@@ -11,6 +11,7 @@ ALTER TABLE distribution.pipes ADD COLUMN   id_function integer;
 ALTER TABLE distribution.pipes ADD COLUMN   year smallint CHECK (year > 1800 AND year < 2100);
 ALTER TABLE distribution.pipes ADD COLUMN   folder character(20);
 ALTER TABLE distribution.pipes ADD COLUMN   schema_force_view smallint NOT NULL DEFAULT 0;
+ALTER TABLE distribution.pipes ADD COLUMN   is_on_map text;
 
 ALTER TABLE distribution.pipes ADD COLUMN   wkb_geometry geometry;
 
