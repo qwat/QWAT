@@ -62,7 +62,7 @@ CREATE INDEX geoidx ON distribution.pipes USING GIST ( wkb_geometry );
 
 
 /*----------------!!!---!!!----------------*//*----------------!!!---!!!----------------*/
-/*----------------!!!---!!!----------------*//*----------------!!!---!!!----------------*
+/*----------------!!!---!!!----------------*//*----------------!!!---!!!----------------*/
 /* PIPES VIEW */
 DROP VIEW IF EXISTS distribution.pipes_view CASCADE;
 CREATE VIEW distribution.pipes_view AS 
