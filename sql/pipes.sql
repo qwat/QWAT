@@ -41,7 +41,7 @@ ALTER TABLE distribution.pipes ADD COLUMN   id_install_method character(20);
 ALTER TABLE distribution.pipes ADD COLUMN   material_thickness character(20);
 
 /*----------------!!!---!!!----------------*/
-/* ADD CONSTRAINTS */
+/* Add constraints */
 /* primary key */
 ALTER TABLE distribution.pipes ADD CONSTRAINT pipes_pkey PRIMARY KEY (fid);
 /* id_parent */
@@ -57,8 +57,16 @@ CREATE INDEX fki_id_status ON distribution.pipes(id_status);
 ALTER TABLE distribution.pipes ADD CONSTRAINT enforce_dims_wkb_geometry CHECK (st_ndims(wkb_geometry) = 2);
 ALTER TABLE distribution.pipes ADD CONSTRAINT enforce_geotype_wkb_geometry CHECK (geometrytype(wkb_geometry) = 'LINESTRING'::text OR wkb_geometry IS NULL);
 ALTER TABLE distribution.pipes ADD CONSTRAINT enforce_srid_wkb_geometry CHECK (st_srid(wkb_geometry) = 21781);
-/* GIST INDEX*/
+/* GIST index*/
 CREATE INDEX geoidx ON distribution.pipes USING GIST ( wkb_geometry );
+
+/*----------------!!!---!!!----------------*/
+/* Comments */
+COMMENT ON TABLE distribution.pipes IS 'Table for pipes. This should not be used for vewing, as a more complete view (pipes_view) exists.';
+
+
+
+
 
 
 /*----------------!!!---!!!----------------*//*----------------!!!---!!!----------------*/
@@ -80,6 +88,18 @@ CREATE VIEW distribution.pipes_view AS
 		INNER JOIN distribution.pipes_function ON pipes.id_function = pipes_function.id
 		INNER JOIN distribution.pipes_status   ON pipes.id_status   = pipes_status.id;
 /*----------------!!!---!!!----------------*/
+/* Add view in geometry_columns */
+DELETE FROM geometry_columns WHERE f_table_name = 'pipes_view';
+INSERT INTO geometry_columns (f_table_catalog, f_table_schema, f_table_name, f_geometry_column, coord_dimension, srid, type) 
+	VALUES  ('' , 'distribution', 'pipes_view', 'wkb_geometry', 2, 21781, 'LINESTRING');
+/*----------------!!!---!!!----------------*/
+/* Comment */	
+COMMENT ON VIEW distribution.pipes_view IS 'View for pipes. This view is editable (a rule exists to forwad changes to the table). 
+		schema_view is a boolean to define if the pipes is visible in the schematic view. This field is usually determined by the pipe''s function attribute schema_view,
+		but it can be overridden by the pipe''s attribute schema_force_view.';
+
+
+/*----------------!!!---!!!----------------*/
 /* UPDATE RULE */
 CREATE OR REPLACE RULE update_pipes AS
 	ON UPDATE TO distribution.pipes_view DO INSTEAD
@@ -89,14 +109,9 @@ CREATE OR REPLACE RULE update_pipes AS
 			folder = NEW.folder,
 			schema_force_view  = NEW.schema_force_view,
 			
-			
-			pressure_nominale = NEW.pressure_nominale
-			
-			
+			pressure_nominale = NEW.pressure_nominale			
 		WHERE fid = NEW.fid;
-/*----------------!!!---!!!----------------*/
-/* Add view in geometry_columns */
-DELETE FROM geometry_columns WHERE f_table_name = 'pipes_view';
-INSERT INTO geometry_columns (f_table_catalog, f_table_schema, f_table_name, f_geometry_column, coord_dimension, srid, type) 
-	VALUES  ('' , 'distribution', 'pipes_view', 'wkb_geometry', 2, 21781, 'LINESTRING');
+/* Comment */	
+COMMENT ON RULE update_pipes IS 'Rule to forward changes for pipes_view to the table pipes.';
+
 
