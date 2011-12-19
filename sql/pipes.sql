@@ -1,15 +1,14 @@
-""
+/*
 	qWat - QGIS Water Module
 	
 	SQL file :: pipes table and view
-	
-""
+*/
 
 DROP TABLE IF EXISTS distribution.pipes CASCADE;
 CREATE TABLE distribution.pipes (fid serial NOT NULL);
 
 ALTER TABLE distribution.pipes ADD COLUMN   id_function integer;
-ALTER TABLE distribution.pipes ADD COLUMN   year smallint; /* CHECK (year > 1800 AND year < 2100);*/
+ALTER TABLE distribution.pipes ADD COLUMN   year smallint CHECK (year > 1800 AND year < 2100);
 ALTER TABLE distribution.pipes ADD COLUMN   folder character(20);
 ALTER TABLE distribution.pipes ADD COLUMN   schema_force_view smallint NOT NULL DEFAULT 0;
 
@@ -77,16 +76,22 @@ CREATE VIEW distribution.pipes_view AS
 			ELSE false
 		END AS _schema_view
 		FROM distribution.pipes
-		INNER JOIN distribution.pipes_function ON pipes_table.id_function = pipes_function.id
-		INNER JOIN distribution.pipes_status   ON pipes_table.id_status   = pipes_status.id;
+		INNER JOIN distribution.pipes_function ON pipes.id_function = pipes_function.id
+		INNER JOIN distribution.pipes_status   ON pipes.id_status   = pipes_status.id;
 /*----------------!!!---!!!----------------*/
 /* UPDATE RULE */
 CREATE OR REPLACE RULE update_pipes AS
 	ON UPDATE TO distribution.pipes_view DO INSTEAD
 		UPDATE distribution.pipes SET 
-			pressure_nominale = NEW.pressure_nominale,
+			id_function = NEW.id_function,
 			id_parent = NULLIF(NEW.id_parent,0)::integer,
-			schema_force_view  = NEW.schema_force_view
+			folder = NEW.folder,
+			schema_force_view  = NEW.schema_force_view,
+			
+			
+			pressure_nominale = NEW.pressure_nominale
+			
+			
 		WHERE fid = NEW.fid;
 /*----------------!!!---!!!----------------*/
 /* Add view in geometry_columns */
