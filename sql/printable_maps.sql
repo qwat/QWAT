@@ -27,7 +27,7 @@ COMMENT ON TABLE distribution.printable_maps IS 'This table is used for polygons
 /* FUNCTION */
 DROP AGGREGATE IF EXISTS distribution.tsum(text);
 CREATE AGGREGATE distribution.tsum ( BASETYPE = text, SFUNC = textcat, STYPE = text, INITCOND = '' );
-COMMENT ON AGGREGATE distribution.tsum IS 'Used to concatenate text in a SELECT. See distribution.getMapName for an example.';
+COMMENT ON AGGREGATE distribution.tsum(text) IS 'Used to concatenate text in a SELECT. See distribution.getMapName for an example.';
 
 
 CREATE OR REPLACE FUNCTION distribution.getMapName(integer) RETURNS text AS '
