@@ -1,8 +1,8 @@
 # -*- coding: utf-8 -*-
 
-# Form implementation generated from reading ui file 'ui_Browser.ui'
+# Form implementation generated from reading ui file '/home/denis/Documents/qWat/qWat/ui_ItemBrowser.ui'
 #
-# Created: Tue Dec 20 08:55:26 2011
+# Created: Tue Dec 20 09:39:55 2011
 #      by: PyQt4 UI code generator 4.8.5
 #
 # WARNING! All changes made in this file will be lost!
@@ -43,10 +43,10 @@ class Ui_ItemBrowser(object):
         self.previousButton.setText(QtGui.QApplication.translate("ItemBrowser", "<", None, QtGui.QApplication.UnicodeUTF8))
         self.previousButton.setObjectName(_fromUtf8("previousButton"))
         self.gridLayout_2.addWidget(self.previousButton, 0, 0, 1, 1)
-        self.fidListCombo = QtGui.QComboBox(self.browseFrame)
-        self.fidListCombo.setEditable(True)
-        self.fidListCombo.setObjectName(_fromUtf8("fidListCombo"))
-        self.gridLayout_2.addWidget(self.fidListCombo, 0, 1, 1, 1)
+        self.listCombo = QtGui.QComboBox(self.browseFrame)
+        self.listCombo.setEditable(True)
+        self.listCombo.setObjectName(_fromUtf8("listCombo"))
+        self.gridLayout_2.addWidget(self.listCombo, 0, 1, 1, 1)
         self.nextButton = QtGui.QPushButton(self.browseFrame)
         sizePolicy = QtGui.QSizePolicy(QtGui.QSizePolicy.Minimum, QtGui.QSizePolicy.Fixed)
         sizePolicy.setHorizontalStretch(0)

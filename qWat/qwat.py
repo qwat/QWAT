@@ -24,10 +24,9 @@ from PyQt4.QtGui import *
 from qgis.core import *
 
 # Import the code for the dialog
-from pipeedit import PipeEdit
 from pipesearch import PipeSearch
 from connectlayers import ConnectLayers
-from layerconnected import LayerConnected
+from itembrowser import ItemBrowser
 
 # Initialize Qt resources from file resources.py
 import resources
@@ -71,7 +70,7 @@ class qWat ():
 		
 	def disconnectPipeLayer(self):
 		self.pipelayer = 0
-		self.PipeEditDock.unload()
+		self.itembrowser.unload()
 		
 	def ConnectLayersDlg(self):
 		# create and show the dialog
@@ -85,7 +84,7 @@ class qWat ():
 				QMessageBox.warning( dlg , "qWat", "The pipe layer has not a valid structure! Check again!" )
 				return
 			else:
-				self.PipeEditDock = PipeEdit(self.iface,pipelayer)
+				self.itembrowser = ItemBrowser( self.iface , pipelayer , QApplication.translate("Browser", "Pipes", "Label title", QApplication.UnicodeUTF8) )
 				QObject.connect(pipelayer , SIGNAL("layerDeleted ()")    , self.disconnectPipeLayer )
 				self.pipelayer = pipelayer
 				print "qWat: connecting SIGNAL for pipes (layer: %s)" % pipelayer.name()

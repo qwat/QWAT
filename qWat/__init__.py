@@ -35,13 +35,13 @@ def classFactory(iface):
     return qWat(iface)
     
 """  
-pyrcc4 -o /home/denis/Documents/qgis/plugins/qWat/resources.py /home/denis/Documents/qgis/plugins/qWat/resources.qrc
+pyrcc4 -o /home/denis/Documents/qWat/qWat/resources.py /home/denis/Documents/qWat/qWat/resources.qrc
   
-pyuic4 -o /home/denis/Documents/qgis/plugins/qWat/ui_PipeEdit.py /home/denis/Documents/qgis/plugins/qWat/ui_PipeEdit.ui 
-pyuic4 -o /home/denis/Documents/qgis/plugins/qWat/ui_PipeSearch.py /home/denis/Documents/qgis/plugins/qWat/ui_PipeSearch.ui 
-pyuic4 -o /home/denis/Documents/qgis/plugins/qWat/ui_ConnectLayers.py /home/denis/Documents/qgis/plugins/qWat/ui_ConnectLayers.ui 
+pyuic4 -o /home/denis/Documents/qWat/qWat/ui_ItemBrowser.py /home/denis/Documents/qWat/qWat/ui_ItemBrowser.ui 
+pyuic4 -o /home/denis/Documents/qWat/qWat/ui_PipeSearch.py /home/denis/Documents/qWat/qWat/ui_PipeSearch.ui 
+pyuic4 -o /home/denis/Documents/qWat/qWat/ui_ConnectLayers.py /home/denis/Documents/qWat/qWat/ui_ConnectLayers.ui 
 
-rm /home/denis/.qgis/python/plugins/qWat/*; cp /home/denis/Documents/qgis/plugins/qWat/* /home/denis/.qgis/python/plugins/qWat/; qgis /home/denis/Documents/qgis/distribution.qgs &
+rm /home/denis/.qgis/python/plugins/qWat/*; cp /home/denis/Documents/qWat/qWat/* /home/denis/.qgis/python/plugins/qWat/; qgis /home/denis/Documents/qgis/distribution19.qgs &
 """
 
 

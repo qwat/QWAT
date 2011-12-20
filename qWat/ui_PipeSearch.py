@@ -1,8 +1,8 @@
 # -*- coding: utf-8 -*-
 
-# Form implementation generated from reading ui file '/home/denis/Documents/qgis/plugins/qWat/ui_PipeSearch.ui'
+# Form implementation generated from reading ui file '/home/denis/Documents/qWat/qWat/ui_PipeSearch.ui'
 #
-# Created: Thu Dec  8 10:46:41 2011
+# Created: Tue Dec 20 09:39:55 2011
 #      by: PyQt4 UI code generator 4.8.5
 #
 # WARNING! All changes made in this file will be lost!
