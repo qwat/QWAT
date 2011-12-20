@@ -2,7 +2,7 @@
 
 # Form implementation generated from reading ui file 'ui_Browser.ui'
 #
-# Created: Tue Dec 20 08:36:17 2011
+# Created: Tue Dec 20 08:55:26 2011
 #      by: PyQt4 UI code generator 4.8.5
 #
 # WARNING! All changes made in this file will be lost!
@@ -18,7 +18,7 @@ class Ui_ItemBrowser(object):
     def setupUi(self, ItemBrowser):
         ItemBrowser.setObjectName(_fromUtf8("ItemBrowser"))
         ItemBrowser.resize(218, 118)
-        ItemBrowser.setWindowTitle(QtGui.QApplication.translate("ItemBrowser", "Title", None, QtGui.QApplication.UnicodeUTF8))
+        ItemBrowser.setWindowTitle(_fromUtf8("Title"))
         self.dockWidgetContents = QtGui.QWidget()
         self.dockWidgetContents.setObjectName(_fromUtf8("dockWidgetContents"))
         self.gridLayout_3 = QtGui.QGridLayout(self.dockWidgetContents)
