@@ -51,7 +51,6 @@ class ItemBrowser( QDockWidget , Ui_ItemBrowser ):
 	def selectionChanged(self):
 		self.browseFrame.setEnabled(False)
 		self.cleanBrowserFields()
-		ifid = self.layer.dataProvider().fieldNameIndex('fid') # TODO: can be removed
 		nItems = self.layer.selectedFeatureCount()
 		if nItems == 0:	print "qWat: Nothing has been selected"; return
 		if nItems > 1:  self.setVisible(True)
