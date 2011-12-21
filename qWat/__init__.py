@@ -41,7 +41,7 @@ pyuic4 -o /home/denis/Documents/qWat/qWat/ui_ItemBrowser.py /home/denis/Document
 pyuic4 -o /home/denis/Documents/qWat/qWat/ui_PipeSearch.py /home/denis/Documents/qWat/qWat/ui_PipeSearch.ui 
 pyuic4 -o /home/denis/Documents/qWat/qWat/ui_ConnectLayers.py /home/denis/Documents/qWat/qWat/ui_ConnectLayers.ui 
 
-rm /home/denis/.qgis/python/plugins/qWat/*; cp /home/denis/Documents/qWat/qWat/* /home/denis/.qgis/python/plugins/qWat/; qgis /home/denis/Documents/qgis/distribution19.qgs &
+rm /home/denis/.qgis/python/plugins/qWat/*; cp /home/denis/Documents/qWat/qWat/* /home/denis/.qgis/python/plugins/qWat/; qgis /home/denis/Documents/qWat/project/distribution_v19.qgs &
 """
 
 
