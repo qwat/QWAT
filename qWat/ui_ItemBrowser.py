@@ -1,8 +1,8 @@
 # -*- coding: utf-8 -*-
 
-# Form implementation generated from reading ui file '/home/denis/Documents/qWat/qWat/ui_ItemBrowser.ui'
+# Form implementation generated from reading ui file 'ui_ItemBrowser.ui'
 #
-# Created: Wed Dec 21 14:46:39 2011
+# Created: Wed Dec 21 17:07:02 2011
 #      by: PyQt4 UI code generator 4.8.5
 #
 # WARNING! All changes made in this file will be lost!
@@ -17,7 +17,7 @@ except AttributeError:
 class Ui_ItemBrowser(object):
     def setupUi(self, ItemBrowser):
         ItemBrowser.setObjectName(_fromUtf8("ItemBrowser"))
-        ItemBrowser.resize(367, 154)
+        ItemBrowser.resize(266, 154)
         ItemBrowser.setWindowTitle(_fromUtf8("qWat :: item browser"))
         self.dockWidgetContents = QtGui.QWidget()
         self.dockWidgetContents.setObjectName(_fromUtf8("dockWidgetContents"))
@@ -84,7 +84,7 @@ class Ui_ItemBrowser(object):
         self.editFormButton.setAccessibleDescription(_fromUtf8(""))
         self.editFormButton.setText(_fromUtf8("..."))
         icon = QtGui.QIcon()
-        icon.addPixmap(QtGui.QPixmap(_fromUtf8("../project/ui_forms/icons/edit.png")), QtGui.QIcon.Normal, QtGui.QIcon.Off)
+        icon.addPixmap(QtGui.QPixmap(_fromUtf8("icons/edit.png")), QtGui.QIcon.Normal, QtGui.QIcon.Off)
         self.editFormButton.setIcon(icon)
         self.editFormButton.setObjectName(_fromUtf8("editFormButton"))
         self.gridLayout_2.addWidget(self.editFormButton, 1, 5, 1, 1)
