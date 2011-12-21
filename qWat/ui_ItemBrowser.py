@@ -2,7 +2,7 @@
 
 # Form implementation generated from reading ui file 'ui_ItemBrowser.ui'
 #
-# Created: Wed Dec 21 10:15:02 2011
+# Created: Wed Dec 21 11:02:16 2011
 #      by: PyQt4 UI code generator 4.8.5
 #
 # WARNING! All changes made in this file will be lost!
@@ -70,7 +70,7 @@ class Ui_ItemBrowser(object):
         self.editFormButton = QtGui.QToolButton(self.browseFrame)
         self.editFormButton.setText(QtGui.QApplication.translate("ItemBrowser", "...", None, QtGui.QApplication.UnicodeUTF8))
         icon = QtGui.QIcon()
-        icon.addPixmap(QtGui.QPixmap(_fromUtf8("../ui_forms/icons/edit.png")), QtGui.QIcon.Normal, QtGui.QIcon.Off)
+        icon.addPixmap(QtGui.QPixmap(_fromUtf8("../project/ui_forms/icons/edit.png")), QtGui.QIcon.Normal, QtGui.QIcon.Off)
         self.editFormButton.setIcon(icon)
         self.editFormButton.setObjectName(_fromUtf8("editFormButton"))
         self.gridLayout_2.addWidget(self.editFormButton, 1, 5, 1, 1)
