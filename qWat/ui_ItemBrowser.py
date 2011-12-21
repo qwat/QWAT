@@ -1,8 +1,8 @@
 # -*- coding: utf-8 -*-
 
-# Form implementation generated from reading ui file '/home/denis/Documents/qWat/qWat/ui_ItemBrowser.ui'
+# Form implementation generated from reading ui file 'ui_ItemBrowser.ui'
 #
-# Created: Tue Dec 20 11:06:31 2011
+# Created: Wed Dec 21 10:15:02 2011
 #      by: PyQt4 UI code generator 4.8.5
 #
 # WARNING! All changes made in this file will be lost!
@@ -17,7 +17,7 @@ except AttributeError:
 class Ui_ItemBrowser(object):
     def setupUi(self, ItemBrowser):
         ItemBrowser.setObjectName(_fromUtf8("ItemBrowser"))
-        ItemBrowser.resize(389, 254)
+        ItemBrowser.resize(363, 139)
         ItemBrowser.setWindowTitle(_fromUtf8("Title"))
         self.dockWidgetContents = QtGui.QWidget()
         self.dockWidgetContents.setObjectName(_fromUtf8("dockWidgetContents"))
@@ -57,16 +57,23 @@ class Ui_ItemBrowser(object):
         self.nextButton.setMaximumSize(QtCore.QSize(21, 16777215))
         self.nextButton.setText(QtGui.QApplication.translate("ItemBrowser", ">", None, QtGui.QApplication.UnicodeUTF8))
         self.nextButton.setObjectName(_fromUtf8("nextButton"))
-        self.gridLayout_2.addWidget(self.nextButton, 0, 4, 1, 1)
+        self.gridLayout_2.addWidget(self.nextButton, 0, 5, 1, 1)
         self.currentPosLabel = QtGui.QLabel(self.browseFrame)
         self.currentPosLabel.setText(QtGui.QApplication.translate("ItemBrowser", "0/0", None, QtGui.QApplication.UnicodeUTF8))
         self.currentPosLabel.setAlignment(QtCore.Qt.AlignCenter)
         self.currentPosLabel.setObjectName(_fromUtf8("currentPosLabel"))
-        self.gridLayout_2.addWidget(self.currentPosLabel, 0, 2, 1, 1)
+        self.gridLayout_2.addWidget(self.currentPosLabel, 0, 2, 1, 3)
         self.zoomCheck = QtGui.QCheckBox(self.browseFrame)
         self.zoomCheck.setText(QtGui.QApplication.translate("ItemBrowser", "zoom to current item", None, QtGui.QApplication.UnicodeUTF8))
         self.zoomCheck.setObjectName(_fromUtf8("zoomCheck"))
-        self.gridLayout_2.addWidget(self.zoomCheck, 1, 0, 1, 3)
+        self.gridLayout_2.addWidget(self.zoomCheck, 1, 0, 1, 4)
+        self.editFormButton = QtGui.QToolButton(self.browseFrame)
+        self.editFormButton.setText(QtGui.QApplication.translate("ItemBrowser", "...", None, QtGui.QApplication.UnicodeUTF8))
+        icon = QtGui.QIcon()
+        icon.addPixmap(QtGui.QPixmap(_fromUtf8("../ui_forms/icons/edit.png")), QtGui.QIcon.Normal, QtGui.QIcon.Off)
+        self.editFormButton.setIcon(icon)
+        self.editFormButton.setObjectName(_fromUtf8("editFormButton"))
+        self.gridLayout_2.addWidget(self.editFormButton, 1, 5, 1, 1)
         self.colorButton = QtGui.QToolButton(self.browseFrame)
         font = QtGui.QFont()
         font.setStyleStrategy(QtGui.QFont.PreferDefault)

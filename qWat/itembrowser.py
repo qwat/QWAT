@@ -85,11 +85,6 @@ class ItemBrowser( QDockWidget , Ui_ItemBrowser ):
 		self.layer.featureAtId(self.subset[i],item)
 		return item	
 	
-	@pyqtSignature("on_colorButton_clicked()")
-	def on_colorButton_clicked(self):
-		self.rubber.color = QColorDialog.getColor(self.rubber.color,self)
-		self.colorButton.setStyleSheet("background-color: rgb(%u,%u,%u)" % (self.rubber.color.red(),self.rubber.color.green(),self.rubber.color.blue()))
-		self.rubber.setColor(self.rubber.color)
 
 	@pyqtSignature("on_previousButton_clicked()")
 	def on_previousButton_clicked(self):
@@ -115,8 +110,6 @@ class ItemBrowser( QDockWidget , Ui_ItemBrowser ):
 			self.zoomToItem(item)
 		# Update browser
 		self.currentPosLabel.setText('%u/%u' % (i+1,len(self.subset)) )
-		# launch form with Qaction
-		# TODO	
 		
 	@pyqtSignature("on_zoomCheck_stateChanged(int)")
 	def on_zoomCheck_stateChanged(self,i):
@@ -125,3 +118,16 @@ class ItemBrowser( QDockWidget , Ui_ItemBrowser ):
 			item = self.getCurrentItem()
 			# zoom
 			self.zoomToItem(item)
+
+	@pyqtSignature("on_editFormButton_clicked()")
+	def on_editFormButton_clicked(self):
+		# launch edit form
+		self.iface.openFeatureForm(self.layer, self.getCurrentItem() )
+			
+	@pyqtSignature("on_colorButton_clicked()")
+	def on_colorButton_clicked(self):
+		self.rubber.color = QColorDialog.getColor(self.rubber.color,self)
+		self.colorButton.setStyleSheet("background-color: rgb(%u,%u,%u)" % (self.rubber.color.red(),self.rubber.color.green(),self.rubber.color.blue()))
+		self.rubber.setColor(self.rubber.color)
+
+
