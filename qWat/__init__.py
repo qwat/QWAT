@@ -42,6 +42,8 @@ pyuic4 -o /home/denis/Documents/qWat/qWat/ui_ConnectLayers.py /home/denis/Docume
 pylupdate4             /home/denis/Documents/qWat/qWat/*.py /home/denis/Documents/qWat/qWat/*.ui -ts qWat_fr.ts
 pylupdate4 -noobsolete /home/denis/Documents/qWat/qWat/*.py /home/denis/Documents/qWat/qWat/*.ui -ts qWat_fr.ts
 
+lrelease /home/denis/Documents/qWat/qWat/qWat_fr.ts -qm /home/denis/Documents/qWat/qWat/qWat.qm
+
 rm /home/denis/.qgis/python/plugins/qWat/*; cp /home/denis/Documents/qWat/qWat/* /home/denis/.qgis/python/plugins/qWat/; qgis /home/denis/Documents/qWat/project/distribution_v19.qgs &
 """
 

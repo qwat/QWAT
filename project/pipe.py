@@ -30,6 +30,4 @@ class Pipe:
 		self.dialog = dialog
 		self.layerId = layerId
 		self.featureId = featureId
-		
-		dialog.setWindowTitle("Pipe %u" % featureId)
-		
+			
