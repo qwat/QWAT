@@ -1,8 +1,6 @@
 """
 /***************************************************************************
- qWat
-                                 A QGIS plugin
- Tools
+ qWat - item browser 
                               -------------------
         begin                : 2011-12-20
         copyright            : (C) 2011 by Denis Rouzaud

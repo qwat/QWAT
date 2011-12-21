@@ -1,8 +1,6 @@
 """
 /***************************************************************************
- qWat
-                                 A QGIS plugin
- Tools
+ qWat - QGIS Water Module
                               -------------------
         begin                : 2011-11-17
         copyright            : (C) 2011 by Denis Rouzaud
