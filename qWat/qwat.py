@@ -79,10 +79,10 @@ class qWat ():
 			pipelayer = layerlist[dlg.pipesCombo.currentIndex()]
 			if pipelayer.type() != QgsMapLayer.VectorLayer or pipelayer.geometryType() != 1 and pipelayer.dataProvider().fieldNameIndex('id_parent') == -1:
 				self.pipelayer = 0;
-				QMessageBox.warning( dlg , "qWat", "The pipe layer has not a valid structure! Check again!" )
+				QMessageBox.warning( dlg , "qWat", QApplication.translate("PipeSearch", "The pipe layer has not a valid structure! Check again!", None, QApplication.UnicodeUTF8) )
 				return
 			else:
-				self.itembrowser = ItemBrowser( self.iface , pipelayer , QApplication.translate("Browser", "Pipes", "Label title", QApplication.UnicodeUTF8) )
+				self.itembrowser = ItemBrowser( self.iface , pipelayer , QApplication.translate("Browser", "qWat :: Pipes", "Window title", QApplication.UnicodeUTF8) )
 				QObject.connect(pipelayer , SIGNAL("layerDeleted ()")    , self.disconnectPipeLayer )
 				self.pipelayer = pipelayer
 				print "qWat: connecting SIGNAL for pipes (layer: %s)" % pipelayer.name()
@@ -90,7 +90,7 @@ class qWat ():
 	def PipeSearchDlg(self):
 		dlg = PipeSearch(self.pipelayer, self.iface )
 		if self.pipelayer == 0:
-			QMessageBox.warning( dlg , "qWat", QApplication.translate("PipSearch", "Connect pipe layer first.", None, QApplication.UnicodeUTF8) )
+			QMessageBox.warning( dlg , "qWat", QApplication.translate("PipeSearch", "Pipes layer is not connected.", None, QApplication.UnicodeUTF8) )
 			dlg.close()
 			return
 		# create and show the dialog

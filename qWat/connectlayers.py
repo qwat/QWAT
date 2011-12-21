@@ -34,7 +34,7 @@ class ConnectLayers(QDialog, Ui_ConnectLayers ):
 		QDialog.__init__(self)
 		# Set up the user interface from Designer.
 		self.setupUi(self)
-		
+			
 		l = 0
 		for lay in layerlist:
 			self.pipesCombo.addItem(_fromUtf8(""))

@@ -17,7 +17,7 @@
    </sizepolicy>
   </property>
   <property name="windowTitle">
-   <string>qWat Pipe Search</string>
+   <string>qWat :: pipe search</string>
   </property>
   <layout class="QGridLayout" name="gridLayout">
    <item row="0" column="0" colspan="2">
@@ -60,9 +60,12 @@
             <verstretch>0</verstretch>
            </sizepolicy>
           </property>
+          <property name="accessibleDescription">
+           <string notr="true"/>
+          </property>
           <item>
            <property name="text">
-            <string>&lt;</string>
+            <string notr="true">&lt;</string>
            </property>
           </item>
           <item>
@@ -74,6 +77,12 @@
         </item>
         <item>
          <widget class="QDoubleSpinBox" name="geomLengthValueSpin">
+          <property name="accessibleDescription">
+           <string notr="true"/>
+          </property>
+          <property name="specialValueText">
+           <string notr="true"/>
+          </property>
           <property name="decimals">
            <number>1</number>
           </property>

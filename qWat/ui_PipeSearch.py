@@ -2,7 +2,7 @@
 
 # Form implementation generated from reading ui file '/home/denis/Documents/qWat/qWat/ui_PipeSearch.ui'
 #
-# Created: Tue Dec 20 09:39:55 2011
+# Created: Wed Dec 21 14:46:39 2011
 #      by: PyQt4 UI code generator 4.8.5
 #
 # WARNING! All changes made in this file will be lost!
@@ -23,7 +23,7 @@ class Ui_PipeSearch(object):
         sizePolicy.setVerticalStretch(0)
         sizePolicy.setHeightForWidth(PipeSearch.sizePolicy().hasHeightForWidth())
         PipeSearch.setSizePolicy(sizePolicy)
-        PipeSearch.setWindowTitle(QtGui.QApplication.translate("PipeSearch", "qWat Pipe Search", None, QtGui.QApplication.UnicodeUTF8))
+        PipeSearch.setWindowTitle(QtGui.QApplication.translate("PipeSearch", "qWat :: pipe search", None, QtGui.QApplication.UnicodeUTF8))
         self.gridLayout = QtGui.QGridLayout(PipeSearch)
         self.gridLayout.setObjectName(_fromUtf8("gridLayout"))
         self.searchTabWidget = QtGui.QTabWidget(PipeSearch)
@@ -51,13 +51,16 @@ class Ui_PipeSearch(object):
         sizePolicy.setVerticalStretch(0)
         sizePolicy.setHeightForWidth(self.geomLengthModeCombo.sizePolicy().hasHeightForWidth())
         self.geomLengthModeCombo.setSizePolicy(sizePolicy)
+        self.geomLengthModeCombo.setAccessibleDescription(_fromUtf8(""))
         self.geomLengthModeCombo.setObjectName(_fromUtf8("geomLengthModeCombo"))
         self.geomLengthModeCombo.addItem(_fromUtf8(""))
-        self.geomLengthModeCombo.setItemText(0, QtGui.QApplication.translate("PipeSearch", "<", None, QtGui.QApplication.UnicodeUTF8))
+        self.geomLengthModeCombo.setItemText(0, _fromUtf8("<"))
         self.geomLengthModeCombo.addItem(_fromUtf8(""))
         self.geomLengthModeCombo.setItemText(1, QtGui.QApplication.translate("PipeSearch", ">", None, QtGui.QApplication.UnicodeUTF8))
         self.horizontalLayout.addWidget(self.geomLengthModeCombo)
         self.geomLengthValueSpin = QtGui.QDoubleSpinBox(self.geomLengthWidget)
+        self.geomLengthValueSpin.setAccessibleDescription(_fromUtf8(""))
+        self.geomLengthValueSpin.setSpecialValueText(_fromUtf8(""))
         self.geomLengthValueSpin.setDecimals(1)
         self.geomLengthValueSpin.setMaximum(99999.0)
         self.geomLengthValueSpin.setProperty("value", 3.0)

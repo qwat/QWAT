@@ -2,7 +2,7 @@
 
 # Form implementation generated from reading ui file '/home/denis/Documents/qWat/qWat/ui_ConnectLayers.ui'
 #
-# Created: Tue Dec 20 09:39:55 2011
+# Created: Wed Dec 21 14:46:39 2011
 #      by: PyQt4 UI code generator 4.8.5
 #
 # WARNING! All changes made in this file will be lost!
@@ -18,7 +18,7 @@ class Ui_ConnectLayers(object):
     def setupUi(self, ConnectLayers):
         ConnectLayers.setObjectName(_fromUtf8("ConnectLayers"))
         ConnectLayers.resize(244, 201)
-        ConnectLayers.setWindowTitle(QtGui.QApplication.translate("ConnectLayers", "Dialog", None, QtGui.QApplication.UnicodeUTF8))
+        ConnectLayers.setWindowTitle(QtGui.QApplication.translate("ConnectLayers", "qWat :: connect layers", None, QtGui.QApplication.UnicodeUTF8))
         self.gridLayout = QtGui.QGridLayout(ConnectLayers)
         self.gridLayout.setObjectName(_fromUtf8("gridLayout"))
         self.pipeslabel = QtGui.QLabel(ConnectLayers)
