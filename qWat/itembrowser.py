@@ -50,12 +50,6 @@ class ItemBrowser( QDockWidget , Ui_ItemBrowser ):
 		self.symbol.setWidth( 1.3 )
 		self.applySymbolStyle()
 		
-		
-		
-		
-		
-
-		
 	def unload(self):
 		self.iface.removeDockWidget(self)
 		
@@ -138,5 +132,3 @@ class ItemBrowser( QDockWidget , Ui_ItemBrowser ):
 	def on_colorButton_clicked(self):
 		if QgsSymbolV2PropertiesDialog(self.symbol,self.layer).exec_():
 			self.applySymbolStyle()
-
-
