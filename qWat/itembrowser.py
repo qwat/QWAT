@@ -44,10 +44,17 @@ class ItemBrowser( QDockWidget , Ui_ItemBrowser ):
 		QObject.connect(self.layer , SIGNAL("selectionChanged ()"), self.selectionChanged )
 		# create rubber band to emphasis the current selected item (over the whole selection)
 		self.rubber = QgsRubberBand(self.iface.mapCanvas())
-		# initial color for rubber band
-		self.rubber.color = QColor(255,0,0,255)
-		self.rubber.setColor(self.rubber.color)
-		self.colorButton.setStyleSheet("background-color: rgb(255,0,0)")
+		# initial style for rubber band
+		self.symbol = QgsLineSymbolV2()
+		self.symbol.setColor( QColor(255,0,0,255) )
+		self.symbol.setWidth( 1.3 )
+		self.applySymbolStyle()
+		
+		
+		
+		
+		
+
 		
 	def unload(self):
 		self.iface.removeDockWidget(self)
@@ -82,7 +89,12 @@ class ItemBrowser( QDockWidget , Ui_ItemBrowser ):
 		i = self.listCombo.currentIndex()
 		self.layer.featureAtId(self.subset[i],item)
 		return item	
-	
+		
+	def applySymbolStyle(self):
+		color = self.symbol.color()
+		self.rubber.setColor(color)
+		self.rubber.setWidth(self.symbol.width())
+		self.colorButton.setStyleSheet("background-color: rgb(%u,%u,%u)" % (color.red(),color.green(),color.blue()))	
 
 	@pyqtSignature("on_previousButton_clicked()")
 	def on_previousButton_clicked(self):
@@ -124,8 +136,7 @@ class ItemBrowser( QDockWidget , Ui_ItemBrowser ):
 			
 	@pyqtSignature("on_colorButton_clicked()")
 	def on_colorButton_clicked(self):
-		self.rubber.color = QColorDialog.getColor(self.rubber.color,self)
-		self.colorButton.setStyleSheet("background-color: rgb(%u,%u,%u)" % (self.rubber.color.red(),self.rubber.color.green(),self.rubber.color.blue()))
-		self.rubber.setColor(self.rubber.color)
+		if QgsSymbolV2PropertiesDialog(self.symbol,self.layer).exec_():
+			self.applySymbolStyle()
 
 
