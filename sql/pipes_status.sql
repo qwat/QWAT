@@ -3,6 +3,7 @@
 	
 	SQL file :: pipes_status table
 */
+BEGIN;
 
 DROP TABLE IF EXISTS "distribution"."pipes_status" CASCADE;
 CREATE TABLE "distribution"."pipes_status" ( id SERIAL, CONSTRAINT "pipes_status_pk" PRIMARY KEY (id) );
@@ -38,4 +39,4 @@ INSERT INTO distribution.pipes_status (strid,status,active) VALUES ('CR','condam
 INSERT INTO distribution.pipes_status (strid,status,active) VALUES ('PA','projet approuve',true);
 */
 
-
+COMMIT;

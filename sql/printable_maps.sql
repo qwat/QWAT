@@ -4,7 +4,8 @@
 	SQL file :: print table and function
 */
 
-/*----------------!!!---!!!----------------*/
+/*----------------!!!---!!!----------------*/+
+BEGIN;
 /* CREATE TABLE */
 DROP TABLE IF EXISTS distribution.printable_maps CASCADE;
 CREATE TABLE distribution.printable_maps (fid serial NOT NULL);
@@ -52,6 +53,4 @@ CREATE OR REPLACE FUNCTION distribution.fillMapNames() RETURNS boolean AS '
 ' LANGUAGE 'plpgsql';
 COMMENT ON FUNCTION distribution.fillMapNames() IS 'Populates the is_on_map field in pipes table with all the short names of poylgons in table printable_maps which overlap the given pipe.';
 
-
-
-
+COMMIT;
