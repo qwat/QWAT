@@ -19,27 +19,20 @@ COMMENT ON TABLE distribution.pipes_material IS 'List of materials for pipes. Al
 
 
 
-/* Trigger / Rule */
+/* Trigger */
 CREATE OR REPLACE FUNCTION distribution.pipes_material_fancy_name() RETURNS trigger AS ' 
 	BEGIN
 		 UPDATE distribution.pipes_material SET _fancy_name = NEW.short_name||'' ''||NEW.diameter WHERE id = NEW.id ;
 		 RETURN NEW;
 	END;
 ' LANGUAGE 'plpgsql';
-COMMENT ON FUNCTION distribution.pipes_material_fancy_name() IS 'Update the fancy name in the material table.';
+COMMENT ON FUNCTION distribution.pipes_material_fancy_name() IS 'Fcn/Trigger: updates the fancy name in the material table.';
 
-/*
-CREATE OR REPLACE RULE fancy_name_insert_rule AS
-	ON INSERT TO distribution.pipes_material 
-	DO ALSO UPDATE distribution.pipes_material SET _fancy_name = NEW.short_name||' '||NEW.diameter WHERE id = NEW.id;
-*/
-	
-	
-CREATE TRIGGER fancy_name_update_trigger 
+CREATE TRIGGER fancy_name_trigger 
 	AFTER INSERT OR UPDATE OF short_name, diameter ON distribution.pipes_material 
 	FOR EACH ROW
 	EXECUTE PROCEDURE distribution.pipes_material_fancy_name();
-/* Function */
+COMMENT ON TRIGGER fancy_name_trigger ON distribution.pipes_material IS 'Trigger: updates the fancy name in the material table.';
 
 
 
