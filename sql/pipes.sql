@@ -8,6 +8,7 @@ DROP TABLE IF EXISTS distribution.pipes CASCADE;
 CREATE TABLE distribution.pipes (fid serial NOT NULL);
 
 ALTER TABLE distribution.pipes ADD COLUMN   id_function integer;
+ALTER TABLE distribution.pipes ADD COLUMN   id_material integer;
 ALTER TABLE distribution.pipes ADD COLUMN   year smallint CHECK (year > 1800 AND year < 2100);
 ALTER TABLE distribution.pipes ADD COLUMN   length2d decimal(8,2);
 ALTER TABLE distribution.pipes ADD COLUMN   length3d decimal(8,2);
@@ -27,8 +28,6 @@ ALTER TABLE distribution.pipes ADD COLUMN   id_precision_2d character(20);
 ALTER TABLE distribution.pipes ADD COLUMN   material_int_diam character(20);
 ALTER TABLE distribution.pipes ADD COLUMN   id_owner character(20);
 ALTER TABLE distribution.pipes ADD COLUMN   protection_coating_detail character(20);
-
-ALTER TABLE distribution.pipes ADD COLUMN   id_material character(20);
 ALTER TABLE distribution.pipes ADD COLUMN   material_nominal_diam character(20);
 ALTER TABLE distribution.pipes ADD COLUMN   "deleted" character(20);
 ALTER TABLE distribution.pipes ADD COLUMN   id_parent integer;
