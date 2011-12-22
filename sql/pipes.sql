@@ -3,12 +3,14 @@
 	
 	SQL file :: pipes table and view
 */
-
+BEGIN;
 DROP TABLE IF EXISTS distribution.pipes CASCADE;
 CREATE TABLE distribution.pipes (fid serial NOT NULL);
 
 ALTER TABLE distribution.pipes ADD COLUMN   id_function integer;
 ALTER TABLE distribution.pipes ADD COLUMN   year smallint CHECK (year > 1800 AND year < 2100);
+ALTER TABLE distribution.pipes ADD COLUMN   length2d decimal(8,2);
+ALTER TABLE distribution.pipes ADD COLUMN   length3d decimal(8,2);
 ALTER TABLE distribution.pipes ADD COLUMN   folder character(20);
 ALTER TABLE distribution.pipes ADD COLUMN   schema_force_view smallint NOT NULL DEFAULT 0;
 ALTER TABLE distribution.pipes ADD COLUMN   is_on_map text;
@@ -21,7 +23,7 @@ ALTER TABLE distribution.pipes ADD COLUMN   pressure_nominale character(20);
 ALTER TABLE distribution.pipes ADD COLUMN   folio character(20);
 ALTER TABLE distribution.pipes ADD COLUMN   id_precision_2d character(20);
 
-ALTER TABLE distribution.pipes ADD COLUMN   length_real character(20);
+
 ALTER TABLE distribution.pipes ADD COLUMN   material_int_diam character(20);
 ALTER TABLE distribution.pipes ADD COLUMN   id_owner character(20);
 ALTER TABLE distribution.pipes ADD COLUMN   protection_coating_detail character(20);
@@ -114,4 +116,6 @@ CREATE OR REPLACE RULE update_pipes AS
 /* Comment */	
 COMMENT ON RULE update_pipes IS 'Rule to forward changes for pipes_view to the table pipes.';
 
+
+COMMIT;
 
