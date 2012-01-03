@@ -3,16 +3,15 @@
 	
 	SQL file :: create tool functions
 */
+BEGIN;
 
-
+/* Text concatenation */
 DROP AGGREGATE IF EXISTS distribution.tsum(text);
 CREATE AGGREGATE distribution.tsum ( BASETYPE = text, SFUNC = textcat, STYPE = text, INITCOND = '' );
 COMMENT ON AGGREGATE distribution.tsum(text) IS 'Concatenates text in a SELECT. See distribution.get_map_name for an example.';
 
 
-
-
-
+/* List all columns from a table */
 CREATE OR REPLACE FUNCTION distribution.table_fields(varchar,VARIADIC exclude varchar[]) RETURNS text AS '
 	DECLARE
 		ftable ALIAS FOR $1;
@@ -32,7 +31,6 @@ CREATE OR REPLACE FUNCTION distribution.table_fields(varchar,VARIADIC exclude va
 	END
 ' LANGUAGE 'plpgsql';
 COMMENT ON FUNCTION distribution.table_fields(varchar,varchar[]) IS 'Returns field names from a table except those listed in arguments.';
-
 CREATE OR REPLACE FUNCTION distribution.table_fields(varchar) RETURNS text AS '
 	DECLARE
 		ftable ALIAS FOR $1;
@@ -43,5 +41,9 @@ CREATE OR REPLACE FUNCTION distribution.table_fields(varchar) RETURNS text AS '
 	END			
 ' LANGUAGE 'plpgsql';
 COMMENT ON FUNCTION distribution.table_fields(varchar,varchar[]) IS 'Returns field names from a table.';
+
+
+
+COMMIT;
 
 

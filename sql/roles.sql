@@ -3,7 +3,7 @@
 	
 	SQL file :: database roles
 */
-
+BEGIN;
 /* 
 Viewer role - can SELECT all the tables
 */
@@ -34,6 +34,8 @@ ALTER DEFAULT PRIVILEGES IN SCHEMA distribution
 Admin role
 */ 
 CREATE ROLE "admin" SUPERUSER;
+
+COMMIT;
 
 
 
