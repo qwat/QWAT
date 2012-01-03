@@ -5,6 +5,13 @@
 */
 BEGIN;
 /* 
+remove roles
+*/
+ALTER DEFAULT PRIVILEGES IN SCHEMA distribution,public
+    REVOKE ALL ON TABLES
+    FROM "poweruser","simpleuser","viewer";
+DROP ROLE IF EXISTS "admin","poweruser","simpleuser","viewer";
+/* 
 Viewer role - can SELECT all the tables
 */
 CREATE ROLE "viewer";
@@ -14,7 +21,7 @@ ALTER DEFAULT PRIVILEGES IN SCHEMA distribution,public
        
 /* 
 Simple user role - can update geometric objects except their geometries
-*/    
+*/   
 CREATE ROLE "simpleuser" IN ROLE "viewer";
 ALTER DEFAULT PRIVILEGES IN SCHEMA distribution
     GRANT INSERT, UPDATE, DELETE ON TABLES
