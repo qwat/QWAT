@@ -152,6 +152,7 @@ INSERT INTO distribution.pipes_material ("short_name","name","diameter","diamete
 INSERT INTO distribution.pipes_material ("short_name","name","diameter","diameter_internal","diameter_external") VALUES ('PL'  ,'Plastique'             ,'25'     ,'','');             
 INSERT INTO distribution.pipes_material ("short_name","name","diameter","diameter_internal","diameter_external") VALUES ('PL'  ,'Plastique'             ,'2.5"'   ,'','');           
 INSERT INTO distribution.pipes_material ("short_name","name","diameter","diameter_internal","diameter_external") VALUES ('PL'  ,'Plastique'             ,'32'     ,'','');                      
+INSERT INTO distribution.pipes_material ("short_name","name","diameter","diameter_internal","diameter_external") VALUES ('PL'  ,'Plastique'             ,'150'     ,'','');        /*SHOULD BE REMOVED */
 INSERT INTO distribution.pipes_material ("short_name","name","diameter","diameter_internal","diameter_external") VALUES ('PVC' ,'Chlorure de polyvinyle','100'    ,'','');           
 INSERT INTO distribution.pipes_material ("short_name","name","diameter","diameter_internal","diameter_external") VALUES ('PVC' ,'Chlorure de polyvinyle','120'    ,'','');           
 INSERT INTO distribution.pipes_material ("short_name","name","diameter","diameter_internal","diameter_external") VALUES ('PVC' ,'Chlorure de polyvinyle','125'    ,'','');           
