@@ -7,27 +7,27 @@ BEGIN;
 DROP TABLE IF EXISTS distribution.pipes CASCADE;
 CREATE TABLE distribution.pipes (fid serial NOT NULL);
 
-ALTER TABLE distribution.pipes ADD COLUMN   id_function integer;
-ALTER TABLE distribution.pipes ADD COLUMN   id_material integer;
-ALTER TABLE distribution.pipes ADD COLUMN   id_status integer;
-ALTER TABLE distribution.pipes ADD COLUMN   id_parent integer;
-ALTER TABLE distribution.pipes ADD COLUMN   year smallint CHECK (year > 1800 AND year < 2100);
-ALTER TABLE distribution.pipes ADD COLUMN   _length2d decimal(8,2);
-ALTER TABLE distribution.pipes ADD COLUMN   _length3d decimal(8,2);
-ALTER TABLE distribution.pipes ADD COLUMN   folder character(20);
-ALTER TABLE distribution.pipes ADD COLUMN   schema_force_view smallint NOT NULL DEFAULT 0;
-ALTER TABLE distribution.pipes ADD COLUMN   _is_on_map text;
-ALTER TABLE distribution.pipes ADD COLUMN   remarks text;
-
-ALTER TABLE distribution.pipes ADD COLUMN   wkb_geometry geometry;
-
+ALTER TABLE distribution.pipes ADD COLUMN   id_function integer;									/* id_function          */ 
+ALTER TABLE distribution.pipes ADD COLUMN   id_material integer;                                    /* id_material          */
+ALTER TABLE distribution.pipes ADD COLUMN   id_status integer;                                      /* id_status            */
+ALTER TABLE distribution.pipes ADD COLUMN   id_parent integer;                                      /* id_parent            */
+ALTER TABLE distribution.pipes ADD COLUMN   year smallint CHECK (year > 1800 AND year < 2100);      /* year                 */
+ALTER TABLE distribution.pipes ADD COLUMN   pressure_nominale smallint;                             /* pressure_nominale    */
+ALTER TABLE distribution.pipes ADD COLUMN   _length2d decimal(8,2);                                 /* _length2d            */
+ALTER TABLE distribution.pipes ADD COLUMN   _length3d decimal(8,2);                                 /* _length3d            */
+ALTER TABLE distribution.pipes ADD COLUMN   schema_force_view  boolean DEFAULT NULL::boolean;       /* schema_force_view    */
+ALTER TABLE distribution.pipes ADD COLUMN   folder character(20);                                   /* folder               */
+ALTER TABLE distribution.pipes ADD COLUMN   _is_on_map varchar(80);                                 /* _is_on_map           */
+ALTER TABLE distribution.pipes ADD COLUMN   remarks text;                                           /* remarks              */
+                                                                                                    /*                      */
+ALTER TABLE distribution.pipes ADD COLUMN   wkb_geometry geometry;                                  /* wkb_geometry         */
 
 ALTER TABLE distribution.pipes ADD COLUMN   id_precision_2d character(20);
 ALTER TABLE distribution.pipes ADD COLUMN   id_owner character(20);
 ALTER TABLE distribution.pipes ADD COLUMN   id_location character(20);
 ALTER TABLE distribution.pipes ADD COLUMN   id_install_method character(20);
 
-ALTER TABLE distribution.pipes ADD COLUMN   pressure_nominale character(20);
+
 ALTER TABLE distribution.pipes ADD COLUMN   material_int_diam character(20);
 ALTER TABLE distribution.pipes ADD COLUMN   protection_coating_detail character(20);
 ALTER TABLE distribution.pipes ADD COLUMN   material_nominal_diam character(20);
@@ -93,9 +93,8 @@ CREATE VIEW distribution.pipes_view AS
 		pipes_status.status        AS _status_name,
 		pipes_status.active        AS _status_active,
 		CASE 
-			WHEN pipes.schema_force_view = 0 THEN pipes_function.schema_view
-			WHEN pipes.schema_force_view = 1 THEN true
-			ELSE false
+			WHEN pipes.schema_force_view IS NULL THEN pipes_function.schema_view
+			ELSE pipes.schema_force_view
 		END AS _schema_view
 		FROM distribution.pipes
 		INNER JOIN distribution.pipes_function ON pipes.id_function = pipes_function.id
@@ -117,13 +116,22 @@ COMMENT ON VIEW distribution.pipes_view IS 'View for pipes. This view is editabl
 CREATE OR REPLACE RULE update_pipes AS
 	ON UPDATE TO distribution.pipes_view DO INSTEAD
 		UPDATE distribution.pipes SET 
-			id_function = NEW.id_function,
-			id_parent = NULLIF(NEW.id_parent,0)::integer,
-			folder = NEW.folder,
-			schema_force_view  = NEW.schema_force_view,
+		
+			id_function        = NEW.id_function        ,
+			id_material        = NEW.id_material        ,
+			id_status          = NEW.id_status          ,
+			year               = NEW.year               ,
+			pressure_nominale  = NEW.pressure_nominale  ,
+			_length2d          = NEW._length2d          ,
+			_length3d          = NEW._length3d          ,
+			schema_force_view  = NEW.schema_force_view  ,
+			folder             = NEW.folder             ,
+			_is_on_map         = NEW._is_on_map         ,
+			remarks            = NEW.remarks            ,
+			wkb_geometry       = NEW.wkb_geometry       ,
 			
-			pressure_nominale = NEW.pressure_nominale			
-		WHERE fid = NEW.fid;
+			id_parent          = NULLIF(NEW.id_parent,0)::integer	
+		WHERE fid = OLD.fid;
 /* Comment */	
 COMMENT ON RULE update_pipes IS 'Rule to forward changes for pipes_view to the table pipes.';
 
