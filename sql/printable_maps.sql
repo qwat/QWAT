@@ -4,7 +4,7 @@
 	SQL file :: print table and function
 */
 
-/*----------------!!!---!!!----------------*/+
+/*----------------!!!---!!!----------------*/
 BEGIN;
 /* CREATE TABLE */
 DROP TABLE IF EXISTS distribution.printable_maps CASCADE;
@@ -42,7 +42,7 @@ COMMENT ON FUNCTION distribution.get_map_name(integer) IS 'Returns a string cont
 
 CREATE OR REPLACE FUNCTION distribution.fill_map_names() RETURNS boolean AS '
 	BEGIN
-		UPDATE distribution.pipes SET is_on_map = distribution.get_map_name(pipes.fid);	
+		UPDATE distribution.pipes SET _is_on_map = distribution.get_map_name(pipes.fid);	
 		RETURN true;
 	END
 ' LANGUAGE 'plpgsql';
