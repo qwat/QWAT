@@ -9,37 +9,37 @@ CREATE TABLE distribution.pipes (fid serial NOT NULL);
 
 ALTER TABLE distribution.pipes ADD COLUMN   id_function integer;
 ALTER TABLE distribution.pipes ADD COLUMN   id_material integer;
+ALTER TABLE distribution.pipes ADD COLUMN   id_status integer;
+ALTER TABLE distribution.pipes ADD COLUMN   id_parent integer;
 ALTER TABLE distribution.pipes ADD COLUMN   year smallint CHECK (year > 1800 AND year < 2100);
-ALTER TABLE distribution.pipes ADD COLUMN   length2d decimal(8,2);
-ALTER TABLE distribution.pipes ADD COLUMN   length3d decimal(8,2);
+ALTER TABLE distribution.pipes ADD COLUMN   _length2d decimal(8,2);
+ALTER TABLE distribution.pipes ADD COLUMN   _length3d decimal(8,2);
 ALTER TABLE distribution.pipes ADD COLUMN   folder character(20);
 ALTER TABLE distribution.pipes ADD COLUMN   schema_force_view smallint NOT NULL DEFAULT 0;
-ALTER TABLE distribution.pipes ADD COLUMN   is_on_map text;
+ALTER TABLE distribution.pipes ADD COLUMN   _is_on_map text;
+ALTER TABLE distribution.pipes ADD COLUMN   remarks text;
 
 ALTER TABLE distribution.pipes ADD COLUMN   wkb_geometry geometry;
 
 
-
-ALTER TABLE distribution.pipes ADD COLUMN   pressure_nominale character(20);
-ALTER TABLE distribution.pipes ADD COLUMN   folio character(20);
 ALTER TABLE distribution.pipes ADD COLUMN   id_precision_2d character(20);
-
-
-ALTER TABLE distribution.pipes ADD COLUMN   material_int_diam character(20);
 ALTER TABLE distribution.pipes ADD COLUMN   id_owner character(20);
-ALTER TABLE distribution.pipes ADD COLUMN   protection_coating_detail character(20);
-ALTER TABLE distribution.pipes ADD COLUMN   material_nominal_diam character(20);
-ALTER TABLE distribution.pipes ADD COLUMN   "deleted" character(20);
-ALTER TABLE distribution.pipes ADD COLUMN   id_parent integer;
-ALTER TABLE distribution.pipes ADD COLUMN   remarks character(20);
-ALTER TABLE distribution.pipes ADD COLUMN   coating_internal_material_id character(20);
-
-ALTER TABLE distribution.pipes ADD COLUMN   material_ext_diam character(20);
-ALTER TABLE distribution.pipes ADD COLUMN   coating_external_material_id character(20);
-ALTER TABLE distribution.pipes ADD COLUMN   id_status integer;
 ALTER TABLE distribution.pipes ADD COLUMN   id_location character(20);
 ALTER TABLE distribution.pipes ADD COLUMN   id_install_method character(20);
+
+ALTER TABLE distribution.pipes ADD COLUMN   pressure_nominale character(20);
+ALTER TABLE distribution.pipes ADD COLUMN   material_int_diam character(20);
+ALTER TABLE distribution.pipes ADD COLUMN   protection_coating_detail character(20);
+ALTER TABLE distribution.pipes ADD COLUMN   material_nominal_diam character(20);
+ALTER TABLE distribution.pipes ADD COLUMN   coating_internal_material_id character(20);
+ALTER TABLE distribution.pipes ADD COLUMN   material_ext_diam character(20);
 ALTER TABLE distribution.pipes ADD COLUMN   material_thickness character(20);
+ALTER TABLE distribution.pipes ADD COLUMN   coating_external_material_id character(20);
+
+ALTER TABLE distribution.pipes ADD COLUMN   z_folio character(20);
+ALTER TABLE distribution.pipes ADD COLUMN   "z_deleted" character(20);
+
+
 
 /*----------------!!!---!!!----------------*/
 /* Add constraints */
@@ -62,12 +62,24 @@ ALTER TABLE distribution.pipes ADD CONSTRAINT enforce_srid_wkb_geometry CHECK (s
 CREATE INDEX geoidx ON distribution.pipes USING GIST ( wkb_geometry );
 
 /*----------------!!!---!!!----------------*/
-/* Comments */
+/* Comment */
 COMMENT ON TABLE distribution.pipes IS 'Table for pipes. This should not be used for vewing, as a more complete view (pipes_view) exists.';
 
+/*----------------!!!---!!!----------------*/
+/* Trigger fr 2d length */
+CREATE OR REPLACE FUNCTION distribution.pipes_length2d() RETURNS trigger AS ' 
+	BEGIN
+		 UPDATE distribution.pipes SET _length2d = ST_Length(NEW.wkb_geometry) WHERE fid = NEW.fid ;
+		 RETURN NEW;
+	END;
+' LANGUAGE 'plpgsql';
+COMMENT ON FUNCTION distribution.pipes_length2d() IS 'Fcn/Trigger: updates the length of the pipe after insert/update.';
 
-
-
+CREATE TRIGGER length2d_trigger 
+	AFTER INSERT OR UPDATE OF wkb_geometry ON distribution.pipes
+	FOR EACH ROW
+	EXECUTE PROCEDURE distribution.pipes_length2d();
+COMMENT ON TRIGGER length2d_trigger ON distribution.pipes IS 'Trigger: updates the length of the pipe after insert/update.';
 
 
 /*----------------!!!---!!!----------------*//*----------------!!!---!!!----------------*/
