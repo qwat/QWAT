@@ -46,6 +46,6 @@ CREATE OR REPLACE FUNCTION distribution.fill_map_names() RETURNS boolean AS '
 		RETURN true;
 	END
 ' LANGUAGE 'plpgsql';
-COMMENT ON FUNCTION distribution.fill_map_names() IS 'Populates the is_on_map field in pipes table with all the short names of poylgons in table printable_maps which overlap the given pipe.';
+COMMENT ON FUNCTION distribution.fill_map_names() IS 'Populates the _is_on_map field in pipes table with all the short names of poylgons in table printable_maps which overlap the given pipe.';
 
 COMMIT;
