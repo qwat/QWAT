@@ -79,7 +79,7 @@ class qWat ():
 			pipelayer = layerlist[dlg.pipesCombo.currentIndex()]
 			if pipelayer.type() != QgsMapLayer.VectorLayer or pipelayer.geometryType() != 1 and pipelayer.dataProvider().fieldNameIndex('id_parent') == -1:
 				self.pipelayer = 0;
-				QMessageBox.warning( dlg , "qWat", QApplication.translate("PipeSearch", "The pipe layer has not a valid structure! Check again!", None, QApplication.UnicodeUTF8) )
+				QMessageBox.warning( dlg , "qWat", QApplication.translate("Connect layers", "The pipe layer has not a valid structure! Check again!", None, QApplication.UnicodeUTF8) )
 				return
 			else:
 				self.itembrowser = ItemBrowser( self.iface , pipelayer , QApplication.translate("Browser", "qWat :: Pipes", "Window title", QApplication.UnicodeUTF8) )
