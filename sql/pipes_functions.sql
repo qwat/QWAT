@@ -10,7 +10,7 @@ CREATE TABLE distribution.pipes_function ( id SERIAL, CONSTRAINT "pipes_function
 
 /* Columns*/
 ALTER TABLE distribution.pipes_function ADD COLUMN "function" VARCHAR(30);
-ALTER TABLE distribution.pipes_function ADD COLUMN "schema_view" BOOLEAN DEFAULT true;
+ALTER TABLE distribution.pipes_function ADD COLUMN "schema_view" BOOLEAN NOT NULL DEFAULT true;
 
 /* Constraints*/
 ALTER TABLE distribution.pipes_function ADD CONSTRAINT function_name UNIQUE ("function");
