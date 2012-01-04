@@ -7,6 +7,8 @@ BEGIN;
 /* 
 remove roles
 */
+REVOKE ALL ON SCHEMA distribution,public FROM viewer;
+REVOKE ALL ON DATABASE sige FROM viewer CASCADE;
 ALTER DEFAULT PRIVILEGES IN SCHEMA distribution,public
     REVOKE ALL ON TABLES
     FROM "poweruser","simpleuser","viewer";
@@ -14,7 +16,9 @@ DROP ROLE IF EXISTS "admin","poweruser","simpleuser","viewer";
 /* 
 Viewer role - can SELECT all the tables
 */
-CREATE ROLE "viewer";
+CREATE ROLE "viewer" LOGIN;
+GRANT USAGE ON SCHEMA distribution,public TO GROUP viewer;
+GRANT CONNECT, TEMPORARY ON DATABASE sige TO "viewer";
 ALTER DEFAULT PRIVILEGES IN SCHEMA distribution,public
     GRANT SELECT ON TABLES
     TO "viewer";
