@@ -37,7 +37,7 @@ ALTER TABLE distribution.pipes ADD COLUMN   material_thickness character(20);
 ALTER TABLE distribution.pipes ADD COLUMN   coating_external_material_id character(20);
 
 ALTER TABLE distribution.pipes ADD COLUMN   z_folio character(20);
-ALTER TABLE distribution.pipes ADD COLUMN   "z_deleted" character(20);
+ALTER TABLE distribution.pipes ADD COLUMN   z_deleted character(20);
 
 
 
@@ -99,15 +99,20 @@ CREATE VIEW distribution.pipes_view AS
 	SELECT  pipes.*, 
 		pipes_function.function    AS _function_name, 
 		pipes_function.schema_view AS _function_schema_view,
+		pipes_material._fancy_name AS _material_name,
+		pipes_material.diameter    AS _material_diameter,
 		pipes_status.status        AS _status_name,
 		pipes_status.active        AS _status_active,
+		owner.name                 AS _owner,
 		CASE 
 			WHEN pipes.schema_force_view IS NULL THEN pipes_function.schema_view
 			ELSE pipes.schema_force_view
 		END AS _schema_view
 		FROM distribution.pipes
 		INNER JOIN distribution.pipes_function ON pipes.id_function = pipes_function.id
-		INNER JOIN distribution.pipes_status   ON pipes.id_status   = pipes_status.id;
+		INNER JOIN distribution.pipes_material ON pipes.id_material = pipes_material.id
+		INNER JOIN distribution.pipes_status   ON pipes.id_status   = pipes_status.id
+		INNER JOIN distribution.owner          ON pipes.id_owner    = owner.id;
 /*----------------!!!---!!!----------------*/
 /* Add view in geometry_columns */
 DELETE FROM geometry_columns WHERE f_table_name = 'pipes_view';
