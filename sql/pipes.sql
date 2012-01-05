@@ -16,8 +16,8 @@ ALTER TABLE distribution.pipes ADD COLUMN   pressure_nominale smallint;         
 ALTER TABLE distribution.pipes ADD COLUMN   _length2d decimal(8,2);                                 /* _length2d            */
 ALTER TABLE distribution.pipes ADD COLUMN   _length3d decimal(8,2);                                 /* _length3d            */
 ALTER TABLE distribution.pipes ADD COLUMN   schema_force_view  boolean DEFAULT NULL::boolean;       /* schema_force_view    */
-ALTER TABLE distribution.pipes ADD COLUMN   folder character(20);                                   /* folder               */
-ALTER TABLE distribution.pipes ADD COLUMN   _is_on_map varchar(80);                                 /* _is_on_map           */
+ALTER TABLE distribution.pipes ADD COLUMN   folder varchar(20) DEFAULT '';                          /* folder               */
+ALTER TABLE distribution.pipes ADD COLUMN   _is_on_map varchar(80) DEFAULT '';                      /* _is_on_map           */
 ALTER TABLE distribution.pipes ADD COLUMN   remarks text;                                           /* remarks              */
                                                                                                     /*                      */
 ALTER TABLE distribution.pipes ADD COLUMN   wkb_geometry geometry;                                  /* wkb_geometry         */
@@ -112,11 +112,10 @@ COMMENT ON VIEW distribution.pipes_view IS 'View for pipes. This view is editabl
 
 
 /*----------------!!!---!!!----------------*/
-/* UPDATE RULE */
-CREATE OR REPLACE RULE update_pipes AS
+/* INSERT,UPDATE,DELETE RULES */
+CREATE OR REPLACE RULE pipes_update AS
 	ON UPDATE TO distribution.pipes_view DO INSTEAD
 		UPDATE distribution.pipes SET 
-		
 			id_function        = NEW.id_function        ,
 			id_material        = NEW.id_material        ,
 			id_status          = NEW.id_status          ,
@@ -129,11 +128,21 @@ CREATE OR REPLACE RULE update_pipes AS
 			_is_on_map         = NEW._is_on_map         ,
 			remarks            = NEW.remarks            ,
 			wkb_geometry       = NEW.wkb_geometry       ,
-			
 			id_parent          = NULLIF(NEW.id_parent,0)::integer	
-		WHERE fid = OLD.fid;
-/* Comment */	
-COMMENT ON RULE update_pipes IS 'Rule to forward changes for pipes_view to the table pipes.';
+		WHERE fid = NEW.fid;
+CREATE OR REPLACE RULE pipes_insert AS
+	ON INSERT TO distribution.pipes_view DO INSTEAD
+		INSERT INTO distribution.pipes 
+			(    id_function,    id_material,    id_status,    id_parent,    year,    pressure_nominale,    _length2d,    _length3d,    schema_force_view,    folder,    _is_on_map,    remarks,    wkb_geometry)     
+		VALUES
+			(NEW.id_function,NEW.id_material,NEW.id_status,NEW.id_parent,NEW.year,NEW.pressure_nominale,NEW._length2d,NEW._length3d,NEW.schema_force_view,NEW.folder,NEW._is_on_map,NEW.remarks,NEW.wkb_geometry);
+CREATE OR REPLACE RULE pipes_delete AS
+	ON DELETE TO distribution.pipes_view DO INSTEAD
+		DELETE FROM distribution.pipes WHERE fid = OLD.fid;
+/* Comments */	
+COMMENT ON RULE pipes_update IS 'Rule to forward changes for pipes_view to the table pipes.';
+COMMENT ON RULE pipes_insert IS 'Rule to forward insert of pipes_view to the table pipes.';
+COMMENT ON RULE pipes_delete IS 'Rule to forward deletion of pipes_view to the table pipes.';
 
 
 COMMIT;
