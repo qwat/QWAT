@@ -5,7 +5,7 @@
 */
 BEGIN;
 DROP TABLE IF EXISTS distribution.pipes CASCADE;
-CREATE TABLE distribution.pipes (fid serial NOT NULL);
+CREATE TABLE distribution.pipes (id serial NOT NULL);
 
 ALTER TABLE distribution.pipes ADD COLUMN   id_function integer;									/* id_function          */ 
 ALTER TABLE distribution.pipes ADD COLUMN   id_material integer;                                    /* id_material          */
@@ -44,9 +44,9 @@ ALTER TABLE distribution.pipes ADD COLUMN   z_deleted character(20);
 /*----------------!!!---!!!----------------*/
 /* Add constraints */
 /* primary key */
-ALTER TABLE distribution.pipes ADD CONSTRAINT pipes_pkey PRIMARY KEY (fid);
+ALTER TABLE distribution.pipes ADD CONSTRAINT pipes_pkey PRIMARY KEY (id);
 /* id_parent */
-ALTER TABLE distribution.pipes ADD CONSTRAINT pipes_id_parent FOREIGN KEY (id_parent) REFERENCES distribution.pipes (fid) MATCH SIMPLE ON UPDATE NO ACTION ON DELETE NO ACTION;
+ALTER TABLE distribution.pipes ADD CONSTRAINT pipes_id_parent FOREIGN KEY (id_parent) REFERENCES distribution.pipes (id) MATCH SIMPLE ON UPDATE NO ACTION ON DELETE NO ACTION;
 CREATE INDEX fki_id_parent ON distribution.pipes(id_parent);
 /* function */
 ALTER TABLE distribution.pipes ADD CONSTRAINT pipes_id_function FOREIGN KEY (id_function) REFERENCES distribution.pipes_function(id) MATCH FULL ON UPDATE NO ACTION ON DELETE NO ACTION;
@@ -78,7 +78,7 @@ COMMENT ON TABLE distribution.pipes IS 'Table for pipes. This should not be used
 /* Trigger fr 2d length */
 CREATE OR REPLACE FUNCTION distribution.pipes_length2d() RETURNS trigger AS ' 
 	BEGIN
-		 UPDATE distribution.pipes SET _length2d = ST_Length(NEW.wkb_geometry) WHERE fid = NEW.fid ;
+		 UPDATE distribution.pipes SET _length2d = ST_Length(NEW.wkb_geometry) WHERE id = NEW.id ;
 		 RETURN NEW;
 	END;
 ' LANGUAGE 'plpgsql';
@@ -144,7 +144,7 @@ CREATE OR REPLACE RULE pipes_update AS
 			remarks            = NEW.remarks            ,
 			wkb_geometry       = NEW.wkb_geometry       ,
 			id_parent          = NULLIF(NEW.id_parent,0)::integer	
-		WHERE fid = NEW.fid;
+		WHERE id = NEW.id;
 CREATE OR REPLACE RULE pipes_insert AS
 	ON INSERT TO distribution.pipes_view DO INSTEAD
 		INSERT INTO distribution.pipes 
@@ -153,7 +153,7 @@ CREATE OR REPLACE RULE pipes_insert AS
 			(NEW.id_function,NEW.id_material,NEW.id_status,NEW.id_parent,NEW.id_owner,NEW.year,NEW.pressure_nominale,NEW._length2d,NEW._length3d,NEW.schema_force_view,NEW.folder,NEW._is_on_map,NEW.remarks,NEW.wkb_geometry);
 CREATE OR REPLACE RULE pipes_delete AS
 	ON DELETE TO distribution.pipes_view DO INSTEAD
-		DELETE FROM distribution.pipes WHERE fid = OLD.fid;
+		DELETE FROM distribution.pipes WHERE id = OLD.id;
 /* Comments */	
 COMMENT ON RULE pipes_update IS 'Rule to forward changes for pipes_view to the table pipes.';
 COMMENT ON RULE pipes_insert IS 'Rule to forward insert of pipes_view to the table pipes.';

@@ -6,7 +6,7 @@
 
 /* create a view with the viewable items */
 CREATE OR REPLACE VIEW distribution.pipes_schema_viewableitems AS 
-	SELECT 	fid,id_parent,wkb_geometry
+	SELECT 	id,id_parent,wkb_geometry
 	  FROM distribution.pipes_view
 		WHERE _schema_view IS TRUE
 		AND _status_active IS TRUE;
@@ -27,7 +27,7 @@ CREATE OR REPLACE FUNCTION distribution.get_parent(integer,integer) RETURNS inte
 		LOOP
 			SELECT id_parent INTO childid 
 			FROM distribution.pipes_schema_viewableitems
-			WHERE fid = parentid;
+			WHERE id = parentid;
 
 			IF childid IS NOT NULL THEN
 				parentid := childid;
@@ -44,7 +44,7 @@ View of pipes with group ID
 */
 CREATE OR REPLACE VIEW distribution.pipes_schema_items AS 
 	SELECT 	wkb_geometry,
-		distribution.get_parent(fid,id_parent) AS groupid
+		distribution.get_parent(id,id_parent) AS groupid
 	  FROM distribution.pipes_schema_viewableitems;
 
 /* 

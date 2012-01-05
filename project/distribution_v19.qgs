@@ -250,7 +250,7 @@
         </maplayer>
         <maplayer minimumScale="0" maximumScale="1e+08" geometry="Line" type="vector" hasScaleBasedVisibilityFlag="0">
             <id>pipes_view20120103154925828</id>
-            <datasource>dbname='sige' host=172.24.171.75 port=5432 user='sige' password='1234' sslmode=allow key='fid' table="distribution"."pipes_view" (wkb_geometry) sql=</datasource>
+            <datasource>dbname='sige' host=172.24.171.75 port=5432 user='sige' password='1234' sslmode=allow key='id' table="distribution"."pipes_view" (wkb_geometry) sql=</datasource>
             <title></title>
             <abstract></abstract>
             <layername>pipes_view</layername>
@@ -351,9 +351,9 @@
                 <edittype type="0" name="coating_external_material_id"/>
                 <edittype type="0" name="coating_internal_material_id"/>
                 <edittype type="0" name="deleted"/>
-                <edittype type="10" name="fid"/>
                 <edittype type="0" name="folder"/>
                 <edittype type="0" name="folio"/>
+                <edittype type="10" name="id"/>
                 <edittype allowNull="false" orderByValue="false" key="id" layer="pipes_function20111216153420379" type="15" value="function" name="id_function"/>
                 <edittype type="0" name="id_install_method"/>
                 <edittype type="0" name="id_location"/>
@@ -384,7 +384,7 @@
         </maplayer>
         <maplayer minimumScale="0" maximumScale="1e+08" geometry="Polygon" type="vector" hasScaleBasedVisibilityFlag="0">
             <id>printable_maps20120103150232188</id>
-            <datasource>dbname='sige' host=172.24.171.75 port=5432 user='sige' password='1234' sslmode=allow key='fid' table="distribution"."printable_maps" (wkb_geometry) sql=</datasource>
+            <datasource>dbname='sige' host=172.24.171.75 port=5432 user='sige' password='1234' sslmode=allow key='id' table="distribution"."printable_maps" (wkb_geometry) sql=</datasource>
             <title></title>
             <abstract></abstract>
             <layername>printable_maps</layername>
@@ -492,7 +492,7 @@
                 <selectedonly on=""/>
             </labelattributes>
             <edittypes>
-                <edittype type="0" name="fid"/>
+                <edittype type="0" name="id"/>
                 <edittype type="0" name="long_name"/>
                 <edittype type="0" name="short_name"/>
                 <edittype type="0" name="template"/>
