@@ -4,10 +4,10 @@
     <mapcanvas>
         <units>meters</units>
         <extent>
-            <xmin>554366.405433</xmin>
-            <ymin>145296.445013</ymin>
-            <xmax>554710.273562</xmax>
-            <ymax>145534.041013</ymax>
+            <xmin>554148.783806</xmin>
+            <ymin>144345.417350</ymin>
+            <xmax>556360.674494</xmax>
+            <ymax>145622.649350</ymax>
         </extent>
         <projections>0</projections>
         <destinationsrs>
@@ -24,33 +24,72 @@
         </destinationsrs>
     </mapcanvas>
     <legend updateDrawingOrder="false">
-        <legendlayer drawingOrder="-1" open="false" checked="Qt::Checked" name="pipes_view" showFeatureCount="0">
+        <legendlayer drawingOrder="1" open="false" checked="Qt::Checked" name="pipes_view" showFeatureCount="0">
             <filegroup open="false" hidden="false">
                 <legendlayerfile isInOverview="0" layerid="pipes_view20120103154925828" visible="1"/>
             </filegroup>
         </legendlayer>
-        <legendlayer drawingOrder="1" open="false" checked="Qt::Checked" name="printable_maps" showFeatureCount="0">
+        <legendlayer drawingOrder="5" open="false" checked="Qt::Checked" name="printable_maps" showFeatureCount="0">
             <filegroup open="false" hidden="false">
                 <legendlayerfile isInOverview="0" layerid="printable_maps20120103150232188" visible="1"/>
             </filegroup>
         </legendlayer>
-        <legendlayer drawingOrder="-1" open="true" checked="Qt::Unchecked" name="pipes_status" showFeatureCount="0">
-            <filegroup open="true" hidden="false">
-                <legendlayerfile isInOverview="0" layerid="pipes_status20120103152931649" visible="0"/>
-            </filegroup>
-        </legendlayer>
-        <legendlayer drawingOrder="-1" open="true" checked="Qt::Unchecked" name="pipes_material" showFeatureCount="0">
-            <filegroup open="true" hidden="false">
-                <legendlayerfile isInOverview="0" layerid="pipes_material20120103152931607" visible="0"/>
-            </filegroup>
-        </legendlayer>
-        <legendlayer drawingOrder="2" open="true" checked="Qt::Unchecked" name="pipes_function" showFeatureCount="0">
-            <filegroup open="true" hidden="false">
-                <legendlayerfile isInOverview="0" layerid="pipes_function20111216153420379" visible="0"/>
-            </filegroup>
-        </legendlayer>
+        <legendgroup open="true" checked="Qt::Checked" name="Additionnal Tables">
+            <legendlayer drawingOrder="6" open="true" checked="Qt::Unchecked" name="pipes_function" showFeatureCount="0">
+                <filegroup open="true" hidden="false">
+                    <legendlayerfile isInOverview="0" layerid="pipes_function20111216153420379" visible="1"/>
+                </filegroup>
+            </legendlayer>
+            <legendlayer drawingOrder="0" open="true" checked="Qt::Unchecked" name="owner" showFeatureCount="0">
+                <filegroup open="true" hidden="false">
+                    <legendlayerfile isInOverview="0" layerid="owner20120105153524348" visible="1"/>
+                </filegroup>
+            </legendlayer>
+            <legendlayer drawingOrder="2" open="true" checked="Qt::Unchecked" name="pipes_material" showFeatureCount="0">
+                <filegroup open="true" hidden="false">
+                    <legendlayerfile isInOverview="0" layerid="pipes_material20120103152931607" visible="1"/>
+                </filegroup>
+            </legendlayer>
+            <legendlayer drawingOrder="3" open="true" checked="Qt::Unchecked" name="pipes_status" showFeatureCount="0">
+                <filegroup open="true" hidden="false">
+                    <legendlayerfile isInOverview="0" layerid="pipes_status20120103152931649" visible="1"/>
+                </filegroup>
+            </legendlayer>
+            <legendlayer drawingOrder="4" open="false" checked="Qt::Unchecked" name="visible" showFeatureCount="0">
+                <filegroup open="false" hidden="false">
+                    <legendlayerfile isInOverview="0" layerid="visible20120104110624026" visible="1"/>
+                </filegroup>
+            </legendlayer>
+        </legendgroup>
     </legend>
-    <projectlayers layercount="5">
+    <projectlayers layercount="7">
+        <maplayer minimumScale="0" maximumScale="1e+08" geometry="No geometry" type="vector" hasScaleBasedVisibilityFlag="0">
+            <id>owner20120105153524348</id>
+            <datasource>dbname='sige' host=172.24.171.75 port=5432 user='sige' password='1234' sslmode=allow key='id' table="distribution"."owner" sql=</datasource>
+            <title></title>
+            <abstract></abstract>
+            <layername>owner</layername>
+            <srs>
+                <spatialrefsys>
+                    <proj4>+proj=longlat +ellps=WGS84 +datum=WGS84 +no_defs</proj4>
+                    <srsid>3452</srsid>
+                    <srid>4326</srid>
+                    <authid>EPSG:4326</authid>
+                    <description>WGS 84</description>
+                    <projectionacronym>longlat</projectionacronym>
+                    <ellipsoidacronym>WGS84</ellipsoidacronym>
+                    <geographicflag>true</geographicflag>
+                </spatialrefsys>
+            </srs>
+            <transparencyLevelInt>255</transparencyLevelInt>
+            <customproperties/>
+            <provider encoding="ISO-8859-1">postgres</provider>
+            <vectorjoins/>
+            <editform>.</editform>
+            <editforminit></editforminit>
+            <annotationform>.</annotationform>
+            <attributeactions/>
+        </maplayer>
         <maplayer minimumScale="0" maximumScale="1e+08" geometry="No geometry" type="vector" hasScaleBasedVisibilityFlag="0">
             <id>pipes_function20111216153420379</id>
             <datasource>dbname='sige' host=172.24.171.75 port=5432 user='sige' password='1234' sslmode=allow key='id' table="distribution"."pipes_function" sql=</datasource>
@@ -202,23 +241,26 @@
             <edittypes>
                 <edittype type="0" name="_function_name"/>
                 <edittype type="0" name="_function_schema_view"/>
-                <edittype type="0" name="_schema_view"/>
+                <edittype type="10" name="_is_on_map"/>
+                <edittype type="10" name="_length2d"/>
+                <edittype type="10" name="_length3d"/>
+                <edittype unchecked="0" type="7" checked="1" name="_schema_view"/>
                 <edittype type="0" name="_status_active"/>
                 <edittype type="0" name="_status_name"/>
                 <edittype type="0" name="coating_external_material_id"/>
                 <edittype type="0" name="coating_internal_material_id"/>
                 <edittype type="0" name="deleted"/>
-                <edittype type="0" name="fid"/>
+                <edittype type="10" name="fid"/>
                 <edittype type="0" name="folder"/>
                 <edittype type="0" name="folio"/>
-                <edittype type="0" name="id_function"/>
+                <edittype allowNull="false" orderByValue="false" key="id" layer="pipes_function20111216153420379" type="15" value="function" name="id_function"/>
                 <edittype type="0" name="id_install_method"/>
                 <edittype type="0" name="id_location"/>
                 <edittype allowNull="false" orderByValue="false" key="id" layer="pipes_material20120103152931607" type="15" value="_fancy_name" name="id_material"/>
-                <edittype type="0" name="id_owner"/>
+                <edittype allowNull="false" orderByValue="false" key="id" layer="owner20120105153524348" type="15" value="name" name="id_owner"/>
                 <edittype type="0" name="id_parent"/>
                 <edittype type="0" name="id_precision_2d"/>
-                <edittype type="0" name="id_status"/>
+                <edittype allowNull="false" orderByValue="false" key="id" layer="pipes_status20120103152931649" type="15" value="status" name="id_status"/>
                 <edittype type="0" name="is_on_map"/>
                 <edittype type="0" name="length2d"/>
                 <edittype type="0" name="length3d"/>
@@ -229,12 +271,14 @@
                 <edittype type="0" name="pressure_nominale"/>
                 <edittype type="0" name="protection_coating_detail"/>
                 <edittype type="0" name="remarks"/>
-                <edittype type="0" name="schema_force_view"/>
+                <edittype allowNull="false" orderByValue="false" key="id" layer="visible20120104110624026" type="15" value="name" name="schema_force_view"/>
                 <edittype type="0" name="year"/>
+                <edittype type="0" name="z_deleted"/>
+                <edittype type="0" name="z_folio"/>
             </edittypes>
             <editform>./ui_forms/pipe.ui</editform>
             <editforminit></editforminit>
-            <annotationform></annotationform>
+            <annotationform>.</annotationform>
             <attributeactions/>
         </maplayer>
         <maplayer minimumScale="0" maximumScale="1e+08" geometry="Polygon" type="vector" hasScaleBasedVisibilityFlag="0">
@@ -302,6 +346,37 @@
                 <edittype type="0" name="long_name"/>
                 <edittype type="0" name="short_name"/>
                 <edittype type="0" name="template"/>
+            </edittypes>
+            <editform>.</editform>
+            <editforminit></editforminit>
+            <annotationform>.</annotationform>
+            <attributeactions/>
+        </maplayer>
+        <maplayer minimumScale="0" maximumScale="1e+08" geometry="No geometry" type="vector" hasScaleBasedVisibilityFlag="0">
+            <id>visible20120104110624026</id>
+            <datasource>dbname='sige' host=172.24.171.75 port=5432 user='sige' password='1234' sslmode=allow key='id' table="distribution"."visible" sql=</datasource>
+            <title></title>
+            <abstract></abstract>
+            <layername>visible</layername>
+            <srs>
+                <spatialrefsys>
+                    <proj4>+proj=longlat +ellps=WGS84 +datum=WGS84 +no_defs</proj4>
+                    <srsid>3452</srsid>
+                    <srid>4326</srid>
+                    <authid>EPSG:4326</authid>
+                    <description>WGS 84</description>
+                    <projectionacronym>longlat</projectionacronym>
+                    <ellipsoidacronym>WGS84</ellipsoidacronym>
+                    <geographicflag>true</geographicflag>
+                </spatialrefsys>
+            </srs>
+            <transparencyLevelInt>255</transparencyLevelInt>
+            <customproperties/>
+            <provider encoding="ISO-8859-1">postgres</provider>
+            <vectorjoins/>
+            <edittypes>
+                <edittype type="0" name="id"/>
+                <edittype type="0" name="name"/>
             </edittypes>
             <editform>.</editform>
             <editforminit></editforminit>
