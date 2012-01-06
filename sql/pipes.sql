@@ -59,7 +59,7 @@ CREATE INDEX fki_id_status ON distribution.pipes(id_status);
 ALTER TABLE distribution.pipes ADD CONSTRAINT pipes_id_material FOREIGN KEY (id_material) REFERENCES distribution.pipes_material(id) MATCH FULL ON UPDATE NO ACTION ON DELETE NO ACTION;
 CREATE INDEX fki_id_material ON distribution.pipes(id_material);
 /* owner */
-ALTER TABLE distribution.pipes ADD CONSTRAINT pipes_id_owner FOREIGN KEY (id_owner) REFERENCES distribution.owner(id) MATCH FULL ON UPDATE NO ACTION ON DELETE NO ACTION;
+ALTER TABLE distribution.pipes ADD CONSTRAINT pipes_id_owner FOREIGN KEY (id_owner) REFERENCES distribution.owner(id) MATCH SIMPLE ON UPDATE NO ACTION ON DELETE NO ACTION;
 CREATE INDEX fki_id_owner ON distribution.pipes(id_owner);
 /* schema visibility */
 ALTER TABLE distribution.pipes ADD CONSTRAINT pipes_visible FOREIGN KEY (schema_force_view) REFERENCES distribution.visible(id) MATCH SIMPLE ON UPDATE NO ACTION ON DELETE NO ACTION;
@@ -113,7 +113,7 @@ CREATE VIEW distribution.pipes_view AS
 		INNER JOIN distribution.pipes_function ON pipes.id_function = pipes_function.id
 		INNER JOIN distribution.pipes_material ON pipes.id_material = pipes_material.id
 		INNER JOIN distribution.pipes_status   ON pipes.id_status   = pipes_status.id
-		INNER JOIN distribution.owner          ON pipes.id_owner    = owner.id;
+		LEFT OUTER JOIN  distribution.owner          ON pipes.id_owner    = owner.id;
 /*----------------!!!---!!!----------------*/
 /* Add view in geometry_columns */
 DELETE FROM geometry_columns WHERE f_table_name = 'pipes_view';
