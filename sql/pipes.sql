@@ -12,6 +12,7 @@ ALTER TABLE distribution.pipes ADD COLUMN   id_material integer;                
 ALTER TABLE distribution.pipes ADD COLUMN   id_status integer;                                      /* id_status            */
 ALTER TABLE distribution.pipes ADD COLUMN   id_parent integer;                                      /* id_parent            */
 ALTER TABLE distribution.pipes ADD COLUMN   id_owner integer;										/* id_owner             */
+ALTER TABLE distribution.pipes ADD COLUMN   id_zone integer;										/* id_zone             */
 ALTER TABLE distribution.pipes ADD COLUMN   year smallint CHECK (year > 1800 AND year < 2100);      /* year                 */
 ALTER TABLE distribution.pipes ADD COLUMN   pressure_nominale smallint;                             /* pressure_nominale    */
 ALTER TABLE distribution.pipes ADD COLUMN   _length2d decimal(8,2);                                 /* _length2d            */
@@ -61,6 +62,9 @@ CREATE INDEX fki_id_material ON distribution.pipes(id_material);
 /* owner */
 ALTER TABLE distribution.pipes ADD CONSTRAINT pipes_id_owner FOREIGN KEY (id_owner) REFERENCES distribution.owner(id) MATCH SIMPLE ON UPDATE NO ACTION ON DELETE NO ACTION;
 CREATE INDEX fki_id_owner ON distribution.pipes(id_owner);
+/* zone */
+ALTER TABLE distribution.pipes ADD CONSTRAINT pipes_id_zone FOREIGN KEY (id_zone) REFERENCES distribution.zones(id) MATCH SIMPLE ON UPDATE NO ACTION ON DELETE NO ACTION;
+CREATE INDEX fki_id_zone ON distribution.pipes(id_zone);
 /* schema visibility */
 ALTER TABLE distribution.pipes ADD CONSTRAINT pipes_visible FOREIGN KEY (schema_force_view) REFERENCES distribution.visible(id) MATCH SIMPLE ON UPDATE NO ACTION ON DELETE NO ACTION;
 CREATE INDEX fki_id_visible ON distribution.pipes(schema_force_view);
@@ -134,7 +138,8 @@ CREATE OR REPLACE RULE pipes_update AS
 			id_function        = NEW.id_function        ,
 			id_material        = NEW.id_material        ,
 			id_status          = NEW.id_status          ,
-			id_owner           = NEW.id_owner          ,
+			id_owner           = NEW.id_owner           ,
+			id_zone            = NEW.id_zone            ,
 			year               = NEW.year               ,
 			pressure_nominale  = NEW.pressure_nominale  ,
 			_length2d          = NEW._length2d          ,
@@ -150,9 +155,9 @@ CREATE OR REPLACE RULE pipes_update AS
 CREATE OR REPLACE RULE pipes_insert AS
 	ON INSERT TO distribution.pipes_view DO INSTEAD
 		INSERT INTO distribution.pipes 
-			(    id_function,    id_material,    id_status,    id_parent,    id_owner,    year,    pressure_nominale,    _length2d,    _length3d,    schema_force_view,    folder,    _is_on_map,    _is_on_district,    remarks,    wkb_geometry)     
+			(    id_function,    id_material,    id_status,    id_parent,    id_owner,    id_zone,    year,    pressure_nominale,    _length2d,    _length3d,    schema_force_view,    folder,    _is_on_map,    _is_on_district,    remarks,    wkb_geometry)     
 		VALUES
-			(NEW.id_function,NEW.id_material,NEW.id_status,NEW.id_parent,NEW.id_owner,NEW.year,NEW.pressure_nominale,NEW._length2d,NEW._length3d,NEW.schema_force_view,NEW.folder,NEW._is_on_map,NEW._is_on_district,NEW.remarks,NEW.wkb_geometry);
+			(NEW.id_function,NEW.id_material,NEW.id_status,NEW.id_parent,NEW.id_owner,NEW.id_zone,NEW.year,NEW.pressure_nominale,NEW._length2d,NEW._length3d,NEW.schema_force_view,NEW.folder,NEW._is_on_map,NEW._is_on_district,NEW.remarks,NEW.wkb_geometry);
 CREATE OR REPLACE RULE pipes_delete AS
 	ON DELETE TO distribution.pipes_view DO INSTEAD
 		DELETE FROM distribution.pipes WHERE id = OLD.id;
