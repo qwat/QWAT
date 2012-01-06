@@ -113,7 +113,7 @@ CREATE VIEW distribution.pipes_view AS
 		INNER JOIN distribution.pipes_function ON pipes.id_function = pipes_function.id
 		INNER JOIN distribution.pipes_material ON pipes.id_material = pipes_material.id
 		INNER JOIN distribution.pipes_status   ON pipes.id_status   = pipes_status.id
-		LEFT OUTER JOIN  distribution.owner          ON pipes.id_owner    = owner.id;
+		LEFT OUTER JOIN  distribution.owner    ON pipes.id_owner    = owner.id;
 /*----------------!!!---!!!----------------*/
 /* Add view in geometry_columns */
 DELETE FROM geometry_columns WHERE f_table_name = 'pipes_view';
