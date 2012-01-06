@@ -26,26 +26,26 @@ COMMENT ON TABLE distribution.printable_maps IS 'This table is used for polygons
 
 /*----------------!!!---!!!----------------*/
 /* FUNCTION */
-CREATE OR REPLACE FUNCTION distribution.get_map_name(integer) RETURNS text AS '
+CREATE OR REPLACE FUNCTION distribution.get_map(geometry) RETURNS text AS '
 	DECLARE
-		pipe_id ALIAS FOR $1;
+		geometry ALIAS FOR $1;
 		result text;
 	BEGIN
 		SELECT left(distribution.tsum(printable_maps.short_name || '', ''),-2) INTO result
-			FROM distribution.printable_maps, distribution.pipes WHERE pipes.id = pipe_id
-			 AND ST_Intersects(pipes.wkb_geometry,printable_maps.wkb_geometry) IS TRUE;
+			FROM  distribution.printable_maps
+			WHERE ST_Intersects(geometry,printable_maps.wkb_geometry) IS TRUE;
 		RETURN result;
 	END
 ' LANGUAGE 'plpgsql';
-COMMENT ON FUNCTION distribution.get_map_name(integer) IS 'Returns a string contaning all the short names of the polygons in table printable_maps which overlap the given pipe.';
+COMMENT ON FUNCTION distribution.get_map(geometry) IS 'Returns a string contaning all the short names of the polygons in table printable_maps which overlap the given geometry.';
 
 
-CREATE OR REPLACE FUNCTION distribution.fill_map_names() RETURNS boolean AS '
+CREATE OR REPLACE FUNCTION distribution.fill_pipes_map() RETURNS boolean AS '
 	BEGIN
-		UPDATE distribution.pipes SET _is_on_map = distribution.get_map_name(pipes.id);	
+		UPDATE distribution.pipes SET _is_on_map = distribution.get_map(pipes.wkb_geometry);	
 		RETURN true;
 	END
 ' LANGUAGE 'plpgsql';
-COMMENT ON FUNCTION distribution.fill_map_names() IS 'Populates the _is_on_map field in pipes table with all the short names of poylgons in table printable_maps which overlap the given pipe.';
+COMMENT ON FUNCTION distribution.fill_pipes_map() IS 'Populates the _is_on_map field in pipes table with all the short names of poylgons in table printable_maps which overlap the given pipe geometry.';
 
 COMMIT;

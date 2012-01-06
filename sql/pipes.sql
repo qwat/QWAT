@@ -19,6 +19,7 @@ ALTER TABLE distribution.pipes ADD COLUMN   _length3d decimal(8,2);             
 ALTER TABLE distribution.pipes ADD COLUMN   schema_force_view  boolean DEFAULT NULL::boolean;       /* schema_force_view    */
 ALTER TABLE distribution.pipes ADD COLUMN   folder varchar(20) DEFAULT '';                          /* folder               */
 ALTER TABLE distribution.pipes ADD COLUMN   _is_on_map varchar(80) DEFAULT '';                      /* _is_on_map           */
+ALTER TABLE distribution.pipes ADD COLUMN   _is_on_district varchar(100) DEFAULT '';                /* _is_on_district      */
 ALTER TABLE distribution.pipes ADD COLUMN   remarks text;                                           /* remarks              */
                                                                                                     /*                      */
 ALTER TABLE distribution.pipes ADD COLUMN   wkb_geometry geometry;                                  /* wkb_geometry         */
@@ -141,6 +142,7 @@ CREATE OR REPLACE RULE pipes_update AS
 			schema_force_view  = NEW.schema_force_view  ,
 			folder             = NEW.folder             ,
 			_is_on_map         = NEW._is_on_map         ,
+			_is_on_district    = NEW._is_on_district    ,
 			remarks            = NEW.remarks            ,
 			wkb_geometry       = NEW.wkb_geometry       ,
 			id_parent          = NULLIF(NEW.id_parent,0)::integer	
@@ -148,9 +150,9 @@ CREATE OR REPLACE RULE pipes_update AS
 CREATE OR REPLACE RULE pipes_insert AS
 	ON INSERT TO distribution.pipes_view DO INSTEAD
 		INSERT INTO distribution.pipes 
-			(    id_function,    id_material,    id_status,    id_parent,    id_owner,    year,    pressure_nominale,    _length2d,    _length3d,    schema_force_view,    folder,    _is_on_map,    remarks,    wkb_geometry)     
+			(    id_function,    id_material,    id_status,    id_parent,    id_owner,    year,    pressure_nominale,    _length2d,    _length3d,    schema_force_view,    folder,    _is_on_map,    _is_on_district,    remarks,    wkb_geometry)     
 		VALUES
-			(NEW.id_function,NEW.id_material,NEW.id_status,NEW.id_parent,NEW.id_owner,NEW.year,NEW.pressure_nominale,NEW._length2d,NEW._length3d,NEW.schema_force_view,NEW.folder,NEW._is_on_map,NEW.remarks,NEW.wkb_geometry);
+			(NEW.id_function,NEW.id_material,NEW.id_status,NEW.id_parent,NEW.id_owner,NEW.year,NEW.pressure_nominale,NEW._length2d,NEW._length3d,NEW.schema_force_view,NEW.folder,NEW._is_on_map,NEW._is_on_district,NEW.remarks,NEW.wkb_geometry);
 CREATE OR REPLACE RULE pipes_delete AS
 	ON DELETE TO distribution.pipes_view DO INSTEAD
 		DELETE FROM distribution.pipes WHERE id = OLD.id;
