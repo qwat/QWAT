@@ -8,7 +8,7 @@
 BEGIN;
 
 DROP TABLE IF EXISTS distribution.visible CASCADE;
-CREATE TABLE distribution.visible () WITH ( OIDS = FALSE );
+CREATE TABLE distribution.visible  ( x SERIAL, CONSTRAINT "visible_pk" PRIMARY KEY (x) );
 
 ALTER TABLE distribution.visible ADD COLUMN  id    boolean;
 ALTER TABLE distribution.visible ADD COLUMN  name  varchar(50);
