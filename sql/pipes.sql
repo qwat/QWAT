@@ -26,7 +26,6 @@ ALTER TABLE distribution.pipes ADD COLUMN   remarks text;                       
                                                                                                     /*                      */
 ALTER TABLE distribution.pipes ADD COLUMN   wkb_geometry geometry;                                  /* wkb_geometry         */
 
-ALTER TABLE distribution.pipes ADD COLUMN   id_location character(20);
 ALTER TABLE distribution.pipes ADD COLUMN   id_install_method character(20);
 
 
@@ -84,19 +83,23 @@ COMMENT ON TABLE distribution.pipes IS 'Table for pipes. This should not be used
 
 /*----------------!!!---!!!----------------*/
 /* Trigger fr 2d length */
-CREATE OR REPLACE FUNCTION distribution.pipes_length2d() RETURNS trigger AS ' 
+CREATE OR REPLACE FUNCTION distribution.pipes_geom() RETURNS trigger AS ' 
 	BEGIN
-		 UPDATE distribution.pipes SET _length2d = ST_Length(NEW.wkb_geometry) WHERE id = NEW.id ;
-		 RETURN NEW;
+		UPDATE distribution.pipes SET 
+			_length2d       = ST_Length(NEW.wkb_geometry),
+			_is_on_map      = distribution.get_map(NEW.wkb_geometry),
+			_is_on_district = distribution.get_district(NEW.wkb_geometry)
+		WHERE id = NEW.id ;
+		RETURN NEW;
 	END;
 ' LANGUAGE 'plpgsql';
-COMMENT ON FUNCTION distribution.pipes_length2d() IS 'Fcn/Trigger: updates the length of the pipe after insert/update.';
+COMMENT ON FUNCTION distribution.pipes_geom() IS 'Fcn/Trigger: updates the length and other fields of the pipe after insert/update.';
 
-CREATE TRIGGER length2d_trigger 
+CREATE TRIGGER pipes_geom_trigger 
 	AFTER INSERT OR UPDATE OF wkb_geometry ON distribution.pipes
 	FOR EACH ROW
-	EXECUTE PROCEDURE distribution.pipes_length2d();
-COMMENT ON TRIGGER length2d_trigger ON distribution.pipes IS 'Trigger: updates the length of the pipe after insert/update.';
+	EXECUTE PROCEDURE distribution.pipes_geom();
+COMMENT ON TRIGGER pipes_geom_trigger ON distribution.pipes IS 'Trigger: updates the length and other fields of the pipe after insert/update.';
 
 
 /*----------------!!!---!!!----------------*//*----------------!!!---!!!----------------*/
