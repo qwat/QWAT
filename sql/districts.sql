@@ -10,7 +10,10 @@ BEGIN;
 DROP TABLE IF EXISTS distribution.districts CASCADE;
 CREATE TABLE distribution.districts (id serial NOT NULL);
 
-ALTER TABLE distribution.districts ADD COLUMN  name varchar(30);
+ALTER TABLE distribution.districts ADD COLUMN  name  varchar(30);
+ALTER TABLE distribution.districts ADD COLUMN  lbl_x double precision;
+ALTER TABLE distribution.districts ADD COLUMN  lbl_y double precision;
+ALTER TABLE distribution.districts ADD COLUMN  lbl_a double precision;
 
 SELECT AddGeometryColumn('distribution', 'districts', 'wkb_geometry', 21781, 'POLYGON', 2);
 
