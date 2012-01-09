@@ -9,12 +9,12 @@ CREATE TABLE distribution.pipes (id serial NOT NULL);
 
 ALTER TABLE distribution.pipes ADD COLUMN   id_parent integer;                                      /* id_parent         FK */
 ALTER TABLE distribution.pipes ADD COLUMN   id_function integer;									/* id_function       FK */ 
-ALTER TABLE distribution.pipes ADD COLUMN   id_material integer;                                    /* id_material       FK */
-ALTER TABLE distribution.pipes ADD COLUMN   id_status integer;                                      /* id_status         FK */
-ALTER TABLE distribution.pipes ADD COLUMN   id_owner integer;										/* id_owner          FK */
-ALTER TABLE distribution.pipes ADD COLUMN   id_zone integer;										/* id_zone           FK */
-ALTER TABLE distribution.pipes ADD COLUMN   id_precision integer;                                   /* id_precision      FK */
 ALTER TABLE distribution.pipes ADD COLUMN   id_install_method integer;                              /* id_install_method FK */
+ALTER TABLE distribution.pipes ADD COLUMN   id_material integer;                                    /* id_material       FK */
+ALTER TABLE distribution.pipes ADD COLUMN   id_owner integer;										/* id_owner          FK */
+ALTER TABLE distribution.pipes ADD COLUMN   id_precision integer;                                   /* id_precision      FK */
+ALTER TABLE distribution.pipes ADD COLUMN   id_status integer;                                      /* id_status         FK */
+ALTER TABLE distribution.pipes ADD COLUMN   id_zone integer;										/* id_zone           FK */
 ALTER TABLE distribution.pipes ADD COLUMN   schema_force_view  boolean DEFAULT NULL::boolean;       /* schema_force_view FK */
 ALTER TABLE distribution.pipes ADD COLUMN   year smallint CHECK (year > 1800 AND year < 2100);      /* year                 */
 ALTER TABLE distribution.pipes ADD COLUMN   pressure_nominale smallint;                             /* pressure_nominale    */
@@ -52,27 +52,24 @@ CREATE INDEX fki_id_parent ON distribution.pipes(id_parent);
 /* function */
 ALTER TABLE distribution.pipes ADD CONSTRAINT pipes_id_function FOREIGN KEY (id_function) REFERENCES distribution.pipes_function(id) MATCH FULL ON UPDATE NO ACTION ON DELETE NO ACTION;
 CREATE INDEX fki_id_function ON distribution.pipes(id_function);
-/* status */
-ALTER TABLE distribution.pipes ADD CONSTRAINT pipes_id_status FOREIGN KEY (id_status) REFERENCES distribution.pipes_status(id) MATCH FULL ON UPDATE NO ACTION ON DELETE NO ACTION;
-CREATE INDEX fki_id_status ON distribution.pipes(id_status);
-/* material */
-ALTER TABLE distribution.pipes ADD CONSTRAINT pipes_id_material FOREIGN KEY (id_material) REFERENCES distribution.pipes_material(id) MATCH FULL ON UPDATE NO ACTION ON DELETE NO ACTION;
-CREATE INDEX fki_id_material ON distribution.pipes(id_material);
-/* owner */
-ALTER TABLE distribution.pipes ADD CONSTRAINT pipes_id_owner FOREIGN KEY (id_owner) REFERENCES distribution.owner(id) MATCH SIMPLE ON UPDATE NO ACTION ON DELETE NO ACTION;
-CREATE INDEX fki_id_owner ON distribution.pipes(id_owner);
-/* zone */
-ALTER TABLE distribution.pipes ADD CONSTRAINT pipes_id_zone FOREIGN KEY (id_zone) REFERENCES distribution.zones(id) MATCH SIMPLE ON UPDATE NO ACTION ON DELETE NO ACTION;
-CREATE INDEX fki_id_zone ON distribution.pipes(id_zone);
-/* id_precision */
-ALTER TABLE distribution.pipes ADD CONSTRAINT pipes_id_precision FOREIGN KEY (id_precision) REFERENCES distribution."precision"(id) MATCH FULL ON UPDATE NO ACTION ON DELETE NO ACTION;
-CREATE INDEX fki_id_precision ON distribution.pipes(id_precision);
 /* id_install_method */
 ALTER TABLE distribution.pipes ADD CONSTRAINT pipes_id_install_method FOREIGN KEY (id_install_method) REFERENCES distribution.pipes_install_method(id) MATCH FULL ON UPDATE NO ACTION ON DELETE NO ACTION;
 CREATE INDEX fki_id_install_method ON distribution.pipes(id_install_method);
-/* schema visibility */
-ALTER TABLE distribution.pipes ADD CONSTRAINT pipes_visible FOREIGN KEY (schema_force_view) REFERENCES distribution.visible(id) MATCH SIMPLE ON UPDATE NO ACTION ON DELETE NO ACTION;
-CREATE INDEX fki_id_visible ON distribution.pipes(schema_force_view);
+/* id_material */
+ALTER TABLE distribution.pipes ADD CONSTRAINT pipes_id_material FOREIGN KEY (id_material) REFERENCES distribution.pipes_material(id) MATCH FULL ON UPDATE NO ACTION ON DELETE NO ACTION;
+CREATE INDEX fki_id_material ON distribution.pipes(id_material);
+/* id_owner */
+ALTER TABLE distribution.pipes ADD CONSTRAINT pipes_id_owner FOREIGN KEY (id_owner) REFERENCES distribution.owner(id) MATCH SIMPLE ON UPDATE NO ACTION ON DELETE NO ACTION;
+CREATE INDEX fki_id_owner ON distribution.pipes(id_owner);
+/* id_precision */
+ALTER TABLE distribution.pipes ADD CONSTRAINT pipes_id_precision FOREIGN KEY (id_precision) REFERENCES distribution."precision"(id) MATCH FULL ON UPDATE NO ACTION ON DELETE NO ACTION;
+CREATE INDEX fki_id_precision ON distribution.pipes(id_precision);
+/* id_status */
+ALTER TABLE distribution.pipes ADD CONSTRAINT pipes_id_status FOREIGN KEY (id_status) REFERENCES distribution.pipes_status(id) MATCH FULL ON UPDATE NO ACTION ON DELETE NO ACTION;
+CREATE INDEX fki_id_status ON distribution.pipes(id_status);
+/* id_zone */
+ALTER TABLE distribution.pipes ADD CONSTRAINT pipes_id_zone FOREIGN KEY (id_zone) REFERENCES distribution.zones(id) MATCH SIMPLE ON UPDATE NO ACTION ON DELETE NO ACTION;
+CREATE INDEX fki_id_zone ON distribution.pipes(id_zone);
 /* Geometry */
 ALTER TABLE distribution.pipes ADD CONSTRAINT enforce_dims_wkb_geometry CHECK (st_ndims(wkb_geometry) = 2);
 ALTER TABLE distribution.pipes ADD CONSTRAINT enforce_geotype_wkb_geometry CHECK (geometrytype(wkb_geometry) = 'LINESTRING'::text OR wkb_geometry IS NULL);
@@ -111,28 +108,30 @@ COMMENT ON TRIGGER pipes_geom_trigger ON distribution.pipes IS 'Trigger: updates
 DROP VIEW IF EXISTS distribution.pipes_view CASCADE;
 CREATE VIEW distribution.pipes_view AS 
 	SELECT  pipes.*, 
-		pipes_function.function    AS _function_name, 
-		pipes_function.schema_view AS _function_schema_view,
-		pipes_material._fancy_name AS _material_name,
-		pipes_material.diameter    AS _material_diameter,
-		pipes_status.status        AS _status_name,
-		pipes_status.active        AS _status_active,
-		"precision".name           AS _precision,
-		pipes_install_method.name  AS _install_method,
-		zones.name                 AS _zone,
-		owner.name                 AS _owner,
+		pipes_function.function             AS _function_name, 
+		pipes_install_method.name           AS _install_method,
+		pipes_material._fancy_name          AS _material_name,
+		pipes_material.diameter             AS _material_diameter,
+		pipes_material.diameter_internal    AS _material_diameter_internal,
+		pipes_material.diameter_external    AS _material_diameter_external,
+		owner.name                          AS _owner,
+		"precision".name                    AS _precision,
+		pipes_status.status                 AS _status_name,
+		pipes_status.active                 AS _status_active,
+		zones.name                          AS _zone,
 		CASE 
 			WHEN pipes.schema_force_view IS NULL THEN pipes_function.schema_view
 			ELSE pipes.schema_force_view
 		END AS _schema_view
 		FROM distribution.pipes
 		INNER JOIN distribution.pipes_function       ON pipes.id_function       = pipes_function.id
-		INNER JOIN distribution.pipes_material       ON pipes.id_material       = pipes_material.id
-		INNER JOIN distribution.pipes_status         ON pipes.id_status         = pipes_status.id
-		INNER JOIN distribution."precision"          ON pipes.id_precision      = "precision".id
 		INNER JOIN distribution.pipes_install_method ON pipes.id_install_method = pipes_install_method.id
-		LEFT OUTER JOIN  distribution.zones          ON pipes.id_zone           = zones.id
-		LEFT OUTER JOIN  distribution.owner          ON pipes.id_owner          = owner.id;
+		INNER JOIN distribution.pipes_material       ON pipes.id_material       = pipes_material.id
+		LEFT OUTER JOIN  distribution.owner          ON pipes.id_owner          = owner.id
+		INNER JOIN distribution."precision"          ON pipes.id_precision      = "precision".id
+		INNER JOIN distribution.pipes_status         ON pipes.id_status         = pipes_status.id
+		LEFT OUTER JOIN  distribution.zones          ON pipes.id_zone           = zones.id;
+		
 /*----------------!!!---!!!----------------*/
 /* Add view in geometry_columns */
 DELETE FROM geometry_columns WHERE f_table_name = 'pipes_view';
