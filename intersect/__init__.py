@@ -1,7 +1,6 @@
 """
 /***************************************************************************
- qWat - QGIS Water Module
-                             -------------------
+ intersect                             -------------------
         begin                : 2011-11-17
         copyright            : (C) 2011 by Denis Rouzaud
         email                : denis.rouzaud@sige.ch
