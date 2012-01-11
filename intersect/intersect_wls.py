@@ -21,40 +21,90 @@
 import math
 from qgis.core import *
 
+import numpy as np
+from numpy import linalg as la
 
-# create the dialog to connect layers
+
+
 class intersect_wls:
-	def __init__(self,xyrp):
-		for l in xyrp:
-			print l
-			
-			
-			
-	def twoCirclesIntersect(self,c1,c2):
-		# cf http://www.mathpages.com/home/kmath396/kmath396.htm
-		[x1,y1,r1,p1] = c1
-		[x2,y2,r2,p2] = c2
+	def __init__(self,initPoint,xyrp):
+		self.initPoint = initPoint
+		self.xyrp = xyrp
+		self.nc = len(xyrp)
 		
-		d = pointDistance(x1,y1,x2,y2)
-		if d<math.abs(r1-r2):
+	def getIntersection(self):
+		if self.nc<2:
+			print "Intetersect :: not enough circles in tolerance radius"
+			return
+		elif self.nc==2:
+			pts = self.twoCirclesIntersect()
+			d1 = pts[0].sqrDist(self.initPoint)
+			d2 = pts[1].sqrDist(self.initPoint)
+			print d1
+			print d2
+			if d1<d2:
+				return pts[0]
+			else:
+				return pts[1]
+		else:
+			self.leastSquares()
+			
+	def leastSquares(self):
+		threshold = .002 # in meters
+		# initial parameters
+		x0  = np.array( [ self.initPoint.x() , self.initPoint.y() ] )
+		print "Initial: %f,%f" % (x0[0],x0[1])
+		dx = [10,10]
+		while max(dx)>threshold:
+			# jacobian for parameters
+			A   = np.array( [ [2*self.initPoint.x()-2*c[0].x(),2*self.initPoint.y()-2*c[0].y()] for c in self.xyrp ] )
+			# jacobian for observations
+			B   = np.diag( [ -2*c[1] for c in self.xyrp ] )
+			# stochastic model
+			q   = [math.pow(c[2],2)   for c in self.xyrp ] 	
+			Qll = np.diag(q)
+			Pm  = np.dot( B , np.dot(Qll,B.T) )
+			P   = la.inv( Pm )
+			# misclosure
+			w   = np.array([ math.pow(x0[0]-c[0].x(),2) + math.pow(x0[1]-c[0].y(),2) - math.pow(c[1],2) for c in self.xyrp ])
+			# normal matrix
+			N = np.dot( A.T , np.dot(P,A) )
+			u = np.dot( A.T , np.dot(P,w) )
+			# QR decomposition
+			q,r = la.qr(N)
+			p   = np.dot(q.T,u)
+			dx  = np.dot(la.inv(r),p)
+			x0 -= dx
+			print "Correction: %f,%f" % (dx[0],dx[1])
+		print "Solution: %f,%f" % (x0[0],x0[1])
+						
+	def twoCirclesIntersect(self):
+		# cf http://www.mathpages.com/home/kmath396/kmath396.htm
+		[pt1,r1,p1] = self.xyrp[0]
+		[pt2,r2,p2] = self.xyrp[1]
+		x1 = pt1.x()
+		y1 = pt1.y()
+		x2 = pt2.x()
+		y2 = pt2.y()
+		d = math.sqrt( pt1.sqrDist(pt2) )
+		if d<math.fabs(r1-r2):
 			# circle is within the other
 			return
-		while d>r1+r2:
-			# no solution: circles are separate, let's increase radius to get a point
-			r1+=.01
-			r2+=.01
-	
-		a = .25*math.sqrt( (d+r1+r2) * (d+r1-r2) * (d-r1+r2) * (-d+r1+r2) )
+		if d>r1+r2:
+			print "Intersect :: circles are separate, scaling radius to get intersection"
+			s = d/(r1+r2)
+			r1*=s
+			r2*=s
+		a = math.sqrt( (d+r1+r2) * (d+r1-r2) * (d-r1+r2) * (-d+r1+r2) ) / 4
+		xlt = (x1+x2)/2.0 - (x1-x2)*(r1*r1-r2*r2)/(2.0*d*d)
+		ylt = (y1+y2)/2.0 - (y1-y2)*(r1*r1-r2*r2)/(2.0*d*d)
+		xrt = 2.0*(y1-y2)*a/(d*d)
+		yrt = 2.0*(x1-x2)*a/(d*d)
+		xa = xlt + xrt
+		ya = ylt - yrt
+		xb = xlt - xrt
+		yb = ylt + yrt
+		return [QgsPoint(xa,ya),QgsPoint(xb,yb)]
 		
-		xrt = 2*(y1-y2)*a/(d*d)
-		yrt = 2*(x1-x2)*a/(d*d)
 		
-		xlt = (x1+x2)/2 - (x1-x2)(r1*r1-r2*r2)/(2*d*d)
-		ylt = (y1+y2)/2 - (y1-y2)(r1*r1-r2*r2)/(2*d*d)
-		
-		
-			
-			
-	def pointDistance(x1,y1,x2,y2):
-		return math.sqrt(  math.pow(x1-x2,2) + math.pow(y1-y2,2)  )
 		
