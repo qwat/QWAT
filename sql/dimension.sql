@@ -34,8 +34,8 @@ DROP VIEW IF EXISTS distribution.dimension_view CASCADE;
 CREATE VIEW distribution.dimension_view AS 
 	SELECT id,label,lbl_x,lbl_y,lbl_a,
 		ST_CurveToLine(
-			ST_GeomFromText(
-				'CIRCULARSTRING('||left(distribution.tsum(ST_X(ST_GeometryN(wkb_geometry,n))||' '||ST_Y(ST_GeometryN(wkb_geometry,n))||','),-1)||')'
+			ST_GeomFromEWKT(
+				'SRID=21781;CIRCULARSTRING('||left(distribution.tsum(ST_X(ST_GeometryN(wkb_geometry,n))||' '||ST_Y(ST_GeometryN(wkb_geometry,n))||','),-1)||')'
 			)
 		,12) AS wkb_geometry
 	FROM   distribution.dimension
