@@ -23,7 +23,6 @@ INSERT INTO geometry_columns (f_table_catalog, f_table_schema, f_table_name, f_g
 /* ADD CONSTRAINTS */
 /* primary key */
 ALTER TABLE distribution.dimension ADD CONSTRAINT dimension_pkey PRIMARY KEY (id);
-ALTER TABLE distribution.dimension ADD CONSTRAINT dimension_label UNIQUE (label);
 
 /* Comment */
 COMMENT ON TABLE distribution.dimension IS 'dimension arcs displays measures done on the field. For example: distances to buildings corner';
