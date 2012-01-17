@@ -9,7 +9,8 @@ BEGIN;
 DROP TABLE IF EXISTS distribution.dimension CASCADE;
 CREATE TABLE distribution.dimension (id serial NOT NULL);
 
-ALTER TABLE distribution.dimension ADD COLUMN  label  varchar(12);
+ALTER TABLE distribution.dimension ADD COLUMN  distance_observed  varchar(12);
+ALTER TABLE distribution.dimension ADD COLUMN  _distance_terrain  double precision;
 ALTER TABLE distribution.dimension ADD COLUMN  lbl_x double precision;
 ALTER TABLE distribution.dimension ADD COLUMN  lbl_y double precision;
 ALTER TABLE distribution.dimension ADD COLUMN  lbl_a double precision;
@@ -27,18 +28,37 @@ ALTER TABLE distribution.dimension ADD CONSTRAINT dimension_pkey PRIMARY KEY (id
 /* Comment */
 COMMENT ON TABLE distribution.dimension IS 'dimension arcs displays measures done on the field. For example: distances to buildings corner';
 
+/* Trigger for 2d length */
+CREATE OR REPLACE FUNCTION distribution.dimension_geom() RETURNS trigger AS ' 
+	BEGIN
+		UPDATE distribution.dimension SET 
+			_distance_terrain = ST_Distance( ST_GeometryN(NEW.wkb_geometry,1) , ST_GeometryN(NEW.wkb_geometry,ST_NumGeometries(NEW.wkb_geometry)) )
+		WHERE id = NEW.id ;
+		RETURN NEW;
+	END;
+' LANGUAGE 'plpgsql';
+COMMENT ON FUNCTION distribution.dimension_geom() IS 'Fcn/Trigger: updates the map distance between the two extremities of the arc.';
+
+CREATE TRIGGER dimension_geom_trigger 
+	AFTER INSERT OR UPDATE OF wkb_geometry ON distribution.dimension
+	FOR EACH ROW
+	EXECUTE PROCEDURE distribution.dimension_geom();
+COMMENT ON TRIGGER dimension_geom_trigger ON distribution.dimension IS 'Trigger: updates the length and other fields of the pipe after insert/update.';
+
+
+
 /*----------------!!!---!!!----------------*/
 /* VIEW */
 DROP VIEW IF EXISTS distribution.dimension_view CASCADE;
 CREATE VIEW distribution.dimension_view AS 
-	SELECT id,label,lbl_x,lbl_y,lbl_a,
+	SELECT id,distance_observed,_distance_terrain,lbl_x,lbl_y,lbl_a,
 		ST_CurveToLine(
 			ST_GeomFromEWKT(
 				'SRID=21781;CIRCULARSTRING('||left(distribution.tsum(ST_X(ST_GeometryN(wkb_geometry,n))||' '||ST_Y(ST_GeometryN(wkb_geometry,n))||','),-1)||')'
 			)
 		,12) AS wkb_geometry
 	FROM   distribution.dimension
-	CROSS JOIN generate_series(1,100) n 
+	CROSS JOIN generate_series(1,5) n 
 	WHERE n <= ST_NumGeometries(wkb_geometry) 
 	GROUP BY id;
 
@@ -52,7 +72,7 @@ COMMENT ON VIEW distribution.dimension_view IS 'Creates a Linestring so it can b
 CREATE OR REPLACE RULE dimension_update AS
 	ON UPDATE TO distribution.dimension_view DO INSTEAD
 		UPDATE distribution.dimension SET 
-			label = NEW.label,
+			distance_observed = NEW.distance_observed,
 			lbl_x = NEW.lbl_x,
 			lbl_y = NEW.lbl_y,
 			lbl_a = NEW.lbl_a
@@ -60,9 +80,9 @@ CREATE OR REPLACE RULE dimension_update AS
 CREATE OR REPLACE RULE dimension_insert AS
 	ON INSERT TO distribution.dimension_view DO INSTEAD
 		INSERT INTO distribution.dimension 
-			(    label,    lbl_x,    lbl_y,    lbl_a)     
+			(    distance_observed,    lbl_x,    lbl_y,    lbl_a)     
 		VALUES
-			(NEW.label,NEW.lbl_x,NEW.lbl_y,NEW.lbl_a);
+			(NEW.distance_observed,NEW.lbl_x,NEW.lbl_y,NEW.lbl_a);
 CREATE OR REPLACE RULE dimension_delete AS
 	ON DELETE TO distribution.dimension_view DO INSTEAD
 		DELETE FROM distribution.dimension WHERE id = OLD.id;
