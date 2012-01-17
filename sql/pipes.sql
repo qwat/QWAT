@@ -82,7 +82,7 @@ CREATE INDEX geoidx ON distribution.pipes USING GIST ( wkb_geometry );
 COMMENT ON TABLE distribution.pipes IS 'Table for pipes. This should not be used for vewing, as a more complete view (pipes_view) exists.';
 
 /*----------------!!!---!!!----------------*/
-/* Trigger fr 2d length */
+/* Trigger for 2d length, map and district update */
 CREATE OR REPLACE FUNCTION distribution.pipes_geom() RETURNS trigger AS ' 
 	BEGIN
 		UPDATE distribution.pipes SET 
