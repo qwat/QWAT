@@ -1,0 +1,31 @@
+#read -p "Press any key to continue..."
+#psql -h 172.24.171.75 -U sige -f roles.sql
+
+psql -h 172.24.171.75 -U sige -f tool_functions.sql
+read -p "Press any key to continue..."
+psql -h 172.24.171.75 -U sige -f boolean.sql
+read -p "Press any key to continue..."
+psql -h 172.24.171.75 -U sige -f dimension.sql
+read -p "Press any key to continue..."
+psql -h 172.24.171.75 -U sige -f pipes_install_method.sql
+read -p "Press any key to continue..."
+psql -h 172.24.171.75 -U sige -f precision.sql
+read -p "Press any key to continue..."
+psql -h 172.24.171.75 -U sige -f zones.sql
+read -p "Press any key to continue..."
+psql -h 172.24.171.75 -U sige -f districts.sql
+read -p "Press any key to continue..."
+psql -h 172.24.171.75 -U sige -f owner.sql
+read -p "Press any key to continue..."
+psql -h 172.24.171.75 -U sige -f pipes_functions.sql
+read -p "Press any key to continue..."
+psql -h 172.24.171.75 -U sige -f pipes_material.sql
+read -p "Press any key to continue..."
+psql -h 172.24.171.75 -U sige -f pipes_status.sql
+read -p "Press any key to continue..."
+psql -h 172.24.171.75 -U sige -f printable_maps.sql
+read -p "Press any key to continue..."
+psql -h 172.24.171.75 -U sige -f pipes.sql
+read -p "Press any key to continue..."
+psql -h 172.24.171.75 -U sige -f schema.sql
+
