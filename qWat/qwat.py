@@ -12,10 +12,9 @@ from PyQt4.QtCore import *
 from PyQt4.QtGui import *
 from qgis.core import *
 
+# Import the code for the dialog
 from itembrowser import itemBrowser
 from pipemerger import pipeMerger
-
-# Import the code for the dialog
 from pipesearch import pipeSearch
 from connectlayers import connectLayers
 
@@ -79,12 +78,11 @@ class qWat ():
 
 		
 	def PipeSearchDlg(self):
-		dlg = PipeSearch(self.pipelayer, self.iface )
-		if self.pipelayer == 0:
+		layer = next( ( layer for layer in self.iface.mapCanvas().layers() if layer.id() == QgsProject.instance().readEntry("qWat", "pipes_layer", "")[0] ), False )
+		if layer is False: 
 			QMessageBox.warning( dlg , "qWat", QApplication.translate("PipeSearch", "Pipes layer is not connected.", None, QApplication.UnicodeUTF8) )
-			dlg.close()
 			return
-		# create and show the dialog
+		dlg = pipeSearch(layer, self.iface )
 		dlg.exec_()
 
 				

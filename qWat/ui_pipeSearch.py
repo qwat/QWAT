@@ -2,7 +2,7 @@
 
 # Form implementation generated from reading ui file 'ui_pipeSearch.ui'
 #
-# Created: Wed Jan 18 10:59:32 2012
+# Created: Wed Jan 18 16:41:10 2012
 #      by: PyQt4 UI code generator 4.8.5
 #
 # WARNING! All changes made in this file will be lost!
@@ -17,7 +17,7 @@ except AttributeError:
 class Ui_pipeSearch(object):
     def setupUi(self, pipeSearch):
         pipeSearch.setObjectName(_fromUtf8("pipeSearch"))
-        pipeSearch.resize(270, 321)
+        pipeSearch.resize(270, 266)
         sizePolicy = QtGui.QSizePolicy(QtGui.QSizePolicy.Fixed, QtGui.QSizePolicy.Preferred)
         sizePolicy.setHorizontalStretch(0)
         sizePolicy.setVerticalStretch(0)
@@ -30,8 +30,9 @@ class Ui_pipeSearch(object):
         self.searchTabWidget.setObjectName(_fromUtf8("searchTabWidget"))
         self.geomTab = QtGui.QWidget()
         self.geomTab.setObjectName(_fromUtf8("geomTab"))
+        self.gridLayout_2 = QtGui.QGridLayout(self.geomTab)
+        self.gridLayout_2.setObjectName(_fromUtf8("gridLayout_2"))
         self.geomLengthWidget = QtGui.QWidget(self.geomTab)
-        self.geomLengthWidget.setGeometry(QtCore.QRect(10, 20, 262, 45))
         sizePolicy = QtGui.QSizePolicy(QtGui.QSizePolicy.Preferred, QtGui.QSizePolicy.Preferred)
         sizePolicy.setHorizontalStretch(0)
         sizePolicy.setVerticalStretch(0)
@@ -66,6 +67,7 @@ class Ui_pipeSearch(object):
         self.geomLengthValueSpin.setProperty("value", 3.0)
         self.geomLengthValueSpin.setObjectName(_fromUtf8("geomLengthValueSpin"))
         self.horizontalLayout.addWidget(self.geomLengthValueSpin)
+        self.gridLayout_2.addWidget(self.geomLengthWidget, 0, 0, 1, 1)
         self.searchTabWidget.addTab(self.geomTab, _fromUtf8(""))
         self.schemaTab = QtGui.QWidget()
         self.schemaTab.setObjectName(_fromUtf8("schemaTab"))
