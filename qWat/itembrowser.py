@@ -69,8 +69,9 @@ class itemBrowser( QDockWidget , Ui_itemBrowser ):
 		self.iface.mapCanvas().refresh()	
 
 	def getCurrentItem(self):
-		item = QgsFeature()
 		i = self.listCombo.currentIndex()
+		if i == -1: return False
+		item = QgsFeature()
 		self.layer.featureAtId(self.subset[i],item)
 		return item	
 		
@@ -96,6 +97,9 @@ class itemBrowser( QDockWidget , Ui_itemBrowser ):
 	@pyqtSignature("on_listCombo_currentIndexChanged(int)")
 	def on_listCombo_currentIndexChanged(self,i):
 		item = self.getCurrentItem()
+		if item is False:
+			self.emit(SIGNAL("browserNoItem()"))
+			return
 		# update rubber band
 		self.rubber.reset()
 		self.rubber.addGeometry(item.geometry(),self.layer)
@@ -104,6 +108,9 @@ class itemBrowser( QDockWidget , Ui_itemBrowser ):
 			self.zoomToItem(item)
 		# Update browser
 		self.currentPosLabel.setText('%u/%u' % (i+1,len(self.subset)) )
+		# emit signal
+		self.emit(SIGNAL("browserItemChanged(QgsVectorLayer,int)"),self.layer,item.id())
+		
 		
 	@pyqtSignature("on_zoomCheck_stateChanged(int)")
 	def on_zoomCheck_stateChanged(self,i):

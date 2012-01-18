@@ -11,7 +11,6 @@ from PyQt4.QtCore import *
 from PyQt4.QtGui import *
 from qgis.core import *
 from ui_connectLayers import Ui_connectLayers
-from itembrowser import itemBrowser
 
 try:
     _fromUtf8 = QString.fromUtf8
@@ -48,19 +47,12 @@ class connectLayers(QDialog, Ui_connectLayers ):
 		for c in range(len(self.combos)):
 			# TODO if pipelayer.type() != QgsMapLayer.VectorLayer or pipelayer.geometryType() != 1 and pipelayer.dataProvider().fieldNameIndex('id_parent') == -1:
 			self.proj.writeEntry("qWat", self.settingName[c] , self.layer(c).id() )
-		self.connect()
 		
 	def layer(self,c):
 		i = self.combos[c].currentIndex()
 		if i == 0: return emptyLayer()
 		else: return self.layers[i-1]
 		
-	def connect(self):
-		for setting in self.settingName:
-			layer = next( ( layer for layer in self.iface.mapCanvas().layers() if layer.id() == QgsProject.instance().readEntry("qWat", setting, "")[0] ), False )
-			if layer is not False:
-				self.itembrowser = itemBrowser( self.iface , layer , QApplication.translate("Browser", "qWat :: Pipes", "Window title", QApplication.UnicodeUTF8) )
-				
 				
 class emptyLayer():
 	def id(self):
