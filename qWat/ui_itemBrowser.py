@@ -1,8 +1,8 @@
 # -*- coding: utf-8 -*-
 
-# Form implementation generated from reading ui file 'ui_ItemBrowser.ui'
+# Form implementation generated from reading ui file 'ui_itemBrowser.ui'
 #
-# Created: Thu Jan 12 08:06:07 2012
+# Created: Wed Jan 18 10:59:19 2012
 #      by: PyQt4 UI code generator 4.8.5
 #
 # WARNING! All changes made in this file will be lost!
@@ -14,11 +14,11 @@ try:
 except AttributeError:
     _fromUtf8 = lambda s: s
 
-class Ui_ItemBrowser(object):
-    def setupUi(self, ItemBrowser):
-        ItemBrowser.setObjectName(_fromUtf8("ItemBrowser"))
-        ItemBrowser.resize(266, 154)
-        ItemBrowser.setWindowTitle(_fromUtf8("qWat :: item browser"))
+class Ui_itemBrowser(object):
+    def setupUi(self, itemBrowser):
+        itemBrowser.setObjectName(_fromUtf8("itemBrowser"))
+        itemBrowser.resize(266, 154)
+        itemBrowser.setWindowTitle(_fromUtf8("qWat :: item browser"))
         self.dockWidgetContents = QtGui.QWidget()
         self.dockWidgetContents.setObjectName(_fromUtf8("dockWidgetContents"))
         self.gridLayout_3 = QtGui.QGridLayout(self.dockWidgetContents)
@@ -76,7 +76,7 @@ class Ui_ItemBrowser(object):
         self.currentPosLabel.setObjectName(_fromUtf8("currentPosLabel"))
         self.gridLayout_2.addWidget(self.currentPosLabel, 0, 2, 1, 3)
         self.zoomCheck = QtGui.QCheckBox(self.browseFrame)
-        self.zoomCheck.setText(QtGui.QApplication.translate("ItemBrowser", "zoom to current item", None, QtGui.QApplication.UnicodeUTF8))
+        self.zoomCheck.setText(QtGui.QApplication.translate("itemBrowser", "zoom to current item", None, QtGui.QApplication.UnicodeUTF8))
         self.zoomCheck.setObjectName(_fromUtf8("zoomCheck"))
         self.gridLayout_2.addWidget(self.zoomCheck, 1, 0, 1, 4)
         self.editFormButton = QtGui.QToolButton(self.browseFrame)
@@ -99,11 +99,11 @@ class Ui_ItemBrowser(object):
         self.colorButton.setObjectName(_fromUtf8("colorButton"))
         self.gridLayout_2.addWidget(self.colorButton, 1, 4, 1, 1)
         self.gridLayout_3.addWidget(self.browseFrame, 0, 0, 1, 1)
-        ItemBrowser.setWidget(self.dockWidgetContents)
+        itemBrowser.setWidget(self.dockWidgetContents)
 
-        self.retranslateUi(ItemBrowser)
-        QtCore.QMetaObject.connectSlotsByName(ItemBrowser)
+        self.retranslateUi(itemBrowser)
+        QtCore.QMetaObject.connectSlotsByName(itemBrowser)
 
-    def retranslateUi(self, ItemBrowser):
+    def retranslateUi(self, itemBrowser):
         pass
 

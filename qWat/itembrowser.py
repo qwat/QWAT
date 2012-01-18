@@ -12,7 +12,7 @@ from PyQt4.QtGui import *
 from qgis.core import *
 from qgis.gui import *
 
-from ui_ItemBrowser import Ui_ItemBrowser
+from ui_itemBrowser import Ui_itemBrowser
 
 try:
     _fromUtf8 = QString.fromUtf8
@@ -20,7 +20,7 @@ except AttributeError:
     _fromUtf8 = lambda s: s
 
 
-class itemBrowser( QDockWidget , Ui_ItemBrowser ):
+class itemBrowser( QDockWidget , Ui_itemBrowser ):
 	def __init__(self,iface,layer,name):
 		self.iface = iface
 		self.layer = layer
