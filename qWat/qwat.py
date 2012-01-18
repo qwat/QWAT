@@ -1,21 +1,12 @@
 """
-/***************************************************************************
- qWat - QGIS Water Module
-                              -------------------
-        begin                : 2011-11-17
-        copyright            : (C) 2011 by Denis Rouzaud
-        email                : denis.rouzaud@sige.ch
- ***************************************************************************/
+Triangulation QGIS plugin
+Denis Rouzaud
+denis.rouzaud@gmail.com
+Jan. 2012
 
-/***************************************************************************
- *                                                                         *
- *   This program is free software; you can redistribute it and/or modify  *
- *   it under the terms of the GNU General Public License as published by  *
- *   the Free Software Foundation; either version 2 of the License, or     *
- *   (at your option) any later version.                                   *
- *                                                                         *
- ***************************************************************************/
+qWat - qgis water module
 """
+
 # Import the PyQt and QGIS libraries
 from PyQt4.QtCore import *
 from PyQt4.QtGui import *
@@ -23,7 +14,7 @@ from qgis.core import *
 
 # Import the code for the dialog
 from pipesearch import PipeSearch
-from connectlayers import ConnectLayers
+from connectlayers import connectLayers
 from itembrowser import ItemBrowser
 
 # Initialize Qt resources from file resources.py
@@ -41,12 +32,13 @@ class qWat ():
 		# Save reference to the QGIS interface
 		self.iface = iface
 		self.pipelayer = 0
+		self.connectLayers = connectLayers()
 
 	def initGui(self):
 		# CONNECTLAYERS
 		self.ConnectLayerAction = QAction(QIcon(":/plugins/qWat/icons/connect.png"), "connect layers", self.iface.mainWindow())
 		# connect the action to the run method
-		QObject.connect(self.ConnectLayerAction, SIGNAL("triggered()"), self.ConnectLayersDlg)
+		QObject.connect(self.ConnectLayerAction, SIGNAL("triggered()"), connectLayers.exec_())
 		# Add toolbar button and menu item
 		self.iface.addToolBarIcon(self.ConnectLayerAction)
 		self.iface.addPluginToMenu("&qWat", self.ConnectLayerAction)
