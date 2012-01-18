@@ -13,9 +13,9 @@ from PyQt4.QtGui import *
 from qgis.core import *
 
 # Import the code for the dialog
-from pipesearch import PipeSearch
+from pipesearch import pipeSearch
 from connectlayers import connectLayers
-from itembrowser import ItemBrowser
+from itembrowser import itemBrowser
 
 # Initialize Qt resources from file resources.py
 import resources
@@ -32,7 +32,7 @@ class qWat ():
 		# Save reference to the QGIS interface
 		self.iface = iface
 		self.pipelayer = 0
-		self.connectLayers = connectLayers()
+		self.connectLayers = connectLayers(iface)
 
 	def initGui(self):
 		# CONNECTLAYERS

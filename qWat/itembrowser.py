@@ -20,7 +20,7 @@ except AttributeError:
     _fromUtf8 = lambda s: s
 
 
-class ItemBrowser( QDockWidget , Ui_ItemBrowser ):
+class itemBrowser( QDockWidget , Ui_ItemBrowser ):
 	def __init__(self,iface,layer,name):
 		self.iface = iface
 		self.layer = layer

@@ -23,7 +23,7 @@
 from PyQt4.QtCore import *
 from PyQt4.QtGui import *
 from qgis.core import *
-from ui_PipeSearch import Ui_PipeSearch
+from ui_pipeSearch import Ui_pipeSearch
 
 try:
     _fromUtf8 = QString.fromUtf8
@@ -31,7 +31,7 @@ except AttributeError:
     _fromUtf8 = lambda s: s
 
 
-class PipeSearch( QDialog , Ui_PipeSearch ):
+class pipeSearch( QDialog , Ui_pipeSearch ):
 	def __init__(self , layer, iface ):
 		self.iface = iface
 		self.layer = layer
