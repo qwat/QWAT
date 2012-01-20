@@ -6,6 +6,7 @@
 BEGIN;
 DROP TABLE IF EXISTS distribution.pipes CASCADE;
 CREATE TABLE distribution.pipes (id serial NOT NULL);
+SELECT setval('distribution.pipes_id_seq', 30000, true);
 
 ALTER TABLE distribution.pipes ADD COLUMN   id_parent integer;                                      /* id_parent         FK */
 ALTER TABLE distribution.pipes ADD COLUMN   id_function integer;									/* id_function       FK */ 
@@ -26,7 +27,6 @@ ALTER TABLE distribution.pipes ADD COLUMN   _is_on_district varchar(100) DEFAULT
 ALTER TABLE distribution.pipes ADD COLUMN   remarks text;                                           /* remarks              */
                                                                                                     /*                      */
 ALTER TABLE distribution.pipes ADD COLUMN   wkb_geometry geometry;                                  /* wkb_geometry         */
-
 
 
 ALTER TABLE distribution.pipes ADD COLUMN   material_int_diam character(20);
