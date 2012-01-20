@@ -24,8 +24,10 @@ from ui_pipemerger import Ui_pipemerger
 
 # create the dialog for zoom to point
 class pipeMerger( QDockWidget , Ui_pipemerger ):
-	def __init__(self,iface):
+	def __init__(self,iface,layer):
 		self.iface = iface		
+		self.layer = layer
+		self.provider = layer.dataProvider()
 		# UI setup
 		QDockWidget.__init__(self)
 		self.setupUi(self)
@@ -39,11 +41,9 @@ class pipeMerger( QDockWidget , Ui_pipemerger ):
 	def layer(self):
 		return QgsProject.instance().readEntry("qWat", setting, "pipes_layer")[0]
 		
-	def itemChanged(self,layer,fid):
+	def itemChanged(self,fid):
 		self.clear()
 		self.setVisible(True)
-		self.layer    = layer
-		self.provider = layer.dataProvider()
 		self.fid      = fid
 		self.idFieldPos     = self.provider.fieldNameIndex('id')
 		self.parentFieldPos = self.provider.fieldNameIndex('id_parent')
