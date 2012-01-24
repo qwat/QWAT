@@ -62,11 +62,10 @@ class qWat ():
 	def connect(self):
 		self.pipelayer = next( ( layer for layer in self.iface.mapCanvas().layers() if layer.id() == QgsProject.instance().readEntry("qWat", "pipes_layer", "")[0] ), False )
 		if self.pipelayer is not False:
-			print "helloooooo"
 			self.pipeMerger = pipeMerger(self.iface,self.pipelayer)
 			QObject.connect( self.pipelayer , SIGNAL("browserCurrentItem(int)") , self.pipeMerger.itemChanged )
-			QObject.connect( self.pipelayer , SIGNAL("browserNoItem()")                  , self.pipeMerger.clear )
-			QObject.connect( self.pipelayer , SIGNAL("layerDeleted()")                   , self.pipeMerger.unload )
+			QObject.connect( self.pipelayer , SIGNAL("browserNoItem()")         , self.pipeMerger.clear )
+			QObject.connect( self.pipelayer , SIGNAL("layerDeleted()")          , self.pipeMerger.unload )
 		
 	def PipeSearchDlg(self):
 		layer = next( ( layer for layer in self.iface.mapCanvas().layers() if layer.id() == QgsProject.instance().readEntry("qWat", "pipes_layer", "")[0] ), False )
