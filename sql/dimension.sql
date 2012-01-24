@@ -77,12 +77,6 @@ CREATE OR REPLACE RULE dimension_update AS
 			lbl_y = NEW.lbl_y,
 			lbl_a = NEW.lbl_a
 		WHERE id = NEW.id;
-CREATE OR REPLACE RULE dimension_insert AS
-	ON INSERT TO distribution.dimension_view DO INSTEAD
-		INSERT INTO distribution.dimension 
-			(    distance_observed,    lbl_x,    lbl_y,    lbl_a)     
-		VALUES
-			(NEW.distance_observed,NEW.lbl_x,NEW.lbl_y,NEW.lbl_a);
 CREATE OR REPLACE RULE dimension_delete AS
 	ON DELETE TO distribution.dimension_view DO INSTEAD
 		DELETE FROM distribution.dimension WHERE id = OLD.id;
