@@ -164,12 +164,8 @@ CREATE OR REPLACE RULE pipes_update AS
 			id_install_method  = NEW.id_install_method  ,
 			year               = NEW.year               ,
 			pressure_nominale  = NEW.pressure_nominale  ,
-			_length2d          = NEW._length2d          ,
-			_length3d          = NEW._length3d          ,
 			schema_force_view  = NEW.schema_force_view  ,
 			folder             = NEW.folder             ,
-			_is_on_map         = NEW._is_on_map         ,
-			_is_on_district    = NEW._is_on_district    ,
 			remarks            = NEW.remarks            ,
 			wkb_geometry       = NEW.wkb_geometry       ,
 			id_parent          = NULLIF(NEW.id_parent,0)::integer	
@@ -177,9 +173,9 @@ CREATE OR REPLACE RULE pipes_update AS
 CREATE OR REPLACE RULE pipes_insert AS
 	ON INSERT TO distribution.pipes_view DO INSTEAD
 		INSERT INTO distribution.pipes 
-			(    id_function,    id_material,    id_status,    id_parent,    id_owner,    id_zone,    id_precision,    id_protection,    id_install_method,    year,    pressure_nominale,    _length2d,    _length3d,    schema_force_view,    folder,    _is_on_map,    _is_on_district,    remarks,    wkb_geometry)     
+			(    id_function,    id_material,    id_status,    id_parent,    id_owner,    id_zone,    id_precision,    id_protection,    id_install_method,    year,    pressure_nominale,    schema_force_view,    folder,    remarks,    wkb_geometry)     
 		VALUES
-			(NEW.id_function,NEW.id_material,NEW.id_status,NEW.id_parent,NEW.id_owner,NEW.id_zone,NEW.id_precision,NEW.id_protection,NEW.id_install_method,NEW.year,NEW.pressure_nominale,NEW._length2d,NEW._length3d,NEW.schema_force_view,NEW.folder,NEW._is_on_map,NEW._is_on_district,NEW.remarks,NEW.wkb_geometry);
+			(NEW.id_function,NEW.id_material,NEW.id_status,NEW.id_parent,NEW.id_owner,NEW.id_zone,NEW.id_precision,NEW.id_protection,NEW.id_install_method,NEW.year,NEW.pressure_nominale,NEW.schema_force_view,NEW.folder,NEW.remarks,NEW.wkb_geometry);
 CREATE OR REPLACE RULE pipes_delete AS
 	ON DELETE TO distribution.pipes_view DO INSTEAD
 		DELETE FROM distribution.pipes WHERE id = OLD.id;
