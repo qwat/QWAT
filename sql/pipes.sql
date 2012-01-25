@@ -14,6 +14,7 @@ ALTER TABLE distribution.pipes ADD COLUMN   id_install_method integer;          
 ALTER TABLE distribution.pipes ADD COLUMN   id_material integer;                                    /* id_material       FK */
 ALTER TABLE distribution.pipes ADD COLUMN   id_owner integer;										/* id_owner          FK */
 ALTER TABLE distribution.pipes ADD COLUMN   id_precision integer;                                   /* id_precision      FK */
+ALTER TABLE distribution.pipes ADD COLUMN   id_protection integer;                                  /* id_protection     FK */
 ALTER TABLE distribution.pipes ADD COLUMN   id_status integer;                                      /* id_status         FK */
 ALTER TABLE distribution.pipes ADD COLUMN   id_zone integer;										/* id_zone           FK */
 ALTER TABLE distribution.pipes ADD COLUMN   schema_force_view  boolean DEFAULT NULL::boolean;       /* schema_force_view FK */
@@ -30,7 +31,6 @@ ALTER TABLE distribution.pipes ADD COLUMN   wkb_geometry geometry;              
 
 
 ALTER TABLE distribution.pipes ADD COLUMN   material_int_diam character(20);
-ALTER TABLE distribution.pipes ADD COLUMN   protection_coating_detail character(20);
 ALTER TABLE distribution.pipes ADD COLUMN   material_nominal_diam character(20);
 ALTER TABLE distribution.pipes ADD COLUMN   coating_internal_material_id character(20);
 ALTER TABLE distribution.pipes ADD COLUMN   material_ext_diam character(20);
@@ -64,6 +64,9 @@ CREATE INDEX fki_id_owner ON distribution.pipes(id_owner);
 /* id_precision */
 ALTER TABLE distribution.pipes ADD CONSTRAINT pipes_id_precision FOREIGN KEY (id_precision) REFERENCES distribution."precision"(id) MATCH FULL ON UPDATE NO ACTION ON DELETE NO ACTION;
 CREATE INDEX fki_id_precision ON distribution.pipes(id_precision);
+/* id_protection */
+ALTER TABLE distribution.pipes ADD CONSTRAINT pipes_id_protection FOREIGN KEY (id_protection) REFERENCES distribution.pipes_protection(id) MATCH SIMPLE ON UPDATE NO ACTION ON DELETE NO ACTION;
+CREATE INDEX fki_id_protection ON distribution.pipes(id_protection);
 /* id_status */
 ALTER TABLE distribution.pipes ADD CONSTRAINT pipes_id_status FOREIGN KEY (id_status) REFERENCES distribution.pipes_status(id) MATCH FULL ON UPDATE NO ACTION ON DELETE NO ACTION;
 CREATE INDEX fki_id_status ON distribution.pipes(id_status);
@@ -116,6 +119,7 @@ CREATE VIEW distribution.pipes_view AS
 		pipes_material.diameter_external    AS _material_diameter_external,
 		owner.name                          AS _owner,
 		"precision".name                    AS _precision,
+		pipes_protection.name               AS _protection,
 		pipes_status.status                 AS _status_name,
 		pipes_status.active                 AS _status_active,
 		zones.name                          AS _zone,
@@ -124,13 +128,14 @@ CREATE VIEW distribution.pipes_view AS
 			ELSE pipes.schema_force_view
 		END AS _schema_view
 		FROM distribution.pipes
-		INNER JOIN distribution.pipes_function       ON pipes.id_function       = pipes_function.id
-		INNER JOIN distribution.pipes_install_method ON pipes.id_install_method = pipes_install_method.id
-		INNER JOIN distribution.pipes_material       ON pipes.id_material       = pipes_material.id
-		LEFT OUTER JOIN  distribution.owner          ON pipes.id_owner          = owner.id
-		INNER JOIN distribution."precision"          ON pipes.id_precision      = "precision".id
-		INNER JOIN distribution.pipes_status         ON pipes.id_status         = pipes_status.id
-		LEFT OUTER JOIN  distribution.zones          ON pipes.id_zone           = zones.id;
+		INNER JOIN distribution.pipes_function         ON pipes.id_function       = pipes_function.id
+		INNER JOIN distribution.pipes_install_method   ON pipes.id_install_method = pipes_install_method.id
+		INNER JOIN distribution.pipes_material         ON pipes.id_material       = pipes_material.id
+		LEFT OUTER JOIN  distribution.owner            ON pipes.id_owner          = owner.id
+		INNER JOIN distribution."precision"            ON pipes.id_precision      = "precision".id
+		LEFT OUTER JOIN  distribution.pipes_protection ON pipes.id_protection     = pipes_protection.id
+		INNER JOIN distribution.pipes_status           ON pipes.id_status         = pipes_status.id
+		LEFT OUTER JOIN  distribution.zones            ON pipes.id_zone           = zones.id;
 		
 /*----------------!!!---!!!----------------*/
 /* Add view in geometry_columns */
@@ -155,6 +160,7 @@ CREATE OR REPLACE RULE pipes_update AS
 			id_owner           = NEW.id_owner           ,
 			id_zone            = NEW.id_zone            ,
 			id_precision       = NEW.id_precision       ,
+			id_protection      = NEW.id_protection      ,
 			id_install_method  = NEW.id_install_method  ,
 			year               = NEW.year               ,
 			pressure_nominale  = NEW.pressure_nominale  ,
@@ -171,9 +177,9 @@ CREATE OR REPLACE RULE pipes_update AS
 CREATE OR REPLACE RULE pipes_insert AS
 	ON INSERT TO distribution.pipes_view DO INSTEAD
 		INSERT INTO distribution.pipes 
-			(    id_function,    id_material,    id_status,    id_parent,    id_owner,    id_zone,    id_precision,    id_install_method,    year,    pressure_nominale,    _length2d,    _length3d,    schema_force_view,    folder,    _is_on_map,    _is_on_district,    remarks,    wkb_geometry)     
+			(    id_function,    id_material,    id_status,    id_parent,    id_owner,    id_zone,    id_precision,    id_protection,    id_install_method,    year,    pressure_nominale,    _length2d,    _length3d,    schema_force_view,    folder,    _is_on_map,    _is_on_district,    remarks,    wkb_geometry)     
 		VALUES
-			(NEW.id_function,NEW.id_material,NEW.id_status,NEW.id_parent,NEW.id_owner,NEW.id_zone,NEW.id_precision,NEW.id_install_method,NEW.year,NEW.pressure_nominale,NEW._length2d,NEW._length3d,NEW.schema_force_view,NEW.folder,NEW._is_on_map,NEW._is_on_district,NEW.remarks,NEW.wkb_geometry);
+			(NEW.id_function,NEW.id_material,NEW.id_status,NEW.id_parent,NEW.id_owner,NEW.id_zone,NEW.id_precision,NEW.id_protection,NEW.id_install_method,NEW.year,NEW.pressure_nominale,NEW._length2d,NEW._length3d,NEW.schema_force_view,NEW.folder,NEW._is_on_map,NEW._is_on_district,NEW.remarks,NEW.wkb_geometry);
 CREATE OR REPLACE RULE pipes_delete AS
 	ON DELETE TO distribution.pipes_view DO INSTEAD
 		DELETE FROM distribution.pipes WHERE id = OLD.id;

@@ -6,7 +6,7 @@
 BEGIN;
 
 /* Text concatenation */
-DROP AGGREGATE IF EXISTS distribution.tsum(text);
+DROP AGGREGATE IF EXISTS distribution.tsum(text) CASCADE;
 CREATE AGGREGATE distribution.tsum ( BASETYPE = text, SFUNC = textcat, STYPE = text, INITCOND = '' );
 COMMENT ON AGGREGATE distribution.tsum(text) IS 'Concatenates text in a SELECT. See distribution.get_map_name for an example.';
 

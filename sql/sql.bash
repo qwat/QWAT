@@ -11,6 +11,8 @@ psql -h 172.24.171.75 -U sige -f pipes_install_method.sql
 read -p "Press any key to continue..."
 psql -h 172.24.171.75 -U sige -f precision.sql
 read -p "Press any key to continue..."
+psql -h 172.24.171.75 -U sige -f pipes_protection.sql
+read -p "Press any key to continue..."
 psql -h 172.24.171.75 -U sige -f zones.sql
 read -p "Press any key to continue..."
 psql -h 172.24.171.75 -U sige -f districts.sql
