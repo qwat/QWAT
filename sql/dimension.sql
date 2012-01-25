@@ -82,8 +82,6 @@ CREATE OR REPLACE RULE dimension_delete AS
 		DELETE FROM distribution.dimension WHERE id = OLD.id;
 /* Comments */	
 COMMENT ON RULE dimension_update IS 'Rule to forward changes for dimension_view to the table dimension.';
-COMMENT ON RULE dimension_insert IS 'Rule to forward insert of dimension_view to the table dimension.';
 COMMENT ON RULE dimension_delete IS 'Rule to forward deletion of dsimension_view to the table dimension.';
-
 
 COMMIT;
