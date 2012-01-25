@@ -29,7 +29,7 @@ class connectLayers(QDialog, Ui_connectLayers ):
 				
 	def showEvent(self, e):
 		self.proj   = QgsProject.instance()
-		self.layers = self.iface.mapCanvas().layers()
+		self.layers = self.iface.legendInterface().layers()
 	
 		for c in range(len(self.combos)):
 			combo = self.combos[c]

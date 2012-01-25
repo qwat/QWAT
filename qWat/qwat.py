@@ -60,7 +60,7 @@ class qWat ():
 		self.iface.removeToolBarIcon(self.pipeSearchAction)	
 		
 	def connect(self):
-		self.pipelayer = next( ( layer for layer in self.iface.mapCanvas().layers() if layer.id() == QgsProject.instance().readEntry("qWat", "pipes_layer", "")[0] ), False )
+		self.pipelayer = next( ( layer for layer in self.iface.legendInterface().layers() if layer.id() == QgsProject.instance().readEntry("qWat", "pipes_layer", "")[0] ), False )
 		if self.pipelayer is not False:
 			self.pipeMerger = pipeMerger(self.iface,self.pipelayer)
 			QObject.connect( self.pipelayer , SIGNAL("browserCurrentItem(int)") , self.pipeMerger.itemChanged )
@@ -68,7 +68,7 @@ class qWat ():
 			QObject.connect( self.pipelayer , SIGNAL("layerDeleted()")          , self.pipeMerger.unload )
 		
 	def PipeSearchDlg(self):
-		layer = next( ( layer for layer in self.iface.mapCanvas().layers() if layer.id() == QgsProject.instance().readEntry("qWat", "pipes_layer", "")[0] ), False )
+		layer = next( ( layer for layer in self.iface.legendInterface().layers() if layer.id() == QgsProject.instance().readEntry("qWat", "pipes_layer", "")[0] ), False )
 		if layer is False: 
 			QMessageBox.warning( dlg , "qWat", QApplication.translate("PipeSearch", "Pipes layer is not connected.", None, QApplication.UnicodeUTF8) )
 			return
