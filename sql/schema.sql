@@ -52,7 +52,7 @@ Merging of pipes based on the group ID
 TODO: controler que c'est bien les champs du parent qui sont utilises => faire un join avec pipe_table
 */
 CREATE OR REPLACE VIEW distribution.pipes_schema AS
-	SELECT groupid, LineMerge(ST_Union(wkb_geometry)) AS thegeom
+	SELECT groupid, LineMerge(ST_Union(wkb_geometry)) AS wkb_geometry
 	  FROM distribution.pipes_schema_items
 	 GROUP BY groupid ;
 COMMENT ON VIEW distribution.pipes_schema IS 'Merging of pipes based on the group ID';
@@ -63,5 +63,5 @@ It is a multilinestring as it could happen to a merge of separated pipes (but it
 */
 DELETE FROM geometry_columns WHERE f_table_name = 'pipes_schema';
 INSERT INTO geometry_columns (f_table_catalog, f_table_schema, f_table_name, f_geometry_column, coord_dimension, srid, "type") 
-	VALUES  ('' , 'distribution', 'pipes_schema', 'thegeom', 2, 21781, 'MULTILINESTRING');
+	VALUES  ('' , 'distribution', 'pipes_schema', 'wkb_geometry', 2, 21781, 'MULTILINESTRING');
 
