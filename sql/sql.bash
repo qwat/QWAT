@@ -25,7 +25,7 @@ psql -h 172.24.171.75 -U sige -f pipes_material.sql
 read -p "Press any key to continue..."
 psql -h 172.24.171.75 -U sige -f pipes_status.sql
 read -p "Press any key to continue..."
-psql -h 172.24.171.75 -U sige -f printable_maps.sql
+psql -h 172.24.171.75 -U sige -f printmaps.sql
 read -p "Press any key to continue..."
 psql -h 172.24.171.75 -U sige -f pipes.sql
 read -p "Press any key to continue..."
