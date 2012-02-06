@@ -39,13 +39,4 @@ CREATE OR REPLACE FUNCTION distribution.get_map(geometry) RETURNS text AS '
 ' LANGUAGE 'plpgsql';
 COMMENT ON FUNCTION distribution.get_map(geometry) IS 'Returns a string contaning all the short names of the polygons in table printable_maps which overlap the given geometry.';
 
-
-CREATE OR REPLACE FUNCTION distribution.fill_pipes_map() RETURNS boolean AS '
-	BEGIN
-		UPDATE distribution.pipes SET _is_on_map = distribution.get_map(pipes.wkb_geometry);	
-		RETURN true;
-	END
-' LANGUAGE 'plpgsql';
-COMMENT ON FUNCTION distribution.fill_pipes_map() IS 'Populates the _is_on_map field in pipes table with all the short names of poylgons in table printable_maps which overlap the given pipe geometry.';
-
 COMMIT;
