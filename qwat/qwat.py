@@ -37,7 +37,7 @@ class qWat ():
 		QObject.connect(self.iface.mapCanvas() , SIGNAL("layersChanged ()") , self.connect ) 
 		
 		# CONNECTLAYERS
-		self.connectLayerAction = QAction(QIcon(":/plugins/qWat/icons/connect.png"), "connect layers", self.iface.mainWindow())
+		self.connectLayerAction = QAction(QIcon(":/plugins/qwat/icons/raindrop.png"), "qWat settings", self.iface.mainWindow())
 		# connect the action to the run method
 		QObject.connect(self.connectLayerAction, SIGNAL("triggered()"), self.connectLayersDlg.exec_)
 		QObject.connect(self.connectLayersDlg,   SIGNAL("accepted()"),  self.connect)
@@ -47,9 +47,7 @@ class qWat ():
 				
 	def unload(self):
 		self.iface.removePluginMenu("&qWat",self.connectLayerAction)
-		self.iface.removePluginMenu("&qWat",self.pipeSearchAction)
 		self.iface.removeToolBarIcon(self.connectLayerAction)
-		self.iface.removeToolBarIcon(self.pipeSearchAction)	
 		
 	def connect(self):
 		self.pipelayer = next( ( layer for layer in self.iface.legendInterface().layers() if layer.id() == QgsProject.instance().readEntry("qWat", "pipes_layer", "")[0] ), False )
