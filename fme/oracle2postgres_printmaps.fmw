@@ -5,7 +5,7 @@
 #    Windows command-line to run this workspace:
 #    
 #    
-#    fme.exe oracle2postgres_folio.fmw
+#    fme.exe oracle2postgres_printmaps.fmw
 #          --SourceDataset_ORACLE8I orcl
 #          --SourceDataset_ORACLE8I_DB orcl
 #          --DestDataset_POSTGIS sige
@@ -29,6 +29,7 @@
 #! GRID_SNAPTO="false"
 #! GRID_WIDTH="50"
 #! BEGIN_TCL=""
+#! ACTIVE_SUBDOCUMENT="polygoner"
 #! FME_STROKE_MAX_DEVIATION="0"
 #! LOG_FILE=""
 #! VIEW_POSITION="0 0"
@@ -1034,12 +1035,12 @@
 #! </FEATURE_TYPE>
 #! <FEATURE_TYPE
 #! IS_SOURCE="false"
-#! NODE_NAME="distribution.printable_maps"
+#! NODE_NAME="distribution.printmaps"
 #! IS_EDITABLE="true"
 #! IDENTIFIER="9"
 #! FEAT_GEOMTYPE="&lt;NO_GEOMETRY&gt;"
 #! POSITION="1919 -267"
-#! ORDER="16"
+#! ORDER="17"
 #! COLLAPSED="true"
 #! KEYWORD="POSTGIS_1"
 #! ENABLED="true"
@@ -1302,7 +1303,7 @@
 #! TYPE="Visualizer"
 #! VERSION="2"
 #! POSITION="679 -1254"
-#! ORDER="17"
+#! ORDER="16"
 #! PARMS_EDITED="false"
 #! ENABLED="true"
 #! >
@@ -1594,7 +1595,7 @@
 #! VERSION="1"
 #! POSITION="398 -452"
 #! ORDER="23"
-#! PARMS_EDITED="false"
+#! PARMS_EDITED="true"
 #! ENABLED="true"
 #! >
 #! <OUTPUT_FEAT NAME="OUTPUT"/>
@@ -1603,7 +1604,7 @@
 #! <XFORM_ATTR ATTR_NAME="SEQ" IS_USER_CREATED="false" FEAT_INDEX="0"/>
 #! <XFORM_ATTR ATTR_NAME="X1" IS_USER_CREATED="false" FEAT_INDEX="0"/>
 #! <XFORM_ATTR ATTR_NAME="Y1" IS_USER_CREATED="false" FEAT_INDEX="0"/>
-#! <XFORM_PARM PARM_NAME="FORMAT" PARM_VALUE=".4f"/>
+#! <XFORM_PARM PARM_NAME="FORMAT" PARM_VALUE=".10f"/>
 #! <XFORM_PARM PARM_NAME="PARAMETERS_GROUP" PARM_VALUE=""/>
 #! <XFORM_PARM PARM_NAME="XFORMER_NAME" PARM_VALUE="StringFormatter"/>
 #! <XFORM_PARM PARM_NAME="SRC_ATTRS" PARM_VALUE="X1,Y1"/>
@@ -2016,7 +2017,7 @@
 #! <SUBDOCUMENT
 #! NAME="liner"
 #! CATEGORY=""
-#! VIEW_POSITION="313 -194"
+#! VIEW_POSITION="313 -162"
 #! ZOOM_SCALE="100"
 #! DESCRIPTION=""
 #! SUPPRESS_UPGRADE="false"
@@ -2435,7 +2436,7 @@ POSTGIS_1_DATASET "$(DestDataset_POSTGIS_1)"
 #! END_DEST_HEADER
 #! END_HEADER
 
-LOG_FILENAME "$(FME_MF_DIR)oracle2postgres_folio.log"
+LOG_FILENAME "$(FME_MF_DIR)oracle2postgres_printmaps.log"
 LOG_APPEND NO
 LOG_MAX_FEATURES 200
 LOG_MAX_RECORDED_FEATURES 200
@@ -2462,7 +2463,7 @@ MULTI_READER_CONTINUE_ON_READER_FAILURE No
 
 # -------------------------------------------------------------------------
 
-MACRO WORKSPACE_NAME oracle2postgres_folio
+MACRO WORKSPACE_NAME oracle2postgres_printmaps
 MACRO FME_VIEWER_APP fmeview
 # -------------------------------------------------------------------------
 ORACLE8I_1_DEF SIGE_DISTRIBUTION.SIGE_FOLIO   oracle_envelope_min_x        ""   oracle_envelope_min_y        ""   oracle_envelope_max_x        ""   oracle_envelope_max_y        ""   oracle_mapinfo_symbology_style_column ""   AREA_GERECHNET               number(20,8)   AREA_NOMINAL                 number(20,8)   COM                          varchar2(10)   COMMUNE                      number(10,0)   DELETED                      number(1,0)   FID                          number(10,0)   GID                          number(10,0)   MENSU_NUM                    number(1,0)   NO_FOLIO                     varchar2(10)
@@ -2522,8 +2523,8 @@ FACTORY_DEF * SortFactory    FACTORY_NAME $(polygoner_WORKSPACE_NAME)_Sorter    
 
 # -------------------------------------------------------------------------
 
-Tcl2    regsub {^[^a-zA-Z]*([a-zA-Z]).*} {.4f} {\1} formatChar;    if { [string first $formatChar {duiofxeEgG}] != -1 } {       proc {$(polygoner_WORKSPACE_NAME)_StringFormatter_getAttribute} {attr} { return [regsub {^0*(.)} [FME_GetAttribute $attr] {\1}] }    }    else    {       proc {$(polygoner_WORKSPACE_NAME)_StringFormatter_getAttribute} {attr} { return [FME_GetAttribute $attr] }    }
-Tcl2 proc $(polygoner_WORKSPACE_NAME)_StringFormatter_formatter {} {    set attrs [split {X1,Y1} {,}];    foreach attr $attrs {       set attrVal [FME_GetAttribute $attr];       set length [string length $attrVal];       if {$length > 0} {          FME_SetAttribute $attr [format %.4f [{$(polygoner_WORKSPACE_NAME)_StringFormatter_getAttribute} $attr]];       };    }; }
+Tcl2    regsub {^[^a-zA-Z]*([a-zA-Z]).*} {.10f} {\1} formatChar;    if { [string first $formatChar {duiofxeEgG}] != -1 } {       proc {$(polygoner_WORKSPACE_NAME)_StringFormatter_getAttribute} {attr} { return [regsub {^0*(.)} [FME_GetAttribute $attr] {\1}] }    }    else    {       proc {$(polygoner_WORKSPACE_NAME)_StringFormatter_getAttribute} {attr} { return [FME_GetAttribute $attr] }    }
+Tcl2 proc $(polygoner_WORKSPACE_NAME)_StringFormatter_formatter {} {    set attrs [split {X1,Y1} {,}];    foreach attr $attrs {       set attrVal [FME_GetAttribute $attr];       set length [string length $attrVal];       if {$length > 0} {          FME_SetAttribute $attr [format %.10f [{$(polygoner_WORKSPACE_NAME)_StringFormatter_getAttribute} $attr]];       };    }; }
 FACTORY_DEF * TeeFactory    FACTORY_NAME $(polygoner_WORKSPACE_NAME)_StringFormatter    INPUT  FEATURE_TYPE "$(polygoner_WORKSPACE_NAME)_Sorter_SORTED"    OUTPUT FEATURE_TYPE "$(polygoner_WORKSPACE_NAME)_StringFormatter_OUTPUT"         @Tcl2($(polygoner_WORKSPACE_NAME)_StringFormatter_formatter)
 
 # -------------------------------------------------------------------------
@@ -2601,7 +2602,7 @@ FACTORY_DEF * ReferenceFactory    FACTORY_NAME FeatureMerger    GROUP_BY GID    
 
 # -------------------------------------------------------------------------
 
-FACTORY_DEF * TeeFactory    FACTORY_NAME "FeatureMerger_COMPLETE -> distribution.printable_maps Correlator"    INPUT FEATURE_TYPE FeatureMerger_COMPLETE    OUTPUT FEATURE_TYPE __GO_TO_FINAL_OUTPUT_ROUTER__       @Transform(FME_GENERIC,POSTGIS)       @SupplyAttributes(__wb_out_feat_type__,distribution.printable_maps)
+FACTORY_DEF * TeeFactory    FACTORY_NAME "FeatureMerger_COMPLETE -> distribution.printmaps Correlator"    INPUT FEATURE_TYPE FeatureMerger_COMPLETE    OUTPUT FEATURE_TYPE __GO_TO_FINAL_OUTPUT_ROUTER__       @Transform(FME_GENERIC,POSTGIS)       @SupplyAttributes(__wb_out_feat_type__,distribution.printmaps)
 # -------------------------------------------------------------------------
 
 FACTORY_DEF * TestFactory   FACTORY_NAME "Final Output Feature Type Router"   INPUT FEATURE_TYPE *   TEST @Value(__wb_out_feat_type__) != ""   OUTPUT PASSED FEATURE_TYPE *     @FeatureType(@Value(__wb_out_feat_type__))   OUTPUT FAILED FEATURE_TYPE __nuke_me__ @Tcl2("FME_StatMessage 818059 {@Value(fme_template_feature_type)} 818060 818061 fme_warn")
@@ -2616,4 +2617,4 @@ INCLUDE [ if {{$(WORKSPACE_TEMP_DIR)} == {}} { puts {MACRO __WB_ENABLE_VISUALIZE
 FACTORY_DEF $(__WB_ENABLE_VISUALIZER__) CreationFactory   CREATE_AT_END   OUTPUT FEATURE_TYPE __NUKEME__   @TCL("if [info exists ::gVisualizerFilesToView] {eval FME_Execute System \173\042$(FME_HOME_UNIX)/fmeview\042 /ownffs {$(WORKSPACE_TEMP_DIR)} $::gVisualizerFilesToView & \175 }")
 FACTORY_DEF * TeeFactory   INPUT FEATURE_TYPE __NUKEME__
 # -------------------------------------------------------------------------
-POSTGIS_1_DEF distribution.printable_maps   postgis_type                 postgis_geometry   postgis_mode                 INHERIT_FROM_WRITER   postgis_spatial_column_type  geometry   postgis_spatial_column       wkb_geometry   postgis_srid                 INHERIT_FROM_WRITER   postgis_drop_table           NO   postgis_truncate_table       YES   postgis_create_with_oids     NO   postgis_create_gist_index    YES   postgis_vacuum_analyze       YES   postgis_allow_serial_writing NO
+POSTGIS_1_DEF distribution.printmaps   postgis_type                 postgis_geometry   postgis_mode                 INHERIT_FROM_WRITER   postgis_spatial_column_type  geometry   postgis_spatial_column       wkb_geometry   postgis_srid                 INHERIT_FROM_WRITER   postgis_drop_table           NO   postgis_truncate_table       YES   postgis_create_with_oids     NO   postgis_create_gist_index    YES   postgis_vacuum_analyze       YES   postgis_allow_serial_writing NO
