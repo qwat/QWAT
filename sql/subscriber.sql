@@ -31,7 +31,7 @@ CREATE INDEX fki_id_type ON distribution.subscriber(id_type);
 ALTER TABLE distribution.subscriber ADD CONSTRAINT subscriber_id_pipe FOREIGN KEY (id_pipe) REFERENCES distribution.pipes (id) MATCH SIMPLE ON UPDATE NO ACTION ON DELETE NO ACTION;
 CREATE INDEX fki_id_pipe ON distribution.subscriber(id_pipe);
 /* Geometry */
-ALTER TABLE distribution.subscriber ADD CONSTRAINT enforce_dims_wkb_geometry CHECK (st_ndims(wkb_geometry) = 1);
+ALTER TABLE distribution.subscriber ADD CONSTRAINT enforce_dims_wkb_geometry CHECK (st_ndims(wkb_geometry) = 2);
 ALTER TABLE distribution.subscriber ADD CONSTRAINT enforce_geotype_wkb_geometry CHECK (geometrytype(wkb_geometry) = 'POINT'::text OR wkb_geometry IS NULL);
 ALTER TABLE distribution.subscriber ADD CONSTRAINT enforce_srid_wkb_geometry CHECK (st_srid(wkb_geometry) = 21781);
 /* GIST index*/
@@ -76,7 +76,7 @@ CREATE VIEW distribution.subscriber_view AS
 /* Add view in geometry_columns */
 DELETE FROM geometry_columns WHERE f_table_name = 'subscriber_view';
 INSERT INTO geometry_columns (f_table_catalog, f_table_schema, f_table_name, f_geometry_column, coord_dimension, srid, type) 
-	VALUES  ('' , 'distribution', 'subscriber_view', 'wkb_geometry', 1 , 21781, 'LINESTRING');
+	VALUES  ('' , 'distribution', 'subscriber_view', 'wkb_geometry', 2 , 21781, 'LINESTRING');
 /*----------------!!!---!!!----------------*/
 /* Comment */	
 COMMENT ON VIEW distribution.subscriber_view IS 'View for subscriber. This view is editable (a rule exists to forwad changes to the table).';
