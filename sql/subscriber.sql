@@ -11,7 +11,7 @@ SELECT setval('distribution.subscriber_id_seq', 8000, true);
 ALTER TABLE distribution.subscriber ADD COLUMN   id_type integer;                                      /* id_parent         FK FULL */
 ALTER TABLE distribution.subscriber ADD COLUMN   id_pipe integer;									/* id_function       FK SIMPLE*/ 
 ALTER TABLE distribution.subscriber ADD COLUMN   id_client integer;                              /*  */
-ALTER TABLE distribution.subscriber ADD COLUMN   parcel integer;                                    /*  */
+ALTER TABLE distribution.subscriber ADD COLUMN   parcel character varying (12) ;                                    /*  */
 ALTER TABLE distribution.subscriber ADD COLUMN   _is_on_map varchar(80) DEFAULT '';                      /* _is_on_map           */
 ALTER TABLE distribution.subscriber ADD COLUMN   _is_on_district varchar(100) DEFAULT '';                /* _is_on_district      */
 
