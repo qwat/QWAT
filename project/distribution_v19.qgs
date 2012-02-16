@@ -4,10 +4,10 @@
     <mapcanvas>
         <units>meters</units>
         <extent>
-            <xmin>553756.097412</xmin>
-            <ymin>145637.517198</ymin>
-            <xmax>555479.210218</xmax>
-            <ymax>146696.080057</ymax>
+            <xmin>537254.490593</xmin>
+            <ymin>133361.839555</ymin>
+            <xmax>580418.721415</xmax>
+            <ymax>156563.601211</ymax>
         </extent>
         <projections>0</projections>
         <destinationsrs>
@@ -24,19 +24,19 @@
         </destinationsrs>
     </mapcanvas>
     <legend updateDrawingOrder="false">
-        <legendlayer drawingOrder="14" open="false" checked="Qt::Unchecked" name="Conduites schémas" showFeatureCount="0">
-            <filegroup open="false" hidden="false">
-                <legendlayerfile isInOverview="0" layerid="pipes_schema20120105161302902" visible="0"/>
-            </filegroup>
-        </legendlayer>
         <legendlayer drawingOrder="0" open="false" checked="Qt::Checked" name="Conduites" showFeatureCount="0">
             <filegroup open="false" hidden="false">
                 <legendlayerfile isInOverview="0" layerid="pipes_view20120103154925828" visible="1"/>
             </filegroup>
         </legendlayer>
+        <legendlayer drawingOrder="14" open="false" checked="Qt::Unchecked" name="Conduites schémas" showFeatureCount="0">
+            <filegroup open="false" hidden="false">
+                <legendlayerfile isInOverview="0" layerid="pipes_schema20120105161302902" visible="0"/>
+            </filegroup>
+        </legendlayer>
         <legendlayer drawingOrder="12" open="false" checked="Qt::Checked" name="Folios" showFeatureCount="0">
             <filegroup open="false" hidden="false">
-                <legendlayerfile isInOverview="0" layerid="printable_maps20120103150232188" visible="1"/>
+                <legendlayerfile isInOverview="0" layerid="printmaps20120103150232188" visible="1"/>
             </filegroup>
         </legendlayer>
         <legendlayer drawingOrder="13" open="false" checked="Qt::Checked" name="Communes" showFeatureCount="0">
@@ -44,7 +44,7 @@
                 <legendlayerfile isInOverview="0" layerid="districts20120105171833435" visible="1"/>
             </filegroup>
         </legendlayer>
-        <legendgroup open="true" checked="Qt::Checked" name="Cotes">
+        <legendgroup open="true" checked="Qt::PartiallyChecked" name="Cotes">
             <legendlayer drawingOrder="2" open="false" checked="Qt::Checked" name="Cotes - points accrochage" showFeatureCount="0">
                 <filegroup open="false" hidden="false">
                     <legendlayerfile isInOverview="0" layerid="dimension20120117162539458" visible="1"/>
@@ -55,14 +55,14 @@
                     <legendlayerfile isInOverview="0" layerid="dimension_view20120117162543747" visible="1"/>
                 </filegroup>
             </legendlayer>
-            <legendlayer drawingOrder="4" open="false" checked="Qt::Checked" name="Temp - center" showFeatureCount="0">
+            <legendlayer drawingOrder="4" open="false" checked="Qt::Unchecked" name="Temp - center" showFeatureCount="0">
                 <filegroup open="false" hidden="false">
-                    <legendlayerfile isInOverview="0" layerid="Triangulation_Lines20120117162903254" visible="1"/>
+                    <legendlayerfile isInOverview="0" layerid="Triangulation_Lines20120117162903254" visible="0"/>
                 </filegroup>
             </legendlayer>
-            <legendlayer drawingOrder="3" open="false" checked="Qt::Checked" name="Temp - distance" showFeatureCount="0">
+            <legendlayer drawingOrder="3" open="false" checked="Qt::Unchecked" name="Temp - distance" showFeatureCount="0">
                 <filegroup open="false" hidden="false">
-                    <legendlayerfile isInOverview="0" layerid="Triangulation_Points20120117163321793" visible="1"/>
+                    <legendlayerfile isInOverview="0" layerid="Triangulation_Points20120117163321793" visible="0"/>
                 </filegroup>
             </legendlayer>
         </legendgroup>
@@ -168,7 +168,7 @@
                 </filegroup>
             </legendlayer>
         </legendgroup>
-        <legendgroup open="true" checked="Qt::Unchecked" name="Tables annexes">
+        <legendgroup open="false" checked="Qt::Unchecked" name="Tables annexes">
             <legendlayer drawingOrder="-1" open="false" checked="Qt::Unchecked" name="Conduites protection" showFeatureCount="0">
                 <filegroup open="false" hidden="false">
                     <legendlayerfile isInOverview="0" layerid="pipes_protection20120125161810030" visible="0"/>
@@ -217,7 +217,25 @@
         </legendgroup>
     </legend>
     <Composer title="Composer 1" visible="0">
-        <ComposerLegend symbolWidth="7" title="Legend" boxSpace="2" titleFont="Ubuntu,16,-1,5,50,0,0,0,0,0" map="0" groupFont="Ubuntu,14,-1,5,50,0,0,0,0,0" layerFont="Ubuntu,12,-1,5,50,0,0,0,0,0" symbolSpace="2" symbolHeight="4" layerSpace="2" iconLabelSpace="2" itemFont="Ubuntu,12,-1,5,50,0,0,0,0,0">
+        <ComposerMap keepLayerSet="false" id="0" previewMode="Cache" drawCanvasItems="true">
+            <Extent ymin="138705.5188338333" xmin="553783.5670325317" ymax="156238.5996095036" xmax="568098.2466795173"/>
+            <LayerSet/>
+            <Grid gridStyle="0" crossLength="3" penColorRed="0" penColorBlue="0" intervalX="0" offsetX="0" intervalY="0" offsetY="0" show="0" penWidth="0" penColorGreen="0">
+                <Annotation direction="0" precision="3" position="1" frameDistance="1" show="0" font="Ubuntu,11,-1,5,50,0,0,0,0,0"/>
+            </Grid>
+            <ComposerItem width="294.5406301824212" x="5.436152570480928" y="17.29684908789386" rotation="0" height="360.7628524046435" frame="true" outlineWidth="0.3" zValue="1" lastValidViewScaleFactor="1.248739495798319" id="" positionLock="true">
+                <FrameColor alpha="255" red="0" blue="0" green="0"/>
+                <BackgroundColor alpha="255" red="255" blue="255" green="255"/>
+            </ComposerItem>
+        </ComposerMap>
+        <ComposerScaleBar segmentMillimeters="20.57612447124835" numMapUnitsPerScaleBarUnit="1" numSegments="2" height="5" alignment="0" labelBarSpace="3" outlineWidth="1" numSegmentsLeft="0" style="Single Box" unitLabel="" font="Ubuntu,12,-1,5,50,0,0,0,0,0" mapId="0" boxContentSpace="1" numUnitsPerSegment="1000">
+            <BrushColor red="0" blue="0" green="0"/>
+            <ComposerItem width="51.6522489424967" x="246.1094527363184" y="0.9883913764510801" rotation="0" height="14" frame="true" outlineWidth="0.3" zValue="3" lastValidViewScaleFactor="2.023489932885906" id="" positionLock="false">
+                <FrameColor alpha="255" red="0" blue="0" green="0"/>
+                <BackgroundColor alpha="255" red="255" blue="255" green="255"/>
+            </ComposerItem>
+        </ComposerScaleBar>
+        <ComposerLegend symbolWidth="7" title="Legend" boxSpace="2" titleFont="Ubuntu,16,-1,5,50,0,0,0,0,0" map="0" groupFont="Ubuntu,14,-1,5,50,0,0,0,0,0" layerFont="Ubuntu,12,-1,5,50,0,0,0,0,0" groupSpace="3" symbolSpace="2" symbolHeight="4" layerSpace="2" iconLabelSpace="2" wrapChar="" itemFont="Ubuntu,12,-1,5,50,0,0,0,0,0">
             <Model autoUpdate="1">
                 <LayerItem layerId="pipes_view20120103154925828" text="Conduites">
                     <VectorClassificationItemNg text="Distribution">
@@ -253,7 +271,7 @@
                         </symbols>
                     </VectorClassificationItemNg>
                 </LayerItem>
-                <LayerItem layerId="printable_maps20120103150232188" text="printable_maps">
+                <LayerItem layerId="printmaps20120103150232188" text="printmaps">
                     <VectorClassificationItemNg text="">
                         <symbols>
                             <symbol outputUnit="MM" alpha="0.1803921568627451" type="fill" name="classificationSymbol">
@@ -689,31 +707,24 @@
                 <BackgroundColor alpha="255" red="255" blue="255" green="255"/>
             </ComposerItem>
         </ComposerLegend>
-        <ComposerScaleBar segmentMillimeters="20.57612447124835" numMapUnitsPerScaleBarUnit="1" numSegments="2" height="5" alignment="0" labelBarSpace="3" outlineWidth="1" numSegmentsLeft="0" style="Single Box" unitLabel="" font="Ubuntu,12,-1,5,50,0,0,0,0,0" mapId="0" boxContentSpace="1" numUnitsPerSegment="1000">
-            <BrushColor red="0" blue="0" green="0"/>
-            <ComposerItem width="51.6522489424967" x="246.1094527363184" y="0.9883913764510801" rotation="0" height="14" frame="true" outlineWidth="0.3" zValue="3" lastValidViewScaleFactor="2.023489932885906" id="" positionLock="false">
-                <FrameColor alpha="255" red="0" blue="0" green="0"/>
-                <BackgroundColor alpha="255" red="255" blue="255" green="255"/>
-            </ComposerItem>
-        </ComposerScaleBar>
-        <ComposerMap keepLayerSet="false" id="0" previewMode="Cache" drawCanvasItems="true">
-            <Extent ymin="138705.5188338333" xmin="553783.5670325317" ymax="156238.5996095036" xmax="568098.2466795173"/>
-            <LayerSet/>
-            <Grid gridStyle="0" crossLength="3" penColorRed="0" penColorBlue="0" intervalX="0" offsetX="0" intervalY="0" offsetY="0" show="0" penWidth="0" penColorGreen="0">
-                <Annotation direction="0" precision="3" position="1" frameDistance="1" show="0" font="Ubuntu,11,-1,5,50,0,0,0,0,0"/>
-            </Grid>
-            <ComposerItem width="294.5406301824212" x="5.436152570480928" y="17.29684908789386" rotation="0" height="360.7628524046435" frame="true" outlineWidth="0.3" zValue="1" lastValidViewScaleFactor="1.248739495798319" id="" positionLock="true">
-                <FrameColor alpha="255" red="0" blue="0" green="0"/>
-                <BackgroundColor alpha="255" red="255" blue="255" green="255"/>
-            </ComposerItem>
-        </ComposerMap>
         <Composition printResolution="300" paperWidth="210" snapGridOffsetX="0" snapGridResolution="0" snapGridOffsetY="0" snapping="0" paperHeight="297" printAsRaster="0"/>
     </Composer>
     <Composer title="Composer 2" visible="0">
         <Composition printResolution="300" paperWidth="841" snapGridOffsetX="0" snapGridResolution="0" snapGridOffsetY="0" snapping="0" paperHeight="1189" printAsRaster="0"/>
     </Composer>
     <Composer title="Composer 3" visible="0">
-        <ComposerLegend symbolWidth="7" title="Legend" boxSpace="2" titleFont="Ubuntu,16,-1,5,50,0,0,0,0,0" map="0" groupFont="Ubuntu,14,-1,5,50,0,0,0,0,0" layerFont="Ubuntu,12,-1,5,50,0,0,0,0,0" symbolSpace="2" symbolHeight="4" layerSpace="2" iconLabelSpace="2" itemFont="Ubuntu,12,-1,5,50,0,0,0,0,0">
+        <ComposerMap keepLayerSet="false" id="0" previewMode="Cache" drawCanvasItems="true">
+            <Extent ymin="145630.1711692762" xmin="554289.2416903595" ymax="146047.4060099553" xmax="554875.0183829057"/>
+            <LayerSet/>
+            <Grid gridStyle="0" crossLength="3" penColorRed="0" penColorBlue="0" intervalX="0" offsetX="0" intervalY="0" offsetY="0" show="0" penWidth="0" penColorGreen="0">
+                <Annotation direction="0" precision="3" position="1" frameDistance="1" show="0" font="Ubuntu,11,-1,5,50,0,0,0,0,0"/>
+            </Grid>
+            <ComposerItem width="245.8192371475954" x="10.17412935323382" y="26.54063018242122" rotation="0" height="175.0912106135987" frame="true" outlineWidth="0.3" zValue="1" lastValidViewScaleFactor="2.023489932885906" id="" positionLock="false">
+                <FrameColor alpha="255" red="0" blue="0" green="0"/>
+                <BackgroundColor alpha="255" red="255" blue="255" green="255"/>
+            </ComposerItem>
+        </ComposerMap>
+        <ComposerLegend symbolWidth="7" title="Legend" boxSpace="2" titleFont="Ubuntu,16,-1,5,50,0,0,0,0,0" map="0" groupFont="Ubuntu,14,-1,5,50,0,0,0,0,0" layerFont="Ubuntu,12,-1,5,50,0,0,0,0,0" groupSpace="3" symbolSpace="2" symbolHeight="4" layerSpace="2" iconLabelSpace="2" wrapChar="" itemFont="Ubuntu,12,-1,5,50,0,0,0,0,0">
             <Model autoUpdate="1">
                 <LayerItem layerId="pipes_view20120103154925828" text="Conduites">
                     <VectorClassificationItemNg text="Distribution">
@@ -919,7 +930,7 @@
                         </symbols>
                     </VectorClassificationItemNg>
                 </LayerItem>
-                <LayerItem layerId="printable_maps20120103150232188" text="Folios">
+                <LayerItem layerId="printmaps20120103150232188" text="Folios">
                     <VectorClassificationItemNg text="">
                         <symbols>
                             <symbol outputUnit="MM" alpha="0.1803921568627451" type="fill" name="classificationSymbol">
@@ -958,17 +969,6 @@
                 <BackgroundColor alpha="255" red="255" blue="255" green="255"/>
             </ComposerItem>
         </ComposerLegend>
-        <ComposerMap keepLayerSet="false" id="0" previewMode="Cache" drawCanvasItems="true">
-            <Extent ymin="145630.1711692762" xmin="554289.2416903595" ymax="146047.4060099553" xmax="554875.0183829057"/>
-            <LayerSet/>
-            <Grid gridStyle="0" crossLength="3" penColorRed="0" penColorBlue="0" intervalX="0" offsetX="0" intervalY="0" offsetY="0" show="0" penWidth="0" penColorGreen="0">
-                <Annotation direction="0" precision="3" position="1" frameDistance="1" show="0" font="Ubuntu,11,-1,5,50,0,0,0,0,0"/>
-            </Grid>
-            <ComposerItem width="245.8192371475954" x="10.17412935323382" y="26.54063018242122" rotation="0" height="175.0912106135987" frame="true" outlineWidth="0.3" zValue="1" lastValidViewScaleFactor="2.023489932885906" id="" positionLock="false">
-                <FrameColor alpha="255" red="0" blue="0" green="0"/>
-                <BackgroundColor alpha="255" red="255" blue="255" green="255"/>
-            </ComposerItem>
-        </ComposerMap>
         <Composition printResolution="300" paperWidth="297" snapGridOffsetX="0" snapGridResolution="0" snapGridOffsetY="0" snapping="0" paperHeight="210" printAsRaster="0"/>
     </Composer>
     <Composer title="Composer 4" visible="0">
@@ -2963,14 +2963,14 @@
                 <edittype type="10" name="id"/>
                 <edittype type="0" name="name"/>
             </edittypes>
-            <editform></editform>
+            <editform>.</editform>
             <editforminit></editforminit>
-            <annotationform></annotationform>
+            <annotationform>.</annotationform>
             <attributeactions/>
         </maplayer>
         <maplayer minimumScale="0" maximumScale="1e+08" geometry="Line" type="vector" hasScaleBasedVisibilityFlag="0">
             <id>pipes_schema20120105161302902</id>
-            <datasource>dbname='sige' host=172.24.171.75 port=5432 user='sige' password='1234' sslmode=allow key='groupid' table="distribution"."pipes_schema" (thegeom) sql=</datasource>
+            <datasource>dbname='sige' host=172.24.171.75 port=5432 user='sige' password='1234' sslmode=allow key='groupid' table="distribution"."pipes_schema" (wkb_geometry) sql=</datasource>
             <title></title>
             <abstract></abstract>
             <layername>Conduites schémas</layername>
@@ -3094,11 +3094,26 @@
             <vectorjoins/>
             <renderer-v2 symbollevels="0" type="RuleRenderer">
                 <rules>
-                    <rule scalemaxdenom="6000" filter="_schema_view = 'f'" symbol="0" scalemindenom="1" label="Distribution"/>
-                    <rule filter="_schema_view = 't'" symbol="1" label="Transport"/>
+                    <rule scalemaxdenom="6000" filter="_status_active = 'f'" symbol="0" scalemindenom="1" label="Inactive"/>
+                    <rule filter="_status_active = 't'" label="Active">
+                        <rule scalemaxdenom="6000" filter="_schema_view = 'f'" symbol="1" scalemindenom="1" label="Distribution"/>
+                        <rule filter="_schema_view = 't'" symbol="2" label="Transport"/>
+                    </rule>
                 </rules>
                 <symbols>
                     <symbol outputUnit="MM" alpha="1" type="line" name="0">
+                        <layer pass="0" class="SimpleLine" locked="0">
+                            <prop k="capstyle" v="square"/>
+                            <prop k="color" v="170,170,255,255"/>
+                            <prop k="customdash" v="5;2"/>
+                            <prop k="joinstyle" v="bevel"/>
+                            <prop k="offset" v="0"/>
+                            <prop k="penstyle" v="dash dot"/>
+                            <prop k="use_custom_dash" v="0"/>
+                            <prop k="width" v="0.25"/>
+                        </layer>
+                    </symbol>
+                    <symbol outputUnit="MM" alpha="1" type="line" name="1">
                         <layer pass="0" class="SimpleLine" locked="0">
                             <prop k="capstyle" v="square"/>
                             <prop k="color" v="0,0,255,255"/>
@@ -3110,7 +3125,7 @@
                             <prop k="width" v="0.25"/>
                         </layer>
                     </symbol>
-                    <symbol outputUnit="MM" alpha="1" type="line" name="1">
+                    <symbol outputUnit="MM" alpha="1" type="line" name="2">
                         <layer pass="0" class="SimpleLine" locked="0">
                             <prop k="capstyle" v="square"/>
                             <prop k="color" v="0,0,255,255"/>
@@ -3126,6 +3141,8 @@
             </renderer-v2>
             <customproperties>
                 <property key="itemBrowserConnected" value="yes"/>
+                <property key="itemBrowserCurrentItem" value="41"/>
+                <property key="itemBrowserSelection" value="[4107L, 4108L, 4109L, 4110L, 4111L, 4112L, 4113L, 4114L, 4119L, 4120L, 4121L, 4122L, 4123L, 4124L, 4125L, 4126L, 4127L, 4129L, 4132L, 4133L, 4134L, 4138L, 4139L, 4140L, 4141L, 4143L, 4144L, 4145L, 4146L, 4147L, 4148L, 4149L, 4150L, 4151L, 4152L, 4154L, 4156L, 4157L, 4158L, 4159L, 4160L, 4161L, 4162L, 4163L, 4164L, 4165L, 4166L, 4167L, 4168L, 4169L, 4170L, 4171L, 4173L, 4174L, 4175L, 4176L, 4177L, 4178L, 4179L, 4180L, 4181L, 4182L, 4183L, 4184L, 4185L, 4187L, 4188L, 20612L, 4189L, 83L, 20613L, 4190L, 84L, 20614L, 4191L, 85L, 4192L, 86L, 4193L, 87L, 4194L, 88L, 4195L, 89L, 4196L, 90L, 4197L, 91L, 4198L, 92L, 4199L, 93L, 4200L, 94L, 4201L, 95L, 4202L, 4203L, 98L, 4205L, 99L, 4206L, 101L, 4208L, 102L, 4209L, 103L, 104L, 4211L, 105L, 106L, 4213L, 107L, 108L, 4215L, 109L, 110L, 111L, 112L, 113L, 4219L, 4220L, 114L, 115L, 4222L, 116L, 117L, 4224L, 118L, 119L, 120L, 121L, 4230L, 4231L, 4232L, 126L, 4233L, 127L, 128L, 4234L, 4235L, 129L, 4236L, 130L, 4237L, 131L, 4238L, 132L, 4239L, 133L, 4240L, 134L, 26824L, 4241L, 4242L, 137L, 4243L, 4244L, 138L, 4245L, 139L, 4246L, 140L, 141L, 4248L, 4249L, 143L, 4250L, 4251L, 145L, 4252L, 146L, 4253L, 147L, 4254L, 4255L, 149L, 4256L, 150L, 4257L, 4258L, 152L, 4259L, 153L, 4260L, 154L, 26844L, 4261L, 155L, 26845L, 4262L, 156L, 26846L, 4263L, 157L, 26847L, 4264L, 158L, 26848L, 4265L, 159L, 4266L, 4267L, 161L, 4268L, 4269L, 163L, 4270L, 164L, 4271L, 165L, 4272L, 166L, 4273L, 167L, 4274L, 168L, 169L, 4275L, 4276L, 170L, 4277L, 171L, 4278L, 4279L, 4280L, 175L, 176L, 177L, 4284L, 4285L, 179L, 4286L, 180L, 4287L, 181L, 4288L, 182L, 4289L, 183L, 4290L, 184L, 4291L, 185L, 4292L, 186L, 187L, 4293L, 4294L, 188L, 4295L, 189L, 4296L, 4297L, 191L, 4298L, 192L, 4299L, 193L, 4300L, 4301L, 195L, 4302L, 4303L, 4304L, 198L, 4305L, 199L, 4306L, 200L, 4307L, 201L, 4308L, 202L, 4309L, 203L, 4310L, 204L, 4311L, 205L, 4312L, 206L, 4313L, 207L, 4314L, 208L, 4315L, 209L, 4316L, 210L, 211L, 4317L, 4318L, 212L, 4319L, 213L, 4320L, 214L, 4321L, 215L, 4322L, 4323L, 217L, 10483L, 4324L, 218L, 4325L, 219L, 4326L, 220L, 4327L, 221L, 4328L, 222L, 4329L, 4330L, 4331L, 225L, 4332L, 226L, 4333L, 227L, 4334L, 4335L, 229L, 4336L, 4337L, 231L, 4338L, 232L, 4339L, 233L, 4340L, 234L, 4341L, 235L, 4342L, 236L, 4343L, 237L, 4344L, 238L, 4345L, 239L, 4346L, 240L, 241L, 4348L, 242L, 26932L, 4349L, 243L, 26933L, 244L, 4350L, 4351L, 245L, 4352L, 246L, 4353L, 247L, 4354L, 248L, 4355L, 249L, 4356L, 250L, 4357L, 251L, 4358L, 252L, 4359L, 253L, 4360L, 254L, 4361L, 255L, 4362L, 256L, 4363L, 257L, 4364L, 258L, 4365L, 259L, 10525L, 4366L, 260L, 4367L, 261L, 4368L, 262L, 263L, 4370L, 264L, 4371L, 265L, 4372L, 266L, 4373L, 267L, 4374L, 268L, 4375L, 269L, 4376L, 270L, 4377L, 4378L, 272L, 273L, 4380L, 274L, 22858L, 4381L, 275L, 22859L, 4382L, 276L, 4383L, 277L, 4384L, 278L, 22861L, 279L, 280L, 281L, 282L, 283L, 285L, 4392L, 286L, 4393L, 287L, 4394L, 288L, 4395L, 289L, 290L, 4397L, 291L, 4398L, 292L, 4399L, 293L, 4400L, 294L, 4401L, 295L, 4402L, 296L, 4403L, 297L, 4404L, 298L, 299L, 4405L, 4406L, 300L, 4407L, 301L, 4408L, 303L, 4409L, 304L, 4411L, 305L, 4412L, 24943L, 4413L, 24944L, 4414L, 308L, 24945L, 309L, 24946L, 4416L, 310L, 4417L, 311L, 4418L, 312L, 4419L, 4420L, 314L, 4421L, 315L, 10581L, 4422L, 316L, 4423L, 317L, 4424L, 318L, 319L, 4425L, 320L, 22903L, 4426L, 22904L, 4427L, 321L, 322L, 4428L, 323L, 4429L, 324L, 4430L, 325L, 4431L, 22909L, 4432L, 22910L, 327L, 4433L, 4434L, 328L, 329L, 4435L, 330L, 4436L, 4437L, 331L, 4438L, 332L, 333L, 4439L, 4440L, 4441L, 335L, 4442L, 336L, 10602L, 337L, 4443L, 4444L, 338L, 10604L, 4445L, 339L, 10605L, 4446L, 340L, 341L, 342L, 343L, 4450L, 344L, 4451L, 345L, 346L, 4452L, 4453L, 347L, 4454L, 348L, 349L, 4455L, 4456L, 350L, 351L, 4457L, 4458L, 352L, 4459L, 353L, 354L, 4460L, 355L, 4461L, 356L, 4462L, 357L, 4463L, 4464L, 358L, 359L, 4465L, 4466L, 361L, 4467L, 362L, 4468L, 363L, 4469L, 4470L, 364L, 365L, 4471L, 366L, 4472L, 10632L, 4473L, 4474L, 10633L, 368L, 10634L, 369L, 4475L, 10635L, 370L, 4476L, 10636L, 4477L, 10637L, 372L, 4478L, 10638L, 373L, 4479L, 10639L, 374L, 4480L, 10640L, 375L, 4481L, 10641L, 4482L, 376L, 377L, 4483L, 378L, 4484L, 379L, 4485L, 4486L, 4487L, 381L, 382L, 4488L, 383L, 4489L, 4490L, 384L, 385L, 4491L, 386L, 4492L, 4493L, 4494L, 388L, 4495L, 390L, 4496L, 391L, 4497L, 392L, 4498L, 393L, 4499L, 4500L, 394L, 395L, 4501L, 4502L, 396L, 397L, 398L, 399L, 400L, 4506L, 401L, 4508L, 403L, 10671L, 10672L, 10673L, 10681L, 10682L, 10686L, 10687L, 10688L, 10689L, 10690L, 10691L, 4532L, 10692L, 4533L, 10693L, 4534L, 25065L, 10694L, 4535L, 25066L, 10695L, 4536L, 10696L, 4537L, 25068L, 4538L, 25069L, 10698L, 4539L, 25070L, 10699L, 4540L, 25071L, 10700L, 4541L, 4542L, 4543L, 4544L, 4545L, 25077L, 4549L, 4550L, 4551L, 25082L, 4552L, 25083L, 4553L, 447L, 25084L, 4554L, 4555L, 449L, 25086L, 450L, 25087L, 451L, 25088L, 4558L, 452L, 4559L, 453L, 25090L, 4560L, 25091L, 4561L, 25092L, 4562L, 456L, 25093L, 4563L, 457L, 25094L, 4564L, 25095L, 4565L, 25096L, 4566L, 10726L, 4567L, 10727L, 4568L, 10728L, 4569L, 4570L, 464L, 4571L, 465L, 4572L, 466L, 14838L, 467L, 4573L, 468L, 4574L, 4575L, 469L, 14841L, 4576L, 470L, 471L, 4577L, 472L, 4578L, 473L, 4579L, 4580L, 474L, 4581L, 475L, 476L, 4582L, 10742L, 477L, 4583L, 478L, 4584L, 4585L, 479L, 10745L, 10746L, 10747L, 482L, 483L, 10748L, 484L, 10749L, 10750L, 485L, 4592L, 486L, 4593L, 4594L, 488L, 489L, 4595L, 4596L, 490L, 4597L, 491L, 492L, 4598L, 4599L, 493L, 494L, 4600L, 495L, 4601L, 496L, 4602L, 497L, 4603L, 4604L, 498L, 499L, 4605L, 500L, 4606L, 4607L, 4608L, 4609L, 504L, 4610L, 4611L, 4613L, 507L, 4614L, 508L, 10773L, 4615L, 509L, 10775L, 4616L, 10776L, 4617L, 511L, 4618L, 512L, 4619L, 513L, 10779L, 514L, 10780L, 515L, 10781L, 10782L, 517L, 25154L, 521L, 523L, 524L, 526L, 527L, 528L, 529L, 530L, 531L, 532L, 533L, 10798L, 534L, 10799L, 535L, 10801L, 536L, 10802L, 537L, 540L, 541L, 10807L, 542L, 543L, 545L, 10815L, 10816L, 14946L, 14947L, 14948L, 14949L, 14950L, 25216L, 14951L, 4709L, 4710L, 4711L, 4712L, 4713L, 4714L, 4715L, 4716L, 4717L, 4718L, 4719L, 4720L, 4721L, 4722L, 27311L, 27312L, 27315L, 4733L, 4734L, 628L, 4735L, 629L, 4736L, 630L, 27320L, 632L, 27321L, 4743L, 638L, 4751L, 4752L, 4753L, 647L, 648L, 652L, 4760L, 4761L, 4762L, 4763L, 4764L, 27348L, 4765L, 27349L, 4766L, 27350L, 4767L, 4768L, 4769L, 27353L, 4770L, 4771L, 4772L, 4773L, 27357L, 4774L, 27358L, 4775L, 4776L, 4777L, 4778L, 27362L, 4779L, 4780L, 4781L, 4782L, 676L, 4783L, 677L, 4784L, 27368L, 4785L, 27369L, 4786L, 4787L, 4788L, 27372L, 4789L, 27373L, 4790L, 27374L, 4791L, 27375L, 4792L, 27376L, 4793L, 27377L, 4794L, 4795L, 27379L, 4796L, 4797L, 27381L, 4798L, 4799L, 27383L, 4800L, 27384L, 4801L, 4802L, 27386L, 4803L, 4804L, 711L, 712L, 4819L, 4820L, 4821L, 715L, 4822L, 716L, 4823L, 4824L, 718L, 4825L, 4826L, 4827L, 4828L, 4829L, 723L, 4830L, 4831L, 4832L, 4833L, 4834L, 4835L, 4836L, 4841L, 4842L, 4844L, 4845L, 4846L, 4847L, 4848L, 4849L, 4850L, 4851L, 4852L, 4853L, 4859L, 27443L, 4860L, 27444L, 27445L, 27447L, 4864L, 27448L, 4865L, 760L, 4866L, 27451L, 4869L, 27453L, 27455L, 4872L, 27456L, 4873L, 27457L, 4874L, 27458L, 4875L, 4876L, 4877L, 4878L, 4880L, 4881L, 4882L, 4883L, 4884L, 4885L, 4886L, 4887L, 4888L, 4889L, 4891L, 4892L, 4893L, 4894L, 4896L, 4900L, 4901L, 4902L, 4903L, 4904L, 4906L, 4907L, 4908L, 4909L, 4910L, 4911L, 4912L, 4913L, 4914L, 4915L, 4916L, 4917L, 4918L, 4919L, 4920L, 4921L, 4922L, 4923L, 4924L, 27508L, 4925L, 4926L, 4935L, 4937L, 4938L, 4939L, 4941L, 23419L, 4942L, 23420L, 4943L, 23424L, 23426L, 23427L, 23428L, 4951L, 23429L, 4952L, 23430L, 4953L, 23431L, 4954L, 23432L, 4955L, 23433L, 4956L, 23434L, 4957L, 4958L, 4959L, 4960L, 4961L, 4977L, 4985L, 4986L, 4987L, 27574L, 4995L, 4996L, 27580L, 11156L, 4997L, 27581L, 4998L, 27582L, 4999L, 27583L, 5000L, 5001L, 27585L, 5002L, 27586L, 5003L, 23481L, 5004L, 27588L, 23483L, 27590L, 27591L, 27592L, 27593L, 27594L, 27595L, 27599L, 27619L, 27620L, 23519L, 27625L, 27626L, 27629L, 27630L, 27632L, 5049L, 27635L, 27637L, 11214L, 27638L, 27639L, 27640L, 25587L, 27641L, 25588L, 25589L, 27642L, 27643L, 25590L, 27644L, 27645L, 27646L, 27647L, 27648L, 27649L, 27650L, 23546L, 27703L, 27705L, 25657L, 27732L, 27733L, 27737L, 27738L, 27739L, 27742L, 27743L, 27744L, 27747L, 27749L, 27759L, 27761L, 27762L, 27803L, 27804L, 27805L, 27807L, 27808L, 27809L, 27810L, 27811L, 27812L, 27813L, 27814L, 5242L, 5243L, 27839L, 27840L, 27842L, 5261L, 5262L, 5263L, 5264L, 5266L, 5267L, 5268L, 5284L, 5285L, 5286L, 25842L, 25843L, 25844L, 25845L, 25846L, 25847L, 25849L, 25850L, 25851L, 25852L, 25853L, 25854L, 25855L, 25856L, 25857L, 25858L, 25860L, 25861L, 25862L, 5342L, 5343L, 5344L, 5345L, 5359L, 27950L, 27952L, 27954L, 27955L, 25903L, 27957L, 25904L, 27958L, 27959L, 25906L, 25907L, 25908L, 25909L, 25910L, 25911L, 25912L, 25913L, 25914L, 25920L, 25922L, 25926L, 25927L, 27981L, 25928L, 5398L, 25929L, 25930L, 25931L, 5426L, 5427L, 5428L, 28018L, 28019L, 28021L, 28022L, 28024L, 28026L, 28028L, 28031L, 28032L, 28035L, 23929L, 28036L, 23930L, 28037L, 23931L, 28038L, 23932L, 28039L, 23933L, 28040L, 28041L, 28042L, 28043L, 28044L, 28045L, 28046L, 28047L, 5481L, 15817L, 15818L, 3520L, 3525L, 3537L, 3538L, 15856L, 3542L, 15864L, 15865L, 15866L, 26136L, 26138L, 26139L, 26140L, 26141L, 26142L, 26143L, 26144L, 26153L, 26169L, 26170L, 26171L, 26172L, 28226L, 26173L, 26174L, 3604L, 3616L, 3617L, 3618L, 3621L, 3622L, 3623L, 3624L, 3625L, 3626L, 3652L, 3657L, 3659L, 22138L, 3661L, 22139L, 3662L, 3663L, 22140L, 22141L, 3664L, 3665L, 3667L, 3668L, 3669L, 22151L, 3674L, 22152L, 11899L, 28373L, 3738L, 28374L, 28375L, 26326L, 26327L, 26328L, 3746L, 26330L, 3747L, 3748L, 3751L, 3753L, 26340L, 3763L, 3764L, 3765L, 3766L, 3768L, 22295L, 22296L, 22321L, 22324L, 22325L, 22326L, 22327L, 22330L, 22331L, 22333L, 22334L, 22335L, 22336L, 22337L, 22338L, 22340L, 22341L, 22342L, 3888L, 26483L, 24460L, 24463L, 24464L, 24465L, 24467L, 3952L, 3953L, 26542L, 26544L, 26546L, 26547L, 26548L, 3965L, 26549L, 3966L, 22444L, 3967L, 22445L, 26552L, 3969L, 26553L, 26554L, 26555L, 3972L, 26556L, 26557L, 26558L, 3975L, 26559L, 26560L, 3977L, 26561L, 22455L, 3978L, 26562L, 26563L, 22457L, 26564L, 26565L, 22459L, 26566L, 22460L, 3983L, 26567L, 26568L, 3986L, 26570L, 22464L, 26571L, 26572L, 26573L, 22467L, 3990L, 26574L, 22468L, 3991L, 26575L, 22469L, 3992L, 22470L, 3993L, 22471L, 3994L, 22472L, 3995L, 22473L, 3996L, 22474L, 3997L, 3998L, 3999L, 26583L, 4000L, 22478L, 4001L, 22479L, 4002L, 22480L, 4003L, 22481L, 22482L, 22483L, 4009L, 4010L, 4011L, 4012L, 4013L, 4014L, 4015L, 4016L, 4017L, 26601L, 4018L, 26602L, 4019L, 4020L, 26604L, 4021L, 26605L, 4022L, 26606L, 4023L, 26607L, 4024L, 26608L, 4025L, 4026L, 26610L, 4027L, 26611L, 4028L, 26612L, 4029L, 26613L, 4030L, 26614L, 4031L, 26615L, 4032L, 26616L, 4033L, 4034L, 26618L, 4035L, 26619L, 26620L, 4037L, 26621L, 4038L, 26623L, 4041L, 26625L, 4042L, 26626L, 26627L, 26628L, 26629L, 4046L, 26630L, 22524L, 4047L, 26631L, 22525L, 4048L, 26632L, 22526L, 4049L, 26633L, 4050L, 22527L, 26634L, 22528L, 4051L, 26635L, 22529L, 4052L, 26636L, 4053L, 22530L, 26637L, 22531L, 4054L, 26638L, 22532L, 4055L, 22533L, 4056L, 22534L, 4057L, 26641L, 22535L, 4058L, 26642L, 22537L, 4060L, 26643L, 26644L, 22538L, 4061L, 22539L, 4062L, 22540L, 26646L, 26647L, 22541L, 22542L, 4065L, 4066L, 4067L, 22544L, 4068L, 4071L, 4072L, 4073L, 4074L, 4075L, 4076L, 4077L, 4078L, 4079L, 4080L, 4081L, 4082L, 4083L, 4084L, 26668L, 4085L, 4087L, 4088L, 4089L, 4090L, 4091L, 4092L, 4094L, 4097L, 4098L, 4103L]"/>
                 <property key="labeling" value="pal"/>
                 <property key="labeling/addDirectionSymbol" value="false"/>
                 <property key="labeling/bufferColorB" value="255"/>
@@ -3174,6 +3191,7 @@
                 <property key="labeling/textColorB" value="0"/>
                 <property key="labeling/textColorG" value="0"/>
                 <property key="labeling/textColorR" value="0"/>
+                <property key="qSearch" value="[{'alias': 0, 'name': PyQt4.QtCore.QString(u'new search\xe9lii'), 'items': [{'operator': 6, 'index': 28, 'andor': 0, 'value': PyQt4.QtCore.QString(u'priv\xe9')}]}]"/>
             </customproperties>
             <displayfield>id</displayfield>
             <label>0</label>
@@ -3247,6 +3265,31 @@
             <editform>./ui_forms/pipe.ui</editform>
             <editforminit></editforminit>
             <annotationform>.</annotationform>
+            <aliases>
+                <alias field="_function_name" index="28" name="Fonction"/>
+                <alias field="_install_method" index="29" name="Mode de pose"/>
+                <alias field="_is_on_district" index="17" name="Commune"/>
+                <alias field="_is_on_map" index="16" name="Folio"/>
+                <alias field="_length2d" index="13" name="Longueur 2D"/>
+                <alias field="_length3d" index="14" name="Longueur 3D"/>
+                <alias field="_material_diameter" index="31" name="Diamètre"/>
+                <alias field="_material_diameter_external" index="33" name="Diamètre externe"/>
+                <alias field="_material_diameter_internal" index="32" name="Diamètre interne"/>
+                <alias field="_material_name" index="30" name="Matériau"/>
+                <alias field="_owner" index="34" name="Propriétaire"/>
+                <alias field="_precision" index="35" name="Précision"/>
+                <alias field="_protection" index="36" name="Protection"/>
+                <alias field="_schema_view" index="40" name="Schématique"/>
+                <alias field="_status_active" index="38" name="Actif"/>
+                <alias field="_status_name" index="37" name="Status"/>
+                <alias field="_zone" index="39" name="Zone"/>
+                <alias field="folder" index="15" name="Dossier"/>
+                <alias field="id" index="0" name="ID"/>
+                <alias field="pressure_nominale" index="12" name="Pression nominale"/>
+                <alias field="remarks" index="18" name="Remarque"/>
+                <alias field="schema_force_view" index="10" name="Schématique forcée"/>
+                <alias field="year" index="11" name="Année"/>
+            </aliases>
             <attributeactions/>
         </maplayer>
         <maplayer minimumScale="0" maximumScale="1e+08" geometry="No geometry" type="vector" hasScaleBasedVisibilityFlag="0">
@@ -3283,8 +3326,8 @@
             <attributeactions/>
         </maplayer>
         <maplayer minimumScale="0" maximumScale="1e+08" geometry="Polygon" type="vector" hasScaleBasedVisibilityFlag="0">
-            <id>printable_maps20120103150232188</id>
-            <datasource>dbname='sige' host=172.24.171.75 port=5432 user='sige' password='1234' sslmode=allow key='id' table="distribution"."printable_maps" (wkb_geometry) sql=</datasource>
+            <id>printmaps20120103150232188</id>
+            <datasource>dbname='sige' host=172.24.171.75 port=5432 user='sige' password='1234' sslmode=allow key='id' table="distribution"."printmaps" (wkb_geometry) sql=</datasource>
             <title></title>
             <abstract></abstract>
             <layername>Folios</layername>
@@ -3393,6 +3436,8 @@
                 <selectedonly on=""/>
             </labelattributes>
             <edittypes>
+                <edittype type="10" name="_east"/>
+                <edittype type="10" name="_north"/>
                 <edittype type="10" name="id"/>
                 <edittype type="0" name="long_name"/>
                 <edittype type="0" name="short_name"/>
@@ -3552,6 +3597,7 @@
         <SpatialRefSys>
             <ProjectCRSProj4String type="QString">+proj=somerc +lat_0=46.95240555555556 +lon_0=7.439583333333333 +k_0=1 +x_0=600000 +y_0=200000 +ellps=bessel +towgs84=674.4,15.1,405.3,0,0,0,0 +units=m +no_defs</ProjectCRSProj4String>
             <ProjectCrs type="QString">EPSG:21781</ProjectCrs>
+            <ProjectCRSID type="int">1919</ProjectCRSID>
             <ProjectionsEnabled type="int">0</ProjectionsEnabled>
         </SpatialRefSys>
         <Paths>
@@ -3600,7 +3646,7 @@
                 <value>districts20120105171833435</value>
                 <value>pipes_schema20120105161302902</value>
                 <value>pipes_view20120103154925828</value>
-                <value>printable_maps20120103150232188</value>
+                <value>printmaps20120103150232188</value>
                 <value>zones20120120113402241</value>
             </LayerSnappingList>
             <LayerSnappingEnabledList type="QStringList">
