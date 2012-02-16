@@ -21,6 +21,7 @@ COMMENT ON TABLE distribution.subscriber_type IS 'type for subscriber.';
 
 /* Predefined types list */
 /* This has to be filled by user to fullfil language preferences */
+INSERT INTO distribution.subscriber_type ("name","short_name") VALUES ('Abonnement','abo');
 INSERT INTO distribution.subscriber_type ("name","short_name") VALUES ('Arrosage','arr');
 INSERT INTO distribution.subscriber_type ("name","short_name") VALUES ('Fontaine','font');
 INSERT INTO distribution.subscriber_type ("name","short_name") VALUES ('WC','wc');
