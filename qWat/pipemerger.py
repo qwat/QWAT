@@ -120,5 +120,3 @@ class getNeighbor(QgsMapToolEmitPoint):
 		point = self.toMapCoordinates( mouseEvent.pos() )
 		self.emit( SIGNAL( "canvasClickedWithModifiers" ), point, mouseEvent.button(), mouseEvent.modifiers() )
 
-
-

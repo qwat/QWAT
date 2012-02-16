@@ -13,7 +13,6 @@ from qgis.core import *
 
 # Import the code for the dialog
 from pipemerger import pipeMerger
-from pipesearch import pipeSearch
 from connectlayers import connectLayers
 
 
@@ -45,13 +44,6 @@ class qWat ():
 		# Add toolbar button and menu item
 		self.iface.addToolBarIcon(self.connectLayerAction)
 		self.iface.addPluginToMenu("&qWat", self.connectLayerAction)
-		
-		# PIPESEARCH
-		self.pipeSearchAction = QAction(QIcon(":/plugins/qWat/icons/search.png"), "pipe search", self.iface.mainWindow())
-		QObject.connect(self.pipeSearchAction, SIGNAL("triggered()"), self.PipeSearchDlg)
-		# Add toolbar button and menu item
-		self.iface.addToolBarIcon(self.pipeSearchAction)
-		self.iface.addPluginToMenu("&qWat", self.pipeSearchAction)
 				
 	def unload(self):
 		self.iface.removePluginMenu("&qWat",self.connectLayerAction)
@@ -66,11 +58,3 @@ class qWat ():
 			QObject.connect( self.pipelayer , SIGNAL("browserCurrentItem(int)") , self.pipeMerger.itemChanged )
 			QObject.connect( self.pipelayer , SIGNAL("browserNoItem()")         , self.pipeMerger.clear )
 			QObject.connect( self.pipelayer , SIGNAL("layerDeleted()")          , self.pipeMerger.unload )
-		
-	def PipeSearchDlg(self):
-		layer = next( ( layer for layer in self.iface.legendInterface().layers() if layer.id() == QgsProject.instance().readEntry("qWat", "pipes_layer", "")[0] ), False )
-		if layer is False: 
-			QMessageBox.warning( dlg , "qWat", QApplication.translate("PipeSearch", "Pipes layer is not connected.", None, QApplication.UnicodeUTF8) )
-			return
-		dlg = pipeSearch(layer, self.iface )
-		dlg.exec_()
