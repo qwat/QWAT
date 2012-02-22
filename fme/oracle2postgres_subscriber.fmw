@@ -740,7 +740,7 @@
 #! IDENTIFIER="42"
 #! FEAT_GEOMTYPE="oracle_nil"
 #! POSITION="54 -1160"
-#! ORDER="35"
+#! ORDER="34"
 #! COLLAPSED="true"
 #! KEYWORD="ORACLE8I_DB_2"
 #! ENABLED="true"
@@ -855,7 +855,7 @@
 #! IDENTIFIER="40"
 #! FEAT_GEOMTYPE="&lt;NO_GEOMETRY&gt;"
 #! POSITION="1872 -1095"
-#! ORDER="37"
+#! ORDER="36"
 #! COLLAPSED="false"
 #! KEYWORD="POSTGIS_1"
 #! ENABLED="true"
@@ -973,7 +973,7 @@
 #! <XFORM_ATTR ATTR_NAME="X1" IS_USER_CREATED="false" FEAT_INDEX="0"/>
 #! <XFORM_ATTR ATTR_NAME="Y1" IS_USER_CREATED="false" FEAT_INDEX="0"/>
 #! <XFORM_ATTR ATTR_NAME="Z1" IS_USER_CREATED="false" FEAT_INDEX="0"/>
-#! <XFORM_PARM PARM_NAME="PARM_LINE" PARM_VALUE="POINT&lt;openparen&gt;,&amp;X1,&lt;space&gt;,&amp;Y1,&lt;space&gt;&lt;closeparen&gt;"/>
+#! <XFORM_PARM PARM_NAME="PARM_LINE" PARM_VALUE="POINT&lt;openparen&gt;,&amp;Y1,&lt;space&gt;,&amp;X1,&lt;space&gt;&lt;closeparen&gt;"/>
 #! <XFORM_PARM PARM_NAME="XFORMER_NAME" PARM_VALUE="StringConcatenator"/>
 #! <XFORM_PARM PARM_NAME="VAL_ATTR" PARM_VALUE="_concatenated"/>
 #! </TRANSFORMER>
@@ -1380,7 +1380,7 @@
 #! TYPE="AttributeRemover"
 #! VERSION="0"
 #! POSITION="21 -1354"
-#! ORDER="33"
+#! ORDER="32"
 #! PARMS_EDITED="true"
 #! ENABLED="true"
 #! >
@@ -1401,7 +1401,7 @@
 #! TYPE="GeometryReplacer"
 #! VERSION="2"
 #! POSITION="636 -1198"
-#! ORDER="34"
+#! ORDER="33"
 #! PARMS_EDITED="true"
 #! ENABLED="true"
 #! >
@@ -1424,7 +1424,7 @@
 #! TYPE="FeatureMerger"
 #! VERSION="8"
 #! POSITION="1346 -1032"
-#! ORDER="36"
+#! ORDER="35"
 #! PARMS_EDITED="true"
 #! ENABLED="true"
 #! >
@@ -1977,7 +1977,7 @@ FACTORY_DEF * TeeFactory    FACTORY_NAME StringFormatter    INPUT  FEATURE_TYPE 
 
 # -------------------------------------------------------------------------
 
-Tcl2 set {StringConcatenator_valList} [split POINT<openparen>,&X1,<space>,&Y1,<space><closeparen> ,];
+Tcl2 set {StringConcatenator_valList} [split POINT<openparen>,&Y1,<space>,&X1,<space><closeparen> ,];
 # We use Tcl here instead of @Concatenate because Tcl is more flexible.
 Tcl2 proc StringConcatenator_concatter {} {     global {StringConcatenator_valList};     set val {};     foreach {valEnc} [set {StringConcatenator_valList}] {       append val [FME_DecodeTextOrAttr $valEnc];     };     FME_SetAttribute {_concatenated} $val; }
 FACTORY_DEF * TeeFactory    FACTORY_NAME StringConcatenator    INPUT  FEATURE_TYPE StringFormatter_OUTPUT    OUTPUT FEATURE_TYPE StringConcatenator_OUTPUT         @Tcl2(StringConcatenator_concatter)
