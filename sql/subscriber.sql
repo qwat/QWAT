@@ -28,10 +28,8 @@ ALTER TABLE distribution.subscriber ADD CONSTRAINT subscriber_pkey PRIMARY KEY (
 ALTER TABLE distribution.subscriber ADD CONSTRAINT subscriber_id_type FOREIGN KEY (id_type) REFERENCES distribution.subscriber_type (id) MATCH FULL ON UPDATE NO ACTION ON DELETE NO ACTION;
 CREATE INDEX fki_id_type ON distribution.subscriber(id_type);
 /* id_pipe */
-/*
 ALTER TABLE distribution.subscriber ADD CONSTRAINT subscriber_id_pipe FOREIGN KEY (id_pipe) REFERENCES distribution.pipes (id) MATCH SIMPLE ON UPDATE NO ACTION ON DELETE NO ACTION;
 CREATE INDEX fki_id_pipe ON distribution.subscriber(id_pipe);
-*/
 /* Geometry */
 ALTER TABLE distribution.subscriber ADD CONSTRAINT enforce_dims_wkb_geometry CHECK (st_ndims(wkb_geometry) = 2);
 ALTER TABLE distribution.subscriber ADD CONSTRAINT enforce_geotype_wkb_geometry CHECK (geometrytype(wkb_geometry) = 'POINT'::text OR wkb_geometry IS NULL);
