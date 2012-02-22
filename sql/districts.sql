@@ -10,7 +10,12 @@ BEGIN;
 DROP TABLE IF EXISTS distribution.districts CASCADE;
 CREATE TABLE distribution.districts (id serial NOT NULL);
 
-ALTER TABLE distribution.districts ADD COLUMN  name  varchar(30);
+ALTER TABLE distribution.districts ADD COLUMN  name  varchar(40);
+ALTER TABLE distribution.districts ADD COLUMN  shortname  varchar(12);
+ALTER TABLE distribution.districts ADD COLUMN  zip  varchar(12);
+ALTER TABLE distribution.districts ADD COLUMN  land_registry  varchar(12);
+ALTER TABLE distribution.districts ADD COLUMN  subscriber_prefix  varchar(12);
+
 ALTER TABLE distribution.districts ADD COLUMN  lbl_x double precision;
 ALTER TABLE distribution.districts ADD COLUMN  lbl_y double precision;
 ALTER TABLE distribution.districts ADD COLUMN  lbl_a double precision;
