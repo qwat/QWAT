@@ -6,7 +6,7 @@
 
 /* create a view with the viewable items */
 CREATE OR REPLACE VIEW distribution.pipes_schema_viewableitems AS 
-	SELECT 	id,id_parent,wkb_geometry
+	SELECT 	id,id_parent,wkb_geometry::geoemtry(LineString,21781)
 	  FROM distribution.pipes_view
 		WHERE _schema_view IS TRUE
 		AND _status_active IS TRUE;
@@ -43,7 +43,7 @@ COMMENT ON FUNCTION distribution.get_parent(integer,integer) IS 'Function to get
 View of pipes with group ID
 */
 CREATE OR REPLACE VIEW distribution.pipes_schema_items AS 
-	SELECT 	wkb_geometry,
+	SELECT 	wkb_geometry::geometry(LineString,21781),
 		distribution.get_parent(id,id_parent) AS groupid
 	  FROM distribution.pipes_schema_viewableitems;
 
@@ -52,16 +52,20 @@ Merging of pipes based on the group ID
 TODO: controler que c'est bien les champs du parent qui sont utilises => faire un join avec pipe_table
 */
 CREATE OR REPLACE VIEW distribution.pipes_schema AS
-	SELECT groupid, ST_LineMerge(ST_Union(wkb_geometry)) AS wkb_geometry
+	SELECT groupid, ST_LineMerge(ST_Union(wkb_geometry))::geometry(MultiLineString,21781) AS wkb_geometry
 	  FROM distribution.pipes_schema_items
 	 GROUP BY groupid ;
 COMMENT ON VIEW distribution.pipes_schema IS 'Merging of pipes based on the group ID';
 
-/* 
-Add geometry column info into PostGIS
-It is a multilinestring as it could happen to a merge of separated pipes (but it should not)
+
+/*
+view to display arrows from children to parent
 */
-DELETE FROM geometry_columns WHERE f_table_name = 'pipes_schema';
-INSERT INTO geometry_columns (f_table_catalog, f_table_schema, f_table_name, f_geometry_column, coord_dimension, srid, "type") 
-	VALUES  ('' , 'distribution', 'pipes_schema', 'wkb_geometry', 2, 21781, 'MULTILINESTRING');
+CREATE OR REPLACE VIEW distribution.pipe_child_parent AS
+	SELECT a.id AS child ,b.id AS parent, 
+		ST_MakeLine( ST_Line_Interpolate_Point(a.wkb_geometry,.5) , ST_Line_Interpolate_Point(b.wkb_geometry,.5) )::geometry(LineString,21781) AS wkb_geometry
+	FROM distribution.pipes a 
+	INNER JOIN distribution.pipes b ON a.id_parent = b.id
+	WHERE a.id_parent IS NOT NULL;
+SELECT populate_geometry_columns('distribution.pipe_child_parent'::regclass);
 
