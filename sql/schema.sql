@@ -3,10 +3,11 @@
 	
 	SQL file :: schematic network view
 */
+BEGIN;
 
 /* create a view with the viewable items */
 CREATE OR REPLACE VIEW distribution.pipes_schema_viewableitems AS 
-	SELECT 	id,id_parent,wkb_geometry::geoemtry(LineString,21781)
+	SELECT 	id,id_parent,wkb_geometry::geometry(LineString,21781)
 	  FROM distribution.pipes_view
 		WHERE _schema_view IS TRUE
 		AND _status_active IS TRUE;
@@ -69,3 +70,4 @@ CREATE OR REPLACE VIEW distribution.pipe_child_parent AS
 	WHERE a.id_parent IS NOT NULL;
 SELECT populate_geometry_columns('distribution.pipe_child_parent'::regclass);
 
+COMMIT;
