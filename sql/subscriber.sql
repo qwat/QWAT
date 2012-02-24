@@ -67,17 +67,18 @@ COMMENT ON TRIGGER subscriber_geom_trigger ON distribution.subscriber IS 'Trigge
 /* SUBSCRIBER VIEW */
 DROP VIEW IF EXISTS distribution.subscriber_view CASCADE;
 CREATE VIEW distribution.subscriber_view AS 
-	SELECT  subscriber.*, 
+	SELECT 
+		subscriber.id				,
+		subscriber.id_type         ,
+		subscriber.id_pipe         ,
+		subscriber.id_client       ,
+		subscriber.parcel          ,
+		subscriber._is_on_map      ,
+		subscriber._is_on_district ,
+		subscriber.wkb_geometry::geometry(Point,21781),	
 		subscriber_type.name             AS _type 
 		FROM distribution.subscriber
 		LEFT OUTER JOIN  distribution.subscriber_type            ON subscriber.id_type          = subscriber_type.id;
-		
-/*----------------!!!---!!!----------------*/
-/* Add view in geometry_columns */
-DELETE FROM geometry_columns WHERE f_table_name = 'subscriber_view';
-INSERT INTO geometry_columns (f_table_catalog, f_table_schema, f_table_name, f_geometry_column, coord_dimension, srid, type) 
-	VALUES  ('' , 'distribution', 'subscriber_view', 'wkb_geometry', 2 , 21781, 'POINT');
-/*----------------!!!---!!!----------------*/
 /* Comment */	
 COMMENT ON VIEW distribution.subscriber_view IS 'View for subscriber. This view is editable (a rule exists to forward changes to the table).';
 

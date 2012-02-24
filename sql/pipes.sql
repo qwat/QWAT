@@ -37,8 +37,6 @@ ALTER TABLE distribution.pipes ADD COLUMN   material_ext_diam character(20);
 ALTER TABLE distribution.pipes ADD COLUMN   material_thickness character(20);
 ALTER TABLE distribution.pipes ADD COLUMN   coating_external_material_id character(20);
 
-ALTER TABLE distribution.pipes ADD COLUMN   z_folio character(20);
-ALTER TABLE distribution.pipes ADD COLUMN   z_deleted character(20);
 
 
 
@@ -110,7 +108,28 @@ COMMENT ON TRIGGER pipes_geom_trigger ON distribution.pipes IS 'Trigger: updates
 /* PIPES VIEW */
 DROP VIEW IF EXISTS distribution.pipes_view CASCADE;
 CREATE VIEW distribution.pipes_view AS 
-	SELECT  pipes.*, 
+	SELECT  
+		pipes.id				,
+		pipes.id_parent         ,       	
+		pipes.id_function       ,			
+		pipes.id_install_method ,	
+		pipes.id_material       ,         	
+		pipes.id_owner          ,			
+		pipes.id_precision      ,   	
+		pipes.id_protection     ,     	
+		pipes.id_status         ,         	
+		pipes.id_zone           ,					
+		pipes.schema_force_view ,	
+		pipes.year              ,
+		pipes.pressure_nominale ,	
+		pipes._length2d         ,       	
+		pipes._length3d         ,              	
+		pipes.folder            ,             	
+		pipes._is_on_map        ,         	
+		pipes._is_on_district   ,     	
+		pipes.remarks           ,        	                                         	
+		pipes.wkb_geometry::geometry(LineString,21781),
+		
 		pipes_function.function             AS _function_name, 
 		pipes_install_method.name           AS _install_method,
 		pipes_material._fancy_name          AS _material_name,
@@ -136,12 +155,6 @@ CREATE VIEW distribution.pipes_view AS
 		LEFT OUTER JOIN  distribution.pipes_protection ON pipes.id_protection     = pipes_protection.id
 		INNER JOIN distribution.pipes_status           ON pipes.id_status         = pipes_status.id
 		LEFT OUTER JOIN  distribution.zones            ON pipes.id_zone           = zones.id;
-		
-/*----------------!!!---!!!----------------*/
-/* Add view in geometry_columns */
-DELETE FROM geometry_columns WHERE f_table_name = 'pipes_view';
-INSERT INTO geometry_columns (f_table_catalog, f_table_schema, f_table_name, f_geometry_column, coord_dimension, srid, type) 
-	VALUES  ('' , 'distribution', 'pipes_view', 'wkb_geometry', 2, 21781, 'LINESTRING');
 /*----------------!!!---!!!----------------*/
 /* Comment */	
 COMMENT ON VIEW distribution.pipes_view IS 'View for pipes. This view is editable (a rule exists to forwad changes to the table). 
