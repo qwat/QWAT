@@ -19,7 +19,7 @@ CREATE OR REPLACE FUNCTION distribution.pipes_topology() RETURNS VOID AS '
 		PERFORM topology.DropTopoGeometryColumn(''distribution'',''pipes'',''topogeom'');
 		SELECT topology.AddTopoGeometryColumn(''distrib_topo'',''distribution'',''pipes'',''topogeom'',''LINE'') INTO layer;
 
-		FOR pi in SELECT id FROM distribution.pipes_schema_viewableitems LOOP
+		FOR pi in SELECT id FROM distribution.pipes_schema_viewableitems ORDER BY id LOOP
 			UPDATE distribution.pipes SET topogeom = toTopoGeom(wkb_geometry, ''distrib_topo'', layer) WHERE id = pi.id;
 		END LOOP;
 		RETURN;
