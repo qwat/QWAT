@@ -14,12 +14,18 @@ ALTER TABLE distribution.dimension ADD COLUMN  _distance_terrain  double precisi
 ALTER TABLE distribution.dimension ADD COLUMN  lbl_x double precision;
 ALTER TABLE distribution.dimension ADD COLUMN  lbl_y double precision;
 ALTER TABLE distribution.dimension ADD COLUMN  lbl_a double precision;
+
+SELECT AddGeometryColumn('distribution','dimension','wkb_geometry',21781,'MULTIPOINT',2);
+
+/*
 ALTER TABLE distribution.dimension ADD COLUMN  wkb_geometry geometry;
 
 
 DELETE FROM geometry_columns WHERE f_table_name = 'dimension';
 INSERT INTO geometry_columns (f_table_catalog, f_table_schema, f_table_name, f_geometry_column, coord_dimension, srid, type) 
 	VALUES  ('' , 'distribution', 'dimension', 'wkb_geometry', 2, 21781, 'MULTIPOINT');
+*/
+
 
 /* ADD CONSTRAINTS */
 /* primary key */
@@ -56,16 +62,18 @@ CREATE VIEW distribution.dimension_view AS
 			ST_GeomFromEWKT(
 				'SRID=21781;CIRCULARSTRING('||left(distribution.tsum(ST_X(ST_GeometryN(wkb_geometry,n))||' '||ST_Y(ST_GeometryN(wkb_geometry,n))||','),-1)||')'
 			)
-		,12) AS wkb_geometry
+		,12)::geometry(LINESTRING,21781) AS wkb_geometry
 	FROM   distribution.dimension
 	CROSS JOIN generate_series(1,5) n 
 	WHERE n <= ST_NumGeometries(wkb_geometry) 
 	GROUP BY id;
 
-	
+	/*
 DELETE FROM geometry_columns WHERE f_table_name = 'dimension_view';
 INSERT INTO geometry_columns (f_table_catalog, f_table_schema, f_table_name, f_geometry_column, coord_dimension, srid, type) 
 	VALUES  ('' , 'distribution', 'dimension_view', 'wkb_geometry', 2, 21781, 'LINESTRING');
+	*/
+	
 /* Comment */	
 COMMENT ON VIEW distribution.dimension_view IS 'Creates a Linestring so it can be viewed in QGIS as a curve. Later, this view should be remove and the new geometry transformed to CIRCULARSTRING.';
 /* insert,update,delete rules */
