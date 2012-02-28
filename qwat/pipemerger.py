@@ -94,7 +94,7 @@ class pipeMerger( QDockWidget , Ui_pipemerger ):
 		canvas = self.iface.mapCanvas()
 		point = canvas.mapRenderer().mapToLayerCoordinates(self.layer, point)
 
-		pixTolerance = 6
+		pixTolerance = 10
 		mapTolerance = pixTolerance * canvas.mapUnitsPerPixel()
 		rect = QgsRectangle(point.x()-mapTolerance,point.y()-mapTolerance,point.x()+mapTolerance,point.y()+mapTolerance)
 
@@ -109,7 +109,7 @@ class pipeMerger( QDockWidget , Ui_pipemerger ):
 		if len(subset) == 1:
 			fieldmap=subset[0].attributeMap()
 			self.idParent.setText(fieldmap[self.idFieldPos].toString())
-		self.on_cancelButton_clicked()
+			self.on_cancelButton_clicked()
 
 
 class getNeighbor(QgsMapToolEmitPoint):
