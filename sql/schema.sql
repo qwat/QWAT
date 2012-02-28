@@ -85,9 +85,10 @@ CREATE OR REPLACE VIEW distribution.pipe_child_parent AS
 		FROM (
 			SELECT a.id AS child ,b.id AS parent, 
 					ST_Line_Interpolate_Point(a.wkb_geometry,.5)::geometry(Point,21781) AS start_point,
+					/* select end_point at 4 meters from the closest side of the pipe */
 					ST_ClosestPoint(ST_MakeLine(  
-						ST_Line_Interpolate_Point(b.wkb_geometry,   LEAST(1,  a._length2d/b._length2d/2))::geometry(Point,21781) ,
-						ST_Line_Interpolate_Point(b.wkb_geometry,GREATEST(0,1-a._length2d/b._length2d/2))::geometry(Point,21781) 
+						ST_Line_Interpolate_Point(b.wkb_geometry,   LEAST(1,  4/b._length2d/2))::geometry(Point,21781) ,
+						ST_Line_Interpolate_Point(b.wkb_geometry,GREATEST(0,1-4/b._length2d/2))::geometry(Point,21781) 
 					),a.wkb_geometry) AS end_point
 			FROM distribution.pipes a 
 			INNER JOIN distribution.pipes b ON a.id_parent = b.id
