@@ -80,7 +80,7 @@ CREATE OR REPLACE VIEW distribution.pipe_child_parent AS
 		SELECT child,parent,
 			start_point , end_point ,
 			pi()/2+ST_Azimuth(start_point,end_point) AS azimuth,
-			.45*ST_Distance(start_point,end_point) AS distance,
+			.5*ST_Distance(start_point,end_point) AS distance,
 			ST_Line_Interpolate_Point(ST_MakeLine( start_point , end_point ),.5)::geometry(Point,21781) AS middle_point
 		FROM (
 			SELECT a.id AS child ,b.id AS parent, 
