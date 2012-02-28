@@ -4,10 +4,10 @@
     <mapcanvas>
         <units>meters</units>
         <extent>
-            <xmin>552126.397953</xmin>
-            <ymin>144384.546880</ymin>
-            <xmax>559074.926956</xmax>
-            <ymax>148026.220914</ymax>
+            <xmin>554780.294113</xmin>
+            <ymin>145386.451636</ymin>
+            <xmax>554825.045490</xmax>
+            <ymax>145403.699279</ymax>
         </extent>
         <projections>0</projections>
         <destinationsrs>
@@ -24,40 +24,40 @@
         </destinationsrs>
     </mapcanvas>
     <legend updateDrawingOrder="false">
-        <legendlayer drawingOrder="-1" open="false" checked="Qt::Checked" name="Abonnements" showFeatureCount="0">
+        <legendlayer drawingOrder="-1" open="false" checked="Qt::Unchecked" name="Abonnements" showFeatureCount="0">
             <filegroup open="false" hidden="false">
-                <legendlayerfile isInOverview="0" layerid="subscriber_view20120220074846336" visible="1"/>
+                <legendlayerfile isInOverview="0" layerid="subscriber_view20120220074846336" visible="0"/>
             </filegroup>
         </legendlayer>
-        <legendlayer drawingOrder="0" open="false" checked="Qt::Checked" name="Conduites" showFeatureCount="0">
+        <legendlayer drawingOrder="-1" open="false" checked="Qt::Checked" name="Relation parent enfant" showFeatureCount="0">
             <filegroup open="false" hidden="false">
+                <legendlayerfile isInOverview="0" layerid="pipe_child_parent20120224101723880" visible="1"/>
+            </filegroup>
+        </legendlayer>
+        <legendlayer drawingOrder="0" open="true" checked="Qt::Checked" name="Conduites" showFeatureCount="0">
+            <filegroup open="true" hidden="false">
                 <legendlayerfile isInOverview="0" layerid="pipes_view20120103154925828" visible="1"/>
             </filegroup>
         </legendlayer>
-        <legendlayer drawingOrder="14" open="false" checked="Qt::Unchecked" name="Conduites schémas" showFeatureCount="0">
+        <legendlayer drawingOrder="12" open="false" checked="Qt::Unchecked" name="Folios" showFeatureCount="0">
             <filegroup open="false" hidden="false">
-                <legendlayerfile isInOverview="0" layerid="pipes_schema20120105161302902" visible="0"/>
+                <legendlayerfile isInOverview="0" layerid="printmaps20120103150232188" visible="0"/>
             </filegroup>
         </legendlayer>
-        <legendlayer drawingOrder="12" open="false" checked="Qt::Checked" name="Folios" showFeatureCount="0">
+        <legendlayer drawingOrder="13" open="false" checked="Qt::Unchecked" name="Communes" showFeatureCount="0">
             <filegroup open="false" hidden="false">
-                <legendlayerfile isInOverview="0" layerid="printmaps20120103150232188" visible="1"/>
+                <legendlayerfile isInOverview="0" layerid="districts20120105171833435" visible="0"/>
             </filegroup>
         </legendlayer>
-        <legendlayer drawingOrder="13" open="false" checked="Qt::Checked" name="Communes" showFeatureCount="0">
-            <filegroup open="false" hidden="false">
-                <legendlayerfile isInOverview="0" layerid="districts20120105171833435" visible="1"/>
-            </filegroup>
-        </legendlayer>
-        <legendgroup open="true" checked="Qt::PartiallyChecked" name="Cotes">
+        <legendgroup open="false" checked="Qt::PartiallyChecked" name="Cotes">
+            <legendlayer drawingOrder="-1" open="false" checked="Qt::Checked" name="Cotes - arc" showFeatureCount="0">
+                <filegroup open="false" hidden="false">
+                    <legendlayerfile isInOverview="0" layerid="dimension_view20120224101542374" visible="1"/>
+                </filegroup>
+            </legendlayer>
             <legendlayer drawingOrder="2" open="false" checked="Qt::Checked" name="Cotes - points accrochage" showFeatureCount="0">
                 <filegroup open="false" hidden="false">
                     <legendlayerfile isInOverview="0" layerid="dimension20120117162539458" visible="1"/>
-                </filegroup>
-            </legendlayer>
-            <legendlayer drawingOrder="1" open="false" checked="Qt::Checked" name="Cotes - arc" showFeatureCount="0">
-                <filegroup open="false" hidden="false">
-                    <legendlayerfile isInOverview="0" layerid="dimension_view20120117162543747" visible="1"/>
                 </filegroup>
             </legendlayer>
             <legendlayer drawingOrder="4" open="false" checked="Qt::Unchecked" name="Temp - center" showFeatureCount="0">
@@ -174,8 +174,8 @@
             </legendlayer>
         </legendgroup>
         <legendgroup open="false" checked="Qt::Unchecked" name="Tables annexes">
-            <legendlayer drawingOrder="-1" open="true" checked="Qt::Unchecked" name="subscriber_type" showFeatureCount="0">
-                <filegroup open="true" hidden="false">
+            <legendlayer drawingOrder="-1" open="false" checked="Qt::Unchecked" name="Abonnement type" showFeatureCount="0">
+                <filegroup open="false" hidden="false">
                     <legendlayerfile isInOverview="0" layerid="subscriber_type20120220074657628" visible="0"/>
                 </filegroup>
             </legendlayer>
@@ -238,6 +238,13 @@
                 <BackgroundColor alpha="255" red="255" blue="255" green="255"/>
             </ComposerItem>
         </ComposerMap>
+        <ComposerScaleBar segmentMillimeters="20.57612447124835" numMapUnitsPerScaleBarUnit="1" numSegments="2" height="5" alignment="0" labelBarSpace="3" outlineWidth="1" numSegmentsLeft="0" style="Single Box" unitLabel="" font="Ubuntu,12,-1,5,50,0,0,0,0,0" mapId="0" boxContentSpace="1" numUnitsPerSegment="1000">
+            <BrushColor red="0" blue="0" green="0"/>
+            <ComposerItem width="51.6522489424967" x="246.1094527363184" y="0.9883913764510801" rotation="0" height="14" frame="true" outlineWidth="0.3" zValue="3" lastValidViewScaleFactor="2.023489932885906" id="" positionLock="false">
+                <FrameColor alpha="255" red="0" blue="0" green="0"/>
+                <BackgroundColor alpha="255" red="255" blue="255" green="255"/>
+            </ComposerItem>
+        </ComposerScaleBar>
         <ComposerLegend symbolWidth="7" title="Legend" boxSpace="2" titleFont="Ubuntu,16,-1,5,50,0,0,0,0,0" map="0" groupFont="Ubuntu,14,-1,5,50,0,0,0,0,0" layerFont="Ubuntu,12,-1,5,50,0,0,0,0,0" groupSpace="3" symbolSpace="2" symbolHeight="4" layerSpace="2" iconLabelSpace="2" wrapChar="" itemFont="Ubuntu,12,-1,5,50,0,0,0,0,0">
             <Model autoUpdate="1">
                 <LayerItem layerId="pipes_view20120103154925828" text="Conduites">
@@ -721,25 +728,65 @@
                         </symbols>
                     </VectorClassificationItemNg>
                 </LayerItem>
+                <LayerItem layerId="dimension_view20120224101542374" text="dimension_view">
+                    <VectorClassificationItemNg text="">
+                        <symbols>
+                            <symbol outputUnit="MM" alpha="1" type="line" name="classificationSymbol">
+                                <layer pass="0" class="SimpleLine" locked="0">
+                                    <prop k="capstyle" v="square"/>
+                                    <prop k="color" v="59,143,139,255"/>
+                                    <prop k="customdash" v="5;2"/>
+                                    <prop k="joinstyle" v="bevel"/>
+                                    <prop k="offset" v="0"/>
+                                    <prop k="penstyle" v="solid"/>
+                                    <prop k="use_custom_dash" v="0"/>
+                                    <prop k="width" v="0.26"/>
+                                </layer>
+                            </symbol>
+                        </symbols>
+                    </VectorClassificationItemNg>
+                </LayerItem>
+                <LayerItem layerId="pipe_child_parent20120224101723880" text="pipe_child_parent">
+                    <VectorClassificationItemNg text="">
+                        <symbols>
+                            <symbol outputUnit="MM" alpha="1" type="line" name="classificationSymbol">
+                                <layer pass="0" class="SimpleLine" locked="0">
+                                    <prop k="capstyle" v="square"/>
+                                    <prop k="color" v="17,51,220,255"/>
+                                    <prop k="customdash" v="5;2"/>
+                                    <prop k="joinstyle" v="bevel"/>
+                                    <prop k="offset" v="0"/>
+                                    <prop k="penstyle" v="solid"/>
+                                    <prop k="use_custom_dash" v="0"/>
+                                    <prop k="width" v="0.26"/>
+                                </layer>
+                            </symbol>
+                        </symbols>
+                    </VectorClassificationItemNg>
+                </LayerItem>
             </Model>
-            <ComposerItem width="4" x="602.207267833109" y="211.4131897711978" rotation="0" height="285.5" frame="true" outlineWidth="0.3" zValue="4" lastValidViewScaleFactor="0.6243697478991597" id="" positionLock="false">
+            <ComposerItem width="4" x="602.207267833109" y="211.4131897711978" rotation="0" height="304.5" frame="true" outlineWidth="0.3" zValue="4" lastValidViewScaleFactor="0.6243697478991597" id="" positionLock="false">
                 <FrameColor alpha="255" red="0" blue="0" green="0"/>
                 <BackgroundColor alpha="255" red="255" blue="255" green="255"/>
             </ComposerItem>
         </ComposerLegend>
-        <ComposerScaleBar segmentMillimeters="20.57612447124835" numMapUnitsPerScaleBarUnit="1" numSegments="2" height="5" alignment="0" labelBarSpace="3" outlineWidth="1" numSegmentsLeft="0" style="Single Box" unitLabel="" font="Ubuntu,12,-1,5,50,0,0,0,0,0" mapId="0" boxContentSpace="1" numUnitsPerSegment="1000">
-            <BrushColor red="0" blue="0" green="0"/>
-            <ComposerItem width="51.6522489424967" x="246.1094527363184" y="0.9883913764510801" rotation="0" height="14" frame="true" outlineWidth="0.3" zValue="3" lastValidViewScaleFactor="2.023489932885906" id="" positionLock="false">
-                <FrameColor alpha="255" red="0" blue="0" green="0"/>
-                <BackgroundColor alpha="255" red="255" blue="255" green="255"/>
-            </ComposerItem>
-        </ComposerScaleBar>
         <Composition printResolution="300" paperWidth="210" snapGridOffsetX="0" snapGridResolution="0" snapGridOffsetY="0" snapping="0" paperHeight="297" printAsRaster="0"/>
     </Composer>
     <Composer title="Composer 2" visible="0">
         <Composition printResolution="300" paperWidth="841" snapGridOffsetX="0" snapGridResolution="0" snapGridOffsetY="0" snapping="0" paperHeight="1189" printAsRaster="0"/>
     </Composer>
     <Composer title="Composer 3" visible="0">
+        <ComposerMap keepLayerSet="false" id="0" previewMode="Cache" drawCanvasItems="true">
+            <Extent ymin="145630.1711692762" xmin="554289.2416903595" ymax="146047.4060099553" xmax="554875.0183829057"/>
+            <LayerSet/>
+            <Grid gridStyle="0" crossLength="3" penColorRed="0" penColorBlue="0" intervalX="0" offsetX="0" intervalY="0" offsetY="0" show="0" penWidth="0" penColorGreen="0">
+                <Annotation direction="0" precision="3" position="1" frameDistance="1" show="0" font="Ubuntu,11,-1,5,50,0,0,0,0,0"/>
+            </Grid>
+            <ComposerItem width="245.8192371475954" x="10.17412935323382" y="26.54063018242122" rotation="0" height="175.0912106135987" frame="true" outlineWidth="0.3" zValue="1" lastValidViewScaleFactor="2.023489932885906" id="" positionLock="false">
+                <FrameColor alpha="255" red="0" blue="0" green="0"/>
+                <BackgroundColor alpha="255" red="255" blue="255" green="255"/>
+            </ComposerItem>
+        </ComposerMap>
         <ComposerLegend symbolWidth="7" title="Legend" boxSpace="2" titleFont="Ubuntu,16,-1,5,50,0,0,0,0,0" map="0" groupFont="Ubuntu,14,-1,5,50,0,0,0,0,0" layerFont="Ubuntu,12,-1,5,50,0,0,0,0,0" groupSpace="3" symbolSpace="2" symbolHeight="4" layerSpace="2" iconLabelSpace="2" wrapChar="" itemFont="Ubuntu,12,-1,5,50,0,0,0,0,0">
             <Model autoUpdate="1">
                 <LayerItem layerId="pipes_view20120103154925828" text="Conduites">
@@ -996,23 +1043,48 @@
                         </symbols>
                     </VectorClassificationItemNg>
                 </LayerItem>
+                <LayerItem layerId="dimension_view20120224101542374" text="dimension_view">
+                    <VectorClassificationItemNg text="">
+                        <symbols>
+                            <symbol outputUnit="MM" alpha="1" type="line" name="classificationSymbol">
+                                <layer pass="0" class="SimpleLine" locked="0">
+                                    <prop k="capstyle" v="square"/>
+                                    <prop k="color" v="59,143,139,255"/>
+                                    <prop k="customdash" v="5;2"/>
+                                    <prop k="joinstyle" v="bevel"/>
+                                    <prop k="offset" v="0"/>
+                                    <prop k="penstyle" v="solid"/>
+                                    <prop k="use_custom_dash" v="0"/>
+                                    <prop k="width" v="0.26"/>
+                                </layer>
+                            </symbol>
+                        </symbols>
+                    </VectorClassificationItemNg>
+                </LayerItem>
+                <LayerItem layerId="pipe_child_parent20120224101723880" text="pipe_child_parent">
+                    <VectorClassificationItemNg text="">
+                        <symbols>
+                            <symbol outputUnit="MM" alpha="1" type="line" name="classificationSymbol">
+                                <layer pass="0" class="SimpleLine" locked="0">
+                                    <prop k="capstyle" v="square"/>
+                                    <prop k="color" v="17,51,220,255"/>
+                                    <prop k="customdash" v="5;2"/>
+                                    <prop k="joinstyle" v="bevel"/>
+                                    <prop k="offset" v="0"/>
+                                    <prop k="penstyle" v="solid"/>
+                                    <prop k="use_custom_dash" v="0"/>
+                                    <prop k="width" v="0.26"/>
+                                </layer>
+                            </symbol>
+                        </symbols>
+                    </VectorClassificationItemNg>
+                </LayerItem>
             </Model>
-            <ComposerItem width="4" x="229.8009950248756" y="10.87230514096186" rotation="0" height="146.5" frame="true" outlineWidth="0.3" zValue="3" lastValidViewScaleFactor="2.023489932885906" id="" positionLock="false">
+            <ComposerItem width="4" x="229.8009950248756" y="10.87230514096186" rotation="0" height="165.5" frame="true" outlineWidth="0.3" zValue="3" lastValidViewScaleFactor="2.023489932885906" id="" positionLock="false">
                 <FrameColor alpha="255" red="0" blue="0" green="0"/>
                 <BackgroundColor alpha="255" red="255" blue="255" green="255"/>
             </ComposerItem>
         </ComposerLegend>
-        <ComposerMap keepLayerSet="false" id="0" previewMode="Cache" drawCanvasItems="true">
-            <Extent ymin="145630.1711692762" xmin="554289.2416903595" ymax="146047.4060099553" xmax="554875.0183829057"/>
-            <LayerSet/>
-            <Grid gridStyle="0" crossLength="3" penColorRed="0" penColorBlue="0" intervalX="0" offsetX="0" intervalY="0" offsetY="0" show="0" penWidth="0" penColorGreen="0">
-                <Annotation direction="0" precision="3" position="1" frameDistance="1" show="0" font="Ubuntu,11,-1,5,50,0,0,0,0,0"/>
-            </Grid>
-            <ComposerItem width="245.8192371475954" x="10.17412935323382" y="26.54063018242122" rotation="0" height="175.0912106135987" frame="true" outlineWidth="0.3" zValue="1" lastValidViewScaleFactor="2.023489932885906" id="" positionLock="false">
-                <FrameColor alpha="255" red="0" blue="0" green="0"/>
-                <BackgroundColor alpha="255" red="255" blue="255" green="255"/>
-            </ComposerItem>
-        </ComposerMap>
         <Composition printResolution="300" paperWidth="297" snapGridOffsetX="0" snapGridResolution="0" snapGridOffsetY="0" snapping="0" paperHeight="210" printAsRaster="0"/>
     </Composer>
     <Composer title="Composer 4" visible="0">
@@ -1092,9 +1164,9 @@
                 <multilineenabled fieldname="" on=""/>
                 <selectedonly on=""/>
             </labelattributes>
-            <editform>.</editform>
+            <editform>../project</editform>
             <editforminit></editforminit>
-            <annotationform>.</annotationform>
+            <annotationform>../project</annotationform>
             <attributeactions/>
         </maplayer>
         <maplayer minimumScale="0" maximumScale="1e+08" geometry="Point" type="vector" hasScaleBasedVisibilityFlag="0">
@@ -1159,9 +1231,9 @@
                 <multilineenabled fieldname="" on=""/>
                 <selectedonly on=""/>
             </labelattributes>
-            <editform>.</editform>
+            <editform>../project</editform>
             <editforminit></editforminit>
-            <annotationform>.</annotationform>
+            <annotationform>../project</annotationform>
             <attributeactions/>
         </maplayer>
         <maplayer minimumScale="0" maximumScale="1e+08" geometry="Point" type="vector" hasScaleBasedVisibilityFlag="0">
@@ -1226,9 +1298,9 @@
                 <multilineenabled fieldname="" on=""/>
                 <selectedonly on=""/>
             </labelattributes>
-            <editform>.</editform>
+            <editform>../project</editform>
             <editforminit></editforminit>
-            <annotationform>.</annotationform>
+            <annotationform>../project</annotationform>
             <attributeactions/>
         </maplayer>
         <maplayer minimumScale="0" maximumScale="1e+08" geometry="Line" type="vector" hasScaleBasedVisibilityFlag="0">
@@ -1295,9 +1367,9 @@
                 <multilineenabled fieldname="" on=""/>
                 <selectedonly on=""/>
             </labelattributes>
-            <editform>.</editform>
+            <editform>../project</editform>
             <editforminit></editforminit>
-            <annotationform>.</annotationform>
+            <annotationform>../project</annotationform>
             <attributeactions/>
         </maplayer>
         <maplayer minimumScale="0" maximumScale="1e+08" geometry="Polygon" type="vector" hasScaleBasedVisibilityFlag="0">
@@ -1362,9 +1434,9 @@
                 <multilineenabled fieldname="" on=""/>
                 <selectedonly on=""/>
             </labelattributes>
-            <editform>.</editform>
+            <editform>../project</editform>
             <editforminit></editforminit>
-            <annotationform>.</annotationform>
+            <annotationform>../project</annotationform>
             <attributeactions/>
         </maplayer>
         <maplayer minimumScale="0" maximumScale="1e+08" geometry="Polygon" type="vector" hasScaleBasedVisibilityFlag="0">
@@ -1429,9 +1501,9 @@
                 <multilineenabled fieldname="" on=""/>
                 <selectedonly on=""/>
             </labelattributes>
-            <editform>.</editform>
+            <editform>../project</editform>
             <editforminit></editforminit>
-            <annotationform>.</annotationform>
+            <annotationform>../project</annotationform>
             <attributeactions/>
         </maplayer>
         <maplayer minimumScale="0" maximumScale="1e+08" geometry="Point" type="vector" hasScaleBasedVisibilityFlag="0">
@@ -1496,9 +1568,9 @@
                 <multilineenabled fieldname="" on=""/>
                 <selectedonly on=""/>
             </labelattributes>
-            <editform>.</editform>
+            <editform>../project</editform>
             <editforminit></editforminit>
-            <annotationform>.</annotationform>
+            <annotationform>../project</annotationform>
             <attributeactions/>
         </maplayer>
         <maplayer minimumScale="0" maximumScale="1e+08" geometry="Point" type="vector" hasScaleBasedVisibilityFlag="0">
@@ -1563,9 +1635,9 @@
                 <multilineenabled fieldname="" on=""/>
                 <selectedonly on=""/>
             </labelattributes>
-            <editform>.</editform>
+            <editform>../project</editform>
             <editforminit></editforminit>
-            <annotationform>.</annotationform>
+            <annotationform>../project</annotationform>
             <attributeactions/>
         </maplayer>
         <maplayer minimumScale="0" maximumScale="1e+08" geometry="Line" type="vector" hasScaleBasedVisibilityFlag="0">
@@ -1632,9 +1704,9 @@
                 <multilineenabled fieldname="" on=""/>
                 <selectedonly on=""/>
             </labelattributes>
-            <editform>.</editform>
+            <editform>../project</editform>
             <editforminit></editforminit>
-            <annotationform>.</annotationform>
+            <annotationform>../project</annotationform>
             <attributeactions/>
         </maplayer>
         <maplayer minimumScale="0" maximumScale="1e+08" geometry="Polygon" type="vector" hasScaleBasedVisibilityFlag="0">
@@ -1699,9 +1771,9 @@
                 <multilineenabled fieldname="" on=""/>
                 <selectedonly on=""/>
             </labelattributes>
-            <editform>.</editform>
+            <editform>../project</editform>
             <editforminit></editforminit>
-            <annotationform>.</annotationform>
+            <annotationform>../project</annotationform>
             <attributeactions/>
         </maplayer>
         <maplayer minimumScale="0" maximumScale="1e+08" geometry="Point" type="vector" hasScaleBasedVisibilityFlag="0">
@@ -1766,9 +1838,9 @@
                 <multilineenabled fieldname="" on=""/>
                 <selectedonly on=""/>
             </labelattributes>
-            <editform>.</editform>
+            <editform>../project</editform>
             <editforminit></editforminit>
-            <annotationform>.</annotationform>
+            <annotationform>../project</annotationform>
             <attributeactions/>
         </maplayer>
         <maplayer minimumScale="0" maximumScale="1e+08" geometry="Point" type="vector" hasScaleBasedVisibilityFlag="0">
@@ -1833,9 +1905,9 @@
                 <multilineenabled fieldname="" on=""/>
                 <selectedonly on=""/>
             </labelattributes>
-            <editform>.</editform>
+            <editform>../project</editform>
             <editforminit></editforminit>
-            <annotationform>.</annotationform>
+            <annotationform>../project</annotationform>
             <attributeactions/>
         </maplayer>
         <maplayer minimumScale="0" maximumScale="1e+08" geometry="Polygon" type="vector" hasScaleBasedVisibilityFlag="0">
@@ -1900,9 +1972,9 @@
                 <multilineenabled fieldname="" on=""/>
                 <selectedonly on=""/>
             </labelattributes>
-            <editform>.</editform>
+            <editform>../project</editform>
             <editforminit></editforminit>
-            <annotationform>.</annotationform>
+            <annotationform>../project</annotationform>
             <attributeactions/>
         </maplayer>
         <maplayer minimumScale="0" maximumScale="1e+08" geometry="Point" type="vector" hasScaleBasedVisibilityFlag="0">
@@ -1967,9 +2039,9 @@
                 <multilineenabled fieldname="" on=""/>
                 <selectedonly on=""/>
             </labelattributes>
-            <editform>.</editform>
+            <editform>../project</editform>
             <editforminit></editforminit>
-            <annotationform>.</annotationform>
+            <annotationform>../project</annotationform>
             <attributeactions/>
         </maplayer>
         <maplayer minimumScale="0" maximumScale="1e+08" geometry="Polygon" type="vector" hasScaleBasedVisibilityFlag="0">
@@ -2034,9 +2106,9 @@
                 <multilineenabled fieldname="" on=""/>
                 <selectedonly on=""/>
             </labelattributes>
-            <editform>.</editform>
+            <editform>../project</editform>
             <editforminit></editforminit>
-            <annotationform>.</annotationform>
+            <annotationform>../project</annotationform>
             <attributeactions/>
         </maplayer>
         <maplayer minimumScale="0" maximumScale="1e+08" geometry="Line" type="vector" hasScaleBasedVisibilityFlag="0">
@@ -2103,9 +2175,9 @@
                 <multilineenabled fieldname="" on=""/>
                 <selectedonly on=""/>
             </labelattributes>
-            <editform>.</editform>
+            <editform>../project</editform>
             <editforminit></editforminit>
-            <annotationform>.</annotationform>
+            <annotationform>../project</annotationform>
             <attributeactions/>
         </maplayer>
         <maplayer minimumScale="0" maximumScale="1e+08" geometry="Polygon" type="vector" hasScaleBasedVisibilityFlag="0">
@@ -2170,9 +2242,9 @@
                 <multilineenabled fieldname="" on=""/>
                 <selectedonly on=""/>
             </labelattributes>
-            <editform>.</editform>
+            <editform>../project</editform>
             <editforminit></editforminit>
-            <annotationform>.</annotationform>
+            <annotationform>../project</annotationform>
             <attributeactions/>
         </maplayer>
         <maplayer minimumScale="0" maximumScale="1e+08" geometry="Point" type="vector" hasScaleBasedVisibilityFlag="0">
@@ -2237,9 +2309,9 @@
                 <multilineenabled fieldname="" on=""/>
                 <selectedonly on=""/>
             </labelattributes>
-            <editform>.</editform>
+            <editform>../project</editform>
             <editforminit></editforminit>
-            <annotationform>.</annotationform>
+            <annotationform>../project</annotationform>
             <attributeactions/>
         </maplayer>
         <maplayer minimumScale="0" maximumScale="1e+08" geometry="Point" type="vector" hasScaleBasedVisibilityFlag="0">
@@ -2304,9 +2376,9 @@
                 <multilineenabled fieldname="" on=""/>
                 <selectedonly on=""/>
             </labelattributes>
-            <editform>.</editform>
+            <editform>../project</editform>
             <editforminit></editforminit>
-            <annotationform>.</annotationform>
+            <annotationform>../project</annotationform>
             <attributeactions/>
         </maplayer>
         <maplayer minimumScale="0" maximumScale="1e+08" geometry="Point" type="vector" hasScaleBasedVisibilityFlag="0">
@@ -2371,9 +2443,9 @@
                 <multilineenabled fieldname="" on=""/>
                 <selectedonly on=""/>
             </labelattributes>
-            <editform>.</editform>
+            <editform>../project</editform>
             <editforminit></editforminit>
-            <annotationform>.</annotationform>
+            <annotationform>../project</annotationform>
             <attributeactions/>
         </maplayer>
         <maplayer minimumScale="0" maximumScale="1e+08" geometry="Line" type="vector" hasScaleBasedVisibilityFlag="0">
@@ -2446,9 +2518,9 @@
                 <edittype type="0" name="x"/>
                 <edittype type="0" name="y"/>
             </edittypes>
-            <editform>.</editform>
+            <editform>../project</editform>
             <editforminit></editforminit>
-            <annotationform>.</annotationform>
+            <annotationform>../project</annotationform>
             <attributeactions/>
         </maplayer>
         <maplayer minimumScale="0" maximumScale="1e+08" geometry="Point" type="vector" hasScaleBasedVisibilityFlag="0">
@@ -2513,9 +2585,9 @@
                 <multilineenabled fieldname="" on=""/>
                 <selectedonly on=""/>
             </labelattributes>
-            <editform>.</editform>
+            <editform>../project</editform>
             <editforminit></editforminit>
-            <annotationform>.</annotationform>
+            <annotationform>../project</annotationform>
             <attributeactions/>
         </maplayer>
         <maplayer minimumScale="0" maximumScale="1e+08" geometry="Point" type="vector" hasScaleBasedVisibilityFlag="0">
@@ -2588,14 +2660,14 @@
                 <edittype type="0" name="lbl_x"/>
                 <edittype type="0" name="lbl_y"/>
             </edittypes>
-            <editform>.</editform>
+            <editform>../project</editform>
             <editforminit></editforminit>
-            <annotationform>.</annotationform>
+            <annotationform>../project</annotationform>
             <attributeactions/>
         </maplayer>
         <maplayer minimumScale="0" maximumScale="1e+08" geometry="Line" type="vector" hasScaleBasedVisibilityFlag="0">
-            <id>dimension_view20120117162543747</id>
-            <datasource>dbname='sige' host=172.24.171.75 port=5432 user='sige' password='1234' sslmode=allow key='id' srid=21781 table="distribution"."dimension_view" (wkb_geometry) sql=</datasource>
+            <id>dimension_view20120224101542374</id>
+            <datasource>dbname='sige' host=172.24.171.75 port=5432 user='sige' password='1234' sslmode=allow key='id' srid=21781 type=Line table="distribution"."dimension_view" (wkb_geometry) sql=</datasource>
             <title></title>
             <abstract></abstract>
             <layername>Cotes - arc</layername>
@@ -2619,7 +2691,7 @@
                     <symbol outputUnit="MM" alpha="1" type="line" name="0">
                         <layer pass="0" class="SimpleLine" locked="0">
                             <prop k="capstyle" v="square"/>
-                            <prop k="color" v="254,60,206,255"/>
+                            <prop k="color" v="59,143,139,255"/>
                             <prop k="customdash" v="5;2"/>
                             <prop k="joinstyle" v="bevel"/>
                             <prop k="offset" v="0"/>
@@ -2632,58 +2704,7 @@
                 <rotation field=""/>
                 <sizescale field=""/>
             </renderer-v2>
-            <customproperties>
-                <property key="itemBrowserConnected" value="no"/>
-                <property key="labeling" value="pal"/>
-                <property key="labeling/addDirectionSymbol" value="false"/>
-                <property key="labeling/bufferColorB" value="255"/>
-                <property key="labeling/bufferColorG" value="255"/>
-                <property key="labeling/bufferColorR" value="255"/>
-                <property key="labeling/bufferSize" value="1"/>
-                <property key="labeling/dataDefinedProperty0" value=""/>
-                <property key="labeling/dataDefinedProperty1" value=""/>
-                <property key="labeling/dataDefinedProperty10" value=""/>
-                <property key="labeling/dataDefinedProperty11" value=""/>
-                <property key="labeling/dataDefinedProperty12" value=""/>
-                <property key="labeling/dataDefinedProperty13" value=""/>
-                <property key="labeling/dataDefinedProperty14" value=""/>
-                <property key="labeling/dataDefinedProperty2" value=""/>
-                <property key="labeling/dataDefinedProperty3" value=""/>
-                <property key="labeling/dataDefinedProperty4" value=""/>
-                <property key="labeling/dataDefinedProperty5" value=""/>
-                <property key="labeling/dataDefinedProperty6" value=""/>
-                <property key="labeling/dataDefinedProperty7" value=""/>
-                <property key="labeling/dataDefinedProperty8" value=""/>
-                <property key="labeling/dataDefinedProperty9" value=""/>
-                <property key="labeling/decimals" value="0"/>
-                <property key="labeling/dist" value="0"/>
-                <property key="labeling/distInMapUnits" value="false"/>
-                <property key="labeling/enabled" value="true"/>
-                <property key="labeling/fieldName" value="distance_observed"/>
-                <property key="labeling/fontFamily" value="Ubuntu"/>
-                <property key="labeling/fontItalic" value="false"/>
-                <property key="labeling/fontSize" value="9"/>
-                <property key="labeling/fontSizeInMapUnits" value="false"/>
-                <property key="labeling/fontStrikeout" value="false"/>
-                <property key="labeling/fontUnderline" value="false"/>
-                <property key="labeling/fontWeight" value="50"/>
-                <property key="labeling/formatNumbers" value="false"/>
-                <property key="labeling/isExpression" value="false"/>
-                <property key="labeling/labelPerPart" value="false"/>
-                <property key="labeling/mergeLines" value="false"/>
-                <property key="labeling/minFeatureSize" value="0"/>
-                <property key="labeling/obstacle" value="true"/>
-                <property key="labeling/placement" value="2"/>
-                <property key="labeling/placementFlags" value="10"/>
-                <property key="labeling/plussign" value="true"/>
-                <property key="labeling/priority" value="5"/>
-                <property key="labeling/scaleMax" value="0"/>
-                <property key="labeling/scaleMin" value="0"/>
-                <property key="labeling/textColorB" value="0"/>
-                <property key="labeling/textColorG" value="0"/>
-                <property key="labeling/textColorR" value="0"/>
-                <property key="labeling/wrapChar" value=""/>
-            </customproperties>
+            <customproperties/>
             <displayfield>id</displayfield>
             <label>0</label>
             <labelattributes>
@@ -2707,8 +2728,8 @@
                 <selectedonly on=""/>
             </labelattributes>
             <edittypes>
+                <edittype type="0" name="_distance_terrain"/>
                 <edittype type="0" name="distance_observed"/>
-                <edittype type="0" name="distance_terrain"/>
                 <edittype type="0" name="id"/>
                 <edittype type="0" name="lbl_a"/>
                 <edittype type="0" name="lbl_x"/>
@@ -2831,14 +2852,25 @@
             </labelattributes>
             <edittypes>
                 <edittype type="10" name="id"/>
+                <edittype type="0" name="land_registry"/>
                 <edittype type="0" name="lbl_a"/>
                 <edittype type="0" name="lbl_x"/>
                 <edittype type="0" name="lbl_y"/>
                 <edittype type="0" name="name"/>
+                <edittype type="0" name="shortname"/>
+                <edittype type="0" name="subscriber_prefix"/>
+                <edittype type="0" name="zip"/>
             </edittypes>
-            <editform>.</editform>
+            <editform>../project</editform>
             <editforminit></editforminit>
-            <annotationform>.</annotationform>
+            <annotationform>../project</annotationform>
+            <aliases>
+                <alias field="land_registry" index="4" name="Registre foncier"/>
+                <alias field="name" index="1" name="Nom"/>
+                <alias field="shortname" index="2" name="Abbrégé"/>
+                <alias field="subscriber_prefix" index="5" name="Préfixe abonné"/>
+                <alias field="zip" index="3" name="NPA"/>
+            </aliases>
             <attributeactions/>
         </maplayer>
         <maplayer minimumScale="0" maximumScale="1e+08" geometry="No geometry" type="vector" hasScaleBasedVisibilityFlag="0">
@@ -2869,7 +2901,94 @@
                 <edittype type="10" name="id"/>
                 <edittype type="0" name="name"/>
             </edittypes>
-            <editform>.</editform>
+            <editform>../project</editform>
+            <editforminit></editforminit>
+            <annotationform>../project</annotationform>
+            <attributeactions/>
+        </maplayer>
+        <maplayer minimumScale="0" maximumScale="5000" geometry="Line" type="vector" hasScaleBasedVisibilityFlag="1">
+            <id>pipe_child_parent20120224101723880</id>
+            <datasource>dbname='sige' host=172.24.171.75 port=5432 user='sige' password='1234' sslmode=allow key='child' srid=21781 type=Line table="distribution"."pipe_child_parent" (wkb_geometry) sql=</datasource>
+            <title></title>
+            <abstract></abstract>
+            <layername>Relation parent enfant</layername>
+            <srs>
+                <spatialrefsys>
+                    <proj4>+proj=somerc +lat_0=46.95240555555556 +lon_0=7.439583333333333 +k_0=1 +x_0=600000 +y_0=200000 +ellps=bessel +towgs84=674.4,15.1,405.3,0,0,0,0 +units=m +no_defs</proj4>
+                    <srsid>1919</srsid>
+                    <srid>21781</srid>
+                    <authid>EPSG:21781</authid>
+                    <description>CH1903 / LV03</description>
+                    <projectionacronym>somerc</projectionacronym>
+                    <ellipsoidacronym>bessel</ellipsoidacronym>
+                    <geographicflag>false</geographicflag>
+                </spatialrefsys>
+            </srs>
+            <transparencyLevelInt>255</transparencyLevelInt>
+            <provider encoding="ISO-8859-1">postgres</provider>
+            <vectorjoins/>
+            <renderer-v2 symbollevels="0" type="singleSymbol">
+                <symbols>
+                    <symbol outputUnit="MM" alpha="1" type="line" name="0">
+                        <layer pass="0" class="MarkerLine" locked="0">
+                            <prop k="interval" v="3"/>
+                            <prop k="offset" v="0"/>
+                            <prop k="placement" v="lastvertex"/>
+                            <prop k="rotate" v="1"/>
+                        </layer>
+                        <layer pass="0" class="SimpleLine" locked="0">
+                            <prop k="capstyle" v="square"/>
+                            <prop k="color" v="0,0,0,255"/>
+                            <prop k="customdash" v="5;2"/>
+                            <prop k="joinstyle" v="bevel"/>
+                            <prop k="offset" v="0"/>
+                            <prop k="penstyle" v="solid"/>
+                            <prop k="use_custom_dash" v="0"/>
+                            <prop k="width" v="0.26"/>
+                        </layer>
+                    </symbol>
+                    <symbol outputUnit="MM" alpha="1" type="marker" name="@0@0">
+                        <layer pass="0" class="SimpleMarker" locked="0">
+                            <prop k="angle" v="0"/>
+                            <prop k="color" v="0,0,0,255"/>
+                            <prop k="color_border" v="0,0,0,255"/>
+                            <prop k="name" v="arrowhead"/>
+                            <prop k="offset" v="0,0"/>
+                            <prop k="size" v="3"/>
+                        </layer>
+                    </symbol>
+                </symbols>
+                <rotation field=""/>
+                <sizescale field=""/>
+            </renderer-v2>
+            <customproperties/>
+            <displayfield>child</displayfield>
+            <label>0</label>
+            <labelattributes>
+                <label fieldname="" text="Label"/>
+                <family fieldname="" name="Ubuntu"/>
+                <size fieldname="" units="pt" value="12"/>
+                <bold fieldname="" on="0"/>
+                <italic fieldname="" on="0"/>
+                <underline fieldname="" on="0"/>
+                <strikeout fieldname="" on="0"/>
+                <color fieldname="" red="0" blue="0" green="0"/>
+                <x fieldname=""/>
+                <y fieldname=""/>
+                <offset x="0" y="0" units="pt" yfieldname="" xfieldname=""/>
+                <angle fieldname="" value="0" auto="0"/>
+                <alignment fieldname="" value="center"/>
+                <buffercolor fieldname="" red="255" blue="255" green="255"/>
+                <buffersize fieldname="" units="pt" value="1"/>
+                <bufferenabled fieldname="" on=""/>
+                <multilineenabled fieldname="" on=""/>
+                <selectedonly on=""/>
+            </labelattributes>
+            <edittypes>
+                <edittype type="0" name="child"/>
+                <edittype type="0" name="parent"/>
+            </edittypes>
+            <editform></editform>
             <editforminit></editforminit>
             <annotationform>.</annotationform>
             <attributeactions/>
@@ -2903,9 +3022,9 @@
                 <edittype type="10" name="id"/>
                 <edittype unchecked="f" type="7" checked="t" name="schema_view"/>
             </edittypes>
-            <editform>.</editform>
+            <editform>../project</editform>
             <editforminit></editforminit>
-            <annotationform>.</annotationform>
+            <annotationform>../project</annotationform>
             <attributeactions/>
         </maplayer>
         <maplayer minimumScale="0" maximumScale="1e+08" geometry="No geometry" type="vector" hasScaleBasedVisibilityFlag="0">
@@ -2936,9 +3055,9 @@
                 <edittype type="10" name="id"/>
                 <edittype type="0" name="name"/>
             </edittypes>
-            <editform>.</editform>
+            <editform>../project</editform>
             <editforminit></editforminit>
-            <annotationform>.</annotationform>
+            <annotationform>../project</annotationform>
             <attributeactions/>
         </maplayer>
         <maplayer minimumScale="0" maximumScale="1e+08" geometry="No geometry" type="vector" hasScaleBasedVisibilityFlag="0">
@@ -2974,9 +3093,9 @@
                 <edittype type="0" name="name"/>
                 <edittype type="0" name="short_name"/>
             </edittypes>
-            <editform>.</editform>
+            <editform>../project</editform>
             <editforminit></editforminit>
-            <annotationform>.</annotationform>
+            <annotationform>../project</annotationform>
             <attributeactions/>
         </maplayer>
         <maplayer minimumScale="0" maximumScale="1e+08" geometry="No geometry" type="vector" hasScaleBasedVisibilityFlag="0">
@@ -3007,78 +3126,9 @@
                 <edittype type="10" name="id"/>
                 <edittype type="0" name="name"/>
             </edittypes>
-            <editform>.</editform>
+            <editform>../project</editform>
             <editforminit></editforminit>
-            <annotationform>.</annotationform>
-            <attributeactions/>
-        </maplayer>
-        <maplayer minimumScale="0" maximumScale="1e+08" geometry="Line" type="vector" hasScaleBasedVisibilityFlag="0">
-            <id>pipes_schema20120105161302902</id>
-            <datasource>dbname='sige' host=172.24.171.75 port=5432 user='sige' password='1234' sslmode=allow key='groupid' table="distribution"."pipes_schema" (wkb_geometry) sql=</datasource>
-            <title></title>
-            <abstract></abstract>
-            <layername>Conduites schémas</layername>
-            <srs>
-                <spatialrefsys>
-                    <proj4>+proj=somerc +lat_0=46.95240555555556 +lon_0=7.439583333333333 +k_0=1 +x_0=600000 +y_0=200000 +ellps=bessel +towgs84=674.4,15.1,405.3,0,0,0,0 +units=m +no_defs</proj4>
-                    <srsid>1919</srsid>
-                    <srid>21781</srid>
-                    <authid>EPSG:21781</authid>
-                    <description>CH1903 / LV03</description>
-                    <projectionacronym>somerc</projectionacronym>
-                    <ellipsoidacronym>bessel</ellipsoidacronym>
-                    <geographicflag>false</geographicflag>
-                </spatialrefsys>
-            </srs>
-            <transparencyLevelInt>255</transparencyLevelInt>
-            <provider encoding="ISO-8859-1">postgres</provider>
-            <vectorjoins/>
-            <renderer-v2 symbollevels="0" type="singleSymbol">
-                <symbols>
-                    <symbol outputUnit="MM" alpha="1" type="line" name="0">
-                        <layer pass="0" class="SimpleLine" locked="0">
-                            <prop k="capstyle" v="square"/>
-                            <prop k="color" v="243,20,250,255"/>
-                            <prop k="customdash" v="5;2"/>
-                            <prop k="joinstyle" v="bevel"/>
-                            <prop k="offset" v="0"/>
-                            <prop k="penstyle" v="solid"/>
-                            <prop k="use_custom_dash" v="0"/>
-                            <prop k="width" v="0.26"/>
-                        </layer>
-                    </symbol>
-                </symbols>
-                <rotation field=""/>
-                <sizescale field=""/>
-            </renderer-v2>
-            <customproperties>
-                <property key="itemBrowserConnected" value="no"/>
-            </customproperties>
-            <displayfield>groupid</displayfield>
-            <label>0</label>
-            <labelattributes>
-                <label fieldname="" text="Label"/>
-                <family fieldname="" name="Ubuntu"/>
-                <size fieldname="" units="pt" value="12"/>
-                <bold fieldname="" on="0"/>
-                <italic fieldname="" on="0"/>
-                <underline fieldname="" on="0"/>
-                <strikeout fieldname="" on="0"/>
-                <color fieldname="" red="0" blue="0" green="0"/>
-                <x fieldname=""/>
-                <y fieldname=""/>
-                <offset x="0" y="0" units="pt" yfieldname="" xfieldname=""/>
-                <angle fieldname="" value="0" auto="0"/>
-                <alignment fieldname="" value="center"/>
-                <buffercolor fieldname="" red="255" blue="255" green="255"/>
-                <buffersize fieldname="" units="pt" value="1"/>
-                <bufferenabled fieldname="" on=""/>
-                <multilineenabled fieldname="" on=""/>
-                <selectedonly on=""/>
-            </labelattributes>
-            <editform>.</editform>
-            <editforminit></editforminit>
-            <annotationform>.</annotationform>
+            <annotationform>../project</annotationform>
             <attributeactions/>
         </maplayer>
         <maplayer minimumScale="0" maximumScale="1e+08" geometry="No geometry" type="vector" hasScaleBasedVisibilityFlag="0">
@@ -3110,9 +3160,9 @@
                 <edittype type="10" name="id"/>
                 <edittype type="0" name="status"/>
             </edittypes>
-            <editform>.</editform>
+            <editform>../project</editform>
             <editforminit></editforminit>
-            <annotationform>.</annotationform>
+            <annotationform>../project</annotationform>
             <attributeactions/>
         </maplayer>
         <maplayer minimumScale="0" maximumScale="1e+08" geometry="Line" type="vector" hasScaleBasedVisibilityFlag="0">
@@ -3138,14 +3188,29 @@
             <vectorjoins/>
             <renderer-v2 symbollevels="0" type="RuleRenderer">
                 <rules>
-                    <rule scalemaxdenom="6000" filter="_status_active = 'f'" symbol="0" scalemindenom="1" label="Inactive"/>
+                    <rule scalemaxdenom="5000" symbol="0" label="Vannes"/>
+                    <rule scalemaxdenom="6000" filter="_status_active = 'f'" symbol="1" label="Inactive"/>
                     <rule filter="_status_active = 't'" label="Active">
-                        <rule scalemaxdenom="6000" filter="_schema_view = 'f'" symbol="1" scalemindenom="1" label="Distribution"/>
-                        <rule filter="_schema_view = 't'" symbol="2" label="Transport"/>
+                        <rule scalemaxdenom="6000" filter="_schema_view = 'f'" symbol="2" label="Distribution"/>
+                        <rule filter="_schema_view = 't'" symbol="3" label="Transport"/>
                     </rule>
                 </rules>
                 <symbols>
                     <symbol outputUnit="MM" alpha="1" type="line" name="0">
+                        <layer pass="0" class="MarkerLine" locked="0">
+                            <prop k="interval" v="3"/>
+                            <prop k="offset" v="0"/>
+                            <prop k="placement" v="lastvertex"/>
+                            <prop k="rotate" v="1"/>
+                        </layer>
+                        <layer pass="0" class="MarkerLine" locked="0">
+                            <prop k="interval" v="3"/>
+                            <prop k="offset" v="0"/>
+                            <prop k="placement" v="firstvertex"/>
+                            <prop k="rotate" v="1"/>
+                        </layer>
+                    </symbol>
+                    <symbol outputUnit="MM" alpha="1" type="line" name="1">
                         <layer pass="0" class="SimpleLine" locked="0">
                             <prop k="capstyle" v="square"/>
                             <prop k="color" v="170,170,255,255"/>
@@ -3157,7 +3222,7 @@
                             <prop k="width" v="0.25"/>
                         </layer>
                     </symbol>
-                    <symbol outputUnit="MM" alpha="1" type="line" name="1">
+                    <symbol outputUnit="MM" alpha="1" type="line" name="2">
                         <layer pass="0" class="SimpleLine" locked="0">
                             <prop k="capstyle" v="square"/>
                             <prop k="color" v="0,0,255,255"/>
@@ -3169,7 +3234,7 @@
                             <prop k="width" v="0.25"/>
                         </layer>
                     </symbol>
-                    <symbol outputUnit="MM" alpha="1" type="line" name="2">
+                    <symbol outputUnit="MM" alpha="1" type="line" name="3">
                         <layer pass="0" class="SimpleLine" locked="0">
                             <prop k="capstyle" v="square"/>
                             <prop k="color" v="0,0,255,255"/>
@@ -3179,6 +3244,26 @@
                             <prop k="penstyle" v="solid"/>
                             <prop k="use_custom_dash" v="0"/>
                             <prop k="width" v="0.4"/>
+                        </layer>
+                    </symbol>
+                    <symbol outputUnit="MM" alpha="1" type="marker" name="@0@0">
+                        <layer pass="0" class="SimpleMarker" locked="0">
+                            <prop k="angle" v="0"/>
+                            <prop k="color" v="0,0,255,255"/>
+                            <prop k="color_border" v="0,0,255,255"/>
+                            <prop k="name" v="line"/>
+                            <prop k="offset" v="0,0"/>
+                            <prop k="size" v="2"/>
+                        </layer>
+                    </symbol>
+                    <symbol outputUnit="MM" alpha="1" type="marker" name="@0@1">
+                        <layer pass="0" class="SimpleMarker" locked="0">
+                            <prop k="angle" v="0"/>
+                            <prop k="color" v="0,0,255,255"/>
+                            <prop k="color_border" v="0,0,255,255"/>
+                            <prop k="name" v="line"/>
+                            <prop k="offset" v="0,0"/>
+                            <prop k="size" v="2"/>
                         </layer>
                     </symbol>
                 </symbols>
@@ -3308,25 +3393,25 @@
             </edittypes>
             <editform>./ui_forms/pipe.ui</editform>
             <editforminit></editforminit>
-            <annotationform>.</annotationform>
+            <annotationform>../project</annotationform>
             <aliases>
-                <alias field="_function_name" index="28" name="Fonction"/>
-                <alias field="_install_method" index="29" name="Mode de pose"/>
+                <alias field="_function_name" index="20" name="Fonction"/>
+                <alias field="_install_method" index="21" name="Mode de pose"/>
                 <alias field="_is_on_district" index="17" name="Commune"/>
                 <alias field="_is_on_map" index="16" name="Folio"/>
                 <alias field="_length2d" index="13" name="Longueur 2D"/>
                 <alias field="_length3d" index="14" name="Longueur 3D"/>
-                <alias field="_material_diameter" index="31" name="Diamètre"/>
-                <alias field="_material_diameter_external" index="33" name="Diamètre externe"/>
-                <alias field="_material_diameter_internal" index="32" name="Diamètre interne"/>
-                <alias field="_material_name" index="30" name="Matériau"/>
-                <alias field="_owner" index="34" name="Propriétaire"/>
-                <alias field="_precision" index="35" name="Précision"/>
-                <alias field="_protection" index="36" name="Protection"/>
-                <alias field="_schema_view" index="40" name="Schématique"/>
-                <alias field="_status_active" index="38" name="Actif"/>
-                <alias field="_status_name" index="37" name="Status"/>
-                <alias field="_zone" index="39" name="Zone"/>
+                <alias field="_material_diameter" index="23" name="Diamètre"/>
+                <alias field="_material_diameter_external" index="25" name="Diamètre externe"/>
+                <alias field="_material_diameter_internal" index="24" name="Diamètre interne"/>
+                <alias field="_material_name" index="22" name="Matériau"/>
+                <alias field="_owner" index="26" name="Propriétaire"/>
+                <alias field="_precision" index="27" name="Précision"/>
+                <alias field="_protection" index="28" name="Protection"/>
+                <alias field="_schema_view" index="32" name="Schématique"/>
+                <alias field="_status_active" index="30" name="Actif"/>
+                <alias field="_status_name" index="29" name="Status"/>
+                <alias field="_zone" index="31" name="Zone"/>
                 <alias field="folder" index="15" name="Dossier"/>
                 <alias field="id" index="0" name="ID"/>
                 <alias field="pressure_nominale" index="12" name="Pression nominale"/>
@@ -3364,9 +3449,9 @@
                 <edittype type="10" name="id"/>
                 <edittype type="0" name="name"/>
             </edittypes>
-            <editform>.</editform>
+            <editform>../project</editform>
             <editforminit></editforminit>
-            <annotationform>.</annotationform>
+            <annotationform>../project</annotationform>
             <attributeactions/>
         </maplayer>
         <maplayer minimumScale="0" maximumScale="1e+08" geometry="Polygon" type="vector" hasScaleBasedVisibilityFlag="0">
@@ -3487,9 +3572,9 @@
                 <edittype type="0" name="short_name"/>
                 <edittype type="0" name="template"/>
             </edittypes>
-            <editform>.</editform>
+            <editform>../project</editform>
             <editforminit></editforminit>
-            <annotationform>.</annotationform>
+            <annotationform>../project</annotationform>
             <attributeactions/>
         </maplayer>
         <maplayer minimumScale="0" maximumScale="1e+08" geometry="No geometry" type="vector" hasScaleBasedVisibilityFlag="0">
@@ -3497,7 +3582,7 @@
             <datasource>dbname='sige' host=172.24.171.75 port=5432 user='sige' password='1234' sslmode=allow key='id' table="distribution"."subscriber_type" sql=</datasource>
             <title></title>
             <abstract></abstract>
-            <layername>subscriber_type</layername>
+            <layername>Abonnement type</layername>
             <srs>
                 <spatialrefsys>
                     <proj4>+proj=longlat +datum=WGS84 +no_defs</proj4>
@@ -3516,9 +3601,14 @@
             </customproperties>
             <provider encoding="ISO-8859-1">postgres</provider>
             <vectorjoins/>
-            <editform>.</editform>
+            <edittypes>
+                <edittype type="0" name="id"/>
+                <edittype type="0" name="name"/>
+                <edittype type="0" name="short_name"/>
+            </edittypes>
+            <editform>../project</editform>
             <editforminit></editforminit>
-            <annotationform>.</annotationform>
+            <annotationform>../project</annotationform>
             <attributeactions/>
         </maplayer>
         <maplayer minimumScale="0" maximumScale="1e+08" geometry="Point" type="vector" hasScaleBasedVisibilityFlag="0">
@@ -3566,7 +3656,7 @@
                         <layer pass="0" class="SvgMarker" locked="0">
                             <prop k="angle" v="0"/>
                             <prop k="fill" v="#000000"/>
-                            <prop k="name" v="/home/denis/Documents/qgis/qwat/project/symbols/amenity_fountain2_brown.svg"/>
+                            <prop k="name" v="/home/denis/Documents/qgis/qwat/qgis-project/symbols/amenity_fountain2_brown.svg"/>
                             <prop k="offset" v="0,0"/>
                             <prop k="outline" v="#000000"/>
                             <prop k="outline-width" v="1"/>
@@ -3577,7 +3667,7 @@
                         <layer pass="0" class="SvgMarker" locked="0">
                             <prop k="angle" v="0"/>
                             <prop k="fill" v="#000000"/>
-                            <prop k="name" v="/home/denis/Documents/qgis/qwat/project/symbols/Watering-can.svg"/>
+                            <prop k="name" v="/home/denis/Documents/qgis/qwat/qgis-project/symbols/Watering-can.svg"/>
                             <prop k="offset" v="0,0"/>
                             <prop k="outline" v="#000000"/>
                             <prop k="outline-width" v="1"/>
@@ -3588,7 +3678,7 @@
                         <layer pass="0" class="SvgMarker" locked="0">
                             <prop k="angle" v="0"/>
                             <prop k="fill" v="#000000"/>
-                            <prop k="name" v="/home/denis/Documents/qgis/qwat/project/symbols/amenity_toilets_men.svg"/>
+                            <prop k="name" v="/home/denis/Documents/qgis/qwat/qgis-project/symbols/amenity_toilets_men.svg"/>
                             <prop k="offset" v="0,0"/>
                             <prop k="outline" v="#000000"/>
                             <prop k="outline-width" v="1"/>
@@ -3599,7 +3689,7 @@
                         <layer pass="0" class="SvgMarker" locked="0">
                             <prop k="angle" v="0"/>
                             <prop k="fill" v="#000000"/>
-                            <prop k="name" v="/home/denis/Documents/qgis/qwat/project/symbols/amenity_firestation_brown_bg.svg"/>
+                            <prop k="name" v="/home/denis/Documents/qgis/qwat/qgis-project/symbols/amenity_firestation_brown_bg.svg"/>
                             <prop k="offset" v="0,0"/>
                             <prop k="outline" v="#000000"/>
                             <prop k="outline-width" v="1"/>
@@ -3653,9 +3743,9 @@
                 <edittype allowNull="false" orderByValue="false" key="id" layer="subscriber_type20120220074657628" type="15" value="name" name="id_type"/>
                 <edittype type="0" name="parcel"/>
             </edittypes>
-            <editform>.</editform>
+            <editform>../project</editform>
             <editforminit></editforminit>
-            <annotationform>.</annotationform>
+            <annotationform>../project</annotationform>
             <aliases>
                 <alias field="id" index="0" name=""/>
             </aliases>
@@ -3690,9 +3780,9 @@
                 <edittype type="10" name="name"/>
                 <edittype type="10" name="x"/>
             </edittypes>
-            <editform>.</editform>
+            <editform>../project</editform>
             <editforminit></editforminit>
-            <annotationform>.</annotationform>
+            <annotationform>../project</annotationform>
             <attributeactions/>
         </maplayer>
         <maplayer minimumScale="0" maximumScale="1e+08" geometry="No geometry" type="vector" hasScaleBasedVisibilityFlag="0">
@@ -3728,9 +3818,9 @@
                 <edittype type="0" name="short_name"/>
                 <edittype type="0" name="wkb_geometry"/>
             </edittypes>
-            <editform>.</editform>
+            <editform>../project</editform>
             <editforminit></editforminit>
-            <annotationform>.</annotationform>
+            <annotationform>../project</annotationform>
             <attributeactions/>
         </maplayer>
         <maplayer minimumScale="0" maximumScale="1e+08" geometry="Polygon" type="vector" hasScaleBasedVisibilityFlag="0">
@@ -3793,9 +3883,9 @@
                 <multilineenabled fieldname="" on=""/>
                 <selectedonly on=""/>
             </labelattributes>
-            <editform>.</editform>
+            <editform>../project</editform>
             <editforminit></editforminit>
-            <annotationform>.</annotationform>
+            <annotationform>../project</annotationform>
             <attributeactions/>
         </maplayer>
     </projectlayers>
