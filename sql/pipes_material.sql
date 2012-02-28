@@ -61,8 +61,7 @@ INSERT INTO distribution.pipes_material ("short_name","name","diameter","diamete
 INSERT INTO distribution.pipes_material ("short_name","name","diameter","diameter_internal","diameter_external") VALUES ('ACG' ,'Acier galvanisé'       ,'0.75"'  ,'','');         
 INSERT INTO distribution.pipes_material ("short_name","name","diameter","diameter_internal","diameter_external") VALUES ('ACG' ,'Acier galvanisé'       ,'1 '     ,'','');            
 INSERT INTO distribution.pipes_material ("short_name","name","diameter","diameter_internal","diameter_external") VALUES ('ACG' ,'Acier galvanisé'       ,'1"'     ,'','');            
-INSERT INTO distribution.pipes_material ("short_name","name","diameter","diameter_internal","diameter_external") VALUES ('ACG' ,'Acier galvanisé'       ,'100'    ,'','');           
-INSERT INTO distribution.pipes_material ("short_name","name","diameter","diameter_internal","diameter_external") VALUES ('ACG' ,'Acier galvanisé'       ,'1,25"'  ,'','');         
+INSERT INTO distribution.pipes_material ("short_name","name","diameter","diameter_internal","diameter_external") VALUES ('ACG' ,'Acier galvanisé'       ,'100'    ,'','');                   
 INSERT INTO distribution.pipes_material ("short_name","name","diameter","diameter_internal","diameter_external") VALUES ('ACG' ,'Acier galvanisé'       ,'1.25"'  ,'','');         
 INSERT INTO distribution.pipes_material ("short_name","name","diameter","diameter_internal","diameter_external") VALUES ('ACG' ,'Acier galvanisé'       ,'1.5"'   ,'','');          
 INSERT INTO distribution.pipes_material ("short_name","name","diameter","diameter_internal","diameter_external") VALUES ('ACG' ,'Acier galvanisé'       ,'2"'     ,'','');            
