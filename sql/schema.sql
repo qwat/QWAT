@@ -53,7 +53,7 @@ Merging of pipes based on the group ID
 TODO: controler que c'est bien les champs du parent qui sont utilises => faire un join avec pipe_table
 */
 CREATE OR REPLACE VIEW distribution.pipes_schema AS
-	SELECT groupid, ST_LineMerge(ST_Union(wkb_geometry))::geometry(MultiLineString,21781) AS wkb_geometry
+	SELECT groupid AS id, ST_LineMerge(ST_Union(wkb_geometry))::geometry(LineString,21781) AS wkb_geometry
 	  FROM distribution.pipes_schema_items
 	 GROUP BY groupid ;
 COMMENT ON VIEW distribution.pipes_schema IS 'Merging of pipes based on the group ID';
