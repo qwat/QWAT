@@ -61,13 +61,37 @@ COMMENT ON VIEW distribution.pipes_schema IS 'Merging of pipes based on the grou
 
 /*
 view to display arrows from children to parent
+this shoud be used as soon as ST_lineToCurve works for 3 points
+		ST_CurveToLine(ST_LineToCurve( ST_AddPoint( vector , ST_MakePoint( ST_X(middle_point)+distance*cos(azimuth),ST_Y(middle_point)+distance*sin(azimuth) ) , 1 ) ) ,15)::geometry(LineString,21781) AS wkb_geometry
+then this should be added to select of foo2
+		ST_MakeLine( start_point , end_point )::geometry(LineString,21781) AS vector,
 */
 CREATE OR REPLACE VIEW distribution.pipe_child_parent AS
-	SELECT a.id AS child ,b.id AS parent, 
-		ST_MakeLine( ST_Line_Interpolate_Point(a.wkb_geometry,.5) , ST_Line_Interpolate_Point(b.wkb_geometry,.5) )::geometry(LineString,21781) AS wkb_geometry
-	FROM distribution.pipes a 
-	INNER JOIN distribution.pipes b ON a.id_parent = b.id
-	WHERE a.id_parent IS NOT NULL;
-SELECT populate_geometry_columns('distribution.pipe_child_parent'::regclass);
-
+	SELECT child, parent,
+		 ST_CurveToLine(ST_GeomFromEWKT('SRID=21781;CIRCULARSTRING('
+			||ST_X(start_point)||' '||ST_Y(start_point)
+			||','||
+			ST_X(middle_point)+distance*cos(azimuth)||' '||ST_Y(middle_point)+distance*sin(azimuth)
+			||','||
+			ST_X(end_point)||' '||ST_Y(end_point) 
+			||')'
+		),15)::geometry(LineString,21781) AS wkb_geometry
+	FROM (
+		SELECT child,parent,
+			start_point , end_point ,
+			pi()/2+ST_Azimuth(start_point,end_point) AS azimuth,
+			.45*ST_Distance(start_point,end_point) AS distance,
+			ST_Line_Interpolate_Point(ST_MakeLine( start_point , end_point ),.5)::geometry(Point,21781) AS middle_point
+		FROM (
+			SELECT a.id AS child ,b.id AS parent, 
+					ST_Line_Interpolate_Point(a.wkb_geometry,.5)::geometry(Point,21781) AS start_point,
+					ST_ClosestPoint(ST_MakeLine(  
+						ST_Line_Interpolate_Point(b.wkb_geometry,   LEAST(1,  a._length2d/b._length2d/2))::geometry(Point,21781) ,
+						ST_Line_Interpolate_Point(b.wkb_geometry,GREATEST(0,1-a._length2d/b._length2d/2))::geometry(Point,21781) 
+					),a.wkb_geometry) AS end_point
+			FROM distribution.pipes a 
+			INNER JOIN distribution.pipes b ON a.id_parent = b.id
+			WHERE a.id_parent IS NOT NULL
+		) AS foo
+	) AS foo2;
 COMMIT;
