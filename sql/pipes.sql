@@ -88,9 +88,10 @@ COMMENT ON TABLE distribution.pipes IS 'Table for pipes. This should not be used
 CREATE OR REPLACE FUNCTION distribution.pipes_geom() RETURNS trigger AS ' 
 	BEGIN
 		UPDATE distribution.pipes SET 
-			_length2d       = ST_Length(NEW.wkb_geometry),
-			_is_on_map      = distribution.get_map(NEW.wkb_geometry),
-			_is_on_district = distribution.get_district(NEW.wkb_geometry)
+			_length2d          = ST_Length(NEW.wkb_geometry),
+			_length3d_uptodate = False,
+			_is_on_map         = distribution.get_map(NEW.wkb_geometry),
+			_is_on_district    = distribution.get_district(NEW.wkb_geometry)
 		WHERE id = NEW.id ;
 		RETURN NEW;
 	END;
