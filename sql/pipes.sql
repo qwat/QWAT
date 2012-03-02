@@ -22,6 +22,7 @@ ALTER TABLE distribution.pipes ADD COLUMN   year smallint CHECK (year > 1800 AND
 ALTER TABLE distribution.pipes ADD COLUMN   pressure_nominale smallint;                             /* pressure_nominale    */
 ALTER TABLE distribution.pipes ADD COLUMN   _length2d decimal(8,2);                                 /* _length2d            */
 ALTER TABLE distribution.pipes ADD COLUMN   _length3d decimal(8,2);                                 /* _length3d            */
+ALTER TABLE distribution.pipes ADD COLUMN   _length3d_uptodate boolean DEFAULT False;               /* _length3d_uptodate   */
 ALTER TABLE distribution.pipes ADD COLUMN   folder varchar(20) DEFAULT '';                          /* folder               */
 ALTER TABLE distribution.pipes ADD COLUMN   _is_on_map varchar(80) DEFAULT '';                      /* _is_on_map           */
 ALTER TABLE distribution.pipes ADD COLUMN   _is_on_district varchar(100) DEFAULT '';                /* _is_on_district      */
@@ -124,12 +125,13 @@ CREATE VIEW distribution.pipes_view AS
 		pipes.pressure_nominale ,	
 		pipes._length2d         ,       	
 		pipes._length3d         ,              	
+		pipes._length3d_uptodate,              	
 		pipes.folder            ,             	
 		pipes._is_on_map        ,         	
 		pipes._is_on_district   ,     	
 		pipes.remarks           ,        	                                         	
 		pipes.wkb_geometry::geometry(LineString,21781),
-		
+		sqrt(pow(_length3d,2)-pow(_length2d,2))/_length2d AS slope,
 		pipes_function.function             AS _function_name, 
 		pipes_install_method.name           AS _install_method,
 		pipes_material._fancy_name          AS _material_name,
