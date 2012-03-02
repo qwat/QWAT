@@ -17,15 +17,6 @@ ALTER TABLE distribution.dimension ADD COLUMN  lbl_a double precision;
 
 SELECT AddGeometryColumn('distribution','dimension','wkb_geometry',21781,'MULTIPOINT',2);
 
-/*
-ALTER TABLE distribution.dimension ADD COLUMN  wkb_geometry geometry;
-
-
-DELETE FROM geometry_columns WHERE f_table_name = 'dimension';
-INSERT INTO geometry_columns (f_table_catalog, f_table_schema, f_table_name, f_geometry_column, coord_dimension, srid, type) 
-	VALUES  ('' , 'distribution', 'dimension', 'wkb_geometry', 2, 21781, 'MULTIPOINT');
-*/
-
 
 /* ADD CONSTRAINTS */
 /* primary key */
@@ -51,8 +42,6 @@ CREATE TRIGGER dimension_geom_trigger
 	EXECUTE PROCEDURE distribution.dimension_geom();
 COMMENT ON TRIGGER dimension_geom_trigger ON distribution.dimension IS 'Trigger: updates the length and other fields of the pipe after insert/update.';
 
-
-
 /*----------------!!!---!!!----------------*/
 /* VIEW */
 DROP VIEW IF EXISTS distribution.dimension_view CASCADE;
@@ -67,12 +56,6 @@ CREATE VIEW distribution.dimension_view AS
 	CROSS JOIN generate_series(1,5) n 
 	WHERE n <= ST_NumGeometries(wkb_geometry) 
 	GROUP BY id;
-
-	/*
-DELETE FROM geometry_columns WHERE f_table_name = 'dimension_view';
-INSERT INTO geometry_columns (f_table_catalog, f_table_schema, f_table_name, f_geometry_column, coord_dimension, srid, type) 
-	VALUES  ('' , 'distribution', 'dimension_view', 'wkb_geometry', 2, 21781, 'LINESTRING');
-	*/
 	
 /* Comment */	
 COMMENT ON VIEW distribution.dimension_view IS 'Creates a Linestring so it can be viewed in QGIS as a curve. Later, this view should be remove and the new geometry transformed to CIRCULARSTRING.';
