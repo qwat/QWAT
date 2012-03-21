@@ -49,13 +49,14 @@ CREATE VIEW distribution.dimension_view AS
 	SELECT id,distance_observed,_distance_terrain,lbl_x,lbl_y,lbl_a,
 		ST_CurveToLine(
 			ST_GeomFromEWKT(
-				'SRID=21781;CIRCULARSTRING('||left(distribution.tsum(ST_X(ST_GeometryN(wkb_geometry,n))||' '||ST_Y(ST_GeometryN(wkb_geometry,n))||','),-1)||')'
+				'SRID=21781;CIRCULARSTRING('
+					||ST_X(ST_GeometryN(wkb_geometry,1))||' '||ST_Y(ST_GeometryN(wkb_geometry,1))||','
+					||ST_X(ST_GeometryN(wkb_geometry,2))||' '||ST_Y(ST_GeometryN(wkb_geometry,2))||','
+					||ST_X(ST_GeometryN(wkb_geometry,3))||' '||ST_Y(ST_GeometryN(wkb_geometry,3))
+					||')'
 			)
 		,12)::geometry(LINESTRING,21781) AS wkb_geometry
-	FROM   distribution.dimension
-	CROSS JOIN generate_series(1,5) n 
-	WHERE n <= ST_NumGeometries(wkb_geometry) 
-	GROUP BY id;
+	FROM   distribution.dimension;
 	
 /* Comment */	
 COMMENT ON VIEW distribution.dimension_view IS 'Creates a Linestring so it can be viewed in QGIS as a curve. Later, this view should be remove and the new geometry transformed to CIRCULARSTRING.';
