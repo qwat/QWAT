@@ -2,7 +2,14 @@
 	qWat - QGIS Water Module
 	
 	SQL file :: schematic network view
+
+Creation of schema
+view pipes_schema_viewableitems select pipes which are viewable in schema
+view pipes_schema_items         get the parent id of each pipe
+view pipes_schema_merged        merge the pipes by grouping by id
+view pipes_schema               join with pipes_view to get pipes properties
 */
+
 BEGIN;
 
 /* create a view with the viewable items */
@@ -50,14 +57,27 @@ CREATE OR REPLACE VIEW distribution.pipes_schema_items AS
 
 /* 
 Merging of pipes based on the group ID
-TODO: controler que c'est bien les champs du parent qui sont utilises => faire un join avec pipe_table
 */
-CREATE OR REPLACE VIEW distribution.pipes_schema AS
-	SELECT groupid AS id, ST_LineMerge(ST_Union(wkb_geometry))::geometry(LineString,21781) AS wkb_geometry
+CREATE OR REPLACE VIEW distribution.pipes_schema_merged AS
+	SELECT 	groupid AS id, 
+			ST_LineMerge(ST_Union(wkb_geometry))::geometry(LineString,21781) AS wkb_geometry,
+			COUNT(groupid) AS number_of_pipes
 	  FROM distribution.pipes_schema_items
 	 GROUP BY groupid ;
-COMMENT ON VIEW distribution.pipes_schema IS 'Merging of pipes based on the group ID';
+COMMENT ON VIEW distribution.pipes_schema_merged IS 'Merging of pipes based on the group ID';
 
+/* 
+Join with pipes_view to get pipes properties
+*/
+CREATE OR REPLACE VIEW distribution.pipes_schema AS
+	SELECT	pipes_view.id,
+			pipes_view.year,
+			pipes_view._material_name,
+			pipes_schema_merged.number_of_pipes,
+			pipes_schema_merged.wkb_geometry::geometry(LineString,21781)
+	  FROM distribution.pipes_schema_merged
+	 INNER JOIN distribution.pipes_view ON pipes_view.id = pipes_schema_merged.id;
+COMMENT ON VIEW distribution.pipes_schema IS 'Final view for schema';
 
 /*
 view to display arrows from children to parent
