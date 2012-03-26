@@ -30,16 +30,12 @@ ALTER TABLE distribution.pipes ADD COLUMN   remarks text;                       
                                                                                                     /*                      */
 ALTER TABLE distribution.pipes ADD COLUMN   wkb_geometry geometry;                                  /* wkb_geometry         */
 
-
 ALTER TABLE distribution.pipes ADD COLUMN   material_int_diam character(20);
 ALTER TABLE distribution.pipes ADD COLUMN   material_nominal_diam character(20);
 ALTER TABLE distribution.pipes ADD COLUMN   coating_internal_material_id character(20);
 ALTER TABLE distribution.pipes ADD COLUMN   material_ext_diam character(20);
 ALTER TABLE distribution.pipes ADD COLUMN   material_thickness character(20);
 ALTER TABLE distribution.pipes ADD COLUMN   coating_external_material_id character(20);
-
-
-
 
 /*----------------!!!---!!!----------------*/
 /* Add constraints */
