@@ -48,10 +48,10 @@ class pipeMerger( QDockWidget , Ui_pipemerger ):
 		self.idFieldPos     = self.provider.fieldNameIndex('id')
 		self.parentFieldPos = self.provider.fieldNameIndex('id_parent')
 		f = QgsFeature()
-		self.provider.featureAtId(fid,f,True,[self.parentFieldPos])
-		fieldmap = f.attributeMap()
-		idParent = fieldmap[self.parentFieldPos].toString()
-		self.idParent.setText(idParent)		
+		if self.provider.featureAtId(fid,f,True,[self.parentFieldPos]) is True:
+			fieldmap = f.attributeMap()
+			idParent = fieldmap[self.parentFieldPos].toString()
+			self.idParent.setText(idParent)		
 		
 	def clear(self):
 		self.setVisible(False)
