@@ -74,11 +74,23 @@ CREATE OR REPLACE VIEW distribution.pipes_schema AS
 			pipes_view.year,
 			pipes_view._material_name,
 			pipes_schema_merged.number_of_pipes,
-			pipes_schema_merged.wkb_geometry::geometry(LineString,21781)
+			pipes_schema_merged.wkb_geometry::geometry(LineString,21781) AS wkb_geometry
 	  FROM distribution.pipes_schema_merged
 	 INNER JOIN distribution.pipes_view ON pipes_view.id = pipes_schema_merged.id;
 COMMENT ON VIEW distribution.pipes_schema IS 'Final view for schema';
 
+/*
+Report schema errors
+*/
+CREATE OR REPLACE VIEW distribution.pipes_schema_error AS
+	SELECT id FROM 
+	 ( 	SELECT 	groupid AS id, 
+				ST_Multi(ST_LineMerge(ST_Union(wkb_geometry)))::geometry(MultiLineString,21781) AS wkb_geometry
+		  FROM distribution.pipes_schema_items
+		 GROUP BY groupid 
+	 ) AS foo
+	 WHERE geometryType(ST_CollectionHomogenize(wkb_geometry)) != 'LINESTRING';
+COMMENT ON VIEW distribution.pipes_schema_error IS 'Report IDs of parent pipes where pipe concatenation leads to a MultiLineString and not to a LineString.';
 /*
 view to display arrows from children to parent
 this shoud be used as soon as ST_lineToCurve works for 3 points
