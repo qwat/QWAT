@@ -6,7 +6,7 @@
 BEGIN;
 DROP TABLE IF EXISTS distribution.pipes CASCADE;
 CREATE TABLE distribution.pipes (id serial NOT NULL);
-SELECT setval('distribution.pipes_id_seq', 30000, true);
+SELECT setval('distribution.pipes_id_seq', 35000, true);
 
 ALTER TABLE distribution.pipes ADD COLUMN   id_parent integer;                                      /* id_parent         FK */
 ALTER TABLE distribution.pipes ADD COLUMN   id_function integer;									/* id_function       FK */ 
@@ -16,7 +16,7 @@ ALTER TABLE distribution.pipes ADD COLUMN   id_owner integer;										/* id_own
 ALTER TABLE distribution.pipes ADD COLUMN   id_precision integer;                                   /* id_precision      FK */
 ALTER TABLE distribution.pipes ADD COLUMN   id_protection integer;                                  /* id_protection     FK */
 ALTER TABLE distribution.pipes ADD COLUMN   id_status integer;                                      /* id_status         FK */
-ALTER TABLE distribution.pipes ADD COLUMN   id_zone integer;										/* id_zone           FK */
+ALTER TABLE distribution.pipes ADD COLUMN   id_pressure_zone integer;								/* id_pressure_zone  FK */
 ALTER TABLE distribution.pipes ADD COLUMN   schema_force_view  boolean DEFAULT NULL::boolean;       /* schema_force_view FK */
 ALTER TABLE distribution.pipes ADD COLUMN   year smallint CHECK (year > 1800 AND year < 2100);      /* year                 */
 ALTER TABLE distribution.pipes ADD COLUMN   pressure_nominale smallint;                             /* pressure_nominale    */
@@ -65,9 +65,9 @@ CREATE INDEX fki_id_protection ON distribution.pipes(id_protection);
 /* id_status */
 ALTER TABLE distribution.pipes ADD CONSTRAINT pipes_id_status FOREIGN KEY (id_status) REFERENCES distribution.pipes_status(id) MATCH FULL ON UPDATE NO ACTION ON DELETE NO ACTION;
 CREATE INDEX fki_id_status ON distribution.pipes(id_status);
-/* id_zone */
-ALTER TABLE distribution.pipes ADD CONSTRAINT pipes_id_zone FOREIGN KEY (id_zone) REFERENCES distribution.zones(id) MATCH SIMPLE ON UPDATE NO ACTION ON DELETE NO ACTION;
-CREATE INDEX fki_id_zone ON distribution.pipes(id_zone);
+/* id_pressure_zone */
+ALTER TABLE distribution.pipes ADD CONSTRAINT pipes_id_pressure_zone FOREIGN KEY (id_pressure_zone) REFERENCES distribution.pressure_zones(id) MATCH SIMPLE ON UPDATE NO ACTION ON DELETE NO ACTION;
+CREATE INDEX fki_id_pressure_zone ON distribution.pipes(id_pressure_zone);
 /* Geometry */
 ALTER TABLE distribution.pipes ADD CONSTRAINT enforce_dims_wkb_geometry CHECK (st_ndims(wkb_geometry) = 2);
 ALTER TABLE distribution.pipes ADD CONSTRAINT enforce_geotype_wkb_geometry CHECK (geometrytype(wkb_geometry) = 'LINESTRING'::text OR wkb_geometry IS NULL);
@@ -116,7 +116,7 @@ CREATE VIEW distribution.pipes_view AS
 		pipes.id_precision      ,   	
 		pipes.id_protection     ,     	
 		pipes.id_status         ,         	
-		pipes.id_zone           ,					
+		pipes.id_pressure_zone  ,					
 		pipes.schema_force_view ,	
 		pipes.year              ,
 		pipes.pressure_nominale ,	
@@ -140,7 +140,7 @@ CREATE VIEW distribution.pipes_view AS
 		pipes_protection.name               AS _protection,
 		pipes_status.status                 AS _status_name,
 		pipes_status.active                 AS _status_active,
-		zones.name                          AS _zone,
+		pressure_zones.name                 AS _pressure_zone,
 		CASE 
 			WHEN pipes.schema_force_view IS NULL THEN pipes_function.schema_view
 			ELSE pipes.schema_force_view
@@ -153,7 +153,7 @@ CREATE VIEW distribution.pipes_view AS
 		INNER JOIN distribution."precision"            ON pipes.id_precision      = "precision".id
 		LEFT OUTER JOIN  distribution.pipes_protection ON pipes.id_protection     = pipes_protection.id
 		INNER JOIN distribution.pipes_status           ON pipes.id_status         = pipes_status.id
-		LEFT OUTER JOIN  distribution.zones            ON pipes.id_zone           = zones.id;
+		LEFT OUTER JOIN  distribution.pressure_zones   ON pipes.id_pressure_zone  = pressure_zones.id;
 /*----------------!!!---!!!----------------*/
 /* Comment */	
 COMMENT ON VIEW distribution.pipes_view IS 'View for pipes. This view is editable (a rule exists to forwad changes to the table). 
@@ -170,7 +170,7 @@ CREATE OR REPLACE RULE pipes_update AS
 			id_material        = NEW.id_material        ,
 			id_status          = NEW.id_status          ,
 			id_owner           = NEW.id_owner           ,
-			id_zone            = NEW.id_zone            ,
+			id_pressure_zone   = NEW.id_pressure_zone   ,
 			id_precision       = NEW.id_precision       ,
 			id_protection      = NEW.id_protection      ,
 			id_install_method  = NEW.id_install_method  ,
@@ -185,9 +185,9 @@ CREATE OR REPLACE RULE pipes_update AS
 CREATE OR REPLACE RULE pipes_insert AS
 	ON INSERT TO distribution.pipes_view DO INSTEAD
 		INSERT INTO distribution.pipes 
-			(    id_function,    id_material,    id_status,    id_parent,    id_owner,    id_zone,    id_precision,    id_protection,    id_install_method,    year,    pressure_nominale,    schema_force_view,    folder,    remarks,    wkb_geometry)     
+			(    id_function,    id_material,    id_status,    id_parent,    id_owner,    id_pressure_zone,    id_precision,    id_protection,    id_install_method,    year,    pressure_nominale,    schema_force_view,    folder,    remarks,    wkb_geometry)     
 		VALUES
-			(NEW.id_function,NEW.id_material,NEW.id_status,NEW.id_parent,NEW.id_owner,NEW.id_zone,NEW.id_precision,NEW.id_protection,NEW.id_install_method,NEW.year,NEW.pressure_nominale,NEW.schema_force_view,NEW.folder,NEW.remarks,NEW.wkb_geometry);
+			(NEW.id_function,NEW.id_material,NEW.id_status,NEW.id_parent,NEW.id_owner,NEW.id_pressure_zone,NEW.id_precision,NEW.id_protection,NEW.id_install_method,NEW.year,NEW.pressure_nominale,NEW.schema_force_view,NEW.folder,NEW.remarks,NEW.wkb_geometry);
 CREATE OR REPLACE RULE pipes_delete AS
 	ON DELETE TO distribution.pipes_view DO INSTEAD
 		DELETE FROM distribution.pipes WHERE id = OLD.id;
