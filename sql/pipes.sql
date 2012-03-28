@@ -108,27 +108,27 @@ DROP VIEW IF EXISTS distribution.pipes_view CASCADE;
 CREATE VIEW distribution.pipes_view AS 
 	SELECT  
 		pipes.id				,
-		pipes.id_parent         ,       	
-		pipes.id_function       ,			
-		pipes.id_install_method ,	
-		pipes.id_material       ,         	
-		pipes.id_owner          ,			
-		pipes.id_precision      ,   	
-		pipes.id_protection     ,     	
-		pipes.id_status         ,         	
-		pipes.id_pressure_zone  ,					
-		pipes.schema_force_view ,	
+		pipes.id_parent         ,
+		pipes.id_function       ,
+		pipes.id_install_method ,
+		pipes.id_material       ,
+		pipes.id_owner          ,
+		pipes.id_precision      ,
+		pipes.id_protection     ,
+		pipes.id_status         ,
+		pipes.id_pressure_zone  ,
+		pipes.schema_force_view ,
 		pipes.year              ,
-		pipes.pressure_nominale ,	
-		pipes._length2d         ,       	
-		pipes._length3d         ,              	
-		pipes._length3d_uptodate,              	
-		pipes.folder            ,             	
-		pipes._is_on_map        ,         	
-		pipes._is_on_district   ,     	
-		pipes.remarks           ,        	                                         	
+		pipes.pressure_nominale ,
+		pipes._length2d         ,
+		pipes._length3d         ,
+		pipes._length3d_uptodate,
+		pipes.folder            ,
+		pipes._is_on_map        ,
+		pipes._is_on_district   ,
+		pipes.remarks           , 
 		pipes.wkb_geometry::geometry(LineString,21781),
-		sqrt(pow(_length3d,2)-pow(_length2d,2))/_length2d AS slope,
+		sqrt(pow(_length3d,2)-pow(_length2d,2))/_length2d AS _slope,
 		pipes_function.function             AS _function_name, 
 		pipes_install_method.name           AS _install_method,
 		pipes_material._fancy_name          AS _material_name,
@@ -155,7 +155,7 @@ CREATE VIEW distribution.pipes_view AS
 		INNER JOIN distribution.pipes_status           ON pipes.id_status         = pipes_status.id
 		LEFT OUTER JOIN  distribution.pressure_zones   ON pipes.id_pressure_zone  = pressure_zones.id;
 /*----------------!!!---!!!----------------*/
-/* Comment */	
+/* Comment */
 COMMENT ON VIEW distribution.pipes_view IS 'View for pipes. This view is editable (a rule exists to forwad changes to the table). 
 		schema_view is a boolean to define if the pipes is visible in the schematic view. This field is usually determined by the pipe''s function attribute schema_view,
 		but it can be overridden by the pipe''s attribute schema_force_view.';

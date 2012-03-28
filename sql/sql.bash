@@ -17,7 +17,7 @@ psql -h 172.24.171.$ip -U sige -f precision.sql
 read -p "Press any key to continue..."
 psql -h 172.24.171.$ip -U sige -f pipes_protection.sql
 read -p "Press any key to continue..."
-psql -h 172.24.171.$ip -U sige -f zones.sql
+psql -h 172.24.171.$ip -U sige -f pressure_zones.sql
 read -p "Press any key to continue..."
 psql -h 172.24.171.$ip -U sige -f districts.sql
 read -p "Press any key to continue..."
@@ -42,3 +42,10 @@ read -p "Press any key to continue..."
 psql -h 172.24.171.$ip -U sige -f subscriber.sql
 read -p "Press any key to continue..."
 psql -h 172.24.171.$ip -U sige -f 3d.sql
+
+
+read -p "Press any key to continue..."
+psql -h 172.24.171.$ip -U sige -f sige_data/data_pressure_zones.sql
+
+
+
