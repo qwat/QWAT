@@ -110,6 +110,7 @@ class pipeMerger( QDockWidget , Ui_pipemerger ):
 			fieldmap=subset[0].attributeMap()
 			self.idParent.setText(fieldmap[self.idFieldPos].toString())
 			self.on_cancelButton_clicked()
+			canvas.refresh()
 
 
 class getNeighbor(QgsMapToolEmitPoint):
