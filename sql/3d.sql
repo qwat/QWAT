@@ -66,8 +66,8 @@ CREATE OR REPLACE FUNCTION distribution.pipes_length3d() RETURNS void AS '
 		length double precision;
 		pipeitem RECORD;
 	BEGIN
-		FOR pipeitem IN SELECT id,wkb_geometry FROM distribution.pipes WHERE _length3d_uptodate IS NOT TRUE ORDER BY id LOOP
-			IF pipes.tunnel_or_bridge IS TRUE THEN
+		FOR pipeitem IN SELECT id,wkb_geometry,tunnel_or_bridge FROM distribution.pipes WHERE _length3d_uptodate IS NOT TRUE ORDER BY id LOOP
+			IF pipeitem.tunnel_or_bridge IS TRUE THEN
 				length := pipeitem._length2d;
 			ELSE
 				RAISE NOTICE ''%'', pipeitem.id;
