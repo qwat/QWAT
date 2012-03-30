@@ -101,10 +101,19 @@ CREATE TRIGGER pipes_geom_trigger
 	EXECUTE PROCEDURE distribution.pipes_geom();
 COMMENT ON TRIGGER pipes_geom_trigger ON distribution.pipes IS 'Trigger: updates the length and other fields of the pipe after insert/update.';
 
-CREATE OR REPLACE RULE pipes_tunnelbridge AS
-	ON UPDATE TO distribution.pipes WHERE NEW.tunnel_or_bridge != OLD.tunnel_or_bridge
-	DO ALSO UPDATE distribution.pipes SET _length3d_uptodate = FALSE WHERE id = NEW.id ;
-COMMENT ON RULE pipes_tunnelbridge IS 'As for tunnel and bridges, 3d length is the 2d length, set _length3d_uptodate to false to recalculate it later.';
+/* Trigger for tunnel_or_bridge */
+CREATE OR REPLACE FUNCTION distribution.pipes_tunnelbridge() RETURNS trigger AS ' 
+	BEGIN
+		UPDATE distribution.pipes SET _length3d_uptodate = FALSE WHERE id = NEW.id ;
+		RETURN NEW;
+	END;
+' LANGUAGE 'plpgsql';
+
+CREATE TRIGGER pipes_tunnelbridge_trigger
+	AFTER UPDATE OF tunnel_or_bridge ON distribution.pipes
+	FOR EACH ROW
+	EXECUTE PROCEDURE distribution.pipes_tunnelbridge();
+COMMENT ON TRIGGER pipes_tunnelbridge_trigger ON distribution.pipes IS 'As for tunnel and bridges, 3d length is the 2d length, set _length3d_uptodate to false to reset it later.';
 
 
 /*----------------!!!---!!!----------------*//*----------------!!!---!!!----------------*/
