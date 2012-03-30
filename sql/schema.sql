@@ -14,7 +14,12 @@ BEGIN;
 
 /* create a view with the viewable items */
 CREATE OR REPLACE VIEW distribution.pipes_schema_viewableitems AS 
-	SELECT 	id,id_parent,wkb_geometry::geometry(LineString,21781)
+	SELECT 	
+		id,
+		id_parent,
+		_length2d,
+		_length3d,
+		wkb_geometry::geometry(LineString,21781)
 	  FROM distribution.pipes_view
 		WHERE _schema_view IS TRUE
 		AND _status_active IS TRUE;
@@ -51,8 +56,11 @@ COMMENT ON FUNCTION distribution.get_parent(integer,integer) IS 'Function to get
 View of pipes with group ID
 */
 CREATE OR REPLACE VIEW distribution.pipes_schema_items AS 
-	SELECT 	wkb_geometry::geometry(LineString,21781),
-		distribution.get_parent(id,id_parent) AS groupid
+	SELECT 
+		wkb_geometry::geometry(LineString,21781),
+		distribution.get_parent(id,id_parent) AS groupid,
+		_length2d,
+		_length3d
 	  FROM distribution.pipes_schema_viewableitems;
 
 /* 
@@ -61,7 +69,9 @@ Merging of pipes based on the group ID
 CREATE OR REPLACE VIEW distribution.pipes_schema_merged AS
 	SELECT 	groupid AS id, 
 			ST_LineMerge(ST_Union(wkb_geometry))::geometry(LineString,21781) AS wkb_geometry,
-			COUNT(groupid) AS number_of_pipes
+			COUNT(groupid) AS number_of_pipes,
+			SUM(_length2d) AS _length2d,
+			SUM(_length3d) AS _length3d
 	  FROM distribution.pipes_schema_items
 	 GROUP BY groupid ;
 COMMENT ON VIEW distribution.pipes_schema_merged IS 'Merging of pipes based on the group ID';
@@ -71,41 +81,41 @@ Join with pipes_view to get pipes properties
 */
 CREATE OR REPLACE VIEW distribution.pipes_schema AS
 	SELECT	
-			pipes_view.id				 ,
-			pipes_view.id_parent         ,
-			pipes_view.id_function       ,
-			pipes_view.id_install_method ,
-			pipes_view.id_material       ,
-			pipes_view.id_owner          ,
-			pipes_view.id_precision      ,
-			pipes_view.id_protection     ,
-			pipes_view.id_status         ,
-			pipes_view.id_pressure_zone  ,
-			pipes_view.schema_force_view ,
-			pipes_view.year              ,
-			pipes_view.pressure_nominale ,
-			pipes_view._length2d         ,
-			pipes_view._length3d         ,
-			pipes_view._length3d_uptodate,
-			pipes_view.folder            ,
-			pipes_view._is_on_map        ,
-			pipes_view._is_on_district   ,
-			pipes_view.remarks           , 
-			pipes_view._slope,
-			pipes_view._function_name, 
-			pipes_view._install_method,
-			pipes_view._material_name,
-			pipes_view._material_diameter,
+			pipes_view.id				          ,
+			pipes_view.id_parent                  ,
+			pipes_view.id_function                ,
+			pipes_view.id_install_method          ,
+			pipes_view.id_material                ,
+			pipes_view.id_owner                   ,
+			pipes_view.id_precision               ,
+			pipes_view.id_protection              ,
+			pipes_view.id_status                  ,
+			pipes_view.id_pressure_zone           ,
+			pipes_view.schema_force_view          ,
+			pipes_view.year                       ,
+			pipes_view.pressure_nominale          ,
+			pipes_view._length3d_uptodate         ,
+			pipes_view.folder                     ,
+			pipes_view._is_on_map                 ,
+			pipes_view._is_on_district            ,
+			pipes_view.remarks                    , 
+			pipes_view._slope                     ,
+			pipes_view._function_name             , 
+			pipes_view._install_method            ,
+			pipes_view._material_name             ,
+			pipes_view._material_diameter         ,
 			pipes_view._material_diameter_internal,
 			pipes_view._material_diameter_external,
-			pipes_view._owner,
-			pipes_view._precision,
-			pipes_view._protection,
-			pipes_view._status_name,
-			pipes_view._status_active,
-			pipes_view._pressure_zone,
-			pipes_view._schema_view,	
-			pipes_schema_merged.number_of_pipes,
+			pipes_view._owner                     ,
+			pipes_view._precision                 ,
+			pipes_view._protection                ,
+			pipes_view._status_name               ,
+			pipes_view._status_active             ,
+			pipes_view._pressure_zone             ,
+			pipes_view._schema_view               ,	
+			pipes_schema_merged._length2d         ,
+			pipes_schema_merged._length3d         ,
+			pipes_schema_merged.number_of_pipes   ,
 			pipes_schema_merged.wkb_geometry::geometry(LineString,21781) AS wkb_geometry
 	  FROM distribution.pipes_schema_merged
 	 INNER JOIN distribution.pipes_view ON pipes_view.id = pipes_schema_merged.id;
