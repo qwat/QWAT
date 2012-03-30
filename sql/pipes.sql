@@ -19,7 +19,7 @@ ALTER TABLE distribution.pipes ADD COLUMN   id_status integer;                  
 ALTER TABLE distribution.pipes ADD COLUMN   id_pressure_zone integer;								/* id_pressure_zone  FK */
 ALTER TABLE distribution.pipes ADD COLUMN   schema_force_view  boolean DEFAULT NULL::boolean;       /* schema_force_view FK */
 ALTER TABLE distribution.pipes ADD COLUMN   year smallint CHECK (year > 1800 AND year < 2100);      /* year                 */
-ALTER TABLE distribution.pipes ADD COLUMN   tunnel_or_bridge boolean default FALSE;                 /* tunnel_or_bridge     */
+ALTER TABLE distribution.pipes ADD COLUMN   tunnel_or_bridge boolean DEFAULT FALSE;                 /* tunnel_or_bridge     */
 ALTER TABLE distribution.pipes ADD COLUMN   pressure_nominale smallint;                             /* pressure_nominale    */
 ALTER TABLE distribution.pipes ADD COLUMN   folder varchar(20) DEFAULT '';                          /* folder               */
 ALTER TABLE distribution.pipes ADD COLUMN   remarks text;                                           /* remarks              */
@@ -100,6 +100,11 @@ CREATE TRIGGER pipes_geom_trigger
 	FOR EACH ROW
 	EXECUTE PROCEDURE distribution.pipes_geom();
 COMMENT ON TRIGGER pipes_geom_trigger ON distribution.pipes IS 'Trigger: updates the length and other fields of the pipe after insert/update.';
+
+CREATE OR REPLACE RULE pipes_tunnelbridge AS
+	ON UPDATE TO distribution.pipes WHERE NEW.tunnel_or_bridge != OLD.tunnel_or_bridge
+	DO ALSO UPDATE distribution.pipes SET _length3d_uptodate = FALSE WHERE id = NEW.id ;
+COMMENT ON RULE pipes_tunnelbridge IS 'As for tunnel and bridges, 3d length is the 2d length, set _length3d_uptodate to false to recalculate it later.';
 
 
 /*----------------!!!---!!!----------------*//*----------------!!!---!!!----------------*/
