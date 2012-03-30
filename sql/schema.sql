@@ -19,6 +19,7 @@ CREATE OR REPLACE VIEW distribution.pipes_schema_viewableitems AS
 		id_parent,
 		_length2d,
 		_length3d,
+		_length3d_uptodate,
 		wkb_geometry::geometry(LineString,21781)
 	  FROM distribution.pipes_view
 		WHERE _schema_view IS TRUE
@@ -60,7 +61,8 @@ CREATE OR REPLACE VIEW distribution.pipes_schema_items AS
 		wkb_geometry::geometry(LineString,21781),
 		distribution.get_parent(id,id_parent) AS groupid,
 		_length2d,
-		_length3d
+		_length3d,
+		_length3d_uptodate
 	  FROM distribution.pipes_schema_viewableitems;
 
 /* 
@@ -71,7 +73,8 @@ CREATE OR REPLACE VIEW distribution.pipes_schema_merged AS
 			ST_LineMerge(ST_Union(wkb_geometry))::geometry(LineString,21781) AS wkb_geometry,
 			COUNT(groupid) AS number_of_pipes,
 			SUM(_length2d) AS _length2d,
-			SUM(_length3d) AS _length3d
+			SUM(_length3d) AS _length3d,
+			bool_and(_length3d_uptodate) AS _length3d_uptodate
 	  FROM distribution.pipes_schema_items
 	 GROUP BY groupid ;
 COMMENT ON VIEW distribution.pipes_schema_merged IS 'Merging of pipes based on the group ID';
@@ -94,11 +97,10 @@ CREATE OR REPLACE VIEW distribution.pipes_schema AS
 			pipes_view.schema_force_view          ,
 			pipes_view.year                       ,
 			pipes_view.pressure_nominale          ,
-			pipes_view._length3d_uptodate         ,
 			pipes_view.folder                     ,
+			pipes_view.remarks                    , 
 			pipes_view._is_on_map                 ,
 			pipes_view._is_on_district            ,
-			pipes_view.remarks                    , 
 			pipes_view._slope                     ,
 			pipes_view._function_name             , 
 			pipes_view._install_method            ,
@@ -115,6 +117,7 @@ CREATE OR REPLACE VIEW distribution.pipes_schema AS
 			pipes_view._schema_view               ,	
 			pipes_schema_merged._length2d         ,
 			pipes_schema_merged._length3d         ,
+			pipes_schema_merged._length3d_uptodate,
 			pipes_schema_merged.number_of_pipes   ,
 			pipes_schema_merged.wkb_geometry::geometry(LineString,21781) AS wkb_geometry
 	  FROM distribution.pipes_schema_merged
