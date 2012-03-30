@@ -19,14 +19,15 @@ ALTER TABLE distribution.pipes ADD COLUMN   id_status integer;                  
 ALTER TABLE distribution.pipes ADD COLUMN   id_pressure_zone integer;								/* id_pressure_zone  FK */
 ALTER TABLE distribution.pipes ADD COLUMN   schema_force_view  boolean DEFAULT NULL::boolean;       /* schema_force_view FK */
 ALTER TABLE distribution.pipes ADD COLUMN   year smallint CHECK (year > 1800 AND year < 2100);      /* year                 */
+ALTER TABLE distribution.pipes ADD COLUMN   tunnel_or_bridge boolean default FALSE;                 /* tunnel_or_bridge     */
 ALTER TABLE distribution.pipes ADD COLUMN   pressure_nominale smallint;                             /* pressure_nominale    */
+ALTER TABLE distribution.pipes ADD COLUMN   folder varchar(20) DEFAULT '';                          /* folder               */
+ALTER TABLE distribution.pipes ADD COLUMN   remarks text;                                           /* remarks              */
 ALTER TABLE distribution.pipes ADD COLUMN   _length2d decimal(8,2);                                 /* _length2d            */
 ALTER TABLE distribution.pipes ADD COLUMN   _length3d decimal(8,2);                                 /* _length3d            */
 ALTER TABLE distribution.pipes ADD COLUMN   _length3d_uptodate boolean DEFAULT False;               /* _length3d_uptodate   */
-ALTER TABLE distribution.pipes ADD COLUMN   folder varchar(20) DEFAULT '';                          /* folder               */
 ALTER TABLE distribution.pipes ADD COLUMN   _is_on_map varchar(80) DEFAULT '';                      /* _is_on_map           */
 ALTER TABLE distribution.pipes ADD COLUMN   _is_on_district varchar(100) DEFAULT '';                /* _is_on_district      */
-ALTER TABLE distribution.pipes ADD COLUMN   remarks text;                                           /* remarks              */
                                                                                                     /*                      */
 ALTER TABLE distribution.pipes ADD COLUMN   wkb_geometry geometry;                                  /* wkb_geometry         */
 
@@ -119,14 +120,15 @@ CREATE VIEW distribution.pipes_view AS
 		pipes.id_pressure_zone  ,
 		pipes.schema_force_view ,
 		pipes.year              ,
+		pipes.tunnel_or_bridge  ,
 		pipes.pressure_nominale ,
+		pipes.folder            ,
+		pipes.remarks           , 
 		pipes._length2d         ,
 		pipes._length3d         ,
 		pipes._length3d_uptodate,
-		pipes.folder            ,
 		pipes._is_on_map        ,
 		pipes._is_on_district   ,
-		pipes.remarks           , 
 		pipes.wkb_geometry::geometry(LineString,21781),
 		sqrt(pow(_length3d,2)-pow(_length2d,2))/_length2d AS _slope,
 		pipes_function.function             AS _function_name, 
@@ -175,6 +177,7 @@ CREATE OR REPLACE RULE pipes_update AS
 			id_protection      = NEW.id_protection      ,
 			id_install_method  = NEW.id_install_method  ,
 			year               = NEW.year               ,
+			tunnel_or_bridge   = NEW.tunnel_or_bridge   ,
 			pressure_nominale  = NEW.pressure_nominale  ,
 			schema_force_view  = NEW.schema_force_view  ,
 			folder             = NEW.folder             ,
@@ -185,9 +188,9 @@ CREATE OR REPLACE RULE pipes_update AS
 CREATE OR REPLACE RULE pipes_insert AS
 	ON INSERT TO distribution.pipes_view DO INSTEAD
 		INSERT INTO distribution.pipes 
-			(    id_function,    id_material,    id_status,    id_parent,    id_owner,    id_pressure_zone,    id_precision,    id_protection,    id_install_method,    year,    pressure_nominale,    schema_force_view,    folder,    remarks,    wkb_geometry)     
+			(    id_function,    id_material,    id_status,    id_parent,    id_owner,    id_pressure_zone,    id_precision,    id_protection,    id_install_method,    year,    tunnel_or_bridge,    pressure_nominale,    schema_force_view,    folder,    remarks,    wkb_geometry)     
 		VALUES
-			(NEW.id_function,NEW.id_material,NEW.id_status,NEW.id_parent,NEW.id_owner,NEW.id_pressure_zone,NEW.id_precision,NEW.id_protection,NEW.id_install_method,NEW.year,NEW.pressure_nominale,NEW.schema_force_view,NEW.folder,NEW.remarks,NEW.wkb_geometry);
+			(NEW.id_function,NEW.id_material,NEW.id_status,NEW.id_parent,NEW.id_owner,NEW.id_pressure_zone,NEW.id_precision,NEW.id_protection,NEW.id_install_method,NEW.year,NEW.tunnel_or_bridge,NEW.pressure_nominale,NEW.schema_force_view,NEW.folder,NEW.remarks,NEW.wkb_geometry);
 CREATE OR REPLACE RULE pipes_delete AS
 	ON DELETE TO distribution.pipes_view DO INSTEAD
 		DELETE FROM distribution.pipes WHERE id = OLD.id;
@@ -196,6 +199,4 @@ COMMENT ON RULE pipes_update IS 'Rule to forward changes for pipes_view to the t
 COMMENT ON RULE pipes_insert IS 'Rule to forward insert of pipes_view to the table pipes.';
 COMMENT ON RULE pipes_delete IS 'Rule to forward deletion of pipes_view to the table pipes.';
 
-
 COMMIT;
-
