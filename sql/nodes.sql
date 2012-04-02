@@ -74,7 +74,6 @@ CREATE OR REPLACE FUNCTION distribution.set_nodes() RETURNS void AS '
 				type := ''three'';
 			END IF;
 			RAISE NOTICE ''%'' , node.id;
-			RAISE NOTICE ''%'' , npipe;
 			RAISE NOTICE ''%'' , type;
 		END LOOP;
 	END;
