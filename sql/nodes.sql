@@ -16,7 +16,8 @@ SELECT setval('distribution.nodes_id_seq', 100, true);
 /* ADD CONSTRAINTS */
 /* primary key */
 ALTER TABLE distribution.nodes ADD CONSTRAINT nodes_pkey PRIMARY KEY (id);
-
+/* GIST index*/
+CREATE INDEX nodes_geoidx ON distribution.nodes USING GIST ( wkb_geometry );
 /* Comment */
 COMMENT ON TABLE distribution.nodes IS 'Nodes. Type:If three pipes or more arrives at the node: three. If one pipe: one. If two: depends on characteristics of pipes: two_same (everything same), two_year (year is different), two_material (and year is/are different), two_diameter (and material/year are different). Orientation is calculated if two pipes arrives to place the symbol in theright direction.';
 
