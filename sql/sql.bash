@@ -7,6 +7,8 @@ psql -h 172.24.171.$ip -U sige -f tool_functions.sql
 read -p "Press any key to continue..."
 psql -h 172.24.171.$ip -U sige -f visible.sql
 read -p "Press any key to continue..."
+psql -h 172.24.171.$ip -U sige -f nodes.sql
+read -p "Press any key to continue..."
 psql -h 172.24.171.$ip -U sige -f dimension.sql
 read -p "Press any key to continue..."
 psql -h 172.24.171.$ip -U sige -f intersection.sql

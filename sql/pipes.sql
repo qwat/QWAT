@@ -16,6 +16,8 @@ ALTER TABLE distribution.pipes ADD COLUMN   id_owner integer;										/* id_own
 ALTER TABLE distribution.pipes ADD COLUMN   id_precision integer;                                   /* id_precision      FK */
 ALTER TABLE distribution.pipes ADD COLUMN   id_protection integer;                                  /* id_protection     FK */
 ALTER TABLE distribution.pipes ADD COLUMN   id_status integer;                                      /* id_status         FK */
+ALTER TABLE distribution.pipes ADD COLUMN   id_node_a integer;			          					/* id_node_a         FK */
+ALTER TABLE distribution.pipes ADD COLUMN   id_node_b integer;			          					/* id_node_b         FK */
 ALTER TABLE distribution.pipes ADD COLUMN   id_pressure_zone integer;								/* id_pressure_zone  FK */
 ALTER TABLE distribution.pipes ADD COLUMN   schema_force_view  boolean DEFAULT NULL::boolean;       /* schema_force_view FK */
 ALTER TABLE distribution.pipes ADD COLUMN   year smallint CHECK (year > 1800 AND year < 2100);      /* year                 */
@@ -69,6 +71,12 @@ CREATE INDEX fki_id_status ON distribution.pipes(id_status);
 /* id_pressure_zone */
 ALTER TABLE distribution.pipes ADD CONSTRAINT pipes_id_pressure_zone FOREIGN KEY (id_pressure_zone) REFERENCES distribution.pressure_zones(id) MATCH SIMPLE ON UPDATE NO ACTION ON DELETE NO ACTION;
 CREATE INDEX fki_id_pressure_zone ON distribution.pipes(id_pressure_zone);
+/* id_node_a */
+ALTER TABLE distribution.pipes ADD CONSTRAINT pipes_id_node_a FOREIGN KEY (id_node_a) REFERENCES distribution.nodes(id) MATCH SIMPLE ON UPDATE NO ACTION ON DELETE NO ACTION;
+CREATE INDEX fki_id_node_a ON distribution.pipes(id_node_a);
+/* id_node_b */
+ALTER TABLE distribution.pipes ADD CONSTRAINT pipes_id_node_b FOREIGN KEY (id_node_b) REFERENCES distribution.nodes(id) MATCH SIMPLE ON UPDATE NO ACTION ON DELETE NO ACTION;
+CREATE INDEX fki_id_node_b ON distribution.pipes(id_node_b);
 /* Geometry */
 ALTER TABLE distribution.pipes ADD CONSTRAINT enforce_dims_wkb_geometry CHECK (st_ndims(wkb_geometry) = 2);
 ALTER TABLE distribution.pipes ADD CONSTRAINT enforce_geotype_wkb_geometry CHECK (geometrytype(wkb_geometry) = 'LINESTRING'::text OR wkb_geometry IS NULL);
@@ -84,7 +92,9 @@ COMMENT ON TABLE distribution.pipes IS 'Table for pipes. This should not be used
 /* Trigger for 2d length, map and district update */
 CREATE OR REPLACE FUNCTION distribution.pipes_geom() RETURNS trigger AS ' 
 	BEGIN
-		UPDATE distribution.pipes SET 
+		UPDATE distribution.pipes SET
+			id_node_a          = distribution.get_node(ST_StartPoint(NEW.wkb_geometry)),
+			id_node_b          = distribution.get_node(ST_EndPoint(  NEW.wkb_geometry)),
 			_length2d          = ST_Length(NEW.wkb_geometry),
 			_length3d_uptodate = False,
 			_is_on_map         = distribution.get_map(NEW.wkb_geometry),
@@ -100,6 +110,9 @@ CREATE TRIGGER pipes_geom_trigger
 	FOR EACH ROW
 	EXECUTE PROCEDURE distribution.pipes_geom();
 COMMENT ON TRIGGER pipes_geom_trigger ON distribution.pipes IS 'Trigger: updates the length and other fields of the pipe after insert/update.';
+
+
+
 
 /* Trigger for tunnel_or_bridge */
 CREATE OR REPLACE FUNCTION distribution.pipes_tunnelbridge() RETURNS trigger AS ' 
@@ -132,6 +145,8 @@ CREATE VIEW distribution.pipes_view AS
 		pipes.id_protection     ,
 		pipes.id_status         ,
 		pipes.id_pressure_zone  ,
+		pipes.id_node_a         ,
+		pipes.id_node_b         ,
 		pipes.schema_force_view ,
 		pipes.year              ,
 		pipes.tunnel_or_bridge  ,
@@ -148,9 +163,9 @@ CREATE VIEW distribution.pipes_view AS
 		pipes_function.function             AS _function_name, 
 		pipes_install_method.name           AS _install_method,
 		pipes_material._fancy_name          AS _material_name,
+		pipes_material.name                 AS _material_longname,
 		pipes_material.diameter             AS _material_diameter,
 		pipes_material.diameter_internal    AS _material_diameter_internal,
-		pipes_material.diameter_external    AS _material_diameter_external,
 		owner.name                          AS _owner,
 		"precision".name                    AS _precision,
 		pipes_protection.name               AS _protection,
