@@ -75,21 +75,21 @@ CREATE OR REPLACE FUNCTION distribution.node_update_type(integer) RETURNS void A
 					Tmaterial := pipeitem._material_longname;
 					Tdiameter := pipeitem._material_diameter;
 					i := 1;
-					SELECT radians( ST_Azimuth(pipeitem.point_1,pipeitem.point_2) ) INTO ori1 ;
+					SELECT  ST_Azimuth(pipeitem.point_1,pipeitem.point_2) INTO ori1 ;
 				ELSE
 					Ntype := ''two_same'';
 					IF Tyear     != pipeitem.year               THEN Ntype := ''two_year''    ; END IF;
 					IF Tmaterial != pipeitem._material_longname THEN Ntype := ''two_material''; END IF;
 					IF Tdiameter != pipeitem._material_diameter THEN Ntype := ''two_diameter''; END IF;
-					SELECT radians( ST_Azimuth(pipeitem.point_1,pipeitem.point_2) ) INTO ori2 ;
-					SELECT degrees( ATAN2( (COS(ori1)+COS(ori2))/2 , (SIN(ori1)+SIN(ori2))/2) ) INTO Norientation;
+					SELECT ST_Azimuth(pipeitem.point_1,pipeitem.point_2) INTO ori2 ;
+					SELECT degrees( ATAN2( (SIN(ori1)+SIN(ori2))/2 , (COS(ori1)+COS(ori2))/2 ) ) INTO Norientation;
 				END IF;
 			END LOOP;
 		ELSE
 			Ntype := ''three'';
 		END IF;
 		UPDATE distribution.nodes SET type = Ntype, orientation = Norientation WHERE id = node_id;
-		RAISE NOTICE ''%'' , node_id ;
+		RAISE NOTICE ''% %'' , node_id , Norientation;
 	END;
 ' LANGUAGE 'plpgsql';
 COMMENT ON FUNCTION distribution.node_update_type(integer) IS 'Set the orientation and type for a node. If three pipes arrives at the node: intersection. If one pipe: end. If two: depends on characteristics of pipes: year (is different), material (and year), diameter(and material/year)';
