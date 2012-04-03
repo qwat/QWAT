@@ -9,8 +9,9 @@ BEGIN;
 /* CREATE TABLE */
 DROP TABLE IF EXISTS distribution.nodes CASCADE;
 CREATE TABLE distribution.nodes (id serial NOT NULL);
-ALTER TABLE distribution.nodes ADD COLUMN  type    varchar(20) DEFAULT 'end';
-ALTER TABLE distribution.nodes ADD COLUMN  orientation float DEFAULT 0;
+ALTER TABLE distribution.nodes ADD COLUMN  _type        VARCHAR(20) DEFAULT '';
+ALTER TABLE distribution.nodes ADD COLUMN  _orientation FLOAT       DEFAULT 0;
+ALTER TABLE distribution.nodes ADD COLUMN  _schema_view BOOLEAN     DEFAULT False;
 SELECT AddGeometryColumn('distribution', 'nodes', 'wkb_geometry', 21781, 'POINT', 2);
 SELECT setval('distribution.nodes_id_seq', 100, true);
 /* ADD CONSTRAINTS */
@@ -32,7 +33,7 @@ CREATE OR REPLACE FUNCTION distribution.node_get_id(geometry) RETURNS integer AS
 	BEGIN
 		SELECT id FROM distribution.nodes WHERE ST_Distance(point,wkb_geometry)<distance_threshold LIMIT 1 INTO node_id;
 		IF node_id IS NULL THEN
-			INSERT INTO distribution.nodes (type,wkb_geometry) VALUES ('''',point);
+			INSERT INTO distribution.nodes (wkb_geometry) VALUES (point);
 		END IF;
 		SELECT id FROM distribution.nodes WHERE ST_Distance(point,wkb_geometry)<distance_threshold LIMIT 1 INTO node_id;
 		RETURN node_id;	
@@ -43,28 +44,30 @@ COMMENT ON FUNCTION distribution.node_get_id(geometry) IS 'Returns the node for 
 
 /* 
 To reset all pipes nodes
-UPDATE distribution.pipes SET	id_node_a = distribution.node_get_id(ST_StartPoint(wkb_geometry)),
-								id_node_b = distribution.node_get_id(ST_EndPoint(  wkb_geometry));
+sige -c "
+UPDATE distribution.pipes SET id_node_a = distribution.node_get_id(ST_StartPoint(wkb_geometry)),
+                              id_node_b = distribution.node_get_id(ST_EndPoint(  wkb_geometry));
+"
 */
 
 CREATE OR REPLACE FUNCTION distribution.node_update_type(integer) RETURNS void AS '
 	DECLARE
-		node_id ALIAS FOR $1;
-		pipeitem record;
-		npipe integer;
-		Tyear integer;
-		Tmaterial varchar(30);
-		Tdiameter varchar(10);
-		i integer := 0;
-		Ntype VARCHAR(20);
-		ori1 double precision := 0;
-		ori2 double precision := 0;
-		Norientation float := 0;
+		node_id     ALIAS FOR $1         ;
+		pipeitem    RECORD               ;
+		grouped     RECORD               ;
+		Tyear       INTEGER              ;
+		Tmaterial   VARCHAR(30)          ;
+		Tdiameter   VARCHAR(10)          ;
+		i           INTEGER          := 0;
+		type        VARCHAR(20)          ;
+		ori1        DOUBLE PRECISION := 0;
+		ori2        DOUBLE PRECISION := 0;
+		orientation FLOAT            := 0;
 	BEGIN
-		SELECT COUNT(id) INTO npipe FROM distribution.pipes_view WHERE id_node_a = node_id OR id_node_b = node_id;
-		IF npipe = 1 THEN
-			Ntype := ''one'';
-		ELSEIF npipe = 2 THEN
+		SELECT COUNT(pipes_view.id) AS count , bool_or(pipes_view._schema_view) AS schema_view INTO grouped FROM distribution.pipes_view WHERE id_node_a = node_id OR id_node_b = node_id;
+		IF grouped.count = 1 THEN
+			type := ''one'';
+		ELSEIF grouped.count = 2 THEN
 			FOR pipeitem IN (
 				SELECT year,_material_longname,_material_diameter,ST_PointN(wkb_geometry,2)                          AS point_1 , ST_StartPoint(wkb_geometry) AS point_2 FROM distribution.pipes_view WHERE id_node_a = node_id
 				UNION
@@ -77,19 +80,19 @@ CREATE OR REPLACE FUNCTION distribution.node_update_type(integer) RETURNS void A
 					i := 1;
 					SELECT  ST_Azimuth(pipeitem.point_1,pipeitem.point_2) INTO ori1 ;
 				ELSE
-					Ntype := ''two_same'';
-					IF Tyear     != pipeitem.year               THEN Ntype := ''two_year''    ; END IF;
-					IF Tmaterial != pipeitem._material_longname THEN Ntype := ''two_material''; END IF;
-					IF Tdiameter != pipeitem._material_diameter THEN Ntype := ''two_diameter''; END IF;
+					type := ''two_same'';
+					IF Tyear     != pipeitem.year               THEN type := ''two_year''    ; END IF;
+					IF Tmaterial != pipeitem._material_longname THEN type := ''two_material''; END IF;
+					IF Tdiameter != pipeitem._material_diameter THEN type := ''two_diameter''; END IF;
 					SELECT ST_Azimuth(pipeitem.point_1,pipeitem.point_2) INTO ori2 ;
-					SELECT degrees( ATAN2( (SIN(ori1)+SIN(ori2))/2 , (COS(ori1)+COS(ori2))/2 ) ) INTO Norientation;
+					SELECT degrees( ATAN2( (SIN(ori1)+SIN(ori2))/2 , (COS(ori1)+COS(ori2))/2 ) ) INTO orientation;
 				END IF;
 			END LOOP;
 		ELSE
-			Ntype := ''three'';
+			type := ''three'';
 		END IF;
-		UPDATE distribution.nodes SET type = Ntype, orientation = Norientation WHERE id = node_id;
-		RAISE NOTICE ''% %'' , node_id , Norientation;
+		UPDATE distribution.nodes SET _type = type, _orientation = orientation, _schema_view = grouped.schema_view WHERE id = node_id;
+		/*RAISE NOTICE ''% %'' , node_id , orientation;*/
 	END;
 ' LANGUAGE 'plpgsql';
 COMMENT ON FUNCTION distribution.node_update_type(integer) IS 'Set the orientation and type for a node. If three pipes arrives at the node: intersection. If one pipe: end. If two: depends on characteristics of pipes: year (is different), material (and year), diameter(and material/year)';
