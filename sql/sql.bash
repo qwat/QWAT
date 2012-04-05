@@ -43,6 +43,10 @@ psql -h 172.24.171.$ip -U sige -f subscriber_type.sql
 read -p "Press any key to continue..."
 psql -h 172.24.171.$ip -U sige -f subscriber.sql
 read -p "Press any key to continue..."
+psql -h 172.24.171.$ip -U sige -f installations_type.sql
+read -p "Press any key to continue..."
+psql -h 172.24.171.$ip -U sige -f installations.sql
+read -p "Press any key to continue..."
 psql -h 172.24.171.$ip -U sige -f 3d.sql
 
 
