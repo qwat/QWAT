@@ -30,14 +30,12 @@ ALTER TABLE distribution.pipes ADD COLUMN   _length3d decimal(8,2);             
 ALTER TABLE distribution.pipes ADD COLUMN   _length3d_uptodate boolean DEFAULT False;               /* _length3d_uptodate   */
 ALTER TABLE distribution.pipes ADD COLUMN   _is_on_map varchar(80) DEFAULT '';                      /* _is_on_map           */
 ALTER TABLE distribution.pipes ADD COLUMN   _is_on_district varchar(100) DEFAULT '';                /* _is_on_district      */
-                                                                                                    /*                      */
-ALTER TABLE distribution.pipes ADD COLUMN   wkb_geometry geometry;                                  /* wkb_geometry         */
 
-ALTER TABLE distribution.pipes ADD COLUMN   material_int_diam character(20);
-ALTER TABLE distribution.pipes ADD COLUMN   material_nominal_diam character(20);
+
+SELECT addGeometryColumn('distribution', 'pipes', 'wkb_geometry', 21781, 'LINESTRING', 2);
+
+
 ALTER TABLE distribution.pipes ADD COLUMN   coating_internal_material_id character(20);
-ALTER TABLE distribution.pipes ADD COLUMN   material_ext_diam character(20);
-ALTER TABLE distribution.pipes ADD COLUMN   material_thickness character(20);
 ALTER TABLE distribution.pipes ADD COLUMN   coating_external_material_id character(20);
 
 /*----------------!!!---!!!----------------*/
@@ -78,9 +76,11 @@ CREATE INDEX fki_id_node_a ON distribution.pipes(id_node_a);
 ALTER TABLE distribution.pipes ADD CONSTRAINT pipes_id_node_b FOREIGN KEY (id_node_b) REFERENCES distribution.nodes(id) MATCH SIMPLE ON UPDATE NO ACTION ON DELETE NO ACTION;
 CREATE INDEX fki_id_node_b ON distribution.pipes(id_node_b);
 /* Geometry */
+/*
 ALTER TABLE distribution.pipes ADD CONSTRAINT enforce_dims_wkb_geometry CHECK (st_ndims(wkb_geometry) = 2);
 ALTER TABLE distribution.pipes ADD CONSTRAINT enforce_geotype_wkb_geometry CHECK (geometrytype(wkb_geometry) = 'LINESTRING'::text OR wkb_geometry IS NULL);
 ALTER TABLE distribution.pipes ADD CONSTRAINT enforce_srid_wkb_geometry CHECK (st_srid(wkb_geometry) = 21781);
+*/
 /* GIST index*/
 CREATE INDEX pipes_geoidx ON distribution.pipes USING GIST ( wkb_geometry );
 
