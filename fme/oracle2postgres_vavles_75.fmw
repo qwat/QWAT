@@ -91,7 +91,7 @@
 #! DEFLINE_TEMPLATE="postgis_type postgis_geometry postgis_mode INHERIT_FROM_WRITER postgis_spatial_column_type geometry postgis_spatial_column geom postgis_srid INHERIT_FROM_WRITER postgis_drop_table NO postgis_truncate_table NO postgis_create_with_oids YES postgis_create_gist_index YES postgis_vacuum_analyze YES postgis_allow_serial_writing NO"
 #! DEFLINE_ATTRS="true"
 #! EXPOSABLE_ATTRS="fme_type char(50) postgis_collection_id int fme_text_string char(50) fme_db_operation char(8) fme_feature_type char(50) fme_basename char(50) fme_where char(254) fme_geometry fme_char(50) postgis_collection_part_id int fme_sweep_angle float8 fme_rotation float8 postgis_type char(50) fme_secondary_axis float8 fme_fill_color char(50) fme_dataset char(50) fme_primary_axis float8 fme_start_angle float8 fme_text_size float8 fme_color char(50)"
-#! DEFLINE_PARMS="&quot;GUI CHOICE postgis_mode INHERIT_FROM_WRITER%INSERT%UPDATE%DELETE Writer Mode&quot; INHERIT_FROM_WRITER &quot;GUI CHOICE postgis_spatial_column_type geometry%geography Spatial Column Type&quot; geometry &quot;GUI TEXT postgis_spatial_column Spatial Column Name&quot; wkb_geometry &quot;GUI OPTIONAL FLOAT postgis_srid Spatial Column SRID&quot; INHERIT_FROM_WRITER &quot;GUI CHOICE postgis_drop_table YES%NO Drop Table First&quot; NO &quot;GUI CHOICE postgis_truncate_table YES%NO Truncate Table First&quot; NO &quot;GUI CHOICE postgis_create_with_oids YES%NO Create With OIDs&quot; YES &quot;GUI CHOICE postgis_create_gist_index YES%NO Create GiST Index&quot; YES &quot;GUI CHOICE postgis_vacuum_analyze YES%NO Vacuum Analyze Table&quot; YES &quot;GUI CHOICE postgis_allow_serial_writing YES%NO Allow serial Column Writing&quot; NO "
+#! DEFLINE_PARMS="&quot;GUI CHOICE postgis_mode INHERIT_FROM_WRITER%INSERT%UPDATE%DELETE Writer Mode&quot; INHERIT_FROM_WRITER &quot;GUI CHOICE postgis_spatial_column_type geometry%geography Spatial Column Type&quot; geometry &quot;GUI TEXT postgis_spatial_column Spatial Column Name&quot; geometry &quot;GUI OPTIONAL FLOAT postgis_srid Spatial Column SRID&quot; INHERIT_FROM_WRITER &quot;GUI CHOICE postgis_drop_table YES%NO Drop Table First&quot; NO &quot;GUI CHOICE postgis_truncate_table YES%NO Truncate Table First&quot; NO &quot;GUI CHOICE postgis_create_with_oids YES%NO Create With OIDs&quot; YES &quot;GUI CHOICE postgis_create_gist_index YES%NO Create GiST Index&quot; YES &quot;GUI CHOICE postgis_vacuum_analyze YES%NO Vacuum Analyze Table&quot; YES &quot;GUI CHOICE postgis_allow_serial_writing YES%NO Allow serial Column Writing&quot; NO "
 #! ATTR_INDEX_TYPES="BTREE RTREE HASH PRIKEY"
 #! ATTR_NAME_INVALID_CHARS=". %-#[]&quot;()!?*&apos;&amp;+\/"
 #! SUPPORTS_FEATURE_TYPE_FANOUT="true"
@@ -640,7 +640,7 @@
 #! IDENTIFIER="0"
 #! FEAT_GEOMTYPE="oracle_nil"
 #! POSITION="103 -2122"
-#! ORDER="11"
+#! ORDER="12"
 #! COLLAPSED="true"
 #! KEYWORD="ORACLE8I_DB_1"
 #! ENABLED="true"
@@ -755,7 +755,7 @@
 #! IDENTIFIER="1"
 #! FEAT_GEOMTYPE="oracle_nil"
 #! POSITION="0 -84"
-#! ORDER="18"
+#! ORDER="19"
 #! COLLAPSED="true"
 #! KEYWORD="ORACLE8I_DB_1"
 #! ENABLED="true"
@@ -833,7 +833,7 @@
 #! </FEATURE_TYPE>
 #! <FEATURE_TYPE
 #! IS_SOURCE="false"
-#! NODE_NAME="valves"
+#! NODE_NAME="distribution.valves"
 #! IS_EDITABLE="true"
 #! IDENTIFIER="18"
 #! FEAT_GEOMTYPE="&lt;NO_GEOMETRY&gt;"
@@ -847,7 +847,7 @@
 #! >
 #! <FEAT_ATTRIBUTE ATTR_NAME="id" ATTR_TYPE="int4"/>
 #! <DEFLINE_PARM PARM_NAME="postgis_truncate_table" PARM_VALUE="YES"/>
-#! <DEFLINE_PARM PARM_NAME="postgis_spatial_column" PARM_VALUE="wkb_geometry"/>
+#! <DEFLINE_PARM PARM_NAME="postgis_spatial_column" PARM_VALUE="geometry"/>
 #! <DEFLINE_PARM PARM_NAME="postgis_drop_table" PARM_VALUE="NO"/>
 #! <DEFLINE_PARM PARM_NAME="postgis_spatial_column_type" PARM_VALUE="geometry"/>
 #! <DEFLINE_PARM PARM_NAME="postgis_vacuum_analyze" PARM_VALUE="YES"/>
@@ -884,7 +884,7 @@
 #! TYPE="FeatureMerger"
 #! VERSION="8"
 #! POSITION="1221 -246"
-#! ORDER="10"
+#! ORDER="11"
 #! PARMS_EDITED="true"
 #! ENABLED="true"
 #! >
@@ -1044,7 +1044,7 @@
 #! <XFORM_ATTR ATTR_NAME="Z_DIFF" IS_USER_CREATED="false" FEAT_INDEX="0"/>
 #! <XFORM_ATTR ATTR_NAME="Z_TERRAIN" IS_USER_CREATED="false" FEAT_INDEX="0"/>
 #! <XFORM_ATTR ATTR_NAME="WKT" IS_USER_CREATED="false" FEAT_INDEX="0"/>
-#! <XFORM_ATTR ATTR_NAME="wkb_geometry" IS_USER_CREATED="false" FEAT_INDEX="0"/>
+#! <XFORM_ATTR ATTR_NAME="geometry" IS_USER_CREATED="false" FEAT_INDEX="0"/>
 #! <XFORM_ATTR ATTR_NAME="id" IS_USER_CREATED="false" FEAT_INDEX="0"/>
 #! <OUTPUT_FEAT NAME="INCOMPLETE"/>
 #! <FEAT_COLLAPSED COLLAPSED="1"/>
@@ -1274,7 +1274,7 @@
 #! <XFORM_ATTR ATTR_NAME="Z_DIFF" IS_USER_CREATED="false" FEAT_INDEX="3"/>
 #! <XFORM_ATTR ATTR_NAME="Z_TERRAIN" IS_USER_CREATED="false" FEAT_INDEX="3"/>
 #! <XFORM_ATTR ATTR_NAME="WKT" IS_USER_CREATED="false" FEAT_INDEX="3"/>
-#! <XFORM_ATTR ATTR_NAME="wkb_geometry" IS_USER_CREATED="false" FEAT_INDEX="3"/>
+#! <XFORM_ATTR ATTR_NAME="geometry" IS_USER_CREATED="false" FEAT_INDEX="3"/>
 #! <OUTPUT_FEAT NAME="UNREFERENCED"/>
 #! <FEAT_COLLAPSED COLLAPSED="4"/>
 #! <XFORM_ATTR ATTR_NAME="ACCURACY_LEVEL" IS_USER_CREATED="false" FEAT_INDEX="4"/>
@@ -1373,7 +1373,7 @@
 #! <XFORM_ATTR ATTR_NAME="Z_DIFF" IS_USER_CREATED="false" FEAT_INDEX="4"/>
 #! <XFORM_ATTR ATTR_NAME="Z_TERRAIN" IS_USER_CREATED="false" FEAT_INDEX="4"/>
 #! <XFORM_ATTR ATTR_NAME="WKT" IS_USER_CREATED="false" FEAT_INDEX="4"/>
-#! <XFORM_ATTR ATTR_NAME="wkb_geometry" IS_USER_CREATED="false" FEAT_INDEX="4"/>
+#! <XFORM_ATTR ATTR_NAME="geometry" IS_USER_CREATED="false" FEAT_INDEX="4"/>
 #! <OUTPUT_FEAT NAME="DUPLICATE_SUPPLIER"/>
 #! <FEAT_COLLAPSED COLLAPSED="5"/>
 #! <XFORM_ATTR ATTR_NAME="ACCURACY_LEVEL" IS_USER_CREATED="false" FEAT_INDEX="5"/>
@@ -1472,13 +1472,13 @@
 #! <XFORM_ATTR ATTR_NAME="Z_DIFF" IS_USER_CREATED="false" FEAT_INDEX="5"/>
 #! <XFORM_ATTR ATTR_NAME="Z_TERRAIN" IS_USER_CREATED="false" FEAT_INDEX="5"/>
 #! <XFORM_ATTR ATTR_NAME="WKT" IS_USER_CREATED="false" FEAT_INDEX="5"/>
-#! <XFORM_ATTR ATTR_NAME="wkb_geometry" IS_USER_CREATED="false" FEAT_INDEX="5"/>
+#! <XFORM_ATTR ATTR_NAME="geometry" IS_USER_CREATED="false" FEAT_INDEX="5"/>
 #! <XFORM_PARM PARM_NAME="GROUP_BY" PARM_VALUE=""/>
 #! <XFORM_PARM PARM_NAME="PARAMETERS_GROUP" PARM_VALUE=""/>
 #! <XFORM_PARM PARM_NAME="LIST_NAME" PARM_VALUE=""/>
 #! <XFORM_PARM PARM_NAME="REFEEATTR" PARM_VALUE="GID"/>
 #! <XFORM_PARM PARM_NAME="XFORMER_NAME" PARM_VALUE="FeatureMerger"/>
-#! <XFORM_PARM PARM_NAME="MERGE_TYPE" PARM_VALUE="Attributes Only"/>
+#! <XFORM_PARM PARM_NAME="MERGE_TYPE" PARM_VALUE="Geometry - Build Aggregates"/>
 #! <XFORM_PARM PARM_NAME="PROCESS_DUPS" PARM_VALUE="No"/>
 #! <XFORM_PARM PARM_NAME="TRANSFORMER_GROUP" PARM_VALUE=""/>
 #! <XFORM_PARM PARM_NAME="BUILD_INCOMPLETE" PARM_VALUE="No"/>
@@ -1489,7 +1489,7 @@
 #! TYPE="StringFormatter"
 #! VERSION="1"
 #! POSITION="69 -1723"
-#! ORDER="12"
+#! ORDER="13"
 #! PARMS_EDITED="true"
 #! ENABLED="true"
 #! >
@@ -1601,7 +1601,7 @@
 #! TYPE="StringConcatenator"
 #! VERSION="5"
 #! POSITION="76 -1435"
-#! ORDER="13"
+#! ORDER="14"
 #! PARMS_EDITED="true"
 #! ENABLED="true"
 #! >
@@ -1703,7 +1703,7 @@
 #! <XFORM_ATTR ATTR_NAME="Z_DIFF" IS_USER_CREATED="false" FEAT_INDEX="0"/>
 #! <XFORM_ATTR ATTR_NAME="Z_TERRAIN" IS_USER_CREATED="false" FEAT_INDEX="0"/>
 #! <XFORM_ATTR ATTR_NAME="WKT" IS_USER_CREATED="false" FEAT_INDEX="0"/>
-#! <XFORM_PARM PARM_NAME="PARM_LINE" PARM_VALUE="POINT&lt;openparen&gt;,&amp;X1,&lt;space&gt;,&amp;Y1,&lt;space&gt;&lt;closeparen&gt;"/>
+#! <XFORM_PARM PARM_NAME="PARM_LINE" PARM_VALUE="POINT&lt;openparen&gt;,&amp;Y1,&lt;space&gt;,&amp;X1,&lt;space&gt;&lt;closeparen&gt;"/>
 #! <XFORM_PARM PARM_NAME="XFORMER_NAME" PARM_VALUE="StringConcatenator"/>
 #! <XFORM_PARM PARM_NAME="VAL_ATTR" PARM_VALUE="WKT"/>
 #! </TRANSFORMER>
@@ -1712,7 +1712,7 @@
 #! TYPE="GeometryReplacer"
 #! VERSION="2"
 #! POSITION="65 -1179"
-#! ORDER="14"
+#! ORDER="15"
 #! PARMS_EDITED="true"
 #! ENABLED="true"
 #! >
@@ -1825,7 +1825,7 @@
 #! TYPE="GeometryOGCValidator"
 #! VERSION="0"
 #! POSITION="606 -1920"
-#! ORDER="15"
+#! ORDER="16"
 #! PARMS_EDITED="true"
 #! ENABLED="true"
 #! >
@@ -2039,7 +2039,7 @@
 #! TYPE="CoordinateSystemSetter"
 #! VERSION="0"
 #! POSITION="631 -1636"
-#! ORDER="16"
+#! ORDER="17"
 #! PARMS_EDITED="true"
 #! ENABLED="true"
 #! >
@@ -2151,7 +2151,7 @@
 #! TYPE="GeometryExtractor"
 #! VERSION="2"
 #! POSITION="626 -1360"
-#! ORDER="17"
+#! ORDER="18"
 #! PARMS_EDITED="true"
 #! ENABLED="true"
 #! >
@@ -2253,20 +2253,228 @@
 #! <XFORM_ATTR ATTR_NAME="Z_DIFF" IS_USER_CREATED="false" FEAT_INDEX="0"/>
 #! <XFORM_ATTR ATTR_NAME="Z_TERRAIN" IS_USER_CREATED="false" FEAT_INDEX="0"/>
 #! <XFORM_ATTR ATTR_NAME="WKT" IS_USER_CREATED="false" FEAT_INDEX="0"/>
-#! <XFORM_ATTR ATTR_NAME="wkb_geometry" IS_USER_CREATED="false" FEAT_INDEX="0"/>
+#! <XFORM_ATTR ATTR_NAME="geometry" IS_USER_CREATED="false" FEAT_INDEX="0"/>
 #! <XFORM_PARM PARM_NAME="PARAMETERS_GROUP" PARM_VALUE=""/>
 #! <XFORM_PARM PARM_NAME="KIND_LONG" PARM_VALUE="OGC Well Known Binary"/>
-#! <XFORM_PARM PARM_NAME="ATTR" PARM_VALUE="wkb_geometry"/>
+#! <XFORM_PARM PARM_NAME="ATTR" PARM_VALUE="geometry"/>
 #! <XFORM_PARM PARM_NAME="XFORMER_NAME" PARM_VALUE="GeometryExtractor"/>
 #! <XFORM_PARM PARM_NAME="OGCVERSION" PARM_VALUE="1.1"/>
 #! <XFORM_PARM PARM_NAME="TRANSFORMER_GROUP" PARM_VALUE=""/>
 #! </TRANSFORMER>
 #! <TRANSFORMER
+#! IDENTIFIER="25"
+#! TYPE="AttributeFilter"
+#! VERSION="2"
+#! POSITION="122 -208"
+#! ORDER="22"
+#! PARMS_EDITED="true"
+#! ENABLED="true"
+#! >
+#! <OUTPUT_FEAT NAME="0"/>
+#! <FEAT_COLLAPSED COLLAPSED="0"/>
+#! <XFORM_ATTR ATTR_NAME="ALTITUDE" IS_USER_CREATED="false" FEAT_INDEX="0"/>
+#! <XFORM_ATTR ATTR_NAME="ANSCHLUSS_ABSAUGUNG" IS_USER_CREATED="false" FEAT_INDEX="0"/>
+#! <XFORM_ATTR ATTR_NAME="ANSCHLUSS_SPERRSTOFFE" IS_USER_CREATED="false" FEAT_INDEX="0"/>
+#! <XFORM_ATTR ATTR_NAME="ANTRIEBS_ART" IS_USER_CREATED="false" FEAT_INDEX="0"/>
+#! <XFORM_ATTR ATTR_NAME="AREA_NOMINAL" IS_USER_CREATED="false" FEAT_INDEX="0"/>
+#! <XFORM_ATTR ATTR_NAME="ARTIKEL_NR" IS_USER_CREATED="false" FEAT_INDEX="0"/>
+#! <XFORM_ATTR ATTR_NAME="BEMERKUNG" IS_USER_CREATED="false" FEAT_INDEX="0"/>
+#! <XFORM_ATTR ATTR_NAME="BESCHICHTUNG_AUSSEN" IS_USER_CREATED="false" FEAT_INDEX="0"/>
+#! <XFORM_ATTR ATTR_NAME="BESCHICHTUNG_INNEN" IS_USER_CREATED="false" FEAT_INDEX="0"/>
+#! <XFORM_ATTR ATTR_NAME="BEZEICHNUNG" IS_USER_CREATED="false" FEAT_INDEX="0"/>
+#! <XFORM_ATTR ATTR_NAME="BEZEICHNUNG2" IS_USER_CREATED="false" FEAT_INDEX="0"/>
+#! <XFORM_ATTR ATTR_NAME="DATENUEBERTRAGUNG" IS_USER_CREATED="false" FEAT_INDEX="0"/>
+#! <XFORM_ATTR ATTR_NAME="DATUM_VERGABE" IS_USER_CREATED="false" FEAT_INDEX="0"/>
+#! <XFORM_ATTR ATTR_NAME="DELETED" IS_USER_CREATED="false" FEAT_INDEX="0"/>
+#! <XFORM_ATTR ATTR_NAME="DRUCKZONE_ID" IS_USER_CREATED="false" FEAT_INDEX="0"/>
+#! <XFORM_ATTR ATTR_NAME="ECKFORM" IS_USER_CREATED="false" FEAT_INDEX="0"/>
+#! <XFORM_ATTR ATTR_NAME="EIGENTUMSVERHAELTNIS" IS_USER_CREATED="false" FEAT_INDEX="0"/>
+#! <XFORM_ATTR ATTR_NAME="EINBAUFIRMA_ID" IS_USER_CREATED="false" FEAT_INDEX="0"/>
+#! <XFORM_ATTR ATTR_NAME="EINBAUJAHR" IS_USER_CREATED="false" FEAT_INDEX="0"/>
+#! <XFORM_ATTR ATTR_NAME="F1" IS_USER_CREATED="false" FEAT_INDEX="0"/>
+#! <XFORM_ATTR ATTR_NAME="F2" IS_USER_CREATED="false" FEAT_INDEX="0"/>
+#! <XFORM_ATTR ATTR_NAME="F3" IS_USER_CREATED="false" FEAT_INDEX="0"/>
+#! <XFORM_ATTR ATTR_NAME="FERME" IS_USER_CREATED="false" FEAT_INDEX="0"/>
+#! <XFORM_ATTR ATTR_NAME="FESTSTELLBAR" IS_USER_CREATED="false" FEAT_INDEX="0"/>
+#! <XFORM_ATTR ATTR_NAME="FID" IS_USER_CREATED="false" FEAT_INDEX="0"/>
+#! <XFORM_ATTR ATTR_NAME="FID_LAGEBEZEICHNUNG" IS_USER_CREATED="false" FEAT_INDEX="0"/>
+#! <XFORM_ATTR ATTR_NAME="FID_NETZPUNKT" IS_USER_CREATED="false" FEAT_INDEX="0"/>
+#! <XFORM_ATTR ATTR_NAME="FLST_KENNZEICHEN_OF" IS_USER_CREATED="false" FEAT_INDEX="0"/>
+#! <XFORM_ATTR ATTR_NAME="FLST_NENNER" IS_USER_CREATED="false" FEAT_INDEX="0"/>
+#! <XFORM_ATTR ATTR_NAME="FLST_NR" IS_USER_CREATED="false" FEAT_INDEX="0"/>
+#! <XFORM_ATTR ATTR_NAME="FLST_ZAEHLER" IS_USER_CREATED="false" FEAT_INDEX="0"/>
+#! <XFORM_ATTR ATTR_NAME="FREMDANTRIEB" IS_USER_CREATED="false" FEAT_INDEX="0"/>
+#! <XFORM_ATTR ATTR_NAME="FUNKTION" IS_USER_CREATED="false" FEAT_INDEX="0"/>
+#! <XFORM_ATTR ATTR_NAME="GAUCHE" IS_USER_CREATED="false" FEAT_INDEX="0"/>
+#! <XFORM_ATTR ATTR_NAME="GEMARKUNG" IS_USER_CREATED="false" FEAT_INDEX="0"/>
+#! <XFORM_ATTR ATTR_NAME="GID" IS_USER_CREATED="false" FEAT_INDEX="0"/>
+#! <XFORM_ATTR ATTR_NAME="HAUSNUMMER" IS_USER_CREATED="false" FEAT_INDEX="0"/>
+#! <XFORM_ATTR ATTR_NAME="HAUSNUMMER_ERG" IS_USER_CREATED="false" FEAT_INDEX="0"/>
+#! <XFORM_ATTR ATTR_NAME="HERSTELLER_ID" IS_USER_CREATED="false" FEAT_INDEX="0"/>
+#! <XFORM_ATTR ATTR_NAME="ID_BESCHILDERUNG" IS_USER_CREATED="false" FEAT_INDEX="0"/>
+#! <XFORM_ATTR ATTR_NAME="KATASTERBLATT" IS_USER_CREATED="false" FEAT_INDEX="0"/>
+#! <XFORM_ATTR ATTR_NAME="LAGEGENAUIGKEIT" IS_USER_CREATED="false" FEAT_INDEX="0"/>
+#! <XFORM_ATTR ATTR_NAME="MATERIAL" IS_USER_CREATED="false" FEAT_INDEX="0"/>
+#! <XFORM_ATTR ATTR_NAME="NAME" IS_USER_CREATED="false" FEAT_INDEX="0"/>
+#! <XFORM_ATTR ATTR_NAME="NAME2" IS_USER_CREATED="false" FEAT_INDEX="0"/>
+#! <XFORM_ATTR ATTR_NAME="NENNDRUCK" IS_USER_CREATED="false" FEAT_INDEX="0"/>
+#! <XFORM_ATTR ATTR_NAME="NENNWEITE" IS_USER_CREATED="false" FEAT_INDEX="0"/>
+#! <XFORM_ATTR ATTR_NAME="ORTSBEZEICHNUNG" IS_USER_CREATED="false" FEAT_INDEX="0"/>
+#! <XFORM_ATTR ATTR_NAME="POINT_NUMBER" IS_USER_CREATED="false" FEAT_INDEX="0"/>
+#! <XFORM_ATTR ATTR_NAME="SCHIEBER_ART" IS_USER_CREATED="false" FEAT_INDEX="0"/>
+#! <XFORM_ATTR ATTR_NAME="SCHIEBER_AUF" IS_USER_CREATED="false" FEAT_INDEX="0"/>
+#! <XFORM_ATTR ATTR_NAME="SCHILD_MONTIERT" IS_USER_CREATED="false" FEAT_INDEX="0"/>
+#! <XFORM_ATTR ATTR_NAME="SKALIERFAKTOR" IS_USER_CREATED="false" FEAT_INDEX="0"/>
+#! <XFORM_ATTR ATTR_NAME="STANDORT" IS_USER_CREATED="false" FEAT_INDEX="0"/>
+#! <XFORM_ATTR ATTR_NAME="STATUS" IS_USER_CREATED="false" FEAT_INDEX="0"/>
+#! <XFORM_ATTR ATTR_NAME="STETIGES_STELLVERHALTEN" IS_USER_CREATED="false" FEAT_INDEX="0"/>
+#! <XFORM_ATTR ATTR_NAME="STRANG_ID" IS_USER_CREATED="false" FEAT_INDEX="0"/>
+#! <XFORM_ATTR ATTR_NAME="TB_POINT_NUMBER" IS_USER_CREATED="false" FEAT_INDEX="0"/>
+#! <XFORM_ATTR ATTR_NAME="UE_PLAN_NUMMER" IS_USER_CREATED="false" FEAT_INDEX="0"/>
+#! <XFORM_ATTR ATTR_NAME="VERBINDUNGSART" IS_USER_CREATED="false" FEAT_INDEX="0"/>
+#! <XFORM_ATTR ATTR_NAME="V_COMMUNE" IS_USER_CREATED="false" FEAT_INDEX="0"/>
+#! <XFORM_ATTR ATTR_NAME="WERKPLAN_NUMMER" IS_USER_CREATED="false" FEAT_INDEX="0"/>
+#! <XFORM_ATTR ATTR_NAME="ZERTIFIKAT" IS_USER_CREATED="false" FEAT_INDEX="0"/>
+#! <OUTPUT_FEAT NAME="&lt;BLANK&gt;"/>
+#! <FEAT_COLLAPSED COLLAPSED="1"/>
+#! <XFORM_ATTR ATTR_NAME="ALTITUDE" IS_USER_CREATED="false" FEAT_INDEX="1"/>
+#! <XFORM_ATTR ATTR_NAME="ANSCHLUSS_ABSAUGUNG" IS_USER_CREATED="false" FEAT_INDEX="1"/>
+#! <XFORM_ATTR ATTR_NAME="ANSCHLUSS_SPERRSTOFFE" IS_USER_CREATED="false" FEAT_INDEX="1"/>
+#! <XFORM_ATTR ATTR_NAME="ANTRIEBS_ART" IS_USER_CREATED="false" FEAT_INDEX="1"/>
+#! <XFORM_ATTR ATTR_NAME="AREA_NOMINAL" IS_USER_CREATED="false" FEAT_INDEX="1"/>
+#! <XFORM_ATTR ATTR_NAME="ARTIKEL_NR" IS_USER_CREATED="false" FEAT_INDEX="1"/>
+#! <XFORM_ATTR ATTR_NAME="BEMERKUNG" IS_USER_CREATED="false" FEAT_INDEX="1"/>
+#! <XFORM_ATTR ATTR_NAME="BESCHICHTUNG_AUSSEN" IS_USER_CREATED="false" FEAT_INDEX="1"/>
+#! <XFORM_ATTR ATTR_NAME="BESCHICHTUNG_INNEN" IS_USER_CREATED="false" FEAT_INDEX="1"/>
+#! <XFORM_ATTR ATTR_NAME="BEZEICHNUNG" IS_USER_CREATED="false" FEAT_INDEX="1"/>
+#! <XFORM_ATTR ATTR_NAME="BEZEICHNUNG2" IS_USER_CREATED="false" FEAT_INDEX="1"/>
+#! <XFORM_ATTR ATTR_NAME="DATENUEBERTRAGUNG" IS_USER_CREATED="false" FEAT_INDEX="1"/>
+#! <XFORM_ATTR ATTR_NAME="DATUM_VERGABE" IS_USER_CREATED="false" FEAT_INDEX="1"/>
+#! <XFORM_ATTR ATTR_NAME="DELETED" IS_USER_CREATED="false" FEAT_INDEX="1"/>
+#! <XFORM_ATTR ATTR_NAME="DRUCKZONE_ID" IS_USER_CREATED="false" FEAT_INDEX="1"/>
+#! <XFORM_ATTR ATTR_NAME="ECKFORM" IS_USER_CREATED="false" FEAT_INDEX="1"/>
+#! <XFORM_ATTR ATTR_NAME="EIGENTUMSVERHAELTNIS" IS_USER_CREATED="false" FEAT_INDEX="1"/>
+#! <XFORM_ATTR ATTR_NAME="EINBAUFIRMA_ID" IS_USER_CREATED="false" FEAT_INDEX="1"/>
+#! <XFORM_ATTR ATTR_NAME="EINBAUJAHR" IS_USER_CREATED="false" FEAT_INDEX="1"/>
+#! <XFORM_ATTR ATTR_NAME="F1" IS_USER_CREATED="false" FEAT_INDEX="1"/>
+#! <XFORM_ATTR ATTR_NAME="F2" IS_USER_CREATED="false" FEAT_INDEX="1"/>
+#! <XFORM_ATTR ATTR_NAME="F3" IS_USER_CREATED="false" FEAT_INDEX="1"/>
+#! <XFORM_ATTR ATTR_NAME="FERME" IS_USER_CREATED="false" FEAT_INDEX="1"/>
+#! <XFORM_ATTR ATTR_NAME="FESTSTELLBAR" IS_USER_CREATED="false" FEAT_INDEX="1"/>
+#! <XFORM_ATTR ATTR_NAME="FID" IS_USER_CREATED="false" FEAT_INDEX="1"/>
+#! <XFORM_ATTR ATTR_NAME="FID_LAGEBEZEICHNUNG" IS_USER_CREATED="false" FEAT_INDEX="1"/>
+#! <XFORM_ATTR ATTR_NAME="FID_NETZPUNKT" IS_USER_CREATED="false" FEAT_INDEX="1"/>
+#! <XFORM_ATTR ATTR_NAME="FLST_KENNZEICHEN_OF" IS_USER_CREATED="false" FEAT_INDEX="1"/>
+#! <XFORM_ATTR ATTR_NAME="FLST_NENNER" IS_USER_CREATED="false" FEAT_INDEX="1"/>
+#! <XFORM_ATTR ATTR_NAME="FLST_NR" IS_USER_CREATED="false" FEAT_INDEX="1"/>
+#! <XFORM_ATTR ATTR_NAME="FLST_ZAEHLER" IS_USER_CREATED="false" FEAT_INDEX="1"/>
+#! <XFORM_ATTR ATTR_NAME="FREMDANTRIEB" IS_USER_CREATED="false" FEAT_INDEX="1"/>
+#! <XFORM_ATTR ATTR_NAME="FUNKTION" IS_USER_CREATED="false" FEAT_INDEX="1"/>
+#! <XFORM_ATTR ATTR_NAME="GAUCHE" IS_USER_CREATED="false" FEAT_INDEX="1"/>
+#! <XFORM_ATTR ATTR_NAME="GEMARKUNG" IS_USER_CREATED="false" FEAT_INDEX="1"/>
+#! <XFORM_ATTR ATTR_NAME="GID" IS_USER_CREATED="false" FEAT_INDEX="1"/>
+#! <XFORM_ATTR ATTR_NAME="HAUSNUMMER" IS_USER_CREATED="false" FEAT_INDEX="1"/>
+#! <XFORM_ATTR ATTR_NAME="HAUSNUMMER_ERG" IS_USER_CREATED="false" FEAT_INDEX="1"/>
+#! <XFORM_ATTR ATTR_NAME="HERSTELLER_ID" IS_USER_CREATED="false" FEAT_INDEX="1"/>
+#! <XFORM_ATTR ATTR_NAME="ID_BESCHILDERUNG" IS_USER_CREATED="false" FEAT_INDEX="1"/>
+#! <XFORM_ATTR ATTR_NAME="KATASTERBLATT" IS_USER_CREATED="false" FEAT_INDEX="1"/>
+#! <XFORM_ATTR ATTR_NAME="LAGEGENAUIGKEIT" IS_USER_CREATED="false" FEAT_INDEX="1"/>
+#! <XFORM_ATTR ATTR_NAME="MATERIAL" IS_USER_CREATED="false" FEAT_INDEX="1"/>
+#! <XFORM_ATTR ATTR_NAME="NAME" IS_USER_CREATED="false" FEAT_INDEX="1"/>
+#! <XFORM_ATTR ATTR_NAME="NAME2" IS_USER_CREATED="false" FEAT_INDEX="1"/>
+#! <XFORM_ATTR ATTR_NAME="NENNDRUCK" IS_USER_CREATED="false" FEAT_INDEX="1"/>
+#! <XFORM_ATTR ATTR_NAME="NENNWEITE" IS_USER_CREATED="false" FEAT_INDEX="1"/>
+#! <XFORM_ATTR ATTR_NAME="ORTSBEZEICHNUNG" IS_USER_CREATED="false" FEAT_INDEX="1"/>
+#! <XFORM_ATTR ATTR_NAME="POINT_NUMBER" IS_USER_CREATED="false" FEAT_INDEX="1"/>
+#! <XFORM_ATTR ATTR_NAME="SCHIEBER_ART" IS_USER_CREATED="false" FEAT_INDEX="1"/>
+#! <XFORM_ATTR ATTR_NAME="SCHIEBER_AUF" IS_USER_CREATED="false" FEAT_INDEX="1"/>
+#! <XFORM_ATTR ATTR_NAME="SCHILD_MONTIERT" IS_USER_CREATED="false" FEAT_INDEX="1"/>
+#! <XFORM_ATTR ATTR_NAME="SKALIERFAKTOR" IS_USER_CREATED="false" FEAT_INDEX="1"/>
+#! <XFORM_ATTR ATTR_NAME="STANDORT" IS_USER_CREATED="false" FEAT_INDEX="1"/>
+#! <XFORM_ATTR ATTR_NAME="STATUS" IS_USER_CREATED="false" FEAT_INDEX="1"/>
+#! <XFORM_ATTR ATTR_NAME="STETIGES_STELLVERHALTEN" IS_USER_CREATED="false" FEAT_INDEX="1"/>
+#! <XFORM_ATTR ATTR_NAME="STRANG_ID" IS_USER_CREATED="false" FEAT_INDEX="1"/>
+#! <XFORM_ATTR ATTR_NAME="TB_POINT_NUMBER" IS_USER_CREATED="false" FEAT_INDEX="1"/>
+#! <XFORM_ATTR ATTR_NAME="UE_PLAN_NUMMER" IS_USER_CREATED="false" FEAT_INDEX="1"/>
+#! <XFORM_ATTR ATTR_NAME="VERBINDUNGSART" IS_USER_CREATED="false" FEAT_INDEX="1"/>
+#! <XFORM_ATTR ATTR_NAME="V_COMMUNE" IS_USER_CREATED="false" FEAT_INDEX="1"/>
+#! <XFORM_ATTR ATTR_NAME="WERKPLAN_NUMMER" IS_USER_CREATED="false" FEAT_INDEX="1"/>
+#! <XFORM_ATTR ATTR_NAME="ZERTIFIKAT" IS_USER_CREATED="false" FEAT_INDEX="1"/>
+#! <OUTPUT_FEAT NAME="&lt;UNFILTERED&gt;"/>
+#! <FEAT_COLLAPSED COLLAPSED="2"/>
+#! <XFORM_ATTR ATTR_NAME="ALTITUDE" IS_USER_CREATED="false" FEAT_INDEX="2"/>
+#! <XFORM_ATTR ATTR_NAME="ANSCHLUSS_ABSAUGUNG" IS_USER_CREATED="false" FEAT_INDEX="2"/>
+#! <XFORM_ATTR ATTR_NAME="ANSCHLUSS_SPERRSTOFFE" IS_USER_CREATED="false" FEAT_INDEX="2"/>
+#! <XFORM_ATTR ATTR_NAME="ANTRIEBS_ART" IS_USER_CREATED="false" FEAT_INDEX="2"/>
+#! <XFORM_ATTR ATTR_NAME="AREA_NOMINAL" IS_USER_CREATED="false" FEAT_INDEX="2"/>
+#! <XFORM_ATTR ATTR_NAME="ARTIKEL_NR" IS_USER_CREATED="false" FEAT_INDEX="2"/>
+#! <XFORM_ATTR ATTR_NAME="BEMERKUNG" IS_USER_CREATED="false" FEAT_INDEX="2"/>
+#! <XFORM_ATTR ATTR_NAME="BESCHICHTUNG_AUSSEN" IS_USER_CREATED="false" FEAT_INDEX="2"/>
+#! <XFORM_ATTR ATTR_NAME="BESCHICHTUNG_INNEN" IS_USER_CREATED="false" FEAT_INDEX="2"/>
+#! <XFORM_ATTR ATTR_NAME="BEZEICHNUNG" IS_USER_CREATED="false" FEAT_INDEX="2"/>
+#! <XFORM_ATTR ATTR_NAME="BEZEICHNUNG2" IS_USER_CREATED="false" FEAT_INDEX="2"/>
+#! <XFORM_ATTR ATTR_NAME="DATENUEBERTRAGUNG" IS_USER_CREATED="false" FEAT_INDEX="2"/>
+#! <XFORM_ATTR ATTR_NAME="DATUM_VERGABE" IS_USER_CREATED="false" FEAT_INDEX="2"/>
+#! <XFORM_ATTR ATTR_NAME="DELETED" IS_USER_CREATED="false" FEAT_INDEX="2"/>
+#! <XFORM_ATTR ATTR_NAME="DRUCKZONE_ID" IS_USER_CREATED="false" FEAT_INDEX="2"/>
+#! <XFORM_ATTR ATTR_NAME="ECKFORM" IS_USER_CREATED="false" FEAT_INDEX="2"/>
+#! <XFORM_ATTR ATTR_NAME="EIGENTUMSVERHAELTNIS" IS_USER_CREATED="false" FEAT_INDEX="2"/>
+#! <XFORM_ATTR ATTR_NAME="EINBAUFIRMA_ID" IS_USER_CREATED="false" FEAT_INDEX="2"/>
+#! <XFORM_ATTR ATTR_NAME="EINBAUJAHR" IS_USER_CREATED="false" FEAT_INDEX="2"/>
+#! <XFORM_ATTR ATTR_NAME="F1" IS_USER_CREATED="false" FEAT_INDEX="2"/>
+#! <XFORM_ATTR ATTR_NAME="F2" IS_USER_CREATED="false" FEAT_INDEX="2"/>
+#! <XFORM_ATTR ATTR_NAME="F3" IS_USER_CREATED="false" FEAT_INDEX="2"/>
+#! <XFORM_ATTR ATTR_NAME="FERME" IS_USER_CREATED="false" FEAT_INDEX="2"/>
+#! <XFORM_ATTR ATTR_NAME="FESTSTELLBAR" IS_USER_CREATED="false" FEAT_INDEX="2"/>
+#! <XFORM_ATTR ATTR_NAME="FID" IS_USER_CREATED="false" FEAT_INDEX="2"/>
+#! <XFORM_ATTR ATTR_NAME="FID_LAGEBEZEICHNUNG" IS_USER_CREATED="false" FEAT_INDEX="2"/>
+#! <XFORM_ATTR ATTR_NAME="FID_NETZPUNKT" IS_USER_CREATED="false" FEAT_INDEX="2"/>
+#! <XFORM_ATTR ATTR_NAME="FLST_KENNZEICHEN_OF" IS_USER_CREATED="false" FEAT_INDEX="2"/>
+#! <XFORM_ATTR ATTR_NAME="FLST_NENNER" IS_USER_CREATED="false" FEAT_INDEX="2"/>
+#! <XFORM_ATTR ATTR_NAME="FLST_NR" IS_USER_CREATED="false" FEAT_INDEX="2"/>
+#! <XFORM_ATTR ATTR_NAME="FLST_ZAEHLER" IS_USER_CREATED="false" FEAT_INDEX="2"/>
+#! <XFORM_ATTR ATTR_NAME="FREMDANTRIEB" IS_USER_CREATED="false" FEAT_INDEX="2"/>
+#! <XFORM_ATTR ATTR_NAME="FUNKTION" IS_USER_CREATED="false" FEAT_INDEX="2"/>
+#! <XFORM_ATTR ATTR_NAME="GAUCHE" IS_USER_CREATED="false" FEAT_INDEX="2"/>
+#! <XFORM_ATTR ATTR_NAME="GEMARKUNG" IS_USER_CREATED="false" FEAT_INDEX="2"/>
+#! <XFORM_ATTR ATTR_NAME="GID" IS_USER_CREATED="false" FEAT_INDEX="2"/>
+#! <XFORM_ATTR ATTR_NAME="HAUSNUMMER" IS_USER_CREATED="false" FEAT_INDEX="2"/>
+#! <XFORM_ATTR ATTR_NAME="HAUSNUMMER_ERG" IS_USER_CREATED="false" FEAT_INDEX="2"/>
+#! <XFORM_ATTR ATTR_NAME="HERSTELLER_ID" IS_USER_CREATED="false" FEAT_INDEX="2"/>
+#! <XFORM_ATTR ATTR_NAME="ID_BESCHILDERUNG" IS_USER_CREATED="false" FEAT_INDEX="2"/>
+#! <XFORM_ATTR ATTR_NAME="KATASTERBLATT" IS_USER_CREATED="false" FEAT_INDEX="2"/>
+#! <XFORM_ATTR ATTR_NAME="LAGEGENAUIGKEIT" IS_USER_CREATED="false" FEAT_INDEX="2"/>
+#! <XFORM_ATTR ATTR_NAME="MATERIAL" IS_USER_CREATED="false" FEAT_INDEX="2"/>
+#! <XFORM_ATTR ATTR_NAME="NAME" IS_USER_CREATED="false" FEAT_INDEX="2"/>
+#! <XFORM_ATTR ATTR_NAME="NAME2" IS_USER_CREATED="false" FEAT_INDEX="2"/>
+#! <XFORM_ATTR ATTR_NAME="NENNDRUCK" IS_USER_CREATED="false" FEAT_INDEX="2"/>
+#! <XFORM_ATTR ATTR_NAME="NENNWEITE" IS_USER_CREATED="false" FEAT_INDEX="2"/>
+#! <XFORM_ATTR ATTR_NAME="ORTSBEZEICHNUNG" IS_USER_CREATED="false" FEAT_INDEX="2"/>
+#! <XFORM_ATTR ATTR_NAME="POINT_NUMBER" IS_USER_CREATED="false" FEAT_INDEX="2"/>
+#! <XFORM_ATTR ATTR_NAME="SCHIEBER_ART" IS_USER_CREATED="false" FEAT_INDEX="2"/>
+#! <XFORM_ATTR ATTR_NAME="SCHIEBER_AUF" IS_USER_CREATED="false" FEAT_INDEX="2"/>
+#! <XFORM_ATTR ATTR_NAME="SCHILD_MONTIERT" IS_USER_CREATED="false" FEAT_INDEX="2"/>
+#! <XFORM_ATTR ATTR_NAME="SKALIERFAKTOR" IS_USER_CREATED="false" FEAT_INDEX="2"/>
+#! <XFORM_ATTR ATTR_NAME="STANDORT" IS_USER_CREATED="false" FEAT_INDEX="2"/>
+#! <XFORM_ATTR ATTR_NAME="STATUS" IS_USER_CREATED="false" FEAT_INDEX="2"/>
+#! <XFORM_ATTR ATTR_NAME="STETIGES_STELLVERHALTEN" IS_USER_CREATED="false" FEAT_INDEX="2"/>
+#! <XFORM_ATTR ATTR_NAME="STRANG_ID" IS_USER_CREATED="false" FEAT_INDEX="2"/>
+#! <XFORM_ATTR ATTR_NAME="TB_POINT_NUMBER" IS_USER_CREATED="false" FEAT_INDEX="2"/>
+#! <XFORM_ATTR ATTR_NAME="UE_PLAN_NUMMER" IS_USER_CREATED="false" FEAT_INDEX="2"/>
+#! <XFORM_ATTR ATTR_NAME="VERBINDUNGSART" IS_USER_CREATED="false" FEAT_INDEX="2"/>
+#! <XFORM_ATTR ATTR_NAME="V_COMMUNE" IS_USER_CREATED="false" FEAT_INDEX="2"/>
+#! <XFORM_ATTR ATTR_NAME="WERKPLAN_NUMMER" IS_USER_CREATED="false" FEAT_INDEX="2"/>
+#! <XFORM_ATTR ATTR_NAME="ZERTIFIKAT" IS_USER_CREATED="false" FEAT_INDEX="2"/>
+#! <XFORM_PARM PARM_NAME="XFORMER_NAME" PARM_VALUE="AttributeFilter"/>
+#! <XFORM_PARM PARM_NAME="ATTR_NAME" PARM_VALUE="DELETED"/>
+#! <XFORM_PARM PARM_NAME="ATTR_VALUES" PARM_VALUE="0"/>
+#! </TRANSFORMER>
+#! <TRANSFORMER
 #! IDENTIFIER="22"
 #! TYPE="AttributeRenamer"
 #! VERSION="1"
-#! POSITION="578 -108"
-#! ORDER="19"
+#! POSITION="682 -65"
+#! ORDER="23"
 #! PARMS_EDITED="true"
 #! ENABLED="true"
 #! >
@@ -2413,18 +2621,27 @@
 #! EXTRA_POINTS=""
 #! />
 #! <FEAT_LINK
-#! IDENTIFIER="23"
+#! IDENTIFIER="24"
+#! SOURCE_NODE="22"
+#! TARGET_NODE="2"
+#! SOURCE_PORT_DESC="fo 0"
+#! TARGET_PORT_DESC="fi 0"
+#! ENABLED="true"
+#! EXTRA_POINTS=""
+#! />
+#! <FEAT_LINK
+#! IDENTIFIER="26"
 #! SOURCE_NODE="1"
-#! TARGET_NODE="22"
+#! TARGET_NODE="25"
 #! SOURCE_PORT_DESC="-1"
 #! TARGET_PORT_DESC="fi 0"
 #! ENABLED="true"
 #! EXTRA_POINTS=""
 #! />
 #! <FEAT_LINK
-#! IDENTIFIER="24"
-#! SOURCE_NODE="22"
-#! TARGET_NODE="2"
+#! IDENTIFIER="23"
+#! SOURCE_NODE="25"
+#! TARGET_NODE="22"
 #! SOURCE_PORT_DESC="fo 0"
 #! TARGET_PORT_DESC="fi 0"
 #! ENABLED="true"
@@ -2552,7 +2769,7 @@ GUI OPTIONAL INTEGER POSTGIS_OUT_PORT_POSTGIS_1 Port:
 DEFAULT_MACRO POSTGIS_OUT_USER_NAME_POSTGIS_1 sige
 POSTGIS_1_USER_NAME "$(POSTGIS_OUT_USER_NAME_POSTGIS_1)"
 GUI TEXT POSTGIS_OUT_USER_NAME_POSTGIS_1 Username:
-DEFAULT_MACRO POSTGIS_OUT_PASSWORD_POSTGIS_1 1234
+DEFAULT_MACRO POSTGIS_OUT_PASSWORD_POSTGIS_1 db4wat$
 POSTGIS_1_PASSWORD "$(POSTGIS_OUT_PASSWORD_POSTGIS_1)"
 GUI OPTIONAL PASSWORD POSTGIS_OUT_PASSWORD_POSTGIS_1 Password:
 # ============================================================================
@@ -2562,7 +2779,7 @@ POSTGIS_1_SPATIAL_COLUMN_TYPE "$(POSTGIS_OUT_SPATIAL_COLUMN_TYPE_POSTGIS_1)"
 GUI LOOKUP_CHOICE POSTGIS_OUT_SPATIAL_COLUMN_TYPE_POSTGIS_1 geometry%geography Spatial Column Type:
 # ============================================================================
 # Default spatial column name
-DEFAULT_MACRO POSTGIS_OUT_SPATIAL_COLUMN_NAME_POSTGIS_1 wkb_geometry
+DEFAULT_MACRO POSTGIS_OUT_SPATIAL_COLUMN_NAME_POSTGIS_1 geometry
 POSTGIS_1_SPATIAL_COLUMN_NAME "$(POSTGIS_OUT_SPATIAL_COLUMN_NAME_POSTGIS_1)"
 GUI TEXT POSTGIS_OUT_SPATIAL_COLUMN_NAME_POSTGIS_1 Spatial Column Name:
 DEFAULT_MACRO POSTGIS_OUT_GENERIC_GEOMETRY_POSTGIS_1 yes
@@ -2633,7 +2850,7 @@ FACTORY_DEF * TeeFactory    FACTORY_NAME StringFormatter    INPUT  FEATURE_TYPE 
 
 # -------------------------------------------------------------------------
 
-Tcl2 set {StringConcatenator_valList} [split POINT<openparen>,&X1,<space>,&Y1,<space><closeparen> ,];
+Tcl2 set {StringConcatenator_valList} [split POINT<openparen>,&Y1,<space>,&X1,<space><closeparen> ,];
 # We use Tcl here instead of @Concatenate because Tcl is more flexible.
 Tcl2 proc StringConcatenator_concatter {} {     global {StringConcatenator_valList};     set val {};     foreach {valEnc} [set {StringConcatenator_valList}] {       append val [FME_DecodeTextOrAttr $valEnc];     };     FME_SetAttribute {WKT} $val; }
 FACTORY_DEF * TeeFactory    FACTORY_NAME StringConcatenator    INPUT  FEATURE_TYPE StringFormatter_OUTPUT    OUTPUT FEATURE_TYPE StringConcatenator_OUTPUT         @Tcl2(StringConcatenator_concatter)
@@ -2661,20 +2878,29 @@ FACTORY_DEF * TeeFactory    FACTORY_NAME CoordinateSystemSetter    INPUT  FEATUR
 # this statically at parse time for efficiency sake
 
 MACRO GeometryExtractor_Function
-INCLUDE [ if {{wkb} == {fmebinary} } {               puts {MACRO GeometryExtractor_Function @Geometry(TO_ATTRIBUTE_BINARY,wkb_geometry) }           } elseif {{wkb} == {fmehex} } {               puts {MACRO GeometryExtractor_Function @Geometry(TO_ATTRIBUTE_BINARY_HEX,wkb_geometry) }           } elseif {{wkb} == {fmexml} } {               puts {MACRO GeometryExtractor_Function @Geometry(TO_ATTRIBUTE,wkb_geometry) }           } elseif {{wkb} == {wkt} ||                      {wkb} == {wkb} ||                      {wkb} == {wkbhex} } {               puts {MACRO GeometryExtractor_Function @OGCGeometry(to_attribute,wkb,wkb_geometry,1.1) }           } elseif {{wkb} == {GEOJSON} ||                     {wkb} == {ESRIJSON} } {               puts {MACRO GeometryExtractor_Function @JSONGeometry(TO_ATTRIBUTE,wkb,wkb_geometry) }           } elseif {{wkb} == {KML} } {               puts {MACRO GeometryExtractor_Function @KMLGeometry(TO_ATTRIBUTE,wkb_geometry) }           } elseif {{wkb} == {GEORSS_SIMPLE} } {               puts {MACRO GeometryExtractor_Function @GeoRSSGeometry(TO_ATTRIBUTE,wkb,wkb_geometry) }           } elseif {{wkb} == {GML_3.1.1} ||                      {wkb} == {GML_3.2.1} } {               puts {MACRO GeometryExtractor_Function @GMLGeometry(TO_ATTRIBUTE,wkb,wkb_geometry) }           }         ]
+INCLUDE [ if {{wkb} == {fmebinary} } {               puts {MACRO GeometryExtractor_Function @Geometry(TO_ATTRIBUTE_BINARY,geometry) }           } elseif {{wkb} == {fmehex} } {               puts {MACRO GeometryExtractor_Function @Geometry(TO_ATTRIBUTE_BINARY_HEX,geometry) }           } elseif {{wkb} == {fmexml} } {               puts {MACRO GeometryExtractor_Function @Geometry(TO_ATTRIBUTE,geometry) }           } elseif {{wkb} == {wkt} ||                      {wkb} == {wkb} ||                      {wkb} == {wkbhex} } {               puts {MACRO GeometryExtractor_Function @OGCGeometry(to_attribute,wkb,geometry,1.1) }           } elseif {{wkb} == {GEOJSON} ||                     {wkb} == {ESRIJSON} } {               puts {MACRO GeometryExtractor_Function @JSONGeometry(TO_ATTRIBUTE,wkb,geometry) }           } elseif {{wkb} == {KML} } {               puts {MACRO GeometryExtractor_Function @KMLGeometry(TO_ATTRIBUTE,geometry) }           } elseif {{wkb} == {GEORSS_SIMPLE} } {               puts {MACRO GeometryExtractor_Function @GeoRSSGeometry(TO_ATTRIBUTE,wkb,geometry) }           } elseif {{wkb} == {GML_3.1.1} ||                      {wkb} == {GML_3.2.1} } {               puts {MACRO GeometryExtractor_Function @GMLGeometry(TO_ATTRIBUTE,wkb,geometry) }           }         ]
 FACTORY_DEF * TeeFactory    FACTORY_NAME GeometryExtractor    INPUT  FEATURE_TYPE CoordinateSystemSetter_OUTPUT    OUTPUT FEATURE_TYPE GeometryExtractor_OUTPUT         $(GeometryExtractor_Function)
 
 # -------------------------------------------------------------------------
+Lookup AttributeFilter_AttributeFilterLut   0 ok   "" notok   ENCODED
 
-FACTORY_DEF * TeeFactory    FACTORY_NAME AttributeRenamer    INPUT  FEATURE_TYPE SIGE_DISTRIBUTION.WA_SCHIEBER    OUTPUT FEATURE_TYPE AttributeRenamer_OUTPUT         @RenameAttributes(id,FID)
+Tcl2 proc AttributeFilter_setFeatType {} {     global FME_FeatureType;     set ft {AttributeFilter_};     append ft [FME_GetAttribute {DELETED}];     set FME_FeatureType [FME_EncodeText $ft]; }
+FACTORY_DEF * TestFactory    FACTORY_NAME AttributeFilter    INPUT  FEATURE_TYPE SIGE_DISTRIBUTION.WA_SCHIEBER    TEST @Lookup(AttributeFilter_AttributeFilterLut,"DELETED",ENCODED_ATTR) == "ok"    OUTPUT PASSED FEATURE_TYPE * @Tcl2(AttributeFilter_setFeatType)    OUTPUT FAILED FEATURE_TYPE AttributeFilter_<UNFILTERED>
+FACTORY_DEF * TestFactory    FACTORY_NAME AttributeFilter_BlankFilter    INPUT FEATURE_TYPE AttributeFilter_<UNFILTERED>    TEST @Value("DELETED") == ""    OUTPUT PASSED FEATURE_TYPE AttributeFilter_<BLANK>    OUTPUT FAILED FEATURE_TYPE AttributeFilter_<UNFILTERED>
+
+FACTORY_DEF * TeeFactory   FACTORY_NAME "AttributeFilter <BLANK> Output Nuker"   INPUT FEATURE_TYPE AttributeFilter_<BLANK>
+FACTORY_DEF * TeeFactory   FACTORY_NAME "AttributeFilter <UNFILTERED> Output Nuker"   INPUT FEATURE_TYPE AttributeFilter_<UNFILTERED>
+# -------------------------------------------------------------------------
+
+FACTORY_DEF * TeeFactory    FACTORY_NAME AttributeRenamer    INPUT  FEATURE_TYPE AttributeFilter_0    OUTPUT FEATURE_TYPE AttributeRenamer_OUTPUT         @RenameAttributes(id,FID)
 
 # -------------------------------------------------------------------------
 
-FACTORY_DEF * ReferenceFactory    FACTORY_NAME FeatureMerger    INPUT REFERENCER FEATURE_TYPE AttributeRenamer_OUTPUT    INPUT REFERENCEE FEATURE_TYPE GeometryExtractor_OUTPUT    REFERENCE_INFO ATTRIBUTES    REFERENCEE_FIELDS "GID"    REFERENCER_FIELDS "GID"    MERGE_ATTRIBUTES Yes    MANAGE_FME_TYPE Yes    MODE COMPLETE    PROCESS_DUPLICATE_REFERENCEES No    BUILD_INCOMPLETE_REFERENCERS No    OUTPUT COMPLETE FEATURE_TYPE FeatureMerger_COMPLETE
+FACTORY_DEF * ReferenceFactory    FACTORY_NAME FeatureMerger    INPUT REFERENCER FEATURE_TYPE AttributeRenamer_OUTPUT    INPUT REFERENCEE FEATURE_TYPE GeometryExtractor_OUTPUT    REFERENCE_INFO GEOM_BUILD_AGGREGATES    REFERENCEE_FIELDS "GID"    REFERENCER_FIELDS "GID"    MERGE_ATTRIBUTES Yes    MANAGE_FME_TYPE Yes    MODE COMPLETE    PROCESS_DUPLICATE_REFERENCEES No    BUILD_INCOMPLETE_REFERENCERS No    OUTPUT COMPLETE FEATURE_TYPE FeatureMerger_COMPLETE
 
 # -------------------------------------------------------------------------
 
-FACTORY_DEF * TeeFactory    FACTORY_NAME "FeatureMerger_COMPLETE -> valves Correlator"    INPUT FEATURE_TYPE FeatureMerger_COMPLETE    OUTPUT FEATURE_TYPE __GO_TO_FINAL_OUTPUT_ROUTER__       @Reproject("EPSG:21781","EPSG:21781")       @Transform(FME_GENERIC,POSTGIS)       @SupplyAttributes(__wb_out_feat_type__,valves)
+FACTORY_DEF * TeeFactory    FACTORY_NAME "FeatureMerger_COMPLETE -> distribution.valves Correlator"    INPUT FEATURE_TYPE FeatureMerger_COMPLETE    OUTPUT FEATURE_TYPE __GO_TO_FINAL_OUTPUT_ROUTER__       @Reproject("EPSG:21781","EPSG:21781")       @Transform(FME_GENERIC,POSTGIS)       @SupplyAttributes(__wb_out_feat_type__,distribution.valves)
 # -------------------------------------------------------------------------
 
 FACTORY_DEF * TestFactory   FACTORY_NAME "Final Output Feature Type Router"   INPUT FEATURE_TYPE *   TEST @Value(__wb_out_feat_type__) != ""   OUTPUT PASSED FEATURE_TYPE *     @FeatureType(@Value(__wb_out_feat_type__))   OUTPUT FAILED FEATURE_TYPE __nuke_me__ @Tcl2("FME_StatMessage 818059 {@Value(fme_template_feature_type)} 818060 818061 fme_warn")
@@ -2683,4 +2909,4 @@ FACTORY_DEF * TestFactory   FACTORY_NAME "Final Output Feature Type Router"   IN
 FACTORY_DEF * TeeFactory   FACTORY_NAME "Final Output Nuker"   INPUT FEATURE_TYPE __nuke_me__
 
 # -------------------------------------------------------------------------
-POSTGIS_1_DEF valves   postgis_type                 postgis_geometry   postgis_mode                 INHERIT_FROM_WRITER   postgis_spatial_column_type  geometry   postgis_spatial_column       wkb_geometry   postgis_srid                 INHERIT_FROM_WRITER   postgis_drop_table           NO   postgis_truncate_table       YES   postgis_create_with_oids     YES   postgis_create_gist_index    YES   postgis_vacuum_analyze       YES   postgis_allow_serial_writing YES   id                           int4
+POSTGIS_1_DEF distribution.valves   postgis_type                 postgis_geometry   postgis_mode                 INHERIT_FROM_WRITER   postgis_spatial_column_type  geometry   postgis_spatial_column       geometry   postgis_srid                 INHERIT_FROM_WRITER   postgis_drop_table           NO   postgis_truncate_table       YES   postgis_create_with_oids     YES   postgis_create_gist_index    YES   postgis_vacuum_analyze       YES   postgis_allow_serial_writing YES   id                           int4

@@ -5,9 +5,9 @@
 #    Windows command-line to run this workspace:
 #    
 #    
-#    fme.exe oracle2postgres_printmaps.fmw
-#          --SourceDataset_ORACLE8I orcl
+#    fme.exe oracle2postgres_districts.fmw
 #          --SourceDataset_ORACLE8I_DB orcl
+#          --SourceDataset_ORACLE8I_DB_3 orcl
 #          --DestDataset_POSTGIS sige
 #    
 #    
@@ -29,7 +29,6 @@
 #! GRID_SNAPTO="false"
 #! GRID_WIDTH="50"
 #! BEGIN_TCL=""
-#! ACTIVE_SUBDOCUMENT="polygoner"
 #! FME_STROKE_MAX_DEVIATION="0"
 #! LOG_FILE=""
 #! VIEW_POSITION="0 0"
@@ -50,18 +49,18 @@
 #! <DATASET
 #! IS_SOURCE="true"
 #! ROLE="READER"
-#! FORMAT="ORACLE8I"
-#! DATASET="$(SourceDataset_ORACLE8I)"
-#! KEYWORD="ORACLE8I_1"
+#! FORMAT="ORACLE8I_DB"
+#! DATASET="$(SourceDataset_ORACLE8I_DB)"
+#! KEYWORD="ORACLE8I_DB_1"
 #! MULTI_GEOM_ALLOWED="false"
 #! ATTR_MAX_LENGTH="60"
 #! ATTR_CASE="ANY"
 #! ALLOWED_FEAT_TYPES=""
 #! WRITE_DEFS="true"
-#! DEFLINE_TEMPLATE="oracle_geom_column &quot;&quot; oracle_sql_encoded &quot;&quot; oracle_where_clause_encoded &quot;&quot; oracle_envelope_min_x 0 oracle_envelope_min_y 0 oracle_envelope_max_x 0 oracle_envelope_max_y 0 oracle_mapinfo_symbology_style_column &quot;&quot;"
+#! DEFLINE_TEMPLATE="oracle_sql_encoded &quot;&quot; oracle_where_clause_encoded &quot;&quot;"
 #! DEFLINE_ATTRS="true"
-#! EXPOSABLE_ATTRS="fme_text_string char(50) geomedia_text_font_size integer fme_where char(254) oracle_sdo_point.x float oracle_sdo_point.y float geomedia_rtf_text_string char(50) geomedia_text_font char(50) oracle_sweep_angle float oracle_secondary_radius float fme_type char(50) multi_reader_full_id integer geomedia_type char(50) oracle_orient_k float oracle_sdo_point.z float oracle_orient_j float oracle_orientation float oracle_orient_i float oracle_type char(50) oracle_srid char(50) oracle_radius float fme_feature_type char(50) oracle_structured_geom char(50) fme_basename char(50) oracle_primary_radius float geomedia_text_string char(50) geomedia_justification integer fme_secondary_axis float fme_fill_color char(50) fme_primary_axis float fme_start_angle float fme_text_size float fme_color char(50) geomedia_orient_i float multi_reader_id integer oracle_rotation float geomedia_orient_k float oracle_start_angle float multi_reader_type char(50) fme_geometry fme_char(50) multi_reader_keyword char(50) fme_sweep_angle float fme_rotation float geomedia_orient_j float fme_dataset char(50) geomedia_rotation float"
-#! DEFLINE_PARMS="&quot;GUI OPTIONAL WHOLE_LINE TEXT oracle_geom_column Geometry Column Name&quot; &quot;&quot; &quot;GUI OPTIONAL WHOLE_LINE TEXT_EDIT_SQL oracle_sql_encoded SELECT Statement&quot; &quot;&quot; &quot;GUI OPTIONAL WHOLE_LINE TEXT_EDIT_SQL oracle_where_clause_encoded WHERE Clause&quot; &quot;&quot; &quot;GUI OPTIONAL FLOAT oracle_envelope_min_x Search Envelope Min X&quot; &quot;&quot; &quot;GUI OPTIONAL FLOAT oracle_envelope_min_y Search Envelope Min Y&quot; &quot;&quot; &quot;GUI OPTIONAL FLOAT oracle_envelope_max_x Search Envelope Max X&quot; &quot;&quot; &quot;GUI OPTIONAL FLOAT oracle_envelope_max_y Search Envelope Max Y&quot; &quot;&quot; &quot;GUI OPTIONAL TEXT oracle_mapinfo_symbology_style_column MapInfo Symbology Style Column Name&quot; &quot;&quot; "
+#! EXPOSABLE_ATTRS="fme_type char(50) fme_text_string char(50) multi_reader_full_id integer fme_db_operation char(8) fme_feature_type char(50) fme_basename char(50) fme_where char(254) multi_reader_type char(50) fme_geometry fme_char(50) multi_reader_keyword char(50) fme_sweep_angle float fme_rotation float fme_secondary_axis float fme_fill_color char(50) fme_dataset char(50) fme_primary_axis float fme_start_angle float fme_text_size float fme_color char(50) multi_reader_id integer oracle_type char(50)"
+#! DEFLINE_PARMS="&quot;GUI OPTIONAL WHOLE_LINE TEXT_EDIT_SQL oracle_sql_encoded SQL SELECT Statement&quot; &quot;&quot; &quot;GUI OPTIONAL WHOLE_LINE TEXT_EDIT_SQL oracle_where_clause_encoded SQL WHERE Clause&quot; &quot;&quot; "
 #! ATTR_INDEX_TYPES=""
 #! ATTR_NAME_INVALID_CHARS=""
 #! SUPPORTS_FEATURE_TYPE_FANOUT="true"
@@ -76,15 +75,15 @@
 #! >
 #! <METAFILE_PARAMETER
 #! NAME="ADVANCED_PARMS"
-#! VALUE="SEARCH_ENVELOPE_MINX SEARCH_ENVELOPE_MINY SEARCH_ENVELOPE_MAXX SEARCH_ENVELOPE_MAXX ORACLE8I_IN_SEARCH_ENVELOPE_COORDINATE_SYSTEM WHERE_CLAUSE _ORACLE8I_CLIP _ORACLE8I_INTERACTION _ORACLE8I_INTERRESULT _ORACLE8I_ChunkSize _ORACLE8I_StructuredGeom _START_TRANSACTION _CHUNK_SIZE _TRANSACTION_INTERVAL _ORACLE8I_IN_BEGIN_SQL _ORACLE8I_IN_END_SQL _BEGIN_SQL _END_SQL REMOVE_SCHEMA_QUALIFIER READ_3D_POLYGON_AS_FACE"
+#! VALUE="ORACLE8I_DB_IN_CHUNK_SIZE ORACLE8I_DB_OUT_START_TRANSACTION ORACLE8I_DB_OUT_CHUNK_SIZE ORACLE8I_DB_OUT_TRANSACTION_INTERVAL ORACLE8I_DB_IN_BEGIN_SQL ORACLE8I_DB_IN_END_SQL ORACLE8I_DB_OUT_BEGIN_SQL ORACLE8I_DB_OUT_END_SQL ORACLE8I_DB_IN_REMOVE_SCHEMA_QUALIFIER"
 #! />
 #! </DATASET>
 #! <DATASET
 #! IS_SOURCE="true"
 #! ROLE="READER"
 #! FORMAT="ORACLE8I_DB"
-#! DATASET="$(SourceDataset_ORACLE8I_DB)"
-#! KEYWORD="ORACLE8I_DB_1"
+#! DATASET="$(SourceDataset_ORACLE8I_DB_3)"
+#! KEYWORD="ORACLE8I_DB_2"
 #! MULTI_GEOM_ALLOWED="false"
 #! ATTR_MAX_LENGTH="60"
 #! ATTR_CASE="ANY"
@@ -125,7 +124,7 @@
 #! DEFLINE_TEMPLATE="postgis_type postgis_geometry postgis_mode INHERIT_FROM_WRITER postgis_spatial_column_type geometry postgis_spatial_column geom postgis_srid INHERIT_FROM_WRITER postgis_drop_table NO postgis_truncate_table NO postgis_create_with_oids YES postgis_create_gist_index YES postgis_vacuum_analyze YES postgis_allow_serial_writing NO"
 #! DEFLINE_ATTRS="true"
 #! EXPOSABLE_ATTRS="fme_type char(50) postgis_collection_id int fme_text_string char(50) fme_db_operation char(8) fme_feature_type char(50) fme_basename char(50) fme_where char(254) fme_geometry fme_char(50) postgis_collection_part_id int fme_sweep_angle float8 fme_rotation float8 postgis_type char(50) fme_secondary_axis float8 fme_fill_color char(50) fme_dataset char(50) fme_primary_axis float8 fme_start_angle float8 fme_text_size float8 fme_color char(50)"
-#! DEFLINE_PARMS="&quot;GUI CHOICE postgis_mode INHERIT_FROM_WRITER%INSERT%UPDATE%DELETE Writer Mode&quot; INHERIT_FROM_WRITER &quot;GUI CHOICE postgis_spatial_column_type geometry%geography Spatial Column Type&quot; geometry &quot;GUI TEXT postgis_spatial_column Spatial Column Name&quot; wkb_geometry &quot;GUI OPTIONAL FLOAT postgis_srid Spatial Column SRID&quot; INHERIT_FROM_WRITER &quot;GUI CHOICE postgis_drop_table YES%NO Drop Table First&quot; NO &quot;GUI CHOICE postgis_truncate_table YES%NO Truncate Table First&quot; NO &quot;GUI CHOICE postgis_create_with_oids YES%NO Create With OIDs&quot; YES &quot;GUI CHOICE postgis_create_gist_index YES%NO Create GiST Index&quot; YES &quot;GUI CHOICE postgis_vacuum_analyze YES%NO Vacuum Analyze Table&quot; YES &quot;GUI CHOICE postgis_allow_serial_writing YES%NO Allow serial Column Writing&quot; NO "
+#! DEFLINE_PARMS="&quot;GUI CHOICE postgis_mode INHERIT_FROM_WRITER%INSERT%UPDATE%DELETE Writer Mode&quot; INHERIT_FROM_WRITER &quot;GUI CHOICE postgis_spatial_column_type geometry%geography Spatial Column Type&quot; geometry &quot;GUI TEXT postgis_spatial_column Spatial Column Name&quot; geometry &quot;GUI OPTIONAL FLOAT postgis_srid Spatial Column SRID&quot; INHERIT_FROM_WRITER &quot;GUI CHOICE postgis_drop_table YES%NO Drop Table First&quot; NO &quot;GUI CHOICE postgis_truncate_table YES%NO Truncate Table First&quot; NO &quot;GUI CHOICE postgis_create_with_oids YES%NO Create With OIDs&quot; YES &quot;GUI CHOICE postgis_create_gist_index YES%NO Create GiST Index&quot; YES &quot;GUI CHOICE postgis_vacuum_analyze YES%NO Vacuum Analyze Table&quot; YES &quot;GUI CHOICE postgis_allow_serial_writing YES%NO Allow serial Column Writing&quot; NO "
 #! ATTR_INDEX_TYPES="BTREE RTREE HASH PRIKEY"
 #! ATTR_NAME_INVALID_CHARS=". %-#[]&quot;()!?*&apos;&amp;+\/"
 #! SUPPORTS_FEATURE_TYPE_FANOUT="true"
@@ -134,115 +133,13 @@
 #! GENERATE_FME_BUILD_NUM="6501"
 #! FANOUT_SUFFIX=""
 #! FANOUT_ID_ATTR=""
-#! COORDSYS=""
+#! COORDSYS="EPSG:21781"
 #! FANOUT="No"
 #! FANOUT_DIRECTORY=""
 #! FANOUT_PREFIX=""
 #! />
 #! </DATASETS>
 #! <DATA_TYPES>
-#! <DATA_TYPE
-#! IS_SOURCE="true"
-#! FORMAT_TYPE="char(width)"
-#! FME_TYPE="fme_char(width)"
-#! FORMAT="ORACLE8I"
-#! />
-#! <DATA_TYPE
-#! IS_SOURCE="true"
-#! FORMAT_TYPE="varchar2(width)"
-#! FME_TYPE="fme_varchar(width)"
-#! FORMAT="ORACLE8I"
-#! />
-#! <DATA_TYPE
-#! IS_SOURCE="true"
-#! FORMAT_TYPE="nchar(width)"
-#! FME_TYPE="fme_char(width)"
-#! FORMAT="ORACLE8I"
-#! />
-#! <DATA_TYPE
-#! IS_SOURCE="true"
-#! FORMAT_TYPE="nvarchar(width)"
-#! FME_TYPE="fme_varchar(width)"
-#! FORMAT="ORACLE8I"
-#! />
-#! <DATA_TYPE
-#! IS_SOURCE="true"
-#! FORMAT_TYPE="blob"
-#! FME_TYPE="fme_buffer"
-#! FORMAT="ORACLE8I"
-#! />
-#! <DATA_TYPE
-#! IS_SOURCE="true"
-#! FORMAT_TYPE="clob"
-#! FME_TYPE="fme_buffer"
-#! FORMAT="ORACLE8I"
-#! />
-#! <DATA_TYPE
-#! IS_SOURCE="true"
-#! FORMAT_TYPE="nclob"
-#! FME_TYPE="fme_buffer"
-#! FORMAT="ORACLE8I"
-#! />
-#! <DATA_TYPE
-#! IS_SOURCE="true"
-#! FORMAT_TYPE="float"
-#! FME_TYPE="fme_real64"
-#! FORMAT="ORACLE8I"
-#! />
-#! <DATA_TYPE
-#! IS_SOURCE="true"
-#! FORMAT_TYPE="float"
-#! FME_TYPE="fme_real32"
-#! FORMAT="ORACLE8I"
-#! />
-#! <DATA_TYPE
-#! IS_SOURCE="true"
-#! FORMAT_TYPE="integer"
-#! FME_TYPE="fme_int32"
-#! FORMAT="ORACLE8I"
-#! />
-#! <DATA_TYPE
-#! IS_SOURCE="true"
-#! FORMAT_TYPE="smallint"
-#! FME_TYPE="fme_int16"
-#! FORMAT="ORACLE8I"
-#! />
-#! <DATA_TYPE
-#! IS_SOURCE="true"
-#! FORMAT_TYPE="date"
-#! FME_TYPE="fme_datetime"
-#! FORMAT="ORACLE8I"
-#! />
-#! <DATA_TYPE
-#! IS_SOURCE="true"
-#! FORMAT_TYPE="date"
-#! FME_TYPE="fme_date"
-#! FORMAT="ORACLE8I"
-#! />
-#! <DATA_TYPE
-#! IS_SOURCE="true"
-#! FORMAT_TYPE="date"
-#! FME_TYPE="fme_time"
-#! FORMAT="ORACLE8I"
-#! />
-#! <DATA_TYPE
-#! IS_SOURCE="true"
-#! FORMAT_TYPE="char(8)"
-#! FME_TYPE="fme_boolean"
-#! FORMAT="ORACLE8I"
-#! />
-#! <DATA_TYPE
-#! IS_SOURCE="true"
-#! FORMAT_TYPE="float"
-#! FME_TYPE="fme_decimal(width,decimal)"
-#! FORMAT="ORACLE8I"
-#! />
-#! <DATA_TYPE
-#! IS_SOURCE="true"
-#! FORMAT_TYPE="number(width,decimal)"
-#! FME_TYPE="fme_decimal(width,decimal)"
-#! FORMAT="ORACLE8I"
-#! />
 #! <DATA_TYPE
 #! IS_SOURCE="true"
 #! FORMAT_TYPE="char(width)"
@@ -461,120 +358,6 @@
 #! />
 #! </DATA_TYPES>
 #! <GEOM_TYPES>
-#! <GEOM_TYPE
-#! IS_SOURCE="true"
-#! FORMAT_TYPE="oracle_point"
-#! FME_TYPE="fme_point"
-#! FORMAT="ORACLE8I"
-#! />
-#! <GEOM_TYPE
-#! IS_SOURCE="true"
-#! FORMAT_TYPE="oracle_multipoint"
-#! FME_TYPE="fme_point"
-#! FORMAT="ORACLE8I"
-#! />
-#! <GEOM_TYPE
-#! IS_SOURCE="true"
-#! FORMAT_TYPE="oracle_point"
-#! FME_TYPE="fme_text"
-#! FORMAT="ORACLE8I"
-#! />
-#! <GEOM_TYPE
-#! IS_SOURCE="true"
-#! FORMAT_TYPE="oracle_line"
-#! FME_TYPE="fme_line"
-#! FORMAT="ORACLE8I"
-#! />
-#! <GEOM_TYPE
-#! IS_SOURCE="true"
-#! FORMAT_TYPE="oracle_multiline"
-#! FME_TYPE="fme_line"
-#! FORMAT="ORACLE8I"
-#! />
-#! <GEOM_TYPE
-#! IS_SOURCE="true"
-#! FORMAT_TYPE="oracle_area"
-#! FME_TYPE="fme_area"
-#! FORMAT="ORACLE8I"
-#! />
-#! <GEOM_TYPE
-#! IS_SOURCE="true"
-#! FORMAT_TYPE="oracle_multipoly"
-#! FME_TYPE="fme_area"
-#! FORMAT="ORACLE8I"
-#! />
-#! <GEOM_TYPE
-#! IS_SOURCE="true"
-#! FORMAT_TYPE="oracle_nil"
-#! FME_TYPE="fme_no_geom"
-#! FORMAT="ORACLE8I"
-#! />
-#! <GEOM_TYPE
-#! IS_SOURCE="true"
-#! FORMAT_TYPE="oracle_circle"
-#! FME_TYPE="fme_ellipse"
-#! FORMAT="ORACLE8I"
-#! />
-#! <GEOM_TYPE
-#! IS_SOURCE="true"
-#! FORMAT_TYPE="oracle_arc"
-#! FME_TYPE="fme_arc"
-#! FORMAT="ORACLE8I"
-#! />
-#! <GEOM_TYPE
-#! IS_SOURCE="true"
-#! FORMAT_TYPE="oracle_rectangle"
-#! FME_TYPE="fme_rectangle"
-#! FORMAT="ORACLE8I"
-#! />
-#! <GEOM_TYPE
-#! IS_SOURCE="true"
-#! FORMAT_TYPE="oracle_rectangle"
-#! FME_TYPE="fme_rounded_rectangle"
-#! FORMAT="ORACLE8I"
-#! />
-#! <GEOM_TYPE
-#! IS_SOURCE="true"
-#! FORMAT_TYPE="oracle_collection"
-#! FME_TYPE="fme_collection"
-#! FORMAT="ORACLE8I"
-#! />
-#! <GEOM_TYPE
-#! IS_SOURCE="true"
-#! FORMAT_TYPE="oracle_raster"
-#! FME_TYPE="fme_raster"
-#! FORMAT="ORACLE8I"
-#! />
-#! <GEOM_TYPE
-#! IS_SOURCE="true"
-#! FORMAT_TYPE="oracle_solid"
-#! FME_TYPE="fme_solid"
-#! FORMAT="ORACLE8I"
-#! />
-#! <GEOM_TYPE
-#! IS_SOURCE="true"
-#! FORMAT_TYPE="oracle_surface"
-#! FME_TYPE="fme_surface"
-#! FORMAT="ORACLE8I"
-#! />
-#! <GEOM_TYPE
-#! IS_SOURCE="true"
-#! FORMAT_TYPE="oracle_multisolid"
-#! FME_TYPE="fme_solid"
-#! FORMAT="ORACLE8I"
-#! />
-#! <GEOM_TYPE
-#! IS_SOURCE="true"
-#! FORMAT_TYPE="oracle_multisurface"
-#! FME_TYPE="fme_surface"
-#! FORMAT="ORACLE8I"
-#! />
-#! <GEOM_TYPE
-#! IS_SOURCE="true"
-#! FORMAT_TYPE="oracle_area"
-#! FME_TYPE="fme_point_cloud"
-#! FORMAT="ORACLE8I"
-#! />
 #! <GEOM_TYPE
 #! IS_SOURCE="true"
 #! FORMAT_TYPE="oracle_nil"
@@ -885,49 +668,48 @@
 #! <FEATURE_TYPES>
 #! <FEATURE_TYPE
 #! IS_SOURCE="true"
-#! NODE_NAME="SIGE_DISTRIBUTION.SIGE_FOLIO"
+#! NODE_NAME="SIGE_COMMUN.COMMUNES"
 #! IS_EDITABLE="false"
-#! IDENTIFIER="41"
-#! FEAT_GEOMTYPE="oracle_nil oracle_point oracle_line oracle_area oracle_multipoint oracle_multiline oracle_multipoly oracle_arc oracle_circle oracle_rectangle oracle_collection oracle_surface oracle_solid oracle_multisurface oracle_multisolid"
-#! POSITION="50 -150"
-#! ORDER="8"
-#! COLLAPSED="false"
-#! KEYWORD="ORACLE8I_1"
+#! IDENTIFIER="20"
+#! FEAT_GEOMTYPE="oracle_nil"
+#! POSITION="40 -176"
+#! ORDER="14"
+#! COLLAPSED="true"
+#! KEYWORD="ORACLE8I_DB_1"
 #! ENABLED="true"
 #! MERGE="false"
 #! MERGE_FILTER=""
 #! MERGE_FILTER_TYPE="FILTER_TYPE_GLOB"
-#! MERGE_FILTER_CASE_SENSITIVE="true"
+#! MERGE_FILTER_CASE_SENSITIVE="false"
 #! DYNAMIC_SCHEMA="false"
 #! >
+#! <FEAT_ATTRIBUTE ATTR_NAME="ABREGE" ATTR_TYPE="varchar2(3)"/>
 #! <FEAT_ATTRIBUTE ATTR_NAME="AREA_GERECHNET" ATTR_TYPE="number(20,8)"/>
 #! <FEAT_ATTRIBUTE ATTR_NAME="AREA_NOMINAL" ATTR_TYPE="number(20,8)"/>
-#! <FEAT_ATTRIBUTE ATTR_NAME="COM" ATTR_TYPE="varchar2(10)"/>
-#! <FEAT_ATTRIBUTE ATTR_NAME="COMMUNE" ATTR_TYPE="number(10,0)"/>
+#! <FEAT_ATTRIBUTE ATTR_NAME="CANTON" ATTR_TYPE="varchar2(2)"/>
 #! <FEAT_ATTRIBUTE ATTR_NAME="DELETED" ATTR_TYPE="number(1,0)"/>
 #! <FEAT_ATTRIBUTE ATTR_NAME="FID" ATTR_TYPE="number(10,0)"/>
 #! <FEAT_ATTRIBUTE ATTR_NAME="GID" ATTR_TYPE="number(10,0)"/>
-#! <FEAT_ATTRIBUTE ATTR_NAME="MENSU_NUM" ATTR_TYPE="number(1,0)"/>
-#! <FEAT_ATTRIBUTE ATTR_NAME="NO_FOLIO" ATTR_TYPE="varchar2(10)"/>
+#! <FEAT_ATTRIBUTE ATTR_NAME="INTITULE_LISTE" ATTR_TYPE="varchar2(10)"/>
+#! <FEAT_ATTRIBUTE ATTR_NAME="NOM" ATTR_TYPE="varchar2(30)"/>
+#! <FEAT_ATTRIBUTE ATTR_NAME="NO_RF" ATTR_TYPE="number(3,0)"/>
+#! <FEAT_ATTRIBUTE ATTR_NAME="NPA" ATTR_TYPE="number(4,0)"/>
+#! <FEAT_ATTRIBUTE ATTR_NAME="PREFIXE_ABT" ATTR_TYPE="number(2,0)"/>
+#! <FEAT_ATTRIBUTE ATTR_NAME="STATUT_ASSAIN" ATTR_TYPE="varchar2(20)"/>
+#! <FEAT_ATTRIBUTE ATTR_NAME="STATUT_DISTRIB" ATTR_TYPE="varchar2(20)"/>
 #! <DEFLINE_PARM PARM_NAME="oracle_sql_encoded" PARM_VALUE=""/>
-#! <DEFLINE_PARM PARM_NAME="oracle_envelope_min_x" PARM_VALUE=""/>
-#! <DEFLINE_PARM PARM_NAME="oracle_mapinfo_symbology_style_column" PARM_VALUE=""/>
-#! <DEFLINE_PARM PARM_NAME="oracle_geom_column" PARM_VALUE=""/>
-#! <DEFLINE_PARM PARM_NAME="oracle_envelope_min_y" PARM_VALUE=""/>
 #! <DEFLINE_PARM PARM_NAME="oracle_where_clause_encoded" PARM_VALUE=""/>
-#! <DEFLINE_PARM PARM_NAME="oracle_envelope_max_y" PARM_VALUE=""/>
-#! <DEFLINE_PARM PARM_NAME="oracle_envelope_max_x" PARM_VALUE=""/>
 #! </FEATURE_TYPE>
 #! <FEATURE_TYPE
 #! IS_SOURCE="true"
-#! NODE_NAME="SIGE_DISTRIBUTION.SIGE_FOLIO_GEO"
+#! NODE_NAME="SIGE_COMMUN.COMMUNES_GEO"
 #! IS_EDITABLE="false"
-#! IDENTIFIER="3"
+#! IDENTIFIER="24"
 #! FEAT_GEOMTYPE="oracle_nil"
-#! POSITION="64 -925"
-#! ORDER="11"
+#! POSITION="26 -1014"
+#! ORDER="15"
 #! COLLAPSED="true"
-#! KEYWORD="ORACLE8I_DB_1"
+#! KEYWORD="ORACLE8I_DB_2"
 #! ENABLED="true"
 #! MERGE="false"
 #! MERGE_FILTER=""
@@ -1035,20 +817,25 @@
 #! </FEATURE_TYPE>
 #! <FEATURE_TYPE
 #! IS_SOURCE="false"
-#! NODE_NAME="distribution.printmaps"
+#! NODE_NAME="distribution.districts"
 #! IS_EDITABLE="true"
-#! IDENTIFIER="9"
+#! IDENTIFIER="26"
 #! FEAT_GEOMTYPE="&lt;NO_GEOMETRY&gt;"
-#! POSITION="1919 -267"
-#! ORDER="17"
-#! COLLAPSED="true"
+#! POSITION="1996 -564"
+#! ORDER="16"
+#! COLLAPSED="false"
 #! KEYWORD="POSTGIS_1"
 #! ENABLED="true"
 #! FANOUT="No"
 #! FANOUT_ID_ATTR=""
 #! >
+#! <FEAT_ATTRIBUTE ATTR_NAME="name" ATTR_TYPE="char(30)"/>
+#! <FEAT_ATTRIBUTE ATTR_NAME="land_registry" ATTR_TYPE="char(30)"/>
+#! <FEAT_ATTRIBUTE ATTR_NAME="shortname" ATTR_TYPE="char(30)"/>
+#! <FEAT_ATTRIBUTE ATTR_NAME="zip" ATTR_TYPE="char(30)"/>
+#! <FEAT_ATTRIBUTE ATTR_NAME="subscriber_prefix" ATTR_TYPE="char(30)"/>
 #! <DEFLINE_PARM PARM_NAME="postgis_truncate_table" PARM_VALUE="YES"/>
-#! <DEFLINE_PARM PARM_NAME="postgis_spatial_column" PARM_VALUE="wkb_geometry"/>
+#! <DEFLINE_PARM PARM_NAME="postgis_spatial_column" PARM_VALUE="geometry"/>
 #! <DEFLINE_PARM PARM_NAME="postgis_drop_table" PARM_VALUE="NO"/>
 #! <DEFLINE_PARM PARM_NAME="postgis_spatial_column_type" PARM_VALUE="geometry"/>
 #! <DEFLINE_PARM PARM_NAME="postgis_vacuum_analyze" PARM_VALUE="YES"/>
@@ -1063,12 +850,12 @@
 #! </FMESERVER>
 #! <GLOBAL_PARAMETERS>
 #! <GLOBAL_PARAMETER
-#! GUI_LINE="GUI OPTIONAL TEXT SourceDataset_ORACLE8I Source Oracle Spatial Object Service:"
+#! GUI_LINE="GUI OPTIONAL TEXT SourceDataset_ORACLE8I_DB Source Oracle Non-spatial Service:"
 #! DEFAULT_VALUE="orcl"
 #! IS_STAND_ALONE="false"
 #! />
 #! <GLOBAL_PARAMETER
-#! GUI_LINE="GUI OPTIONAL TEXT SourceDataset_ORACLE8I_DB Source Oracle Non-spatial Service:"
+#! GUI_LINE="GUI OPTIONAL TEXT SourceDataset_ORACLE8I_DB_3 Source Oracle Non-spatial Service:"
 #! DEFAULT_VALUE="orcl"
 #! IS_STAND_ALONE="false"
 #! />
@@ -1080,30 +867,20 @@
 #! </GLOBAL_PARAMETERS>
 #! <COMMENTS>
 #! <COMMENT
-#! IDENTIFIER="14"
-#! COMMENT_VALUE="SIGE_FOLIO"
-#! POSITION="50 -70"
+#! IDENTIFIER="15"
+#! COMMENT_VALUE="COMMUNES GEO"
+#! POSITION="64 -845"
 #! ORDER="6"
 #! FOLLOW_ANCHOR="true"
 #! INFO_NODE="false"
 #! COMMENT_TYPE="REGULAR"
-#! ANCHORED_NODE="41"
-#! />
-#! <COMMENT
-#! IDENTIFIER="15"
-#! COMMENT_VALUE="SIGE_FOLIO_GEO"
-#! POSITION="64 -845"
-#! ORDER="7"
-#! FOLLOW_ANCHOR="true"
-#! INFO_NODE="false"
-#! COMMENT_TYPE="REGULAR"
-#! ANCHORED_NODE="3"
+#! ANCHORED_NODE="24"
 #! />
 #! <COMMENT
 #! IDENTIFIER="21"
 #! COMMENT_VALUE="Retirer deleted"
 #! POSITION="570 -151"
-#! ORDER="9"
+#! ORDER="7"
 #! FOLLOW_ANCHOR="true"
 #! INFO_NODE="false"
 #! COMMENT_TYPE="REGULAR"
@@ -1113,11 +890,21 @@
 #! IDENTIFIER="22"
 #! COMMENT_VALUE="Renommage&#13;&#10;"
 #! POSITION="1208 -16"
-#! ORDER="10"
+#! ORDER="8"
 #! FOLLOW_ANCHOR="true"
 #! INFO_NODE="false"
 #! COMMENT_TYPE="REGULAR"
 #! ANCHORED_NODE="16"
+#! />
+#! <COMMENT
+#! IDENTIFIER="14"
+#! COMMENT_VALUE="SIGE_COMMUNES"
+#! POSITION="93 -67"
+#! ORDER="13"
+#! FOLLOW_ANCHOR="true"
+#! INFO_NODE="false"
+#! COMMENT_TYPE="REGULAR"
+#! ANCHORED_NODE="20"
 #! />
 #! </COMMENTS>
 #! <CONSTANTS>
@@ -1130,7 +917,7 @@
 #! TYPE="SubDocumentTransformer"
 #! VERSION="0"
 #! POSITION="608 -790"
-#! ORDER="12"
+#! ORDER="9"
 #! PARMS_EDITED="false"
 #! ENABLED="true"
 #! >
@@ -1138,7 +925,7 @@
 #! <FEAT_COLLAPSED COLLAPSED="0"/>
 #! <XFORM_ATTR ATTR_NAME="list{}.xy" IS_USER_CREATED="false" FEAT_INDEX="0"/>
 #! <XFORM_ATTR ATTR_NAME="linestring" IS_USER_CREATED="false" FEAT_INDEX="0"/>
-#! <XFORM_ATTR ATTR_NAME="wkb_geometry" IS_USER_CREATED="false" FEAT_INDEX="0"/>
+#! <XFORM_ATTR ATTR_NAME="geometry" IS_USER_CREATED="false" FEAT_INDEX="0"/>
 #! <XFORM_ATTR ATTR_NAME="GID" IS_USER_CREATED="false" FEAT_INDEX="0"/>
 #! <XFORM_ATTR ATTR_NAME="list{}.GID" IS_USER_CREATED="false" FEAT_INDEX="0"/>
 #! <XFORM_ATTR ATTR_NAME="list{}.SEQ" IS_USER_CREATED="false" FEAT_INDEX="0"/>
@@ -1152,43 +939,58 @@
 #! TYPE="AttributeFilter"
 #! VERSION="2"
 #! POSITION="570 -231"
-#! ORDER="13"
+#! ORDER="10"
 #! PARMS_EDITED="true"
 #! ENABLED="true"
 #! >
 #! <OUTPUT_FEAT NAME="0"/>
 #! <FEAT_COLLAPSED COLLAPSED="0"/>
+#! <XFORM_ATTR ATTR_NAME="ABREGE" IS_USER_CREATED="false" FEAT_INDEX="0"/>
 #! <XFORM_ATTR ATTR_NAME="AREA_GERECHNET" IS_USER_CREATED="false" FEAT_INDEX="0"/>
 #! <XFORM_ATTR ATTR_NAME="AREA_NOMINAL" IS_USER_CREATED="false" FEAT_INDEX="0"/>
-#! <XFORM_ATTR ATTR_NAME="COM" IS_USER_CREATED="false" FEAT_INDEX="0"/>
-#! <XFORM_ATTR ATTR_NAME="COMMUNE" IS_USER_CREATED="false" FEAT_INDEX="0"/>
+#! <XFORM_ATTR ATTR_NAME="CANTON" IS_USER_CREATED="false" FEAT_INDEX="0"/>
 #! <XFORM_ATTR ATTR_NAME="DELETED" IS_USER_CREATED="false" FEAT_INDEX="0"/>
 #! <XFORM_ATTR ATTR_NAME="FID" IS_USER_CREATED="false" FEAT_INDEX="0"/>
 #! <XFORM_ATTR ATTR_NAME="GID" IS_USER_CREATED="false" FEAT_INDEX="0"/>
-#! <XFORM_ATTR ATTR_NAME="MENSU_NUM" IS_USER_CREATED="false" FEAT_INDEX="0"/>
-#! <XFORM_ATTR ATTR_NAME="NO_FOLIO" IS_USER_CREATED="false" FEAT_INDEX="0"/>
+#! <XFORM_ATTR ATTR_NAME="INTITULE_LISTE" IS_USER_CREATED="false" FEAT_INDEX="0"/>
+#! <XFORM_ATTR ATTR_NAME="NOM" IS_USER_CREATED="false" FEAT_INDEX="0"/>
+#! <XFORM_ATTR ATTR_NAME="NO_RF" IS_USER_CREATED="false" FEAT_INDEX="0"/>
+#! <XFORM_ATTR ATTR_NAME="NPA" IS_USER_CREATED="false" FEAT_INDEX="0"/>
+#! <XFORM_ATTR ATTR_NAME="PREFIXE_ABT" IS_USER_CREATED="false" FEAT_INDEX="0"/>
+#! <XFORM_ATTR ATTR_NAME="STATUT_ASSAIN" IS_USER_CREATED="false" FEAT_INDEX="0"/>
+#! <XFORM_ATTR ATTR_NAME="STATUT_DISTRIB" IS_USER_CREATED="false" FEAT_INDEX="0"/>
 #! <OUTPUT_FEAT NAME="&lt;BLANK&gt;"/>
 #! <FEAT_COLLAPSED COLLAPSED="1"/>
+#! <XFORM_ATTR ATTR_NAME="ABREGE" IS_USER_CREATED="false" FEAT_INDEX="1"/>
 #! <XFORM_ATTR ATTR_NAME="AREA_GERECHNET" IS_USER_CREATED="false" FEAT_INDEX="1"/>
 #! <XFORM_ATTR ATTR_NAME="AREA_NOMINAL" IS_USER_CREATED="false" FEAT_INDEX="1"/>
-#! <XFORM_ATTR ATTR_NAME="COM" IS_USER_CREATED="false" FEAT_INDEX="1"/>
-#! <XFORM_ATTR ATTR_NAME="COMMUNE" IS_USER_CREATED="false" FEAT_INDEX="1"/>
+#! <XFORM_ATTR ATTR_NAME="CANTON" IS_USER_CREATED="false" FEAT_INDEX="1"/>
 #! <XFORM_ATTR ATTR_NAME="DELETED" IS_USER_CREATED="false" FEAT_INDEX="1"/>
 #! <XFORM_ATTR ATTR_NAME="FID" IS_USER_CREATED="false" FEAT_INDEX="1"/>
 #! <XFORM_ATTR ATTR_NAME="GID" IS_USER_CREATED="false" FEAT_INDEX="1"/>
-#! <XFORM_ATTR ATTR_NAME="MENSU_NUM" IS_USER_CREATED="false" FEAT_INDEX="1"/>
-#! <XFORM_ATTR ATTR_NAME="NO_FOLIO" IS_USER_CREATED="false" FEAT_INDEX="1"/>
+#! <XFORM_ATTR ATTR_NAME="INTITULE_LISTE" IS_USER_CREATED="false" FEAT_INDEX="1"/>
+#! <XFORM_ATTR ATTR_NAME="NOM" IS_USER_CREATED="false" FEAT_INDEX="1"/>
+#! <XFORM_ATTR ATTR_NAME="NO_RF" IS_USER_CREATED="false" FEAT_INDEX="1"/>
+#! <XFORM_ATTR ATTR_NAME="NPA" IS_USER_CREATED="false" FEAT_INDEX="1"/>
+#! <XFORM_ATTR ATTR_NAME="PREFIXE_ABT" IS_USER_CREATED="false" FEAT_INDEX="1"/>
+#! <XFORM_ATTR ATTR_NAME="STATUT_ASSAIN" IS_USER_CREATED="false" FEAT_INDEX="1"/>
+#! <XFORM_ATTR ATTR_NAME="STATUT_DISTRIB" IS_USER_CREATED="false" FEAT_INDEX="1"/>
 #! <OUTPUT_FEAT NAME="&lt;UNFILTERED&gt;"/>
 #! <FEAT_COLLAPSED COLLAPSED="2"/>
+#! <XFORM_ATTR ATTR_NAME="ABREGE" IS_USER_CREATED="false" FEAT_INDEX="2"/>
 #! <XFORM_ATTR ATTR_NAME="AREA_GERECHNET" IS_USER_CREATED="false" FEAT_INDEX="2"/>
 #! <XFORM_ATTR ATTR_NAME="AREA_NOMINAL" IS_USER_CREATED="false" FEAT_INDEX="2"/>
-#! <XFORM_ATTR ATTR_NAME="COM" IS_USER_CREATED="false" FEAT_INDEX="2"/>
-#! <XFORM_ATTR ATTR_NAME="COMMUNE" IS_USER_CREATED="false" FEAT_INDEX="2"/>
+#! <XFORM_ATTR ATTR_NAME="CANTON" IS_USER_CREATED="false" FEAT_INDEX="2"/>
 #! <XFORM_ATTR ATTR_NAME="DELETED" IS_USER_CREATED="false" FEAT_INDEX="2"/>
 #! <XFORM_ATTR ATTR_NAME="FID" IS_USER_CREATED="false" FEAT_INDEX="2"/>
 #! <XFORM_ATTR ATTR_NAME="GID" IS_USER_CREATED="false" FEAT_INDEX="2"/>
-#! <XFORM_ATTR ATTR_NAME="MENSU_NUM" IS_USER_CREATED="false" FEAT_INDEX="2"/>
-#! <XFORM_ATTR ATTR_NAME="NO_FOLIO" IS_USER_CREATED="false" FEAT_INDEX="2"/>
+#! <XFORM_ATTR ATTR_NAME="INTITULE_LISTE" IS_USER_CREATED="false" FEAT_INDEX="2"/>
+#! <XFORM_ATTR ATTR_NAME="NOM" IS_USER_CREATED="false" FEAT_INDEX="2"/>
+#! <XFORM_ATTR ATTR_NAME="NO_RF" IS_USER_CREATED="false" FEAT_INDEX="2"/>
+#! <XFORM_ATTR ATTR_NAME="NPA" IS_USER_CREATED="false" FEAT_INDEX="2"/>
+#! <XFORM_ATTR ATTR_NAME="PREFIXE_ABT" IS_USER_CREATED="false" FEAT_INDEX="2"/>
+#! <XFORM_ATTR ATTR_NAME="STATUT_ASSAIN" IS_USER_CREATED="false" FEAT_INDEX="2"/>
+#! <XFORM_ATTR ATTR_NAME="STATUT_DISTRIB" IS_USER_CREATED="false" FEAT_INDEX="2"/>
 #! <XFORM_PARM PARM_NAME="XFORMER_NAME" PARM_VALUE="AttributeFilter"/>
 #! <XFORM_PARM PARM_NAME="ATTR_NAME" PARM_VALUE="DELETED"/>
 #! <XFORM_PARM PARM_NAME="ATTR_VALUES" PARM_VALUE="0"/>
@@ -1198,7 +1000,7 @@
 #! TYPE="AttributeRenamer"
 #! VERSION="1"
 #! POSITION="1208 -96"
-#! ORDER="14"
+#! ORDER="11"
 #! PARMS_EDITED="true"
 #! ENABLED="true"
 #! >
@@ -1206,104 +1008,27 @@
 #! <FEAT_COLLAPSED COLLAPSED="0"/>
 #! <XFORM_ATTR ATTR_NAME="AREA_GERECHNET" IS_USER_CREATED="false" FEAT_INDEX="0"/>
 #! <XFORM_ATTR ATTR_NAME="AREA_NOMINAL" IS_USER_CREATED="false" FEAT_INDEX="0"/>
-#! <XFORM_ATTR ATTR_NAME="COM" IS_USER_CREATED="false" FEAT_INDEX="0"/>
-#! <XFORM_ATTR ATTR_NAME="COMMUNE" IS_USER_CREATED="false" FEAT_INDEX="0"/>
+#! <XFORM_ATTR ATTR_NAME="CANTON" IS_USER_CREATED="false" FEAT_INDEX="0"/>
 #! <XFORM_ATTR ATTR_NAME="DELETED" IS_USER_CREATED="false" FEAT_INDEX="0"/>
 #! <XFORM_ATTR ATTR_NAME="FID" IS_USER_CREATED="false" FEAT_INDEX="0"/>
 #! <XFORM_ATTR ATTR_NAME="GID" IS_USER_CREATED="false" FEAT_INDEX="0"/>
-#! <XFORM_ATTR ATTR_NAME="MENSU_NUM" IS_USER_CREATED="false" FEAT_INDEX="0"/>
-#! <XFORM_ATTR ATTR_NAME="short_name" IS_USER_CREATED="false" FEAT_INDEX="0"/>
+#! <XFORM_ATTR ATTR_NAME="INTITULE_LISTE" IS_USER_CREATED="false" FEAT_INDEX="0"/>
+#! <XFORM_ATTR ATTR_NAME="STATUT_ASSAIN" IS_USER_CREATED="false" FEAT_INDEX="0"/>
+#! <XFORM_ATTR ATTR_NAME="STATUT_DISTRIB" IS_USER_CREATED="false" FEAT_INDEX="0"/>
+#! <XFORM_ATTR ATTR_NAME="name" IS_USER_CREATED="false" FEAT_INDEX="0"/>
+#! <XFORM_ATTR ATTR_NAME="land_registry" IS_USER_CREATED="false" FEAT_INDEX="0"/>
+#! <XFORM_ATTR ATTR_NAME="shortname" IS_USER_CREATED="false" FEAT_INDEX="0"/>
+#! <XFORM_ATTR ATTR_NAME="zip" IS_USER_CREATED="false" FEAT_INDEX="0"/>
+#! <XFORM_ATTR ATTR_NAME="subscriber_prefix" IS_USER_CREATED="false" FEAT_INDEX="0"/>
 #! <XFORM_PARM PARM_NAME="XFORMER_NAME" PARM_VALUE="AttributeRenamer"/>
-#! <XFORM_PARM PARM_NAME="ATTR_LIST" PARM_VALUE="short_name,NO_FOLIO"/>
-#! </TRANSFORMER>
-#! <TRANSFORMER
-#! IDENTIFIER="8"
-#! TYPE="FeatureMerger"
-#! VERSION="8"
-#! POSITION="1270 -516"
-#! ORDER="15"
-#! PARMS_EDITED="true"
-#! ENABLED="true"
-#! >
-#! <OUTPUT_FEAT NAME="COMPLETE"/>
-#! <FEAT_COLLAPSED COLLAPSED="0"/>
-#! <XFORM_ATTR ATTR_NAME="list{}.xy" IS_USER_CREATED="false" FEAT_INDEX="0"/>
-#! <XFORM_ATTR ATTR_NAME="linestring" IS_USER_CREATED="false" FEAT_INDEX="0"/>
-#! <XFORM_ATTR ATTR_NAME="wkb_geometry" IS_USER_CREATED="false" FEAT_INDEX="0"/>
-#! <XFORM_ATTR ATTR_NAME="GID" IS_USER_CREATED="false" FEAT_INDEX="0"/>
-#! <XFORM_ATTR ATTR_NAME="list{}.GID" IS_USER_CREATED="false" FEAT_INDEX="0"/>
-#! <XFORM_ATTR ATTR_NAME="list{}.SEQ" IS_USER_CREATED="false" FEAT_INDEX="0"/>
-#! <XFORM_ATTR ATTR_NAME="AREA_GERECHNET" IS_USER_CREATED="false" FEAT_INDEX="0"/>
-#! <XFORM_ATTR ATTR_NAME="AREA_NOMINAL" IS_USER_CREATED="false" FEAT_INDEX="0"/>
-#! <XFORM_ATTR ATTR_NAME="COM" IS_USER_CREATED="false" FEAT_INDEX="0"/>
-#! <XFORM_ATTR ATTR_NAME="COMMUNE" IS_USER_CREATED="false" FEAT_INDEX="0"/>
-#! <XFORM_ATTR ATTR_NAME="DELETED" IS_USER_CREATED="false" FEAT_INDEX="0"/>
-#! <XFORM_ATTR ATTR_NAME="FID" IS_USER_CREATED="false" FEAT_INDEX="0"/>
-#! <XFORM_ATTR ATTR_NAME="MENSU_NUM" IS_USER_CREATED="false" FEAT_INDEX="0"/>
-#! <XFORM_ATTR ATTR_NAME="short_name" IS_USER_CREATED="false" FEAT_INDEX="0"/>
-#! <OUTPUT_FEAT NAME="INCOMPLETE"/>
-#! <FEAT_COLLAPSED COLLAPSED="1"/>
-#! <XFORM_ATTR ATTR_NAME="AREA_GERECHNET" IS_USER_CREATED="false" FEAT_INDEX="1"/>
-#! <XFORM_ATTR ATTR_NAME="AREA_NOMINAL" IS_USER_CREATED="false" FEAT_INDEX="1"/>
-#! <XFORM_ATTR ATTR_NAME="COM" IS_USER_CREATED="false" FEAT_INDEX="1"/>
-#! <XFORM_ATTR ATTR_NAME="COMMUNE" IS_USER_CREATED="false" FEAT_INDEX="1"/>
-#! <XFORM_ATTR ATTR_NAME="DELETED" IS_USER_CREATED="false" FEAT_INDEX="1"/>
-#! <XFORM_ATTR ATTR_NAME="FID" IS_USER_CREATED="false" FEAT_INDEX="1"/>
-#! <XFORM_ATTR ATTR_NAME="GID" IS_USER_CREATED="false" FEAT_INDEX="1"/>
-#! <XFORM_ATTR ATTR_NAME="MENSU_NUM" IS_USER_CREATED="false" FEAT_INDEX="1"/>
-#! <XFORM_ATTR ATTR_NAME="short_name" IS_USER_CREATED="false" FEAT_INDEX="1"/>
-#! <OUTPUT_FEAT NAME="EMPTY"/>
-#! <FEAT_COLLAPSED COLLAPSED="2"/>
-#! <XFORM_ATTR ATTR_NAME="AREA_GERECHNET" IS_USER_CREATED="false" FEAT_INDEX="2"/>
-#! <XFORM_ATTR ATTR_NAME="AREA_NOMINAL" IS_USER_CREATED="false" FEAT_INDEX="2"/>
-#! <XFORM_ATTR ATTR_NAME="COM" IS_USER_CREATED="false" FEAT_INDEX="2"/>
-#! <XFORM_ATTR ATTR_NAME="COMMUNE" IS_USER_CREATED="false" FEAT_INDEX="2"/>
-#! <XFORM_ATTR ATTR_NAME="DELETED" IS_USER_CREATED="false" FEAT_INDEX="2"/>
-#! <XFORM_ATTR ATTR_NAME="FID" IS_USER_CREATED="false" FEAT_INDEX="2"/>
-#! <XFORM_ATTR ATTR_NAME="GID" IS_USER_CREATED="false" FEAT_INDEX="2"/>
-#! <XFORM_ATTR ATTR_NAME="MENSU_NUM" IS_USER_CREATED="false" FEAT_INDEX="2"/>
-#! <XFORM_ATTR ATTR_NAME="short_name" IS_USER_CREATED="false" FEAT_INDEX="2"/>
-#! <OUTPUT_FEAT NAME="REFERENCED"/>
-#! <FEAT_COLLAPSED COLLAPSED="3"/>
-#! <XFORM_ATTR ATTR_NAME="list{}.xy" IS_USER_CREATED="false" FEAT_INDEX="3"/>
-#! <XFORM_ATTR ATTR_NAME="linestring" IS_USER_CREATED="false" FEAT_INDEX="3"/>
-#! <XFORM_ATTR ATTR_NAME="wkb_geometry" IS_USER_CREATED="false" FEAT_INDEX="3"/>
-#! <XFORM_ATTR ATTR_NAME="GID" IS_USER_CREATED="false" FEAT_INDEX="3"/>
-#! <XFORM_ATTR ATTR_NAME="list{}.GID" IS_USER_CREATED="false" FEAT_INDEX="3"/>
-#! <XFORM_ATTR ATTR_NAME="list{}.SEQ" IS_USER_CREATED="false" FEAT_INDEX="3"/>
-#! <OUTPUT_FEAT NAME="UNREFERENCED"/>
-#! <FEAT_COLLAPSED COLLAPSED="4"/>
-#! <XFORM_ATTR ATTR_NAME="list{}.xy" IS_USER_CREATED="false" FEAT_INDEX="4"/>
-#! <XFORM_ATTR ATTR_NAME="linestring" IS_USER_CREATED="false" FEAT_INDEX="4"/>
-#! <XFORM_ATTR ATTR_NAME="wkb_geometry" IS_USER_CREATED="false" FEAT_INDEX="4"/>
-#! <XFORM_ATTR ATTR_NAME="GID" IS_USER_CREATED="false" FEAT_INDEX="4"/>
-#! <XFORM_ATTR ATTR_NAME="list{}.GID" IS_USER_CREATED="false" FEAT_INDEX="4"/>
-#! <XFORM_ATTR ATTR_NAME="list{}.SEQ" IS_USER_CREATED="false" FEAT_INDEX="4"/>
-#! <OUTPUT_FEAT NAME="DUPLICATE_SUPPLIER"/>
-#! <FEAT_COLLAPSED COLLAPSED="5"/>
-#! <XFORM_ATTR ATTR_NAME="list{}.xy" IS_USER_CREATED="false" FEAT_INDEX="5"/>
-#! <XFORM_ATTR ATTR_NAME="linestring" IS_USER_CREATED="false" FEAT_INDEX="5"/>
-#! <XFORM_ATTR ATTR_NAME="wkb_geometry" IS_USER_CREATED="false" FEAT_INDEX="5"/>
-#! <XFORM_ATTR ATTR_NAME="GID" IS_USER_CREATED="false" FEAT_INDEX="5"/>
-#! <XFORM_ATTR ATTR_NAME="list{}.GID" IS_USER_CREATED="false" FEAT_INDEX="5"/>
-#! <XFORM_ATTR ATTR_NAME="list{}.SEQ" IS_USER_CREATED="false" FEAT_INDEX="5"/>
-#! <XFORM_PARM PARM_NAME="GROUP_BY" PARM_VALUE="GID"/>
-#! <XFORM_PARM PARM_NAME="PARAMETERS_GROUP" PARM_VALUE=""/>
-#! <XFORM_PARM PARM_NAME="LIST_NAME" PARM_VALUE=""/>
-#! <XFORM_PARM PARM_NAME="REFEEATTR" PARM_VALUE="GID"/>
-#! <XFORM_PARM PARM_NAME="XFORMER_NAME" PARM_VALUE="FeatureMerger"/>
-#! <XFORM_PARM PARM_NAME="MERGE_TYPE" PARM_VALUE="Geometry - Build Aggregates"/>
-#! <XFORM_PARM PARM_NAME="PROCESS_DUPS" PARM_VALUE="No"/>
-#! <XFORM_PARM PARM_NAME="TRANSFORMER_GROUP" PARM_VALUE=""/>
-#! <XFORM_PARM PARM_NAME="BUILD_INCOMPLETE" PARM_VALUE="No"/>
-#! <XFORM_PARM PARM_NAME="REFERATTR" PARM_VALUE="GID"/>
+#! <XFORM_PARM PARM_NAME="ATTR_LIST" PARM_VALUE="name,NOM,land_registry,NO_RF,subscriber_prefix,PREFIXE_ABT,zip,NPA,shortname,ABREGE"/>
 #! </TRANSFORMER>
 #! <TRANSFORMER
 #! IDENTIFIER="2"
 #! TYPE="Visualizer"
 #! VERSION="2"
 #! POSITION="679 -1254"
-#! ORDER="16"
+#! ORDER="12"
 #! PARMS_EDITED="false"
 #! ENABLED="true"
 #! >
@@ -1323,32 +1048,111 @@
 #! <XFORM_PARM PARM_NAME="PEN_COLOR" PARM_VALUE=""/>
 #! <XFORM_PARM PARM_NAME="POINTCLOUD_GROUP" PARM_VALUE=""/>
 #! </TRANSFORMER>
+#! <TRANSFORMER
+#! IDENTIFIER="8"
+#! TYPE="FeatureMerger"
+#! VERSION="8"
+#! POSITION="1391 -692"
+#! ORDER="17"
+#! PARMS_EDITED="true"
+#! ENABLED="true"
+#! >
+#! <OUTPUT_FEAT NAME="COMPLETE"/>
+#! <FEAT_COLLAPSED COLLAPSED="0"/>
+#! <XFORM_ATTR ATTR_NAME="list{}.xy" IS_USER_CREATED="false" FEAT_INDEX="0"/>
+#! <XFORM_ATTR ATTR_NAME="linestring" IS_USER_CREATED="false" FEAT_INDEX="0"/>
+#! <XFORM_ATTR ATTR_NAME="geometry" IS_USER_CREATED="false" FEAT_INDEX="0"/>
+#! <XFORM_ATTR ATTR_NAME="AREA_GERECHNET" IS_USER_CREATED="false" FEAT_INDEX="0"/>
+#! <XFORM_ATTR ATTR_NAME="AREA_NOMINAL" IS_USER_CREATED="false" FEAT_INDEX="0"/>
+#! <XFORM_ATTR ATTR_NAME="CANTON" IS_USER_CREATED="false" FEAT_INDEX="0"/>
+#! <XFORM_ATTR ATTR_NAME="DELETED" IS_USER_CREATED="false" FEAT_INDEX="0"/>
+#! <XFORM_ATTR ATTR_NAME="FID" IS_USER_CREATED="false" FEAT_INDEX="0"/>
+#! <XFORM_ATTR ATTR_NAME="GID" IS_USER_CREATED="false" FEAT_INDEX="0"/>
+#! <XFORM_ATTR ATTR_NAME="INTITULE_LISTE" IS_USER_CREATED="false" FEAT_INDEX="0"/>
+#! <XFORM_ATTR ATTR_NAME="STATUT_ASSAIN" IS_USER_CREATED="false" FEAT_INDEX="0"/>
+#! <XFORM_ATTR ATTR_NAME="STATUT_DISTRIB" IS_USER_CREATED="false" FEAT_INDEX="0"/>
+#! <XFORM_ATTR ATTR_NAME="name" IS_USER_CREATED="false" FEAT_INDEX="0"/>
+#! <XFORM_ATTR ATTR_NAME="list{}.GID" IS_USER_CREATED="false" FEAT_INDEX="0"/>
+#! <XFORM_ATTR ATTR_NAME="list{}.SEQ" IS_USER_CREATED="false" FEAT_INDEX="0"/>
+#! <XFORM_ATTR ATTR_NAME="land_registry" IS_USER_CREATED="false" FEAT_INDEX="0"/>
+#! <XFORM_ATTR ATTR_NAME="shortname" IS_USER_CREATED="false" FEAT_INDEX="0"/>
+#! <XFORM_ATTR ATTR_NAME="zip" IS_USER_CREATED="false" FEAT_INDEX="0"/>
+#! <XFORM_ATTR ATTR_NAME="subscriber_prefix" IS_USER_CREATED="false" FEAT_INDEX="0"/>
+#! <OUTPUT_FEAT NAME="INCOMPLETE"/>
+#! <FEAT_COLLAPSED COLLAPSED="1"/>
+#! <XFORM_ATTR ATTR_NAME="AREA_GERECHNET" IS_USER_CREATED="false" FEAT_INDEX="1"/>
+#! <XFORM_ATTR ATTR_NAME="AREA_NOMINAL" IS_USER_CREATED="false" FEAT_INDEX="1"/>
+#! <XFORM_ATTR ATTR_NAME="CANTON" IS_USER_CREATED="false" FEAT_INDEX="1"/>
+#! <XFORM_ATTR ATTR_NAME="DELETED" IS_USER_CREATED="false" FEAT_INDEX="1"/>
+#! <XFORM_ATTR ATTR_NAME="FID" IS_USER_CREATED="false" FEAT_INDEX="1"/>
+#! <XFORM_ATTR ATTR_NAME="GID" IS_USER_CREATED="false" FEAT_INDEX="1"/>
+#! <XFORM_ATTR ATTR_NAME="INTITULE_LISTE" IS_USER_CREATED="false" FEAT_INDEX="1"/>
+#! <XFORM_ATTR ATTR_NAME="STATUT_ASSAIN" IS_USER_CREATED="false" FEAT_INDEX="1"/>
+#! <XFORM_ATTR ATTR_NAME="STATUT_DISTRIB" IS_USER_CREATED="false" FEAT_INDEX="1"/>
+#! <XFORM_ATTR ATTR_NAME="name" IS_USER_CREATED="false" FEAT_INDEX="1"/>
+#! <XFORM_ATTR ATTR_NAME="land_registry" IS_USER_CREATED="false" FEAT_INDEX="1"/>
+#! <XFORM_ATTR ATTR_NAME="shortname" IS_USER_CREATED="false" FEAT_INDEX="1"/>
+#! <XFORM_ATTR ATTR_NAME="zip" IS_USER_CREATED="false" FEAT_INDEX="1"/>
+#! <XFORM_ATTR ATTR_NAME="subscriber_prefix" IS_USER_CREATED="false" FEAT_INDEX="1"/>
+#! <OUTPUT_FEAT NAME="EMPTY"/>
+#! <FEAT_COLLAPSED COLLAPSED="2"/>
+#! <XFORM_ATTR ATTR_NAME="AREA_GERECHNET" IS_USER_CREATED="false" FEAT_INDEX="2"/>
+#! <XFORM_ATTR ATTR_NAME="AREA_NOMINAL" IS_USER_CREATED="false" FEAT_INDEX="2"/>
+#! <XFORM_ATTR ATTR_NAME="CANTON" IS_USER_CREATED="false" FEAT_INDEX="2"/>
+#! <XFORM_ATTR ATTR_NAME="DELETED" IS_USER_CREATED="false" FEAT_INDEX="2"/>
+#! <XFORM_ATTR ATTR_NAME="FID" IS_USER_CREATED="false" FEAT_INDEX="2"/>
+#! <XFORM_ATTR ATTR_NAME="GID" IS_USER_CREATED="false" FEAT_INDEX="2"/>
+#! <XFORM_ATTR ATTR_NAME="INTITULE_LISTE" IS_USER_CREATED="false" FEAT_INDEX="2"/>
+#! <XFORM_ATTR ATTR_NAME="STATUT_ASSAIN" IS_USER_CREATED="false" FEAT_INDEX="2"/>
+#! <XFORM_ATTR ATTR_NAME="STATUT_DISTRIB" IS_USER_CREATED="false" FEAT_INDEX="2"/>
+#! <XFORM_ATTR ATTR_NAME="name" IS_USER_CREATED="false" FEAT_INDEX="2"/>
+#! <XFORM_ATTR ATTR_NAME="land_registry" IS_USER_CREATED="false" FEAT_INDEX="2"/>
+#! <XFORM_ATTR ATTR_NAME="shortname" IS_USER_CREATED="false" FEAT_INDEX="2"/>
+#! <XFORM_ATTR ATTR_NAME="zip" IS_USER_CREATED="false" FEAT_INDEX="2"/>
+#! <XFORM_ATTR ATTR_NAME="subscriber_prefix" IS_USER_CREATED="false" FEAT_INDEX="2"/>
+#! <OUTPUT_FEAT NAME="REFERENCED"/>
+#! <FEAT_COLLAPSED COLLAPSED="3"/>
+#! <XFORM_ATTR ATTR_NAME="list{}.xy" IS_USER_CREATED="false" FEAT_INDEX="3"/>
+#! <XFORM_ATTR ATTR_NAME="linestring" IS_USER_CREATED="false" FEAT_INDEX="3"/>
+#! <XFORM_ATTR ATTR_NAME="geometry" IS_USER_CREATED="false" FEAT_INDEX="3"/>
+#! <XFORM_ATTR ATTR_NAME="GID" IS_USER_CREATED="false" FEAT_INDEX="3"/>
+#! <XFORM_ATTR ATTR_NAME="list{}.GID" IS_USER_CREATED="false" FEAT_INDEX="3"/>
+#! <XFORM_ATTR ATTR_NAME="list{}.SEQ" IS_USER_CREATED="false" FEAT_INDEX="3"/>
+#! <OUTPUT_FEAT NAME="UNREFERENCED"/>
+#! <FEAT_COLLAPSED COLLAPSED="4"/>
+#! <XFORM_ATTR ATTR_NAME="list{}.xy" IS_USER_CREATED="false" FEAT_INDEX="4"/>
+#! <XFORM_ATTR ATTR_NAME="linestring" IS_USER_CREATED="false" FEAT_INDEX="4"/>
+#! <XFORM_ATTR ATTR_NAME="geometry" IS_USER_CREATED="false" FEAT_INDEX="4"/>
+#! <XFORM_ATTR ATTR_NAME="GID" IS_USER_CREATED="false" FEAT_INDEX="4"/>
+#! <XFORM_ATTR ATTR_NAME="list{}.GID" IS_USER_CREATED="false" FEAT_INDEX="4"/>
+#! <XFORM_ATTR ATTR_NAME="list{}.SEQ" IS_USER_CREATED="false" FEAT_INDEX="4"/>
+#! <OUTPUT_FEAT NAME="DUPLICATE_SUPPLIER"/>
+#! <FEAT_COLLAPSED COLLAPSED="5"/>
+#! <XFORM_ATTR ATTR_NAME="list{}.xy" IS_USER_CREATED="false" FEAT_INDEX="5"/>
+#! <XFORM_ATTR ATTR_NAME="linestring" IS_USER_CREATED="false" FEAT_INDEX="5"/>
+#! <XFORM_ATTR ATTR_NAME="geometry" IS_USER_CREATED="false" FEAT_INDEX="5"/>
+#! <XFORM_ATTR ATTR_NAME="GID" IS_USER_CREATED="false" FEAT_INDEX="5"/>
+#! <XFORM_ATTR ATTR_NAME="list{}.GID" IS_USER_CREATED="false" FEAT_INDEX="5"/>
+#! <XFORM_ATTR ATTR_NAME="list{}.SEQ" IS_USER_CREATED="false" FEAT_INDEX="5"/>
+#! <XFORM_PARM PARM_NAME="GROUP_BY" PARM_VALUE="GID"/>
+#! <XFORM_PARM PARM_NAME="PARAMETERS_GROUP" PARM_VALUE=""/>
+#! <XFORM_PARM PARM_NAME="LIST_NAME" PARM_VALUE=""/>
+#! <XFORM_PARM PARM_NAME="REFEEATTR" PARM_VALUE="GID"/>
+#! <XFORM_PARM PARM_NAME="XFORMER_NAME" PARM_VALUE="FeatureMerger"/>
+#! <XFORM_PARM PARM_NAME="MERGE_TYPE" PARM_VALUE="Geometry - Build Aggregates"/>
+#! <XFORM_PARM PARM_NAME="PROCESS_DUPS" PARM_VALUE="No"/>
+#! <XFORM_PARM PARM_NAME="TRANSFORMER_GROUP" PARM_VALUE=""/>
+#! <XFORM_PARM PARM_NAME="BUILD_INCOMPLETE" PARM_VALUE="No"/>
+#! <XFORM_PARM PARM_NAME="REFERATTR" PARM_VALUE="GID"/>
+#! </TRANSFORMER>
 #! </TRANSFORMERS>
 #! <FEAT_LINKS>
-#! <FEAT_LINK
-#! IDENTIFIER="5"
-#! SOURCE_NODE="3"
-#! TARGET_NODE="4"
-#! SOURCE_PORT_DESC="-1"
-#! TARGET_PORT_DESC="fi 0"
-#! ENABLED="true"
-#! EXTRA_POINTS=""
-#! />
 #! <FEAT_LINK
 #! IDENTIFIER="10"
 #! SOURCE_NODE="4"
 #! TARGET_NODE="8"
 #! SOURCE_PORT_DESC="fo 0"
 #! TARGET_PORT_DESC="fi 1"
-#! ENABLED="true"
-#! EXTRA_POINTS=""
-#! />
-#! <FEAT_LINK
-#! IDENTIFIER="12"
-#! SOURCE_NODE="8"
-#! TARGET_NODE="9"
-#! SOURCE_PORT_DESC="fo 0"
-#! TARGET_PORT_DESC="-1"
 #! ENABLED="true"
 #! EXTRA_POINTS=""
 #! />
@@ -1362,8 +1166,17 @@
 #! EXTRA_POINTS=""
 #! />
 #! <FEAT_LINK
-#! IDENTIFIER="20"
-#! SOURCE_NODE="41"
+#! IDENTIFIER="17"
+#! SOURCE_NODE="19"
+#! TARGET_NODE="16"
+#! SOURCE_PORT_DESC="fo 0"
+#! TARGET_PORT_DESC="fi 0"
+#! ENABLED="true"
+#! EXTRA_POINTS=""
+#! />
+#! <FEAT_LINK
+#! IDENTIFIER="23"
+#! SOURCE_NODE="20"
 #! TARGET_NODE="19"
 #! SOURCE_PORT_DESC="-1"
 #! TARGET_PORT_DESC="fi 0"
@@ -1371,11 +1184,20 @@
 #! EXTRA_POINTS=""
 #! />
 #! <FEAT_LINK
-#! IDENTIFIER="17"
-#! SOURCE_NODE="19"
-#! TARGET_NODE="16"
-#! SOURCE_PORT_DESC="fo 0"
+#! IDENTIFIER="25"
+#! SOURCE_NODE="24"
+#! TARGET_NODE="4"
+#! SOURCE_PORT_DESC="-1"
 #! TARGET_PORT_DESC="fi 0"
+#! ENABLED="true"
+#! EXTRA_POINTS=""
+#! />
+#! <FEAT_LINK
+#! IDENTIFIER="27"
+#! SOURCE_NODE="8"
+#! TARGET_NODE="26"
+#! SOURCE_PORT_DESC="fo 0"
+#! TARGET_PORT_DESC="-1"
 #! ENABLED="true"
 #! EXTRA_POINTS=""
 #! />
@@ -1595,7 +1417,7 @@
 #! VERSION="1"
 #! POSITION="398 -452"
 #! ORDER="23"
-#! PARMS_EDITED="true"
+#! PARMS_EDITED="false"
 #! ENABLED="true"
 #! >
 #! <OUTPUT_FEAT NAME="OUTPUT"/>
@@ -1604,7 +1426,7 @@
 #! <XFORM_ATTR ATTR_NAME="SEQ" IS_USER_CREATED="false" FEAT_INDEX="0"/>
 #! <XFORM_ATTR ATTR_NAME="X1" IS_USER_CREATED="false" FEAT_INDEX="0"/>
 #! <XFORM_ATTR ATTR_NAME="Y1" IS_USER_CREATED="false" FEAT_INDEX="0"/>
-#! <XFORM_PARM PARM_NAME="FORMAT" PARM_VALUE=".10f"/>
+#! <XFORM_PARM PARM_NAME="FORMAT" PARM_VALUE=".4f"/>
 #! <XFORM_PARM PARM_NAME="PARAMETERS_GROUP" PARM_VALUE=""/>
 #! <XFORM_PARM PARM_NAME="XFORMER_NAME" PARM_VALUE="StringFormatter"/>
 #! <XFORM_PARM PARM_NAME="SRC_ATTRS" PARM_VALUE="X1,Y1"/>
@@ -1768,7 +1590,7 @@
 #! >
 #! <OUTPUT_FEAT NAME="OUTPUT"/>
 #! <FEAT_COLLAPSED COLLAPSED="0"/>
-#! <XFORM_ATTR ATTR_NAME="wkb_geometry" IS_USER_CREATED="false" FEAT_INDEX="0"/>
+#! <XFORM_ATTR ATTR_NAME="geometry" IS_USER_CREATED="false" FEAT_INDEX="0"/>
 #! <XFORM_ATTR ATTR_NAME="list{}.xy" IS_USER_CREATED="false" FEAT_INDEX="0"/>
 #! <XFORM_ATTR ATTR_NAME="linestring" IS_USER_CREATED="false" FEAT_INDEX="0"/>
 #! <XFORM_ATTR ATTR_NAME="GID" IS_USER_CREATED="false" FEAT_INDEX="0"/>
@@ -1776,7 +1598,7 @@
 #! <XFORM_ATTR ATTR_NAME="list{}.SEQ" IS_USER_CREATED="false" FEAT_INDEX="0"/>
 #! <XFORM_PARM PARM_NAME="PARAMETERS_GROUP" PARM_VALUE=""/>
 #! <XFORM_PARM PARM_NAME="KIND_LONG" PARM_VALUE="OGC Well Known Binary"/>
-#! <XFORM_PARM PARM_NAME="ATTR" PARM_VALUE="wkb_geometry"/>
+#! <XFORM_PARM PARM_NAME="ATTR" PARM_VALUE="geometry"/>
 #! <XFORM_PARM PARM_NAME="XFORMER_NAME" PARM_VALUE="GeometryExtractor"/>
 #! <XFORM_PARM PARM_NAME="OGCVERSION" PARM_VALUE="1.1"/>
 #! <XFORM_PARM PARM_NAME="TRANSFORMER_GROUP" PARM_VALUE=""/>
@@ -2046,7 +1868,7 @@
 #! <FEAT_COLLAPSED COLLAPSED="0"/>
 #! <XFORM_ATTR ATTR_NAME="list{}.xy" IS_USER_CREATED="false" FEAT_INDEX="0"/>
 #! <XFORM_ATTR ATTR_NAME="linestring" IS_USER_CREATED="false" FEAT_INDEX="0"/>
-#! <XFORM_ATTR ATTR_NAME="wkb_geometry" IS_USER_CREATED="false" FEAT_INDEX="0"/>
+#! <XFORM_ATTR ATTR_NAME="geometry" IS_USER_CREATED="false" FEAT_INDEX="0"/>
 #! <XFORM_ATTR ATTR_NAME="GID" IS_USER_CREATED="false" FEAT_INDEX="0"/>
 #! <XFORM_ATTR ATTR_NAME="list{}.GID" IS_USER_CREATED="false" FEAT_INDEX="0"/>
 #! <XFORM_ATTR ATTR_NAME="list{}.SEQ" IS_USER_CREATED="false" FEAT_INDEX="0"/>
@@ -2128,183 +1950,26 @@
 #! </LOOKUP_TABLES>
 #! </WORKSPACE>
 #! 
-GUI IGNORE SourceDataset_ORACLE8I_1,ORACLE8I_IN_USER_NAME_ORACLE8I_1,ORACLE8I_IN_PASSWORD_ORACLE8I_1,ORACLE8I_IN_REMOVE_SCHEMA_QUALIFIER_ORACLE8I_1,ORACLE8I_IN_READ_3D_POLYGON_AS_FACE_ORACLE8I_1,ORACLE8I_IN_WHERE_CLAUSE_ORACLE8I_1,ORACLE8I_IN_SEARCH_ENVELOPE_MINX_ORACLE8I_1,ORACLE8I_IN_SEARCH_ENVELOPE_MINY_ORACLE8I_1,ORACLE8I_IN_SEARCH_ENVELOPE_MAXX_ORACLE8I_1,ORACLE8I_IN_SEARCH_ENVELOPE_MAXY_ORACLE8I_1,ORACLE8I_IN_CLIP_TO_ENVELOPE_ORACLE8I_1,ORACLE8I_IN_SEARCH_ENVELOPE_COORDINATE_SYSTEM_ORACLE8I_1,_ORACLE8I_INTERACTION_ORACLE8I_1,_ORACLE8I_INTERRESULT_ORACLE8I_1,_ORACLE8I_ChunkSize_ORACLE8I_1,_ORACLE8I_IN_BEGIN_SQL_ORACLE8I_1,_ORACLE8I_IN_END_SQL_ORACLE8I_1,_ORACLE8I_Workspace_ORACLE8I_1,_ORACLE8I_IN_HANDLE_MULTIPLE_SPATIAL_COLUMNS_ORACLE8I_1,SourceDataset_ORACLE8I_DB_1,ORACLE8I_DB_IN_USER_NAME_ORACLE8I_DB_1,ORACLE8I_DB_IN_PASSWORD_ORACLE8I_DB_1,ORACLE8I_DB_IN_REMOVE_SCHEMA_QUALIFIER_ORACLE8I_DB_1,ORACLE8I_DB_IN_CHUNK_SIZE_ORACLE8I_DB_1,_ORACLE8I_DB_IN_BEGIN_SQL_ORACLE8I_DB_1,_ORACLE8I_DB_IN_END_SQL_ORACLE8I_DB_1,ORACLE8I_DB_IN_WORKSPACE_ORACLE8I_DB_1,DestDataset_POSTGIS_1,POSTGIS_OUT_HOST_POSTGIS_1,POSTGIS_OUT_PORT_POSTGIS_1,POSTGIS_OUT_USER_NAME_POSTGIS_1,POSTGIS_OUT_PASSWORD_POSTGIS_1,POSTGIS_OUT_SPATIAL_COLUMN_TYPE_POSTGIS_1,POSTGIS_OUT_SPATIAL_COLUMN_NAME_POSTGIS_1,POSTGIS_OUT_WRITER_MODE_POSTGIS_1,POSTGIS_OUT_START_TRANSACTION_POSTGIS_1,POSTGIS_OUT_TRANSACTION_INTERVAL_POSTGIS_1,POSTGIS_OUT_BULK_COPY_POSTGIS_1,POSTGIS_OUT_INSERT_TEXT_GEOMETRY_POSTGIS_1
-DEFAULT_MACRO SourceDataset_ORACLE8I orcl
-GUI OPTIONAL TEXT SourceDataset_ORACLE8I Source Oracle Spatial Object Service:
+GUI IGNORE SourceDataset_ORACLE8I_DB_1,ORACLE8I_DB_IN_USER_NAME_ORACLE8I_DB_1,ORACLE8I_DB_IN_PASSWORD_ORACLE8I_DB_1,ORACLE8I_DB_IN_REMOVE_SCHEMA_QUALIFIER_ORACLE8I_DB_1,ORACLE8I_DB_IN_CHUNK_SIZE_ORACLE8I_DB_1,_ORACLE8I_DB_IN_BEGIN_SQL_ORACLE8I_DB_1,_ORACLE8I_DB_IN_END_SQL_ORACLE8I_DB_1,ORACLE8I_DB_IN_WORKSPACE_ORACLE8I_DB_1,SourceDataset_ORACLE8I_DB_2,ORACLE8I_DB_IN_USER_NAME_ORACLE8I_DB_2,ORACLE8I_DB_IN_PASSWORD_ORACLE8I_DB_2,ORACLE8I_DB_IN_REMOVE_SCHEMA_QUALIFIER_ORACLE8I_DB_2,ORACLE8I_DB_IN_CHUNK_SIZE_ORACLE8I_DB_2,_ORACLE8I_DB_IN_BEGIN_SQL_ORACLE8I_DB_2,_ORACLE8I_DB_IN_END_SQL_ORACLE8I_DB_2,ORACLE8I_DB_IN_WORKSPACE_ORACLE8I_DB_2,DestDataset_POSTGIS_1,POSTGIS_OUT_HOST_POSTGIS_1,POSTGIS_OUT_PORT_POSTGIS_1,POSTGIS_OUT_USER_NAME_POSTGIS_1,POSTGIS_OUT_PASSWORD_POSTGIS_1,POSTGIS_OUT_SPATIAL_COLUMN_TYPE_POSTGIS_1,POSTGIS_OUT_SPATIAL_COLUMN_NAME_POSTGIS_1,POSTGIS_OUT_WRITER_MODE_POSTGIS_1,POSTGIS_OUT_START_TRANSACTION_POSTGIS_1,POSTGIS_OUT_TRANSACTION_INTERVAL_POSTGIS_1,POSTGIS_OUT_BULK_COPY_POSTGIS_1,POSTGIS_OUT_INSERT_TEXT_GEOMETRY_POSTGIS_1
 DEFAULT_MACRO SourceDataset_ORACLE8I_DB orcl
 GUI OPTIONAL TEXT SourceDataset_ORACLE8I_DB Source Oracle Non-spatial Service:
+DEFAULT_MACRO SourceDataset_ORACLE8I_DB_3 orcl
+GUI OPTIONAL TEXT SourceDataset_ORACLE8I_DB_3 Source Oracle Non-spatial Service:
 DEFAULT_MACRO DestDataset_POSTGIS sige
 GUI TEXT DestDataset_POSTGIS Destination PostGIS Dataset:
 INCLUDE [ if {{$(DestDataset_POSTGIS)} == {}} { puts_real {Parameter 'DestDataset_POSTGIS' must be given a value.}; exit 1; }; ]
 #! START_HEADER
 #! START_WB_HEADER
 READER_TYPE MULTI_READER
-MULTI_READER_TYPE{0} ORACLE8I
-MULTI_READER_KEYWORD{0} ORACLE8I_1
-MULTI_READER_GEN_DIRECTIVES{0} MAPINFO_SYMBOLOGY_STYLE_COLUMN,,WHERE_CLAUSE,,USE_SEARCH_ENVELOPE,NO,_MERGE_SCHEMAS,YES,READ_3D_POLYGON_AS_FACE,NO,SEARCH_ENVELOPE_MAXY,0,REMOVE_SCHEMA_QUALIFIER,NO,SEARCH_ENVELOPE_MAXX,0,SERVER_TYPE,ORACLE8i,WORKSPACELIST,LIVE,ORACLE8I_EXPOSE_FORMAT_ATTRS,,USER_NAME,SYSTEM,SEARCH_ENVELOPE_MINX,0,MAPINFO_SYMBOLOGY_INDEX_COLUMN,,TABLELIST,SIGE_DISTRIBUTION.SIGE_FOLIO,PARSE_MAPINFO_SYMBOLOGY,NO,CLIP_TO_ENVELOPE,NO,SEARCH_ENVELOPE_MINY,0
+MULTI_READER_TYPE{0} ORACLE8I_DB
+MULTI_READER_KEYWORD{0} ORACLE8I_DB_1
+MULTI_READER_GEN_DIRECTIVES{0} _MERGE_SCHEMAS,YES,REMOVE_SCHEMA_QUALIFIER,NO,SERVER_TYPE,ORACLE8i,WORKSPACELIST,LIVE,USER_NAME,SYSTEM,TABLELIST,SIGE_COMMUN.COMMUNES,ORACLE8I_DB_EXPOSE_FORMAT_ATTRS,
 MULTI_READER_TYPE{1} ORACLE8I_DB
-MULTI_READER_KEYWORD{1} ORACLE8I_DB_1
-MULTI_READER_GEN_DIRECTIVES{1} REMOVE_SCHEMA_QUALIFIER,NO,TABLELIST,SIGE_DISTRIBUTION.WA_STRANG_GEO,ORACLE8I_DB_EXPOSE_FORMAT_ATTRS,,SERVER_TYPE,ORACLE8i,USER_NAME,system,WORKSPACELIST,LIVE,_MERGE_SCHEMAS,YES
+MULTI_READER_KEYWORD{1} ORACLE8I_DB_2
+MULTI_READER_GEN_DIRECTIVES{1} _MERGE_SCHEMAS,YES,REMOVE_SCHEMA_QUALIFIER,NO,SERVER_TYPE,ORACLE8i,WORKSPACELIST,LIVE,USER_NAME,SYSTEM,TABLELIST,SIGE_COMMUN.COMMUNES_GEO,ORACLE8I_DB_EXPOSE_FORMAT_ATTRS,
 WRITER_TYPE POSTGIS
 WRITER_KEYWORD POSTGIS_1
 #! END_WB_HEADER
-#! START_WB_HEADER
-MACRO WB_KEYWORD "ORACLE8I_1"
-#! END_WB_HEADER
-#! START_SOURCE_HEADER ORACLE8I ORACLE8I_1
-# ========================================================================
-# The following GUI line prompts for the name of the Oracle Service
-# from which data will be extracted.
-# The dataset this mapping file was generated from was:
-#! END_SOURCE_HEADER
-#! START_WB_HEADER
-DEFAULT_MACRO SourceDataset
-INCLUDE [ if {{$(SourceDataset)} != ""} {                        \
- puts {DEFAULT_MACRO SourceDataset_ORACLE8I_1 $(SourceDataset)}     \
- } ]
-#! END_WB_HEADER
-#! START_SOURCE_HEADER ORACLE8I ORACLE8I_1
-DEFAULT_MACRO SourceDataset_ORACLE8I_1 $(SourceDataset_ORACLE8I)
-GUI OPTIONAL TEXT SourceDataset_ORACLE8I_1 Source Oracle Spatial Object Service:
-# ========================================================================
-# Here we allow one to specify the relationship which must exist between
-# the query region and the returned features. This is specified by a
-# *type* of relationship, and a *result* to be tested. The relationship
-# type is a string such as ANYINTERACT (thedefault) or TOUCH+INSIDE.
-# The result is a simple test applied to determine whether the features
-# exhibit the correct relationship. The default value of = 'TRUE'
-# will be true for all single relationship types, but will never
-# be true for combined relationships like TOUCH+INSIDE; a query
-# performed with this relationship will return a result of TOUCH,
-# INSIDE, or FALSE.
-DEFAULT_MACRO _ORACLE8I_INTERACTION_ORACLE8I_1 ANYINTERACT
-ORACLE8I_1_INTERACTION $(_ORACLE8I_INTERACTION_ORACLE8I_1)
-DEFAULT_MACRO _ORACLE8I_INTERRESULT_ORACLE8I_1 = 'TRUE'
-ORACLE8I_1_INTERACTION_RESULT "$(_ORACLE8I_INTERRESULT_ORACLE8I_1)"
-# ========================================================================
-# By uncommenting the following, you can prompt for a suffix to be applied
-# to the layer name to form the name of a layer to use for performing
-# spatial queries. The default value of  will result in a layer name
-# of _FMESQ to be used, so the query feature will be written to layers
-# named (forexample) ROADS_FMESQ.
-DEFAULT_MACRO _ORACLE8I_QUERY_SUFFIX_ORACLE8I_1
-# GUI TEXT _ORACLE8I_QUERY_SUFFIX Query layer suffix:
-ORACLE8I_1_QUERY_SUFFIX $(_ORACLE8I_QUERY_SUFFIX_ORACLE8I_1)
-ORACLE8I_1_SERVER_TYPE ORACLE8i
-# ===========================================================================
-# ===========================================================================
-DEFAULT_MACRO ORACLE8I_IN_USER_NAME_ORACLE8I_1 SYSTEM
-ORACLE8I_1_USER_NAME "$(ORACLE8I_IN_USER_NAME_ORACLE8I_1)"
-GUI OPTIONAL TEXT ORACLE8I_IN_USER_NAME_ORACLE8I_1 Username:
-# ===========================================================================
-DEFAULT_MACRO ORACLE8I_IN_PASSWORD_ORACLE8I_1 MANAGER
-ORACLE8I_1_PASSWORD "$(ORACLE8I_IN_PASSWORD_ORACLE8I_1)"
-GUI OPTIONAL PASSWORD ORACLE8I_IN_PASSWORD_ORACLE8I_1 Password:
-# ===========================================================================
-# ===========================================================================
-DEFAULT_MACRO ORACLE8I_IN_REMOVE_SCHEMA_QUALIFIER_ORACLE8I_1 NO
-ORACLE8I_1_REMOVE_SCHEMA_QUALIFIER "$(ORACLE8I_IN_REMOVE_SCHEMA_QUALIFIER_ORACLE8I_1)"
-GUI CHECKBOX ORACLE8I_IN_REMOVE_SCHEMA_QUALIFIER_ORACLE8I_1 YES%NO Remove Schema Qualifier
-#-DEFAULT_VALUE HOMOGENEOUS_GEOMETRY YES
-#-GUI CHECKBOX HOMOGENEOUS_GEOMETRY YES%NO Homogeneous Geometry
-# ===========================================================================
-DEFAULT_MACRO ORACLE8I_IN_READ_3D_POLYGON_AS_FACE_ORACLE8I_1 NO
-ORACLE8I_1_READ_3D_POLYGON_AS_FACE "$(ORACLE8I_IN_READ_3D_POLYGON_AS_FACE_ORACLE8I_1)"
-GUI CHECKBOX ORACLE8I_IN_READ_3D_POLYGON_AS_FACE_ORACLE8I_1 YES%NO Read 3D Polygons as Faces
-# ===========================================================================
-DEFAULT_MACRO ORACLE8I_IN_WHERE_CLAUSE_ORACLE8I_1 
-ORACLE8I_1_WHERE_CLAUSE "$(ORACLE8I_IN_WHERE_CLAUSE_ORACLE8I_1)"
-GUI OPTIONAL TEXT ORACLE8I_IN_WHERE_CLAUSE_ORACLE8I_1 WHERE Clause:
-# ============================================================================
-DEFAULT_MACRO ORACLE8I_IN_MAPINFO_SYMBOLOGY_STYLE_COLUMN_ORACLE8I_1 
-ORACLE8I_1_MAPINFO_SYMBOLOGY_STYLE_COLUMN "$(ORACLE8I_IN_MAPINFO_SYMBOLOGY_STYLE_COLUMN_ORACLE8I_1)"
-# ============================================================================
-DEFAULT_MACRO ORACLE8I_IN_MAPINFO_SYMBOLOGY_INDEX_COLUMN_ORACLE8I_1 
-ORACLE8I_1_MAPINFO_SYMBOLOGY_INDEX_COLUMN "$(ORACLE8I_IN_MAPINFO_SYMBOLOGY_INDEX_COLUMN_ORACLE8I_1)"
-# ============================================================================
-# bounding box with optional clipping
-# Include this file in source setting section to add native search envelope processing
-# Zero as a default means we don't do any search -- this makes workbench happier
-# ===========================================================================
-DEFAULT_MACRO ORACLE8I_IN_SEARCH_ENVELOPE_MINX_ORACLE8I_1 0
-ORACLE8I_1_SEARCH_ENVELOPE "$(ORACLE8I_IN_SEARCH_ENVELOPE_MINX_ORACLE8I_1)"
-GUI OPTIONAL FLOAT ORACLE8I_IN_SEARCH_ENVELOPE_MINX_ORACLE8I_1 Minimum X:
-# ===========================================================================
-DEFAULT_MACRO ORACLE8I_IN_SEARCH_ENVELOPE_MINY_ORACLE8I_1 0
-ORACLE8I_1_SEARCH_ENVELOPE "$(ORACLE8I_IN_SEARCH_ENVELOPE_MINY_ORACLE8I_1)"
-GUI OPTIONAL FLOAT ORACLE8I_IN_SEARCH_ENVELOPE_MINY_ORACLE8I_1 Minimum Y:
-# ===========================================================================
-DEFAULT_MACRO ORACLE8I_IN_SEARCH_ENVELOPE_MAXX_ORACLE8I_1 0
-ORACLE8I_1_SEARCH_ENVELOPE "$(ORACLE8I_IN_SEARCH_ENVELOPE_MAXX_ORACLE8I_1)"
-GUI OPTIONAL FLOAT ORACLE8I_IN_SEARCH_ENVELOPE_MAXX_ORACLE8I_1 Maximum X:
-# ===========================================================================
-DEFAULT_MACRO ORACLE8I_IN_SEARCH_ENVELOPE_MAXY_ORACLE8I_1 0
-ORACLE8I_1_SEARCH_ENVELOPE "$(ORACLE8I_IN_SEARCH_ENVELOPE_MAXY_ORACLE8I_1)"
-GUI OPTIONAL FLOAT ORACLE8I_IN_SEARCH_ENVELOPE_MAXY_ORACLE8I_1 Maximum Y:
-# ===========================================================================
-DEFAULT_MACRO ORACLE8I_IN_CLIP_TO_ENVELOPE_ORACLE8I_1 NO
-ORACLE8I_1_CLIP_TO_ENVELOPE "$(ORACLE8I_IN_CLIP_TO_ENVELOPE_ORACLE8I_1)"
-GUI OPTIONAL CHECKBOX ORACLE8I_IN_CLIP_TO_ENVELOPE_ORACLE8I_1 YES%NO Clip to Search Envelope
-# ============================================================================
-# Search Envelope Coordinate System
-DEFAULT_MACRO ORACLE8I_IN_SEARCH_ENVELOPE_COORDINATE_SYSTEM_ORACLE8I_1 
-GUI OPTIONAL COORDSYS ORACLE8I_IN_SEARCH_ENVELOPE_COORDINATE_SYSTEM_ORACLE8I_1 Search Envelope Coordinate System:
-ORACLE8I_1_SEARCH_ENVELOPE_COORDINATE_SYSTEM "$(ORACLE8I_IN_SEARCH_ENVELOPE_COORDINATE_SYSTEM_ORACLE8I_1)"
-GUI CHOICE _ORACLE8I_INTERACTION_ORACLE8I_1 ANYINTERACT%CONTAINS%COVEREDBY%COVERS%DISJOINT%EQUAL%INSIDE%OVERLAPBDYDISJOINT%OVERLAPBDYINTERSECT%TOUCH Relationship To Query Feature:
-GUI TEXT _ORACLE8I_INTERRESULT_ORACLE8I_1 Relationship Result Test:
-# ========================================================================
-# The following defines how many rows of data are read from the database
-# at a time. You could prompt for it by uncommenting the relevant GUI
-# lines.
-DEFAULT_MACRO _ORACLE8I_ChunkSize_ORACLE8I_1 200
-GUI INTEGER _ORACLE8I_ChunkSize_ORACLE8I_1 Rows To Read At A Time:
-ORACLE8I_1_CHUNK_SIZE $(_ORACLE8I_ChunkSize_ORACLE8I_1)
-# ========================================================================
-# The following states whether the Oracle reader should return geometry
-# in a way faithful to how it is encoded in the database. If it is set
-# to yes, the geometries returned will be much more complex, including
-# things like aggregates.
-#__
-#No longer needed in Rich Geometry
-#GUI CHOICE _ORACLE8I_StructuredGeom yes%no Complex (Structured) Geometries:
-DEFAULT_MACRO _ORACLE8I_StructuredGeom_ORACLE8I_1 no
-ORACLE8I_1_STRUCTURED_GEOMETRY $(_ORACLE8I_StructuredGeom_ORACLE8I_1)
-# ============================================================================
-# The following specifies an SQL command to execute before opening the first
-# ORACLE table.
-DEFAULT_MACRO _ORACLE8I_IN_BEGIN_SQL_ORACLE8I_1 
-GUI OPTIONAL TEXT_EDIT_SQL _ORACLE8I_IN_BEGIN_SQL_ORACLE8I_1 SQL Statement To Execute Before Translation:
-ORACLE8I_1_BEGIN_SQL{0} "$(_ORACLE8I_IN_BEGIN_SQL_ORACLE8I_1)"
-# ============================================================================
-# The following specifies an SQL command to execute after closing all the
-# ORACLE tables.
-DEFAULT_MACRO _ORACLE8I_IN_END_SQL_ORACLE8I_1 
-GUI OPTIONAL TEXT_EDIT_SQL _ORACLE8I_IN_END_SQL_ORACLE8I_1 SQL Statement To Execute After Translation:
-ORACLE8I_1_END_SQL{0} "$(_ORACLE8I_IN_END_SQL_ORACLE8I_1)"
-# ========================================================================
-# The following specifies whether we want to use unified date attributes,
-# where the date and time are read into one attribute, or whether we want
-# to use split date attributes, where two attributes are produced, one with
-# only the date, and another with both the date and time.
-#
-# The default value of yes should not be changed.
-DEFAULT_MACRO _ORACLE8I_UseUnifiedDateAttrs_ORACLE8I_1 yes
-ORACLE8I_1_USE_UNIFIED_DATE_ATTRS $(_ORACLE8I_UseUnifiedDateAttrs_ORACLE8I_1)
-# ============================================================================
-# The following specifies the name of the Oracle Workspace that we should go
-# to when reading tables.
-DEFAULT_MACRO _ORACLE8I_Workspace_ORACLE8I_1 
-GUI OPTIONAL TEXT _ORACLE8I_Workspace_ORACLE8I_1 Oracle Workspace:
-ORACLE8I_1_WORKSPACE "$(_ORACLE8I_Workspace_ORACLE8I_1)"
-# ============================================================================
-# The following specifies whether to maintain multiple geometries or not.
-# If set to YES, the Multiple Geometries will be read into an aggregate
-# If NO, the default behavior of selecting one geometry will occur
-DEFAULT_MACRO _ORACLE8I_IN_HANDLE_MULTIPLE_SPATIAL_COLUMNS_ORACLE8I_1 NO
-GUI CHOICE _ORACLE8I_IN_HANDLE_MULTIPLE_SPATIAL_COLUMNS_ORACLE8I_1 YES%NO Handle Multiple Spatial Columns:
-ORACLE8I_1_HANDLE_MULTIPLE_SPATIAL_COLUMNS $(_ORACLE8I_IN_HANDLE_MULTIPLE_SPATIAL_COLUMNS_ORACLE8I_1)
-ORACLE8I_1_DATASET "$(SourceDataset_ORACLE8I_1)"
-#! END_SOURCE_HEADER
 #! START_WB_HEADER
 MACRO WB_KEYWORD "ORACLE8I_DB_1"
 #! END_WB_HEADER
@@ -2375,6 +2040,75 @@ ORACLE8I_DB_1_WORKSPACE "$(ORACLE8I_DB_IN_WORKSPACE_ORACLE8I_DB_1)"
 ORACLE8I_DB_1_DATASET "$(SourceDataset_ORACLE8I_DB_1)"
 #! END_SOURCE_HEADER
 #! START_WB_HEADER
+MACRO WB_KEYWORD "ORACLE8I_DB_2"
+#! END_WB_HEADER
+#! START_SOURCE_HEADER ORACLE8I_DB ORACLE8I_DB_2
+# ========================================================================
+# The following GUI line prompts for the name of the Oracle Service
+# from which data will be extracted.
+# The dataset this mapping file was generated from was:
+#! END_SOURCE_HEADER
+#! START_WB_HEADER
+DEFAULT_MACRO SourceDataset
+INCLUDE [ if {{$(SourceDataset)} != ""} {                        \
+ puts {DEFAULT_MACRO SourceDataset_ORACLE8I_DB_2 $(SourceDataset)}     \
+ } ]
+#! END_WB_HEADER
+#! START_SOURCE_HEADER ORACLE8I_DB ORACLE8I_DB_2
+DEFAULT_MACRO SourceDataset_ORACLE8I_DB_2 $(SourceDataset_ORACLE8I_DB_3)
+GUI OPTIONAL TEXT SourceDataset_ORACLE8I_DB_2 Source Oracle Non-spatial Service:
+ORACLE8I_DB_2_SERVER_TYPE ORACLE8i
+# ===========================================================================
+# ===========================================================================
+DEFAULT_MACRO ORACLE8I_DB_IN_USER_NAME_ORACLE8I_DB_2 SYSTEM
+ORACLE8I_DB_2_USER_NAME "$(ORACLE8I_DB_IN_USER_NAME_ORACLE8I_DB_2)"
+GUI OPTIONAL TEXT ORACLE8I_DB_IN_USER_NAME_ORACLE8I_DB_2 Username:
+# ===========================================================================
+DEFAULT_MACRO ORACLE8I_DB_IN_PASSWORD_ORACLE8I_DB_2 MANAGER
+ORACLE8I_DB_2_PASSWORD "$(ORACLE8I_DB_IN_PASSWORD_ORACLE8I_DB_2)"
+GUI OPTIONAL PASSWORD ORACLE8I_DB_IN_PASSWORD_ORACLE8I_DB_2 Password:
+# ===========================================================================
+# ===========================================================================
+DEFAULT_MACRO ORACLE8I_DB_IN_REMOVE_SCHEMA_QUALIFIER_ORACLE8I_DB_2 NO
+ORACLE8I_DB_2_REMOVE_SCHEMA_QUALIFIER "$(ORACLE8I_DB_IN_REMOVE_SCHEMA_QUALIFIER_ORACLE8I_DB_2)"
+GUI CHECKBOX ORACLE8I_DB_IN_REMOVE_SCHEMA_QUALIFIER_ORACLE8I_DB_2 YES%NO Remove Schema Qualifier
+# ========================================================================
+# The following defines how many rows of data are read from the database
+# at a time. You could prompt for it by uncommenting the relevant GUI
+# lines.
+DEFAULT_MACRO ORACLE8I_DB_IN_CHUNK_SIZE_ORACLE8I_DB_2 1000
+GUI INTEGER ORACLE8I_DB_IN_CHUNK_SIZE_ORACLE8I_DB_2 Rows To Read At A Time:
+ORACLE8I_DB_2_CHUNK_SIZE $(ORACLE8I_DB_IN_CHUNK_SIZE_ORACLE8I_DB_2)
+# ============================================================================
+# The following specifies an SQL command to execute before opening the first
+# ORACLE table.
+DEFAULT_MACRO _ORACLE8I_DB_IN_BEGIN_SQL_ORACLE8I_DB_2 
+GUI OPTIONAL TEXT_EDIT_SQL _ORACLE8I_DB_IN_BEGIN_SQL_ORACLE8I_DB_2 SQL Statement To Execute Before Translation:
+ORACLE8I_DB_2_BEGIN_SQL{0} "$(_ORACLE8I_DB_IN_BEGIN_SQL_ORACLE8I_DB_2)"
+# ============================================================================
+# The following specifies an SQL command to execute after closing all the
+# ORACLE tables.
+DEFAULT_MACRO _ORACLE8I_DB_IN_END_SQL_ORACLE8I_DB_2 
+GUI OPTIONAL TEXT_EDIT_SQL _ORACLE8I_DB_IN_END_SQL_ORACLE8I_DB_2 SQL Statement To Execute After Translation:
+ORACLE8I_DB_2_END_SQL{0} "$(_ORACLE8I_DB_IN_END_SQL_ORACLE8I_DB_2)"
+# ========================================================================
+# The following specifies whether we want to use unified date attributes,
+# where the date and time are read into one attribute, or whether we want
+# to use split date attributes, where two attributes are produced, one with
+# only the date, and another with both the date and time.
+#
+# The default value of yes should not be changed.
+DEFAULT_MACRO ORACLE8I_DB_IN_USE_UNIFIED_DATE_ATTRS_ORACLE8I_DB_2 yes
+ORACLE8I_DB_2_USE_UNIFIED_DATE_ATTRS $(ORACLE8I_DB_IN_USE_UNIFIED_DATE_ATTRS_ORACLE8I_DB_2)
+# ============================================================================
+# The following specifies the name of the Oracle Workspace that we should go
+# to when reading tables.
+DEFAULT_MACRO ORACLE8I_DB_IN_WORKSPACE_ORACLE8I_DB_2 
+GUI OPTIONAL TEXT ORACLE8I_DB_IN_WORKSPACE_ORACLE8I_DB_2 Oracle Workspace:
+ORACLE8I_DB_2_WORKSPACE "$(ORACLE8I_DB_IN_WORKSPACE_ORACLE8I_DB_2)"
+ORACLE8I_DB_2_DATASET "$(SourceDataset_ORACLE8I_DB_2)"
+#! END_SOURCE_HEADER
+#! START_WB_HEADER
 MACRO WB_KEYWORD "POSTGIS_1"
 #! END_WB_HEADER
 #! START_DEST_HEADER POSTGIS POSTGIS_1
@@ -2402,7 +2136,7 @@ GUI OPTIONAL INTEGER POSTGIS_OUT_PORT_POSTGIS_1 Port:
 DEFAULT_MACRO POSTGIS_OUT_USER_NAME_POSTGIS_1 sige
 POSTGIS_1_USER_NAME "$(POSTGIS_OUT_USER_NAME_POSTGIS_1)"
 GUI TEXT POSTGIS_OUT_USER_NAME_POSTGIS_1 Username:
-DEFAULT_MACRO POSTGIS_OUT_PASSWORD_POSTGIS_1 1234
+DEFAULT_MACRO POSTGIS_OUT_PASSWORD_POSTGIS_1 db4wat$
 POSTGIS_1_PASSWORD "$(POSTGIS_OUT_PASSWORD_POSTGIS_1)"
 GUI OPTIONAL PASSWORD POSTGIS_OUT_PASSWORD_POSTGIS_1 Password:
 # ============================================================================
@@ -2412,7 +2146,7 @@ POSTGIS_1_SPATIAL_COLUMN_TYPE "$(POSTGIS_OUT_SPATIAL_COLUMN_TYPE_POSTGIS_1)"
 GUI LOOKUP_CHOICE POSTGIS_OUT_SPATIAL_COLUMN_TYPE_POSTGIS_1 geometry%geography Spatial Column Type:
 # ============================================================================
 # Default spatial column name
-DEFAULT_MACRO POSTGIS_OUT_SPATIAL_COLUMN_NAME_POSTGIS_1 wkb_geometry
+DEFAULT_MACRO POSTGIS_OUT_SPATIAL_COLUMN_NAME_POSTGIS_1 geometry
 POSTGIS_1_SPATIAL_COLUMN_NAME "$(POSTGIS_OUT_SPATIAL_COLUMN_NAME_POSTGIS_1)"
 GUI TEXT POSTGIS_OUT_SPATIAL_COLUMN_NAME_POSTGIS_1 Spatial Column Name:
 DEFAULT_MACRO POSTGIS_OUT_GENERIC_GEOMETRY_POSTGIS_1 yes
@@ -2436,7 +2170,7 @@ POSTGIS_1_DATASET "$(DestDataset_POSTGIS_1)"
 #! END_DEST_HEADER
 #! END_HEADER
 
-LOG_FILENAME "$(FME_MF_DIR)oracle2postgres_printmaps.log"
+LOG_FILENAME "$(FME_MF_DIR)oracle2postgres_districts.log"
 LOG_APPEND NO
 LOG_MAX_FEATURES 200
 LOG_MAX_RECORDED_FEATURES 200
@@ -2444,57 +2178,58 @@ FME_REPROJECTION_ENGINE FME
 FME_GEOMETRY_HANDLING Enhanced
 FME_STROKE_MAX_DEVIATION 0
 LOG_FILTER_MASK -1
-DEFAULT_MACRO DATASET_KEYWORD_ORACLE8I_1 ORACLE8I_1
 DEFAULT_MACRO DATASET_KEYWORD_ORACLE8I_DB_1 ORACLE8I_DB_1
+DEFAULT_MACRO DATASET_KEYWORD_ORACLE8I_DB_2 ORACLE8I_DB_2
 DEFAULT_MACRO DATASET_KEYWORD_POSTGIS_1 POSTGIS_1
-# -------------------------------------------------------------------------
-
-ORACLE8I_1_READER_META_ATTRIBUTES fme_feature_type
-
 # -------------------------------------------------------------------------
 
 ORACLE8I_DB_1_READER_META_ATTRIBUTES fme_feature_type
 
 # -------------------------------------------------------------------------
 
-ORACLE8I_1_COORDINATE_SYSTEM EPSG:21781
+ORACLE8I_DB_2_READER_META_ATTRIBUTES fme_feature_type
+
+# -------------------------------------------------------------------------
+
 ORACLE8I_DB_1_COORDINATE_SYSTEM EPSG:21781
+ORACLE8I_DB_2_COORDINATE_SYSTEM EPSG:21781
+POSTGIS_1_COORDINATE_SYSTEM EPSG:21781
 MULTI_READER_CONTINUE_ON_READER_FAILURE No
 
 # -------------------------------------------------------------------------
 
-MACRO WORKSPACE_NAME oracle2postgres_printmaps
+MACRO WORKSPACE_NAME oracle2postgres_districts
 MACRO FME_VIEWER_APP fmeview
 # -------------------------------------------------------------------------
-ORACLE8I_1_DEF SIGE_DISTRIBUTION.SIGE_FOLIO   oracle_envelope_min_x        ""   oracle_envelope_min_y        ""   oracle_envelope_max_x        ""   oracle_envelope_max_y        ""   oracle_mapinfo_symbology_style_column ""   AREA_GERECHNET               number(20,8)   AREA_NOMINAL                 number(20,8)   COM                          varchar2(10)   COMMUNE                      number(10,0)   DELETED                      number(1,0)   FID                          number(10,0)   GID                          number(10,0)   MENSU_NUM                    number(1,0)   NO_FOLIO                     varchar2(10)
+ORACLE8I_DB_1_DEF SIGE_COMMUN.COMMUNES   ABREGE                       varchar2(3)   AREA_GERECHNET               number(20,8)   AREA_NOMINAL                 number(20,8)   CANTON                       varchar2(2)   DELETED                      number(1,0)   FID                          number(10,0)   GID                          number(10,0)   INTITULE_LISTE               varchar2(10)   NOM                          varchar2(30)   NO_RF                        number(3,0)   NPA                          number(4,0)   PREFIXE_ABT                  number(2,0)   STATUT_ASSAIN                varchar2(20)   STATUT_DISTRIB               varchar2(20)
 # -------------------------------------------------------------------------
-ORACLE8I_DB_1_DEF SIGE_DISTRIBUTION.SIGE_FOLIO_GEO   ACCURACY_LEVEL               number(20,8)   AREA                         number(20,8)   AVG_DEV_XY                   number(20,8)   AVG_DEV_Z                    number(20,8)   AZIMUTH                      number(20,8)   CALC_CODE                    number(4,0)   CALC_NUMBER                  number(10,0)   CLIPPING                     number(1,0)   CREATION_CODE_XY_1           number(4,0)   CREATION_CODE_XY_2           number(4,0)   CREATION_CODE_XY_3           number(4,0)   CREATION_CODE_XY_4           number(4,0)   CREATION_CODE_XY_5           number(4,0)   CREATION_CODE_Z              number(4,0)   DA                           number(10,0)   DATE_CREATED                 date   DATE_DELETED                 date   DATE_MODIFIED                date   DELETED                      number(1,0)   DIM_X                        number(20,8)   DIM_Y                        number(20,8)   DTEXT                        number(1,0)   ESEQ                         number(10,0)   ETYPE                        number(4,0)   FID                          number(10,0)   FIELD_CODE                   number(4,0)   FRAME                        number(1,0)   GEO_CONSTRAINT               number(1,0)   GID                          number(10,0)   ID                           number(10,0)   INVISIBLE                    number(1,0)   LABEL_FROM                   number(10,0)   LABEL_TEXT                   varchar2(2000)   LABEL_TO                     number(10,0)   LINEATTRIBUTE_ID             number(10,0)   MUTATION_ID_CREATED          number(10,0)   MUTATION_ID_DELETED          number(10,0)   MUTATION_ID_MODIFIED         number(10,0)   MUTATION_STATUS_CREATED      number(10,0)   MUTATION_STATUS_DELETED      number(10,0)   M_DIRECTION                  number(20,8)   M_DISTANCE                   number(20,8)   ORIENTATION                  number(20,8)   ORIGIN                       number(4,0)   PERIMETER                    number(20,8)   QUALITY                      number(10,0)   SEQ                          number(10,0)   SEQ_ETYPE                    number(4,0)   SEQ_PARAM1                   number(20,8)   SEQ_PARAM1_2                 number(20,8)   SEQ_PARAM1_3                 number(20,8)   SEQ_PARAM1_4                 number(20,8)   SEQ_PARAM1_5                 number(20,8)   SEQ_PARAM2                   number(20,8)   SEQ_PARAM2_2                 number(20,8)   SEQ_PARAM2_3                 number(20,8)   SEQ_PARAM2_4                 number(20,8)   SEQ_PARAM2_5                 number(20,8)   SEQ_PARAM3                   number(20,8)   SEQ_PARAM3_2                 number(20,8)   SEQ_PARAM3_3                 number(20,8)   SEQ_PARAM3_4                 number(20,8)   SEQ_PARAM3_5                 number(20,8)   SOURCE                       number(10,0)   SPATIAL_INDEX_100            number(12,0)   SPATIAL_INDEX_200            number(12,0)   SPATIAL_INDEX_25             number(12,0)   SPATIAL_INDEX_400            number(12,0)   SPATIAL_INDEX_50             number(12,0)   TB_POINT_NUMBER              number(15,0)   TD_DA                        number(10,0)   TD_GROUP                     number(10,0)   TD_LAYER                     number(10,0)   TD_NUMBER                    varchar2(50)   TD_POINT_NUMBER              number(10,0)   USER_CREATED                 varchar2(255)   USER_DELETED                 varchar2(255)   USER_MODIFIED                varchar2(255)   X1                           number(20,8)   X2                           number(20,8)   X3                           number(20,8)   X4                           number(20,8)   X5                           number(20,8)   Y1                           number(20,8)   Y2                           number(20,8)   Y3                           number(20,8)   Y4                           number(20,8)   Y5                           number(20,8)   Z1                           number(20,8)   Z2                           number(20,8)   Z3                           number(20,8)   Z4                           number(20,8)   Z5                           number(20,8)   Z_DIFF                       number(20,8)   Z_TERRAIN                    number(20,8)
+ORACLE8I_DB_2_DEF SIGE_COMMUN.COMMUNES_GEO   ACCURACY_LEVEL               number(20,8)   AREA                         number(20,8)   AVG_DEV_XY                   number(20,8)   AVG_DEV_Z                    number(20,8)   AZIMUTH                      number(20,8)   CALC_CODE                    number(4,0)   CALC_NUMBER                  number(10,0)   CLIPPING                     number(1,0)   CREATION_CODE_XY_1           number(4,0)   CREATION_CODE_XY_2           number(4,0)   CREATION_CODE_XY_3           number(4,0)   CREATION_CODE_XY_4           number(4,0)   CREATION_CODE_XY_5           number(4,0)   CREATION_CODE_Z              number(4,0)   DA                           number(10,0)   DATE_CREATED                 date   DATE_DELETED                 date   DATE_MODIFIED                date   DELETED                      number(1,0)   DIM_X                        number(20,8)   DIM_Y                        number(20,8)   DTEXT                        number(1,0)   ESEQ                         number(10,0)   ETYPE                        number(4,0)   FID                          number(10,0)   FIELD_CODE                   number(4,0)   FRAME                        number(1,0)   GEO_CONSTRAINT               number(1,0)   GID                          number(10,0)   ID                           number(10,0)   INVISIBLE                    number(1,0)   LABEL_FROM                   number(10,0)   LABEL_TEXT                   varchar2(2000)   LABEL_TO                     number(10,0)   LINEATTRIBUTE_ID             number(10,0)   MUTATION_ID_CREATED          number(10,0)   MUTATION_ID_DELETED          number(10,0)   MUTATION_ID_MODIFIED         number(10,0)   MUTATION_STATUS_CREATED      number(10,0)   MUTATION_STATUS_DELETED      number(10,0)   M_DIRECTION                  number(20,8)   M_DISTANCE                   number(20,8)   ORIENTATION                  number(20,8)   ORIGIN                       number(4,0)   PERIMETER                    number(20,8)   QUALITY                      number(10,0)   SEQ                          number(10,0)   SEQ_ETYPE                    number(4,0)   SEQ_PARAM1                   number(20,8)   SEQ_PARAM1_2                 number(20,8)   SEQ_PARAM1_3                 number(20,8)   SEQ_PARAM1_4                 number(20,8)   SEQ_PARAM1_5                 number(20,8)   SEQ_PARAM2                   number(20,8)   SEQ_PARAM2_2                 number(20,8)   SEQ_PARAM2_3                 number(20,8)   SEQ_PARAM2_4                 number(20,8)   SEQ_PARAM2_5                 number(20,8)   SEQ_PARAM3                   number(20,8)   SEQ_PARAM3_2                 number(20,8)   SEQ_PARAM3_3                 number(20,8)   SEQ_PARAM3_4                 number(20,8)   SEQ_PARAM3_5                 number(20,8)   SOURCE                       number(10,0)   SPATIAL_INDEX_100            number(12,0)   SPATIAL_INDEX_200            number(12,0)   SPATIAL_INDEX_25             number(12,0)   SPATIAL_INDEX_400            number(12,0)   SPATIAL_INDEX_50             number(12,0)   TB_POINT_NUMBER              number(15,0)   TD_DA                        number(10,0)   TD_GROUP                     number(10,0)   TD_LAYER                     number(10,0)   TD_NUMBER                    varchar2(50)   TD_POINT_NUMBER              number(10,0)   USER_CREATED                 varchar2(255)   USER_DELETED                 varchar2(255)   USER_MODIFIED                varchar2(255)   X1                           number(20,8)   X2                           number(20,8)   X3                           number(20,8)   X4                           number(20,8)   X5                           number(20,8)   Y1                           number(20,8)   Y2                           number(20,8)   Y3                           number(20,8)   Y4                           number(20,8)   Y5                           number(20,8)   Z1                           number(20,8)   Z2                           number(20,8)   Z3                           number(20,8)   Z4                           number(20,8)   Z5                           number(20,8)   Z_DIFF                       number(20,8)   Z_TERRAIN                    number(20,8)
 
 # -------------------------------------------------------------------------
 
-Lookup ___KnownFeatureTypes___   "$(DATASET_KEYWORD_ORACLE8I_DB_1)_SIGE_DISTRIBUTION.SIGE_FOLIO_GEO" yes   "$(DATASET_KEYWORD_ORACLE8I_1)_SIGE_DISTRIBUTION.SIGE_FOLIO" yes   "" no
+Lookup ___KnownFeatureTypes___   "$(DATASET_KEYWORD_ORACLE8I_DB_1)_SIGE_COMMUN.COMMUNES" yes   "$(DATASET_KEYWORD_ORACLE8I_DB_2)_SIGE_COMMUN.COMMUNES_GEO" yes   "" no
 # -------------------------------------------------------------------------
 
 FACTORY_DEF * TestFactory   FACTORY_NAME "Unexpected Input Remover"   INPUT FEATURE_TYPE *   TEST @Lookup(___KnownFeatureTypes___,@Concatenate(&multi_reader_keyword,"_",@FeatureType())) == yes   OUTPUT PASSED FEATURE_TYPE *
 # -------------------------------------------------------------------------
 
-FACTORY_DEF * TeeFactory    FACTORY_NAME "Source -> Generic"    INPUT FEATURE_TYPE *    OUTPUT FEATURE_TYPE *       @Transform(&multi_reader_type,FME_GENERIC,PRESERVE_GEOMETRY)
+FACTORY_DEF * TeeFactory    FACTORY_NAME "Source -> Generic"    INPUT FEATURE_TYPE *    OUTPUT FEATURE_TYPE *       @Transform(&multi_reader_type,FME_GENERIC,ALIAS_GEOMETRY)
 DEFAULT_MACRO WB_CURRENT_CONTEXT
 # -------------------------------------------------------------------------
 Lookup AttributeFilter_AttributeFilterLut   0 ok   "" notok   ENCODED
 
 Tcl2 proc AttributeFilter_setFeatType {} {     global FME_FeatureType;     set ft {AttributeFilter_};     append ft [FME_GetAttribute {DELETED}];     set FME_FeatureType [FME_EncodeText $ft]; }
-FACTORY_DEF * TestFactory    FACTORY_NAME AttributeFilter    INPUT  FEATURE_TYPE SIGE_DISTRIBUTION.SIGE_FOLIO    TEST @Lookup(AttributeFilter_AttributeFilterLut,"DELETED",ENCODED_ATTR) == "ok"    OUTPUT PASSED FEATURE_TYPE * @Tcl2(AttributeFilter_setFeatType)    OUTPUT FAILED FEATURE_TYPE AttributeFilter_<UNFILTERED>
+FACTORY_DEF * TestFactory    FACTORY_NAME AttributeFilter    INPUT  FEATURE_TYPE SIGE_COMMUN.COMMUNES    TEST @Lookup(AttributeFilter_AttributeFilterLut,"DELETED",ENCODED_ATTR) == "ok"    OUTPUT PASSED FEATURE_TYPE * @Tcl2(AttributeFilter_setFeatType)    OUTPUT FAILED FEATURE_TYPE AttributeFilter_<UNFILTERED>
 FACTORY_DEF * TestFactory    FACTORY_NAME AttributeFilter_BlankFilter    INPUT FEATURE_TYPE AttributeFilter_<UNFILTERED>    TEST @Value("DELETED") == ""    OUTPUT PASSED FEATURE_TYPE AttributeFilter_<BLANK>    OUTPUT FAILED FEATURE_TYPE AttributeFilter_<UNFILTERED>
 
 FACTORY_DEF * TeeFactory   FACTORY_NAME "AttributeFilter <BLANK> Output Nuker"   INPUT FEATURE_TYPE AttributeFilter_<BLANK>
 FACTORY_DEF * TeeFactory   FACTORY_NAME "AttributeFilter <UNFILTERED> Output Nuker"   INPUT FEATURE_TYPE AttributeFilter_<UNFILTERED>
 # -------------------------------------------------------------------------
 
-FACTORY_DEF * TeeFactory    FACTORY_NAME AttributeRenamer    INPUT  FEATURE_TYPE AttributeFilter_0    OUTPUT FEATURE_TYPE AttributeRenamer_OUTPUT         @RenameAttributes(short_name,NO_FOLIO)
+FACTORY_DEF * TeeFactory    FACTORY_NAME AttributeRenamer    INPUT  FEATURE_TYPE AttributeFilter_0    OUTPUT FEATURE_TYPE AttributeRenamer_OUTPUT         @RenameAttributes(name,NOM,land_registry,NO_RF,subscriber_prefix,PREFIXE_ABT,zip,NPA,shortname,ABREGE)
 
 # -------------------------------------------------------------------------
-FACTORY_DEF * TeeFactory   FACTORY_NAME "liner AttributeRemover_2_INPUT_39 Input Collector"   INPUT FEATURE_TYPE SIGE_DISTRIBUTION.SIGE_FOLIO_GEO   OUTPUT FEATURE_TYPE liner_AttributeRemover_2_INPUT_39
+FACTORY_DEF * TeeFactory   FACTORY_NAME "liner AttributeRemover_2_INPUT_39 Input Collector"   INPUT FEATURE_TYPE SIGE_COMMUN.COMMUNES_GEO   OUTPUT FEATURE_TYPE liner_AttributeRemover_2_INPUT_39
 MACRO liner_WORKSPACE_NAME liner
 MACRO $(liner_WORKSPACE_NAME)_XFORMER_NAME liner
 MACRO $(liner_WORKSPACE_NAME)_TRANSFORMER_GROUP 
@@ -2523,8 +2258,8 @@ FACTORY_DEF * SortFactory    FACTORY_NAME $(polygoner_WORKSPACE_NAME)_Sorter    
 
 # -------------------------------------------------------------------------
 
-Tcl2    regsub {^[^a-zA-Z]*([a-zA-Z]).*} {.10f} {\1} formatChar;    if { [string first $formatChar {duiofxeEgG}] != -1 } {       proc {$(polygoner_WORKSPACE_NAME)_StringFormatter_getAttribute} {attr} { return [regsub {^0*(.)} [FME_GetAttribute $attr] {\1}] }    }    else    {       proc {$(polygoner_WORKSPACE_NAME)_StringFormatter_getAttribute} {attr} { return [FME_GetAttribute $attr] }    }
-Tcl2 proc $(polygoner_WORKSPACE_NAME)_StringFormatter_formatter {} {    set attrs [split {X1,Y1} {,}];    foreach attr $attrs {       set attrVal [FME_GetAttribute $attr];       set length [string length $attrVal];       if {$length > 0} {          FME_SetAttribute $attr [format %.10f [{$(polygoner_WORKSPACE_NAME)_StringFormatter_getAttribute} $attr]];       };    }; }
+Tcl2    regsub {^[^a-zA-Z]*([a-zA-Z]).*} {.4f} {\1} formatChar;    if { [string first $formatChar {duiofxeEgG}] != -1 } {       proc {$(polygoner_WORKSPACE_NAME)_StringFormatter_getAttribute} {attr} { return [regsub {^0*(.)} [FME_GetAttribute $attr] {\1}] }    }    else    {       proc {$(polygoner_WORKSPACE_NAME)_StringFormatter_getAttribute} {attr} { return [FME_GetAttribute $attr] }    }
+Tcl2 proc $(polygoner_WORKSPACE_NAME)_StringFormatter_formatter {} {    set attrs [split {X1,Y1} {,}];    foreach attr $attrs {       set attrVal [FME_GetAttribute $attr];       set length [string length $attrVal];       if {$length > 0} {          FME_SetAttribute $attr [format %.4f [{$(polygoner_WORKSPACE_NAME)_StringFormatter_getAttribute} $attr]];       };    }; }
 FACTORY_DEF * TeeFactory    FACTORY_NAME $(polygoner_WORKSPACE_NAME)_StringFormatter    INPUT  FEATURE_TYPE "$(polygoner_WORKSPACE_NAME)_Sorter_SORTED"    OUTPUT FEATURE_TYPE "$(polygoner_WORKSPACE_NAME)_StringFormatter_OUTPUT"         @Tcl2($(polygoner_WORKSPACE_NAME)_StringFormatter_formatter)
 
 # -------------------------------------------------------------------------
@@ -2587,7 +2322,7 @@ FACTORY_DEF * TeeFactory    FACTORY_NAME $(polygoner_WORKSPACE_NAME)_CoordinateS
 # this statically at parse time for efficiency sake
 
 MACRO $(polygoner_WORKSPACE_NAME)_GeometryExtractor_Function
-INCLUDE [ if {{wkb} == {fmebinary} } {               puts {MACRO $(polygoner_WORKSPACE_NAME)_GeometryExtractor_Function @Geometry(TO_ATTRIBUTE_BINARY,wkb_geometry) }           } elseif {{wkb} == {fmehex} } {               puts {MACRO $(polygoner_WORKSPACE_NAME)_GeometryExtractor_Function @Geometry(TO_ATTRIBUTE_BINARY_HEX,wkb_geometry) }           } elseif {{wkb} == {fmexml} } {               puts {MACRO $(polygoner_WORKSPACE_NAME)_GeometryExtractor_Function @Geometry(TO_ATTRIBUTE,wkb_geometry) }           } elseif {{wkb} == {wkt} ||                      {wkb} == {wkb} ||                      {wkb} == {wkbhex} } {               puts {MACRO $(polygoner_WORKSPACE_NAME)_GeometryExtractor_Function @OGCGeometry(to_attribute,wkb,wkb_geometry,1.1) }           } elseif {{wkb} == {GEOJSON} ||                     {wkb} == {ESRIJSON} } {               puts {MACRO $(polygoner_WORKSPACE_NAME)_GeometryExtractor_Function @JSONGeometry(TO_ATTRIBUTE,wkb,wkb_geometry) }           } elseif {{wkb} == {KML} } {               puts {MACRO $(polygoner_WORKSPACE_NAME)_GeometryExtractor_Function @KMLGeometry(TO_ATTRIBUTE,wkb_geometry) }           } elseif {{wkb} == {GEORSS_SIMPLE} } {               puts {MACRO $(polygoner_WORKSPACE_NAME)_GeometryExtractor_Function @GeoRSSGeometry(TO_ATTRIBUTE,wkb,wkb_geometry) }           } elseif {{wkb} == {GML_3.1.1} ||                      {wkb} == {GML_3.2.1} } {               puts {MACRO $(polygoner_WORKSPACE_NAME)_GeometryExtractor_Function @GMLGeometry(TO_ATTRIBUTE,wkb,wkb_geometry) }           }         ]
+INCLUDE [ if {{wkb} == {fmebinary} } {               puts {MACRO $(polygoner_WORKSPACE_NAME)_GeometryExtractor_Function @Geometry(TO_ATTRIBUTE_BINARY,geometry) }           } elseif {{wkb} == {fmehex} } {               puts {MACRO $(polygoner_WORKSPACE_NAME)_GeometryExtractor_Function @Geometry(TO_ATTRIBUTE_BINARY_HEX,geometry) }           } elseif {{wkb} == {fmexml} } {               puts {MACRO $(polygoner_WORKSPACE_NAME)_GeometryExtractor_Function @Geometry(TO_ATTRIBUTE,geometry) }           } elseif {{wkb} == {wkt} ||                      {wkb} == {wkb} ||                      {wkb} == {wkbhex} } {               puts {MACRO $(polygoner_WORKSPACE_NAME)_GeometryExtractor_Function @OGCGeometry(to_attribute,wkb,geometry,1.1) }           } elseif {{wkb} == {GEOJSON} ||                     {wkb} == {ESRIJSON} } {               puts {MACRO $(polygoner_WORKSPACE_NAME)_GeometryExtractor_Function @JSONGeometry(TO_ATTRIBUTE,wkb,geometry) }           } elseif {{wkb} == {KML} } {               puts {MACRO $(polygoner_WORKSPACE_NAME)_GeometryExtractor_Function @KMLGeometry(TO_ATTRIBUTE,geometry) }           } elseif {{wkb} == {GEORSS_SIMPLE} } {               puts {MACRO $(polygoner_WORKSPACE_NAME)_GeometryExtractor_Function @GeoRSSGeometry(TO_ATTRIBUTE,wkb,geometry) }           } elseif {{wkb} == {GML_3.1.1} ||                      {wkb} == {GML_3.2.1} } {               puts {MACRO $(polygoner_WORKSPACE_NAME)_GeometryExtractor_Function @GMLGeometry(TO_ATTRIBUTE,wkb,geometry) }           }         ]
 FACTORY_DEF * TeeFactory    FACTORY_NAME $(polygoner_WORKSPACE_NAME)_GeometryExtractor    INPUT  FEATURE_TYPE "$(polygoner_WORKSPACE_NAME)_CoordinateSystemSetter_OUTPUT"    OUTPUT FEATURE_TYPE "$(polygoner_WORKSPACE_NAME)_GeometryExtractor_OUTPUT"         $($(polygoner_WORKSPACE_NAME)_GeometryExtractor_Function)
 
 FACTORY_DEF * TeeFactory   FACTORY_NAME "$(polygoner_WORKSPACE_NAME)_GeometryExtractor_OUTPUT_35 Output Collector"   INPUT FEATURE_TYPE "$(polygoner_WORKSPACE_NAME)_GeometryExtractor_OUTPUT"   OUTPUT FEATURE_TYPE "$(polygoner_WORKSPACE_NAME)_GeometryExtractor_OUTPUT_35"
@@ -2602,7 +2337,7 @@ FACTORY_DEF * ReferenceFactory    FACTORY_NAME FeatureMerger    GROUP_BY GID    
 
 # -------------------------------------------------------------------------
 
-FACTORY_DEF * TeeFactory    FACTORY_NAME "FeatureMerger_COMPLETE -> distribution.printmaps Correlator"    INPUT FEATURE_TYPE FeatureMerger_COMPLETE    OUTPUT FEATURE_TYPE __GO_TO_FINAL_OUTPUT_ROUTER__       @Transform(FME_GENERIC,POSTGIS)       @SupplyAttributes(__wb_out_feat_type__,distribution.printmaps)
+FACTORY_DEF * TeeFactory    FACTORY_NAME "FeatureMerger_COMPLETE -> distribution.districts Correlator"    INPUT FEATURE_TYPE FeatureMerger_COMPLETE    OUTPUT FEATURE_TYPE __GO_TO_FINAL_OUTPUT_ROUTER__       @Reproject("EPSG:21781","EPSG:21781")       @Transform(FME_GENERIC,POSTGIS)       @SupplyAttributes(__wb_out_feat_type__,distribution.districts)
 # -------------------------------------------------------------------------
 
 FACTORY_DEF * TestFactory   FACTORY_NAME "Final Output Feature Type Router"   INPUT FEATURE_TYPE *   TEST @Value(__wb_out_feat_type__) != ""   OUTPUT PASSED FEATURE_TYPE *     @FeatureType(@Value(__wb_out_feat_type__))   OUTPUT FAILED FEATURE_TYPE __nuke_me__ @Tcl2("FME_StatMessage 818059 {@Value(fme_template_feature_type)} 818060 818061 fme_warn")
@@ -2617,4 +2352,4 @@ INCLUDE [ if {{$(WORKSPACE_TEMP_DIR)} == {}} { puts {MACRO __WB_ENABLE_VISUALIZE
 FACTORY_DEF $(__WB_ENABLE_VISUALIZER__) CreationFactory   CREATE_AT_END   OUTPUT FEATURE_TYPE __NUKEME__   @TCL("if [info exists ::gVisualizerFilesToView] {eval FME_Execute System \173\042$(FME_HOME_UNIX)/fmeview\042 /ownffs {$(WORKSPACE_TEMP_DIR)} $::gVisualizerFilesToView & \175 }")
 FACTORY_DEF * TeeFactory   INPUT FEATURE_TYPE __NUKEME__
 # -------------------------------------------------------------------------
-POSTGIS_1_DEF distribution.printmaps   postgis_type                 postgis_geometry   postgis_mode                 INHERIT_FROM_WRITER   postgis_spatial_column_type  geometry   postgis_spatial_column       wkb_geometry   postgis_srid                 INHERIT_FROM_WRITER   postgis_drop_table           NO   postgis_truncate_table       YES   postgis_create_with_oids     NO   postgis_create_gist_index    YES   postgis_vacuum_analyze       YES   postgis_allow_serial_writing NO
+POSTGIS_1_DEF distribution.districts   postgis_type                 postgis_geometry   postgis_mode                 INHERIT_FROM_WRITER   postgis_spatial_column_type  geometry   postgis_spatial_column       geometry   postgis_srid                 INHERIT_FROM_WRITER   postgis_drop_table           NO   postgis_truncate_table       YES   postgis_create_with_oids     NO   postgis_create_gist_index    YES   postgis_vacuum_analyze       YES   postgis_allow_serial_writing NO   name                         char(30)   land_registry                char(30)   shortname                    char(30)   zip                          char(30)   subscriber_prefix            char(30)

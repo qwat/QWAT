@@ -5,7 +5,7 @@
 #    Windows command-line to run this workspace:
 #    
 #    
-#    fme.exe oracle2postgres_pipes.fmw
+#    fme.exe oracle2postgres_pipes_75.fmw
 #          --SourceDataset_ORACLE8I_DB orcl
 #          --SourceDataset_ORACLE8I_DB_3 orcl
 #          --DestDataset_POSTGIS sige
@@ -32,9 +32,10 @@
 #! GRID_SNAPTO="false"
 #! GRID_WIDTH="50"
 #! BEGIN_TCL=""
+#! ACTIVE_SUBDOCUMENT="pipes_material"
 #! FME_STROKE_MAX_DEVIATION="0"
 #! LOG_FILE=""
-#! VIEW_POSITION="0 -476"
+#! VIEW_POSITION="0 0"
 #! SOURCE_ROUTING_FILE=""
 #! ZOOM_SCALE="104"
 #! PASSWORD=""
@@ -208,7 +209,7 @@
 #! DEFLINE_TEMPLATE="postgis_type postgis_geometry postgis_mode INHERIT_FROM_WRITER postgis_spatial_column_type geometry postgis_spatial_column geom postgis_srid INHERIT_FROM_WRITER postgis_drop_table NO postgis_truncate_table NO postgis_create_with_oids YES postgis_create_gist_index YES postgis_vacuum_analyze YES postgis_allow_serial_writing NO"
 #! DEFLINE_ATTRS="true"
 #! EXPOSABLE_ATTRS="fme_type char(50) postgis_collection_id int fme_text_string char(50) fme_db_operation char(8) fme_feature_type char(50) fme_basename char(50) fme_where char(254) fme_geometry fme_char(50) postgis_collection_part_id int fme_sweep_angle float8 fme_rotation float8 postgis_type char(50) fme_secondary_axis float8 fme_fill_color char(50) fme_dataset char(50) fme_primary_axis float8 fme_start_angle float8 fme_text_size float8 fme_color char(50)"
-#! DEFLINE_PARMS="&quot;GUI CHOICE postgis_mode INHERIT_FROM_WRITER%INSERT%UPDATE%DELETE Writer Mode&quot; INHERIT_FROM_WRITER &quot;GUI CHOICE postgis_spatial_column_type geometry%geography Spatial Column Type&quot; geometry &quot;GUI TEXT postgis_spatial_column Spatial Column Name&quot; wkb_geometry &quot;GUI OPTIONAL FLOAT postgis_srid Spatial Column SRID&quot; INHERIT_FROM_WRITER &quot;GUI CHOICE postgis_drop_table YES%NO Drop Table First&quot; NO &quot;GUI CHOICE postgis_truncate_table YES%NO Truncate Table First&quot; NO &quot;GUI CHOICE postgis_create_with_oids YES%NO Create With OIDs&quot; YES &quot;GUI CHOICE postgis_create_gist_index YES%NO Create GiST Index&quot; YES &quot;GUI CHOICE postgis_vacuum_analyze YES%NO Vacuum Analyze Table&quot; YES &quot;GUI CHOICE postgis_allow_serial_writing YES%NO Allow serial Column Writing&quot; NO "
+#! DEFLINE_PARMS="&quot;GUI CHOICE postgis_mode INHERIT_FROM_WRITER%INSERT%UPDATE%DELETE Writer Mode&quot; INHERIT_FROM_WRITER &quot;GUI CHOICE postgis_spatial_column_type geometry%geography Spatial Column Type&quot; geometry &quot;GUI TEXT postgis_spatial_column Spatial Column Name&quot; geometry &quot;GUI OPTIONAL FLOAT postgis_srid Spatial Column SRID&quot; INHERIT_FROM_WRITER &quot;GUI CHOICE postgis_drop_table YES%NO Drop Table First&quot; NO &quot;GUI CHOICE postgis_truncate_table YES%NO Truncate Table First&quot; NO &quot;GUI CHOICE postgis_create_with_oids YES%NO Create With OIDs&quot; YES &quot;GUI CHOICE postgis_create_gist_index YES%NO Create GiST Index&quot; YES &quot;GUI CHOICE postgis_vacuum_analyze YES%NO Vacuum Analyze Table&quot; YES &quot;GUI CHOICE postgis_allow_serial_writing YES%NO Allow serial Column Writing&quot; NO "
 #! ATTR_INDEX_TYPES="BTREE RTREE HASH PRIKEY"
 #! ATTR_NAME_INVALID_CHARS=". %-#[]&quot;()!?*&apos;&amp;+\/"
 #! SUPPORTS_FEATURE_TYPE_FANOUT="true"
@@ -1099,7 +1100,7 @@
 #! <FEAT_ATTRIBUTE ATTR_NAME="schema_force_view" ATTR_TYPE="bool"/>
 #! <FEAT_ATTRIBUTE ATTR_NAME="year" ATTR_TYPE="char(20)"/>
 #! <DEFLINE_PARM PARM_NAME="postgis_truncate_table" PARM_VALUE="YES"/>
-#! <DEFLINE_PARM PARM_NAME="postgis_spatial_column" PARM_VALUE="wkb_geometry"/>
+#! <DEFLINE_PARM PARM_NAME="postgis_spatial_column" PARM_VALUE="geometry"/>
 #! <DEFLINE_PARM PARM_NAME="postgis_drop_table" PARM_VALUE="NO"/>
 #! <DEFLINE_PARM PARM_NAME="postgis_spatial_column_type" PARM_VALUE="geometry"/>
 #! <DEFLINE_PARM PARM_NAME="postgis_vacuum_analyze" PARM_VALUE="YES"/>
@@ -1250,7 +1251,7 @@
 #! <FEAT_ATTRIBUTE ATTR_NAME="lbl_x" ATTR_TYPE="float8"/>
 #! <FEAT_ATTRIBUTE ATTR_NAME="lbl_y" ATTR_TYPE="float8"/>
 #! <FEAT_ATTRIBUTE ATTR_NAME="lbl_a" ATTR_TYPE="float8"/>
-#! <FEAT_ATTRIBUTE ATTR_NAME="wkb_geometry" ATTR_TYPE="char(80)"/>
+#! <FEAT_ATTRIBUTE ATTR_NAME="geometry" ATTR_TYPE="char(80)"/>
 #! <DEFLINE_PARM PARM_NAME="postgres_sql_statement" PARM_VALUE=""/>
 #! <DEFLINE_PARM PARM_NAME="postgres_sql_where_clause" PARM_VALUE=""/>
 #! </FEATURE_TYPE>
@@ -1514,7 +1515,7 @@
 #! >
 #! <OUTPUT_FEAT NAME="AttributeRemover_4_OUTPUT_86"/>
 #! <FEAT_COLLAPSED COLLAPSED="0"/>
-#! <XFORM_ATTR ATTR_NAME="wkb_geometry" IS_USER_CREATED="false" FEAT_INDEX="0"/>
+#! <XFORM_ATTR ATTR_NAME="geometry" IS_USER_CREATED="false" FEAT_INDEX="0"/>
 #! <XFORM_ATTR ATTR_NAME="GID" IS_USER_CREATED="false" FEAT_INDEX="0"/>
 #! <XFORM_ATTR ATTR_NAME="list{}.GID" IS_USER_CREATED="false" FEAT_INDEX="0"/>
 #! <XFORM_ATTR ATTR_NAME="list{}.SEQ" IS_USER_CREATED="false" FEAT_INDEX="0"/>
@@ -1610,7 +1611,7 @@
 #! <XFORM_ATTR ATTR_NAME="lbl_x" IS_USER_CREATED="false" FEAT_INDEX="0"/>
 #! <XFORM_ATTR ATTR_NAME="lbl_y" IS_USER_CREATED="false" FEAT_INDEX="0"/>
 #! <XFORM_ATTR ATTR_NAME="lbl_a" IS_USER_CREATED="false" FEAT_INDEX="0"/>
-#! <XFORM_ATTR ATTR_NAME="wkb_geometry" IS_USER_CREATED="false" FEAT_INDEX="0"/>
+#! <XFORM_ATTR ATTR_NAME="geometry" IS_USER_CREATED="false" FEAT_INDEX="0"/>
 #! <XFORM_ATTR ATTR_NAME="id_zone" IS_USER_CREATED="false" FEAT_INDEX="0"/>
 #! <XFORM_ATTR ATTR_NAME="DRUCKZONE_ID" IS_USER_CREATED="false" FEAT_INDEX="0"/>
 #! <XFORM_ATTR ATTR_NAME="LAGEGENAUIGKEIT" IS_USER_CREATED="false" FEAT_INDEX="0"/>
@@ -1674,7 +1675,7 @@
 #! <XFORM_ATTR ATTR_NAME="lbl_x" IS_USER_CREATED="false" FEAT_INDEX="0"/>
 #! <XFORM_ATTR ATTR_NAME="lbl_y" IS_USER_CREATED="false" FEAT_INDEX="0"/>
 #! <XFORM_ATTR ATTR_NAME="lbl_a" IS_USER_CREATED="false" FEAT_INDEX="0"/>
-#! <XFORM_ATTR ATTR_NAME="wkb_geometry" IS_USER_CREATED="false" FEAT_INDEX="0"/>
+#! <XFORM_ATTR ATTR_NAME="geometry" IS_USER_CREATED="false" FEAT_INDEX="0"/>
 #! <XFORM_ATTR ATTR_NAME="id_precision" IS_USER_CREATED="false" FEAT_INDEX="0"/>
 #! <XFORM_ATTR ATTR_NAME="id_install_method" IS_USER_CREATED="false" FEAT_INDEX="0"/>
 #! <XFORM_ATTR ATTR_NAME="id_parent" IS_USER_CREATED="false" FEAT_INDEX="0"/>
@@ -1723,7 +1724,7 @@
 #! <XFORM_ATTR ATTR_NAME="lbl_x" IS_USER_CREATED="false" FEAT_INDEX="1"/>
 #! <XFORM_ATTR ATTR_NAME="lbl_y" IS_USER_CREATED="false" FEAT_INDEX="1"/>
 #! <XFORM_ATTR ATTR_NAME="lbl_a" IS_USER_CREATED="false" FEAT_INDEX="1"/>
-#! <XFORM_ATTR ATTR_NAME="wkb_geometry" IS_USER_CREATED="false" FEAT_INDEX="1"/>
+#! <XFORM_ATTR ATTR_NAME="geometry" IS_USER_CREATED="false" FEAT_INDEX="1"/>
 #! <XFORM_ATTR ATTR_NAME="id_precision" IS_USER_CREATED="false" FEAT_INDEX="1"/>
 #! <XFORM_ATTR ATTR_NAME="id_install_method" IS_USER_CREATED="false" FEAT_INDEX="1"/>
 #! <XFORM_ATTR ATTR_NAME="id_parent" IS_USER_CREATED="false" FEAT_INDEX="1"/>
@@ -1768,7 +1769,7 @@
 #! <XFORM_ATTR ATTR_NAME="lbl_x" IS_USER_CREATED="false" FEAT_INDEX="2"/>
 #! <XFORM_ATTR ATTR_NAME="lbl_y" IS_USER_CREATED="false" FEAT_INDEX="2"/>
 #! <XFORM_ATTR ATTR_NAME="lbl_a" IS_USER_CREATED="false" FEAT_INDEX="2"/>
-#! <XFORM_ATTR ATTR_NAME="wkb_geometry" IS_USER_CREATED="false" FEAT_INDEX="2"/>
+#! <XFORM_ATTR ATTR_NAME="geometry" IS_USER_CREATED="false" FEAT_INDEX="2"/>
 #! <XFORM_ATTR ATTR_NAME="id_precision" IS_USER_CREATED="false" FEAT_INDEX="2"/>
 #! <XFORM_ATTR ATTR_NAME="id_install_method" IS_USER_CREATED="false" FEAT_INDEX="2"/>
 #! <XFORM_ATTR ATTR_NAME="id_parent" IS_USER_CREATED="false" FEAT_INDEX="2"/>
@@ -1777,7 +1778,7 @@
 #! <FEAT_COLLAPSED COLLAPSED="3"/>
 #! <XFORM_ATTR ATTR_NAME="list{}.xy" IS_USER_CREATED="false" FEAT_INDEX="3"/>
 #! <XFORM_ATTR ATTR_NAME="linestring" IS_USER_CREATED="false" FEAT_INDEX="3"/>
-#! <XFORM_ATTR ATTR_NAME="wkb_geometry" IS_USER_CREATED="false" FEAT_INDEX="3"/>
+#! <XFORM_ATTR ATTR_NAME="geometry" IS_USER_CREATED="false" FEAT_INDEX="3"/>
 #! <XFORM_ATTR ATTR_NAME="GID" IS_USER_CREATED="false" FEAT_INDEX="3"/>
 #! <XFORM_ATTR ATTR_NAME="list{}.GID" IS_USER_CREATED="false" FEAT_INDEX="3"/>
 #! <XFORM_ATTR ATTR_NAME="list{}.SEQ" IS_USER_CREATED="false" FEAT_INDEX="3"/>
@@ -1785,7 +1786,7 @@
 #! <FEAT_COLLAPSED COLLAPSED="4"/>
 #! <XFORM_ATTR ATTR_NAME="list{}.xy" IS_USER_CREATED="false" FEAT_INDEX="4"/>
 #! <XFORM_ATTR ATTR_NAME="linestring" IS_USER_CREATED="false" FEAT_INDEX="4"/>
-#! <XFORM_ATTR ATTR_NAME="wkb_geometry" IS_USER_CREATED="false" FEAT_INDEX="4"/>
+#! <XFORM_ATTR ATTR_NAME="geometry" IS_USER_CREATED="false" FEAT_INDEX="4"/>
 #! <XFORM_ATTR ATTR_NAME="GID" IS_USER_CREATED="false" FEAT_INDEX="4"/>
 #! <XFORM_ATTR ATTR_NAME="list{}.GID" IS_USER_CREATED="false" FEAT_INDEX="4"/>
 #! <XFORM_ATTR ATTR_NAME="list{}.SEQ" IS_USER_CREATED="false" FEAT_INDEX="4"/>
@@ -1793,7 +1794,7 @@
 #! <FEAT_COLLAPSED COLLAPSED="5"/>
 #! <XFORM_ATTR ATTR_NAME="list{}.xy" IS_USER_CREATED="false" FEAT_INDEX="5"/>
 #! <XFORM_ATTR ATTR_NAME="linestring" IS_USER_CREATED="false" FEAT_INDEX="5"/>
-#! <XFORM_ATTR ATTR_NAME="wkb_geometry" IS_USER_CREATED="false" FEAT_INDEX="5"/>
+#! <XFORM_ATTR ATTR_NAME="geometry" IS_USER_CREATED="false" FEAT_INDEX="5"/>
 #! <XFORM_ATTR ATTR_NAME="GID" IS_USER_CREATED="false" FEAT_INDEX="5"/>
 #! <XFORM_ATTR ATTR_NAME="list{}.GID" IS_USER_CREATED="false" FEAT_INDEX="5"/>
 #! <XFORM_ATTR ATTR_NAME="list{}.SEQ" IS_USER_CREATED="false" FEAT_INDEX="5"/>
@@ -1857,7 +1858,7 @@
 #! <XFORM_ATTR ATTR_NAME="lbl_x" IS_USER_CREATED="false" FEAT_INDEX="0"/>
 #! <XFORM_ATTR ATTR_NAME="lbl_y" IS_USER_CREATED="false" FEAT_INDEX="0"/>
 #! <XFORM_ATTR ATTR_NAME="lbl_a" IS_USER_CREATED="false" FEAT_INDEX="0"/>
-#! <XFORM_ATTR ATTR_NAME="wkb_geometry" IS_USER_CREATED="false" FEAT_INDEX="0"/>
+#! <XFORM_ATTR ATTR_NAME="geometry" IS_USER_CREATED="false" FEAT_INDEX="0"/>
 #! <XFORM_ATTR ATTR_NAME="id_precision" IS_USER_CREATED="false" FEAT_INDEX="0"/>
 #! <XFORM_ATTR ATTR_NAME="id_install_method" IS_USER_CREATED="false" FEAT_INDEX="0"/>
 #! <XFORM_PARM PARM_NAME="VAL" PARM_VALUE="1899"/>
@@ -1911,7 +1912,7 @@
 #! <XFORM_ATTR ATTR_NAME="lbl_x" IS_USER_CREATED="false" FEAT_INDEX="0"/>
 #! <XFORM_ATTR ATTR_NAME="lbl_y" IS_USER_CREATED="false" FEAT_INDEX="0"/>
 #! <XFORM_ATTR ATTR_NAME="lbl_a" IS_USER_CREATED="false" FEAT_INDEX="0"/>
-#! <XFORM_ATTR ATTR_NAME="wkb_geometry" IS_USER_CREATED="false" FEAT_INDEX="0"/>
+#! <XFORM_ATTR ATTR_NAME="geometry" IS_USER_CREATED="false" FEAT_INDEX="0"/>
 #! <XFORM_ATTR ATTR_NAME="id_zone" IS_USER_CREATED="false" FEAT_INDEX="0"/>
 #! <XFORM_ATTR ATTR_NAME="DRUCKZONE_ID" IS_USER_CREATED="false" FEAT_INDEX="0"/>
 #! <XFORM_ATTR ATTR_NAME="LAGEGENAUIGKEIT" IS_USER_CREATED="false" FEAT_INDEX="0"/>
@@ -1972,7 +1973,7 @@
 #! <XFORM_ATTR ATTR_NAME="lbl_x" IS_USER_CREATED="false" FEAT_INDEX="0"/>
 #! <XFORM_ATTR ATTR_NAME="lbl_y" IS_USER_CREATED="false" FEAT_INDEX="0"/>
 #! <XFORM_ATTR ATTR_NAME="lbl_a" IS_USER_CREATED="false" FEAT_INDEX="0"/>
-#! <XFORM_ATTR ATTR_NAME="wkb_geometry" IS_USER_CREATED="false" FEAT_INDEX="0"/>
+#! <XFORM_ATTR ATTR_NAME="geometry" IS_USER_CREATED="false" FEAT_INDEX="0"/>
 #! <XFORM_ATTR ATTR_NAME="id_precision" IS_USER_CREATED="false" FEAT_INDEX="0"/>
 #! <XFORM_PARM PARM_NAME="LUT" PARM_VALUE="IP,1,P,2,L,3,D,4,I,5,,5"/>
 #! <XFORM_PARM PARM_NAME="XFORMER_NAME" PARM_VALUE="AttributeValueMapper"/>
@@ -2029,7 +2030,7 @@
 #! <XFORM_ATTR ATTR_NAME="lbl_x" IS_USER_CREATED="false" FEAT_INDEX="0"/>
 #! <XFORM_ATTR ATTR_NAME="lbl_y" IS_USER_CREATED="false" FEAT_INDEX="0"/>
 #! <XFORM_ATTR ATTR_NAME="lbl_a" IS_USER_CREATED="false" FEAT_INDEX="0"/>
-#! <XFORM_ATTR ATTR_NAME="wkb_geometry" IS_USER_CREATED="false" FEAT_INDEX="0"/>
+#! <XFORM_ATTR ATTR_NAME="geometry" IS_USER_CREATED="false" FEAT_INDEX="0"/>
 #! <XFORM_ATTR ATTR_NAME="id_precision" IS_USER_CREATED="false" FEAT_INDEX="0"/>
 #! <XFORM_ATTR ATTR_NAME="id_install_method" IS_USER_CREATED="false" FEAT_INDEX="0"/>
 #! <OUTPUT_FEAT NAME="&lt;BLANK&gt;"/>
@@ -2072,7 +2073,7 @@
 #! <XFORM_ATTR ATTR_NAME="lbl_x" IS_USER_CREATED="false" FEAT_INDEX="1"/>
 #! <XFORM_ATTR ATTR_NAME="lbl_y" IS_USER_CREATED="false" FEAT_INDEX="1"/>
 #! <XFORM_ATTR ATTR_NAME="lbl_a" IS_USER_CREATED="false" FEAT_INDEX="1"/>
-#! <XFORM_ATTR ATTR_NAME="wkb_geometry" IS_USER_CREATED="false" FEAT_INDEX="1"/>
+#! <XFORM_ATTR ATTR_NAME="geometry" IS_USER_CREATED="false" FEAT_INDEX="1"/>
 #! <XFORM_ATTR ATTR_NAME="id_precision" IS_USER_CREATED="false" FEAT_INDEX="1"/>
 #! <XFORM_ATTR ATTR_NAME="id_install_method" IS_USER_CREATED="false" FEAT_INDEX="1"/>
 #! <OUTPUT_FEAT NAME="&lt;UNFILTERED&gt;"/>
@@ -2115,7 +2116,7 @@
 #! <XFORM_ATTR ATTR_NAME="lbl_x" IS_USER_CREATED="false" FEAT_INDEX="2"/>
 #! <XFORM_ATTR ATTR_NAME="lbl_y" IS_USER_CREATED="false" FEAT_INDEX="2"/>
 #! <XFORM_ATTR ATTR_NAME="lbl_a" IS_USER_CREATED="false" FEAT_INDEX="2"/>
-#! <XFORM_ATTR ATTR_NAME="wkb_geometry" IS_USER_CREATED="false" FEAT_INDEX="2"/>
+#! <XFORM_ATTR ATTR_NAME="geometry" IS_USER_CREATED="false" FEAT_INDEX="2"/>
 #! <XFORM_ATTR ATTR_NAME="id_precision" IS_USER_CREATED="false" FEAT_INDEX="2"/>
 #! <XFORM_ATTR ATTR_NAME="id_install_method" IS_USER_CREATED="false" FEAT_INDEX="2"/>
 #! <XFORM_PARM PARM_NAME="XFORMER_NAME" PARM_VALUE="AttributeFilter_2"/>
@@ -2707,6 +2708,7 @@
 #! <XFORM_ATTR ATTR_NAME="BESCHICHTUNG_INNEN" IS_USER_CREATED="false" FEAT_INDEX="3"/>
 #! <XFORM_ATTR ATTR_NAME="DELETED" IS_USER_CREATED="false" FEAT_INDEX="3"/>
 #! <XFORM_ATTR ATTR_NAME="DOSSIER" IS_USER_CREATED="false" FEAT_INDEX="3"/>
+#! <XFORM_ATTR ATTR_NAME="DRUCKZONE_ID" IS_USER_CREATED="false" FEAT_INDEX="3"/>
 #! <XFORM_ATTR ATTR_NAME="DURCHMESSER_AUSSEN" IS_USER_CREATED="false" FEAT_INDEX="3"/>
 #! <XFORM_ATTR ATTR_NAME="DURCHMESSER_INNEN" IS_USER_CREATED="false" FEAT_INDEX="3"/>
 #! <XFORM_ATTR ATTR_NAME="EIGENTUMSVERHAELTNIS" IS_USER_CREATED="false" FEAT_INDEX="3"/>
@@ -2723,7 +2725,6 @@
 #! <XFORM_ATTR ATTR_NAME="VERLEGEART" IS_USER_CREATED="false" FEAT_INDEX="3"/>
 #! <XFORM_ATTR ATTR_NAME="WANDSTAERKE" IS_USER_CREATED="false" FEAT_INDEX="3"/>
 #! <XFORM_ATTR ATTR_NAME="remarks" IS_USER_CREATED="false" FEAT_INDEX="3"/>
-#! <XFORM_ATTR ATTR_NAME="DRUCKZONE_ID" IS_USER_CREATED="false" FEAT_INDEX="3"/>
 #! <XFORM_ATTR ATTR_NAME="AREA_NOMINAL" IS_USER_CREATED="false" FEAT_INDEX="3"/>
 #! <XFORM_ATTR ATTR_NAME="AUFMASSSKIZZE" IS_USER_CREATED="false" FEAT_INDEX="3"/>
 #! <XFORM_ATTR ATTR_NAME="A_DESAFFECTER_PDDE" IS_USER_CREATED="false" FEAT_INDEX="3"/>
@@ -3034,7 +3035,7 @@
 #! <XFORM_ATTR ATTR_NAME="lbl_x" IS_USER_CREATED="false" FEAT_INDEX="0"/>
 #! <XFORM_ATTR ATTR_NAME="lbl_y" IS_USER_CREATED="false" FEAT_INDEX="0"/>
 #! <XFORM_ATTR ATTR_NAME="lbl_a" IS_USER_CREATED="false" FEAT_INDEX="0"/>
-#! <XFORM_ATTR ATTR_NAME="wkb_geometry" IS_USER_CREATED="false" FEAT_INDEX="0"/>
+#! <XFORM_ATTR ATTR_NAME="geometry" IS_USER_CREATED="false" FEAT_INDEX="0"/>
 #! <XFORM_ATTR ATTR_NAME="id_zone" IS_USER_CREATED="false" FEAT_INDEX="0"/>
 #! <XFORM_ATTR ATTR_NAME="DRUCKZONE_ID" IS_USER_CREATED="false" FEAT_INDEX="0"/>
 #! <XFORM_ATTR ATTR_NAME="LAGEGENAUIGKEIT" IS_USER_CREATED="false" FEAT_INDEX="0"/>
@@ -3174,7 +3175,7 @@
 #! <XFORM_ATTR ATTR_NAME="lbl_x" IS_USER_CREATED="false" FEAT_INDEX="0"/>
 #! <XFORM_ATTR ATTR_NAME="lbl_y" IS_USER_CREATED="false" FEAT_INDEX="0"/>
 #! <XFORM_ATTR ATTR_NAME="lbl_a" IS_USER_CREATED="false" FEAT_INDEX="0"/>
-#! <XFORM_ATTR ATTR_NAME="wkb_geometry" IS_USER_CREATED="false" FEAT_INDEX="0"/>
+#! <XFORM_ATTR ATTR_NAME="geometry" IS_USER_CREATED="false" FEAT_INDEX="0"/>
 #! <XFORM_ATTR ATTR_NAME="id_zone" IS_USER_CREATED="false" FEAT_INDEX="0"/>
 #! <XFORM_ATTR ATTR_NAME="DRUCKZONE_ID" IS_USER_CREATED="false" FEAT_INDEX="0"/>
 #! <XFORM_ATTR ATTR_NAME="id_protection" IS_USER_CREATED="false" FEAT_INDEX="0"/>
@@ -3222,7 +3223,7 @@
 #! <XFORM_ATTR ATTR_NAME="lbl_x" IS_USER_CREATED="false" FEAT_INDEX="2"/>
 #! <XFORM_ATTR ATTR_NAME="lbl_y" IS_USER_CREATED="false" FEAT_INDEX="2"/>
 #! <XFORM_ATTR ATTR_NAME="lbl_a" IS_USER_CREATED="false" FEAT_INDEX="2"/>
-#! <XFORM_ATTR ATTR_NAME="wkb_geometry" IS_USER_CREATED="false" FEAT_INDEX="2"/>
+#! <XFORM_ATTR ATTR_NAME="geometry" IS_USER_CREATED="false" FEAT_INDEX="2"/>
 #! <XFORM_ATTR ATTR_NAME="id_zone" IS_USER_CREATED="false" FEAT_INDEX="2"/>
 #! <OUTPUT_FEAT NAME="FeatureMerger_DUPLICATE_SUPPLIER_5"/>
 #! <FEAT_COLLAPSED COLLAPSED="3"/>
@@ -3232,7 +3233,7 @@
 #! <XFORM_ATTR ATTR_NAME="lbl_x" IS_USER_CREATED="false" FEAT_INDEX="3"/>
 #! <XFORM_ATTR ATTR_NAME="lbl_y" IS_USER_CREATED="false" FEAT_INDEX="3"/>
 #! <XFORM_ATTR ATTR_NAME="lbl_a" IS_USER_CREATED="false" FEAT_INDEX="3"/>
-#! <XFORM_ATTR ATTR_NAME="wkb_geometry" IS_USER_CREATED="false" FEAT_INDEX="3"/>
+#! <XFORM_ATTR ATTR_NAME="geometry" IS_USER_CREATED="false" FEAT_INDEX="3"/>
 #! <XFORM_ATTR ATTR_NAME="id_zone" IS_USER_CREATED="false" FEAT_INDEX="3"/>
 #! <XFORM_PARM PARM_NAME="SUB_DOC_NAME" PARM_VALUE="pipes_druckzone"/>
 #! <XFORM_PARM PARM_NAME="XFORMER_NAME" PARM_VALUE="pipes_druckzone"/>
@@ -3289,7 +3290,7 @@
 #! <XFORM_ATTR ATTR_NAME="lbl_x" IS_USER_CREATED="false" FEAT_INDEX="0"/>
 #! <XFORM_ATTR ATTR_NAME="lbl_y" IS_USER_CREATED="false" FEAT_INDEX="0"/>
 #! <XFORM_ATTR ATTR_NAME="lbl_a" IS_USER_CREATED="false" FEAT_INDEX="0"/>
-#! <XFORM_ATTR ATTR_NAME="wkb_geometry" IS_USER_CREATED="false" FEAT_INDEX="0"/>
+#! <XFORM_ATTR ATTR_NAME="geometry" IS_USER_CREATED="false" FEAT_INDEX="0"/>
 #! <XFORM_PARM PARM_NAME="XFORMER_NAME" PARM_VALUE="AttributeRenamer"/>
 #! <XFORM_PARM PARM_NAME="ATTR_LIST" PARM_VALUE="coating_internal_material_id,BESCHICHTUNG_AUSSEN,coating_external_material_id,BESCHICHTUNG_INNEN,material_ext_diam,DURCHMESSER_AUSSEN,material_int_diam,DURCHMESSER_INNEN,id_owner,EIGENTUMSVERHAELTNIS,pressure_nominale,NENNDRUCK,material_nominal_diam,NENNWEITE,length3d,STRANGLAENGE_BERECHNET,material_thickness,WANDSTAERKE,year,BAUJAHR,id,FID,folder,DOSSIER,z_folio,FOLIO,status,STATUS,z_deleted,DELETED"/>
 #! </TRANSFORMER>
@@ -4022,7 +4023,7 @@
 #! IDENTIFIER="5"
 #! COMMENT_VALUE="Concat MATERIAL NENNWEITE"
 #! POSITION="2607 -844"
-#! ORDER="20"
+#! ORDER="22"
 #! FOLLOW_ANCHOR="true"
 #! INFO_NODE="false"
 #! COMMENT_TYPE="REGULAR"
@@ -4032,7 +4033,7 @@
 #! IDENTIFIER="6"
 #! COMMENT_VALUE="renommer id to id_material"
 #! POSITION="503 -1711"
-#! ORDER="21"
+#! ORDER="23"
 #! FOLLOW_ANCHOR="true"
 #! INFO_NODE="false"
 #! COMMENT_TYPE="REGULAR"
@@ -4042,7 +4043,7 @@
 #! IDENTIFIER="18"
 #! COMMENT_VALUE="Unknown material =&gt; Inconnu"
 #! POSITION="451 -23"
-#! ORDER="22"
+#! ORDER="24"
 #! FOLLOW_ANCHOR="true"
 #! INFO_NODE="false"
 #! COMMENT_TYPE="REGULAR"
@@ -4052,7 +4053,7 @@
 #! IDENTIFIER="25"
 #! COMMENT_VALUE="Unknown diameter=&gt; inconnu"
 #! POSITION="2028 -390"
-#! ORDER="23"
+#! ORDER="25"
 #! FOLLOW_ANCHOR="true"
 #! INFO_NODE="false"
 #! COMMENT_TYPE="REGULAR"
@@ -4062,7 +4063,7 @@
 #! IDENTIFIER="39"
 #! COMMENT_VALUE="Detect numeric material&#13;&#10;=&gt; Inconnu"
 #! POSITION="912 -398"
-#! ORDER="25"
+#! ORDER="27"
 #! FOLLOW_ANCHOR="true"
 #! INFO_NODE="false"
 #! COMMENT_TYPE="REGULAR"
@@ -4072,7 +4073,7 @@
 #! IDENTIFIER="47"
 #! COMMENT_VALUE="Inonnu inconnu =&gt; Inconnu"
 #! POSITION="1018 -917"
-#! ORDER="26"
+#! ORDER="28"
 #! FOLLOW_ANCHOR="true"
 #! INFO_NODE="false"
 #! COMMENT_TYPE="REGULAR"
@@ -4082,7 +4083,7 @@
 #! IDENTIFIER="52"
 #! COMMENT_VALUE="Set MATERIAL = Inconnu"
 #! POSITION="1471 -96"
-#! ORDER="28"
+#! ORDER="30"
 #! FOLLOW_ANCHOR="true"
 #! INFO_NODE="false"
 #! COMMENT_TYPE="REGULAR"
@@ -4092,7 +4093,7 @@
 #! IDENTIFIER="53"
 #! COMMENT_VALUE="Set NENNWEITE = inconnu"
 #! POSITION="2694 -156"
-#! ORDER="29"
+#! ORDER="31"
 #! FOLLOW_ANCHOR="true"
 #! INFO_NODE="false"
 #! COMMENT_TYPE="REGULAR"
@@ -4102,7 +4103,7 @@
 #! IDENTIFIER="54"
 #! COMMENT_VALUE="Set joined_material =  Inconnu"
 #! POSITION="219 -972"
-#! ORDER="36"
+#! ORDER="38"
 #! FOLLOW_ANCHOR="true"
 #! INFO_NODE="false"
 #! COMMENT_TYPE="REGULAR"
@@ -4119,7 +4120,7 @@
 #! TYPE="AttributeFilter"
 #! VERSION="2"
 #! POSITION="441 -78"
-#! ORDER="24"
+#! ORDER="26"
 #! PARMS_EDITED="true"
 #! ENABLED="true"
 #! >
@@ -4216,7 +4217,7 @@
 #! TYPE="AttributeSetter"
 #! VERSION="2"
 #! POSITION="1471 -176"
-#! ORDER="27"
+#! ORDER="29"
 #! PARMS_EDITED="true"
 #! ENABLED="true"
 #! >
@@ -4259,7 +4260,7 @@
 #! TYPE="AttributeFilter"
 #! VERSION="2"
 #! POSITION="2028 -470"
-#! ORDER="30"
+#! ORDER="32"
 #! PARMS_EDITED="true"
 #! ENABLED="true"
 #! >
@@ -4356,7 +4357,7 @@
 #! TYPE="AttributeSetter"
 #! VERSION="2"
 #! POSITION="2694 -236"
-#! ORDER="31"
+#! ORDER="33"
 #! PARMS_EDITED="true"
 #! ENABLED="true"
 #! >
@@ -4399,7 +4400,7 @@
 #! TYPE="StringConcatenator"
 #! VERSION="5"
 #! POSITION="2607 -924"
-#! ORDER="32"
+#! ORDER="34"
 #! PARMS_EDITED="true"
 #! ENABLED="true"
 #! >
@@ -4441,7 +4442,7 @@
 #! TYPE="FeatureMerger"
 #! VERSION="8"
 #! POSITION="1307 -1552"
-#! ORDER="33"
+#! ORDER="35"
 #! PARMS_EDITED="true"
 #! ENABLED="true"
 #! >
@@ -4582,7 +4583,7 @@
 #! TYPE="AttributeFilter"
 #! VERSION="2"
 #! POSITION="1256 -985"
-#! ORDER="34"
+#! ORDER="36"
 #! PARMS_EDITED="true"
 #! ENABLED="true"
 #! >
@@ -4682,7 +4683,7 @@
 #! TYPE="AttributeRenamer"
 #! VERSION="1"
 #! POSITION="503 -1791"
-#! ORDER="35"
+#! ORDER="37"
 #! PARMS_EDITED="true"
 #! ENABLED="true"
 #! >
@@ -4702,7 +4703,7 @@
 #! TYPE="Tester"
 #! VERSION="1"
 #! POSITION="894 -500"
-#! ORDER="37"
+#! ORDER="39"
 #! PARMS_EDITED="true"
 #! ENABLED="true"
 #! >
@@ -4774,7 +4775,7 @@
 #! TYPE="AttributeSetter"
 #! VERSION="2"
 #! POSITION="219 -1052"
-#! ORDER="38"
+#! ORDER="40"
 #! PARMS_EDITED="true"
 #! ENABLED="true"
 #! >
@@ -4812,6 +4813,40 @@
 #! <XFORM_PARM PARM_NAME="PARAMETERS_GROUP" PARM_VALUE=""/>
 #! <XFORM_PARM PARM_NAME="XFORMER_NAME" PARM_VALUE="AttributeSetter_3"/>
 #! <XFORM_PARM PARM_NAME="TRANSFORMER_GROUP" PARM_VALUE=""/>
+#! </TRANSFORMER>
+#! <TRANSFORMER
+#! IDENTIFIER="46"
+#! TYPE="Logger"
+#! VERSION="2"
+#! POSITION="1155 -915"
+#! ORDER="45"
+#! PARMS_EDITED="false"
+#! ENABLED="true"
+#! >
+#! <XFORM_PARM PARM_NAME="FEATURE_TYPE" PARM_VALUE=""/>
+#! <XFORM_PARM PARM_NAME="PARAMETERS_GROUP" PARM_VALUE=""/>
+#! <XFORM_PARM PARM_NAME="XFORMER_NAME" PARM_VALUE="Logger"/>
+#! <XFORM_PARM PARM_NAME="TRANSFORMER_GROUP" PARM_VALUE=""/>
+#! <XFORM_PARM PARM_NAME="MESSAGE" PARM_VALUE="Feature is:"/>
+#! <XFORM_PARM PARM_NAME="MAXFEATS" PARM_VALUE="20"/>
+#! <XFORM_PARM PARM_NAME="MAXCOORDS" PARM_VALUE="20"/>
+#! </TRANSFORMER>
+#! <TRANSFORMER
+#! IDENTIFIER="55"
+#! TYPE="Logger"
+#! VERSION="2"
+#! POSITION="2265 -2141"
+#! ORDER="46"
+#! PARMS_EDITED="false"
+#! ENABLED="true"
+#! >
+#! <XFORM_PARM PARM_NAME="FEATURE_TYPE" PARM_VALUE=""/>
+#! <XFORM_PARM PARM_NAME="PARAMETERS_GROUP" PARM_VALUE=""/>
+#! <XFORM_PARM PARM_NAME="XFORMER_NAME" PARM_VALUE="Logger_2"/>
+#! <XFORM_PARM PARM_NAME="TRANSFORMER_GROUP" PARM_VALUE=""/>
+#! <XFORM_PARM PARM_NAME="MESSAGE" PARM_VALUE="Feature is:"/>
+#! <XFORM_PARM PARM_NAME="MAXFEATS" PARM_VALUE="20"/>
+#! <XFORM_PARM PARM_NAME="MAXCOORDS" PARM_VALUE="20"/>
 #! </TRANSFORMER>
 #! </TRANSFORMERS>
 #! <SUBDOCUMENT_IOS>
@@ -5006,20 +5041,38 @@
 #! EXTRA_POINTS=""
 #! />
 #! <FEAT_LINK
+#! IDENTIFIER="43"
+#! SOURCE_NODE="2"
+#! TARGET_NODE="45"
+#! SOURCE_PORT_DESC="fo 2"
+#! TARGET_PORT_DESC="0"
+#! ENABLED="true"
+#! EXTRA_POINTS=""
+#! />
+#! <FEAT_LINK
 #! IDENTIFIER="42"
 #! SOURCE_NODE="2"
 #! TARGET_NODE="45"
 #! SOURCE_PORT_DESC="fo 1"
 #! TARGET_PORT_DESC="0"
 #! ENABLED="true"
+#! EXTRA_POINTS="2125 -1875"
+#! />
+#! <FEAT_LINK
+#! IDENTIFIER="56"
+#! SOURCE_NODE="2"
+#! TARGET_NODE="55"
+#! SOURCE_PORT_DESC="fo 2"
+#! TARGET_PORT_DESC="fi 0"
+#! ENABLED="true"
 #! EXTRA_POINTS=""
 #! />
 #! <FEAT_LINK
-#! IDENTIFIER="43"
+#! IDENTIFIER="57"
 #! SOURCE_NODE="2"
-#! TARGET_NODE="45"
-#! SOURCE_PORT_DESC="fo 2"
-#! TARGET_PORT_DESC="0"
+#! TARGET_NODE="55"
+#! SOURCE_PORT_DESC="fo 1"
+#! TARGET_PORT_DESC="fi 0"
 #! ENABLED="true"
 #! EXTRA_POINTS=""
 #! />
@@ -5103,7 +5156,7 @@
 #! <XFORM_ATTR ATTR_NAME="lbl_x" IS_USER_CREATED="false" FEAT_INDEX="0"/>
 #! <XFORM_ATTR ATTR_NAME="lbl_y" IS_USER_CREATED="false" FEAT_INDEX="0"/>
 #! <XFORM_ATTR ATTR_NAME="lbl_a" IS_USER_CREATED="false" FEAT_INDEX="0"/>
-#! <XFORM_ATTR ATTR_NAME="wkb_geometry" IS_USER_CREATED="false" FEAT_INDEX="0"/>
+#! <XFORM_ATTR ATTR_NAME="geometry" IS_USER_CREATED="false" FEAT_INDEX="0"/>
 #! <XFORM_PARM PARM_NAME="LUT" PARM_VALUE="&quot;conduite de refoulement&quot;,REF,&quot;Conduite de transport&quot;,A,&quot;Conduite de purge&quot;,CPU,&quot;Conduite d&apos;hydrant&quot;,CH,&quot;Conduite de vidange&quot;,CV,Inconnu,I,&quot;Conduite de distribution&quot;,CD,&quot;Branchement commun&quot;,CB,By-pass,BP,&quot;Branchement privé&quot;,CA,&quot;Conduite haute pression&quot;,HP,,0"/>
 #! <XFORM_PARM PARM_NAME="XFORMER_NAME" PARM_VALUE="AttributeValueMapper"/>
 #! <XFORM_PARM PARM_NAME="SRC" PARM_VALUE="$(SRC)"/>
@@ -5159,7 +5212,7 @@
 #! <XFORM_ATTR ATTR_NAME="lbl_x" IS_USER_CREATED="false" FEAT_INDEX="0"/>
 #! <XFORM_ATTR ATTR_NAME="lbl_y" IS_USER_CREATED="false" FEAT_INDEX="0"/>
 #! <XFORM_ATTR ATTR_NAME="lbl_a" IS_USER_CREATED="false" FEAT_INDEX="0"/>
-#! <XFORM_ATTR ATTR_NAME="wkb_geometry" IS_USER_CREATED="false" FEAT_INDEX="0"/>
+#! <XFORM_ATTR ATTR_NAME="geometry" IS_USER_CREATED="false" FEAT_INDEX="0"/>
 #! <XFORM_PARM PARM_NAME="PARAMETERS_GROUP" PARM_VALUE=""/>
 #! <XFORM_PARM PARM_NAME="XFORMER_NAME" PARM_VALUE="AttributeRemover"/>
 #! <XFORM_PARM PARM_NAME="REMOVE_ATTRS" PARM_VALUE="FUNKTION,_TBFunktion,schema_view"/>
@@ -5215,7 +5268,7 @@
 #! <XFORM_ATTR ATTR_NAME="lbl_x" IS_USER_CREATED="false" FEAT_INDEX="0"/>
 #! <XFORM_ATTR ATTR_NAME="lbl_y" IS_USER_CREATED="false" FEAT_INDEX="0"/>
 #! <XFORM_ATTR ATTR_NAME="lbl_a" IS_USER_CREATED="false" FEAT_INDEX="0"/>
-#! <XFORM_ATTR ATTR_NAME="wkb_geometry" IS_USER_CREATED="false" FEAT_INDEX="0"/>
+#! <XFORM_ATTR ATTR_NAME="geometry" IS_USER_CREATED="false" FEAT_INDEX="0"/>
 #! <OUTPUT_FEAT NAME="INCOMPLETE"/>
 #! <FEAT_COLLAPSED COLLAPSED="1"/>
 #! <XFORM_ATTR ATTR_NAME="id_status" IS_USER_CREATED="false" FEAT_INDEX="1"/>
@@ -5297,7 +5350,7 @@
 #! <XFORM_ATTR ATTR_NAME="lbl_x" IS_USER_CREATED="false" FEAT_INDEX="3"/>
 #! <XFORM_ATTR ATTR_NAME="lbl_y" IS_USER_CREATED="false" FEAT_INDEX="3"/>
 #! <XFORM_ATTR ATTR_NAME="lbl_a" IS_USER_CREATED="false" FEAT_INDEX="3"/>
-#! <XFORM_ATTR ATTR_NAME="wkb_geometry" IS_USER_CREATED="false" FEAT_INDEX="3"/>
+#! <XFORM_ATTR ATTR_NAME="geometry" IS_USER_CREATED="false" FEAT_INDEX="3"/>
 #! <OUTPUT_FEAT NAME="UNREFERENCED"/>
 #! <FEAT_COLLAPSED COLLAPSED="4"/>
 #! <XFORM_ATTR ATTR_NAME="_TBFunktion" IS_USER_CREATED="false" FEAT_INDEX="4"/>
@@ -5307,7 +5360,7 @@
 #! <XFORM_ATTR ATTR_NAME="lbl_x" IS_USER_CREATED="false" FEAT_INDEX="4"/>
 #! <XFORM_ATTR ATTR_NAME="lbl_y" IS_USER_CREATED="false" FEAT_INDEX="4"/>
 #! <XFORM_ATTR ATTR_NAME="lbl_a" IS_USER_CREATED="false" FEAT_INDEX="4"/>
-#! <XFORM_ATTR ATTR_NAME="wkb_geometry" IS_USER_CREATED="false" FEAT_INDEX="4"/>
+#! <XFORM_ATTR ATTR_NAME="geometry" IS_USER_CREATED="false" FEAT_INDEX="4"/>
 #! <OUTPUT_FEAT NAME="DUPLICATE_SUPPLIER"/>
 #! <FEAT_COLLAPSED COLLAPSED="5"/>
 #! <XFORM_ATTR ATTR_NAME="_TBFunktion" IS_USER_CREATED="false" FEAT_INDEX="5"/>
@@ -5317,7 +5370,7 @@
 #! <XFORM_ATTR ATTR_NAME="lbl_x" IS_USER_CREATED="false" FEAT_INDEX="5"/>
 #! <XFORM_ATTR ATTR_NAME="lbl_y" IS_USER_CREATED="false" FEAT_INDEX="5"/>
 #! <XFORM_ATTR ATTR_NAME="lbl_a" IS_USER_CREATED="false" FEAT_INDEX="5"/>
-#! <XFORM_ATTR ATTR_NAME="wkb_geometry" IS_USER_CREATED="false" FEAT_INDEX="5"/>
+#! <XFORM_ATTR ATTR_NAME="geometry" IS_USER_CREATED="false" FEAT_INDEX="5"/>
 #! <XFORM_PARM PARM_NAME="GROUP_BY" PARM_VALUE=""/>
 #! <XFORM_PARM PARM_NAME="PARAMETERS_GROUP" PARM_VALUE=""/>
 #! <XFORM_PARM PARM_NAME="LIST_NAME" PARM_VALUE=""/>
@@ -5347,7 +5400,7 @@
 #! <XFORM_ATTR ATTR_NAME="lbl_x" IS_USER_CREATED="false" FEAT_INDEX="0"/>
 #! <XFORM_ATTR ATTR_NAME="lbl_y" IS_USER_CREATED="false" FEAT_INDEX="0"/>
 #! <XFORM_ATTR ATTR_NAME="lbl_a" IS_USER_CREATED="false" FEAT_INDEX="0"/>
-#! <XFORM_ATTR ATTR_NAME="wkb_geometry" IS_USER_CREATED="false" FEAT_INDEX="0"/>
+#! <XFORM_ATTR ATTR_NAME="geometry" IS_USER_CREATED="false" FEAT_INDEX="0"/>
 #! <XFORM_PARM PARM_NAME="XFORMER_NAME" PARM_VALUE="AttributeRenamer"/>
 #! <XFORM_PARM PARM_NAME="ATTR_LIST" PARM_VALUE="id_zone,id"/>
 #! </TRANSFORMER>
@@ -5920,7 +5973,7 @@
 #! >
 #! <OUTPUT_FEAT NAME="OUTPUT"/>
 #! <FEAT_COLLAPSED COLLAPSED="0"/>
-#! <XFORM_ATTR ATTR_NAME="wkb_geometry" IS_USER_CREATED="false" FEAT_INDEX="0"/>
+#! <XFORM_ATTR ATTR_NAME="geometry" IS_USER_CREATED="false" FEAT_INDEX="0"/>
 #! <XFORM_ATTR ATTR_NAME="list{}.xy" IS_USER_CREATED="false" FEAT_INDEX="0"/>
 #! <XFORM_ATTR ATTR_NAME="linestring" IS_USER_CREATED="false" FEAT_INDEX="0"/>
 #! <XFORM_ATTR ATTR_NAME="GID" IS_USER_CREATED="false" FEAT_INDEX="0"/>
@@ -5928,7 +5981,7 @@
 #! <XFORM_ATTR ATTR_NAME="list{}.SEQ" IS_USER_CREATED="false" FEAT_INDEX="0"/>
 #! <XFORM_PARM PARM_NAME="PARAMETERS_GROUP" PARM_VALUE=""/>
 #! <XFORM_PARM PARM_NAME="KIND_LONG" PARM_VALUE="OGC Well Known Binary"/>
-#! <XFORM_PARM PARM_NAME="ATTR" PARM_VALUE="wkb_geometry"/>
+#! <XFORM_PARM PARM_NAME="ATTR" PARM_VALUE="geometry"/>
 #! <XFORM_PARM PARM_NAME="XFORMER_NAME" PARM_VALUE="GeometryExtractor"/>
 #! <XFORM_PARM PARM_NAME="OGCVERSION" PARM_VALUE="1.1"/>
 #! <XFORM_PARM PARM_NAME="TRANSFORMER_GROUP" PARM_VALUE=""/>
@@ -6320,7 +6373,7 @@ GUI INTEGER POSTGRES_IN_PORT_POSTGRES_1 Port:
 DEFAULT_MACRO POSTGRES_IN_USER_NAME_POSTGRES_1 sige
 POSTGRES_1_USER_NAME "$(POSTGRES_IN_USER_NAME_POSTGRES_1)"
 GUI TEXT POSTGRES_IN_USER_NAME_POSTGRES_1 Username:
-DEFAULT_MACRO POSTGRES_IN_PASSWORD_POSTGRES_1 1234
+DEFAULT_MACRO POSTGRES_IN_PASSWORD_POSTGRES_1 db4wat$
 POSTGRES_1_PASSWORD "$(POSTGRES_IN_PASSWORD_POSTGRES_1)"
 GUI OPTIONAL PASSWORD POSTGRES_IN_PASSWORD_POSTGRES_1 Password:
 DEFAULT_MACRO POSTGRES_IN_FEATURES_PER_FETCH_POSTGRES_1 10000
@@ -6352,7 +6405,7 @@ GUI INTEGER POSTGRES_IN_PORT_POSTGRES_2 Port:
 DEFAULT_MACRO POSTGRES_IN_USER_NAME_POSTGRES_2 sige
 POSTGRES_2_USER_NAME "$(POSTGRES_IN_USER_NAME_POSTGRES_2)"
 GUI TEXT POSTGRES_IN_USER_NAME_POSTGRES_2 Username:
-DEFAULT_MACRO POSTGRES_IN_PASSWORD_POSTGRES_2 1234
+DEFAULT_MACRO POSTGRES_IN_PASSWORD_POSTGRES_2 db4wat$
 POSTGRES_2_PASSWORD "$(POSTGRES_IN_PASSWORD_POSTGRES_2)"
 GUI OPTIONAL PASSWORD POSTGRES_IN_PASSWORD_POSTGRES_2 Password:
 DEFAULT_MACRO POSTGRES_IN_FEATURES_PER_FETCH_POSTGRES_2 10000
@@ -6384,7 +6437,7 @@ GUI INTEGER POSTGRES_IN_PORT_POSTGRES_3 Port:
 DEFAULT_MACRO POSTGRES_IN_USER_NAME_POSTGRES_3 sige
 POSTGRES_3_USER_NAME "$(POSTGRES_IN_USER_NAME_POSTGRES_3)"
 GUI TEXT POSTGRES_IN_USER_NAME_POSTGRES_3 Username:
-DEFAULT_MACRO POSTGRES_IN_PASSWORD_POSTGRES_3 1234
+DEFAULT_MACRO POSTGRES_IN_PASSWORD_POSTGRES_3 db4wat$
 POSTGRES_3_PASSWORD "$(POSTGRES_IN_PASSWORD_POSTGRES_3)"
 GUI OPTIONAL PASSWORD POSTGRES_IN_PASSWORD_POSTGRES_3 Password:
 DEFAULT_MACRO POSTGRES_IN_FEATURES_PER_FETCH_POSTGRES_3 10000
@@ -6420,7 +6473,7 @@ GUI OPTIONAL INTEGER POSTGIS_OUT_PORT_POSTGIS_1 Port:
 DEFAULT_MACRO POSTGIS_OUT_USER_NAME_POSTGIS_1 sige
 POSTGIS_1_USER_NAME "$(POSTGIS_OUT_USER_NAME_POSTGIS_1)"
 GUI TEXT POSTGIS_OUT_USER_NAME_POSTGIS_1 Username:
-DEFAULT_MACRO POSTGIS_OUT_PASSWORD_POSTGIS_1 1234
+DEFAULT_MACRO POSTGIS_OUT_PASSWORD_POSTGIS_1 db4wat$
 POSTGIS_1_PASSWORD "$(POSTGIS_OUT_PASSWORD_POSTGIS_1)"
 GUI OPTIONAL PASSWORD POSTGIS_OUT_PASSWORD_POSTGIS_1 Password:
 # ============================================================================
@@ -6430,7 +6483,7 @@ POSTGIS_1_SPATIAL_COLUMN_TYPE "$(POSTGIS_OUT_SPATIAL_COLUMN_TYPE_POSTGIS_1)"
 GUI LOOKUP_CHOICE POSTGIS_OUT_SPATIAL_COLUMN_TYPE_POSTGIS_1 geometry%geography Spatial Column Type:
 # ============================================================================
 # Default spatial column name
-DEFAULT_MACRO POSTGIS_OUT_SPATIAL_COLUMN_NAME_POSTGIS_1 wkb_geometry
+DEFAULT_MACRO POSTGIS_OUT_SPATIAL_COLUMN_NAME_POSTGIS_1 geometry
 POSTGIS_1_SPATIAL_COLUMN_NAME "$(POSTGIS_OUT_SPATIAL_COLUMN_NAME_POSTGIS_1)"
 GUI TEXT POSTGIS_OUT_SPATIAL_COLUMN_NAME_POSTGIS_1 Spatial Column Name:
 DEFAULT_MACRO POSTGIS_OUT_GENERIC_GEOMETRY_POSTGIS_1 yes
@@ -6454,7 +6507,7 @@ POSTGIS_1_DATASET "$(DestDataset_POSTGIS_1)"
 #! END_DEST_HEADER
 #! END_HEADER
 
-LOG_FILENAME "$(FME_MF_DIR)oracle2postgres_pipes.log"
+LOG_FILENAME "$(FME_MF_DIR)oracle2postgres_pipes_75.log"
 LOG_APPEND NO
 LOG_MAX_FEATURES 200
 LOG_MAX_RECORDED_FEATURES 200
@@ -6495,7 +6548,7 @@ MULTI_READER_CONTINUE_ON_READER_FAILURE No
 
 # -------------------------------------------------------------------------
 
-MACRO WORKSPACE_NAME oracle2postgres_pipes
+MACRO WORKSPACE_NAME oracle2postgres_pipes_75
 MACRO FME_VIEWER_APP fmeview
 # -------------------------------------------------------------------------
 ORACLE8I_DB_1_DEF SIGE_DISTRIBUTION.WA_STRANG_GEO   ACCURACY_LEVEL               number(20,8)   AREA                         number(20,8)   AVG_DEV_XY                   number(20,8)   AVG_DEV_Z                    number(20,8)   AZIMUTH                      number(20,8)   CALC_CODE                    number(4,0)   CALC_NUMBER                  number(10,0)   CLIPPING                     number(1,0)   CREATION_CODE_XY_1           number(4,0)   CREATION_CODE_XY_2           number(4,0)   CREATION_CODE_XY_3           number(4,0)   CREATION_CODE_XY_4           number(4,0)   CREATION_CODE_XY_5           number(4,0)   CREATION_CODE_Z              number(4,0)   DA                           number(10,0)   DATE_CREATED                 date   DATE_DELETED                 date   DATE_MODIFIED                date   DELETED                      number(1,0)   DIM_X                        number(20,8)   DIM_Y                        number(20,8)   DTEXT                        number(1,0)   ESEQ                         number(10,0)   ETYPE                        number(4,0)   FID                          number(10,0)   FIELD_CODE                   number(4,0)   FRAME                        number(1,0)   GEO_CONSTRAINT               number(1,0)   GID                          number(10,0)   ID                           number(10,0)   INVISIBLE                    number(1,0)   LABEL_FROM                   number(10,0)   LABEL_TEXT                   varchar2(2000)   LABEL_TO                     number(10,0)   LINEATTRIBUTE_ID             number(10,0)   MUTATION_ID_CREATED          number(10,0)   MUTATION_ID_DELETED          number(10,0)   MUTATION_ID_MODIFIED         number(10,0)   MUTATION_STATUS_CREATED      number(10,0)   MUTATION_STATUS_DELETED      number(10,0)   M_DIRECTION                  number(20,8)   M_DISTANCE                   number(20,8)   ORIENTATION                  number(20,8)   ORIGIN                       number(4,0)   PERIMETER                    number(20,8)   QUALITY                      number(10,0)   SEQ                          number(10,0)   SEQ_ETYPE                    number(4,0)   SEQ_PARAM1                   number(20,8)   SEQ_PARAM1_2                 number(20,8)   SEQ_PARAM1_3                 number(20,8)   SEQ_PARAM1_4                 number(20,8)   SEQ_PARAM1_5                 number(20,8)   SEQ_PARAM2                   number(20,8)   SEQ_PARAM2_2                 number(20,8)   SEQ_PARAM2_3                 number(20,8)   SEQ_PARAM2_4                 number(20,8)   SEQ_PARAM2_5                 number(20,8)   SEQ_PARAM3                   number(20,8)   SEQ_PARAM3_2                 number(20,8)   SEQ_PARAM3_3                 number(20,8)   SEQ_PARAM3_4                 number(20,8)   SEQ_PARAM3_5                 number(20,8)   SOURCE                       number(10,0)   SPATIAL_INDEX_100            number(12,0)   SPATIAL_INDEX_200            number(12,0)   SPATIAL_INDEX_25             number(12,0)   SPATIAL_INDEX_400            number(12,0)   SPATIAL_INDEX_50             number(12,0)   TB_POINT_NUMBER              number(15,0)   TD_DA                        number(10,0)   TD_GROUP                     number(10,0)   TD_LAYER                     number(10,0)   TD_NUMBER                    varchar2(50)   TD_POINT_NUMBER              number(10,0)   USER_CREATED                 varchar2(255)   USER_DELETED                 varchar2(255)   USER_MODIFIED                varchar2(255)   X1                           number(20,8)   X2                           number(20,8)   X3                           number(20,8)   X4                           number(20,8)   X5                           number(20,8)   Y1                           number(20,8)   Y2                           number(20,8)   Y3                           number(20,8)   Y4                           number(20,8)   Y5                           number(20,8)   Z1                           number(20,8)   Z2                           number(20,8)   Z3                           number(20,8)   Z4                           number(20,8)   Z5                           number(20,8)   Z_DIFF                       number(20,8)   Z_TERRAIN                    number(20,8)
@@ -6506,7 +6559,7 @@ POSTGRES_1_DEF distribution.pipes_function   postgres_type                postgr
 # -------------------------------------------------------------------------
 POSTGRES_2_DEF distribution.pipes_material   postgres_type                postgres_none   postgres_sql_where_clause    ""   postgres_sql_statement       ""   id                           serial,PRIKEY   short_name                   varchar(6)   name                         varchar(30)   diameter                     varchar(10)   diameter_internal            varchar(10)   diameter_external            varchar(10)   _fancy_name                  varchar(16)
 # -------------------------------------------------------------------------
-POSTGRES_3_DEF distribution.zones   postgres_type                postgres_none   postgres_sql_where_clause    ""   postgres_sql_statement       ""   id                           serial,PRIKEY   short_name                   varchar(10)   name                         varchar(30),PRIKEY   lbl_x                        float8   lbl_y                        float8   lbl_a                        float8   wkb_geometry                 char(80)
+POSTGRES_3_DEF distribution.zones   postgres_type                postgres_none   postgres_sql_where_clause    ""   postgres_sql_statement       ""   id                           serial,PRIKEY   short_name                   varchar(10)   name                         varchar(30),PRIKEY   lbl_x                        float8   lbl_y                        float8   lbl_a                        float8   geometry                 char(80)
 
 # -------------------------------------------------------------------------
 
@@ -6602,7 +6655,7 @@ FACTORY_DEF * TeeFactory    FACTORY_NAME $(liner_WORKSPACE_NAME)_CoordinateSyste
 # this statically at parse time for efficiency sake
 
 MACRO $(liner_WORKSPACE_NAME)_GeometryExtractor_Function
-INCLUDE [ if {{wkb} == {fmebinary} } {               puts {MACRO $(liner_WORKSPACE_NAME)_GeometryExtractor_Function @Geometry(TO_ATTRIBUTE_BINARY,wkb_geometry) }           } elseif {{wkb} == {fmehex} } {               puts {MACRO $(liner_WORKSPACE_NAME)_GeometryExtractor_Function @Geometry(TO_ATTRIBUTE_BINARY_HEX,wkb_geometry) }           } elseif {{wkb} == {fmexml} } {               puts {MACRO $(liner_WORKSPACE_NAME)_GeometryExtractor_Function @Geometry(TO_ATTRIBUTE,wkb_geometry) }           } elseif {{wkb} == {wkt} ||                      {wkb} == {wkb} ||                      {wkb} == {wkbhex} } {               puts {MACRO $(liner_WORKSPACE_NAME)_GeometryExtractor_Function @OGCGeometry(to_attribute,wkb,wkb_geometry,1.1) }           } elseif {{wkb} == {GEOJSON} ||                     {wkb} == {ESRIJSON} } {               puts {MACRO $(liner_WORKSPACE_NAME)_GeometryExtractor_Function @JSONGeometry(TO_ATTRIBUTE,wkb,wkb_geometry) }           } elseif {{wkb} == {KML} } {               puts {MACRO $(liner_WORKSPACE_NAME)_GeometryExtractor_Function @KMLGeometry(TO_ATTRIBUTE,wkb_geometry) }           } elseif {{wkb} == {GEORSS_SIMPLE} } {               puts {MACRO $(liner_WORKSPACE_NAME)_GeometryExtractor_Function @GeoRSSGeometry(TO_ATTRIBUTE,wkb,wkb_geometry) }           } elseif {{wkb} == {GML_3.1.1} ||                      {wkb} == {GML_3.2.1} } {               puts {MACRO $(liner_WORKSPACE_NAME)_GeometryExtractor_Function @GMLGeometry(TO_ATTRIBUTE,wkb,wkb_geometry) }           }         ]
+INCLUDE [ if {{wkb} == {fmebinary} } {               puts {MACRO $(liner_WORKSPACE_NAME)_GeometryExtractor_Function @Geometry(TO_ATTRIBUTE_BINARY,geometry) }           } elseif {{wkb} == {fmehex} } {               puts {MACRO $(liner_WORKSPACE_NAME)_GeometryExtractor_Function @Geometry(TO_ATTRIBUTE_BINARY_HEX,geometry) }           } elseif {{wkb} == {fmexml} } {               puts {MACRO $(liner_WORKSPACE_NAME)_GeometryExtractor_Function @Geometry(TO_ATTRIBUTE,geometry) }           } elseif {{wkb} == {wkt} ||                      {wkb} == {wkb} ||                      {wkb} == {wkbhex} } {               puts {MACRO $(liner_WORKSPACE_NAME)_GeometryExtractor_Function @OGCGeometry(to_attribute,wkb,geometry,1.1) }           } elseif {{wkb} == {GEOJSON} ||                     {wkb} == {ESRIJSON} } {               puts {MACRO $(liner_WORKSPACE_NAME)_GeometryExtractor_Function @JSONGeometry(TO_ATTRIBUTE,wkb,geometry) }           } elseif {{wkb} == {KML} } {               puts {MACRO $(liner_WORKSPACE_NAME)_GeometryExtractor_Function @KMLGeometry(TO_ATTRIBUTE,geometry) }           } elseif {{wkb} == {GEORSS_SIMPLE} } {               puts {MACRO $(liner_WORKSPACE_NAME)_GeometryExtractor_Function @GeoRSSGeometry(TO_ATTRIBUTE,wkb,geometry) }           } elseif {{wkb} == {GML_3.1.1} ||                      {wkb} == {GML_3.2.1} } {               puts {MACRO $(liner_WORKSPACE_NAME)_GeometryExtractor_Function @GMLGeometry(TO_ATTRIBUTE,wkb,geometry) }           }         ]
 FACTORY_DEF * TeeFactory    FACTORY_NAME $(liner_WORKSPACE_NAME)_GeometryExtractor    INPUT  FEATURE_TYPE "$(liner_WORKSPACE_NAME)_CoordinateSystemSetter_OUTPUT"    OUTPUT FEATURE_TYPE "$(liner_WORKSPACE_NAME)_GeometryExtractor_OUTPUT"         $($(liner_WORKSPACE_NAME)_GeometryExtractor_Function)
 
 FACTORY_DEF * TeeFactory   FACTORY_NAME "$(liner_WORKSPACE_NAME)_AttributeRemover_4_OUTPUT_86 Output Collector"   INPUT FEATURE_TYPE "$(liner_WORKSPACE_NAME)_GeometryExtractor_OUTPUT"   OUTPUT FEATURE_TYPE "$(liner_WORKSPACE_NAME)_AttributeRemover_4_OUTPUT_86"
@@ -6755,8 +6808,15 @@ FACTORY_DEF * TeeFactory    FACTORY_NAME $(pipes_material_WORKSPACE_NAME)_Attrib
 
 FACTORY_DEF * ReferenceFactory    FACTORY_NAME $(pipes_material_WORKSPACE_NAME)_FeatureMerger_2    INPUT REFERENCER FEATURE_TYPE "$(pipes_material_WORKSPACE_NAME)_AttributeSetter_3_OUTPUT"    INPUT REFERENCER FEATURE_TYPE "$(pipes_material_WORKSPACE_NAME)_AttributeFilter_3_<UNFILTERED>"    INPUT REFERENCEE FEATURE_TYPE "$(pipes_material_WORKSPACE_NAME)_AttributeRenamer_2_OUTPUT"    REFERENCE_INFO ATTRIBUTES    REFERENCEE_FIELDS "_fancy_name"    REFERENCER_FIELDS "joined_material_text"    MERGE_ATTRIBUTES Yes    MANAGE_FME_TYPE Yes    MODE COMPLETE    PROCESS_DUPLICATE_REFERENCEES No    BUILD_INCOMPLETE_REFERENCERS No    OUTPUT COMPLETE FEATURE_TYPE "$(pipes_material_WORKSPACE_NAME)_FeatureMerger_2_COMPLETE"    OUTPUT INCOMPLETE FEATURE_TYPE "$(pipes_material_WORKSPACE_NAME)_FeatureMerger_2_INCOMPLETE"    OUTPUT NO_REFERENCES FEATURE_TYPE "$(pipes_material_WORKSPACE_NAME)_FeatureMerger_2_EMPTY"
 
+FACTORY_DEF * TeeFactory   FACTORY_NAME "$(pipes_material_WORKSPACE_NAME)_FeatureMerger_2 INCOMPLETE Splitter"   INPUT FEATURE_TYPE "$(pipes_material_WORKSPACE_NAME)_FeatureMerger_2_INCOMPLETE"   OUTPUT FEATURE_TYPE "$(pipes_material_WORKSPACE_NAME)_FeatureMerger_2_INCOMPLETE_0"   OUTPUT FEATURE_TYPE "$(pipes_material_WORKSPACE_NAME)_FeatureMerger_2_INCOMPLETE_1"
+FACTORY_DEF * TeeFactory   FACTORY_NAME "$(pipes_material_WORKSPACE_NAME)_FeatureMerger_2 EMPTY Splitter"   INPUT FEATURE_TYPE "$(pipes_material_WORKSPACE_NAME)_FeatureMerger_2_EMPTY"   OUTPUT FEATURE_TYPE "$(pipes_material_WORKSPACE_NAME)_FeatureMerger_2_EMPTY_0"   OUTPUT FEATURE_TYPE "$(pipes_material_WORKSPACE_NAME)_FeatureMerger_2_EMPTY_1"
+# -------------------------------------------------------------------------
+
+FACTORY_DEF * TeeFactory    FACTORY_NAME $(pipes_material_WORKSPACE_NAME)_Logger_2_Logger    INPUT  FEATURE_TYPE "$(pipes_material_WORKSPACE_NAME)_FeatureMerger_2_EMPTY_1"    INPUT  FEATURE_TYPE "$(pipes_material_WORKSPACE_NAME)_FeatureMerger_2_INCOMPLETE_1"    OUTPUT FEATURE_TYPE * @FeatureType("") @Log("Feature is:",20,20) @FeatureType(__NUKE_LOGGED__)
+FACTORY_DEF * TeeFactory    FACTORY_NAME $(pipes_material_WORKSPACE_NAME)_Logger_2_Nuker    INPUT FEATURE_TYPE __NUKE_LOGGED__
+
 FACTORY_DEF * TeeFactory   FACTORY_NAME "$(pipes_material_WORKSPACE_NAME)_ok Output Collector"   INPUT FEATURE_TYPE "$(pipes_material_WORKSPACE_NAME)_FeatureMerger_2_COMPLETE"   OUTPUT FEATURE_TYPE "$(pipes_material_WORKSPACE_NAME)_ok"
-FACTORY_DEF * TeeFactory   FACTORY_NAME "$(pipes_material_WORKSPACE_NAME)_material_error Output Collector"   INPUT FEATURE_TYPE "$(pipes_material_WORKSPACE_NAME)_FeatureMerger_2_INCOMPLETE"   INPUT FEATURE_TYPE "$(pipes_material_WORKSPACE_NAME)_FeatureMerger_2_EMPTY"   OUTPUT FEATURE_TYPE "$(pipes_material_WORKSPACE_NAME)_material_error"
+FACTORY_DEF * TeeFactory   FACTORY_NAME "$(pipes_material_WORKSPACE_NAME)_material_error Output Collector"   INPUT FEATURE_TYPE "$(pipes_material_WORKSPACE_NAME)_FeatureMerger_2_INCOMPLETE_0"   INPUT FEATURE_TYPE "$(pipes_material_WORKSPACE_NAME)_FeatureMerger_2_EMPTY_0"   OUTPUT FEATURE_TYPE "$(pipes_material_WORKSPACE_NAME)_material_error"
 INCLUDE [puts {MACRO WB_CURRENT_CONTEXT $(WB_OLD_CONTEXT_$(pipes_material_WORKSPACE_NAME))}]
 FACTORY_DEF * TeeFactory   FACTORY_NAME "pipes_material ok Output Renamer/Nuker"   INPUT FEATURE_TYPE pipes_material_ok   OUTPUT FEATURE_TYPE pipes_material_ok
 FACTORY_DEF * TeeFactory   FACTORY_NAME "pipes_material material_error Output Renamer/Nuker"   INPUT FEATURE_TYPE pipes_material_material_error
@@ -6849,4 +6909,4 @@ FACTORY_DEF * TestFactory   FACTORY_NAME "Final Output Feature Type Router"   IN
 FACTORY_DEF * TeeFactory   FACTORY_NAME "Final Output Nuker"   INPUT FEATURE_TYPE __nuke_me__
 
 # -------------------------------------------------------------------------
-POSTGIS_1_DEF distribution.pipes   postgis_type                 postgis_geometry   postgis_mode                 INHERIT_FROM_WRITER   postgis_spatial_column_type  geometry   postgis_spatial_column       wkb_geometry   postgis_srid                 21781   postgis_drop_table           NO   postgis_truncate_table       YES   postgis_create_with_oids     NO   postgis_create_gist_index    YES   postgis_vacuum_analyze       YES   postgis_allow_serial_writing YES   coating_external_material_id char(20)   coating_internal_material_id char(20)   folder                       char(20)   id                           serial,PRIKEY   id_function                  int4   id_install_method            char(20)   id_material                  int4   id_owner                     char(20)   id_parent                    int4   id_precision                 char(20)   id_status                    int4   id_zone                      int4   material_ext_diam            char(20)   material_int_diam            char(20)   material_nominal_diam        char(20)   material_thickness           char(20)   pressure_nominale            char(20)   protection_coating_detail    char(20)   remarks                      char(20)   schema_force_view            bool   year                         char(20)
+POSTGIS_1_DEF distribution.pipes   postgis_type                 postgis_geometry   postgis_mode                 INHERIT_FROM_WRITER   postgis_spatial_column_type  geometry   postgis_spatial_column       geometry   postgis_srid                 21781   postgis_drop_table           NO   postgis_truncate_table       YES   postgis_create_with_oids     NO   postgis_create_gist_index    YES   postgis_vacuum_analyze       YES   postgis_allow_serial_writing YES   coating_external_material_id char(20)   coating_internal_material_id char(20)   folder                       char(20)   id                           serial,PRIKEY   id_function                  int4   id_install_method            char(20)   id_material                  int4   id_owner                     char(20)   id_parent                    int4   id_precision                 char(20)   id_status                    int4   id_zone                      int4   material_ext_diam            char(20)   material_int_diam            char(20)   material_nominal_diam        char(20)   material_thickness           char(20)   pressure_nominale            char(20)   protection_coating_detail    char(20)   remarks                      char(20)   schema_force_view            bool   year                         char(20)
