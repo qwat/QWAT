@@ -44,37 +44,37 @@ ALTER TABLE distribution.pipes ADD COLUMN   coating_external_material_id charact
 ALTER TABLE distribution.pipes ADD CONSTRAINT pipes_pkey PRIMARY KEY (id);
 /* id_parent */
 ALTER TABLE distribution.pipes ADD CONSTRAINT pipes_id_parent FOREIGN KEY (id_parent) REFERENCES distribution.pipes (id) MATCH SIMPLE ON UPDATE NO ACTION ON DELETE NO ACTION;
-CREATE INDEX fki_id_parent ON distribution.pipes(id_parent);
+CREATE INDEX fki_pipes_id_parent ON distribution.pipes(id_parent);
 /* function */
 ALTER TABLE distribution.pipes ADD CONSTRAINT pipes_id_function FOREIGN KEY (id_function) REFERENCES distribution.pipes_function(id) MATCH FULL ON UPDATE NO ACTION ON DELETE NO ACTION;
-CREATE INDEX fki_id_function ON distribution.pipes(id_function);
+CREATE INDEX fki_pipes_id_function ON distribution.pipes(id_function);
 /* id_install_method */
 ALTER TABLE distribution.pipes ADD CONSTRAINT pipes_id_install_method FOREIGN KEY (id_install_method) REFERENCES distribution.pipes_install_method(id) MATCH FULL ON UPDATE NO ACTION ON DELETE NO ACTION;
-CREATE INDEX fki_id_install_method ON distribution.pipes(id_install_method);
+CREATE INDEX fki_pipes_id_install_method ON distribution.pipes(id_install_method);
 /* id_material */
 ALTER TABLE distribution.pipes ADD CONSTRAINT pipes_id_material FOREIGN KEY (id_material) REFERENCES distribution.pipes_material(id) MATCH FULL ON UPDATE NO ACTION ON DELETE NO ACTION;
-CREATE INDEX fki_id_material ON distribution.pipes(id_material);
+CREATE INDEX fki_pipes_id_material ON distribution.pipes(id_material);
 /* id_owner */
 ALTER TABLE distribution.pipes ADD CONSTRAINT pipes_id_owner FOREIGN KEY (id_owner) REFERENCES distribution.owner(id) MATCH SIMPLE ON UPDATE NO ACTION ON DELETE NO ACTION;
-CREATE INDEX fki_id_owner ON distribution.pipes(id_owner);
+CREATE INDEX fki_pipes_id_owner ON distribution.pipes(id_owner);
 /* id_precision */
 ALTER TABLE distribution.pipes ADD CONSTRAINT pipes_id_precision FOREIGN KEY (id_precision) REFERENCES distribution."precision"(id) MATCH FULL ON UPDATE NO ACTION ON DELETE NO ACTION;
-CREATE INDEX fki_id_precision ON distribution.pipes(id_precision);
+CREATE INDEX fki_pipes_id_precision ON distribution.pipes(id_precision);
 /* id_protection */
 ALTER TABLE distribution.pipes ADD CONSTRAINT pipes_id_protection FOREIGN KEY (id_protection) REFERENCES distribution.pipes_protection(id) MATCH SIMPLE ON UPDATE NO ACTION ON DELETE NO ACTION;
-CREATE INDEX fki_id_protection ON distribution.pipes(id_protection);
+CREATE INDEX fki_pipes_id_protection ON distribution.pipes(id_protection);
 /* id_status */
 ALTER TABLE distribution.pipes ADD CONSTRAINT pipes_id_status FOREIGN KEY (id_status) REFERENCES distribution.pipes_status(id) MATCH FULL ON UPDATE NO ACTION ON DELETE NO ACTION;
-CREATE INDEX fki_id_status ON distribution.pipes(id_status);
+CREATE INDEX fki_pipes_id_status ON distribution.pipes(id_status);
 /* id_pressure_zone */
 ALTER TABLE distribution.pipes ADD CONSTRAINT pipes_id_pressure_zone FOREIGN KEY (id_pressure_zone) REFERENCES distribution.pressure_zones(id) MATCH SIMPLE ON UPDATE NO ACTION ON DELETE NO ACTION;
-CREATE INDEX fki_id_pressure_zone ON distribution.pipes(id_pressure_zone);
+CREATE INDEX fki_pipes_id_pressure_zone ON distribution.pipes(id_pressure_zone);
 /* id_node_a */
 ALTER TABLE distribution.pipes ADD CONSTRAINT pipes_id_node_a FOREIGN KEY (id_node_a) REFERENCES distribution.nodes(id) MATCH SIMPLE ON UPDATE NO ACTION ON DELETE NO ACTION;
-CREATE INDEX fki_id_node_a ON distribution.pipes(id_node_a);
+CREATE INDEX fki_pipes_id_node_a ON distribution.pipes(id_node_a);
 /* id_node_b */
 ALTER TABLE distribution.pipes ADD CONSTRAINT pipes_id_node_b FOREIGN KEY (id_node_b) REFERENCES distribution.nodes(id) MATCH SIMPLE ON UPDATE NO ACTION ON DELETE NO ACTION;
-CREATE INDEX fki_id_node_b ON distribution.pipes(id_node_b);
+CREATE INDEX fki_pipes_id_node_b ON distribution.pipes(id_node_b);
 /* Geometry */
 /*
 ALTER TABLE distribution.pipes ADD CONSTRAINT enforce_dims_wkb_geometry CHECK (st_ndims(wkb_geometry) = 2);
