@@ -11,7 +11,7 @@ SELECT setval('distribution.valves_id_seq', 30000, true);
 ALTER TABLE distribution.valves ADD COLUMN   _is_on_map varchar(80) DEFAULT '';                      /* _is_on_map           */
 ALTER TABLE distribution.valves ADD COLUMN   _is_on_district varchar(100) DEFAULT '';                /* _is_on_district      */
 
-ALTER TABLE distribution.valves ADD COLUMN   wkb_geometry geometry;                                  /* wkb_geometry         */
+ALTER TABLE distribution.valves ADD COLUMN   geometry geometry;                                  /* geometry         */
 
 
 
@@ -21,11 +21,11 @@ ALTER TABLE distribution.valves ADD COLUMN   wkb_geometry geometry;             
 /* primary key */
 ALTER TABLE distribution.valves ADD CONSTRAINT valves_pkey PRIMARY KEY (id);
 /* Geometry */
-ALTER TABLE distribution.valves ADD CONSTRAINT enforce_dims_wkb_geometry CHECK (st_ndims(wkb_geometry) = 2);
-ALTER TABLE distribution.valves ADD CONSTRAINT enforce_geotype_wkb_geometry CHECK (geometrytype(wkb_geometry) = 'POINT'::text OR wkb_geometry IS NULL);
-ALTER TABLE distribution.valves ADD CONSTRAINT enforce_srid_wkb_geometry CHECK (st_srid(wkb_geometry) = 21781);
+ALTER TABLE distribution.valves ADD CONSTRAINT enforce_dims_geometry CHECK (st_ndims(geometry) = 2);
+ALTER TABLE distribution.valves ADD CONSTRAINT enforce_geotype_geometry CHECK (geometrytype(geometry) = 'POINT'::text OR geometry IS NULL);
+ALTER TABLE distribution.valves ADD CONSTRAINT enforce_srid_geometry CHECK (st_srid(geometry) = 21781);
 /* GIST index*/
-CREATE INDEX valves_geoidx ON distribution.valves USING GIST ( wkb_geometry );
+CREATE INDEX valves_geoidx ON distribution.valves USING GIST ( geometry );
 
 /*----------------!!!---!!!----------------*/
 /* Comment */
@@ -36,8 +36,8 @@ COMMENT ON TABLE distribution.valves IS 'Table for valves.';
 CREATE OR REPLACE FUNCTION distribution.valves_geom() RETURNS trigger AS ' 
 	BEGIN
 		UPDATE distribution.valves SET 
-			_is_on_map         = distribution.get_map(NEW.wkb_geometry),
-			_is_on_district    = distribution.get_district(NEW.wkb_geometry)
+			_is_on_map         = distribution.get_map(NEW.geometry),
+			_is_on_district    = distribution.get_district(NEW.geometry)
 		WHERE id = NEW.id ;
 		RETURN NEW;
 	END;
@@ -45,7 +45,7 @@ CREATE OR REPLACE FUNCTION distribution.valves_geom() RETURNS trigger AS '
 COMMENT ON FUNCTION distribution.valves_geom() IS 'Fcn/Trigger: updates auto fields of the valve after insert/update.';
 
 CREATE TRIGGER valves_geom_trigger 
-	AFTER INSERT OR UPDATE OF wkb_geometry ON distribution.valves
+	AFTER INSERT OR UPDATE OF geometry ON distribution.valves
 	FOR EACH ROW
 	EXECUTE PROCEDURE distribution.valves_geom();
 COMMENT ON TRIGGER valves_geom_trigger ON distribution.valves IS 'Trigger: updates auto fields of the valve after insert/update.';

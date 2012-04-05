@@ -15,7 +15,7 @@ ALTER TABLE distribution.dimension ADD COLUMN  lbl_x double precision;
 ALTER TABLE distribution.dimension ADD COLUMN  lbl_y double precision;
 ALTER TABLE distribution.dimension ADD COLUMN  lbl_a double precision;
 
-SELECT AddGeometryColumn('distribution','dimension','wkb_geometry',21781,'MULTIPOINT',2);
+SELECT AddGeometryColumn('distribution','dimension','geometry',21781,'MULTIPOINT',2);
 
 
 /* ADD CONSTRAINTS */
@@ -29,7 +29,7 @@ COMMENT ON TABLE distribution.dimension IS 'dimension arcs displays measures don
 CREATE OR REPLACE FUNCTION distribution.dimension_geom() RETURNS trigger AS ' 
 	BEGIN
 		UPDATE distribution.dimension SET 
-			_distance_terrain = ST_Distance( ST_GeometryN(NEW.wkb_geometry,1) , ST_GeometryN(NEW.wkb_geometry,ST_NumGeometries(NEW.wkb_geometry)) )
+			_distance_terrain = ST_Distance( ST_GeometryN(NEW.geometry,1) , ST_GeometryN(NEW.geometry,ST_NumGeometries(NEW.geometry)) )
 		WHERE id = NEW.id ;
 		RETURN NEW;
 	END;
@@ -37,7 +37,7 @@ CREATE OR REPLACE FUNCTION distribution.dimension_geom() RETURNS trigger AS '
 COMMENT ON FUNCTION distribution.dimension_geom() IS 'Fcn/Trigger: updates the map distance between the two extremities of the arc.';
 
 CREATE TRIGGER dimension_geom_trigger 
-	AFTER INSERT OR UPDATE OF wkb_geometry ON distribution.dimension
+	AFTER INSERT OR UPDATE OF geometry ON distribution.dimension
 	FOR EACH ROW
 	EXECUTE PROCEDURE distribution.dimension_geom();
 COMMENT ON TRIGGER dimension_geom_trigger ON distribution.dimension IS 'Trigger: updates the length and other fields of the pipe after insert/update.';
@@ -50,12 +50,12 @@ CREATE VIEW distribution.dimension_view AS
 		ST_CurveToLine(
 			ST_GeomFromEWKT(
 				'SRID=21781;CIRCULARSTRING('
-					||ST_X(ST_GeometryN(wkb_geometry,1))||' '||ST_Y(ST_GeometryN(wkb_geometry,1))||','
-					||ST_X(ST_GeometryN(wkb_geometry,2))||' '||ST_Y(ST_GeometryN(wkb_geometry,2))||','
-					||ST_X(ST_GeometryN(wkb_geometry,3))||' '||ST_Y(ST_GeometryN(wkb_geometry,3))
+					||ST_X(ST_GeometryN(geometry,1))||' '||ST_Y(ST_GeometryN(geometry,1))||','
+					||ST_X(ST_GeometryN(geometry,2))||' '||ST_Y(ST_GeometryN(geometry,2))||','
+					||ST_X(ST_GeometryN(geometry,3))||' '||ST_Y(ST_GeometryN(geometry,3))
 					||')'
 			)
-		,12)::geometry(LINESTRING,21781) AS wkb_geometry
+		,12)::geometry(LINESTRING,21781) AS geometry
 	FROM   distribution.dimension;
 	
 /* Comment */	

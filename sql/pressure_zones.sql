@@ -14,7 +14,7 @@ ALTER TABLE distribution.pressure_zones ADD COLUMN  short_name    varchar(10);
 ALTER TABLE distribution.pressure_zones ADD COLUMN  name          varchar(30);
 ALTER TABLE distribution.pressure_zones ADD COLUMN  consummer_zone varchar(30);
 
-SELECT AddGeometryColumn('distribution', 'pressure_zones', 'wkb_geometry', 21781, 'POLYGON', 2);
+SELECT AddGeometryColumn('distribution', 'pressure_zones', 'geometry', 21781, 'POLYGON', 2);
 
 /* ADD CONSTRAINTS */
 /* primary key */

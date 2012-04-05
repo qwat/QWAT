@@ -16,7 +16,7 @@ ALTER TABLE distribution.printmaps ADD COLUMN  template  varchar(50);
 ALTER TABLE distribution.printmaps ADD COLUMN  _east  double precision;
 ALTER TABLE distribution.printmaps ADD COLUMN  _north  double precision;
 
-SELECT AddGeometryColumn('distribution', 'printmaps', 'wkb_geometry', 21781, 'POLYGON', 2);
+SELECT AddGeometryColumn('distribution', 'printmaps', 'geometry', 21781, 'POLYGON', 2);
 
 /* ADD CONSTRAINTS */
 /* primary key */
@@ -30,8 +30,8 @@ COMMENT ON TABLE distribution.printmaps IS 'This table is used for polygons for 
 CREATE OR REPLACE FUNCTION distribution.printmaps_geom() RETURNS trigger AS ' 
 	BEGIN
 		UPDATE distribution.printmaps SET 
-			_east   = ST_XMax(BOX2D(NEW.wkb_geometry))-ST_XMin(BOX2D(NEW.wkb_geometry)),
-			_north  = ST_YMax(BOX2D(NEW.wkb_geometry))-ST_YMin(BOX2D(NEW.wkb_geometry))
+			_east   = ST_XMax(BOX2D(NEW.geometry))-ST_XMin(BOX2D(NEW.geometry)),
+			_north  = ST_YMax(BOX2D(NEW.geometry))-ST_YMin(BOX2D(NEW.geometry))
 		WHERE id = NEW.id ;
 		RETURN NEW;
 	END;
@@ -39,7 +39,7 @@ CREATE OR REPLACE FUNCTION distribution.printmaps_geom() RETURNS trigger AS '
 COMMENT ON FUNCTION distribution.printmaps_geom() IS 'Fcn/Trigger: updates the size of the bounding box into width/length fields.';
 
 CREATE TRIGGER printmaps_geom_trigger 
-	AFTER INSERT OR UPDATE OF wkb_geometry ON distribution.printmaps
+	AFTER INSERT OR UPDATE OF geometry ON distribution.printmaps
 	FOR EACH ROW
 	EXECUTE PROCEDURE distribution.printmaps_geom();
 COMMENT ON TRIGGER printmaps_geom_trigger ON distribution.printmaps IS 'Trigger: updates the size of the bounding box into width/length fields.';
@@ -54,7 +54,7 @@ CREATE OR REPLACE FUNCTION distribution.get_map(geometry) RETURNS text AS '
 	BEGIN
 		SELECT left(distribution.tsum(printmaps.short_name || '', ''),-2) INTO result
 			FROM  distribution.printmaps
-			WHERE ST_Intersects(geometry,printmaps.wkb_geometry) IS TRUE;
+			WHERE ST_Intersects(geometry,printmaps.geometry) IS TRUE;
 		RETURN result;
 	END
 ' LANGUAGE 'plpgsql';

@@ -20,7 +20,7 @@ CREATE OR REPLACE VIEW distribution.pipes_schema_viewableitems AS
 		_length2d,
 		_length3d,
 		_length3d_uptodate,
-		wkb_geometry::geometry(LineString,21781)
+		geometry::geometry(LineString,21781)
 	  FROM distribution.pipes_view
 		WHERE _schema_view IS TRUE
 		AND _status_active IS TRUE;
@@ -58,7 +58,7 @@ View of pipes with group ID
 */
 CREATE OR REPLACE VIEW distribution.pipes_schema_items AS 
 	SELECT 
-		wkb_geometry::geometry(LineString,21781),
+		geometry::geometry(LineString,21781),
 		distribution.get_parent(id,id_parent) AS groupid,
 		_length2d,
 		_length3d,
@@ -70,7 +70,7 @@ Merging of pipes based on the group ID
 */
 CREATE OR REPLACE VIEW distribution.pipes_schema_merged AS
 	SELECT 	groupid AS id, 
-			ST_LineMerge(ST_Union(wkb_geometry))::geometry(LineString,21781) AS wkb_geometry,
+			ST_LineMerge(ST_Union(geometry))::geometry(LineString,21781) AS geometry,
 			COUNT(groupid) AS number_of_pipes,
 			SUM(_length2d) AS _length2d,
 			SUM(_length3d) AS _length3d,
@@ -119,7 +119,7 @@ CREATE OR REPLACE VIEW distribution.pipes_schema AS
 			pipes_schema_merged._length3d         ,
 			pipes_schema_merged._length3d_uptodate,
 			pipes_schema_merged.number_of_pipes   ,
-			pipes_schema_merged.wkb_geometry::geometry(LineString,21781) AS wkb_geometry
+			pipes_schema_merged.geometry::geometry(LineString,21781) AS geometry
 	  FROM distribution.pipes_schema_merged
 	 INNER JOIN distribution.pipes_view ON pipes_view.id = pipes_schema_merged.id;
 COMMENT ON VIEW distribution.pipes_schema IS 'Final view for schema';
@@ -130,16 +130,16 @@ Report schema errors
 CREATE OR REPLACE VIEW distribution.pipes_schema_error AS
 	SELECT id FROM 
 	 ( 	SELECT 	groupid AS id, 
-				ST_Multi(ST_LineMerge(ST_Union(wkb_geometry)))::geometry(MultiLineString,21781) AS wkb_geometry
+				ST_Multi(ST_LineMerge(ST_Union(geometry)))::geometry(MultiLineString,21781) AS geometry
 		  FROM distribution.pipes_schema_items
 		 GROUP BY groupid 
 	 ) AS foo
-	 WHERE geometryType(ST_CollectionHomogenize(wkb_geometry)) != 'LINESTRING';
+	 WHERE geometryType(ST_CollectionHomogenize(geometry)) != 'LINESTRING';
 COMMENT ON VIEW distribution.pipes_schema_error IS 'Report IDs of parent pipes where pipe concatenation leads to a MultiLineString and not to a LineString.';
 /*
 view to display arrows from children to parent
 this shoud be used as soon as ST_lineToCurve works for 3 points
-		ST_CurveToLine(ST_LineToCurve( ST_AddPoint( vector , ST_MakePoint( ST_X(middle_point)+distance*cos(azimuth),ST_Y(middle_point)+distance*sin(azimuth) ) , 1 ) ) ,15)::geometry(LineString,21781) AS wkb_geometry
+		ST_CurveToLine(ST_LineToCurve( ST_AddPoint( vector , ST_MakePoint( ST_X(middle_point)+distance*cos(azimuth),ST_Y(middle_point)+distance*sin(azimuth) ) , 1 ) ) ,15)::geometry(LineString,21781) AS geometry
 then this should be added to select of foo2
 		ST_MakeLine( start_point , end_point )::geometry(LineString,21781) AS vector,
 */
@@ -152,7 +152,7 @@ CREATE OR REPLACE VIEW distribution.pipe_child_parent AS
 			||','||
 			ST_X(end_point)||' '||ST_Y(end_point) 
 			||')'
-		),15)::geometry(LineString,21781) AS wkb_geometry
+		),15)::geometry(LineString,21781) AS geometry
 	FROM (
 		SELECT child,parent,
 			start_point , end_point ,
@@ -161,12 +161,12 @@ CREATE OR REPLACE VIEW distribution.pipe_child_parent AS
 			ST_Line_Interpolate_Point(ST_MakeLine( start_point , end_point ),.5)::geometry(Point,21781) AS middle_point
 		FROM (
 			SELECT a.id AS child ,b.id AS parent, 
-					ST_Line_Interpolate_Point(a.wkb_geometry,.5)::geometry(Point,21781) AS start_point,
+					ST_Line_Interpolate_Point(a.geometry,.5)::geometry(Point,21781) AS start_point,
 					/* select end_point at 4 meters from the closest side of the pipe */
 					ST_ClosestPoint(ST_MakeLine(  
-						ST_Line_Interpolate_Point(b.wkb_geometry,   LEAST(1,  4/b._length2d/2))::geometry(Point,21781) ,
-						ST_Line_Interpolate_Point(b.wkb_geometry,GREATEST(0,1-4/b._length2d/2))::geometry(Point,21781) 
-					),a.wkb_geometry) AS end_point
+						ST_Line_Interpolate_Point(b.geometry,   LEAST(1,  4/b._length2d/2))::geometry(Point,21781) ,
+						ST_Line_Interpolate_Point(b.geometry,GREATEST(0,1-4/b._length2d/2))::geometry(Point,21781) 
+					),a.geometry) AS end_point
 			FROM distribution.pipes a 
 			INNER JOIN distribution.pipes b ON a.id_parent = b.id
 			WHERE a.id_parent IS NOT NULL

@@ -16,7 +16,7 @@ ALTER TABLE distribution.subscriber ADD COLUMN   _is_on_map character varying (8
 ALTER TABLE distribution.subscriber ADD COLUMN   _is_on_district character varying (100) DEFAULT '';                /* _is_on_district      */
 
                                                                                                          
-ALTER TABLE distribution.subscriber ADD COLUMN   wkb_geometry geometry;                                  /* wkb_geometry         */
+ALTER TABLE distribution.subscriber ADD COLUMN   geometry geometry;                                  /* geometry         */
 
 
 
@@ -31,11 +31,11 @@ CREATE INDEX fki_id_type ON distribution.subscriber(id_type);
 ALTER TABLE distribution.subscriber ADD CONSTRAINT subscriber_id_pipe FOREIGN KEY (id_pipe) REFERENCES distribution.pipes (id) MATCH SIMPLE ON UPDATE NO ACTION ON DELETE NO ACTION;
 CREATE INDEX fki_id_pipe ON distribution.subscriber(id_pipe);
 /* Geometry */
-ALTER TABLE distribution.subscriber ADD CONSTRAINT enforce_dims_wkb_geometry CHECK (st_ndims(wkb_geometry) = 2);
-ALTER TABLE distribution.subscriber ADD CONSTRAINT enforce_geotype_wkb_geometry CHECK (geometrytype(wkb_geometry) = 'POINT'::text OR wkb_geometry IS NULL);
-ALTER TABLE distribution.subscriber ADD CONSTRAINT enforce_srid_wkb_geometry CHECK (st_srid(wkb_geometry) = 21781);
+ALTER TABLE distribution.subscriber ADD CONSTRAINT enforce_dims_geometry CHECK (st_ndims(geometry) = 2);
+ALTER TABLE distribution.subscriber ADD CONSTRAINT enforce_geotype_geometry CHECK (geometrytype(geometry) = 'POINT'::text OR geometry IS NULL);
+ALTER TABLE distribution.subscriber ADD CONSTRAINT enforce_srid_geometry CHECK (st_srid(geometry) = 21781);
 /* GIST index*/
-CREATE INDEX subscriber_geoidx ON distribution.subscriber USING GIST ( wkb_geometry );
+CREATE INDEX subscriber_geoidx ON distribution.subscriber USING GIST ( geometry );
 
 /*----------------!!!---!!!----------------*/
 /* Comment */
@@ -46,8 +46,8 @@ COMMENT ON TABLE distribution.subscriber IS 'Table for subscriber. This should n
 CREATE OR REPLACE FUNCTION distribution.subscriber_geom() RETURNS trigger AS ' 
 	BEGIN
 		UPDATE distribution.subscriber SET 
-			_is_on_map      = distribution.get_map(NEW.wkb_geometry),
-			_is_on_district = distribution.get_district(NEW.wkb_geometry)
+			_is_on_map      = distribution.get_map(NEW.geometry),
+			_is_on_district = distribution.get_district(NEW.geometry)
 		WHERE id = NEW.id ;
 		RETURN NEW;
 	END;
@@ -55,7 +55,7 @@ CREATE OR REPLACE FUNCTION distribution.subscriber_geom() RETURNS trigger AS '
 COMMENT ON FUNCTION distribution.subscriber_geom() IS 'Fcn/Trigger: updates the disctrict and map of the subscriber after insert/update.';
 
 CREATE TRIGGER subscriber_geom_trigger 
-	AFTER INSERT OR UPDATE OF wkb_geometry ON distribution.subscriber
+	AFTER INSERT OR UPDATE OF geometry ON distribution.subscriber
 	FOR EACH ROW
 	EXECUTE PROCEDURE distribution.subscriber_geom();
 COMMENT ON TRIGGER subscriber_geom_trigger ON distribution.subscriber IS 'Trigger: updates the disctrict and map of the subscriber after insert/update.';
@@ -75,7 +75,7 @@ CREATE VIEW distribution.subscriber_view AS
 		subscriber.parcel          ,
 		subscriber._is_on_map      ,
 		subscriber._is_on_district ,
-		subscriber.wkb_geometry::geometry(Point,21781),	
+		subscriber.geometry::geometry(Point,21781),	
 		subscriber_type.name             AS _type 
 		FROM distribution.subscriber
 		LEFT OUTER JOIN  distribution.subscriber_type            ON subscriber.id_type          = subscriber_type.id;

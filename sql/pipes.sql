@@ -32,7 +32,7 @@ ALTER TABLE distribution.pipes ADD COLUMN   _is_on_map varchar(80) DEFAULT '';  
 ALTER TABLE distribution.pipes ADD COLUMN   _is_on_district varchar(100) DEFAULT '';                /* _is_on_district      */
 
 
-SELECT addGeometryColumn('distribution', 'pipes', 'wkb_geometry', 21781, 'LINESTRING', 2);
+SELECT addGeometryColumn('distribution', 'pipes', 'geometry', 21781, 'LINESTRING', 2);
 
 
 ALTER TABLE distribution.pipes ADD COLUMN   coating_internal_material_id character(20);
@@ -76,7 +76,7 @@ CREATE INDEX fki_pipes_id_node_a ON distribution.pipes(id_node_a);
 ALTER TABLE distribution.pipes ADD CONSTRAINT pipes_id_node_b FOREIGN KEY (id_node_b) REFERENCES distribution.nodes(id) MATCH SIMPLE ON UPDATE NO ACTION ON DELETE NO ACTION;
 CREATE INDEX fki_pipes_id_node_b ON distribution.pipes(id_node_b);
 /* GIST index*/
-CREATE INDEX pipes_geoidx ON distribution.pipes USING GIST ( wkb_geometry );
+CREATE INDEX pipes_geoidx ON distribution.pipes USING GIST ( geometry );
 
 /*----------------!!!---!!!----------------*/
 /* Comment */
@@ -87,12 +87,12 @@ COMMENT ON TABLE distribution.pipes IS 'Table for pipes. This should not be used
 CREATE OR REPLACE FUNCTION distribution.pipes_geom() RETURNS trigger AS ' 
 	BEGIN
 		UPDATE distribution.pipes SET
-			id_node_a          = distribution.node_get_id(ST_StartPoint(NEW.wkb_geometry)),
-			id_node_b          = distribution.node_get_id(ST_EndPoint(  NEW.wkb_geometry)),
-			_length2d          = ST_Length(NEW.wkb_geometry),
+			id_node_a          = distribution.node_get_id(ST_StartPoint(NEW.geometry)),
+			id_node_b          = distribution.node_get_id(ST_EndPoint(  NEW.geometry)),
+			_length2d          = ST_Length(NEW.geometry),
 			_length3d_uptodate = False,
-			_is_on_map         = distribution.get_map(NEW.wkb_geometry),
-			_is_on_district    = distribution.get_district(NEW.wkb_geometry)
+			_is_on_map         = distribution.get_map(NEW.geometry),
+			_is_on_district    = distribution.get_district(NEW.geometry)
 		WHERE id = NEW.id ;
 		RETURN NEW;
 	END;
@@ -100,7 +100,7 @@ CREATE OR REPLACE FUNCTION distribution.pipes_geom() RETURNS trigger AS '
 COMMENT ON FUNCTION distribution.pipes_geom() IS 'Fcn/Trigger: updates the length and other fields of the pipe after insert/update.';
 
 CREATE TRIGGER pipes_geom_trigger 
-	AFTER INSERT OR UPDATE OF wkb_geometry ON distribution.pipes
+	AFTER INSERT OR UPDATE OF geometry ON distribution.pipes
 	FOR EACH ROW
 	EXECUTE PROCEDURE distribution.pipes_geom();
 COMMENT ON TRIGGER pipes_geom_trigger ON distribution.pipes IS 'Trigger: updates the length and other fields of the pipe after insert/update.';
@@ -152,7 +152,7 @@ CREATE VIEW distribution.pipes_view AS
 		pipes._length3d_uptodate,
 		pipes._is_on_map        ,
 		pipes._is_on_district   ,
-		pipes.wkb_geometry::geometry(LineString,21781),
+		pipes.geometry::geometry(LineString,21781),
 		sqrt(pow(_length3d,2)-pow(_length2d,2))/_length2d AS _slope,
 		pipes_function.function             AS _function_name, 
 		pipes_install_method.name           AS _install_method,
@@ -205,15 +205,15 @@ CREATE OR REPLACE RULE pipes_update AS
 			schema_force_view  = NEW.schema_force_view  ,
 			folder             = NEW.folder             ,
 			remarks            = NEW.remarks            ,
-			wkb_geometry       = NEW.wkb_geometry       ,
+			geometry       = NEW.geometry       ,
 			id_parent          = NULLIF(NEW.id_parent,0)::integer	
 		WHERE id = NEW.id;
 CREATE OR REPLACE RULE pipes_insert AS
 	ON INSERT TO distribution.pipes_view DO INSTEAD
 		INSERT INTO distribution.pipes 
-			(    id_function,    id_material,    id_status,    id_parent,    id_owner,    id_pressure_zone,    id_precision,    id_protection,    id_install_method,    year,    tunnel_or_bridge,    pressure_nominale,    schema_force_view,    folder,    remarks,    wkb_geometry)     
+			(    id_function,    id_material,    id_status,    id_parent,    id_owner,    id_pressure_zone,    id_precision,    id_protection,    id_install_method,    year,    tunnel_or_bridge,    pressure_nominale,    schema_force_view,    folder,    remarks,    geometry)     
 		VALUES
-			(NEW.id_function,NEW.id_material,NEW.id_status,NEW.id_parent,NEW.id_owner,NEW.id_pressure_zone,NEW.id_precision,NEW.id_protection,NEW.id_install_method,NEW.year,NEW.tunnel_or_bridge,NEW.pressure_nominale,NEW.schema_force_view,NEW.folder,NEW.remarks,NEW.wkb_geometry);
+			(NEW.id_function,NEW.id_material,NEW.id_status,NEW.id_parent,NEW.id_owner,NEW.id_pressure_zone,NEW.id_precision,NEW.id_protection,NEW.id_install_method,NEW.year,NEW.tunnel_or_bridge,NEW.pressure_nominale,NEW.schema_force_view,NEW.folder,NEW.remarks,NEW.geometry);
 CREATE OR REPLACE RULE pipes_delete AS
 	ON DELETE TO distribution.pipes_view DO INSTEAD
 		DELETE FROM distribution.pipes WHERE id = OLD.id;

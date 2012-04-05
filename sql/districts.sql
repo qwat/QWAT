@@ -20,7 +20,7 @@ ALTER TABLE distribution.districts ADD COLUMN  lbl_x double precision;
 ALTER TABLE distribution.districts ADD COLUMN  lbl_y double precision;
 ALTER TABLE distribution.districts ADD COLUMN  lbl_a double precision;
 
-SELECT AddGeometryColumn('distribution', 'districts', 'wkb_geometry', 21781, 'POLYGON', 2);
+SELECT AddGeometryColumn('distribution', 'districts', 'geometry', 21781, 'POLYGON', 2);
 
 /* ADD CONSTRAINTS */
 /* primary key */
@@ -39,7 +39,7 @@ CREATE OR REPLACE FUNCTION distribution.get_district(geometry) RETURNS text AS '
 	BEGIN
 		SELECT left(distribution.tsum(districts.name || '', ''),-2) INTO result
 			FROM  distribution.districts
-			WHERE ST_Intersects(geometry,districts.wkb_geometry) IS TRUE;
+			WHERE ST_Intersects(geometry,districts.geometry) IS TRUE;
 		RETURN result;
 	END
 ' LANGUAGE 'plpgsql';
@@ -48,7 +48,7 @@ COMMENT ON FUNCTION distribution.get_district(geometry) IS 'Returns a string con
 
 CREATE OR REPLACE FUNCTION distribution.fill_pipes_district() RETURNS boolean AS '
 	BEGIN
-		UPDATE distribution.pipes SET _is_on_district = distribution.get_district(pipes.wkb_geometry);	
+		UPDATE distribution.pipes SET _is_on_district = distribution.get_district(pipes.geometry);	
 		RETURN true;
 	END
 ' LANGUAGE 'plpgsql';
