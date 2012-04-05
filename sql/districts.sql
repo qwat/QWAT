@@ -34,12 +34,12 @@ COMMENT ON TABLE distribution.districts IS 'Districts.';
 /* FUNCTION */
 CREATE OR REPLACE FUNCTION distribution.get_district(geometry) RETURNS text AS '
 	DECLARE
-		geometry ALIAS FOR $1;
+		geom ALIAS FOR $1;
 		result text;
 	BEGIN
 		SELECT left(distribution.tsum(districts.name || '', ''),-2) INTO result
 			FROM  distribution.districts
-			WHERE ST_Intersects(geometry,districts.geometry) IS TRUE;
+			WHERE ST_Intersects(geom,districts.geometry) IS TRUE;
 		RETURN result;
 	END
 ' LANGUAGE 'plpgsql';

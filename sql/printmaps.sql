@@ -49,12 +49,12 @@ COMMENT ON TRIGGER printmaps_geom_trigger ON distribution.printmaps IS 'Trigger:
 /* FUNCTION  to get the map*/
 CREATE OR REPLACE FUNCTION distribution.get_map(geometry) RETURNS text AS '
 	DECLARE
-		geometry ALIAS FOR $1;
+		geom ALIAS FOR $1;
 		result text;
 	BEGIN
 		SELECT left(distribution.tsum(printmaps.short_name || '', ''),-2) INTO result
 			FROM  distribution.printmaps
-			WHERE ST_Intersects(geometry,printmaps.geometry) IS TRUE;
+			WHERE ST_Intersects(geom,printmaps.geometry) IS TRUE;
 		RETURN result;
 	END
 ' LANGUAGE 'plpgsql';
