@@ -75,12 +75,6 @@ CREATE INDEX fki_pipes_id_node_a ON distribution.pipes(id_node_a);
 /* id_node_b */
 ALTER TABLE distribution.pipes ADD CONSTRAINT pipes_id_node_b FOREIGN KEY (id_node_b) REFERENCES distribution.nodes(id) MATCH SIMPLE ON UPDATE NO ACTION ON DELETE NO ACTION;
 CREATE INDEX fki_pipes_id_node_b ON distribution.pipes(id_node_b);
-/* Geometry */
-/*
-ALTER TABLE distribution.pipes ADD CONSTRAINT enforce_dims_wkb_geometry CHECK (st_ndims(wkb_geometry) = 2);
-ALTER TABLE distribution.pipes ADD CONSTRAINT enforce_geotype_wkb_geometry CHECK (geometrytype(wkb_geometry) = 'LINESTRING'::text OR wkb_geometry IS NULL);
-ALTER TABLE distribution.pipes ADD CONSTRAINT enforce_srid_wkb_geometry CHECK (st_srid(wkb_geometry) = 21781);
-*/
 /* GIST index*/
 CREATE INDEX pipes_geoidx ON distribution.pipes USING GIST ( wkb_geometry );
 
