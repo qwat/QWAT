@@ -47,9 +47,9 @@ psql -h 172.24.171.$ip -U sige -f installations_type.sql
 read -p "Press any key to continue..."
 psql -h 172.24.171.$ip -U sige -f installations.sql
 read -p "Press any key to continue..."
-psql -h 172.24.171.$ip -U sige -f 3d.sql
+psql -h 172.24.171.$ip -U sige -f altitude.sql
 
-
+# SIGE DATA
 read -p "Press any key to continue..."
 psql -h 172.24.171.$ip -U sige -f sige_data/data_pressure_zones.sql
 

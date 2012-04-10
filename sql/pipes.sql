@@ -222,4 +222,25 @@ COMMENT ON RULE pipes_update IS 'Rule to forward changes for pipes_view to the t
 COMMENT ON RULE pipes_insert IS 'Rule to forward insert of pipes_view to the table pipes.';
 COMMENT ON RULE pipes_delete IS 'Rule to forward deletion of pipes_view to the table pipes.';
 
+/*----------------!!!---!!!----------------*/
+/* 3D Length */
+CREATE OR REPLACE FUNCTION distribution.pipes_length3d() RETURNS void AS '
+	DECLARE
+		length double precision;
+		pipeitem RECORD;
+	BEGIN
+		FOR pipeitem IN SELECT id,geometry,tunnel_or_bridge FROM distribution.pipes WHERE _length3d_uptodate IS NOT TRUE ORDER BY id LOOP
+			IF pipeitem.tunnel_or_bridge IS TRUE THEN
+				length := pipeitem._length2d;
+			ELSE
+				RAISE NOTICE ''%'', pipeitem.id;
+				SELECT distribution.length3d(pipeitem.geometry) INTO length;
+			END IF;
+			UPDATE distribution.pipes SET _length3d = length, _length3d_uptodate = TRUE WHERE id = pipeitem.id;
+		END LOOP;
+	END
+' LANGUAGE 'plpgsql';
+COMMENT ON FUNCTION distribution.pipes_length3d() IS 'Fill the 3d length of the pipes.';
+
+
 COMMIT;
