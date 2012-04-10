@@ -234,7 +234,7 @@ CREATE OR REPLACE FUNCTION distribution.pipes_length3d() RETURNS void AS '
 				length := pipeitem._length2d;
 			ELSE
 				RAISE NOTICE ''%'', pipeitem.id;
-				SELECT distribution.length3d(pipeitem.geometry) INTO length;
+				SELECT altitude.length3d(pipeitem.geometry) INTO length;
 			END IF;
 			UPDATE distribution.pipes SET _length3d = length, _length3d_uptodate = TRUE WHERE id = pipeitem.id;
 		END LOOP;
