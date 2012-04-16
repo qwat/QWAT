@@ -11,7 +11,7 @@ _material_longname AS MATERIAU,
 _material_diameter_internal_internal AS DIAM_INT,
 year AS ANNEE,
 id_node_a AS NOEUD_A,
-id_node_b AS NOEUD_B
+id_node_b AS NOEUD_B,
 NULL::varchar(10) AS PRESSION,
 NULL::varchar(10) AS RUGOSITE,
 NULL::boolean AS CALC_HYD,
