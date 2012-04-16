@@ -3,4 +3,4 @@
 
 /usr/lib/postgresql/9.1/bin/pgsql2shp -h 172.24.171.202 -g geom -f zones -P db4wat$ -u sige sige "SELECT id,name AS NOM, geometry AS geom FROM distribution.pressure_zones"
 
-/usr/lib/postgresql/9.1/bin/pgsql2shp -h 172.24.171.202 -g geom -f noeuds -P db4wat$ -u sige sige "SELECT id,altitude_dtm AS ALTITUDE, geometry AS geom FROM distribution.nodes"
+/usr/lib/postgresql/9.1/bin/pgsql2shp -h 172.24.171.202 -g geom -f noeuds -P db4wat$ -u sige sige "SELECT id,altitude_dtm AS ALTITUDE, geometry AS geom FROM distribution.nodes WHERE _schema_view IS TRUE"
