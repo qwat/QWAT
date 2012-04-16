@@ -82,7 +82,8 @@ COMMENT ON VIEW distribution.pipes_schema_merged IS 'Merging of pipes based on t
 /* 
 Join with pipes_view to get pipes properties
 */
-CREATE OR REPLACE VIEW distribution.pipes_schema AS
+DROP VIEW IF EXISTS distribution.pipes_schema ;
+CREATE VIEW distribution.pipes_schema AS
 	SELECT	
 			pipes_view.id				          ,
 			pipes_view.id_parent                  ,
@@ -94,6 +95,8 @@ CREATE OR REPLACE VIEW distribution.pipes_schema AS
 			pipes_view.id_protection              ,
 			pipes_view.id_status                  ,
 			pipes_view.id_pressure_zone           ,
+			pipes_view.id_node_a                  ,
+			pipes_view.id_node_b                  ,
 			pipes_view.schema_force_view          ,
 			pipes_view.year                       ,
 			pipes_view.pressure_nominale          ,
