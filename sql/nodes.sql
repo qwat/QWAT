@@ -9,12 +9,13 @@ BEGIN;
 /* CREATE TABLE */
 DROP TABLE IF EXISTS distribution.nodes CASCADE;
 CREATE TABLE distribution.nodes (id serial NOT NULL);
-ALTER TABLE distribution.nodes ADD COLUMN  altitude_dtm  DECIMAL(10,3)            ;
-ALTER TABLE distribution.nodes ADD COLUMN  altitude_real DECIMAL(10,3)            ;
-ALTER TABLE distribution.nodes ADD COLUMN  _type         VARCHAR(20) DEFAULT ''   ;
-ALTER TABLE distribution.nodes ADD COLUMN  _orientation  FLOAT       DEFAULT 0    ;
-ALTER TABLE distribution.nodes ADD COLUMN  _schema_view  BOOLEAN     DEFAULT False;
-ALTER TABLE distribution.nodes ADD COLUMN  _uptodate     BOOLEAN     DEFAULT False;
+ALTER TABLE distribution.nodes ADD COLUMN  altitude_dtm       DECIMAL(10,3)              ;
+ALTER TABLE distribution.nodes ADD COLUMN  altitude_real      DECIMAL(10,3)              ;
+ALTER TABLE distribution.nodes ADD COLUMN  _type              VARCHAR(20)   DEFAULT ''   ;
+ALTER TABLE distribution.nodes ADD COLUMN  _orientation       FLOAT         DEFAULT 0    ;
+ALTER TABLE distribution.nodes ADD COLUMN  _schema_view       BOOLEAN       DEFAULT False;
+ALTER TABLE distribution.nodes ADD COLUMN  _type_uptodate     BOOLEAN       DEFAULT False;
+ALTER TABLE distribution.nodes ADD COLUMN  _altitude_uptodate BOOLEAN       DEFAULT False;
 SELECT AddGeometryColumn('distribution', 'nodes', 'geometry', 21781, 'POINT', 2)  ;
 SELECT setval('distribution.nodes_id_seq', 100, true);
 /* ADD CONSTRAINTS */
@@ -24,6 +25,24 @@ ALTER TABLE distribution.nodes ADD CONSTRAINT nodes_pkey PRIMARY KEY (id);
 CREATE INDEX nodes_geoidx ON distribution.nodes USING GIST ( geometry );
 /* Comment */
 COMMENT ON TABLE distribution.nodes IS 'Nodes. Type:If three pipes or more arrives at the node: three. If one pipe: one. If two: depends on characteristics of pipes: two_same (everything same), two_year (year is different), two_material (and year is/are different), two_diameter (and material/year are different). Orientation is calculated if two pipes arrives to place the symbol in theright direction.';
+
+/* nodes altitude */
+CREATE OR REPLACE FUNCTION distribution.nodes_altitude() RETURNS void AS '
+	DECLARE
+		altitude double precision;
+		nodeitem RECORD;
+	BEGIN
+		FOR nodeitem IN SELECT id,geometry FROM distribution.nodes WHERE _altitude_uptodate IS NOT TRUE ORDER BY id LOOP
+			RAISE NOTICE ''%'', nodeitem.id;
+			SELECT altitude.altitude(nodeitem.geometry) INTO altitude;
+			UPDATE distribution.nodes SET altitude_dtm = altitude, _altitude_uptodate = TRUE WHERE id = nodeitem.id;
+		END LOOP;
+	END
+' LANGUAGE 'plpgsql';
+COMMENT ON FUNCTION distribution.nodes_altitude() IS 'Fill the altitude of the nodes.';
+
+
+
 
 /* PREVENT ANY CHANGE IN NODE POSITION */
 
@@ -50,6 +69,7 @@ CREATE OR REPLACE FUNCTION distribution.node_get_id(geometry) RETURNS integer AS
 	END;
 ' LANGUAGE 'plpgsql';
 COMMENT ON FUNCTION distribution.node_get_id(geometry) IS 'Returns the node for a given geometry (point). If node does not exist, it is created.';
+
 
 
 /* To reset all pipes nodes */
