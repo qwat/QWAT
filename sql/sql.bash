@@ -3,6 +3,9 @@
 
 read -p "server 75 or 202 : " ip
 
+psql -h 172.24.171.$ip -U sige -f topology.sql
+read -p "Press any key to continue..."
+
 psql -h 172.24.171.$ip -U sige -f tool_functions.sql
 read -p "Press any key to continue..."
 psql -h 172.24.171.$ip -U sige -f visible.sql
@@ -48,6 +51,10 @@ read -p "Press any key to continue..."
 psql -h 172.24.171.$ip -U sige -f installations.sql
 read -p "Press any key to continue..."
 psql -h 172.24.171.$ip -U sige -f altitude.sql
+
+# CONTROL
+read -p "Press any key to continue..."
+psql -h 172.24.171.$ip -U sige -f control/control_nodes.sql
 
 # SIGE DATA
 read -p "Press any key to continue..."
