@@ -17,7 +17,7 @@ ALTER TABLE distribution.nodes ADD COLUMN  _schema_view       BOOLEAN       DEFA
 ALTER TABLE distribution.nodes ADD COLUMN  _type_uptodate     BOOLEAN       DEFAULT False;
 ALTER TABLE distribution.nodes ADD COLUMN  _altitude_uptodate BOOLEAN       DEFAULT False;
 SELECT AddGeometryColumn('distribution', 'nodes', 'geometry', 21781, 'POINT', 2)  ;
-SELECT setval('distribution.nodes_id_seq', 100, true);
+SELECT setval('distribution.nodes_id_seq', 40000, true);
 /* ADD CONSTRAINTS */
 /* primary key */
 ALTER TABLE distribution.nodes ADD CONSTRAINT nodes_pkey PRIMARY KEY (id);
@@ -137,7 +137,7 @@ CREATE OR REPLACE FUNCTION distribution.node_set_type() RETURNS void AS '
 		node record;
 	BEGIN
 		FOR node IN SELECT id FROM distribution.nodes WHERE _type_uptodate IS FALSE ORDER BY id LOOP
-			PERFORM distribution.node_set_type(node.id);
+			PERFORM distribution.node_type(node.id);
 		END LOOP;
 	END;
 ' LANGUAGE 'plpgsql';
@@ -150,7 +150,7 @@ CREATE OR REPLACE FUNCTION distribution.node_reset_all() RETURNS void AS '
 	BEGIN
 		UPDATE distribution.nodes SET _type = NULL;
 		FOR node IN SELECT id FROM distribution.nodes ORDER BY id LOOP
-			PERFORM distribution.node_set_type(node.id);
+			PERFORM distribution.node_type(node.id);
 		END LOOP;
 	END;
 ' LANGUAGE 'plpgsql';
