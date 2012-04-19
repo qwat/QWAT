@@ -4,15 +4,15 @@
     <mapcanvas>
         <units>meters</units>
         <extent>
-            <xmin>556147.926132</xmin>
-            <ymin>144053.541484</ymin>
-            <xmax>557051.136209</xmax>
-            <ymax>144593.409383</ymax>
+            <xmin>554590.411107</xmin>
+            <ymin>147761.422690</ymin>
+            <xmax>554612.714987</xmax>
+            <ymax>147776.709866</ymax>
         </extent>
         <projections>0</projections>
         <destinationsrs>
             <spatialrefsys>
-                <proj4>+proj=somerc +lat_0=46.95240555555556 +lon_0=7.439583333333333 +k_0=1 +x_0=600000 +y_0=200000 +ellps=bessel +towgs84=674.374,15.056,405.346,0,0,0,0 +units=m +no_defs</proj4>
+                <proj4>+proj=somerc +lat_0=46.95240555555556 +lon_0=7.439583333333333 +k_0=1 +x_0=600000 +y_0=200000 +ellps=bessel +towgs84=674.4,15.1,405.3,0,0,0,0 +units=m +no_defs</proj4>
                 <srsid>1919</srsid>
                 <srid>21781</srid>
                 <authid>EPSG:21781</authid>
@@ -44,7 +44,7 @@
                 <legendlayerfile isInOverview="0" layerid="subscriber_view20120220074846336" visible="0"/>
             </filegroup>
         </legendlayer>
-        <legendgroup open="true" checked="Qt::Unchecked" name="Zones">
+        <legendgroup open="false" checked="Qt::Unchecked" name="Zones">
             <legendlayer drawingOrder="18" open="false" checked="Qt::Unchecked" name="Zones de pression" showFeatureCount="0">
                 <filegroup open="false" hidden="false">
                     <legendlayerfile isInOverview="0" layerid="pressure_zones20120329155833649" visible="0"/>
@@ -192,13 +192,6 @@
                 <BackgroundColor alpha="255" red="255" blue="255" green="255"/>
             </ComposerItem>
         </ComposerMap>
-        <ComposerScaleBar segmentMillimeters="33.33333329933317" numMapUnitsPerScaleBarUnit="1" numSegments="2" height="5" alignment="0" labelBarSpace="3" outlineWidth="1" numSegmentsLeft="0" style="Single Box" unitLabel="" font="Ubuntu,12,-1,5,50,0,0,0,0,0" mapId="0" boxContentSpace="1" numUnitsPerSegment="500">
-            <BrushColor red="0" blue="0" green="0"/>
-            <ComposerItem width="77.16666659866634" x="11.50998948475289" y="816.3238696109357" rotation="0" height="14" frame="true" outlineWidth="0.3" zValue="3" lastValidViewScaleFactor="1.129453681710214" id="" positionLock="false">
-                <FrameColor alpha="255" red="0" blue="0" green="0"/>
-                <BackgroundColor alpha="255" red="255" blue="255" green="255"/>
-            </ComposerItem>
-        </ComposerScaleBar>
         <ComposerLegend symbolWidth="7" title="Légende" boxSpace="2" titleFont="Ubuntu,16,-1,5,50,0,0,0,0,0" map="0" groupFont="Ubuntu,14,-1,5,50,0,0,0,0,0" layerFont="Ubuntu,12,-1,5,50,0,0,0,0,0" groupSpace="2" symbolSpace="2" symbolHeight="4" layerSpace="2" iconLabelSpace="2" wrapChar="" itemFont="Ubuntu,12,-1,5,50,0,0,0,0,0">
             <Model autoUpdate="1">
                 <LayerItem layerId="installations_view20120405105153760" text="Ouvrages">
@@ -401,6 +394,13 @@
                 <BackgroundColor alpha="255" red="255" blue="255" green="255"/>
             </ComposerItem>
         </ComposerLegend>
+        <ComposerScaleBar segmentMillimeters="33.33333329933317" numMapUnitsPerScaleBarUnit="1" numSegments="2" height="5" alignment="0" labelBarSpace="3" outlineWidth="1" numSegmentsLeft="0" style="Single Box" unitLabel="" font="Ubuntu,12,-1,5,50,0,0,0,0,0" mapId="0" boxContentSpace="1" numUnitsPerSegment="500">
+            <BrushColor red="0" blue="0" green="0"/>
+            <ComposerItem width="77.16666659866634" x="11.50998948475289" y="816.3238696109357" rotation="0" height="14" frame="true" outlineWidth="0.3" zValue="3" lastValidViewScaleFactor="1.129453681710214" id="" positionLock="false">
+                <FrameColor alpha="255" red="0" blue="0" green="0"/>
+                <BackgroundColor alpha="255" red="255" blue="255" green="255"/>
+            </ComposerItem>
+        </ComposerScaleBar>
         <Composition printResolution="300" paperWidth="1189" snapGridOffsetX="0" snapGridResolution="0" snapGridOffsetY="0" snapping="0" paperHeight="841" printAsRaster="0"/>
     </Composer>
     <Composer title="Composer 2" visible="0">
@@ -756,7 +756,7 @@
             <layername>IntersectIt Lines</layername>
             <srs>
                 <spatialrefsys>
-                    <proj4>+proj=somerc +lat_0=46.95240555555556 +lon_0=7.439583333333333 +k_0=1 +x_0=600000 +y_0=200000 +ellps=bessel +towgs84=674.374,15.056,405.346,0,0,0,0 +units=m +no_defs</proj4>
+                    <proj4>+proj=somerc +lat_0=46.95240555555556 +lon_0=7.439583333333333 +k_0=1 +x_0=600000 +y_0=200000 +ellps=bessel +towgs84=674.4,15.1,405.3,0,0,0,0 +units=m +no_defs</proj4>
                     <srsid>1919</srsid>
                     <srid>21781</srid>
                     <authid>EPSG:21781</authid>
@@ -825,7 +825,7 @@
             <layername>IntersectIt Points</layername>
             <srs>
                 <spatialrefsys>
-                    <proj4>+proj=somerc +lat_0=46.95240555555556 +lon_0=7.439583333333333 +k_0=1 +x_0=600000 +y_0=200000 +ellps=bessel +towgs84=674.374,15.056,405.346,0,0,0,0 +units=m +no_defs</proj4>
+                    <proj4>+proj=somerc +lat_0=46.95240555555556 +lon_0=7.439583333333333 +k_0=1 +x_0=600000 +y_0=200000 +ellps=bessel +towgs84=674.4,15.1,405.3,0,0,0,0 +units=m +no_defs</proj4>
                     <srsid>1919</srsid>
                     <srid>21781</srid>
                     <authid>EPSG:21781</authid>
@@ -892,7 +892,7 @@
             <layername>cn1244</layername>
             <srs>
                 <spatialrefsys>
-                    <proj4>+proj=somerc +lat_0=46.95240555555556 +lon_0=7.439583333333333 +k_0=1 +x_0=600000 +y_0=200000 +ellps=bessel +towgs84=674.374,15.056,405.346,0,0,0,0 +units=m +no_defs</proj4>
+                    <proj4>+proj=somerc +lat_0=46.95240555555556 +lon_0=7.439583333333333 +k_0=1 +x_0=600000 +y_0=200000 +ellps=bessel +towgs84=674.4,15.1,405.3,0,0,0,0 +units=m +no_defs</proj4>
                     <srsid>1919</srsid>
                     <srid>21781</srid>
                     <authid>EPSG:21781</authid>
@@ -909,9 +909,9 @@
                 <mDrawingStyle>PalettedColor</mDrawingStyle>
                 <mColorShadingAlgorithm>ColorRampShader</mColorShadingAlgorithm>
                 <mInvertColor boolean="false"/>
-                <mRedBandName>Not Set</mRedBandName>
-                <mGreenBandName>Not Set</mGreenBandName>
-                <mBlueBandName>Not Set</mBlueBandName>
+                <mRedBandName></mRedBandName>
+                <mGreenBandName></mGreenBandName>
+                <mBlueBandName></mBlueBandName>
                 <mGrayBandName>Band 1</mGrayBandName>
                 <mStandardDeviations>0</mStandardDeviations>
                 <mUserDefinedRGBMinimumMaximum boolean="false"/>
@@ -1201,7 +1201,7 @@
             <layername>cn1264</layername>
             <srs>
                 <spatialrefsys>
-                    <proj4>+proj=somerc +lat_0=46.95240555555556 +lon_0=7.439583333333333 +k_0=1 +x_0=600000 +y_0=200000 +ellps=bessel +towgs84=674.374,15.056,405.346,0,0,0,0 +units=m +no_defs</proj4>
+                    <proj4>+proj=somerc +lat_0=46.95240555555556 +lon_0=7.439583333333333 +k_0=1 +x_0=600000 +y_0=200000 +ellps=bessel +towgs84=674.4,15.1,405.3,0,0,0,0 +units=m +no_defs</proj4>
                     <srsid>1919</srsid>
                     <srid>21781</srid>
                     <authid>EPSG:21781</authid>
@@ -1218,9 +1218,9 @@
                 <mDrawingStyle>PalettedColor</mDrawingStyle>
                 <mColorShadingAlgorithm>ColorRampShader</mColorShadingAlgorithm>
                 <mInvertColor boolean="false"/>
-                <mRedBandName>Not Set</mRedBandName>
-                <mGreenBandName>Not Set</mGreenBandName>
-                <mBlueBandName>Not Set</mBlueBandName>
+                <mRedBandName></mRedBandName>
+                <mGreenBandName></mGreenBandName>
+                <mBlueBandName></mBlueBandName>
                 <mGrayBandName>Band 1</mGrayBandName>
                 <mStandardDeviations>0</mStandardDeviations>
                 <mUserDefinedRGBMinimumMaximum boolean="false"/>
@@ -1510,7 +1510,7 @@
             <layername>Cotes - points accrochage</layername>
             <srs>
                 <spatialrefsys>
-                    <proj4>+proj=somerc +lat_0=46.95240555555556 +lon_0=7.439583333333333 +k_0=1 +x_0=600000 +y_0=200000 +ellps=bessel +towgs84=674.374,15.056,405.346,0,0,0,0 +units=m +no_defs</proj4>
+                    <proj4>+proj=somerc +lat_0=46.95240555555556 +lon_0=7.439583333333333 +k_0=1 +x_0=600000 +y_0=200000 +ellps=bessel +towgs84=674.4,15.1,405.3,0,0,0,0 +units=m +no_defs</proj4>
                     <srsid>1919</srsid>
                     <srid>21781</srid>
                     <authid>EPSG:21781</authid>
@@ -1585,7 +1585,7 @@
             <layername>Cotes - arc</layername>
             <srs>
                 <spatialrefsys>
-                    <proj4>+proj=somerc +lat_0=46.95240555555556 +lon_0=7.439583333333333 +k_0=1 +x_0=600000 +y_0=200000 +ellps=bessel +towgs84=674.374,15.056,405.346,0,0,0,0 +units=m +no_defs</proj4>
+                    <proj4>+proj=somerc +lat_0=46.95240555555556 +lon_0=7.439583333333333 +k_0=1 +x_0=600000 +y_0=200000 +ellps=bessel +towgs84=674.4,15.1,405.3,0,0,0,0 +units=m +no_defs</proj4>
                     <srsid>1919</srsid>
                     <srid>21781</srid>
                     <authid>EPSG:21781</authid>
@@ -1711,7 +1711,7 @@
             <layername>Communes</layername>
             <srs>
                 <spatialrefsys>
-                    <proj4>+proj=somerc +lat_0=46.95240555555556 +lon_0=7.439583333333333 +k_0=1 +x_0=600000 +y_0=200000 +ellps=bessel +towgs84=674.374,15.056,405.346,0,0,0,0 +units=m +no_defs</proj4>
+                    <proj4>+proj=somerc +lat_0=46.95240555555556 +lon_0=7.439583333333333 +k_0=1 +x_0=600000 +y_0=200000 +ellps=bessel +towgs84=674.4,15.1,405.3,0,0,0,0 +units=m +no_defs</proj4>
                     <srsid>1919</srsid>
                     <srid>21781</srid>
                     <authid>EPSG:21781</authid>
@@ -1844,7 +1844,7 @@
             <layername>Installations Type</layername>
             <srs>
                 <spatialrefsys>
-                    <proj4>+proj=longlat +ellps=WGS84 +datum=WGS84 +no_defs</proj4>
+                    <proj4>+proj=longlat +datum=WGS84 +no_defs</proj4>
                     <srsid>3452</srsid>
                     <srid>4326</srid>
                     <authid>EPSG:4326</authid>
@@ -1876,7 +1876,7 @@
             <layername>Ouvrages</layername>
             <srs>
                 <spatialrefsys>
-                    <proj4>+proj=somerc +lat_0=46.95240555555556 +lon_0=7.439583333333333 +k_0=1 +x_0=600000 +y_0=200000 +ellps=bessel +towgs84=674.374,15.056,405.346,0,0,0,0 +units=m +no_defs</proj4>
+                    <proj4>+proj=somerc +lat_0=46.95240555555556 +lon_0=7.439583333333333 +k_0=1 +x_0=600000 +y_0=200000 +ellps=bessel +towgs84=674.4,15.1,405.3,0,0,0,0 +units=m +no_defs</proj4>
                     <srsid>1919</srsid>
                     <srid>21781</srid>
                     <authid>EPSG:21781</authid>
@@ -2105,7 +2105,7 @@
             <layername>Cotes - intersection</layername>
             <srs>
                 <spatialrefsys>
-                    <proj4>+proj=somerc +lat_0=46.95240555555556 +lon_0=7.439583333333333 +k_0=1 +x_0=600000 +y_0=200000 +ellps=bessel +towgs84=674.374,15.056,405.346,0,0,0,0 +units=m +no_defs</proj4>
+                    <proj4>+proj=somerc +lat_0=46.95240555555556 +lon_0=7.439583333333333 +k_0=1 +x_0=600000 +y_0=200000 +ellps=bessel +towgs84=674.4,15.1,405.3,0,0,0,0 +units=m +no_defs</proj4>
                     <srsid>1919</srsid>
                     <srid>21781</srid>
                     <authid>EPSG:21781</authid>
@@ -2176,7 +2176,7 @@
             <layername>Noeuds</layername>
             <srs>
                 <spatialrefsys>
-                    <proj4>+proj=somerc +lat_0=46.95240555555556 +lon_0=7.439583333333333 +k_0=1 +x_0=600000 +y_0=200000 +ellps=bessel +towgs84=674.374,15.056,405.346,0,0,0,0 +units=m +no_defs</proj4>
+                    <proj4>+proj=somerc +lat_0=46.95240555555556 +lon_0=7.439583333333333 +k_0=1 +x_0=600000 +y_0=200000 +ellps=bessel +towgs84=674.4,15.1,405.3,0,0,0,0 +units=m +no_defs</proj4>
                     <srsid>1919</srsid>
                     <srid>21781</srid>
                     <authid>EPSG:21781</authid>
@@ -2192,14 +2192,14 @@
             <renderer-v2 symbollevels="0" type="RuleRenderer">
                 <rules>
                     <rule filter="_schema_view = 't'" label="Transport">
-                        <rule filter="_type = 'one'" symbol="0" label="Extrémité"/>
+                        <rule filter="_type = 'one' OR _type = 'two_same'" symbol="0" label="Extrémité"/>
                         <rule filter="_type = 'three'" symbol="1" label="Intersection"/>
                         <rule filter="_type = 'two_year'" symbol="2" label="Chg. Année"/>
                         <rule filter="_type = 'two_diameter'" symbol="3" label="Chg. diamètre"/>
                         <rule filter="_type = 'two_material'" symbol="4" label="Chg. matériau"/>
                     </rule>
                     <rule scalemaxdenom="6000" filter="_schema_view = 'f'" label="Distribution">
-                        <rule filter="_type = 'one'" symbol="5" label="Extrémité"/>
+                        <rule filter="_type = 'one' OR _type = 'two_same'" symbol="5" label="Extrémité"/>
                         <rule filter="_type = 'three'" symbol="6" label="Intersection"/>
                         <rule filter="_type = 'two_year'" symbol="7" label="Chg. Année"/>
                         <rule filter="_type = 'two_diameter'" symbol="8" label="Chg. diamètre"/>
@@ -2312,7 +2312,7 @@
             <customproperties>
                 <property key="itemBrowserConnected" value="yes"/>
                 <property key="itemBrowserCurrentItem" value="0"/>
-                <property key="itemBrowserSelection" value="[]"/>
+                <property key="itemBrowserSelection" value="[40002L]"/>
                 <property key="labeling" value="pal"/>
                 <property key="labeling/addDirectionSymbol" value="false"/>
                 <property key="labeling/bufferColorB" value="255"/>
@@ -2337,7 +2337,7 @@
                 <property key="labeling/decimals" value="0"/>
                 <property key="labeling/dist" value="0"/>
                 <property key="labeling/distInMapUnits" value="false"/>
-                <property key="labeling/enabled" value="false"/>
+                <property key="labeling/enabled" value="true"/>
                 <property key="labeling/fieldName" value="id"/>
                 <property key="labeling/fontFamily" value="Times New Roman"/>
                 <property key="labeling/fontItalic" value="false"/>
@@ -2386,9 +2386,13 @@
                 <selectedonly on=""/>
             </labelattributes>
             <edittypes>
+                <edittype type="0" name="_altitude_uptodate"/>
                 <edittype type="0" name="_orientation"/>
                 <edittype type="0" name="_schema_view"/>
+                <edittype type="0" name="_status_active"/>
                 <edittype type="0" name="_type"/>
+                <edittype type="0" name="altitude_dtm"/>
+                <edittype type="0" name="altitude_real"/>
                 <edittype type="0" name="id"/>
                 <edittype type="0" name="orientation"/>
                 <edittype type="0" name="type"/>
@@ -2406,7 +2410,7 @@
             <layername>Propriétaire</layername>
             <srs>
                 <spatialrefsys>
-                    <proj4>+proj=longlat +ellps=WGS84 +datum=WGS84 +no_defs</proj4>
+                    <proj4>+proj=longlat +datum=WGS84 +no_defs</proj4>
                     <srsid>3452</srsid>
                     <srid>4326</srid>
                     <authid>EPSG:4326</authid>
@@ -2439,7 +2443,7 @@
             <layername>Relation parent enfant</layername>
             <srs>
                 <spatialrefsys>
-                    <proj4>+proj=somerc +lat_0=46.95240555555556 +lon_0=7.439583333333333 +k_0=1 +x_0=600000 +y_0=200000 +ellps=bessel +towgs84=674.374,15.056,405.346,0,0,0,0 +units=m +no_defs</proj4>
+                    <proj4>+proj=somerc +lat_0=46.95240555555556 +lon_0=7.439583333333333 +k_0=1 +x_0=600000 +y_0=200000 +ellps=bessel +towgs84=674.4,15.1,405.3,0,0,0,0 +units=m +no_defs</proj4>
                     <srsid>1919</srsid>
                     <srid>21781</srid>
                     <authid>EPSG:21781</authid>
@@ -2593,7 +2597,7 @@
             <layername>Conduites fonction</layername>
             <srs>
                 <spatialrefsys>
-                    <proj4>+proj=longlat +ellps=WGS84 +datum=WGS84 +no_defs</proj4>
+                    <proj4>+proj=longlat +datum=WGS84 +no_defs</proj4>
                     <srsid>3452</srsid>
                     <srid>4326</srid>
                     <authid>EPSG:4326</authid>
@@ -2627,7 +2631,7 @@
             <layername>Conduites mode de pose</layername>
             <srs>
                 <spatialrefsys>
-                    <proj4>+proj=longlat +ellps=WGS84 +datum=WGS84 +no_defs</proj4>
+                    <proj4>+proj=longlat +datum=WGS84 +no_defs</proj4>
                     <srsid>3452</srsid>
                     <srid>4326</srid>
                     <authid>EPSG:4326</authid>
@@ -2660,7 +2664,7 @@
             <layername>Conduites matériau</layername>
             <srs>
                 <spatialrefsys>
-                    <proj4>+proj=longlat +ellps=WGS84 +datum=WGS84 +no_defs</proj4>
+                    <proj4>+proj=longlat +datum=WGS84 +no_defs</proj4>
                     <srsid>3452</srsid>
                     <srid>4326</srid>
                     <authid>EPSG:4326</authid>
@@ -2698,7 +2702,7 @@
             <layername>Conduites protection</layername>
             <srs>
                 <spatialrefsys>
-                    <proj4>+proj=longlat +ellps=WGS84 +datum=WGS84 +no_defs</proj4>
+                    <proj4>+proj=longlat +datum=WGS84 +no_defs</proj4>
                     <srsid>3452</srsid>
                     <srid>4326</srid>
                     <authid>EPSG:4326</authid>
@@ -2731,7 +2735,7 @@
             <layername>Schématique</layername>
             <srs>
                 <spatialrefsys>
-                    <proj4>+proj=somerc +lat_0=46.95240555555556 +lon_0=7.439583333333333 +k_0=1 +x_0=600000 +y_0=200000 +ellps=bessel +towgs84=674.374,15.056,405.346,0,0,0,0 +units=m +no_defs</proj4>
+                    <proj4>+proj=somerc +lat_0=46.95240555555556 +lon_0=7.439583333333333 +k_0=1 +x_0=600000 +y_0=200000 +ellps=bessel +towgs84=674.4,15.1,405.3,0,0,0,0 +units=m +no_defs</proj4>
                     <srsid>1919</srsid>
                     <srid>21781</srid>
                     <authid>EPSG:21781</authid>
@@ -2919,7 +2923,7 @@
             <layername>Conduites état</layername>
             <srs>
                 <spatialrefsys>
-                    <proj4>+proj=longlat +ellps=WGS84 +datum=WGS84 +no_defs</proj4>
+                    <proj4>+proj=longlat +datum=WGS84 +no_defs</proj4>
                     <srsid>3452</srsid>
                     <srid>4326</srid>
                     <authid>EPSG:4326</authid>
@@ -2953,7 +2957,7 @@
             <layername>Conduites</layername>
             <srs>
                 <spatialrefsys>
-                    <proj4>+proj=somerc +lat_0=46.95240555555556 +lon_0=7.439583333333333 +k_0=1 +x_0=600000 +y_0=200000 +ellps=bessel +towgs84=674.374,15.056,405.346,0,0,0,0 +units=m +no_defs</proj4>
+                    <proj4>+proj=somerc +lat_0=46.95240555555556 +lon_0=7.439583333333333 +k_0=1 +x_0=600000 +y_0=200000 +ellps=bessel +towgs84=674.4,15.1,405.3,0,0,0,0 +units=m +no_defs</proj4>
                     <srsid>1919</srsid>
                     <srid>21781</srid>
                     <authid>EPSG:21781</authid>
@@ -3213,7 +3217,7 @@
             <layername>Précision</layername>
             <srs>
                 <spatialrefsys>
-                    <proj4>+proj=longlat +ellps=WGS84 +datum=WGS84 +no_defs</proj4>
+                    <proj4>+proj=longlat +datum=WGS84 +no_defs</proj4>
                     <srsid>3452</srsid>
                     <srid>4326</srid>
                     <authid>EPSG:4326</authid>
@@ -3246,7 +3250,7 @@
             <layername>Zones de pression</layername>
             <srs>
                 <spatialrefsys>
-                    <proj4>+proj=somerc +lat_0=46.95240555555556 +lon_0=7.439583333333333 +k_0=1 +x_0=600000 +y_0=200000 +ellps=bessel +towgs84=674.374,15.056,405.346,0,0,0,0 +units=m +no_defs</proj4>
+                    <proj4>+proj=somerc +lat_0=46.95240555555556 +lon_0=7.439583333333333 +k_0=1 +x_0=600000 +y_0=200000 +ellps=bessel +towgs84=674.4,15.1,405.3,0,0,0,0 +units=m +no_defs</proj4>
                     <srsid>1919</srsid>
                     <srid>21781</srid>
                     <authid>EPSG:21781</authid>
@@ -3860,7 +3864,7 @@
             <layername>Folios</layername>
             <srs>
                 <spatialrefsys>
-                    <proj4>+proj=somerc +lat_0=46.95240555555556 +lon_0=7.439583333333333 +k_0=1 +x_0=600000 +y_0=200000 +ellps=bessel +towgs84=674.374,15.056,405.346,0,0,0,0 +units=m +no_defs</proj4>
+                    <proj4>+proj=somerc +lat_0=46.95240555555556 +lon_0=7.439583333333333 +k_0=1 +x_0=600000 +y_0=200000 +ellps=bessel +towgs84=674.4,15.1,405.3,0,0,0,0 +units=m +no_defs</proj4>
                     <srsid>1919</srsid>
                     <srid>21781</srid>
                     <authid>EPSG:21781</authid>
@@ -3983,7 +3987,7 @@
             <layername>riviera</layername>
             <srs>
                 <spatialrefsys>
-                    <proj4>+proj=somerc +lat_0=46.95240555555556 +lon_0=7.439583333333333 +k_0=1 +x_0=600000 +y_0=200000 +ellps=bessel +towgs84=674.374,15.056,405.346,0,0,0,0 +units=m +no_defs</proj4>
+                    <proj4>+proj=somerc +lat_0=46.95240555555556 +lon_0=7.439583333333333 +k_0=1 +x_0=600000 +y_0=200000 +ellps=bessel +towgs84=674.4,15.1,405.3,0,0,0,0 +units=m +no_defs</proj4>
                     <srsid>1919</srsid>
                     <srid>21781</srid>
                     <authid>EPSG:21781</authid>
@@ -4002,9 +4006,9 @@
                 <mDrawingStyle>SingleBandGray</mDrawingStyle>
                 <mColorShadingAlgorithm>UndefinedShader</mColorShadingAlgorithm>
                 <mInvertColor boolean="false"/>
-                <mRedBandName>Not Set</mRedBandName>
-                <mGreenBandName>Not Set</mGreenBandName>
-                <mBlueBandName>Not Set</mBlueBandName>
+                <mRedBandName></mRedBandName>
+                <mGreenBandName></mGreenBandName>
+                <mBlueBandName></mBlueBandName>
                 <mGrayBandName>Band 1</mGrayBandName>
                 <mStandardDeviations>0</mStandardDeviations>
                 <mUserDefinedRGBMinimumMaximum boolean="false"/>
@@ -4035,7 +4039,7 @@
             <layername>Abonnement type</layername>
             <srs>
                 <spatialrefsys>
-                    <proj4>+proj=longlat +ellps=WGS84 +datum=WGS84 +no_defs</proj4>
+                    <proj4>+proj=longlat +datum=WGS84 +no_defs</proj4>
                     <srsid>3452</srsid>
                     <srid>4326</srid>
                     <authid>EPSG:4326</authid>
@@ -4069,7 +4073,7 @@
             <layername>Abonnements</layername>
             <srs>
                 <spatialrefsys>
-                    <proj4>+proj=somerc +lat_0=46.95240555555556 +lon_0=7.439583333333333 +k_0=1 +x_0=600000 +y_0=200000 +ellps=bessel +towgs84=674.374,15.056,405.346,0,0,0,0 +units=m +no_defs</proj4>
+                    <proj4>+proj=somerc +lat_0=46.95240555555556 +lon_0=7.439583333333333 +k_0=1 +x_0=600000 +y_0=200000 +ellps=bessel +towgs84=674.4,15.1,405.3,0,0,0,0 +units=m +no_defs</proj4>
                     <srsid>1919</srsid>
                     <srid>21781</srid>
                     <authid>EPSG:21781</authid>
@@ -4106,7 +4110,7 @@
                         <layer pass="0" class="SvgMarker" locked="0">
                             <prop k="angle" v="0"/>
                             <prop k="fill" v="#000000"/>
-                            <prop k="name" v="../standard/symbols/amenity_fountain2_brown.svg"/>
+                            <prop k="name" v=""/>
                             <prop k="offset" v="0,0"/>
                             <prop k="outline" v="#000000"/>
                             <prop k="outline-width" v="1"/>
@@ -4117,7 +4121,7 @@
                         <layer pass="0" class="SvgMarker" locked="0">
                             <prop k="angle" v="0"/>
                             <prop k="fill" v="#000000"/>
-                            <prop k="name" v="../standard/symbols/Watering-can.svg"/>
+                            <prop k="name" v=""/>
                             <prop k="offset" v="0,0"/>
                             <prop k="outline" v="#000000"/>
                             <prop k="outline-width" v="1"/>
@@ -4128,7 +4132,7 @@
                         <layer pass="0" class="SvgMarker" locked="0">
                             <prop k="angle" v="0"/>
                             <prop k="fill" v="#000000"/>
-                            <prop k="name" v="../standard/symbols/amenity_toilets_men.svg"/>
+                            <prop k="name" v=""/>
                             <prop k="offset" v="0,0"/>
                             <prop k="outline" v="#000000"/>
                             <prop k="outline-width" v="1"/>
@@ -4139,7 +4143,7 @@
                         <layer pass="0" class="SvgMarker" locked="0">
                             <prop k="angle" v="0"/>
                             <prop k="fill" v="#000000"/>
-                            <prop k="name" v="../standard/symbols/amenity_firestation_brown_bg.svg"/>
+                            <prop k="name" v=""/>
                             <prop k="offset" v="0,0"/>
                             <prop k="outline" v="#000000"/>
                             <prop k="outline-width" v="1"/>
@@ -4210,7 +4214,7 @@
             <layername>Fontaines</layername>
             <srs>
                 <spatialrefsys>
-                    <proj4>+proj=somerc +lat_0=46.95240555555556 +lon_0=7.439583333333333 +k_0=1 +x_0=600000 +y_0=200000 +ellps=bessel +towgs84=674.374,15.056,405.346,0,0,0,0 +units=m +no_defs</proj4>
+                    <proj4>+proj=somerc +lat_0=46.95240555555556 +lon_0=7.439583333333333 +k_0=1 +x_0=600000 +y_0=200000 +ellps=bessel +towgs84=674.4,15.1,405.3,0,0,0,0 +units=m +no_defs</proj4>
                     <srsid>1919</srsid>
                     <srid>21781</srid>
                     <authid>EPSG:21781</authid>
@@ -4335,7 +4339,7 @@
             <layername>Vannes</layername>
             <srs>
                 <spatialrefsys>
-                    <proj4>+proj=somerc +lat_0=46.95240555555556 +lon_0=7.439583333333333 +k_0=1 +x_0=600000 +y_0=200000 +ellps=bessel +towgs84=674.374,15.056,405.346,0,0,0,0 +units=m +no_defs</proj4>
+                    <proj4>+proj=somerc +lat_0=46.95240555555556 +lon_0=7.439583333333333 +k_0=1 +x_0=600000 +y_0=200000 +ellps=bessel +towgs84=674.4,15.1,405.3,0,0,0,0 +units=m +no_defs</proj4>
                     <srsid>1919</srsid>
                     <srid>21781</srid>
                     <authid>EPSG:21781</authid>
@@ -4408,7 +4412,7 @@
             <layername>Visibilité</layername>
             <srs>
                 <spatialrefsys>
-                    <proj4>+proj=longlat +ellps=WGS84 +datum=WGS84 +no_defs</proj4>
+                    <proj4>+proj=longlat +datum=WGS84 +no_defs</proj4>
                     <srsid>3452</srsid>
                     <srid>4326</srid>
                     <authid>EPSG:4326</authid>
