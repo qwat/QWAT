@@ -11,10 +11,10 @@ DROP TABLE IF EXISTS distribution.nodes CASCADE;
 CREATE TABLE distribution.nodes (id serial NOT NULL);
 ALTER TABLE distribution.nodes ADD COLUMN  altitude_dtm       DECIMAL(10,3)              ;
 ALTER TABLE distribution.nodes ADD COLUMN  altitude_real      DECIMAL(10,3)              ;
-ALTER TABLE distribution.nodes ADD COLUMN  _type              VARCHAR(20)   DEFAULT ''   ;
+ALTER TABLE distribution.nodes ADD COLUMN  _type              VARCHAR(20)   DEFAULT NULL ;
 ALTER TABLE distribution.nodes ADD COLUMN  _orientation       FLOAT         DEFAULT 0    ;
 ALTER TABLE distribution.nodes ADD COLUMN  _schema_view       BOOLEAN       DEFAULT False;
-ALTER TABLE distribution.nodes ADD COLUMN  _type_uptodate     BOOLEAN       DEFAULT False;
+ALTER TABLE distribution.nodes ADD COLUMN  _status_active     BOOLEAN       DEFAULT False;
 ALTER TABLE distribution.nodes ADD COLUMN  _altitude_uptodate BOOLEAN       DEFAULT False;
 SELECT AddGeometryColumn('distribution', 'nodes', 'geometry', 21781, 'POINT', 2)  ;
 SELECT setval('distribution.nodes_id_seq', 40000, true);
@@ -97,14 +97,23 @@ CREATE OR REPLACE FUNCTION distribution.node_type(integer) RETURNS void AS '
 		ori2        DOUBLE PRECISION := 0;
 		orientation FLOAT            := 0;
 	BEGIN
-		SELECT COUNT(pipes_view.id) AS count , bool_or(pipes_view._schema_view) AS schema_view INTO grouped FROM distribution.pipes_view WHERE _status_active IS TRUE AND (id_node_a = node_id OR id_node_b = node_id);
-		IF grouped.count = 1 THEN
+		SELECT 
+			COUNT(pipes_view.id)               AS count         ,
+			bool_or(pipes_view._schema_view)   AS schema_view   ,
+			bool_or(pipes_view._status_active) AS status_active
+			INTO grouped 
+			FROM distribution.pipes_view 
+			WHERE (id_node_a = node_id OR id_node_b = node_id);
+		IF grouped.count = 0 THEN
+			RAISE NOTICE ''Delete node %'' , node_id ;
+			DELETE FROM distribution.nodes WHERE id = node_id ;
+		ELSEIF grouped.count = 1 THEN
 			type := ''one'';
 		ELSEIF grouped.count = 2 THEN
 			FOR pipeitem IN (
-				SELECT year,_material_longname,_material_diameter,ST_PointN(geometry,2)                      AS point_1 , ST_StartPoint(geometry) AS point_2 FROM distribution.pipes_view WHERE _status_active IS TRUE AND id_node_a = node_id
-				UNION
-				SELECT year,_material_longname,_material_diameter,ST_PointN(geometry,ST_NPoints(geometry)-1) AS point_1 , ST_EndPoint(  geometry) AS point_2 FROM distribution.pipes_view WHERE _status_active IS TRUE AND id_node_b = node_id
+				SELECT year,_material_longname,_material_diameter,ST_PointN(geometry,2)                      AS point_1 , ST_StartPoint(geometry) AS point_2 FROM distribution.pipes_view WHERE id_node_a = node_id
+				UNION ALL
+				SELECT year,_material_longname,_material_diameter,ST_PointN(geometry,ST_NPoints(geometry)-1) AS point_1 , ST_EndPoint(  geometry) AS point_2 FROM distribution.pipes_view WHERE id_node_b = node_id
 			) LOOP
 				IF i=0 THEN
 					Tyear     := pipeitem.year;
@@ -121,10 +130,15 @@ CREATE OR REPLACE FUNCTION distribution.node_type(integer) RETURNS void AS '
 					SELECT degrees( ATAN2( (SIN(ori1)+SIN(ori2))/2 , (COS(ori1)+COS(ori2))/2 ) ) INTO orientation;
 				END IF;
 			END LOOP;
-		ELSE
+		ELSEIF grouped.count > 2 THEN
 			type := ''three'';
 		END IF;
-		UPDATE distribution.nodes SET _type = type, _orientation = orientation, _schema_view = grouped.schema_view, _type_uptodate = TRUE WHERE id = node_id;
+		UPDATE distribution.nodes SET 
+			_type          = type,
+			_orientation   = orientation,
+			_schema_view   = grouped.schema_view,
+			_status_active = grouped.status_active
+			WHERE id = node_id;
 		/*RAISE NOTICE ''% %'' , node_id , orientation;*/
 	END;
 ' LANGUAGE 'plpgsql';
@@ -136,7 +150,7 @@ CREATE OR REPLACE FUNCTION distribution.node_set_type() RETURNS void AS '
 	DECLARE
 		node record;
 	BEGIN
-		FOR node IN SELECT id FROM distribution.nodes WHERE _type_uptodate IS FALSE ORDER BY id LOOP
+		FOR node IN SELECT id FROM distribution.nodes WHERE _type IS NULL ORDER BY id LOOP
 			PERFORM distribution.node_type(node.id);
 		END LOOP;
 	END;

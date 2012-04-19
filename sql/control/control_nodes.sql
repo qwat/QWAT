@@ -1,6 +1,6 @@
 CREATE OR REPLACE VIEW distribution.node_control AS 
 	/* Nodes with undefined types */
-	SELECT 'Nodes with undefined types' AS problem, id, 'node id' AS comment 
+	SELECT 'Nodes with undefined type' AS problem, id, 'node id' AS comment 
 		FROM distribution.nodes 
 		WHERE _type IS NULL 
 	UNION
