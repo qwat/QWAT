@@ -28,6 +28,7 @@ CREATE OR REPLACE VIEW distribution.node_control AS
 		WHERE id_node_a IS NULL 
 		OR    id_node_b IS NULL
 	/* */
+	ORDER BY problem
 	;
 
 
