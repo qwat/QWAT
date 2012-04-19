@@ -1,11 +1,11 @@
 CREATE OR REPLACE VIEW distribution.node_control AS 
-	/* nodes with undefined types */
-	SELECT 'nodes with undefined types' AS problem, id, 'node id' AS comment 
+	/* Nodes with undefined types */
+	SELECT 'Nodes with undefined types' AS problem, id, 'node id' AS comment 
 		FROM distribution.nodes 
 		WHERE _type IS NULL 
 	UNION
-	/* Nodes with unreferenced pipes */
-	SELECT 'Nodes with unreferenced pipes' AS problem, id, 'node id' AS comment 
+	/* Nodes with no pipe connected */
+	SELECT 'Nodes with no pipe connected' AS problem, id, 'node id' AS comment 
 		FROM distribution.nodes 
 		WHERE nodes.id NOT IN (SELECT DISTINCT(id_node_a) FROM distribution.pipes) 
 		AND   nodes.id NOT IN (SELECT DISTINCT(id_node_b) FROM distribution.pipes)
