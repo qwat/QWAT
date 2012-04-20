@@ -3,6 +3,7 @@
 # psql -f /usr/share/postgresql/9.1/contrib/postgis-2.0/legacy.sql
 
 export ogr2ogrpath=/usr/local/bin/ogr2ogr
+export ogr2ogrpath=ogr2ogr
 
 
 rm distribution.sqlite
