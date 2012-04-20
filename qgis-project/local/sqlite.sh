@@ -2,8 +2,7 @@
 # to have ogr2ogr working with postgis 2.0
 # psql -f /usr/share/postgresql/9.1/contrib/postgis-2.0/legacy.sql
 
-export ogr2ogrpath=ogr2ogr
-export ogr2ogrpath=/home/sige/opt/gdal-1.9.0/apps/ogr2ogr
+export ogr2ogrpath=/usr/local/bin/ogr2ogr
 
 
 rm distribution.sqlite
