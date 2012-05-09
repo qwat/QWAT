@@ -42,21 +42,11 @@ CREATE OR REPLACE FUNCTION distribution.nodes_altitude() RETURNS void AS '
 COMMENT ON FUNCTION distribution.nodes_altitude() IS 'Fill the altitude of the nodes.';
 
 
-CREATE TRIGGER topology_nodes_update_trigger 
-	AFTER UPDATE OF geometry ON distribution.nodes
-	FOR EACH ROW
-	EXECUTE PROCEDURE distribution.topology_nodes_update();
-COMMENT ON TRIGGER topology_nodes_update_trigger ON distribution.nodes IS 'Trigger: trigger to move connected pipes with the node';
-
 
 /* TODO: prevent node deletion if pipes are connected */
 
 
 /* node type: end, intersection, year, material, diameter */
-
-
-
-
 
 CREATE OR REPLACE FUNCTION distribution.node_get_id(geometry) RETURNS integer AS '
 	DECLARE

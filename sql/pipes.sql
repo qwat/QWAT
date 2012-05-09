@@ -87,6 +87,8 @@ COMMENT ON TABLE distribution.pipes IS 'Table for pipes. This should not be used
 CREATE OR REPLACE FUNCTION distribution.pipes_geom() RETURNS trigger AS ' 
 	BEGIN
 		UPDATE distribution.pipes SET
+			id_node_a          = distribution.node_get_id(ST_StartPoint(NEW.geometry)),
+			id_node_b          = distribution.node_get_id(ST_EndPoint(  NEW.geometry))
 			_length2d          = ST_Length(NEW.geometry),
 			_length3d_uptodate = False,
 			_is_on_map         = distribution.get_map(NEW.geometry),
@@ -102,19 +104,6 @@ CREATE TRIGGER pipes_geom_trigger
 		FOR EACH ROW
 		EXECUTE PROCEDURE distribution.pipes_geom();
 COMMENT ON TRIGGER pipes_geom_trigger ON distribution.pipes IS 'Trigger: updates the length and other fields of the pipe after insert/update.';
-
-CREATE TRIGGER pipes_topology_insert_trigger 
-	AFTER INSERT ON distribution.pipes
-		FOR EACH ROW
-		EXECUTE PROCEDURE distribution.topology_pipes_insert();
-COMMENT ON TRIGGER pipes_topology_insert_trigger ON distribution.pipes IS 'Trigger: when inserting a pipe, look for nodes';
-
-CREATE TRIGGER pipes_topology_update_trigger 
-	AFTER UPDATE OF geometry ON distribution.pipes
-		FOR EACH ROW
-		EXECUTE PROCEDURE distribution.topology_pipes_update();
-COMMENT ON TRIGGER pipes_topology_update_trigger ON distribution.pipes IS 'Trigger: when editing a pipe, keep extremities on the nodes';
-
 
 /* Trigger for tunnel_or_bridge */
 CREATE OR REPLACE FUNCTION distribution.pipes_tunnelbridge() RETURNS trigger AS ' 
