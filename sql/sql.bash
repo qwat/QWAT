@@ -3,8 +3,6 @@
 
 read -p "server 75 or 202 : " ip
 
-psql -h 172.24.171.$ip -U sige -f topology.sql
-read -p "Press any key to continue..."
 
 psql -h 172.24.171.$ip -U sige -f tool_functions.sql
 read -p "Press any key to continue..."
@@ -13,8 +11,6 @@ read -p "Press any key to continue..."
 psql -h 172.24.171.$ip -U sige -f nodes.sql
 read -p "Press any key to continue..."
 psql -h 172.24.171.$ip -U sige -f dimension.sql
-read -p "Press any key to continue..."
-psql -h 172.24.171.$ip -U sige -f intersection.sql
 read -p "Press any key to continue..."
 psql -h 172.24.171.$ip -U sige -f pipes_install_method.sql
 read -p "Press any key to continue..."
@@ -58,11 +54,11 @@ psql -h 172.24.171.$ip -U sige -f control/control_nodes.sql
 
 # SIGE DATA
 read -p "Press any key to continue..."
-psql -h 172.24.171.$ip -U sige -f sige_data/data_pressure_zones.sql
+psql -h 172.24.171.$ip -U sige -f sige_data/data_pressure_zones.sql -v ON_ERROR_STOP=1
 read -p "Press any key to continue..."
-psql -h 172.24.171.$ip -U sige -f sige_data/data_nodes.sql
+psql -h 172.24.171.$ip -U sige -f sige_data/data_nodes.sql -v ON_ERROR_STOP=1
 read -p "Press any key to continue..."
-psql -h 172.24.171.$ip -U sige -f sige_data/load_idparent.sql
+psql -h 172.24.171.$ip -U sige -f sige_data/load_idparent.sql -v ON_ERROR_STOP=1
 
 
 
