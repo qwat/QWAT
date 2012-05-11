@@ -20,6 +20,7 @@ CREATE OR REPLACE VIEW distribution.pipes_schema_viewableitems AS
 		_length2d,
 		_length3d,
 		_length3d_uptodate,
+		tunnel_or_bridge,
 		geometry::geometry(LineString,21781)
 	  FROM distribution.pipes_view
 		WHERE _schema_view IS TRUE
@@ -62,7 +63,8 @@ CREATE OR REPLACE VIEW distribution.pipes_schema_items AS
 		distribution.get_parent(id,id_parent) AS groupid,
 		_length2d,
 		_length3d,
-		_length3d_uptodate
+		_length3d_uptodate,
+		tunnel_or_bridge
 	  FROM distribution.pipes_schema_viewableitems;
 
 /* 
@@ -74,7 +76,8 @@ CREATE OR REPLACE VIEW distribution.pipes_schema_merged AS
 			COUNT(groupid) AS number_of_pipes,
 			SUM(_length2d) AS _length2d,
 			SUM(_length3d) AS _length3d,
-			bool_and(_length3d_uptodate) AS _length3d_uptodate
+			bool_and(_length3d_uptodate) AS _length3d_uptodate,
+			bool_or(tunnel_or_bridge) AS tunnel_or_bridge
 	  FROM distribution.pipes_schema_items
 	 GROUP BY groupid ;
 COMMENT ON VIEW distribution.pipes_schema_merged IS 'Merging of pipes based on the group ID';
@@ -122,6 +125,7 @@ CREATE VIEW distribution.pipes_schema AS
 			pipes_schema_merged._length3d         ,
 			pipes_schema_merged._length3d_uptodate,
 			pipes_schema_merged.number_of_pipes   ,
+			pipes_schema_merged.tunnel_or_bridge  ,
 			pipes_schema_merged.geometry::geometry(LineString,21781) AS geometry
 	  FROM distribution.pipes_schema_merged
 	 INNER JOIN distribution.pipes_view ON pipes_view.id = pipes_schema_merged.id;
