@@ -21,7 +21,7 @@ COMMENT ON TABLE distribution.pipes_function IS 'Function for pipes. Here is det
 /* Predefined functions list */
 /* This has to be filled by user to fullfile language preferences */
 INSERT INTO distribution.pipes_function ("function") VALUES ('Conduite de transport');
-INSERT INTO distribution.pipes_function ("function","schema_view") VALUES ('Conduite d''hydrant',false);
+INSERT INTO distribution.pipes_function ("function","schema_view") VALUES ('Conduite d''hydrant',true);
 INSERT INTO distribution.pipes_function ("function","schema_view") VALUES ('Conduite de vidange',false);
 INSERT INTO distribution.pipes_function ("function","schema_view") VALUES ('Inconnu',false);
 INSERT INTO distribution.pipes_function ("function") VALUES ('Conduite de distribution');
