@@ -88,7 +88,7 @@ CREATE OR REPLACE FUNCTION distribution.pipes_geom() RETURNS trigger AS '
 	BEGIN
 		UPDATE distribution.pipes SET
 			id_node_a          = distribution.node_get_id(ST_StartPoint(NEW.geometry)),
-			id_node_b          = distribution.node_get_id(ST_EndPoint(  NEW.geometry))
+			id_node_b          = distribution.node_get_id(ST_EndPoint(  NEW.geometry)),
 			_length2d          = ST_Length(NEW.geometry),
 			_length3d_uptodate = False,
 			_is_on_map         = distribution.get_map(NEW.geometry),
