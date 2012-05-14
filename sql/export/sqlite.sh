@@ -41,7 +41,7 @@ $ogr2ogrpath -sql "SELECT                                           \
  -overwrite -a_srs EPSG:21781 -f SQLite sige_distribution.sqlite \
  -nln pipes -nlt LINESTRING -progress \
  PG:"dbname='sige' host='172.24.171.202' port='5432' user='sige' password='db4wat$'" \
- -dsco SPATIALITE=yes -lco SPATIAL_INDEX=yes  -gt 65536
+ -dsco SPATIALITE=no -lco "SPATIAL_INDEX=no FORMAT=SPATIALITE" -gt 65536
 
 # PIPES SCHEMA
 $ogr2ogrpath -sql "SELECT                                            \
@@ -74,21 +74,21 @@ $ogr2ogrpath -sql "SELECT                                            \
  -overwrite -a_srs EPSG:21781 -f SQLite sige_distribution.sqlite \
  -nln pipes_schema -nlt LINESTRING -progress \
  PG:"dbname='sige' host='172.24.171.202' port='5432' user='sige' password='db4wat$'" \
- -dsco SPATIALITE=yes -lco SPATIAL_INDEX=yes  -gt 65536
+ -dsco SPATIALITE=no -lco "SPATIAL_INDEX=no FORMAT=SPATIALITE" -gt 65536
 
 # NODES
 $ogr2ogrpath -sql "SELECT * FROM distribution.nodes WHERE _status_active IS TRUE" \
  -overwrite -a_srs EPSG:21781 -f SQLite sige_distribution.sqlite \
  -nln nodes -nlt POINT -progress \
  PG:"dbname='sige' host='172.24.171.202' port='5432' user='sige' password='db4wat$'" \
- -dsco SPATIALITE=yes -lco SPATIAL_INDEX=yes  -gt 65536
+ -dsco SPATIALITE=no -lco "SPATIAL_INDEX=no FORMAT=SPATIALITE" -gt 65536
  
 # INSTALLATIONS
-$ogr2ogrpath -sql "SELECT * FROM distribution.installations" \
+$ogr2ogrpath -sql "SELECT * FROM distribution.installations_view" \
  -overwrite -a_srs EPSG:21781 -f SQLite sige_distribution.sqlite \
  -nln installations -nlt POINT -progress \
  PG:"dbname='sige' host='172.24.171.202' port='5432' user='sige' password='db4wat$'" \
- -dsco SPATIALITE=yes -lco SPATIAL_INDEX=yes  -gt 65536
+ -dsco SPATIALITE=no -lco "SPATIAL_INDEX=no FORMAT=SPATIALITE" -gt 65536
  
  
  # PRESSURE ZONES
@@ -96,4 +96,4 @@ $ogr2ogrpath -sql "SELECT * FROM distribution.pressure_zones" \
  -overwrite -a_srs EPSG:21781 -f SQLite sige_distribution.sqlite \
  -nln pressure_zones -nlt POLYGON -progress \
  PG:"dbname='sige' host='172.24.171.202' port='5432' user='sige' password='db4wat$'" \
- -dsco SPATIALITE=yes -lco SPATIAL_INDEX=yes  -gt 65536
+ -dsco SPATIALITE=no -lco "SPATIAL_INDEX=no FORMAT=SPATIALITE" -gt 65536
