@@ -36,6 +36,7 @@ $ogr2ogrpath -sql "SELECT                                           \
 		_status_name,                                               \
 		_status_active,                                             \
 		_pressure_zone                                              \
+		_schema_view                                                \
  FROM distribution.pipes_view WHERE id_owner = 1" \
  -overwrite -a_srs EPSG:21781 -f SQLite sige_distribution.sqlite \
  -nln pipes -nlt LINESTRING -progress \
@@ -93,6 +94,6 @@ $ogr2ogrpath -sql "SELECT * FROM distribution.installations" \
  # PRESSURE ZONES
 $ogr2ogrpath -sql "SELECT * FROM distribution.pressure_zones" \
  -overwrite -a_srs EPSG:21781 -f SQLite sige_distribution.sqlite \
- -nln pressure_zones -nlt POINT -progress \
+ -nln pressure_zones -nlt POLYGON -progress \
  PG:"dbname='sige' host='172.24.171.202' port='5432' user='sige' password='db4wat$'" \
  -dsco SPATIALITE=yes -lco SPATIAL_INDEX=yes  -gt 65536
