@@ -9,8 +9,11 @@ BEGIN;
 /* CREATE TABLE */
 DROP TABLE IF EXISTS distribution.installations CASCADE;
 CREATE TABLE distribution.installations (id serial NOT NULL);
-ALTER TABLE distribution.installations ADD COLUMN  name       varchar(30) DEFAULT '';
-ALTER TABLE distribution.installations ADD COLUMN  id_type    integer               ;
+ALTER TABLE distribution.installations ADD COLUMN  name      varchar(30) DEFAULT '';
+ALTER TABLE distribution.installations ADD COLUMN  id_type   integer                ;
+ALTER TABLE distribution.installations ADD COLUMN  id_owner  integer                ;
+ALTER TABLE distribution.installations ADD COLUMN  status    varchar(30)            ;
+ALTER TABLE distribution.installations ADD COLUMN  remarks   text                ;
 SELECT AddGeometryColumn('distribution', 'installations', 'geometry', 21781, 'POINT', 2);
 SELECT setval('distribution.installations_id_seq', 100, true);
 /* primary key */
@@ -34,6 +37,9 @@ CREATE VIEW distribution.installations_view AS
 		installations.id                                ,
 		installations.name                              ,
 		installations.id_type                           ,
+		installations.id_owner                          ,
+		installations.status                          ,
+		installations.remarks                          ,
 		installations.geometry::geometry(Point,21781)   ,
 		installations_type.name       AS _type_name     ,
 		installations_type.short_name AS _type_shortname
