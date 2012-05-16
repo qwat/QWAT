@@ -74,12 +74,11 @@ CREATE OR REPLACE FUNCTION distribution.node_get_id(geometry,boolean) RETURNS in
 		point ALIAS for $1;
 		place_node ALIAS for $2;
 		node_id integer;
-		distance_threshold double precision := 0.000001;
 	BEGIN
-		SELECT id FROM distribution.nodes WHERE ST_Distance(point,geometry)<distance_threshold LIMIT 1 INTO node_id;
+		SELECT id FROM distribution.nodes WHERE ST_OrderingEquals(point,geometry) IS TRUE LIMIT 1 INTO node_id;
 		IF node_id IS NULL AND place_node IS TRUE THEN
 			INSERT INTO distribution.nodes (geometry) VALUES (point);
-			SELECT id FROM distribution.nodes WHERE ST_Distance(point,geometry)<distance_threshold LIMIT 1 INTO node_id;
+			SELECT id FROM distribution.nodes WHERE ST_OrderingEquals(point,geometry) IS TRUE LIMIT 1 INTO node_id;
 		END IF;
 		RETURN node_id;	
 	END;
