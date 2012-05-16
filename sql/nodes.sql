@@ -83,7 +83,7 @@ CREATE OR REPLACE FUNCTION distribution.node_get_id(geometry,boolean) RETURNS in
 		RETURN node_id;	
 	END;
 ' LANGUAGE 'plpgsql';
-COMMENT ON FUNCTION distribution.node_get_id(geometry,boolean) IS 'Returns the node for a given geometry (point). If node does not exist, it is created.';
+COMMENT ON FUNCTION distribution.node_get_id(geometry,boolean) IS 'Returns the node for a given geometry (point). If node does not exist and if specified in argument, it is created.';
 
 
 
