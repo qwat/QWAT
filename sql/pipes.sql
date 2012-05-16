@@ -85,8 +85,8 @@ CREATE INDEX pipes_geoidx ON distribution.pipes USING GIST ( geometry );
 CREATE OR REPLACE FUNCTION distribution.pipes_geom() RETURNS trigger AS ' 
 	BEGIN
 		UPDATE distribution.pipes SET
-			id_node_a          = distribution.node_get_id(ST_StartPoint(NEW.geometry)),
-			id_node_b          = distribution.node_get_id(ST_EndPoint(  NEW.geometry)),
+			id_node_a          = distribution.node_get_id(ST_StartPoint(NEW.geometry),true),
+			id_node_b          = distribution.node_get_id(ST_EndPoint(  NEW.geometry),true),
 			_length2d          = ST_Length(NEW.geometry),
 			_length3d_uptodate = False,
 			_is_on_map         = distribution.get_map(NEW.geometry),
@@ -236,6 +236,27 @@ CREATE OR REPLACE FUNCTION distribution.pipes_length3d() RETURNS void AS '
 	END
 ' LANGUAGE 'plpgsql';
 COMMENT ON FUNCTION distribution.pipes_length3d() IS 'Fill the 3d length of the pipes.';
+
+/*----------------!!!---!!!----------------*/
+/* get pipe id */
+CREATE OR REPLACE FUNCTION distribution.pipe_get_id(geometry) RETURNS integer AS '
+	DECLARE
+		point ALIAS for $1;
+		pipe_id integer;
+		distance_threshold double precision := 0.000001;
+		number_of_pipes integer;
+	BEGIN
+		SELECT COUNT(id) FROM distribution.pipes WHERE ST_DWithin(point,geometry,distance_threshold) INTO number_of_pipes;
+		IF number_of_pipes != 1 THEN
+			RETURN NULL ;
+		ELSE 
+			SELECT id FROM distribution.pipes WHERE ST_DWithin(point,geometry,distance_threshold) INTO pipe_id ;
+			RETURN node_id;	
+		END IF;
+	END;
+' LANGUAGE 'plpgsql';
+COMMENT ON FUNCTION distribution.pipe_get_id(geometry) IS 'Returns the pipe at a given position. If several pipes, return NULL.';
+
 
 
 COMMIT;
