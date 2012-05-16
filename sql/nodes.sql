@@ -75,10 +75,10 @@ CREATE OR REPLACE FUNCTION distribution.node_get_id(geometry,boolean) RETURNS in
 		place_node ALIAS for $2;
 		node_id integer;
 	BEGIN
-		SELECT id FROM distribution.nodes WHERE ST_OrderingEquals(point,geometry) IS TRUE LIMIT 1 INTO node_id;
+		SELECT id FROM distribution.nodes WHERE ST_DWithin(point,geometry,0) IS TRUE LIMIT 1 INTO node_id;
 		IF node_id IS NULL AND place_node IS TRUE THEN
 			INSERT INTO distribution.nodes (geometry) VALUES (point);
-			SELECT id FROM distribution.nodes WHERE ST_OrderingEquals(point,geometry) IS TRUE LIMIT 1 INTO node_id;
+			SELECT id FROM distribution.nodes WHERE ST_DWithin(point,geometry,0) IS TRUE LIMIT 1 INTO node_id;
 		END IF;
 		RETURN node_id;	
 	END;
