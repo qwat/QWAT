@@ -6,36 +6,44 @@
 BEGIN;
 DROP TABLE IF EXISTS distribution.valves CASCADE;
 CREATE TABLE distribution.valves (id serial NOT NULL);
-SELECT setval('distribution.valves_id_seq', 30000, true);
+COMMENT ON TABLE distribution.valves IS 'Table for valves.';
 
-ALTER TABLE distribution.valves ADD COLUMN   _is_on_map varchar(80) DEFAULT '';                      /* _is_on_map           */
-ALTER TABLE distribution.valves ADD COLUMN   _is_on_district varchar(100) DEFAULT '';                /* _is_on_district      */
+ALTER TABLE distribution.valves ADD COLUMN sige             integer ;
+ALTER TABLE distribution.valves ADD COLUMN id_pipe          integer ;
+ALTER TABLE distribution.valves ADD COLUMN id_node          integer ;
+ALTER TABLE distribution.valves ADD COLUMN diameter_nominal varchar(10) ;
+ALTER TABLE distribution.valves ADD COLUMN year            smallint CHECK (year > 1800 AND year < 2100);
+ALTER TABLE distribution.valves ADD COLUMN closed           boolean default false ;
+ALTER TABLE distribution.valves ADD COLUMN altitude_dtm     decimal(10,3) ;
+ALTER TABLE distribution.valves ADD COLUMN altitude_real    decimal(10,3) ;
+ALTER TABLE distribution.valves ADD COLUMN remarks          text           ;
+ALTER TABLE distribution.valves ADD COLUMN _is_on_map varchar(80) DEFAULT '';      
+ALTER TABLE distribution.valves ADD COLUMN _is_on_district varchar(100) DEFAULT '';
 
-ALTER TABLE distribution.valves ADD COLUMN   geometry geometry;                                  /* geometry         */
-
-
-
+SELECT addGeometryColumn('distribution', 'valves', 'geometry', 21781, 'POINT', 2);
 
 /*----------------!!!---!!!----------------*/
 /* Add constraints */
 /* primary key */
 ALTER TABLE distribution.valves ADD CONSTRAINT valves_pkey PRIMARY KEY (id);
-/* Geometry */
-ALTER TABLE distribution.valves ADD CONSTRAINT enforce_dims_geometry CHECK (st_ndims(geometry) = 2);
-ALTER TABLE distribution.valves ADD CONSTRAINT enforce_geotype_geometry CHECK (geometrytype(geometry) = 'POINT'::text OR geometry IS NULL);
-ALTER TABLE distribution.valves ADD CONSTRAINT enforce_srid_geometry CHECK (st_srid(geometry) = 21781);
+/* foreign keys */
+ALTER TABLE distribution.valves ADD CONSTRAINT valves_id_pipe FOREIGN KEY (id_pipe) REFERENCES distribution.pipes(id) MATCH SIMPLE ON UPDATE NO ACTION ON DELETE NO ACTION;
+CREATE INDEX fki_valves_id_pipe ON distribution.valves(id_pipe);
+ALTER TABLE distribution.valves ADD CONSTRAINT valves_id_node FOREIGN KEY (id_node) REFERENCES distribution.nodes(id) MATCH SIMPLE ON UPDATE NO ACTION ON DELETE NO ACTION;
+CREATE INDEX fki_valves_id_node ON distribution.valves(id_node);
 /* GIST index*/
 CREATE INDEX valves_geoidx ON distribution.valves USING GIST ( geometry );
 
-/*----------------!!!---!!!----------------*/
-/* Comment */
-COMMENT ON TABLE distribution.valves IS 'Table for valves.';
+
+
 
 /*----------------!!!---!!!----------------*/
 /* Trigger for map and district update */
 CREATE OR REPLACE FUNCTION distribution.valves_geom() RETURNS trigger AS ' 
 	BEGIN
 		UPDATE distribution.valves SET 
+			id_node            = distribution.node_get_id(NEW.geometry,false),
+			id_pipe            = distribution.pipe_get_id(NEW.geometry),
 			_is_on_map         = distribution.get_map(NEW.geometry),
 			_is_on_district    = distribution.get_district(NEW.geometry)
 		WHERE id = NEW.id ;
