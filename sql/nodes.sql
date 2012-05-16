@@ -26,6 +26,27 @@ ALTER TABLE distribution.nodes ADD CONSTRAINT nodes_pkey PRIMARY KEY (id);
 /* GIST index*/
 CREATE INDEX nodes_geoidx ON distribution.nodes USING GIST ( geometry );
 
+
+/*----------------!!!---!!!----------------*/
+/* Trigger for geometry */
+CREATE OR REPLACE FUNCTION distribution.nodes_geom() RETURNS trigger AS ' 
+	BEGIN
+		UPDATE distribution.nodes SET
+			_altitude_uptodate = NULL
+		WHERE id = NEW.id ;
+		RETURN NEW;
+	END;
+' LANGUAGE 'plpgsql';
+COMMENT ON FUNCTION distribution.nodes_geom() IS 'Fcn/Trigger: set uptodate to false for altitude when geometry changes.';
+
+CREATE TRIGGER nodes_geom_trigger 
+	AFTER INSERT OR UPDATE OF geometry ON distribution.nodes
+		FOR EACH ROW
+		EXECUTE PROCEDURE distribution.nodes_geom();
+COMMENT ON TRIGGER nodes_geom_trigger ON distribution.nodes IS 'Trigger: uset uptodate to false for altitude when geometry changes.';
+
+
+
 /* nodes altitude */
 CREATE OR REPLACE FUNCTION distribution.nodes_altitude() RETURNS void AS '
 	DECLARE
