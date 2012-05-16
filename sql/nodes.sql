@@ -48,28 +48,29 @@ COMMENT ON FUNCTION distribution.nodes_altitude() IS 'Fill the altitude of the n
 
 /* node type: end, intersection, year, material, diameter */
 
-CREATE OR REPLACE FUNCTION distribution.node_get_id(geometry) RETURNS integer AS '
+CREATE OR REPLACE FUNCTION distribution.node_get_id(geometry,boolean) RETURNS integer AS '
 	DECLARE
 		point ALIAS for $1;
+		place_node ALIAS for $2;
 		node_id integer;
 		distance_threshold double precision := 0.000001;
 	BEGIN
 		SELECT id FROM distribution.nodes WHERE ST_Distance(point,geometry)<distance_threshold LIMIT 1 INTO node_id;
-		IF node_id IS NULL THEN
+		IF node_id IS NULL AND place_node IS TRUE THEN
 			INSERT INTO distribution.nodes (geometry) VALUES (point);
+			SELECT id FROM distribution.nodes WHERE ST_Distance(point,geometry)<distance_threshold LIMIT 1 INTO node_id;
 		END IF;
-		SELECT id FROM distribution.nodes WHERE ST_Distance(point,geometry)<distance_threshold LIMIT 1 INTO node_id;
 		RETURN node_id;	
 	END;
 ' LANGUAGE 'plpgsql';
-COMMENT ON FUNCTION distribution.node_get_id(geometry) IS 'Returns the node for a given geometry (point). If node does not exist, it is created.';
+COMMENT ON FUNCTION distribution.node_get_id(geometry,boolean) IS 'Returns the node for a given geometry (point). If node does not exist, it is created.';
 
 
 
 /* To reset all pipes nodes */
 /*
-UPDATE distribution.pipes SET id_node_a = distribution.node_get_id(ST_StartPoint(geometry)),
-                              id_node_b = distribution.node_get_id(ST_EndPoint(  geometry));
+UPDATE distribution.pipes SET id_node_a = distribution.node_get_id(ST_StartPoint(geometry,true)),
+                              id_node_b = distribution.node_get_id(ST_EndPoint(  geometry,true));
 */
 
 
