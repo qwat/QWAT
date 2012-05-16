@@ -251,7 +251,7 @@ CREATE OR REPLACE FUNCTION distribution.pipe_get_id(geometry) RETURNS integer AS
 			RETURN NULL ;
 		ELSE 
 			SELECT id FROM distribution.pipes WHERE ST_DWithin(point,geometry,distance_threshold) INTO pipe_id ;
-			RETURN node_id;	
+			RETURN pipe_id;	
 		END IF;
 	END;
 ' LANGUAGE 'plpgsql';
