@@ -27,6 +27,9 @@ CREATE OR REPLACE VIEW distribution.node_control AS
 		FROM distribution.pipes 
 		WHERE id_node_a IS NULL 
 		OR    id_node_b IS NULL
+	UNION
+	/* Non up-to-date geometries */
+	SELECT 'Non up-to-date altitudes' AS problem, NULL AS id, 'number of nodes' AS comment
 	/* */
 	ORDER BY problem
 	;
