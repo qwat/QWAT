@@ -9,6 +9,7 @@ BEGIN;
 /* CREATE TABLE */
 DROP TABLE IF EXISTS distribution.districts CASCADE;
 CREATE TABLE distribution.districts (id serial NOT NULL);
+COMMENT ON TABLE distribution.districts IS 'Districts.';
 
 ALTER TABLE distribution.districts ADD COLUMN  name  varchar(40);
 ALTER TABLE distribution.districts ADD COLUMN  shortname  varchar(12);
@@ -27,8 +28,6 @@ SELECT AddGeometryColumn('distribution', 'districts', 'geometry', 21781, 'POLYGO
 ALTER TABLE distribution.districts ADD CONSTRAINT districts_pkey PRIMARY KEY (id);
 ALTER TABLE distribution.districts ADD CONSTRAINT districts_name UNIQUE (name);
 
-/* Comment */
-COMMENT ON TABLE distribution.districts IS 'Districts.';
 
 /*----------------!!!---!!!----------------*/
 /* FUNCTION */

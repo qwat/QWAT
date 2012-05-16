@@ -6,6 +6,7 @@
 BEGIN;
 DROP TABLE IF EXISTS distribution.pipes CASCADE;
 CREATE TABLE distribution.pipes (id serial NOT NULL);
+COMMENT ON TABLE distribution.pipes IS 'Table for pipes. This should not be used for editing/viewing, as a more complete view (pipes_view) exists.';
 SELECT setval('distribution.pipes_id_seq', 35000, true);
 
 ALTER TABLE distribution.pipes ADD COLUMN   id_parent integer;                                      /* id_parent         FK */
@@ -78,9 +79,6 @@ CREATE INDEX fki_pipes_id_node_b ON distribution.pipes(id_node_b);
 /* GIST index*/
 CREATE INDEX pipes_geoidx ON distribution.pipes USING GIST ( geometry );
 
-/*----------------!!!---!!!----------------*/
-/* Comment */
-COMMENT ON TABLE distribution.pipes IS 'Table for pipes. This should not be used for editing/viewing, as a more complete view (pipes_view) exists.';
 
 /*----------------!!!---!!!----------------*/
 /* Trigger for 2d length, map and district update */

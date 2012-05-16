@@ -9,6 +9,8 @@ BEGIN;
 /* CREATE TABLE */
 DROP TABLE IF EXISTS distribution.nodes CASCADE;
 CREATE TABLE distribution.nodes (id serial NOT NULL);
+COMMENT ON TABLE distribution.nodes IS 'Nodes. Type:If three pipes or more arrives at the node: three. If one pipe: one. If two: depends on characteristics of pipes: two_same (everything same), two_year (year is different), two_material (and year is/are different), two_diameter (and material/year are different). Orientation is calculated if two pipes arrives to place the symbol in theright direction.';
+
 ALTER TABLE distribution.nodes ADD COLUMN  altitude_dtm       DECIMAL(10,3)              ;
 ALTER TABLE distribution.nodes ADD COLUMN  altitude_real      DECIMAL(10,3)              ;
 ALTER TABLE distribution.nodes ADD COLUMN  _type              VARCHAR(20)   DEFAULT NULL ;
@@ -23,8 +25,6 @@ SELECT setval('distribution.nodes_id_seq', 40000, true);
 ALTER TABLE distribution.nodes ADD CONSTRAINT nodes_pkey PRIMARY KEY (id);
 /* GIST index*/
 CREATE INDEX nodes_geoidx ON distribution.nodes USING GIST ( geometry );
-/* Comment */
-COMMENT ON TABLE distribution.nodes IS 'Nodes. Type:If three pipes or more arrives at the node: three. If one pipe: one. If two: depends on characteristics of pipes: two_same (everything same), two_year (year is different), two_material (and year is/are different), two_diameter (and material/year are different). Orientation is calculated if two pipes arrives to place the symbol in theright direction.';
 
 /* nodes altitude */
 CREATE OR REPLACE FUNCTION distribution.nodes_altitude() RETURNS void AS '
