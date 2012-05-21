@@ -34,6 +34,8 @@ psql -h 172.24.171.$ip -U sige -f printmaps.sql
 read -p "Press any key to continue..."
 psql -h 172.24.171.$ip -U sige -f pipes.sql
 read -p "Press any key to continue..."
+psql -h 172.24.171.$ip -U sige -f pipes_view.sql
+read -p "Press any key to continue..."
 psql -h 172.24.171.$ip -U sige -f valves_type.sql
 read -p "Press any key to continue..."
 psql -h 172.24.171.$ip -U sige -f valves_function.sql
