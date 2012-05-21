@@ -19,6 +19,7 @@ ALTER TABLE distribution.valves ADD COLUMN closed           boolean default fals
 ALTER TABLE distribution.valves ADD COLUMN altitude_dtm     decimal(10,3) ;
 ALTER TABLE distribution.valves ADD COLUMN altitude_real    decimal(10,3) ;
 ALTER TABLE distribution.valves ADD COLUMN remarks          text           ;
+ALTER TABLE distribution.valves ADD COLUMN schema_force_view  boolean DEFAULT NULL::boolean; 
 ALTER TABLE distribution.valves ADD COLUMN _is_on_map varchar(80) DEFAULT '';      
 ALTER TABLE distribution.valves ADD COLUMN _is_on_district varchar(100) DEFAULT '';
 
@@ -39,9 +40,6 @@ ALTER TABLE distribution.valves ADD CONSTRAINT valves_id_node FOREIGN KEY (id_no
 CREATE INDEX fki_valves_id_node ON distribution.valves(id_node);
 /* GIST index*/
 CREATE INDEX valves_geoidx ON distribution.valves USING GIST ( geometry );
-
-
-
 
 /*----------------!!!---!!!----------------*/
 /* Trigger for map and district update */
