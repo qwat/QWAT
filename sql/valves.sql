@@ -9,6 +9,8 @@ CREATE TABLE distribution.valves (id serial NOT NULL);
 COMMENT ON TABLE distribution.valves IS 'Table for valves.';
 
 ALTER TABLE distribution.valves ADD COLUMN sige             integer ;
+ALTER TABLE distribution.valves ADD COLUMN id_type          integer ;
+ALTER TABLE distribution.valves ADD COLUMN id_function      integer ;
 ALTER TABLE distribution.valves ADD COLUMN id_pipe          integer ;
 ALTER TABLE distribution.valves ADD COLUMN id_node          integer ;
 ALTER TABLE distribution.valves ADD COLUMN diameter_nominal varchar(10) ;
@@ -27,6 +29,10 @@ SELECT addGeometryColumn('distribution', 'valves', 'geometry', 21781, 'POINT', 2
 /* primary key */
 ALTER TABLE distribution.valves ADD CONSTRAINT valves_pkey PRIMARY KEY (id);
 /* foreign keys */
+ALTER TABLE distribution.valves ADD CONSTRAINT valves_id_type FOREIGN KEY (id_type) REFERENCES distribution.valves_type(id) MATCH FULL ON UPDATE NO ACTION ON DELETE NO ACTION;
+CREATE INDEX fki_valves_id_type ON distribution.valves(id_type);
+ALTER TABLE distribution.valves ADD CONSTRAINT valves_id_function FOREIGN KEY (id_function) REFERENCES distribution.valves_function(id) MATCH FULL ON UPDATE NO ACTION ON DELETE NO ACTION;
+CREATE INDEX fki_valves_id_function ON distribution.valves(id_function);
 ALTER TABLE distribution.valves ADD CONSTRAINT valves_id_pipe FOREIGN KEY (id_pipe) REFERENCES distribution.pipes(id) MATCH SIMPLE ON UPDATE NO ACTION ON DELETE NO ACTION;
 CREATE INDEX fki_valves_id_pipe ON distribution.valves(id_pipe);
 ALTER TABLE distribution.valves ADD CONSTRAINT valves_id_node FOREIGN KEY (id_node) REFERENCES distribution.nodes(id) MATCH SIMPLE ON UPDATE NO ACTION ON DELETE NO ACTION;
