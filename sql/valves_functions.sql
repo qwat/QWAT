@@ -17,17 +17,17 @@ ALTER TABLE distribution.valves_function ADD CONSTRAINT unique_function UNIQUE (
 /* Comment */
 COMMENT ON TABLE distribution.valves_function IS 'Types of valves';
 
-INSERT INTO distribution.valves_function ( function ) VALUES ('vanne de régulation');
-INSERT INTO distribution.valves_function ( function ) VALUES ('ventouse');           
-INSERT INTO distribution.valves_function ( function ) VALUES ('vanne by-pass');      
-INSERT INTO distribution.valves_function ( function ) VALUES ('vanne d''ouvrage');   
-INSERT INTO distribution.valves_function ( function ) VALUES ('organe abonné');      
-INSERT INTO distribution.valves_function ( function ) VALUES ('prise de secours');   
-INSERT INTO distribution.valves_function ( function ) VALUES ('vanne incendie');     
-INSERT INTO distribution.valves_function ( function ) VALUES ('vanne d''hydrant');   
-INSERT INTO distribution.valves_function ( function ) VALUES ('inconnu');            
-INSERT INTO distribution.valves_function ( function ) VALUES ('vidange');            
-INSERT INTO distribution.valves_function ( function ) VALUES ('organe réseau');      
-INSERT INTO distribution.valves_function ( function ) VALUES ('vidange-ventouse');   
+INSERT INTO distribution.valves_function ( function ) VALUES ('vanne de régulation');    /* 1  REG' */
+INSERT INTO distribution.valves_function ( function ) VALUES ('ventouse');               /* 2  VE   */
+INSERT INTO distribution.valves_function ( function ) VALUES ('vanne by-pass');          /* 3  VBP  */
+INSERT INTO distribution.valves_function ( function ) VALUES ('vanne d''ouvrage');       /* 4  OUV  */
+INSERT INTO distribution.valves_function ( function ) VALUES ('organe abonné');          /* 5  OA   */
+INSERT INTO distribution.valves_function ( function ) VALUES ('prise de secours');       /* 6  SEC  */
+INSERT INTO distribution.valves_function ( function ) VALUES ('vanne incendie');         /* 7  VIN  */
+INSERT INTO distribution.valves_function ( function ) VALUES ('vanne d''hydrant');       /* 8  VH   */
+INSERT INTO distribution.valves_function ( function ) VALUES ('inconnu');                /* 9 I     */
+INSERT INTO distribution.valves_function ( function ) VALUES ('vidange');                /* 10 VID  */
+INSERT INTO distribution.valves_function ( function ) VALUES ('organe réseau');          /* 11 VR   */
+INSERT INTO distribution.valves_function ( function ) VALUES ('vidange-ventouse');       /* 12 VIVE */
 
 COMMIT;

@@ -18,19 +18,19 @@ ALTER TABLE distribution.valves_type ADD CONSTRAINT unique_type UNIQUE ("type");
 COMMENT ON TABLE distribution.valves_type IS 'Types of valves';
 
 
-INSERT INTO distribution.valves_type ( type ) VALUES ('vanne à gauche');                                                                                                                                                                                                                                                           
-INSERT INTO distribution.valves_type ( type ) VALUES ('vanne clayton');                 
-INSERT INTO distribution.valves_type ( type ) VALUES ('vanne annulaire');                                                                                                                                                                                                                                 
-INSERT INTO distribution.valves_type ( type ) VALUES ('inconnu')   ;                 
-INSERT INTO distribution.valves_type ( type ) VALUES ('jauge');
-INSERT INTO distribution.valves_type ( type ) VALUES ('limiteur de débit');
-INSERT INTO distribution.valves_type ( type ) VALUES ('purge');                                                                                                                                                                                                                                                                                                                                                                                             
-INSERT INTO distribution.valves_type ( type ) VALUES ('soupape automatique');
-INSERT INTO distribution.valves_type ( type ) VALUES ('sprinkler');                                                                                                                                                                                                                                                                                                                                                                                             
-INSERT INTO distribution.valves_type ( type ) VALUES ('vanne');
-INSERT INTO distribution.valves_type ( type ) VALUES ('vanne papillon');                                                                                                                                                                                                                                                                                                                                                  
-INSERT INTO distribution.valves_type ( type ) VALUES ('Elgef');
-INSERT INTO distribution.valves_type ( type ) VALUES ('arrêt');                                                                                                                                                                                                                                                                                        
-INSERT INTO distribution.valves_type ( type ) VALUES ('vanne télécommandée');   
+INSERT INTO distribution.valves_type ( type ) VALUES ('vanne à gauche');            /* 1  VG  */                                                                                                                                                                                                                                              
+INSERT INTO distribution.valves_type ( type ) VALUES ('vanne clayton');             /* 2  CL  */
+INSERT INTO distribution.valves_type ( type ) VALUES ('vanne annulaire');           /* 3  VAN */                                                                                                                                                                                                                 
+INSERT INTO distribution.valves_type ( type ) VALUES ('inconnu')   ;                /* 4  I   */
+INSERT INTO distribution.valves_type ( type ) VALUES ('jauge');                     /* 5  J   */
+INSERT INTO distribution.valves_type ( type ) VALUES ('limiteur de débit');         /* 6  LD  */
+INSERT INTO distribution.valves_type ( type ) VALUES ('purge');                     /* 7  PU  */                                                                                                                                                                                                                                                                                                                                                                   
+INSERT INTO distribution.valves_type ( type ) VALUES ('soupape automatique');       /* 8  SA  */
+INSERT INTO distribution.valves_type ( type ) VALUES ('sprinkler');                 /* 9  SP  */                                                                                                                                                                                                                                                                                                                                                                       
+INSERT INTO distribution.valves_type ( type ) VALUES ('vanne');                     /* 10 V   */
+INSERT INTO distribution.valves_type ( type ) VALUES ('vanne papillon');            /* 11 P   */                                                                                                                                                                                                                                                                                                                                 
+INSERT INTO distribution.valves_type ( type ) VALUES ('Elgef');                     /* 12 E   */
+INSERT INTO distribution.valves_type ( type ) VALUES ('arrêt');                     /* 13 A   */                                                                                                                                                                                                                                                              
+INSERT INTO distribution.valves_type ( type ) VALUES ('vanne télécommandée');       /* 14 TEL */
 
 COMMIT;
