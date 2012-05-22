@@ -47,21 +47,29 @@ CREATE INDEX valves_geoidx ON distribution.valves USING GIST ( geometry );
 CREATE OR REPLACE FUNCTION distribution.valves_geom() RETURNS trigger AS ' 
 	BEGIN
 		UPDATE distribution.valves SET 
-			id_node            = distribution.node_get_id(NEW.geometry,false),
-			id_pipe            = distribution.pipe_get_id(NEW.geometry),
-			_is_on_map         = distribution.get_map(NEW.geometry),
-			_is_on_district    = distribution.get_district(NEW.geometry)
+			id_node              = distribution.node_get_id(NEW.geometry,false),
+			id_pipe              = distribution.pipe_get_id(NEW.geometry),
+			_is_on_map           = distribution.get_map(NEW.geometry),
+			_is_on_district      = distribution.get_district(NEW.geometry),
+			geometry_alternative = NEW.geometry
 		WHERE id = NEW.id ;
 		RETURN NEW;
 	END;
 ' LANGUAGE 'plpgsql';
 COMMENT ON FUNCTION distribution.valves_geom() IS 'Fcn/Trigger: updates auto fields of the valve after insert/update.';
 
-CREATE TRIGGER valves_geom_trigger 
-	AFTER INSERT OR UPDATE OF geometry ON distribution.valves
+CREATE TRIGGER valves_geom_trigger_insert
+	AFTER INSERT ON distribution.valves
 	FOR EACH ROW
 	EXECUTE PROCEDURE distribution.valves_geom();
-COMMENT ON TRIGGER valves_geom_trigger ON distribution.valves IS 'Trigger: updates auto fields of the valve after insert/update.';
+COMMENT ON TRIGGER valves_geom_trigger_insert ON distribution.valves IS 'Trigger: updates auto fields of the valve after insert.';
+
+CREATE TRIGGER valves_geom_trigger_update
+	AFTER UPDATE OF geometry ON distribution.valves 
+	FOR EACH ROW
+	WHEN (ST_AsBinary(NEW.geometry) <> ST_AsBinary(OLD.geometry))
+	EXECUTE PROCEDURE distribution.valves_geom();
+COMMENT ON TRIGGER valves_geom_trigger_update ON distribution.valves IS 'Trigger: updates auto fields of the valve after update.';
 
 
 COMMIT;

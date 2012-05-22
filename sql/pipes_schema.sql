@@ -21,11 +21,18 @@ CREATE OR REPLACE VIEW distribution.pipes_schema_viewableitems AS
 		_length3d,
 		_length3d_uptodate,
 		tunnel_or_bridge,
-		geometry::geometry(LineString,21781)
+		geometry_alternative::geometry(LineString,21781)
 	  FROM distribution.pipes_view
 		WHERE _schema_view IS TRUE
 		AND _status_active IS TRUE;
 COMMENT ON VIEW distribution.pipes_schema_viewableitems IS 'viewable pipes in the schematic view (before merge)';
+
+CREATE OR REPLACE RULE pipes_update_alternative AS
+	ON UPDATE TO distribution.pipes_view_alternative DO INSTEAD
+		UPDATE distribution.pipes SET 
+			geometry_alternative = NEW.geometry_alternative
+		WHERE id = NEW.id;
+		
 
 /* 
 Function to get a group ID (parent/children).

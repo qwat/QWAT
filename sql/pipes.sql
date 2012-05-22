@@ -34,6 +34,7 @@ ALTER TABLE distribution.pipes ADD COLUMN   _is_on_district varchar(100) DEFAULT
 
 
 SELECT addGeometryColumn('distribution', 'pipes', 'geometry', 21781, 'LINESTRING', 2);
+SELECT addGeometryColumn('distribution', 'pipes', 'geometry_alternative', 21781, 'LINESTRING', 2);
 
 
 ALTER TABLE distribution.pipes ADD COLUMN   coating_internal_material_id character(20);
@@ -85,23 +86,31 @@ CREATE INDEX pipes_geoidx ON distribution.pipes USING GIST ( geometry );
 CREATE OR REPLACE FUNCTION distribution.pipes_geom() RETURNS trigger AS ' 
 	BEGIN
 		UPDATE distribution.pipes SET
-			id_node_a          = distribution.node_get_id(ST_StartPoint(NEW.geometry),true),
-			id_node_b          = distribution.node_get_id(ST_EndPoint(  NEW.geometry),true),
-			_length2d          = ST_Length(NEW.geometry),
-			_length3d_uptodate = False,
-			_is_on_map         = distribution.get_map(NEW.geometry),
-			_is_on_district    = distribution.get_district(NEW.geometry)
+			id_node_a            = distribution.node_get_id(ST_StartPoint(NEW.geometry),true),
+			id_node_b            = distribution.node_get_id(ST_EndPoint(  NEW.geometry),true),
+			_length2d            = ST_Length(NEW.geometry),
+			_length3d_uptodate   = False,
+			_is_on_map           = distribution.get_map(NEW.geometry),
+			_is_on_district      = distribution.get_district(NEW.geometry),
+			geometry_alternative = NEW.geometry
 		WHERE id = NEW.id ;
 		RETURN NEW;
 	END;
 ' LANGUAGE 'plpgsql';
 COMMENT ON FUNCTION distribution.pipes_geom() IS 'Fcn/Trigger: updates the length and other fields of the pipe after insert/update.';
 
-CREATE TRIGGER pipes_geom_trigger 
-	AFTER INSERT OR UPDATE OF geometry ON distribution.pipes
-		FOR EACH ROW
-		EXECUTE PROCEDURE distribution.pipes_geom();
-COMMENT ON TRIGGER pipes_geom_trigger ON distribution.pipes IS 'Trigger: updates the length and other fields of the pipe after insert/update.';
+CREATE TRIGGER pipes_geom_trigger_insert
+	AFTER INSERT ON distribution.pipes
+	FOR EACH ROW
+	EXECUTE PROCEDURE distribution.pipes_geom();
+COMMENT ON TRIGGER pipes_geom_trigger_insert ON distribution.pipes IS 'Trigger: updates auto fields of the pipe after insert.';
+
+CREATE TRIGGER pipes_geom_trigger_update
+	AFTER UPDATE OF geometry ON distribution.pipes 
+	FOR EACH ROW
+	WHEN (ST_AsBinary(NEW.geometry) <> ST_AsBinary(OLD.geometry))
+	EXECUTE PROCEDURE distribution.pipes_geom();
+COMMENT ON TRIGGER pipes_geom_trigger_update ON distribution.pipes IS 'Trigger: updates auto fields of the pipe after update.';
 
 /* Trigger for tunnel_or_bridge */
 CREATE OR REPLACE FUNCTION distribution.pipes_tunnelbridge() RETURNS trigger AS ' 

@@ -26,8 +26,9 @@ CREATE VIEW distribution.valves_view_alternative AS
 		valves._is_on_map,
 		valves._is_on_district,
 		valves.geometry_alternative::geometry(Point,21781),
-		valves_function.function,
-		valves_type.type
+		valves_function.function AS _function,
+		valves_function.shortname AS _function_shortname,
+		valves_type.type AS _type
 		FROM distribution.valves
 		INNER JOIN distribution.valves_type     ON valves.id_function = valves_type.id
 		INNER JOIN distribution.valves_function ON valves.id_function = valves_function.id

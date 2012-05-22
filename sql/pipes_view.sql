@@ -85,7 +85,7 @@ CREATE OR REPLACE RULE pipes_update AS
 			schema_force_view  = NEW.schema_force_view  ,
 			folder             = NEW.folder             ,
 			remarks            = NEW.remarks            ,
-			geometry       = NEW.geometry       ,
+			geometry           = NEW.geometry       ,
 			id_parent          = NULLIF(NEW.id_parent,0)::integer	
 		WHERE id = NEW.id;
 CREATE OR REPLACE RULE pipes_insert AS

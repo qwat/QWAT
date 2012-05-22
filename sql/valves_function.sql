@@ -10,7 +10,7 @@ CREATE TABLE distribution.valves_function ( id SERIAL, CONSTRAINT "valves_functi
 
 /* Columns*/
 ALTER TABLE distribution.valves_function ADD COLUMN "function" VARCHAR(30);
-ALTER TABLE distribution.valves_function ADD COLUMN "short_name" VARCHAR(5);
+ALTER TABLE distribution.valves_function ADD COLUMN "shortname" VARCHAR(5);
 ALTER TABLE distribution.valves_function ADD COLUMN "schema_view" BOOLEAN NOT NULL DEFAULT true;
 
 /* Constraints*/
@@ -22,7 +22,7 @@ COMMENT ON TABLE distribution.valves_function IS 'Types of valves';
 INSERT INTO distribution.valves_function ( function ) VALUES ('vanne de régulation');      /* 1  REG' */
 INSERT INTO distribution.valves_function ( function ) VALUES ('ventouse','Ve');            /* 2  VE   */
 INSERT INTO distribution.valves_function ( function ) VALUES ('vanne by-pass');            /* 3  VBP  */
-INSERT INTO distribution.valves_function ( function ) VALUES ('vanne d''ouvrage');         /* 4  OUV  */
+INSERT INTO distribution.valves_function ( function ) VALUES ('vanne d''ouvrage','','false');/* 4  OUV  */
 INSERT INTO distribution.valves_function ( function ) VALUES ('organe abonné','','false'); /* 5  OA   */
 INSERT INTO distribution.valves_function ( function ) VALUES ('prise de secours');         /* 6  SEC  */
 INSERT INTO distribution.valves_function ( function ) VALUES ('vanne incendie');           /* 7  VIN  */
