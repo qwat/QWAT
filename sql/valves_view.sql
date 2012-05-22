@@ -51,7 +51,7 @@ CREATE OR REPLACE RULE valves_update AS
 			altitude_real     = NEW.altitude_real,		
 			remarks           = NEW.remarks,		
 			schema_force_view = NEW.schema_force_view,
-			geometry          = NEW.schema_force_view
+			geometry          = NEW.geometry
 		WHERE id = NEW.id;
 		
 CREATE OR REPLACE RULE valves_insert AS
