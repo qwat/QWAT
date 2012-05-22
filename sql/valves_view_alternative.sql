@@ -27,14 +27,12 @@ CREATE VIEW distribution.valves_view_alternative AS
 		valves._is_on_district,
 		valves.geometry_alternative::geometry(Point,21781),
 		valves_function.function,
-		valves_type.type,
-		CASE 
-			WHEN valves.schema_force_view IS NULL THEN valves_function.schema_view
-			ELSE valves.schema_force_view
-		END AS _schema_view
+		valves_type.type
 		FROM distribution.valves
 		INNER JOIN distribution.valves_type     ON valves.id_function = valves_type.id
-		INNER JOIN distribution.valves_function ON valves.id_function = valves_function.id;
+		INNER JOIN distribution.valves_function ON valves.id_function = valves_function.id
+		WHERE  valves.schema_force_view IS TRUE 
+		   OR (valves.schema_force_view IS NULL AND valves_function.schema_view IS TRUE);
 		
 		
 CREATE OR REPLACE RULE valves_update_alternative AS
