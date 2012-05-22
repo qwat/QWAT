@@ -3,6 +3,7 @@
 
 read -p "server 75 or 202 : " ip
 
+psql -h 172.24.171.$ip -U sige -c "DROP SCHEMA distribution CASCADE; CREATE SCHEMA distribution;"
 
 psql -h 172.24.171.$ip -U sige -f tool_functions.sql
 read -p "Press any key to continue..."
