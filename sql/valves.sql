@@ -24,6 +24,7 @@ ALTER TABLE distribution.valves ADD COLUMN _is_on_map varchar(80) DEFAULT '';
 ALTER TABLE distribution.valves ADD COLUMN _is_on_district varchar(100) DEFAULT '';
 
 SELECT addGeometryColumn('distribution', 'valves', 'geometry', 21781, 'POINT', 2);
+SELECT addGeometryColumn('distribution', 'valves', 'geometry_alternative', 21781, 'POINT', 2);
 
 /*----------------!!!---!!!----------------*/
 /* Add constraints */
