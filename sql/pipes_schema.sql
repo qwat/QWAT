@@ -15,22 +15,23 @@ BEGIN;
 /* create a view with the viewable items */
 CREATE OR REPLACE VIEW distribution.pipes_schema_viewableitems AS 
 	SELECT 	
-		id,
-		id_parent,
-		_length2d,
-		_length3d,
-		_length3d_uptodate,
-		tunnel_or_bridge,
-		geometry_alternative::geometry(LineString,21781)
-	  FROM distribution.pipes_view
+		pipes.id,
+		pipes.id_parent,
+		pipes._length2d,
+		pipes._length3d,
+		pipes._length3d_uptodate,
+		pipes.tunnel_or_bridge,
+		pipes.geometry_alternative::geometry(LineString,21781) AS geometry
+	  FROM distribution.pipes
+	  INNER JOIN distribution.pipes_view ON pipes.id = pipes_view.id
 		WHERE _schema_view IS TRUE
 		AND _status_active IS TRUE;
 COMMENT ON VIEW distribution.pipes_schema_viewableitems IS 'viewable pipes in the schematic view (before merge)';
 
 CREATE OR REPLACE RULE pipes_update_alternative AS
-	ON UPDATE TO distribution.pipes_view_alternative DO INSTEAD
+	ON UPDATE TO distribution.pipes_schema_viewableitems DO INSTEAD
 		UPDATE distribution.pipes SET 
-			geometry_alternative = NEW.geometry_alternative
+			geometry_alternative = NEW.geometry
 		WHERE id = NEW.id;
 		
 
