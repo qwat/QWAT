@@ -35,7 +35,7 @@ $ogr2ogrpath -sql "SELECT                                           \
 		_protection,                                                \
 		_status_name,                                               \
 		_status_active,                                             \
-		_pressure_zone                                              \
+		_pressure_zone,                                              \
 		_schema_view                                                \
  FROM distribution.pipes_view WHERE id_owner = 1" \
  -overwrite -a_srs EPSG:21781 -f SQLite /home/denis/Documents/cartoriviera/sige_distribution.sqlite \
