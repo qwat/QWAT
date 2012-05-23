@@ -4,10 +4,10 @@
     <mapcanvas>
         <units>meters</units>
         <extent>
-            <xmin>556118.836695</xmin>
-            <ymin>148347.612887</ymin>
-            <xmax>556127.204116</xmax>
-            <ymax>148353.034976</ymax>
+            <xmin>555466.418822</xmin>
+            <ymin>148535.666675</ymin>
+            <xmax>556768.122618</xmax>
+            <ymax>149379.170735</ymax>
         </extent>
         <projections>0</projections>
         <destinationsrs>
@@ -57,9 +57,9 @@
             </legendlayer>
         </legendgroup>
         <legendgroup open="true" checked="Qt::PartiallyChecked" name="Réseau">
-            <legendlayer drawingOrder="4" open="false" checked="Qt::Checked" name="Vannes" showFeatureCount="0">
+            <legendlayer drawingOrder="4" open="false" checked="Qt::Unchecked" name="Vannes" showFeatureCount="0">
                 <filegroup open="false" hidden="false">
-                    <legendlayerfile isInOverview="0" layerid="valves_view20120314082412614" visible="1"/>
+                    <legendlayerfile isInOverview="0" layerid="valves_view20120314082412614" visible="0"/>
                 </filegroup>
             </legendlayer>
             <legendlayer drawingOrder="14" open="false" checked="Qt::Checked" name="Conduites" showFeatureCount="0">
@@ -5838,6 +5838,141 @@
             <annotationform>.</annotationform>
             <attributeactions/>
         </maplayer>
+        <maplayer minimumScale="0" maximumScale="25000" geometry="Point" type="vector" hasScaleBasedVisibilityFlag="1">
+            <id>valves_schema20120522093545758</id>
+            <datasource>dbname='sige' host=172.24.171.202 port=5432 user='sige' password='db4wat$' sslmode=allow key='id' srid=21781 type=POINT table="distribution"."valves_schema" (geometry_alternative) sql=</datasource>
+            <title></title>
+            <abstract></abstract>
+            <layername>Vannes schéma</layername>
+            <srs>
+                <spatialrefsys>
+                    <proj4>+proj=somerc +lat_0=46.95240555555556 +lon_0=7.439583333333333 +k_0=1 +x_0=600000 +y_0=200000 +ellps=bessel +towgs84=674.374,15.056,405.346,0,0,0,0 +units=m +no_defs</proj4>
+                    <srsid>1919</srsid>
+                    <srid>21781</srid>
+                    <authid>EPSG:21781</authid>
+                    <description>CH1903 / LV03</description>
+                    <projectionacronym>somerc</projectionacronym>
+                    <ellipsoidacronym>bessel</ellipsoidacronym>
+                    <geographicflag>false</geographicflag>
+                </spatialrefsys>
+            </srs>
+            <transparencyLevelInt>255</transparencyLevelInt>
+            <provider encoding="ISO-8859-1">postgres</provider>
+            <vectorjoins/>
+            <renderer-v2 symbollevels="0" type="singleSymbol">
+                <symbols>
+                    <symbol outputUnit="MM" alpha="1" type="marker" name="0">
+                        <layer pass="0" class="SimpleMarker" locked="0">
+                            <prop k="angle" v="0"/>
+                            <prop k="color" v="255,0,0,255"/>
+                            <prop k="color_border" v="255,0,0,255"/>
+                            <prop k="name" v="circle"/>
+                            <prop k="offset" v="0,0"/>
+                            <prop k="size" v="1.4"/>
+                        </layer>
+                    </symbol>
+                </symbols>
+                <rotation field=""/>
+                <sizescale field=""/>
+            </renderer-v2>
+            <customproperties>
+                <property key="labeling" value="pal"/>
+                <property key="labeling/addDirectionSymbol" value="false"/>
+                <property key="labeling/bufferColorB" value="255"/>
+                <property key="labeling/bufferColorG" value="255"/>
+                <property key="labeling/bufferColorR" value="255"/>
+                <property key="labeling/bufferSize" value="0.3"/>
+                <property key="labeling/dataDefinedProperty0" value=""/>
+                <property key="labeling/dataDefinedProperty1" value=""/>
+                <property key="labeling/dataDefinedProperty10" value=""/>
+                <property key="labeling/dataDefinedProperty11" value=""/>
+                <property key="labeling/dataDefinedProperty12" value=""/>
+                <property key="labeling/dataDefinedProperty13" value=""/>
+                <property key="labeling/dataDefinedProperty14" value=""/>
+                <property key="labeling/dataDefinedProperty2" value=""/>
+                <property key="labeling/dataDefinedProperty3" value=""/>
+                <property key="labeling/dataDefinedProperty4" value=""/>
+                <property key="labeling/dataDefinedProperty5" value=""/>
+                <property key="labeling/dataDefinedProperty6" value=""/>
+                <property key="labeling/dataDefinedProperty7" value=""/>
+                <property key="labeling/dataDefinedProperty8" value=""/>
+                <property key="labeling/dataDefinedProperty9" value=""/>
+                <property key="labeling/decimals" value="0"/>
+                <property key="labeling/dist" value="0"/>
+                <property key="labeling/distInMapUnits" value="false"/>
+                <property key="labeling/enabled" value="true"/>
+                <property key="labeling/fieldName" value="_label"/>
+                <property key="labeling/fontFamily" value="Arial"/>
+                <property key="labeling/fontItalic" value="false"/>
+                <property key="labeling/fontSize" value="6"/>
+                <property key="labeling/fontSizeInMapUnits" value="false"/>
+                <property key="labeling/fontStrikeout" value="false"/>
+                <property key="labeling/fontUnderline" value="false"/>
+                <property key="labeling/fontWeight" value="50"/>
+                <property key="labeling/formatNumbers" value="false"/>
+                <property key="labeling/isExpression" value="false"/>
+                <property key="labeling/labelPerPart" value="false"/>
+                <property key="labeling/mergeLines" value="false"/>
+                <property key="labeling/minFeatureSize" value="0"/>
+                <property key="labeling/obstacle" value="true"/>
+                <property key="labeling/placement" value="0"/>
+                <property key="labeling/placementFlags" value="0"/>
+                <property key="labeling/plussign" value="true"/>
+                <property key="labeling/priority" value="5"/>
+                <property key="labeling/scaleMax" value="8000"/>
+                <property key="labeling/scaleMin" value="1"/>
+                <property key="labeling/textColorB" value="0"/>
+                <property key="labeling/textColorG" value="0"/>
+                <property key="labeling/textColorR" value="0"/>
+                <property key="labeling/wrapChar" value=""/>
+            </customproperties>
+            <displayfield>id</displayfield>
+            <label>0</label>
+            <labelattributes>
+                <label fieldname="" text="Label"/>
+                <family fieldname="" name="Ubuntu"/>
+                <size fieldname="" units="pt" value="12"/>
+                <bold fieldname="" on="0"/>
+                <italic fieldname="" on="0"/>
+                <underline fieldname="" on="0"/>
+                <strikeout fieldname="" on="0"/>
+                <color fieldname="" red="0" blue="0" green="0"/>
+                <x fieldname=""/>
+                <y fieldname=""/>
+                <offset x="0" y="0" units="pt" yfieldname="" xfieldname=""/>
+                <angle fieldname="" value="0" auto="0"/>
+                <alignment fieldname="" value="center"/>
+                <buffercolor fieldname="" red="255" blue="255" green="255"/>
+                <buffersize fieldname="" units="pt" value="1"/>
+                <bufferenabled fieldname="" on=""/>
+                <multilineenabled fieldname="" on=""/>
+                <selectedonly on=""/>
+            </labelattributes>
+            <edittypes>
+                <edittype type="0" name="_is_on_district"/>
+                <edittype type="0" name="_label"/>
+                <edittype type="0" name="_schema_view"/>
+                <edittype type="0" name="altitude_dtm"/>
+                <edittype type="0" name="altitude_real"/>
+                <edittype type="0" name="closed"/>
+                <edittype type="0" name="diameter_nominal"/>
+                <edittype type="0" name="function"/>
+                <edittype type="0" name="id"/>
+                <edittype type="0" name="id_function"/>
+                <edittype type="0" name="id_node"/>
+                <edittype type="0" name="id_pipe"/>
+                <edittype type="0" name="id_type"/>
+                <edittype type="0" name="remarks"/>
+                <edittype type="0" name="schema_force_view"/>
+                <edittype type="0" name="sige"/>
+                <edittype type="0" name="type"/>
+                <edittype type="0" name="year"/>
+            </edittypes>
+            <editform>.</editform>
+            <editforminit></editforminit>
+            <annotationform>.</annotationform>
+            <attributeactions/>
+        </maplayer>
         <maplayer minimumScale="0" maximumScale="1e+08" geometry="No geometry" type="vector" hasScaleBasedVisibilityFlag="0">
             <id>valves_type20120521151925807</id>
             <datasource>dbname='sige' host=172.24.171.202 port=5432 user='sige' password='db4wat$' sslmode=allow key='id' table="distribution"."valves_type" sql=</datasource>
@@ -6009,142 +6144,6 @@
                 <edittype allowNull="false" orderByValue="false" key="id" layer="valves_type20120521151925807" type="15" value="type" name="id_type"/>
                 <edittype type="12" name="remarks"/>
                 <edittype allowNull="false" orderByValue="false" key="id" layer="visible20120104110624026" type="15" value="name" name="schema_force_view"/>
-                <edittype type="0" name="sige"/>
-                <edittype type="0" name="type"/>
-                <edittype type="0" name="year"/>
-            </edittypes>
-            <editform>.</editform>
-            <editforminit></editforminit>
-            <annotationform>.</annotationform>
-            <attributeactions/>
-        </maplayer>
-        <maplayer minimumScale="0" maximumScale="25000" geometry="Point" type="vector" hasScaleBasedVisibilityFlag="1">
-            <id>valves_schema20120522093545758</id>
-            <datasource>dbname='sige' host=172.24.171.202 port=5432 user='sige' password='db4wat$' sslmode=allow key='id' srid=21781 type=POINT table="distribution"."valves_schema" (geometry_alternative) sql=</datasource>
-            <title></title>
-            <abstract></abstract>
-            <layername>Vannes schéma</layername>
-            <srs>
-                <spatialrefsys>
-                    <proj4>+proj=somerc +lat_0=46.95240555555556 +lon_0=7.439583333333333 +k_0=1 +x_0=600000 +y_0=200000 +ellps=bessel +towgs84=674.374,15.056,405.346,0,0,0,0 +units=m +no_defs</proj4>
-                    <srsid>1919</srsid>
-                    <srid>21781</srid>
-                    <authid>EPSG:21781</authid>
-                    <description>CH1903 / LV03</description>
-                    <projectionacronym>somerc</projectionacronym>
-                    <ellipsoidacronym>bessel</ellipsoidacronym>
-                    <geographicflag>false</geographicflag>
-                </spatialrefsys>
-            </srs>
-            <transparencyLevelInt>255</transparencyLevelInt>
-            <provider encoding="ISO-8859-1">postgres</provider>
-            <vectorjoins/>
-            <renderer-v2 symbollevels="0" type="singleSymbol">
-                <symbols>
-                    <symbol outputUnit="MM" alpha="1" type="marker" name="0">
-                        <layer pass="0" class="SimpleMarker" locked="0">
-                            <prop k="angle" v="0"/>
-                            <prop k="color" v="255,0,0,255"/>
-                            <prop k="color_border" v="255,0,0,255"/>
-                            <prop k="name" v="circle"/>
-                            <prop k="offset" v="0,0"/>
-                            <prop k="size" v="1.4"/>
-                        </layer>
-                    </symbol>
-                </symbols>
-                <rotation field=""/>
-                <sizescale field=""/>
-            </renderer-v2>
-            <customproperties>
-                <property key="labeling" value="pal"/>
-                <property key="labeling/addDirectionSymbol" value="false"/>
-                <property key="labeling/bufferColorB" value="255"/>
-                <property key="labeling/bufferColorG" value="255"/>
-                <property key="labeling/bufferColorR" value="255"/>
-                <property key="labeling/bufferSize" value="0.3"/>
-                <property key="labeling/dataDefinedProperty0" value=""/>
-                <property key="labeling/dataDefinedProperty1" value=""/>
-                <property key="labeling/dataDefinedProperty10" value=""/>
-                <property key="labeling/dataDefinedProperty11" value=""/>
-                <property key="labeling/dataDefinedProperty12" value=""/>
-                <property key="labeling/dataDefinedProperty13" value=""/>
-                <property key="labeling/dataDefinedProperty14" value=""/>
-                <property key="labeling/dataDefinedProperty2" value=""/>
-                <property key="labeling/dataDefinedProperty3" value=""/>
-                <property key="labeling/dataDefinedProperty4" value=""/>
-                <property key="labeling/dataDefinedProperty5" value=""/>
-                <property key="labeling/dataDefinedProperty6" value=""/>
-                <property key="labeling/dataDefinedProperty7" value=""/>
-                <property key="labeling/dataDefinedProperty8" value=""/>
-                <property key="labeling/dataDefinedProperty9" value=""/>
-                <property key="labeling/decimals" value="0"/>
-                <property key="labeling/dist" value="0"/>
-                <property key="labeling/distInMapUnits" value="false"/>
-                <property key="labeling/enabled" value="true"/>
-                <property key="labeling/fieldName" value="&quot;_function_shortname&quot; || &quot;sige&quot;"/>
-                <property key="labeling/fontFamily" value="Arial"/>
-                <property key="labeling/fontItalic" value="false"/>
-                <property key="labeling/fontSize" value="6"/>
-                <property key="labeling/fontSizeInMapUnits" value="false"/>
-                <property key="labeling/fontStrikeout" value="false"/>
-                <property key="labeling/fontUnderline" value="false"/>
-                <property key="labeling/fontWeight" value="50"/>
-                <property key="labeling/formatNumbers" value="false"/>
-                <property key="labeling/isExpression" value="true"/>
-                <property key="labeling/labelPerPart" value="false"/>
-                <property key="labeling/mergeLines" value="false"/>
-                <property key="labeling/minFeatureSize" value="0"/>
-                <property key="labeling/obstacle" value="true"/>
-                <property key="labeling/placement" value="0"/>
-                <property key="labeling/placementFlags" value="0"/>
-                <property key="labeling/plussign" value="true"/>
-                <property key="labeling/priority" value="5"/>
-                <property key="labeling/scaleMax" value="8000"/>
-                <property key="labeling/scaleMin" value="1"/>
-                <property key="labeling/textColorB" value="0"/>
-                <property key="labeling/textColorG" value="0"/>
-                <property key="labeling/textColorR" value="0"/>
-                <property key="labeling/wrapChar" value=""/>
-            </customproperties>
-            <displayfield>id</displayfield>
-            <label>0</label>
-            <labelattributes>
-                <label fieldname="" text="Label"/>
-                <family fieldname="" name="Ubuntu"/>
-                <size fieldname="" units="pt" value="12"/>
-                <bold fieldname="" on="0"/>
-                <italic fieldname="" on="0"/>
-                <underline fieldname="" on="0"/>
-                <strikeout fieldname="" on="0"/>
-                <color fieldname="" red="0" blue="0" green="0"/>
-                <x fieldname=""/>
-                <y fieldname=""/>
-                <offset x="0" y="0" units="pt" yfieldname="" xfieldname=""/>
-                <angle fieldname="" value="0" auto="0"/>
-                <alignment fieldname="" value="center"/>
-                <buffercolor fieldname="" red="255" blue="255" green="255"/>
-                <buffersize fieldname="" units="pt" value="1"/>
-                <bufferenabled fieldname="" on=""/>
-                <multilineenabled fieldname="" on=""/>
-                <selectedonly on=""/>
-            </labelattributes>
-            <edittypes>
-                <edittype type="0" name="_is_on_district"/>
-                <edittype type="0" name="_is_on_district"/>
-                <edittype type="0" name="_label"/>
-                <edittype type="0" name="_schema_view"/>
-                <edittype type="0" name="altitude_dtm"/>
-                <edittype type="0" name="altitude_real"/>
-                <edittype type="0" name="closed"/>
-                <edittype type="0" name="diameter_nominal"/>
-                <edittype type="0" name="function"/>
-                <edittype type="0" name="id"/>
-                <edittype type="0" name="id_function"/>
-                <edittype type="0" name="id_node"/>
-                <edittype type="0" name="id_pipe"/>
-                <edittype type="0" name="id_type"/>
-                <edittype type="0" name="remarks"/>
-                <edittype type="0" name="schema_force_view"/>
                 <edittype type="0" name="sige"/>
                 <edittype type="0" name="type"/>
                 <edittype type="0" name="year"/>
