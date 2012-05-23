@@ -29,7 +29,10 @@ CREATE VIEW distribution.valves_schema AS
 		valves_function.function AS _function,
 		valves_function.shortname AS _function_shortname,
 		valves_type.type AS _type,
-		valves_function.shortname || valves.sige::varchar AS _label
+		CASE 
+			WHEN valves_function.shortname IS NULL THEN valves.sige::varchar
+			ELSE valves_function.shortname || valves.sige::varchar
+		END AS _label
 		FROM distribution.valves
 		INNER JOIN distribution.valves_type     ON valves.id_function = valves_type.id
 		INNER JOIN distribution.valves_function ON valves.id_function = valves_function.id

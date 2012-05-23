@@ -29,7 +29,10 @@ CREATE VIEW distribution.valves_view AS
 		valves_function.function AS _function,
 		valves_function.shortname AS _function_shortname,
 		valves_type.type AS _type,
-		valves_function.shortname || valves.sige::varchar AS _label,
+		CASE 
+			WHEN valves_function.shortname IS NULL THEN valves.sige::varchar
+			ELSE valves_function.shortname || valves.sige::varchar
+		END AS _label,
 		CASE 
 			WHEN valves.schema_force_view IS NULL THEN valves_function.schema_view
 			ELSE valves.schema_force_view
