@@ -149,30 +149,17 @@ CREATE OR REPLACE FUNCTION distribution.node_type(integer) RETURNS void AS '
 COMMENT ON FUNCTION distribution.node_type(integer) IS 'Set the orientation and type for a node. If three pipes arrives at the node: intersection. If one pipe: end. If two: depends on characteristics of pipes: year (is different), material (and year), diameter(and material/year)';
 
 
-
 CREATE OR REPLACE FUNCTION distribution.node_set_type() RETURNS void AS '
 	DECLARE
 		node record;
 	BEGIN
-		FOR node IN SELECT id FROM distribution.nodes WHERE _type IS NULL ORDER BY id LOOP
+		FOR node IN SELECT id FROM distribution.nodes ORDER BY id LOOP
 			PERFORM distribution.node_type(node.id);
 		END LOOP;
 	END;
 ' LANGUAGE 'plpgsql';
 COMMENT ON FUNCTION distribution.node_set_type() IS 'Set the type and orientation for untyped nodes. If three pipes arrives at the node: intersection. If one pipe: end. If two: depends on characteristics of pipes: year (is different), material (and year), diameter(and material/year)';
 
-
-CREATE OR REPLACE FUNCTION distribution.node_reset_all() RETURNS void AS '
-	DECLARE
-		node record;
-	BEGIN
-		UPDATE distribution.nodes SET _type = NULL;
-		FOR node IN SELECT id FROM distribution.nodes ORDER BY id LOOP
-			PERFORM distribution.node_type(node.id);
-		END LOOP;
-	END;
-' LANGUAGE 'plpgsql';
-COMMENT ON FUNCTION distribution.node_reset_all() IS 'Reset the type and orientation for all nodes. If three pipes arrives at the node: intersection. If one pipe: end. If two: depends on characteristics of pipes: year (is different), material (and year), diameter(and material/year)';
-   
+  
 COMMIT;
 
