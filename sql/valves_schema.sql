@@ -28,7 +28,8 @@ CREATE VIEW distribution.valves_schema AS
 		valves.geometry_alternative::geometry(Point,21781),
 		valves_function.function AS _function,
 		valves_function.shortname AS _function_shortname,
-		valves_type.type AS _type
+		valves_type.type AS _type,
+		valves_function.shortname || valves.sige AS _label
 		FROM distribution.valves
 		INNER JOIN distribution.valves_type     ON valves.id_function = valves_type.id
 		INNER JOIN distribution.valves_function ON valves.id_function = valves_function.id

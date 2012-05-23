@@ -219,10 +219,10 @@
                 </filegroup>
             </legendlayer>
         </legendgroup>
-        <legendgroup open="true" checked="Qt::Unchecked" name="Schématique">
-            <legendlayer drawingOrder="0" open="false" checked="Qt::Unchecked" name="Vannes schéma" showFeatureCount="0">
+        <legendgroup open="true" checked="Qt::PartiallyChecked" name="Schématique">
+            <legendlayer drawingOrder="0" open="false" checked="Qt::Checked" name="Vannes schéma" showFeatureCount="0">
                 <filegroup open="false" hidden="false">
-                    <legendlayerfile isInOverview="0" layerid="valves_schema20120522093545758" visible="0"/>
+                    <legendlayerfile isInOverview="0" layerid="valves_schema20120522093545758" visible="1"/>
                 </filegroup>
             </legendlayer>
             <legendlayer drawingOrder="11" open="false" checked="Qt::Unchecked" name="Conduites schéma" showFeatureCount="0">
@@ -535,7 +535,7 @@
         </ComposerLegend>
         <Composition printResolution="300" paperWidth="1189" snapGridOffsetX="0" snapGridResolution="0" snapGridOffsetY="0" snapping="0" paperHeight="841" printAsRaster="0"/>
     </Composer>
-    <Composer title="Composer 2" visible="1">
+    <Composer title="Composer 2" visible="0">
         <ComposerMap keepLayerSet="false" id="0" previewMode="Render" drawCanvasItems="true">
             <Extent ymin="142027.937669472" xmin="558595.6812412925" ymax="143477.1168464696" xmax="560670.6812434089"/>
             <LayerSet/>
@@ -550,17 +550,6 @@
         <Composition printResolution="300" paperWidth="420" snapGridOffsetX="0" snapGridResolution="0" snapGridOffsetY="0" snapping="0" paperHeight="297" printAsRaster="0"/>
     </Composer>
     <Composer title="Composer 3" visible="0">
-        <ComposerMap keepLayerSet="false" id="0" previewMode="Render" drawCanvasItems="true">
-            <Extent ymin="145630.1711692762" xmin="554289.2416903595" ymax="146047.4060099553" xmax="554875.0183829057"/>
-            <LayerSet/>
-            <Grid gridStyle="0" crossLength="3" penColorRed="0" penColorBlue="0" intervalX="0" offsetX="0" intervalY="0" offsetY="0" show="0" penWidth="0" penColorGreen="0">
-                <Annotation direction="0" precision="3" position="1" frameDistance="1" show="0" font="Ubuntu,11,-1,5,50,0,0,0,0,0"/>
-            </Grid>
-            <ComposerItem width="245.8192371475954" x="10.17412935323382" y="26.54063018242122" rotation="0" height="175.0912106135987" frame="true" outlineWidth="0.3" zValue="1" lastValidViewScaleFactor="2.023489932885906" id="" positionLock="false">
-                <FrameColor alpha="255" red="0" blue="0" green="0"/>
-                <BackgroundColor alpha="255" red="255" blue="255" green="255"/>
-            </ComposerItem>
-        </ComposerMap>
         <ComposerLegend symbolWidth="7" title="Legend" boxSpace="2" titleFont="Ubuntu,16,-1,5,50,0,0,0,0,0" map="0" groupFont="Ubuntu,14,-1,5,50,0,0,0,0,0" layerFont="Ubuntu,12,-1,5,50,0,0,0,0,0" groupSpace="3" symbolSpace="2" symbolHeight="4" layerSpace="2" iconLabelSpace="2" wrapChar="" itemFont="Ubuntu,12,-1,5,50,0,0,0,0,0">
             <Model autoUpdate="1">
                 <LayerItem layerId="pipes_view20120103154925828" text="Conduites">
@@ -994,6 +983,17 @@
                 <BackgroundColor alpha="255" red="255" blue="255" green="255"/>
             </ComposerItem>
         </ComposerLegend>
+        <ComposerMap keepLayerSet="false" id="0" previewMode="Render" drawCanvasItems="true">
+            <Extent ymin="145630.1711692762" xmin="554289.2416903595" ymax="146047.4060099553" xmax="554875.0183829057"/>
+            <LayerSet/>
+            <Grid gridStyle="0" crossLength="3" penColorRed="0" penColorBlue="0" intervalX="0" offsetX="0" intervalY="0" offsetY="0" show="0" penWidth="0" penColorGreen="0">
+                <Annotation direction="0" precision="3" position="1" frameDistance="1" show="0" font="Ubuntu,11,-1,5,50,0,0,0,0,0"/>
+            </Grid>
+            <ComposerItem width="245.8192371475954" x="10.17412935323382" y="26.54063018242122" rotation="0" height="175.0912106135987" frame="true" outlineWidth="0.3" zValue="1" lastValidViewScaleFactor="2.023489932885906" id="" positionLock="false">
+                <FrameColor alpha="255" red="0" blue="0" green="0"/>
+                <BackgroundColor alpha="255" red="255" blue="255" green="255"/>
+            </ComposerItem>
+        </ComposerMap>
         <Composition printResolution="300" paperWidth="297" snapGridOffsetX="0" snapGridResolution="0" snapGridOffsetY="0" snapping="0" paperHeight="210" printAsRaster="0"/>
     </Composer>
     <Composer title="Composer 4" visible="0">
@@ -5946,7 +5946,7 @@
                 <property key="labeling/dist" value="0"/>
                 <property key="labeling/distInMapUnits" value="false"/>
                 <property key="labeling/enabled" value="true"/>
-                <property key="labeling/fieldName" value="sige"/>
+                <property key="labeling/fieldName" value="_label"/>
                 <property key="labeling/fontFamily" value="Arial"/>
                 <property key="labeling/fontItalic" value="false"/>
                 <property key="labeling/fontSize" value="6"/>
@@ -6130,7 +6130,8 @@
             </labelattributes>
             <edittypes>
                 <edittype type="0" name="_is_on_district"/>
-                <edittype type="0" name="_is_on_map"/>
+                <edittype type="0" name="_is_on_district"/>
+                <edittype type="0" name="_label"/>
                 <edittype type="0" name="_schema_view"/>
                 <edittype type="0" name="altitude_dtm"/>
                 <edittype type="0" name="altitude_real"/>
