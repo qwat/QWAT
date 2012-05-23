@@ -7,8 +7,8 @@
 
 BEGIN;
 
-DROP VIEW IF EXISTS distribution.valves_view_alternative CASCADE;		
-CREATE VIEW distribution.valves_view_alternative AS 
+DROP VIEW IF EXISTS distribution.valves_schema CASCADE;		
+CREATE VIEW distribution.valves_schema AS 
 	SELECT  
 		valves.id , 
 		valves.sige,
@@ -37,7 +37,7 @@ CREATE VIEW distribution.valves_view_alternative AS
 		
 		
 CREATE OR REPLACE RULE valves_update_alternative AS
-	ON UPDATE TO distribution.valves_view_alternative DO INSTEAD
+	ON UPDATE TO distribution.valves_schema DO INSTEAD
 		UPDATE distribution.valves SET 
 			geometry_alternative = NEW.geometry_alternative
 		WHERE id = NEW.id;
