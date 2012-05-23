@@ -80,13 +80,6 @@ COMMENT ON FUNCTION distribution.node_get_id(geometry,boolean) IS 'Returns the n
 
 
 
-/* To reset all pipes nodes */
-/*
-UPDATE distribution.pipes SET id_node_a = distribution.node_get_id(ST_StartPoint(geometry,true)),
-                              id_node_b = distribution.node_get_id(ST_EndPoint(  geometry,true));
-*/
-
-
 CREATE OR REPLACE FUNCTION distribution.node_type(integer) RETURNS void AS '
 	DECLARE
 		node_id     ALIAS FOR $1         ;
@@ -158,7 +151,7 @@ CREATE OR REPLACE FUNCTION distribution.node_set_type() RETURNS void AS '
 		END LOOP;
 	END;
 ' LANGUAGE 'plpgsql';
-COMMENT ON FUNCTION distribution.node_set_type() IS 'Set the type and orientation for untyped nodes. If three pipes arrives at the node: intersection. If one pipe: end. If two: depends on characteristics of pipes: year (is different), material (and year), diameter(and material/year)';
+COMMENT ON FUNCTION distribution.node_set_type() IS 'Set the type and orientation for nodes. If three pipes arrives at the node: intersection. If one pipe: end. If two: depends on characteristics of pipes: year (is different), material (and year), diameter(and material/year)';
 
   
 COMMIT;
