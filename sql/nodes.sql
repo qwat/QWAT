@@ -17,7 +17,7 @@ ALTER TABLE distribution.nodes ADD COLUMN  _type              VARCHAR(20)   DEFA
 ALTER TABLE distribution.nodes ADD COLUMN  _orientation       FLOAT         DEFAULT 0    ;
 ALTER TABLE distribution.nodes ADD COLUMN  _schema_view       BOOLEAN       DEFAULT False;
 ALTER TABLE distribution.nodes ADD COLUMN  _status_active     BOOLEAN       DEFAULT False;
-ALTER TABLE distribution.nodes ADD COLUMN  _altitude_uptodate BOOLEAN       DEFAULT False;
+
 SELECT AddGeometryColumn('distribution', 'nodes', 'geometry', 21781, 'POINT', 2)  ;
 SELECT setval('distribution.nodes_id_seq', 40000, true);
 /* ADD CONSTRAINTS */
@@ -32,7 +32,7 @@ CREATE INDEX nodes_geoidx ON distribution.nodes USING GIST ( geometry );
 CREATE OR REPLACE FUNCTION distribution.nodes_geom() RETURNS trigger AS ' 
 	BEGIN
 		UPDATE distribution.nodes SET
-			_altitude_uptodate = NULL
+			altitude_dtm = NULL
 		WHERE id = NEW.id ;
 		RETURN NEW;
 	END;
@@ -49,15 +49,8 @@ COMMENT ON TRIGGER nodes_geom_trigger ON distribution.nodes IS 'Trigger: uset up
 
 /* nodes altitude */
 CREATE OR REPLACE FUNCTION distribution.nodes_altitude() RETURNS void AS '
-	DECLARE
-		altitude double precision;
-		nodeitem RECORD;
 	BEGIN
-		FOR nodeitem IN SELECT id,geometry FROM distribution.nodes WHERE _altitude_uptodate IS NOT TRUE ORDER BY id LOOP
-			RAISE NOTICE ''%'', nodeitem.id;
-			SELECT altitude.altitude(nodeitem.geometry) INTO altitude;
-			UPDATE distribution.nodes SET altitude_dtm = altitude, _altitude_uptodate = TRUE WHERE id = nodeitem.id;
-		END LOOP;
+		UPDATE distribution.nodes SET altitude_dtm = altitude.altitude(geometry) WHERE altitude_dtm IS NULL ;
 	END
 ' LANGUAGE 'plpgsql';
 COMMENT ON FUNCTION distribution.nodes_altitude() IS 'Fill the altitude of the nodes.';
