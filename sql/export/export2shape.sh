@@ -1,6 +1,6 @@
 
 # zones
-/usr/bin/pgsql2shp -h 172.24.171.202 -g geom -f zones -P db4wat$ -u sige sige "\
+/usr/bin/pgsql2shp -h 172.24.171.202 -g geom -f /home/denis/Documents/PPDE/out/zones -P db4wat$ -u sige sige "\
 SELECT	                                                                       \
 	id AS ID,                                                                  \
 	name AS NOM,                                                               \
@@ -9,7 +9,7 @@ FROM distribution.pressure_zones"
 
 
 # conduites
-/usr/bin/pgsql2shp -h 172.24.171.202 -g geom -f conduites -P db4wat$ -u sige sige "\
+/usr/bin/pgsql2shp -h 172.24.171.202 -g geom -f /home/denis/Documents/PPDE/out/conduites -P db4wat$ -u sige sige "\
 SELECT                                                                             \
 	pipes_schema.id AS ID,                                                         \
 	geometry AS geom,                                                              \
@@ -34,7 +34,7 @@ SELECT                                                                          
 FROM distribution.pipes_schema WHERE id_owner = 1 "
 
 # ouvrages
-/usr/bin/pgsql2shp -h 172.24.171.202 -g geom -f ouvrages -P db4wat$ -u sige sige "\
+/usr/bin/pgsql2shp -h 172.24.171.202 -g geom -f /home/denis/Documents/PPDE/out/ouvrages -P db4wat$ -u sige sige "\
 SELECT                                                                            \
 	id AS ID,                                                                     \
 	geometry AS geom,                                                             \
@@ -43,7 +43,7 @@ SELECT                                                                          
 FROM distribution.installations_view"
 
 # noeuds
-/usr/bin/pgsql2shp -h 172.24.171.202 -g geom -f noeuds -P db4wat$ -u sige sige "\
+/usr/bin/pgsql2shp -h 172.24.171.202 -g geom -f /home/denis/Documents/PPDE/out/noeuds -P db4wat$ -u sige sige "\
 SELECT                                                                          \
 	id AS ID,                                                                   \
 	altitude_dtm AS ALTITUDE,                                                   \
