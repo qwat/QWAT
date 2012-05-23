@@ -74,8 +74,10 @@ read -p "Press any key to continue..."
 psql -h 172.24.171.$ip -U sige -f sige_data/data_pressure_zones.sql -v ON_ERROR_STOP=1
 read -p "Press any key to continue..."
 psql -h 172.24.171.$ip -U sige -f sige_data/data_nodes.sql -v ON_ERROR_STOP=1
+
+# TODO AFTER PIPE IMPORT
 read -p "Press any key to continue..."
-psql -h 172.24.171.$ip -U sige -f sige_data/load_idparent.sql -v ON_ERROR_STOP=1
+psql -h 172.24.171.$ip -U sige -f sige_data/data_pipes_id_parent.sql -v ON_ERROR_STOP=1
 
 
 
