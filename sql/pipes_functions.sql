@@ -20,15 +20,16 @@ COMMENT ON TABLE distribution.pipes_function IS 'Function for pipes. Here is det
 
 /* Predefined functions list */
 /* This has to be filled by user to fullfile language preferences */
-INSERT INTO distribution.pipes_function ("function") VALUES ('Conduite de transport');
-INSERT INTO distribution.pipes_function ("function","schema_view") VALUES ('Conduite d''hydrant',true);
-INSERT INTO distribution.pipes_function ("function","schema_view") VALUES ('Conduite de vidange',false);
-INSERT INTO distribution.pipes_function ("function","schema_view") VALUES ('Inconnu',false);
-INSERT INTO distribution.pipes_function ("function") VALUES ('Conduite de distribution');
-INSERT INTO distribution.pipes_function ("function","schema_view") VALUES ('Branchement commun',false);
-INSERT INTO distribution.pipes_function ("function","schema_view") VALUES ('By-pass',false);
-INSERT INTO distribution.pipes_function ("function","schema_view") VALUES ('Branchement privé',false);
-INSERT INTO distribution.pipes_function ("function") VALUES ('Conduite de haute pression');
+INSERT INTO distribution.pipes_function ("function","schema_view") VALUES ('Conduite de transport'     ,true);
+INSERT INTO distribution.pipes_function ("function","schema_view") VALUES ('Conduite d''hydrant'       ,true);
+INSERT INTO distribution.pipes_function ("function","schema_view") VALUES ('Conduite de vidange'       ,false);
+INSERT INTO distribution.pipes_function ("function","schema_view") VALUES ('Inconnu'                   ,false);
+INSERT INTO distribution.pipes_function ("function","schema_view") VALUES ('Conduite de distribution'  ,true);
+INSERT INTO distribution.pipes_function ("function","schema_view") VALUES ('Branchement commun'        ,false);
+INSERT INTO distribution.pipes_function ("function","schema_view") VALUES ('By-pass'                   ,false);
+INSERT INTO distribution.pipes_function ("function","schema_view") VALUES ('Branchement privé'         ,false);
+INSERT INTO distribution.pipes_function ("function","schema_view") VALUES ('Conduite de haute pression',true);
+INSERT INTO distribution.pipes_function ("function","schema_view") VALUES ('Drain captant'             ,false);
 
 COMMIT;
 
