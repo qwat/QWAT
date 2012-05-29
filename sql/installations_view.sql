@@ -19,7 +19,11 @@ CREATE VIEW distribution.installations_view AS
 		installations.geometry::geometry(Point,21781)   ,
 		installations_type.name       AS _type_name     ,
 		installations_type.short_name AS _type_shortname,
-		owner.name AS _owner
+		owner.name AS _owner,
+		CASE 
+			WHEN installations.schema_force_view IS NULL THEN installations_type.schema_view
+			ELSE installations.schema_force_view
+		END AS _schema_view
 	FROM distribution.installations 
 	INNER      JOIN distribution.installations_type ON installations.id_type  = installations_type.id 
 	LEFT OUTER JOIN distribution.owner              ON installations.id_owner = owner.id ;

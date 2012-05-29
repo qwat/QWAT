@@ -13,15 +13,19 @@ ALTER TABLE distribution.installations ADD COLUMN  name      varchar(30) DEFAULT
 ALTER TABLE distribution.installations ADD COLUMN  id_type   integer                ;
 ALTER TABLE distribution.installations ADD COLUMN  id_owner  integer                ;
 ALTER TABLE distribution.installations ADD COLUMN  status    varchar(30)            ;
-ALTER TABLE distribution.installations ADD COLUMN  remarks   text                ;
+ALTER TABLE distribution.installations ADD COLUMN  remarks   text                    ;
+ALTER TABLE distribution.installations ADD COLUMN  schema_force_view  boolean DEFAULT NULL::boolean;
 SELECT AddGeometryColumn('distribution', 'installations', 'geometry', 21781, 'POINT', 2);
+
 SELECT setval('distribution.installations_id_seq', 100, true);
+
 /* primary key */
 ALTER TABLE distribution.installations ADD CONSTRAINT installations_pkey PRIMARY KEY (id);
 /* GIST index*/
 CREATE INDEX installations_geoidx ON distribution.installations USING GIST ( geometry );
 /* Comment */
 COMMENT ON TABLE distribution.installations IS 'installations.';
+
 /*----------------!!!---!!!----------------*/
 /* Add constraints */
 /* id_type */
