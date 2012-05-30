@@ -17,9 +17,11 @@ CREATE VIEW distribution.subscriber_view AS
 		subscriber._is_on_map      ,
 		subscriber._is_on_district ,
 		subscriber.geometry::geometry(Point,21781),	
-		subscriber_type.name             AS _type 
+		subscriber_type.name             AS _type ,
+		districts.subscriber_prefix::varchar || '-' || subscriber.id_client::varchar AS id_client_full
 		FROM distribution.subscriber
-		LEFT OUTER JOIN  distribution.subscriber_type            ON subscriber.id_type          = subscriber_type.id;
+		INNER      JOIN distribution.subscriber_type ON subscriber.id_type         = subscriber_type.id 
+		LEFT OUTER JOIN distribution.districts       ON subscriber._is_on_district = districts.name ;
 /* Comment */	
 COMMENT ON VIEW distribution.subscriber_view IS 'View for subscriber. This view is editable (a rule exists to forward changes to the table).';
 
