@@ -44,13 +44,18 @@ CREATE OR REPLACE FUNCTION distribution.get_district(geometry) RETURNS text AS '
 ' LANGUAGE 'plpgsql';
 COMMENT ON FUNCTION distribution.get_district(geometry) IS 'Returns a string contaning all the names of the polygons in table districts which overlap the given geometry.';
 
-
-CREATE OR REPLACE FUNCTION distribution.fill_pipes_district() RETURNS boolean AS '
+CREATE OR REPLACE FUNCTION distribution.get_district_id(geometry) RETURNS text AS '
+	DECLARE
+		geom ALIAS FOR $1;
+		id_district integer;
 	BEGIN
-		UPDATE distribution.pipes SET _is_on_district = distribution.get_district(pipes.geometry);	
-		RETURN true;
+		SELECT districts.id INTO id_district
+			FROM  distribution.districts
+			WHERE ST_Intersects(geom,districts.geometry) IS TRUE
+			LIMIT 1;
+		RETURN result;
 	END
 ' LANGUAGE 'plpgsql';
-COMMENT ON FUNCTION distribution.fill_pipes_district() IS 'Populates the _is_on_map field in pipes table with all the names of poylgons in table districts which overlap the given pipe geometry.';
+COMMENT ON FUNCTION distribution.get_district_id(geometry) IS 'Returns the id of the first overlapping district.';
 
 COMMIT;
