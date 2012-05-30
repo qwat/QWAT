@@ -44,7 +44,7 @@ CREATE OR REPLACE FUNCTION distribution.get_district(geometry) RETURNS text AS '
 ' LANGUAGE 'plpgsql';
 COMMENT ON FUNCTION distribution.get_district(geometry) IS 'Returns a string contaning all the names of the polygons in table districts which overlap the given geometry.';
 
-CREATE OR REPLACE FUNCTION distribution.get_district_id(geometry) RETURNS text AS '
+CREATE OR REPLACE FUNCTION distribution.get_district_id(geometry) RETURNS integer AS '
 	DECLARE
 		geom ALIAS FOR $1;
 		id_district integer;
@@ -53,7 +53,7 @@ CREATE OR REPLACE FUNCTION distribution.get_district_id(geometry) RETURNS text A
 			FROM  distribution.districts
 			WHERE ST_Intersects(geom,districts.geometry) IS TRUE
 			LIMIT 1;
-		RETURN result;
+		RETURN id_district;
 	END
 ' LANGUAGE 'plpgsql';
 COMMENT ON FUNCTION distribution.get_district_id(geometry) IS 'Returns the id of the first overlapping district.';

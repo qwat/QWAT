@@ -15,13 +15,13 @@ CREATE VIEW distribution.subscriber_view AS
 		subscriber.id_client       ,
 		subscriber.parcel          ,
 		subscriber._is_on_map      ,
-		subscriber._is_on_district ,
 		subscriber.geometry::geometry(Point,21781),	
 		subscriber_type.name             AS _type ,
+		districts.name AS _district ,
 		districts.subscriber_prefix::varchar || '-' || subscriber.id_client::varchar AS id_client_full
 		FROM distribution.subscriber
-		INNER      JOIN distribution.subscriber_type ON subscriber.id_type         = subscriber_type.id 
-		LEFT OUTER JOIN distribution.districts       ON subscriber._is_on_district = districts.name ;
+		INNER      JOIN distribution.subscriber_type ON subscriber.id_type      = subscriber_type.id 
+		LEFT OUTER JOIN distribution.districts      ON subscriber.id_district = districts.id ;
 /* Comment */	
 COMMENT ON VIEW distribution.subscriber_view IS 'View for subscriber. This view is editable (a rule exists to forward changes to the table).';
 

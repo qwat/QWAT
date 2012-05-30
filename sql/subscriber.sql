@@ -11,11 +11,10 @@ SELECT setval('distribution.subscriber_id_seq', 8000, true);
 
 ALTER TABLE distribution.subscriber ADD COLUMN   id_type integer;                                      /* id_parent         FK FULL */
 ALTER TABLE distribution.subscriber ADD COLUMN   id_pipe integer;									/* id_function       FK SIMPLE*/ 
+ALTER TABLE distribution.subscriber ADD COLUMN   id_district integer;									/* id_district       FK SIMPLE */ 
 ALTER TABLE distribution.subscriber ADD COLUMN   id_client character varying (12);                              /*  */
 ALTER TABLE distribution.subscriber ADD COLUMN   parcel character varying (12) ;                                    /*  */
 ALTER TABLE distribution.subscriber ADD COLUMN   _is_on_map character varying (80) DEFAULT '';                      /* _is_on_map           */
-ALTER TABLE distribution.subscriber ADD COLUMN   _is_on_district character varying (100) DEFAULT '';                /* _is_on_district      */
-
                                                                                                          
 ALTER TABLE distribution.subscriber ADD COLUMN   geometry geometry;                                  /* geometry         */
 
@@ -43,12 +42,11 @@ CREATE INDEX subscriber_geoidx ON distribution.subscriber USING GIST ( geometry 
 COMMENT ON TABLE distribution.subscriber IS 'Table for subscriber. This should not be used for editing/viewing, as a more complete view (subscriber_view) exists.';
 
 /*----------------!!!---!!!----------------*/
-/* Trigger for 2d length, map and district update */
+/* INSERT / geometry UPDATE */
 CREATE OR REPLACE FUNCTION distribution.subscriber_geom() RETURNS trigger AS ' 
 	BEGIN
 		UPDATE distribution.subscriber SET 
-			_is_on_map      = distribution.get_map(NEW.geometry),
-			_is_on_district = distribution.get_district(NEW.geometry)
+			_is_on_map      = distribution.get_map(NEW.geometry)
 		WHERE id = NEW.id ;
 		RETURN NEW;
 	END;
@@ -60,6 +58,27 @@ CREATE TRIGGER subscriber_geom_trigger
 	FOR EACH ROW
 	EXECUTE PROCEDURE distribution.subscriber_geom();
 COMMENT ON TRIGGER subscriber_geom_trigger ON distribution.subscriber IS 'Trigger: updates the disctrict and map of the subscriber after insert/update.';
+
+
+
+/* INSERT without id_district */
+CREATE OR REPLACE FUNCTION distribution.subscriber_geom() RETURNS trigger AS ' 
+	BEGIN
+		UPDATE distribution.subscriber SET 
+			id_district = distribution.get_district_id(NEW.geometry)
+		WHERE id = NEW.id ;
+		RETURN NEW;
+	END;
+' LANGUAGE 'plpgsql';
+COMMENT ON FUNCTION distribution.subscriber_geom() IS 'Fcn/Trigger: updates the disctrict and map of the subscriber after insert/update.';
+
+CREATE TRIGGER subscriber_insert_trigger 
+	AFTER INSERT ON distribution.subscriber
+	FOR EACH ROW
+	WHEN (NEW.id_district IS NULL)
+	EXECUTE PROCEDURE distribution.subscriber_geom();
+COMMENT ON TRIGGER subscriber_geom_trigger ON distribution.subscriber IS 'Trigger: updates the disctrict and map of the subscriber after insert/update.';
+
 
 COMMIT;
 
