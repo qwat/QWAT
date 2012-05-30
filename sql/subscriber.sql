@@ -15,9 +15,8 @@ ALTER TABLE distribution.subscriber ADD COLUMN   id_district integer;									/*
 ALTER TABLE distribution.subscriber ADD COLUMN   id_client character varying (12);                              /*  */
 ALTER TABLE distribution.subscriber ADD COLUMN   parcel character varying (12) ;                                    /*  */
 ALTER TABLE distribution.subscriber ADD COLUMN   _is_on_map character varying (80) DEFAULT '';                      /* _is_on_map           */
-                                                                                                         
-ALTER TABLE distribution.subscriber ADD COLUMN   geometry geometry;                                  /* geometry         */
 
+SELECT AddGeometryColumn('distribution', 'subscriber', 'geometry', 21781, 'POINT', 2);                                                                                        
 
 
 /*----------------!!!---!!!----------------*/
@@ -30,10 +29,6 @@ CREATE INDEX fki_id_type ON distribution.subscriber(id_type);
 /* id_pipe */
 ALTER TABLE distribution.subscriber ADD CONSTRAINT subscriber_id_pipe FOREIGN KEY (id_pipe) REFERENCES distribution.pipes (id) MATCH SIMPLE ON UPDATE NO ACTION ON DELETE NO ACTION;
 CREATE INDEX fki_id_pipe ON distribution.subscriber(id_pipe);
-/* Geometry */
-ALTER TABLE distribution.subscriber ADD CONSTRAINT enforce_dims_geometry CHECK (st_ndims(geometry) = 2);
-ALTER TABLE distribution.subscriber ADD CONSTRAINT enforce_geotype_geometry CHECK (geometrytype(geometry) = 'POINT'::text OR geometry IS NULL);
-ALTER TABLE distribution.subscriber ADD CONSTRAINT enforce_srid_geometry CHECK (st_srid(geometry) = 21781);
 /* GIST index*/
 CREATE INDEX subscriber_geoidx ON distribution.subscriber USING GIST ( geometry );
 
