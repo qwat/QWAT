@@ -63,6 +63,8 @@ psql -h 172.24.171.$ip -U sige -f installations.sql
 read -p "Press any key to continue..."
 psql -h 172.24.171.$ip -U sige -f installations_view.sql
 read -p "Press any key to continue..."
+psql -h 172.24.171.$ip -U sige -f samplingpoint.sql
+read -p "Press any key to continue..."
 psql -h 172.24.171.$ip -U sige -f altitude.sql
 
 # CONTROL
@@ -74,6 +76,8 @@ read -p "Press any key to continue..."
 psql -h 172.24.171.$ip -U sige -f sige_data/data_pressure_zones.sql -v ON_ERROR_STOP=1
 read -p "Press any key to continue..."
 psql -h 172.24.171.$ip -U sige -f sige_data/data_nodes.sql -v ON_ERROR_STOP=1
+read -p "Press any key to continue..."
+psql -h 172.24.171.$ip -U sige -f sige_data/data_samplingpoint.sql -v ON_ERROR_STOP=1
 
 # TODO AFTER PIPE IMPORT
 read -p "Press any key to continue..."
