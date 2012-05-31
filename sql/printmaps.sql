@@ -52,7 +52,7 @@ CREATE OR REPLACE FUNCTION distribution.get_map(geometry) RETURNS text AS '
 		geom ALIAS FOR $1;
 		result text;
 	BEGIN
-		SELECT left(distribution.tsum(printmaps.short_name || '', ''),-2) INTO result
+		SELECT string_agg(printmaps.short_name , '', '') INTO result
 			FROM  distribution.printmaps
 			WHERE ST_Intersects(geom,printmaps.geometry) IS TRUE;
 		RETURN result;

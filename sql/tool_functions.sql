@@ -5,12 +5,6 @@
 */
 BEGIN;
 
-/* Text concatenation */
-DROP AGGREGATE IF EXISTS distribution.tsum(text) CASCADE;
-CREATE AGGREGATE distribution.tsum ( BASETYPE = text, SFUNC = textcat, STYPE = text, INITCOND = '' );
-COMMENT ON AGGREGATE distribution.tsum(text) IS 'Concatenates text in a SELECT. See distribution.get_map_name for an example.';
-
-
 /* List all columns from a table */
 CREATE OR REPLACE FUNCTION distribution.table_fields(varchar,VARIADIC exclude varchar[]) RETURNS text AS '
 	DECLARE
@@ -18,7 +12,7 @@ CREATE OR REPLACE FUNCTION distribution.table_fields(varchar,VARIADIC exclude va
 		result text;
 	BEGIN
 		SELECT
-			left(distribution.tsum(pg_attribute.attname || '', ''),-2) INTO result
+			string_agg(pg_attribute.attname , '', '') INTO result
 		FROM
 			pg_class, pg_attribute
 		WHERE

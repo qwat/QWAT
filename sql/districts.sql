@@ -38,7 +38,7 @@ CREATE OR REPLACE FUNCTION distribution.get_district(geometry) RETURNS text AS '
 		geom ALIAS FOR $1;
 		result text;
 	BEGIN
-		SELECT left(distribution.tsum(districts.name || '', ''),-2) INTO result
+		SELECT string_agg(districts.name , '', '') INTO result
 			FROM  distribution.districts
 			WHERE ST_Intersects(geom,districts.geometry) IS TRUE;
 		RETURN result;
