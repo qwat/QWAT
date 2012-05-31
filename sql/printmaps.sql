@@ -4,26 +4,26 @@
 	SQL file :: print table and function
 */
 
-/*----------------!!!---!!!----------------*/
 BEGIN;
 /* CREATE TABLE */
 DROP TABLE IF EXISTS distribution.printmaps CASCADE;
 CREATE TABLE distribution.printmaps (id serial NOT NULL);
+COMMENT ON TABLE distribution.printmaps IS 'This table is used for polygons for predefined printable maps. short_name would be used as label string, and long_mame would be used in the print composer.';
 
+/* columns */
 ALTER TABLE distribution.printmaps ADD COLUMN  short_name varchar(20);
 ALTER TABLE distribution.printmaps ADD COLUMN  long_name  text;
 ALTER TABLE distribution.printmaps ADD COLUMN  template  varchar(50);
 ALTER TABLE distribution.printmaps ADD COLUMN  _east  double precision;
 ALTER TABLE distribution.printmaps ADD COLUMN  _north  double precision;
 
+/* geometry */
 SELECT AddGeometryColumn('distribution', 'printmaps', 'geometry', 21781, 'POLYGON', 2);
+CREATE INDEX printmaps_geoidx ON distribution.printmaps USING GIST ( geometry ); 
 
-/* ADD CONSTRAINTS */
-/* primary key */
+/* Constraints */
 ALTER TABLE distribution.printmaps ADD CONSTRAINT print_pkey PRIMARY KEY (id);
 
-/* Comment */
-COMMENT ON TABLE distribution.printmaps IS 'This table is used for polygons for predefined printable maps. short_name would be used as label string, and long_mame would be used in the print composer.';
 
 /*----------------!!!---!!!----------------*/
 /* Trigger for size */

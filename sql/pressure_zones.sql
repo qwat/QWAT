@@ -9,19 +9,20 @@ BEGIN;
 /* CREATE TABLE */
 DROP TABLE IF EXISTS distribution.pressure_zones CASCADE;
 CREATE TABLE distribution.pressure_zones (id serial NOT NULL);
+COMMENT ON TABLE distribution.pressure_zones IS 'Pressure zones.';
 
+/* columns */
 ALTER TABLE distribution.pressure_zones ADD COLUMN  short_name    varchar(10);
 ALTER TABLE distribution.pressure_zones ADD COLUMN  name          varchar(30);
 ALTER TABLE distribution.pressure_zones ADD COLUMN  consummer_zone varchar(30);
 
+/* geometry */
 SELECT AddGeometryColumn('distribution', 'pressure_zones', 'geometry', 21781, 'POLYGON', 2);
+CREATE INDEX pressure_zones_geoidx ON distribution.pressure_zones USING GIST ( geometry ); 
 
-/* ADD CONSTRAINTS */
-/* primary key */
+/* constraints */
 ALTER TABLE distribution.pressure_zones ADD CONSTRAINT pressure_zones_pkey PRIMARY KEY (id);
 ALTER TABLE distribution.pressure_zones ADD CONSTRAINT pressure_zones_name UNIQUE (name);
 
-/* Comment */
-COMMENT ON TABLE distribution.pressure_zones IS 'Pressure zones.';
                  
 COMMIT;

@@ -4,7 +4,7 @@
 	SQL file :: schematic network view
 
 Creation of schema
-view pipes_schema_viewableitems select pipes which are viewable in schema
+view pipes_schema_viewableitems select pipes which are viewable in schema with the alternative geometry
 view pipes_schema_items         get the parent id of each pipe
 view pipes_schema_merged        merge the pipes by grouping by id
 view pipes_schema               join with pipes_view to get pipes properties

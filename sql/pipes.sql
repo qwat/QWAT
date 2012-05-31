@@ -4,11 +4,13 @@
 	SQL file :: pipes table
 */
 BEGIN;
+/* create */
 DROP TABLE IF EXISTS distribution.pipes CASCADE;
 CREATE TABLE distribution.pipes (id serial NOT NULL);
 COMMENT ON TABLE distribution.pipes IS 'Table for pipes. This should not be used for editing/viewing, as a more complete view (pipes_view) exists.';
 SELECT setval('distribution.pipes_id_seq', 35000, true);
 
+/* columns */
 ALTER TABLE distribution.pipes ADD COLUMN   id_parent integer;                                      /* id_parent         FK */
 ALTER TABLE distribution.pipes ADD COLUMN   id_function integer;									/* id_function       FK */ 
 ALTER TABLE distribution.pipes ADD COLUMN   id_install_method integer;                              /* id_install_method FK */
@@ -22,7 +24,7 @@ ALTER TABLE distribution.pipes ADD COLUMN   id_node_b integer;			          					
 ALTER TABLE distribution.pipes ADD COLUMN   id_pressure_zone integer;								/* id_pressure_zone  FK */
 ALTER TABLE distribution.pipes ADD COLUMN   schema_force_view  boolean DEFAULT NULL::boolean;       /* schema_force_view FK */
 ALTER TABLE distribution.pipes ADD COLUMN   year smallint CHECK (year > 1800 AND year < 2100);      /* year                 */
-ALTER TABLE distribution.pipes ADD COLUMN   tunnel_or_bridge boolean DEFAULT FALSE;                 /* tunnel_or_bridge     */
+ALTER TABLE distribution.pipes ADD COLUMN   tunnel_or_bridge boolean DEFAULT false;                 /* tunnel_or_bridge     */
 ALTER TABLE distribution.pipes ADD COLUMN   pressure_nominale smallint;                             /* pressure_nominale    */
 ALTER TABLE distribution.pipes ADD COLUMN   folder varchar(20) DEFAULT '';                          /* folder               */
 ALTER TABLE distribution.pipes ADD COLUMN   remarks text;                                           /* remarks              */
@@ -32,53 +34,29 @@ ALTER TABLE distribution.pipes ADD COLUMN   _length3d_uptodate boolean DEFAULT F
 ALTER TABLE distribution.pipes ADD COLUMN   _is_on_map varchar(80) DEFAULT '';                      /* _is_on_map           */
 ALTER TABLE distribution.pipes ADD COLUMN   _is_on_district varchar(100) DEFAULT '';                /* _is_on_district      */
 
-
+/* geometry */
 SELECT addGeometryColumn('distribution', 'pipes', 'geometry', 21781, 'LINESTRING', 2);
 SELECT addGeometryColumn('distribution', 'pipes', 'geometry_alternative', 21781, 'LINESTRING', 2);
+CREATE INDEX pipes_geoidx     ON distribution.pipes USING GIST ( geometry );
+CREATE INDEX pipes_geoidx_alt ON distribution.pipes USING GIST ( geometry_alternative );
 
-
+/* old columns */
 ALTER TABLE distribution.pipes ADD COLUMN   coating_internal_material_id character(20);
 ALTER TABLE distribution.pipes ADD COLUMN   coating_external_material_id character(20);
 
-/*----------------!!!---!!!----------------*/
-/* Add constraints */
-/* primary key */
+/* Constraints */
 ALTER TABLE distribution.pipes ADD CONSTRAINT pipes_pkey PRIMARY KEY (id);
-/* id_parent */
-ALTER TABLE distribution.pipes ADD CONSTRAINT pipes_id_parent FOREIGN KEY (id_parent) REFERENCES distribution.pipes (id) MATCH SIMPLE ON UPDATE NO ACTION ON DELETE NO ACTION;
-CREATE INDEX fki_pipes_id_parent ON distribution.pipes(id_parent);
-/* function */
-ALTER TABLE distribution.pipes ADD CONSTRAINT pipes_id_function FOREIGN KEY (id_function) REFERENCES distribution.pipes_function(id) MATCH FULL ON UPDATE NO ACTION ON DELETE NO ACTION;
-CREATE INDEX fki_pipes_id_function ON distribution.pipes(id_function);
-/* id_install_method */
-ALTER TABLE distribution.pipes ADD CONSTRAINT pipes_id_install_method FOREIGN KEY (id_install_method) REFERENCES distribution.pipes_install_method(id) MATCH FULL ON UPDATE NO ACTION ON DELETE NO ACTION;
-CREATE INDEX fki_pipes_id_install_method ON distribution.pipes(id_install_method);
-/* id_material */
-ALTER TABLE distribution.pipes ADD CONSTRAINT pipes_id_material FOREIGN KEY (id_material) REFERENCES distribution.pipes_material(id) MATCH FULL ON UPDATE NO ACTION ON DELETE NO ACTION;
-CREATE INDEX fki_pipes_id_material ON distribution.pipes(id_material);
-/* id_owner */
-ALTER TABLE distribution.pipes ADD CONSTRAINT pipes_id_owner FOREIGN KEY (id_owner) REFERENCES distribution.owner(id) MATCH SIMPLE ON UPDATE NO ACTION ON DELETE NO ACTION;
-CREATE INDEX fki_pipes_id_owner ON distribution.pipes(id_owner);
-/* id_precision */
-ALTER TABLE distribution.pipes ADD CONSTRAINT pipes_id_precision FOREIGN KEY (id_precision) REFERENCES distribution."precision"(id) MATCH FULL ON UPDATE NO ACTION ON DELETE NO ACTION;
-CREATE INDEX fki_pipes_id_precision ON distribution.pipes(id_precision);
-/* id_protection */
-ALTER TABLE distribution.pipes ADD CONSTRAINT pipes_id_protection FOREIGN KEY (id_protection) REFERENCES distribution.pipes_protection(id) MATCH SIMPLE ON UPDATE NO ACTION ON DELETE NO ACTION;
-CREATE INDEX fki_pipes_id_protection ON distribution.pipes(id_protection);
-/* id_status */
-ALTER TABLE distribution.pipes ADD CONSTRAINT pipes_id_status FOREIGN KEY (id_status) REFERENCES distribution.pipes_status(id) MATCH FULL ON UPDATE NO ACTION ON DELETE NO ACTION;
-CREATE INDEX fki_pipes_id_status ON distribution.pipes(id_status);
-/* id_pressure_zone */
-ALTER TABLE distribution.pipes ADD CONSTRAINT pipes_id_pressure_zone FOREIGN KEY (id_pressure_zone) REFERENCES distribution.pressure_zones(id) MATCH SIMPLE ON UPDATE NO ACTION ON DELETE NO ACTION;
-CREATE INDEX fki_pipes_id_pressure_zone ON distribution.pipes(id_pressure_zone);
-/* id_node_a */
-ALTER TABLE distribution.pipes ADD CONSTRAINT pipes_id_node_a FOREIGN KEY (id_node_a) REFERENCES distribution.nodes(id) MATCH SIMPLE ON UPDATE NO ACTION ON DELETE NO ACTION;
-CREATE INDEX fki_pipes_id_node_a ON distribution.pipes(id_node_a);
-/* id_node_b */
-ALTER TABLE distribution.pipes ADD CONSTRAINT pipes_id_node_b FOREIGN KEY (id_node_b) REFERENCES distribution.nodes(id) MATCH SIMPLE ON UPDATE NO ACTION ON DELETE NO ACTION;
-CREATE INDEX fki_pipes_id_node_b ON distribution.pipes(id_node_b);
-/* GIST index*/
-CREATE INDEX pipes_geoidx ON distribution.pipes USING GIST ( geometry );
+ALTER TABLE distribution.pipes ADD CONSTRAINT pipes_id_parent         FOREIGN KEY (id_parent)         REFERENCES distribution.pipes (id)               MATCH SIMPLE ; CREATE INDEX fki_pipes_id_parent         ON distribution.pipes(id_parent);
+ALTER TABLE distribution.pipes ADD CONSTRAINT pipes_id_function       FOREIGN KEY (id_function)       REFERENCES distribution.pipes_function(id)       MATCH FULL   ; CREATE INDEX fki_pipes_id_function       ON distribution.pipes(id_function);
+ALTER TABLE distribution.pipes ADD CONSTRAINT pipes_id_install_method FOREIGN KEY (id_install_method) REFERENCES distribution.pipes_install_method(id) MATCH FULL   ; CREATE INDEX fki_pipes_id_install_method ON distribution.pipes(id_install_method);
+ALTER TABLE distribution.pipes ADD CONSTRAINT pipes_id_material       FOREIGN KEY (id_material)       REFERENCES distribution.pipes_material(id)       MATCH FULL   ; CREATE INDEX fki_pipes_id_material       ON distribution.pipes(id_material);
+ALTER TABLE distribution.pipes ADD CONSTRAINT pipes_id_owner          FOREIGN KEY (id_owner)          REFERENCES distribution.owner(id)                MATCH SIMPLE ; CREATE INDEX fki_pipes_id_owner          ON distribution.pipes(id_owner);
+ALTER TABLE distribution.pipes ADD CONSTRAINT pipes_id_precision      FOREIGN KEY (id_precision)      REFERENCES distribution."precision"(id)          MATCH FULL   ; CREATE INDEX fki_pipes_id_precision      ON distribution.pipes(id_precision);
+ALTER TABLE distribution.pipes ADD CONSTRAINT pipes_id_protection     FOREIGN KEY (id_protection)     REFERENCES distribution.pipes_protection(id)     MATCH SIMPLE ; CREATE INDEX fki_pipes_id_protection     ON distribution.pipes(id_protection);
+ALTER TABLE distribution.pipes ADD CONSTRAINT pipes_id_status         FOREIGN KEY (id_status)         REFERENCES distribution.pipes_status(id)         MATCH FULL   ; CREATE INDEX fki_pipes_id_status         ON distribution.pipes(id_status);
+ALTER TABLE distribution.pipes ADD CONSTRAINT pipes_id_pressure_zone  FOREIGN KEY (id_pressure_zone)  REFERENCES distribution.pressure_zones(id)       MATCH SIMPLE ; CREATE INDEX fki_pipes_id_pressure_zone  ON distribution.pipes(id_pressure_zone);
+ALTER TABLE distribution.pipes ADD CONSTRAINT pipes_id_node_a         FOREIGN KEY (id_node_a)         REFERENCES distribution.nodes(id)                MATCH SIMPLE ; CREATE INDEX fki_pipes_id_node_a         ON distribution.pipes(id_node_a);
+ALTER TABLE distribution.pipes ADD CONSTRAINT pipes_id_node_b         FOREIGN KEY (id_node_b)         REFERENCES distribution.nodes(id)                MATCH SIMPLE ; CREATE INDEX fki_pipes_id_node_b         ON distribution.pipes(id_node_b);
 
 
 /*----------------!!!---!!!----------------*/
@@ -112,6 +90,7 @@ CREATE TRIGGER pipes_geom_trigger_update
 	EXECUTE PROCEDURE distribution.pipes_geom();
 COMMENT ON TRIGGER pipes_geom_trigger_update ON distribution.pipes IS 'Trigger: updates auto fields of the pipe after update.';
 
+/*----------------!!!---!!!----------------*/
 /* Trigger for tunnel_or_bridge */
 CREATE OR REPLACE FUNCTION distribution.pipes_tunnelbridge() RETURNS trigger AS ' 
 	BEGIN
@@ -125,9 +104,6 @@ CREATE TRIGGER pipes_tunnelbridge_trigger
 	FOR EACH ROW
 	EXECUTE PROCEDURE distribution.pipes_tunnelbridge();
 COMMENT ON TRIGGER pipes_tunnelbridge_trigger ON distribution.pipes IS 'As for tunnel and bridges, 3d length is the 2d length, set _length3d_uptodate to false to reset it later.';
-
-
-
 
 /*----------------!!!---!!!----------------*/
 /* 3D Length */

@@ -13,6 +13,8 @@ psql -h 172.24.171.$ip -U sige -f nodes.sql
 read -p "Press any key to continue..."
 psql -h 172.24.171.$ip -U sige -f dimension.sql
 read -p "Press any key to continue..."
+psql -h 172.24.171.$ip -U sige -f dimension_view.sql
+read -p "Press any key to continue..."
 psql -h 172.24.171.$ip -U sige -f pipes_install_method.sql
 read -p "Press any key to continue..."
 psql -h 172.24.171.$ip -U sige -f precision.sql
@@ -73,6 +75,8 @@ psql -h 172.24.171.$ip -U sige -f control/control_nodes.sql
 
 # SIGE DATA
 read -p "Press any key to continue..."
+psql -h 172.24.171.$ip -U sige -f sige_data/data_owner.sql -v ON_ERROR_STOP=1
+rread -p "Press any key to continue..."
 psql -h 172.24.171.$ip -U sige -f sige_data/data_pressure_zones.sql -v ON_ERROR_STOP=1
 read -p "Press any key to continue..."
 psql -h 172.24.171.$ip -U sige -f sige_data/data_nodes.sql -v ON_ERROR_STOP=1

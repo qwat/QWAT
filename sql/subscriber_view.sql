@@ -9,12 +9,12 @@ BEGIN;
 DROP VIEW IF EXISTS distribution.subscriber_view CASCADE;
 CREATE VIEW distribution.subscriber_view AS 
 	SELECT 
-		subscriber.id				,
+		subscriber.id			   ,
 		subscriber.id_type         ,
 		subscriber.id_pipe         ,
+		subscriber.id_district     ,
 		subscriber.id_client       ,
 		subscriber.parcel          ,
-		subscriber._is_on_map      ,
 		subscriber.geometry::geometry(Point,21781),	
 		subscriber_type.name             AS _type ,
 		districts.name AS _district ,
@@ -31,17 +31,19 @@ COMMENT ON VIEW distribution.subscriber_view IS 'View for subscriber. This view 
 CREATE OR REPLACE RULE subscriber_update AS
 	ON UPDATE TO distribution.subscriber_view DO INSTEAD
 		UPDATE distribution.subscriber SET 
-			id_type    = NEW.id_type                   ,
-			id_pipe    = NULLIF(NEW.id_pipe,0)::integer,
-			id_client  = NEW.id_client                 ,
-			parcel     = NEW.parcel
+			id_type     = NEW.id_type                      ,
+			id_pipe     = NULLIF(NEW.id_pipe,0)::integer ,
+			id_client   = NEW.id_client                    ,
+			id_district = NEW.id_district                  ,
+			parcel      = NEW.parcel                       ,
+			geometry    = NEW.geometry
 		WHERE id = NEW.id;
 CREATE OR REPLACE RULE subscriber_insert AS
 	ON INSERT TO distribution.subscriber_view DO INSTEAD
 		INSERT INTO distribution.subscriber 
-			(    id_type,    id_pipe,    id_client,    parcel)
+			(    id_type,    id_pipe,    id_client,    id_district,    parcel,    geometry)
 		VALUES
-			(NEW.id_type,NEW.id_pipe,NEW.id_client,NEW.parcel);
+			(NEW.id_type,NEW.id_pipe,NEW.id_client,NEW.id_district,NEW.parcel,NEW.geometry);
 CREATE OR REPLACE RULE subscriber_delete AS
 	ON DELETE TO distribution.subscriber_view DO INSTEAD
 		DELETE FROM distribution.subscriber WHERE id = OLD.id;

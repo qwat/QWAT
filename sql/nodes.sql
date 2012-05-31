@@ -9,8 +9,10 @@ BEGIN;
 /* CREATE TABLE */
 DROP TABLE IF EXISTS distribution.nodes CASCADE;
 CREATE TABLE distribution.nodes (id serial NOT NULL);
+SELECT setval('distribution.nodes_id_seq', 40000, true);
 COMMENT ON TABLE distribution.nodes IS 'Nodes. Type:If three pipes or more arrives at the node: three. If one pipe: one. If two: depends on characteristics of pipes: two_same (everything same), two_year (year is different), two_material (and year is/are different), two_diameter (and material/year are different). Orientation is calculated if two pipes arrives to place the symbol in theright direction.';
 
+/* columns */
 ALTER TABLE distribution.nodes ADD COLUMN  altitude_dtm       DECIMAL(10,3)              ;
 ALTER TABLE distribution.nodes ADD COLUMN  altitude_real      DECIMAL(10,3)              ;
 ALTER TABLE distribution.nodes ADD COLUMN  _type              VARCHAR(20)   DEFAULT NULL ;
@@ -18,17 +20,16 @@ ALTER TABLE distribution.nodes ADD COLUMN  _orientation       FLOAT         DEFA
 ALTER TABLE distribution.nodes ADD COLUMN  _schema_view       BOOLEAN       DEFAULT False;
 ALTER TABLE distribution.nodes ADD COLUMN  _status_active     BOOLEAN       DEFAULT False;
 
+/* geometry */
 SELECT AddGeometryColumn('distribution', 'nodes', 'geometry', 21781, 'POINT', 2)  ;
-SELECT setval('distribution.nodes_id_seq', 40000, true);
-/* ADD CONSTRAINTS */
-/* primary key */
-ALTER TABLE distribution.nodes ADD CONSTRAINT nodes_pkey PRIMARY KEY (id);
-/* GIST index*/
 CREATE INDEX nodes_geoidx ON distribution.nodes USING GIST ( geometry );
+
+/* constraints */
+ALTER TABLE distribution.nodes ADD CONSTRAINT nodes_pkey PRIMARY KEY (id);
 
 
 /*----------------!!!---!!!----------------*/
-/* Trigger for geometry */
+/* Trigger for geometry (=> altitude) */
 CREATE OR REPLACE FUNCTION distribution.nodes_geom() RETURNS trigger AS ' 
 	BEGIN
 		UPDATE distribution.nodes SET
@@ -45,9 +46,7 @@ CREATE TRIGGER nodes_geom_trigger
 		EXECUTE PROCEDURE distribution.nodes_geom();
 COMMENT ON TRIGGER nodes_geom_trigger ON distribution.nodes IS 'Trigger: uset uptodate to false for altitude when geometry changes.';
 
-
-
-/* nodes altitude */
+/* set nodes altitude */
 CREATE OR REPLACE FUNCTION distribution.nodes_altitude() RETURNS void AS '
 	BEGIN
 		UPDATE distribution.nodes SET altitude_dtm = altitude.altitude(geometry) WHERE altitude_dtm IS NULL ;
@@ -56,12 +55,7 @@ CREATE OR REPLACE FUNCTION distribution.nodes_altitude() RETURNS void AS '
 COMMENT ON FUNCTION distribution.nodes_altitude() IS 'Fill the altitude of the nodes.';
 
 
-
-/* TODO: prevent node deletion if pipes are connected */
-
-
-/* node type: end, intersection, year, material, diameter */
-
+/* get node id */
 CREATE OR REPLACE FUNCTION distribution.node_get_id(geometry,boolean) RETURNS integer AS '
 	DECLARE
 		point ALIAS for $1;
@@ -78,8 +72,8 @@ CREATE OR REPLACE FUNCTION distribution.node_get_id(geometry,boolean) RETURNS in
 ' LANGUAGE 'plpgsql';
 COMMENT ON FUNCTION distribution.node_get_id(geometry,boolean) IS 'Returns the node for a given geometry (point). If node does not exist and if specified in argument, it is created.';
 
-
-
+/* define node type */
+/* node type: end, intersection, year, material, diameter */
 CREATE OR REPLACE FUNCTION distribution.node_type(integer) RETURNS void AS '
 	DECLARE
 		node_id     ALIAS FOR $1         ;
@@ -141,7 +135,7 @@ CREATE OR REPLACE FUNCTION distribution.node_type(integer) RETURNS void AS '
 ' LANGUAGE 'plpgsql';
 COMMENT ON FUNCTION distribution.node_type(integer) IS 'Set the orientation and type for a node. If three pipes arrives at the node: intersection. If one pipe: end. If two: depends on characteristics of pipes: year (is different), material (and year), diameter(and material/year)';
 
-
+/* reset all nodes type */
 CREATE OR REPLACE FUNCTION distribution.node_set_type() RETURNS void AS '
 	DECLARE
 		node record;

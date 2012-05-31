@@ -4,10 +4,12 @@
 	SQL file :: valves table
 */
 BEGIN;
+/* create */
 DROP TABLE IF EXISTS distribution.valves CASCADE;
 CREATE TABLE distribution.valves (id serial NOT NULL);
 COMMENT ON TABLE distribution.valves IS 'Table for valves.';
 
+/* columns */
 ALTER TABLE distribution.valves ADD COLUMN sige             integer ;
 ALTER TABLE distribution.valves ADD COLUMN id_type          integer ;
 ALTER TABLE distribution.valves ADD COLUMN id_function      integer ;
@@ -23,24 +25,19 @@ ALTER TABLE distribution.valves ADD COLUMN schema_force_view  boolean DEFAULT NU
 ALTER TABLE distribution.valves ADD COLUMN _is_on_map varchar(80) DEFAULT '';      
 ALTER TABLE distribution.valves ADD COLUMN _is_on_district varchar(100) DEFAULT '';
 
+/* geometry */
 SELECT addGeometryColumn('distribution', 'valves', 'geometry', 21781, 'POINT', 2);
 SELECT addGeometryColumn('distribution', 'valves', 'geometry_alternative', 21781, 'POINT', 2);
+CREATE INDEX valves_geoidx     ON distribution.valves USING GIST ( geometry );
+CREATE INDEX valves_geoidx_alt ON distribution.valves USING GIST ( geometry_alternative );
 
-/*----------------!!!---!!!----------------*/
-/* Add constraints */
-/* primary key */
+/* constraints */
 ALTER TABLE distribution.valves ADD CONSTRAINT valves_pkey PRIMARY KEY (id);
-/* foreign keys */
-ALTER TABLE distribution.valves ADD CONSTRAINT valves_id_type FOREIGN KEY (id_type) REFERENCES distribution.valves_type(id) MATCH FULL ON UPDATE NO ACTION ON DELETE NO ACTION;
-CREATE INDEX fki_valves_id_type ON distribution.valves(id_type);
-ALTER TABLE distribution.valves ADD CONSTRAINT valves_id_function FOREIGN KEY (id_function) REFERENCES distribution.valves_function(id) MATCH FULL ON UPDATE NO ACTION ON DELETE NO ACTION;
-CREATE INDEX fki_valves_id_function ON distribution.valves(id_function);
-ALTER TABLE distribution.valves ADD CONSTRAINT valves_id_pipe FOREIGN KEY (id_pipe) REFERENCES distribution.pipes(id) MATCH SIMPLE ON UPDATE NO ACTION ON DELETE NO ACTION;
-CREATE INDEX fki_valves_id_pipe ON distribution.valves(id_pipe);
-ALTER TABLE distribution.valves ADD CONSTRAINT valves_id_node FOREIGN KEY (id_node) REFERENCES distribution.nodes(id) MATCH SIMPLE ON UPDATE NO ACTION ON DELETE NO ACTION;
-CREATE INDEX fki_valves_id_node ON distribution.valves(id_node);
-/* GIST index*/
-CREATE INDEX valves_geoidx ON distribution.valves USING GIST ( geometry );
+ALTER TABLE distribution.valves ADD CONSTRAINT valves_id_type     FOREIGN KEY (id_type)     REFERENCES distribution.valves_type(id)     MATCH FULL ;  CREATE INDEX fki_valves_id_type ON distribution.valves(id_type);
+ALTER TABLE distribution.valves ADD CONSTRAINT valves_id_function FOREIGN KEY (id_function) REFERENCES distribution.valves_function(id) MATCH FULL ;  CREATE INDEX fki_valves_id_function ON distribution.valves(id_function);
+ALTER TABLE distribution.valves ADD CONSTRAINT valves_id_pipe     FOREIGN KEY (id_pipe)     REFERENCES distribution.pipes(id)           MATCH SIMPLE ; CREATE INDEX fki_valves_id_pipe ON distribution.valves(id_pipe);
+ALTER TABLE distribution.valves ADD CONSTRAINT valves_id_node     FOREIGN KEY (id_node)     REFERENCES distribution.nodes(id)           MATCH SIMPLE ; CREATE INDEX fki_valves_id_node ON distribution.valves(id_node);
+
 
 /*----------------!!!---!!!----------------*/
 /* Trigger for map and district update */

@@ -5,8 +5,10 @@
 */
 BEGIN;
 
+/* create */
 DROP TABLE IF EXISTS distribution.valves_function CASCADE;
 CREATE TABLE distribution.valves_function ( id SERIAL, CONSTRAINT "valves_function_pk" PRIMARY KEY (id));                          
+COMMENT ON TABLE distribution.valves_function IS 'Types of valves';
 
 /* Columns*/
 ALTER TABLE distribution.valves_function ADD COLUMN "function" VARCHAR(30);
@@ -16,8 +18,6 @@ ALTER TABLE distribution.valves_function ADD COLUMN "schema_view" BOOLEAN NOT NU
 /* Constraints*/
 ALTER TABLE distribution.valves_function ADD CONSTRAINT unique_function UNIQUE ("function");
 
-/* Comment */
-COMMENT ON TABLE distribution.valves_function IS 'Types of valves';
 
 INSERT INTO distribution.valves_function ( function )               VALUES ('vanne de régulation');      /* 1  REG' */
 INSERT INTO distribution.valves_function ( function , shortname )   VALUES ('ventouse','Ve');            /* 2  VE   */
