@@ -13,7 +13,8 @@ view pipes_schema               join with pipes_view to get pipes properties
 BEGIN;
 
 /* create a view with the viewable items */
-CREATE OR REPLACE VIEW distribution.pipes_schema_viewableitems AS 
+DROP VIEW IF EXISTS distribution.pipes_schema_viewableitems CASCADE;
+CREATE VIEW distribution.pipes_schema_viewableitems AS 
 	SELECT 	
 		pipes.id,
 		pipes.id_parent,
@@ -74,12 +75,12 @@ CREATE OR REPLACE VIEW distribution.pipes_schema_items AS
 		_length3d_uptodate,
 		tunnel_or_bridge
 	  FROM distribution.pipes_schema_viewableitems;
-
+	  
 /* 
 Merging of pipes based on the group ID
 */
 CREATE OR REPLACE VIEW distribution.pipes_schema_merged AS
-	SELECT 	groupid AS id, 
+	SELECT	groupid AS id, 
 			ST_LineMerge(ST_Union(geometry))::geometry(LineString,21781) AS geometry,
 			COUNT(groupid) AS number_of_pipes,
 			SUM(_length2d) AS _length2d,
@@ -106,10 +107,8 @@ CREATE VIEW distribution.pipes_schema AS
 			pipes_view.id_protection              ,
 			pipes_view.id_status                  ,
 			pipes_view.id_pressure_zone           ,
-			pipes_view.id_node_a                  ,
-			pipes_view.id_node_b                  ,
 			pipes_view.schema_force_view          ,
-			pipes_view.year                       ,
+			pipes_view.year                      ,
 			pipes_view.pressure_nominale          ,
 			pipes_view.folder                     ,
 			pipes_view.remarks                    , 
@@ -138,6 +137,20 @@ CREATE VIEW distribution.pipes_schema AS
 	  FROM distribution.pipes_schema_merged
 	 INNER JOIN distribution.pipes_view ON pipes_view.id = pipes_schema_merged.id;
 COMMENT ON VIEW distribution.pipes_schema IS 'Final view for schema';
+
+
+/* 
+Join with pipes_view to get pipes properties
+*/
+DROP VIEW IF EXISTS distribution.pipes_schema_nodes ;
+CREATE VIEW distribution.pipes_schema_nodes AS
+	SELECT	
+		*,
+		distribution.node_get_id(ST_StartPoint(geometry),true) AS id_node_a,
+		distribution.node_get_id(ST_EndPoint(  geometry),true) AS id_node_b
+	FROM distribution.pipes_schema ; 
+COMMENT ON VIEW distribution.pipes_schema_nodes IS 'Final view for schema cmpleted with nodes.';
+
 
 /*
 Report schema errors
