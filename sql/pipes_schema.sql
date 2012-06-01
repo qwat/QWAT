@@ -140,7 +140,7 @@ COMMENT ON VIEW distribution.pipes_schema IS 'Final view for schema';
 
 
 /* 
-Join with pipes_view to get pipes properties
+Add nodes id
 */
 DROP VIEW IF EXISTS distribution.pipes_schema_nodes ;
 CREATE VIEW distribution.pipes_schema_nodes AS
@@ -149,7 +149,7 @@ CREATE VIEW distribution.pipes_schema_nodes AS
 		distribution.node_get_id(ST_StartPoint(geometry),true) AS id_node_a,
 		distribution.node_get_id(ST_EndPoint(  geometry),true) AS id_node_b
 	FROM distribution.pipes_schema ; 
-COMMENT ON VIEW distribution.pipes_schema_nodes IS 'Final view for schema cmpleted with nodes.';
+COMMENT ON VIEW distribution.pipes_schema_nodes IS 'Final view for schema completed with nodes.';
 
 
 /*
