@@ -25,7 +25,7 @@ CREATE VIEW distribution.valves_schema AS
 		valves.schema_force_view,
 		valves._is_on_map,
 		valves._is_on_district,
-		valves.geometry_alternative::geometry(Point,21781),
+		valves.geometry_alternative::geometry(Point,21781) AS geometry,
 		valves_function.function AS _function,
 		valves_function.shortname AS _function_shortname,
 		valves_type.type AS _type,
@@ -43,7 +43,7 @@ CREATE VIEW distribution.valves_schema AS
 CREATE OR REPLACE RULE valves_update_alternative AS
 	ON UPDATE TO distribution.valves_schema DO INSTEAD
 		UPDATE distribution.valves SET 
-			geometry_alternative = NEW.geometry_alternative
+			geometry_alternative = NEW.geometry
 		WHERE id = NEW.id;
 		
 COMMIT;
