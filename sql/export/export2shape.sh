@@ -4,7 +4,7 @@ export db_address=172.24.171.202
 # vannes: prendre fermée + vanne régulation/secour (fct) 
 
 # save schema in a table
-#psql -h $db_address -U sige -c "DROP TABLE IF EXISTS distribution.pipes_schema_temp; CREATE TABLE distribution.pipes_schema_temp AS SELECT * FROM distribution.pipes_schema_nodes;"
+psql -h $db_address -U sige -c "DROP TABLE IF EXISTS distribution.pipes_schema_temp; CREATE TABLE distribution.pipes_schema_temp AS SELECT * FROM distribution.pipes_schema_nodes;"
 
  # vannes
 /usr/bin/pgsql2shp -h $db_address -g geom -f /home/denis/Documents/PPDE/out/vannes -P db4wat$ -u sige sige "\
@@ -29,10 +29,10 @@ SELECT \
 
 # zones
 /usr/bin/pgsql2shp -h $db_address -g geom -f /home/denis/Documents/PPDE/out/zones -P db4wat$ -u sige sige "\
-SELECT	                                                                       \
-	id AS ID,                                                                  \
-	name AS NOM,                                                               \
-	geometry::geometry(Polygon,21781) AS geom                                                           \
+SELECT	                                         \
+	id AS ID,                                    \
+	name AS NOM,                                 \
+	geometry::geometry(Polygon,21781) AS geom    \
 FROM distribution.pressure_zones"
 
 

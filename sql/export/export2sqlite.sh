@@ -2,15 +2,11 @@
 # to have ogr2ogr working with postgis 2.0
 # psql -f /usr/share/postgresql/9.1/contrib/postgis-2.0/legacy.sql
 
-export ogr2ogrpath=/usr/local/bin/ogr2ogr
-export ogr2ogrpath=ogr2ogr
-
-
-rm /home/denis/Documents/qgis/qgis-project/sige_distribution.sqlite
-
+export outputpath=/home/denis/Documents/qgis/qgis-project/sige_distribution.sqlite
+rm $outputpath
 
 # PIPES
-$ogr2ogrpath -sql "SELECT                                           \
+ogr2ogr -sql "SELECT                                           \
 		id				  ,                                         \
 		year              ,                                         \
 		tunnel_or_bridge  ,                                         \
@@ -38,13 +34,13 @@ $ogr2ogrpath -sql "SELECT                                           \
 		_pressure_zone,                                             \
 		_schema_view                                                \
  FROM distribution.pipes_view WHERE id_owner = 1" \
- -overwrite -a_srs EPSG:21781 -f SQLite /home/denis/Documents/qgis/qgis-project/sige_distribution.sqlite \
+ -overwrite -a_srs EPSG:21781 -f SQLite $outputpath \
  -nln pipes -nlt LINESTRING -progress \
  PG:"dbname='sige' host='172.24.171.202' port='5432' user='sige' password='db4wat$'" \
  -dsco SPATIALITE=yes -lco SPATIAL_INDEX=yes  -gt 65536
 
 # PIPES SCHEMA
-$ogr2ogrpath -sql "SELECT                                            \
+ogr2ogr -sql "SELECT                                            \
 		id				  ,                                         \
 		year              ,                                         \
 		tunnel_or_bridge  ,                                         \
@@ -71,20 +67,20 @@ $ogr2ogrpath -sql "SELECT                                            \
 		_status_active,                                             \
 		_pressure_zone                                              \
  FROM distribution.pipes_schema WHERE id_owner = 1" \
- -overwrite -a_srs EPSG:21781 -f SQLite /home/denis/Documents/qgis/qgis-project/sige_distribution.sqlite \
+ -overwrite -a_srs EPSG:21781 -f SQLite $outputpath \
  -nln pipes_schema -nlt LINESTRING -progress \
  PG:"dbname='sige' host='172.24.171.202' port='5432' user='sige' password='db4wat$'" \
  -dsco SPATIALITE=yes -lco SPATIAL_INDEX=yes  -gt 65536
 
 # NODES
-$ogr2ogrpath -sql "SELECT * FROM distribution.nodes WHERE _status_active IS TRUE" \
- -overwrite -a_srs EPSG:21781 -f SQLite /home/denis/Documents/qgis/qgis-project/sige_distribution.sqlite \
+ogr2ogr -sql "SELECT * FROM distribution.nodes WHERE _status_active IS TRUE" \
+ -overwrite -a_srs EPSG:21781 -f SQLite $outputpath \
  -nln nodes -nlt POINT -progress \
  PG:"dbname='sige' host='172.24.171.202' port='5432' user='sige' password='db4wat$'" \
  -dsco SPATIALITE=yes -lco SPATIAL_INDEX=yes  -gt 65536
  
  # VALVES
-$ogr2ogrpath -sql "SELECT                   \
+ogr2ogr -sql "SELECT                   \
 	id ,                                        \
 	sige,                                       \
 	id_pipe,                                    \
@@ -103,13 +99,13 @@ $ogr2ogrpath -sql "SELECT                   \
 	_schema_view,                                      \
 	_label                                      \
  FROM distribution.valves_view" \
- -overwrite -a_srs EPSG:21781 -f SQLite /home/denis/Documents/qgis/qgis-project/sige_distribution.sqlite \
+ -overwrite -a_srs EPSG:21781 -f SQLite $outputpath \
  -nln valves -nlt POINT -progress \
  PG:"dbname='sige' host='172.24.171.202' port='5432' user='sige' password='db4wat$'" \
  -dsco SPATIALITE=yes -lco SPATIAL_INDEX=yes  -gt 65536
 
  # VALVES SCHEMA
-$ogr2ogrpath -sql "SELECT                   \
+ogr2ogr -sql "SELECT                   \
 	id ,                                        \
 	sige,                                       \
 	id_pipe,                                    \
@@ -127,37 +123,52 @@ $ogr2ogrpath -sql "SELECT                   \
 	_type,                                      \
 	_label                                      \
 FROM distribution.valves_schema" \
- -overwrite -a_srs EPSG:21781 -f SQLite /home/denis/Documents/qgis/qgis-project/sige_distribution.sqlite \
+ -overwrite -a_srs EPSG:21781 -f SQLite $outputpath \
  -nln valves_schema -nlt POINT -progress \
  PG:"dbname='sige' host='172.24.171.202' port='5432' user='sige' password='db4wat$'" \
  -dsco SPATIALITE=yes -lco SPATIAL_INDEX=yes  -gt 65536
  
 # INSTALLATIONS
-$ogr2ogrpath -sql "SELECT * FROM distribution.installations_view" \
- -overwrite -a_srs EPSG:21781 -f SQLite /home/denis/Documents/qgis/qgis-project/sige_distribution.sqlite \
+ogr2ogr -sql "SELECT * FROM distribution.installations_view" \
+ -overwrite -a_srs EPSG:21781 -f SQLite $outputpath \
  -nln installations -nlt POINT -progress \
  PG:"dbname='sige' host='172.24.171.202' port='5432' user='sige' password='db4wat$'" \
  -dsco SPATIALITE=yes -lco SPATIAL_INDEX=yes  -gt 65536
  
  # PRESSURE ZONES
-$ogr2ogrpath -sql "SELECT * FROM distribution.pressure_zones" \
- -overwrite -a_srs EPSG:21781 -f SQLite /home/denis/Documents/qgis/qgis-project/sige_distribution.sqlite \
+ogr2ogr -sql "SELECT * FROM distribution.pressure_zones" \
+ -overwrite -a_srs EPSG:21781 -f SQLite $outputpath \
  -nln pressure_zones -nlt POLYGON -progress \
  PG:"dbname='sige' host='172.24.171.202' port='5432' user='sige' password='db4wat$'" \
  -dsco SPATIALITE=yes -lco SPATIAL_INDEX=yes  -gt 65536
  
  
   # PRINT MAPS
-$ogr2ogrpath -sql "SELECT * FROM distribution.printmaps" \
- -overwrite -a_srs EPSG:21781 -f SQLite /home/denis/Documents/qgis/qgis-project/sige_distribution.sqlite \
+ogr2ogr -sql "SELECT * FROM distribution.printmaps" \
+ -overwrite -a_srs EPSG:21781 -f SQLite $outputpath \
  -nln printmaps -nlt POLYGON -progress \
  PG:"dbname='sige' host='172.24.171.202' port='5432' user='sige' password='db4wat$'" \
  -dsco SPATIALITE=yes -lco SPATIAL_INDEX=yes  -gt 65536
  
  
    # DISTRICTS
-$ogr2ogrpath -sql "SELECT * FROM distribution.districts" \
- -overwrite -a_srs EPSG:21781 -f SQLite /home/denis/Documents/qgis/qgis-project/sige_distribution.sqlite \
+ogr2ogr -sql "SELECT * FROM distribution.districts" \
+ -overwrite -a_srs EPSG:21781 -f SQLite $outputpath \
  -nln districts -nlt POLYGON -progress \
+ PG:"dbname='sige' host='172.24.171.202' port='5432' user='sige' password='db4wat$'" \
+ -dsco SPATIALITE=yes -lco SPATIAL_INDEX=yes  -gt 65536
+ 
+    # SUBSCRIBER
+ogr2ogr -sql "SELECT * FROM distribution.subscriber_view" \
+ -overwrite -a_srs EPSG:21781 -f SQLite $outputpath \
+ -nln subscriber -nlt POINT -progress \
+ PG:"dbname='sige' host='172.24.171.202' port='5432' user='sige' password='db4wat$'" \
+ -dsco SPATIALITE=yes -lco SPATIAL_INDEX=yes  -gt 65536
+
+
+    # SAMPLING POINTS
+ogr2ogr -sql "SELECT * FROM distribution.samplingpoint" \
+ -overwrite -a_srs EPSG:21781 -f SQLite $outputpath \
+ -nln samplingpoint -nlt POINT -progress \
  PG:"dbname='sige' host='172.24.171.202' port='5432' user='sige' password='db4wat$'" \
  -dsco SPATIALITE=yes -lco SPATIAL_INDEX=yes  -gt 65536
