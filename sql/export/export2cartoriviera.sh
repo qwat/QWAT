@@ -1,3 +1,4 @@
+#!/bin/sh
 
 # to have ogr2ogr working with postgis 2.0
 # psql -f /usr/share/postgresql/9.1/contrib/postgis-2.0/legacy.sql
@@ -76,7 +77,7 @@ ogr2ogr -sql "SELECT                                            \
  -dsco SPATIALITE=no -lco "SPATIAL_INDEX=no FORMAT=SPATIALITE" -gt 65536
 
 # NODES
-ogr2ogr -sql "SELECT * FROM distribution.nodes WHERE _status_active IS TRUE" \
+ogr2ogr -sql "SELECT * FROM distribution.nodes WHERE _status_active IS TRUE AND _type != 'one' " \
  -overwrite -a_srs EPSG:21781 -f SQLite $outputpath \
  -nln nodes -nlt POINT -progress \
  PG:"dbname='sige' host='172.24.171.202' port='5432' user='sige' password='db4wat$'" \
@@ -120,7 +121,7 @@ ogr2ogr -sql "SELECT                   \
 	remarks,                                    \
 	_is_on_map,                                 \
 	_is_on_district,                            \
-	geometry_alternative::geometry(Point,21781),\
+	geometry::geometry(Point,21781),\
 	_function,                                  \
 	_type,                                      \
 	_label                                      \
@@ -143,5 +144,16 @@ ogr2ogr -sql "SELECT * FROM distribution.pressure_zones" \
  -nln pressure_zones -nlt POLYGON -progress \
  PG:"dbname='sige' host='172.24.171.202' port='5432' user='sige' password='db4wat$'" \
  -dsco SPATIALITE=no -lco "SPATIAL_INDEX=no FORMAT=SPATIALITE" -gt 65536
- 
- 
+
+
+# FTP TRANSFER 
+read -p "FTP transfer? (y/n) " answ
+if [ $answ = "y" ] 
+then
+	ftp -n -v ftp.vevey.ch <<-EOF
+	user carto_sige ca61sie 
+	prompt
+	cd Distribution
+	put $outputpath sige_distribution.sqlite
+	EOF
+fi
