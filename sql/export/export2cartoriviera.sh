@@ -153,7 +153,9 @@ then
 	ftp -n -v ftp.vevey.ch <<-EOF
 	user carto_sige ca61sie 
 	prompt
+	binary
 	cd Distribution
 	put $outputpath sige_distribution.sqlite
+	bye
 	EOF
 fi
