@@ -39,7 +39,7 @@ ogr2ogr -sql "SELECT                                           \
 		_schema_view                                                \
  FROM distribution.pipes_view WHERE id_owner = 1" \
  -overwrite -a_srs EPSG:21781 -f SQLite $outputpath \
- -nln pipes -nlt LINESTRING -progress \
+ -nln pipes -nlt LINESTRING -progress -preserve_fid \
  PG:"dbname='sige' host='172.24.171.202' port='5432' user='sige' password='db4wat$'" \
  -dsco SPATIALITE=no -lco "SPATIAL_INDEX=no FORMAT=SPATIALITE" -gt 65536
 
@@ -72,14 +72,14 @@ ogr2ogr -sql "SELECT                                            \
 		_pressure_zone                                              \
  FROM distribution.pipes_schema WHERE id_owner = 1" \
  -overwrite -a_srs EPSG:21781 -f SQLite $outputpath \
- -nln pipes_schema -nlt LINESTRING -progress \
+ -nln pipes_schema -nlt LINESTRING -progress -preserve_fid \
  PG:"dbname='sige' host='172.24.171.202' port='5432' user='sige' password='db4wat$'" \
  -dsco SPATIALITE=no -lco "SPATIAL_INDEX=no FORMAT=SPATIALITE" -gt 65536
 
 # NODES
 ogr2ogr -sql "SELECT * FROM distribution.nodes WHERE _status_active IS TRUE AND _type != 'one' " \
  -overwrite -a_srs EPSG:21781 -f SQLite $outputpath \
- -nln nodes -nlt POINT -progress \
+ -nln nodes -nlt POINT -progress -preserve_fid \
  PG:"dbname='sige' host='172.24.171.202' port='5432' user='sige' password='db4wat$'" \
  -dsco SPATIALITE=no -lco "SPATIAL_INDEX=no FORMAT=SPATIALITE" -gt 65536
  
@@ -103,7 +103,7 @@ ogr2ogr -sql "SELECT                   \
 	_label                                      \
  FROM distribution.valves_view" \
  -overwrite -a_srs EPSG:21781 -f SQLite $outputpath \
- -nln valves -nlt POINT -progress \
+ -nln valves -nlt POINT -progress -preserve_fid \
  PG:"dbname='sige' host='172.24.171.202' port='5432' user='sige' password='db4wat$'" \
  -dsco SPATIALITE=no -lco "SPATIAL_INDEX=no FORMAT=SPATIALITE" -gt 65536
 
@@ -127,24 +127,30 @@ ogr2ogr -sql "SELECT                   \
 	_label                                      \
 FROM distribution.valves_schema" \
  -overwrite -a_srs EPSG:21781 -f SQLite $outputpath \
- -nln valves_schema -nlt POINT -progress \
+ -nln valves_schema -nlt POINT -progress -preserve_fid \
  PG:"dbname='sige' host='172.24.171.202' port='5432' user='sige' password='db4wat$'" \
  -dsco SPATIALITE=no -lco "SPATIAL_INDEX=no FORMAT=SPATIALITE" -gt 65536
  
 # INSTALLATIONS
 ogr2ogr -sql "SELECT * FROM distribution.installations_view WHERE _status_active IS TRUE" \
  -overwrite -a_srs EPSG:21781 -f SQLite $outputpath \
- -nln installations -nlt POINT -progress \
+ -nln installations -nlt POINT -progress -preserve_fid \
  PG:"dbname='sige' host='172.24.171.202' port='5432' user='sige' password='db4wat$'" \
  -dsco SPATIALITE=no -lco "SPATIAL_INDEX=no FORMAT=SPATIALITE" -gt 65536
  
  # PRESSURE ZONES
 ogr2ogr -sql "SELECT * FROM distribution.pressure_zones" \
  -overwrite -a_srs EPSG:21781 -f SQLite $outputpath \
- -nln pressure_zones -nlt POLYGON -progress \
+ -nln pressure_zones -nlt POLYGON -progress -preserve_fid \
  PG:"dbname='sige' host='172.24.171.202' port='5432' user='sige' password='db4wat$'" \
  -dsco SPATIALITE=no -lco "SPATIAL_INDEX=no FORMAT=SPATIALITE" -gt 65536
 
+ # SUBSCRIBER
+ogr2ogr -sql "SELECT * FROM distribution.subscriber_view" \
+ -overwrite -a_srs EPSG:21781 -f SQLite $outputpath \
+ -nln subscriber -nlt POINT -progress -preserve_fid \
+ PG:"dbname='sige' host='172.24.171.202' port='5432' user='sige' password='db4wat$'" \
+ -dsco SPATIALITE=no -lco "SPATIAL_INDEX=no FORMAT=SPATIALITE" -gt 65536
 
 # FTP TRANSFER 
 read -p "FTP transfer? (y/n) " answ
