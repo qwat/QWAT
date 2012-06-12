@@ -2141,7 +2141,7 @@
 #! <XFORM_ATTR ATTR_NAME="closed" IS_USER_CREATED="false" FEAT_INDEX="0"/>
 #! <XFORM_ATTR ATTR_NAME="diameter_nominal" IS_USER_CREATED="false" FEAT_INDEX="0"/>
 #! <XFORM_ATTR ATTR_NAME="sige" IS_USER_CREATED="false" FEAT_INDEX="0"/>
-#! <XFORM_PARM PARM_NAME="LUT" PARM_VALUE="1,True,-1,False,,False"/>
+#! <XFORM_PARM PARM_NAME="LUT" PARM_VALUE="1,False,-1,True,,False"/>
 #! <XFORM_PARM PARM_NAME="XFORMER_NAME" PARM_VALUE="AttributeValueMapper"/>
 #! <XFORM_PARM PARM_NAME="SRC" PARM_VALUE="closed"/>
 #! <XFORM_PARM PARM_NAME="VAL_ATTR" PARM_VALUE="closed"/>
@@ -3311,7 +3311,7 @@ Tcl2 proc NullAttributeReplacer_null_replacer {} {    set attrs [split {year} {,
 FACTORY_DEF * TeeFactory    FACTORY_NAME NullAttributeReplacer    INPUT  FEATURE_TYPE AttributeRenamer_OUTPUT    OUTPUT FEATURE_TYPE NullAttributeReplacer_OUTPUT      @Tcl2("NullAttributeReplacer_null_replacer")
 
 # -------------------------------------------------------------------------
-Lookup AttributeValueMapper_LOOKUP_TABLE   1               True   -1              False   ""              False   ENCODED
+Lookup AttributeValueMapper_LOOKUP_TABLE   1               False   -1              True   ""              False   ENCODED
 
 FACTORY_DEF * TeeFactory    FACTORY_NAME AttributeValueMapper    INPUT  FEATURE_TYPE NullAttributeReplacer_OUTPUT    OUTPUT FEATURE_TYPE AttributeValueMapper_OUTPUT         "closed" @Lookup(AttributeValueMapper_LOOKUP_TABLE,"closed",FORWARD|ENCODED_ATTR)
 
