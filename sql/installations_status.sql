@@ -24,5 +24,6 @@ INSERT INTO distribution.installations_status (status,active) VALUES ('hors serv
 INSERT INTO distribution.installations_status (status,active) VALUES ('abandonnee'  , false);
 INSERT INTO distribution.installations_status (status,active) VALUES ('détruit'     , false);
 INSERT INTO distribution.installations_status (status,active) VALUES ('non capté'   , false);
+INSERT INTO distribution.installations_status (status,active) VALUES ('en réserve'  , false);
 
 COMMIT;
