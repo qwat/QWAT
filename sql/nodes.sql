@@ -10,7 +10,7 @@ BEGIN;
 DROP TABLE IF EXISTS distribution.nodes CASCADE;
 CREATE TABLE distribution.nodes (id serial NOT NULL);
 SELECT setval('distribution.nodes_id_seq', 40000, true);
-COMMENT ON TABLE distribution.nodes IS 'Nodes. Type:If three pipes or more arrives at the node: three. If one pipe: one. If two: depends on characteristics of pipes: two_same (everything same), two_year (year is different), two_material (and year is/are different), two_diameter (and material/year are different). Orientation is calculated if two pipes arrives to place the symbol in theright direction.';
+COMMENT ON TABLE distribution.nodes IS 'Nodes. Type:If three pipe or more arrives at the node: three. If one pipe: one. If two: depends on characteristics of pipe: two_same (everything same), two_year (year is different), two_material (and year is/are different), two_diameter (and material/year are different). Orientation is calculated if two pipe arrives to place the symbol in theright direction.';
 
 /* columns */
 ALTER TABLE distribution.nodes ADD COLUMN  altitude_dtm       DECIMAL(10,3)              ;
@@ -89,11 +89,11 @@ CREATE OR REPLACE FUNCTION distribution.node_type(integer) RETURNS void AS '
 		orientation FLOAT            := 0;
 	BEGIN
 		SELECT 
-			COUNT(pipes_view.id)               AS count         ,
-			bool_or(pipes_view._schema_view)   AS schema_view   ,
-			bool_or(pipes_view._status_active) AS status_active
+			COUNT(pipe_view.id)               AS count         ,
+			bool_or(pipe_view._schema_view)   AS schema_view   ,
+			bool_or(pipe_view._status_active) AS status_active
 			INTO grouped 
-			FROM distribution.pipes_view 
+			FROM distribution.pipe_view 
 			WHERE (id_node_a = node_id OR id_node_b = node_id);
 		IF grouped.count = 0 THEN
 			RAISE NOTICE ''Delete node %'' , node_id ;
@@ -102,9 +102,9 @@ CREATE OR REPLACE FUNCTION distribution.node_type(integer) RETURNS void AS '
 			type := ''one'';
 		ELSEIF grouped.count = 2 THEN
 			FOR pipeitem IN (
-				SELECT year,_material_longname,_material_diameter,ST_PointN(geometry,2)                      AS point_1 , ST_StartPoint(geometry) AS point_2 FROM distribution.pipes_view WHERE id_node_a = node_id
+				SELECT year,_material_longname,_material_diameter,ST_PointN(geometry,2)                      AS point_1 , ST_StartPoint(geometry) AS point_2 FROM distribution.pipe_view WHERE id_node_a = node_id
 				UNION ALL
-				SELECT year,_material_longname,_material_diameter,ST_PointN(geometry,ST_NPoints(geometry)-1) AS point_1 , ST_EndPoint(  geometry) AS point_2 FROM distribution.pipes_view WHERE id_node_b = node_id
+				SELECT year,_material_longname,_material_diameter,ST_PointN(geometry,ST_NPoints(geometry)-1) AS point_1 , ST_EndPoint(  geometry) AS point_2 FROM distribution.pipe_view WHERE id_node_b = node_id
 			) LOOP
 				IF i=0 THEN
 					Tyear     := pipeitem.year;
@@ -133,7 +133,7 @@ CREATE OR REPLACE FUNCTION distribution.node_type(integer) RETURNS void AS '
 		/*RAISE NOTICE ''% %'' , node_id , orientation;*/
 	END;
 ' LANGUAGE 'plpgsql';
-COMMENT ON FUNCTION distribution.node_type(integer) IS 'Set the orientation and type for a node. If three pipes arrives at the node: intersection. If one pipe: end. If two: depends on characteristics of pipes: year (is different), material (and year), diameter(and material/year)';
+COMMENT ON FUNCTION distribution.node_type(integer) IS 'Set the orientation and type for a node. If three pipe arrives at the node: intersection. If one pipe: end. If two: depends on characteristics of pipe: year (is different), material (and year), diameter(and material/year)';
 
 /* reset all nodes type */
 CREATE OR REPLACE FUNCTION distribution.node_set_type() RETURNS void AS '
@@ -145,7 +145,7 @@ CREATE OR REPLACE FUNCTION distribution.node_set_type() RETURNS void AS '
 		END LOOP;
 	END;
 ' LANGUAGE 'plpgsql';
-COMMENT ON FUNCTION distribution.node_set_type() IS 'Set the type and orientation for nodes. If three pipes arrives at the node: intersection. If one pipe: end. If two: depends on characteristics of pipes: year (is different), material (and year), diameter(and material/year)';
+COMMENT ON FUNCTION distribution.node_set_type() IS 'Set the type and orientation for nodes. If three pipe arrives at the node: intersection. If one pipe: end. If two: depends on characteristics of pipe: year (is different), material (and year), diameter(and material/year)';
 
   
 COMMIT;

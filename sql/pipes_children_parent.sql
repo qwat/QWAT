@@ -1,7 +1,7 @@
 /*
 	qWat - QGIS Water Module
 	
-	SQL file :: draw lines from children to parent (pipes)
+	SQL file :: draw lines from children to parent (pipe)
 
 */
 
@@ -39,8 +39,8 @@ CREATE OR REPLACE VIEW distribution.pipe_child_parent AS
 						ST_Line_Interpolate_Point(b.geometry,   LEAST(1,  4/b._length2d/2))::geometry(Point,21781) ,
 						ST_Line_Interpolate_Point(b.geometry,GREATEST(0,1-4/b._length2d/2))::geometry(Point,21781) 
 					),a.geometry) AS end_point
-			FROM distribution.pipes a 
-			INNER JOIN distribution.pipes b ON a.id_parent = b.id
+			FROM distribution.pipe a 
+			INNER JOIN distribution.pipe b ON a.id_parent = b.id
 			WHERE a.id_parent IS NOT NULL
 		) AS foo
 	) AS foo2;

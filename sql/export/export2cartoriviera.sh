@@ -37,9 +37,9 @@ ogr2ogr -sql "SELECT                                           \
 		_status_active,                                             \
 		_pressurezone,                                              \
 		_schema_view                                                \
- FROM distribution.pipes_view WHERE id_distributor = 1" \
+ FROM distribution.pipe_view WHERE id_distributor = 1" \
  -overwrite -a_srs EPSG:21781 -f SQLite $outputpath \
- -nln pipes -nlt LINESTRING -progress -preserve_fid \
+ -nln pipe -nlt LINESTRING -progress -preserve_fid \
  PG:"dbname='sige' host='172.24.171.202' port='5432' user='sige' password='db4wat$'" \
  -dsco SPATIALITE=no -lco "SPATIAL_INDEX=no FORMAT=SPATIALITE" -gt 65536
 
@@ -70,9 +70,9 @@ ogr2ogr -sql "SELECT                                            \
 		_status_name,                                               \
 		_status_active,                                             \
 		_pressurezone                                              \
- FROM distribution.pipes_schema WHERE id_distributor = 1" \
+ FROM distribution.pipe_schema WHERE id_distributor = 1" \
  -overwrite -a_srs EPSG:21781 -f SQLite $outputpath \
- -nln pipes_schema -nlt LINESTRING -progress -preserve_fid \
+ -nln pipe_schema -nlt LINESTRING -progress -preserve_fid \
  PG:"dbname='sige' host='172.24.171.202' port='5432' user='sige' password='db4wat$'" \
  -dsco SPATIALITE=no -lco "SPATIAL_INDEX=no FORMAT=SPATIALITE" -gt 65536
 

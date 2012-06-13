@@ -35,7 +35,7 @@ CREATE INDEX valves_geoidx_alt ON distribution.valves USING GIST ( geometry_alte
 ALTER TABLE distribution.valves ADD CONSTRAINT valves_pkey PRIMARY KEY (id);
 ALTER TABLE distribution.valves ADD CONSTRAINT valves_id_type     FOREIGN KEY (id_type)     REFERENCES distribution.valves_type(id)     MATCH FULL ;  CREATE INDEX fki_valves_id_type ON distribution.valves(id_type);
 ALTER TABLE distribution.valves ADD CONSTRAINT valves_id_function FOREIGN KEY (id_function) REFERENCES distribution.valves_function(id) MATCH FULL ;  CREATE INDEX fki_valves_id_function ON distribution.valves(id_function);
-ALTER TABLE distribution.valves ADD CONSTRAINT valves_id_pipe     FOREIGN KEY (id_pipe)     REFERENCES distribution.pipes(id)           MATCH SIMPLE ; CREATE INDEX fki_valves_id_pipe ON distribution.valves(id_pipe);
+ALTER TABLE distribution.valves ADD CONSTRAINT valves_id_pipe     FOREIGN KEY (id_pipe)     REFERENCES distribution.pipe(id)           MATCH SIMPLE ; CREATE INDEX fki_valves_id_pipe ON distribution.valves(id_pipe);
 ALTER TABLE distribution.valves ADD CONSTRAINT valves_id_node     FOREIGN KEY (id_node)     REFERENCES distribution.nodes(id)           MATCH SIMPLE ; CREATE INDEX fki_valves_id_node ON distribution.valves(id_node);
 
 

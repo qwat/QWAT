@@ -4,7 +4,7 @@ export db_address=172.24.171.202
 # vannes: prendre fermée + vanne régulation/secour (fct) 
 
 # save schema in a table
-psql -h $db_address -U sige -c "DROP TABLE IF EXISTS distribution.pipes_schema_temp; CREATE TABLE distribution.pipes_schema_temp AS SELECT * FROM distribution.pipes_schema_nodes;"
+psql -h $db_address -U sige -c "DROP TABLE IF EXISTS distribution.pipe_schema_temp; CREATE TABLE distribution.pipe_schema_temp AS SELECT * FROM distribution.pipe_schema_nodes;"
 
  # vannes
 /usr/bin/pgsql2shp -h $db_address -g geom -f /home/denis/Documents/PPDE/out/vannes -P db4wat$ -u sige sige "\
@@ -39,7 +39,7 @@ FROM distribution.pressurezones"
 # conduites
 /usr/bin/pgsql2shp -h $db_address -g geom -f /home/denis/Documents/PPDE/out/conduites -P db4wat$ -u sige sige "\
 SELECT                                                                             \
-	pipes_schema.id AS ID,                                                         \
+	pipe_schema.id AS ID,                                                         \
 	geometry::geometry(LineString,21781) AS geom,                                                              \
 	_length2d AS LONGU_2D,                                                         \
 	CASE WHEN _length3d_uptodate IS TRUE                                           \
@@ -59,7 +59,7 @@ SELECT                                                                          
 	NULL::varchar(10) AS RUGOSITE,                                                 \
 	NULL::boolean AS CALC_HYD,                                                     \
 	NULL::boolean AS A_DESAFE                                                      \
-FROM distribution.pipes_schema_nodes WHERE id_distributor = 1 "
+FROM distribution.pipe_schema_nodes WHERE id_distributor = 1 "
 
 # ouvrages
 /usr/bin/pgsql2shp -h $db_address -g geom -f /home/denis/Documents/PPDE/out/ouvrages -P db4wat$ -u sige sige "\
@@ -81,6 +81,6 @@ WHERE _schema_view IS TRUE                                                      
   AND _status_Active IS TRUE                                                    \
   AND id IN (                                                                   \
 	SELECT DISTINCT(id_node_a)                                                  \
-	FROM distribution.pipes_schema_temp WHERE id_distributor = 1                           \
+	FROM distribution.pipe_schema_temp WHERE id_distributor = 1                           \
 	UNION SELECT DISTINCT(id_node_b)                                            \
-	FROM distribution.pipes_schema_temp WHERE id_distributor = 1 )"
+	FROM distribution.pipe_schema_temp WHERE id_distributor = 1 )"

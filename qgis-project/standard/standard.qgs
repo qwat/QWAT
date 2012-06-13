@@ -54,7 +54,7 @@
             </legendlayer>
             <legendlayer drawingOrder="14" open="false" checked="Qt::Checked" name="Conduites" showFeatureCount="0">
                 <filegroup open="false" hidden="false">
-                    <legendlayerfile isInOverview="0" layerid="pipes_view20120103154925828" visible="1"/>
+                    <legendlayerfile isInOverview="0" layerid="pipe_view20120103154925828" visible="1"/>
                 </filegroup>
             </legendlayer>
             <legendlayer drawingOrder="6" open="false" checked="Qt::Checked" name="Noeuds" showFeatureCount="0">
@@ -227,7 +227,7 @@
             </legendlayer>
             <legendlayer drawingOrder="11" open="false" checked="Qt::Unchecked" name="Conduites schéma" showFeatureCount="0">
                 <filegroup open="false" hidden="false">
-                    <legendlayerfile isInOverview="0" layerid="pipes_schema20120228150013459" visible="0"/>
+                    <legendlayerfile isInOverview="0" layerid="pipe_schema20120228150013459" visible="0"/>
                 </filegroup>
             </legendlayer>
         </legendgroup>
@@ -254,27 +254,27 @@
             </legendlayer>
             <legendlayer drawingOrder="21" open="false" checked="Qt::Unchecked" name="Conduites protection" showFeatureCount="0">
                 <filegroup open="false" hidden="false">
-                    <legendlayerfile isInOverview="0" layerid="pipes_protection20120125161810030" visible="0"/>
+                    <legendlayerfile isInOverview="0" layerid="pipe_protection20120125161810030" visible="0"/>
                 </filegroup>
             </legendlayer>
             <legendlayer drawingOrder="19" open="false" checked="Qt::Unchecked" name="Conduites fonction" showFeatureCount="0">
                 <filegroup open="false" hidden="false">
-                    <legendlayerfile isInOverview="0" layerid="pipes_function20111216153420379" visible="0"/>
+                    <legendlayerfile isInOverview="0" layerid="pipe_function20111216153420379" visible="0"/>
                 </filegroup>
             </legendlayer>
             <legendlayer drawingOrder="23" open="false" checked="Qt::Unchecked" name="Conduites matériau" showFeatureCount="0">
                 <filegroup open="false" hidden="false">
-                    <legendlayerfile isInOverview="0" layerid="pipes_material20120103152931607" visible="0"/>
+                    <legendlayerfile isInOverview="0" layerid="pipe_material20120103152931607" visible="0"/>
                 </filegroup>
             </legendlayer>
             <legendlayer drawingOrder="24" open="false" checked="Qt::Unchecked" name="Conduites état" showFeatureCount="0">
                 <filegroup open="false" hidden="false">
-                    <legendlayerfile isInOverview="0" layerid="pipes_status20120103152931649" visible="0"/>
+                    <legendlayerfile isInOverview="0" layerid="pipe_status20120103152931649" visible="0"/>
                 </filegroup>
             </legendlayer>
             <legendlayer drawingOrder="22" open="false" checked="Qt::Unchecked" name="Conduites mode de pose" showFeatureCount="0">
                 <filegroup open="false" hidden="false">
-                    <legendlayerfile isInOverview="0" layerid="pipes_install_method20120106153731818" visible="0"/>
+                    <legendlayerfile isInOverview="0" layerid="pipe_install_method20120106153731818" visible="0"/>
                 </filegroup>
             </legendlayer>
             <legendlayer drawingOrder="18" open="false" checked="Qt::Unchecked" name="Propriétaire" showFeatureCount="0">
@@ -459,7 +459,7 @@
                         </symbols>
                     </VectorClassificationItemNg>
                 </LayerItem>
-                <LayerItem layerId="pipes_schema20120228150013459" text="Schématique">
+                <LayerItem layerId="pipe_schema20120228150013459" text="Schématique">
                     <VectorClassificationItemNg text="">
                         <symbols>
                             <symbol outputUnit="MM" alpha="1" type="line" name="classificationSymbol">
@@ -552,7 +552,7 @@
     <Composer title="Composer 3" visible="0">
         <ComposerLegend symbolWidth="7" title="Legend" boxSpace="2" titleFont="Ubuntu,16,-1,5,50,0,0,0,0,0" map="0" groupFont="Ubuntu,14,-1,5,50,0,0,0,0,0" layerFont="Ubuntu,12,-1,5,50,0,0,0,0,0" groupSpace="3" symbolSpace="2" symbolHeight="4" layerSpace="2" iconLabelSpace="2" wrapChar="" itemFont="Ubuntu,12,-1,5,50,0,0,0,0,0">
             <Model autoUpdate="1">
-                <LayerItem layerId="pipes_view20120103154925828" text="Conduites">
+                <LayerItem layerId="pipe_view20120103154925828" text="Conduites">
                     <VectorClassificationItemNg text="Distribution">
                         <symbols>
                             <symbol outputUnit="MM" alpha="1" type="line" name="classificationSymbol">
@@ -754,7 +754,7 @@
                         </symbols>
                     </VectorClassificationItemNg>
                 </LayerItem>
-                <LayerItem layerId="pipes_protection20120125161810030" text="pipes_protection"/>
+                <LayerItem layerId="pipe_protection20120125161810030" text="pipe_protection"/>
                 <LayerItem layerId="subscriber_type20120220074657628" text="subscriber_type"/>
                 <LayerItem layerId="subscriber_view20120220074846336" text="subscriber_view">
                     <VectorClassificationItemNg text="">
@@ -808,7 +808,7 @@
                         </symbols>
                     </VectorClassificationItemNg>
                 </LayerItem>
-                <LayerItem layerId="pipes_schema20120228150013459" text="pipes_schema">
+                <LayerItem layerId="pipe_schema20120228150013459" text="pipe_schema">
                     <VectorClassificationItemNg text="">
                         <symbols>
                             <symbol outputUnit="MM" alpha="1" type="line" name="classificationSymbol">
@@ -4092,8 +4092,8 @@
             <attributeactions/>
         </maplayer>
         <maplayer minimumScale="0" maximumScale="1e+08" geometry="No geometry" type="vector" hasScaleBasedVisibilityFlag="0">
-            <id>pipes_function20111216153420379</id>
-            <datasource>dbname='sige' host=172.24.171.202 port=5432 user='sige' password='db4wat$' sslmode=allow key='id' table="distribution"."pipes_function" sql=</datasource>
+            <id>pipe_function20111216153420379</id>
+            <datasource>dbname='sige' host=172.24.171.202 port=5432 user='sige' password='db4wat$' sslmode=allow key='id' table="distribution"."pipe_function" sql=</datasource>
             <title></title>
             <abstract></abstract>
             <layername>Conduites fonction</layername>
@@ -4126,8 +4126,8 @@
             <attributeactions/>
         </maplayer>
         <maplayer minimumScale="0" maximumScale="1e+08" geometry="No geometry" type="vector" hasScaleBasedVisibilityFlag="0">
-            <id>pipes_install_method20120106153731818</id>
-            <datasource>dbname='sige' host=172.24.171.202 port=5432 user='sige' password='db4wat$' sslmode=allow key='id' table="distribution"."pipes_install_method" sql=</datasource>
+            <id>pipe_install_method20120106153731818</id>
+            <datasource>dbname='sige' host=172.24.171.202 port=5432 user='sige' password='db4wat$' sslmode=allow key='id' table="distribution"."pipe_install_method" sql=</datasource>
             <title></title>
             <abstract></abstract>
             <layername>Conduites mode de pose</layername>
@@ -4159,8 +4159,8 @@
             <attributeactions/>
         </maplayer>
         <maplayer minimumScale="0" maximumScale="1e+08" geometry="No geometry" type="vector" hasScaleBasedVisibilityFlag="0">
-            <id>pipes_material20120103152931607</id>
-            <datasource>dbname='sige' host=172.24.171.202 port=5432 user='sige' password='db4wat$' sslmode=allow key='id' table="distribution"."pipes_material" sql=</datasource>
+            <id>pipe_material20120103152931607</id>
+            <datasource>dbname='sige' host=172.24.171.202 port=5432 user='sige' password='db4wat$' sslmode=allow key='id' table="distribution"."pipe_material" sql=</datasource>
             <title></title>
             <abstract></abstract>
             <layername>Conduites matériau</layername>
@@ -4197,8 +4197,8 @@
             <attributeactions/>
         </maplayer>
         <maplayer minimumScale="0" maximumScale="1e+08" geometry="No geometry" type="vector" hasScaleBasedVisibilityFlag="0">
-            <id>pipes_protection20120125161810030</id>
-            <datasource>dbname='sige' host=172.24.171.202 port=5432 user='sige' password='db4wat$' sslmode=allow key='id' table="distribution"."pipes_protection" sql=</datasource>
+            <id>pipe_protection20120125161810030</id>
+            <datasource>dbname='sige' host=172.24.171.202 port=5432 user='sige' password='db4wat$' sslmode=allow key='id' table="distribution"."pipe_protection" sql=</datasource>
             <title></title>
             <abstract></abstract>
             <layername>Conduites protection</layername>
@@ -4230,8 +4230,8 @@
             <attributeactions/>
         </maplayer>
         <maplayer minimumScale="0" maximumScale="1e+08" geometry="Line" type="vector" hasScaleBasedVisibilityFlag="0">
-            <id>pipes_schema20120228150013459</id>
-            <datasource>dbname='sige' host=172.24.171.202 port=5432 user='sige' password='db4wat$' sslmode=allow key='id' srid=21781 type=LINESTRING table="distribution"."pipes_schema" (geometry) sql=</datasource>
+            <id>pipe_schema20120228150013459</id>
+            <datasource>dbname='sige' host=172.24.171.202 port=5432 user='sige' password='db4wat$' sslmode=allow key='id' srid=21781 type=LINESTRING table="distribution"."pipe_schema" (geometry) sql=</datasource>
             <title></title>
             <abstract></abstract>
             <layername>Conduites schéma</layername>
@@ -4408,7 +4408,7 @@
                 <edittype type="0" name="id_pressurezone"/>
                 <edittype type="0" name="id_protection"/>
                 <edittype type="0" name="id_status"/>
-                <edittype type="0" name="number_of_pipes"/>
+                <edittype type="0" name="number_of_pipe"/>
                 <edittype type="0" name="pressure_nominale"/>
                 <edittype type="0" name="remarks"/>
                 <edittype type="0" name="schema_force_view"/>
@@ -4421,8 +4421,8 @@
             <attributeactions/>
         </maplayer>
         <maplayer minimumScale="0" maximumScale="1e+08" geometry="No geometry" type="vector" hasScaleBasedVisibilityFlag="0">
-            <id>pipes_status20120103152931649</id>
-            <datasource>dbname='sige' host=172.24.171.202 port=5432 user='sige' password='db4wat$' sslmode=allow key='id' table="distribution"."pipes_status" sql=</datasource>
+            <id>pipe_status20120103152931649</id>
+            <datasource>dbname='sige' host=172.24.171.202 port=5432 user='sige' password='db4wat$' sslmode=allow key='id' table="distribution"."pipe_status" sql=</datasource>
             <title></title>
             <abstract></abstract>
             <layername>Conduites état</layername>
@@ -4455,8 +4455,8 @@
             <attributeactions/>
         </maplayer>
         <maplayer minimumScale="0" maximumScale="1e+08" geometry="Line" type="vector" hasScaleBasedVisibilityFlag="0">
-            <id>pipes_view20120103154925828</id>
-            <datasource>dbname='sige' host=172.24.171.202 port=5432 user='sige' password='db4wat$' sslmode=allow key='id' table="distribution"."pipes_view" (geometry) sql=</datasource>
+            <id>pipe_view20120103154925828</id>
+            <datasource>dbname='sige' host=172.24.171.202 port=5432 user='sige' password='db4wat$' sslmode=allow key='id' table="distribution"."pipe_view" (geometry) sql=</datasource>
             <title></title>
             <abstract></abstract>
             <layername>Conduites</layername>
@@ -4629,17 +4629,17 @@
                 <edittype type="0" name="folder"/>
                 <edittype type="0" name="folio"/>
                 <edittype type="10" name="id"/>
-                <edittype allowNull="false" orderByValue="false" key="id" layer="pipes_function20111216153420379" type="15" value="function" name="id_function"/>
-                <edittype allowNull="false" orderByValue="true" key="id" layer="pipes_install_method20120106153731818" type="15" value="name" name="id_install_method"/>
-                <edittype allowNull="false" orderByValue="true" key="id" layer="pipes_material20120103152931607" type="15" value="_fancy_name" name="id_material"/>
+                <edittype allowNull="false" orderByValue="false" key="id" layer="pipe_function20111216153420379" type="15" value="function" name="id_function"/>
+                <edittype allowNull="false" orderByValue="true" key="id" layer="pipe_install_method20120106153731818" type="15" value="name" name="id_install_method"/>
+                <edittype allowNull="false" orderByValue="true" key="id" layer="pipe_material20120103152931607" type="15" value="_fancy_name" name="id_material"/>
                 <edittype type="10" name="id_node_a"/>
                 <edittype type="10" name="id_node_b"/>
                 <edittype allowNull="true" orderByValue="false" key="id" layer="distributor20120105153524348" type="15" value="name" name="id_distributor"/>
                 <edittype type="0" name="id_parent"/>
                 <edittype allowNull="false" orderByValue="false" key="id" layer="precision20120106115031146" type="15" value="name" name="id_precision"/>
                 <edittype type="0" name="id_pressurezone"/>
-                <edittype allowNull="true" orderByValue="false" key="id" layer="pipes_protection20120125161810030" type="15" value="name" name="id_protection"/>
-                <edittype allowNull="false" orderByValue="false" key="id" layer="pipes_status20120103152931649" type="15" value="status" name="id_status"/>
+                <edittype allowNull="true" orderByValue="false" key="id" layer="pipe_protection20120125161810030" type="15" value="name" name="id_protection"/>
+                <edittype allowNull="false" orderByValue="false" key="id" layer="pipe_status20120103152931649" type="15" value="status" name="id_status"/>
                 <edittype allowNull="true" orderByValue="false" key="id" layer="zones20120106115034338" type="15" value="name" name="id_zone"/>
                 <edittype type="0" name="material_ext_diam"/>
                 <edittype type="0" name="material_int_diam"/>
@@ -6206,7 +6206,7 @@
         </Paths>
         <WMSServiceTitle type="QString"></WMSServiceTitle>
         <qWat>
-            <pipes_layer type="QString">pipes_view20120103154925828</pipes_layer>
+            <pipe_layer type="QString">pipe_view20120103154925828</pipe_layer>
             <valves_layer type="QString"></valves_layer>
         </qWat>
         <WMSContactMail type="QString"></WMSContactMail>
@@ -6220,7 +6220,7 @@
         <WMSAddWktGeometry type="bool">false</WMSAddWktGeometry>
         <LinkIt>
             <field type="QString">id_parent</field>
-            <layer type="QString">pipes_view20120103154925828</layer>
+            <layer type="QString">pipe_view20120103154925828</layer>
         </LinkIt>
         <Gui>
             <SelectionColorBluePart type="int">0</SelectionColorBluePart>
@@ -6260,8 +6260,8 @@
                 <value>districts20120105171833435</value>
                 <value>intersection20120321091951605</value>
                 <value>pipe_child_parent20120224101723880</value>
-                <value>pipes_schema20120228150013459</value>
-                <value>pipes_view20120103154925828</value>
+                <value>pipe_schema20120228150013459</value>
+                <value>pipe_view20120103154925828</value>
                 <value>printmaps20120103150232188</value>
                 <value>subscriber_view20120220074846336</value>
                 <value>valves_view20120314082412614</value>

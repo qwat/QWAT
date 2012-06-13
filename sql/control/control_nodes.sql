@@ -7,12 +7,12 @@ CREATE OR REPLACE VIEW distribution.node_control AS
 	/* Nodes with no pipe connected */
 	SELECT 'Nodes with no pipe connected' AS problem, id, 'node id' AS comment 
 		FROM distribution.nodes 
-		WHERE nodes.id NOT IN (SELECT DISTINCT(id_node_a) FROM distribution.pipes) 
-		AND   nodes.id NOT IN (SELECT DISTINCT(id_node_b) FROM distribution.pipes)
+		WHERE nodes.id NOT IN (SELECT DISTINCT(id_node_a) FROM distribution.pipe) 
+		AND   nodes.id NOT IN (SELECT DISTINCT(id_node_b) FROM distribution.pipe)
 	UNION
 	/* Pipes with unreferenced nodes*/
 	SELECT 'Pipes with unreferenced nodes' AS problem, id, 'pipe id' AS comment
-		FROM distribution.pipes 
+		FROM distribution.pipe 
 		WHERE id_node_a NOT IN (SELECT id FROM distribution.nodes) 
 		AND   id_node_b NOT IN (SELECT id FROM distribution.nodes)
 	UNION
@@ -24,7 +24,7 @@ CREATE OR REPLACE VIEW distribution.node_control AS
 	UNION
 	/* Pipes without node(s) */
 	SELECT 'Pipes without node(s)' AS problem, id, 'pipe id' AS comment
-		FROM distribution.pipes 
+		FROM distribution.pipe 
 		WHERE id_node_a IS NULL 
 		OR    id_node_b IS NULL
 	UNION

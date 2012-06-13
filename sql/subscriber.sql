@@ -29,7 +29,7 @@ ALTER TABLE distribution.subscriber ADD CONSTRAINT subscriber_pkey PRIMARY KEY (
 ALTER TABLE distribution.subscriber ADD CONSTRAINT subscriber_id_type FOREIGN KEY (id_type) REFERENCES distribution.subscriber_type (id) MATCH FULL ON UPDATE NO ACTION ON DELETE NO ACTION;
 CREATE INDEX fki_id_type ON distribution.subscriber(id_type);
 /* id_pipe */
-ALTER TABLE distribution.subscriber ADD CONSTRAINT subscriber_id_pipe FOREIGN KEY (id_pipe) REFERENCES distribution.pipes (id) MATCH SIMPLE ON UPDATE NO ACTION ON DELETE NO ACTION;
+ALTER TABLE distribution.subscriber ADD CONSTRAINT subscriber_id_pipe FOREIGN KEY (id_pipe) REFERENCES distribution.pipe (id) MATCH SIMPLE ON UPDATE NO ACTION ON DELETE NO ACTION;
 CREATE INDEX fki_id_pipe ON distribution.subscriber(id_pipe);
 
 
