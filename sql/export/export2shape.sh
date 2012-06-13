@@ -33,7 +33,7 @@ SELECT	                                         \
 	id AS ID,                                    \
 	name AS NOM,                                 \
 	geometry::geometry(Polygon,21781) AS geom    \
-FROM distribution.pressure_zones"
+FROM distribution.pressurezones"
 
 
 # conduites

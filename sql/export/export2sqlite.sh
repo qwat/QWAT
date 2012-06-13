@@ -31,7 +31,7 @@ ogr2ogr -sql "SELECT                                           \
 		_protection,                                                \
 		_status_name,                                               \
 		_status_active,                                             \
-		_pressure_zone,                                             \
+		_pressurezone,                                             \
 		_schema_view                                                \
  FROM distribution.pipes_view WHERE id_owner = 1" \
  -overwrite -a_srs EPSG:21781 -f SQLite $outputpath \
@@ -65,7 +65,7 @@ ogr2ogr -sql "SELECT                                            \
 		_protection,                                                \
 		_status_name,                                               \
 		_status_active,                                             \
-		_pressure_zone                                              \
+		_pressurezone                                              \
  FROM distribution.pipes_schema WHERE id_owner = 1" \
  -overwrite -a_srs EPSG:21781 -f SQLite $outputpath \
  -nln pipes_schema -nlt LINESTRING -progress -preserve_fid \
@@ -136,9 +136,9 @@ ogr2ogr -sql "SELECT * FROM distribution.installations_view" \
  -dsco SPATIALITE=yes -lco SPATIAL_INDEX=yes  -gt 65536
  
  # PRESSURE ZONES
-ogr2ogr -sql "SELECT * FROM distribution.pressure_zones" \
+ogr2ogr -sql "SELECT * FROM distribution.pressurezones" \
  -overwrite -a_srs EPSG:21781 -f SQLite $outputpath \
- -nln pressure_zones -nlt POLYGON -progress -preserve_fid \
+ -nln pressurezones -nlt POLYGON -progress -preserve_fid \
  PG:"dbname='sige' host='172.24.171.202' port='5432' user='sige' password='db4wat$'" \
  -dsco SPATIALITE=yes -lco SPATIAL_INDEX=yes  -gt 65536
  

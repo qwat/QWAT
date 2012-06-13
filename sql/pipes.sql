@@ -21,7 +21,7 @@ ALTER TABLE distribution.pipes ADD COLUMN   id_protection integer;              
 ALTER TABLE distribution.pipes ADD COLUMN   id_status integer;                                      /* id_status         FK */
 ALTER TABLE distribution.pipes ADD COLUMN   id_node_a integer;			          					/* id_node_a         FK */
 ALTER TABLE distribution.pipes ADD COLUMN   id_node_b integer;			          					/* id_node_b         FK */
-ALTER TABLE distribution.pipes ADD COLUMN   id_pressure_zone integer;								/* id_pressure_zone  FK */
+ALTER TABLE distribution.pipes ADD COLUMN   id_pressurezone integer;								/* id_pressurezone  FK */
 ALTER TABLE distribution.pipes ADD COLUMN   schema_force_view  boolean DEFAULT NULL::boolean;       /* schema_force_view FK */
 ALTER TABLE distribution.pipes ADD COLUMN   year smallint CHECK (year > 1800 AND year < 2100);      /* year                 */
 ALTER TABLE distribution.pipes ADD COLUMN   tunnel_or_bridge boolean DEFAULT false;                 /* tunnel_or_bridge     */
@@ -54,7 +54,7 @@ ALTER TABLE distribution.pipes ADD CONSTRAINT pipes_id_owner          FOREIGN KE
 ALTER TABLE distribution.pipes ADD CONSTRAINT pipes_id_precision      FOREIGN KEY (id_precision)      REFERENCES distribution."precision"(id)          MATCH FULL   ; CREATE INDEX fki_pipes_id_precision      ON distribution.pipes(id_precision);
 ALTER TABLE distribution.pipes ADD CONSTRAINT pipes_id_protection     FOREIGN KEY (id_protection)     REFERENCES distribution.pipes_protection(id)     MATCH SIMPLE ; CREATE INDEX fki_pipes_id_protection     ON distribution.pipes(id_protection);
 ALTER TABLE distribution.pipes ADD CONSTRAINT pipes_id_status         FOREIGN KEY (id_status)         REFERENCES distribution.pipes_status(id)         MATCH FULL   ; CREATE INDEX fki_pipes_id_status         ON distribution.pipes(id_status);
-ALTER TABLE distribution.pipes ADD CONSTRAINT pipes_id_pressure_zone  FOREIGN KEY (id_pressure_zone)  REFERENCES distribution.pressure_zones(id)       MATCH SIMPLE ; CREATE INDEX fki_pipes_id_pressure_zone  ON distribution.pipes(id_pressure_zone);
+ALTER TABLE distribution.pipes ADD CONSTRAINT pipes_id_pressurezone   FOREIGN KEY (id_pressurezone)   REFERENCES distribution.pressurezones(id)        MATCH SIMPLE ; CREATE INDEX fki_pipes_id_pressurezone   ON distribution.pipes(id_pressurezone);
 ALTER TABLE distribution.pipes ADD CONSTRAINT pipes_id_node_a         FOREIGN KEY (id_node_a)         REFERENCES distribution.nodes(id)                MATCH SIMPLE ; CREATE INDEX fki_pipes_id_node_a         ON distribution.pipes(id_node_a);
 ALTER TABLE distribution.pipes ADD CONSTRAINT pipes_id_node_b         FOREIGN KEY (id_node_b)         REFERENCES distribution.nodes(id)                MATCH SIMPLE ; CREATE INDEX fki_pipes_id_node_b         ON distribution.pipes(id_node_b);
 
