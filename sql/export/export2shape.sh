@@ -4,7 +4,7 @@ export db_address=172.24.171.202
 # vannes: prendre fermée + vanne régulation/secour (fct) 
 
 # save schema in a table
-psql -h $db_address -U sige -c "DROP TABLE IF EXISTS distribution.pipe_schema_temp; CREATE TABLE distribution.pipe_schema_temp AS SELECT * FROM distribution.pipe_schema_nodes;"
+psql -h $db_address -U sige -c "DROP TABLE IF EXISTS distribution.pipe_schema_temp; CREATE TABLE distribution.pipe_schema_temp AS SELECT * FROM distribution.pipe_schema_node;"
 
  # vannes
 /usr/bin/pgsql2shp -h $db_address -g geom -f /home/denis/Documents/PPDE/out/vannes -P db4wat$ -u sige sige "\
@@ -59,7 +59,7 @@ SELECT                                                                          
 	NULL::varchar(10) AS RUGOSITE,                                                 \
 	NULL::boolean AS CALC_HYD,                                                     \
 	NULL::boolean AS A_DESAFE                                                      \
-FROM distribution.pipe_schema_nodes WHERE id_distributor = 1 "
+FROM distribution.pipe_schema_node WHERE id_distributor = 1 "
 
 # ouvrages
 /usr/bin/pgsql2shp -h $db_address -g geom -f /home/denis/Documents/PPDE/out/ouvrages -P db4wat$ -u sige sige "\
@@ -76,7 +76,7 @@ SELECT                                                                          
 	id AS ID,                                                                   \
 	altitude_dtm AS ALTITUDE,                                                   \
 	geometry::geometry(Point,21781) AS geom                                                            \
-FROM distribution.nodes                                                         \
+FROM distribution.node                                                         \
 WHERE _schema_view IS TRUE                                                      \
   AND _status_Active IS TRUE                                                    \
   AND id IN (                                                                   \

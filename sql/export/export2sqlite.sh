@@ -73,9 +73,9 @@ ogr2ogr -sql "SELECT                                            \
  -dsco SPATIALITE=yes -lco SPATIAL_INDEX=yes  -gt 65536
 
 # NODES
-ogr2ogr -sql "SELECT * FROM distribution.nodes WHERE _status_active IS TRUE" \
+ogr2ogr -sql "SELECT * FROM distribution.node WHERE _status_active IS TRUE" \
  -overwrite -a_srs EPSG:21781 -f SQLite $outputpath \
- -nln nodes -nlt POINT -progress -preserve_fid \
+ -nln node -nlt POINT -progress -preserve_fid \
  PG:"dbname='sige' host='172.24.171.202' port='5432' user='sige' password='db4wat$'" \
  -dsco SPATIALITE=yes -lco SPATIAL_INDEX=yes  -gt 65536
  

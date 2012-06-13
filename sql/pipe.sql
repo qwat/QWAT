@@ -55,8 +55,8 @@ ALTER TABLE distribution.pipe ADD CONSTRAINT pipe_id_precision      FOREIGN KEY 
 ALTER TABLE distribution.pipe ADD CONSTRAINT pipe_id_protection     FOREIGN KEY (id_protection)     REFERENCES distribution.pipe_protection(id)     MATCH SIMPLE ; CREATE INDEX fki_pipe_id_protection     ON distribution.pipe(id_protection);
 ALTER TABLE distribution.pipe ADD CONSTRAINT pipe_id_status         FOREIGN KEY (id_status)         REFERENCES distribution.pipe_status(id)         MATCH FULL   ; CREATE INDEX fki_pipe_id_status         ON distribution.pipe(id_status);
 ALTER TABLE distribution.pipe ADD CONSTRAINT pipe_id_pressurezone   FOREIGN KEY (id_pressurezone)   REFERENCES distribution.pressurezones(id)        MATCH SIMPLE ; CREATE INDEX fki_pipe_id_pressurezone   ON distribution.pipe(id_pressurezone);
-ALTER TABLE distribution.pipe ADD CONSTRAINT pipe_id_node_a         FOREIGN KEY (id_node_a)         REFERENCES distribution.nodes(id)                MATCH SIMPLE ; CREATE INDEX fki_pipe_id_node_a         ON distribution.pipe(id_node_a);
-ALTER TABLE distribution.pipe ADD CONSTRAINT pipe_id_node_b         FOREIGN KEY (id_node_b)         REFERENCES distribution.nodes(id)                MATCH SIMPLE ; CREATE INDEX fki_pipe_id_node_b         ON distribution.pipe(id_node_b);
+ALTER TABLE distribution.pipe ADD CONSTRAINT pipe_id_node_a         FOREIGN KEY (id_node_a)         REFERENCES distribution.node(id)                MATCH SIMPLE ; CREATE INDEX fki_pipe_id_node_a         ON distribution.pipe(id_node_a);
+ALTER TABLE distribution.pipe ADD CONSTRAINT pipe_id_node_b         FOREIGN KEY (id_node_b)         REFERENCES distribution.node(id)                MATCH SIMPLE ; CREATE INDEX fki_pipe_id_node_b         ON distribution.pipe(id_node_b);
 
 
 /*----------------!!!---!!!----------------*/
