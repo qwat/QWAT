@@ -25,7 +25,7 @@ SELECT \
 	_function,                                  \
 	_type,                                      \
 	_label                                      \
- FROM distribution.valves_schema WHERE closed IS TRUE OR _function = 'vanne de régulation' " 
+ FROM distribution.valve_schema WHERE closed IS TRUE OR _function = 'vanne de régulation' " 
 
 # zones
 /usr/bin/pgsql2shp -h $db_address -g geom -f /home/denis/Documents/PPDE/out/zones -P db4wat$ -u sige sige "\

@@ -98,9 +98,9 @@ ogr2ogr -sql "SELECT                   \
 	_type,                                      \
 	_schema_view,                                      \
 	_label                                      \
- FROM distribution.valves_view" \
+ FROM distribution.valve_view" \
  -overwrite -a_srs EPSG:21781 -f SQLite $outputpath \
- -nln valves -nlt POINT -progress -preserve_fid \
+ -nln valve -nlt POINT -progress -preserve_fid \
  PG:"dbname='sige' host='172.24.171.202' port='5432' user='sige' password='db4wat$'" \
  -dsco SPATIALITE=yes -lco SPATIAL_INDEX=yes  -gt 65536
 
@@ -122,9 +122,9 @@ ogr2ogr -sql "SELECT                   \
 	_function,                                  \
 	_type,                                      \
 	_label                                      \
-FROM distribution.valves_schema" \
+FROM distribution.valve_schema" \
  -overwrite -a_srs EPSG:21781 -f SQLite $outputpath \
- -nln valves_schema -nlt POINT -progress -preserve_fid \
+ -nln valve_schema -nlt POINT -progress -preserve_fid \
  PG:"dbname='sige' host='172.24.171.202' port='5432' user='sige' password='db4wat$'" \
  -dsco SPATIALITE=yes -lco SPATIAL_INDEX=yes  -gt 65536
  

@@ -64,7 +64,7 @@
             </legendlayer>
             <legendlayer drawingOrder="4" open="false" checked="Qt::Unchecked" name="Vannes" showFeatureCount="0">
                 <filegroup open="false" hidden="false">
-                    <legendlayerfile isInOverview="0" layerid="valves_view20120314082412614" visible="0"/>
+                    <legendlayerfile isInOverview="0" layerid="valve_view20120314082412614" visible="0"/>
                 </filegroup>
             </legendlayer>
             <legendlayer drawingOrder="5" open="false" checked="Qt::Checked" name="Ouvrages" showFeatureCount="0">
@@ -222,7 +222,7 @@
             </legendlayer>
             <legendlayer drawingOrder="0" open="false" checked="Qt::Checked" name="Vannes schéma" showFeatureCount="0">
                 <filegroup open="false" hidden="false">
-                    <legendlayerfile isInOverview="0" layerid="valves_schema20120522093545758" visible="1"/>
+                    <legendlayerfile isInOverview="0" layerid="valve_schema20120522093545758" visible="1"/>
                 </filegroup>
             </legendlayer>
             <legendlayer drawingOrder="11" open="false" checked="Qt::Unchecked" name="Conduites schéma" showFeatureCount="0">
@@ -234,12 +234,12 @@
         <legendgroup open="false" checked="Qt::Unchecked" name="Tables annexes">
             <legendlayer drawingOrder="1" open="false" checked="Qt::Unchecked" name="Vannes type" showFeatureCount="0">
                 <filegroup open="false" hidden="false">
-                    <legendlayerfile isInOverview="0" layerid="valves_type20120521151925807" visible="0"/>
+                    <legendlayerfile isInOverview="0" layerid="valve_type20120521151925807" visible="0"/>
                 </filegroup>
             </legendlayer>
             <legendlayer drawingOrder="2" open="false" checked="Qt::Unchecked" name="Vannes fonctions" showFeatureCount="0">
                 <filegroup open="false" hidden="false">
-                    <legendlayerfile isInOverview="0" layerid="valves_function20120521151925793" visible="0"/>
+                    <legendlayerfile isInOverview="0" layerid="valve_function20120521151925793" visible="0"/>
                 </filegroup>
             </legendlayer>
             <legendlayer drawingOrder="7" open="false" checked="Qt::Unchecked" name="Installations Type" showFeatureCount="0">
@@ -509,9 +509,9 @@
                         </symbols>
                     </VectorClassificationItemNg>
                 </LayerItem>
-                <LayerItem layerId="valves_function20120521151925793" text="valves_function"/>
-                <LayerItem layerId="valves_type20120521151925807" text="valves_type"/>
-                <LayerItem layerId="valves_schema20120522093545758" text="valves_schema">
+                <LayerItem layerId="valve_function20120521151925793" text="valve_function"/>
+                <LayerItem layerId="valve_type20120521151925807" text="valve_type"/>
+                <LayerItem layerId="valve_schema20120522093545758" text="valve_schema">
                     <VectorClassificationItemNg text="">
                         <symbols>
                             <symbol outputUnit="MM" alpha="1" type="marker" name="classificationSymbol">
@@ -829,7 +829,7 @@
                 <LayerItem layerId="riviera20120307114631520" text="riviera">
                     <RasterClassificationItem layerId="riviera20120307114631520" color="#7d7d7d" text="0-255"/>
                 </LayerItem>
-                <LayerItem layerId="valves_view20120314082412614" text="valves">
+                <LayerItem layerId="valve_view20120314082412614" text="valve">
                     <VectorClassificationItemNg text="">
                         <symbols>
                             <symbol outputUnit="MM" alpha="1" type="marker" name="classificationSymbol">
@@ -845,7 +845,7 @@
                         </symbols>
                     </VectorClassificationItemNg>
                 </LayerItem>
-                <LayerItem layerId="valves_problem20120314103428187" text="valves_problem">
+                <LayerItem layerId="valve_problem20120314103428187" text="valve_problem">
                     <VectorClassificationItemNg text="">
                         <symbols>
                             <symbol outputUnit="MM" alpha="1" type="marker" name="classificationSymbol">
@@ -959,9 +959,9 @@
                         </symbols>
                     </VectorClassificationItemNg>
                 </LayerItem>
-                <LayerItem layerId="valves_function20120521151925793" text="valves_function"/>
-                <LayerItem layerId="valves_type20120521151925807" text="valves_type"/>
-                <LayerItem layerId="valves_schema20120522093545758" text="valves_schema">
+                <LayerItem layerId="valve_function20120521151925793" text="valve_function"/>
+                <LayerItem layerId="valve_type20120521151925807" text="valve_type"/>
+                <LayerItem layerId="valve_schema20120522093545758" text="valve_schema">
                     <VectorClassificationItemNg text="">
                         <symbols>
                             <symbol outputUnit="MM" alpha="1" type="marker" name="classificationSymbol">
@@ -5807,8 +5807,8 @@
             <attributeactions/>
         </maplayer>
         <maplayer minimumScale="0" maximumScale="1e+08" geometry="No geometry" type="vector" hasScaleBasedVisibilityFlag="0">
-            <id>valves_function20120521151925793</id>
-            <datasource>dbname='sige' host=172.24.171.202 port=5432 user='sige' password='db4wat$' sslmode=allow key='id' table="distribution"."valves_function" sql=</datasource>
+            <id>valve_function20120521151925793</id>
+            <datasource>dbname='sige' host=172.24.171.202 port=5432 user='sige' password='db4wat$' sslmode=allow key='id' table="distribution"."valve_function" sql=</datasource>
             <title></title>
             <abstract></abstract>
             <layername>Vannes fonctions</layername>
@@ -5839,8 +5839,8 @@
             <attributeactions/>
         </maplayer>
         <maplayer minimumScale="0" maximumScale="25000" geometry="Point" type="vector" hasScaleBasedVisibilityFlag="1">
-            <id>valves_schema20120522093545758</id>
-            <datasource>dbname='sige' host=172.24.171.202 port=5432 user='sige' password='db4wat$' sslmode=allow key='id' srid=21781 type=POINT table="distribution"."valves_schema" (geometry_alternative) sql=</datasource>
+            <id>valve_schema20120522093545758</id>
+            <datasource>dbname='sige' host=172.24.171.202 port=5432 user='sige' password='db4wat$' sslmode=allow key='id' srid=21781 type=POINT table="distribution"."valve_schema" (geometry_alternative) sql=</datasource>
             <title></title>
             <abstract></abstract>
             <layername>Vannes schéma</layername>
@@ -5974,8 +5974,8 @@
             <attributeactions/>
         </maplayer>
         <maplayer minimumScale="0" maximumScale="1e+08" geometry="No geometry" type="vector" hasScaleBasedVisibilityFlag="0">
-            <id>valves_type20120521151925807</id>
-            <datasource>dbname='sige' host=172.24.171.202 port=5432 user='sige' password='db4wat$' sslmode=allow key='id' table="distribution"."valves_type" sql=</datasource>
+            <id>valve_type20120521151925807</id>
+            <datasource>dbname='sige' host=172.24.171.202 port=5432 user='sige' password='db4wat$' sslmode=allow key='id' table="distribution"."valve_type" sql=</datasource>
             <title></title>
             <abstract></abstract>
             <layername>Vannes type</layername>
@@ -6005,8 +6005,8 @@
             <attributeactions/>
         </maplayer>
         <maplayer minimumScale="0" maximumScale="1e+08" geometry="Point" type="vector" hasScaleBasedVisibilityFlag="0">
-            <id>valves_view20120314082412614</id>
-            <datasource>dbname='sige' host=172.24.171.202 port=5432 user='sige' password='db4wat$' sslmode=allow key='id' srid=21781 type=POINT table="distribution"."valves_view" (geometry) sql=</datasource>
+            <id>valve_view20120314082412614</id>
+            <datasource>dbname='sige' host=172.24.171.202 port=5432 user='sige' password='db4wat$' sslmode=allow key='id' srid=21781 type=POINT table="distribution"."valve_view" (geometry) sql=</datasource>
             <title></title>
             <abstract></abstract>
             <layername>Vannes</layername>
@@ -6138,10 +6138,10 @@
                 <edittype type="0" name="diameter_nominal"/>
                 <edittype type="0" name="function"/>
                 <edittype type="0" name="id"/>
-                <edittype allowNull="false" orderByValue="false" key="id" layer="valves_function20120521151925793" type="15" value="function" name="id_function"/>
+                <edittype allowNull="false" orderByValue="false" key="id" layer="valve_function20120521151925793" type="15" value="function" name="id_function"/>
                 <edittype type="0" name="id_node"/>
                 <edittype type="0" name="id_pipe"/>
-                <edittype allowNull="false" orderByValue="false" key="id" layer="valves_type20120521151925807" type="15" value="type" name="id_type"/>
+                <edittype allowNull="false" orderByValue="false" key="id" layer="valve_type20120521151925807" type="15" value="type" name="id_type"/>
                 <edittype type="12" name="remarks"/>
                 <edittype allowNull="false" orderByValue="false" key="id" layer="visible20120104110624026" type="15" value="name" name="schema_force_view"/>
                 <edittype type="0" name="sige"/>
@@ -6207,7 +6207,7 @@
         <WMSServiceTitle type="QString"></WMSServiceTitle>
         <qWat>
             <pipe_layer type="QString">pipe_view20120103154925828</pipe_layer>
-            <valves_layer type="QString"></valves_layer>
+            <valve_layer type="QString"></valve_layer>
         </qWat>
         <WMSContactMail type="QString"></WMSContactMail>
         <PositionPrecision>
@@ -6264,7 +6264,7 @@
                 <value>pipe_view20120103154925828</value>
                 <value>printmaps20120103150232188</value>
                 <value>subscriber_view20120220074846336</value>
-                <value>valves_view20120314082412614</value>
+                <value>valve_view20120314082412614</value>
                 <value>zones20120120113402241</value>
                 <value>zones20120322112918980</value>
             </LayerSnappingList>
