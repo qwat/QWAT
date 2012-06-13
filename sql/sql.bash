@@ -59,11 +59,11 @@ psql -h 172.24.171.$ip -U sige -f subscriber.sql
 read -p "Press any key to continue..."
 psql -h 172.24.171.$ip -U sige -f subscriber_view.sql
 read -p "Press any key to continue..."
-psql -h 172.24.171.$ip -U sige -f installations_type.sql
+psql -h 172.24.171.$ip -U sige -f installation_type.sql
 read -p "Press any key to continue..."
-psql -h 172.24.171.$ip -U sige -f installations.sql
+psql -h 172.24.171.$ip -U sige -f installation.sql
 read -p "Press any key to continue..."
-psql -h 172.24.171.$ip -U sige -f installations_view.sql
+psql -h 172.24.171.$ip -U sige -f installation_view.sql
 read -p "Press any key to continue..."
 psql -h 172.24.171.$ip -U sige -f samplingpoint.sql
 read -p "Press any key to continue..."

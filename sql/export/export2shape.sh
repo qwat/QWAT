@@ -68,7 +68,7 @@ SELECT                                                                          
 	geometry::geometry(Point,21781) AS geom,                                                             \
 	name AS NOM,                                                                  \
 	_type_name AS TYPE                                                            \
-FROM distribution.installations_view"
+FROM distribution.installation_view"
 
 # noeuds
 /usr/bin/pgsql2shp -h $db_address -g geom -f /home/denis/Documents/PPDE/out/noeuds -P db4wat$ -u sige sige "\
