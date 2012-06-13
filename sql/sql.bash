@@ -25,7 +25,7 @@ psql -h 172.24.171.$ip -U sige -f pressure_zones.sql
 read -p "Press any key to continue..."
 psql -h 172.24.171.$ip -U sige -f districts.sql
 read -p "Press any key to continue..."
-psql -h 172.24.171.$ip -U sige -f owner.sql
+psql -h 172.24.171.$ip -U sige -f distributor.sql
 read -p "Press any key to continue..."
 psql -h 172.24.171.$ip -U sige -f pipes_functions.sql
 read -p "Press any key to continue..."
@@ -75,7 +75,7 @@ psql -h 172.24.171.$ip -U sige -f control/control_nodes.sql
 
 # SIGE DATA
 read -p "Press any key to continue..."
-psql -h 172.24.171.$ip -U sige -f sige_data/data_owner.sql -v ON_ERROR_STOP=1
+psql -h 172.24.171.$ip -U sige -f sige_data/data_distributor.sql -v ON_ERROR_STOP=1
 rread -p "Press any key to continue..."
 psql -h 172.24.171.$ip -U sige -f sige_data/data_pressure_zones.sql -v ON_ERROR_STOP=1
 read -p "Press any key to continue..."

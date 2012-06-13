@@ -48,7 +48,7 @@ SELECT                                                                          
 	END AS LONGU_3D,                                                               \
 	remarks AS REMARQUE,                                                           \
 	_precision AS PRECISIO,                                                        \
-	_owner AS DISTRIBU,                                                            \
+	_distributor AS DISTRIBU,                                                            \
 	_function_name AS FONCTION,                                                    \
 	_material_longname AS MATERIAU,                                                \
 	_material_diameter_internal AS DIAM_INT,                                       \
@@ -59,7 +59,7 @@ SELECT                                                                          
 	NULL::varchar(10) AS RUGOSITE,                                                 \
 	NULL::boolean AS CALC_HYD,                                                     \
 	NULL::boolean AS A_DESAFE                                                      \
-FROM distribution.pipes_schema_nodes WHERE id_owner = 1 "
+FROM distribution.pipes_schema_nodes WHERE id_distributor = 1 "
 
 # ouvrages
 /usr/bin/pgsql2shp -h $db_address -g geom -f /home/denis/Documents/PPDE/out/ouvrages -P db4wat$ -u sige sige "\
@@ -81,6 +81,6 @@ WHERE _schema_view IS TRUE                                                      
   AND _status_Active IS TRUE                                                    \
   AND id IN (                                                                   \
 	SELECT DISTINCT(id_node_a)                                                  \
-	FROM distribution.pipes_schema_temp WHERE id_owner = 1                           \
+	FROM distribution.pipes_schema_temp WHERE id_distributor = 1                           \
 	UNION SELECT DISTINCT(id_node_b)                                            \
-	FROM distribution.pipes_schema_temp WHERE id_owner = 1 )"
+	FROM distribution.pipes_schema_temp WHERE id_distributor = 1 )"

@@ -30,14 +30,14 @@ ogr2ogr -sql "SELECT                                           \
 		_material_longname,                                         \
 		_material_diameter,                                         \
 		_material_diameter_internal,                                \
-		_owner,                                                     \
+		_distributor,                                                     \
 		_precision,                                                 \
 		_protection,                                                \
 		_status_name,                                               \
 		_status_active,                                             \
 		_pressurezone,                                              \
 		_schema_view                                                \
- FROM distribution.pipes_view WHERE id_owner = 1" \
+ FROM distribution.pipes_view WHERE id_distributor = 1" \
  -overwrite -a_srs EPSG:21781 -f SQLite $outputpath \
  -nln pipes -nlt LINESTRING -progress -preserve_fid \
  PG:"dbname='sige' host='172.24.171.202' port='5432' user='sige' password='db4wat$'" \
@@ -64,13 +64,13 @@ ogr2ogr -sql "SELECT                                            \
 		_material_longname,                                         \
 		_material_diameter,                                         \
 		_material_diameter_internal,                                \
-		_owner,                                                     \
+		_distributor,                                                     \
 		_precision,                                                 \
 		_protection,                                                \
 		_status_name,                                               \
 		_status_active,                                             \
 		_pressurezone                                              \
- FROM distribution.pipes_schema WHERE id_owner = 1" \
+ FROM distribution.pipes_schema WHERE id_distributor = 1" \
  -overwrite -a_srs EPSG:21781 -f SQLite $outputpath \
  -nln pipes_schema -nlt LINESTRING -progress -preserve_fid \
  PG:"dbname='sige' host='172.24.171.202' port='5432' user='sige' password='db4wat$'" \

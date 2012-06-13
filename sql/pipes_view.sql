@@ -14,7 +14,7 @@ CREATE VIEW distribution.pipes_view AS
 		pipes.id_function       ,
 		pipes.id_install_method ,
 		pipes.id_material       ,
-		pipes.id_owner          ,
+		pipes.id_distributor          ,
 		pipes.id_precision      ,
 		pipes.id_protection     ,
 		pipes.id_status         ,
@@ -40,7 +40,7 @@ CREATE VIEW distribution.pipes_view AS
 		pipes_material.name                 AS _material_longname,
 		pipes_material.diameter             AS _material_diameter,
 		pipes_material.diameter_internal    AS _material_diameter_internal,
-		owner.name                          AS _owner,
+		distributor.name                          AS _distributor,
 		"precision".name                    AS _precision,
 		pipes_protection.name               AS _protection,
 		pipes_status.status                 AS _status_name,
@@ -54,7 +54,7 @@ CREATE VIEW distribution.pipes_view AS
 		INNER JOIN distribution.pipes_function         ON pipes.id_function       = pipes_function.id
 		INNER JOIN distribution.pipes_install_method   ON pipes.id_install_method = pipes_install_method.id
 		INNER JOIN distribution.pipes_material         ON pipes.id_material       = pipes_material.id
-		LEFT OUTER JOIN  distribution.owner            ON pipes.id_owner          = owner.id
+		LEFT OUTER JOIN  distribution.distributor            ON pipes.id_distributor          = distributor.id
 		INNER JOIN distribution."precision"            ON pipes.id_precision      = "precision".id
 		LEFT OUTER JOIN  distribution.pipes_protection ON pipes.id_protection     = pipes_protection.id
 		INNER JOIN distribution.pipes_status           ON pipes.id_status         = pipes_status.id
@@ -74,7 +74,7 @@ CREATE OR REPLACE RULE pipes_update AS
 			id_function        = NEW.id_function        ,
 			id_material        = NEW.id_material        ,
 			id_status          = NEW.id_status          ,
-			id_owner           = NEW.id_owner           ,
+			id_distributor           = NEW.id_distributor           ,
 			id_pressurezone   = NEW.id_pressurezone   ,
 			id_precision       = NEW.id_precision       ,
 			id_protection      = NEW.id_protection      ,
@@ -91,9 +91,9 @@ CREATE OR REPLACE RULE pipes_update AS
 CREATE OR REPLACE RULE pipes_insert AS
 	ON INSERT TO distribution.pipes_view DO INSTEAD
 		INSERT INTO distribution.pipes 
-			(    id_function,    id_material,    id_status,    id_parent,    id_owner,    id_pressurezone,    id_precision,    id_protection,    id_install_method,    year,    tunnel_or_bridge,    pressure_nominale,    schema_force_view,    folder,    remarks,    geometry)     
+			(    id_function,    id_material,    id_status,    id_parent,    id_distributor,    id_pressurezone,    id_precision,    id_protection,    id_install_method,    year,    tunnel_or_bridge,    pressure_nominale,    schema_force_view,    folder,    remarks,    geometry)     
 		VALUES
-			(NEW.id_function,NEW.id_material,NEW.id_status,NEW.id_parent,NEW.id_owner,NEW.id_pressurezone,NEW.id_precision,NEW.id_protection,NEW.id_install_method,NEW.year,NEW.tunnel_or_bridge,NEW.pressure_nominale,NEW.schema_force_view,NEW.folder,NEW.remarks,NEW.geometry);
+			(NEW.id_function,NEW.id_material,NEW.id_status,NEW.id_parent,NEW.id_distributor,NEW.id_pressurezone,NEW.id_precision,NEW.id_protection,NEW.id_install_method,NEW.year,NEW.tunnel_or_bridge,NEW.pressure_nominale,NEW.schema_force_view,NEW.folder,NEW.remarks,NEW.geometry);
 CREATE OR REPLACE RULE pipes_delete AS
 	ON DELETE TO distribution.pipes_view DO INSTEAD
 		DELETE FROM distribution.pipes WHERE id = OLD.id;

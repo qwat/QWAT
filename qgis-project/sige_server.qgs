@@ -224,7 +224,7 @@
             </legendlayer>
             <legendlayer drawingOrder="21" open="false" checked="Qt::Unchecked" name="Propriétaire" showFeatureCount="0">
                 <filegroup open="false" hidden="false">
-                    <legendlayerfile isInOverview="0" layerid="owner20120105153524348" visible="0"/>
+                    <legendlayerfile isInOverview="0" layerid="distributor20120105153524348" visible="0"/>
                 </filegroup>
             </legendlayer>
             <legendlayer drawingOrder="34" open="false" checked="Qt::Unchecked" name="Précision" showFeatureCount="0">
@@ -4048,8 +4048,8 @@
             <attributeactions/>
         </maplayer>
         <maplayer minimumScale="0" maximumScale="1e+08" geometry="No geometry" type="vector" hasScaleBasedVisibilityFlag="0">
-            <id>owner20120105153524348</id>
-            <datasource>dbname='sige' host=172.24.171.202 port=5432 user='sige' password='db4wat$' sslmode=allow key='id' table="distribution"."owner" sql=</datasource>
+            <id>distributor20120105153524348</id>
+            <datasource>dbname='sige' host=172.24.171.202 port=5432 user='sige' password='db4wat$' sslmode=allow key='id' table="distribution"."distributor" sql=</datasource>
             <title></title>
             <abstract></abstract>
             <layername>Propriétaire</layername>
@@ -4530,7 +4530,7 @@
                 <edittype type="0" name="_material_diameter_internal"/>
                 <edittype type="0" name="_material_longname"/>
                 <edittype type="0" name="_material_name"/>
-                <edittype type="0" name="_owner"/>
+                <edittype type="0" name="_distributor"/>
                 <edittype type="0" name="_precision"/>
                 <edittype type="0" name="_pressurezone"/>
                 <edittype type="0" name="_protection"/>
@@ -4545,7 +4545,7 @@
                 <edittype type="0" name="id_material"/>
                 <edittype type="0" name="id_node_a"/>
                 <edittype type="0" name="id_node_b"/>
-                <edittype type="0" name="id_owner"/>
+                <edittype type="0" name="id_distributor"/>
                 <edittype type="0" name="id_parent"/>
                 <edittype type="0" name="id_precision"/>
                 <edittype type="0" name="id_pressurezone"/>
@@ -4756,7 +4756,7 @@
                 <edittype type="0" name="_material_diameter_internal"/>
                 <edittype type="0" name="_material_longname"/>
                 <edittype type="0" name="_material_name"/>
-                <edittype type="0" name="_owner"/>
+                <edittype type="0" name="_distributor"/>
                 <edittype type="0" name="_pipe_name"/>
                 <edittype type="0" name="_precision"/>
                 <edittype type="0" name="_pressurezone"/>
@@ -4777,7 +4777,7 @@
                 <edittype allowNull="false" orderByValue="true" key="id" layer="pipes_material20120103152931607" type="15" value="_fancy_name" name="id_material"/>
                 <edittype type="10" name="id_node_a"/>
                 <edittype type="10" name="id_node_b"/>
-                <edittype allowNull="true" orderByValue="false" key="id" layer="owner20120105153524348" type="15" value="name" name="id_owner"/>
+                <edittype allowNull="true" orderByValue="false" key="id" layer="distributor20120105153524348" type="15" value="name" name="id_distributor"/>
                 <edittype type="0" name="id_parent"/>
                 <edittype allowNull="false" orderByValue="false" key="id" layer="precision20120106115031146" type="15" value="name" name="id_precision"/>
                 <edittype type="0" name="id_pressurezone"/>
@@ -4811,7 +4811,7 @@
                 <alias field="_material_diameter" index="29" name="Diamètre"/>
                 <alias field="_material_diameter_internal" index="30" name="Diamètre interne"/>
                 <alias field="_material_name" index="27" name="Matériau"/>
-                <alias field="_owner" index="31" name="Propriétaire"/>
+                <alias field="_distributor" index="31" name="Propriétaire"/>
                 <alias field="_precision" index="32" name="Précision"/>
                 <alias field="_protection" index="33" name="Protection"/>
                 <alias field="_schema_view" index="37" name="Schématique"/>

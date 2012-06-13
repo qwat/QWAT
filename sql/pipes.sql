@@ -15,7 +15,7 @@ ALTER TABLE distribution.pipes ADD COLUMN   id_parent integer;                  
 ALTER TABLE distribution.pipes ADD COLUMN   id_function integer;									/* id_function       FK */ 
 ALTER TABLE distribution.pipes ADD COLUMN   id_install_method integer;                              /* id_install_method FK */
 ALTER TABLE distribution.pipes ADD COLUMN   id_material integer;                                    /* id_material       FK */
-ALTER TABLE distribution.pipes ADD COLUMN   id_owner integer;										/* id_owner          FK */
+ALTER TABLE distribution.pipes ADD COLUMN   id_distributor integer;										/* id_distributor          FK */
 ALTER TABLE distribution.pipes ADD COLUMN   id_precision integer;                                   /* id_precision      FK */
 ALTER TABLE distribution.pipes ADD COLUMN   id_protection integer;                                  /* id_protection     FK */
 ALTER TABLE distribution.pipes ADD COLUMN   id_status integer;                                      /* id_status         FK */
@@ -50,7 +50,7 @@ ALTER TABLE distribution.pipes ADD CONSTRAINT pipes_id_parent         FOREIGN KE
 ALTER TABLE distribution.pipes ADD CONSTRAINT pipes_id_function       FOREIGN KEY (id_function)       REFERENCES distribution.pipes_function(id)       MATCH FULL   ; CREATE INDEX fki_pipes_id_function       ON distribution.pipes(id_function);
 ALTER TABLE distribution.pipes ADD CONSTRAINT pipes_id_install_method FOREIGN KEY (id_install_method) REFERENCES distribution.pipes_install_method(id) MATCH FULL   ; CREATE INDEX fki_pipes_id_install_method ON distribution.pipes(id_install_method);
 ALTER TABLE distribution.pipes ADD CONSTRAINT pipes_id_material       FOREIGN KEY (id_material)       REFERENCES distribution.pipes_material(id)       MATCH FULL   ; CREATE INDEX fki_pipes_id_material       ON distribution.pipes(id_material);
-ALTER TABLE distribution.pipes ADD CONSTRAINT pipes_id_owner          FOREIGN KEY (id_owner)          REFERENCES distribution.owner(id)                MATCH SIMPLE ; CREATE INDEX fki_pipes_id_owner          ON distribution.pipes(id_owner);
+ALTER TABLE distribution.pipes ADD CONSTRAINT pipes_id_distributor          FOREIGN KEY (id_distributor)          REFERENCES distribution.distributor(id)                MATCH SIMPLE ; CREATE INDEX fki_pipes_id_distributor          ON distribution.pipes(id_distributor);
 ALTER TABLE distribution.pipes ADD CONSTRAINT pipes_id_precision      FOREIGN KEY (id_precision)      REFERENCES distribution."precision"(id)          MATCH FULL   ; CREATE INDEX fki_pipes_id_precision      ON distribution.pipes(id_precision);
 ALTER TABLE distribution.pipes ADD CONSTRAINT pipes_id_protection     FOREIGN KEY (id_protection)     REFERENCES distribution.pipes_protection(id)     MATCH SIMPLE ; CREATE INDEX fki_pipes_id_protection     ON distribution.pipes(id_protection);
 ALTER TABLE distribution.pipes ADD CONSTRAINT pipes_id_status         FOREIGN KEY (id_status)         REFERENCES distribution.pipes_status(id)         MATCH FULL   ; CREATE INDEX fki_pipes_id_status         ON distribution.pipes(id_status);

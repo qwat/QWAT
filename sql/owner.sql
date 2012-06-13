@@ -1,19 +1,19 @@
 /*
 	qWat - QGIS Water Module
 	
-	SQL file :: owners/companies tables
+	SQL file :: distributors/companies tables
 */
 BEGIN;
 
-DROP TABLE IF EXISTS distribution.owner CASCADE;
-CREATE TABLE distribution.owner ( id SERIAL, CONSTRAINT owner_pk PRIMARY KEY (id) );
-COMMENT ON TABLE distribution.owner IS 'Companies and owners list.';
+DROP TABLE IF EXISTS distribution.distributor CASCADE;
+CREATE TABLE distribution.distributor ( id SERIAL, CONSTRAINT distributor_pk PRIMARY KEY (id) );
+COMMENT ON TABLE distribution.distributor IS 'Companies and distributors list.';
 
 /* Columns */
-ALTER TABLE distribution.owner ADD COLUMN name VARCHAR(30);
+ALTER TABLE distribution.distributor ADD COLUMN name VARCHAR(30);
 
 /* Constraints */
-ALTER TABLE distribution.owner ADD CONSTRAINT owner_name UNIQUE (name);
+ALTER TABLE distribution.distributor ADD CONSTRAINT distributor_name UNIQUE (name);
 
 
 COMMIT;
