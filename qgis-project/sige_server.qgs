@@ -64,7 +64,7 @@
             </legendlayer>
             <legendlayer drawingOrder="4" open="false" checked="Qt::Unchecked" name="Ouvrages" showFeatureCount="0">
                 <filegroup open="false" hidden="false">
-                    <legendlayerfile isInOverview="0" layerid="installations_view20120405105153760" visible="0"/>
+                    <legendlayerfile isInOverview="0" layerid="installation_view20120405105153760" visible="0"/>
                 </filegroup>
             </legendlayer>
         </legendgroup>
@@ -219,7 +219,7 @@
             </legendlayer>
             <legendlayer drawingOrder="9" open="false" checked="Qt::Unchecked" name="Installations Type" showFeatureCount="0">
                 <filegroup open="false" hidden="false">
-                    <legendlayerfile isInOverview="0" layerid="installations_type20120405091015523" visible="0"/>
+                    <legendlayerfile isInOverview="0" layerid="installation_type20120405091015523" visible="0"/>
                 </filegroup>
             </legendlayer>
             <legendlayer drawingOrder="21" open="false" checked="Qt::Unchecked" name="Propriétaire" showFeatureCount="0">
@@ -258,7 +258,7 @@
         </ComposerMap>
         <ComposerLegend symbolWidth="5" title="Réseau Sige" boxSpace="1" titleFont="Arial,8,-1,5,75,0,0,0,0,0" map="0" groupFont="Arial,8,-1,5,50,1,0,0,0,0" layerFont="Arial,8,-1,5,50,0,0,0,0,0" groupSpace="1" symbolSpace="1" symbolHeight="4" layerSpace="1" iconLabelSpace="1" wrapChar="" itemFont="Arial,8,-1,5,50,0,0,0,0,0">
             <Model autoUpdate="0">
-                <LayerItem layerId="installations20120523151809086" text="Ouvrage">
+                <LayerItem layerId="installation20120523151809086" text="Ouvrage">
                     <VectorClassificationItemNg text="Chambre compteur">
                         <symbols>
                             <symbol outputUnit="MM" alpha="1" type="marker" name="classificationSymbol">
@@ -572,7 +572,7 @@
         </ComposerScaleBar>
         <ComposerLegend symbolWidth="5" title="Réseau Sige" boxSpace="1" titleFont="Arial,8,-1,5,75,0,0,0,0,0" map="0" groupFont="Arial,8,-1,5,50,1,0,0,0,0" layerFont="Arial,8,-1,5,50,0,0,0,0,0" groupSpace="1" symbolSpace="1" symbolHeight="4" layerSpace="1" iconLabelSpace="1" wrapChar="" itemFont="Arial,8,-1,5,50,0,0,0,0,0">
             <Model autoUpdate="0">
-                <LayerItem layerId="installations20120523151809086" text="Ouvrage">
+                <LayerItem layerId="installation20120523151809086" text="Ouvrage">
                     <VectorClassificationItemNg text="Chambre compteur">
                         <symbols>
                             <symbol outputUnit="MM" alpha="1" type="marker" name="classificationSymbol">
@@ -868,7 +868,7 @@
         </ComposerMap>
         <ComposerLegend symbolWidth="5" title="Réseau Sige" boxSpace="1" titleFont="Arial,8,-1,5,75,0,0,0,0,0" map="0" groupFont="Arial,8,-1,5,50,1,0,0,0,0" layerFont="Arial,8,-1,5,50,0,0,0,0,0" groupSpace="1" symbolSpace="1" symbolHeight="4" layerSpace="1" iconLabelSpace="1" wrapChar="" itemFont="Arial,8,-1,5,50,0,0,0,0,0">
             <Model autoUpdate="0">
-                <LayerItem layerId="installations20120523151809086" text="Ouvrage">
+                <LayerItem layerId="installation20120523151809086" text="Ouvrage">
                     <VectorClassificationItemNg text="Chambre compteur">
                         <symbols>
                             <symbol outputUnit="MM" alpha="1" type="marker" name="classificationSymbol">
@@ -1178,7 +1178,7 @@
         </ComposerScaleBar>
         <ComposerLegend symbolWidth="5" title="Réseau Sige" boxSpace="1" titleFont="Arial,8,-1,5,75,0,0,0,0,0" map="0" groupFont="Arial,8,-1,5,50,1,0,0,0,0" layerFont="Arial,8,-1,5,50,0,0,0,0,0" groupSpace="1" symbolSpace="1" symbolHeight="4" layerSpace="1" iconLabelSpace="1" wrapChar="" itemFont="Arial,8,-1,5,50,0,0,0,0,0">
             <Model autoUpdate="0">
-                <LayerItem layerId="installations20120523151809086" text="Ouvrage">
+                <LayerItem layerId="installation20120523151809086" text="Ouvrage">
                     <VectorClassificationItemNg text="Chambre compteur">
                         <symbols>
                             <symbol outputUnit="MM" alpha="1" type="marker" name="classificationSymbol">
@@ -3596,8 +3596,8 @@
             <attributeactions/>
         </maplayer>
         <maplayer minimumScale="0" maximumScale="1e+08" geometry="No geometry" type="vector" hasScaleBasedVisibilityFlag="0">
-            <id>installations_type20120405091015523</id>
-            <datasource>dbname='sige' host=172.24.171.202 port=5432 user='sige' password='db4wat$' sslmode=allow key='id' table="distribution"."installations_type" sql=</datasource>
+            <id>installation_type20120405091015523</id>
+            <datasource>dbname='sige' host=172.24.171.202 port=5432 user='sige' password='db4wat$' sslmode=allow key='id' table="distribution"."installation_type" sql=</datasource>
             <title></title>
             <abstract></abstract>
             <layername>Installations Type</layername>
@@ -3630,8 +3630,8 @@
             <attributeactions/>
         </maplayer>
         <maplayer minimumScale="0" maximumScale="1e+08" geometry="Point" type="vector" hasScaleBasedVisibilityFlag="0">
-            <id>installations_view20120405105153760</id>
-            <datasource>dbname='sige' host=172.24.171.202 port=5432 user='sige' password='db4wat$' sslmode=allow key='id' srid=21781 type=POINT table="distribution"."installations_view" (geometry) sql=</datasource>
+            <id>installation_view20120405105153760</id>
+            <datasource>dbname='sige' host=172.24.171.202 port=5432 user='sige' password='db4wat$' sslmode=allow key='id' srid=21781 type=POINT table="distribution"."installation_view" (geometry) sql=</datasource>
             <title></title>
             <abstract></abstract>
             <layername>Ouvrages</layername>

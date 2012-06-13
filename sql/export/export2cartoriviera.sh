@@ -132,9 +132,9 @@ FROM distribution.valve_schema" \
  -dsco SPATIALITE=no -lco "SPATIAL_INDEX=no FORMAT=SPATIALITE" -gt 65536
  
 # INSTALLATIONS
-ogr2ogr -sql "SELECT * FROM distribution.installations_view WHERE _status_active IS TRUE" \
+ogr2ogr -sql "SELECT * FROM distribution.installation_view WHERE _status_active IS TRUE" \
  -overwrite -a_srs EPSG:21781 -f SQLite $outputpath \
- -nln installations -nlt POINT -progress -preserve_fid \
+ -nln installation -nlt POINT -progress -preserve_fid \
  PG:"dbname='sige' host='172.24.171.202' port='5432' user='sige' password='db4wat$'" \
  -dsco SPATIALITE=no -lco "SPATIAL_INDEX=no FORMAT=SPATIALITE" -gt 65536
  
