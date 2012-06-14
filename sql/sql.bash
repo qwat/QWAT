@@ -1,13 +1,15 @@
 #read -p "Press any key to continue..."
 #psql -h 172.24.171.$ip -U sige -f roles.sql
 
-read -p "server 75 or 202 : " ip
+read -p "Last xxx of IP : " ip
 
 psql -h 172.24.171.$ip -U sige -c "DROP SCHEMA distribution CASCADE; CREATE SCHEMA distribution;"
 
 psql -h 172.24.171.$ip -U sige -f tool_functions.sql
 read -p "Press any key to continue..."
 psql -h 172.24.171.$ip -U sige -f visible.sql
+read -p "Press any key to continue..."
+psql -h 172.24.171.$ip -U sige -f status.sql
 read -p "Press any key to continue..."
 psql -h 172.24.171.$ip -U sige -f node.sql
 read -p "Press any key to continue..."
@@ -30,8 +32,6 @@ read -p "Press any key to continue..."
 psql -h 172.24.171.$ip -U sige -f pipe_functions.sql
 read -p "Press any key to continue..."
 psql -h 172.24.171.$ip -U sige -f pipe_material.sql
-read -p "Press any key to continue..."
-psql -h 172.24.171.$ip -U sige -f pipe_status.sql
 read -p "Press any key to continue..."
 psql -h 172.24.171.$ip -U sige -f printmaps.sql
 read -p "Press any key to continue..."
