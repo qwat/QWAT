@@ -13,7 +13,7 @@ CREATE VIEW distribution.installations_view AS
 		installations.id                                ,
 		installations.name                              ,
 		installations.id_type                           ,
-		installations.id_distributor                          ,
+		installations.id_distributor                    ,
 		installations.id_status                         ,
 		installations.remarks                           ,
 		installations.geometry::geometry(Point,21781)   ,
@@ -27,9 +27,9 @@ CREATE VIEW distribution.installations_view AS
 			ELSE installations.schema_force_view
 		END AS _schema_view
 	FROM distribution.installations 
-	INNER      JOIN distribution.installations_type   ON installations.id_type    = installations_type.id 
-	INNER      JOIN distribution.installations_status ON installations.id_status  = installations_status.id 
-	LEFT OUTER JOIN distribution.distributor                ON installations.id_distributor   = distributor.id ;
+	INNER      JOIN distribution.installations_type ON installations.id_type        = installations_type.id 
+	INNER      JOIN distribution.status             ON installations.id_status      = status.id 
+	LEFT OUTER JOIN distribution.distributor        ON installations.id_distributor = distributor.id ;
 
 
 /* TODO: rules */
