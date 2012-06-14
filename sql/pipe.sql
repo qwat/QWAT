@@ -11,28 +11,28 @@ COMMENT ON TABLE distribution.pipe IS 'Table for pipe. This should not be used f
 SELECT setval('distribution.pipe_id_seq', 35000, true);
 
 /* columns */
-ALTER TABLE distribution.pipe ADD COLUMN   id_parent integer;                                      /* id_parent         FK */
-ALTER TABLE distribution.pipe ADD COLUMN   id_function integer;									/* id_function       FK */ 
-ALTER TABLE distribution.pipe ADD COLUMN   id_install_method integer;                              /* id_install_method FK */
-ALTER TABLE distribution.pipe ADD COLUMN   id_material integer;                                    /* id_material       FK */
-ALTER TABLE distribution.pipe ADD COLUMN   id_distributor integer;										/* id_distributor          FK */
-ALTER TABLE distribution.pipe ADD COLUMN   id_precision integer;                                   /* id_precision      FK */
-ALTER TABLE distribution.pipe ADD COLUMN   id_protection integer;                                  /* id_protection     FK */
-ALTER TABLE distribution.pipe ADD COLUMN   id_status integer;                                      /* id_status         FK */
-ALTER TABLE distribution.pipe ADD COLUMN   id_node_a integer;			          					/* id_node_a         FK */
-ALTER TABLE distribution.pipe ADD COLUMN   id_node_b integer;			          					/* id_node_b         FK */
-ALTER TABLE distribution.pipe ADD COLUMN   id_pressurezone integer;								/* id_pressurezone  FK */
-ALTER TABLE distribution.pipe ADD COLUMN   schema_force_view  boolean DEFAULT NULL::boolean;       /* schema_force_view FK */
-ALTER TABLE distribution.pipe ADD COLUMN   year smallint CHECK (year > 1800 AND year < 2100);      /* year                 */
-ALTER TABLE distribution.pipe ADD COLUMN   tunnel_or_bridge boolean DEFAULT false;                 /* tunnel_or_bridge     */
-ALTER TABLE distribution.pipe ADD COLUMN   pressure_nominale smallint;                             /* pressure_nominale    */
-ALTER TABLE distribution.pipe ADD COLUMN   folder varchar(20) DEFAULT '';                          /* folder               */
-ALTER TABLE distribution.pipe ADD COLUMN   remarks text;                                           /* remarks              */
-ALTER TABLE distribution.pipe ADD COLUMN   _length2d decimal(8,2);                                 /* _length2d            */
-ALTER TABLE distribution.pipe ADD COLUMN   _length3d decimal(8,2);                                 /* _length3d            */
-ALTER TABLE distribution.pipe ADD COLUMN   _length3d_uptodate boolean DEFAULT False;               /* _length3d_uptodate   */
-ALTER TABLE distribution.pipe ADD COLUMN   _is_on_map varchar(80) DEFAULT '';                      /* _is_on_map           */
-ALTER TABLE distribution.pipe ADD COLUMN   _is_on_district varchar(100) DEFAULT '';                /* _is_on_district      */
+ALTER TABLE distribution.pipe ADD COLUMN id_parent integer;                                    /* id_parent         FK */
+ALTER TABLE distribution.pipe ADD COLUMN id_function integer;								   /* id_function       FK */ 
+ALTER TABLE distribution.pipe ADD COLUMN id_install_method integer;                            /* id_install_method FK */
+ALTER TABLE distribution.pipe ADD COLUMN id_material integer;                                  /* id_material       FK */
+ALTER TABLE distribution.pipe ADD COLUMN id_distributor integer;							   /* id_distributor    FK */
+ALTER TABLE distribution.pipe ADD COLUMN id_precision integer;                                 /* id_precision      FK */
+ALTER TABLE distribution.pipe ADD COLUMN id_protection integer;                                /* id_protection     FK */
+ALTER TABLE distribution.pipe ADD COLUMN id_status integer;                                    /* id_status         FK */
+ALTER TABLE distribution.pipe ADD COLUMN id_node_a integer;			          				   /* id_node_a         FK */
+ALTER TABLE distribution.pipe ADD COLUMN id_node_b integer;			          				   /* id_node_b         FK */
+ALTER TABLE distribution.pipe ADD COLUMN id_pressurezone integer;							   /* id_pressurezone   FK */
+ALTER TABLE distribution.pipe ADD COLUMN schema_force_view  boolean DEFAULT NULL::boolean;     /* schema_force_view FK */
+ALTER TABLE distribution.pipe ADD COLUMN year smallint CHECK (year > 1800 AND year < 2100);    /* year                 */
+ALTER TABLE distribution.pipe ADD COLUMN tunnel_or_bridge boolean DEFAULT false;               /* tunnel_or_bridge     */
+ALTER TABLE distribution.pipe ADD COLUMN pressure_nominale smallint;                           /* pressure_nominale    */
+ALTER TABLE distribution.pipe ADD COLUMN folder varchar(20) DEFAULT '';                        /* folder               */
+ALTER TABLE distribution.pipe ADD COLUMN remarks text;                                         /* remarks              */
+ALTER TABLE distribution.pipe ADD COLUMN _length2d decimal(8,2);                               /* _length2d            */
+ALTER TABLE distribution.pipe ADD COLUMN _length3d decimal(8,2);                               /* _length3d            */
+ALTER TABLE distribution.pipe ADD COLUMN _length3d_uptodate boolean DEFAULT False;             /* _length3d_uptodate   */
+ALTER TABLE distribution.pipe ADD COLUMN _is_on_map varchar(80) DEFAULT '';                    /* _is_on_map           */
+ALTER TABLE distribution.pipe ADD COLUMN _is_on_district varchar(100) DEFAULT '';              /* _is_on_district      */
 
 /* geometry */
 SELECT addGeometryColumn('distribution', 'pipe', 'geometry', 21781, 'LINESTRING', 2);
