@@ -9,12 +9,12 @@ BEGIN;
 DROP VIEW IF EXISTS distribution.pipe_view CASCADE;
 CREATE VIEW distribution.pipe_view AS 
 	SELECT  
-		pipe.id		,
+		pipe.id		           ,
 		pipe.id_parent         ,
 		pipe.id_function       ,
 		pipe.id_install_method ,
 		pipe.id_material       ,
-		pipe.id_distributor          ,
+		pipe.id_distributor    ,
 		pipe.id_precision      ,
 		pipe.id_protection     ,
 		pipe.id_status         ,
@@ -34,30 +34,30 @@ CREATE VIEW distribution.pipe_view AS
 		pipe._is_on_district   ,
 		pipe.geometry::geometry(LineString,21781),
 		sqrt(pow(_length3d,2)-pow(_length2d,2))/_length2d AS _slope,
-		pipe_function.function             AS _function_name, 
+		pipe_function.function            AS _function_name, 
 		pipe_install_method.name           AS _install_method,
 		pipe_material._fancy_name          AS _material_name,
 		pipe_material.name                 AS _material_longname,
 		pipe_material.diameter             AS _material_diameter,
 		pipe_material.diameter_internal    AS _material_diameter_internal,
-		distributor.name                          AS _distributor,
-		"precision".name                    AS _precision,
+		distributor.name                   AS _distributor,
+		"precision".name                   AS _precision,
 		pipe_protection.name               AS _protection,
-		pipe_status.status                 AS _status_name,
-		pipe_status.active                 AS _status_active,
+		status.status                      AS _status_name,
+		status.active                      AS _status_active,
 		pressurezones.name                 AS _pressurezone,
 		CASE 
 			WHEN pipe.schema_force_view IS NULL THEN pipe_function.schema_view
 			ELSE pipe.schema_force_view
 		END AS _schema_view
 		FROM distribution.pipe
-		INNER JOIN distribution.pipe_function         ON pipe.id_function       = pipe_function.id
-		INNER JOIN distribution.pipe_install_method   ON pipe.id_install_method = pipe_install_method.id
-		INNER JOIN distribution.pipe_material         ON pipe.id_material       = pipe_material.id
-		LEFT OUTER JOIN  distribution.distributor            ON pipe.id_distributor          = distributor.id
+		INNER JOIN distribution.pipe_function          ON pipe.id_function       = pipe_function.id
+		INNER JOIN distribution.pipe_install_method    ON pipe.id_install_method = pipe_install_method.id
+		INNER JOIN distribution.pipe_material          ON pipe.id_material       = pipe_material.id
+		LEFT OUTER JOIN  distribution.distributor      ON pipe.id_distributor          = distributor.id
 		INNER JOIN distribution."precision"            ON pipe.id_precision      = "precision".id
-		LEFT OUTER JOIN  distribution.pipe_protection ON pipe.id_protection     = pipe_protection.id
-		INNER JOIN distribution.pipe_status           ON pipe.id_status         = pipe_status.id
+		LEFT OUTER JOIN  distribution.pipe_protection  ON pipe.id_protection     = pipe_protection.id
+		INNER JOIN distribution.status                 ON pipe.id_status         = status.id
 		LEFT OUTER JOIN  distribution.pressurezones    ON pipe.id_pressurezone   = pressurezones.id;
 /*----------------!!!---!!!----------------*/
 /* Comment */
