@@ -19,9 +19,9 @@ CREATE VIEW distribution.installations_view AS
 		installations.geometry::geometry(Point,21781)   ,
 		installations_type.name       AS _type          ,
 		installations_type.short_name AS _type_shortname,
-		installations_status.status   AS _status        ,
-		installations_status.active   AS _status_active ,
-		distributor.name AS _distributor,
+		status.status                 AS _status        ,
+		status.active                 AS _status_active ,
+		distributor.name              AS _distributor   ,
 		CASE 
 			WHEN installations.schema_force_view IS NULL THEN installations_type.schema_view
 			ELSE installations.schema_force_view
