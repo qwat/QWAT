@@ -22,7 +22,7 @@ CREATE VIEW distribution.pipe_schema_viewableitems AS
 		pipe._length3d,
 		pipe._length3d_uptodate,
 		pipe.tunnel_or_bridge,
-		pipe.geometry_alternative::geometry(LineString,21781) AS geometry
+		pipe.geometry_schematic::geometry(LineString,21781) AS geometry
 	  FROM distribution.pipe
 	  INNER JOIN distribution.pipe_view ON pipe.id = pipe_view.id
 		WHERE _schema_view IS TRUE
@@ -32,7 +32,7 @@ COMMENT ON VIEW distribution.pipe_schema_viewableitems IS 'viewable pipe in the 
 CREATE OR REPLACE RULE pipe_update_alternative AS
 	ON UPDATE TO distribution.pipe_schema_viewableitems DO INSTEAD
 		UPDATE distribution.pipe SET 
-			geometry_alternative = NEW.geometry
+			geometry_schematic = NEW.geometry
 		WHERE id = NEW.id;
 		
 

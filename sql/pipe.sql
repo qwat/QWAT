@@ -36,9 +36,9 @@ ALTER TABLE distribution.pipe ADD COLUMN _is_on_district varchar(100) DEFAULT ''
 
 /* geometry */
 SELECT addGeometryColumn('distribution', 'pipe', 'geometry', 21781, 'LINESTRING', 2);
-SELECT addGeometryColumn('distribution', 'pipe', 'geometry_alternative', 21781, 'LINESTRING', 2);
+SELECT addGeometryColumn('distribution', 'pipe', 'geometry_schematic', 21781, 'LINESTRING', 2);
 CREATE INDEX pipe_geoidx     ON distribution.pipe USING GIST ( geometry );
-CREATE INDEX pipe_geoidx_alt ON distribution.pipe USING GIST ( geometry_alternative );
+CREATE INDEX pipe_geoidx_alt ON distribution.pipe USING GIST ( geometry_schematic );
 
 /* old columns */
 ALTER TABLE distribution.pipe ADD COLUMN   coating_internal_material_id character(20);
@@ -70,7 +70,7 @@ CREATE OR REPLACE FUNCTION distribution.pipe_geom() RETURNS trigger AS '
 			_length3d_uptodate   = False,
 			_is_on_map           = distribution.get_map(NEW.geometry),
 			_is_on_district      = distribution.get_district(NEW.geometry),
-			geometry_alternative = NEW.geometry
+			geometry_schematic  = NEW.geometry
 		WHERE id = NEW.id ;
 		RETURN NEW;
 	END;
