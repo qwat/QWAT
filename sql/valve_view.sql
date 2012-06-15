@@ -16,6 +16,7 @@ CREATE VIEW distribution.valve_view AS
 		valve.id_function,
 		valve.id_pipe,
 		valve.id_node,
+		valve.id_district,
 		valve.diameter_nominal,
 		valve.year,
 		valve.closed,
@@ -24,11 +25,11 @@ CREATE VIEW distribution.valve_view AS
 		valve.remarks,
 		valve.schema_force_view,
 		valve._is_on_map,
-		valve._is_on_district,
 		valve.geometry::geometry(Point,21781),
 		valve_function.function AS _function,
 		valve_function.shortname AS _function_shortname,
 		valve_type.type AS _type,
+		district.name AS _district ,
 		CASE 
 			WHEN valve_function.shortname IS NULL THEN valve.sige::varchar
 			ELSE valve_function.shortname || valve.sige::varchar
@@ -38,8 +39,9 @@ CREATE VIEW distribution.valve_view AS
 			ELSE valve.schema_force_view
 		END AS _schema_view
 		FROM distribution.valve
-		INNER JOIN distribution.valve_type     ON valve.id_function = valve_type.id
-		INNER JOIN distribution.valve_function ON valve.id_function = valve_function.id;
+		INNER JOIN distribution.valve_type     ON valve.id_type     = valve_type.id
+		INNER JOIN distribution.valve_function ON valve.id_function = valve_function.id
+		LEFT OUTER JOIN distribution.district  ON valve.id_district = district.id ;
 		
 CREATE OR REPLACE RULE valve_update AS
 	ON UPDATE TO distribution.valve_view DO INSTEAD

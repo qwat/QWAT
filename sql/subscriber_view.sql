@@ -16,8 +16,8 @@ CREATE VIEW distribution.subscriber_view AS
 		subscriber.id_client       ,
 		subscriber.parcel          ,
 		subscriber.geometry::geometry(Point,21781),	
-		subscriber_type.name             AS _type ,
-		district.name AS _district ,
+		subscriber_type.name  AS _type     ,
+		district.name         AS _district ,
 		district.subscriber_prefix::varchar || '-' || subscriber.id_client::varchar AS id_client_full
 		FROM distribution.subscriber
 		INNER      JOIN distribution.subscriber_type ON subscriber.id_type      = subscriber_type.id 
@@ -32,7 +32,7 @@ CREATE OR REPLACE RULE subscriber_update AS
 	ON UPDATE TO distribution.subscriber_view DO INSTEAD
 		UPDATE distribution.subscriber SET 
 			id_type     = NEW.id_type                      ,
-			id_pipe     = NULLIF(NEW.id_pipe,0)::integer ,
+			id_pipe     = NULLIF(NEW.id_pipe,0)::integer   ,
 			id_client   = NEW.id_client                    ,
 			id_district = NEW.id_district                  ,
 			parcel      = NEW.parcel                       ,

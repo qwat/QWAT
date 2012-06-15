@@ -44,7 +44,7 @@ CREATE OR REPLACE FUNCTION distribution.get_district(geometry) RETURNS text AS '
 		RETURN result;
 	END
 ' LANGUAGE 'plpgsql';
-COMMENT ON FUNCTION distribution.get_district(geometry) IS 'Returns a string contaning all the names of the polygons in table district which overlap the given geometry.';
+COMMENT ON FUNCTION distribution.get_district(geometry) IS 'Returns a coma separeted list of the districts overlapping the given geometry.';
 
 /* get district id function */
 CREATE OR REPLACE FUNCTION distribution.get_district_id(geometry) RETURNS integer AS '
