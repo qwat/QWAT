@@ -23,7 +23,7 @@ psql -h 172.24.171.$ip -U sige -f precision.sql
 read -p "Press any key to continue..."
 psql -h 172.24.171.$ip -U sige -f pipe_protection.sql
 read -p "Press any key to continue..."
-psql -h 172.24.171.$ip -U sige -f pressure_zones.sql
+psql -h 172.24.171.$ip -U sige -f pressurezone.sql
 read -p "Press any key to continue..."
 psql -h 172.24.171.$ip -U sige -f districts.sql
 read -p "Press any key to continue..."
@@ -34,6 +34,12 @@ read -p "Press any key to continue..."
 psql -h 172.24.171.$ip -U sige -f pipe_material.sql
 read -p "Press any key to continue..."
 psql -h 172.24.171.$ip -U sige -f printmaps.sql
+read -p "Press any key to continue..."
+psql -h 172.24.171.$ip -U sige -f hydrant_provider.sql
+read -p "Press any key to continue..."
+psql -h 172.24.171.$ip -U sige -f hydrant_type.sql
+read -p "Press any key to continue..."
+psql -h 172.24.171.$ip -U sige -f hydrant.sql
 read -p "Press any key to continue..."
 psql -h 172.24.171.$ip -U sige -f pipe.sql
 read -p "Press any key to continue..."
