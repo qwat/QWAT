@@ -54,7 +54,7 @@ CREATE VIEW distribution.pipe_view AS
 		INNER JOIN distribution.pipe_function          ON pipe.id_function       = pipe_function.id
 		INNER JOIN distribution.pipe_install_method    ON pipe.id_install_method = pipe_install_method.id
 		INNER JOIN distribution.pipe_material          ON pipe.id_material       = pipe_material.id
-		LEFT OUTER JOIN  distribution.distributor      ON pipe.id_distributor    = distributor.id
+		INNER JOIN  distribution.distributor           ON pipe.id_distributor    = distributor.id
 		INNER JOIN distribution."precision"            ON pipe.id_precision      = "precision".id
 		LEFT OUTER JOIN  distribution.pipe_protection  ON pipe.id_protection     = pipe_protection.id
 		INNER JOIN distribution.status                 ON pipe.id_status         = status.id
