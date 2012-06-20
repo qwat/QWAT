@@ -63,6 +63,7 @@ CREATE OR REPLACE FUNCTION distribution.hydrant_geom() RETURNS trigger AS '
 	BEGIN
 		UPDATE distribution.hydrant SET 
 			id_node            = distribution.node_get_id(NEW.geometry,false),
+			id_pressurezone    = distribution.get_pressurezone_id(NEW.geometry),
 			id_district        = distribution.get_district_id(NEW.geometry),
 			_is_on_map         = distribution.get_map(NEW.geometry)
 		WHERE id = NEW.id ;

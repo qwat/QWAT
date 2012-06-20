@@ -24,13 +24,16 @@ CREATE VIEW distribution.hydrant_view AS
 		hydrant._is_on_map     ,
 		hydrant.remarks        ,
 		hydrant.geometry::geometry(Point,21781),
-		hydrant_type.name     AS _type, 
-		distributor.name      AS _distributor,
-		status.status         AS _status_name,
-		status.active         AS _status_active,
-		hydrant_provider.name AS _provider,
-		district.name         AS _district,
-		pressurezone.name    AS _pressurezone
+		hydrant_type.name          AS _type, 
+		distributor.name           AS _distributor,
+		status.status              AS _status_name,
+		status.active              AS _status_active,
+		hydrant_provider.name      AS _provider,
+		district.name              AS _district,
+		pressurezone.name          AS _pressurezone,
+		pressurezone.shortname     AS _pressurezone_shortname,
+		pressurezone.consummerzone AS _consummerzone,
+		pressurezone.colorcode     AS _pressurezone_colorcode
 		FROM distribution.hydrant
 		INNER JOIN distribution.hydrant_type           ON hydrant.id_type         = hydrant_type.id
 		INNER JOIN distribution.distributor            ON hydrant.id_distributor  = distributor.id
