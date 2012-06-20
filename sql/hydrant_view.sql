@@ -23,7 +23,7 @@ CREATE VIEW distribution.hydrant_view AS
 		hydrant.model          ,
 		hydrant._is_on_map     ,
 		hydrant.remarks        ,
-		hydrant.geometry::geometry(LineString,21781),
+		hydrant.geometry::geometry(Point,21781),
 		hydrant_type.name     AS _type, 
 		distributor.name      AS _distributor,
 		status.status         AS _status_name,
