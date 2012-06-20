@@ -12,9 +12,10 @@ CREATE TABLE distribution.pressurezone (id serial NOT NULL);
 COMMENT ON TABLE distribution.pressurezone IS 'Pressure zones.';
 
 /* columns */
-ALTER TABLE distribution.pressurezone ADD COLUMN short_name    varchar(10);
+ALTER TABLE distribution.pressurezone ADD COLUMN shortname     varchar(10);
 ALTER TABLE distribution.pressurezone ADD COLUMN name          varchar(30);
-ALTER TABLE distribution.pressurezone ADD COLUMN consummer_zone varchar(30);
+ALTER TABLE distribution.pressurezone ADD COLUMN consummerzone varchar(30);
+ALTER TABLE distribution.pressurezone ADD COLUMN colorcode     smallint;
 
 /* geometry */
 SELECT AddGeometryColumn('distribution', 'pressurezone', 'geometry', 21781, 'POLYGON', 2);
@@ -34,12 +35,11 @@ CREATE OR REPLACE FUNCTION distribution.get_pressurezone_id(geometry) RETURNS in
 		SELECT pressurezone.id INTO id_pressurezone
 			FROM  distribution.pressurezone
 			WHERE ST_Intersects(geom,pressurezone.geometry) IS TRUE
+			ORDER BY ST_Length(ST_Intersection(geom,pressurezone.geometry)) DESC
 			LIMIT 1;
 		RETURN id_pressurezone;
 	END
 ' LANGUAGE 'plpgsql';
 COMMENT ON FUNCTION distribution.get_pressurezone_id(geometry) IS 'Returns the id of the first overlapping pressurezone.';
         
-        
-                 
 COMMIT;

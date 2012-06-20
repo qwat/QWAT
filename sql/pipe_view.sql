@@ -34,18 +34,21 @@ CREATE VIEW distribution.pipe_view AS
 		pipe._is_on_district   ,
 		pipe.geometry::geometry(LineString,21781),
 		sqrt(pow(_length3d,2)-pow(_length2d,2))/_length2d AS _slope,
-		pipe_function.function            AS _function_name, 
-		pipe_install_method.name           AS _install_method,
-		pipe_material._fancy_name          AS _material_name,
-		pipe_material.name                 AS _material_longname,
-		pipe_material.diameter             AS _material_diameter,
-		pipe_material.diameter_internal    AS _material_diameter_internal,
-		distributor.name                   AS _distributor,
-		"precision".name                   AS _precision,
-		pipe_protection.name               AS _protection,
-		status.status                      AS _status_name,
-		status.active                      AS _status_active,
-		pressurezone.name                  AS _pressurezone,
+		pipe_function.function          AS _function_name, 
+		pipe_install_method.name        AS _install_method,
+		pipe_material._fancy_name       AS _material_name,
+		pipe_material.name              AS _material_longname,
+		pipe_material.diameter          AS _material_diameter,
+		pipe_material.diameter_internal AS _material_diameter_internal,
+		distributor.name                AS _distributor,
+		"precision".name                AS _precision,
+		pipe_protection.name            AS _protection,
+		status.status                   AS _status_name,
+		status.active                   AS _status_active,
+		pressurezone.name               AS _pressurezone,
+		pressurezone.shortname          AS _pressurezone_shortname,
+		pressurezone.consummerzone      AS _consummerzone,
+		pressurezone.colorcode          AS _pressurezone_colorcode,
 		CASE 
 			WHEN pipe.schema_force_view IS NULL THEN pipe_function.schema_view
 			ELSE pipe.schema_force_view
@@ -85,7 +88,7 @@ CREATE OR REPLACE RULE pipe_update AS
 			schema_force_view  = NEW.schema_force_view  ,
 			folder             = NEW.folder             ,
 			remarks            = NEW.remarks            ,
-			geometry           = NEW.geometry       ,
+			geometry           = NEW.geometry           ,
 			id_parent          = NULLIF(NEW.id_parent,0)::integer	
 		WHERE id = NEW.id;
 CREATE OR REPLACE RULE pipe_insert AS
