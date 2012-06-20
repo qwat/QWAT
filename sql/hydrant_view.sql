@@ -9,6 +9,7 @@ BEGIN;
 DROP VIEW IF EXISTS distribution.hydrant_view CASCADE;
 CREATE VIEW distribution.hydrant_view AS 
 	SELECT  
+		hydrant.id             ,
 		hydrant.sige           ,
 		hydrant.id_type        ,
 		hydrant.id_distributor ,
@@ -17,7 +18,7 @@ CREATE VIEW distribution.hydrant_view AS
 		hydrant.id_district    ,
 		hydrant.id_pressurezone,
 		hydrant.id_node        ,
-		hydrant.year smallint  ,
+		hydrant.year           ,
 		hydrant.altitude       ,
 		hydrant.model          ,
 		hydrant._is_on_map     ,
@@ -41,17 +42,6 @@ CREATE VIEW distribution.hydrant_view AS
 /* Comment */
 COMMENT ON VIEW distribution.hydrant_view IS 'View for hydrant. This view is editable (a rule exists to forwad changes to the table).';
 
-hydrant.           
-hydran    
-hydrant.
-hydrant.        
-hydrant. smallint  
-hydrant.       
-hydrant.          
-hydrant._is_on_map     
-hydrant.        
-hydrant.geometry::geome
-
 /*----------------!!!---!!!----------------*/
 /* INSERT,UPDATE,DELETE RULES */
 CREATE OR REPLACE RULE hydrant_update AS
@@ -64,7 +54,7 @@ CREATE OR REPLACE RULE hydrant_update AS
 			id_provider     = NEW.id_provider        ,
 			id_district     = NEW.id_district        ,
 			id_pressurezone = NEW.id_pressurezone    ,
-			id_node         = NEW.id_install_method  ,
+			id_node         = NEW.id_node            ,
 			year            = NEW.year               ,
 			altitude        = NEW.altitude           ,
 			model           = NEW.model              ,
