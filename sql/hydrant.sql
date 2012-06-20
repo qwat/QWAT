@@ -21,7 +21,7 @@ ALTER TABLE distribution.hydrant ADD COLUMN  id_provider      integer           
 ALTER TABLE distribution.hydrant ADD COLUMN  id_district      integer                 ;
 ALTER TABLE distribution.hydrant ADD COLUMN  id_pressurezone  integer                 ;
 ALTER TABLE distribution.hydrant ADD COLUMN  id_node          integer                 ;
-ALTER TABLE distribution.hydrant ADD COLUMN  year smallint CHECK (year > 1800 AND year < 2100);
+ALTER TABLE distribution.hydrant ADD COLUMN  year smallint    CHECK (year > 1800 AND year < 2100);
 ALTER TABLE distribution.hydrant ADD COLUMN  altitude         decimal(10,3)           ;
 ALTER TABLE distribution.hydrant ADD COLUMN  model            varchar(30)             ;
 ALTER TABLE distribution.hydrant ADD COLUMN  _is_on_map       varchar(30)             ;
