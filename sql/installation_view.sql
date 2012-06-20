@@ -27,7 +27,7 @@ CREATE VIEW distribution.installation_view AS
 			ELSE installation.schema_force_view
 		END AS _schema_view
 	FROM distribution.installation 
-	INNER      JOIN distribution.installation_type ON installation.id_type        = installation_type.id 
+	INNER      JOIN distribution.installation_type  ON installation.id_type        = installation_type.id 
 	INNER      JOIN distribution.status             ON installation.id_status      = status.id 
 	LEFT OUTER JOIN distribution.distributor        ON installation.id_distributor = distributor.id ;
 
