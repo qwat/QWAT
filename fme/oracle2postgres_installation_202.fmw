@@ -2444,7 +2444,7 @@
 #! <XFORM_ATTR ATTR_NAME="STATUS" IS_USER_CREATED="false" FEAT_INDEX="0"/>
 #! <XFORM_ATTR ATTR_NAME="id_status" IS_USER_CREATED="false" FEAT_INDEX="0"/>
 #! <XFORM_ATTR ATTR_NAME="distributor" IS_USER_CREATED="false" FEAT_INDEX="0"/>
-#! <XFORM_PARM PARM_NAME="LUT" PARM_VALUE="E,1,H,2,A,3,D,4,NONC,5,R,6,,0"/>
+#! <XFORM_PARM PARM_NAME="LUT" PARM_VALUE="E,1,H,2,A,4,D,3,NONC,3,R,6,,0"/>
 #! <XFORM_PARM PARM_NAME="XFORMER_NAME" PARM_VALUE="AttributeValueMapper"/>
 #! <XFORM_PARM PARM_NAME="SRC" PARM_VALUE="STATUS"/>
 #! <XFORM_PARM PARM_NAME="VAL_ATTR" PARM_VALUE="id_status"/>
@@ -3986,7 +3986,7 @@
 #! IDENTIFIER="59"
 #! TYPE="Visualizer"
 #! VERSION="2"
-#! POSITION="2683 -1435"
+#! POSITION="2898 -1138"
 #! ORDER="52"
 #! PARMS_EDITED="false"
 #! ENABLED="true"
@@ -4595,7 +4595,7 @@ ORACLE8I_DB_2_DEF SIGE_DISTRIBUTION_SCHEMA.EP_OUVRAGE_POS_EXACTE_GEO   ACCURACY_
 
 # -------------------------------------------------------------------------
 
-Lookup ___KnownFeatureTypes___   "$(DATASET_KEYWORD_ORACLE8I_DB_2)_SIGE_DISTRIBUTION_SCHEMA.EP_OUVRAGE_POS_EXACTE" yes   "$(DATASET_KEYWORD_ORACLE8I_DB_2)_SIGE_DISTRIBUTION_SCHEMA.EP_OUVRAGE_POS_EXACTE_GEO" yes   "$(DATASET_KEYWORD_ORACLE8I_DB_1)_SIGE_DISTRIBUTION_SCHEMA.WA_BAUWERK" yes   "$(DATASET_KEYWORD_POSTGRES_2)_distribution.installation_type" yes   "$(DATASET_KEYWORD_ORACLE8I_DB_1)_SIGE_DISTRIBUTION_SCHEMA.WA_BAUWERK_GEO" yes   "" no
+Lookup ___KnownFeatureTypes___   "$(DATASET_KEYWORD_POSTGRES_2)_distribution.installation_type" yes   "$(DATASET_KEYWORD_ORACLE8I_DB_2)_SIGE_DISTRIBUTION_SCHEMA.EP_OUVRAGE_POS_EXACTE" yes   "$(DATASET_KEYWORD_ORACLE8I_DB_2)_SIGE_DISTRIBUTION_SCHEMA.EP_OUVRAGE_POS_EXACTE_GEO" yes   "$(DATASET_KEYWORD_ORACLE8I_DB_1)_SIGE_DISTRIBUTION_SCHEMA.WA_BAUWERK" yes   "$(DATASET_KEYWORD_ORACLE8I_DB_1)_SIGE_DISTRIBUTION_SCHEMA.WA_BAUWERK_GEO" yes   "" no
 # -------------------------------------------------------------------------
 
 FACTORY_DEF * TestFactory   FACTORY_NAME "Unexpected Input Remover"   INPUT FEATURE_TYPE *   TEST @Lookup(___KnownFeatureTypes___,@Concatenate(&multi_reader_keyword,"_",@FeatureType())) == yes   OUTPUT PASSED FEATURE_TYPE *
@@ -4620,7 +4620,7 @@ FACTORY_DEF * TeeFactory   FACTORY_NAME "AttributeFilter <UNFILTERED> Output Nuk
 FACTORY_DEF * TeeFactory    FACTORY_NAME AttributeRenamer    INPUT  FEATURE_TYPE AttributeFilter_0    OUTPUT FEATURE_TYPE AttributeRenamer_OUTPUT         @RenameAttributes(id,FID,name,NAME,distributor,EIGENTUMSVERHAELTNIS,remarks,BEMERKUNG)
 
 # -------------------------------------------------------------------------
-Lookup AttributeValueMapper_LOOKUP_TABLE   E               1   H               2   A               3   D               4   NONC            5   R               6   ""              0   ENCODED
+Lookup AttributeValueMapper_LOOKUP_TABLE   E               1   H               2   A               4   D               3   NONC            3   R               6   ""              0   ENCODED
 
 FACTORY_DEF * TeeFactory    FACTORY_NAME AttributeValueMapper    INPUT  FEATURE_TYPE AttributeRenamer_OUTPUT    OUTPUT FEATURE_TYPE AttributeValueMapper_OUTPUT         "id_status" @Lookup(AttributeValueMapper_LOOKUP_TABLE,"STATUS",FORWARD|ENCODED_ATTR)
 
@@ -4761,4 +4761,4 @@ INCLUDE [ if {{$(WORKSPACE_TEMP_DIR)} == {}} { puts {MACRO __WB_ENABLE_VISUALIZE
 FACTORY_DEF $(__WB_ENABLE_VISUALIZER__) CreationFactory   CREATE_AT_END   OUTPUT FEATURE_TYPE __NUKEME__   @TCL("if [info exists ::gVisualizerFilesToView] {eval FME_Execute System \173\042$(FME_HOME_UNIX)/fmeview\042 /ownffs {$(WORKSPACE_TEMP_DIR)} $::gVisualizerFilesToView & \175 }")
 FACTORY_DEF * TeeFactory   INPUT FEATURE_TYPE __NUKEME__
 # -------------------------------------------------------------------------
-POSTGIS_1_DEF distribution.installation   postgis_type                 postgis_geometry   postgis_mode                 INHERIT_FROM_WRITER   postgis_spatial_column_type  geometry   postgis_spatial_column       geometry   postgis_srid                 INHERIT_FROM_WRITER   postgis_drop_table           NO   postgis_truncate_table       YES   postgis_create_with_oids     YES   postgis_create_gist_index    YES   postgis_vacuum_analyze       YES   postgis_allow_serial_writing YES   id                           int4   id_type                      int4   name                         varchar(30)   id_distributor                     varchar(30)   remarks                      text   id_status                    text
+POSTGIS_1_DEF distribution.installation   postgis_type                 postgis_geometry   postgis_mode                 INHERIT_FROM_WRITER   postgis_spatial_column_type  geometry   postgis_spatial_column       geometry   postgis_srid                 INHERIT_FROM_WRITER   postgis_drop_table           NO   postgis_truncate_table       YES   postgis_create_with_oids     YES   postgis_create_gist_index    YES   postgis_vacuum_analyze       YES   postgis_allow_serial_writing YES   id                           int4   id_type                      int4   name                         varchar(30)   id_distributor               varchar(30)   remarks                      text   id_status                    text
