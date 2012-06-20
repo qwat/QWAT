@@ -24,5 +24,22 @@ CREATE INDEX pressurezone_geoidx ON distribution.pressurezone USING GIST ( geome
 ALTER TABLE distribution.pressurezone ADD CONSTRAINT pressurezone_pkey PRIMARY KEY (id);
 ALTER TABLE distribution.pressurezone ADD CONSTRAINT pressurezone_name UNIQUE (name);
 
+        
+/* get pressurezone id function */
+CREATE OR REPLACE FUNCTION distribution.get_pressurezone_id(geometry) RETURNS integer AS '
+	DECLARE
+		geom ALIAS FOR $1;
+		id_pressurezone integer;
+	BEGIN
+		SELECT pressurezone.id INTO id_pressurezone
+			FROM  distribution.pressurezone
+			WHERE ST_Intersects(geom,pressurezone.geometry) IS TRUE
+			LIMIT 1;
+		RETURN id_pressurezone;
+	END
+' LANGUAGE 'plpgsql';
+COMMENT ON FUNCTION distribution.get_pressurezone_id(geometry) IS 'Returns the id of the first overlapping pressurezone.';
+        
+        
                  
 COMMIT;
