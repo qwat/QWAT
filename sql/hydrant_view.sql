@@ -30,14 +30,14 @@ CREATE VIEW distribution.hydrant_view AS
 		status.active         AS _status_active,
 		hydrant_provider.name AS _provider,
 		district.name         AS _district,
-		pressurezones.name    AS _pressurezone
+		pressurezone.name    AS _pressurezone
 		FROM distribution.hydrant
 		INNER JOIN distribution.hydrant_type           ON hydrant.id_type         = hydrant_type.id
 		INNER JOIN distribution.distributor            ON hydrant.id_distributor  = distributor.id
 		INNER JOIN distribution.status                 ON hydrant.id_status       = status.id
 		LEFT OUTER JOIN  distribution.hydrant_provider ON hydrant.id_provider     = hydrant_provider.id
 		LEFT OUTER JOIN distribution.district          ON hydrant.id_district     = district.id       
-		LEFT OUTER JOIN  distribution.pressurezones    ON hydrant.id_pressurezone = pressurezones.id;
+		LEFT OUTER JOIN  distribution.pressurezone    ON hydrant.id_pressurezone = pressurezone.id;
 /*----------------!!!---!!!----------------*/
 /* Comment */
 COMMENT ON VIEW distribution.hydrant_view IS 'View for hydrant. This view is editable (a rule exists to forwad changes to the table).';
