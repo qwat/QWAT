@@ -21,7 +21,7 @@ CREATE VIEW distribution.subscriber_view AS
 		district.subscriber_prefix::varchar || '-' || subscriber.id_client::varchar AS id_client_full
 		FROM distribution.subscriber
 		INNER      JOIN distribution.subscriber_type ON subscriber.id_type      = subscriber_type.id 
-		LEFT OUTER JOIN distribution.district      ON subscriber.id_district = district.id ;
+		LEFT OUTER JOIN distribution.district        ON subscriber.id_district  = district.id        ;
 /* Comment */	
 COMMENT ON VIEW distribution.subscriber_view IS 'View for subscriber. This view is editable (a rule exists to forward changes to the table).';
 
