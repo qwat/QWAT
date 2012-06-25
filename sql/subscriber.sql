@@ -14,6 +14,7 @@ SELECT setval('distribution.subscriber_id_seq', 8000, true);
 ALTER TABLE distribution.subscriber ADD COLUMN   id_type integer;                                   /* id_type       FK FULL */
 ALTER TABLE distribution.subscriber ADD COLUMN   id_pipe integer;									/* id_pipe       FK SIMPLE*/ 
 ALTER TABLE distribution.subscriber ADD COLUMN   id_district integer;								/* id_district   FK SIMPLE */ 
+ALTER TABLE distribution.subscriber ADD COLUMN   id_pressurezone integer;					    	/* id_pressurezone FK SIMPLE */ 
 ALTER TABLE distribution.subscriber ADD COLUMN   id_client character varying (12);                  /* id_client */
 ALTER TABLE distribution.subscriber ADD COLUMN   parcel character varying (12) ;                    /*  */
 ALTER TABLE distribution.subscriber ADD COLUMN   _is_on_map character varying (80) DEFAULT '';      /* _is_on_map           */
@@ -24,9 +25,10 @@ CREATE INDEX subscriber_geoidx ON distribution.subscriber USING GIST ( geometry 
 /*----------------!!!---!!!----------------*/
 /* Add constraints */
 ALTER TABLE distribution.subscriber ADD CONSTRAINT subscriber_pkey PRIMARY KEY (id); 
-ALTER TABLE distribution.subscriber ADD CONSTRAINT subscriber_id_type     FOREIGN KEY (id_type)     REFERENCES distribution.subscriber_type (id) MATCH FULL  ; CREATE INDEX fki_id_type ON distribution.subscriber(id_type)        ;
-ALTER TABLE distribution.subscriber ADD CONSTRAINT subscriber_id_pipe     FOREIGN KEY (id_pipe)     REFERENCES distribution.pipe (id)            MATCH SIMPLE; CREATE INDEX fki_id_pipe ON distribution.subscriber(id_pipe)        ;
-ALTER TABLE distribution.subscriber ADD CONSTRAINT subscriber_id_district FOREIGN KEY (id_district) REFERENCES distribution.district (id)        MATCH SIMPLE; CREATE INDEX fki_id_district ON distribution.subscriber(id_district);
+ALTER TABLE distribution.subscriber ADD CONSTRAINT subscriber_id_type         FOREIGN KEY (id_type)         REFERENCES distribution.subscriber_type (id) MATCH FULL  ; CREATE INDEX fki_id_type         ON distribution.subscriber(id_type)        ;
+ALTER TABLE distribution.subscriber ADD CONSTRAINT subscriber_id_pipe         FOREIGN KEY (id_pipe)         REFERENCES distribution.pipe (id)            MATCH SIMPLE; CREATE INDEX fki_id_pipe         ON distribution.subscriber(id_pipe)        ;
+ALTER TABLE distribution.subscriber ADD CONSTRAINT subscriber_id_district     FOREIGN KEY (id_district)     REFERENCES distribution.district (id)        MATCH SIMPLE; CREATE INDEX fki_id_district     ON distribution.subscriber(id_district)    ;
+ALTER TABLE distribution.subscriber ADD CONSTRAINT subscriber_id_pressurezone FOREIGN KEY (id_pressurezone) REFERENCES distribution.pressurezone (id)    MATCH SIMPLE; CREATE INDEX fki_id_pressurezone ON distribution.subscriber(id_pressurezone);
 
 
 /*----------------!!!---!!!----------------*/
@@ -34,7 +36,8 @@ ALTER TABLE distribution.subscriber ADD CONSTRAINT subscriber_id_district FOREIG
 CREATE OR REPLACE FUNCTION distribution.subscriber_geom() RETURNS trigger AS ' 
 	BEGIN
 		UPDATE distribution.subscriber SET 
-			_is_on_map      = distribution.get_map(NEW.geometry)
+			_is_on_map      = distribution.get_map(NEW.geometry),
+			id_pressurezone = distribution.get_pressurezone_id(NEW.geometry)
 		WHERE id = NEW.id ;
 		RETURN NEW;
 	END;

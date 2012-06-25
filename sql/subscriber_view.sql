@@ -18,10 +18,15 @@ CREATE VIEW distribution.subscriber_view AS
 		subscriber.geometry::geometry(Point,21781),	
 		subscriber_type.name  AS _type     ,
 		district.name         AS _district ,
-		district.subscriber_prefix::varchar || '-' || subscriber.id_client::varchar AS id_client_full
+		district.subscriber_prefix::varchar || '-' || subscriber.id_client::varchar AS id_client_full,
+		pressurezone.name          AS _pressurezone,
+		pressurezone.shortname     AS _pressurezone_shortname,
+		pressurezone.consummerzone AS _consummerzone,
+		pressurezone.colorcode     AS _pressurezone_colorcode
 		FROM distribution.subscriber
-		INNER      JOIN distribution.subscriber_type ON subscriber.id_type      = subscriber_type.id 
-		LEFT OUTER JOIN distribution.district        ON subscriber.id_district  = district.id        ;
+		INNER      JOIN distribution.subscriber_type ON subscriber.id_type         = subscriber_type.id 
+		LEFT OUTER JOIN distribution.district        ON subscriber.id_district     = district.id
+		LEFT OUTER JOIN distribution.pressurezone    ON subscriber.id_pressurezone = pressurezone.id;
 /* Comment */	
 COMMENT ON VIEW distribution.subscriber_view IS 'View for subscriber. This view is editable (a rule exists to forward changes to the table).';
 
