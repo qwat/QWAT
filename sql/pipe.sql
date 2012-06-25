@@ -71,7 +71,7 @@ CREATE OR REPLACE FUNCTION distribution.pipe_geom() RETURNS trigger AS '
 			_length3d_uptodate   = False,
 			_is_on_map           = distribution.get_map(NEW.geometry),
 			_is_on_district      = distribution.get_district(NEW.geometry),
-			geometry_schematic  = NEW.geometry
+			geometry_schematic   = NEW.geometry
 		WHERE id = NEW.id ;
 		RETURN NEW;
 	END;
