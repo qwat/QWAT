@@ -16,20 +16,21 @@ CREATE VIEW distribution.valve_view AS
 		valve.id_function,
 		valve.id_pipe,
 		valve.id_node,
-		valve.id_district,
-		valve.diameter_nominal,
-		valve.year,
-		valve.closed,
-		valve.altitude_dtm,
-		valve.altitude_real,
-		valve.remarks,
-		valve.schema_force_view,
-		valve._is_on_map,
-		valve.geometry::geometry(Point,21781),
-		valve_function.function AS _function,
-		valve_function.shortname AS _function_shortname,
-		valve_type.type AS _type,
-		district.name AS _district ,
+		valve.id_district       ,
+		valve.id_maintenance    ,
+		valve.diameter_nominal  ,
+		valve.year              ,
+		valve.closed            ,
+		valve.altitude_dtm      ,
+		valve.altitude_real     ,
+		valve.remarks           ,
+		valve.schema_force_view ,
+		valve._is_on_map        ,
+		valve.geometry::geometry(Point,21781)    ,
+		valve_function.function  AS _function    ,
+		valve_function.shortname AS _function_shortname ,
+		valve_type.type          AS _type        ,
+		district.name            AS _district    ,
 		CASE 
 			WHEN valve_function.shortname IS NULL THEN valve.sige::varchar
 			ELSE valve_function.shortname || valve.sige::varchar
@@ -46,17 +47,18 @@ CREATE VIEW distribution.valve_view AS
 CREATE OR REPLACE RULE valve_update AS
 	ON UPDATE TO distribution.valve_view DO INSTEAD
 		UPDATE distribution.valve SET 
-			sige                 = NEW.sige,		
-			id_type              = NEW.id_type,		
-			id_function          = NEW.id_function,		
-			id_pipe              = NEW.id_pipe,		
-			id_node              = NEW.id_node,		
-			diameter_nominal     = NEW.diameter_nominal,		
-			"year"               = NEW."year",		
-			closed               = NEW.closed,		
-			altitude_dtm         = NEW.altitude_dtm,		
-			altitude_real        = NEW.altitude_real,		
-			remarks              = NEW.remarks,		
+			sige                 = NEW.sige             ,		
+			id_type              = NEW.id_type          ,		
+			id_function          = NEW.id_function      ,		
+			id_pipe              = NEW.id_pipe          ,		
+			id_node              = NEW.id_node          ,		
+			id_maintenance       = NEW.id_maintenance   ,		
+			diameter_nominal     = NEW.diameter_nominal ,		
+			"year"               = NEW."year"           ,		
+			closed               = NEW.closed           ,		
+			altitude_dtm         = NEW.altitude_dtm     ,		
+			altitude_real        = NEW.altitude_real    ,		
+			remarks              = NEW.remarks          ,		
 			schema_force_view    = NEW.schema_force_view,
 			geometry             = NEW.geometry
 		WHERE id = NEW.id;
@@ -64,9 +66,9 @@ CREATE OR REPLACE RULE valve_update AS
 CREATE OR REPLACE RULE valve_insert AS
 	ON INSERT TO distribution.valve_view DO INSTEAD
 		INSERT INTO distribution.valve 
-			(     sige,    id_type,     id_function,    id_pipe,    id_node,    diameter_nominal,    year,    closed,    altitude_dtm,    altitude_real,    remarks,    schema_force_view,    geometry)     
+			(    sige,    id_type,    id_function,    id_pipe,    id_node,    id_maintenance,    diameter_nominal,    year,    closed,    altitude_dtm,    altitude_real,    remarks,    schema_force_view,    geometry)     
 		VALUES
-			(NEW.sige,NEW.id_type,NEW.id_function,NEW.id_pipe,NEW.id_node,NEW.diameter_nominal,NEW.year,NEW.closed,NEW.altitude_dtm,NEW.altitude_real,NEW.remarks,NEW.schema_force_view,NEW.geometry);
+			(NEW.sige,NEW.id_type,NEW.id_function,NEW.id_pipe,NEW.id_node,NEW.id_maintenance,NEW.diameter_nominal,NEW.year,NEW.closed,NEW.altitude_dtm,NEW.altitude_real,NEW.remarks,NEW.schema_force_view,NEW.geometry);
 			
 CREATE OR REPLACE RULE valve_delete AS
 	ON DELETE TO distribution.valve_view DO INSTEAD

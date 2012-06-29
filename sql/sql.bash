@@ -29,6 +29,7 @@ psql -h 172.24.171.$ip -U sige -f districts.sql
 read -p "Press any key to continue..."
 psql -h 172.24.171.$ip -U sige -f distributor.sql
 read -p "Press any key to continue..."
+
 psql -h 172.24.171.$ip -U sige -f pipe_functions.sql
 read -p "Press any key to continue..."
 psql -h 172.24.171.$ip -U sige -f pipe_material.sql
@@ -45,9 +46,12 @@ psql -h 172.24.171.$ip -U sige -f pipe.sql
 read -p "Press any key to continue..."
 psql -h 172.24.171.$ip -U sige -f pipe_view.sql
 read -p "Press any key to continue..."
+
 psql -h 172.24.171.$ip -U sige -f valve_type.sql
 read -p "Press any key to continue..."
 psql -h 172.24.171.$ip -U sige -f valve_function.sql
+read -p "Press any key to continue..."
+psql -h 172.24.171.$ip -U sige -f valve_maintenance.sql
 read -p "Press any key to continue..."
 psql -h 172.24.171.$ip -U sige -f valve.sql
 read -p "Press any key to continue..."
@@ -55,31 +59,37 @@ psql -h 172.24.171.$ip -U sige -f valve_view.sql
 read -p "Press any key to continue..."
 psql -h 172.24.171.$ip -U sige -f valve_schema.sql
 read -p "Press any key to continue..."
+
 psql -h 172.24.171.$ip -U sige -f pipe_schema.sql
 read -p "Press any key to continue..."
 psql -h 172.24.171.$ip -U sige -f pipe_children_parent.sql
 read -p "Press any key to continue..."
+
 psql -h 172.24.171.$ip -U sige -f subscriber_type.sql
 read -p "Press any key to continue..."
 psql -h 172.24.171.$ip -U sige -f subscriber.sql
 read -p "Press any key to continue..."
 psql -h 172.24.171.$ip -U sige -f subscriber_view.sql
 read -p "Press any key to continue..."
+
 psql -h 172.24.171.$ip -U sige -f installation_type.sql
 read -p "Press any key to continue..."
 psql -h 172.24.171.$ip -U sige -f installation.sql
 read -p "Press any key to continue..."
 psql -h 172.24.171.$ip -U sige -f installation_view.sql
 read -p "Press any key to continue..."
+
 psql -h 172.24.171.$ip -U sige -f samplingpoint.sql
 read -p "Press any key to continue..."
 psql -h 172.24.171.$ip -U sige -f samplingpoint_view.sql
 read -p "Press any key to continue..."
 psql -h 172.24.171.$ip -U sige -f altitude.sql
 
+
 # CONTROL
 read -p "Press any key to continue..."
 psql -h 172.24.171.$ip -U sige -f control/control_node.sql
+
 
 # SIGE DATA
 read -p "Press any key to continue..."
@@ -90,6 +100,7 @@ read -p "Press any key to continue..."
 psql -h 172.24.171.$ip -U sige -f sige_data/data_node.sql -v ON_ERROR_STOP=1
 read -p "Press any key to continue..."
 psql -h 172.24.171.$ip -U sige -f sige_data/data_samplingpoint.sql -v ON_ERROR_STOP=1
+
 
 # TODO AFTER PIPE IMPORT
 read -p "Press any key to continue..."

@@ -17,6 +17,7 @@ CREATE VIEW distribution.valve_schema AS
 		valve.id_pipe,
 		valve.id_node,
 		valve.id_district,
+		valve.id_maintenance,
 		valve.diameter_nominal,
 		valve.year,
 		valve.closed,
