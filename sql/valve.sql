@@ -16,7 +16,7 @@ ALTER TABLE distribution.valve ADD COLUMN id_function       integer ;
 ALTER TABLE distribution.valve ADD COLUMN id_pipe           integer ;
 ALTER TABLE distribution.valve ADD COLUMN id_node           integer ;
 ALTER TABLE distribution.valve ADD COLUMN id_district       integer ;
-ALTER TABLE distribution.valve ADD COLUMN id_maintenane     integer[] ;
+ALTER TABLE distribution.valve ADD COLUMN id_maintenance    integer[] ;
 ALTER TABLE distribution.valve ADD COLUMN diameter_nominal  varchar(10) ;
 ALTER TABLE distribution.valve ADD COLUMN year              smallint CHECK (year > 1800 AND year < 2100);
 ALTER TABLE distribution.valve ADD COLUMN closed            boolean     default false ;
@@ -39,8 +39,9 @@ ALTER TABLE distribution.valve ADD CONSTRAINT valve_id_function    FOREIGN KEY (
 ALTER TABLE distribution.valve ADD CONSTRAINT valve_id_pipe        FOREIGN KEY (id_pipe)        REFERENCES distribution.pipe(id)              MATCH SIMPLE ; CREATE INDEX fki_valve_id_pipe        ON distribution.valve(id_pipe)        ;
 ALTER TABLE distribution.valve ADD CONSTRAINT valve_id_node        FOREIGN KEY (id_node)        REFERENCES distribution.node(id)              MATCH SIMPLE ; CREATE INDEX fki_valve_id_node        ON distribution.valve(id_node)        ;
 ALTER TABLE distribution.valve ADD CONSTRAINT valve_id_district    FOREIGN KEY (id_district)    REFERENCES distribution.district(id)          MATCH SIMPLE ; CREATE INDEX fki_valve_id_district    ON distribution.valve(id_district)    ;
+/* cannot create constraint on arrays yet
 ALTER TABLE distribution.valve ADD CONSTRAINT valve_id_maintenance FOREIGN KEY (id_maintenance) REFERENCES distribution.valve_maintenance(id) MATCH SIMPLE ; CREATE INDEX fki_valve_id_maintenance ON distribution.valve(id_maintenance) ;
-
+*/
 
 /*----------------!!!---!!!----------------*/
 /* Trigger for map and district update */

@@ -15,7 +15,7 @@ ALTER TABLE distribution.valve_maintenance ADD COLUMN priority   SMALLINT CHECK 
 ALTER TABLE distribution.valve_maintenance ADD COLUMN comment   text;
 
 /* Constraints */
-ALTER TABLE distribution.valve_maintenance ADD CONSTRAINT valve_maintenance_name UNIQUE (valve_maintenance);
+ALTER TABLE distribution.valve_maintenance ADD CONSTRAINT valve_maintenance_name UNIQUE (name);
 
 
 /* Predefined functions list */
