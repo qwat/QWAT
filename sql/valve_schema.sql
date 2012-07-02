@@ -27,9 +27,10 @@ CREATE VIEW distribution.valve_schema AS
 		valve.schema_force_view,
 		valve._is_on_map,
 		valve.geometry_schematic::geometry(Point,21781) AS geometry,
-		valve_function.function AS _function,
+		valve_function.function  AS _function,
 		valve_function.shortname AS _function_shortname,
-		valve_type.type AS _type,
+		valve_type.type          AS _type,
+		district.name            AS _district,
 		CASE 
 			WHEN valve_function.shortname IS NULL THEN valve.sige::varchar
 			ELSE valve_function.shortname || valve.sige::varchar
@@ -37,6 +38,7 @@ CREATE VIEW distribution.valve_schema AS
 		FROM distribution.valve
 		INNER JOIN distribution.valve_type     ON valve.id_function = valve_type.id
 		INNER JOIN distribution.valve_function ON valve.id_function = valve_function.id
+		LEFT OUTER JOIN distribution.district  ON valve.id_district = district.id 
 		WHERE  valve.schema_force_view IS TRUE 
 		   OR (valve.schema_force_view IS NULL AND valve_function.schema_view IS TRUE);
 		
