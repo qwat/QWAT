@@ -25,22 +25,25 @@ psql -h 172.24.171.$ip -U sige -f pipe_protection.sql
 read -p "Press any key to continue..."
 psql -h 172.24.171.$ip -U sige -f pressurezone.sql
 read -p "Press any key to continue..."
-psql -h 172.24.171.$ip -U sige -f districts.sql
+psql -h 172.24.171.$ip -U sige -f district.sql
 read -p "Press any key to continue..."
 psql -h 172.24.171.$ip -U sige -f distributor.sql
 read -p "Press any key to continue..."
-
-psql -h 172.24.171.$ip -U sige -f pipe_functions.sql
-read -p "Press any key to continue..."
-psql -h 172.24.171.$ip -U sige -f pipe_material.sql
-read -p "Press any key to continue..."
 psql -h 172.24.171.$ip -U sige -f printmaps.sql
 read -p "Press any key to continue..."
+
 psql -h 172.24.171.$ip -U sige -f hydrant_provider.sql
 read -p "Press any key to continue..."
 psql -h 172.24.171.$ip -U sige -f hydrant_type.sql
 read -p "Press any key to continue..."
 psql -h 172.24.171.$ip -U sige -f hydrant.sql
+read -p "Press any key to continue..."
+psql -h 172.24.171.$ip -U sige -f hydrant_view.sql
+read -p "Press any key to continue..."
+
+psql -h 172.24.171.$ip -U sige -f pipe_functions.sql
+read -p "Press any key to continue..."
+psql -h 172.24.171.$ip -U sige -f pipe_material.sql
 read -p "Press any key to continue..."
 psql -h 172.24.171.$ip -U sige -f pipe.sql
 read -p "Press any key to continue..."
@@ -94,8 +97,8 @@ psql -h 172.24.171.$ip -U sige -f control/control_node.sql
 # SIGE DATA
 read -p "Press any key to continue..."
 psql -h 172.24.171.$ip -U sige -f sige_data/data_distributor.sql -v ON_ERROR_STOP=1
-rread -p "Press any key to continue..."
-psql -h 172.24.171.$ip -U sige -f sige_data/data_pressure_zones.sql -v ON_ERROR_STOP=1
+read -p "Press any key to continue..."
+psql -h 172.24.171.$ip -U sige -f sige_data/data_pressurezone.sql -v ON_ERROR_STOP=1
 read -p "Press any key to continue..."
 psql -h 172.24.171.$ip -U sige -f sige_data/data_node.sql -v ON_ERROR_STOP=1
 read -p "Press any key to continue..."
