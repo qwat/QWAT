@@ -30,7 +30,7 @@ ALTER TABLE distribution.installation ADD CONSTRAINT installation_pkey PRIMARY K
 
 /* Constraints */
 /* id_type */
-ALTER TABLE distribution.installation ADD CONSTRAINT installation_id_type        FOREIGN KEY (id_type)        REFERENCES distribution.installation_type(id)   MATCH FULL; CREATE INDEX fki_installation_id_type        ON distribution.installation(id_type)        ;
+ALTER TABLE distribution.installation ADD CONSTRAINT installation_id_type        FOREIGN KEY (id_type)        REFERENCES distribution.installation_type(id)    MATCH FULL; CREATE INDEX fki_installation_id_type        ON distribution.installation(id_type)        ;
 ALTER TABLE distribution.installation ADD CONSTRAINT installation_id_distributor FOREIGN KEY (id_distributor) REFERENCES distribution.distributor(id)          MATCH FULL; CREATE INDEX fki_installation_id_distributor ON distribution.installation(id_distributor) ;
 ALTER TABLE distribution.installation ADD CONSTRAINT installation_id_status      FOREIGN KEY (id_status)      REFERENCES distribution.status(id)               MATCH FULL; CREATE INDEX fki_installation_id_status      ON distribution.installation(id_status)      ;
 
