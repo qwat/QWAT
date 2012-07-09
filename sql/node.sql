@@ -96,8 +96,12 @@ CREATE OR REPLACE FUNCTION distribution.node_type(integer) RETURNS void AS '
 			FROM distribution.pipe_view 
 			WHERE (id_node_a = node_id OR id_node_b = node_id);
 		IF grouped.count = 0 THEN
-			RAISE NOTICE ''Delete node %'' , node_id ;
-			DELETE FROM distribution.node WHERE id = node_id ;
+			IF node_id IN (SELECT id_node FROM distribution.valve) THEN
+				type := ''valve'';
+			ELSE
+				RAISE NOTICE ''Delete node %'' , node_id ;
+				DELETE FROM distribution.node WHERE id = node_id ;
+			END IF;
 		ELSEIF grouped.count = 1 THEN
 			type := ''one'';
 		ELSEIF grouped.count = 2 THEN
