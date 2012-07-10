@@ -96,7 +96,7 @@ ogr2ogr -sql "SELECT                   \
 	altitude_real,                              \
 	remarks,                                    \
 	_is_on_map,                                 \
-	_is_on_district,                            \
+	_district,                            \
 	geometry::geometry(Point,21781),            \
 	_function,                                  \
 	_type,                                      \
@@ -120,7 +120,7 @@ ogr2ogr -sql "SELECT                   \
 	altitude_real,                              \
 	remarks,                                    \
 	_is_on_map,                                 \
-	_is_on_district,                            \
+	_district,                            \
 	geometry::geometry(Point,21781),\
 	_function,                                  \
 	_type,                                      \
@@ -139,9 +139,9 @@ ogr2ogr -sql "SELECT * FROM distribution.installation_view WHERE _status_active 
  -dsco SPATIALITE=no -lco "SPATIAL_INDEX=no FORMAT=SPATIALITE" -gt 65536
  
  # PRESSURE ZONES
-ogr2ogr -sql "SELECT * FROM distribution.pressurezones" \
+ogr2ogr -sql "SELECT * FROM distribution.pressurezone" \
  -overwrite -a_srs EPSG:21781 -f SQLite $outputpath \
- -nln pressurezones -nlt POLYGON -progress -preserve_fid \
+ -nln pressurezone -nlt POLYGON -progress -preserve_fid \
  PG:"dbname='sige' host='172.24.171.202' port='5432' user='sige' password='db4wat$'" \
  -dsco SPATIALITE=no -lco "SPATIAL_INDEX=no FORMAT=SPATIALITE" -gt 65536
 

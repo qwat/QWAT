@@ -85,6 +85,7 @@ ogr2ogr -sql "SELECT                   \
 	sige,                                       \
 	id_pipe,                                    \
 	id_node,                                    \
+	id_district,                                \
 	diameter_nominal,                           \
 	year,                                       \
 	closed,                                     \
@@ -92,11 +93,10 @@ ogr2ogr -sql "SELECT                   \
 	altitude_real,                              \
 	remarks,                                    \
 	_is_on_map,                                 \
-	_is_on_district,                            \
 	geometry::geometry(Point,21781),            \
 	_function,                                  \
 	_type,                                      \
-	_schema_view,                                      \
+	_schema_view,                               \
 	_label                                      \
  FROM distribution.valve_view" \
  -overwrite -a_srs EPSG:21781 -f SQLite $outputpath \
@@ -110,6 +110,7 @@ ogr2ogr -sql "SELECT                   \
 	sige,                                       \
 	id_pipe,                                    \
 	id_node,                                    \
+	id_district,                                \
 	diameter_nominal,                           \
 	year,                                       \
 	closed,                                     \
@@ -117,8 +118,7 @@ ogr2ogr -sql "SELECT                   \
 	altitude_real,                              \
 	remarks,                                    \
 	_is_on_map,                                 \
-	_is_on_district,                            \
-	geometry_alternative::geometry(Point,21781),\
+	geometry::geometry(Point,21781),            \
 	_function,                                  \
 	_type,                                      \
 	_label                                      \
@@ -136,9 +136,9 @@ ogr2ogr -sql "SELECT * FROM distribution.installation_view" \
  -dsco SPATIALITE=yes -lco SPATIAL_INDEX=yes  -gt 65536
  
  # PRESSURE ZONES
-ogr2ogr -sql "SELECT * FROM distribution.pressurezones" \
+ogr2ogr -sql "SELECT * FROM distribution.pressurezone" \
  -overwrite -a_srs EPSG:21781 -f SQLite $outputpath \
- -nln pressurezones -nlt POLYGON -progress -preserve_fid \
+ -nln pressurezone -nlt POLYGON -progress -preserve_fid \
  PG:"dbname='sige' host='172.24.171.202' port='5432' user='sige' password='db4wat$'" \
  -dsco SPATIALITE=yes -lco SPATIAL_INDEX=yes  -gt 65536
  
@@ -151,10 +151,10 @@ ogr2ogr -sql "SELECT * FROM distribution.printmaps" \
  -dsco SPATIALITE=yes -lco SPATIAL_INDEX=yes  -gt 65536
  
  
-   # DISTRICTS
-ogr2ogr -sql "SELECT * FROM distribution.districts" \
+   # DISTRICT
+ogr2ogr -sql "SELECT * FROM distribution.district" \
  -overwrite -a_srs EPSG:21781 -f SQLite $outputpath \
- -nln districts -nlt POLYGON -progress -preserve_fid \
+ -nln district -nlt POLYGON -progress -preserve_fid \
  PG:"dbname='sige' host='172.24.171.202' port='5432' user='sige' password='db4wat$'" \
  -dsco SPATIALITE=yes -lco SPATIAL_INDEX=yes  -gt 65536
  
