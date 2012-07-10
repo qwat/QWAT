@@ -52,7 +52,8 @@ CREATE VIEW distribution.pipe_view AS
 		CASE 
 			WHEN pipe.schema_force_view IS NULL THEN pipe_function.schema_view
 			ELSE pipe.schema_force_view
-		END AS _schema_view
+		END AS _schema_view,
+		valve.closed AS _valve_closed
 		FROM distribution.pipe
 		INNER JOIN distribution.pipe_function          ON pipe.id_function       = pipe_function.id
 		INNER JOIN distribution.pipe_install_method    ON pipe.id_install_method = pipe_install_method.id
@@ -61,7 +62,8 @@ CREATE VIEW distribution.pipe_view AS
 		INNER JOIN distribution."precision"            ON pipe.id_precision      = "precision".id
 		LEFT OUTER JOIN  distribution.pipe_protection  ON pipe.id_protection     = pipe_protection.id
 		INNER JOIN distribution.status                 ON pipe.id_status         = status.id
-		LEFT OUTER JOIN  distribution.pressurezone     ON pipe.id_pressurezone   = pressurezone.id;
+		LEFT OUTER JOIN  distribution.pressurezone     ON pipe.id_pressurezone   = pressurezone.id
+		LEFT OUTER JOIN  distribution.valve            ON pipe.id                = valve.id_pipe;
 /*----------------!!!---!!!----------------*/
 /* Comment */
 COMMENT ON VIEW distribution.pipe_view IS 'View for pipe. This view is editable (a rule exists to forwad changes to the table). 

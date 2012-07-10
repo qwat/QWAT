@@ -131,6 +131,7 @@ CREATE VIEW distribution.pipe_schema AS
 			pipe_view._consummerzone             ,
 			pipe_view._pressurezone_colorcode    ,
 			pipe_view._schema_view               ,	
+			pipe_view._valve_closed              ,	
 			pipe_schema_merged._length2d         ,
 			pipe_schema_merged._length3d         ,
 			pipe_schema_merged._length3d_uptodate,
