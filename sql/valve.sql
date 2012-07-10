@@ -14,9 +14,10 @@ ALTER TABLE distribution.valve ADD COLUMN sige              integer ;
 ALTER TABLE distribution.valve ADD COLUMN id_type           integer ;
 ALTER TABLE distribution.valve ADD COLUMN id_function       integer ;
 ALTER TABLE distribution.valve ADD COLUMN id_pipe           integer ;
+ALTER TABLE distribution.valve ADD COLUMN id_maintenance    integer[] ;
 ALTER TABLE distribution.valve ADD COLUMN id_node           integer ;
 ALTER TABLE distribution.valve ADD COLUMN id_district       integer ;
-ALTER TABLE distribution.valve ADD COLUMN id_maintenance    integer[] ;
+ALTER TABLE distribution.valve ADD COLUMN id_pressurezone   integer ;
 ALTER TABLE distribution.valve ADD COLUMN diameter_nominal  varchar(10) ;
 ALTER TABLE distribution.valve ADD COLUMN year              smallint CHECK (year > 1800 AND year < 2100);
 ALTER TABLE distribution.valve ADD COLUMN closed            boolean     default false ;
@@ -34,11 +35,12 @@ CREATE INDEX valve_geoidx     ON distribution.valve USING GIST ( geometry );
 CREATE INDEX valve_geoidx_alt ON distribution.valve USING GIST ( geometry_schematic );
 
 /* constraints */
-ALTER TABLE distribution.valve ADD CONSTRAINT valve_id_type        FOREIGN KEY (id_type)        REFERENCES distribution.valve_type(id)        MATCH FULL   ; CREATE INDEX fki_valve_id_type        ON distribution.valve(id_type)        ;
-ALTER TABLE distribution.valve ADD CONSTRAINT valve_id_function    FOREIGN KEY (id_function)    REFERENCES distribution.valve_function(id)    MATCH FULL   ; CREATE INDEX fki_valve_id_function    ON distribution.valve(id_function)    ;
-ALTER TABLE distribution.valve ADD CONSTRAINT valve_id_pipe        FOREIGN KEY (id_pipe)        REFERENCES distribution.pipe(id)              MATCH SIMPLE ; CREATE INDEX fki_valve_id_pipe        ON distribution.valve(id_pipe)        ;
-ALTER TABLE distribution.valve ADD CONSTRAINT valve_id_node        FOREIGN KEY (id_node)        REFERENCES distribution.node(id)              MATCH SIMPLE ; CREATE INDEX fki_valve_id_node        ON distribution.valve(id_node)        ;
-ALTER TABLE distribution.valve ADD CONSTRAINT valve_id_district    FOREIGN KEY (id_district)    REFERENCES distribution.district(id)          MATCH SIMPLE ; CREATE INDEX fki_valve_id_district    ON distribution.valve(id_district)    ;
+ALTER TABLE distribution.valve ADD CONSTRAINT valve_id_type         FOREIGN KEY (id_type)         REFERENCES distribution.valve_type(id)        MATCH FULL   ; CREATE INDEX fki_valve_id_type         ON distribution.valve(id_type)        ;
+ALTER TABLE distribution.valve ADD CONSTRAINT valve_id_function     FOREIGN KEY (id_function)     REFERENCES distribution.valve_function(id)    MATCH FULL   ; CREATE INDEX fki_valve_id_function     ON distribution.valve(id_function)    ;
+ALTER TABLE distribution.valve ADD CONSTRAINT valve_id_pipe         FOREIGN KEY (id_pipe)         REFERENCES distribution.pipe(id)              MATCH SIMPLE ; CREATE INDEX fki_valve_id_pipe         ON distribution.valve(id_pipe)        ;
+ALTER TABLE distribution.valve ADD CONSTRAINT valve_id_node         FOREIGN KEY (id_node)         REFERENCES distribution.node(id)              MATCH SIMPLE ; CREATE INDEX fki_valve_id_node         ON distribution.valve(id_node)        ;
+ALTER TABLE distribution.valve ADD CONSTRAINT valve_id_district     FOREIGN KEY (id_district)     REFERENCES distribution.district(id)          MATCH SIMPLE ; CREATE INDEX fki_valve_id_district     ON distribution.valve(id_district)    ;
+ALTER TABLE distribution.valve ADD CONSTRAINT valve_id_pressurezone FOREIGN KEY (id_pressurezone) REFERENCES distribution.pressurezone(id)      MATCH SIMPLE ; CREATE INDEX fki_valve_id_pressurezone ON distribution.valve(id_pressurezone);
 /* cannot create constraint on arrays yet
 ALTER TABLE distribution.valve ADD CONSTRAINT valve_id_maintenance FOREIGN KEY (id_maintenance) REFERENCES distribution.valve_maintenance(id) MATCH SIMPLE ; CREATE INDEX fki_valve_id_maintenance ON distribution.valve(id_maintenance) ;
 */
@@ -48,10 +50,11 @@ ALTER TABLE distribution.valve ADD CONSTRAINT valve_id_maintenance FOREIGN KEY (
 CREATE OR REPLACE FUNCTION distribution.valve_geom() RETURNS trigger AS ' 
 	BEGIN
 		UPDATE distribution.valve SET 
-			id_node            = distribution.node_get_id(NEW.geometry,false),
 			id_pipe            = distribution.pipe_get_id(NEW.geometry),
+			id_node            = distribution.node_get_id(NEW.geometry,false),
 			id_district        = distribution.get_district_id(NEW.geometry),
-			_is_on_map         = distribution.get_map(NEW.geometry),
+			id_pressurezone    = distribution.get_pressurezone_id(NEW.geometry),
+			_is_on_map         = distribution.get_map(NEW.geometry)
 			geometry_schematic = NEW.geometry
 		WHERE id = NEW.id ;
 		RETURN NEW;
