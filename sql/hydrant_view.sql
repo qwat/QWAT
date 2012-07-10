@@ -19,7 +19,6 @@ CREATE VIEW distribution.hydrant_view AS
 		hydrant.id_district    ,
 		hydrant.id_pressurezone,
 		hydrant.year           ,
-		hydrant.altitude       ,
 		hydrant.model          ,
 		hydrant._is_on_map     ,
 		hydrant.remarks        ,
@@ -62,7 +61,6 @@ CREATE OR REPLACE RULE hydrant_update AS
 			id_pressurezone = NEW.id_pressurezone    ,
 			id_node         = NEW.id_node            ,
 			year            = NEW.year               ,
-			altitude        = NEW.altitude           ,
 			model           = NEW.model              ,
 			remarks         = NEW.remarks            ,
 			geometry        = NEW.geometry
@@ -70,9 +68,9 @@ CREATE OR REPLACE RULE hydrant_update AS
 CREATE OR REPLACE RULE hydrant_insert AS
 	ON INSERT TO distribution.hydrant_view DO INSTEAD
 		INSERT INTO distribution.hydrant 
-			(    sige,    id_type,    id_status,    id_distributor,    id_provider,    id_district,    id_pressurezone,    id_node,    year,    altitude,    model,    remarks,    geometry)     
+			(    sige,    id_type,    id_status,    id_distributor,    id_provider,    id_district,    id_pressurezone,    id_node,    year,    model,    remarks,    geometry)     
 		VALUES
-			(NEW.sige,NEW.id_type,NEW.id_status,NEW.id_distributor,NEW.id_provider,NEW.id_district,NEW.id_pressurezone,NEW.id_node,NEW.year,NEW.altitude,NEW.model,NEW.remarks,NEW.geometry);
+			(NEW.sige,NEW.id_type,NEW.id_status,NEW.id_distributor,NEW.id_provider,NEW.id_district,NEW.id_pressurezone,NEW.id_node,NEW.year,NEW.model,NEW.remarks,NEW.geometry);
 CREATE OR REPLACE RULE hydrant_delete AS
 	ON DELETE TO distribution.hydrant_view DO INSTEAD
 		DELETE FROM distribution.hydrant WHERE id = OLD.id;
