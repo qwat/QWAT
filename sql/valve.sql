@@ -53,7 +53,7 @@ CREATE OR REPLACE FUNCTION distribution.valve_geom() RETURNS trigger AS '
 			id_node            = distribution.node_get_id(NEW.geometry,false),
 			id_district        = distribution.get_district_id(NEW.geometry),
 			id_pressurezone    = distribution.get_pressurezone_id(NEW.geometry),
-			_is_on_map         = distribution.get_map(NEW.geometry)
+			_is_on_map         = distribution.get_map(NEW.geometry),
 			geometry_schematic = NEW.geometry
 		WHERE id = NEW.id ;
 		RETURN NEW;
