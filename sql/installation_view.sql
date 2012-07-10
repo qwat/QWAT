@@ -18,6 +18,7 @@ CREATE VIEW distribution.installation_view AS
 		installation.id_node                            ,
 		installation.id_district                        ,
 		installation.id_pressurezone                    ,
+		installation.altitude_real                      ,
 		installation.remarks                            ,
 		installation.geometry::geometry(Point,21781)    ,
 		installation_type.name       AS _type           ,
@@ -30,7 +31,6 @@ CREATE VIEW distribution.installation_view AS
 			ELSE installation.schema_force_view
 		END AS _schema_view,
 		node.altitude_dtm          AS _altitude_dtm,
-		node.altitude_real         AS _altitude_real,
 		district.name              AS _district,
 		pressurezone.name          AS _pressurezone,
 		pressurezone.shortname     AS _pressurezone_shortname,

@@ -11,22 +11,26 @@ read -p "Press any key to continue..."
  # vannes 
 pgsql2shp -h $db_address -g geom -f $shapeoutput/vannes -P db4wat$ -u sige sige "\
 SELECT \
- id ,                                        \
- sige,                                       \
- id_pipe,                                    \
- id_node,                                    \
+ id                     AS ID,               \
+ sige                   AS SIGE,             \
+ id_pipe                AS CONDUTE,          \
+ id_node                AS NOEUD             \
  diameter_nominal,                           \
  year,                                       \
  closed,                                     \
- altitude_dtm,                               \
- altitude_real,                              \
  remarks,                                    \
  _is_on_map,                                 \
  _district,                                  \
  geometry::geometry(Point,21781) AS geom,    \
  _function,                                  \
  _type,                                      \
- _label                                      \
+ _label,                                     \
+ CASE                                        \
+    WHEN altitude_real IS NOT NULL THEN altitude_real \
+    ELSE _altitude_dtm                       \
+ END AS ALTITUDE,                            \
+ _district AS COMMUNNE,                      \
+ _pressurezone AS ZONE_PRES                  \
 FROM distribution.valve_schema WHERE closed IS TRUE OR _function = 'vanne de régulation' " 
 read -p "Press any key to continue..."
 
@@ -69,16 +73,23 @@ read -p "Press any key to continue..."
 pgsql2shp -h $db_address -g geom -f $shapeoutput/ouvrages -P db4wat$ -u sige sige "\
 SELECT                                      \
  id AS ID,                                  \
+ id_node AS NOEUD,                          \
  geometry::geometry(Point,21781) AS geom,   \
  name AS NOM,                               \
- _type AS TYPE                              \
+ _type AS TYPE,                             \
+ CASE                                       \
+    WHEN altitude_real IS NOT NULL THEN altitude_real \
+    ELSE _altitude_dtm                      \
+ END AS ALTITUDE,                           \
+ _district AS COMMUNNE,                     \
+ _pressurezone AS ZONE_PRES                 \
 FROM distribution.installation_view"        
 read -p "Press any key to continue..."
 
 # noeuds
 pgsql2shp -h $db_address -g geom -f $shapeoutput/noeuds -P db4wat$ -u sige sige "\
 SELECT                                                           \
- id AS ID,                                                       \
+ id AS NOEUD,                                                       \
  altitude_dtm AS ALTITUDE,                                       \
  geometry::geometry(Point,21781) AS geom                         \
 FROM distribution.node                                           \
@@ -107,7 +118,6 @@ SELECT                                    \
  sige           AS ID_SIGE,               \
  id_node        AS NOEUD,                 \
  year           AS ANNEE,                 \
- altitude       AS ALTITUDE,              \
  model          AS MODELE,                \
  remarks        AS REMARQUE,              \
  geometry::geometry(Point,21781) AS geom, \
@@ -116,6 +126,10 @@ SELECT                                    \
  _status_name AS STATUT,                  \
  _status_active AS ACTIF,                 \
  _provider AS DISTRIB,                    \
+ CASE                                     \
+    WHEN altitude_real IS NOT NULL THEN altitude_real \
+    ELSE _altitude_dtm                    \
+ END AS ALTITUDE,                         \
  _district AS COMMUNNE,                   \
  _pressurezone AS ZONE_PRES               \
 FROM distribution.hydrant_view "

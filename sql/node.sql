@@ -14,7 +14,6 @@ COMMENT ON TABLE distribution.node IS 'Nodes. Type:If three pipe or more arrives
 
 /* columns */
 ALTER TABLE distribution.node ADD COLUMN  altitude_dtm       DECIMAL(10,3)              ;
-ALTER TABLE distribution.node ADD COLUMN  altitude_real      DECIMAL(10,3)              ;
 ALTER TABLE distribution.node ADD COLUMN  _type              VARCHAR(20)   DEFAULT NULL ;
 ALTER TABLE distribution.node ADD COLUMN  _orientation       FLOAT         DEFAULT 0    ;
 ALTER TABLE distribution.node ADD COLUMN  _schema_view       BOOLEAN       DEFAULT False;

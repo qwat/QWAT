@@ -21,7 +21,6 @@ ALTER TABLE distribution.valve ADD COLUMN id_pressurezone   integer ;
 ALTER TABLE distribution.valve ADD COLUMN diameter_nominal  varchar(10) ;
 ALTER TABLE distribution.valve ADD COLUMN year              smallint CHECK (year > 1800 AND year < 2100);
 ALTER TABLE distribution.valve ADD COLUMN closed            boolean     default false ;
-ALTER TABLE distribution.valve ADD COLUMN altitude_dtm      decimal(10,3)  ;
 ALTER TABLE distribution.valve ADD COLUMN altitude_real     decimal(10,3)  ;
 ALTER TABLE distribution.valve ADD COLUMN remarks           text           ;
 ALTER TABLE distribution.valve ADD COLUMN schema_force_view boolean     default NULL::boolean; 

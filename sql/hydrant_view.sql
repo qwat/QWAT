@@ -21,7 +21,9 @@ CREATE VIEW distribution.hydrant_view AS
 		hydrant.year           ,
 		hydrant.model          ,
 		hydrant._is_on_map     ,
+		hydrant.altitude_real  ,
 		hydrant.remarks        ,
+		hydrant._is_on_map     ,
 		hydrant.geometry::geometry(Point,21781),
 		hydrant_type.name          AS _type, 
 		distributor.name           AS _distributor,
@@ -29,7 +31,6 @@ CREATE VIEW distribution.hydrant_view AS
 		status.active              AS _status_active,
 		hydrant_provider.name      AS _provider,
 		node.altitude_dtm          AS _altitude_dtm,
-		node.altitude_real         AS _altitude_real,
 		district.name              AS _district,
 		pressurezone.name          AS _pressurezone,
 		pressurezone.shortname     AS _pressurezone_shortname,
@@ -62,15 +63,16 @@ CREATE OR REPLACE RULE hydrant_update AS
 			id_node         = NEW.id_node            ,
 			year            = NEW.year               ,
 			model           = NEW.model              ,
+			altitude_real   = NEW.altitude_real      ,
 			remarks         = NEW.remarks            ,
 			geometry        = NEW.geometry
 		WHERE id = NEW.id;
 CREATE OR REPLACE RULE hydrant_insert AS
 	ON INSERT TO distribution.hydrant_view DO INSTEAD
 		INSERT INTO distribution.hydrant 
-			(    sige,    id_type,    id_status,    id_distributor,    id_provider,    id_district,    id_pressurezone,    id_node,    year,    model,    remarks,    geometry)     
+			(    sige,    id_type,    id_status,    id_distributor,    id_provider,    id_district,    id_pressurezone,    id_node,    year,    model,    altitude_real,    remarks,    geometry)     
 		VALUES
-			(NEW.sige,NEW.id_type,NEW.id_status,NEW.id_distributor,NEW.id_provider,NEW.id_district,NEW.id_pressurezone,NEW.id_node,NEW.year,NEW.model,NEW.remarks,NEW.geometry);
+			(NEW.sige,NEW.id_type,NEW.id_status,NEW.id_distributor,NEW.id_provider,NEW.id_district,NEW.id_pressurezone,NEW.id_node,NEW.year,NEW.model,NEW.altitude_real,NEW.remarks,NEW.geometry);
 CREATE OR REPLACE RULE hydrant_delete AS
 	ON DELETE TO distribution.hydrant_view DO INSTEAD
 		DELETE FROM distribution.hydrant WHERE id = OLD.id;

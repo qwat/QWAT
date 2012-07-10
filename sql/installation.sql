@@ -22,6 +22,7 @@ ALTER TABLE distribution.installation ADD COLUMN  id_district       integer     
 ALTER TABLE distribution.installation ADD COLUMN  id_pressurezone   integer                ;
 ALTER TABLE distribution.installation ADD COLUMN  remarks           text                   ;
 ALTER TABLE distribution.installation ADD COLUMN  schema_force_view boolean DEFAULT NULL::boolean;
+ALTER TABLE distribution.installation ADD COLUMN  altitude_real     decimal(10,3)          ;
 ALTER TABLE distribution.installation ADD COLUMN  _is_on_map        varchar(30)            ;
 
 /* geometry */
