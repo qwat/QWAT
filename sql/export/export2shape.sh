@@ -5,7 +5,7 @@ export shapeoutput=/home/denis/Documents/PPDE/out
 # vannes: prendre fermée + vanne régulation/secour (fct) 
 
 # save schema in a table
-psql -h $db_address -U sige -c "DROP TABLE IF EXISTS distribution.pipe_schema_temp; CREATE TABLE distribution.pipe_schema_temp AS SELECT * FROM distribution.pipe_schema_node;"
+#psql -h $db_address -U sige -c "DROP TABLE IF EXISTS distribution.pipe_schema_temp; CREATE TABLE distribution.pipe_schema_temp AS SELECT * FROM distribution.pipe_schema_node;"
 read -p "Press any key to continue..."
 
  # vannes 
@@ -14,7 +14,7 @@ SELECT \
  id                     AS ID,               \
  sige                   AS SIGE,             \
  id_pipe                AS CONDUTE,          \
- id_node                AS NOEUD             \
+ id_node                AS NOEUD,            \
  diameter_nominal,                           \
  year,                                       \
  closed,                                     \
@@ -50,8 +50,8 @@ SELECT                                          \
  geometry::geometry(LineString,21781) AS geom, \
  _length2d AS LONGU_2D,                        \
  CASE WHEN _length3d_uptodate IS TRUE          \
-  THEN _length3d                              \
-  ELSE NULL                                   \
+  THEN _length3d                               \
+  ELSE NULL                                    \
  END AS LONGU_3D,                              \
  remarks AS REMARQUE,                          \
  _precision AS PRECISIO,                       \
@@ -59,6 +59,8 @@ SELECT                                          \
  _function_name AS FONCTION,                   \
  _material_longname AS MATERIAU,               \
  _material_diameter_internal AS DIAM_INT,      \
+ _pressurezone AS ZONE_PRES,                   \
+ _valve_closed AS VAN_FERM,                    \
  year AS ANNEE,                                \
  id_node_a AS NOEUD_A,                         \
  id_node_b AS NOEUD_B,                         \
@@ -102,15 +104,15 @@ WHERE _schema_view IS TRUE                                       \
     FROM distribution.pipe_schema_temp WHERE id_distributor = 1  \
   )                                                              \
   AND id NOT IN (                                                \
-    SELECT id_node FROM distribution.installation                \
+    SELECT id_node FROM distribution.installation WHERE id_node IS NOT NULL \
     UNION                                                        \
-    SELECT id_node FROM distribution.hydrant                     \
+    SELECT id_node FROM distribution.hydrant WHERE id_node IS NOT NULL \
     UNION                                                        \
-    SELECT id_node FROM distribution.installation                \
+    SELECT id_node FROM distribution.valve_schema WHERE id_node IS NOT NULL AND closed IS TRUE OR _function = 'vanne de régulation' \
   )
  "
 read -p "Press any key to continue..."
-
+    
 # hydrantes
 pgsql2shp -h $db_address -g geom -f $shapeoutput/hydrantes -P db4wat$ -u sige sige "\
 SELECT                                    \
