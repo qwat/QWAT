@@ -25,11 +25,21 @@ CREATE VIEW distribution.installation_view AS
 		CASE 
 			WHEN installation.schema_force_view IS NULL THEN installation_type.schema_view
 			ELSE installation.schema_force_view
-		END AS _schema_view
+		END AS _schema_view,
+		node.altitude_dtm          AS _altitude_dtm,
+		node.altitude_real         AS _altitude_real,
+		district.name              AS _district,
+		pressurezone.name          AS _pressurezone,
+		pressurezone.shortname     AS _pressurezone_shortname,
+		pressurezone.consummerzone AS _consummerzone,
+		pressurezone.colorcode     AS _pressurezone_colorcode
 	FROM distribution.installation 
-	INNER      JOIN distribution.installation_type  ON installation.id_type        = installation_type.id 
-	INNER      JOIN distribution.status             ON installation.id_status      = status.id 
-	LEFT OUTER JOIN distribution.distributor        ON installation.id_distributor = distributor.id ;
+	INNER      JOIN distribution.installation_type ON installation.id_type         = installation_type.id 
+	INNER      JOIN distribution.status            ON installation.id_status       = status.id 
+	LEFT OUTER JOIN distribution.distributor       ON installation.id_distributor  = distributor.id 
+	LEFT OUTER JOIN distribution.node              ON installation.id_node         = node.id       
+	LEFT OUTER JOIN distribution.district          ON installation.id_district     = district.id       
+	LEFT OUTER JOIN distribution.pressurezone      ON installation.id_pressurezone = pressurezone.id;
 
 
 /* TODO: rules */
