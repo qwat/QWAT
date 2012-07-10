@@ -27,6 +27,6 @@ INSERT INTO distribution.status (status,active,sire,comment) VALUES ('désaffect
 INSERT INTO distribution.status (status,active,sire,comment) VALUES ('abandonné'   , false, NULL, 'L''objet est inutilisable et sa mise hors service est strictement définitive. Par exemple, une conduite non raccordée et impropre au transport d''eau, mais pouvant éventuellement servir à passer des câbles. Ou encore une station de pompage sans pompe en état de fonctionner.');   /*  */
 INSERT INTO distribution.status (status,active,sire,comment) VALUES ('détruit'     , false, NULL, 'L''objet a été partiellement ou complètement détruit.');   /*  */
 INSERT INTO distribution.status (status,active,sire,comment) VALUES ('projet'      , false, 0    , 'L''objet est un projet validé en attente ou en cours de réalisation.');   /*  */
-INSERT INTO distribution.status (status,active,sire,comment) VALUES ('fictif'      , false, 1    , 'L''objet n''existe pas mais est nécessaire à l''intégrité topologique.');   /*  */
+INSERT INTO distribution.status (status,active,sire,comment) VALUES ('fictif'      , true , 1    , 'L''objet n''existe pas mais est nécessaire à l''intégrité topologique.');   /*  */
 
 COMMIT;
