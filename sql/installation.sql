@@ -48,7 +48,7 @@ ALTER TABLE distribution.installation ADD CONSTRAINT installation_id_pressurezon
 CREATE OR REPLACE FUNCTION distribution.installation_geom() RETURNS trigger AS ' 
 	BEGIN
 		UPDATE distribution.installation SET 
-			id_node            = distribution.node_get_id(NEW.geometry,false),
+			id_node            = distribution.node_get_id(NEW.geometry,true),
 			id_district        = distribution.get_district_id(NEW.geometry),
 			id_pressurezone    = distribution.get_pressurezone_id(NEW.geometry),
 			_is_on_map         = distribution.get_map(NEW.geometry)
