@@ -1,5 +1,8 @@
 #read -p "Press any key to continue..."
 #psql -h 172.24.171.$ip -U sige -f roles.sql
+read -p "REMEMBER TO BACKUP!!! CONTINUE? (y/n) " answ
+if [[ "$answ" == "y" ]]
+then
 
 read -p "Last xxx of IP : " ip
 
@@ -11,17 +14,17 @@ psql -h 172.24.171.$ip -U sige -f visible.sql
 read -p "Press any key to continue..."
 psql -h 172.24.171.$ip -U sige -f status.sql
 read -p "Press any key to continue..."
+psql -h 172.24.171.$ip -U sige -f precision.sql
+read -p "Press any key to continue..."
+
 psql -h 172.24.171.$ip -U sige -f node.sql
 read -p "Press any key to continue..."
+psql -h 172.24.171.$ip -U sige -f node_functions.sql
+read -p "Press any key to continue..."
+
 psql -h 172.24.171.$ip -U sige -f dimension.sql
 read -p "Press any key to continue..."
 psql -h 172.24.171.$ip -U sige -f dimension_view.sql
-read -p "Press any key to continue..."
-psql -h 172.24.171.$ip -U sige -f pipe_install_method.sql
-read -p "Press any key to continue..."
-psql -h 172.24.171.$ip -U sige -f precision.sql
-read -p "Press any key to continue..."
-psql -h 172.24.171.$ip -U sige -f pipe_protection.sql
 read -p "Press any key to continue..."
 psql -h 172.24.171.$ip -U sige -f pressurezone.sql
 read -p "Press any key to continue..."
@@ -41,15 +44,6 @@ read -p "Press any key to continue..."
 psql -h 172.24.171.$ip -U sige -f hydrant_view.sql
 read -p "Press any key to continue..."
 
-psql -h 172.24.171.$ip -U sige -f pipe_functions.sql
-read -p "Press any key to continue..."
-psql -h 172.24.171.$ip -U sige -f pipe_material.sql
-read -p "Press any key to continue..."
-psql -h 172.24.171.$ip -U sige -f pipe.sql
-read -p "Press any key to continue..."
-psql -h 172.24.171.$ip -U sige -f pipe_view.sql
-read -p "Press any key to continue..."
-
 psql -h 172.24.171.$ip -U sige -f valve_type.sql
 read -p "Press any key to continue..."
 psql -h 172.24.171.$ip -U sige -f valve_function.sql
@@ -61,6 +55,19 @@ read -p "Press any key to continue..."
 psql -h 172.24.171.$ip -U sige -f valve_view.sql
 read -p "Press any key to continue..."
 psql -h 172.24.171.$ip -U sige -f valve_schema.sql
+read -p "Press any key to continue..."
+
+psql -h 172.24.171.$ip -U sige -f pipe_install_method.sql
+read -p "Press any key to continue..."
+psql -h 172.24.171.$ip -U sige -f pipe_protection.sql
+read -p "Press any key to continue..."
+psql -h 172.24.171.$ip -U sige -f pipe_functions.sql
+read -p "Press any key to continue..."
+psql -h 172.24.171.$ip -U sige -f pipe_material.sql
+read -p "Press any key to continue..."
+psql -h 172.24.171.$ip -U sige -f pipe.sql
+read -p "Press any key to continue..."
+psql -h 172.24.171.$ip -U sige -f pipe_view.sql
 read -p "Press any key to continue..."
 
 psql -h 172.24.171.$ip -U sige -f pipe_schema.sql
@@ -109,5 +116,5 @@ psql -h 172.24.171.$ip -U sige -f sige_data/data_samplingpoint.sql -v ON_ERROR_S
 read -p "Press any key to continue..."
 psql -h 172.24.171.$ip -U sige -f sige_data/data_pipe_id_parent.sql -v ON_ERROR_STOP=1
 
-
+fi
 
