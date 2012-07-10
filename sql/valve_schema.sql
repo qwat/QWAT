@@ -14,7 +14,6 @@ CREATE VIEW distribution.valve_schema AS
 		valve.sige,
 		valve.id_type,
 		valve.id_function,
-		valve.id_pipe,
 		valve.id_node,
 		valve.id_district,
 		valve.id_maintenance,

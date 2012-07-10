@@ -15,7 +15,6 @@ SELECT
 	valve.id_type           ,
 	valve.id_function       ,
 	valve.id_maintenance    ,
-	valve.id_pipe           ,
 	valve.id_node           ,
 	valve.id_district       ,
 	valve.id_pressurezone   ,
@@ -57,7 +56,6 @@ CREATE OR REPLACE RULE valve_update AS
 			sige                 = NEW.sige             ,		
 			id_type              = NEW.id_type          ,		
 			id_function          = NEW.id_function      ,		
-			id_pipe              = NEW.id_pipe          ,		
 			id_node              = NEW.id_node          ,		
 			id_district          = NEW.id_district      ,		
 			id_pressurezone      = NEW.id_pressurezone  ,		
@@ -74,9 +72,9 @@ CREATE OR REPLACE RULE valve_update AS
 CREATE OR REPLACE RULE valve_insert AS
 	ON INSERT TO distribution.valve_view DO INSTEAD
 		INSERT INTO distribution.valve 
-			(    sige,    id_type,    id_function,    id_pipe,    id_node,    id_district,    id_pressurezone,    id_maintenance,    diameter_nominal,    year,    closed,    altitude_real,    remarks,    schema_force_view,    geometry)     
+			(    sige,    id_type,    id_function,    id_node,    id_district,    id_pressurezone,    id_maintenance,    diameter_nominal,    year,    closed,    altitude_real,    remarks,    schema_force_view,    geometry)     
 		VALUES
-			(NEW.sige,NEW.id_type,NEW.id_function,NEW.id_pipe,NEW.id_node,NEW.id_district,NEW.id_pressurezone,NEW.id_maintenance,NEW.diameter_nominal,NEW.year,NEW.closed,NEW.altitude_real,NEW.remarks,NEW.schema_force_view,NEW.geometry);
+			(NEW.sige,NEW.id_type,NEW.id_function,NEW.id_node,NEW.id_district,NEW.id_pressurezone,NEW.id_maintenance,NEW.diameter_nominal,NEW.year,NEW.closed,NEW.altitude_real,NEW.remarks,NEW.schema_force_view,NEW.geometry);
 			
 CREATE OR REPLACE RULE valve_delete AS
 	ON DELETE TO distribution.valve_view DO INSTEAD
