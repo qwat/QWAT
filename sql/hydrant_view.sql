@@ -20,7 +20,6 @@ CREATE VIEW distribution.hydrant_view AS
 		hydrant.id_pressurezone,
 		hydrant.year           ,
 		hydrant.model          ,
-		hydrant._is_on_map     ,
 		hydrant.altitude_real  ,
 		hydrant.remarks        ,
 		hydrant._is_on_map     ,
