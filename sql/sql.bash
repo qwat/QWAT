@@ -8,7 +8,7 @@ read -p "Last xxx of IP : " ip
 
 psql -h 172.24.171.$ip -U sige -c "DROP SCHEMA distribution CASCADE; CREATE SCHEMA distribution;"
 
-psql -h 172.24.171.$ip -U sige -f tool_functions.sql
+psql -h 172.24.171.$ip -U sige -f tool_fcn.sql
 read -p "Press any key to continue..."
 psql -h 172.24.171.$ip -U sige -f visible.sql
 read -p "Press any key to continue..."
@@ -19,7 +19,7 @@ read -p "Press any key to continue..."
 
 psql -h 172.24.171.$ip -U sige -f node.sql
 read -p "Press any key to continue..."
-psql -h 172.24.171.$ip -U sige -f node_functions.sql
+psql -h 172.24.171.$ip -U sige -f node_fcn.sql
 read -p "Press any key to continue..."
 
 psql -h 172.24.171.$ip -U sige -f dimension.sql
@@ -56,12 +56,14 @@ psql -h 172.24.171.$ip -U sige -f valve_view.sql
 read -p "Press any key to continue..."
 psql -h 172.24.171.$ip -U sige -f valve_schema.sql
 read -p "Press any key to continue..."
+psql -h 172.24.171.$ip -U sige -f valve_fcn.sql
+read -p "Press any key to continue..."
 
 psql -h 172.24.171.$ip -U sige -f pipe_install_method.sql
 read -p "Press any key to continue..."
 psql -h 172.24.171.$ip -U sige -f pipe_protection.sql
 read -p "Press any key to continue..."
-psql -h 172.24.171.$ip -U sige -f pipe_functions.sql
+psql -h 172.24.171.$ip -U sige -f pipe_function.sql
 read -p "Press any key to continue..."
 psql -h 172.24.171.$ip -U sige -f pipe_material.sql
 read -p "Press any key to continue..."
