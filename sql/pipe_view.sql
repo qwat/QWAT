@@ -20,7 +20,6 @@ CREATE VIEW distribution.pipe_view AS
 		pipe.id_status         ,
 		pipe.id_node_a         ,
 		pipe.id_node_b         ,
-		pipe.id_valve          ,
 		pipe.id_pressurezone   ,
 		pipe.schema_force_view ,
 		pipe.year              ,
@@ -54,17 +53,17 @@ CREATE VIEW distribution.pipe_view AS
 			WHEN pipe.schema_force_view IS NULL THEN pipe_function.schema_view
 			ELSE pipe.schema_force_view
 		END AS _schema_view,
-		valve.closed AS _valve_closed
+		distribution.pipe_count_valve(pipe.id) AS _valve_count,
+		distribution.pipe_isClosed(pipe.id)    AS _valve_closed
 		FROM distribution.pipe
-		INNER JOIN distribution.pipe_function          ON pipe.id_function       = pipe_function.id
-		INNER JOIN distribution.pipe_install_method    ON pipe.id_install_method = pipe_install_method.id
-		INNER JOIN distribution.pipe_material          ON pipe.id_material       = pipe_material.id
-		INNER JOIN  distribution.distributor           ON pipe.id_distributor    = distributor.id
-		INNER JOIN distribution."precision"            ON pipe.id_precision      = "precision".id
-		LEFT OUTER JOIN  distribution.pipe_protection  ON pipe.id_protection     = pipe_protection.id
-		INNER JOIN distribution.status                 ON pipe.id_status         = status.id
-		LEFT OUTER JOIN  distribution.pressurezone     ON pipe.id_pressurezone   = pressurezone.id
-		LEFT OUTER JOIN  distribution.valve            ON pipe.id_valve          = valve.id ;
+		INNER      JOIN distribution.pipe_function       ON pipe.id_function       = pipe_function.id
+		INNER      JOIN distribution.pipe_install_method ON pipe.id_install_method = pipe_install_method.id
+		INNER      JOIN distribution.pipe_material       ON pipe.id_material       = pipe_material.id
+		INNER      JOIN distribution.distributor         ON pipe.id_distributor    = distributor.id
+		INNER      JOIN distribution."precision"         ON pipe.id_precision      = "precision".id
+		LEFT OUTER JOIN distribution.pipe_protection     ON pipe.id_protection     = pipe_protection.id
+		INNER      JOIN distribution.status              ON pipe.id_status         = status.id
+		LEFT OUTER JOIN distribution.pressurezone        ON pipe.id_pressurezone   = pressurezone.id ;
 /*----------------!!!---!!!----------------*/
 /* Comment */
 COMMENT ON VIEW distribution.pipe_view IS 'View for pipe. This view is editable (a rule exists to forwad changes to the table). 
@@ -85,7 +84,6 @@ CREATE OR REPLACE RULE pipe_update AS
 			id_precision       = NEW.id_precision       ,
 			id_protection      = NEW.id_protection      ,
 			id_install_method  = NEW.id_install_method  ,
-			id_valve           = NEW.id_valve           ,
 			year               = NEW.year               ,
 			tunnel_or_bridge   = NEW.tunnel_or_bridge   ,
 			pressure_nominale  = NEW.pressure_nominale  ,
@@ -98,9 +96,9 @@ CREATE OR REPLACE RULE pipe_update AS
 CREATE OR REPLACE RULE pipe_insert AS
 	ON INSERT TO distribution.pipe_view DO INSTEAD
 		INSERT INTO distribution.pipe 
-			(    id_function,    id_material,    id_status,    id_parent,    id_distributor,    id_pressurezone,    id_precision,    id_protection,    id_install_method,    id_valve,    year,    tunnel_or_bridge,    pressure_nominale,    schema_force_view,    folder,    remarks,    geometry)     
+			(    id_function,    id_material,    id_status,    id_parent,    id_distributor,    id_pressurezone,    id_precision,    id_protection,    id_install_method,    year,    tunnel_or_bridge,    pressure_nominale,    schema_force_view,    folder,    remarks,    geometry)     
 		VALUES
-			(NEW.id_function,NEW.id_material,NEW.id_status,NEW.id_parent,NEW.id_distributor,NEW.id_pressurezone,NEW.id_precision,NEW.id_protection,NEW.id_install_method,NEW.id_valve,NEW.year,NEW.tunnel_or_bridge,NEW.pressure_nominale,NEW.schema_force_view,NEW.folder,NEW.remarks,NEW.geometry);
+			(NEW.id_function,NEW.id_material,NEW.id_status,NEW.id_parent,NEW.id_distributor,NEW.id_pressurezone,NEW.id_precision,NEW.id_protection,NEW.id_install_method,NEW.year,NEW.tunnel_or_bridge,NEW.pressure_nominale,NEW.schema_force_view,NEW.folder,NEW.remarks,NEW.geometry);
 CREATE OR REPLACE RULE pipe_delete AS
 	ON DELETE TO distribution.pipe_view DO INSTEAD
 		DELETE FROM distribution.pipe WHERE id = OLD.id;

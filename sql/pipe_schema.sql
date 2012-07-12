@@ -23,6 +23,7 @@ CREATE VIEW distribution.pipe_schema_viewableitems AS
 		pipe._length3d_uptodate,
 		pipe.tunnel_or_bridge,
 		pipe.geometry_schematic::geometry(LineString,21781) AS geometry,
+		pipe_view._valve_count,
 		pipe_view._valve_closed
 	  FROM distribution.pipe
 	  INNER JOIN distribution.pipe_view ON pipe.id = pipe_view.id
@@ -75,6 +76,7 @@ CREATE OR REPLACE VIEW distribution.pipe_schema_items AS
 		_length3d,
 		_length3d_uptodate,
 		tunnel_or_bridge,
+		_valve_count,
 		_valve_closed
 	  FROM distribution.pipe_schema_viewableitems;
 	  
@@ -89,6 +91,7 @@ CREATE OR REPLACE VIEW distribution.pipe_schema_merged AS
 			SUM(_length3d) AS _length3d,
 			bool_and(_length3d_uptodate) AS _length3d_uptodate,
 			bool_or(tunnel_or_bridge) AS tunnel_or_bridge,
+			SUM(_valve_count) AS _valve_count,
 			bool_or(_valve_closed) AS _valve_closed
 	  FROM distribution.pipe_schema_items
 	 GROUP BY groupid ;
@@ -139,6 +142,7 @@ CREATE VIEW distribution.pipe_schema AS
 			pipe_schema_merged._length3d_uptodate,
 			pipe_schema_merged.number_of_pipe    ,
 			pipe_schema_merged.tunnel_or_bridge  ,
+			pipe_schema_merged._valve_count      ,
 			pipe_schema_merged._valve_closed     ,
 			pipe_schema_merged.geometry::geometry(LineString,21781) AS geometry
 	  FROM distribution.pipe_schema_merged

@@ -21,7 +21,6 @@ ALTER TABLE distribution.pipe ADD COLUMN id_protection integer;                 
 ALTER TABLE distribution.pipe ADD COLUMN id_status integer;                                    /* id_status         FK */
 ALTER TABLE distribution.pipe ADD COLUMN id_node_a integer;			          				   /* id_node_a         FK */
 ALTER TABLE distribution.pipe ADD COLUMN id_node_b integer;			          				   /* id_node_b         FK */
-ALTER TABLE distribution.pipe ADD COLUMN id_valve integer;			          				   /* id_valve          FK */
 ALTER TABLE distribution.pipe ADD COLUMN id_pressurezone integer;							   /* id_pressurezone   FK */
 ALTER TABLE distribution.pipe ADD COLUMN schema_force_view  boolean DEFAULT NULL::boolean;     /* schema_force_view FK */
 ALTER TABLE distribution.pipe ADD COLUMN year smallint CHECK (year > 1800 AND year < 2100);    /* year                 */
@@ -57,7 +56,6 @@ ALTER TABLE distribution.pipe ADD CONSTRAINT pipe_id_protection     FOREIGN KEY 
 ALTER TABLE distribution.pipe ADD CONSTRAINT pipe_id_status         FOREIGN KEY (id_status)         REFERENCES distribution.status(id)              MATCH FULL   ; CREATE INDEX fki_pipe_id_status         ON distribution.pipe(id_status);
 ALTER TABLE distribution.pipe ADD CONSTRAINT pipe_id_node_a         FOREIGN KEY (id_node_a)         REFERENCES distribution.node(id)                MATCH SIMPLE ; CREATE INDEX fki_pipe_id_node_a         ON distribution.pipe(id_node_a);
 ALTER TABLE distribution.pipe ADD CONSTRAINT pipe_id_node_b         FOREIGN KEY (id_node_b)         REFERENCES distribution.node(id)                MATCH SIMPLE ; CREATE INDEX fki_pipe_id_node_b         ON distribution.pipe(id_node_b);
-ALTER TABLE distribution.pipe ADD CONSTRAINT pipe_id_valve          FOREIGN KEY (id_valve)          REFERENCES distribution.valve(id)               MATCH SIMPLE ; CREATE INDEX fki_pipe_id_valve          ON distribution.pipe(id_valve);
 ALTER TABLE distribution.pipe ADD CONSTRAINT pipe_id_pressurezone   FOREIGN KEY (id_pressurezone)   REFERENCES distribution.pressurezone(id)        MATCH SIMPLE ; CREATE INDEX fki_pipe_id_pressurezone   ON distribution.pipe(id_pressurezone);
 
 

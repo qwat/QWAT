@@ -15,6 +15,7 @@ SELECT
 	valve.id_type           ,
 	valve.id_function       ,
 	valve.id_maintenance    ,
+	valve.id_pipe           ,
 	valve.id_node           ,
 	valve.id_district       ,
 	valve.id_pressurezone   ,
