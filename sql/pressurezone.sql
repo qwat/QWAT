@@ -27,7 +27,8 @@ ALTER TABLE distribution.pressurezone ADD CONSTRAINT pressurezone_name UNIQUE (n
 
         
 /* get pressurezone id function */
-CREATE OR REPLACE FUNCTION distribution.get_pressurezone_id(geometry) RETURNS integer AS '
+CREATE OR REPLACE FUNCTION distribution.get_pressurezone_id(geometry) RETURNS integer AS
+$BODY$ 
 	DECLARE
 		geom ALIAS FOR $1;
 		id_pressurezone integer;
@@ -39,7 +40,8 @@ CREATE OR REPLACE FUNCTION distribution.get_pressurezone_id(geometry) RETURNS in
 			LIMIT 1;
 		RETURN id_pressurezone;
 	END
-' LANGUAGE 'plpgsql';
+$BODY$
+LANGUAGE 'plpgsql';
 COMMENT ON FUNCTION distribution.get_pressurezone_id(geometry) IS 'Returns the id of the first overlapping pressurezone.';
         
 COMMIT;
