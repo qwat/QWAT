@@ -58,7 +58,6 @@ ALTER TABLE distribution.pipe ADD CONSTRAINT pipe_id_node_a         FOREIGN KEY 
 ALTER TABLE distribution.pipe ADD CONSTRAINT pipe_id_node_b         FOREIGN KEY (id_node_b)         REFERENCES distribution.node(id)                MATCH SIMPLE ; CREATE INDEX fki_pipe_id_node_b         ON distribution.pipe(id_node_b);
 ALTER TABLE distribution.pipe ADD CONSTRAINT pipe_id_pressurezone   FOREIGN KEY (id_pressurezone)   REFERENCES distribution.pressurezone(id)        MATCH SIMPLE ; CREATE INDEX fki_pipe_id_pressurezone   ON distribution.pipe(id_pressurezone);
 
-
 /*----------------!!!---!!!----------------*/
 /* Trigger for 2d length, map and district update */
 CREATE OR REPLACE FUNCTION distribution.pipe_geom() RETURNS trigger AS ' 
@@ -105,45 +104,5 @@ CREATE TRIGGER pipe_tunnelbridge_trigger
 	FOR EACH ROW
 	EXECUTE PROCEDURE distribution.pipe_tunnelbridge();
 COMMENT ON TRIGGER pipe_tunnelbridge_trigger ON distribution.pipe IS 'As for tunnel and bridges, 3d length is the 2d length, set _length3d_uptodate to false to reset it later.';
-
-/*----------------!!!---!!!----------------*/
-/* 3D Length */
-CREATE OR REPLACE FUNCTION distribution.pipe_length3d() RETURNS void AS '
-	DECLARE
-		length double precision;
-		pipeitem RECORD;
-	BEGIN
-		FOR pipeitem IN SELECT id,geometry,tunnel_or_bridge FROM distribution.pipe WHERE _length3d_uptodate IS NOT TRUE ORDER BY id LOOP
-			IF pipeitem.tunnel_or_bridge IS TRUE THEN
-				length := pipeitem._length2d;
-			ELSE
-				RAISE NOTICE ''%'', pipeitem.id;
-				SELECT altitude.length3d(pipeitem.geometry) INTO length;
-			END IF;
-			UPDATE distribution.pipe SET _length3d = length, _length3d_uptodate = TRUE WHERE id = pipeitem.id;
-		END LOOP;
-	END
-' LANGUAGE 'plpgsql';
-COMMENT ON FUNCTION distribution.pipe_length3d() IS 'Fill the 3d length of the pipe.';
-
-/*----------------!!!---!!!----------------*/
-/* get pipe id */
-CREATE OR REPLACE FUNCTION distribution.pipe_get_id(geometry) RETURNS integer AS '
-	DECLARE
-		point ALIAS for $1;
-		pipe_id integer;
-		distance_threshold double precision := 0.000001;
-		number_of_pipe integer;
-	BEGIN
-		SELECT COUNT(id) FROM distribution.pipe WHERE ST_DWithin(point,geometry,distance_threshold) INTO number_of_pipe;
-		IF number_of_pipe != 1 THEN
-			RETURN NULL ;
-		ELSE 
-			SELECT id FROM distribution.pipe WHERE ST_DWithin(point,geometry,distance_threshold) INTO pipe_id ;
-			RETURN pipe_id;	
-		END IF;
-	END;
-' LANGUAGE 'plpgsql';
-COMMENT ON FUNCTION distribution.pipe_get_id(geometry) IS 'Returns the pipe at a given position. If several pipe, return NULL.';
 
 COMMIT;

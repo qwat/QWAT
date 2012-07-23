@@ -44,6 +44,19 @@ read -p "Press any key to continue..."
 psql -h 172.24.171.$ip -U sige -f hydrant_view.sql
 read -p "Press any key to continue..."
 
+psql -h 172.24.171.$ip -U sige -f pipe_install_method.sql
+read -p "Press any key to continue..."
+psql -h 172.24.171.$ip -U sige -f pipe_protection.sql
+read -p "Press any key to continue..."
+psql -h 172.24.171.$ip -U sige -f pipe_function.sql
+read -p "Press any key to continue..."
+psql -h 172.24.171.$ip -U sige -f pipe_material.sql
+read -p "Press any key to continue..."
+psql -h 172.24.171.$ip -U sige -f pipe.sql
+read -p "Press any key to continue..."
+psql -h 172.24.171.$ip -U sige -f pipe_fcn.sql
+read -p "Press any key to continue..."
+
 psql -h 172.24.171.$ip -U sige -f valve_type.sql
 read -p "Press any key to continue..."
 psql -h 172.24.171.$ip -U sige -f valve_function.sql
@@ -59,16 +72,7 @@ read -p "Press any key to continue..."
 psql -h 172.24.171.$ip -U sige -f valve_fcn.sql
 read -p "Press any key to continue..."
 
-psql -h 172.24.171.$ip -U sige -f pipe_install_method.sql
-read -p "Press any key to continue..."
-psql -h 172.24.171.$ip -U sige -f pipe_protection.sql
-read -p "Press any key to continue..."
-psql -h 172.24.171.$ip -U sige -f pipe_function.sql
-read -p "Press any key to continue..."
-psql -h 172.24.171.$ip -U sige -f pipe_material.sql
-read -p "Press any key to continue..."
-psql -h 172.24.171.$ip -U sige -f pipe.sql
-read -p "Press any key to continue..."
+# needs vavle_fcn
 psql -h 172.24.171.$ip -U sige -f pipe_view.sql
 read -p "Press any key to continue..."
 

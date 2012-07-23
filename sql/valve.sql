@@ -49,7 +49,7 @@ ALTER TABLE distribution.valve ADD CONSTRAINT valve_id_maintenance FOREIGN KEY (
 CREATE OR REPLACE FUNCTION distribution.valve_geom() RETURNS trigger AS ' 
 	BEGIN
 		UPDATE distribution.valve SET 
-			id_pipe            = distribution.pipe_get_id(NEW.geometry,false),
+			id_pipe            = distribution.pipe_get_id(NEW.geometry),
 			id_node            = distribution.node_get_id(NEW.geometry,false),
 			id_district        = distribution.get_district_id(NEW.geometry),
 			id_pressurezone    = distribution.get_pressurezone_id(NEW.geometry),
