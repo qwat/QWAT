@@ -30,6 +30,8 @@ psql -h 172.24.171.$ip -U sige -f pressurezone.sql
 read -p "Press any key to continue..."
 psql -h 172.24.171.$ip -U sige -f district.sql
 read -p "Press any key to continue..."
+psql -h 172.24.171.$ip -U sige -f district_fcn.sql
+read -p "Press any key to continue..."
 psql -h 172.24.171.$ip -U sige -f distributor.sql
 read -p "Press any key to continue..."
 psql -h 172.24.171.$ip -U sige -f printmaps.sql
