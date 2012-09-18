@@ -2,11 +2,16 @@
 # to have ogr2ogr working with postgis 2.0
 # psql -f /usr/share/postgresql/9.1/contrib/postgis-2.0/legacy.sql
 
-export outputpath=/home/denis/Documents/qgis/qgis-project/sige_distribution.sqlite
-rm $outputpath
+export db_address=172.24.171.202
+export shapeoutput=/home/denis/Documents/cartoriviera/out
+export sqliteoutput=/home/denis/Documents/qgis/qgis-project/sige_distribution.sqlite
+
+export PGCLIENTENCODING=LATIN1;
+
+rm $sqliteoutput
 
 # PIPES
-ogr2ogr -sql "SELECT                                           \
+ogr2ogr -sql "SELECT                                                \
 		id				  ,                                         \
 		year              ,                                         \
 		tunnel_or_bridge  ,                                         \
@@ -26,21 +31,21 @@ ogr2ogr -sql "SELECT                                           \
 		_material_longname,                                         \
 		_material_diameter,                                         \
 		_material_diameter_internal,                                \
-		_distributor,                                                     \
+		_distributor,                                               \
 		_precision,                                                 \
 		_protection,                                                \
 		_status_name,                                               \
 		_status_active,                                             \
-		_pressurezone,                                             \
+		_pressurezone,                                              \
 		_schema_view                                                \
  FROM distribution.pipe_view WHERE id_distributor = 1" \
- -overwrite -a_srs EPSG:21781 -f SQLite $outputpath \
+ -overwrite -a_srs EPSG:21781 -f SQLite $sqliteoutput \
  -nln pipe -nlt LINESTRING -progress -preserve_fid \
- PG:"dbname='sige' host='172.24.171.202' port='5432' user='sige' password='db4wat$'" \
+ PG:"dbname='sige' host=$db_address port='5432' user='sige' password='db4wat$'" \
  -dsco SPATIALITE=yes -lco SPATIAL_INDEX=yes  -gt 65536
 
 # PIPES SCHEMA
-ogr2ogr -sql "SELECT                                            \
+ogr2ogr -sql "SELECT                                                \
 		id				  ,                                         \
 		year              ,                                         \
 		tunnel_or_bridge  ,                                         \
@@ -60,23 +65,23 @@ ogr2ogr -sql "SELECT                                            \
 		_material_longname,                                         \
 		_material_diameter,                                         \
 		_material_diameter_internal,                                \
-		_distributor,                                                     \
+		_distributor,                                               \
 		_precision,                                                 \
 		_protection,                                                \
 		_status_name,                                               \
 		_status_active,                                             \
-		_pressurezone                                              \
+		_pressurezone                                               \
  FROM distribution.pipe_schema WHERE id_distributor = 1" \
- -overwrite -a_srs EPSG:21781 -f SQLite $outputpath \
+ -overwrite -a_srs EPSG:21781 -f SQLite $sqliteoutput \
  -nln pipe_schema -nlt LINESTRING -progress -preserve_fid \
- PG:"dbname='sige' host='172.24.171.202' port='5432' user='sige' password='db4wat$'" \
+ PG:"dbname='sige' host=$db_address port='5432' user='sige' password='db4wat$'" \
  -dsco SPATIALITE=yes -lco SPATIAL_INDEX=yes  -gt 65536
 
 # NODES
 ogr2ogr -sql "SELECT * FROM distribution.node WHERE _status_active IS TRUE" \
- -overwrite -a_srs EPSG:21781 -f SQLite $outputpath \
+ -overwrite -a_srs EPSG:21781 -f SQLite $sqliteoutput \
  -nln node -nlt POINT -progress -preserve_fid \
- PG:"dbname='sige' host='172.24.171.202' port='5432' user='sige' password='db4wat$'" \
+ PG:"dbname='sige' host=$db_address port='5432' user='sige' password='db4wat$'" \
  -dsco SPATIALITE=yes -lco SPATIAL_INDEX=yes  -gt 65536
  
  # VALVES
@@ -99,9 +104,9 @@ ogr2ogr -sql "SELECT                   \
 	_schema_view,                               \
 	_label                                      \
  FROM distribution.valve_view" \
- -overwrite -a_srs EPSG:21781 -f SQLite $outputpath \
+ -overwrite -a_srs EPSG:21781 -f SQLite $sqliteoutput \
  -nln valve -nlt POINT -progress -preserve_fid \
- PG:"dbname='sige' host='172.24.171.202' port='5432' user='sige' password='db4wat$'" \
+ PG:"dbname='sige' host=$db_address port='5432' user='sige' password='db4wat$'" \
  -dsco SPATIALITE=yes -lco SPATIAL_INDEX=yes  -gt 65536
 
  # VALVES SCHEMA
@@ -123,52 +128,52 @@ ogr2ogr -sql "SELECT                   \
 	_type,                                      \
 	_label                                      \
 FROM distribution.valve_schema" \
- -overwrite -a_srs EPSG:21781 -f SQLite $outputpath \
+ -overwrite -a_srs EPSG:21781 -f SQLite $sqliteoutput \
  -nln valve_schema -nlt POINT -progress -preserve_fid \
- PG:"dbname='sige' host='172.24.171.202' port='5432' user='sige' password='db4wat$'" \
+ PG:"dbname='sige' host=$db_address port='5432' user='sige' password='db4wat$'" \
  -dsco SPATIALITE=yes -lco SPATIAL_INDEX=yes  -gt 65536
  
 # INSTALLATIONS
 ogr2ogr -sql "SELECT * FROM distribution.installation_view" \
- -overwrite -a_srs EPSG:21781 -f SQLite $outputpath \
+ -overwrite -a_srs EPSG:21781 -f SQLite $sqliteoutput \
  -nln installation -nlt POINT -progress -preserve_fid \
- PG:"dbname='sige' host='172.24.171.202' port='5432' user='sige' password='db4wat$'" \
+ PG:"dbname='sige' host=$db_address port='5432' user='sige' password='db4wat$'" \
  -dsco SPATIALITE=yes -lco SPATIAL_INDEX=yes  -gt 65536
  
  # PRESSURE ZONES
 ogr2ogr -sql "SELECT * FROM distribution.pressurezone" \
- -overwrite -a_srs EPSG:21781 -f SQLite $outputpath \
+ -overwrite -a_srs EPSG:21781 -f SQLite $sqliteoutput \
  -nln pressurezone -nlt POLYGON -progress -preserve_fid \
- PG:"dbname='sige' host='172.24.171.202' port='5432' user='sige' password='db4wat$'" \
+ PG:"dbname='sige' host=$db_address port='5432' user='sige' password='db4wat$'" \
  -dsco SPATIALITE=yes -lco SPATIAL_INDEX=yes  -gt 65536
  
  
   # PRINT MAPS
 ogr2ogr -sql "SELECT * FROM distribution.printmaps" \
- -overwrite -a_srs EPSG:21781 -f SQLite $outputpath \
+ -overwrite -a_srs EPSG:21781 -f SQLite $sqliteoutput \
  -nln printmaps -nlt POLYGON -progress -preserve_fid \
- PG:"dbname='sige' host='172.24.171.202' port='5432' user='sige' password='db4wat$'" \
+ PG:"dbname='sige' host=$db_address port='5432' user='sige' password='db4wat$'" \
  -dsco SPATIALITE=yes -lco SPATIAL_INDEX=yes  -gt 65536
  
  
    # DISTRICT
 ogr2ogr -sql "SELECT * FROM distribution.district" \
- -overwrite -a_srs EPSG:21781 -f SQLite $outputpath \
+ -overwrite -a_srs EPSG:21781 -f SQLite $sqliteoutput \
  -nln district -nlt POLYGON -progress -preserve_fid \
- PG:"dbname='sige' host='172.24.171.202' port='5432' user='sige' password='db4wat$'" \
+ PG:"dbname='sige' host=$db_address port='5432' user='sige' password='db4wat$'" \
  -dsco SPATIALITE=yes -lco SPATIAL_INDEX=yes  -gt 65536
  
     # SUBSCRIBER
 ogr2ogr -sql "SELECT * FROM distribution.subscriber_view" \
- -overwrite -a_srs EPSG:21781 -f SQLite $outputpath \
+ -overwrite -a_srs EPSG:21781 -f SQLite $sqliteoutput \
  -nln subscriber -nlt POINT -progress -preserve_fid \
- PG:"dbname='sige' host='172.24.171.202' port='5432' user='sige' password='db4wat$'" \
+ PG:"dbname='sige' host=$db_address port='5432' user='sige' password='db4wat$'" \
  -dsco SPATIALITE=yes -lco SPATIAL_INDEX=yes  -gt 65536
 
 
     # SAMPLING POINTS
 ogr2ogr -sql "SELECT * FROM distribution.samplingpoint" \
- -overwrite -a_srs EPSG:21781 -f SQLite $outputpath \
+ -overwrite -a_srs EPSG:21781 -f SQLite $sqliteoutput \
  -nln samplingpoint -nlt POINT -progress -preserve_fid \
- PG:"dbname='sige' host='172.24.171.202' port='5432' user='sige' password='db4wat$'" \
+ PG:"dbname='sige' host=$db_address port='5432' user='sige' password='db4wat$'" \
  -dsco SPATIALITE=yes -lco SPATIAL_INDEX=yes  -gt 65536

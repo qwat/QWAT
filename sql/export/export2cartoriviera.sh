@@ -3,14 +3,40 @@
 # to have ogr2ogr working with postgis 2.0
 # psql -f /usr/share/postgresql/9.1/contrib/postgis-2.0/legacy.sql
 
-export outputpath=/home/denis/Documents/cartoriviera/sige_distribution.sqlite
+
+export db_address=172.24.171.202
+export shapeoutput=/home/denis/Documents/out
+export sqliteoutput=/home/denis/Documents/cartoriviera/sige_distribution.sqlite
+export PGCLIENTENCODING=LATIN1;
 
 
-rm $outputpath
+echo "Format?"
+echo "1. SQLite (cartoriviera)"
+echo "2. Shape "
+read -p "? " outputformat
+if [ $outputformat = "1" ] 
+then
+	rm $sqliteoutput
+	export geomcol=geometry;
+elif [ $outputformat = "2" ]
+then
+	export geomcol=geometry;
+else
+	exit
+fi
+
+
+# read -p "Generate nodes ID for schema? (y/n) " answ
+# if [ $answ = "y" ] 
+# then
+#   # save schema in a table
+#   psql -h $db_address -U sige -c "DROP TABLE IF EXISTS distribution.pipe_schema_temp; CREATE TABLE distribution.pipe_schema_temp AS SELECT * FROM distribution.pipe_schema_node;"
+#   read -p "Press any key to continue..."
+# fi
 
 
 # PIPES
-ogr2ogr -sql "SELECT                                           \
+export sql="SELECT                                                      \
 		id				  ,                                         \
 		year              ,                                         \
 		tunnel_or_bridge  ,                                         \
@@ -22,7 +48,7 @@ ogr2ogr -sql "SELECT                                           \
 		_length3d_uptodate,                                         \
 		_is_on_map        ,                                         \
 		_is_on_district   ,                                         \
-		geometry::geometry(LineString,21781),                       \
+		geometry::$geomcol(LineString,21781),                       \
 		sqrt(pow(_length3d,2)-pow(_length2d,2))/_length2d AS _slope,\
 		_function_name,                                             \
 		_install_method,                                            \
@@ -30,21 +56,32 @@ ogr2ogr -sql "SELECT                                           \
 		_material_longname,                                         \
 		_material_diameter,                                         \
 		_material_diameter_internal,                                \
-		_distributor,                                                     \
+		_distributor,                                               \
 		_precision,                                                 \
 		_protection,                                                \
 		_status_name,                                               \
 		_status_active,                                             \
 		_pressurezone,                                              \
 		_schema_view                                                \
- FROM distribution.pipe_view WHERE id_distributor = 1" \
- -overwrite -a_srs EPSG:21781 -f SQLite $outputpath \
- -nln pipe -nlt LINESTRING -progress -preserve_fid \
- PG:"dbname='sige' host='172.24.171.202' port='5432' user='sige' password='db4wat$'" \
- -dsco SPATIALITE=no -lco "SPATIAL_INDEX=no FORMAT=SPATIALITE" -gt 65536
+ FROM distribution.pipe_view WHERE id_distributor = 1" 
+ 
+if [ $outputformat = "1" ] 
+then
+  ogr2ogr -sql "$sql" \
+  -overwrite -a_srs EPSG:21781 -f SQLite $sqliteoutput \
+  -nln pipe -nlt LINESTRING -progress -preserve_fid \
+  PG:"dbname='sige' host=$db_address port='5432' user='sige' password='db4wat$'" \
+  -dsco SPATIALITE=no -lco "SPATIAL_INDEX=no FORMAT=SPATIALITE" -gt 65536
+elif [ $outputformat = "2" ]
+then
+  pgsql2shp -h $db_address -g geom -f $shapeoutput/zones -P db4wat$ -u sige sige
+fi
+
+ 
+
 
 # PIPES SCHEMA
-ogr2ogr -sql "SELECT                                            \
+export sql="SELECT                                                \
 		id				  ,                                         \
 		year              ,                                         \
 		tunnel_or_bridge  ,                                         \
@@ -56,7 +93,7 @@ ogr2ogr -sql "SELECT                                            \
 		_length3d_uptodate,                                         \
 		_is_on_map        ,                                         \
 		_is_on_district   ,                                         \
-		geometry::geometry(LineString,21781),                       \
+		geometry::$geomcol(LineString,21781),                       \
 		sqrt(pow(_length3d,2)-pow(_length2d,2))/_length2d AS _slope,\
 		_function_name,                                             \
 		_install_method,                                            \
@@ -64,27 +101,43 @@ ogr2ogr -sql "SELECT                                            \
 		_material_longname,                                         \
 		_material_diameter,                                         \
 		_material_diameter_internal,                                \
-		_distributor,                                                     \
+		_distributor,                                               \
 		_precision,                                                 \
 		_protection,                                                \
 		_status_name,                                               \
 		_status_active,                                             \
-		_pressurezone                                              \
+		_pressurezone                                               \
  FROM distribution.pipe_schema WHERE id_distributor = 1" \
- -overwrite -a_srs EPSG:21781 -f SQLite $outputpath \
- -nln pipe_schema -nlt LINESTRING -progress -preserve_fid \
- PG:"dbname='sige' host='172.24.171.202' port='5432' user='sige' password='db4wat$'" \
- -dsco SPATIALITE=no -lco "SPATIAL_INDEX=no FORMAT=SPATIALITE" -gt 65536
+if [ $outputformat = "1" ] 
+then
+  ogr2ogr -sql "$sql" \
+  -overwrite -a_srs EPSG:21781 -f SQLite $sqliteoutput \
+  -nln pipe_schema -nlt LINESTRING -progress -preserve_fid \
+  PG:"dbname='sige' host=$db_address port='5432' user='sige' password='db4wat$'" \
+  -dsco SPATIALITE=no -lco "SPATIAL_INDEX=no FORMAT=SPATIALITE" -gt 65536
+elif [ $outputformat = "2" ]
+then
+  pgsql2shp -h $db_address -g geom -f $shapeoutput/zones -P db4wat$ -u sige sige
+fi
+
+ 
 
 # NODES
-ogr2ogr -sql "SELECT * FROM distribution.node WHERE _status_active IS TRUE AND _type != 'one' " \
- -overwrite -a_srs EPSG:21781 -f SQLite $outputpath \
- -nln node -nlt POINT -progress -preserve_fid \
- PG:"dbname='sige' host='172.24.171.202' port='5432' user='sige' password='db4wat$'" \
- -dsco SPATIALITE=no -lco "SPATIAL_INDEX=no FORMAT=SPATIALITE" -gt 65536
+export sql="SELECT * FROM distribution.node WHERE _status_active IS TRUE AND _type != 'one' " 
+if [ $outputformat = "1" ] 
+then
+  ogr2ogr -sql "$sql" \
+  -overwrite -a_srs EPSG:21781 -f SQLite $sqliteoutput \
+  -nln node -nlt POINT -progress -preserve_fid \
+  PG:"dbname='sige' host=$db_address port='5432' user='sige' password='db4wat$'" \
+  -dsco SPATIALITE=no -lco "SPATIAL_INDEX=no FORMAT=SPATIALITE" -gt 65536
+elif [ $outputformat = "2" ]
+then
+  pgsql2shp -h $db_address -g geom -f $shapeoutput/zones -P db4wat$ -u sige sige
+fi
  
- # VALVES
-ogr2ogr -sql "SELECT                   \
+# VALVES
+export sql="SELECT                              \
 	id ,                                        \
 	sige,                                       \
 	id_pipe,                                    \
@@ -92,23 +145,31 @@ ogr2ogr -sql "SELECT                   \
 	diameter_nominal,                           \
 	year,                                       \
 	closed,                                     \
-	altitude_dtm,                               \
+	_altitude_dtm,                              \
 	altitude_real,                              \
 	remarks,                                    \
 	_is_on_map,                                 \
-	_district,                            \
-	geometry::geometry(Point,21781),            \
+	_district,                                  \
+	geometry::$geomcol(Point,21781),            \
 	_function,                                  \
 	_type,                                      \
 	_label                                      \
- FROM distribution.valve_view" \
- -overwrite -a_srs EPSG:21781 -f SQLite $outputpath \
- -nln valve -nlt POINT -progress -preserve_fid \
- PG:"dbname='sige' host='172.24.171.202' port='5432' user='sige' password='db4wat$'" \
- -dsco SPATIALITE=no -lco "SPATIAL_INDEX=no FORMAT=SPATIALITE" -gt 65536
+ FROM distribution.valve_view" 
+if [ $outputformat = "1" ] 
+then
+  ogr2ogr -sql "$sql" \
+  -overwrite -a_srs EPSG:21781 -f SQLite $sqliteoutput \
+  -nln valve -nlt POINT -progress -preserve_fid \
+  PG:"dbname='sige' host=$db_address port='5432' user='sige' password='db4wat$'" \
+  -dsco SPATIALITE=no -lco "SPATIAL_INDEX=no FORMAT=SPATIALITE" -gt 65536
+elif [ $outputformat = "2" ]
+then
+  pgsql2shp -h $db_address -g geom -f $shapeoutput/zones -P db4wat$ -u sige sige
+fi
+
 
  # VALVES SCHEMA
-ogr2ogr -sql "SELECT                   \
+export sql="SELECT                            \
 	id ,                                        \
 	sige,                                       \
 	id_pipe,                                    \
@@ -116,52 +177,71 @@ ogr2ogr -sql "SELECT                   \
 	diameter_nominal,                           \
 	year,                                       \
 	closed,                                     \
-	altitude_dtm,                               \
+	_altitude_dtm,                              \
 	altitude_real,                              \
 	remarks,                                    \
 	_is_on_map,                                 \
-	_district,                            \
-	geometry::geometry(Point,21781),\
+	_district,                                  \
+	geometry::$geomcol(Point,21781),            \
 	_function,                                  \
 	_type,                                      \
 	_label                                      \
-FROM distribution.valve_schema" \
- -overwrite -a_srs EPSG:21781 -f SQLite $outputpath \
- -nln valve_schema -nlt POINT -progress -preserve_fid \
- PG:"dbname='sige' host='172.24.171.202' port='5432' user='sige' password='db4wat$'" \
- -dsco SPATIALITE=no -lco "SPATIAL_INDEX=no FORMAT=SPATIALITE" -gt 65536
+FROM distribution.valve_schema" 
+if [ $outputformat = "1" ] 
+then
+  ogr2ogr -sql "$sql" \
+  -overwrite -a_srs EPSG:21781 -f SQLite $sqliteoutput \
+  -nln valve_schema -nlt POINT -progress -preserve_fid \
+  PG:"dbname='sige' host=$db_address port='5432' user='sige' password='db4wat$'" \
+  -dsco SPATIALITE=no -lco "SPATIAL_INDEX=no FORMAT=SPATIALITE" -gt 65536
+elif [ $outputformat = "2" ]
+then
+  pgsql2shp -h $db_address -g geom -f $shapeoutput/zones -P db4wat$ -u sige sige
+fi
+
+
  
 # INSTALLATIONS
-ogr2ogr -sql "SELECT * FROM distribution.installation_view WHERE _status_active IS TRUE" \
- -overwrite -a_srs EPSG:21781 -f SQLite $outputpath \
- -nln installation -nlt POINT -progress -preserve_fid \
- PG:"dbname='sige' host='172.24.171.202' port='5432' user='sige' password='db4wat$'" \
- -dsco SPATIALITE=no -lco "SPATIAL_INDEX=no FORMAT=SPATIALITE" -gt 65536
+export sql="SELECT * FROM distribution.installation_view WHERE _status_active IS TRUE" 
+if [ $outputformat = "1" ] 
+then
+  ogr2ogr -sql "$sql" \
+  -overwrite -a_srs EPSG:21781 -f SQLite $sqliteoutput \
+  -nln installation -nlt POINT -progress -preserve_fid \
+  PG:"dbname='sige' host=$db_address port='5432' user='sige' password='db4wat$'" \
+  -dsco SPATIALITE=no -lco "SPATIAL_INDEX=no FORMAT=SPATIALITE" -gt 65536
+elif [ $outputformat = "2" ]
+then
+  pgsql2shp -h $db_address -g geom -f $shapeoutput/zones -P db4wat$ -u sige sige
+fi
+
  
  # PRESSURE ZONES
-ogr2ogr -sql "SELECT * FROM distribution.pressurezone" \
- -overwrite -a_srs EPSG:21781 -f SQLite $outputpath \
- -nln pressurezone -nlt POLYGON -progress -preserve_fid \
- PG:"dbname='sige' host='172.24.171.202' port='5432' user='sige' password='db4wat$'" \
- -dsco SPATIALITE=no -lco "SPATIAL_INDEX=no FORMAT=SPATIALITE" -gt 65536
-
- # SUBSCRIBER
-ogr2ogr -sql "SELECT * FROM distribution.subscriber_view" \
- -overwrite -a_srs EPSG:21781 -f SQLite $outputpath \
- -nln subscriber -nlt POINT -progress -preserve_fid \
- PG:"dbname='sige' host='172.24.171.202' port='5432' user='sige' password='db4wat$'" \
- -dsco SPATIALITE=no -lco "SPATIAL_INDEX=no FORMAT=SPATIALITE" -gt 65536
-
-# FTP TRANSFER 
-read -p "FTP transfer? (y/n) " answ
-if [ $answ = "y" ] 
+export sql="SELECT * FROM distribution.pressurezone" 
+if [ $outputformat = "1" ] 
 then
-	ftp -n -v ftp.vevey.ch <<-EOF
-	user carto_sige ca61sie 
-	prompt
-	binary
-	cd Distribution
-	put $outputpath sige_distribution.sqlite
-	bye
-	EOF
+  ogr2ogr -sql "$sql" \
+  -overwrite -a_srs EPSG:21781 -f SQLite $sqliteoutput \
+  -nln pressurezone -nlt POLYGON -progress -preserve_fid \
+  PG:"dbname='sige' host=$db_address port='5432' user='sige' password='db4wat$'" \
+  -dsco SPATIALITE=no -lco "SPATIAL_INDEX=no FORMAT=SPATIALITE" -gt 65536
+elif [ $outputformat = "2" ]
+then
+  pgsql2shp -h $db_address -g geom -f $shapeoutput/zones -P db4wat$ -u sige sige
 fi
+ 
+ # SUBSCRIBER
+export sql="SELECT * FROM distribution.subscriber_view" 
+if [ $outputformat = "1" ] 
+then
+  ogr2ogr -sql "$sql" \
+  -overwrite -a_srs EPSG:21781 -f SQLite $sqliteoutput \
+  -nln subscriber -nlt POINT -progress -preserve_fid \
+  PG:"dbname='sige' host=$db_address port='5432' user='sige' password='db4wat$'" \
+  -dsco SPATIALITE=no -lco "SPATIAL_INDEX=no FORMAT=SPATIALITE" -gt 65536
+elif [ $outputformat = "2" ]
+then
+  pgsql2shp -h $db_address -g geom -f $shapeoutput/zones -P db4wat$ -u sige sige
+fi
+
+
