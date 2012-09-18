@@ -9,19 +9,22 @@ raster2pgsql mnt.asc altitude.dtm > load_dtm.sql
 psql -f load_dtm.sql
 */
 
-CREATE OR REPLACE FUNCTION altitude.getRasterId(geometry) RETURNS integer AS '
+CREATE OR REPLACE FUNCTION altitude.getRasterId(geometry) RETURNS integer AS
+$BODY$
 	DECLARE
 		geom ALIAS FOR $1;
 		rasterid integer;
 	BEGIN
 		SELECT rid FROM altitude.dtm WHERE ST_Intersects(ST_SetSRID(rast,21781),1,geom) LIMIT 1 INTO rasterid;
 		RETURN rasterid;
-	END
-' LANGUAGE 'plpgsql';
+	END:
+$BODY$
+LANGUAGE 'plpgsql';
 COMMENT ON FUNCTION altitude.getRasterId(geometry) IS 'Returns the first raster ID that match geometry location.';
 
 
-CREATE OR REPLACE FUNCTION altitude.altitude(geometry) RETURNS double precision AS '
+CREATE OR REPLACE FUNCTION altitude.altitude(geometry) RETURNS double precision AS
+$BODY$
 	DECLARE
 		point ALIAS FOR $1;
 		altitude double precision;
@@ -30,12 +33,14 @@ CREATE OR REPLACE FUNCTION altitude.altitude(geometry) RETURNS double precision 
 		SELECT altitude.getRasterId(point) INTO rasterid;
 		SELECT ST_Value(rast,point) FROM altitude.dtm WHERE rid = rasterid INTO altitude;
 		RETURN altitude;
-	END
-' LANGUAGE 'plpgsql';
+	END;
+$BODY$
+LANGUAGE 'plpgsql';
 COMMENT ON FUNCTION altitude.altitude(geometry) IS 'Return altitude for a point.';
 
 
-CREATE OR REPLACE FUNCTION altitude.length3d(geometry) RETURNS double precision AS '
+CREATE OR REPLACE FUNCTION altitude.length3d(geometry) RETURNS double precision AS
+$BODY$
 	DECLARE
 		geom ALIAS FOR $1;
 		point geometry;
@@ -70,6 +75,7 @@ CREATE OR REPLACE FUNCTION altitude.length3d(geometry) RETURNS double precision 
 		/* Calculates 3d length */
 		SELECT ST_3DLength(geom) INTO length;
 		RETURN length;
-	END
-' LANGUAGE 'plpgsql';
+	END;
+$BODY$
+LANGUAGE 'plpgsql';
 COMMENT ON FUNCTION altitude.length3d(geometry) IS 'Returns the real (3D) length of a linestring using the dtm (raster) stored in altitude.dtm. To create the DTM use raster2pgsql DTM altitude.dtm > load_dtm.sql and load the resulting file.';
