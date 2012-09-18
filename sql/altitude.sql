@@ -42,13 +42,13 @@ COMMENT ON FUNCTION altitude.altitude(geometry) IS 'Return altitude for a point.
 CREATE OR REPLACE FUNCTION altitude.length3d(geometry) RETURNS double precision AS
 $BODY$
 	DECLARE
-		geom ALIAS FOR $1;
-		point geometry;
-		altitude double precision;
-		length double precision;
-		i RECORD;
+		geom      ALIAS FOR $1;
+		point     geometry;
+		altitude  double precision;
+		length    double precision;
+		i         RECORD;
 		interpolateDistance integer := 4;
-		rasterid integer;
+		rasterid  integer;
 		intersect boolean;
 	BEGIN
 		/* Interpolate along the line */
