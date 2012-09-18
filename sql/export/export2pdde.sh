@@ -1,6 +1,8 @@
 export db_address=172.24.171.202
 export shapeoutput=/home/denis/Documents/PPDE/out
 
+export PGCLIENTENCODING=LATIN1;
+
 
 # vannes: prendre fermée + vanne régulation/secour (fct) 
 
@@ -72,6 +74,7 @@ FROM distribution.pipe_schema_temp WHERE id_distributor = 1 "
 read -p "Press any key to continue..."
 
 # ouvrages
+# TODO proprio etrangers
 pgsql2shp -h $db_address -g geom -f $shapeoutput/ouvrages -P db4wat$ -u sige sige "\
 SELECT                                      \
  id      AS ID,                             \
@@ -113,11 +116,12 @@ WHERE _schema_view IS TRUE                                       \
  "
 read -p "Press any key to continue..."
     
-# hydrantes
+# hydrante
+# TODO: bouche arrosage, 8 Noville, retirer etrangers
 pgsql2shp -h $db_address -g geom -f $shapeoutput/hydrantes -P db4wat$ -u sige sige "\
 SELECT                                    \
  id             AS ID,                    \
- sige           AS ID_SIGE,               \
+ _district_shortname || '_' || sige AS ID_SIGE,\
  id_node        AS NOEUD,                 \
  year           AS ANNEE,                 \
  model          AS MODELE,                \
