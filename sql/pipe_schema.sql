@@ -117,7 +117,6 @@ CREATE VIEW distribution.pipe_schema AS
 			pipe_view.remarks                    , 
 			pipe_view._is_on_map                 ,
 			pipe_view._is_on_district            ,
-			pipe_view._slope                     ,
 			pipe_view._function_name             , 
 			pipe_view._install_method            ,
 			pipe_view._material_name             ,
@@ -151,13 +150,26 @@ Add node id
 */
 DROP VIEW IF EXISTS distribution.pipe_schema_node ;
 CREATE VIEW distribution.pipe_schema_node AS
-	SELECT	
-		*,
-		distribution.node_get_id(ST_StartPoint(geometry),true) AS id_node_a,
-		distribution.node_get_id(ST_EndPoint(  geometry),true) AS id_node_b
-	FROM distribution.pipe_schema ; 
+	SELECT 
+		foo.*,
+		CASE
+			WHEN tunnel_or_bridge IS TRUE THEN NULL
+			ELSE abs(node_a.altitude_dtm-node_b.altitude_dtm)
+		END AS _diff_elevation,
+		CASE
+			WHEN tunnel_or_bridge IS TRUE THEN NULL
+			ELSE abs(node_a.altitude_dtm-node_b.altitude_dtm)/_length3d
+		END AS _slope
+	FROM
+		( SELECT	
+			pipe_schema.*,
+			distribution.node_get_id(ST_StartPoint(geometry),true) AS id_node_a,
+			distribution.node_get_id(ST_EndPoint(  geometry),true) AS id_node_b	
+			FROM distribution.pipe_schema 
+		) AS foo
+		LEFT OUTER JOIN distribution.node AS node_a ON id_node_a = node_a.id
+		LEFT OUTER JOIN distribution.node AS node_b ON id_node_b = node_b.id; 
 COMMENT ON VIEW distribution.pipe_schema_node IS 'Final view for schema completed with node.';
-
 
 /*
 Report schema errors

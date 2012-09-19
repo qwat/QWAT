@@ -91,4 +91,24 @@ CREATE TRIGGER pipe_geom_trigger_update
 	EXECUTE PROCEDURE distribution.pipe_geom();
 COMMENT ON TRIGGER pipe_geom_trigger_update ON distribution.pipe IS 'Trigger: updates auto fields of the pipe after geometry update.';
 
+/*----------------!!!---!!!----------------*/
+/* Trigger for tunnel_or_bridge */
+CREATE OR REPLACE FUNCTION distribution.pipe_tunnelbridge() RETURNS trigger AS ' 
+	BEGIN
+		UPDATE distribution.pipe SET _length3d = _length2d WHERE id = NEW.id AND NEW.tunnel_or_bridge IS TRUE;
+		UPDATE distribution.pipe SET _length3d = NULL      WHERE id = NEW.id AND NEW.tunnel_or_bridge IS FALSE;
+		RETURN NEW;
+	END;
+' LANGUAGE 'plpgsql';
+
+CREATE TRIGGER pipe_tunnelbridge_trigger
+	AFTER UPDATE OF tunnel_or_bridge ON distribution.pipe
+	FOR EACH ROW
+	EXECUTE PROCEDURE distribution.pipe_tunnelbridge();
+COMMENT ON TRIGGER pipe_tunnelbridge_trigger ON distribution.pipe IS 'For tunnel and bridges, 3d length is the 2d length (i.e. pipes are considered as horinzontal).';
+
+
+
+
+
 COMMIT;

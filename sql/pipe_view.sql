@@ -28,6 +28,7 @@ CREATE VIEW distribution.pipe_view AS
 		pipe.folder            ,
 		pipe.remarks           , 
 		pipe._length2d         ,
+		pipe._length3d         ,
 		pipe._is_on_map        ,
 		pipe._is_on_district   ,
 		pipe.geometry::geometry(LineString,21781),
@@ -51,17 +52,12 @@ CREATE VIEW distribution.pipe_view AS
 			ELSE pipe.schema_force_view
 		END AS _schema_view,
 		CASE
-			WHEN tunnel_or_bridge IS TRUE THEN NULL
-			ELSE pipe._length3d
-		END AS _length3d,
-		CASE
-			WHEN tunnel_or_bridge IS TRUE THEN NULL
+			WHEN tunnel_or_bridge IS TRUE THEN 0
 			ELSE abs(node_a.altitude_dtm-node_b.altitude_dtm)
 		END AS _diff_elevation,
 		CASE
 			WHEN tunnel_or_bridge IS TRUE THEN NULL
-			WHEN _length3d IS NOT NULL THEN abs(node_a.altitude_dtm-node_b.altitude_dtm)/_length3d
-			ELSE                            abs(node_a.altitude_dtm-node_b.altitude_dtm)/_length2d
+			ELSE abs(node_a.altitude_dtm-node_b.altitude_dtm)/_length3d
 		END AS _slope,
 		distribution.pipe_count_valve(pipe.id) AS _valve_count,
 		distribution.pipe_isClosed(pipe.id)    AS _valve_closed
