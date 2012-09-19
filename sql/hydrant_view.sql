@@ -31,6 +31,7 @@ CREATE VIEW distribution.hydrant_view AS
 		hydrant_provider.name      AS _provider,
 		node.altitude_dtm          AS _altitude_dtm,
 		district.name              AS _district,
+		district.shortname         AS _district_shortname,
 		pressurezone.name          AS _pressurezone,
 		pressurezone.shortname     AS _pressurezone_shortname,
 		pressurezone.consummerzone AS _consummerzone,
