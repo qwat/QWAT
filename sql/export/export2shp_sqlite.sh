@@ -16,13 +16,13 @@ echo "2. Shape "
 read -p "? " outputformat
 if [ $outputformat = "1" ] 
 then
-	rm $sqliteoutput
-	export geomcol=geometry;
+    rm $sqliteoutput
+    export geomcol=geometry;
 elif [ $outputformat = "2" ]
 then
-	export geomcol=geometry;
+    export geomcol=geometry;
 else
-	exit
+    exit
 fi
 
 
@@ -34,37 +34,36 @@ fi
 #   read -p "Press any key to continue..."
 # fi
 
-
-# PIPES
-export sql="SELECT                                                      \
-		id				  ,                                         \
-		year              ,                                         \
-		tunnel_or_bridge  ,                                         \
-		pressure_nominale ,                                         \
-		folder            ,                                         \
-		remarks           ,                                         \
-		_length2d         ,                                         \
-		_length3d         ,                                         \
-		_length3d_uptodate,                                         \
-		_is_on_map        ,                                         \
-		_is_on_district   ,                                         \
-		geometry::$geomcol(LineString,21781),                       \
-		sqrt(pow(_length3d,2)-pow(_length2d,2))/_length2d AS _slope,\
-		_function_name,                                             \
-		_install_method,                                            \
-		_material_name,                                             \
-		_material_longname,                                         \
-		_material_diameter,                                         \
-		_material_diameter_internal,                                \
-		_distributor,                                               \
-		_precision,                                                 \
-		_protection,                                                \
-		_status_name,                                               \
-		_status_active,                                             \
-		_pressurezone,                                              \
-		_schema_view                                                \
- FROM distribution.pipe_view WHERE id_distributor = 1" 
- 
+########################################################################
+# PIPES VIEW
+export sql="SELECT ";
+export sql=$sql"id                                  "; if [ $outputformat = "2" ]; then export sql=$sql" AS id        ,";else export sql=$sql",";fi
+export sql=$sql"year                                "; if [ $outputformat = "2" ]; then export sql=$sql" AS annee     ,";else export sql=$sql",";fi
+export sql=$sql"tunnel_or_bridge                    "; if [ $outputformat = "2" ]; then export sql=$sql" AS tunnel_pon,";else export sql=$sql",";fi
+export sql=$sql"pressure_nominale                   "; if [ $outputformat = "2" ]; then export sql=$sql" AS pres_nomin,";else export sql=$sql",";fi
+export sql=$sql"folder                              "; if [ $outputformat = "2" ]; then export sql=$sql" AS dossier   ,";else export sql=$sql",";fi
+export sql=$sql"remarks                             "; if [ $outputformat = "2" ]; then export sql=$sql" AS remarques ,";else export sql=$sql",";fi
+export sql=$sql"_length2d                           "; if [ $outputformat = "2" ]; then export sql=$sql" AS long_2d   ,";else export sql=$sql",";fi
+export sql=$sql"_length3d                           "; if [ $outputformat = "2" ]; then export sql=$sql" AS long_3d   ,";else export sql=$sql",";fi
+export sql=$sql"_diff_elevation                     "; if [ $outputformat = "2" ]; then export sql=$sql" AS dz        ,";else export sql=$sql",";fi
+export sql=$sql"_slope                              "; if [ $outputformat = "2" ]; then export sql=$sql" AS pente     ,";else export sql=$sql",";fi
+export sql=$sql"_is_on_map                          "; if [ $outputformat = "2" ]; then export sql=$sql" AS folio     ,";else export sql=$sql",";fi
+export sql=$sql"_is_on_district                     "; if [ $outputformat = "2" ]; then export sql=$sql" AS commune   ,";else export sql=$sql",";fi
+export sql=$sql"geometry::geometry(LineString,21781)"; if [ $outputformat = "2" ]; then export sql=$sql" AS geometry  ,";else export sql=$sql",";fi
+export sql=$sql"_function_name                      "; if [ $outputformat = "2" ]; then export sql=$sql" AS fonction  ,";else export sql=$sql",";fi
+export sql=$sql"_install_method                     "; if [ $outputformat = "2" ]; then export sql=$sql" AS mode_pose ,";else export sql=$sql",";fi
+export sql=$sql"_material_name                      "; if [ $outputformat = "2" ]; then export sql=$sql" AS mat_court ,";else export sql=$sql",";fi
+export sql=$sql"_material_longname                  "; if [ $outputformat = "2" ]; then export sql=$sql" AS mat_long  ,";else export sql=$sql",";fi
+export sql=$sql"_material_diameter                  "; if [ $outputformat = "2" ]; then export sql=$sql" AS mat_diam  ,";else export sql=$sql",";fi
+export sql=$sql"_material_diameter_internal         "; if [ $outputformat = "2" ]; then export sql=$sql" AS mat_diam_i,";else export sql=$sql",";fi
+export sql=$sql"_distributor                        "; if [ $outputformat = "2" ]; then export sql=$sql" AS distribut ,";else export sql=$sql",";fi
+export sql=$sql"_precision                          "; if [ $outputformat = "2" ]; then export sql=$sql" AS precision ,";else export sql=$sql",";fi
+export sql=$sql"_protection                         "; if [ $outputformat = "2" ]; then export sql=$sql" AS protection,";else export sql=$sql",";fi
+export sql=$sql"_status_name                        "; if [ $outputformat = "2" ]; then export sql=$sql" AS etat      ,";else export sql=$sql",";fi
+export sql=$sql"_status_active                      "; if [ $outputformat = "2" ]; then export sql=$sql" AS etat_actif,";else export sql=$sql",";fi
+export sql=$sql"_pressurezone                       "; if [ $outputformat = "2" ]; then export sql=$sql" AS zone_press,";else export sql=$sql",";fi
+export sql=$sql"_schema_view                        "; if [ $outputformat = "2" ]; then export sql=$sql" AS schema_vis";else export sql=$sql",";fi
+export sql=$sql" FROM distribution.pipe_view WHERE id_distributor = 1";
 if [ $outputformat = "1" ] 
 then
   ogr2ogr -sql "$sql" \
@@ -74,37 +73,38 @@ then
   -dsco SPATIALITE=no -lco "SPATIAL_INDEX=no FORMAT=SPATIALITE" -gt 65536
 elif [ $outputformat = "2" ]
 then
-  /usr/lib/postgresql/9.1/bin/pgsql2shp -h $db_address -g $geomcol -f $shapeoutput/zones -P db4wat$ -u sige sige "$sql"
+  /usr/lib/postgresql/9.1/bin/pgsql2shp -S -h $db_address -g $geomcol -f $shapeoutput/pipes -P db4wat$ -u sige sige "$sql"
 fi
 
+########################################################################
 # PIPES SCHEMA
-export sql="SELECT                                                \
-		id				  ,                                         \
-		year              ,                                         \
-		tunnel_or_bridge  ,                                         \
-		pressure_nominale ,                                         \
-		folder            ,                                         \
-		remarks           ,                                         \
-		_length2d         ,                                         \
-		_length3d         ,                                         \
-		_length3d_uptodate,                                         \
-		_is_on_map        ,                                         \
-		_is_on_district   ,                                         \
-		geometry::$geomcol(LineString,21781),                       \
-		sqrt(pow(_length3d,2)-pow(_length2d,2))/_length2d AS _slope,\
-		_function_name,                                             \
-		_install_method,                                            \
-		_material_name,                                             \
-		_material_longname,                                         \
-		_material_diameter,                                         \
-		_material_diameter_internal,                                \
-		_distributor,                                               \
-		_precision,                                                 \
-		_protection,                                                \
-		_status_name,                                               \
-		_status_active,                                             \
-		_pressurezone                                               \
- FROM distribution.pipe_schema WHERE id_distributor = 1" \
+export sql="SELECT ";
+export sql=$sql"id                                  "; if [ $outputformat = "2" ]; then export sql=$sql" AS id        ,";else export sql=$sql",";fi
+export sql=$sql"year                                "; if [ $outputformat = "2" ]; then export sql=$sql" AS annee     ,";else export sql=$sql",";fi
+export sql=$sql"tunnel_or_bridge                    "; if [ $outputformat = "2" ]; then export sql=$sql" AS tunnel_pon,";else export sql=$sql",";fi
+export sql=$sql"pressure_nominale                   "; if [ $outputformat = "2" ]; then export sql=$sql" AS pres_nomin,";else export sql=$sql",";fi
+export sql=$sql"folder                              "; if [ $outputformat = "2" ]; then export sql=$sql" AS dossier   ,";else export sql=$sql",";fi
+export sql=$sql"remarks                             "; if [ $outputformat = "2" ]; then export sql=$sql" AS remarques ,";else export sql=$sql",";fi
+export sql=$sql"_length2d                           "; if [ $outputformat = "2" ]; then export sql=$sql" AS long_2d   ,";else export sql=$sql",";fi
+export sql=$sql"_length3d                           "; if [ $outputformat = "2" ]; then export sql=$sql" AS long_3d   ,";else export sql=$sql",";fi
+export sql=$sql"_diff_elevation                     "; if [ $outputformat = "2" ]; then export sql=$sql" AS dz        ,";else export sql=$sql",";fi
+export sql=$sql"_slope                              "; if [ $outputformat = "2" ]; then export sql=$sql" AS pente     ,";else export sql=$sql",";fi
+export sql=$sql"_is_on_map                          "; if [ $outputformat = "2" ]; then export sql=$sql" AS folio     ,";else export sql=$sql",";fi
+export sql=$sql"_is_on_district                     "; if [ $outputformat = "2" ]; then export sql=$sql" AS commune   ,";else export sql=$sql",";fi
+export sql=$sql"geometry::geometry(LineString,21781)"; if [ $outputformat = "2" ]; then export sql=$sql" AS geometry  ,";else export sql=$sql",";fi
+export sql=$sql"_function_name                      "; if [ $outputformat = "2" ]; then export sql=$sql" AS           ,";else export sql=$sql",";fi
+export sql=$sql"_install_method                     "; if [ $outputformat = "2" ]; then export sql=$sql" AS fonction  ,";else export sql=$sql",";fi
+export sql=$sql"_material_name                      "; if [ $outputformat = "2" ]; then export sql=$sql" AS mode_pose ,";else export sql=$sql",";fi
+export sql=$sql"_material_longname                  "; if [ $outputformat = "2" ]; then export sql=$sql" AS mat_court ,";else export sql=$sql",";fi
+export sql=$sql"_material_diameter                  "; if [ $outputformat = "2" ]; then export sql=$sql" AS mat_long  ,";else export sql=$sql",";fi
+export sql=$sql"_material_diameter_internal         "; if [ $outputformat = "2" ]; then export sql=$sql" AS mat_diam  ,";else export sql=$sql",";fi
+export sql=$sql"_distributor                        "; if [ $outputformat = "2" ]; then export sql=$sql" AS mat_diam_i,";else export sql=$sql",";fi
+export sql=$sql"_precision                          "; if [ $outputformat = "2" ]; then export sql=$sql" AS distribu  ,";else export sql=$sql",";fi
+export sql=$sql"_protection                         "; if [ $outputformat = "2" ]; then export sql=$sql" AS precision ,";else export sql=$sql",";fi
+export sql=$sql"_status_name                        "; if [ $outputformat = "2" ]; then export sql=$sql" AS protection,";else export sql=$sql",";fi
+export sql=$sql"_status_active                      "; if [ $outputformat = "2" ]; then export sql=$sql" AS etat      ,";else export sql=$sql",";fi
+export sql=$sql"_pressurezone                       "; if [ $outputformat = "2" ]; then export sql=$sql" AS etat_actif";else export sql=$sql",";fi
+export sql=$sql"FROM distribution.pipe_schema WHERE id_distributor = 1"
 if [ $outputformat = "1" ] 
 then
   ogr2ogr -sql "$sql" \
@@ -114,12 +114,49 @@ then
   -dsco SPATIALITE=no -lco "SPATIAL_INDEX=no FORMAT=SPATIALITE" -gt 65536
 elif [ $outputformat = "2" ]
 then
-  /usr/lib/postgresql/9.1/bin/pgsql2shp -h $db_address -g $geomcol -f $shapeoutput/zones -P db4wat$ -u sige sige "$sql"
+  /usr/lib/postgresql/9.1/bin/pgsql2shp -S -h $db_address -g $geomcol -f $shapeoutput/pipes_schema -P db4wat$ -u sige sige "$sql"
 fi
 
  
-
+########################################################################
 # NODES
+export sql="SELECT ";
+export sql=$sql"id          "; if [ $outputformat = "2" ]; then export sql=$sql" AS id        ,";else export sql=$sql",";fi
+export sql=$sql"altitude_dtm"; if [ $outputformat = "2" ]; then export sql=$sql" AS           ,";else export sql=$sql",";fi
+export sql=$sql"            "; if [ $outputformat = "2" ]; then export sql=$sql" AS           ,";else export sql=$sql",";fi
+export sql=$sql"            "; if [ $outputformat = "2" ]; then export sql=$sql" AS           ,";else export sql=$sql",";fi
+export sql=$sql"            "; if [ $outputformat = "2" ]; then export sql=$sql" AS           ,";else export sql=$sql",";fi
+export sql=$sql"            "; if [ $outputformat = "2" ]; then export sql=$sql" AS           ,";else export sql=$sql",";fi
+export sql=$sql"            "; if [ $outputformat = "2" ]; then export sql=$sql" AS           ,";else export sql=$sql",";fi
+export sql=$sql"            "; if [ $outputformat = "2" ]; then export sql=$sql" AS           ,";else export sql=$sql",";fi
+export sql=$sql"            "; if [ $outputformat = "2" ]; then export sql=$sql" AS           ,";else export sql=$sql",";fi
+export sql=$sql"            "; if [ $outputformat = "2" ]; then export sql=$sql" AS           ,";else export sql=$sql",";fi
+export sql=$sql"            "; if [ $outputformat = "2" ]; then export sql=$sql" AS           ,";else export sql=$sql",";fi
+export sql=$sql"            "; if [ $outputformat = "2" ]; then export sql=$sql" AS           ,";else export sql=$sql",";fi
+export sql=$sql"            "; if [ $outputformat = "2" ]; then export sql=$sql" AS           ,";else export sql=$sql",";fi
+export sql=$sql"            "; if [ $outputformat = "2" ]; then export sql=$sql" AS           ,";else export sql=$sql",";fi
+export sql=$sql"            "; if [ $outputformat = "2" ]; then export sql=$sql" AS           ,";else export sql=$sql",";fi
+export sql=$sql"            "; if [ $outputformat = "2" ]; then export sql=$sql" AS           ,";else export sql=$sql",";fi
+export sql=$sql"            "; if [ $outputformat = "2" ]; then export sql=$sql" AS           ,";else export sql=$sql",";fi
+export sql=$sql"            "; if [ $outputformat = "2" ]; then export sql=$sql" AS           ,";else export sql=$sql",";fi
+export sql=$sql"            "; if [ $outputformat = "2" ]; then export sql=$sql" AS           ,";else export sql=$sql",";fi
+export sql=$sql"            "; if [ $outputformat = "2" ]; then export sql=$sql" AS           ,";else export sql=$sql",";fi
+export sql=$sql"            "; if [ $outputformat = "2" ]; then export sql=$sql" AS           ,";else export sql=$sql",";fi
+export sql=$sql"            "; if [ $outputformat = "2" ]; then export sql=$sql" AS           ,";else export sql=$sql",";fi
+export sql=$sql"            "; if [ $outputformat = "2" ]; then export sql=$sql" AS           ,";else export sql=$sql",";fi
+export sql=$sql"            "; if [ $outputformat = "2" ]; then export sql=$sql" AS           ,";else export sql=$sql",";fi
+export sql=$sql"            "; if [ $outputformat = "2" ]; then export sql=$sql" AS           ,";else export sql=$sql",";fi
+export sql=$sql"            "; if [ $outputformat = "2" ]; then export sql=$sql" AS           ,";else export sql=$sql",";fi
+export sql=$sql"            "; if [ $outputformat = "2" ]; then export sql=$sql" AS           ,";else export sql=$sql",";fi
+export sql=$sql"            "; if [ $outputformat = "2" ]; then export sql=$sql" AS           ,";else export sql=$sql",";fi
+export sql=$sql"            "; if [ $outputformat = "2" ]; then export sql=$sql" AS           ,";else export sql=$sql",";fi
+export sql=$sql"            "; if [ $outputformat = "2" ]; then export sql=$sql" AS           ,";else export sql=$sql",";fi
+export sql=$sql"            "; if [ $outputformat = "2" ]; then export sql=$sql" AS           ,";else export sql=$sql",";fi
+export sql=$sql"            "; if [ $outputformat = "2" ]; then export sql=$sql" AS           ,";else export sql=$sql",";fi
+export sql=$sql"            "; if [ $outputformat = "2" ]; then export sql=$sql" AS           ,";else export sql=$sql",";fi
+export sql=$sql"            "; if [ $outputformat = "2" ]; then export sql=$sql" AS           ,";else export sql=$sql",";fi
+export sql=$sql" FROM distribution.pipe_schema WHERE id_distributor = 1" 
+
 export sql="SELECT * FROM distribution.node WHERE _status_active IS TRUE AND _type != 'one' " 
 if [ $outputformat = "1" ] 
 then
@@ -130,27 +167,65 @@ then
   -dsco SPATIALITE=no -lco "SPATIAL_INDEX=no FORMAT=SPATIALITE" -gt 65536
 elif [ $outputformat = "2" ]
 then
-  /usr/lib/postgresql/9.1/bin/pgsql2shp -h $db_address -g $geomcol -f $shapeoutput/zones -P db4wat$ -u sige sige "$sql"
+  /usr/lib/postgresql/9.1/bin/pgsql2shp -S -h $db_address -g $geomcol -f $shapeoutput/nodes -P db4wat$ -u sige sige "$sql"
 fi
  
+########################################################################
 # VALVES
+export sql="SELECT ";
+export sql=$sql"id          "; if [ $outputformat = "2" ]; then export sql=$sql" AS id        ,";else export sql=$sql",";fi
+export sql=$sql"            "; if [ $outputformat = "2" ]; then export sql=$sql" AS           ,";else export sql=$sql",";fi
+export sql=$sql"            "; if [ $outputformat = "2" ]; then export sql=$sql" AS           ,";else export sql=$sql",";fi
+export sql=$sql"            "; if [ $outputformat = "2" ]; then export sql=$sql" AS           ,";else export sql=$sql",";fi
+export sql=$sql"            "; if [ $outputformat = "2" ]; then export sql=$sql" AS           ,";else export sql=$sql",";fi
+export sql=$sql"            "; if [ $outputformat = "2" ]; then export sql=$sql" AS           ,";else export sql=$sql",";fi
+export sql=$sql"            "; if [ $outputformat = "2" ]; then export sql=$sql" AS           ,";else export sql=$sql",";fi
+export sql=$sql"            "; if [ $outputformat = "2" ]; then export sql=$sql" AS           ,";else export sql=$sql",";fi
+export sql=$sql"            "; if [ $outputformat = "2" ]; then export sql=$sql" AS           ,";else export sql=$sql",";fi
+export sql=$sql"            "; if [ $outputformat = "2" ]; then export sql=$sql" AS           ,";else export sql=$sql",";fi
+export sql=$sql"            "; if [ $outputformat = "2" ]; then export sql=$sql" AS           ,";else export sql=$sql",";fi
+export sql=$sql"            "; if [ $outputformat = "2" ]; then export sql=$sql" AS           ,";else export sql=$sql",";fi
+export sql=$sql"            "; if [ $outputformat = "2" ]; then export sql=$sql" AS           ,";else export sql=$sql",";fi
+export sql=$sql"            "; if [ $outputformat = "2" ]; then export sql=$sql" AS           ,";else export sql=$sql",";fi
+export sql=$sql"            "; if [ $outputformat = "2" ]; then export sql=$sql" AS           ,";else export sql=$sql",";fi
+export sql=$sql"            "; if [ $outputformat = "2" ]; then export sql=$sql" AS           ,";else export sql=$sql",";fi
+export sql=$sql"            "; if [ $outputformat = "2" ]; then export sql=$sql" AS           ,";else export sql=$sql",";fi
+export sql=$sql"            "; if [ $outputformat = "2" ]; then export sql=$sql" AS           ,";else export sql=$sql",";fi
+export sql=$sql"            "; if [ $outputformat = "2" ]; then export sql=$sql" AS           ,";else export sql=$sql",";fi
+export sql=$sql"            "; if [ $outputformat = "2" ]; then export sql=$sql" AS           ,";else export sql=$sql",";fi
+export sql=$sql"            "; if [ $outputformat = "2" ]; then export sql=$sql" AS           ,";else export sql=$sql",";fi
+export sql=$sql"            "; if [ $outputformat = "2" ]; then export sql=$sql" AS           ,";else export sql=$sql",";fi
+export sql=$sql"            "; if [ $outputformat = "2" ]; then export sql=$sql" AS           ,";else export sql=$sql",";fi
+export sql=$sql"            "; if [ $outputformat = "2" ]; then export sql=$sql" AS           ,";else export sql=$sql",";fi
+export sql=$sql"            "; if [ $outputformat = "2" ]; then export sql=$sql" AS           ,";else export sql=$sql",";fi
+export sql=$sql"            "; if [ $outputformat = "2" ]; then export sql=$sql" AS           ,";else export sql=$sql",";fi
+export sql=$sql"            "; if [ $outputformat = "2" ]; then export sql=$sql" AS           ,";else export sql=$sql",";fi
+export sql=$sql"            "; if [ $outputformat = "2" ]; then export sql=$sql" AS           ,";else export sql=$sql",";fi
+export sql=$sql"            "; if [ $outputformat = "2" ]; then export sql=$sql" AS           ,";else export sql=$sql",";fi
+export sql=$sql"            "; if [ $outputformat = "2" ]; then export sql=$sql" AS           ,";else export sql=$sql",";fi
+export sql=$sql"            "; if [ $outputformat = "2" ]; then export sql=$sql" AS           ,";else export sql=$sql",";fi
+export sql=$sql"            "; if [ $outputformat = "2" ]; then export sql=$sql" AS           ,";else export sql=$sql",";fi
+export sql=$sql"            "; if [ $outputformat = "2" ]; then export sql=$sql" AS           ,";else export sql=$sql",";fi
+export sql=$sql"            "; if [ $outputformat = "2" ]; then export sql=$sql" AS           ,";else export sql=$sql",";fi
+export sql=$sql" FROM distribution.pipe_schema WHERE id_distributor = 1" 
+
 export sql="SELECT                              \
-	id ,                                        \
-	sige,                                       \
-	id_pipe,                                    \
-	id_node,                                    \
-	diameter_nominal,                           \
-	year,                                       \
-	closed,                                     \
-	_altitude_dtm,                              \
-	altitude_real,                              \
-	remarks,                                    \
-	_is_on_map,                                 \
-	_district,                                  \
-	geometry::$geomcol(Point,21781),            \
-	_function,                                  \
-	_type,                                      \
-	_label                                      \
+    id ,                                        \
+    sige,                                       \
+    id_pipe,                                    \
+    id_node,                                    \
+    diameter_nominal,                           \
+    year,                                       \
+    closed,                                     \
+    _altitude_dtm,                              \
+    altitude_real,                              \
+    remarks,                                    \
+    _is_on_map,                                 \
+    _district,                                  \
+    geometry::$geomcol(Point,21781),            \
+    _function,                                  \
+    _type,                                      \
+    _label                                      \
  FROM distribution.valve_view" 
 if [ $outputformat = "1" ] 
 then
@@ -161,28 +236,65 @@ then
   -dsco SPATIALITE=no -lco "SPATIAL_INDEX=no FORMAT=SPATIALITE" -gt 65536
 elif [ $outputformat = "2" ]
 then
-  /usr/lib/postgresql/9.1/bin/pgsql2shp -h $db_address -g $geomcol -f $shapeoutput/zones -P db4wat$ -u sige sige "$sql"
+  /usr/lib/postgresql/9.1/bin/pgsql2shp -S -h $db_address -g $geomcol -f $shapeoutput/valves -P db4wat$ -u sige sige "$sql"
 fi
 
-
+########################################################################
  # VALVES SCHEMA
-export sql="SELECT                            \
-	id ,                                        \
-	sige,                                       \
-	id_pipe,                                    \
-	id_node,                                    \
-	diameter_nominal,                           \
-	year,                                       \
-	closed,                                     \
-	_altitude_dtm,                              \
-	altitude_real,                              \
-	remarks,                                    \
-	_is_on_map,                                 \
-	_district,                                  \
-	geometry::$geomcol(Point,21781),            \
-	_function,                                  \
-	_type,                                      \
-	_label                                      \
+ export sql="SELECT ";
+export sql=$sql"id          "; if [ $outputformat = "2" ]; then export sql=$sql" AS id        ,";else export sql=$sql",";fi
+export sql=$sql"            "; if [ $outputformat = "2" ]; then export sql=$sql" AS           ,";else export sql=$sql",";fi
+export sql=$sql"            "; if [ $outputformat = "2" ]; then export sql=$sql" AS           ,";else export sql=$sql",";fi
+export sql=$sql"            "; if [ $outputformat = "2" ]; then export sql=$sql" AS           ,";else export sql=$sql",";fi
+export sql=$sql"            "; if [ $outputformat = "2" ]; then export sql=$sql" AS           ,";else export sql=$sql",";fi
+export sql=$sql"            "; if [ $outputformat = "2" ]; then export sql=$sql" AS           ,";else export sql=$sql",";fi
+export sql=$sql"            "; if [ $outputformat = "2" ]; then export sql=$sql" AS           ,";else export sql=$sql",";fi
+export sql=$sql"            "; if [ $outputformat = "2" ]; then export sql=$sql" AS           ,";else export sql=$sql",";fi
+export sql=$sql"            "; if [ $outputformat = "2" ]; then export sql=$sql" AS           ,";else export sql=$sql",";fi
+export sql=$sql"            "; if [ $outputformat = "2" ]; then export sql=$sql" AS           ,";else export sql=$sql",";fi
+export sql=$sql"            "; if [ $outputformat = "2" ]; then export sql=$sql" AS           ,";else export sql=$sql",";fi
+export sql=$sql"            "; if [ $outputformat = "2" ]; then export sql=$sql" AS           ,";else export sql=$sql",";fi
+export sql=$sql"            "; if [ $outputformat = "2" ]; then export sql=$sql" AS           ,";else export sql=$sql",";fi
+export sql=$sql"            "; if [ $outputformat = "2" ]; then export sql=$sql" AS           ,";else export sql=$sql",";fi
+export sql=$sql"            "; if [ $outputformat = "2" ]; then export sql=$sql" AS           ,";else export sql=$sql",";fi
+export sql=$sql"            "; if [ $outputformat = "2" ]; then export sql=$sql" AS           ,";else export sql=$sql",";fi
+export sql=$sql"            "; if [ $outputformat = "2" ]; then export sql=$sql" AS           ,";else export sql=$sql",";fi
+export sql=$sql"            "; if [ $outputformat = "2" ]; then export sql=$sql" AS           ,";else export sql=$sql",";fi
+export sql=$sql"            "; if [ $outputformat = "2" ]; then export sql=$sql" AS           ,";else export sql=$sql",";fi
+export sql=$sql"            "; if [ $outputformat = "2" ]; then export sql=$sql" AS           ,";else export sql=$sql",";fi
+export sql=$sql"            "; if [ $outputformat = "2" ]; then export sql=$sql" AS           ,";else export sql=$sql",";fi
+export sql=$sql"            "; if [ $outputformat = "2" ]; then export sql=$sql" AS           ,";else export sql=$sql",";fi
+export sql=$sql"            "; if [ $outputformat = "2" ]; then export sql=$sql" AS           ,";else export sql=$sql",";fi
+export sql=$sql"            "; if [ $outputformat = "2" ]; then export sql=$sql" AS           ,";else export sql=$sql",";fi
+export sql=$sql"            "; if [ $outputformat = "2" ]; then export sql=$sql" AS           ,";else export sql=$sql",";fi
+export sql=$sql"            "; if [ $outputformat = "2" ]; then export sql=$sql" AS           ,";else export sql=$sql",";fi
+export sql=$sql"            "; if [ $outputformat = "2" ]; then export sql=$sql" AS           ,";else export sql=$sql",";fi
+export sql=$sql"            "; if [ $outputformat = "2" ]; then export sql=$sql" AS           ,";else export sql=$sql",";fi
+export sql=$sql"            "; if [ $outputformat = "2" ]; then export sql=$sql" AS           ,";else export sql=$sql",";fi
+export sql=$sql"            "; if [ $outputformat = "2" ]; then export sql=$sql" AS           ,";else export sql=$sql",";fi
+export sql=$sql"            "; if [ $outputformat = "2" ]; then export sql=$sql" AS           ,";else export sql=$sql",";fi
+export sql=$sql"            "; if [ $outputformat = "2" ]; then export sql=$sql" AS           ,";else export sql=$sql",";fi
+export sql=$sql"            "; if [ $outputformat = "2" ]; then export sql=$sql" AS           ,";else export sql=$sql",";fi
+export sql=$sql"            "; if [ $outputformat = "2" ]; then export sql=$sql" AS           ,";else export sql=$sql",";fi
+export sql=$sql" FROM distribution.pipe_schema WHERE id_distributor = 1" 
+
+export sql="SELECT                              \
+    id ,                                        \
+    sige,                                       \
+    id_pipe,                                    \
+    id_node,                                    \
+    diameter_nominal,                           \
+    year,                                       \
+    closed,                                     \
+    _altitude_dtm,                              \
+    altitude_real,                              \
+    remarks,                                    \
+    _is_on_map,                                 \
+    _district,                                  \
+    geometry::$geomcol(Point,21781),            \
+    _function,                                  \
+    _type,                                      \
+    _label                                      \
 FROM distribution.valve_schema" 
 if [ $outputformat = "1" ] 
 then
@@ -193,12 +305,49 @@ then
   -dsco SPATIALITE=no -lco "SPATIAL_INDEX=no FORMAT=SPATIALITE" -gt 65536
 elif [ $outputformat = "2" ]
 then
-  /usr/lib/postgresql/9.1/bin/pgsql2shp -h $db_address -g $geomcol -f $shapeoutput/zones -P db4wat$ -u sige sige "$sql"
+  /usr/lib/postgresql/9.1/bin/pgsql2shp -S -h $db_address -g $geomcol -f $shapeoutput/valves_schema -P db4wat$ -u sige sige "$sql"
 fi
 
 
- 
+ ########################################################################
 # INSTALLATIONS
+export sql="SELECT ";
+export sql=$sql"id          "; if [ $outputformat = "2" ]; then export sql=$sql" AS id        ,";else export sql=$sql",";fi
+export sql=$sql"            "; if [ $outputformat = "2" ]; then export sql=$sql" AS           ,";else export sql=$sql",";fi
+export sql=$sql"            "; if [ $outputformat = "2" ]; then export sql=$sql" AS           ,";else export sql=$sql",";fi
+export sql=$sql"            "; if [ $outputformat = "2" ]; then export sql=$sql" AS           ,";else export sql=$sql",";fi
+export sql=$sql"            "; if [ $outputformat = "2" ]; then export sql=$sql" AS           ,";else export sql=$sql",";fi
+export sql=$sql"            "; if [ $outputformat = "2" ]; then export sql=$sql" AS           ,";else export sql=$sql",";fi
+export sql=$sql"            "; if [ $outputformat = "2" ]; then export sql=$sql" AS           ,";else export sql=$sql",";fi
+export sql=$sql"            "; if [ $outputformat = "2" ]; then export sql=$sql" AS           ,";else export sql=$sql",";fi
+export sql=$sql"            "; if [ $outputformat = "2" ]; then export sql=$sql" AS           ,";else export sql=$sql",";fi
+export sql=$sql"            "; if [ $outputformat = "2" ]; then export sql=$sql" AS           ,";else export sql=$sql",";fi
+export sql=$sql"            "; if [ $outputformat = "2" ]; then export sql=$sql" AS           ,";else export sql=$sql",";fi
+export sql=$sql"            "; if [ $outputformat = "2" ]; then export sql=$sql" AS           ,";else export sql=$sql",";fi
+export sql=$sql"            "; if [ $outputformat = "2" ]; then export sql=$sql" AS           ,";else export sql=$sql",";fi
+export sql=$sql"            "; if [ $outputformat = "2" ]; then export sql=$sql" AS           ,";else export sql=$sql",";fi
+export sql=$sql"            "; if [ $outputformat = "2" ]; then export sql=$sql" AS           ,";else export sql=$sql",";fi
+export sql=$sql"            "; if [ $outputformat = "2" ]; then export sql=$sql" AS           ,";else export sql=$sql",";fi
+export sql=$sql"            "; if [ $outputformat = "2" ]; then export sql=$sql" AS           ,";else export sql=$sql",";fi
+export sql=$sql"            "; if [ $outputformat = "2" ]; then export sql=$sql" AS           ,";else export sql=$sql",";fi
+export sql=$sql"            "; if [ $outputformat = "2" ]; then export sql=$sql" AS           ,";else export sql=$sql",";fi
+export sql=$sql"            "; if [ $outputformat = "2" ]; then export sql=$sql" AS           ,";else export sql=$sql",";fi
+export sql=$sql"            "; if [ $outputformat = "2" ]; then export sql=$sql" AS           ,";else export sql=$sql",";fi
+export sql=$sql"            "; if [ $outputformat = "2" ]; then export sql=$sql" AS           ,";else export sql=$sql",";fi
+export sql=$sql"            "; if [ $outputformat = "2" ]; then export sql=$sql" AS           ,";else export sql=$sql",";fi
+export sql=$sql"            "; if [ $outputformat = "2" ]; then export sql=$sql" AS           ,";else export sql=$sql",";fi
+export sql=$sql"            "; if [ $outputformat = "2" ]; then export sql=$sql" AS           ,";else export sql=$sql",";fi
+export sql=$sql"            "; if [ $outputformat = "2" ]; then export sql=$sql" AS           ,";else export sql=$sql",";fi
+export sql=$sql"            "; if [ $outputformat = "2" ]; then export sql=$sql" AS           ,";else export sql=$sql",";fi
+export sql=$sql"            "; if [ $outputformat = "2" ]; then export sql=$sql" AS           ,";else export sql=$sql",";fi
+export sql=$sql"            "; if [ $outputformat = "2" ]; then export sql=$sql" AS           ,";else export sql=$sql",";fi
+export sql=$sql"            "; if [ $outputformat = "2" ]; then export sql=$sql" AS           ,";else export sql=$sql",";fi
+export sql=$sql"            "; if [ $outputformat = "2" ]; then export sql=$sql" AS           ,";else export sql=$sql",";fi
+export sql=$sql"            "; if [ $outputformat = "2" ]; then export sql=$sql" AS           ,";else export sql=$sql",";fi
+export sql=$sql"            "; if [ $outputformat = "2" ]; then export sql=$sql" AS           ,";else export sql=$sql",";fi
+export sql=$sql"            "; if [ $outputformat = "2" ]; then export sql=$sql" AS           ,";else export sql=$sql",";fi
+export sql=$sql" FROM distribution.pipe_schema WHERE id_distributor = 1" 
+
 export sql="SELECT * FROM distribution.installation_view WHERE _status_active IS TRUE" 
 if [ $outputformat = "1" ] 
 then
@@ -209,11 +358,48 @@ then
   -dsco SPATIALITE=no -lco "SPATIAL_INDEX=no FORMAT=SPATIALITE" -gt 65536
 elif [ $outputformat = "2" ]
 then
-  /usr/lib/postgresql/9.1/bin/pgsql2shp -h $db_address -g $geomcol -f $shapeoutput/zones -P db4wat$ -u sige sige "$sql"
+  /usr/lib/postgresql/9.1/bin/pgsql2shp -S -h $db_address -g $geomcol -f $shapeoutput/installations -P db4wat$ -u sige sige "$sql"
 fi
 
- 
+######################################################################## 
  # PRESSURE ZONES
+ export sql="SELECT ";
+export sql=$sql"id          "; if [ $outputformat = "2" ]; then export sql=$sql" AS id        ,";else export sql=$sql",";fi
+export sql=$sql"            "; if [ $outputformat = "2" ]; then export sql=$sql" AS           ,";else export sql=$sql",";fi
+export sql=$sql"            "; if [ $outputformat = "2" ]; then export sql=$sql" AS           ,";else export sql=$sql",";fi
+export sql=$sql"            "; if [ $outputformat = "2" ]; then export sql=$sql" AS           ,";else export sql=$sql",";fi
+export sql=$sql"            "; if [ $outputformat = "2" ]; then export sql=$sql" AS           ,";else export sql=$sql",";fi
+export sql=$sql"            "; if [ $outputformat = "2" ]; then export sql=$sql" AS           ,";else export sql=$sql",";fi
+export sql=$sql"            "; if [ $outputformat = "2" ]; then export sql=$sql" AS           ,";else export sql=$sql",";fi
+export sql=$sql"            "; if [ $outputformat = "2" ]; then export sql=$sql" AS           ,";else export sql=$sql",";fi
+export sql=$sql"            "; if [ $outputformat = "2" ]; then export sql=$sql" AS           ,";else export sql=$sql",";fi
+export sql=$sql"            "; if [ $outputformat = "2" ]; then export sql=$sql" AS           ,";else export sql=$sql",";fi
+export sql=$sql"            "; if [ $outputformat = "2" ]; then export sql=$sql" AS           ,";else export sql=$sql",";fi
+export sql=$sql"            "; if [ $outputformat = "2" ]; then export sql=$sql" AS           ,";else export sql=$sql",";fi
+export sql=$sql"            "; if [ $outputformat = "2" ]; then export sql=$sql" AS           ,";else export sql=$sql",";fi
+export sql=$sql"            "; if [ $outputformat = "2" ]; then export sql=$sql" AS           ,";else export sql=$sql",";fi
+export sql=$sql"            "; if [ $outputformat = "2" ]; then export sql=$sql" AS           ,";else export sql=$sql",";fi
+export sql=$sql"            "; if [ $outputformat = "2" ]; then export sql=$sql" AS           ,";else export sql=$sql",";fi
+export sql=$sql"            "; if [ $outputformat = "2" ]; then export sql=$sql" AS           ,";else export sql=$sql",";fi
+export sql=$sql"            "; if [ $outputformat = "2" ]; then export sql=$sql" AS           ,";else export sql=$sql",";fi
+export sql=$sql"            "; if [ $outputformat = "2" ]; then export sql=$sql" AS           ,";else export sql=$sql",";fi
+export sql=$sql"            "; if [ $outputformat = "2" ]; then export sql=$sql" AS           ,";else export sql=$sql",";fi
+export sql=$sql"            "; if [ $outputformat = "2" ]; then export sql=$sql" AS           ,";else export sql=$sql",";fi
+export sql=$sql"            "; if [ $outputformat = "2" ]; then export sql=$sql" AS           ,";else export sql=$sql",";fi
+export sql=$sql"            "; if [ $outputformat = "2" ]; then export sql=$sql" AS           ,";else export sql=$sql",";fi
+export sql=$sql"            "; if [ $outputformat = "2" ]; then export sql=$sql" AS           ,";else export sql=$sql",";fi
+export sql=$sql"            "; if [ $outputformat = "2" ]; then export sql=$sql" AS           ,";else export sql=$sql",";fi
+export sql=$sql"            "; if [ $outputformat = "2" ]; then export sql=$sql" AS           ,";else export sql=$sql",";fi
+export sql=$sql"            "; if [ $outputformat = "2" ]; then export sql=$sql" AS           ,";else export sql=$sql",";fi
+export sql=$sql"            "; if [ $outputformat = "2" ]; then export sql=$sql" AS           ,";else export sql=$sql",";fi
+export sql=$sql"            "; if [ $outputformat = "2" ]; then export sql=$sql" AS           ,";else export sql=$sql",";fi
+export sql=$sql"            "; if [ $outputformat = "2" ]; then export sql=$sql" AS           ,";else export sql=$sql",";fi
+export sql=$sql"            "; if [ $outputformat = "2" ]; then export sql=$sql" AS           ,";else export sql=$sql",";fi
+export sql=$sql"            "; if [ $outputformat = "2" ]; then export sql=$sql" AS           ,";else export sql=$sql",";fi
+export sql=$sql"            "; if [ $outputformat = "2" ]; then export sql=$sql" AS           ,";else export sql=$sql",";fi
+export sql=$sql"            "; if [ $outputformat = "2" ]; then export sql=$sql" AS           ,";else export sql=$sql",";fi
+export sql=$sql" FROM distribution.pipe_schema WHERE id_distributor = 1" 
+
 export sql="SELECT * FROM distribution.pressurezone" 
 if [ $outputformat = "1" ] 
 then
@@ -224,10 +410,48 @@ then
   -dsco SPATIALITE=no -lco "SPATIAL_INDEX=no FORMAT=SPATIALITE" -gt 65536
 elif [ $outputformat = "2" ]
 then
-  /usr/lib/postgresql/9.1/bin/pgsql2shp -h $db_address -g $geomcol -f $shapeoutput/zones -P db4wat$ -u sige sige "$sql"
+  /usr/lib/postgresql/9.1/bin/pgsql2shp -S -h $db_address -g $geomcol -f $shapeoutput/pressurezones -P db4wat$ -u sige sige "$sql"
 fi
- 
+
+######################################################################## 
  # SUBSCRIBER
+ export sql="SELECT ";
+export sql=$sql"id          "; if [ $outputformat = "2" ]; then export sql=$sql" AS id        ,";else export sql=$sql",";fi
+export sql=$sql"            "; if [ $outputformat = "2" ]; then export sql=$sql" AS           ,";else export sql=$sql",";fi
+export sql=$sql"            "; if [ $outputformat = "2" ]; then export sql=$sql" AS           ,";else export sql=$sql",";fi
+export sql=$sql"            "; if [ $outputformat = "2" ]; then export sql=$sql" AS           ,";else export sql=$sql",";fi
+export sql=$sql"            "; if [ $outputformat = "2" ]; then export sql=$sql" AS           ,";else export sql=$sql",";fi
+export sql=$sql"            "; if [ $outputformat = "2" ]; then export sql=$sql" AS           ,";else export sql=$sql",";fi
+export sql=$sql"            "; if [ $outputformat = "2" ]; then export sql=$sql" AS           ,";else export sql=$sql",";fi
+export sql=$sql"            "; if [ $outputformat = "2" ]; then export sql=$sql" AS           ,";else export sql=$sql",";fi
+export sql=$sql"            "; if [ $outputformat = "2" ]; then export sql=$sql" AS           ,";else export sql=$sql",";fi
+export sql=$sql"            "; if [ $outputformat = "2" ]; then export sql=$sql" AS           ,";else export sql=$sql",";fi
+export sql=$sql"            "; if [ $outputformat = "2" ]; then export sql=$sql" AS           ,";else export sql=$sql",";fi
+export sql=$sql"            "; if [ $outputformat = "2" ]; then export sql=$sql" AS           ,";else export sql=$sql",";fi
+export sql=$sql"            "; if [ $outputformat = "2" ]; then export sql=$sql" AS           ,";else export sql=$sql",";fi
+export sql=$sql"            "; if [ $outputformat = "2" ]; then export sql=$sql" AS           ,";else export sql=$sql",";fi
+export sql=$sql"            "; if [ $outputformat = "2" ]; then export sql=$sql" AS           ,";else export sql=$sql",";fi
+export sql=$sql"            "; if [ $outputformat = "2" ]; then export sql=$sql" AS           ,";else export sql=$sql",";fi
+export sql=$sql"            "; if [ $outputformat = "2" ]; then export sql=$sql" AS           ,";else export sql=$sql",";fi
+export sql=$sql"            "; if [ $outputformat = "2" ]; then export sql=$sql" AS           ,";else export sql=$sql",";fi
+export sql=$sql"            "; if [ $outputformat = "2" ]; then export sql=$sql" AS           ,";else export sql=$sql",";fi
+export sql=$sql"            "; if [ $outputformat = "2" ]; then export sql=$sql" AS           ,";else export sql=$sql",";fi
+export sql=$sql"            "; if [ $outputformat = "2" ]; then export sql=$sql" AS           ,";else export sql=$sql",";fi
+export sql=$sql"            "; if [ $outputformat = "2" ]; then export sql=$sql" AS           ,";else export sql=$sql",";fi
+export sql=$sql"            "; if [ $outputformat = "2" ]; then export sql=$sql" AS           ,";else export sql=$sql",";fi
+export sql=$sql"            "; if [ $outputformat = "2" ]; then export sql=$sql" AS           ,";else export sql=$sql",";fi
+export sql=$sql"            "; if [ $outputformat = "2" ]; then export sql=$sql" AS           ,";else export sql=$sql",";fi
+export sql=$sql"            "; if [ $outputformat = "2" ]; then export sql=$sql" AS           ,";else export sql=$sql",";fi
+export sql=$sql"            "; if [ $outputformat = "2" ]; then export sql=$sql" AS           ,";else export sql=$sql",";fi
+export sql=$sql"            "; if [ $outputformat = "2" ]; then export sql=$sql" AS           ,";else export sql=$sql",";fi
+export sql=$sql"            "; if [ $outputformat = "2" ]; then export sql=$sql" AS           ,";else export sql=$sql",";fi
+export sql=$sql"            "; if [ $outputformat = "2" ]; then export sql=$sql" AS           ,";else export sql=$sql",";fi
+export sql=$sql"            "; if [ $outputformat = "2" ]; then export sql=$sql" AS           ,";else export sql=$sql",";fi
+export sql=$sql"            "; if [ $outputformat = "2" ]; then export sql=$sql" AS           ,";else export sql=$sql",";fi
+export sql=$sql"            "; if [ $outputformat = "2" ]; then export sql=$sql" AS           ,";else export sql=$sql",";fi
+export sql=$sql"            "; if [ $outputformat = "2" ]; then export sql=$sql" AS           ,";else export sql=$sql",";fi
+export sql=$sql" FROM distribution.pipe_schema WHERE id_distributor = 1" 
+
 export sql="SELECT * FROM distribution.subscriber_view" 
 if [ $outputformat = "1" ] 
 then
@@ -238,10 +462,48 @@ then
   -dsco SPATIALITE=no -lco "SPATIAL_INDEX=no FORMAT=SPATIALITE" -gt 65536
 elif [ $outputformat = "2" ]
 then
-  /usr/lib/postgresql/9.1/bin/pgsql2shp -h $db_address -g $geomcol -f $shapeoutput/zones -P db4wat$ -u sige sige "$sql"
+  /usr/lib/postgresql/9.1/bin/pgsql2shp -S -h $db_address -g $geomcol -f $shapeoutput/subscriber -P db4wat$ -u sige sige "$sql"
 fi
 
-# SAMPLING POINTS
+########################################################################
+# SAMPLING POINT
+export sql="SELECT ";
+export sql=$sql"id          "; if [ $outputformat = "2" ]; then export sql=$sql" AS id        ,";else export sql=$sql",";fi
+export sql=$sql"            "; if [ $outputformat = "2" ]; then export sql=$sql" AS           ,";else export sql=$sql",";fi
+export sql=$sql"            "; if [ $outputformat = "2" ]; then export sql=$sql" AS           ,";else export sql=$sql",";fi
+export sql=$sql"            "; if [ $outputformat = "2" ]; then export sql=$sql" AS           ,";else export sql=$sql",";fi
+export sql=$sql"            "; if [ $outputformat = "2" ]; then export sql=$sql" AS           ,";else export sql=$sql",";fi
+export sql=$sql"            "; if [ $outputformat = "2" ]; then export sql=$sql" AS           ,";else export sql=$sql",";fi
+export sql=$sql"            "; if [ $outputformat = "2" ]; then export sql=$sql" AS           ,";else export sql=$sql",";fi
+export sql=$sql"            "; if [ $outputformat = "2" ]; then export sql=$sql" AS           ,";else export sql=$sql",";fi
+export sql=$sql"            "; if [ $outputformat = "2" ]; then export sql=$sql" AS           ,";else export sql=$sql",";fi
+export sql=$sql"            "; if [ $outputformat = "2" ]; then export sql=$sql" AS           ,";else export sql=$sql",";fi
+export sql=$sql"            "; if [ $outputformat = "2" ]; then export sql=$sql" AS           ,";else export sql=$sql",";fi
+export sql=$sql"            "; if [ $outputformat = "2" ]; then export sql=$sql" AS           ,";else export sql=$sql",";fi
+export sql=$sql"            "; if [ $outputformat = "2" ]; then export sql=$sql" AS           ,";else export sql=$sql",";fi
+export sql=$sql"            "; if [ $outputformat = "2" ]; then export sql=$sql" AS           ,";else export sql=$sql",";fi
+export sql=$sql"            "; if [ $outputformat = "2" ]; then export sql=$sql" AS           ,";else export sql=$sql",";fi
+export sql=$sql"            "; if [ $outputformat = "2" ]; then export sql=$sql" AS           ,";else export sql=$sql",";fi
+export sql=$sql"            "; if [ $outputformat = "2" ]; then export sql=$sql" AS           ,";else export sql=$sql",";fi
+export sql=$sql"            "; if [ $outputformat = "2" ]; then export sql=$sql" AS           ,";else export sql=$sql",";fi
+export sql=$sql"            "; if [ $outputformat = "2" ]; then export sql=$sql" AS           ,";else export sql=$sql",";fi
+export sql=$sql"            "; if [ $outputformat = "2" ]; then export sql=$sql" AS           ,";else export sql=$sql",";fi
+export sql=$sql"            "; if [ $outputformat = "2" ]; then export sql=$sql" AS           ,";else export sql=$sql",";fi
+export sql=$sql"            "; if [ $outputformat = "2" ]; then export sql=$sql" AS           ,";else export sql=$sql",";fi
+export sql=$sql"            "; if [ $outputformat = "2" ]; then export sql=$sql" AS           ,";else export sql=$sql",";fi
+export sql=$sql"            "; if [ $outputformat = "2" ]; then export sql=$sql" AS           ,";else export sql=$sql",";fi
+export sql=$sql"            "; if [ $outputformat = "2" ]; then export sql=$sql" AS           ,";else export sql=$sql",";fi
+export sql=$sql"            "; if [ $outputformat = "2" ]; then export sql=$sql" AS           ,";else export sql=$sql",";fi
+export sql=$sql"            "; if [ $outputformat = "2" ]; then export sql=$sql" AS           ,";else export sql=$sql",";fi
+export sql=$sql"            "; if [ $outputformat = "2" ]; then export sql=$sql" AS           ,";else export sql=$sql",";fi
+export sql=$sql"            "; if [ $outputformat = "2" ]; then export sql=$sql" AS           ,";else export sql=$sql",";fi
+export sql=$sql"            "; if [ $outputformat = "2" ]; then export sql=$sql" AS           ,";else export sql=$sql",";fi
+export sql=$sql"            "; if [ $outputformat = "2" ]; then export sql=$sql" AS           ,";else export sql=$sql",";fi
+export sql=$sql"            "; if [ $outputformat = "2" ]; then export sql=$sql" AS           ,";else export sql=$sql",";fi
+export sql=$sql"            "; if [ $outputformat = "2" ]; then export sql=$sql" AS           ,";else export sql=$sql",";fi
+export sql=$sql"            "; if [ $outputformat = "2" ]; then export sql=$sql" AS           ,";else export sql=$sql",";fi
+export sql=$sql" FROM distribution.pipe_schema WHERE id_distributor = 1" 
+
 export sql="SELECT * FROM distribution.samplingpoint"
 if [ $outputformat = "1" ] 
 then
@@ -252,7 +514,7 @@ then
   -dsco SPATIALITE=no -lco "SPATIAL_INDEX=no FORMAT=SPATIALITE" -gt 65536
 elif [ $outputformat = "2" ]
 then
-  /usr/lib/postgresql/9.1/bin/pgsql2shp -h $db_address -g $geomcol -f $shapeoutput/zones -P db4wat$ -u sige sige "$sql"
+  /usr/lib/postgresql/9.1/bin/pgsql2shp -S -h $db_address -g $geomcol -f $shapeoutput/samplingpoint -P db4wat$ -u sige sige "$sql"
 fi
 
 
