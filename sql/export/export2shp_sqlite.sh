@@ -74,11 +74,8 @@ then
   -dsco SPATIALITE=no -lco "SPATIAL_INDEX=no FORMAT=SPATIALITE" -gt 65536
 elif [ $outputformat = "2" ]
 then
-  /usr/lib/postgresql/9.1/bin/pgsql2shp -h $db_address -g geom -f $shapeoutput/zones -P db4wat$ -u sige sige
+  /usr/lib/postgresql/9.1/bin/pgsql2shp -h $db_address -g $geomcol -f $shapeoutput/zones -P db4wat$ -u sige sige
 fi
-
- 
-
 
 # PIPES SCHEMA
 export sql="SELECT                                                \
@@ -117,7 +114,7 @@ then
   -dsco SPATIALITE=no -lco "SPATIAL_INDEX=no FORMAT=SPATIALITE" -gt 65536
 elif [ $outputformat = "2" ]
 then
-  /usr/lib/postgresql/9.1/bin/pgsql2shp -h $db_address -g geom -f $shapeoutput/zones -P db4wat$ -u sige sige
+  /usr/lib/postgresql/9.1/bin/pgsql2shp -h $db_address -g $geomcol -f $shapeoutput/zones -P db4wat$ -u sige sige
 fi
 
  
@@ -133,7 +130,7 @@ then
   -dsco SPATIALITE=no -lco "SPATIAL_INDEX=no FORMAT=SPATIALITE" -gt 65536
 elif [ $outputformat = "2" ]
 then
-  /usr/lib/postgresql/9.1/bin/pgsql2shp -h $db_address -g geom -f $shapeoutput/zones -P db4wat$ -u sige sige
+  /usr/lib/postgresql/9.1/bin/pgsql2shp -h $db_address -g $geomcol -f $shapeoutput/zones -P db4wat$ -u sige sige
 fi
  
 # VALVES
@@ -164,7 +161,7 @@ then
   -dsco SPATIALITE=no -lco "SPATIAL_INDEX=no FORMAT=SPATIALITE" -gt 65536
 elif [ $outputformat = "2" ]
 then
-  /usr/lib/postgresql/9.1/bin/pgsql2shp -h $db_address -g geom -f $shapeoutput/zones -P db4wat$ -u sige sige
+  /usr/lib/postgresql/9.1/bin/pgsql2shp -h $db_address -g $geomcol -f $shapeoutput/zones -P db4wat$ -u sige sige
 fi
 
 
@@ -196,7 +193,7 @@ then
   -dsco SPATIALITE=no -lco "SPATIAL_INDEX=no FORMAT=SPATIALITE" -gt 65536
 elif [ $outputformat = "2" ]
 then
-  /usr/lib/postgresql/9.1/bin/pgsql2shp -h $db_address -g geom -f $shapeoutput/zones -P db4wat$ -u sige sige
+  /usr/lib/postgresql/9.1/bin/pgsql2shp -h $db_address -g $geomcol -f $shapeoutput/zones -P db4wat$ -u sige sige
 fi
 
 
@@ -212,7 +209,7 @@ then
   -dsco SPATIALITE=no -lco "SPATIAL_INDEX=no FORMAT=SPATIALITE" -gt 65536
 elif [ $outputformat = "2" ]
 then
-  /usr/lib/postgresql/9.1/bin/pgsql2shp -h $db_address -g geom -f $shapeoutput/zones -P db4wat$ -u sige sige
+  /usr/lib/postgresql/9.1/bin/pgsql2shp -h $db_address -g $geomcol -f $shapeoutput/zones -P db4wat$ -u sige sige
 fi
 
  
@@ -227,7 +224,7 @@ then
   -dsco SPATIALITE=no -lco "SPATIAL_INDEX=no FORMAT=SPATIALITE" -gt 65536
 elif [ $outputformat = "2" ]
 then
-  /usr/lib/postgresql/9.1/bin/pgsql2shp -h $db_address -g geom -f $shapeoutput/zones -P db4wat$ -u sige sige
+  /usr/lib/postgresql/9.1/bin/pgsql2shp -h $db_address -g $geomcol -f $shapeoutput/zones -P db4wat$ -u sige sige
 fi
  
  # SUBSCRIBER
@@ -241,7 +238,22 @@ then
   -dsco SPATIALITE=no -lco "SPATIAL_INDEX=no FORMAT=SPATIALITE" -gt 65536
 elif [ $outputformat = "2" ]
 then
-  /usr/lib/postgresql/9.1/bin/pgsql2shp -h $db_address -g geom -f $shapeoutput/zones -P db4wat$ -u sige sige
+  /usr/lib/postgresql/9.1/bin/pgsql2shp -h $db_address -g $geomcol -f $shapeoutput/zones -P db4wat$ -u sige sige
 fi
+
+# SAMPLING POINTS
+export sql="SELECT * FROM distribution.samplingpoint"
+if [ $outputformat = "1" ] 
+then
+  ogr2ogr -sql "$sql" \
+  -overwrite -a_srs EPSG:21781 -f SQLite $sqliteoutput \
+  -nln samplingpoint -nlt POINT -progress -preserve_fid \
+  PG:"dbname='sige' host=$db_address port='5432' user='sige' password='db4wat$'" \
+  -dsco SPATIALITE=no -lco "SPATIAL_INDEX=no FORMAT=SPATIALITE" -gt 65536
+elif [ $outputformat = "2" ]
+then
+  /usr/lib/postgresql/9.1/bin/pgsql2shp -h $db_address -g $geomcol -f $shapeoutput/zones -P db4wat$ -u sige sige
+fi
+
 
 
