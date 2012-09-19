@@ -29,8 +29,7 @@ ALTER TABLE distribution.pipe ADD COLUMN pressure_nominale smallint;            
 ALTER TABLE distribution.pipe ADD COLUMN folder varchar(20) DEFAULT '';                        /* folder               */
 ALTER TABLE distribution.pipe ADD COLUMN remarks text;                                         /* remarks              */
 ALTER TABLE distribution.pipe ADD COLUMN _length2d decimal(8,2);                               /* _length2d            */
-ALTER TABLE distribution.pipe ADD COLUMN _length3d decimal(8,2);                               /* _length3d            */
-ALTER TABLE distribution.pipe ADD COLUMN _length3d_uptodate boolean DEFAULT False;             /* _length3d_uptodate   */
+ALTER TABLE distribution.pipe ADD COLUMN _length3d decimal(8,2) DEFAULT NULL;                  /* _length3d            */
 ALTER TABLE distribution.pipe ADD COLUMN _is_on_map varchar(80) DEFAULT '';                    /* _is_on_map           */
 ALTER TABLE distribution.pipe ADD COLUMN _is_on_district varchar(100) DEFAULT '';              /* _is_on_district      */
 
@@ -67,7 +66,7 @@ CREATE OR REPLACE FUNCTION distribution.pipe_geom() RETURNS trigger AS '
 			id_node_b            = distribution.node_get_id(ST_EndPoint(  NEW.geometry),true),
 			id_pressurezone      = distribution.get_pressurezone_id(NEW.geometry),
 			_length2d            = ST_Length(NEW.geometry),
-			_length3d_uptodate   = False,
+			_length3d            = NULL,
 			_is_on_map           = distribution.get_map(NEW.geometry),
 			_is_on_district      = distribution.get_district(NEW.geometry),
 			geometry_schematic   = NEW.geometry
@@ -88,21 +87,6 @@ CREATE TRIGGER pipe_geom_trigger_update
 	FOR EACH ROW
 	WHEN (ST_AsBinary(NEW.geometry) <> ST_AsBinary(OLD.geometry))
 	EXECUTE PROCEDURE distribution.pipe_geom();
-COMMENT ON TRIGGER pipe_geom_trigger_update ON distribution.pipe IS 'Trigger: updates auto fields of the pipe after update.';
-
-/*----------------!!!---!!!----------------*/
-/* Trigger for tunnel_or_bridge */
-CREATE OR REPLACE FUNCTION distribution.pipe_tunnelbridge() RETURNS trigger AS ' 
-	BEGIN
-		UPDATE distribution.pipe SET _length3d_uptodate = FALSE WHERE id = NEW.id ;
-		RETURN NEW;
-	END;
-' LANGUAGE 'plpgsql';
-
-CREATE TRIGGER pipe_tunnelbridge_trigger
-	AFTER UPDATE OF tunnel_or_bridge ON distribution.pipe
-	FOR EACH ROW
-	EXECUTE PROCEDURE distribution.pipe_tunnelbridge();
-COMMENT ON TRIGGER pipe_tunnelbridge_trigger ON distribution.pipe IS 'As for tunnel and bridges, 3d length is the 2d length, set _length3d_uptodate to false to reset it later.';
+COMMENT ON TRIGGER pipe_geom_trigger_update ON distribution.pipe IS 'Trigger: updates auto fields of the pipe after geometry update.';
 
 COMMIT;

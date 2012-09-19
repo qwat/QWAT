@@ -28,8 +28,7 @@ CREATE VIEW distribution.pipe_view AS
 		pipe.folder            ,
 		pipe.remarks           , 
 		pipe._length2d         ,
-		pipe._length3d         ,
-		pipe._length3d_uptodate,
+		
 		pipe._is_on_map        ,
 		pipe._is_on_district   ,
 		pipe.geometry::geometry(LineString,21781),
@@ -53,6 +52,19 @@ CREATE VIEW distribution.pipe_view AS
 			WHEN pipe.schema_force_view IS NULL THEN pipe_function.schema_view
 			ELSE pipe.schema_force_view
 		END AS _schema_view,
+		CASE
+			WHEN tunnel_or_bridge IS TRUE THEN NULL
+			ELSE pipe._length3d
+		END AS _length3d,
+		CASE
+			WHEN tunnel_or_bridge IS TRUE THEN NULL
+			ELSE abs(node_a.altitude_dtm-node_b.altitude_dtm)
+		END AS _diff_elevation,
+		CASE
+			WHEN tunnel_or_bridge IS TRUE THEN NULL
+			WHEN _length3d IS NOT NULL THEN abs(node_a.altitude_dtm-node_b.altitude_dtm)/_length3d
+			ELSE                            abs(node_a.altitude_dtm-node_b.altitude_dtm)/_length2d
+		END AS _slope,
 		distribution.pipe_count_valve(pipe.id) AS _valve_count,
 		distribution.pipe_isClosed(pipe.id)    AS _valve_closed
 		FROM distribution.pipe
@@ -63,7 +75,9 @@ CREATE VIEW distribution.pipe_view AS
 		INNER      JOIN distribution."precision"         ON pipe.id_precision      = "precision".id
 		LEFT OUTER JOIN distribution.pipe_protection     ON pipe.id_protection     = pipe_protection.id
 		INNER      JOIN distribution.status              ON pipe.id_status         = status.id
-		LEFT OUTER JOIN distribution.pressurezone        ON pipe.id_pressurezone   = pressurezone.id ;
+		LEFT OUTER JOIN distribution.pressurezone        ON pipe.id_pressurezone   = pressurezone.id 
+		LEFT OUTER JOIN distribution.node AS node_a      ON pipe.id_node_a         = node_a.id
+		LEFT OUTER JOIN distribution.node AS node_b      ON pipe.id_node_b         = node_b.id;
 /*----------------!!!---!!!----------------*/
 /* Comment */
 COMMENT ON VIEW distribution.pipe_view IS 'View for pipe. This view is editable (a rule exists to forwad changes to the table). 

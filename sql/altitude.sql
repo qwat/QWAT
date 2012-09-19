@@ -79,3 +79,5 @@ $BODY$
 $BODY$
 LANGUAGE 'plpgsql';
 COMMENT ON FUNCTION altitude.length3d(geometry) IS 'Returns the real (3D) length of a linestring using the dtm (raster) stored in altitude.dtm. To create the DTM use raster2pgsql DTM altitude.dtm > load_dtm.sql and load the resulting file.';
+
+
