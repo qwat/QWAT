@@ -28,11 +28,9 @@ CREATE VIEW distribution.pipe_view AS
 		pipe.folder            ,
 		pipe.remarks           , 
 		pipe._length2d         ,
-		
 		pipe._is_on_map        ,
 		pipe._is_on_district   ,
 		pipe.geometry::geometry(LineString,21781),
-		sqrt(pow(_length3d,2)-pow(_length2d,2))/_length2d AS _slope,
 		pipe_function.function          AS _function_name, 
 		pipe_install_method.name        AS _install_method,
 		pipe_material._fancy_name       AS _material_name,

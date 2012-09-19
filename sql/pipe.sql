@@ -59,7 +59,8 @@ ALTER TABLE distribution.pipe ADD CONSTRAINT pipe_id_pressurezone   FOREIGN KEY 
 
 /*----------------!!!---!!!----------------*/
 /* Trigger for 2d length, map and district update */
-CREATE OR REPLACE FUNCTION distribution.pipe_geom() RETURNS trigger AS ' 
+CREATE OR REPLACE FUNCTION distribution.pipe_geom() RETURNS trigger AS 
+$BODY$
 	BEGIN
 		UPDATE distribution.pipe SET
 			id_node_a            = distribution.node_get_id(ST_StartPoint(NEW.geometry),true),
@@ -73,7 +74,8 @@ CREATE OR REPLACE FUNCTION distribution.pipe_geom() RETURNS trigger AS '
 		WHERE id = NEW.id ;
 		RETURN NEW;
 	END;
-' LANGUAGE 'plpgsql';
+$BODY$
+LANGUAGE 'plpgsql';
 COMMENT ON FUNCTION distribution.pipe_geom() IS 'Fcn/Trigger: updates the length and other fields of the pipe after insert/update.';
 
 CREATE TRIGGER pipe_geom_trigger_insert
