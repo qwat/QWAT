@@ -64,6 +64,8 @@ $BODY$
 		IF grouped.count = 0 THEN
 			IF node_id IN (SELECT id_node FROM distribution.valve) THEN
 				type := 'valve';
+			ELSEIF node_id IN (SELECT id_node FROM distribution.installation) THEN
+				type := 'installation';
 			ELSE
 				RAISE NOTICE 'Delete node %' , node_id ;
 				DELETE FROM distribution.node WHERE id = node_id ;
