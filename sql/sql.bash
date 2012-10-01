@@ -6,7 +6,8 @@ then
 
 read -p "Last xxx of IP : " ip
 
-psql -h 172.24.171.$ip -U sige -c "DROP SCHEMA distribution CASCADE; CREATE SCHEMA distribution;"
+psql -h 172.24.171.$ip -U sige -c "DROP SCHEMA distribution CASCADE;"
+psql -h 172.24.171.$ip -U sige -c "CREATE SCHEMA distribution;"
 
 psql -h 172.24.171.$ip -U sige -f tool_fcn.sql
 read -p "Press any key to continue..."
@@ -34,7 +35,7 @@ psql -h 172.24.171.$ip -U sige -f district_fcn.sql
 read -p "Press any key to continue..."
 psql -h 172.24.171.$ip -U sige -f distributor.sql
 read -p "Press any key to continue..."
-psql -h 172.24.171.$ip -U sige -f printmaps.sql
+psql -h 172.24.171.$ip -U sige -f printmap.sql
 read -p "Press any key to continue..."
 
 psql -h 172.24.171.$ip -U sige -f hydrant_provider.sql
