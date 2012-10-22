@@ -20,7 +20,7 @@ fi
 ########################################################################
 # TABLES AND VIEWS
 # pipes
-ogr2ogr -sql "SELECT * FROM distribution.pipe WHERE id_distributor = 1"  \
+ogr2ogr -sql "SELECT * FROM distribution.pipe_view WHERE id_distributor = 1"  \
 -overwrite -a_srs EPSG:21781 -f SQLite $sqliteoutput \
 -nln pipe -nlt LINESTRING -progress -preserve_fid \
 PG:"dbname='sige' host=$db_address port='5432' user='sige' password='db4wat$'" \
@@ -54,10 +54,10 @@ ogr2ogr -sql "SELECT * FROM distribution.valve_schema "  \
 PG:"dbname='sige' host=$db_address port='5432' user='sige' password='db4wat$'" \
 -dsco SPATIALITE=no -lco "SPATIAL_INDEX=no FORMAT=SPATIALITE" -gt 65536
 
-# valves schema
-ogr2ogr -sql "SELECT * FROM distribution.valve_schema "  \
+# hydrantes
+ogr2ogr -sql "SELECT * FROM distribution.hydrant_view WHERE id_distributor = 1"  \
 -overwrite -a_srs EPSG:21781 -f SQLite $sqliteoutput \
--nln valve_schema -nlt POINT -progress -preserve_fid \
+-nln hydrant -nlt POINT -progress -preserve_fid \
 PG:"dbname='sige' host=$db_address port='5432' user='sige' password='db4wat$'" \
 -dsco SPATIALITE=no -lco "SPATIAL_INDEX=no FORMAT=SPATIALITE" -gt 65536
 
@@ -65,22 +65,28 @@ PG:"dbname='sige' host=$db_address port='5432' user='sige' password='db4wat$'" \
 ogr2ogr -sql "SELECT * FROM distribution.installation_view WHERE _status_active IS TRUE" \
 -overwrite -a_srs EPSG:21781 -f SQLite $sqliteoutput \
 -nln installation -nlt POINT -progress \
-PG:"dbname='sige' host='172.24.171.202' port='5432' user='sige' password='db4wat$'" \
+PG:"dbname='sige' host='172.24.171.203' port='5432' user='sige' password='db4wat$'" \
 -dsco SPATIALITE=no -lco "SPATIAL_INDEX=no FORMAT=SPATIALITE" -gt 65536
 
 # pressure zones
 ogr2ogr -sql "SELECT * FROM distribution.pressurezone" \
 -overwrite -a_srs EPSG:21781 -f SQLite $sqliteoutput \
 -nln pressurezone -nlt POLYGON -progress \
-PG:"dbname='sige' host='172.24.171.202' port='5432' user='sige' password='db4wat$'" \
+PG:"dbname='sige' host='172.24.171.203' port='5432' user='sige' password='db4wat$'" \
 -dsco SPATIALITE=no -lco "SPATIAL_INDEX=no FORMAT=SPATIALITE" -gt 65536
 
 # print maps
-# pressure zones
 ogr2ogr -sql "SELECT * FROM distribution.printmap" \
 -overwrite -a_srs EPSG:21781 -f SQLite $sqliteoutput \
 -nln printmap -nlt POLYGON -progress \
-PG:"dbname='sige' host='172.24.171.202' port='5432' user='sige' password='db4wat$'" \
+PG:"dbname='sige' host='172.24.171.203' port='5432' user='sige' password='db4wat$'" \
+-dsco SPATIALITE=no -lco "SPATIAL_INDEX=no FORMAT=SPATIALITE" -gt 65536
+
+# subscriber
+ogr2ogr -sql "SELECT * FROM distribution.subscriber_view"  \
+-overwrite -a_srs EPSG:21781 -f SQLite $sqliteoutput \
+-nln subscriber -nlt POINT -progress -preserve_fid \
+PG:"dbname='sige' host=$db_address port='5432' user='sige' password='db4wat$'" \
 -dsco SPATIALITE=no -lco "SPATIAL_INDEX=no FORMAT=SPATIALITE" -gt 65536
 
 ########################################################################
@@ -93,7 +99,7 @@ then
 	prompt
 	binary
 	cd Distribution
-	put $sqliteoutput sige_distribution.sqlite
+	put $sqliteoutput sige_distribution_v2.sqlite
 	bye
 	EOF
 fi
