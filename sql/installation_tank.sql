@@ -1,7 +1,7 @@
 /*
 	qWat - QGIS Water Module
 	
-	SQL file :: installation tank
+	SQL file :: installation <- tank
 */
 
 BEGIN;
@@ -38,3 +38,4 @@ ALTER TABLE distribution.installation_tank ADD CONSTRAINT installation_tank_id_d
 ALTER TABLE distribution.installation_tank ADD CONSTRAINT installation_tank_id_status       FOREIGN KEY (id_status)       REFERENCES distribution.status(id)            MATCH FULL; CREATE INDEX fki_installation_tank_id_status         ON distribution.installation_tank(id_status)      ;
 
 COMMIT;
+
