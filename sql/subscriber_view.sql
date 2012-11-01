@@ -15,6 +15,7 @@ CREATE VIEW distribution.subscriber_view AS
 		subscriber.id_district     ,
 		subscriber.id_client       ,
 		subscriber.parcel          ,
+		subscriber._is_on_map      ,
 		subscriber.geometry::geometry(Point,21781),	
 		subscriber_type.name  AS _type     ,
 		district.name         AS _district ,
