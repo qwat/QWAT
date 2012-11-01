@@ -13,17 +13,23 @@ SELECT setval('distribution.installation_id_seq', 100, true);
 COMMENT ON TABLE distribution.installation IS 'installation.';
 
 /* columns */
-ALTER TABLE distribution.installation ADD COLUMN  name              varchar(30) DEFAULT '' ;
-ALTER TABLE distribution.installation ADD COLUMN  id_distributor    integer                ;
-ALTER TABLE distribution.installation ADD COLUMN  id_status         integer                ;
-ALTER TABLE distribution.installation ADD COLUMN  id_type           integer                ;
-ALTER TABLE distribution.installation ADD COLUMN  id_node           integer                ;
-ALTER TABLE distribution.installation ADD COLUMN  id_district       integer                ;
-ALTER TABLE distribution.installation ADD COLUMN  id_pressurezone   integer                ;
-ALTER TABLE distribution.installation ADD COLUMN  remarks           text                   ;
-ALTER TABLE distribution.installation ADD COLUMN  schema_force_view boolean DEFAULT NULL::boolean;
-ALTER TABLE distribution.installation ADD COLUMN  altitude_real     decimal(10,3)          ;
-ALTER TABLE distribution.installation ADD COLUMN  _is_on_map        varchar(30)            ;
+ALTER TABLE distribution.installation ADD COLUMN  name               varchar(30) DEFAULT '' ;
+ALTER TABLE distribution.installation ADD COLUMN  sige               integer                ;
+ALTER TABLE distribution.installation ADD COLUMN  id_status          integer                ;
+ALTER TABLE distribution.installation ADD COLUMN  id_distributor     integer                ;
+ALTER TABLE distribution.installation ADD COLUMN  id_type            integer                ;
+ALTER TABLE distribution.installation ADD COLUMN  id_node            integer                ;
+ALTER TABLE distribution.installation ADD COLUMN  id_district        integer                ;
+ALTER TABLE distribution.installation ADD COLUMN  id_pressurezone    integer                ;
+ALTER TABLE distribution.installation ADD COLUMN  remarks            text                   ;
+ALTER TABLE distribution.installation ADD COLUMN  year smallint CHECK (year > 1800 AND year < 2100);
+ALTER TABLE distribution.installation ADD COLUMN  schema_force_view  boolean DEFAULT NULL::boolean;
+ALTER TABLE distribution.installation ADD COLUMN  altitude_real      decimal(10,3)          ;
+ALTER TABLE distribution.installation ADD COLUMN  _is_on_map         varchar(30)            ;
+ALTER TABLE distribution.installation ADD COLUMN  open_water_surface boolean DEFAULT False  ;
+ALTER TABLE distribution.installation ADD COLUMN  parcel             varchar(30)            ;
+ALTER TABLE distribution.installation ADD COLUMN  eca                varchar(30)            ;
+
 
 /* geometry */
 SELECT AddGeometryColumn('distribution', 'installation', 'geometry', 21781, 'POINT', 2);
