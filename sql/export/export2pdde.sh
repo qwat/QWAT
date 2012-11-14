@@ -1,4 +1,4 @@
-export db_address=172.24.171.202
+export db_address=172.24.171.203
 export shapeoutput=/home/denis/Documents/PPDE/out
 
 export PGCLIENTENCODING=LATIN1;

@@ -10,14 +10,6 @@ export sqliteoutput=/home/denis/Documents/cartoriviera/sige_distribution.sqlite
 export PGCLIENTENCODING=LATIN1;
 
 
-ok pour export qgis server
-
--overwrite -a_srs EPSG:21781 -f SQLite $outputpath \
- -nln pipe -nlt LINESTRING -progress -preserve_fid \
- PG:"dbname='sige' host='172.24.171.203' port='5432' user='sige' password='db4wat$'" \
- -dsco SPATIALITE=yes -lco SPATIAL_INDEX=yes  -gt 65536
-
-
 echo "Format?"
 echo "1. SQLite (cartoriviera)"
 echo "2. Shape "
@@ -46,32 +38,32 @@ fi
 ########################################################################
 # PIPES VIEW
 export sql="SELECT";
-export sql="$sql id                                  ,";
-export sql="$sql year                                ,";
-export sql="$sql tunnel_or_bridge                    ,";
-export sql="$sql pressure_nominale                   ,";
-export sql="$sql folder                              ,";
-export sql="$sql remarks                             ,";
-export sql="$sql _length2d                           ,";
-export sql="$sql _length3d                           ,";
-export sql="$sql _diff_elevation                     ,";
-export sql="$sql _slope                              ,";
-export sql="$sql _is_on_map                          ,";
-export sql="$sql _is_on_district                     ,";
-export sql="$sql geometry::geometry(LineString,21781),";
-export sql="$sql _function_name                      ,";
-export sql="$sql _install_method                     ,";
-export sql="$sql _material_name                      ,";
-export sql="$sql _material_longname                  ,";
-export sql="$sql _material_diameter                  ,";
-export sql="$sql _material_diameter_internal         ,";
-export sql="$sql _distributor                        ,";
-export sql="$sql _precision                          ,";
-export sql="$sql _protection                         ,";
-export sql="$sql _status_name                        ,";
-export sql="$sql _status_active                      ,";
-export sql="$sql _pressurezone                       ,";
-export sql="$sql _schema_view                         ";
+export sql="$sql id                                  "; if [ $outputformat = "2" ]; then export sql="$sql AS id        ,";else export sql="$sql ,";fi
+export sql="$sql year                                "; if [ $outputformat = "2" ]; then export sql="$sql AS annee     ,";else export sql="$sql ,";fi
+export sql="$sql tunnel_or_bridge                    "; if [ $outputformat = "2" ]; then export sql="$sql AS tunnel_pon,";else export sql="$sql ,";fi
+export sql="$sql pressure_nominale                   "; if [ $outputformat = "2" ]; then export sql="$sql AS pres_nomin,";else export sql="$sql ,";fi
+export sql="$sql folder                              "; if [ $outputformat = "2" ]; then export sql="$sql AS dossier   ,";else export sql="$sql ,";fi
+export sql="$sql remarks                             "; if [ $outputformat = "2" ]; then export sql="$sql AS remarques ,";else export sql="$sql ,";fi
+export sql="$sql _length2d                           "; if [ $outputformat = "2" ]; then export sql="$sql AS long_2d   ,";else export sql="$sql ,";fi
+export sql="$sql _length3d                           "; if [ $outputformat = "2" ]; then export sql="$sql AS long_3d   ,";else export sql="$sql ,";fi
+export sql="$sql _diff_elevation                     "; if [ $outputformat = "2" ]; then export sql="$sql AS dz        ,";else export sql="$sql ,";fi
+export sql="$sql _slope                              "; if [ $outputformat = "2" ]; then export sql="$sql AS pente     ,";else export sql="$sql ,";fi
+export sql="$sql _is_on_map                          "; if [ $outputformat = "2" ]; then export sql="$sql AS folio     ,";else export sql="$sql ,";fi
+export sql="$sql _is_on_district                     "; if [ $outputformat = "2" ]; then export sql="$sql AS commune   ,";else export sql="$sql ,";fi
+export sql="$sql geometry::geometry(LineString,21781)"; if [ $outputformat = "2" ]; then export sql="$sql AS geometry  ,";else export sql="$sql ,";fi
+export sql="$sql _function_name                      "; if [ $outputformat = "2" ]; then export sql="$sql AS fonction  ,";else export sql="$sql ,";fi
+export sql="$sql _install_method                     "; if [ $outputformat = "2" ]; then export sql="$sql AS mode_pose ,";else export sql="$sql ,";fi
+export sql="$sql _material_name                      "; if [ $outputformat = "2" ]; then export sql="$sql AS mat_court ,";else export sql="$sql ,";fi
+export sql="$sql _material_longname                  "; if [ $outputformat = "2" ]; then export sql="$sql AS mat_long  ,";else export sql="$sql ,";fi
+export sql="$sql _material_diameter                  "; if [ $outputformat = "2" ]; then export sql="$sql AS mat_diam  ,";else export sql="$sql ,";fi
+export sql="$sql _material_diameter_internal         "; if [ $outputformat = "2" ]; then export sql="$sql AS mat_diam_i,";else export sql="$sql ,";fi
+export sql="$sql _distributor                        "; if [ $outputformat = "2" ]; then export sql="$sql AS distribut ,";else export sql="$sql ,";fi
+export sql="$sql _precision                          "; if [ $outputformat = "2" ]; then export sql="$sql AS precision ,";else export sql="$sql ,";fi
+export sql="$sql _protection                         "; if [ $outputformat = "2" ]; then export sql="$sql AS protection,";else export sql="$sql ,";fi
+export sql="$sql _status_name                        "; if [ $outputformat = "2" ]; then export sql="$sql AS etat      ,";else export sql="$sql ,";fi
+export sql="$sql _status_active                      "; if [ $outputformat = "2" ]; then export sql="$sql AS etat_actif,";else export sql="$sql ,";fi
+export sql="$sql _pressurezone                       "; if [ $outputformat = "2" ]; then export sql="$sql AS zone_press,";else export sql="$sql ,";fi
+export sql="$sql _schema_view                        "; if [ $outputformat = "2" ]; then export sql="$sql AS schema_vis";fi
 export sql="$sql FROM distribution.pipe_view WHERE id_distributor = 1";
 if [ $outputformat = "1" ] 
 then
@@ -88,31 +80,31 @@ fi
 ########################################################################
 # PIPES SCHEMA
 export sql="SELECT ";
-export sql="$sql id                                  ,";
-export sql="$sql year                                ,";
-export sql="$sql tunnel_or_bridge                    ,";
-export sql="$sql pressure_nominale                   ,";
-export sql="$sql folder                              ,";
-export sql="$sql remarks                             ,";
-export sql="$sql _length2d                           ,";
-export sql="$sql _length3d                           ,";
-export sql="$sql _diff_elevation                     ,";
-export sql="$sql _slope                              ,";
-export sql="$sql _is_on_map                          ,";
-export sql="$sql _is_on_district                     ,";
-export sql="$sql geometry::geometry(LineString,21781),";
-export sql="$sql _function_name                      ,";
-export sql="$sql _install_method                     ,";
-export sql="$sql _material_name                      ,";
-export sql="$sql _material_longname                  ,";
-export sql="$sql _material_diameter                  ,";
-export sql="$sql _material_diameter_internal         ,";
-export sql="$sql _distributor                        ,";
-export sql="$sql _precision                          ,";
-export sql="$sql _protection                         ,";
-export sql="$sql _status_name                        ,";
-export sql="$sql _status_active                      ,";
-export sql="$sql _pressurezone                       "; 
+export sql="$sql id                                  "; if [ $outputformat = "2" ]; then export sql="$sql AS id        ,";else export sql="$sql ,";fi
+export sql="$sql year                                "; if [ $outputformat = "2" ]; then export sql="$sql AS annee     ,";else export sql="$sql ,";fi
+export sql="$sql tunnel_or_bridge                    "; if [ $outputformat = "2" ]; then export sql="$sql AS tunnel_pon,";else export sql="$sql ,";fi
+export sql="$sql pressure_nominale                   "; if [ $outputformat = "2" ]; then export sql="$sql AS pres_nomin,";else export sql="$sql ,";fi
+export sql="$sql folder                              "; if [ $outputformat = "2" ]; then export sql="$sql AS dossier   ,";else export sql="$sql ,";fi
+export sql="$sql remarks                             "; if [ $outputformat = "2" ]; then export sql="$sql AS remarques ,";else export sql="$sql ,";fi
+export sql="$sql _length2d                           "; if [ $outputformat = "2" ]; then export sql="$sql AS long_2d   ,";else export sql="$sql ,";fi
+export sql="$sql _length3d                           "; if [ $outputformat = "2" ]; then export sql="$sql AS long_3d   ,";else export sql="$sql ,";fi
+export sql="$sql _diff_elevation                     "; if [ $outputformat = "2" ]; then export sql="$sql AS dz        ,";else export sql="$sql ,";fi
+export sql="$sql _slope                              "; if [ $outputformat = "2" ]; then export sql="$sql AS pente     ,";else export sql="$sql ,";fi
+export sql="$sql _is_on_map                          "; if [ $outputformat = "2" ]; then export sql="$sql AS folio     ,";else export sql="$sql ,";fi
+export sql="$sql _is_on_district                     "; if [ $outputformat = "2" ]; then export sql="$sql AS commune   ,";else export sql="$sql ,";fi
+export sql="$sql geometry::geometry(LineString,21781)"; if [ $outputformat = "2" ]; then export sql="$sql AS geometry  ,";else export sql="$sql ,";fi
+export sql="$sql _function_name                      "; if [ $outputformat = "2" ]; then export sql="$sql AS fonction  ,";else export sql="$sql ,";fi
+export sql="$sql _install_method                     "; if [ $outputformat = "2" ]; then export sql="$sql AS mode_pose ,";else export sql="$sql ,";fi
+export sql="$sql _material_name                      "; if [ $outputformat = "2" ]; then export sql="$sql AS mat_court ,";else export sql="$sql ,";fi
+export sql="$sql _material_longname                  "; if [ $outputformat = "2" ]; then export sql="$sql AS mat_long  ,";else export sql="$sql ,";fi
+export sql="$sql _material_diameter                  "; if [ $outputformat = "2" ]; then export sql="$sql AS mat_diam  ,";else export sql="$sql ,";fi
+export sql="$sql _material_diameter_internal         "; if [ $outputformat = "2" ]; then export sql="$sql AS mat_diam_i,";else export sql="$sql ,";fi
+export sql="$sql _distributor                        "; if [ $outputformat = "2" ]; then export sql="$sql AS distribu  ,";else export sql="$sql ,";fi
+export sql="$sql _precision                          "; if [ $outputformat = "2" ]; then export sql="$sql AS precision ,";else export sql="$sql ,";fi
+export sql="$sql _protection                         "; if [ $outputformat = "2" ]; then export sql="$sql AS protection,";else export sql="$sql ,";fi
+export sql="$sql _status_name                        "; if [ $outputformat = "2" ]; then export sql="$sql AS etat      ,";else export sql="$sql ,";fi
+export sql="$sql _status_active                      "; if [ $outputformat = "2" ]; then export sql="$sql AS etat_actif,";else export sql="$sql ,";fi
+export sql="$sql _pressurezone                       "; if [ $outputformat = "2" ]; then export sql="$sql AS zone_press";fi
 export sql="$sql FROM distribution.pipe_schema_temp WHERE id_distributor = 1"
 if [ $outputformat = "1" ] 
 then
