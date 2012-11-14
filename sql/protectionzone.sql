@@ -12,14 +12,14 @@ CREATE TABLE distribution.protectionzone (id serial NOT NULL);
 COMMENT ON TABLE distribution.protectionzone IS 'protectionzones.';
 
 /* columns */
-ALTER TABLE distribution.protectionzone ADD COLUMN  id_type            integer;
-ALTER TABLE distribution.protectionzone ADD COLUMN  name               varchar(40);
-ALTER TABLE distribution.protectionzone ADD COLUMN  definitive         boolean     default True;
-ALTER TABLE distribution.protectionzone ADD COLUMN  date_accepted      date;
-ALTER TABLE distribution.protectionzone ADD COLUMN  agent              varchar(12);
+ALTER TABLE distribution.protectionzone ADD COLUMN  id_type   integer;
+ALTER TABLE distribution.protectionzone ADD COLUMN  name      varchar(40);
+ALTER TABLE distribution.protectionzone ADD COLUMN  validated boolean     default True;
+ALTER TABLE distribution.protectionzone ADD COLUMN  date      date;
+ALTER TABLE distribution.protectionzone ADD COLUMN  agent     varchar(40);
 
 /* geometry */
-SELECT AddGeometryColumn('distribution', 'protectionzone', 'geometry', 21781, 'POLYGON', 2);
+SELECT AddGeometryColumn('distribution', 'protectionzone', 'geometry', 21781, 'MULTIPOLYGON', 2);
 CREATE INDEX protectionzone_geoidx ON distribution.protectionzone USING GIST ( geometry );
 
 /* contraints */
