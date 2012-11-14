@@ -5,7 +5,7 @@
 #    Windows command-line to run this workspace:
 #    
 #    
-#    fme.exe oracle2postgres_samplingpoint_202.fmw
+#    fme.exe oracle2postgres_5_samplingpoint_202.fmw
 #          --DestDataset_POSTGIS sige
 #          --SourceDataset_ORACLE8I_DB orcl
 #    
@@ -2464,7 +2464,7 @@ INCLUDE [ if {"$(DestDataset)" != ""} {                          \
 #! START_DEST_HEADER POSTGIS POSTGIS_1
 DEFAULT_MACRO DestDataset_POSTGIS_1 $(DestDataset_POSTGIS)
 GUI TEXT DestDataset_POSTGIS_1 Destination PostGIS Dataset:
-DEFAULT_MACRO POSTGIS_OUT_HOST_POSTGIS_1 172.24.171.202
+DEFAULT_MACRO POSTGIS_OUT_HOST_POSTGIS_1 172.24.171.203
 POSTGIS_1_HOST "$(POSTGIS_OUT_HOST_POSTGIS_1)"
 GUI TEXT POSTGIS_OUT_HOST_POSTGIS_1 Host:
 DEFAULT_MACRO POSTGIS_OUT_PORT_POSTGIS_1 5432
@@ -2507,7 +2507,7 @@ POSTGIS_1_DATASET "$(DestDataset_POSTGIS_1)"
 #! END_DEST_HEADER
 #! END_HEADER
 
-LOG_FILENAME "$(FME_MF_DIR)oracle2postgres_samplingpoint_202.log"
+LOG_FILENAME "$(FME_MF_DIR)oracle2postgres_5_samplingpoint_202.log"
 LOG_APPEND NO
 LOG_MAX_FEATURES 200
 LOG_MAX_RECORDED_FEATURES 200
@@ -2529,7 +2529,7 @@ MULTI_READER_CONTINUE_ON_READER_FAILURE No
 
 # -------------------------------------------------------------------------
 
-MACRO WORKSPACE_NAME oracle2postgres_samplingpoint_202
+MACRO WORKSPACE_NAME oracle2postgres_5_samplingpoint_202
 MACRO FME_VIEWER_APP fmeview
 # -------------------------------------------------------------------------
 ORACLE8I_DB_1_DEF SIGE_DISTRIBUTION_SCHEMA.EP_POINT_PRELEVEMENT   DELETED                      number(1,0)   DESIGNATION                  varchar2(150)   FID                          number(10,0)   GID                          number(10,0)   GROUPE                       number(10,0)   LIEU                         varchar2(250)   NUMERO                       number(5,0)   POINTS_PRELEV_PI_NOABTC      number(10,0)   POINTS_PRELEV_PP_ACTIF       number(10,0)   POINTS_PRELEV_PP_CHIMI       number(10,0)   POINTS_PRELEV_PP_DEBADR1     varchar2(255)   POINTS_PRELEV_PP_DEBADR2     varchar2(255)   POINTS_PRELEV_PP_DEBLOCALITE varchar2(255)   POINTS_PRELEV_PP_DEBNPA      varchar2(255)   POINTS_PRELEV_PP_DESIGNATION varchar2(255)   POINTS_PRELEV_PP_GROUPE      varchar2(255)   POINTS_PRELEV_PP_JOUR        varchar2(255)   POINTS_PRELEV_PP_LIEU        varchar2(255)   POINTS_PRELEV_PP_LOCALITE    varchar2(255)   POINTS_PRELEV_PP_NO          number(20,8)   POINTS_PRELEV_PP_NOABT       number(20,8)   POINTS_PRELEV_PP_NODEBITEUR  number(10,0)   POINTS_PRELEV_PP_NOMDEBITEUR varchar2(255)   POINTS_PRELEV_PP_NPA         varchar2(255)   POINTS_PRELEV_PP_SURVEILLANT varchar2(255)   TB_POINT_NUMBER              number(15,0)

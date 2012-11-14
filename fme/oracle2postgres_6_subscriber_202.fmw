@@ -5,7 +5,7 @@
 #    Windows command-line to run this workspace:
 #    
 #    
-#    fme.exe oracle2postgres_subscriber.fmw
+#    fme.exe oracle2postgres_6_subscriber_202.fmw
 #          --SourceDataset_ORACLE8I_DB orcl
 #          --DestDataset_POSTGIS sige
 #          --SourceDataset_ORACLE8I_DB_3 orcl
@@ -1844,7 +1844,7 @@ INCLUDE [ if {"$(DestDataset)" != ""} {                          \
 #! START_DEST_HEADER POSTGIS POSTGIS_1
 DEFAULT_MACRO DestDataset_POSTGIS_1 $(DestDataset_POSTGIS)
 GUI TEXT DestDataset_POSTGIS_1 Destination PostGIS Dataset:
-DEFAULT_MACRO POSTGIS_OUT_HOST_POSTGIS_1 172.24.171.202
+DEFAULT_MACRO POSTGIS_OUT_HOST_POSTGIS_1 172.24.171.203
 POSTGIS_1_HOST "$(POSTGIS_OUT_HOST_POSTGIS_1)"
 GUI TEXT POSTGIS_OUT_HOST_POSTGIS_1 Host:
 DEFAULT_MACRO POSTGIS_OUT_PORT_POSTGIS_1 5432
@@ -1887,7 +1887,7 @@ POSTGIS_1_DATASET "$(DestDataset_POSTGIS_1)"
 #! END_DEST_HEADER
 #! END_HEADER
 
-LOG_FILENAME "$(FME_MF_DIR)oracle2postgres_subscriber.log"
+LOG_FILENAME "$(FME_MF_DIR)oracle2postgres_6_subscriber_202.log"
 LOG_APPEND NO
 LOG_MAX_FEATURES 200
 LOG_MAX_RECORDED_FEATURES 200
@@ -1913,7 +1913,7 @@ MULTI_READER_CONTINUE_ON_READER_FAILURE No
 
 # -------------------------------------------------------------------------
 
-MACRO WORKSPACE_NAME oracle2postgres_subscriber
+MACRO WORKSPACE_NAME oracle2postgres_6_subscriber_202
 MACRO FME_VIEWER_APP fmeview
 # -------------------------------------------------------------------------
 ORACLE8I_DB_1_DEF SIGE_DISTRIBUTION.WA_GEBEINFUEHR   AREA_NOMINAL                 number(20,8)   ARTIKEL_NR                   varchar2(50)   BEMERKUNG                    varchar2(255)   BEZEICHNUNG                  varchar2(20)   COMMUNE_PROV                 number(10,0)   DELETED                      number(1,0)   DRUCKZONE_ID                 number(10,0)   EIGENTUMSVERHAELTNIS         varchar2(5)   EINBAUJAHR                   number(20,0)   F1                           varchar2(20)   F2                           varchar2(20)   F3                           varchar2(20)   FACTEUR_ECHELLE              number(2,1)   FID                          number(10,0)   FID_KUNDE                    number(10,0)   FID_LAGEBEZEICHNUNG          number(10,0)   FID_NETZPUNKT                number(10,0)   FLST_KENNZEICHEN_OF          varchar2(25)   FLST_NENNER                  number(20,0)   FLST_NR                      number(20,0)   FLST_ZAEHLER                 number(20,0)   FOLIO                        varchar2(15)   GEMARKUNG                    number(20,0)   GID                          number(10,0)   HAUSNUMMER                   number(10,0)   HAUSNUMMER_ERG               varchar2(10)   HERSTELLER_ID                number(20,0)   ISOLIERSTUECK_INTERN         varchar2(15)   KUNDENNUMMER                 varchar2(20)   LAGEGENAUIGKEIT              varchar2(5)   NAME                         varchar2(60)   NENNDRUCK                    number(20,5)   NENNWEITE_EXTERN             varchar2(15)   NENNWEITE_INTERN             varchar2(15)   PARCELLE                     varchar2(10)   PASTILLE                     number(1,0)   POINT_NUMBER                 varchar2(50)   SAMMELANSCHLUSS              number(10,0)   SPRINKLER_VORHANDEN          number(20,0)   STATUS                       varchar2(5)   STRANG_ID                    number(10,0)   TARIFNUMMER                  varchar2(10)   TB_POINT_NUMBER              number(15,0)   TEXT                         varchar2(255)   TOURNUMMER                   number(10,0)   TYP                          varchar2(5)   V_COMMUNE                    number(10,0)

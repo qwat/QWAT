@@ -5,7 +5,7 @@
 #    Windows command-line to run this workspace:
 #    
 #    
-#    fme.exe oracle2postgres_hydrant_202.fmw
+#    fme.exe oracle2postgres_3_hydrant_202.fmw
 #          --DestDataset_POSTGIS sige
 #          --SourceDataset_ORACLE8I_DB_3 orcl
 #    
@@ -637,7 +637,7 @@
 #! IS_SOURCE="false"
 #! NODE_NAME="distribution.hydrant"
 #! IS_EDITABLE="true"
-#! IDENTIFIER="18"
+#! IDENTIFIER="0"
 #! FEAT_GEOMTYPE="&lt;NO_GEOMETRY&gt;"
 #! POSITION="1875 -38"
 #! ORDER="24"
@@ -671,7 +671,7 @@
 #! IS_SOURCE="true"
 #! NODE_NAME="SIGE_DISTRIBUTION.WA_HYDRANT_GEO"
 #! IS_EDITABLE="false"
-#! IDENTIFIER="40"
+#! IDENTIFIER="1"
 #! FEAT_GEOMTYPE="oracle_nil"
 #! POSITION="140 -2113"
 #! ORDER="27"
@@ -786,7 +786,7 @@
 #! IS_SOURCE="true"
 #! NODE_NAME="SIGE_DISTRIBUTION.WA_HYDRANT"
 #! IS_EDITABLE="false"
-#! IDENTIFIER="41"
+#! IDENTIFIER="2"
 #! FEAT_GEOMTYPE="oracle_nil"
 #! POSITION="191 -72"
 #! ORDER="28"
@@ -878,14 +878,14 @@
 #! </GLOBAL_PARAMETERS>
 #! <COMMENTS>
 #! <COMMENT
-#! IDENTIFIER="29"
+#! IDENTIFIER="31"
 #! COMMENT_VALUE="années"
 #! POSITION="1244 -97"
 #! ORDER="23"
 #! FOLLOW_ANCHOR="true"
 #! INFO_NODE="false"
 #! COMMENT_TYPE="REGULAR"
-#! ANCHORED_NODE="27"
+#! ANCHORED_NODE="10"
 #! />
 #! <COMMENT
 #! IDENTIFIER="32"
@@ -895,27 +895,27 @@
 #! FOLLOW_ANCHOR="true"
 #! INFO_NODE="false"
 #! COMMENT_TYPE="REGULAR"
-#! ANCHORED_NODE="31"
+#! ANCHORED_NODE="12"
 #! />
 #! <COMMENT
-#! IDENTIFIER="36"
+#! IDENTIFIER="33"
 #! COMMENT_VALUE="function"
 #! POSITION="766 -863"
 #! ORDER="26"
 #! FOLLOW_ANCHOR="true"
 #! INFO_NODE="false"
 #! COMMENT_TYPE="REGULAR"
-#! ANCHORED_NODE="37"
+#! ANCHORED_NODE="13"
 #! />
 #! <COMMENT
-#! IDENTIFIER="38"
+#! IDENTIFIER="34"
 #! COMMENT_VALUE="deleted"
 #! POSITION="122 -128"
 #! ORDER="34"
 #! FOLLOW_ANCHOR="true"
 #! INFO_NODE="false"
 #! COMMENT_TYPE="REGULAR"
-#! ANCHORED_NODE="25"
+#! ANCHORED_NODE="9"
 #! />
 #! </COMMENTS>
 #! <CONSTANTS>
@@ -924,7 +924,7 @@
 #! </BOOKMARKS>
 #! <TRANSFORMERS>
 #! <TRANSFORMER
-#! IDENTIFIER="5"
+#! IDENTIFIER="3"
 #! TYPE="StringFormatter"
 #! VERSION="1"
 #! POSITION="69 -1723"
@@ -1036,7 +1036,7 @@
 #! <XFORM_PARM PARM_NAME="TRANSFORMER_GROUP" PARM_VALUE=""/>
 #! </TRANSFORMER>
 #! <TRANSFORMER
-#! IDENTIFIER="8"
+#! IDENTIFIER="4"
 #! TYPE="StringConcatenator"
 #! VERSION="5"
 #! POSITION="76 -1435"
@@ -1147,7 +1147,7 @@
 #! <XFORM_PARM PARM_NAME="VAL_ATTR" PARM_VALUE="WKT"/>
 #! </TRANSFORMER>
 #! <TRANSFORMER
-#! IDENTIFIER="11"
+#! IDENTIFIER="5"
 #! TYPE="GeometryReplacer"
 #! VERSION="2"
 #! POSITION="65 -1179"
@@ -1260,7 +1260,7 @@
 #! <XFORM_PARM PARM_NAME="TRANSFORMER_GROUP" PARM_VALUE=""/>
 #! </TRANSFORMER>
 #! <TRANSFORMER
-#! IDENTIFIER="14"
+#! IDENTIFIER="6"
 #! TYPE="GeometryOGCValidator"
 #! VERSION="0"
 #! POSITION="606 -1920"
@@ -1474,7 +1474,7 @@
 #! <XFORM_PARM PARM_NAME="TRANSFORMER_GROUP" PARM_VALUE=""/>
 #! </TRANSFORMER>
 #! <TRANSFORMER
-#! IDENTIFIER="13"
+#! IDENTIFIER="7"
 #! TYPE="CoordinateSystemSetter"
 #! VERSION="0"
 #! POSITION="631 -1636"
@@ -1586,7 +1586,7 @@
 #! <XFORM_PARM PARM_NAME="COORDSYS" PARM_VALUE="EPSG:21781"/>
 #! </TRANSFORMER>
 #! <TRANSFORMER
-#! IDENTIFIER="16"
+#! IDENTIFIER="8"
 #! TYPE="GeometryExtractor"
 #! VERSION="2"
 #! POSITION="626 -1360"
@@ -1701,7 +1701,7 @@
 #! <XFORM_PARM PARM_NAME="TRANSFORMER_GROUP" PARM_VALUE=""/>
 #! </TRANSFORMER>
 #! <TRANSFORMER
-#! IDENTIFIER="25"
+#! IDENTIFIER="9"
 #! TYPE="AttributeFilter"
 #! VERSION="2"
 #! POSITION="122 -208"
@@ -1897,7 +1897,7 @@
 #! <XFORM_PARM PARM_NAME="ATTR_VALUES" PARM_VALUE="0"/>
 #! </TRANSFORMER>
 #! <TRANSFORMER
-#! IDENTIFIER="27"
+#! IDENTIFIER="10"
 #! TYPE="NullAttributeReplacer"
 #! VERSION="1"
 #! POSITION="1244 -177"
@@ -1973,7 +1973,7 @@
 #! <XFORM_PARM PARM_NAME="TRANSFORMER_GROUP" PARM_VALUE=""/>
 #! </TRANSFORMER>
 #! <TRANSFORMER
-#! IDENTIFIER="22"
+#! IDENTIFIER="11"
 #! TYPE="AttributeRenamer"
 #! VERSION="1"
 #! POSITION="704 -65"
@@ -2046,7 +2046,7 @@
 #! <XFORM_PARM PARM_NAME="ATTR_LIST" PARM_VALUE="id,FID,remarks,BEMERKUNG,year,EINBAUJAHR,sige,POINT_NUMBER,id_provider,HERSTELLER_ID,model,ARTIKEL_NR"/>
 #! </TRANSFORMER>
 #! <TRANSFORMER
-#! IDENTIFIER="31"
+#! IDENTIFIER="12"
 #! TYPE="AttributeValueMapper"
 #! VERSION="2"
 #! POSITION="681 -486"
@@ -2123,7 +2123,7 @@
 #! <XFORM_PARM PARM_NAME="DIRECTION" PARM_VALUE="Forward"/>
 #! </TRANSFORMER>
 #! <TRANSFORMER
-#! IDENTIFIER="37"
+#! IDENTIFIER="13"
 #! TYPE="AttributeValueMapper"
 #! VERSION="2"
 #! POSITION="766 -943"
@@ -2203,7 +2203,7 @@
 #! <XFORM_PARM PARM_NAME="DIRECTION" PARM_VALUE="Forward"/>
 #! </TRANSFORMER>
 #! <TRANSFORMER
-#! IDENTIFIER="34"
+#! IDENTIFIER="14"
 #! TYPE="AttributeCreator"
 #! VERSION="2"
 #! POSITION="12 -710"
@@ -2279,7 +2279,7 @@
 #! <XFORM_PARM PARM_NAME="ATTR_LIST" PARM_VALUE="id_distributor,1,id_status,1"/>
 #! </TRANSFORMER>
 #! <TRANSFORMER
-#! IDENTIFIER="2"
+#! IDENTIFIER="15"
 #! TYPE="FeatureMerger"
 #! VERSION="8"
 #! POSITION="1413 -723"
@@ -2886,27 +2886,9 @@
 #! </TRANSFORMERS>
 #! <FEAT_LINKS>
 #! <FEAT_LINK
-#! IDENTIFIER="9"
-#! SOURCE_NODE="5"
-#! TARGET_NODE="8"
-#! SOURCE_PORT_DESC="fo 0"
-#! TARGET_PORT_DESC="fi 0"
-#! ENABLED="true"
-#! EXTRA_POINTS=""
-#! />
-#! <FEAT_LINK
-#! IDENTIFIER="12"
-#! SOURCE_NODE="8"
-#! TARGET_NODE="11"
-#! SOURCE_PORT_DESC="fo 0"
-#! TARGET_PORT_DESC="fi 0"
-#! ENABLED="true"
-#! EXTRA_POINTS=""
-#! />
-#! <FEAT_LINK
-#! IDENTIFIER="15"
-#! SOURCE_NODE="11"
-#! TARGET_NODE="14"
+#! IDENTIFIER="16"
+#! SOURCE_NODE="3"
+#! TARGET_NODE="4"
 #! SOURCE_PORT_DESC="fo 0"
 #! TARGET_PORT_DESC="fi 0"
 #! ENABLED="true"
@@ -2914,8 +2896,17 @@
 #! />
 #! <FEAT_LINK
 #! IDENTIFIER="17"
-#! SOURCE_NODE="14"
-#! TARGET_NODE="13"
+#! SOURCE_NODE="4"
+#! TARGET_NODE="5"
+#! SOURCE_PORT_DESC="fo 0"
+#! TARGET_PORT_DESC="fi 0"
+#! ENABLED="true"
+#! EXTRA_POINTS=""
+#! />
+#! <FEAT_LINK
+#! IDENTIFIER="18"
+#! SOURCE_NODE="5"
+#! TARGET_NODE="6"
 #! SOURCE_PORT_DESC="fo 0"
 #! TARGET_PORT_DESC="fi 0"
 #! ENABLED="true"
@@ -2923,8 +2914,8 @@
 #! />
 #! <FEAT_LINK
 #! IDENTIFIER="19"
-#! SOURCE_NODE="13"
-#! TARGET_NODE="16"
+#! SOURCE_NODE="6"
+#! TARGET_NODE="7"
 #! SOURCE_PORT_DESC="fo 0"
 #! TARGET_PORT_DESC="fi 0"
 #! ENABLED="true"
@@ -2932,17 +2923,26 @@
 #! />
 #! <FEAT_LINK
 #! IDENTIFIER="20"
-#! SOURCE_NODE="16"
-#! TARGET_NODE="2"
+#! SOURCE_NODE="7"
+#! TARGET_NODE="8"
+#! SOURCE_PORT_DESC="fo 0"
+#! TARGET_PORT_DESC="fi 0"
+#! ENABLED="true"
+#! EXTRA_POINTS=""
+#! />
+#! <FEAT_LINK
+#! IDENTIFIER="21"
+#! SOURCE_NODE="8"
+#! TARGET_NODE="15"
 #! SOURCE_PORT_DESC="fo 0"
 #! TARGET_PORT_DESC="fi 1"
 #! ENABLED="true"
 #! EXTRA_POINTS=""
 #! />
 #! <FEAT_LINK
-#! IDENTIFIER="21"
-#! SOURCE_NODE="2"
-#! TARGET_NODE="18"
+#! IDENTIFIER="22"
+#! SOURCE_NODE="15"
+#! TARGET_NODE="0"
 #! SOURCE_PORT_DESC="fo 0"
 #! TARGET_PORT_DESC="-1"
 #! ENABLED="true"
@@ -2950,71 +2950,71 @@
 #! />
 #! <FEAT_LINK
 #! IDENTIFIER="23"
-#! SOURCE_NODE="25"
-#! TARGET_NODE="22"
+#! SOURCE_NODE="9"
+#! TARGET_NODE="11"
 #! SOURCE_PORT_DESC="fo 0"
+#! TARGET_PORT_DESC="fi 0"
+#! ENABLED="true"
+#! EXTRA_POINTS=""
+#! />
+#! <FEAT_LINK
+#! IDENTIFIER="24"
+#! SOURCE_NODE="11"
+#! TARGET_NODE="10"
+#! SOURCE_PORT_DESC="fo 0"
+#! TARGET_PORT_DESC="fi 0"
+#! ENABLED="true"
+#! EXTRA_POINTS=""
+#! />
+#! <FEAT_LINK
+#! IDENTIFIER="25"
+#! SOURCE_NODE="13"
+#! TARGET_NODE="15"
+#! SOURCE_PORT_DESC="fo 0"
+#! TARGET_PORT_DESC="fi 0"
+#! ENABLED="true"
+#! EXTRA_POINTS=""
+#! />
+#! <FEAT_LINK
+#! IDENTIFIER="26"
+#! SOURCE_NODE="1"
+#! TARGET_NODE="3"
+#! SOURCE_PORT_DESC="-1"
+#! TARGET_PORT_DESC="fi 0"
+#! ENABLED="true"
+#! EXTRA_POINTS=""
+#! />
+#! <FEAT_LINK
+#! IDENTIFIER="27"
+#! SOURCE_NODE="2"
+#! TARGET_NODE="9"
+#! SOURCE_PORT_DESC="-1"
 #! TARGET_PORT_DESC="fi 0"
 #! ENABLED="true"
 #! EXTRA_POINTS=""
 #! />
 #! <FEAT_LINK
 #! IDENTIFIER="28"
-#! SOURCE_NODE="22"
-#! TARGET_NODE="27"
+#! SOURCE_NODE="10"
+#! TARGET_NODE="12"
 #! SOURCE_PORT_DESC="fo 0"
 #! TARGET_PORT_DESC="fi 0"
 #! ENABLED="true"
 #! EXTRA_POINTS=""
 #! />
 #! <FEAT_LINK
-#! IDENTIFIER="39"
-#! SOURCE_NODE="37"
-#! TARGET_NODE="2"
+#! IDENTIFIER="29"
+#! SOURCE_NODE="12"
+#! TARGET_NODE="14"
 #! SOURCE_PORT_DESC="fo 0"
 #! TARGET_PORT_DESC="fi 0"
 #! ENABLED="true"
 #! EXTRA_POINTS=""
 #! />
 #! <FEAT_LINK
-#! IDENTIFIER="42"
-#! SOURCE_NODE="40"
-#! TARGET_NODE="5"
-#! SOURCE_PORT_DESC="-1"
-#! TARGET_PORT_DESC="fi 0"
-#! ENABLED="true"
-#! EXTRA_POINTS=""
-#! />
-#! <FEAT_LINK
-#! IDENTIFIER="43"
-#! SOURCE_NODE="41"
-#! TARGET_NODE="25"
-#! SOURCE_PORT_DESC="-1"
-#! TARGET_PORT_DESC="fi 0"
-#! ENABLED="true"
-#! EXTRA_POINTS=""
-#! />
-#! <FEAT_LINK
-#! IDENTIFIER="33"
-#! SOURCE_NODE="27"
-#! TARGET_NODE="31"
-#! SOURCE_PORT_DESC="fo 0"
-#! TARGET_PORT_DESC="fi 0"
-#! ENABLED="true"
-#! EXTRA_POINTS=""
-#! />
-#! <FEAT_LINK
-#! IDENTIFIER="35"
-#! SOURCE_NODE="31"
-#! TARGET_NODE="34"
-#! SOURCE_PORT_DESC="fo 0"
-#! TARGET_PORT_DESC="fi 0"
-#! ENABLED="true"
-#! EXTRA_POINTS=""
-#! />
-#! <FEAT_LINK
-#! IDENTIFIER="44"
-#! SOURCE_NODE="34"
-#! TARGET_NODE="37"
+#! IDENTIFIER="30"
+#! SOURCE_NODE="14"
+#! TARGET_NODE="13"
 #! SOURCE_PORT_DESC="fo 0"
 #! TARGET_PORT_DESC="fi 0"
 #! ENABLED="true"
@@ -3132,7 +3132,7 @@ INCLUDE [ if {"$(DestDataset)" != ""} {                          \
 #! START_DEST_HEADER POSTGIS POSTGIS_1
 DEFAULT_MACRO DestDataset_POSTGIS_1 $(DestDataset_POSTGIS)
 GUI TEXT DestDataset_POSTGIS_1 Destination PostGIS Dataset:
-DEFAULT_MACRO POSTGIS_OUT_HOST_POSTGIS_1 172.24.171.202
+DEFAULT_MACRO POSTGIS_OUT_HOST_POSTGIS_1 172.24.171.203
 POSTGIS_1_HOST "$(POSTGIS_OUT_HOST_POSTGIS_1)"
 GUI TEXT POSTGIS_OUT_HOST_POSTGIS_1 Host:
 DEFAULT_MACRO POSTGIS_OUT_PORT_POSTGIS_1 5432
@@ -3175,7 +3175,7 @@ POSTGIS_1_DATASET "$(DestDataset_POSTGIS_1)"
 #! END_DEST_HEADER
 #! END_HEADER
 
-LOG_FILENAME "$(FME_MF_DIR)oracle2postgres_hydrant_202.log"
+LOG_FILENAME "$(FME_MF_DIR)oracle2postgres_3_hydrant_202.log"
 LOG_APPEND NO
 LOG_MAX_FEATURES 200
 LOG_MAX_RECORDED_FEATURES 200
@@ -3196,7 +3196,7 @@ MULTI_READER_CONTINUE_ON_READER_FAILURE No
 
 # -------------------------------------------------------------------------
 
-MACRO WORKSPACE_NAME oracle2postgres_hydrant_202
+MACRO WORKSPACE_NAME oracle2postgres_3_hydrant_202
 MACRO FME_VIEWER_APP fmeview
 # -------------------------------------------------------------------------
 ORACLE8I_DB_1_DEF SIGE_DISTRIBUTION.WA_HYDRANT   ALTITUDE                     number(5,1)   AREA_NOMINAL                 number(20,8)   ARTIKEL_NR                   varchar2(50)   BAULAENGE                    number(10,5)   BEMERKUNG                    varchar2(255)   BESCHICHTUNG_AUSSEN          varchar2(5)   BESCHICHTUNG_INNEN           varchar2(5)   BEZEICHNUNG                  varchar2(20)   BEZEICHNUNG2                 varchar2(20)   COMMUNE                      number(10,0)   DATUM_VERGABE                date   DELETED                      number(1,0)   DRUCKZONE_ID                 number(20,0)   EIGENTUMSVERHAELTNIS         varchar2(5)   EINBAUJAHR                   number(20,0)   F1                           varchar2(20)   F2                           varchar2(20)   F3                           varchar2(20)   FID                          number(10,0)   FID_LAGEBEZEICHNUNG          number(10,0)   FID_NETZPUNKT                number(10,0)   FLST_KENNZEICHEN_OF          varchar2(25)   FLST_NENNER                  number(20,0)   FLST_NR                      number(20,0)   FLST_ZAEHLER                 number(20,0)   FUNKTION                     varchar2(5)   GEMARKUNG                    number(20,0)   GID                          number(10,0)   HAUSNUMMER                   number(10,0)   HAUSNUMMER_ERG               varchar2(25)   HERSTELLER_ID                number(20,0)   HYDRANTEN_ART                varchar2(5)   ID_BESCHILDERUNG             number(10,0)   KATASTERBLATT                varchar2(5)   LAGEGENAUIGKEIT              varchar2(5)   MATERIAL                     varchar2(5)   NAME                         varchar2(60)   NAME2                        varchar2(50)   NENNDRUCK                    number(20,5)   NENNWEITE                    varchar2(15)   ORTSBEZEICHNUNG              varchar2(50)   P2                           number(3,1)   POINT_NUMBER                 varchar2(50)   P_QMAX                       number(3,1)   P_STATIQUE                   number(3,1)   Q2                           number(5,1)   QMAX                         number(5,1)   SCHILD_MONTIERT              varchar2(2)   SKALIERFAKTOR                number(20,5)   SORTIE_CENTRALE              number(1,0)   STANDORT                     varchar2(255)   STATUS                       varchar2(5)   STRANG_ID                    number(10,0)   TB_POINT_NUMBER              number(15,0)   UE_PLAN_NUMMER               varchar2(7)   VERBINDUNGSART               varchar2(15)   V_COMMUNE                    number(10,0)   WERKPLAN_NUMMER              varchar2(7)   ZERTIFIKAT                   varchar2(10)
