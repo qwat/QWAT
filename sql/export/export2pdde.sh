@@ -51,10 +51,7 @@ SELECT                                         \
  id                          AS ID,            \
  geometry::geometry(LineString,21781) AS geom, \
  _length2d                   AS LONGU_2D,      \
- CASE WHEN _length3d_uptodate IS TRUE          \
-  THEN _length3d                               \
-  ELSE NULL                                    \
- END                         AS LONGU_3D,      \
+ _length3d                   AS LONGU_3D,      \
  remarks                     AS REMARQUE,      \
  _precision                  AS PRECISIO,      \
  _distributor                AS DISTRIBU,      \
