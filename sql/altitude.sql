@@ -17,7 +17,7 @@ $BODY$
 	BEGIN
 		SELECT rid FROM altitude.dtm WHERE ST_Intersects(ST_SetSRID(rast,21781),1,geom) LIMIT 1 INTO rasterid;
 		RETURN rasterid;
-	END:
+	END;
 $BODY$
 LANGUAGE 'plpgsql';
 COMMENT ON FUNCTION altitude.getRasterId(geometry) IS 'Returns the first raster ID that match geometry location.';
