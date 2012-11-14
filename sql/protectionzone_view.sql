@@ -16,7 +16,8 @@ CREATE VIEW distribution.protectionzone_view AS
 		protectionzone.date            ,
 		protectionzone.agent           ,
 		protectionzone.geometry::geometry(MultiPolygon,21781),	
-		protectionzone_type.name  AS _type
+		protectionzone_type.shortname  AS _type     ,
+		protectionzone_type.name       AS _type_long
 		FROM distribution.protectionzone
 		INNER JOIN distribution.protectionzone_type ON protectionzone.id_type = protectionzone_type.id;
 /* Comment */	
