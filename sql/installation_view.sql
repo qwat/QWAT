@@ -20,6 +20,7 @@ CREATE VIEW distribution.installation_view AS
 		installation.id_district                        ,
 		installation.id_pressurezone                    ,
 		installation.remarks                            ,
+		installation.links                              ,
 		installation.year                               ,
 		installation.altitude_real                      ,
 		installation._is_on_map                         ,
