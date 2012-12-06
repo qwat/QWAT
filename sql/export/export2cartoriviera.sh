@@ -3,7 +3,6 @@ export db_address=172.24.171.203
 export sqliteoutput=/home/denis/Documents/cartoriviera/sige_distribution.sqlite
 #export PGCLIENTENCODING=LATIN1;
 
-
 rm $sqliteoutput
 
 ########################################################################
@@ -19,6 +18,14 @@ fi
 
 ########################################################################
 # TABLES AND VIEWS
+
+# search view
+ogr2ogr -sql "SELECT * FROM distribution.search_view"  \
+-overwrite -a_srs EPSG:21781 -f SQLite $sqliteoutput \
+-nln pipe -nlt POINT -progress -preserve_fid \
+PG:"dbname='sige' host=$db_address port='5432' user='sige' password='db4wat$'" \
+-dsco SPATIALITE=no -lco "SPATIAL_INDEX=no FORMAT=SPATIALITE" -gt 65536
+
 # pipes
 ogr2ogr -sql "SELECT * FROM distribution.pipe_view WHERE id_distributor = 1"  \
 -overwrite -a_srs EPSG:21781 -f SQLite $sqliteoutput \
@@ -101,8 +108,9 @@ PG:"dbname='sige' host=$db_address port='5432' user='sige' password='db4wat$'" \
 read -p "FTP transfer? (y/n) " answ
 if [ $answ = "y" ] 
 then
+	read -p "FTP password? " ftppwd
 	ftp -n -v ftp.vevey.ch <<-EOF
-	user carto_sige ca61sie 
+	user carto_sige $ftppwd 
 	prompt
 	binary
 	cd Distribution
