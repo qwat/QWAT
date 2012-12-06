@@ -22,7 +22,7 @@ fi
 # search view
 ogr2ogr -sql "SELECT * FROM distribution.search_view"  \
 -overwrite -a_srs EPSG:21781 -f SQLite $sqliteoutput \
--nln pipe -nlt POINT -progress -preserve_fid \
+-nln search_view -nlt POINT -progress -preserve_fid \
 PG:"dbname='sige' host=$db_address port='5432' user='sige' password='db4wat$'" \
 -dsco SPATIALITE=no -lco "SPATIAL_INDEX=no FORMAT=SPATIALITE" -gt 65536
 
