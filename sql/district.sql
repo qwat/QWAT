@@ -26,4 +26,6 @@ CREATE INDEX district_geoidx ON distribution.district USING GIST ( geometry );
 ALTER TABLE distribution.district ADD CONSTRAINT district_pkey PRIMARY KEY (id);
 ALTER TABLE distribution.district ADD CONSTRAINT district_name UNIQUE (name);
 
+ALTER TABLE distribution.district ADD CONSTRAINT no_overlap CHECK ( ST_Intersects(geometry,district.geometry) IS False );
+
 COMMIT;
