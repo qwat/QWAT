@@ -10,6 +10,8 @@ $BODY$
 		EXECUTE 'ALTER TABLE distribution.'||table_name||' ADD COLUMN id_district     integer   ;';
 		EXECUTE 'ALTER TABLE distribution.'||table_name||' ADD COLUMN id_pressurezone integer   ;';
 		EXECUTE 'ALTER TABLE distribution.'||table_name||' ADD COLUMN id_printmap     integer[] ;';
+		EXECUTE 'ALTER TABLE distribution.'||table_name||' ADD COLUMN _printmaps      varchar(100) ;';
+		EXECUTE 'ALTER TABLE distribution.'||table_name||' ADD COLUMN _districts      varchar(255) ;';
 		
 		/* Enables geometry */
 		PERFORM addGeometryColumn('distribution', table_name, 'geometry', 21781, 'POINT', 2);
@@ -31,10 +33,13 @@ $BODY$
 				''
 				BEGIN
 					UPDATE distribution.'||table_name||' SET
-						id_node         = distribution.node_get_id(NEW.geometry,false),
-						id_district     = distribution.get_district_id(NEW.geometry),
-						id_pressurezone = distribution.get_pressurezone_id(NEW.geometry),
-						id_printmap     = distribution.get_printmap(NEW.geometry)
+						id_node            = distribution.node_get_id(NEW.geometry,false),
+						id_district        = distribution.get_district_id(NEW.geometry),
+						id_pressurezone    = distribution.get_pressurezone_id(NEW.geometry),
+						id_printmap        = distribution.get_printmap_id(NEW.geometry),
+						geometry_schematic = NEW.geometry,
+						_printmaps         = distribution.get_printmaps(NEW.geometry),
+						_districts         = distribution.get_districts(NEW.geometry)
 						WHERE id = NEW.id ;
 					RETURN NEW;				
 				END;
@@ -77,6 +82,8 @@ $BODY$
 		EXECUTE 'ALTER TABLE distribution.'||table_name||' ADD COLUMN id_printmap     integer[] ;';
 		EXECUTE 'ALTER TABLE distribution.'||table_name||' ADD COLUMN _length2d       decimal(8,2) ;';
 		EXECUTE 'ALTER TABLE distribution.'||table_name||' ADD COLUMN _length3d       decimal(8,2) ;';	
+		EXECUTE 'ALTER TABLE distribution.'||table_name||' ADD COLUMN _printmaps      varchar(100) ;';
+		EXECUTE 'ALTER TABLE distribution.'||table_name||' ADD COLUMN _districts      varchar(255) ;';
 			
 		/* Enables geometry */
 		PERFORM addGeometryColumn('distribution', table_name, 'geometry', 21781, 'LINESTRING', 2);
@@ -104,8 +111,10 @@ $BODY$
 						id_node_b          = distribution.node_get_id(ST_EndPoint(  NEW.geometry),true),
 						id_district        = distribution.get_district_id(NEW.geometry),
 						id_pressurezone    = distribution.get_pressurezone_id(NEW.geometry),
-						id_printmap        = distribution.get_printmap(NEW.geometry),
+						id_printmap        = distribution.get_printmap_id(NEW.geometry),
 						geometry_schematic = NEW.geometry,
+						_printmaps         = distribution.get_printmaps(NEW.geometry),
+						_districts         = distribution.get_districts(NEW.geometry),
 						_length2d          = ST_Length(NEW.geometry),
 						_length3d          = NULL
 						WHERE id = NEW.id ;
@@ -132,13 +141,5 @@ $BODY$
 LANGUAGE 'plpgsql';
 COMMENT ON FUNCTION distribution.geom_tool_line(varchar) IS 'Create geometric columns, constraint and triggers for tables with line items.';
 
-
-
-
-
-DROP TABLE distribution.test;
-CREATE TABLE distribution.test();
-
-SELECT distribution.geom_tool_point('test');
 
 
