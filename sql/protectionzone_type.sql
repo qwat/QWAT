@@ -11,7 +11,7 @@ CREATE TABLE distribution.protectionzone_type ( id SERIAL, CONSTRAINT "protectio
 COMMENT ON TABLE distribution.protectionzone_type IS 'type for hydrant.';
 
 /* Columns*/
-ALTER TABLE distribution.protectionzone_type ADD COLUMN "name" VARCHAR(10);
+ALTER TABLE distribution.protectionzone_type ADD COLUMN "name" VARCHAR(50);
 ALTER TABLE distribution.protectionzone_type ADD COLUMN "shortname" VARCHAR(255);
 
 /* Constraints*/
