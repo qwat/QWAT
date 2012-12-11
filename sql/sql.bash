@@ -43,6 +43,8 @@ psql -h 172.24.171.$ip -U sige -f distributor.sql
 read -p "Press any key to continue..."
 psql -h 172.24.171.$ip -U sige -f printmap.sql
 read -p "Press any key to continue..."
+psql -h 172.24.171.$ip -U sige -f printmap_fcn.sql
+read -p "Press any key to continue..."
 
 psql -h 172.24.171.$ip -U sige -f hydrant_provider.sql
 read -p "Press any key to continue..."
