@@ -9,7 +9,9 @@ read -p "Last xxx of IP : " ip
 psql -h 172.24.171.$ip -U sige -c "DROP SCHEMA distribution CASCADE;"
 psql -h 172.24.171.$ip -U sige -c "CREATE SCHEMA distribution;"
 
-psql -h 172.24.171.$ip -U sige -f tool_fcn.sql
+psql -h 172.24.171.$ip -U sige -f fcn_tool.sql
+read -p "Press any key to continue..."
+psql -h 172.24.171.$ip -U sige -f fcn_geom.sql
 read -p "Press any key to continue..."
 psql -h 172.24.171.$ip -U sige -f visible.sql
 read -p "Press any key to continue..."
