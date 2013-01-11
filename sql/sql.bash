@@ -68,6 +68,7 @@ read -p "Press any key to continue..."
 psql -h 172.24.171.$ip -U sige -f pipe_fcn.sql
 read -p "Press any key to continue..."
 
+
 psql -h 172.24.171.$ip -U sige -f valve_type.sql
 read -p "Press any key to continue..."
 psql -h 172.24.171.$ip -U sige -f valve_function.sql
@@ -83,7 +84,6 @@ read -p "Press any key to continue..."
 psql -h 172.24.171.$ip -U sige -f valve_fcn.sql
 read -p "Press any key to continue..."
 
-# needs vavle_fcn
 psql -h 172.24.171.$ip -U sige -f pipe_view.sql
 read -p "Press any key to continue..."
 
@@ -117,12 +117,18 @@ read -p "Press any key to continue..."
 psql -h 172.24.171.$ip -U sige -f altitude.sql
 
 
+# BIG TABLE SEARCH
+read -p "Press any key to continue..."
+psql -h 172.24.171.$ip -U sige -f search_view.sql
+
 # CONTROL
 read -p "Press any key to continue..."
 psql -h 172.24.171.$ip -U sige -f control/control_node.sql
 
 
 # SIGE DATA
+read -p "Press any key to continue..."
+psql -h 172.24.171.$ip -U sige -f sige_data/data_district.sql -v ON_ERROR_STOP=1
 read -p "Press any key to continue..."
 psql -h 172.24.171.$ip -U sige -f sige_data/data_distributor.sql -v ON_ERROR_STOP=1
 read -p "Press any key to continue..."
