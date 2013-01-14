@@ -14,7 +14,7 @@ $BODY$
 		geom ALIAS FOR $1;
 		result text;
 	BEGIN
-		SELECT string_agg(printmap.short_name , '', '') INTO result
+		SELECT string_agg(printmap.short_name , ', ') INTO result
 			FROM  distribution.printmap
 			WHERE ST_Intersects(geom,printmap.geometry) IS TRUE;
 		RETURN result;
@@ -25,16 +25,12 @@ COMMENT ON FUNCTION distribution.get_printmaps(geometry) IS 'Returns a string co
 
 
 /* get printmap id function */
-CREATE OR REPLACE FUNCTION distribution.get_printmap_id(geometry) RETURNS integer AS
+CREATE OR REPLACE FUNCTION distribution.get_printmap_id(geometry) RETURNS integer[] AS
 $BODY$
 	DECLARE
 		geom ALIAS FOR $1;
-		id_printmap integer[];
 	BEGIN
-		SELECT printmap.id INTO id_printmap
-				FROM  distribution.printmap
-				WHERE ST_Intersects(geom,printmap.geometry) IS TRUE;
-		RETURN id_printmap;
+		RETURN ARRAY( SELECT printmap.id FROM  distribution.printmap WHERE ST_Intersects(geom,printmap.geometry) IS TRUE);
 	END;
 $BODY$
 LANGUAGE 'plpgsql';

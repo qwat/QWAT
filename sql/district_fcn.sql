@@ -8,7 +8,7 @@ BEGIN;
 
 /*----------------!!!---!!!----------------*/
 /* get district function */
-CREATE OR REPLACE FUNCTION distribution.get_district(geometry) RETURNS text AS
+CREATE OR REPLACE FUNCTION distribution.get_districts(geometry) RETURNS text AS
 $BODY$
 	DECLARE
 		geom ALIAS FOR $1;
@@ -21,7 +21,7 @@ $BODY$
 	END;
 $BODY$
 LANGUAGE 'plpgsql';
-COMMENT ON FUNCTION distribution.get_district(geometry) IS 'Returns a coma separeted list of the districts overlapping the given geometry.';
+COMMENT ON FUNCTION distribution.get_districts(geometry) IS 'Returns a coma separeted list of the districts overlapping the given geometry.';
 
 /* get district id function */
 CREATE OR REPLACE FUNCTION distribution.get_district_id(geometry) RETURNS integer AS
