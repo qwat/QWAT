@@ -4,10 +4,11 @@ POINT and NODE
 a point is not on a node: do not create id_node and so on
 */ 
 
-CREATE OR REPLACE FUNCTION distribution.geom_tool_node(varchar) RETURNS void AS
+CREATE OR REPLACE FUNCTION distribution.geom_tool_node(varchar,boolean) RETURNS void AS
 $BODY$
 	DECLARE
 		table_name ALIAS for $1;
+		create_node ALIAS for $2;
 	BEGIN
 		/* Creates columns */
 		EXECUTE 'ALTER TABLE distribution.'||table_name||' ADD COLUMN id_node         integer   ;';
@@ -37,7 +38,7 @@ $BODY$
 				''
 				BEGIN
 					UPDATE distribution.'||table_name||' SET
-						id_node            = distribution.node_get_id(NEW.geometry,false),
+						id_node            = distribution.node_get_id(NEW.geometry,'||create_node||'),
 						id_district        = distribution.get_district_id(NEW.geometry),
 						id_pressurezone    = distribution.get_pressurezone_id(NEW.geometry),
 						id_printmap        = distribution.get_printmap_id(NEW.geometry),
@@ -66,7 +67,7 @@ $BODY$
 	END;
 $BODY$
 LANGUAGE 'plpgsql';
-COMMENT ON FUNCTION distribution.geom_tool_node(varchar) IS 'Create geometric columns, constraint and triggers for tables with point on node items.';
+COMMENT ON FUNCTION distribution.geom_tool_node(varchar,boolean) IS 'Create geometric columns, constraint and triggers for tables with point on node items. Second argument determines if node has to be created or not of not found.';
 
 
 CREATE OR REPLACE FUNCTION distribution.geom_tool_point(varchar) RETURNS void AS

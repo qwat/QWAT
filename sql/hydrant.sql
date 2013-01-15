@@ -34,7 +34,7 @@ troncons
 */
 
 /* geometry */
-SELECT distribution.geom_tool_node('hydrant');
+SELECT distribution.geom_tool_node('hydrant',true);
 
 /* primary key */
 ALTER TABLE distribution.hydrant ADD CONSTRAINT hydrant_pkey PRIMARY KEY (id);

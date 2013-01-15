@@ -28,7 +28,7 @@ ALTER TABLE distribution.installation ADD COLUMN  parcel             varchar(30)
 ALTER TABLE distribution.installation ADD COLUMN  eca                varchar(30)            ;
 
 /* geometry */
-SELECT distribution.geom_tool_node('installation');
+SELECT distribution.geom_tool_node('installation',true);
 
 /* primary key */
 ALTER TABLE distribution.installation ADD CONSTRAINT installation_pkey PRIMARY KEY (id);
