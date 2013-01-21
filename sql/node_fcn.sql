@@ -66,6 +66,8 @@ $BODY$
 				type := 'valve';
 			ELSEIF node_id IN (SELECT id_node FROM distribution.installation) THEN
 				type := 'installation';
+			ELSEIF node_id IN (SELECT id_node FROM distribution.hydrant) THEN
+				type := 'hydrant';
 			ELSE
 				RAISE NOTICE 'Delete node %' , node_id ;
 				DELETE FROM distribution.node WHERE id = node_id ;
