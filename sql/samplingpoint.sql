@@ -16,7 +16,7 @@ ALTER TABLE distribution.samplingpoint ADD COLUMN  sige             integer     
 ALTER TABLE distribution.samplingpoint ADD COLUMN  remarks          text          ;
 
 /* geometry */
-SELECT distribution.geom_tool_point('samplingpoint');
+SELECT distribution.geom_tool_point('samplingpoint',false,false,false);
 
 
 
