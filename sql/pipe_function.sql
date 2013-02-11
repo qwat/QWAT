@@ -26,6 +26,7 @@ INSERT INTO distribution.pipe_function ("function","schema_view") VALUES ('By-pa
 INSERT INTO distribution.pipe_function ("function","schema_view") VALUES ('Branchement privé'         ,false);
 INSERT INTO distribution.pipe_function ("function","schema_view") VALUES ('Conduite de haute pression',true);
 INSERT INTO distribution.pipe_function ("function","schema_view") VALUES ('Drain captant'             ,false);
+INSERT INTO distribution.pipe_function ("function","schema_view") VALUES ('Trop plein'                ,true);
 
 COMMIT;
 
