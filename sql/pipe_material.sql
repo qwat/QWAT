@@ -36,7 +36,7 @@ COMMENT ON TRIGGER fancy_name_trigger ON distribution.pipe_material IS 'Trigger:
 /* Predefined functions list */
 /* This has to be filled by user to fullfile language preferences */
 INSERT INTO distribution.pipe_material ("short_name","name","diameter","diameter_internal","diameter_external") VALUES ('Inconnu','Inconnu'            ,''       ,''       ,''       );       
-INSERT INTO distribution.pipe_material ("short_name","name","diameter","diameter_internal","diameter_external") VALUES ('AC'  ,'Acier'                 ,'inconnu','inconnu',''       );             
+INSERT INTO distribution.pipe_material ("short_name","name","diameter","diameter_internal","diameter_external") VALUES ('AC'  ,'Acier'                 ,''       ,''       ,''       );             
 INSERT INTO distribution.pipe_material ("short_name","name","diameter","diameter_internal","diameter_external") VALUES ('AC'  ,'Acier'                 ,'100'    ,'100'    ,''       );            
 INSERT INTO distribution.pipe_material ("short_name","name","diameter","diameter_internal","diameter_external") VALUES ('AC'  ,'Acier'                 ,'120'    ,'120'    ,''       );            
 INSERT INTO distribution.pipe_material ("short_name","name","diameter","diameter_internal","diameter_external") VALUES ('AC'  ,'Acier'                 ,'125'    ,'125'    ,''       );            
@@ -56,7 +56,7 @@ INSERT INTO distribution.pipe_material ("short_name","name","diameter","diameter
 INSERT INTO distribution.pipe_material ("short_name","name","diameter","diameter_internal","diameter_external") VALUES ('AC'  ,'Acier'                 ,'75'     ,'75'     ,''       );             
 INSERT INTO distribution.pipe_material ("short_name","name","diameter","diameter_internal","diameter_external") VALUES ('AC'  ,'Acier'                 ,'80'     ,'80'     ,''       );             
 INSERT INTO distribution.pipe_material ("short_name","name","diameter","diameter_internal","diameter_external") VALUES ('AC'  ,'Acier'                 ,'800'    ,'800'    ,''       );            
-INSERT INTO distribution.pipe_material ("short_name","name","diameter","diameter_internal","diameter_external") VALUES ('ACG' ,'Acier galvanisé'       ,'inconnu','inconnu',''       );             
+INSERT INTO distribution.pipe_material ("short_name","name","diameter","diameter_internal","diameter_external") VALUES ('ACG' ,'Acier galvanisé'       ,''       ,''       ,''       );             
 INSERT INTO distribution.pipe_material ("short_name","name","diameter","diameter_internal","diameter_external") VALUES ('ACG' ,'Acier galvanisé'       ,'0.5"'   ,'16'     ,''       );          
 INSERT INTO distribution.pipe_material ("short_name","name","diameter","diameter_internal","diameter_external") VALUES ('ACG' ,'Acier galvanisé'       ,'0.75"'  ,'21.6'   ,''       );         
 INSERT INTO distribution.pipe_material ("short_name","name","diameter","diameter_internal","diameter_external") VALUES ('ACG' ,'Acier galvanisé'       ,'1 '     ,'27.2'   ,''       );            
@@ -73,7 +73,7 @@ INSERT INTO distribution.pipe_material ("short_name","name","diameter","diameter
 INSERT INTO distribution.pipe_material ("short_name","name","diameter","diameter_internal","diameter_external") VALUES ('ACI' ,'Acier inoxydable'      ,'150'    ,'150'    ,''       );           
 INSERT INTO distribution.pipe_material ("short_name","name","diameter","diameter_internal","diameter_external") VALUES ('ACI' ,'Acier inoxydable'      ,'200'    ,'200'    ,''       );           
 INSERT INTO distribution.pipe_material ("short_name","name","diameter","diameter_internal","diameter_external") VALUES ('ACI' ,'Acier inoxydable'      ,'250'    ,'250'    ,''       );           
-INSERT INTO distribution.pipe_material ("short_name","name","diameter","diameter_internal","diameter_external") VALUES ('ACPR','Acier prestolic'       ,'inconnu','inconnu',''       );            
+INSERT INTO distribution.pipe_material ("short_name","name","diameter","diameter_internal","diameter_external") VALUES ('ACPR','Acier prestolic'       ,''       ,''       ,''       );            
 INSERT INTO distribution.pipe_material ("short_name","name","diameter","diameter_internal","diameter_external") VALUES ('ACPR','Acier prestolic'       ,'100'    ,'100'    ,''       );          
 INSERT INTO distribution.pipe_material ("short_name","name","diameter","diameter_internal","diameter_external") VALUES ('ACPR','Acier prestolic'       ,'125'    ,'125'    ,''       );          
 INSERT INTO distribution.pipe_material ("short_name","name","diameter","diameter_internal","diameter_external") VALUES ('ACPR','Acier prestolic'       ,'150'    ,'150'    ,''       );          
@@ -82,7 +82,7 @@ INSERT INTO distribution.pipe_material ("short_name","name","diameter","diameter
 INSERT INTO distribution.pipe_material ("short_name","name","diameter","diameter_internal","diameter_external") VALUES ('ACPR','Acier prestolic'       ,'50'     ,'50'     ,''       );           
 INSERT INTO distribution.pipe_material ("short_name","name","diameter","diameter_internal","diameter_external") VALUES ('ACPR','Acier prestolic'       ,'60'     ,'60'     ,''       );           
 INSERT INTO distribution.pipe_material ("short_name","name","diameter","diameter_internal","diameter_external") VALUES ('ACPR','Acier prestolic'       ,'80'     ,'80'     ,''       );                         
-INSERT INTO distribution.pipe_material ("short_name","name","diameter","diameter_internal","diameter_external") VALUES ('CU'  ,'Cuivre'                ,'inconnu','inconnu',''       );
+INSERT INTO distribution.pipe_material ("short_name","name","diameter","diameter_internal","diameter_external") VALUES ('CU'  ,'Cuivre'                ,''       ,''       ,''       );
 INSERT INTO distribution.pipe_material ("short_name","name","diameter","diameter_internal","diameter_external") VALUES ('CU'  ,'Cuivre'                ,'1"'     ,'25'     ,'28'     );             
 INSERT INTO distribution.pipe_material ("short_name","name","diameter","diameter_internal","diameter_external") VALUES ('CU'  ,'Cuivre'                ,'10'     ,'10'     ,'12'     );             
 INSERT INTO distribution.pipe_material ("short_name","name","diameter","diameter_internal","diameter_external") VALUES ('CU'  ,'Cuivre'                ,'12'     ,'10'     ,'12'     );             
@@ -92,7 +92,7 @@ INSERT INTO distribution.pipe_material ("short_name","name","diameter","diameter
 INSERT INTO distribution.pipe_material ("short_name","name","diameter","diameter_internal","diameter_external") VALUES ('CU'  ,'Cuivre'                ,'22/19'  ,'20'     ,'22'     );          
 INSERT INTO distribution.pipe_material ("short_name","name","diameter","diameter_internal","diameter_external") VALUES ('CU'  ,'Cuivre'                ,'25'     ,'25'     ,'28'     );             
 INSERT INTO distribution.pipe_material ("short_name","name","diameter","diameter_internal","diameter_external") VALUES ('CU'  ,'Cuivre'                ,'32'     ,'32'     ,'35'     );             
-INSERT INTO distribution.pipe_material ("short_name","name","diameter","diameter_internal","diameter_external") VALUES ('F'   ,'Fonte'                 ,'inconnu','inconnu',''       );            
+INSERT INTO distribution.pipe_material ("short_name","name","diameter","diameter_internal","diameter_external") VALUES ('F'   ,'Fonte'                 ,''       ,''       ,''       );            
 INSERT INTO distribution.pipe_material ("short_name","name","diameter","diameter_internal","diameter_external") VALUES ('F'   ,'Fonte'                 ,'100'    ,'100'    ,''       );             
 INSERT INTO distribution.pipe_material ("short_name","name","diameter","diameter_internal","diameter_external") VALUES ('F'   ,'Fonte'                 ,'110'    ,'110'    ,''       );             
 INSERT INTO distribution.pipe_material ("short_name","name","diameter","diameter_internal","diameter_external") VALUES ('F'   ,'Fonte'                 ,'120'    ,'120'    ,''       );             
@@ -122,7 +122,7 @@ INSERT INTO distribution.pipe_material ("short_name","name","diameter","diameter
 INSERT INTO distribution.pipe_material ("short_name","name","diameter","diameter_internal","diameter_external") VALUES ('FAE' ,'Fonte auto-étanche'    ,'250'    ,'250'    ,''       );           
 INSERT INTO distribution.pipe_material ("short_name","name","diameter","diameter_internal","diameter_external") VALUES ('FAE' ,'Fonte auto-étanche'    ,'300'    ,'300'    ,''       );           
 INSERT INTO distribution.pipe_material ("short_name","name","diameter","diameter_internal","diameter_external") VALUES ('FAE' ,'Fonte auto-étanche'    ,'400'    ,'400'    ,''       );           
-INSERT INTO distribution.pipe_material ("short_name","name","diameter","diameter_internal","diameter_external") VALUES ('PE'  ,'Polyéthylène'          ,'inconnu','inconnu','inconnu');             
+INSERT INTO distribution.pipe_material ("short_name","name","diameter","diameter_internal","diameter_external") VALUES ('PE'  ,'Polyéthylène'          ,''       ,''       ,''       );             
 INSERT INTO distribution.pipe_material ("short_name","name","diameter","diameter_internal","diameter_external") VALUES ('PE'  ,'Polyéthylène'          ,'100'    ,''       ,''       );            
 INSERT INTO distribution.pipe_material ("short_name","name","diameter","diameter_internal","diameter_external") VALUES ('PE'  ,'Polyéthylène'          ,'110'    ,'90'     ,'110'    );            
 INSERT INTO distribution.pipe_material ("short_name","name","diameter","diameter_internal","diameter_external") VALUES ('PE'  ,'Polyéthylène'          ,'125'    ,'102.2'  ,'125'    );            
@@ -141,7 +141,7 @@ INSERT INTO distribution.pipe_material ("short_name","name","diameter","diameter
 INSERT INTO distribution.pipe_material ("short_name","name","diameter","diameter_internal","diameter_external") VALUES ('PE'  ,'Polyéthylène'          ,'90'     ,'73.6'   ,'90'     );             
 INSERT INTO distribution.pipe_material ("short_name","name","diameter","diameter_internal","diameter_external") VALUES ('PEX' ,'Polyéthylène réticulé' ,'63'     ,'50'     ,'63'     );            
 INSERT INTO distribution.pipe_material ("short_name","name","diameter","diameter_internal","diameter_external") VALUES ('PEX' ,'Polyéthylène réticulé' ,'90'     ,'75'     ,'90'     );            
-INSERT INTO distribution.pipe_material ("short_name","name","diameter","diameter_internal","diameter_external") VALUES ('PL'  ,'Plastique'             ,'inconnu','inconnu',''       );             
+INSERT INTO distribution.pipe_material ("short_name","name","diameter","diameter_internal","diameter_external") VALUES ('PL'  ,'Plastique'             ,''       ,''       ,''       );             
 INSERT INTO distribution.pipe_material ("short_name","name","diameter","diameter_internal","diameter_external") VALUES ('PL'  ,'Plastique'             ,'0.2'    ,''       ,''       );            
 INSERT INTO distribution.pipe_material ("short_name","name","diameter","diameter_internal","diameter_external") VALUES ('PL'  ,'Plastique'             ,'0.75"'  ,'20.4'   ,'25'     );          
 INSERT INTO distribution.pipe_material ("short_name","name","diameter","diameter_internal","diameter_external") VALUES ('PL'  ,'Plastique'             ,'1"'     ,'32.6'   ,'40'     );             
