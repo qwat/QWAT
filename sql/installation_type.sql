@@ -21,16 +21,16 @@ COMMENT ON TABLE distribution.installation_type IS 'type for installation.';
 
 /* Predefined types list */
 /* This has to be filled by user to fullfile language preferences */
-INSERT INTO distribution.installation_type (short_name,name,schema_view) VALUES ('I'  ,'Inconnu'                 ,true);
-INSERT INTO distribution.installation_type (short_name,name,schema_view) VALUES ('R'  ,'Réservoir'               ,true);
-INSERT INTO distribution.installation_type (short_name,name,schema_view) VALUES ('S'  ,'Source'                  ,true);
-INSERT INTO distribution.installation_type (short_name,name,schema_view) VALUES ('P'  ,'Pompage'                 ,true);
-INSERT INTO distribution.installation_type (short_name,name,schema_view) VALUES ('CV' ,'Chambres de vannes'      ,true);
-INSERT INTO distribution.installation_type (short_name,name,schema_view) VALUES ('CC' ,'Chambre compteur'        ,true);
-INSERT INTO distribution.installation_type (short_name,name,schema_view) VALUES ('CT' ,'Chambre de traitement'   ,true);
-INSERT INTO distribution.installation_type (short_name,name,schema_view) VALUES ('CR' ,'Chambre réducteur'       ,true);
-INSERT INTO distribution.installation_type (short_name,name,schema_view) VALUES ('CCP','Chambre coupe pression'  ,true);
-INSERT INTO distribution.installation_type (short_name,name,schema_view) VALUES ('CRA','Chambre de rassemblement',true);
+INSERT INTO distribution.installation_type (shortname,name,schema_view) VALUES ('I'  ,'Inconnu'                 ,true);
+INSERT INTO distribution.installation_type (shortname,name,schema_view) VALUES ('R'  ,'Réservoir'               ,true);
+INSERT INTO distribution.installation_type (shortname,name,schema_view) VALUES ('S'  ,'Source'                  ,true);
+INSERT INTO distribution.installation_type (shortname,name,schema_view) VALUES ('P'  ,'Pompage'                 ,true);
+INSERT INTO distribution.installation_type (shortname,name,schema_view) VALUES ('CV' ,'Chambres de vannes'      ,true);
+INSERT INTO distribution.installation_type (shortname,name,schema_view) VALUES ('CC' ,'Chambre compteur'        ,true);
+INSERT INTO distribution.installation_type (shortname,name,schema_view) VALUES ('CT' ,'Chambre de traitement'   ,true);
+INSERT INTO distribution.installation_type (shortname,name,schema_view) VALUES ('CR' ,'Chambre réducteur'       ,true);
+INSERT INTO distribution.installation_type (shortname,name,schema_view) VALUES ('CCP','Chambre coupe pression'  ,true);
+INSERT INTO distribution.installation_type (shortname,name,schema_view) VALUES ('CRA','Chambre de rassemblement',true);
 
 
 COMMIT;
