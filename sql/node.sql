@@ -40,7 +40,7 @@ CREATE OR REPLACE FUNCTION distribution.node_geom() RETURNS trigger AS '
 COMMENT ON FUNCTION distribution.node_geom() IS 'Fcn/Trigger: set uptodate to false for altitude when geometry changes.';
 
 CREATE TRIGGER node_geom_trigger 
-	AFTER INSERT OR UPDATE OF geometry ON distribution.node
+	AFTER UPDATE OF geometry ON distribution.node
 		FOR EACH ROW
 		EXECUTE PROCEDURE distribution.node_geom();
 COMMENT ON TRIGGER node_geom_trigger ON distribution.node IS 'Trigger: uset uptodate to false for altitude when geometry changes.';
