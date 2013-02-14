@@ -70,6 +70,7 @@ INSERT INTO distribution.pipe_material ("short_name","name","diameter","diameter
 INSERT INTO distribution.pipe_material ("short_name","name","diameter","diameter_internal","diameter_external") VALUES ('ACG' ,'Acier galvanisé'       ,'4"'     ,'105.3'  ,''       );            
 INSERT INTO distribution.pipe_material ("short_name","name","diameter","diameter_internal","diameter_external") VALUES ('ACG' ,'Acier galvanisé'       ,'80'     ,'80.8'   ,''       );            
 INSERT INTO distribution.pipe_material ("short_name","name","diameter","diameter_internal","diameter_external") VALUES ('ACI' ,'Acier inoxydable'      ,'100'    ,'100'    ,''       );           
+INSERT INTO distribution.pipe_material ("short_name","name","diameter","diameter_internal","diameter_external") VALUES ('ACI' ,'Acier inoxydable'      ,'125'    ,'125'    ,''       );           
 INSERT INTO distribution.pipe_material ("short_name","name","diameter","diameter_internal","diameter_external") VALUES ('ACI' ,'Acier inoxydable'      ,'150'    ,'150'    ,''       );           
 INSERT INTO distribution.pipe_material ("short_name","name","diameter","diameter_internal","diameter_external") VALUES ('ACI' ,'Acier inoxydable'      ,'200'    ,'200'    ,''       );           
 INSERT INTO distribution.pipe_material ("short_name","name","diameter","diameter_internal","diameter_external") VALUES ('ACI' ,'Acier inoxydable'      ,'250'    ,'250'    ,''       );           
@@ -139,8 +140,10 @@ INSERT INTO distribution.pipe_material ("short_name","name","diameter","diameter
 INSERT INTO distribution.pipe_material ("short_name","name","diameter","diameter_internal","diameter_external") VALUES ('PE'  ,'Polyéthylène'          ,'63'     ,'51.4'   ,'63'     );             
 INSERT INTO distribution.pipe_material ("short_name","name","diameter","diameter_internal","diameter_external") VALUES ('PE'  ,'Polyéthylène'          ,'75'     ,'61.4'   ,'75'     );             
 INSERT INTO distribution.pipe_material ("short_name","name","diameter","diameter_internal","diameter_external") VALUES ('PE'  ,'Polyéthylène'          ,'90'     ,'73.6'   ,'90'     );             
+INSERT INTO distribution.pipe_material ("short_name","name","diameter","diameter_internal","diameter_external") VALUES ('PE80','Polyéthylène 80'       ,'50'     ,''       ,''     );             
 INSERT INTO distribution.pipe_material ("short_name","name","diameter","diameter_internal","diameter_external") VALUES ('PEX' ,'Polyéthylène réticulé' ,'63'     ,'50'     ,'63'     );            
 INSERT INTO distribution.pipe_material ("short_name","name","diameter","diameter_internal","diameter_external") VALUES ('PEX' ,'Polyéthylène réticulé' ,'90'     ,'75'     ,'90'     );            
+INSERT INTO distribution.pipe_material ("short_name","name","diameter","diameter_internal","diameter_external") VALUES ('PEX' ,'Polyéthylène réticulé' ,'160'    ,''       ,''       );            
 INSERT INTO distribution.pipe_material ("short_name","name","diameter","diameter_internal","diameter_external") VALUES ('PL'  ,'Plastique'             ,''       ,''       ,''       );             
 INSERT INTO distribution.pipe_material ("short_name","name","diameter","diameter_internal","diameter_external") VALUES ('PL'  ,'Plastique'             ,'0.2'    ,''       ,''       );            
 INSERT INTO distribution.pipe_material ("short_name","name","diameter","diameter_internal","diameter_external") VALUES ('PL'  ,'Plastique'             ,'0.75"'  ,'20.4'   ,'25'     );          

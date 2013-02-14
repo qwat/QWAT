@@ -27,6 +27,7 @@ INSERT INTO distribution.pipe_function ("function","schema_view") VALUES ('Branc
 INSERT INTO distribution.pipe_function ("function","schema_view") VALUES ('Conduite de haute pression',true);
 INSERT INTO distribution.pipe_function ("function","schema_view") VALUES ('Drain captant'             ,false);
 INSERT INTO distribution.pipe_function ("function","schema_view") VALUES ('Trop plein'                ,true);
+INSERT INTO distribution.pipe_function ("function","schema_view") VALUES ('Ventilation'               ,false);
 
 COMMIT;
 
