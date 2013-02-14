@@ -9,7 +9,7 @@ DROP TABLE IF EXISTS distribution.installation_type CASCADE;
 CREATE TABLE distribution.installation_type ( id SERIAL, CONSTRAINT "installation_type_pk" PRIMARY KEY (id) );
 
 /* Columns*/
-ALTER TABLE distribution.installation_type ADD COLUMN "short_name"  VARCHAR(5);
+ALTER TABLE distribution.installation_type ADD COLUMN "shortname"  VARCHAR(5);
 ALTER TABLE distribution.installation_type ADD COLUMN "name"        VARCHAR(30);
 ALTER TABLE distribution.installation_type ADD COLUMN "schema_view" boolean default true;
 
