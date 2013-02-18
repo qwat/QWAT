@@ -34,16 +34,9 @@ $BODY$
 	DECLARE
 		point ALIAS for $1;
 		pipe_id integer;
-		distance_threshold double precision := 0.000001;
-		number_of_pipe integer;
 	BEGIN
-		SELECT COUNT(id) FROM distribution.pipe WHERE ST_DWithin(point,geometry,distance_threshold) INTO number_of_pipe;
-		IF number_of_pipe != 1 THEN
-			RETURN NULL ;
-		ELSE 
-			SELECT id FROM distribution.pipe WHERE ST_DWithin(point,geometry,distance_threshold) INTO pipe_id ;
-			RETURN pipe_id;	
-		END IF;
+		SELECT id FROM distribution.pipe WHERE ST_Intersects(point,geometry) LIMIT 1 INTO pipe_id ;
+		RETURN pipe_id;	
 	END;
 $BODY$
 LANGUAGE 'plpgsql';
