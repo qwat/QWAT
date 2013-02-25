@@ -11,7 +11,7 @@ CREATE TABLE distribution.samplingpoint (id serial NOT NULL);
 SELECT setval('distribution.samplingpoint_id_seq', 200, true);
 
 /* columns */
-ALTER TABLE distribution.samplingpoint ADD COLUMN  sige             integer       ;
+ALTER TABLE distribution.samplingpoint ADD COLUMN  identification             integer       ;
 
 ALTER TABLE distribution.samplingpoint ADD COLUMN  remarks          text          ;
 

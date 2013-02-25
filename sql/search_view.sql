@@ -9,7 +9,7 @@ CREATE OR REPLACE VIEW distribution.search_view AS
 		FROM distribution.installation_view WhERE _status_active IS TRUE
 	UNION SELECT
 		'Hydrantes' as layer_name,
-		_district || ' '|| sige as search_text,
+		_district || ' '|| identification as search_text,
 		geometry
 		FROM distribution.hydrant_view WhERE _status_active IS TRUE
 	UNION SELECT
@@ -19,8 +19,8 @@ CREATE OR REPLACE VIEW distribution.search_view AS
 		FROM distribution.subscriber_view
 	UNION SELECT
 		'Vannes' as layer_name,
-		_function || ' ' || sige as search_text,
+		_function || ' ' || identification as search_text,
 		geometry
-		FROM distribution.valve_view WHERE sige IS NOT NULL;
+		FROM distribution.valve_view WHERE identification IS NOT NULL;
 COMMIT;
 

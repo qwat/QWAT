@@ -10,7 +10,7 @@ DROP VIEW IF EXISTS distribution.samplingpoint_view CASCADE;
 CREATE VIEW distribution.samplingpoint_view AS 
 	SELECT  
 		samplingpoint.id             ,
-		samplingpoint.sige        ,
+		samplingpoint.identification        ,
 		samplingpoint.id_district    ,
 		samplingpoint.id_printmap    ,
 		samplingpoint.id_pressurezone,
@@ -35,15 +35,15 @@ COMMENT ON VIEW distribution.samplingpoint_view IS 'View for samplingpoint. This
 CREATE OR REPLACE RULE samplingpoint_update AS
 	ON UPDATE TO distribution.samplingpoint_view DO INSTEAD
 		UPDATE distribution.samplingpoint SET 
-			sige      = NEW.sige ,
+			identification      = NEW.identification ,
 			remarks   = NEW.remarks 
 		WHERE id = NEW.id;
 CREATE OR REPLACE RULE samplingpoint_insert AS
 	ON INSERT TO distribution.samplingpoint_view DO INSTEAD
 		INSERT INTO distribution.samplingpoint 
-			(    sige,    remarks,    geometry)     
+			(    identification,    remarks,    geometry)     
 		VALUES
-			(NEW.sige,NEW.remarks,NEW.geometry);
+			(NEW.identification,NEW.remarks,NEW.geometry);
 CREATE OR REPLACE RULE samplingpoint_delete AS
 	ON DELETE TO distribution.samplingpoint_view DO INSTEAD
 		DELETE FROM distribution.samplingpoint WHERE id = OLD.id;

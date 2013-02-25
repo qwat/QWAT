@@ -10,7 +10,7 @@ DROP VIEW IF EXISTS distribution.hydrant_view CASCADE;
 CREATE VIEW distribution.hydrant_view AS 
 	SELECT  
 		hydrant.id             ,
-		hydrant.sige           ,
+		hydrant.identification           ,
 		hydrant.id_type        ,
 		hydrant.id_distributor ,
 		hydrant.id_status      ,
@@ -55,7 +55,7 @@ COMMENT ON VIEW distribution.hydrant_view IS 'View for hydrant. This view is edi
 CREATE OR REPLACE RULE hydrant_update AS
 	ON UPDATE TO distribution.hydrant_view DO INSTEAD
 		UPDATE distribution.hydrant SET 
-			sige            = NEW.sige               ,
+			identification            = NEW.identification               ,
 			id_type         = NEW.id_type            ,
 			id_status       = NEW.id_status          ,
 			id_distributor  = NEW.id_distributor     ,
@@ -72,9 +72,9 @@ CREATE OR REPLACE RULE hydrant_update AS
 CREATE OR REPLACE RULE hydrant_insert AS
 	ON INSERT TO distribution.hydrant_view DO INSTEAD
 		INSERT INTO distribution.hydrant 
-			(    sige,    id_type,    id_status,    id_distributor,    id_provider,    id_district,    id_pressurezone,    id_node,    year,    model,    altitude_real,    remarks,    geometry)     
+			(    identification,    id_type,    id_status,    id_distributor,    id_provider,    id_district,    id_pressurezone,    id_node,    year,    model,    altitude_real,    remarks,    geometry)     
 		VALUES
-			(NEW.sige,NEW.id_type,NEW.id_status,NEW.id_distributor,NEW.id_provider,NEW.id_district,NEW.id_pressurezone,NEW.id_node,NEW.year,NEW.model,NEW.altitude_real,NEW.remarks,NEW.geometry);
+			(NEW.identification,NEW.id_type,NEW.id_status,NEW.id_distributor,NEW.id_provider,NEW.id_district,NEW.id_pressurezone,NEW.id_node,NEW.year,NEW.model,NEW.altitude_real,NEW.remarks,NEW.geometry);
 CREATE OR REPLACE RULE hydrant_delete AS
 	ON DELETE TO distribution.hydrant_view DO INSTEAD
 		DELETE FROM distribution.hydrant WHERE id = OLD.id;

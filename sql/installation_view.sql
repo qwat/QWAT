@@ -12,7 +12,7 @@ CREATE VIEW distribution.installation_view AS
 	SELECT
 		installation.id                                 ,
 		installation.name                               ,
-		installation.sige                               ,
+		installation.identification                               ,
 		installation.id_status                          ,
 		installation.id_distributor                     ,
 		installation.remarks                            ,

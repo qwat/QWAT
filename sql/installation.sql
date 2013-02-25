@@ -14,7 +14,7 @@ COMMENT ON TABLE distribution.installation IS 'installation.';
 
 /* columns */
 ALTER TABLE distribution.installation ADD COLUMN  name               varchar(30) DEFAULT '' ;
-ALTER TABLE distribution.installation ADD COLUMN  sige               integer                ;
+ALTER TABLE distribution.installation ADD COLUMN  identification               integer                ;
 ALTER TABLE distribution.installation ADD COLUMN  id_status          integer                ;
 ALTER TABLE distribution.installation ADD COLUMN  id_distributor     integer                ;
 ALTER TABLE distribution.installation ADD COLUMN  id_type            integer                ;
