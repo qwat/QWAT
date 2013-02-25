@@ -22,7 +22,7 @@ ALTER TABLE distribution.pipe ADD COLUMN id_status integer;                     
 ALTER TABLE distribution.pipe ADD COLUMN schema_force_view  boolean DEFAULT NULL::boolean;     /* schema_force_view FK */
 ALTER TABLE distribution.pipe ADD COLUMN year smallint CHECK (year > 1800 AND year < 2100);    /* year                 */
 ALTER TABLE distribution.pipe ADD COLUMN tunnel_or_bridge boolean DEFAULT false;               /* tunnel_or_bridge     */
-ALTER TABLE distribution.pipe ADD COLUMN pressure_nominale smallint;                           /* pressure_nominale    */
+ALTER TABLE distribution.pipe ADD COLUMN pressure_nominal smallint;                           /* pressure_nominale    */
 ALTER TABLE distribution.pipe ADD COLUMN folder varchar(20) DEFAULT '';                        /* folder               */
 ALTER TABLE distribution.pipe ADD COLUMN remarks text;                                         /* remarks              */
 
