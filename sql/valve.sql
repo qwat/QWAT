@@ -10,7 +10,7 @@ CREATE TABLE distribution.valve (id serial , CONSTRAINT valve_pkey PRIMARY KEY (
 COMMENT ON TABLE distribution.valve IS 'Table for valve.';
 
 /* columns */
-ALTER TABLE distribution.valve ADD COLUMN sige              integer ;
+ALTER TABLE distribution.valve ADD COLUMN identification              integer ;
 ALTER TABLE distribution.valve ADD COLUMN id_type           integer ;
 ALTER TABLE distribution.valve ADD COLUMN id_function       integer ;
 ALTER TABLE distribution.valve ADD COLUMN id_maintenance    integer[] ;

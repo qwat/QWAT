@@ -5,13 +5,15 @@
 	SQL file :: valvles view
 */
 
+/* TODO: maintenance */
+
 BEGIN;
 
 DROP VIEW IF EXISTS distribution.valve_view CASCADE;
 CREATE VIEW distribution.valve_view AS 
 SELECT  
 	valve.id                ,
-	valve.sige              ,
+	valve.identification              ,
 	valve.id_type           ,
 	valve.id_function       ,
 	valve.id_maintenance    ,
@@ -33,8 +35,8 @@ SELECT
 	valve_function.shortname AS _function_shortname ,
 	valve_type.type          AS _type        ,
 	CASE 
-		WHEN valve_function.shortname IS NULL THEN valve.sige::varchar
-		ELSE valve_function.shortname || valve.sige::varchar
+		WHEN valve_function.shortname IS NULL THEN valve.identification::varchar
+		ELSE valve_function.shortname || valve.identification::varchar
 	END AS _label,
 	CASE 
 		WHEN valve.schema_force_view IS NULL THEN valve_function.schema_view
@@ -56,7 +58,7 @@ SELECT
 CREATE OR REPLACE RULE valve_update AS
 	ON UPDATE TO distribution.valve_view DO INSTEAD
 		UPDATE distribution.valve SET 
-			sige                 = NEW.sige             ,		
+			identification                 = NEW.identification             ,		
 			id_type              = NEW.id_type          ,		
 			id_function          = NEW.id_function      ,				
 			id_district          = NEW.id_district      ,		
@@ -74,9 +76,9 @@ CREATE OR REPLACE RULE valve_update AS
 CREATE OR REPLACE RULE valve_insert AS
 	ON INSERT TO distribution.valve_view DO INSTEAD
 		INSERT INTO distribution.valve 
-			(    sige,    id_type,    id_function,    id_district,    id_pressurezone,    id_maintenance,    diameter_nominal,    year,    closed,    altitude_real,    remarks,    schema_force_view,    geometry)     
+			(    identification,    id_type,    id_function,    id_district,    id_pressurezone,    id_maintenance,    diameter_nominal,    year,    closed,    altitude_real,    remarks,    schema_force_view,    geometry)     
 		VALUES
-			(NEW.sige,NEW.id_type,NEW.id_function,NEW.id_district,NEW.id_pressurezone,NEW.id_maintenance,NEW.diameter_nominal,NEW.year,NEW.closed,NEW.altitude_real,NEW.remarks,NEW.schema_force_view,NEW.geometry);
+			(NEW.identification,NEW.id_type,NEW.id_function,NEW.id_district,NEW.id_pressurezone,NEW.id_maintenance,NEW.diameter_nominal,NEW.year,NEW.closed,NEW.altitude_real,NEW.remarks,NEW.schema_force_view,NEW.geometry);
 			
 CREATE OR REPLACE RULE valve_delete AS
 	ON DELETE TO distribution.valve_view DO INSTEAD

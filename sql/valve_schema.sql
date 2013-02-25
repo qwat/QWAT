@@ -11,7 +11,7 @@ DROP VIEW IF EXISTS distribution.valve_schema CASCADE;
 CREATE VIEW distribution.valve_schema AS 
 	SELECT  
 		valve.id , 
-		valve.sige,
+		valve.identification,
 		valve.id_type,
 		valve.id_function,
 		valve.id_pipe,
@@ -31,8 +31,8 @@ CREATE VIEW distribution.valve_schema AS
 		valve_function.shortname AS _function_shortname,
 		valve_type.type          AS _type,
 		CASE 
-			WHEN valve_function.shortname IS NULL THEN valve.sige::varchar
-			ELSE valve_function.shortname || valve.sige::varchar
+			WHEN valve_function.shortname IS NULL THEN valve.identification::varchar
+			ELSE valve_function.shortname || valve.identification::varchar
 		END AS _label,
 		node.altitude_dtm          AS _altitude_dtm,
 		district.name              AS _district,
