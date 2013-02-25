@@ -8,10 +8,10 @@ BEGIN;
 /* CREATE TABLE */
 DROP TABLE IF EXISTS distribution.printmap CASCADE;
 CREATE TABLE distribution.printmap (id serial NOT NULL);
-COMMENT ON TABLE distribution.printmap IS 'This table is used for polygons for predefined printable maps. short_name would be used as label string, and long_mame would be used in the print composer.';
+COMMENT ON TABLE distribution.printmap IS 'This table is used for polygons for predefined printable maps. shortname would be used as label string, and long_mame would be used in the print composer.';
 
 /* columns */
-ALTER TABLE distribution.printmap ADD COLUMN  short_name varchar(20);
+ALTER TABLE distribution.printmap ADD COLUMN  shortname varchar(20);
 ALTER TABLE distribution.printmap ADD COLUMN  long_name  text;
 ALTER TABLE distribution.printmap ADD COLUMN  template  varchar(50);
 ALTER TABLE distribution.printmap ADD COLUMN  _east  double precision;
