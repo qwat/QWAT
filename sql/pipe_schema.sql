@@ -112,7 +112,7 @@ CREATE VIEW distribution.pipe_schema AS
 			pipe_view.id_pressurezone            ,
 			pipe_view.schema_force_view          ,
 			pipe_view.year                       ,
-			pipe_view.pressure_nominale          ,
+			pipe_view.pressure_nominal           ,
 			pipe_view.folder                     ,
 			pipe_view.remarks                    , 
 			pipe_view.id_printmap                ,
