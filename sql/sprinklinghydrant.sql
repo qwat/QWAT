@@ -13,7 +13,7 @@ SELECT setval('distribution.sprinklinghydrant_id_seq', 100, true);
 COMMENT ON TABLE distribution.sprinklinghydrant IS 'sprinklinghydrant.';
 
 /* columns */
-ALTER TABLE distribution.sprinklinghydrant ADD COLUMN  sige             character varying (15)  ;
+ALTER TABLE distribution.sprinklinghydrant ADD COLUMN  identification             character varying (15)  ;
 ALTER TABLE distribution.sprinklinghydrant ADD COLUMN  id_type          integer                 ;
 ALTER TABLE distribution.sprinklinghydrant ADD COLUMN  id_distributor   integer                 ;
 ALTER TABLE distribution.sprinklinghydrant ADD COLUMN  id_status        integer                 ;
