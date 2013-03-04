@@ -1,8 +1,11 @@
 export db_address=172.24.171.203
 export shapeoutput=/home/denis/Documents/PPDE/out
 
-export PGCLIENTENCODING=LATIN1;
+export PGCLIENTENCODING=ISO-8859-1
+export PGCLIENTENCODING=LATIN1
 
+
+rm $shapeoutput/*
 
 # vannes: prendre fermée + vanne régulation/secour (fct) 
 
@@ -13,16 +16,15 @@ read -p "Press any key to continue..."
  # vannes 
 pgsql2shp -h $db_address -g geom -f $shapeoutput/vannes -P db4wat$ -u sige sige "\
 SELECT \
- id                     AS ID,               \
+ 'VA_' || id::varchar   AS ID,               \
  sige                   AS SIGE,             \
  id_pipe                AS CONDUTE,          \
  id_node                AS NOEUD,            \
  diameter_nominal,                           \
  year,                                       \
- closed,                                     \
+ '2' AS closed,                              \
  remarks,                                    \
- _is_on_map,                                 \
- _district,                                  \
+ _districts,                                 \
  geometry::geometry(Point,21781) AS geom,    \
  _function,                                  \
  _type,                                      \
@@ -48,16 +50,19 @@ read -p "Press any key to continue..."
 # conduites
 pgsql2shp -h $db_address -g geom -f $shapeoutput/conduites -P db4wat$ -u sige sige "\
 SELECT                                         \
- id                          AS ID,            \
+ 'CO_' || id::varchar        AS ID,            \
  geometry::geometry(LineString,21781) AS geom, \
  _length2d                   AS LONGU_2D,      \
  _length3d                   AS LONGU_3D,      \
  remarks                     AS REMARQUE,      \
  _precision                  AS PRECISIO,      \
- _distributor                AS DISTRIBU,      \
+ _status_name                AS STATUT,        \
  _function_name              AS FONCTION,      \
  _material_longname          AS MATERIAU,      \
- _material_diameter_internal AS DIAM_INT,      \
+ CASE \
+    WHEN _status_name = 'fictif' THEN 20000::varchar \
+    ELSE _material_diameter_internal \
+ END AS DIAM_INT,      \
  _pressurezone               AS ZONE_PRES,     \
  _valve_closed               AS VAN_FERM,      \
  year                        AS ANNEE,         \
@@ -72,26 +77,31 @@ read -p "Press any key to continue..."
 
 # ouvrages
 # TODO proprio etrangers
-pgsql2shp -h $db_address -g geom -f $shapeoutput/ouvrages -P db4wat$ -u sige sige "\
+#export ouvtype=( "Inconnu" "Réservoir" "Source" "Pompage" "Chambres de vannes" "Chambre compteur" "Chambre de traitement" "Chambre réducteur" "Chambre coupe pression" "Chambre de rassemblement")
+export ouvtype=(I R S P CV CC CT CR CCP CRA)
+for i in "${ouvtype[@]}"
+do :
+pgsql2shp -h $db_address -g geom -f $shapeoutput/ouvrages_${i// /_} -P db4wat$ -u sige sige "\
 SELECT                                      \
- id      AS ID,                             \
+ 'OU_' || id::varchar   AS ID,              \
  id_node AS NOEUD,                          \
  geometry::geometry(Point,21781) AS geom,   \
- name    AS NOM,                            \
+ _type_shortname || '. ' || name    AS NOM, \
  _type   AS TYPE,                           \
  CASE                                       \
     WHEN altitude_real IS NOT NULL THEN altitude_real \
     ELSE _altitude_dtm                      \
  END           AS ALTITUDE,                 \
- _district     AS COMMUNNE,                 \
+ _districts     AS COMMUNNE,                 \
  _pressurezone AS ZONE_PRES                 \
-FROM distribution.installation_view"        
+FROM distribution.installation_view WHERE _type_shortname = '$i' AND id_distributor=1 AND _status_active IS TRUE"        
+done
 read -p "Press any key to continue..."
 
 # noeuds
 pgsql2shp -h $db_address -g geom -f $shapeoutput/noeuds -P db4wat$ -u sige sige "\
 SELECT                                                           \
- id AS NOEUD,                                                    \
+ 'NO_' || id::varchar   AS ID,               \
  altitude_dtm AS ALTITUDE,                                       \
  geometry::geometry(Point,21781) AS geom                         \
 FROM distribution.node                                           \
@@ -108,7 +118,7 @@ WHERE _schema_view IS TRUE                                       \
     UNION                                                        \
     SELECT id_node FROM distribution.hydrant WHERE id_node IS NOT NULL \
     UNION                                                        \
-    SELECT id_node FROM distribution.valve_schema WHERE id_node IS NOT NULL AND closed IS TRUE OR _function = 'vanne de régulation' \
+    SELECT id_node FROM distribution.valve_schema WHERE id_node IS NOT NULL AND ( closed IS TRUE OR _function = 'vanne de régulation' ) \
   )
  "
 read -p "Press any key to continue..."
@@ -117,7 +127,7 @@ read -p "Press any key to continue..."
 # TODO: bouche arrosage, 8 Noville, retirer etrangers
 pgsql2shp -h $db_address -g geom -f $shapeoutput/hydrantes -P db4wat$ -u sige sige "\
 SELECT                                    \
- id             AS ID,                    \
+ 'HY_' || id::varchar   AS ID,               \
  _district_shortname || '_' || sige AS ID_SIGE,\
  id_node        AS NOEUD,                 \
  year           AS ANNEE,                 \
@@ -135,5 +145,5 @@ SELECT                                    \
  END            AS ALTITUDE,              \
  _district      AS COMMUNNE,              \
  _pressurezone  AS ZONE_PRES              \
-FROM distribution.hydrant_view "
+FROM distribution.hydrant_view WHERE id_type = 1"
 read -p "Press any key to continue..."
