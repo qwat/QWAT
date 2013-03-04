@@ -101,12 +101,14 @@ read -p "Press any key to continue..."
 
 psql -h 172.24.171.$ip -U sige -f installation_type.sql
 read -p "Press any key to continue..."
+psql -h 172.24.171.$ip -U sige -f installation_remote.sql
+read -p "Press any key to continue..."
 psql -h 172.24.171.$ip -U sige -f installation.sql
 read -p "Press any key to continue..."
 psql -h 172.24.171.$ip -U sige -f installation_tank.sql
 read -p "Press any key to continue..."
-psql -h 172.24.171.$ip -U sige -f installation_tank_cistern.sql
-read -p "Press any key to continue..."
+#psql -h 172.24.171.$ip -U sige -f installation_tank_cistern.sql
+#read -p "Press any key to continue..."
 psql -h 172.24.171.$ip -U sige -f installation_view.sql
 read -p "Press any key to continue..."
 
@@ -124,6 +126,13 @@ psql -h 172.24.171.$ip -U sige -f search_view.sql
 # CONTROL
 read -p "Press any key to continue..."
 psql -h 172.24.171.$ip -U sige -f control/control_node.sql
+
+# AUDIT TABLES
+read -p "Press any key to continue..."
+psql -h 172.24.171.$ip -U sige -f audit.sql
+read -p "Press any key to continue..."
+psql -h 172.24.171.$ip -U sige -f audit_tables.sql
+
 
 fi
 
