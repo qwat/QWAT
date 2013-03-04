@@ -21,7 +21,7 @@ CREATE VIEW distribution.pipe_view AS
 		pipe.schema_force_view ,
 		pipe.year              ,
 		pipe.tunnel_or_bridge  ,
-		pipe.pressure_nominale ,
+		pipe.pressure_nominal  ,
 		pipe.folder            ,
 		pipe.remarks           ,
 		pipe.id_node_a         ,
