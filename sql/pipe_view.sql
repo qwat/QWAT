@@ -96,7 +96,7 @@ CREATE OR REPLACE RULE pipe_update AS
 			id_install_method  = NEW.id_install_method  ,
 			year               = NEW.year               ,
 			tunnel_or_bridge   = NEW.tunnel_or_bridge   ,
-			pressure_nominale  = NEW.pressure_nominale  ,
+			pressure_nominal   = NEW.pressure_nominal   ,
 			schema_force_view  = NEW.schema_force_view  ,
 			folder             = NEW.folder             ,
 			remarks            = NEW.remarks            ,
@@ -106,9 +106,9 @@ CREATE OR REPLACE RULE pipe_update AS
 CREATE OR REPLACE RULE pipe_insert AS
 	ON INSERT TO distribution.pipe_view DO INSTEAD
 		INSERT INTO distribution.pipe 
-			(    id_function,    id_material,    id_status,    id_parent,    id_distributor,    id_pressurezone,    id_precision,    id_protection,    id_install_method,    year,    tunnel_or_bridge,    pressure_nominale,    schema_force_view,    folder,    remarks,    geometry)     
+			(    id_function,    id_material,    id_status,    id_parent,    id_distributor,    id_pressurezone,    id_precision,    id_protection,    id_install_method,    year,    tunnel_or_bridge,    pressure_nominal,    schema_force_view,    folder,    remarks,    geometry)     
 		VALUES
-			(NEW.id_function,NEW.id_material,NEW.id_status,NEW.id_parent,NEW.id_distributor,NEW.id_pressurezone,NEW.id_precision,NEW.id_protection,NEW.id_install_method,NEW.year,NEW.tunnel_or_bridge,NEW.pressure_nominale,NEW.schema_force_view,NEW.folder,NEW.remarks,NEW.geometry);
+			(NEW.id_function,NEW.id_material,NEW.id_status,NEW.id_parent,NEW.id_distributor,NEW.id_pressurezone,NEW.id_precision,NEW.id_protection,NEW.id_install_method,NEW.year,NEW.tunnel_or_bridge,NEW.pressure_nominal,NEW.schema_force_view,NEW.folder,NEW.remarks,NEW.geometry);
 CREATE OR REPLACE RULE pipe_delete AS
 	ON DELETE TO distribution.pipe_view DO INSTEAD
 		DELETE FROM distribution.pipe WHERE id = OLD.id;
