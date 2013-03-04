@@ -6,8 +6,8 @@
 
 export db_address=172.24.171.203
 export shapeoutput=/home/sige/out
-export sqliteoutput=/home/denis/Documents/cartoriviera/sige_distribution.sqlite
-export PGCLIENTENCODING=LATIN1;
+export sqliteoutput=/home/denis/Documents/qgis/qwat/sql/export/planches.sqlite
+export PGCLIENTENCODING=LATIN1
 
 
 ok pour export qgis server
