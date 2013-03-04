@@ -2,7 +2,7 @@
 
 
 #  export node
-pg_dump --host 172.24.171.203 --port 5432 --username "sige" --no-password  --format plain --data-only --inserts --verbose --file tempfile --table "distribution.node" "sige"
+pg_dump --host 172.24.171.203 --port 5432 --username "sige" --no-password  --format plain --data-only --inserts --column-inserts --verbose --file tempfile --table "distribution.node" "sige"
 cat tempfile | sed 's/INSERT INTO node/INSERT INTO distribution.node/g' > /home/denis/Documents/qgis/qwat/sql/sige_data/data_node.sql
 rm tempfile
 
@@ -19,6 +19,5 @@ then
 	mv temp2 /home/denis/Documents/qgis/qwat/sql/sige_data/data_pipe_id_parent.sql
 	rm temp
 fi
-
 
 read -p "press any key to finish"
