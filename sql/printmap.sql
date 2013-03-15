@@ -12,7 +12,7 @@ COMMENT ON TABLE distribution.printmap IS 'This table is used for polygons for p
 
 /* columns */
 ALTER TABLE distribution.printmap ADD COLUMN  shortname varchar(20);
-ALTER TABLE distribution.printmap ADD COLUMN  long_name  text;
+ALTER TABLE distribution.printmap ADD COLUMN  longname  text;
 ALTER TABLE distribution.printmap ADD COLUMN  template  varchar(50);
 ALTER TABLE distribution.printmap ADD COLUMN  _east  double precision;
 ALTER TABLE distribution.printmap ADD COLUMN  _north  double precision;

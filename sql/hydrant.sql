@@ -13,7 +13,7 @@ SELECT setval('distribution.hydrant_id_seq', 100, true);
 COMMENT ON TABLE distribution.hydrant IS 'hydrant.';
 
 /* columns */
-ALTER TABLE distribution.hydrant ADD COLUMN  identification             character varying (15)  ;
+ALTER TABLE distribution.hydrant ADD COLUMN  identification  character varying (15)  ;
 ALTER TABLE distribution.hydrant ADD COLUMN  id_type          integer                 ;
 ALTER TABLE distribution.hydrant ADD COLUMN  id_distributor   integer                 ;
 ALTER TABLE distribution.hydrant ADD COLUMN  id_status        integer                 ;
