@@ -1,5 +1,8 @@
 #!/bin/bash
 
+read -p "Sure to perform backup (erase old files)? (y/n) " answ
+if [[ "$answ" == "y" ]]
+then
 
 #  export node
 pg_dump --host 172.24.171.203 --port 5432 --username "sige" --no-password  --format plain --data-only --inserts --column-inserts --verbose --file tempfile --table "distribution.node" "sige"
@@ -20,4 +23,12 @@ then
 	rm temp
 fi
 
+# export installation
+pg_dump --host 172.24.171.203 --port 5432 --username "sige" --no-password  --format plain --data-only --inserts --column-inserts --verbose --file tempfile --table "distribution.installation_tank" "sige"
+cat tempfile | sed 's/INSERT INTO node/INSERT INTO distribution.node/g' > /home/denis/Documents/qgis/qwat/sql/sige_data/data_installation_tank.sql
+rm tempfile
+
 read -p "press any key to finish"
+
+
+fi
