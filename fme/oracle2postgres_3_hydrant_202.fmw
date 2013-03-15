@@ -651,7 +651,7 @@
 #! <FEAT_ATTRIBUTE ATTR_NAME="id_type" ATTR_TYPE="int4"/>
 #! <FEAT_ATTRIBUTE ATTR_NAME="id_distributor" ATTR_TYPE="int4"/>
 #! <FEAT_ATTRIBUTE ATTR_NAME="year" ATTR_TYPE="int4"/>
-#! <FEAT_ATTRIBUTE ATTR_NAME="sige" ATTR_TYPE="int4"/>
+#! <FEAT_ATTRIBUTE ATTR_NAME="identification" ATTR_TYPE="int4"/>
 #! <FEAT_ATTRIBUTE ATTR_NAME="remarks" ATTR_TYPE="text"/>
 #! <FEAT_ATTRIBUTE ATTR_NAME="id_status" ATTR_TYPE="int4"/>
 #! <FEAT_ATTRIBUTE ATTR_NAME="id_provider" ATTR_TYPE="int4"/>
@@ -1946,7 +1946,6 @@
 #! <XFORM_ATTR ATTR_NAME="NENNDRUCK" IS_USER_CREATED="false" FEAT_INDEX="0"/>
 #! <XFORM_ATTR ATTR_NAME="ORTSBEZEICHNUNG" IS_USER_CREATED="false" FEAT_INDEX="0"/>
 #! <XFORM_ATTR ATTR_NAME="P2" IS_USER_CREATED="false" FEAT_INDEX="0"/>
-#! <XFORM_ATTR ATTR_NAME="sige" IS_USER_CREATED="false" FEAT_INDEX="0"/>
 #! <XFORM_ATTR ATTR_NAME="P_QMAX" IS_USER_CREATED="false" FEAT_INDEX="0"/>
 #! <XFORM_ATTR ATTR_NAME="P_STATIQUE" IS_USER_CREATED="false" FEAT_INDEX="0"/>
 #! <XFORM_ATTR ATTR_NAME="Q2" IS_USER_CREATED="false" FEAT_INDEX="0"/>
@@ -1966,6 +1965,7 @@
 #! <XFORM_ATTR ATTR_NAME="NENNWEITE" IS_USER_CREATED="false" FEAT_INDEX="0"/>
 #! <XFORM_ATTR ATTR_NAME="model" IS_USER_CREATED="false" FEAT_INDEX="0"/>
 #! <XFORM_ATTR ATTR_NAME="id_provider" IS_USER_CREATED="false" FEAT_INDEX="0"/>
+#! <XFORM_ATTR ATTR_NAME="identification" IS_USER_CREATED="false" FEAT_INDEX="0"/>
 #! <XFORM_PARM PARM_NAME="NEW_VALUE" PARM_VALUE="1899"/>
 #! <XFORM_PARM PARM_NAME="PARAMETERS_GROUP" PARM_VALUE=""/>
 #! <XFORM_PARM PARM_NAME="XFORMER_NAME" PARM_VALUE="NullAttributeReplacer"/>
@@ -2022,7 +2022,6 @@
 #! <XFORM_ATTR ATTR_NAME="NENNDRUCK" IS_USER_CREATED="false" FEAT_INDEX="0"/>
 #! <XFORM_ATTR ATTR_NAME="ORTSBEZEICHNUNG" IS_USER_CREATED="false" FEAT_INDEX="0"/>
 #! <XFORM_ATTR ATTR_NAME="P2" IS_USER_CREATED="false" FEAT_INDEX="0"/>
-#! <XFORM_ATTR ATTR_NAME="sige" IS_USER_CREATED="false" FEAT_INDEX="0"/>
 #! <XFORM_ATTR ATTR_NAME="P_QMAX" IS_USER_CREATED="false" FEAT_INDEX="0"/>
 #! <XFORM_ATTR ATTR_NAME="P_STATIQUE" IS_USER_CREATED="false" FEAT_INDEX="0"/>
 #! <XFORM_ATTR ATTR_NAME="Q2" IS_USER_CREATED="false" FEAT_INDEX="0"/>
@@ -2042,8 +2041,9 @@
 #! <XFORM_ATTR ATTR_NAME="NENNWEITE" IS_USER_CREATED="false" FEAT_INDEX="0"/>
 #! <XFORM_ATTR ATTR_NAME="model" IS_USER_CREATED="false" FEAT_INDEX="0"/>
 #! <XFORM_ATTR ATTR_NAME="id_provider" IS_USER_CREATED="false" FEAT_INDEX="0"/>
+#! <XFORM_ATTR ATTR_NAME="identification" IS_USER_CREATED="false" FEAT_INDEX="0"/>
 #! <XFORM_PARM PARM_NAME="XFORMER_NAME" PARM_VALUE="AttributeRenamer"/>
-#! <XFORM_PARM PARM_NAME="ATTR_LIST" PARM_VALUE="id,FID,remarks,BEMERKUNG,year,EINBAUJAHR,sige,POINT_NUMBER,id_provider,HERSTELLER_ID,model,ARTIKEL_NR"/>
+#! <XFORM_PARM PARM_NAME="ATTR_LIST" PARM_VALUE="id,FID,remarks,BEMERKUNG,year,EINBAUJAHR,identification,POINT_NUMBER,id_provider,HERSTELLER_ID,model,ARTIKEL_NR"/>
 #! </TRANSFORMER>
 #! <TRANSFORMER
 #! IDENTIFIER="12"
@@ -2096,7 +2096,6 @@
 #! <XFORM_ATTR ATTR_NAME="NENNDRUCK" IS_USER_CREATED="false" FEAT_INDEX="0"/>
 #! <XFORM_ATTR ATTR_NAME="ORTSBEZEICHNUNG" IS_USER_CREATED="false" FEAT_INDEX="0"/>
 #! <XFORM_ATTR ATTR_NAME="P2" IS_USER_CREATED="false" FEAT_INDEX="0"/>
-#! <XFORM_ATTR ATTR_NAME="sige" IS_USER_CREATED="false" FEAT_INDEX="0"/>
 #! <XFORM_ATTR ATTR_NAME="P_QMAX" IS_USER_CREATED="false" FEAT_INDEX="0"/>
 #! <XFORM_ATTR ATTR_NAME="P_STATIQUE" IS_USER_CREATED="false" FEAT_INDEX="0"/>
 #! <XFORM_ATTR ATTR_NAME="Q2" IS_USER_CREATED="false" FEAT_INDEX="0"/>
@@ -2116,6 +2115,7 @@
 #! <XFORM_ATTR ATTR_NAME="NENNWEITE" IS_USER_CREATED="false" FEAT_INDEX="0"/>
 #! <XFORM_ATTR ATTR_NAME="model" IS_USER_CREATED="false" FEAT_INDEX="0"/>
 #! <XFORM_ATTR ATTR_NAME="id_provider" IS_USER_CREATED="false" FEAT_INDEX="0"/>
+#! <XFORM_ATTR ATTR_NAME="identification" IS_USER_CREATED="false" FEAT_INDEX="0"/>
 #! <XFORM_PARM PARM_NAME="LUT" PARM_VALUE="HB,1,HS,2,HD,3,,0"/>
 #! <XFORM_PARM PARM_NAME="XFORMER_NAME" PARM_VALUE="AttributeValueMapper_2"/>
 #! <XFORM_PARM PARM_NAME="SRC" PARM_VALUE="HYDRANTEN_ART"/>
@@ -2174,7 +2174,6 @@
 #! <XFORM_ATTR ATTR_NAME="NENNDRUCK" IS_USER_CREATED="false" FEAT_INDEX="0"/>
 #! <XFORM_ATTR ATTR_NAME="ORTSBEZEICHNUNG" IS_USER_CREATED="false" FEAT_INDEX="0"/>
 #! <XFORM_ATTR ATTR_NAME="P2" IS_USER_CREATED="false" FEAT_INDEX="0"/>
-#! <XFORM_ATTR ATTR_NAME="sige" IS_USER_CREATED="false" FEAT_INDEX="0"/>
 #! <XFORM_ATTR ATTR_NAME="P_QMAX" IS_USER_CREATED="false" FEAT_INDEX="0"/>
 #! <XFORM_ATTR ATTR_NAME="P_STATIQUE" IS_USER_CREATED="false" FEAT_INDEX="0"/>
 #! <XFORM_ATTR ATTR_NAME="Q2" IS_USER_CREATED="false" FEAT_INDEX="0"/>
@@ -2196,6 +2195,7 @@
 #! <XFORM_ATTR ATTR_NAME="id_status" IS_USER_CREATED="false" FEAT_INDEX="0"/>
 #! <XFORM_ATTR ATTR_NAME="model" IS_USER_CREATED="false" FEAT_INDEX="0"/>
 #! <XFORM_ATTR ATTR_NAME="id_provider" IS_USER_CREATED="false" FEAT_INDEX="0"/>
+#! <XFORM_ATTR ATTR_NAME="identification" IS_USER_CREATED="false" FEAT_INDEX="0"/>
 #! <XFORM_PARM PARM_NAME="LUT" PARM_VALUE="REG,1,VE,2,VBP,3,OUV,4,OA,5,SEC,6,VIN,7,VH,8,I,9,VID,10,VR,11,VIVE,12,,"/>
 #! <XFORM_PARM PARM_NAME="XFORMER_NAME" PARM_VALUE="AttributeValueMapper_3"/>
 #! <XFORM_PARM PARM_NAME="SRC" PARM_VALUE="FUNKTION"/>
@@ -2253,7 +2253,6 @@
 #! <XFORM_ATTR ATTR_NAME="NENNDRUCK" IS_USER_CREATED="false" FEAT_INDEX="0"/>
 #! <XFORM_ATTR ATTR_NAME="ORTSBEZEICHNUNG" IS_USER_CREATED="false" FEAT_INDEX="0"/>
 #! <XFORM_ATTR ATTR_NAME="P2" IS_USER_CREATED="false" FEAT_INDEX="0"/>
-#! <XFORM_ATTR ATTR_NAME="sige" IS_USER_CREATED="false" FEAT_INDEX="0"/>
 #! <XFORM_ATTR ATTR_NAME="P_QMAX" IS_USER_CREATED="false" FEAT_INDEX="0"/>
 #! <XFORM_ATTR ATTR_NAME="P_STATIQUE" IS_USER_CREATED="false" FEAT_INDEX="0"/>
 #! <XFORM_ATTR ATTR_NAME="Q2" IS_USER_CREATED="false" FEAT_INDEX="0"/>
@@ -2275,6 +2274,7 @@
 #! <XFORM_ATTR ATTR_NAME="id_status" IS_USER_CREATED="false" FEAT_INDEX="0"/>
 #! <XFORM_ATTR ATTR_NAME="model" IS_USER_CREATED="false" FEAT_INDEX="0"/>
 #! <XFORM_ATTR ATTR_NAME="id_provider" IS_USER_CREATED="false" FEAT_INDEX="0"/>
+#! <XFORM_ATTR ATTR_NAME="identification" IS_USER_CREATED="false" FEAT_INDEX="0"/>
 #! <XFORM_PARM PARM_NAME="XFORMER_NAME" PARM_VALUE="AttributeCreator"/>
 #! <XFORM_PARM PARM_NAME="ATTR_LIST" PARM_VALUE="id_distributor,1,id_status,1"/>
 #! </TRANSFORMER>
@@ -2288,6 +2288,7 @@
 #! ENABLED="true"
 #! >
 #! <OUTPUT_FEAT NAME="COMPLETE"/>
+#! <FEAT_COLLAPSED COLLAPSED="0"/>
 #! <XFORM_ATTR ATTR_NAME="DELETED" IS_USER_CREATED="false" FEAT_INDEX="0"/>
 #! <XFORM_ATTR ATTR_NAME="GID" IS_USER_CREATED="false" FEAT_INDEX="0"/>
 #! <XFORM_ATTR ATTR_NAME="TB_POINT_NUMBER" IS_USER_CREATED="false" FEAT_INDEX="0"/>
@@ -2424,7 +2425,6 @@
 #! <XFORM_ATTR ATTR_NAME="NENNDRUCK" IS_USER_CREATED="false" FEAT_INDEX="0"/>
 #! <XFORM_ATTR ATTR_NAME="ORTSBEZEICHNUNG" IS_USER_CREATED="false" FEAT_INDEX="0"/>
 #! <XFORM_ATTR ATTR_NAME="P2" IS_USER_CREATED="false" FEAT_INDEX="0"/>
-#! <XFORM_ATTR ATTR_NAME="sige" IS_USER_CREATED="false" FEAT_INDEX="0"/>
 #! <XFORM_ATTR ATTR_NAME="P_QMAX" IS_USER_CREATED="false" FEAT_INDEX="0"/>
 #! <XFORM_ATTR ATTR_NAME="P_STATIQUE" IS_USER_CREATED="false" FEAT_INDEX="0"/>
 #! <XFORM_ATTR ATTR_NAME="Q2" IS_USER_CREATED="false" FEAT_INDEX="0"/>
@@ -2445,6 +2445,7 @@
 #! <XFORM_ATTR ATTR_NAME="id_status" IS_USER_CREATED="false" FEAT_INDEX="0"/>
 #! <XFORM_ATTR ATTR_NAME="model" IS_USER_CREATED="false" FEAT_INDEX="0"/>
 #! <XFORM_ATTR ATTR_NAME="id_provider" IS_USER_CREATED="false" FEAT_INDEX="0"/>
+#! <XFORM_ATTR ATTR_NAME="identification" IS_USER_CREATED="false" FEAT_INDEX="0"/>
 #! <OUTPUT_FEAT NAME="INCOMPLETE"/>
 #! <FEAT_COLLAPSED COLLAPSED="1"/>
 #! <XFORM_ATTR ATTR_NAME="id_type" IS_USER_CREATED="false" FEAT_INDEX="1"/>
@@ -2488,7 +2489,6 @@
 #! <XFORM_ATTR ATTR_NAME="NENNDRUCK" IS_USER_CREATED="false" FEAT_INDEX="1"/>
 #! <XFORM_ATTR ATTR_NAME="ORTSBEZEICHNUNG" IS_USER_CREATED="false" FEAT_INDEX="1"/>
 #! <XFORM_ATTR ATTR_NAME="P2" IS_USER_CREATED="false" FEAT_INDEX="1"/>
-#! <XFORM_ATTR ATTR_NAME="sige" IS_USER_CREATED="false" FEAT_INDEX="1"/>
 #! <XFORM_ATTR ATTR_NAME="P_QMAX" IS_USER_CREATED="false" FEAT_INDEX="1"/>
 #! <XFORM_ATTR ATTR_NAME="P_STATIQUE" IS_USER_CREATED="false" FEAT_INDEX="1"/>
 #! <XFORM_ATTR ATTR_NAME="Q2" IS_USER_CREATED="false" FEAT_INDEX="1"/>
@@ -2510,6 +2510,7 @@
 #! <XFORM_ATTR ATTR_NAME="id_status" IS_USER_CREATED="false" FEAT_INDEX="1"/>
 #! <XFORM_ATTR ATTR_NAME="model" IS_USER_CREATED="false" FEAT_INDEX="1"/>
 #! <XFORM_ATTR ATTR_NAME="id_provider" IS_USER_CREATED="false" FEAT_INDEX="1"/>
+#! <XFORM_ATTR ATTR_NAME="identification" IS_USER_CREATED="false" FEAT_INDEX="1"/>
 #! <OUTPUT_FEAT NAME="EMPTY"/>
 #! <FEAT_COLLAPSED COLLAPSED="2"/>
 #! <XFORM_ATTR ATTR_NAME="id_type" IS_USER_CREATED="false" FEAT_INDEX="2"/>
@@ -2553,7 +2554,6 @@
 #! <XFORM_ATTR ATTR_NAME="NENNDRUCK" IS_USER_CREATED="false" FEAT_INDEX="2"/>
 #! <XFORM_ATTR ATTR_NAME="ORTSBEZEICHNUNG" IS_USER_CREATED="false" FEAT_INDEX="2"/>
 #! <XFORM_ATTR ATTR_NAME="P2" IS_USER_CREATED="false" FEAT_INDEX="2"/>
-#! <XFORM_ATTR ATTR_NAME="sige" IS_USER_CREATED="false" FEAT_INDEX="2"/>
 #! <XFORM_ATTR ATTR_NAME="P_QMAX" IS_USER_CREATED="false" FEAT_INDEX="2"/>
 #! <XFORM_ATTR ATTR_NAME="P_STATIQUE" IS_USER_CREATED="false" FEAT_INDEX="2"/>
 #! <XFORM_ATTR ATTR_NAME="Q2" IS_USER_CREATED="false" FEAT_INDEX="2"/>
@@ -2575,6 +2575,7 @@
 #! <XFORM_ATTR ATTR_NAME="id_status" IS_USER_CREATED="false" FEAT_INDEX="2"/>
 #! <XFORM_ATTR ATTR_NAME="model" IS_USER_CREATED="false" FEAT_INDEX="2"/>
 #! <XFORM_ATTR ATTR_NAME="id_provider" IS_USER_CREATED="false" FEAT_INDEX="2"/>
+#! <XFORM_ATTR ATTR_NAME="identification" IS_USER_CREATED="false" FEAT_INDEX="2"/>
 #! <OUTPUT_FEAT NAME="REFERENCED"/>
 #! <FEAT_COLLAPSED COLLAPSED="3"/>
 #! <XFORM_ATTR ATTR_NAME="WKT" IS_USER_CREATED="false" FEAT_INDEX="3"/>
@@ -3263,7 +3264,7 @@ FACTORY_DEF * TeeFactory   FACTORY_NAME "AttributeFilter <BLANK> Output Nuker"  
 FACTORY_DEF * TeeFactory   FACTORY_NAME "AttributeFilter <UNFILTERED> Output Nuker"   INPUT FEATURE_TYPE AttributeFilter_<UNFILTERED>
 # -------------------------------------------------------------------------
 
-FACTORY_DEF * TeeFactory    FACTORY_NAME AttributeRenamer    INPUT  FEATURE_TYPE AttributeFilter_0    OUTPUT FEATURE_TYPE AttributeRenamer_OUTPUT         @RenameAttributes(id,FID,remarks,BEMERKUNG,year,EINBAUJAHR,sige,POINT_NUMBER,id_provider,HERSTELLER_ID,model,ARTIKEL_NR)
+FACTORY_DEF * TeeFactory    FACTORY_NAME AttributeRenamer    INPUT  FEATURE_TYPE AttributeFilter_0    OUTPUT FEATURE_TYPE AttributeRenamer_OUTPUT         @RenameAttributes(id,FID,remarks,BEMERKUNG,year,EINBAUJAHR,identification,POINT_NUMBER,id_provider,HERSTELLER_ID,model,ARTIKEL_NR)
 
 # -------------------------------------------------------------------------
 
@@ -3299,4 +3300,4 @@ FACTORY_DEF * TestFactory   FACTORY_NAME "Final Output Feature Type Router"   IN
 FACTORY_DEF * TeeFactory   FACTORY_NAME "Final Output Nuker"   INPUT FEATURE_TYPE __nuke_me__
 
 # -------------------------------------------------------------------------
-POSTGIS_1_DEF distribution.hydrant   postgis_type                 postgis_geometry   postgis_mode                 INHERIT_FROM_WRITER   postgis_spatial_column_type  geometry   postgis_spatial_column       geometry   postgis_srid                 INHERIT_FROM_WRITER   postgis_drop_table           NO   postgis_truncate_table       YES   postgis_create_with_oids     YES   postgis_create_gist_index    YES   postgis_vacuum_analyze       YES   postgis_allow_serial_writing YES   id                           int4   id_type                      int4   id_distributor               int4   year                         int4   sige                         int4   remarks                      text   id_status                    int4   id_provider                  int4   model                        varchar(30)
+POSTGIS_1_DEF distribution.hydrant   postgis_type                 postgis_geometry   postgis_mode                 INHERIT_FROM_WRITER   postgis_spatial_column_type  geometry   postgis_spatial_column       geometry   postgis_srid                 INHERIT_FROM_WRITER   postgis_drop_table           NO   postgis_truncate_table       YES   postgis_create_with_oids     YES   postgis_create_gist_index    YES   postgis_vacuum_analyze       YES   postgis_allow_serial_writing YES   id                           int4   id_type                      int4   id_distributor               int4   year                         int4   identification               int4   remarks                      text   id_status                    int4   id_provider                  int4   model                        varchar(30)
