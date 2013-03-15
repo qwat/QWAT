@@ -101,7 +101,7 @@ read -p "Press any key to continue..."
 
 psql -h 172.24.171.$ip -U sige -f installation_type.sql
 read -p "Press any key to continue..."
-psql -h 172.24.171.$ip -U sige -f installation_remote.sql
+psql -h 172.24.171.$ip -U sige -f remote_type.sql
 read -p "Press any key to continue..."
 psql -h 172.24.171.$ip -U sige -f installation.sql
 read -p "Press any key to continue..."
@@ -113,8 +113,8 @@ psql -h 172.24.171.$ip -U sige -f installation_view.sql
 read -p "Press any key to continue..."
 
 psql -h 172.24.171.$ip -U sige -f samplingpoint.sql
-read -p "Press any key to continue..."
-psql -h 172.24.171.$ip -U sige -f samplingpoint_view.sql
+#read -p "Press any key to continue..."
+#psql -h 172.24.171.$ip -U sige -f samplingpoint_view.sql
 read -p "Press any key to continue..."
 psql -h 172.24.171.$ip -U sige -f altitude.sql
 
