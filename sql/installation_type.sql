@@ -21,7 +21,6 @@ COMMENT ON TABLE distribution.installation_type IS 'type for installation.';
 
 /* Predefined types list */
 /* This has to be filled by user to fullfile language preferences */
-INSERT INTO distribution.installation_type (shortname,name,schema_view) VALUES ('I'  ,'Inconnu'                 ,true);
 INSERT INTO distribution.installation_type (shortname,name,schema_view) VALUES ('R'  ,'Réservoir'               ,true);
 INSERT INTO distribution.installation_type (shortname,name,schema_view) VALUES ('S'  ,'Source'                  ,true);
 INSERT INTO distribution.installation_type (shortname,name,schema_view) VALUES ('P'  ,'Pompage'                 ,true);
