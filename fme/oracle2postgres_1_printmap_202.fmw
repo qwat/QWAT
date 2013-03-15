@@ -889,7 +889,7 @@
 #! IDENTIFIER="41"
 #! FEAT_GEOMTYPE="oracle_nil oracle_point oracle_line oracle_area oracle_multipoint oracle_multiline oracle_multipoly oracle_arc oracle_circle oracle_rectangle oracle_collection oracle_surface oracle_solid oracle_multisurface oracle_multisolid"
 #! POSITION="50 -150"
-#! ORDER="8"
+#! ORDER="9"
 #! COLLAPSED="false"
 #! KEYWORD="ORACLE8I_1"
 #! ENABLED="true"
@@ -924,7 +924,7 @@
 #! IDENTIFIER="3"
 #! FEAT_GEOMTYPE="oracle_nil"
 #! POSITION="64 -925"
-#! ORDER="11"
+#! ORDER="12"
 #! COLLAPSED="true"
 #! KEYWORD="ORACLE8I_DB_1"
 #! ENABLED="true"
@@ -1039,13 +1039,14 @@
 #! IDENTIFIER="9"
 #! FEAT_GEOMTYPE="&lt;NO_GEOMETRY&gt;"
 #! POSITION="1919 -267"
-#! ORDER="16"
-#! COLLAPSED="true"
+#! ORDER="17"
+#! COLLAPSED="false"
 #! KEYWORD="POSTGIS_1"
 #! ENABLED="true"
 #! FANOUT="No"
 #! FANOUT_ID_ATTR=""
 #! >
+#! <FEAT_ATTRIBUTE ATTR_NAME="shortname" ATTR_TYPE="char(30)"/>
 #! <DEFLINE_PARM PARM_NAME="postgis_truncate_table" PARM_VALUE="YES"/>
 #! <DEFLINE_PARM PARM_NAME="postgis_spatial_column" PARM_VALUE="geometry"/>
 #! <DEFLINE_PARM PARM_NAME="postgis_drop_table" PARM_VALUE="NO"/>
@@ -1082,7 +1083,7 @@
 #! IDENTIFIER="14"
 #! COMMENT_VALUE="SIGE_FOLIO"
 #! POSITION="50 -70"
-#! ORDER="6"
+#! ORDER="7"
 #! FOLLOW_ANCHOR="true"
 #! INFO_NODE="false"
 #! COMMENT_TYPE="REGULAR"
@@ -1092,7 +1093,7 @@
 #! IDENTIFIER="15"
 #! COMMENT_VALUE="SIGE_FOLIO_GEO"
 #! POSITION="64 -845"
-#! ORDER="7"
+#! ORDER="8"
 #! FOLLOW_ANCHOR="true"
 #! INFO_NODE="false"
 #! COMMENT_TYPE="REGULAR"
@@ -1102,7 +1103,7 @@
 #! IDENTIFIER="21"
 #! COMMENT_VALUE="Retirer deleted"
 #! POSITION="570 -151"
-#! ORDER="9"
+#! ORDER="10"
 #! FOLLOW_ANCHOR="true"
 #! INFO_NODE="false"
 #! COMMENT_TYPE="REGULAR"
@@ -1112,7 +1113,7 @@
 #! IDENTIFIER="22"
 #! COMMENT_VALUE="Renommage&#13;&#10;"
 #! POSITION="1208 -16"
-#! ORDER="10"
+#! ORDER="11"
 #! FOLLOW_ANCHOR="true"
 #! INFO_NODE="false"
 #! COMMENT_TYPE="REGULAR"
@@ -1129,7 +1130,7 @@
 #! TYPE="SubDocumentTransformer"
 #! VERSION="0"
 #! POSITION="608 -790"
-#! ORDER="12"
+#! ORDER="13"
 #! PARMS_EDITED="false"
 #! ENABLED="true"
 #! >
@@ -1151,7 +1152,7 @@
 #! TYPE="AttributeFilter"
 #! VERSION="2"
 #! POSITION="570 -231"
-#! ORDER="13"
+#! ORDER="14"
 #! PARMS_EDITED="true"
 #! ENABLED="true"
 #! >
@@ -1197,7 +1198,7 @@
 #! TYPE="AttributeRenamer"
 #! VERSION="1"
 #! POSITION="1208 -96"
-#! ORDER="14"
+#! ORDER="15"
 #! PARMS_EDITED="true"
 #! ENABLED="true"
 #! >
@@ -1211,16 +1212,16 @@
 #! <XFORM_ATTR ATTR_NAME="FID" IS_USER_CREATED="false" FEAT_INDEX="0"/>
 #! <XFORM_ATTR ATTR_NAME="GID" IS_USER_CREATED="false" FEAT_INDEX="0"/>
 #! <XFORM_ATTR ATTR_NAME="MENSU_NUM" IS_USER_CREATED="false" FEAT_INDEX="0"/>
-#! <XFORM_ATTR ATTR_NAME="short_name" IS_USER_CREATED="false" FEAT_INDEX="0"/>
+#! <XFORM_ATTR ATTR_NAME="shortname" IS_USER_CREATED="false" FEAT_INDEX="0"/>
 #! <XFORM_PARM PARM_NAME="XFORMER_NAME" PARM_VALUE="AttributeRenamer"/>
-#! <XFORM_PARM PARM_NAME="ATTR_LIST" PARM_VALUE="short_name,NO_FOLIO"/>
+#! <XFORM_PARM PARM_NAME="ATTR_LIST" PARM_VALUE="shortname,NO_FOLIO"/>
 #! </TRANSFORMER>
 #! <TRANSFORMER
 #! IDENTIFIER="8"
 #! TYPE="FeatureMerger"
 #! VERSION="8"
 #! POSITION="1270 -516"
-#! ORDER="15"
+#! ORDER="16"
 #! PARMS_EDITED="true"
 #! ENABLED="true"
 #! >
@@ -1239,7 +1240,7 @@
 #! <XFORM_ATTR ATTR_NAME="DELETED" IS_USER_CREATED="false" FEAT_INDEX="0"/>
 #! <XFORM_ATTR ATTR_NAME="FID" IS_USER_CREATED="false" FEAT_INDEX="0"/>
 #! <XFORM_ATTR ATTR_NAME="MENSU_NUM" IS_USER_CREATED="false" FEAT_INDEX="0"/>
-#! <XFORM_ATTR ATTR_NAME="short_name" IS_USER_CREATED="false" FEAT_INDEX="0"/>
+#! <XFORM_ATTR ATTR_NAME="shortname" IS_USER_CREATED="false" FEAT_INDEX="0"/>
 #! <OUTPUT_FEAT NAME="INCOMPLETE"/>
 #! <FEAT_COLLAPSED COLLAPSED="1"/>
 #! <XFORM_ATTR ATTR_NAME="AREA_GERECHNET" IS_USER_CREATED="false" FEAT_INDEX="1"/>
@@ -1250,7 +1251,7 @@
 #! <XFORM_ATTR ATTR_NAME="FID" IS_USER_CREATED="false" FEAT_INDEX="1"/>
 #! <XFORM_ATTR ATTR_NAME="GID" IS_USER_CREATED="false" FEAT_INDEX="1"/>
 #! <XFORM_ATTR ATTR_NAME="MENSU_NUM" IS_USER_CREATED="false" FEAT_INDEX="1"/>
-#! <XFORM_ATTR ATTR_NAME="short_name" IS_USER_CREATED="false" FEAT_INDEX="1"/>
+#! <XFORM_ATTR ATTR_NAME="shortname" IS_USER_CREATED="false" FEAT_INDEX="1"/>
 #! <OUTPUT_FEAT NAME="EMPTY"/>
 #! <FEAT_COLLAPSED COLLAPSED="2"/>
 #! <XFORM_ATTR ATTR_NAME="AREA_GERECHNET" IS_USER_CREATED="false" FEAT_INDEX="2"/>
@@ -1261,7 +1262,7 @@
 #! <XFORM_ATTR ATTR_NAME="FID" IS_USER_CREATED="false" FEAT_INDEX="2"/>
 #! <XFORM_ATTR ATTR_NAME="GID" IS_USER_CREATED="false" FEAT_INDEX="2"/>
 #! <XFORM_ATTR ATTR_NAME="MENSU_NUM" IS_USER_CREATED="false" FEAT_INDEX="2"/>
-#! <XFORM_ATTR ATTR_NAME="short_name" IS_USER_CREATED="false" FEAT_INDEX="2"/>
+#! <XFORM_ATTR ATTR_NAME="shortname" IS_USER_CREATED="false" FEAT_INDEX="2"/>
 #! <OUTPUT_FEAT NAME="REFERENCED"/>
 #! <FEAT_COLLAPSED COLLAPSED="3"/>
 #! <XFORM_ATTR ATTR_NAME="list{}.xy" IS_USER_CREATED="false" FEAT_INDEX="3"/>
@@ -2465,7 +2466,7 @@ FACTORY_DEF * TeeFactory   FACTORY_NAME "AttributeFilter <BLANK> Output Nuker"  
 FACTORY_DEF * TeeFactory   FACTORY_NAME "AttributeFilter <UNFILTERED> Output Nuker"   INPUT FEATURE_TYPE AttributeFilter_<UNFILTERED>
 # -------------------------------------------------------------------------
 
-FACTORY_DEF * TeeFactory    FACTORY_NAME AttributeRenamer    INPUT  FEATURE_TYPE AttributeFilter_0    OUTPUT FEATURE_TYPE AttributeRenamer_OUTPUT         @RenameAttributes(short_name,NO_FOLIO)
+FACTORY_DEF * TeeFactory    FACTORY_NAME AttributeRenamer    INPUT  FEATURE_TYPE AttributeFilter_0    OUTPUT FEATURE_TYPE AttributeRenamer_OUTPUT         @RenameAttributes(shortname,NO_FOLIO)
 
 # -------------------------------------------------------------------------
 FACTORY_DEF * TeeFactory   FACTORY_NAME "liner AttributeRemover_2_INPUT_39 Input Collector"   INPUT FEATURE_TYPE SIGE_DISTRIBUTION.SIGE_FOLIO_GEO   OUTPUT FEATURE_TYPE liner_AttributeRemover_2_INPUT_39
@@ -2585,4 +2586,4 @@ FACTORY_DEF * TestFactory   FACTORY_NAME "Final Output Feature Type Router"   IN
 FACTORY_DEF * TeeFactory   FACTORY_NAME "Final Output Nuker"   INPUT FEATURE_TYPE __nuke_me__
 
 # -------------------------------------------------------------------------
-POSTGIS_1_DEF distribution.printmap   postgis_type                 postgis_geometry   postgis_mode                 INHERIT_FROM_WRITER   postgis_spatial_column_type  geometry   postgis_spatial_column       geometry   postgis_srid                 INHERIT_FROM_WRITER   postgis_drop_table           NO   postgis_truncate_table       YES   postgis_create_with_oids     NO   postgis_create_gist_index    YES   postgis_vacuum_analyze       YES   postgis_allow_serial_writing NO
+POSTGIS_1_DEF distribution.printmap   postgis_type                 postgis_geometry   postgis_mode                 INHERIT_FROM_WRITER   postgis_spatial_column_type  geometry   postgis_spatial_column       geometry   postgis_srid                 INHERIT_FROM_WRITER   postgis_drop_table           NO   postgis_truncate_table       YES   postgis_create_with_oids     NO   postgis_create_gist_index    YES   postgis_vacuum_analyze       YES   postgis_allow_serial_writing NO   shortname                    char(30)
