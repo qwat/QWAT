@@ -46,7 +46,6 @@ SELECT
 	district.name              AS _district,
 	pressurezone.name          AS _pressurezone,
 	pressurezone.shortname     AS _pressurezone_shortname,
-	pressurezone.consummerzone AS _consummerzone,
 	pressurezone.colorcode     AS _pressurezone_colorcode
 	FROM distribution.valve
 	INNER JOIN      distribution.valve_type     ON valve.id_type         = valve_type.id

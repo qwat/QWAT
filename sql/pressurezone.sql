@@ -12,19 +12,19 @@ CREATE TABLE distribution.pressurezone (id serial NOT NULL);
 COMMENT ON TABLE distribution.pressurezone IS 'Pressure zones.';
 
 /* columns */
-ALTER TABLE distribution.pressurezone ADD COLUMN shortname     varchar(10);
-ALTER TABLE distribution.pressurezone ADD COLUMN name          varchar(30);
-ALTER TABLE distribution.pressurezone ADD COLUMN consummerzone varchar(30);
-ALTER TABLE distribution.pressurezone ADD COLUMN colorcode     smallint;
+ALTER TABLE distribution.pressurezone ADD COLUMN shortname  varchar(10);
+ALTER TABLE distribution.pressurezone ADD COLUMN name       varchar(30);
+ALTER TABLE distribution.pressurezone ADD COLUMN id_parent  integer;     /* FK self reference */
+ALTER TABLE distribution.pressurezone ADD COLUMN colorcode  smallint;
 
 /* geometry */
-SELECT AddGeometryColumn('distribution', 'pressurezone', 'geometry', 21781, 'POLYGON', 2);
+SELECT AddGeometryColumn('distribution', 'pressurezone', 'geometry', 21781, 'MULTIPOLYGON', 2);
 CREATE INDEX pressurezone_geoidx ON distribution.pressurezone USING GIST ( geometry ); 
 
 /* constraints */
 ALTER TABLE distribution.pressurezone ADD CONSTRAINT pressurezone_pkey PRIMARY KEY (id);
 ALTER TABLE distribution.pressurezone ADD CONSTRAINT pressurezone_name UNIQUE (name);
-
+ALTER TABLE distribution.pressurezone ADD CONSTRAINT pressurezone_id_parent FOREIGN KEY (id_parent) REFERENCES distribution.pressurezone (id) MATCH SIMPLE ; CREATE INDEX fki_pressurezone_id_parent  ON distribution.pressurezone(id_parent);
         
 /* get pressurezone id function */
 CREATE OR REPLACE FUNCTION distribution.get_pressurezone_id(geometry) RETURNS integer AS

@@ -47,7 +47,6 @@ CREATE VIEW distribution.pipe_view AS
 		status.active                   AS _status_active,
 		pressurezone.name               AS _pressurezone,
 		pressurezone.shortname          AS _pressurezone_shortname,
-		pressurezone.consummerzone      AS _consummerzone,
 		pressurezone.colorcode          AS _pressurezone_colorcode,
 		CASE 
 			WHEN pipe.schema_force_view IS NULL THEN pipe_function.schema_view

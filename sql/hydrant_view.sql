@@ -36,7 +36,6 @@ CREATE VIEW distribution.hydrant_view AS
 		district.shortname         AS _district_shortname,
 		pressurezone.name          AS _pressurezone,
 		pressurezone.shortname     AS _pressurezone_shortname,
-		pressurezone.consummerzone AS _consummerzone,
 		pressurezone.colorcode     AS _pressurezone_colorcode
 		FROM distribution.hydrant
 		INNER JOIN distribution.hydrant_type          ON hydrant.id_type         = hydrant_type.id

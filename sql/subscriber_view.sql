@@ -25,7 +25,6 @@ CREATE VIEW distribution.subscriber_view AS
 		district.subscriber_prefix::varchar || '-' || subscriber.id_client::varchar AS id_client_full,
 		pressurezone.name          AS _pressurezone,
 		pressurezone.shortname     AS _pressurezone_shortname,
-		pressurezone.consummerzone AS _consummerzone,
 		pressurezone.colorcode     AS _pressurezone_colorcode
 		FROM distribution.subscriber
 		INNER      JOIN distribution.subscriber_type ON subscriber.id_type         = subscriber_type.id 

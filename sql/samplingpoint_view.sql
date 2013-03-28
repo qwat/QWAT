@@ -21,7 +21,6 @@ CREATE VIEW distribution.samplingpoint_view AS
 		district.name              AS _district,
 		pressurezone.name          AS _pressurezone,
 		pressurezone.shortname     AS _pressurezone_shortname,
-		pressurezone.consummerzone AS _consummerzone,
 		pressurezone.colorcode     AS _pressurezone_colorcode
 		FROM distribution.samplingpoint
 		LEFT OUTER JOIN distribution.district      ON samplingpoint.id_district     = district.id       

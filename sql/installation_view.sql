@@ -42,7 +42,6 @@ CREATE VIEW distribution.installation_view AS
 		district.name              AS _district,
 		pressurezone.name          AS _pressurezone,
 		pressurezone.shortname     AS _pressurezone_shortname,
-		pressurezone.consummerzone AS _consummerzone,
 		pressurezone.colorcode     AS _pressurezone_colorcode
 	FROM distribution.installation 
 	INNER      JOIN distribution.installation_type ON installation.id_type         = installation_type.id 

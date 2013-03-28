@@ -132,7 +132,6 @@ CREATE VIEW distribution.pipe_schema AS
 			pipe_view._status_active             ,
 			pipe_view._pressurezone              ,
 			pipe_view._pressurezone_shortname    ,
-			pipe_view._consummerzone             ,
 			pipe_view._pressurezone_colorcode    ,
 			pipe_view._schema_view               ,		
 			pipe_schema_merged._length2d         ,
