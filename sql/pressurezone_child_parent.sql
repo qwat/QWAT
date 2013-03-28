@@ -9,6 +9,7 @@ BEGIN;
 
 CREATE OR REPLACE VIEW distribution.pressurezone_child_parent AS
 	SELECT
+		a.id as id,
 		a.name AS child,
 		b.name AS parent,
 		ST_MakeLine(ST_Centroid(a.geometry),ST_Centroid(b.geometry))::geometry(LineString,21781) AS geometry
