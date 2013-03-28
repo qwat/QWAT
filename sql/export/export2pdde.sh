@@ -17,12 +17,12 @@ read -p "Press any key to continue..."
 pgsql2shp -h $db_address -g geom -f $shapeoutput/vannes -P db4wat$ -u sige sige "\
 SELECT \
  'VA_' || id::varchar   AS ID,               \
- sige                   AS SIGE,             \
+ identification                   AS identification,             \
  id_pipe                AS CONDUTE,          \
  id_node                AS NOEUD,            \
  diameter_nominal,                           \
  year,                                       \
- '2' AS closed,                              \
+ '2'::integer AS closed,                              \
  remarks,                                    \
  _districts,                                 \
  geometry::geometry(Point,21781) AS geom,    \
@@ -77,8 +77,8 @@ read -p "Press any key to continue..."
 
 # ouvrages
 # TODO proprio etrangers
-#export ouvtype=( "Inconnu" "RÃ©servoir" "Source" "Pompage" "Chambres de vannes" "Chambre compteur" "Chambre de traitement" "Chambre rÃ©ducteur" "Chambre coupe pression" "Chambre de rassemblement")
-export ouvtype=(I R S P CV CC CT CR CCP CRA)
+#export ouvtype=( "Inconnu" "Réservoir" "Source" "Pompage" "Chambres de vannes" "Chambre compteur" "Chambre de traitement" "Chambre rÃ©ducteur" "Chambre coupe pression" "Chambre de rassemblement")
+export ouvtype=(S P CV CC CT CR CCP CRA)
 for i in "${ouvtype[@]}"
 do :
 pgsql2shp -h $db_address -g geom -f $shapeoutput/ouvrages_${i// /_} -P db4wat$ -u sige sige "\
@@ -96,6 +96,59 @@ SELECT                                      \
  _pressurezone AS ZONE_PRES                 \
 FROM distribution.installation_view WHERE _type_shortname = '$i' AND id_distributor=1 AND _status_active IS TRUE"        
 done
+read -p "Press any key to continue..."
+
+#reservoir
+pgsql2shp -h $db_address -g geom -f $shapeoutput/ouvrages_reservoir -P db4wat$ -u sige sige "\
+SELECT                                      \
+ 'OU_' || installation_view.id::varchar   AS ID,              \
+ id_node AS NOEUD,                          \
+ installation_view.geometry::geometry(Point,21781) AS geom,   \
+ _type_shortname || '. ' || name    AS NOM, \
+ _type   AS TYPE,                           \
+ CASE                                       \
+    WHEN altitude_real IS NOT NULL THEN altitude_real \
+    ELSE _altitude_dtm                      \
+ END           AS ALTITUDE,                 \
+ _districts     AS COMMUNNE,                 \
+ _pressurezone AS ZONE_PRES,                 \
+installation_tank.remarks              AS REMARKS         , \
+CASE                                                                                  \
+    WHEN installation_tank.id_overflow = 1 THEN 'alimentation commandée'::VARCHAR(100)    \
+    WHEN installation_tank.id_overflow = 2 THEN 'en décharge'::VARCHAR(100)               \
+    WHEN installation_tank.id_overflow = 3 THEN 'récupéré'::VARCHAR(100)                  \
+    ELSE 'inconnu'::VARCHAR(100)                                                          \
+END AS TROPPLEIN,                                                                         \
+CASE                                                                                      \
+    WHEN installation_tank.id_firestorage = 1 THEN 'aucune'::VARCHAR(100)                 \
+    WHEN installation_tank.id_firestorage = 2 THEN 'cuve 1 entiere'::VARCHAR(100)         \
+    WHEN installation_tank.id_firestorage = 3 THEN 'cave 1 partielle'::VARCHAR(100)       \
+    WHEN installation_tank.id_firestorage = 4 THEN 'cuve 2 entiere'::VARCHAR(100)         \
+    WHEN installation_tank.id_firestorage = 5 THEN 'cave 2 partielle'::VARCHAR(100)       \
+    WHEN installation_tank.id_firestorage = 6 THEN '2 cuves partielles'::VARCHAR(100)     \
+    ELSE ''::VARCHAR(100)                                                                 \
+END AS RES_INCENDIE,                                                                      \
+installation_tank.storage_total        AS VOLUM_TOT      ,                               \
+installation_tank.storage_supply       AS VOLUM_UTIL  ,                               \
+installation_tank.storage_fire         AS VOLUM_INCE    ,                               \
+installation_tank.altitude_overflow    AS ALT_TROPLEIN   ,                           \
+installation_tank.altitude_apron       AS ALT_RADIER      ,                           \
+installation_tank.height_max           AS HEIGHT_MAX          ,                           \
+installation_tank.fire_valve           AS FIRE_VALVE          ,                           \
+installation_tank.fire_remote          AS FIRE_REMOTE         ,                           \
+installation_tank._litrepercm          AS LITREPERCM         ,                           \
+installation_tank.cistern1_id_type     AS CUV1_TYPE    ,                           \
+installation_tank.cistern1_dimension_1 AS CUV1_DIM1,                           \
+installation_tank.cistern1_dimension_2 AS CUV1_DIM2,                           \
+installation_tank.cistern1_storage     AS CUV1_VOLU    ,                           \
+installation_tank._cistern1_litrepercm AS CUV1_LPCM,                           \
+installation_tank.cistern2_id_type     AS CUV2_TYPE    ,                                             \
+installation_tank.cistern2_dimension_1 AS CUV2_DIM1,                                                 \
+installation_tank.cistern2_dimension_2 AS CUV2_DIM2,                                                 \
+installation_tank.cistern2_storage     AS CUV2_VOLU    ,                                             \
+installation_tank._cistern2_litrepercm AS CUV2_LPCM                                                 \
+FROM distribution.installation_view LEFT OUTER JOIN distribution.installation_tank ON installation_tank.id_installation = installation_view.id\
+ WHERE _type_shortname = 'R' AND id_distributor=1 AND _status_active IS TRUE"
 read -p "Press any key to continue..."
 
 # noeuds
@@ -128,7 +181,7 @@ read -p "Press any key to continue..."
 pgsql2shp -h $db_address -g geom -f $shapeoutput/hydrantes -P db4wat$ -u sige sige "\
 SELECT                                    \
  'HY_' || id::varchar   AS ID,               \
- _district_shortname || '_' || sige AS ID_SIGE,\
+ _district_shortname || '_' || identification AS ID_SIGE,\
  id_node        AS NOEUD,                 \
  year           AS ANNEE,                 \
  model          AS MODELE,                \

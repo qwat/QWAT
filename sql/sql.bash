@@ -37,6 +37,8 @@ psql -h 172.24.171.$ip -U sige -f protectionzone_type.sql
 read -p "Press any key to continue..."
 psql -h 172.24.171.$ip -U sige -f protectionzone.sql
 read -p "Press any key to continue..."
+psql -h 172.24.171.$ip -U sige -f protectionzone_view.sql
+read -p "Press any key to continue..."
 psql -h 172.24.171.$ip -U sige -f district.sql
 read -p "Press any key to continue..."
 psql -h 172.24.171.$ip -U sige -f district_fcn.sql
