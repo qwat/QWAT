@@ -53,7 +53,8 @@ SELECT
 	LEFT OUTER JOIN distribution.node           ON valve.id_node         = node.id       
 	LEFT OUTER JOIN distribution.district       ON valve.id_district     = district.id       
 	LEFT OUTER JOIN distribution.pressurezone   ON valve.id_pressurezone = pressurezone.id;
-		
+	
+/*	
 CREATE OR REPLACE RULE valve_update AS
 	ON UPDATE TO distribution.valve_view DO INSTEAD
 		UPDATE distribution.valve SET 
@@ -82,5 +83,5 @@ CREATE OR REPLACE RULE valve_insert AS
 CREATE OR REPLACE RULE valve_delete AS
 	ON DELETE TO distribution.valve_view DO INSTEAD
 		DELETE FROM distribution.valve WHERE id = OLD.id;
-
+*/
 COMMIT;

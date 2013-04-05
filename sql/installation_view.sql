@@ -51,8 +51,6 @@ CREATE VIEW distribution.installation_view AS
 	LEFT OUTER JOIN distribution.district          ON installation.id_district     = district.id       
 	LEFT OUTER JOIN distribution.pressurezone      ON installation.id_pressurezone = pressurezone.id;
 
-
-/* TODO: rules */
-
+-- no rules
 
 COMMIT;

@@ -29,26 +29,26 @@ CREATE VIEW distribution.samplingpoint_view AS
 /* Comment */
 COMMENT ON VIEW distribution.samplingpoint_view IS 'View for samplingpoint. This view is editable (a rule exists to forwad changes to the table).';
 
-/*----------------!!!---!!!----------------*/
-/* INSERT,UPDATE,DELETE RULES */
-CREATE OR REPLACE RULE samplingpoint_update AS
-	ON UPDATE TO distribution.samplingpoint_view DO INSTEAD
-		UPDATE distribution.samplingpoint SET 
-			identification      = NEW.identification ,
-			remarks   = NEW.remarks 
-		WHERE id = NEW.id;
-CREATE OR REPLACE RULE samplingpoint_insert AS
-	ON INSERT TO distribution.samplingpoint_view DO INSTEAD
-		INSERT INTO distribution.samplingpoint 
-			(    identification,    remarks,    geometry)     
-		VALUES
-			(NEW.identification,NEW.remarks,NEW.geometry);
-CREATE OR REPLACE RULE samplingpoint_delete AS
-	ON DELETE TO distribution.samplingpoint_view DO INSTEAD
-		DELETE FROM distribution.samplingpoint WHERE id = OLD.id;
-/* Comments */	
-COMMENT ON RULE samplingpoint_update IS 'Rule to forward changes for samplingpoint_view to the table samplingpoint.';
-COMMENT ON RULE samplingpoint_insert IS 'Rule to forward insert of samplingpoint_view to the table samplingpoint.';
-COMMENT ON RULE samplingpoint_delete IS 'Rule to forward deletion of samplingpoint_view to the table samplingpoint.';
+--/*----------------!!!---!!!----------------*/
+--/* INSERT,UPDATE,DELETE RULES */
+--CREATE OR REPLACE RULE samplingpoint_update AS
+--	ON UPDATE TO distribution.samplingpoint_view DO INSTEAD
+--		UPDATE distribution.samplingpoint SET 
+--			identification      = NEW.identification ,
+--			remarks   = NEW.remarks 
+--		WHERE id = NEW.id;
+--CREATE OR REPLACE RULE samplingpoint_insert AS
+--	ON INSERT TO distribution.samplingpoint_view DO INSTEAD
+--		INSERT INTO distribution.samplingpoint 
+--			(    identification,    remarks,    geometry)     
+--		VALUES
+--			(NEW.identification,NEW.remarks,NEW.geometry);
+--CREATE OR REPLACE RULE samplingpoint_delete AS
+--	ON DELETE TO distribution.samplingpoint_view DO INSTEAD
+--		DELETE FROM distribution.samplingpoint WHERE id = OLD.id;
+--/* Comments */	
+--COMMENT ON RULE samplingpoint_update IS 'Rule to forward changes for samplingpoint_view to the table samplingpoint.';
+--COMMENT ON RULE samplingpoint_insert IS 'Rule to forward insert of samplingpoint_view to the table samplingpoint.';
+--COMMENT ON RULE samplingpoint_delete IS 'Rule to forward deletion of samplingpoint_view to the table samplingpoint.';
 
 COMMIT;
