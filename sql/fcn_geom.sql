@@ -62,6 +62,7 @@ $BODY$
 			sql_trigger := sql_trigger || '
 						id_district        = distribution.get_district_id(NEW.geometry),
 			';
+		END IF;
 		sql_trigger := sql_trigger || '
 						id_pressurezone    = distribution.get_pressurezone_id(NEW.geometry),
 						id_printmap        = distribution.get_printmap_id(NEW.geometry),';
@@ -96,7 +97,7 @@ $BODY$
 	END;
 $BODY$
 LANGUAGE 'plpgsql';
-COMMENT ON FUNCTION distribution.geom_tool_point(varchar,boolean,boolean,boolean,boolean) IS 'Create geometric columns, constraint and triggers for tables with point on node items. Second argument determines if node has to be created or not of not found.';
+COMMENT ON FUNCTION distribution.geom_tool_point(varchar,boolean,boolean,boolean,boolean,boolean) IS 'Create geometric columns, constraint and triggers for tables with point on node items. Second argument determines if node has to be created or not of not found.';
 
 
 /* LINES */
