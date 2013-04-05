@@ -12,7 +12,8 @@ CREATE VIEW distribution.subscriber_view AS
 		subscriber.id			   ,
 		subscriber.id_type         ,
 		subscriber.id_pipe         ,
-		subscriber.id_client       ,
+		subscriber.client_identification       ,
+		subscriber._client_identification_full ,
 		subscriber.parcel          ,
 		subscriber.id_district     ,
 		subscriber.id_pressurezone ,
@@ -22,7 +23,6 @@ CREATE VIEW distribution.subscriber_view AS
 		subscriber.geometry::geometry(Point,21781),	
 		subscriber_type.name  AS _type     ,
 		district.name         AS _district ,
-		district.subscriber_prefix::varchar || '-' || subscriber.id_client::varchar AS id_client_full,
 		pressurezone.name          AS _pressurezone,
 		pressurezone.shortname     AS _pressurezone_shortname,
 		pressurezone.colorcode     AS _pressurezone_colorcode
