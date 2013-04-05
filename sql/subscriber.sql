@@ -34,7 +34,7 @@ ALTER TABLE distribution.subscriber ADD CONSTRAINT subscriber_id_pipe  FOREIGN K
 CREATE OR REPLACE FUNCTION distribution.subscriber_fullid() RETURNS trigger AS
 $BODY$
 	BEGIN
-		 UPDATE distribution.subscriber SET _client_identification_full = district.subscriber_prefix||'_'||NEW.id_client FROM distribution.district WHERE id = NEW.id AND district.id = NEW.id_district ;
+		 UPDATE distribution.subscriber SET _client_identification_full = district.subscriber_prefix||'_'||NEW.client_identification FROM distribution.district WHERE subscriber.id = NEW.id AND district.id = NEW.id_district ;
 		 RETURN NEW;
 	END;
 $BODY$
