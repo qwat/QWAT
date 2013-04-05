@@ -4,7 +4,7 @@ POINT and NODE
 a point is not on a node: do not create id_node and so on
 */ 
 
-CREATE OR REPLACE FUNCTION distribution.geom_tool_point(table_name varchar, is_node boolean, create_node boolean, create_schematic boolean, get_pipe boolean) RETURNS void AS
+CREATE OR REPLACE FUNCTION distribution.geom_tool_point(table_name varchar, is_node boolean, create_node boolean, create_schematic boolean, get_pipe boolean, auto_district boolean) RETURNS void AS
 $BODY$
 	DECLARE
 		sql_trigger varchar;
@@ -58,8 +58,11 @@ $BODY$
 						id_node            = distribution.node_get_id(NEW.geometry,'||create_node||'),
 			';
 		END IF;
-		sql_trigger := sql_trigger || '
+		IF auto_district IS TRUE THEN
+			sql_trigger := sql_trigger || '
 						id_district        = distribution.get_district_id(NEW.geometry),
+			';
+		sql_trigger := sql_trigger || '
 						id_pressurezone    = distribution.get_pressurezone_id(NEW.geometry),
 						id_printmap        = distribution.get_printmap_id(NEW.geometry),';
 		IF create_schematic IS TRUE THEN

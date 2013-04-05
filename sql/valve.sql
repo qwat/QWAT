@@ -22,7 +22,7 @@ ALTER TABLE distribution.valve ADD COLUMN remarks           text           ;
 ALTER TABLE distribution.valve ADD COLUMN schema_force_view boolean     default NULL::boolean; 
    
 /* geometry */
-SELECT distribution.geom_tool_point('valve',true,false,true,true);
+SELECT distribution.geom_tool_point('valve',true,false,true,true,true);
 
 /* constraints */
 ALTER TABLE distribution.valve ADD CONSTRAINT valve_id_type         FOREIGN KEY (id_type)         REFERENCES distribution.valve_type(id)        MATCH FULL   ; CREATE INDEX fki_valve_id_type         ON distribution.valve(id_type)        ;

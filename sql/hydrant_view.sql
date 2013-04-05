@@ -10,7 +10,7 @@ DROP VIEW IF EXISTS distribution.hydrant_view CASCADE;
 CREATE VIEW distribution.hydrant_view AS 
 	SELECT  
 		hydrant.id             ,
-		hydrant.identification           ,
+		hydrant.identification ,
 		hydrant.id_type        ,
 		hydrant.id_distributor ,
 		hydrant.id_status      ,

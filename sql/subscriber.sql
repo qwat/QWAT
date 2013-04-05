@@ -19,7 +19,7 @@ ALTER TABLE distribution.subscriber ADD COLUMN   parcel character varying (12) ;
 ALTER TABLE distribution.subscriber ADD COLUMN   remarks text ;
 
 /* geometry */
-SELECT distribution.geom_tool_point('subscriber',false,false,false,false);
+SELECT distribution.geom_tool_point('subscriber',false,false,false,false,false);
 
 /*----------------!!!---!!!----------------*/
 /* Add constraints */
