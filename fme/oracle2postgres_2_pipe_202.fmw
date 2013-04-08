@@ -11,6 +11,7 @@
 #          --DestDataset_POSTGIS sige
 #          --SourceDataset_POSTGRES sige
 #          --SourceDataset_POSTGRES_5 sige
+#          --DestDataset_XLS_ADO F:\fme\202\material_error.xls
 #    
 #    
 #! MAX_LOG_FEATURES="200"
@@ -33,7 +34,7 @@
 #! BEGIN_TCL=""
 #! FME_STROKE_MAX_DEVIATION="0"
 #! LOG_FILE=""
-#! VIEW_POSITION="136 0"
+#! VIEW_POSITION="112 0"
 #! SOURCE_ROUTING_FILE=""
 #! ZOOM_SCALE="104"
 #! PASSWORD=""
@@ -194,6 +195,39 @@
 #! FANOUT_DIRECTORY=""
 #! FANOUT_PREFIX=""
 #! />
+#! <DATASET
+#! IS_SOURCE="false"
+#! ROLE="WRITER"
+#! FORMAT="XLS_ADO"
+#! DATASET="$(DestDataset_XLS_ADO)"
+#! KEYWORD="XLS_ADO_1"
+#! MULTI_GEOM_ALLOWED="true"
+#! ATTR_MAX_LENGTH="255"
+#! ATTR_CASE="ANY"
+#! ALLOWED_FEAT_TYPES=""
+#! WRITE_DEFS="true"
+#! DEFLINE_TEMPLATE="xls_update_key_columns &quot;&quot; xls_table_writer_mode INHERIT_FROM_WRITER xls_is_named_range NO"
+#! DEFLINE_ATTRS="true"
+#! EXPOSABLE_ATTRS="fme_type varchar(50) fme_text_string varchar(50) fme_db_operation varchar(8) fme_feature_type varchar(50) fme_basename varchar(50) fme_where varchar(254) fme_geometry fme_char(50) fme_sweep_angle double fme_rotation double fme_secondary_axis double fme_fill_color varchar(50) fme_dataset varchar(50) fme_primary_axis double fme_start_angle double fme_text_size double fme_color varchar(50) db_type varchar(254)"
+#! DEFLINE_PARMS="&quot;GUI CHOICE xls_table_writer_mode INHERIT_FROM_WRITER%INSERT%UPDATE Writer Mode&quot; INHERIT_FROM_WRITER &quot;GUI OPTIONAL ATTRLIST_COMMAS xls_update_key_columns SQL Key Columns&quot; &quot;&quot; &quot;GUI CHOICE xls_is_named_range NO%YES Is Named Range&quot; NO "
+#! ATTR_INDEX_TYPES=""
+#! ATTR_NAME_INVALID_CHARS="./*#;:!&amp;-&quot;&apos;$[]"
+#! SUPPORTS_FEATURE_TYPE_FANOUT="true"
+#! ENABLED="true"
+#! DYNAMIC_FEATURE_TYPES_LIST_ON_MERGE="true"
+#! GENERATE_FME_BUILD_NUM="6501"
+#! FANOUT_SUFFIX=""
+#! FANOUT_ID_ATTR=""
+#! COORDSYS=""
+#! FANOUT="No"
+#! FANOUT_DIRECTORY=""
+#! FANOUT_PREFIX=""
+#! >
+#! <METAFILE_PARAMETER
+#! NAME="MIME_TYPE"
+#! VALUE="application/vnd.ms-excel ADD_DISPOSITION"
+#! />
+#! </DATASET>
 #! </DATASETS>
 #! <DATA_TYPES>
 #! <DATA_TYPE
@@ -525,6 +559,84 @@
 #! FORMAT_TYPE="timestamptz"
 #! FME_TYPE="fme_datetime"
 #! FORMAT="POSTGIS"
+#! />
+#! <DATA_TYPE
+#! IS_SOURCE="false"
+#! FORMAT_TYPE="varchar(width)"
+#! FME_TYPE="fme_varchar(width)"
+#! FORMAT="XLS_ADO"
+#! />
+#! <DATA_TYPE
+#! IS_SOURCE="false"
+#! FORMAT_TYPE="varchar(width)"
+#! FME_TYPE="fme_char(width)"
+#! FORMAT="XLS_ADO"
+#! />
+#! <DATA_TYPE
+#! IS_SOURCE="false"
+#! FORMAT_TYPE="text"
+#! FME_TYPE="fme_buffer"
+#! FORMAT="XLS_ADO"
+#! />
+#! <DATA_TYPE
+#! IS_SOURCE="false"
+#! FORMAT_TYPE="datetime"
+#! FME_TYPE="fme_datetime"
+#! FORMAT="XLS_ADO"
+#! />
+#! <DATA_TYPE
+#! IS_SOURCE="false"
+#! FORMAT_TYPE="datetime"
+#! FME_TYPE="fme_time"
+#! FORMAT="XLS_ADO"
+#! />
+#! <DATA_TYPE
+#! IS_SOURCE="false"
+#! FORMAT_TYPE="datetime"
+#! FME_TYPE="fme_date"
+#! FORMAT="XLS_ADO"
+#! />
+#! <DATA_TYPE
+#! IS_SOURCE="false"
+#! FORMAT_TYPE="decimal(width,decimal)"
+#! FME_TYPE="fme_decimal(width,decimal)"
+#! FORMAT="XLS_ADO"
+#! />
+#! <DATA_TYPE
+#! IS_SOURCE="false"
+#! FORMAT_TYPE="currency(width,decimal)"
+#! FME_TYPE="fme_decimal(width,decimal)"
+#! FORMAT="XLS_ADO"
+#! />
+#! <DATA_TYPE
+#! IS_SOURCE="false"
+#! FORMAT_TYPE="double"
+#! FME_TYPE="fme_real64"
+#! FORMAT="XLS_ADO"
+#! />
+#! <DATA_TYPE
+#! IS_SOURCE="false"
+#! FORMAT_TYPE="double"
+#! FME_TYPE="fme_real32"
+#! FORMAT="XLS_ADO"
+#! />
+#! <DATA_TYPE
+#! IS_SOURCE="false"
+#! FORMAT_TYPE="double"
+#! FME_TYPE="fme_int32"
+#! FORMAT="XLS_ADO"
+#! />
+#! <DATA_TYPE
+#! IS_SOURCE="false"
+#! FORMAT_TYPE="double"
+#! FME_TYPE="fme_int16"
+#! FORMAT="XLS_ADO"
+#! />
+#! <DATA_TYPE
+#! IS_SOURCE="false"
+#! FORMAT_TYPE="bit"
+#! FME_TYPE="fme_boolean"
+#! FORMAT="XLS_ADO"
 #! />
 #! </DATA_TYPES>
 #! <GEOM_TYPES>
@@ -918,6 +1030,90 @@
 #! FME_TYPE="fme_point_cloud"
 #! FORMAT="POSTGIS"
 #! />
+#! <GEOM_TYPE
+#! IS_SOURCE="false"
+#! FORMAT_TYPE="db_none"
+#! FME_TYPE="fme_no_geom"
+#! FORMAT="XLS_ADO"
+#! />
+#! <GEOM_TYPE
+#! IS_SOURCE="false"
+#! FORMAT_TYPE="db_none"
+#! FME_TYPE="fme_point"
+#! FORMAT="XLS_ADO"
+#! />
+#! <GEOM_TYPE
+#! IS_SOURCE="false"
+#! FORMAT_TYPE="db_none"
+#! FME_TYPE="fme_line"
+#! FORMAT="XLS_ADO"
+#! />
+#! <GEOM_TYPE
+#! IS_SOURCE="false"
+#! FORMAT_TYPE="db_none"
+#! FME_TYPE="fme_area"
+#! FORMAT="XLS_ADO"
+#! />
+#! <GEOM_TYPE
+#! IS_SOURCE="false"
+#! FORMAT_TYPE="db_none"
+#! FME_TYPE="fme_text"
+#! FORMAT="XLS_ADO"
+#! />
+#! <GEOM_TYPE
+#! IS_SOURCE="false"
+#! FORMAT_TYPE="db_none"
+#! FME_TYPE="fme_ellipse"
+#! FORMAT="XLS_ADO"
+#! />
+#! <GEOM_TYPE
+#! IS_SOURCE="false"
+#! FORMAT_TYPE="db_none"
+#! FME_TYPE="fme_arc"
+#! FORMAT="XLS_ADO"
+#! />
+#! <GEOM_TYPE
+#! IS_SOURCE="false"
+#! FORMAT_TYPE="db_none"
+#! FME_TYPE="fme_rectangle"
+#! FORMAT="XLS_ADO"
+#! />
+#! <GEOM_TYPE
+#! IS_SOURCE="false"
+#! FORMAT_TYPE="db_none"
+#! FME_TYPE="fme_rounded_rectangle"
+#! FORMAT="XLS_ADO"
+#! />
+#! <GEOM_TYPE
+#! IS_SOURCE="false"
+#! FORMAT_TYPE="db_none"
+#! FME_TYPE="fme_collection"
+#! FORMAT="XLS_ADO"
+#! />
+#! <GEOM_TYPE
+#! IS_SOURCE="false"
+#! FORMAT_TYPE="db_none"
+#! FME_TYPE="fme_raster"
+#! FORMAT="XLS_ADO"
+#! />
+#! <GEOM_TYPE
+#! IS_SOURCE="false"
+#! FORMAT_TYPE="db_none"
+#! FME_TYPE="fme_surface"
+#! FORMAT="XLS_ADO"
+#! />
+#! <GEOM_TYPE
+#! IS_SOURCE="false"
+#! FORMAT_TYPE="db_none"
+#! FME_TYPE="fme_solid"
+#! FORMAT="XLS_ADO"
+#! />
+#! <GEOM_TYPE
+#! IS_SOURCE="false"
+#! FORMAT_TYPE="db_none"
+#! FME_TYPE="fme_point_cloud"
+#! FORMAT="XLS_ADO"
+#! />
 #! </GEOM_TYPES>
 #! <FEATURE_TYPES>
 #! <FEATURE_TYPE
@@ -1209,7 +1405,7 @@
 #! IDENTIFIER="63"
 #! FEAT_GEOMTYPE="postgres_none"
 #! POSITION="2176 -436"
-#! ORDER="59"
+#! ORDER="58"
 #! COLLAPSED="true"
 #! KEYWORD="POSTGRES_1"
 #! ENABLED="true"
@@ -1224,6 +1420,24 @@
 #! <FEAT_ATTRIBUTE ATTR_NAME="schema_view" ATTR_TYPE="bool"/>
 #! <DEFLINE_PARM PARM_NAME="postgres_sql_statement" PARM_VALUE=""/>
 #! <DEFLINE_PARM PARM_NAME="postgres_sql_where_clause" PARM_VALUE=""/>
+#! </FEATURE_TYPE>
+#! <FEATURE_TYPE
+#! IS_SOURCE="false"
+#! NODE_NAME="materror"
+#! IS_EDITABLE="true"
+#! IDENTIFIER="74"
+#! FEAT_GEOMTYPE="&lt;NO_GEOMETRY&gt;"
+#! POSITION="1719 -1204"
+#! ORDER="59"
+#! COLLAPSED="false"
+#! KEYWORD="XLS_ADO_1"
+#! ENABLED="true"
+#! FANOUT="No"
+#! FANOUT_ID_ATTR=""
+#! >
+#! <DEFLINE_PARM PARM_NAME="xls_update_key_columns" PARM_VALUE=""/>
+#! <DEFLINE_PARM PARM_NAME="xls_is_named_range" PARM_VALUE="NO"/>
+#! <DEFLINE_PARM PARM_NAME="xls_table_writer_mode" PARM_VALUE="INHERIT_FROM_WRITER"/>
 #! </FEATURE_TYPE>
 #! </FEATURE_TYPES>
 #! <FMESERVER>
@@ -1252,6 +1466,11 @@
 #! <GLOBAL_PARAMETER
 #! GUI_LINE="GUI OPTIONAL TEXT SourceDataset_POSTGRES_5 Source PostgreSQL Dataset:"
 #! DEFAULT_VALUE="sige"
+#! IS_STAND_ALONE="false"
+#! />
+#! <GLOBAL_PARAMETER
+#! GUI_LINE="GUI FILENAME DestDataset_XLS_ADO Excel_Files(*.xls;*.xlsx;*.xlsb)|*.xls;*.xlsx;*.xlsb|All_files(*.*)|*.* Destination Microsoft Excel File:"
+#! DEFAULT_VALUE="F:\fme\202\material_error.xls"
 #! IS_STAND_ALONE="false"
 #! />
 #! </GLOBAL_PARAMETERS>
@@ -2720,28 +2939,11 @@
 #! <XFORM_PARM PARM_NAME="ATTR_VALUES" PARM_VALUE="0"/>
 #! </TRANSFORMER>
 #! <TRANSFORMER
-#! IDENTIFIER="76"
-#! TYPE="Logger"
-#! VERSION="2"
-#! POSITION="1705 -1108"
-#! ORDER="56"
-#! PARMS_EDITED="true"
-#! ENABLED="true"
-#! >
-#! <XFORM_PARM PARM_NAME="FEATURE_TYPE" PARM_VALUE=""/>
-#! <XFORM_PARM PARM_NAME="PARAMETERS_GROUP" PARM_VALUE=""/>
-#! <XFORM_PARM PARM_NAME="XFORMER_NAME" PARM_VALUE="ErrorMaterial"/>
-#! <XFORM_PARM PARM_NAME="TRANSFORMER_GROUP" PARM_VALUE=""/>
-#! <XFORM_PARM PARM_NAME="MESSAGE" PARM_VALUE="ErrorMaterial:"/>
-#! <XFORM_PARM PARM_NAME="MAXFEATS" PARM_VALUE="20"/>
-#! <XFORM_PARM PARM_NAME="MAXCOORDS" PARM_VALUE="20"/>
-#! </TRANSFORMER>
-#! <TRANSFORMER
 #! IDENTIFIER="3"
 #! TYPE="StringConcatenator"
 #! VERSION="5"
 #! POSITION="828 -181"
-#! ORDER="57"
+#! ORDER="56"
 #! PARMS_EDITED="true"
 #! ENABLED="true"
 #! >
@@ -2832,7 +3034,7 @@
 #! TYPE="Logger"
 #! VERSION="2"
 #! POSITION="2975 -633"
-#! ORDER="58"
+#! ORDER="57"
 #! PARMS_EDITED="true"
 #! ENABLED="true"
 #! >
@@ -3045,20 +3247,20 @@
 #! EXTRA_POINTS=""
 #! />
 #! <FEAT_LINK
-#! IDENTIFIER="77"
-#! SOURCE_NODE="75"
-#! TARGET_NODE="76"
+#! IDENTIFIER="70"
+#! SOURCE_NODE="68"
+#! TARGET_NODE="61"
 #! SOURCE_PORT_DESC="fo 1"
 #! TARGET_PORT_DESC="fi 0"
 #! ENABLED="true"
 #! EXTRA_POINTS=""
 #! />
 #! <FEAT_LINK
-#! IDENTIFIER="70"
-#! SOURCE_NODE="68"
-#! TARGET_NODE="61"
+#! IDENTIFIER="76"
+#! SOURCE_NODE="75"
+#! TARGET_NODE="74"
 #! SOURCE_PORT_DESC="fo 1"
-#! TARGET_PORT_DESC="fi 0"
+#! TARGET_PORT_DESC="-1"
 #! ENABLED="true"
 #! EXTRA_POINTS=""
 #! />
@@ -3132,7 +3334,7 @@
 #! IDENTIFIER="18"
 #! COMMENT_VALUE="Unknown material =&gt; Inconnu"
 #! POSITION="451 -23"
-#! ORDER="24"
+#! ORDER="23"
 #! FOLLOW_ANCHOR="true"
 #! INFO_NODE="false"
 #! COMMENT_TYPE="REGULAR"
@@ -3142,7 +3344,7 @@
 #! IDENTIFIER="25"
 #! COMMENT_VALUE="Unknown diameter=&gt; inconnu"
 #! POSITION="2028 -390"
-#! ORDER="25"
+#! ORDER="24"
 #! FOLLOW_ANCHOR="true"
 #! INFO_NODE="false"
 #! COMMENT_TYPE="REGULAR"
@@ -3152,7 +3354,7 @@
 #! IDENTIFIER="39"
 #! COMMENT_VALUE="Detect numeric material&#13;&#10;=&gt; Inconnu"
 #! POSITION="912 -398"
-#! ORDER="27"
+#! ORDER="26"
 #! FOLLOW_ANCHOR="true"
 #! INFO_NODE="false"
 #! COMMENT_TYPE="REGULAR"
@@ -3162,7 +3364,7 @@
 #! IDENTIFIER="52"
 #! COMMENT_VALUE="Set MATERIAL = Inconnu"
 #! POSITION="1471 -96"
-#! ORDER="29"
+#! ORDER="28"
 #! FOLLOW_ANCHOR="true"
 #! INFO_NODE="false"
 #! COMMENT_TYPE="REGULAR"
@@ -3172,7 +3374,7 @@
 #! IDENTIFIER="53"
 #! COMMENT_VALUE="Set NENNWEITE = NULL"
 #! POSITION="2694 -156"
-#! ORDER="30"
+#! ORDER="29"
 #! FOLLOW_ANCHOR="true"
 #! INFO_NODE="false"
 #! COMMENT_TYPE="REGULAR"
@@ -3182,7 +3384,7 @@
 #! IDENTIFIER="54"
 #! COMMENT_VALUE="Set joined_material =  Inconnu"
 #! POSITION="219 -972"
-#! ORDER="36"
+#! ORDER="35"
 #! FOLLOW_ANCHOR="true"
 #! INFO_NODE="false"
 #! COMMENT_TYPE="REGULAR"
@@ -3192,7 +3394,7 @@
 #! IDENTIFIER="47"
 #! COMMENT_VALUE="Inonnu inconnu =&gt; Inconnu"
 #! POSITION="399 -852"
-#! ORDER="40"
+#! ORDER="39"
 #! FOLLOW_ANCHOR="true"
 #! INFO_NODE="false"
 #! COMMENT_TYPE="REGULAR"
@@ -3209,7 +3411,7 @@
 #! TYPE="AttributeFilter"
 #! VERSION="2"
 #! POSITION="441 -78"
-#! ORDER="26"
+#! ORDER="25"
 #! PARMS_EDITED="true"
 #! ENABLED="true"
 #! >
@@ -3309,7 +3511,7 @@
 #! TYPE="AttributeSetter"
 #! VERSION="2"
 #! POSITION="1471 -176"
-#! ORDER="28"
+#! ORDER="27"
 #! PARMS_EDITED="true"
 #! ENABLED="true"
 #! >
@@ -3353,7 +3555,7 @@
 #! TYPE="AttributeFilter"
 #! VERSION="2"
 #! POSITION="2028 -470"
-#! ORDER="31"
+#! ORDER="30"
 #! PARMS_EDITED="true"
 #! ENABLED="true"
 #! >
@@ -3453,7 +3655,7 @@
 #! TYPE="AttributeSetter"
 #! VERSION="2"
 #! POSITION="2694 -236"
-#! ORDER="32"
+#! ORDER="31"
 #! PARMS_EDITED="true"
 #! ENABLED="true"
 #! >
@@ -3497,7 +3699,7 @@
 #! TYPE="StringConcatenator"
 #! VERSION="5"
 #! POSITION="2607 -924"
-#! ORDER="33"
+#! ORDER="32"
 #! PARMS_EDITED="true"
 #! ENABLED="true"
 #! >
@@ -3540,7 +3742,7 @@
 #! TYPE="FeatureMerger"
 #! VERSION="8"
 #! POSITION="1307 -1552"
-#! ORDER="34"
+#! ORDER="33"
 #! PARMS_EDITED="true"
 #! ENABLED="true"
 #! >
@@ -3684,7 +3886,7 @@
 #! TYPE="AttributeRenamer"
 #! VERSION="1"
 #! POSITION="503 -1791"
-#! ORDER="35"
+#! ORDER="34"
 #! PARMS_EDITED="true"
 #! ENABLED="true"
 #! >
@@ -3704,7 +3906,7 @@
 #! TYPE="Tester"
 #! VERSION="1"
 #! POSITION="894 -500"
-#! ORDER="37"
+#! ORDER="36"
 #! PARMS_EDITED="true"
 #! ENABLED="true"
 #! >
@@ -3778,7 +3980,7 @@
 #! TYPE="AttributeSetter"
 #! VERSION="2"
 #! POSITION="219 -1052"
-#! ORDER="38"
+#! ORDER="37"
 #! PARMS_EDITED="true"
 #! ENABLED="true"
 #! >
@@ -3823,7 +4025,7 @@
 #! TYPE="Logger"
 #! VERSION="2"
 #! POSITION="2265 -2141"
-#! ORDER="39"
+#! ORDER="38"
 #! PARMS_EDITED="true"
 #! ENABLED="true"
 #! >
@@ -3840,7 +4042,7 @@
 #! TYPE="AttributeFilter"
 #! VERSION="2"
 #! POSITION="715 -926"
-#! ORDER="41"
+#! ORDER="40"
 #! PARMS_EDITED="true"
 #! ENABLED="true"
 #! >
@@ -5869,7 +6071,7 @@
 #! </LOOKUP_TABLES>
 #! </WORKSPACE>
 #! 
-GUI IGNORE SourceDataset_ORACLE8I_DB_1,ORACLE8I_DB_IN_USER_NAME_ORACLE8I_DB_1,ORACLE8I_DB_IN_PASSWORD_ORACLE8I_DB_1,ORACLE8I_DB_IN_REMOVE_SCHEMA_QUALIFIER_ORACLE8I_DB_1,ORACLE8I_DB_IN_CHUNK_SIZE_ORACLE8I_DB_1,_ORACLE8I_DB_IN_BEGIN_SQL_ORACLE8I_DB_1,_ORACLE8I_DB_IN_END_SQL_ORACLE8I_DB_1,ORACLE8I_DB_IN_WORKSPACE_ORACLE8I_DB_1,SourceDataset_ORACLE8I_DB_2,ORACLE8I_DB_IN_USER_NAME_ORACLE8I_DB_2,ORACLE8I_DB_IN_PASSWORD_ORACLE8I_DB_2,ORACLE8I_DB_IN_REMOVE_SCHEMA_QUALIFIER_ORACLE8I_DB_2,ORACLE8I_DB_IN_CHUNK_SIZE_ORACLE8I_DB_2,_ORACLE8I_DB_IN_BEGIN_SQL_ORACLE8I_DB_2,_ORACLE8I_DB_IN_END_SQL_ORACLE8I_DB_2,ORACLE8I_DB_IN_WORKSPACE_ORACLE8I_DB_2,SourceDataset_POSTGRES_1,POSTGRES_IN_HOST_POSTGRES_1,POSTGRES_IN_PORT_POSTGRES_1,POSTGRES_IN_USER_NAME_POSTGRES_1,POSTGRES_IN_PASSWORD_POSTGRES_1,POSTGRES_IN_FEATURES_PER_FETCH_POSTGRES_1,SourceDataset_POSTGRES_2,POSTGRES_IN_HOST_POSTGRES_2,POSTGRES_IN_PORT_POSTGRES_2,POSTGRES_IN_USER_NAME_POSTGRES_2,POSTGRES_IN_PASSWORD_POSTGRES_2,POSTGRES_IN_FEATURES_PER_FETCH_POSTGRES_2,DestDataset_POSTGIS_1,POSTGIS_OUT_HOST_POSTGIS_1,POSTGIS_OUT_PORT_POSTGIS_1,POSTGIS_OUT_USER_NAME_POSTGIS_1,POSTGIS_OUT_PASSWORD_POSTGIS_1,POSTGIS_OUT_SPATIAL_COLUMN_TYPE_POSTGIS_1,POSTGIS_OUT_SPATIAL_COLUMN_NAME_POSTGIS_1,POSTGIS_OUT_WRITER_MODE_POSTGIS_1,POSTGIS_OUT_START_TRANSACTION_POSTGIS_1,POSTGIS_OUT_TRANSACTION_INTERVAL_POSTGIS_1,POSTGIS_OUT_BULK_COPY_POSTGIS_1,POSTGIS_OUT_INSERT_TEXT_GEOMETRY_POSTGIS_1
+GUI IGNORE SourceDataset_ORACLE8I_DB_1,ORACLE8I_DB_IN_USER_NAME_ORACLE8I_DB_1,ORACLE8I_DB_IN_PASSWORD_ORACLE8I_DB_1,ORACLE8I_DB_IN_REMOVE_SCHEMA_QUALIFIER_ORACLE8I_DB_1,ORACLE8I_DB_IN_CHUNK_SIZE_ORACLE8I_DB_1,_ORACLE8I_DB_IN_BEGIN_SQL_ORACLE8I_DB_1,_ORACLE8I_DB_IN_END_SQL_ORACLE8I_DB_1,ORACLE8I_DB_IN_WORKSPACE_ORACLE8I_DB_1,SourceDataset_ORACLE8I_DB_2,ORACLE8I_DB_IN_USER_NAME_ORACLE8I_DB_2,ORACLE8I_DB_IN_PASSWORD_ORACLE8I_DB_2,ORACLE8I_DB_IN_REMOVE_SCHEMA_QUALIFIER_ORACLE8I_DB_2,ORACLE8I_DB_IN_CHUNK_SIZE_ORACLE8I_DB_2,_ORACLE8I_DB_IN_BEGIN_SQL_ORACLE8I_DB_2,_ORACLE8I_DB_IN_END_SQL_ORACLE8I_DB_2,ORACLE8I_DB_IN_WORKSPACE_ORACLE8I_DB_2,SourceDataset_POSTGRES_1,POSTGRES_IN_HOST_POSTGRES_1,POSTGRES_IN_PORT_POSTGRES_1,POSTGRES_IN_USER_NAME_POSTGRES_1,POSTGRES_IN_PASSWORD_POSTGRES_1,POSTGRES_IN_FEATURES_PER_FETCH_POSTGRES_1,SourceDataset_POSTGRES_2,POSTGRES_IN_HOST_POSTGRES_2,POSTGRES_IN_PORT_POSTGRES_2,POSTGRES_IN_USER_NAME_POSTGRES_2,POSTGRES_IN_PASSWORD_POSTGRES_2,POSTGRES_IN_FEATURES_PER_FETCH_POSTGRES_2,DestDataset_POSTGIS_1,POSTGIS_OUT_HOST_POSTGIS_1,POSTGIS_OUT_PORT_POSTGIS_1,POSTGIS_OUT_USER_NAME_POSTGIS_1,POSTGIS_OUT_PASSWORD_POSTGIS_1,POSTGIS_OUT_SPATIAL_COLUMN_TYPE_POSTGIS_1,POSTGIS_OUT_SPATIAL_COLUMN_NAME_POSTGIS_1,POSTGIS_OUT_WRITER_MODE_POSTGIS_1,POSTGIS_OUT_START_TRANSACTION_POSTGIS_1,POSTGIS_OUT_TRANSACTION_INTERVAL_POSTGIS_1,POSTGIS_OUT_BULK_COPY_POSTGIS_1,POSTGIS_OUT_INSERT_TEXT_GEOMETRY_POSTGIS_1,DestDataset_XLS_ADO_1,XLS_ADO_OUT_VERSION_XLS_ADO_1,XLS_ADO_OUT_WRITER_MODE_XLS_ADO_1,XLS_ADO_OUT_START_TRANSACTION_XLS_ADO_1,XLS_ADO_OUT_BEGIN_SQL_XLS_ADO_1,XLS_ADO_OUT_END_SQL_XLS_ADO_1,XLS_ADO_OUT_INIT_TABLES_XLS_ADO_1
 DEFAULT_MACRO SourceDataset_ORACLE8I_DB orcl
 GUI OPTIONAL TEXT SourceDataset_ORACLE8I_DB Source Oracle Non-spatial Service:
 DEFAULT_MACRO SourceDataset_ORACLE8I_DB_3 orcl
@@ -5880,7 +6082,10 @@ DEFAULT_MACRO SourceDataset_POSTGRES sige
 GUI OPTIONAL TEXT SourceDataset_POSTGRES Source PostgreSQL Dataset:
 DEFAULT_MACRO SourceDataset_POSTGRES_5 sige
 GUI OPTIONAL TEXT SourceDataset_POSTGRES_5 Source PostgreSQL Dataset:
+DEFAULT_MACRO DestDataset_XLS_ADO F:\fme\202\material_error.xls
+GUI FILENAME DestDataset_XLS_ADO Excel_Files(*.xls;*.xlsx;*.xlsb)|*.xls;*.xlsx;*.xlsb|All_files(*.*)|*.* Destination Microsoft Excel File:
 INCLUDE [ if {{$(DestDataset_POSTGIS)} == {}} { puts_real {Parameter 'DestDataset_POSTGIS' must be given a value.}; exit 1; }; ]
+INCLUDE [ if {{$(DestDataset_XLS_ADO)} == {}} { puts_real {Parameter 'DestDataset_XLS_ADO' must be given a value.}; exit 1; }; ]
 #! START_HEADER
 #! START_WB_HEADER
 READER_TYPE MULTI_READER
@@ -5896,8 +6101,13 @@ MULTI_READER_GEN_DIRECTIVES{2} TABLELIST,distribution.pipe_function,USER_NAME,si
 MULTI_READER_TYPE{3} POSTGRES
 MULTI_READER_KEYWORD{3} POSTGRES_2
 MULTI_READER_GEN_DIRECTIVES{3} TABLELIST,distribution.pipe_material,USER_NAME,sige,PORT,5432,POSTGRES_EXPOSE_FORMAT_ATTRS,,_MERGE_SCHEMAS,YES,HOST,172.24.171.202
-WRITER_TYPE POSTGIS
-WRITER_KEYWORD POSTGIS_1
+WRITER_TYPE MULTI_WRITER
+MULTI_WRITER_DATASET_ORDER BY_ID
+MULTI_WRITER_FIRST_WRITER_ID 0
+MULTI_WRITER_TYPE{0} POSTGIS
+MULTI_WRITER_KEYWORD{0} POSTGIS_1
+MULTI_WRITER_TYPE{1} XLS_ADO
+MULTI_WRITER_KEYWORD{1} XLS_ADO_1
 #! END_WB_HEADER
 #! START_WB_HEADER
 MACRO WB_KEYWORD "ORACLE8I_DB_1"
@@ -6161,6 +6371,67 @@ GUI CHOICE POSTGIS_OUT_INSERT_TEXT_GEOMETRY_POSTGIS_1 YES%NO Insert WKT:
 POSTGIS_1_INSERT_TEXT_GEOMETRY $(POSTGIS_OUT_INSERT_TEXT_GEOMETRY_POSTGIS_1)
 POSTGIS_1_DATASET "$(DestDataset_POSTGIS_1)"
 #! END_DEST_HEADER
+#! START_WB_HEADER
+MACRO WB_KEYWORD "XLS_ADO_1"
+#! END_WB_HEADER
+#! START_DEST_HEADER XLS_ADO XLS_ADO_1
+# ============================================================================
+# First get the dataset for the database. For Excel, it's the file name.
+# For now we'll use whatever they had when they generated this mapping file,
+# and not reprompt
+#! END_DEST_HEADER
+#! START_WB_HEADER
+DEFAULT_MACRO DestDataset
+INCLUDE [ if {"$(DestDataset)" != ""} {                          \
+ puts {DEFAULT_MACRO DestDataset_XLS_ADO_1 $(DestDataset)}         \
+ } ]
+#! END_WB_HEADER
+#! START_DEST_HEADER XLS_ADO XLS_ADO_1
+DEFAULT_MACRO DestDataset_XLS_ADO_1 $(DestDataset_XLS_ADO)
+GUI FILENAME DestDataset_XLS_ADO_1 Excel_Files(*.xls;*.xlsx;*.xlsb)|*.xls;*.xlsx;*.xlsb|All_files(*.*)|*.* Destination Microsoft Excel File:
+# ============================================================================
+# The ADO provider in use. For Excel, this is always XLS_ADO
+DEFAULT_MACRO XLS_ADO_OUT_PROVIDER_TYPE_XLS_ADO_1 XLS_ADO
+XLS_ADO_1_PROVIDER_TYPE "$(XLS_ADO_OUT_PROVIDER_TYPE_XLS_ADO_1)"
+# ============================================================================
+# Optional Version (defaultstonewestversion)
+DEFAULT_MACRO XLS_ADO_OUT_VERSION_XLS_ADO_1 97/2000/2002/2003
+XLS_ADO_1_VERSION "$(XLS_ADO_OUT_VERSION_XLS_ADO_1)"
+GUI RADIO_GROUP XLS_ADO_OUT_VERSION_XLS_ADO_1 5%2007%97/2000/2002/2003%5.0/95%4.0%3.0 Excel Version
+# ============================================================================
+# This keyword sets the mode of the writer
+DEFAULT_MACRO XLS_ADO_OUT_WRITER_MODE_XLS_ADO_1 INSERT
+GUI CHOICE XLS_ADO_OUT_WRITER_MODE_XLS_ADO_1 INSERT%UPDATE Writer Mode:
+XLS_ADO_1_WRITER_MODE $(XLS_ADO_OUT_WRITER_MODE_XLS_ADO_1)
+# ============================================================================
+# This keyword sets the starting transaction
+DEFAULT_MACRO XLS_ADO_OUT_START_TRANSACTION_XLS_ADO_1 0
+GUI OPTIONAL TEXT XLS_ADO_OUT_START_TRANSACTION_XLS_ADO_1 Start writing at feature:
+XLS_ADO_1_START_TRANSACTION $(XLS_ADO_OUT_START_TRANSACTION_XLS_ADO_1)
+# ============================================================================
+# This keyword sets the number of features between transaction commits
+DEFAULT_MACRO XLS_ADO_OUT_TRANSACTION_INTERVAL_XLS_ADO_1 1
+XLS_ADO_1_TRANSACTION_INTERVAL $(XLS_ADO_OUT_TRANSACTION_INTERVAL_XLS_ADO_1)
+# ============================================================================
+# The following specifies an SQL command to execute before opening the first
+# table.
+DEFAULT_MACRO XLS_ADO_OUT_BEGIN_SQL_XLS_ADO_1 
+GUI OPTIONAL TEXT_EDIT_SQL XLS_ADO_OUT_BEGIN_SQL_XLS_ADO_1 SQL Statement to Execute Before Translation:
+XLS_ADO_1_BEGIN_SQL{0} "$(XLS_ADO_OUT_BEGIN_SQL_XLS_ADO_1)"
+# ============================================================================
+# The following specifies an SQL command to execute after closing all the
+# tables.
+DEFAULT_MACRO XLS_ADO_OUT_END_SQL_XLS_ADO_1 
+GUI OPTIONAL TEXT_EDIT_SQL XLS_ADO_OUT_END_SQL_XLS_ADO_1 SQL Statement to Execute After Translation:
+XLS_ADO_1_END_SQL{0} "$(XLS_ADO_OUT_END_SQL_XLS_ADO_1)"
+# ============================================================================
+# The following specifies when we should perform table initialization.
+# Table initialization is when we DROP, TRUNCATE, and CREATE TABLE.
+DEFAULT_MACRO XLS_ADO_OUT_INIT_TABLES_XLS_ADO_1 FIRSTFEATURE
+GUI OPTIONAL CHOICE XLS_ADO_OUT_INIT_TABLES_XLS_ADO_1 FIRSTFEATURE%IMMEDIATELY Initialize Tables:
+XLS_ADO_1_INIT_TABLES "$(XLS_ADO_OUT_INIT_TABLES_XLS_ADO_1)"
+XLS_ADO_1_DATASET "$(DestDataset_XLS_ADO_1)"
+#! END_DEST_HEADER
 #! END_HEADER
 
 LOG_FILENAME "$(FME_MF_DIR)oracle2postgres_2_pipe_202.log"
@@ -6176,6 +6447,7 @@ DEFAULT_MACRO DATASET_KEYWORD_ORACLE8I_DB_2 ORACLE8I_DB_2
 DEFAULT_MACRO DATASET_KEYWORD_POSTGRES_1 POSTGRES_1
 DEFAULT_MACRO DATASET_KEYWORD_POSTGRES_2 POSTGRES_2
 DEFAULT_MACRO DATASET_KEYWORD_POSTGIS_1 POSTGIS_1
+DEFAULT_MACRO DATASET_KEYWORD_XLS_ADO_1 XLS_ADO_1
 # -------------------------------------------------------------------------
 
 ORACLE8I_DB_1_READER_META_ATTRIBUTES fme_feature_type
@@ -6493,11 +6765,6 @@ FACTORY_DEF * TeeFactory   FACTORY_NAME "pipe_material ok Output Renamer/Nuker" 
 FACTORY_DEF * TeeFactory   FACTORY_NAME "pipe_material material_error Output Renamer/Nuker"   INPUT FEATURE_TYPE pipe_material_material_error   OUTPUT FEATURE_TYPE pipe_material_material_error
 # -------------------------------------------------------------------------
 
-FACTORY_DEF * TeeFactory    FACTORY_NAME ErrorMaterial_Logger    INPUT  FEATURE_TYPE pipe_material_material_error    OUTPUT FEATURE_TYPE * @FeatureType("") @Log("ErrorMaterial:",20,20) @FeatureType(__NUKE_LOGGED__)
-FACTORY_DEF * TeeFactory    FACTORY_NAME ErrorMaterial_Nuker    INPUT FEATURE_TYPE __NUKE_LOGGED__
-
-# -------------------------------------------------------------------------
-
 FACTORY_DEF * TeeFactory    FACTORY_NAME AttributeRenamer    INPUT  FEATURE_TYPE pipe_material_ok    OUTPUT FEATURE_TYPE AttributeRenamer_OUTPUT         @RenameAttributes(coating_internal_material_id,BESCHICHTUNG_AUSSEN,coating_external_material_id,BESCHICHTUNG_INNEN,material_ext_diam,DURCHMESSER_AUSSEN,material_int_diam,DURCHMESSER_INNEN,id_distributor,EIGENTUMSVERHAELTNIS,pressure_nominal,NENNDRUCK,material_nominal_diam,NENNWEITE,length3d,STRANGLAENGE_BERECHNET,material_thickness,WANDSTAERKE,year,BAUJAHR,id,FID,folder,DOSSIER,z_folio,FOLIO,status,STATUS,z_deleted,DELETED)
 
 # -------------------------------------------------------------------------
@@ -6550,7 +6817,10 @@ FACTORY_DEF * ReferenceFactory    FACTORY_NAME FeatureMerger    GROUP_BY GID    
 
 # -------------------------------------------------------------------------
 
-FACTORY_DEF * TeeFactory    FACTORY_NAME "FeatureMerger_COMPLETE -> distribution.pipe Correlator"    INPUT FEATURE_TYPE FeatureMerger_COMPLETE    OUTPUT FEATURE_TYPE __GO_TO_FINAL_OUTPUT_ROUTER__       @Transform(FME_GENERIC,POSTGIS)       @SupplyAttributes(__wb_out_feat_type__,distribution.pipe)
+FACTORY_DEF * TeeFactory    FACTORY_NAME "FeatureMerger_COMPLETE -> distribution.pipe Correlator"    INPUT FEATURE_TYPE FeatureMerger_COMPLETE    OUTPUT FEATURE_TYPE __GO_TO_FINAL_OUTPUT_ROUTER__       multi_writer_id 0       @Transform(FME_GENERIC,POSTGIS)       @SupplyAttributes(__wb_out_feat_type__,distribution.pipe)
+# -------------------------------------------------------------------------
+
+FACTORY_DEF * TeeFactory    FACTORY_NAME "pipe_material_material_error -> materror Correlator"    INPUT FEATURE_TYPE pipe_material_material_error    OUTPUT FEATURE_TYPE __GO_TO_FINAL_OUTPUT_ROUTER__       multi_writer_id 1       @Transform(FME_GENERIC,XLS_ADO)       @SupplyAttributes(__wb_out_feat_type__,materror)
 # -------------------------------------------------------------------------
 
 FACTORY_DEF * TestFactory   FACTORY_NAME "Final Output Feature Type Router"   INPUT FEATURE_TYPE *   TEST @Value(__wb_out_feat_type__) != ""   OUTPUT PASSED FEATURE_TYPE *     @FeatureType(@Value(__wb_out_feat_type__))   OUTPUT FAILED FEATURE_TYPE __nuke_me__ @Tcl2("FME_StatMessage 818059 {@Value(fme_template_feature_type)} 818060 818061 fme_warn")
@@ -6560,3 +6830,5 @@ FACTORY_DEF * TeeFactory   FACTORY_NAME "Final Output Nuker"   INPUT FEATURE_TYP
 
 # -------------------------------------------------------------------------
 POSTGIS_1_DEF distribution.pipe   postgis_type                 postgis_geometry   postgis_mode                 INHERIT_FROM_WRITER   postgis_spatial_column_type  geometry   postgis_spatial_column       geometry   postgis_srid                 21781   postgis_drop_table           NO   postgis_truncate_table       NO   postgis_create_with_oids     NO   postgis_create_gist_index    YES   postgis_vacuum_analyze       YES   postgis_allow_serial_writing YES   coating_external_material_id char(20)   coating_internal_material_id char(20)   folder                       char(20)   id                           serial,PRIKEY   id_function                  int4   id_install_method            char(20)   id_material                  int4   id_distributor               char(20)   id_parent                    int4   id_precision                 char(20)   id_status                    int4   material_ext_diam            char(20)   material_int_diam            char(20)   material_nominal_diam        char(20)   material_thickness           char(20)   pressure_nominale            char(20)   protection_coating_detail    char(20)   remarks                      char(20)   schema_force_view            bool   year                         char(20)
+# -------------------------------------------------------------------------
+XLS_ADO_1_DEF materror   xls_update_key_columns       ""   xls_table_writer_mode        INHERIT_FROM_WRITER   xls_is_named_range           NO
