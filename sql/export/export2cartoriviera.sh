@@ -91,7 +91,7 @@ PG:"dbname='sige' host='172.24.171.203' port='5432' user='sige' password='db4wat
 
 # subscriber
 ogr2ogr -sql "SELECT subscriber_view.*, '<a href=javascript:app.openInfoWindow(\"http://www.cartoriviera.ch/sige/www/gallery.php?type=abonne&abonne='
-||id_client||'&commune='||district.subscriber_prefix||
+||client_identification||'&commune='||district.subscriber_prefix||
 '\",\"Abonne\",600,600)>croquis</a>' as links 
 FROM distribution.subscriber_view
 LEFT OUTER JOIN distribution.district ON subscriber_view.id_district = district.id;"  \
