@@ -90,11 +90,11 @@ PG:"dbname='sige' host='172.24.171.203' port='5432' user='sige' password='db4wat
 -dsco SPATIALITE=no -lco "SPATIAL_INDEX=no FORMAT=SPATIALITE" -gt 65536
 
 # subscriber
-ogr2ogr -sql "SELECT subscriber.*, '<a href=javascript:app.openInfoWindow(\"http://www.cartoriviera.ch/sige/www/gallery.php?type=abonne&abonne='
+ogr2ogr -sql "SELECT subscriber_view.*, '<a href=javascript:app.openInfoWindow(\"http://www.cartoriviera.ch/sige/www/gallery.php?type=abonne&abonne='
 ||id_client||'&commune='||district.subscriber_prefix||
 '\",\"Abonne\",600,600)>croquis</a>' as links 
-FROM distribution.subscriber 
-LEFT OUTER JOIN distribution.district     ON subscriber.id_district     = district.id;"  \
+FROM distribution.subscriber_view
+LEFT OUTER JOIN distribution.district ON subscriber_view.id_district = district.id;"  \
 -overwrite -a_srs EPSG:21781 -f SQLite $sqliteoutput \
 -nln subscriber -nlt POINT -progress -preserve_fid \
 PG:"dbname='sige' host=$db_address port='5432' user='sige' password='db4wat$'" \
