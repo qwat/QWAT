@@ -14,7 +14,7 @@ CREATE OR REPLACE VIEW distribution.search_view AS
 		FROM distribution.hydrant_view WhERE _status_active IS TRUE
 	UNION SELECT
 		'Abonnés' as layer_name,
-		_type || ' ' || id_client_full as search_text,
+		_type || ' ' || _client_identification_full as search_text,
 		geometry
 		FROM distribution.subscriber_view
 	UNION SELECT
