@@ -102,6 +102,8 @@ psql -h 172.24.171.$ip -U sige -f subscriber.sql
 read -p "Press any key to continue..."
 psql -h 172.24.171.$ip -U sige -f subscriber_view.sql
 read -p "Press any key to continue..."
+psql -h 172.24.171.$ip -U sige -f subscriber_pipe_relation.sql
+read -p "Press any key to continue..."
 
 psql -h 172.24.171.$ip -U sige -f installation_type.sql
 read -p "Press any key to continue..."
