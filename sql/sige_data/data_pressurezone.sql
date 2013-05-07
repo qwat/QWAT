@@ -4,7 +4,7 @@
 
 -- Dumped from database version 9.1.8
 -- Dumped by pg_dump version 9.2.4
--- Started on 2013-05-06 16:06:20 CEST
+-- Started on 2013-05-07 11:32:03 CEST
 
 SET statement_timeout = 0;
 SET client_encoding = 'UTF8';
@@ -116,7 +116,7 @@ INSERT INTO distribution.pressurezone (id, shortname, name, id_parent, colorcode
 SELECT pg_catalog.setval('pressurezone_id_seq', 135, true);
 
 
--- Completed on 2013-05-06 16:06:20 CEST
+-- Completed on 2013-05-07 11:32:04 CEST
 
 --
 -- PostgreSQL database dump complete
