@@ -11,7 +11,8 @@
 #          --DestDataset_POSTGIS sige
 #          --SourceDataset_POSTGRES sige
 #          --SourceDataset_POSTGRES_5 sige
-#          --DestDataset_XLS_ADO F:\fme\202\material_error.xls
+#          --DestDataset_CSV F:\fme\202\materror.csv
+#          --DestDataset_CSV_3 F:\fme\202\funcerror.csv
 #    
 #    
 #! MAX_LOG_FEATURES="200"
@@ -198,20 +199,20 @@
 #! <DATASET
 #! IS_SOURCE="false"
 #! ROLE="WRITER"
-#! FORMAT="XLS_ADO"
-#! DATASET="$(DestDataset_XLS_ADO)"
-#! KEYWORD="XLS_ADO_1"
+#! FORMAT="CSV"
+#! DATASET="$(DestDataset_CSV)"
+#! KEYWORD="CSV_1"
 #! MULTI_GEOM_ALLOWED="true"
-#! ATTR_MAX_LENGTH="255"
+#! ATTR_MAX_LENGTH="32"
 #! ATTR_CASE="ANY"
 #! ALLOWED_FEAT_TYPES=""
 #! WRITE_DEFS="true"
-#! DEFLINE_TEMPLATE="xls_update_key_columns &quot;&quot; xls_table_writer_mode INHERIT_FROM_WRITER xls_is_named_range NO"
+#! DEFLINE_TEMPLATE="csv_append_mode INHERIT_FROM_WRITER csv_field_names INHERIT_FROM_WRITER"
 #! DEFLINE_ATTRS="true"
-#! EXPOSABLE_ATTRS="fme_type varchar(50) fme_text_string varchar(50) fme_db_operation varchar(8) fme_feature_type varchar(50) fme_basename varchar(50) fme_where varchar(254) fme_geometry fme_char(50) fme_sweep_angle double fme_rotation double fme_secondary_axis double fme_fill_color varchar(50) fme_dataset varchar(50) fme_primary_axis double fme_start_angle double fme_text_size double fme_color varchar(50) db_type varchar(254)"
-#! DEFLINE_PARMS="&quot;GUI CHOICE xls_table_writer_mode INHERIT_FROM_WRITER%INSERT%UPDATE Writer Mode&quot; INHERIT_FROM_WRITER &quot;GUI OPTIONAL ATTRLIST_COMMAS xls_update_key_columns SQL Key Columns&quot; &quot;&quot; &quot;GUI CHOICE xls_is_named_range NO%YES Is Named Range&quot; NO "
+#! EXPOSABLE_ATTRS="fme_type char(50) fme_text_string char(50) fme_feature_type char(50) fme_basename char(50) fme_geometry fme_char(50) fme_sweep_angle number(31,15) csv_number_of_fields number(11,0) fme_rotation number(31,15) fme_secondary_axis number(31,15) fme_fill_color char(50) fme_dataset char(50) fme_primary_axis number(31,15) fme_start_angle number(31,15) fme_text_size number(31,15) fme_color char(50)"
+#! DEFLINE_PARMS="&quot;GUI OPTIONAL CHOICE csv_append_mode INHERIT_FROM_WRITER%yes%no Append to file&quot; INHERIT_FROM_WRITER &quot;GUI OPTIONAL CHOICE csv_field_names INHERIT_FROM_WRITER%yes%no Output Field Names&quot; INHERIT_FROM_WRITER "
 #! ATTR_INDEX_TYPES=""
-#! ATTR_NAME_INVALID_CHARS="./*#;:!&amp;-&quot;&apos;$[]"
+#! ATTR_NAME_INVALID_CHARS=". %-#[]&quot;()!?*&apos;&amp;+\/"
 #! SUPPORTS_FEATURE_TYPE_FANOUT="true"
 #! ENABLED="true"
 #! DYNAMIC_FEATURE_TYPES_LIST_ON_MERGE="true"
@@ -225,7 +226,48 @@
 #! >
 #! <METAFILE_PARAMETER
 #! NAME="MIME_TYPE"
-#! VALUE="application/vnd.ms-excel ADD_DISPOSITION"
+#! VALUE="text/csv ADD_DISPOSITION"
+#! />
+#! <METAFILE_PARAMETER
+#! NAME="ADVANCED_PARMS"
+#! VALUE="_ENCODING CSV_OUT_ENCODING _WRITE_UTF8_BOM"
+#! />
+#! </DATASET>
+#! <DATASET
+#! IS_SOURCE="false"
+#! ROLE="WRITER"
+#! FORMAT="CSV"
+#! DATASET="$(DestDataset_CSV_3)"
+#! KEYWORD="CSV_2"
+#! MULTI_GEOM_ALLOWED="true"
+#! ATTR_MAX_LENGTH="32"
+#! ATTR_CASE="ANY"
+#! ALLOWED_FEAT_TYPES=""
+#! WRITE_DEFS="true"
+#! DEFLINE_TEMPLATE="csv_append_mode INHERIT_FROM_WRITER csv_field_names INHERIT_FROM_WRITER"
+#! DEFLINE_ATTRS="true"
+#! EXPOSABLE_ATTRS="fme_type char(50) fme_text_string char(50) fme_feature_type char(50) fme_basename char(50) fme_geometry fme_char(50) fme_sweep_angle number(31,15) csv_number_of_fields number(11,0) fme_rotation number(31,15) fme_secondary_axis number(31,15) fme_fill_color char(50) fme_dataset char(50) fme_primary_axis number(31,15) fme_start_angle number(31,15) fme_text_size number(31,15) fme_color char(50)"
+#! DEFLINE_PARMS="&quot;GUI OPTIONAL CHOICE csv_append_mode INHERIT_FROM_WRITER%yes%no Append to file&quot; INHERIT_FROM_WRITER &quot;GUI OPTIONAL CHOICE csv_field_names INHERIT_FROM_WRITER%yes%no Output Field Names&quot; INHERIT_FROM_WRITER "
+#! ATTR_INDEX_TYPES=""
+#! ATTR_NAME_INVALID_CHARS=". %-#[]&quot;()!?*&apos;&amp;+\/"
+#! SUPPORTS_FEATURE_TYPE_FANOUT="true"
+#! ENABLED="true"
+#! DYNAMIC_FEATURE_TYPES_LIST_ON_MERGE="true"
+#! GENERATE_FME_BUILD_NUM="6501"
+#! FANOUT_SUFFIX=""
+#! FANOUT_ID_ATTR=""
+#! COORDSYS=""
+#! FANOUT="No"
+#! FANOUT_DIRECTORY=""
+#! FANOUT_PREFIX=""
+#! >
+#! <METAFILE_PARAMETER
+#! NAME="MIME_TYPE"
+#! VALUE="text/csv ADD_DISPOSITION"
+#! />
+#! <METAFILE_PARAMETER
+#! NAME="ADVANCED_PARMS"
+#! VALUE="_ENCODING CSV_OUT_ENCODING _WRITE_UTF8_BOM"
 #! />
 #! </DATASET>
 #! </DATASETS>
@@ -448,6 +490,78 @@
 #! />
 #! <DATA_TYPE
 #! IS_SOURCE="false"
+#! FORMAT_TYPE="char(width)"
+#! FME_TYPE="fme_varchar(width)"
+#! FORMAT="CSV"
+#! />
+#! <DATA_TYPE
+#! IS_SOURCE="false"
+#! FORMAT_TYPE="char(width)"
+#! FME_TYPE="fme_char(width)"
+#! FORMAT="CSV"
+#! />
+#! <DATA_TYPE
+#! IS_SOURCE="false"
+#! FORMAT_TYPE="char(254)"
+#! FME_TYPE="fme_buffer"
+#! FORMAT="CSV"
+#! />
+#! <DATA_TYPE
+#! IS_SOURCE="false"
+#! FORMAT_TYPE="char(20)"
+#! FME_TYPE="fme_datetime"
+#! FORMAT="CSV"
+#! />
+#! <DATA_TYPE
+#! IS_SOURCE="false"
+#! FORMAT_TYPE="char(12)"
+#! FME_TYPE="fme_time"
+#! FORMAT="CSV"
+#! />
+#! <DATA_TYPE
+#! IS_SOURCE="false"
+#! FORMAT_TYPE="date"
+#! FME_TYPE="fme_date"
+#! FORMAT="CSV"
+#! />
+#! <DATA_TYPE
+#! IS_SOURCE="false"
+#! FORMAT_TYPE="number(31,15)"
+#! FME_TYPE="fme_real64"
+#! FORMAT="CSV"
+#! />
+#! <DATA_TYPE
+#! IS_SOURCE="false"
+#! FORMAT_TYPE="number(15,7)"
+#! FME_TYPE="fme_real32"
+#! FORMAT="CSV"
+#! />
+#! <DATA_TYPE
+#! IS_SOURCE="false"
+#! FORMAT_TYPE="number(11,0)"
+#! FME_TYPE="fme_int32"
+#! FORMAT="CSV"
+#! />
+#! <DATA_TYPE
+#! IS_SOURCE="false"
+#! FORMAT_TYPE="logical"
+#! FME_TYPE="fme_boolean"
+#! FORMAT="CSV"
+#! />
+#! <DATA_TYPE
+#! IS_SOURCE="false"
+#! FORMAT_TYPE="number(6,0)"
+#! FME_TYPE="fme_int16"
+#! FORMAT="CSV"
+#! />
+#! <DATA_TYPE
+#! IS_SOURCE="false"
+#! FORMAT_TYPE="number(width,decimal)"
+#! FME_TYPE="fme_decimal(width,decimal)"
+#! FORMAT="CSV"
+#! />
+#! <DATA_TYPE
+#! IS_SOURCE="false"
 #! FORMAT_TYPE="bool"
 #! FME_TYPE="fme_boolean"
 #! FORMAT="POSTGIS"
@@ -559,84 +673,6 @@
 #! FORMAT_TYPE="timestamptz"
 #! FME_TYPE="fme_datetime"
 #! FORMAT="POSTGIS"
-#! />
-#! <DATA_TYPE
-#! IS_SOURCE="false"
-#! FORMAT_TYPE="varchar(width)"
-#! FME_TYPE="fme_varchar(width)"
-#! FORMAT="XLS_ADO"
-#! />
-#! <DATA_TYPE
-#! IS_SOURCE="false"
-#! FORMAT_TYPE="varchar(width)"
-#! FME_TYPE="fme_char(width)"
-#! FORMAT="XLS_ADO"
-#! />
-#! <DATA_TYPE
-#! IS_SOURCE="false"
-#! FORMAT_TYPE="text"
-#! FME_TYPE="fme_buffer"
-#! FORMAT="XLS_ADO"
-#! />
-#! <DATA_TYPE
-#! IS_SOURCE="false"
-#! FORMAT_TYPE="datetime"
-#! FME_TYPE="fme_datetime"
-#! FORMAT="XLS_ADO"
-#! />
-#! <DATA_TYPE
-#! IS_SOURCE="false"
-#! FORMAT_TYPE="datetime"
-#! FME_TYPE="fme_time"
-#! FORMAT="XLS_ADO"
-#! />
-#! <DATA_TYPE
-#! IS_SOURCE="false"
-#! FORMAT_TYPE="datetime"
-#! FME_TYPE="fme_date"
-#! FORMAT="XLS_ADO"
-#! />
-#! <DATA_TYPE
-#! IS_SOURCE="false"
-#! FORMAT_TYPE="decimal(width,decimal)"
-#! FME_TYPE="fme_decimal(width,decimal)"
-#! FORMAT="XLS_ADO"
-#! />
-#! <DATA_TYPE
-#! IS_SOURCE="false"
-#! FORMAT_TYPE="currency(width,decimal)"
-#! FME_TYPE="fme_decimal(width,decimal)"
-#! FORMAT="XLS_ADO"
-#! />
-#! <DATA_TYPE
-#! IS_SOURCE="false"
-#! FORMAT_TYPE="double"
-#! FME_TYPE="fme_real64"
-#! FORMAT="XLS_ADO"
-#! />
-#! <DATA_TYPE
-#! IS_SOURCE="false"
-#! FORMAT_TYPE="double"
-#! FME_TYPE="fme_real32"
-#! FORMAT="XLS_ADO"
-#! />
-#! <DATA_TYPE
-#! IS_SOURCE="false"
-#! FORMAT_TYPE="double"
-#! FME_TYPE="fme_int32"
-#! FORMAT="XLS_ADO"
-#! />
-#! <DATA_TYPE
-#! IS_SOURCE="false"
-#! FORMAT_TYPE="double"
-#! FME_TYPE="fme_int16"
-#! FORMAT="XLS_ADO"
-#! />
-#! <DATA_TYPE
-#! IS_SOURCE="false"
-#! FORMAT_TYPE="bit"
-#! FME_TYPE="fme_boolean"
-#! FORMAT="XLS_ADO"
 #! />
 #! </DATA_TYPES>
 #! <GEOM_TYPES>
@@ -894,6 +930,102 @@
 #! />
 #! <GEOM_TYPE
 #! IS_SOURCE="false"
+#! FORMAT_TYPE="csv_none"
+#! FME_TYPE="fme_no_geom"
+#! FORMAT="CSV"
+#! />
+#! <GEOM_TYPE
+#! IS_SOURCE="false"
+#! FORMAT_TYPE="csv_none"
+#! FME_TYPE="fme_point"
+#! FORMAT="CSV"
+#! />
+#! <GEOM_TYPE
+#! IS_SOURCE="false"
+#! FORMAT_TYPE="csv_none"
+#! FME_TYPE="fme_line"
+#! FORMAT="CSV"
+#! />
+#! <GEOM_TYPE
+#! IS_SOURCE="false"
+#! FORMAT_TYPE="csv_none"
+#! FME_TYPE="fme_area"
+#! FORMAT="CSV"
+#! />
+#! <GEOM_TYPE
+#! IS_SOURCE="false"
+#! FORMAT_TYPE="csv_none"
+#! FME_TYPE="fme_text"
+#! FORMAT="CSV"
+#! />
+#! <GEOM_TYPE
+#! IS_SOURCE="false"
+#! FORMAT_TYPE="csv_none"
+#! FME_TYPE="fme_ellipse"
+#! FORMAT="CSV"
+#! />
+#! <GEOM_TYPE
+#! IS_SOURCE="false"
+#! FORMAT_TYPE="csv_none"
+#! FME_TYPE="fme_arc"
+#! FORMAT="CSV"
+#! />
+#! <GEOM_TYPE
+#! IS_SOURCE="false"
+#! FORMAT_TYPE="csv_none"
+#! FME_TYPE="fme_rectangle"
+#! FORMAT="CSV"
+#! />
+#! <GEOM_TYPE
+#! IS_SOURCE="false"
+#! FORMAT_TYPE="csv_none"
+#! FME_TYPE="fme_rounded_rectangle"
+#! FORMAT="CSV"
+#! />
+#! <GEOM_TYPE
+#! IS_SOURCE="false"
+#! FORMAT_TYPE="fme_no_map"
+#! FME_TYPE="fme_no_geom"
+#! FORMAT="CSV"
+#! />
+#! <GEOM_TYPE
+#! IS_SOURCE="false"
+#! FORMAT_TYPE="fme_no_map"
+#! FME_TYPE="fme_no_map"
+#! FORMAT="CSV"
+#! />
+#! <GEOM_TYPE
+#! IS_SOURCE="false"
+#! FORMAT_TYPE="csv_none"
+#! FME_TYPE="fme_collection"
+#! FORMAT="CSV"
+#! />
+#! <GEOM_TYPE
+#! IS_SOURCE="false"
+#! FORMAT_TYPE="csv_none"
+#! FME_TYPE="fme_raster"
+#! FORMAT="CSV"
+#! />
+#! <GEOM_TYPE
+#! IS_SOURCE="false"
+#! FORMAT_TYPE="csv_none"
+#! FME_TYPE="fme_surface"
+#! FORMAT="CSV"
+#! />
+#! <GEOM_TYPE
+#! IS_SOURCE="false"
+#! FORMAT_TYPE="csv_none"
+#! FME_TYPE="fme_solid"
+#! FORMAT="CSV"
+#! />
+#! <GEOM_TYPE
+#! IS_SOURCE="false"
+#! FORMAT_TYPE="csv_none"
+#! FME_TYPE="fme_point_cloud"
+#! FORMAT="CSV"
+#! />
+#! <GEOM_TYPE
+#! IS_SOURCE="false"
 #! FORMAT_TYPE="postgis_multipoint"
 #! FME_TYPE="fme_point"
 #! FORMAT="POSTGIS"
@@ -1030,90 +1162,6 @@
 #! FME_TYPE="fme_point_cloud"
 #! FORMAT="POSTGIS"
 #! />
-#! <GEOM_TYPE
-#! IS_SOURCE="false"
-#! FORMAT_TYPE="db_none"
-#! FME_TYPE="fme_no_geom"
-#! FORMAT="XLS_ADO"
-#! />
-#! <GEOM_TYPE
-#! IS_SOURCE="false"
-#! FORMAT_TYPE="db_none"
-#! FME_TYPE="fme_point"
-#! FORMAT="XLS_ADO"
-#! />
-#! <GEOM_TYPE
-#! IS_SOURCE="false"
-#! FORMAT_TYPE="db_none"
-#! FME_TYPE="fme_line"
-#! FORMAT="XLS_ADO"
-#! />
-#! <GEOM_TYPE
-#! IS_SOURCE="false"
-#! FORMAT_TYPE="db_none"
-#! FME_TYPE="fme_area"
-#! FORMAT="XLS_ADO"
-#! />
-#! <GEOM_TYPE
-#! IS_SOURCE="false"
-#! FORMAT_TYPE="db_none"
-#! FME_TYPE="fme_text"
-#! FORMAT="XLS_ADO"
-#! />
-#! <GEOM_TYPE
-#! IS_SOURCE="false"
-#! FORMAT_TYPE="db_none"
-#! FME_TYPE="fme_ellipse"
-#! FORMAT="XLS_ADO"
-#! />
-#! <GEOM_TYPE
-#! IS_SOURCE="false"
-#! FORMAT_TYPE="db_none"
-#! FME_TYPE="fme_arc"
-#! FORMAT="XLS_ADO"
-#! />
-#! <GEOM_TYPE
-#! IS_SOURCE="false"
-#! FORMAT_TYPE="db_none"
-#! FME_TYPE="fme_rectangle"
-#! FORMAT="XLS_ADO"
-#! />
-#! <GEOM_TYPE
-#! IS_SOURCE="false"
-#! FORMAT_TYPE="db_none"
-#! FME_TYPE="fme_rounded_rectangle"
-#! FORMAT="XLS_ADO"
-#! />
-#! <GEOM_TYPE
-#! IS_SOURCE="false"
-#! FORMAT_TYPE="db_none"
-#! FME_TYPE="fme_collection"
-#! FORMAT="XLS_ADO"
-#! />
-#! <GEOM_TYPE
-#! IS_SOURCE="false"
-#! FORMAT_TYPE="db_none"
-#! FME_TYPE="fme_raster"
-#! FORMAT="XLS_ADO"
-#! />
-#! <GEOM_TYPE
-#! IS_SOURCE="false"
-#! FORMAT_TYPE="db_none"
-#! FME_TYPE="fme_surface"
-#! FORMAT="XLS_ADO"
-#! />
-#! <GEOM_TYPE
-#! IS_SOURCE="false"
-#! FORMAT_TYPE="db_none"
-#! FME_TYPE="fme_solid"
-#! FORMAT="XLS_ADO"
-#! />
-#! <GEOM_TYPE
-#! IS_SOURCE="false"
-#! FORMAT_TYPE="db_none"
-#! FME_TYPE="fme_point_cloud"
-#! FORMAT="XLS_ADO"
-#! />
 #! </GEOM_TYPES>
 #! <FEATURE_TYPES>
 #! <FEATURE_TYPE
@@ -1123,7 +1171,7 @@
 #! IDENTIFIER="1"
 #! FEAT_GEOMTYPE="oracle_nil"
 #! POSITION="133 -2727"
-#! ORDER="27"
+#! ORDER="28"
 #! COLLAPSED="true"
 #! KEYWORD="ORACLE8I_DB_1"
 #! ENABLED="true"
@@ -1238,7 +1286,7 @@
 #! IDENTIFIER="47"
 #! FEAT_GEOMTYPE="&lt;NO_GEOMETRY&gt;"
 #! POSITION="2542 -943"
-#! ORDER="32"
+#! ORDER="33"
 #! COLLAPSED="false"
 #! KEYWORD="POSTGIS_1"
 #! ENABLED="true"
@@ -1283,7 +1331,7 @@
 #! IDENTIFIER="0"
 #! FEAT_GEOMTYPE="oracle_nil"
 #! POSITION="21 -110"
-#! ORDER="48"
+#! ORDER="49"
 #! COLLAPSED="true"
 #! KEYWORD="ORACLE8I_DB_2"
 #! ENABLED="true"
@@ -1378,7 +1426,7 @@
 #! IDENTIFIER="56"
 #! FEAT_GEOMTYPE="postgres_none"
 #! POSITION="1011 -1004"
-#! ORDER="55"
+#! ORDER="53"
 #! COLLAPSED="true"
 #! KEYWORD="POSTGRES_2"
 #! ENABLED="true"
@@ -1405,7 +1453,7 @@
 #! IDENTIFIER="63"
 #! FEAT_GEOMTYPE="postgres_none"
 #! POSITION="2176 -436"
-#! ORDER="58"
+#! ORDER="55"
 #! COLLAPSED="true"
 #! KEYWORD="POSTGRES_1"
 #! ENABLED="true"
@@ -1427,17 +1475,37 @@
 #! IS_EDITABLE="true"
 #! IDENTIFIER="74"
 #! FEAT_GEOMTYPE="&lt;NO_GEOMETRY&gt;"
-#! POSITION="1719 -1204"
-#! ORDER="59"
+#! POSITION="1980 -1014"
+#! ORDER="57"
 #! COLLAPSED="false"
-#! KEYWORD="XLS_ADO_1"
+#! KEYWORD="CSV_1"
 #! ENABLED="true"
 #! FANOUT="No"
 #! FANOUT_ID_ATTR=""
 #! >
-#! <DEFLINE_PARM PARM_NAME="xls_update_key_columns" PARM_VALUE=""/>
-#! <DEFLINE_PARM PARM_NAME="xls_is_named_range" PARM_VALUE="NO"/>
-#! <DEFLINE_PARM PARM_NAME="xls_table_writer_mode" PARM_VALUE="INHERIT_FROM_WRITER"/>
+#! <FEAT_ATTRIBUTE ATTR_NAME="joined_material_text" ATTR_TYPE="char(30)"/>
+#! <FEAT_ATTRIBUTE ATTR_NAME="FID" ATTR_TYPE="char(30)"/>
+#! <FEAT_ATTRIBUTE ATTR_NAME="FOLIO" ATTR_TYPE="char(30)"/>
+#! <DEFLINE_PARM PARM_NAME="csv_append_mode" PARM_VALUE="INHERIT_FROM_WRITER"/>
+#! <DEFLINE_PARM PARM_NAME="csv_field_names" PARM_VALUE="INHERIT_FROM_WRITER"/>
+#! </FEATURE_TYPE>
+#! <FEATURE_TYPE
+#! IS_SOURCE="false"
+#! NODE_NAME="funcerror"
+#! IS_EDITABLE="true"
+#! IDENTIFIER="61"
+#! FEAT_GEOMTYPE="&lt;NO_GEOMETRY&gt;"
+#! POSITION="3120 -635"
+#! ORDER="60"
+#! COLLAPSED="true"
+#! KEYWORD="CSV_2"
+#! ENABLED="true"
+#! FANOUT="No"
+#! FANOUT_ID_ATTR=""
+#! >
+#! <FEAT_ATTRIBUTE ATTR_NAME="function" ATTR_TYPE="char(30)"/>
+#! <DEFLINE_PARM PARM_NAME="csv_append_mode" PARM_VALUE="INHERIT_FROM_WRITER"/>
+#! <DEFLINE_PARM PARM_NAME="csv_field_names" PARM_VALUE="INHERIT_FROM_WRITER"/>
 #! </FEATURE_TYPE>
 #! </FEATURE_TYPES>
 #! <FMESERVER>
@@ -1469,8 +1537,13 @@
 #! IS_STAND_ALONE="false"
 #! />
 #! <GLOBAL_PARAMETER
-#! GUI_LINE="GUI FILENAME DestDataset_XLS_ADO Excel_Files(*.xls;*.xlsx;*.xlsb)|*.xls;*.xlsx;*.xlsb|All_files(*.*)|*.* Destination Microsoft Excel File:"
-#! DEFAULT_VALUE="F:\fme\202\material_error.xls"
+#! GUI_LINE="GUI DIRNAME DestDataset_CSV Destination Comma Separated Value (CSV) Directory:"
+#! DEFAULT_VALUE="F:\fme\202\materror.csv"
+#! IS_STAND_ALONE="false"
+#! />
+#! <GLOBAL_PARAMETER
+#! GUI_LINE="GUI DIRNAME DestDataset_CSV_3 Destination Comma Separated Value (CSV) Directory:"
+#! DEFAULT_VALUE="F:\fme\202\funcerror.csv"
 #! IS_STAND_ALONE="false"
 #! />
 #! </GLOBAL_PARAMETERS>
@@ -1479,7 +1552,7 @@
 #! IDENTIFIER="31"
 #! COMMENT_VALUE="Supprimer les champs inutile"
 #! POSITION="2204 -161"
-#! ORDER="24"
+#! ORDER="25"
 #! FOLLOW_ANCHOR="true"
 #! INFO_NODE="false"
 #! COMMENT_TYPE="REGULAR"
@@ -1489,7 +1562,7 @@
 #! IDENTIFIER="55"
 #! COMMENT_VALUE="Retirer les DELETED"
 #! POSITION="398 -46"
-#! ORDER="25"
+#! ORDER="26"
 #! FOLLOW_ANCHOR="true"
 #! INFO_NODE="false"
 #! COMMENT_TYPE="REGULAR"
@@ -1499,7 +1572,7 @@
 #! IDENTIFIER="30"
 #! COMMENT_VALUE="Concaténer Bemerkung&#13;&#10;et Bezeichnung1&#13;&#10;(remarks)"
 #! POSITION="842 -52"
-#! ORDER="29"
+#! ORDER="30"
 #! FOLLOW_ANCHOR="true"
 #! INFO_NODE="false"
 #! COMMENT_TYPE="REGULAR"
@@ -1509,7 +1582,7 @@
 #! IDENTIFIER="64"
 #! COMMENT_VALUE="distribution.pipe_function"
 #! POSITION="2151 -524"
-#! ORDER="30"
+#! ORDER="31"
 #! FOLLOW_ANCHOR="true"
 #! INFO_NODE="false"
 #! COMMENT_TYPE="REGULAR"
@@ -1518,8 +1591,8 @@
 #! <COMMENT
 #! IDENTIFIER="32"
 #! COMMENT_VALUE="Renomer les champs"
-#! POSITION="416 -476"
-#! ORDER="31"
+#! POSITION="546 -476"
+#! ORDER="32"
 #! FOLLOW_ANCHOR="true"
 #! INFO_NODE="false"
 #! COMMENT_TYPE="REGULAR"
@@ -1529,7 +1602,7 @@
 #! IDENTIFIER="38"
 #! COMMENT_VALUE="pipe_status"
 #! POSITION="2608 -830"
-#! ORDER="34"
+#! ORDER="35"
 #! FOLLOW_ANCHOR="true"
 #! INFO_NODE="false"
 #! COMMENT_TYPE="REGULAR"
@@ -1539,7 +1612,7 @@
 #! IDENTIFIER="57"
 #! COMMENT_VALUE="distribution.pipe_material"
 #! POSITION="972 -1086"
-#! ORDER="35"
+#! ORDER="36"
 #! FOLLOW_ANCHOR="true"
 #! INFO_NODE="false"
 #! COMMENT_TYPE="REGULAR"
@@ -1549,7 +1622,7 @@
 #! IDENTIFIER="81"
 #! COMMENT_VALUE="id_precision"
 #! POSITION="178 -1144"
-#! ORDER="37"
+#! ORDER="38"
 #! FOLLOW_ANCHOR="true"
 #! INFO_NODE="false"
 #! COMMENT_TYPE="REGULAR"
@@ -1559,7 +1632,7 @@
 #! IDENTIFIER="80"
 #! COMMENT_VALUE="id_install_method"
 #! POSITION="555 -1315"
-#! ORDER="38"
+#! ORDER="39"
 #! FOLLOW_ANCHOR="true"
 #! INFO_NODE="false"
 #! COMMENT_TYPE="REGULAR"
@@ -1569,7 +1642,7 @@
 #! IDENTIFIER="93"
 #! COMMENT_VALUE="delete remarks"
 #! POSITION="1846 -20"
-#! ORDER="42"
+#! ORDER="43"
 #! FOLLOW_ANCHOR="true"
 #! INFO_NODE="false"
 #! COMMENT_TYPE="REGULAR"
@@ -1579,7 +1652,7 @@
 #! IDENTIFIER="92"
 #! COMMENT_VALUE="search empty remarks"
 #! POSITION="1326 -31"
-#! ORDER="43"
+#! ORDER="44"
 #! FOLLOW_ANCHOR="true"
 #! INFO_NODE="false"
 #! COMMENT_TYPE="REGULAR"
@@ -1589,7 +1662,7 @@
 #! IDENTIFIER="98"
 #! COMMENT_VALUE="protection"
 #! POSITION="1970 -594"
-#! ORDER="46"
+#! ORDER="47"
 #! FOLLOW_ANCHOR="true"
 #! INFO_NODE="false"
 #! COMMENT_TYPE="REGULAR"
@@ -1599,7 +1672,7 @@
 #! IDENTIFIER="62"
 #! COMMENT_VALUE="SIGE_DISTRIBUTION.WA_STRANG"
 #! POSITION="13 -207"
-#! ORDER="49"
+#! ORDER="50"
 #! FOLLOW_ANCHOR="true"
 #! INFO_NODE="false"
 #! COMMENT_TYPE="REGULAR"
@@ -1616,7 +1689,7 @@
 #! TYPE="SubDocumentTransformer"
 #! VERSION="0"
 #! POSITION="784 -2819"
-#! ORDER="26"
+#! ORDER="27"
 #! PARMS_EDITED="false"
 #! ENABLED="true"
 #! >
@@ -1638,7 +1711,7 @@
 #! TYPE="AttributeValueMapper"
 #! VERSION="2"
 #! POSITION="2462 -615"
-#! ORDER="28"
+#! ORDER="29"
 #! PARMS_EDITED="true"
 #! ENABLED="true"
 #! >
@@ -1681,7 +1754,7 @@
 #! TYPE="FeatureMerger"
 #! VERSION="8"
 #! POSITION="1900 -1644"
-#! ORDER="33"
+#! ORDER="34"
 #! PARMS_EDITED="true"
 #! ENABLED="true"
 #! >
@@ -1853,7 +1926,7 @@
 #! TYPE="AttributeValueMapper"
 #! VERSION="2"
 #! POSITION="111 -899"
-#! ORDER="36"
+#! ORDER="37"
 #! PARMS_EDITED="true"
 #! ENABLED="true"
 #! >
@@ -1906,7 +1979,7 @@
 #! TYPE="AttributeFilter"
 #! VERSION="2"
 #! POSITION="1292 -79"
-#! ORDER="39"
+#! ORDER="40"
 #! PARMS_EDITED="true"
 #! ENABLED="true"
 #! >
@@ -2153,7 +2226,7 @@
 #! TYPE="AttributeSetter"
 #! VERSION="2"
 #! POSITION="1752 -85"
-#! ORDER="40"
+#! ORDER="41"
 #! PARMS_EDITED="true"
 #! ENABLED="true"
 #! >
@@ -2246,7 +2319,7 @@
 #! TYPE="AttributeRemover"
 #! VERSION="0"
 #! POSITION="2225 -193"
-#! ORDER="41"
+#! ORDER="42"
 #! PARMS_EDITED="true"
 #! ENABLED="true"
 #! >
@@ -2286,7 +2359,7 @@
 #! TYPE="SubDocumentTransformer"
 #! VERSION="0"
 #! POSITION="2735 -70"
-#! ORDER="44"
+#! ORDER="45"
 #! PARMS_EDITED="true"
 #! ENABLED="true"
 #! >
@@ -2363,7 +2436,7 @@
 #! TYPE="AttributeValueMapper"
 #! VERSION="2"
 #! POSITION="1970 -674"
-#! ORDER="45"
+#! ORDER="46"
 #! PARMS_EDITED="true"
 #! ENABLED="true"
 #! >
@@ -2407,7 +2480,7 @@
 #! TYPE="AttributeValueMapper"
 #! VERSION="2"
 #! POSITION="555 -1395"
-#! ORDER="47"
+#! ORDER="48"
 #! PARMS_EDITED="true"
 #! ENABLED="true"
 #! >
@@ -2457,194 +2530,11 @@
 #! <XFORM_PARM PARM_NAME="DIRECTION" PARM_VALUE="Forward"/>
 #! </TRANSFORMER>
 #! <TRANSFORMER
-#! IDENTIFIER="75"
-#! TYPE="SubDocumentTransformer"
-#! VERSION="0"
-#! POSITION="1355 -535"
-#! ORDER="50"
-#! PARMS_EDITED="false"
-#! ENABLED="true"
-#! >
-#! <OUTPUT_FEAT NAME="ok"/>
-#! <FEAT_COLLAPSED COLLAPSED="0"/>
-#! <XFORM_ATTR ATTR_NAME="id_status" IS_USER_CREATED="false" FEAT_INDEX="0"/>
-#! <XFORM_ATTR ATTR_NAME="joined_material_text" IS_USER_CREATED="false" FEAT_INDEX="0"/>
-#! <XFORM_ATTR ATTR_NAME="id_material" IS_USER_CREATED="false" FEAT_INDEX="0"/>
-#! <XFORM_ATTR ATTR_NAME="short_name" IS_USER_CREATED="false" FEAT_INDEX="0"/>
-#! <XFORM_ATTR ATTR_NAME="name" IS_USER_CREATED="false" FEAT_INDEX="0"/>
-#! <XFORM_ATTR ATTR_NAME="diameter" IS_USER_CREATED="false" FEAT_INDEX="0"/>
-#! <XFORM_ATTR ATTR_NAME="diameter_internal" IS_USER_CREATED="false" FEAT_INDEX="0"/>
-#! <XFORM_ATTR ATTR_NAME="diameter_external" IS_USER_CREATED="false" FEAT_INDEX="0"/>
-#! <XFORM_ATTR ATTR_NAME="_fancy_name" IS_USER_CREATED="false" FEAT_INDEX="0"/>
-#! <XFORM_ATTR ATTR_NAME="id_protection" IS_USER_CREATED="false" FEAT_INDEX="0"/>
-#! <XFORM_ATTR ATTR_NAME="remarks" IS_USER_CREATED="false" FEAT_INDEX="0"/>
-#! <XFORM_ATTR ATTR_NAME="BAUJAHR" IS_USER_CREATED="false" FEAT_INDEX="0"/>
-#! <XFORM_ATTR ATTR_NAME="BESCHICHTUNG_AUSSEN" IS_USER_CREATED="false" FEAT_INDEX="0"/>
-#! <XFORM_ATTR ATTR_NAME="BESCHICHTUNG_INNEN" IS_USER_CREATED="false" FEAT_INDEX="0"/>
-#! <XFORM_ATTR ATTR_NAME="DELETED" IS_USER_CREATED="false" FEAT_INDEX="0"/>
-#! <XFORM_ATTR ATTR_NAME="DOSSIER" IS_USER_CREATED="false" FEAT_INDEX="0"/>
-#! <XFORM_ATTR ATTR_NAME="DRUCKZONE_ID" IS_USER_CREATED="false" FEAT_INDEX="0"/>
-#! <XFORM_ATTR ATTR_NAME="DURCHMESSER_AUSSEN" IS_USER_CREATED="false" FEAT_INDEX="0"/>
-#! <XFORM_ATTR ATTR_NAME="DURCHMESSER_INNEN" IS_USER_CREATED="false" FEAT_INDEX="0"/>
-#! <XFORM_ATTR ATTR_NAME="EIGENTUMSVERHAELTNIS" IS_USER_CREATED="false" FEAT_INDEX="0"/>
-#! <XFORM_ATTR ATTR_NAME="FID" IS_USER_CREATED="false" FEAT_INDEX="0"/>
-#! <XFORM_ATTR ATTR_NAME="FOLIO" IS_USER_CREATED="false" FEAT_INDEX="0"/>
-#! <XFORM_ATTR ATTR_NAME="GID" IS_USER_CREATED="false" FEAT_INDEX="0"/>
-#! <XFORM_ATTR ATTR_NAME="LAGEGENAUIGKEIT" IS_USER_CREATED="false" FEAT_INDEX="0"/>
-#! <XFORM_ATTR ATTR_NAME="MATERIAL" IS_USER_CREATED="false" FEAT_INDEX="0"/>
-#! <XFORM_ATTR ATTR_NAME="NENNDRUCK" IS_USER_CREATED="false" FEAT_INDEX="0"/>
-#! <XFORM_ATTR ATTR_NAME="NENNWEITE" IS_USER_CREATED="false" FEAT_INDEX="0"/>
-#! <XFORM_ATTR ATTR_NAME="STATUS" IS_USER_CREATED="false" FEAT_INDEX="0"/>
-#! <XFORM_ATTR ATTR_NAME="STRANGLAENGE_BERECHNET" IS_USER_CREATED="false" FEAT_INDEX="0"/>
-#! <XFORM_ATTR ATTR_NAME="TUYAU_PROTECTEUR" IS_USER_CREATED="false" FEAT_INDEX="0"/>
-#! <XFORM_ATTR ATTR_NAME="VERLEGEART" IS_USER_CREATED="false" FEAT_INDEX="0"/>
-#! <XFORM_ATTR ATTR_NAME="WANDSTAERKE" IS_USER_CREATED="false" FEAT_INDEX="0"/>
-#! <XFORM_ATTR ATTR_NAME="id_function" IS_USER_CREATED="false" FEAT_INDEX="0"/>
-#! <XFORM_ATTR ATTR_NAME="function" IS_USER_CREATED="false" FEAT_INDEX="0"/>
-#! <XFORM_ATTR ATTR_NAME="BEMERKUNG" IS_USER_CREATED="false" FEAT_INDEX="0"/>
-#! <OUTPUT_FEAT NAME="material_error"/>
-#! <FEAT_COLLAPSED COLLAPSED="1"/>
-#! <XFORM_ATTR ATTR_NAME="id_status" IS_USER_CREATED="false" FEAT_INDEX="1"/>
-#! <XFORM_ATTR ATTR_NAME="joined_material_text" IS_USER_CREATED="false" FEAT_INDEX="1"/>
-#! <XFORM_ATTR ATTR_NAME="id_protection" IS_USER_CREATED="false" FEAT_INDEX="1"/>
-#! <XFORM_ATTR ATTR_NAME="remarks" IS_USER_CREATED="false" FEAT_INDEX="1"/>
-#! <XFORM_ATTR ATTR_NAME="BAUJAHR" IS_USER_CREATED="false" FEAT_INDEX="1"/>
-#! <XFORM_ATTR ATTR_NAME="BESCHICHTUNG_AUSSEN" IS_USER_CREATED="false" FEAT_INDEX="1"/>
-#! <XFORM_ATTR ATTR_NAME="BESCHICHTUNG_INNEN" IS_USER_CREATED="false" FEAT_INDEX="1"/>
-#! <XFORM_ATTR ATTR_NAME="DELETED" IS_USER_CREATED="false" FEAT_INDEX="1"/>
-#! <XFORM_ATTR ATTR_NAME="DOSSIER" IS_USER_CREATED="false" FEAT_INDEX="1"/>
-#! <XFORM_ATTR ATTR_NAME="DRUCKZONE_ID" IS_USER_CREATED="false" FEAT_INDEX="1"/>
-#! <XFORM_ATTR ATTR_NAME="DURCHMESSER_AUSSEN" IS_USER_CREATED="false" FEAT_INDEX="1"/>
-#! <XFORM_ATTR ATTR_NAME="DURCHMESSER_INNEN" IS_USER_CREATED="false" FEAT_INDEX="1"/>
-#! <XFORM_ATTR ATTR_NAME="EIGENTUMSVERHAELTNIS" IS_USER_CREATED="false" FEAT_INDEX="1"/>
-#! <XFORM_ATTR ATTR_NAME="FID" IS_USER_CREATED="false" FEAT_INDEX="1"/>
-#! <XFORM_ATTR ATTR_NAME="FOLIO" IS_USER_CREATED="false" FEAT_INDEX="1"/>
-#! <XFORM_ATTR ATTR_NAME="GID" IS_USER_CREATED="false" FEAT_INDEX="1"/>
-#! <XFORM_ATTR ATTR_NAME="LAGEGENAUIGKEIT" IS_USER_CREATED="false" FEAT_INDEX="1"/>
-#! <XFORM_ATTR ATTR_NAME="MATERIAL" IS_USER_CREATED="false" FEAT_INDEX="1"/>
-#! <XFORM_ATTR ATTR_NAME="NENNDRUCK" IS_USER_CREATED="false" FEAT_INDEX="1"/>
-#! <XFORM_ATTR ATTR_NAME="NENNWEITE" IS_USER_CREATED="false" FEAT_INDEX="1"/>
-#! <XFORM_ATTR ATTR_NAME="STATUS" IS_USER_CREATED="false" FEAT_INDEX="1"/>
-#! <XFORM_ATTR ATTR_NAME="STRANGLAENGE_BERECHNET" IS_USER_CREATED="false" FEAT_INDEX="1"/>
-#! <XFORM_ATTR ATTR_NAME="TUYAU_PROTECTEUR" IS_USER_CREATED="false" FEAT_INDEX="1"/>
-#! <XFORM_ATTR ATTR_NAME="VERLEGEART" IS_USER_CREATED="false" FEAT_INDEX="1"/>
-#! <XFORM_ATTR ATTR_NAME="WANDSTAERKE" IS_USER_CREATED="false" FEAT_INDEX="1"/>
-#! <XFORM_ATTR ATTR_NAME="id_function" IS_USER_CREATED="false" FEAT_INDEX="1"/>
-#! <XFORM_ATTR ATTR_NAME="function" IS_USER_CREATED="false" FEAT_INDEX="1"/>
-#! <XFORM_ATTR ATTR_NAME="BEMERKUNG" IS_USER_CREATED="false" FEAT_INDEX="1"/>
-#! <XFORM_PARM PARM_NAME="SUB_DOC_NAME" PARM_VALUE="pipe_material"/>
-#! <XFORM_PARM PARM_NAME="XFORMER_NAME" PARM_VALUE="pipe_material"/>
-#! <XFORM_PARM PARM_NAME="__COMPOUND_PARAMETERS" PARM_VALUE=""/>
-#! <XFORM_PARM PARM_NAME="TRANSFORMER_GROUP" PARM_VALUE=""/>
-#! </TRANSFORMER>
-#! <TRANSFORMER
-#! IDENTIFIER="8"
-#! TYPE="AttributeRenamer"
-#! VERSION="1"
-#! POSITION="398 -535"
-#! ORDER="51"
-#! PARMS_EDITED="true"
-#! ENABLED="true"
-#! >
-#! <OUTPUT_FEAT NAME="OUTPUT"/>
-#! <FEAT_COLLAPSED COLLAPSED="0"/>
-#! <XFORM_ATTR ATTR_NAME="id_function" IS_USER_CREATED="false" FEAT_INDEX="0"/>
-#! <XFORM_ATTR ATTR_NAME="function" IS_USER_CREATED="false" FEAT_INDEX="0"/>
-#! <XFORM_ATTR ATTR_NAME="joined_material_text" IS_USER_CREATED="false" FEAT_INDEX="0"/>
-#! <XFORM_ATTR ATTR_NAME="year" IS_USER_CREATED="false" FEAT_INDEX="0"/>
-#! <XFORM_ATTR ATTR_NAME="BEMERKUNG" IS_USER_CREATED="false" FEAT_INDEX="0"/>
-#! <XFORM_ATTR ATTR_NAME="coating_internal_material_id" IS_USER_CREATED="false" FEAT_INDEX="0"/>
-#! <XFORM_ATTR ATTR_NAME="coating_external_material_id" IS_USER_CREATED="false" FEAT_INDEX="0"/>
-#! <XFORM_ATTR ATTR_NAME="z_deleted" IS_USER_CREATED="false" FEAT_INDEX="0"/>
-#! <XFORM_ATTR ATTR_NAME="folder" IS_USER_CREATED="false" FEAT_INDEX="0"/>
-#! <XFORM_ATTR ATTR_NAME="DRUCKZONE_ID" IS_USER_CREATED="false" FEAT_INDEX="0"/>
-#! <XFORM_ATTR ATTR_NAME="material_ext_diam" IS_USER_CREATED="false" FEAT_INDEX="0"/>
-#! <XFORM_ATTR ATTR_NAME="material_int_diam" IS_USER_CREATED="false" FEAT_INDEX="0"/>
-#! <XFORM_ATTR ATTR_NAME="id_distributor" IS_USER_CREATED="false" FEAT_INDEX="0"/>
-#! <XFORM_ATTR ATTR_NAME="id" IS_USER_CREATED="false" FEAT_INDEX="0"/>
-#! <XFORM_ATTR ATTR_NAME="z_folio" IS_USER_CREATED="false" FEAT_INDEX="0"/>
-#! <XFORM_ATTR ATTR_NAME="GID" IS_USER_CREATED="false" FEAT_INDEX="0"/>
-#! <XFORM_ATTR ATTR_NAME="LAGEGENAUIGKEIT" IS_USER_CREATED="false" FEAT_INDEX="0"/>
-#! <XFORM_ATTR ATTR_NAME="MATERIAL" IS_USER_CREATED="false" FEAT_INDEX="0"/>
-#! <XFORM_ATTR ATTR_NAME="pressure_nominal" IS_USER_CREATED="false" FEAT_INDEX="0"/>
-#! <XFORM_ATTR ATTR_NAME="material_nominal_diam" IS_USER_CREATED="false" FEAT_INDEX="0"/>
-#! <XFORM_ATTR ATTR_NAME="status" IS_USER_CREATED="false" FEAT_INDEX="0"/>
-#! <XFORM_ATTR ATTR_NAME="length3d" IS_USER_CREATED="false" FEAT_INDEX="0"/>
-#! <XFORM_ATTR ATTR_NAME="TUYAU_PROTECTEUR" IS_USER_CREATED="false" FEAT_INDEX="0"/>
-#! <XFORM_ATTR ATTR_NAME="VERLEGEART" IS_USER_CREATED="false" FEAT_INDEX="0"/>
-#! <XFORM_ATTR ATTR_NAME="material_thickness" IS_USER_CREATED="false" FEAT_INDEX="0"/>
-#! <XFORM_ATTR ATTR_NAME="remarks" IS_USER_CREATED="false" FEAT_INDEX="0"/>
-#! <XFORM_ATTR ATTR_NAME="id_status" IS_USER_CREATED="false" FEAT_INDEX="0"/>
-#! <XFORM_ATTR ATTR_NAME="id_protection" IS_USER_CREATED="false" FEAT_INDEX="0"/>
-#! <XFORM_ATTR ATTR_NAME="id_material" IS_USER_CREATED="false" FEAT_INDEX="0"/>
-#! <XFORM_ATTR ATTR_NAME="short_name" IS_USER_CREATED="false" FEAT_INDEX="0"/>
-#! <XFORM_ATTR ATTR_NAME="name" IS_USER_CREATED="false" FEAT_INDEX="0"/>
-#! <XFORM_ATTR ATTR_NAME="diameter" IS_USER_CREATED="false" FEAT_INDEX="0"/>
-#! <XFORM_ATTR ATTR_NAME="diameter_internal" IS_USER_CREATED="false" FEAT_INDEX="0"/>
-#! <XFORM_ATTR ATTR_NAME="diameter_external" IS_USER_CREATED="false" FEAT_INDEX="0"/>
-#! <XFORM_ATTR ATTR_NAME="_fancy_name" IS_USER_CREATED="false" FEAT_INDEX="0"/>
-#! <XFORM_PARM PARM_NAME="XFORMER_NAME" PARM_VALUE="AttributeRenamer"/>
-#! <XFORM_PARM PARM_NAME="ATTR_LIST" PARM_VALUE="coating_internal_material_id,BESCHICHTUNG_AUSSEN,coating_external_material_id,BESCHICHTUNG_INNEN,material_ext_diam,DURCHMESSER_AUSSEN,material_int_diam,DURCHMESSER_INNEN,id_distributor,EIGENTUMSVERHAELTNIS,pressure_nominal,NENNDRUCK,material_nominal_diam,NENNWEITE,length3d,STRANGLAENGE_BERECHNET,material_thickness,WANDSTAERKE,year,BAUJAHR,id,FID,folder,DOSSIER,z_folio,FOLIO,status,STATUS,z_deleted,DELETED"/>
-#! </TRANSFORMER>
-#! <TRANSFORMER
-#! IDENTIFIER="101"
-#! TYPE="NullAttributeReplacer"
-#! VERSION="1"
-#! POSITION="1163 -1277"
-#! ORDER="52"
-#! PARMS_EDITED="true"
-#! ENABLED="true"
-#! >
-#! <OUTPUT_FEAT NAME="OUTPUT"/>
-#! <FEAT_COLLAPSED COLLAPSED="0"/>
-#! <XFORM_ATTR ATTR_NAME="id_precision" IS_USER_CREATED="false" FEAT_INDEX="0"/>
-#! <XFORM_ATTR ATTR_NAME="id_status" IS_USER_CREATED="false" FEAT_INDEX="0"/>
-#! <XFORM_ATTR ATTR_NAME="joined_material_text" IS_USER_CREATED="false" FEAT_INDEX="0"/>
-#! <XFORM_ATTR ATTR_NAME="id_material" IS_USER_CREATED="false" FEAT_INDEX="0"/>
-#! <XFORM_ATTR ATTR_NAME="short_name" IS_USER_CREATED="false" FEAT_INDEX="0"/>
-#! <XFORM_ATTR ATTR_NAME="name" IS_USER_CREATED="false" FEAT_INDEX="0"/>
-#! <XFORM_ATTR ATTR_NAME="diameter" IS_USER_CREATED="false" FEAT_INDEX="0"/>
-#! <XFORM_ATTR ATTR_NAME="diameter_internal" IS_USER_CREATED="false" FEAT_INDEX="0"/>
-#! <XFORM_ATTR ATTR_NAME="diameter_external" IS_USER_CREATED="false" FEAT_INDEX="0"/>
-#! <XFORM_ATTR ATTR_NAME="_fancy_name" IS_USER_CREATED="false" FEAT_INDEX="0"/>
-#! <XFORM_ATTR ATTR_NAME="id_protection" IS_USER_CREATED="false" FEAT_INDEX="0"/>
-#! <XFORM_ATTR ATTR_NAME="remarks" IS_USER_CREATED="false" FEAT_INDEX="0"/>
-#! <XFORM_ATTR ATTR_NAME="year" IS_USER_CREATED="false" FEAT_INDEX="0"/>
-#! <XFORM_ATTR ATTR_NAME="coating_internal_material_id" IS_USER_CREATED="false" FEAT_INDEX="0"/>
-#! <XFORM_ATTR ATTR_NAME="coating_external_material_id" IS_USER_CREATED="false" FEAT_INDEX="0"/>
-#! <XFORM_ATTR ATTR_NAME="z_deleted" IS_USER_CREATED="false" FEAT_INDEX="0"/>
-#! <XFORM_ATTR ATTR_NAME="folder" IS_USER_CREATED="false" FEAT_INDEX="0"/>
-#! <XFORM_ATTR ATTR_NAME="DRUCKZONE_ID" IS_USER_CREATED="false" FEAT_INDEX="0"/>
-#! <XFORM_ATTR ATTR_NAME="material_ext_diam" IS_USER_CREATED="false" FEAT_INDEX="0"/>
-#! <XFORM_ATTR ATTR_NAME="material_int_diam" IS_USER_CREATED="false" FEAT_INDEX="0"/>
-#! <XFORM_ATTR ATTR_NAME="id_distributor" IS_USER_CREATED="false" FEAT_INDEX="0"/>
-#! <XFORM_ATTR ATTR_NAME="id" IS_USER_CREATED="false" FEAT_INDEX="0"/>
-#! <XFORM_ATTR ATTR_NAME="z_folio" IS_USER_CREATED="false" FEAT_INDEX="0"/>
-#! <XFORM_ATTR ATTR_NAME="GID" IS_USER_CREATED="false" FEAT_INDEX="0"/>
-#! <XFORM_ATTR ATTR_NAME="LAGEGENAUIGKEIT" IS_USER_CREATED="false" FEAT_INDEX="0"/>
-#! <XFORM_ATTR ATTR_NAME="MATERIAL" IS_USER_CREATED="false" FEAT_INDEX="0"/>
-#! <XFORM_ATTR ATTR_NAME="material_nominal_diam" IS_USER_CREATED="false" FEAT_INDEX="0"/>
-#! <XFORM_ATTR ATTR_NAME="status" IS_USER_CREATED="false" FEAT_INDEX="0"/>
-#! <XFORM_ATTR ATTR_NAME="length3d" IS_USER_CREATED="false" FEAT_INDEX="0"/>
-#! <XFORM_ATTR ATTR_NAME="TUYAU_PROTECTEUR" IS_USER_CREATED="false" FEAT_INDEX="0"/>
-#! <XFORM_ATTR ATTR_NAME="VERLEGEART" IS_USER_CREATED="false" FEAT_INDEX="0"/>
-#! <XFORM_ATTR ATTR_NAME="material_thickness" IS_USER_CREATED="false" FEAT_INDEX="0"/>
-#! <XFORM_ATTR ATTR_NAME="id_function" IS_USER_CREATED="false" FEAT_INDEX="0"/>
-#! <XFORM_ATTR ATTR_NAME="function" IS_USER_CREATED="false" FEAT_INDEX="0"/>
-#! <XFORM_ATTR ATTR_NAME="BEMERKUNG" IS_USER_CREATED="false" FEAT_INDEX="0"/>
-#! <XFORM_ATTR ATTR_NAME="pressure_nominal" IS_USER_CREATED="false" FEAT_INDEX="0"/>
-#! <XFORM_PARM PARM_NAME="NEW_VALUE" PARM_VALUE="1"/>
-#! <XFORM_PARM PARM_NAME="PARAMETERS_GROUP" PARM_VALUE=""/>
-#! <XFORM_PARM PARM_NAME="XFORMER_NAME" PARM_VALUE="distributor_SIGE"/>
-#! <XFORM_PARM PARM_NAME="SRC_ATTRS" PARM_VALUE="id_distributor"/>
-#! <XFORM_PARM PARM_NAME="TRANSFORMER_GROUP" PARM_VALUE=""/>
-#! </TRANSFORMER>
-#! <TRANSFORMER
 #! IDENTIFIER="69"
 #! TYPE="SubDocumentTransformer"
 #! VERSION="0"
 #! POSITION="652 -1755"
-#! ORDER="53"
+#! ORDER="51"
 #! PARMS_EDITED="false"
 #! ENABLED="true"
 #! >
@@ -2699,7 +2589,7 @@
 #! TYPE="AttributeFilter"
 #! VERSION="2"
 #! POSITION="340 -72"
-#! ORDER="54"
+#! ORDER="52"
 #! PARMS_EDITED="true"
 #! ENABLED="true"
 #! >
@@ -2943,7 +2833,7 @@
 #! TYPE="StringConcatenator"
 #! VERSION="5"
 #! POSITION="828 -181"
-#! ORDER="56"
+#! ORDER="54"
 #! PARMS_EDITED="true"
 #! ENABLED="true"
 #! >
@@ -3030,21 +2920,187 @@
 #! <XFORM_PARM PARM_NAME="VAL_ATTR" PARM_VALUE="remarks"/>
 #! </TRANSFORMER>
 #! <TRANSFORMER
-#! IDENTIFIER="61"
-#! TYPE="Logger"
-#! VERSION="2"
-#! POSITION="2975 -633"
-#! ORDER="57"
+#! IDENTIFIER="101"
+#! TYPE="NullAttributeReplacer"
+#! VERSION="1"
+#! POSITION="976 -1237"
+#! ORDER="56"
 #! PARMS_EDITED="true"
 #! ENABLED="true"
 #! >
-#! <XFORM_PARM PARM_NAME="FEATURE_TYPE" PARM_VALUE=""/>
+#! <OUTPUT_FEAT NAME="OUTPUT"/>
+#! <FEAT_COLLAPSED COLLAPSED="0"/>
+#! <XFORM_ATTR ATTR_NAME="id_precision" IS_USER_CREATED="false" FEAT_INDEX="0"/>
+#! <XFORM_ATTR ATTR_NAME="id_status" IS_USER_CREATED="false" FEAT_INDEX="0"/>
+#! <XFORM_ATTR ATTR_NAME="joined_material_text" IS_USER_CREATED="false" FEAT_INDEX="0"/>
+#! <XFORM_ATTR ATTR_NAME="id_material" IS_USER_CREATED="false" FEAT_INDEX="0"/>
+#! <XFORM_ATTR ATTR_NAME="short_name" IS_USER_CREATED="false" FEAT_INDEX="0"/>
+#! <XFORM_ATTR ATTR_NAME="name" IS_USER_CREATED="false" FEAT_INDEX="0"/>
+#! <XFORM_ATTR ATTR_NAME="diameter" IS_USER_CREATED="false" FEAT_INDEX="0"/>
+#! <XFORM_ATTR ATTR_NAME="diameter_internal" IS_USER_CREATED="false" FEAT_INDEX="0"/>
+#! <XFORM_ATTR ATTR_NAME="diameter_external" IS_USER_CREATED="false" FEAT_INDEX="0"/>
+#! <XFORM_ATTR ATTR_NAME="_fancy_name" IS_USER_CREATED="false" FEAT_INDEX="0"/>
+#! <XFORM_ATTR ATTR_NAME="id_protection" IS_USER_CREATED="false" FEAT_INDEX="0"/>
+#! <XFORM_ATTR ATTR_NAME="remarks" IS_USER_CREATED="false" FEAT_INDEX="0"/>
+#! <XFORM_ATTR ATTR_NAME="year" IS_USER_CREATED="false" FEAT_INDEX="0"/>
+#! <XFORM_ATTR ATTR_NAME="coating_internal_material_id" IS_USER_CREATED="false" FEAT_INDEX="0"/>
+#! <XFORM_ATTR ATTR_NAME="coating_external_material_id" IS_USER_CREATED="false" FEAT_INDEX="0"/>
+#! <XFORM_ATTR ATTR_NAME="z_deleted" IS_USER_CREATED="false" FEAT_INDEX="0"/>
+#! <XFORM_ATTR ATTR_NAME="folder" IS_USER_CREATED="false" FEAT_INDEX="0"/>
+#! <XFORM_ATTR ATTR_NAME="DRUCKZONE_ID" IS_USER_CREATED="false" FEAT_INDEX="0"/>
+#! <XFORM_ATTR ATTR_NAME="material_ext_diam" IS_USER_CREATED="false" FEAT_INDEX="0"/>
+#! <XFORM_ATTR ATTR_NAME="material_int_diam" IS_USER_CREATED="false" FEAT_INDEX="0"/>
+#! <XFORM_ATTR ATTR_NAME="id_distributor" IS_USER_CREATED="false" FEAT_INDEX="0"/>
+#! <XFORM_ATTR ATTR_NAME="id" IS_USER_CREATED="false" FEAT_INDEX="0"/>
+#! <XFORM_ATTR ATTR_NAME="z_folio" IS_USER_CREATED="false" FEAT_INDEX="0"/>
+#! <XFORM_ATTR ATTR_NAME="GID" IS_USER_CREATED="false" FEAT_INDEX="0"/>
+#! <XFORM_ATTR ATTR_NAME="LAGEGENAUIGKEIT" IS_USER_CREATED="false" FEAT_INDEX="0"/>
+#! <XFORM_ATTR ATTR_NAME="MATERIAL" IS_USER_CREATED="false" FEAT_INDEX="0"/>
+#! <XFORM_ATTR ATTR_NAME="material_nominal_diam" IS_USER_CREATED="false" FEAT_INDEX="0"/>
+#! <XFORM_ATTR ATTR_NAME="status" IS_USER_CREATED="false" FEAT_INDEX="0"/>
+#! <XFORM_ATTR ATTR_NAME="length3d" IS_USER_CREATED="false" FEAT_INDEX="0"/>
+#! <XFORM_ATTR ATTR_NAME="TUYAU_PROTECTEUR" IS_USER_CREATED="false" FEAT_INDEX="0"/>
+#! <XFORM_ATTR ATTR_NAME="VERLEGEART" IS_USER_CREATED="false" FEAT_INDEX="0"/>
+#! <XFORM_ATTR ATTR_NAME="material_thickness" IS_USER_CREATED="false" FEAT_INDEX="0"/>
+#! <XFORM_ATTR ATTR_NAME="id_function" IS_USER_CREATED="false" FEAT_INDEX="0"/>
+#! <XFORM_ATTR ATTR_NAME="function" IS_USER_CREATED="false" FEAT_INDEX="0"/>
+#! <XFORM_ATTR ATTR_NAME="BEMERKUNG" IS_USER_CREATED="false" FEAT_INDEX="0"/>
+#! <XFORM_ATTR ATTR_NAME="pressure_nominal" IS_USER_CREATED="false" FEAT_INDEX="0"/>
+#! <XFORM_PARM PARM_NAME="NEW_VALUE" PARM_VALUE="1"/>
 #! <XFORM_PARM PARM_NAME="PARAMETERS_GROUP" PARM_VALUE=""/>
-#! <XFORM_PARM PARM_NAME="XFORMER_NAME" PARM_VALUE="ErrorFunction"/>
+#! <XFORM_PARM PARM_NAME="XFORMER_NAME" PARM_VALUE="distributor_SIGE"/>
+#! <XFORM_PARM PARM_NAME="SRC_ATTRS" PARM_VALUE="id_distributor"/>
 #! <XFORM_PARM PARM_NAME="TRANSFORMER_GROUP" PARM_VALUE=""/>
-#! <XFORM_PARM PARM_NAME="MESSAGE" PARM_VALUE="ErrorFunction:"/>
-#! <XFORM_PARM PARM_NAME="MAXFEATS" PARM_VALUE="20"/>
-#! <XFORM_PARM PARM_NAME="MAXCOORDS" PARM_VALUE="30"/>
+#! </TRANSFORMER>
+#! <TRANSFORMER
+#! IDENTIFIER="75"
+#! TYPE="SubDocumentTransformer"
+#! VERSION="0"
+#! POSITION="1394 -498"
+#! ORDER="58"
+#! PARMS_EDITED="false"
+#! ENABLED="true"
+#! >
+#! <OUTPUT_FEAT NAME="ok"/>
+#! <FEAT_COLLAPSED COLLAPSED="0"/>
+#! <XFORM_ATTR ATTR_NAME="id_status" IS_USER_CREATED="false" FEAT_INDEX="0"/>
+#! <XFORM_ATTR ATTR_NAME="joined_material_text" IS_USER_CREATED="false" FEAT_INDEX="0"/>
+#! <XFORM_ATTR ATTR_NAME="id_material" IS_USER_CREATED="false" FEAT_INDEX="0"/>
+#! <XFORM_ATTR ATTR_NAME="short_name" IS_USER_CREATED="false" FEAT_INDEX="0"/>
+#! <XFORM_ATTR ATTR_NAME="name" IS_USER_CREATED="false" FEAT_INDEX="0"/>
+#! <XFORM_ATTR ATTR_NAME="diameter" IS_USER_CREATED="false" FEAT_INDEX="0"/>
+#! <XFORM_ATTR ATTR_NAME="diameter_internal" IS_USER_CREATED="false" FEAT_INDEX="0"/>
+#! <XFORM_ATTR ATTR_NAME="diameter_external" IS_USER_CREATED="false" FEAT_INDEX="0"/>
+#! <XFORM_ATTR ATTR_NAME="_fancy_name" IS_USER_CREATED="false" FEAT_INDEX="0"/>
+#! <XFORM_ATTR ATTR_NAME="id_protection" IS_USER_CREATED="false" FEAT_INDEX="0"/>
+#! <XFORM_ATTR ATTR_NAME="remarks" IS_USER_CREATED="false" FEAT_INDEX="0"/>
+#! <XFORM_ATTR ATTR_NAME="BAUJAHR" IS_USER_CREATED="false" FEAT_INDEX="0"/>
+#! <XFORM_ATTR ATTR_NAME="BESCHICHTUNG_AUSSEN" IS_USER_CREATED="false" FEAT_INDEX="0"/>
+#! <XFORM_ATTR ATTR_NAME="BESCHICHTUNG_INNEN" IS_USER_CREATED="false" FEAT_INDEX="0"/>
+#! <XFORM_ATTR ATTR_NAME="DELETED" IS_USER_CREATED="false" FEAT_INDEX="0"/>
+#! <XFORM_ATTR ATTR_NAME="DOSSIER" IS_USER_CREATED="false" FEAT_INDEX="0"/>
+#! <XFORM_ATTR ATTR_NAME="DRUCKZONE_ID" IS_USER_CREATED="false" FEAT_INDEX="0"/>
+#! <XFORM_ATTR ATTR_NAME="DURCHMESSER_AUSSEN" IS_USER_CREATED="false" FEAT_INDEX="0"/>
+#! <XFORM_ATTR ATTR_NAME="DURCHMESSER_INNEN" IS_USER_CREATED="false" FEAT_INDEX="0"/>
+#! <XFORM_ATTR ATTR_NAME="EIGENTUMSVERHAELTNIS" IS_USER_CREATED="false" FEAT_INDEX="0"/>
+#! <XFORM_ATTR ATTR_NAME="FID" IS_USER_CREATED="false" FEAT_INDEX="0"/>
+#! <XFORM_ATTR ATTR_NAME="FOLIO" IS_USER_CREATED="false" FEAT_INDEX="0"/>
+#! <XFORM_ATTR ATTR_NAME="GID" IS_USER_CREATED="false" FEAT_INDEX="0"/>
+#! <XFORM_ATTR ATTR_NAME="LAGEGENAUIGKEIT" IS_USER_CREATED="false" FEAT_INDEX="0"/>
+#! <XFORM_ATTR ATTR_NAME="MATERIAL" IS_USER_CREATED="false" FEAT_INDEX="0"/>
+#! <XFORM_ATTR ATTR_NAME="NENNDRUCK" IS_USER_CREATED="false" FEAT_INDEX="0"/>
+#! <XFORM_ATTR ATTR_NAME="NENNWEITE" IS_USER_CREATED="false" FEAT_INDEX="0"/>
+#! <XFORM_ATTR ATTR_NAME="STATUS" IS_USER_CREATED="false" FEAT_INDEX="0"/>
+#! <XFORM_ATTR ATTR_NAME="STRANGLAENGE_BERECHNET" IS_USER_CREATED="false" FEAT_INDEX="0"/>
+#! <XFORM_ATTR ATTR_NAME="TUYAU_PROTECTEUR" IS_USER_CREATED="false" FEAT_INDEX="0"/>
+#! <XFORM_ATTR ATTR_NAME="VERLEGEART" IS_USER_CREATED="false" FEAT_INDEX="0"/>
+#! <XFORM_ATTR ATTR_NAME="WANDSTAERKE" IS_USER_CREATED="false" FEAT_INDEX="0"/>
+#! <XFORM_ATTR ATTR_NAME="id_function" IS_USER_CREATED="false" FEAT_INDEX="0"/>
+#! <XFORM_ATTR ATTR_NAME="function" IS_USER_CREATED="false" FEAT_INDEX="0"/>
+#! <XFORM_ATTR ATTR_NAME="BEMERKUNG" IS_USER_CREATED="false" FEAT_INDEX="0"/>
+#! <OUTPUT_FEAT NAME="material_error"/>
+#! <FEAT_COLLAPSED COLLAPSED="1"/>
+#! <XFORM_ATTR ATTR_NAME="id_status" IS_USER_CREATED="false" FEAT_INDEX="1"/>
+#! <XFORM_ATTR ATTR_NAME="joined_material_text" IS_USER_CREATED="false" FEAT_INDEX="1"/>
+#! <XFORM_ATTR ATTR_NAME="id_protection" IS_USER_CREATED="false" FEAT_INDEX="1"/>
+#! <XFORM_ATTR ATTR_NAME="remarks" IS_USER_CREATED="false" FEAT_INDEX="1"/>
+#! <XFORM_ATTR ATTR_NAME="BAUJAHR" IS_USER_CREATED="false" FEAT_INDEX="1"/>
+#! <XFORM_ATTR ATTR_NAME="BESCHICHTUNG_AUSSEN" IS_USER_CREATED="false" FEAT_INDEX="1"/>
+#! <XFORM_ATTR ATTR_NAME="BESCHICHTUNG_INNEN" IS_USER_CREATED="false" FEAT_INDEX="1"/>
+#! <XFORM_ATTR ATTR_NAME="DELETED" IS_USER_CREATED="false" FEAT_INDEX="1"/>
+#! <XFORM_ATTR ATTR_NAME="DOSSIER" IS_USER_CREATED="false" FEAT_INDEX="1"/>
+#! <XFORM_ATTR ATTR_NAME="DRUCKZONE_ID" IS_USER_CREATED="false" FEAT_INDEX="1"/>
+#! <XFORM_ATTR ATTR_NAME="DURCHMESSER_AUSSEN" IS_USER_CREATED="false" FEAT_INDEX="1"/>
+#! <XFORM_ATTR ATTR_NAME="DURCHMESSER_INNEN" IS_USER_CREATED="false" FEAT_INDEX="1"/>
+#! <XFORM_ATTR ATTR_NAME="EIGENTUMSVERHAELTNIS" IS_USER_CREATED="false" FEAT_INDEX="1"/>
+#! <XFORM_ATTR ATTR_NAME="FID" IS_USER_CREATED="false" FEAT_INDEX="1"/>
+#! <XFORM_ATTR ATTR_NAME="FOLIO" IS_USER_CREATED="false" FEAT_INDEX="1"/>
+#! <XFORM_ATTR ATTR_NAME="GID" IS_USER_CREATED="false" FEAT_INDEX="1"/>
+#! <XFORM_ATTR ATTR_NAME="LAGEGENAUIGKEIT" IS_USER_CREATED="false" FEAT_INDEX="1"/>
+#! <XFORM_ATTR ATTR_NAME="MATERIAL" IS_USER_CREATED="false" FEAT_INDEX="1"/>
+#! <XFORM_ATTR ATTR_NAME="NENNDRUCK" IS_USER_CREATED="false" FEAT_INDEX="1"/>
+#! <XFORM_ATTR ATTR_NAME="NENNWEITE" IS_USER_CREATED="false" FEAT_INDEX="1"/>
+#! <XFORM_ATTR ATTR_NAME="STATUS" IS_USER_CREATED="false" FEAT_INDEX="1"/>
+#! <XFORM_ATTR ATTR_NAME="STRANGLAENGE_BERECHNET" IS_USER_CREATED="false" FEAT_INDEX="1"/>
+#! <XFORM_ATTR ATTR_NAME="TUYAU_PROTECTEUR" IS_USER_CREATED="false" FEAT_INDEX="1"/>
+#! <XFORM_ATTR ATTR_NAME="VERLEGEART" IS_USER_CREATED="false" FEAT_INDEX="1"/>
+#! <XFORM_ATTR ATTR_NAME="WANDSTAERKE" IS_USER_CREATED="false" FEAT_INDEX="1"/>
+#! <XFORM_ATTR ATTR_NAME="id_function" IS_USER_CREATED="false" FEAT_INDEX="1"/>
+#! <XFORM_ATTR ATTR_NAME="function" IS_USER_CREATED="false" FEAT_INDEX="1"/>
+#! <XFORM_ATTR ATTR_NAME="BEMERKUNG" IS_USER_CREATED="false" FEAT_INDEX="1"/>
+#! <XFORM_PARM PARM_NAME="SUB_DOC_NAME" PARM_VALUE="pipe_material"/>
+#! <XFORM_PARM PARM_NAME="XFORMER_NAME" PARM_VALUE="pipe_material"/>
+#! <XFORM_PARM PARM_NAME="__COMPOUND_PARAMETERS" PARM_VALUE=""/>
+#! <XFORM_PARM PARM_NAME="TRANSFORMER_GROUP" PARM_VALUE=""/>
+#! </TRANSFORMER>
+#! <TRANSFORMER
+#! IDENTIFIER="8"
+#! TYPE="AttributeRenamer"
+#! VERSION="1"
+#! POSITION="528 -535"
+#! ORDER="59"
+#! PARMS_EDITED="true"
+#! ENABLED="true"
+#! >
+#! <OUTPUT_FEAT NAME="OUTPUT"/>
+#! <FEAT_COLLAPSED COLLAPSED="0"/>
+#! <XFORM_ATTR ATTR_NAME="id_function" IS_USER_CREATED="false" FEAT_INDEX="0"/>
+#! <XFORM_ATTR ATTR_NAME="function" IS_USER_CREATED="false" FEAT_INDEX="0"/>
+#! <XFORM_ATTR ATTR_NAME="joined_material_text" IS_USER_CREATED="false" FEAT_INDEX="0"/>
+#! <XFORM_ATTR ATTR_NAME="year" IS_USER_CREATED="false" FEAT_INDEX="0"/>
+#! <XFORM_ATTR ATTR_NAME="BEMERKUNG" IS_USER_CREATED="false" FEAT_INDEX="0"/>
+#! <XFORM_ATTR ATTR_NAME="coating_internal_material_id" IS_USER_CREATED="false" FEAT_INDEX="0"/>
+#! <XFORM_ATTR ATTR_NAME="coating_external_material_id" IS_USER_CREATED="false" FEAT_INDEX="0"/>
+#! <XFORM_ATTR ATTR_NAME="z_deleted" IS_USER_CREATED="false" FEAT_INDEX="0"/>
+#! <XFORM_ATTR ATTR_NAME="folder" IS_USER_CREATED="false" FEAT_INDEX="0"/>
+#! <XFORM_ATTR ATTR_NAME="DRUCKZONE_ID" IS_USER_CREATED="false" FEAT_INDEX="0"/>
+#! <XFORM_ATTR ATTR_NAME="material_ext_diam" IS_USER_CREATED="false" FEAT_INDEX="0"/>
+#! <XFORM_ATTR ATTR_NAME="material_int_diam" IS_USER_CREATED="false" FEAT_INDEX="0"/>
+#! <XFORM_ATTR ATTR_NAME="id_distributor" IS_USER_CREATED="false" FEAT_INDEX="0"/>
+#! <XFORM_ATTR ATTR_NAME="id" IS_USER_CREATED="false" FEAT_INDEX="0"/>
+#! <XFORM_ATTR ATTR_NAME="z_folio" IS_USER_CREATED="false" FEAT_INDEX="0"/>
+#! <XFORM_ATTR ATTR_NAME="GID" IS_USER_CREATED="false" FEAT_INDEX="0"/>
+#! <XFORM_ATTR ATTR_NAME="LAGEGENAUIGKEIT" IS_USER_CREATED="false" FEAT_INDEX="0"/>
+#! <XFORM_ATTR ATTR_NAME="MATERIAL" IS_USER_CREATED="false" FEAT_INDEX="0"/>
+#! <XFORM_ATTR ATTR_NAME="pressure_nominal" IS_USER_CREATED="false" FEAT_INDEX="0"/>
+#! <XFORM_ATTR ATTR_NAME="material_nominal_diam" IS_USER_CREATED="false" FEAT_INDEX="0"/>
+#! <XFORM_ATTR ATTR_NAME="status" IS_USER_CREATED="false" FEAT_INDEX="0"/>
+#! <XFORM_ATTR ATTR_NAME="length3d" IS_USER_CREATED="false" FEAT_INDEX="0"/>
+#! <XFORM_ATTR ATTR_NAME="TUYAU_PROTECTEUR" IS_USER_CREATED="false" FEAT_INDEX="0"/>
+#! <XFORM_ATTR ATTR_NAME="VERLEGEART" IS_USER_CREATED="false" FEAT_INDEX="0"/>
+#! <XFORM_ATTR ATTR_NAME="material_thickness" IS_USER_CREATED="false" FEAT_INDEX="0"/>
+#! <XFORM_ATTR ATTR_NAME="remarks" IS_USER_CREATED="false" FEAT_INDEX="0"/>
+#! <XFORM_ATTR ATTR_NAME="id_status" IS_USER_CREATED="false" FEAT_INDEX="0"/>
+#! <XFORM_ATTR ATTR_NAME="id_protection" IS_USER_CREATED="false" FEAT_INDEX="0"/>
+#! <XFORM_ATTR ATTR_NAME="id_material" IS_USER_CREATED="false" FEAT_INDEX="0"/>
+#! <XFORM_ATTR ATTR_NAME="short_name" IS_USER_CREATED="false" FEAT_INDEX="0"/>
+#! <XFORM_ATTR ATTR_NAME="name" IS_USER_CREATED="false" FEAT_INDEX="0"/>
+#! <XFORM_ATTR ATTR_NAME="diameter" IS_USER_CREATED="false" FEAT_INDEX="0"/>
+#! <XFORM_ATTR ATTR_NAME="diameter_internal" IS_USER_CREATED="false" FEAT_INDEX="0"/>
+#! <XFORM_ATTR ATTR_NAME="diameter_external" IS_USER_CREATED="false" FEAT_INDEX="0"/>
+#! <XFORM_ATTR ATTR_NAME="_fancy_name" IS_USER_CREATED="false" FEAT_INDEX="0"/>
+#! <XFORM_PARM PARM_NAME="XFORMER_NAME" PARM_VALUE="AttributeRenamer"/>
+#! <XFORM_PARM PARM_NAME="ATTR_LIST" PARM_VALUE="coating_internal_material_id,BESCHICHTUNG_AUSSEN,coating_external_material_id,BESCHICHTUNG_INNEN,material_ext_diam,DURCHMESSER_AUSSEN,material_int_diam,DURCHMESSER_INNEN,id_distributor,EIGENTUMSVERHAELTNIS,pressure_nominal,NENNDRUCK,material_nominal_diam,NENNWEITE,length3d,STRANGLAENGE_BERECHNET,material_thickness,WANDSTAERKE,year,BAUJAHR,id,FID,folder,DOSSIER,z_folio,FOLIO,status,STATUS,z_deleted,DELETED"/>
 #! </TRANSFORMER>
 #! </TRANSFORMERS>
 #! <FEAT_LINKS>
@@ -3247,18 +3303,27 @@
 #! EXTRA_POINTS=""
 #! />
 #! <FEAT_LINK
-#! IDENTIFIER="70"
-#! SOURCE_NODE="68"
-#! TARGET_NODE="61"
+#! IDENTIFIER="76"
+#! SOURCE_NODE="75"
+#! TARGET_NODE="74"
 #! SOURCE_PORT_DESC="fo 1"
-#! TARGET_PORT_DESC="fi 0"
+#! TARGET_PORT_DESC="-1"
 #! ENABLED="true"
 #! EXTRA_POINTS=""
 #! />
 #! <FEAT_LINK
-#! IDENTIFIER="76"
-#! SOURCE_NODE="75"
-#! TARGET_NODE="74"
+#! IDENTIFIER="70"
+#! SOURCE_NODE="68"
+#! TARGET_NODE="61"
+#! SOURCE_PORT_DESC="fo 2"
+#! TARGET_PORT_DESC="-1"
+#! ENABLED="true"
+#! EXTRA_POINTS=""
+#! />
+#! <FEAT_LINK
+#! IDENTIFIER="77"
+#! SOURCE_NODE="68"
+#! TARGET_NODE="61"
 #! SOURCE_PORT_DESC="fo 1"
 #! TARGET_PORT_DESC="-1"
 #! ENABLED="true"
@@ -3313,7 +3378,7 @@
 #! <COMMENT
 #! IDENTIFIER="5"
 #! COMMENT_VALUE="Concat MATERIAL NENNWEITE"
-#! POSITION="2607 -844"
+#! POSITION="2869 -781"
 #! ORDER="21"
 #! FOLLOW_ANCHOR="true"
 #! INFO_NODE="false"
@@ -3383,8 +3448,8 @@
 #! <COMMENT
 #! IDENTIFIER="54"
 #! COMMENT_VALUE="Set joined_material =  Inconnu"
-#! POSITION="219 -972"
-#! ORDER="35"
+#! POSITION="79 -978"
+#! ORDER="34"
 #! FOLLOW_ANCHOR="true"
 #! INFO_NODE="false"
 #! COMMENT_TYPE="REGULAR"
@@ -3394,7 +3459,7 @@
 #! IDENTIFIER="47"
 #! COMMENT_VALUE="Inonnu inconnu =&gt; Inconnu"
 #! POSITION="399 -852"
-#! ORDER="39"
+#! ORDER="37"
 #! FOLLOW_ANCHOR="true"
 #! INFO_NODE="false"
 #! COMMENT_TYPE="REGULAR"
@@ -3695,54 +3760,11 @@
 #! <XFORM_PARM PARM_NAME="TRANSFORMER_GROUP" PARM_VALUE=""/>
 #! </TRANSFORMER>
 #! <TRANSFORMER
-#! IDENTIFIER="1"
-#! TYPE="StringConcatenator"
-#! VERSION="5"
-#! POSITION="2607 -924"
-#! ORDER="32"
-#! PARMS_EDITED="true"
-#! ENABLED="true"
-#! >
-#! <OUTPUT_FEAT NAME="OUTPUT"/>
-#! <FEAT_COLLAPSED COLLAPSED="0"/>
-#! <XFORM_ATTR ATTR_NAME="joined_material_text" IS_USER_CREATED="false" FEAT_INDEX="0"/>
-#! <XFORM_ATTR ATTR_NAME="id_status" IS_USER_CREATED="false" FEAT_INDEX="0"/>
-#! <XFORM_ATTR ATTR_NAME="id_protection" IS_USER_CREATED="false" FEAT_INDEX="0"/>
-#! <XFORM_ATTR ATTR_NAME="remarks" IS_USER_CREATED="false" FEAT_INDEX="0"/>
-#! <XFORM_ATTR ATTR_NAME="BAUJAHR" IS_USER_CREATED="false" FEAT_INDEX="0"/>
-#! <XFORM_ATTR ATTR_NAME="BESCHICHTUNG_AUSSEN" IS_USER_CREATED="false" FEAT_INDEX="0"/>
-#! <XFORM_ATTR ATTR_NAME="BESCHICHTUNG_INNEN" IS_USER_CREATED="false" FEAT_INDEX="0"/>
-#! <XFORM_ATTR ATTR_NAME="DELETED" IS_USER_CREATED="false" FEAT_INDEX="0"/>
-#! <XFORM_ATTR ATTR_NAME="DOSSIER" IS_USER_CREATED="false" FEAT_INDEX="0"/>
-#! <XFORM_ATTR ATTR_NAME="DRUCKZONE_ID" IS_USER_CREATED="false" FEAT_INDEX="0"/>
-#! <XFORM_ATTR ATTR_NAME="DURCHMESSER_AUSSEN" IS_USER_CREATED="false" FEAT_INDEX="0"/>
-#! <XFORM_ATTR ATTR_NAME="DURCHMESSER_INNEN" IS_USER_CREATED="false" FEAT_INDEX="0"/>
-#! <XFORM_ATTR ATTR_NAME="EIGENTUMSVERHAELTNIS" IS_USER_CREATED="false" FEAT_INDEX="0"/>
-#! <XFORM_ATTR ATTR_NAME="FID" IS_USER_CREATED="false" FEAT_INDEX="0"/>
-#! <XFORM_ATTR ATTR_NAME="FOLIO" IS_USER_CREATED="false" FEAT_INDEX="0"/>
-#! <XFORM_ATTR ATTR_NAME="GID" IS_USER_CREATED="false" FEAT_INDEX="0"/>
-#! <XFORM_ATTR ATTR_NAME="LAGEGENAUIGKEIT" IS_USER_CREATED="false" FEAT_INDEX="0"/>
-#! <XFORM_ATTR ATTR_NAME="MATERIAL" IS_USER_CREATED="false" FEAT_INDEX="0"/>
-#! <XFORM_ATTR ATTR_NAME="NENNDRUCK" IS_USER_CREATED="false" FEAT_INDEX="0"/>
-#! <XFORM_ATTR ATTR_NAME="NENNWEITE" IS_USER_CREATED="false" FEAT_INDEX="0"/>
-#! <XFORM_ATTR ATTR_NAME="STATUS" IS_USER_CREATED="false" FEAT_INDEX="0"/>
-#! <XFORM_ATTR ATTR_NAME="STRANGLAENGE_BERECHNET" IS_USER_CREATED="false" FEAT_INDEX="0"/>
-#! <XFORM_ATTR ATTR_NAME="TUYAU_PROTECTEUR" IS_USER_CREATED="false" FEAT_INDEX="0"/>
-#! <XFORM_ATTR ATTR_NAME="VERLEGEART" IS_USER_CREATED="false" FEAT_INDEX="0"/>
-#! <XFORM_ATTR ATTR_NAME="WANDSTAERKE" IS_USER_CREATED="false" FEAT_INDEX="0"/>
-#! <XFORM_ATTR ATTR_NAME="id_function" IS_USER_CREATED="false" FEAT_INDEX="0"/>
-#! <XFORM_ATTR ATTR_NAME="function" IS_USER_CREATED="false" FEAT_INDEX="0"/>
-#! <XFORM_ATTR ATTR_NAME="BEMERKUNG" IS_USER_CREATED="false" FEAT_INDEX="0"/>
-#! <XFORM_PARM PARM_NAME="PARM_LINE" PARM_VALUE="&amp;MATERIAL,&lt;space&gt;,&amp;NENNWEITE"/>
-#! <XFORM_PARM PARM_NAME="XFORMER_NAME" PARM_VALUE="StringConcatenator_2"/>
-#! <XFORM_PARM PARM_NAME="VAL_ATTR" PARM_VALUE="joined_material_text"/>
-#! </TRANSFORMER>
-#! <TRANSFORMER
 #! IDENTIFIER="2"
 #! TYPE="FeatureMerger"
 #! VERSION="8"
 #! POSITION="1307 -1552"
-#! ORDER="33"
+#! ORDER="32"
 #! PARMS_EDITED="true"
 #! ENABLED="true"
 #! >
@@ -3886,7 +3908,7 @@
 #! TYPE="AttributeRenamer"
 #! VERSION="1"
 #! POSITION="503 -1791"
-#! ORDER="34"
+#! ORDER="33"
 #! PARMS_EDITED="true"
 #! ENABLED="true"
 #! >
@@ -3906,7 +3928,7 @@
 #! TYPE="Tester"
 #! VERSION="1"
 #! POSITION="894 -500"
-#! ORDER="36"
+#! ORDER="35"
 #! PARMS_EDITED="true"
 #! ENABLED="true"
 #! >
@@ -3976,56 +3998,11 @@
 #! <XFORM_PARM PARM_NAME="TEST_MODE" PARM_VALUE="Automatic"/>
 #! </TRANSFORMER>
 #! <TRANSFORMER
-#! IDENTIFIER="36"
-#! TYPE="AttributeSetter"
-#! VERSION="2"
-#! POSITION="219 -1052"
-#! ORDER="37"
-#! PARMS_EDITED="true"
-#! ENABLED="true"
-#! >
-#! <OUTPUT_FEAT NAME="OUTPUT"/>
-#! <FEAT_COLLAPSED COLLAPSED="0"/>
-#! <XFORM_ATTR ATTR_NAME="joined_material_text" IS_USER_CREATED="false" FEAT_INDEX="0"/>
-#! <XFORM_ATTR ATTR_NAME="id_status" IS_USER_CREATED="false" FEAT_INDEX="0"/>
-#! <XFORM_ATTR ATTR_NAME="id_protection" IS_USER_CREATED="false" FEAT_INDEX="0"/>
-#! <XFORM_ATTR ATTR_NAME="remarks" IS_USER_CREATED="false" FEAT_INDEX="0"/>
-#! <XFORM_ATTR ATTR_NAME="BAUJAHR" IS_USER_CREATED="false" FEAT_INDEX="0"/>
-#! <XFORM_ATTR ATTR_NAME="BESCHICHTUNG_AUSSEN" IS_USER_CREATED="false" FEAT_INDEX="0"/>
-#! <XFORM_ATTR ATTR_NAME="BESCHICHTUNG_INNEN" IS_USER_CREATED="false" FEAT_INDEX="0"/>
-#! <XFORM_ATTR ATTR_NAME="DELETED" IS_USER_CREATED="false" FEAT_INDEX="0"/>
-#! <XFORM_ATTR ATTR_NAME="DOSSIER" IS_USER_CREATED="false" FEAT_INDEX="0"/>
-#! <XFORM_ATTR ATTR_NAME="DRUCKZONE_ID" IS_USER_CREATED="false" FEAT_INDEX="0"/>
-#! <XFORM_ATTR ATTR_NAME="DURCHMESSER_AUSSEN" IS_USER_CREATED="false" FEAT_INDEX="0"/>
-#! <XFORM_ATTR ATTR_NAME="DURCHMESSER_INNEN" IS_USER_CREATED="false" FEAT_INDEX="0"/>
-#! <XFORM_ATTR ATTR_NAME="EIGENTUMSVERHAELTNIS" IS_USER_CREATED="false" FEAT_INDEX="0"/>
-#! <XFORM_ATTR ATTR_NAME="FID" IS_USER_CREATED="false" FEAT_INDEX="0"/>
-#! <XFORM_ATTR ATTR_NAME="FOLIO" IS_USER_CREATED="false" FEAT_INDEX="0"/>
-#! <XFORM_ATTR ATTR_NAME="GID" IS_USER_CREATED="false" FEAT_INDEX="0"/>
-#! <XFORM_ATTR ATTR_NAME="LAGEGENAUIGKEIT" IS_USER_CREATED="false" FEAT_INDEX="0"/>
-#! <XFORM_ATTR ATTR_NAME="MATERIAL" IS_USER_CREATED="false" FEAT_INDEX="0"/>
-#! <XFORM_ATTR ATTR_NAME="NENNDRUCK" IS_USER_CREATED="false" FEAT_INDEX="0"/>
-#! <XFORM_ATTR ATTR_NAME="NENNWEITE" IS_USER_CREATED="false" FEAT_INDEX="0"/>
-#! <XFORM_ATTR ATTR_NAME="STATUS" IS_USER_CREATED="false" FEAT_INDEX="0"/>
-#! <XFORM_ATTR ATTR_NAME="STRANGLAENGE_BERECHNET" IS_USER_CREATED="false" FEAT_INDEX="0"/>
-#! <XFORM_ATTR ATTR_NAME="TUYAU_PROTECTEUR" IS_USER_CREATED="false" FEAT_INDEX="0"/>
-#! <XFORM_ATTR ATTR_NAME="VERLEGEART" IS_USER_CREATED="false" FEAT_INDEX="0"/>
-#! <XFORM_ATTR ATTR_NAME="WANDSTAERKE" IS_USER_CREATED="false" FEAT_INDEX="0"/>
-#! <XFORM_ATTR ATTR_NAME="id_function" IS_USER_CREATED="false" FEAT_INDEX="0"/>
-#! <XFORM_ATTR ATTR_NAME="function" IS_USER_CREATED="false" FEAT_INDEX="0"/>
-#! <XFORM_ATTR ATTR_NAME="BEMERKUNG" IS_USER_CREATED="false" FEAT_INDEX="0"/>
-#! <XFORM_PARM PARM_NAME="VAL" PARM_VALUE="Inconnu"/>
-#! <XFORM_PARM PARM_NAME="DEST_ATTR" PARM_VALUE="&amp;joined_material_text"/>
-#! <XFORM_PARM PARM_NAME="PARAMETERS_GROUP" PARM_VALUE=""/>
-#! <XFORM_PARM PARM_NAME="XFORMER_NAME" PARM_VALUE="AttributeSetter_3"/>
-#! <XFORM_PARM PARM_NAME="TRANSFORMER_GROUP" PARM_VALUE=""/>
-#! </TRANSFORMER>
-#! <TRANSFORMER
 #! IDENTIFIER="55"
 #! TYPE="Logger"
 #! VERSION="2"
 #! POSITION="2265 -2141"
-#! ORDER="38"
+#! ORDER="36"
 #! PARMS_EDITED="true"
 #! ENABLED="true"
 #! >
@@ -4042,7 +4019,7 @@
 #! TYPE="AttributeFilter"
 #! VERSION="2"
 #! POSITION="715 -926"
-#! ORDER="40"
+#! ORDER="38"
 #! PARMS_EDITED="true"
 #! ENABLED="true"
 #! >
@@ -4139,6 +4116,94 @@
 #! <XFORM_PARM PARM_NAME="XFORMER_NAME" PARM_VALUE="AttributeFilter_3"/>
 #! <XFORM_PARM PARM_NAME="ATTR_NAME" PARM_VALUE="joined_material_text"/>
 #! <XFORM_PARM PARM_NAME="ATTR_VALUES" PARM_VALUE="Inconnu&lt;space&gt;inconnu"/>
+#! </TRANSFORMER>
+#! <TRANSFORMER
+#! IDENTIFIER="36"
+#! TYPE="AttributeSetter"
+#! VERSION="2"
+#! POSITION="79 -1058"
+#! ORDER="43"
+#! PARMS_EDITED="true"
+#! ENABLED="true"
+#! >
+#! <OUTPUT_FEAT NAME="OUTPUT"/>
+#! <FEAT_COLLAPSED COLLAPSED="0"/>
+#! <XFORM_ATTR ATTR_NAME="joined_material_text" IS_USER_CREATED="false" FEAT_INDEX="0"/>
+#! <XFORM_ATTR ATTR_NAME="id_status" IS_USER_CREATED="false" FEAT_INDEX="0"/>
+#! <XFORM_ATTR ATTR_NAME="id_protection" IS_USER_CREATED="false" FEAT_INDEX="0"/>
+#! <XFORM_ATTR ATTR_NAME="remarks" IS_USER_CREATED="false" FEAT_INDEX="0"/>
+#! <XFORM_ATTR ATTR_NAME="BAUJAHR" IS_USER_CREATED="false" FEAT_INDEX="0"/>
+#! <XFORM_ATTR ATTR_NAME="BESCHICHTUNG_AUSSEN" IS_USER_CREATED="false" FEAT_INDEX="0"/>
+#! <XFORM_ATTR ATTR_NAME="BESCHICHTUNG_INNEN" IS_USER_CREATED="false" FEAT_INDEX="0"/>
+#! <XFORM_ATTR ATTR_NAME="DELETED" IS_USER_CREATED="false" FEAT_INDEX="0"/>
+#! <XFORM_ATTR ATTR_NAME="DOSSIER" IS_USER_CREATED="false" FEAT_INDEX="0"/>
+#! <XFORM_ATTR ATTR_NAME="DRUCKZONE_ID" IS_USER_CREATED="false" FEAT_INDEX="0"/>
+#! <XFORM_ATTR ATTR_NAME="DURCHMESSER_AUSSEN" IS_USER_CREATED="false" FEAT_INDEX="0"/>
+#! <XFORM_ATTR ATTR_NAME="DURCHMESSER_INNEN" IS_USER_CREATED="false" FEAT_INDEX="0"/>
+#! <XFORM_ATTR ATTR_NAME="EIGENTUMSVERHAELTNIS" IS_USER_CREATED="false" FEAT_INDEX="0"/>
+#! <XFORM_ATTR ATTR_NAME="FID" IS_USER_CREATED="false" FEAT_INDEX="0"/>
+#! <XFORM_ATTR ATTR_NAME="FOLIO" IS_USER_CREATED="false" FEAT_INDEX="0"/>
+#! <XFORM_ATTR ATTR_NAME="GID" IS_USER_CREATED="false" FEAT_INDEX="0"/>
+#! <XFORM_ATTR ATTR_NAME="LAGEGENAUIGKEIT" IS_USER_CREATED="false" FEAT_INDEX="0"/>
+#! <XFORM_ATTR ATTR_NAME="MATERIAL" IS_USER_CREATED="false" FEAT_INDEX="0"/>
+#! <XFORM_ATTR ATTR_NAME="NENNDRUCK" IS_USER_CREATED="false" FEAT_INDEX="0"/>
+#! <XFORM_ATTR ATTR_NAME="NENNWEITE" IS_USER_CREATED="false" FEAT_INDEX="0"/>
+#! <XFORM_ATTR ATTR_NAME="STATUS" IS_USER_CREATED="false" FEAT_INDEX="0"/>
+#! <XFORM_ATTR ATTR_NAME="STRANGLAENGE_BERECHNET" IS_USER_CREATED="false" FEAT_INDEX="0"/>
+#! <XFORM_ATTR ATTR_NAME="TUYAU_PROTECTEUR" IS_USER_CREATED="false" FEAT_INDEX="0"/>
+#! <XFORM_ATTR ATTR_NAME="VERLEGEART" IS_USER_CREATED="false" FEAT_INDEX="0"/>
+#! <XFORM_ATTR ATTR_NAME="WANDSTAERKE" IS_USER_CREATED="false" FEAT_INDEX="0"/>
+#! <XFORM_ATTR ATTR_NAME="id_function" IS_USER_CREATED="false" FEAT_INDEX="0"/>
+#! <XFORM_ATTR ATTR_NAME="function" IS_USER_CREATED="false" FEAT_INDEX="0"/>
+#! <XFORM_ATTR ATTR_NAME="BEMERKUNG" IS_USER_CREATED="false" FEAT_INDEX="0"/>
+#! <XFORM_PARM PARM_NAME="VAL" PARM_VALUE="Inconnu"/>
+#! <XFORM_PARM PARM_NAME="DEST_ATTR" PARM_VALUE="&amp;joined_material_text"/>
+#! <XFORM_PARM PARM_NAME="PARAMETERS_GROUP" PARM_VALUE=""/>
+#! <XFORM_PARM PARM_NAME="XFORMER_NAME" PARM_VALUE="AttributeSetter_3"/>
+#! <XFORM_PARM PARM_NAME="TRANSFORMER_GROUP" PARM_VALUE=""/>
+#! </TRANSFORMER>
+#! <TRANSFORMER
+#! IDENTIFIER="1"
+#! TYPE="StringConcatenator"
+#! VERSION="5"
+#! POSITION="2869 -861"
+#! ORDER="44"
+#! PARMS_EDITED="true"
+#! ENABLED="true"
+#! >
+#! <OUTPUT_FEAT NAME="OUTPUT"/>
+#! <FEAT_COLLAPSED COLLAPSED="0"/>
+#! <XFORM_ATTR ATTR_NAME="joined_material_text" IS_USER_CREATED="false" FEAT_INDEX="0"/>
+#! <XFORM_ATTR ATTR_NAME="id_status" IS_USER_CREATED="false" FEAT_INDEX="0"/>
+#! <XFORM_ATTR ATTR_NAME="id_protection" IS_USER_CREATED="false" FEAT_INDEX="0"/>
+#! <XFORM_ATTR ATTR_NAME="remarks" IS_USER_CREATED="false" FEAT_INDEX="0"/>
+#! <XFORM_ATTR ATTR_NAME="BAUJAHR" IS_USER_CREATED="false" FEAT_INDEX="0"/>
+#! <XFORM_ATTR ATTR_NAME="BESCHICHTUNG_AUSSEN" IS_USER_CREATED="false" FEAT_INDEX="0"/>
+#! <XFORM_ATTR ATTR_NAME="BESCHICHTUNG_INNEN" IS_USER_CREATED="false" FEAT_INDEX="0"/>
+#! <XFORM_ATTR ATTR_NAME="DELETED" IS_USER_CREATED="false" FEAT_INDEX="0"/>
+#! <XFORM_ATTR ATTR_NAME="DOSSIER" IS_USER_CREATED="false" FEAT_INDEX="0"/>
+#! <XFORM_ATTR ATTR_NAME="DRUCKZONE_ID" IS_USER_CREATED="false" FEAT_INDEX="0"/>
+#! <XFORM_ATTR ATTR_NAME="DURCHMESSER_AUSSEN" IS_USER_CREATED="false" FEAT_INDEX="0"/>
+#! <XFORM_ATTR ATTR_NAME="DURCHMESSER_INNEN" IS_USER_CREATED="false" FEAT_INDEX="0"/>
+#! <XFORM_ATTR ATTR_NAME="EIGENTUMSVERHAELTNIS" IS_USER_CREATED="false" FEAT_INDEX="0"/>
+#! <XFORM_ATTR ATTR_NAME="FID" IS_USER_CREATED="false" FEAT_INDEX="0"/>
+#! <XFORM_ATTR ATTR_NAME="FOLIO" IS_USER_CREATED="false" FEAT_INDEX="0"/>
+#! <XFORM_ATTR ATTR_NAME="GID" IS_USER_CREATED="false" FEAT_INDEX="0"/>
+#! <XFORM_ATTR ATTR_NAME="LAGEGENAUIGKEIT" IS_USER_CREATED="false" FEAT_INDEX="0"/>
+#! <XFORM_ATTR ATTR_NAME="MATERIAL" IS_USER_CREATED="false" FEAT_INDEX="0"/>
+#! <XFORM_ATTR ATTR_NAME="NENNDRUCK" IS_USER_CREATED="false" FEAT_INDEX="0"/>
+#! <XFORM_ATTR ATTR_NAME="NENNWEITE" IS_USER_CREATED="false" FEAT_INDEX="0"/>
+#! <XFORM_ATTR ATTR_NAME="STATUS" IS_USER_CREATED="false" FEAT_INDEX="0"/>
+#! <XFORM_ATTR ATTR_NAME="STRANGLAENGE_BERECHNET" IS_USER_CREATED="false" FEAT_INDEX="0"/>
+#! <XFORM_ATTR ATTR_NAME="TUYAU_PROTECTEUR" IS_USER_CREATED="false" FEAT_INDEX="0"/>
+#! <XFORM_ATTR ATTR_NAME="VERLEGEART" IS_USER_CREATED="false" FEAT_INDEX="0"/>
+#! <XFORM_ATTR ATTR_NAME="WANDSTAERKE" IS_USER_CREATED="false" FEAT_INDEX="0"/>
+#! <XFORM_ATTR ATTR_NAME="id_function" IS_USER_CREATED="false" FEAT_INDEX="0"/>
+#! <XFORM_ATTR ATTR_NAME="function" IS_USER_CREATED="false" FEAT_INDEX="0"/>
+#! <XFORM_ATTR ATTR_NAME="BEMERKUNG" IS_USER_CREATED="false" FEAT_INDEX="0"/>
+#! <XFORM_PARM PARM_NAME="PARM_LINE" PARM_VALUE="&amp;MATERIAL,&lt;space&gt;,&amp;NENNWEITE"/>
+#! <XFORM_PARM PARM_NAME="XFORMER_NAME" PARM_VALUE="StringConcatenator_2"/>
+#! <XFORM_PARM PARM_NAME="VAL_ATTR" PARM_VALUE="joined_material_text"/>
 #! </TRANSFORMER>
 #! </TRANSFORMERS>
 #! <SUBDOCUMENT_IOS>
@@ -4563,6 +4628,7 @@
 #! <XFORM_ATTR ATTR_NAME="BEMERKUNG" IS_USER_CREATED="false" FEAT_INDEX="2"/>
 #! <XFORM_ATTR ATTR_NAME="FUNKTION" IS_USER_CREATED="false" FEAT_INDEX="2"/>
 #! <OUTPUT_FEAT NAME="&lt;UNFILTERED&gt;"/>
+#! <FEAT_COLLAPSED COLLAPSED="3"/>
 #! <XFORM_ATTR ATTR_NAME="remarks" IS_USER_CREATED="false" FEAT_INDEX="3"/>
 #! <XFORM_ATTR ATTR_NAME="BAUJAHR" IS_USER_CREATED="false" FEAT_INDEX="3"/>
 #! <XFORM_ATTR ATTR_NAME="BESCHICHTUNG_AUSSEN" IS_USER_CREATED="false" FEAT_INDEX="3"/>
@@ -6071,7 +6137,7 @@
 #! </LOOKUP_TABLES>
 #! </WORKSPACE>
 #! 
-GUI IGNORE SourceDataset_ORACLE8I_DB_1,ORACLE8I_DB_IN_USER_NAME_ORACLE8I_DB_1,ORACLE8I_DB_IN_PASSWORD_ORACLE8I_DB_1,ORACLE8I_DB_IN_REMOVE_SCHEMA_QUALIFIER_ORACLE8I_DB_1,ORACLE8I_DB_IN_CHUNK_SIZE_ORACLE8I_DB_1,_ORACLE8I_DB_IN_BEGIN_SQL_ORACLE8I_DB_1,_ORACLE8I_DB_IN_END_SQL_ORACLE8I_DB_1,ORACLE8I_DB_IN_WORKSPACE_ORACLE8I_DB_1,SourceDataset_ORACLE8I_DB_2,ORACLE8I_DB_IN_USER_NAME_ORACLE8I_DB_2,ORACLE8I_DB_IN_PASSWORD_ORACLE8I_DB_2,ORACLE8I_DB_IN_REMOVE_SCHEMA_QUALIFIER_ORACLE8I_DB_2,ORACLE8I_DB_IN_CHUNK_SIZE_ORACLE8I_DB_2,_ORACLE8I_DB_IN_BEGIN_SQL_ORACLE8I_DB_2,_ORACLE8I_DB_IN_END_SQL_ORACLE8I_DB_2,ORACLE8I_DB_IN_WORKSPACE_ORACLE8I_DB_2,SourceDataset_POSTGRES_1,POSTGRES_IN_HOST_POSTGRES_1,POSTGRES_IN_PORT_POSTGRES_1,POSTGRES_IN_USER_NAME_POSTGRES_1,POSTGRES_IN_PASSWORD_POSTGRES_1,POSTGRES_IN_FEATURES_PER_FETCH_POSTGRES_1,SourceDataset_POSTGRES_2,POSTGRES_IN_HOST_POSTGRES_2,POSTGRES_IN_PORT_POSTGRES_2,POSTGRES_IN_USER_NAME_POSTGRES_2,POSTGRES_IN_PASSWORD_POSTGRES_2,POSTGRES_IN_FEATURES_PER_FETCH_POSTGRES_2,DestDataset_POSTGIS_1,POSTGIS_OUT_HOST_POSTGIS_1,POSTGIS_OUT_PORT_POSTGIS_1,POSTGIS_OUT_USER_NAME_POSTGIS_1,POSTGIS_OUT_PASSWORD_POSTGIS_1,POSTGIS_OUT_SPATIAL_COLUMN_TYPE_POSTGIS_1,POSTGIS_OUT_SPATIAL_COLUMN_NAME_POSTGIS_1,POSTGIS_OUT_WRITER_MODE_POSTGIS_1,POSTGIS_OUT_START_TRANSACTION_POSTGIS_1,POSTGIS_OUT_TRANSACTION_INTERVAL_POSTGIS_1,POSTGIS_OUT_BULK_COPY_POSTGIS_1,POSTGIS_OUT_INSERT_TEXT_GEOMETRY_POSTGIS_1,DestDataset_XLS_ADO_1,XLS_ADO_OUT_VERSION_XLS_ADO_1,XLS_ADO_OUT_WRITER_MODE_XLS_ADO_1,XLS_ADO_OUT_START_TRANSACTION_XLS_ADO_1,XLS_ADO_OUT_BEGIN_SQL_XLS_ADO_1,XLS_ADO_OUT_END_SQL_XLS_ADO_1,XLS_ADO_OUT_INIT_TABLES_XLS_ADO_1
+GUI IGNORE SourceDataset_ORACLE8I_DB_1,ORACLE8I_DB_IN_USER_NAME_ORACLE8I_DB_1,ORACLE8I_DB_IN_PASSWORD_ORACLE8I_DB_1,ORACLE8I_DB_IN_REMOVE_SCHEMA_QUALIFIER_ORACLE8I_DB_1,ORACLE8I_DB_IN_CHUNK_SIZE_ORACLE8I_DB_1,_ORACLE8I_DB_IN_BEGIN_SQL_ORACLE8I_DB_1,_ORACLE8I_DB_IN_END_SQL_ORACLE8I_DB_1,ORACLE8I_DB_IN_WORKSPACE_ORACLE8I_DB_1,SourceDataset_ORACLE8I_DB_2,ORACLE8I_DB_IN_USER_NAME_ORACLE8I_DB_2,ORACLE8I_DB_IN_PASSWORD_ORACLE8I_DB_2,ORACLE8I_DB_IN_REMOVE_SCHEMA_QUALIFIER_ORACLE8I_DB_2,ORACLE8I_DB_IN_CHUNK_SIZE_ORACLE8I_DB_2,_ORACLE8I_DB_IN_BEGIN_SQL_ORACLE8I_DB_2,_ORACLE8I_DB_IN_END_SQL_ORACLE8I_DB_2,ORACLE8I_DB_IN_WORKSPACE_ORACLE8I_DB_2,SourceDataset_POSTGRES_1,POSTGRES_IN_HOST_POSTGRES_1,POSTGRES_IN_PORT_POSTGRES_1,POSTGRES_IN_USER_NAME_POSTGRES_1,POSTGRES_IN_PASSWORD_POSTGRES_1,POSTGRES_IN_FEATURES_PER_FETCH_POSTGRES_1,SourceDataset_POSTGRES_2,POSTGRES_IN_HOST_POSTGRES_2,POSTGRES_IN_PORT_POSTGRES_2,POSTGRES_IN_USER_NAME_POSTGRES_2,POSTGRES_IN_PASSWORD_POSTGRES_2,POSTGRES_IN_FEATURES_PER_FETCH_POSTGRES_2,DestDataset_POSTGIS_1,POSTGIS_OUT_HOST_POSTGIS_1,POSTGIS_OUT_PORT_POSTGIS_1,POSTGIS_OUT_USER_NAME_POSTGIS_1,POSTGIS_OUT_PASSWORD_POSTGIS_1,POSTGIS_OUT_SPATIAL_COLUMN_TYPE_POSTGIS_1,POSTGIS_OUT_SPATIAL_COLUMN_NAME_POSTGIS_1,POSTGIS_OUT_WRITER_MODE_POSTGIS_1,POSTGIS_OUT_START_TRANSACTION_POSTGIS_1,POSTGIS_OUT_TRANSACTION_INTERVAL_POSTGIS_1,POSTGIS_OUT_BULK_COPY_POSTGIS_1,POSTGIS_OUT_INSERT_TEXT_GEOMETRY_POSTGIS_1,DestDataset_CSV_1,CSV_OUT_APPEND_CSV_1,CSV_OUT_FIELD_NAMES_CSV_1,CSV_OUT_SEPARATOR_CSV_1,CSV_OUT_EXTENSION_CSV_1,_OUT_QUOTE_OUTPUT_CSV_1,_QUOTE_FIELD_NAMES_CSV_1,CSV_OUT_ENCODING_CSV_1,CSV_OUT_END_OF_LINE_CSV_1,_WRITE_UTF8_BOM_CSV_1,DestDataset_CSV_2,CSV_OUT_APPEND_CSV_2,CSV_OUT_FIELD_NAMES_CSV_2,CSV_OUT_SEPARATOR_CSV_2,CSV_OUT_EXTENSION_CSV_2,_OUT_QUOTE_OUTPUT_CSV_2,_QUOTE_FIELD_NAMES_CSV_2,CSV_OUT_ENCODING_CSV_2,CSV_OUT_END_OF_LINE_CSV_2,_WRITE_UTF8_BOM_CSV_2
 DEFAULT_MACRO SourceDataset_ORACLE8I_DB orcl
 GUI OPTIONAL TEXT SourceDataset_ORACLE8I_DB Source Oracle Non-spatial Service:
 DEFAULT_MACRO SourceDataset_ORACLE8I_DB_3 orcl
@@ -6082,10 +6148,13 @@ DEFAULT_MACRO SourceDataset_POSTGRES sige
 GUI OPTIONAL TEXT SourceDataset_POSTGRES Source PostgreSQL Dataset:
 DEFAULT_MACRO SourceDataset_POSTGRES_5 sige
 GUI OPTIONAL TEXT SourceDataset_POSTGRES_5 Source PostgreSQL Dataset:
-DEFAULT_MACRO DestDataset_XLS_ADO F:\fme\202\material_error.xls
-GUI FILENAME DestDataset_XLS_ADO Excel_Files(*.xls;*.xlsx;*.xlsb)|*.xls;*.xlsx;*.xlsb|All_files(*.*)|*.* Destination Microsoft Excel File:
+DEFAULT_MACRO DestDataset_CSV F:\fme\202\materror.csv
+GUI DIRNAME DestDataset_CSV Destination Comma Separated Value (CSV) Directory:
+DEFAULT_MACRO DestDataset_CSV_3 F:\fme\202\funcerror.csv
+GUI DIRNAME DestDataset_CSV_3 Destination Comma Separated Value (CSV) Directory:
 INCLUDE [ if {{$(DestDataset_POSTGIS)} == {}} { puts_real {Parameter 'DestDataset_POSTGIS' must be given a value.}; exit 1; }; ]
-INCLUDE [ if {{$(DestDataset_XLS_ADO)} == {}} { puts_real {Parameter 'DestDataset_XLS_ADO' must be given a value.}; exit 1; }; ]
+INCLUDE [ if {{$(DestDataset_CSV)} == {}} { puts_real {Parameter 'DestDataset_CSV' must be given a value.}; exit 1; }; ]
+INCLUDE [ if {{$(DestDataset_CSV_3)} == {}} { puts_real {Parameter 'DestDataset_CSV_3' must be given a value.}; exit 1; }; ]
 #! START_HEADER
 #! START_WB_HEADER
 READER_TYPE MULTI_READER
@@ -6106,8 +6175,10 @@ MULTI_WRITER_DATASET_ORDER BY_ID
 MULTI_WRITER_FIRST_WRITER_ID 0
 MULTI_WRITER_TYPE{0} POSTGIS
 MULTI_WRITER_KEYWORD{0} POSTGIS_1
-MULTI_WRITER_TYPE{1} XLS_ADO
-MULTI_WRITER_KEYWORD{1} XLS_ADO_1
+MULTI_WRITER_TYPE{1} CSV
+MULTI_WRITER_KEYWORD{1} CSV_1
+MULTI_WRITER_TYPE{2} CSV
+MULTI_WRITER_KEYWORD{2} CSV_2
 #! END_WB_HEADER
 #! START_WB_HEADER
 MACRO WB_KEYWORD "ORACLE8I_DB_1"
@@ -6372,65 +6443,144 @@ POSTGIS_1_INSERT_TEXT_GEOMETRY $(POSTGIS_OUT_INSERT_TEXT_GEOMETRY_POSTGIS_1)
 POSTGIS_1_DATASET "$(DestDataset_POSTGIS_1)"
 #! END_DEST_HEADER
 #! START_WB_HEADER
-MACRO WB_KEYWORD "XLS_ADO_1"
+MACRO WB_KEYWORD "CSV_1"
 #! END_WB_HEADER
-#! START_DEST_HEADER XLS_ADO XLS_ADO_1
+#! START_DEST_HEADER CSV CSV_1
 # ============================================================================
-# First get the dataset for the database. For Excel, it's the file name.
-# For now we'll use whatever they had when they generated this mapping file,
-# and not reprompt
+# The following GUI line prompts for a directory where the
+# CSV files will be stored
 #! END_DEST_HEADER
 #! START_WB_HEADER
 DEFAULT_MACRO DestDataset
 INCLUDE [ if {"$(DestDataset)" != ""} {                          \
- puts {DEFAULT_MACRO DestDataset_XLS_ADO_1 $(DestDataset)}         \
+ puts {DEFAULT_MACRO DestDataset_CSV_1 $(DestDataset)}         \
  } ]
 #! END_WB_HEADER
-#! START_DEST_HEADER XLS_ADO XLS_ADO_1
-DEFAULT_MACRO DestDataset_XLS_ADO_1 $(DestDataset_XLS_ADO)
-GUI FILENAME DestDataset_XLS_ADO_1 Excel_Files(*.xls;*.xlsx;*.xlsb)|*.xls;*.xlsx;*.xlsb|All_files(*.*)|*.* Destination Microsoft Excel File:
+#! START_DEST_HEADER CSV CSV_1
+DEFAULT_MACRO DestDataset_CSV_1 $(DestDataset_CSV)
+GUI DIRNAME DestDataset_CSV_1 Destination Comma Separated Value (CSV) Directory:
+# =====================================================================
+# Allows one to append
+DEFAULT_MACRO CSV_OUT_APPEND_CSV_1 No
+CSV_1_APPEND "$(CSV_OUT_APPEND_CSV_1)"
+GUI CHECKBOX CSV_OUT_APPEND_CSV_1 Yes%No Append to File
 # ============================================================================
-# The ADO provider in use. For Excel, this is always XLS_ADO
-DEFAULT_MACRO XLS_ADO_OUT_PROVIDER_TYPE_XLS_ADO_1 XLS_ADO
-XLS_ADO_1_PROVIDER_TYPE "$(XLS_ADO_OUT_PROVIDER_TYPE_XLS_ADO_1)"
+# The following determines whether field names will be written on
+# the first row of the file.
+DEFAULT_MACRO CSV_OUT_FIELD_NAMES_CSV_1 yes
+CSV_1_FIELD_NAMES "$(CSV_OUT_FIELD_NAMES_CSV_1)"
+GUI CHECKBOX CSV_OUT_FIELD_NAMES_CSV_1 yes%no Output Field Names on First Line
 # ============================================================================
-# Optional Version (defaultstonewestversion)
-DEFAULT_MACRO XLS_ADO_OUT_VERSION_XLS_ADO_1 97/2000/2002/2003
-XLS_ADO_1_VERSION "$(XLS_ADO_OUT_VERSION_XLS_ADO_1)"
-GUI RADIO_GROUP XLS_ADO_OUT_VERSION_XLS_ADO_1 5%2007%97/2000/2002/2003%5.0/95%4.0%3.0 Excel Version
+# The following determines the field seperator
+# PR#19714 Changed GUI LOOKUP to STRING_OR_CHOICE for showing space and tab
+# as explicit delimiters for parsing issues and symmetry with the reader.
+DEFAULT_MACRO CSV_OUT_SEPARATOR_CSV_1 ,
+CSV_1_SEPARATOR "$(CSV_OUT_SEPARATOR_CSV_1)"
+GUI STRING_OR_CHOICE CSV_OUT_SEPARATOR_CSV_1 ,%;%|%space%tab Separator Character:
 # ============================================================================
-# This keyword sets the mode of the writer
-DEFAULT_MACRO XLS_ADO_OUT_WRITER_MODE_XLS_ADO_1 INSERT
-GUI CHOICE XLS_ADO_OUT_WRITER_MODE_XLS_ADO_1 INSERT%UPDATE Writer Mode:
-XLS_ADO_1_WRITER_MODE $(XLS_ADO_OUT_WRITER_MODE_XLS_ADO_1)
+# The following determines the extension for output CSV files
+DEFAULT_MACRO CSV_OUT_EXTENSION_CSV_1 csv
+CSV_1_EXTENSION "$(CSV_OUT_EXTENSION_CSV_1)"
+GUI TEXT CSV_OUT_EXTENSION_CSV_1 Extension:
 # ============================================================================
-# This keyword sets the starting transaction
-DEFAULT_MACRO XLS_ADO_OUT_START_TRANSACTION_XLS_ADO_1 0
-GUI OPTIONAL TEXT XLS_ADO_OUT_START_TRANSACTION_XLS_ADO_1 Start writing at feature:
-XLS_ADO_1_START_TRANSACTION $(XLS_ADO_OUT_START_TRANSACTION_XLS_ADO_1)
+# The following specifies if output values should be quoted
+DEFAULT_MACRO _OUT_QUOTE_OUTPUT_CSV_1 if_needed
+GUI CHOICE _OUT_QUOTE_OUTPUT_CSV_1 yes%if_needed%no Quote Output Values:
+CSV_1_QUOTE_OUTPUT $(_OUT_QUOTE_OUTPUT_CSV_1)
 # ============================================================================
-# This keyword sets the number of features between transaction commits
-DEFAULT_MACRO XLS_ADO_OUT_TRANSACTION_INTERVAL_XLS_ADO_1 1
-XLS_ADO_1_TRANSACTION_INTERVAL $(XLS_ADO_OUT_TRANSACTION_INTERVAL_XLS_ADO_1)
+# The following choice determines if field names on the first row
+# should be quoted or not.
+DEFAULT_MACRO _QUOTE_FIELD_NAMES_CSV_1 no
+GUI CHOICE _QUOTE_FIELD_NAMES_CSV_1 yes%no Quote Field Names:
+CSV_1_QUOTE_FIELD_NAMES $(_QUOTE_FIELD_NAMES_CSV_1)
+# =====================================================================
+# Allows to set one of the character encodings for output file
+DEFAULT_MACRO CSV_OUT_ENCODING_CSV_1 
+GUI OPTIONAL STRING_OR_CHOICE CSV_OUT_ENCODING_CSV_1 UTF-8%UTF-16LE%UTF-16BE%ANSI%BIG5%SJIS%CP437%CP708%CP720%CP737%CP775%CP850%CP852%CP855%CP857%CP860%CP861%CP862%CP863%CP864%CP865%CP866%CP869%CP932%CP936%CP950%CP1250%CP1251%CP1252%CP1253%CP1254%CP1255%CP1256%CP1257%CP1258%ISO8859-1%ISO8859-2%ISO8859-3%ISO8859-4%ISO8859-5%ISO8859-6%ISO8859-7%ISO8859-8%ISO8859-9%ISO8859-13%ISO8859-15 Character Encoding:
+CSV_1_ENCODING $(CSV_OUT_ENCODING_CSV_1)
+# =====================================================================
+# Allows to set Line termination type
+DEFAULT_MACRO CSV_OUT_END_OF_LINE_CSV_1 
+GUI OPTIONAL CHOICE CSV_OUT_END_OF_LINE_CSV_1 Windows%Unix%Macintosh Line Termination:
+CSV_1_END_OF_LINE $(CSV_OUT_END_OF_LINE_CSV_1)
 # ============================================================================
-# The following specifies an SQL command to execute before opening the first
-# table.
-DEFAULT_MACRO XLS_ADO_OUT_BEGIN_SQL_XLS_ADO_1 
-GUI OPTIONAL TEXT_EDIT_SQL XLS_ADO_OUT_BEGIN_SQL_XLS_ADO_1 SQL Statement to Execute Before Translation:
-XLS_ADO_1_BEGIN_SQL{0} "$(XLS_ADO_OUT_BEGIN_SQL_XLS_ADO_1)"
+# PR 15909
+# The following choice determines if the byte order mark should be written
+# when using UTF-8 encoding. By default BOM is written, so _WRITE_UTF8_BOM should be yes.
+DEFAULT_MACRO _WRITE_UTF8_BOM_CSV_1 yes
+GUI CHOICE _WRITE_UTF8_BOM_CSV_1 yes%no Write UTF-8 Byte Order Mark
+CSV_1_WRITE_UTF8_BOM $(_WRITE_UTF8_BOM_CSV_1)
+CSV_1_DATASET "$(DestDataset_CSV_1)"
+#! END_DEST_HEADER
+#! START_WB_HEADER
+MACRO WB_KEYWORD "CSV_2"
+#! END_WB_HEADER
+#! START_DEST_HEADER CSV CSV_2
 # ============================================================================
-# The following specifies an SQL command to execute after closing all the
-# tables.
-DEFAULT_MACRO XLS_ADO_OUT_END_SQL_XLS_ADO_1 
-GUI OPTIONAL TEXT_EDIT_SQL XLS_ADO_OUT_END_SQL_XLS_ADO_1 SQL Statement to Execute After Translation:
-XLS_ADO_1_END_SQL{0} "$(XLS_ADO_OUT_END_SQL_XLS_ADO_1)"
+# The following GUI line prompts for a directory where the
+# CSV files will be stored
+#! END_DEST_HEADER
+#! START_WB_HEADER
+DEFAULT_MACRO DestDataset
+INCLUDE [ if {"$(DestDataset)" != ""} {                          \
+ puts {DEFAULT_MACRO DestDataset_CSV_2 $(DestDataset)}         \
+ } ]
+#! END_WB_HEADER
+#! START_DEST_HEADER CSV CSV_2
+DEFAULT_MACRO DestDataset_CSV_2 $(DestDataset_CSV_3)
+GUI DIRNAME DestDataset_CSV_2 Destination Comma Separated Value (CSV) Directory:
+# =====================================================================
+# Allows one to append
+DEFAULT_MACRO CSV_OUT_APPEND_CSV_2 No
+CSV_2_APPEND "$(CSV_OUT_APPEND_CSV_2)"
+GUI CHECKBOX CSV_OUT_APPEND_CSV_2 Yes%No Append to File
 # ============================================================================
-# The following specifies when we should perform table initialization.
-# Table initialization is when we DROP, TRUNCATE, and CREATE TABLE.
-DEFAULT_MACRO XLS_ADO_OUT_INIT_TABLES_XLS_ADO_1 FIRSTFEATURE
-GUI OPTIONAL CHOICE XLS_ADO_OUT_INIT_TABLES_XLS_ADO_1 FIRSTFEATURE%IMMEDIATELY Initialize Tables:
-XLS_ADO_1_INIT_TABLES "$(XLS_ADO_OUT_INIT_TABLES_XLS_ADO_1)"
-XLS_ADO_1_DATASET "$(DestDataset_XLS_ADO_1)"
+# The following determines whether field names will be written on
+# the first row of the file.
+DEFAULT_MACRO CSV_OUT_FIELD_NAMES_CSV_2 yes
+CSV_2_FIELD_NAMES "$(CSV_OUT_FIELD_NAMES_CSV_2)"
+GUI CHECKBOX CSV_OUT_FIELD_NAMES_CSV_2 yes%no Output Field Names on First Line
+# ============================================================================
+# The following determines the field seperator
+# PR#19714 Changed GUI LOOKUP to STRING_OR_CHOICE for showing space and tab
+# as explicit delimiters for parsing issues and symmetry with the reader.
+DEFAULT_MACRO CSV_OUT_SEPARATOR_CSV_2 ,
+CSV_2_SEPARATOR "$(CSV_OUT_SEPARATOR_CSV_2)"
+GUI STRING_OR_CHOICE CSV_OUT_SEPARATOR_CSV_2 ,%;%|%space%tab Separator Character:
+# ============================================================================
+# The following determines the extension for output CSV files
+DEFAULT_MACRO CSV_OUT_EXTENSION_CSV_2 csv
+CSV_2_EXTENSION "$(CSV_OUT_EXTENSION_CSV_2)"
+GUI TEXT CSV_OUT_EXTENSION_CSV_2 Extension:
+# ============================================================================
+# The following specifies if output values should be quoted
+DEFAULT_MACRO _OUT_QUOTE_OUTPUT_CSV_2 if_needed
+GUI CHOICE _OUT_QUOTE_OUTPUT_CSV_2 yes%if_needed%no Quote Output Values:
+CSV_2_QUOTE_OUTPUT $(_OUT_QUOTE_OUTPUT_CSV_2)
+# ============================================================================
+# The following choice determines if field names on the first row
+# should be quoted or not.
+DEFAULT_MACRO _QUOTE_FIELD_NAMES_CSV_2 no
+GUI CHOICE _QUOTE_FIELD_NAMES_CSV_2 yes%no Quote Field Names:
+CSV_2_QUOTE_FIELD_NAMES $(_QUOTE_FIELD_NAMES_CSV_2)
+# =====================================================================
+# Allows to set one of the character encodings for output file
+DEFAULT_MACRO CSV_OUT_ENCODING_CSV_2 
+GUI OPTIONAL STRING_OR_CHOICE CSV_OUT_ENCODING_CSV_2 UTF-8%UTF-16LE%UTF-16BE%ANSI%BIG5%SJIS%CP437%CP708%CP720%CP737%CP775%CP850%CP852%CP855%CP857%CP860%CP861%CP862%CP863%CP864%CP865%CP866%CP869%CP932%CP936%CP950%CP1250%CP1251%CP1252%CP1253%CP1254%CP1255%CP1256%CP1257%CP1258%ISO8859-1%ISO8859-2%ISO8859-3%ISO8859-4%ISO8859-5%ISO8859-6%ISO8859-7%ISO8859-8%ISO8859-9%ISO8859-13%ISO8859-15 Character Encoding:
+CSV_2_ENCODING $(CSV_OUT_ENCODING_CSV_2)
+# =====================================================================
+# Allows to set Line termination type
+DEFAULT_MACRO CSV_OUT_END_OF_LINE_CSV_2 
+GUI OPTIONAL CHOICE CSV_OUT_END_OF_LINE_CSV_2 Windows%Unix%Macintosh Line Termination:
+CSV_2_END_OF_LINE $(CSV_OUT_END_OF_LINE_CSV_2)
+# ============================================================================
+# PR 15909
+# The following choice determines if the byte order mark should be written
+# when using UTF-8 encoding. By default BOM is written, so _WRITE_UTF8_BOM should be yes.
+DEFAULT_MACRO _WRITE_UTF8_BOM_CSV_2 yes
+GUI CHOICE _WRITE_UTF8_BOM_CSV_2 yes%no Write UTF-8 Byte Order Mark
+CSV_2_WRITE_UTF8_BOM $(_WRITE_UTF8_BOM_CSV_2)
+CSV_2_DATASET "$(DestDataset_CSV_2)"
 #! END_DEST_HEADER
 #! END_HEADER
 
@@ -6447,7 +6597,8 @@ DEFAULT_MACRO DATASET_KEYWORD_ORACLE8I_DB_2 ORACLE8I_DB_2
 DEFAULT_MACRO DATASET_KEYWORD_POSTGRES_1 POSTGRES_1
 DEFAULT_MACRO DATASET_KEYWORD_POSTGRES_2 POSTGRES_2
 DEFAULT_MACRO DATASET_KEYWORD_POSTGIS_1 POSTGIS_1
-DEFAULT_MACRO DATASET_KEYWORD_XLS_ADO_1 XLS_ADO_1
+DEFAULT_MACRO DATASET_KEYWORD_CSV_1 CSV_1
+DEFAULT_MACRO DATASET_KEYWORD_CSV_2 CSV_2
 # -------------------------------------------------------------------------
 
 ORACLE8I_DB_1_READER_META_ATTRIBUTES fme_feature_type
@@ -6665,12 +6816,7 @@ FACTORY_DEF * TeeFactory   FACTORY_NAME "$(pipe_function_WORKSPACE_NAME)_incompl
 INCLUDE [puts {MACRO WB_CURRENT_CONTEXT $(WB_OLD_CONTEXT_$(pipe_function_WORKSPACE_NAME))}]
 FACTORY_DEF * TeeFactory   FACTORY_NAME "pipe_function joined Output Renamer/Nuker"   INPUT FEATURE_TYPE pipe_function_joined   OUTPUT FEATURE_TYPE pipe_function_joined
 FACTORY_DEF * TeeFactory   FACTORY_NAME "pipe_function incomplete_2 Output Renamer/Nuker"   INPUT FEATURE_TYPE pipe_function_incomplete_2   OUTPUT FEATURE_TYPE pipe_function_incomplete_2
-FACTORY_DEF * TeeFactory   FACTORY_NAME "pipe_function unused_function Output Renamer/Nuker"   INPUT FEATURE_TYPE pipe_function_unused_function
-# -------------------------------------------------------------------------
-
-FACTORY_DEF * TeeFactory    FACTORY_NAME ErrorFunction_Logger    INPUT  FEATURE_TYPE pipe_function_incomplete_2    OUTPUT FEATURE_TYPE * @FeatureType("") @Log("ErrorFunction:",30,20) @FeatureType(__NUKE_LOGGED__)
-FACTORY_DEF * TeeFactory    FACTORY_NAME ErrorFunction_Nuker    INPUT FEATURE_TYPE __NUKE_LOGGED__
-
+FACTORY_DEF * TeeFactory   FACTORY_NAME "pipe_function unused_function Output Renamer/Nuker"   INPUT FEATURE_TYPE pipe_function_unused_function   OUTPUT FEATURE_TYPE pipe_function_unused_function
 # -------------------------------------------------------------------------
 Lookup ValueMapper_id_status_LOOKUP_TABLE   E               1   EA              6   F               7   A               4   D               3   ""              0   ENCODED
 
@@ -6820,7 +6966,13 @@ FACTORY_DEF * ReferenceFactory    FACTORY_NAME FeatureMerger    GROUP_BY GID    
 FACTORY_DEF * TeeFactory    FACTORY_NAME "FeatureMerger_COMPLETE -> distribution.pipe Correlator"    INPUT FEATURE_TYPE FeatureMerger_COMPLETE    OUTPUT FEATURE_TYPE __GO_TO_FINAL_OUTPUT_ROUTER__       multi_writer_id 0       @Transform(FME_GENERIC,POSTGIS)       @SupplyAttributes(__wb_out_feat_type__,distribution.pipe)
 # -------------------------------------------------------------------------
 
-FACTORY_DEF * TeeFactory    FACTORY_NAME "pipe_material_material_error -> materror Correlator"    INPUT FEATURE_TYPE pipe_material_material_error    OUTPUT FEATURE_TYPE __GO_TO_FINAL_OUTPUT_ROUTER__       multi_writer_id 1       @Transform(FME_GENERIC,XLS_ADO)       @SupplyAttributes(__wb_out_feat_type__,materror)
+FACTORY_DEF * TeeFactory    FACTORY_NAME "pipe_material_material_error -> materror Correlator"    INPUT FEATURE_TYPE pipe_material_material_error    OUTPUT FEATURE_TYPE __GO_TO_FINAL_OUTPUT_ROUTER__       multi_writer_id 1       @Transform(FME_GENERIC,CSV)       @SupplyAttributes(__wb_out_feat_type__,materror)
+# -------------------------------------------------------------------------
+
+FACTORY_DEF * TeeFactory    FACTORY_NAME "pipe_function_unused_function -> funcerror Correlator"    INPUT FEATURE_TYPE pipe_function_unused_function    OUTPUT FEATURE_TYPE __GO_TO_FINAL_OUTPUT_ROUTER__       multi_writer_id 2       @Transform(FME_GENERIC,CSV)       @SupplyAttributes(__wb_out_feat_type__,funcerror)
+# -------------------------------------------------------------------------
+
+FACTORY_DEF * TeeFactory    FACTORY_NAME "pipe_function_incomplete_2 -> funcerror Correlator"    INPUT FEATURE_TYPE pipe_function_incomplete_2    OUTPUT FEATURE_TYPE __GO_TO_FINAL_OUTPUT_ROUTER__       multi_writer_id 2       @Transform(FME_GENERIC,CSV)       @SupplyAttributes(__wb_out_feat_type__,funcerror)
 # -------------------------------------------------------------------------
 
 FACTORY_DEF * TestFactory   FACTORY_NAME "Final Output Feature Type Router"   INPUT FEATURE_TYPE *   TEST @Value(__wb_out_feat_type__) != ""   OUTPUT PASSED FEATURE_TYPE *     @FeatureType(@Value(__wb_out_feat_type__))   OUTPUT FAILED FEATURE_TYPE __nuke_me__ @Tcl2("FME_StatMessage 818059 {@Value(fme_template_feature_type)} 818060 818061 fme_warn")
@@ -6831,4 +6983,6 @@ FACTORY_DEF * TeeFactory   FACTORY_NAME "Final Output Nuker"   INPUT FEATURE_TYP
 # -------------------------------------------------------------------------
 POSTGIS_1_DEF distribution.pipe   postgis_type                 postgis_geometry   postgis_mode                 INHERIT_FROM_WRITER   postgis_spatial_column_type  geometry   postgis_spatial_column       geometry   postgis_srid                 21781   postgis_drop_table           NO   postgis_truncate_table       NO   postgis_create_with_oids     NO   postgis_create_gist_index    YES   postgis_vacuum_analyze       YES   postgis_allow_serial_writing YES   coating_external_material_id char(20)   coating_internal_material_id char(20)   folder                       char(20)   id                           serial,PRIKEY   id_function                  int4   id_install_method            char(20)   id_material                  int4   id_distributor               char(20)   id_parent                    int4   id_precision                 char(20)   id_status                    int4   material_ext_diam            char(20)   material_int_diam            char(20)   material_nominal_diam        char(20)   material_thickness           char(20)   pressure_nominale            char(20)   protection_coating_detail    char(20)   remarks                      char(20)   schema_force_view            bool   year                         char(20)
 # -------------------------------------------------------------------------
-XLS_ADO_1_DEF materror   xls_update_key_columns       ""   xls_table_writer_mode        INHERIT_FROM_WRITER   xls_is_named_range           NO
+CSV_1_DEF materror   csv_append_mode              INHERIT_FROM_WRITER   csv_field_names              INHERIT_FROM_WRITER   joined_material_text         char(30)   FID                          char(30)   FOLIO                        char(30)
+# -------------------------------------------------------------------------
+CSV_2_DEF funcerror   csv_append_mode              INHERIT_FROM_WRITER   csv_field_names              INHERIT_FROM_WRITER   function                     char(30)
