@@ -22,12 +22,12 @@ CREATE VIEW distribution.pipe_schema_viewableitems AS
 		pipe._length3d,
 		pipe.tunnel_or_bridge,
 		pipe.geometry_schematic::geometry(LineString,21781) AS geometry,
-		pipe_view._valve_count,
-		pipe_view._valve_closed
-	  FROM distribution.pipe
-	  INNER JOIN distribution.pipe_view ON pipe.id = pipe_view.id
-		WHERE _schema_view IS TRUE
-		AND _status_active IS TRUE;
+		pipe._valve_count,
+		pipe._valve_closed
+	FROM distribution.pipe
+	INNER JOIN distribution.status ON pipe.id_status = status.id
+	WHERE _schema_view IS TRUE
+	AND status.active IS TRUE;
 COMMENT ON VIEW distribution.pipe_schema_viewableitems IS 'viewable pipe in the schematic view (before merge)';
 
 CREATE OR REPLACE RULE pipe_update_alternative AS

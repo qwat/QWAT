@@ -22,9 +22,13 @@ ALTER TABLE distribution.pipe ADD COLUMN id_status integer;                     
 ALTER TABLE distribution.pipe ADD COLUMN schema_force_view  boolean DEFAULT NULL::boolean;     /* schema_force_view FK */
 ALTER TABLE distribution.pipe ADD COLUMN year smallint CHECK (year > 1800 AND year < 2100);    /* year                 */
 ALTER TABLE distribution.pipe ADD COLUMN tunnel_or_bridge boolean DEFAULT false;               /* tunnel_or_bridge     */
-ALTER TABLE distribution.pipe ADD COLUMN pressure_nominal smallint;                           /* pressure_nominale    */
+ALTER TABLE distribution.pipe ADD COLUMN pressure_nominal smallint;                            /* pressure_nominale    */
 ALTER TABLE distribution.pipe ADD COLUMN folder varchar(20) DEFAULT '';                        /* folder               */
 ALTER TABLE distribution.pipe ADD COLUMN remarks text;                                         /* remarks              */
+ALTER TABLE distribution.pipe ADD COLUMN _valve_count  smallint DEFAULT NULL;                  /* _valve_count         */
+ALTER TABLE distribution.pipe ADD COLUMN _valve_closed boolean DEFAULT NULL;                   /* _valve_closed        */
+ALTER TABLE distribution.pipe ADD COLUMN _schema_view  boolean DEFAULT NULL;                   /* _schema_view         */
+
 
 /* geometry */
 SELECT distribution.geom_tool_line('pipe');
@@ -47,18 +51,43 @@ ALTER TABLE distribution.pipe ADD CONSTRAINT pipe_id_status         FOREIGN KEY 
 
 /*----------------!!!---!!!----------------*/
 /* Trigger for tunnel_or_bridge */
-CREATE OR REPLACE FUNCTION distribution.pipe_tunnelbridge() RETURNS trigger AS ' 
+CREATE OR REPLACE FUNCTION distribution.pipe_tunnelbridge() RETURNS trigger AS
+$BODY$ 
 	BEGIN
-		UPDATE distribution.pipe SET _length3d = _length2d WHERE id = NEW.id AND NEW.tunnel_or_bridge IS TRUE;
-		UPDATE distribution.pipe SET _length3d = NULL      WHERE id = NEW.id AND NEW.tunnel_or_bridge IS FALSE;
+		UPDATE distribution.pipe SET _length3d = NULL, _diff_elevation = NULL WHERE id = NEW.id;
 		RETURN NEW;
 	END;
-' LANGUAGE 'plpgsql';
+$BODY$ LANGUAGE 'plpgsql';
 
 CREATE TRIGGER pipe_tunnelbridge_trigger
-	AFTER UPDATE OF tunnel_or_bridge ON distribution.pipe
-	FOR EACH ROW
-	EXECUTE PROCEDURE distribution.pipe_tunnelbridge();
+	AFTER INSERT OR UPDATE OF tunnel_or_bridge ON distribution.pipe
+	FOR EACH ROW EXECUTE PROCEDURE distribution.pipe_tunnelbridge();
 COMMENT ON TRIGGER pipe_tunnelbridge_trigger ON distribution.pipe IS 'For tunnel and bridges, 3d length is the 2d length (i.e. pipes are considered as horinzontal).';
+
+
+/*----------------!!!---!!!----------------*/
+/* Trigger for _schema_view */
+CREATE OR REPLACE FUNCTION distribution.pipe_schemaview() RETURNS trigger AS
+$BODY$
+	DECLARE
+		force_view boolean;
+	BEGIN
+		IF NEW.schema_force_view IS NULL THEN
+			SELECT schema_view FROM pipe_function WHERE id = NEW.id_function INTO force_view;
+		ELSE 
+			force_view := NEW.schema_force_view;
+		END IF;
+		UPDATE distribution.pipe SET _schema_view = force_view WHERE id = NEW.id;
+		RETURN NEW;
+	END;
+$BODY$ LANGUAGE 'plpgsql';
+CREATE TRIGGER pipe_schemaview_trigger
+
+	AFTER INSERT OR UPDATE OF schema_force_view,id_function ON distribution.pipe
+	FOR EACH ROW EXECUTE PROCEDURE distribution.pipe_schemaview();
+COMMENT ON TRIGGER pipe_schemaview_trigger ON distribution.pipe IS 'Schema view depends on pipe function and on manual changes.';
+
+
+
 
 COMMIT;

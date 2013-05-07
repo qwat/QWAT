@@ -116,6 +116,7 @@ $BODY$
 		EXECUTE 'ALTER TABLE distribution.'||table_name||' ADD COLUMN id_printmap     integer[] ;';
 		EXECUTE 'ALTER TABLE distribution.'||table_name||' ADD COLUMN _length2d       decimal(8,2) ;';
 		EXECUTE 'ALTER TABLE distribution.'||table_name||' ADD COLUMN _length3d       decimal(8,2) ;';	
+		EXECUTE 'ALTER TABLE distribution.'||table_name||' ADD COLUMN _diff_elevation decimal(8,2) ;';	
 		EXECUTE 'ALTER TABLE distribution.'||table_name||' ADD COLUMN _printmaps      varchar(100) ;';
 		EXECUTE 'ALTER TABLE distribution.'||table_name||' ADD COLUMN _districts      varchar(255) ;';
 			
@@ -150,7 +151,8 @@ $BODY$
 						_printmaps         = distribution.get_printmaps(NEW.geometry),
 						_districts         = distribution.get_districts(NEW.geometry),
 						_length2d          = ST_Length(NEW.geometry),
-						_length3d          = NULL
+						_length3d          = NULL,
+						_diff_elevation    = NULL
 						WHERE id = NEW.id ;
 					RETURN NEW;				
 				END;

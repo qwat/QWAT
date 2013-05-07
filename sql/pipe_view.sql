@@ -24,6 +24,9 @@ CREATE VIEW distribution.pipe_view AS
 		pipe.pressure_nominal  ,
 		pipe.folder            ,
 		pipe.remarks           ,
+		pipe._valve_count      ,
+		pipe._valve_closed     ,
+		pipe._schema_view      ,
 		pipe.id_node_a         ,
 		pipe.id_node_b         ,
 		pipe.id_district       ,
@@ -31,6 +34,7 @@ CREATE VIEW distribution.pipe_view AS
 		pipe.id_printmap       ,
 		pipe._length2d         ,
 		pipe._length3d         ,
+		pipe._diff_elevation   ,
 		pipe._printmaps        ,
 		pipe._districts        ,
 		pipe.geometry::geometry(LineString,21781),
@@ -47,21 +51,7 @@ CREATE VIEW distribution.pipe_view AS
 		status.active                   AS _status_active,
 		pressurezone.name               AS _pressurezone,
 		pressurezone.shortname          AS _pressurezone_shortname,
-		pressurezone.colorcode          AS _pressurezone_colorcode,
-		CASE 
-			WHEN pipe.schema_force_view IS NULL THEN pipe_function.schema_view
-			ELSE pipe.schema_force_view
-		END AS _schema_view,
-		CASE
-			WHEN tunnel_or_bridge IS TRUE THEN 0
-			ELSE abs(node_a.altitude_dtm-node_b.altitude_dtm)
-		END AS _diff_elevation,
-		CASE
-			WHEN tunnel_or_bridge IS TRUE THEN NULL
-			ELSE abs(node_a.altitude_dtm-node_b.altitude_dtm)/_length3d
-		END AS _slope,
-		distribution.pipe_count_valve(pipe.id) AS _valve_count,
-		distribution.pipe_isClosed(pipe.id)    AS _valve_closed
+		pressurezone.colorcode          AS _pressurezone_colorcode
 		FROM distribution.pipe
 		INNER      JOIN distribution.pipe_function       ON pipe.id_function       = pipe_function.id
 		INNER      JOIN distribution.pipe_install_method ON pipe.id_install_method = pipe_install_method.id
@@ -82,6 +72,7 @@ COMMENT ON VIEW distribution.pipe_view IS 'View for pipe. This view is editable 
 
 /*----------------!!!---!!!----------------*/
 /* INSERT,UPDATE,DELETE RULES */
+/*
 CREATE OR REPLACE RULE pipe_update AS
 	ON UPDATE TO distribution.pipe_view DO INSTEAD
 		UPDATE distribution.pipe SET 
@@ -111,9 +102,11 @@ CREATE OR REPLACE RULE pipe_insert AS
 CREATE OR REPLACE RULE pipe_delete AS
 	ON DELETE TO distribution.pipe_view DO INSTEAD
 		DELETE FROM distribution.pipe WHERE id = OLD.id;
+		*/
 /* Comments */	
+/*
 COMMENT ON RULE pipe_update IS 'Rule to forward changes for pipe_view to the table pipe.';
 COMMENT ON RULE pipe_insert IS 'Rule to forward insert of pipe_view to the table pipe.';
 COMMENT ON RULE pipe_delete IS 'Rule to forward deletion of pipe_view to the table pipe.';
-
+*/
 COMMIT;
