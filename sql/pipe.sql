@@ -73,7 +73,7 @@ $BODY$
 		force_view boolean;
 	BEGIN
 		IF NEW.schema_force_view IS NULL THEN
-			SELECT schema_view FROM pipe_function WHERE id = NEW.id_function INTO force_view;
+			SELECT schema_view FROM distribution.pipe_function WHERE id = NEW.id_function INTO force_view;
 		ELSE 
 			force_view := NEW.schema_force_view;
 		END IF;
