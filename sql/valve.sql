@@ -1,6 +1,6 @@
 /*
 	qWat - QGIS Water Module
-	
+
 	SQL file :: valve table
 */
 BEGIN;
@@ -19,8 +19,9 @@ ALTER TABLE distribution.valve ADD COLUMN year              smallint CHECK (year
 ALTER TABLE distribution.valve ADD COLUMN closed            boolean     default false ;
 ALTER TABLE distribution.valve ADD COLUMN altitude_real     decimal(10,3)  ;
 ALTER TABLE distribution.valve ADD COLUMN remarks           text           ;
-ALTER TABLE distribution.valve ADD COLUMN schema_force_view boolean     default NULL::boolean; 
-   
+ALTER TABLE distribution.valve ADD COLUMN schema_force_view boolean     default NULL::boolean;
+ALTER TABLE distribution.valve ADD COLUMN _schema_view      boolean DEFAULT NULL;
+
 /* geometry */
 SELECT distribution.geom_tool_point('valve',true,false,true,true,true);
 
@@ -30,6 +31,28 @@ ALTER TABLE distribution.valve ADD CONSTRAINT valve_id_function     FOREIGN KEY 
 /* cannot create constraint on arrays yet
 ALTER TABLE distribution.valve ADD CONSTRAINT valve_id_maintenance FOREIGN KEY (id_maintenance) REFERENCES distribution.valve_maintenance(id) MATCH SIMPLE ; CREATE INDEX fki_valve_id_maintenance ON distribution.valve(id_maintenance) ;
 */
+
+/*----------------!!!---!!!----------------*/
+/* Trigger for _schema_view */
+CREATE OR REPLACE FUNCTION distribution.valve_schemaview() RETURNS trigger AS
+$BODY$
+	DECLARE
+		force_view boolean;
+	BEGIN
+		IF NEW.schema_force_view IS NULL THEN
+			SELECT schema_view FROM distribution.valve_function WHERE id = NEW.id_function INTO force_view;
+		ELSE
+			force_view := NEW.schema_force_view;
+		END IF;
+		UPDATE distribution.valve SET _schema_view = force_view WHERE id = NEW.id;
+		RETURN NEW;
+	END;
+$BODY$ LANGUAGE 'plpgsql';
+CREATE TRIGGER valve_schemaview_trigger
+
+	AFTER INSERT OR UPDATE OF schema_force_view,id_function ON distribution.valve
+	FOR EACH ROW EXECUTE PROCEDURE distribution.valve_schemaview();
+COMMENT ON TRIGGER valve_schemaview_trigger ON distribution.valve IS 'Schema view depends on valve function and on manual changes.';
 
 COMMIT;
 
