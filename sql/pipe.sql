@@ -11,23 +11,26 @@ COMMENT ON TABLE distribution.pipe IS 'Table for pipe. This should not be used f
 SELECT setval('distribution.pipe_id_seq', 35000, true);
 
 /* columns */
-ALTER TABLE distribution.pipe ADD COLUMN id_parent integer;                                    /* id_parent         FK */
-ALTER TABLE distribution.pipe ADD COLUMN id_function integer;								   /* id_function       FK */ 
-ALTER TABLE distribution.pipe ADD COLUMN id_install_method integer;                            /* id_install_method FK */
-ALTER TABLE distribution.pipe ADD COLUMN id_material integer;                                  /* id_material       FK */
-ALTER TABLE distribution.pipe ADD COLUMN id_distributor integer;							   /* id_distributor    FK */
-ALTER TABLE distribution.pipe ADD COLUMN id_precision integer;                                 /* id_precision      FK */
-ALTER TABLE distribution.pipe ADD COLUMN id_protection integer;                                /* id_protection     FK */
-ALTER TABLE distribution.pipe ADD COLUMN id_status integer;                                    /* id_status         FK */
-ALTER TABLE distribution.pipe ADD COLUMN schema_force_view  boolean DEFAULT NULL::boolean;     /* schema_force_view FK */
-ALTER TABLE distribution.pipe ADD COLUMN year smallint CHECK (year > 1800 AND year < 2100);    /* year                 */
-ALTER TABLE distribution.pipe ADD COLUMN tunnel_or_bridge boolean DEFAULT false;               /* tunnel_or_bridge     */
-ALTER TABLE distribution.pipe ADD COLUMN pressure_nominal smallint;                            /* pressure_nominale    */
-ALTER TABLE distribution.pipe ADD COLUMN folder varchar(20) DEFAULT '';                        /* folder               */
-ALTER TABLE distribution.pipe ADD COLUMN remarks text;                                         /* remarks              */
-ALTER TABLE distribution.pipe ADD COLUMN _valve_count  smallint DEFAULT NULL;                  /* _valve_count         */
-ALTER TABLE distribution.pipe ADD COLUMN _valve_closed boolean DEFAULT NULL;                   /* _valve_closed        */
-ALTER TABLE distribution.pipe ADD COLUMN _schema_view  boolean DEFAULT NULL;                   /* _schema_view         */
+ALTER TABLE distribution.pipe ADD COLUMN id_parent integer;                                    /* id_parent            FK */
+ALTER TABLE distribution.pipe ADD COLUMN id_function integer;								   /* id_function          FK */ 
+ALTER TABLE distribution.pipe ADD COLUMN id_install_method integer;                            /* id_install_method    FK */
+ALTER TABLE distribution.pipe ADD COLUMN id_material integer;                                  /* id_material          FK */
+ALTER TABLE distribution.pipe ADD COLUMN id_distributor integer;							   /* id_distributor       FK */
+ALTER TABLE distribution.pipe ADD COLUMN id_precision integer;                                 /* id_precision         FK */
+ALTER TABLE distribution.pipe ADD COLUMN id_protection integer;                                /* id_protection        FK */
+ALTER TABLE distribution.pipe ADD COLUMN id_status integer;                                    /* id_status            FK */
+ALTER TABLE distribution.pipe ADD COLUMN schema_force_view  boolean DEFAULT NULL::boolean;     /* schema_force_view    FK */
+ALTER TABLE distribution.pipe ADD COLUMN labelview integer DEFAULT 2;                          /* label_view           FK */
+ALTER TABLE distribution.pipe ADD COLUMN labelview_schema integer DEFAULT 2;                   /* label_view_schema    FK */
+ALTER TABLE distribution.pipe ADD COLUMN year smallint CHECK (year > 1800 AND year < 2100);    /* year                    */
+ALTER TABLE distribution.pipe ADD COLUMN tunnel_or_bridge boolean DEFAULT false;               /* tunnel_or_bridge        */
+ALTER TABLE distribution.pipe ADD COLUMN pressure_nominal smallint;                            /* pressure_nominale       */
+ALTER TABLE distribution.pipe ADD COLUMN folder varchar(20) DEFAULT '';                        /* folder                  */
+ALTER TABLE distribution.pipe ADD COLUMN remarks text;                                         /* remarks                 */
+ALTER TABLE distribution.pipe ADD COLUMN _valve_count  smallint DEFAULT NULL;                  /* _valve_count            */
+ALTER TABLE distribution.pipe ADD COLUMN _valve_closed boolean DEFAULT NULL;                   /* _valve_closed           */
+ALTER TABLE distribution.pipe ADD COLUMN _schema_view  boolean DEFAULT NULL;                   /* _schema_view            */
+
 
 
 /* geometry */
@@ -47,6 +50,9 @@ ALTER TABLE distribution.pipe ADD CONSTRAINT pipe_id_distributor    FOREIGN KEY 
 ALTER TABLE distribution.pipe ADD CONSTRAINT pipe_id_precision      FOREIGN KEY (id_precision)      REFERENCES distribution."precision"(id)         MATCH FULL   ; CREATE INDEX fki_pipe_id_precision      ON distribution.pipe(id_precision);
 ALTER TABLE distribution.pipe ADD CONSTRAINT pipe_id_protection     FOREIGN KEY (id_protection)     REFERENCES distribution.pipe_protection(id)     MATCH SIMPLE ; CREATE INDEX fki_pipe_id_protection     ON distribution.pipe(id_protection);
 ALTER TABLE distribution.pipe ADD CONSTRAINT pipe_id_status         FOREIGN KEY (id_status)         REFERENCES distribution.status(id)              MATCH FULL   ; CREATE INDEX fki_pipe_id_status         ON distribution.pipe(id_status);
+ALTER TABLE distribution.pipe ADD CONSTRAINT pipe_schema_force_view FOREIGN KEY (schema_force_view) REFERENCES distribution.visible(id)             MATCH FULL   ; CREATE INDEX fki_pipe_schema_force_view ON distribution.pipe(schema_force_view);
+ALTER TABLE distribution.pipe ADD CONSTRAINT pipe_labelview         FOREIGN KEY (labelview)         REFERENCES distribution.labelview(id)           MATCH FULL   ; CREATE INDEX fki_pipe_labelview         ON distribution.pipe(labelview);
+ALTER TABLE distribution.pipe ADD CONSTRAINT pipe_labelview_schema  FOREIGN KEY (labelview_schema)  REFERENCES distribution.labelview(id)           MATCH FULL   ; CREATE INDEX fki_pipe_labelview_schema  ON distribution.pipe(labelview_schema);
 
 
 /*----------------!!!---!!!----------------*/

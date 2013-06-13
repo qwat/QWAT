@@ -100,23 +100,25 @@ Join with pipe_view to get pipe properties
 DROP VIEW IF EXISTS distribution.pipe_schema ;
 CREATE VIEW distribution.pipe_schema AS
 	SELECT	
-			pipe_view.id				         ,
-			pipe_view.id_function                ,
-			pipe_view.id_install_method          ,
-			pipe_view.id_material                ,
-			pipe_view.id_distributor             ,
-			pipe_view.id_precision               ,
-			pipe_view.id_protection              ,
-			pipe_view.id_status                  ,
-			pipe_view.id_pressurezone            ,
-			pipe_view.year                       ,
-			pipe_view.pressure_nominal           ,
-			pipe_view.folder                     ,
-			pipe_view.remarks                    , 
-			pipe_view.id_printmap                ,
-			pipe_view._printmaps                 ,
-			pipe_view.id_district                ,
-			pipe_view._districts                 ,
+			pipe.id				                 ,
+			pipe.id_function                     ,
+			pipe.id_install_method               ,
+			pipe.id_material                     ,
+			pipe.id_distributor                  ,
+			pipe.id_precision                    ,
+			pipe.id_protection                   ,
+			pipe.id_status                       ,
+			pipe.id_pressurezone                 ,
+			pipe.labelview                       ,
+			pipe.labelview_schema                ,
+			pipe.year                            ,
+			pipe.pressure_nominal                ,
+			pipe.folder                          ,
+			pipe.remarks                         , 
+			pipe.id_printmap                     ,
+			pipe._printmaps                      ,
+			pipe.id_district                     ,
+			pipe._districts                      ,
 			pipe_schema_merged._length2d         ,
 			pipe_schema_merged._length3d         ,
 			pipe_schema_merged.number_of_pipe    ,
@@ -125,7 +127,7 @@ CREATE VIEW distribution.pipe_schema AS
 			pipe_schema_merged._valve_closed     ,
 			pipe_schema_merged.geometry::geometry(LineString,21781) AS geometry
 	  FROM distribution.pipe_schema_merged
-	 INNER JOIN distribution.pipe_view ON pipe_view.id = pipe_schema_merged.id;
+	 INNER JOIN distribution.pipe ON pipe.id = pipe_schema_merged.id;
 COMMENT ON VIEW distribution.pipe_schema IS 'Final view for schema';
 
 
