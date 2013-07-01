@@ -11,11 +11,8 @@ CREATE TABLE distribution.dimension (id serial NOT NULL);
 COMMENT ON TABLE distribution.dimension IS 'dimension arcs displays measures done on the field. For example: distances to buildings corner';
 
 /* columns */
-ALTER TABLE distribution.dimension ADD COLUMN  distance_observed  varchar(12);
+ALTER TABLE distribution.dimension ADD COLUMN  _distance_observed varchar(12);
 ALTER TABLE distribution.dimension ADD COLUMN  _distance_terrain  double precision;
-ALTER TABLE distribution.dimension ADD COLUMN  lbl_x double precision;
-ALTER TABLE distribution.dimension ADD COLUMN  lbl_y double precision;
-ALTER TABLE distribution.dimension ADD COLUMN  lbl_a double precision;
 
 /* geometry */
 SELECT AddGeometryColumn('distribution','dimension','geometry',21781,'MULTIPOINT',2);
