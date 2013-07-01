@@ -12,8 +12,8 @@ CREATE TABLE distribution.labelview  ( id SERIAL not NULL, CONSTRAINT "labelview
 
 ALTER TABLE distribution.labelview ADD COLUMN  name  varchar(50);
 
-INSERT INTO distribution.labelview (id,name) VALUES (1,'No');
-INSERT INTO distribution.labelview (id,name) VALUES (2,'Try'); /* should be default */
+INSERT INTO distribution.labelview (id,name) VALUES (1,'Non');
+INSERT INTO distribution.labelview (id,name) VALUES (2,'Essaye'); /* should be default */
 INSERT INTO distribution.labelview (id,name) VALUES (3,'Force');
 
 
