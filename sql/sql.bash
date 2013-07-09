@@ -19,6 +19,8 @@ psql -h 172.24.171.$ip -U sige -f status.sql
 read -p "Press any key to continue..."
 psql -h 172.24.171.$ip -U sige -f precision.sql
 read -p "Press any key to continue..."
+psql -h 172.24.171.$ip -U sige -f labelview.sql
+read -p "Press any key to continue..."
 
 psql -h 172.24.171.$ip -U sige -f node.sql
 read -p "Press any key to continue..."
