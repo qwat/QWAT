@@ -4,10 +4,10 @@
     <mapcanvas>
         <units>meters</units>
         <extent>
-            <xmin>559974.523879</xmin>
-            <ymin>142282.109192</ymin>
-            <xmax>560150.869404</xmax>
-            <ymax>142395.410070</ymax>
+            <xmin>552820.367524</xmin>
+            <ymin>142869.106556</ymin>
+            <xmax>558469.017047</xmax>
+            <ymax>146494.734652</ymax>
         </extent>
         <projections>1</projections>
         <destinationsrs>
@@ -23,7 +23,7 @@
             </spatialrefsys>
         </destinationsrs>
     </mapcanvas>
-    <legend updateDrawingOrder="false" activeLayer="dimension20130701113936582">
+    <legend updateDrawingOrder="false" activeLayer="pipe_child_parent20130417092030507">
         <legendgroup open="true" checked="Qt::PartiallyChecked" name="Réseau">
             <legendlayer drawingOrder="0" open="false" checked="Qt::Unchecked" name="conduites inactives" showFeatureCount="0">
                 <filegroup open="false" hidden="false">
@@ -50,8 +50,8 @@
                     <legendlayerfile isInOverview="0" layerid="subscriber20130304110011459" visible="1"/>
                 </filegroup>
             </legendlayer>
-            <legendlayer drawingOrder="5" open="false" checked="Qt::Checked" name="vannes" showFeatureCount="0">
-                <filegroup open="false" hidden="false">
+            <legendlayer drawingOrder="5" open="true" checked="Qt::Checked" name="vannes" showFeatureCount="0">
+                <filegroup open="true" hidden="false">
                     <legendlayerfile isInOverview="0" layerid="valve20130304110011497" visible="1"/>
                 </filegroup>
             </legendlayer>
@@ -73,7 +73,7 @@
                 </filegroup>
             </legendlayer>
         </legendgroup>
-        <legendgroup open="false" checked="Qt::PartiallyChecked" name="Zones">
+        <legendgroup open="true" checked="Qt::PartiallyChecked" name="Zones">
             <legendlayer drawingOrder="9" open="false" checked="Qt::Unchecked" name="communes" showFeatureCount="0">
                 <filegroup open="false" hidden="false">
                     <legendlayerfile isInOverview="0" layerid="district20130304110004764" visible="0"/>
@@ -100,7 +100,7 @@
                 </filegroup>
             </legendlayer>
         </legendgroup>
-        <legendgroup open="true" checked="Qt::PartiallyChecked" name="Plans">
+        <legendgroup open="false" checked="Qt::PartiallyChecked" name="Plans">
             <legendlayer drawingOrder="14" open="false" checked="Qt::Unchecked" name="riviera" showFeatureCount="0">
                 <filegroup open="false" hidden="false">
                     <legendlayerfile isInOverview="0" layerid="riviera20130405112707706" visible="0"/>
@@ -243,7 +243,7 @@
                 </filegroup>
             </legendlayer>
         </legendgroup>
-        <legendgroup open="true" checked="Qt::Checked" name="Côtes">
+        <legendgroup open="false" checked="Qt::Checked" name="Côtes">
             <legendlayer drawingOrder="41" open="true" checked="Qt::Checked" name="côtes - points" showFeatureCount="0">
                 <filegroup open="true" hidden="false">
                     <legendlayerfile isInOverview="0" layerid="dimension20130701113936582" visible="1"/>
@@ -3516,7 +3516,7 @@
                 <actionsetting action="qgis.utils.plugins['linkit'].linkit('pipe20130507153818274','id_parent','pipe20130507153818274', [% $id %])" capture="0" type="1" name="Conduites schéma parent - enfant"/>
             </attributeactions>
         </maplayer>
-        <maplayer minimumScale="-4.65661e-10" maximumScale="1e+08" minLabelScale="0" maxLabelScale="1e+08" geometry="Line" type="vector" hasScaleBasedVisibilityFlag="0" scaleBasedLabelVisibilityFlag="0">
+        <maplayer minimumScale="-4.65661e-10" maximumScale="1500" minLabelScale="0" maxLabelScale="1e+08" geometry="Line" type="vector" hasScaleBasedVisibilityFlag="1" scaleBasedLabelVisibilityFlag="0">
             <id>pipe_child_parent20130417092030507</id>
             <datasource>dbname='sige' host=172.24.171.203 port=5432 user='sige' password='db4wat$' sslmode=disable key='child' srid=21781 type=LINESTRING table="distribution"."pipe_child_parent" (geometry) sql=</datasource>
             <title></title>
@@ -3634,7 +3634,7 @@
                 <property key="labeling/minFeatureSize" value="0"/>
                 <property key="labeling/multilineAlign" value="0"/>
                 <property key="labeling/multilineHeight" value="1"/>
-                <property key="labeling/namedStyle" value="Regular"/>
+                <property key="labeling/namedStyle" value="Normal"/>
                 <property key="labeling/obstacle" value="true"/>
                 <property key="labeling/placeDirectionSymbol" value="0"/>
                 <property key="labeling/placement" value="3"/>
@@ -3646,9 +3646,9 @@
                 <property key="labeling/quadOffset" value="4"/>
                 <property key="labeling/reverseDirectionSymbol" value="false"/>
                 <property key="labeling/rightDirectionSymbol" value=">"/>
-                <property key="labeling/scaleMax" value="10000000"/>
+                <property key="labeling/scaleMax" value="500"/>
                 <property key="labeling/scaleMin" value="1"/>
-                <property key="labeling/scaleVisibility" value="false"/>
+                <property key="labeling/scaleVisibility" value="true"/>
                 <property key="labeling/shadowBlendMode" value="6"/>
                 <property key="labeling/shadowColorB" value="0"/>
                 <property key="labeling/shadowColorG" value="0"/>
@@ -4812,7 +4812,7 @@
                 <property key="labeling/minFeatureSize" value="0"/>
                 <property key="labeling/multilineAlign" value="0"/>
                 <property key="labeling/multilineHeight" value="1"/>
-                <property key="labeling/namedStyle" value="Regular"/>
+                <property key="labeling/namedStyle" value="Normal"/>
                 <property key="labeling/obstacle" value="true"/>
                 <property key="labeling/placeDirectionSymbol" value="0"/>
                 <property key="labeling/placement" value="0"/>
@@ -4824,7 +4824,7 @@
                 <property key="labeling/quadOffset" value="4"/>
                 <property key="labeling/reverseDirectionSymbol" value="false"/>
                 <property key="labeling/rightDirectionSymbol" value=">"/>
-                <property key="labeling/scaleMax" value="30000"/>
+                <property key="labeling/scaleMax" value="25000"/>
                 <property key="labeling/scaleMin" value="800"/>
                 <property key="labeling/scaleVisibility" value="true"/>
                 <property key="labeling/shadowBlendMode" value="6"/>
@@ -5580,7 +5580,7 @@
                 <actionsetting action="qgis.utils.plugins['postgres91plusauditor'].showHistory('subscriber_type20130304110011480',[% $id %])" capture="0" type="1" name="History audit"/>
             </attributeactions>
         </maplayer>
-        <maplayer minimumScale="-4.65661e-10" maximumScale="1e+08" minLabelScale="1" maxLabelScale="1e+08" geometry="Point" type="vector" hasScaleBasedVisibilityFlag="0" scaleBasedLabelVisibilityFlag="0">
+        <maplayer minimumScale="0" maximumScale="1e+08" minLabelScale="1" maxLabelScale="1e+08" geometry="Point" type="vector" hasScaleBasedVisibilityFlag="0" scaleBasedLabelVisibilityFlag="0">
             <id>valve20130304110011497</id>
             <datasource>dbname='sige' host=172.24.171.203 port=5432 user='sige' password='db4wat$' sslmode=allow key='id' srid=21781 type=POINT table="distribution"."valve" (geometry) sql=</datasource>
             <title></title>
@@ -5609,7 +5609,7 @@
             <renderer-v2 symbollevels="0" type="RuleRenderer">
                 <rules>
                     <rule scalemaxdenom="2000" filter="&quot;_schema_view&quot; = 'f'" symbol="0" label="Réseau"/>
-                    <rule filter="&quot;_schema_view&quot; = 't'" symbol="1" label="Schématique"/>
+                    <rule scalemaxdenom="10000" filter="&quot;_schema_view&quot; = 't'" symbol="1" label="Schématique"/>
                 </rules>
                 <symbols>
                     <symbol alpha="1" type="marker" name="0">
@@ -5697,7 +5697,7 @@
                 <property key="labeling/minFeatureSize" value="0"/>
                 <property key="labeling/multilineAlign" value="0"/>
                 <property key="labeling/multilineHeight" value="1"/>
-                <property key="labeling/namedStyle" value="Regular"/>
+                <property key="labeling/namedStyle" value="Normal"/>
                 <property key="labeling/obstacle" value="true"/>
                 <property key="labeling/placeDirectionSymbol" value="0"/>
                 <property key="labeling/placement" value="0"/>
