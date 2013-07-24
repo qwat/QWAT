@@ -20,14 +20,19 @@ ALTER TABLE distribution.valve ADD COLUMN closed            boolean     default 
 ALTER TABLE distribution.valve ADD COLUMN altitude_real     decimal(10,3)  ;
 ALTER TABLE distribution.valve ADD COLUMN remarks           text           ;
 ALTER TABLE distribution.valve ADD COLUMN schema_force_view boolean     default NULL::boolean;
+ALTER TABLE distribution.pipe ADD COLUMN labelview integer DEFAULT 2;              
+ALTER TABLE distribution.pipe ADD COLUMN labelview_schema integer DEFAULT 2;         
 ALTER TABLE distribution.valve ADD COLUMN _schema_view      boolean DEFAULT NULL;
 
 /* geometry */
 SELECT distribution.geom_tool_point('valve',true,false,true,true,true);
 
 /* constraints */
-ALTER TABLE distribution.valve ADD CONSTRAINT valve_id_type         FOREIGN KEY (id_type)         REFERENCES distribution.valve_type(id)        MATCH FULL   ; CREATE INDEX fki_valve_id_type         ON distribution.valve(id_type)        ;
-ALTER TABLE distribution.valve ADD CONSTRAINT valve_id_function     FOREIGN KEY (id_function)     REFERENCES distribution.valve_function(id)    MATCH FULL   ; CREATE INDEX fki_valve_id_function     ON distribution.valve(id_function)    ;
+ALTER TABLE distribution.valve ADD CONSTRAINT valve_id_type          FOREIGN KEY (id_type)          REFERENCES distribution.valve_type(id)     MATCH FULL; CREATE INDEX fki_valve_id_type          ON distribution.valve(id_type)         ;
+ALTER TABLE distribution.valve ADD CONSTRAINT valve_id_function      FOREIGN KEY (id_function)      REFERENCES distribution.valve_function(id) MATCH FULL; CREATE INDEX fki_valve_id_function      ON distribution.valve(id_function)     ;
+ALTER TABLE distribution.valve ADD CONSTRAINT valve_labelview        FOREIGN KEY (labelview)        REFERENCES distribution.labelview(id)      MATCH FULL; CREATE INDEX fki_valve_labelview        ON distribution.valve(labelview)       ;
+ALTER TABLE distribution.valve ADD CONSTRAINT valve_labelview_schema FOREIGN KEY (labelview_schema) REFERENCES distribution.labelview(id)      MATCH FULL; CREATE INDEX fki_valve_labelview_schema ON distribution.valve(labelview_schema);
+
 /* cannot create constraint on arrays yet
 ALTER TABLE distribution.valve ADD CONSTRAINT valve_id_maintenance FOREIGN KEY (id_maintenance) REFERENCES distribution.valve_maintenance(id) MATCH SIMPLE ; CREATE INDEX fki_valve_id_maintenance ON distribution.valve(id_maintenance) ;
 */
