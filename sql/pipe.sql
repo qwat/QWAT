@@ -26,9 +26,9 @@ ALTER TABLE distribution.pipe ADD COLUMN labeladdremark boolean default false;  
 ALTER TABLE distribution.pipe ADD COLUMN labeladdremark_schema boolean default false;          /* labeladdremark_schema   */
 ALTER TABLE distribution.pipe ADD COLUMN year smallint CHECK (year > 1800 AND year < 2100);    /* year                    */
 ALTER TABLE distribution.pipe ADD COLUMN tunnel_or_bridge boolean default false;               /* tunnel_or_bridge        */
-ALTER TABLE distribution.pipe ADD COLUMN pressure_nominal smallint;                            /* pressure_nominale       */
+ALTER TABLE distribution.pipe ADD COLUMN pressure_nominal smallint default 16;                 /* pressure_nominale       */
 ALTER TABLE distribution.pipe ADD COLUMN folder varchar(20) default '';                        /* folder                  */
-ALTER TABLE distribution.pipe ADD COLUMN remarks text default '';                                         /* remarks                 */
+ALTER TABLE distribution.pipe ADD COLUMN remarks text default '';                              /* remarks                 */
 ALTER TABLE distribution.pipe ADD COLUMN _valve_count  smallint default NULL;                  /* _valve_count            */
 ALTER TABLE distribution.pipe ADD COLUMN _valve_closed boolean default NULL;                   /* _valve_closed           */
 ALTER TABLE distribution.pipe ADD COLUMN _schema_view  boolean default NULL;                   /* _schema_view            */
