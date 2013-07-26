@@ -19,19 +19,19 @@ ALTER TABLE distribution.pipe ADD COLUMN id_distributor integer;							   /* id_
 ALTER TABLE distribution.pipe ADD COLUMN id_precision integer;                                 /* id_precision         FK */
 ALTER TABLE distribution.pipe ADD COLUMN id_protection integer;                                /* id_protection        FK */
 ALTER TABLE distribution.pipe ADD COLUMN id_status integer;                                    /* id_status            FK */
-ALTER TABLE distribution.pipe ADD COLUMN schema_force_view  boolean DEFAULT NULL::boolean;     /* schema_force_view    FK */
-ALTER TABLE distribution.pipe ADD COLUMN labelview integer DEFAULT 2;                          /* label_view           FK */
-ALTER TABLE distribution.pipe ADD COLUMN labelview_schema integer DEFAULT 2;                   /* label_view_schema    FK */
-ALTER TABLE distribution.pipe ADD COLUMN labeladdremark boolean DEFAULT false;                 /* labeladdremark          */
-ALTER TABLE distribution.pipe ADD COLUMN labeladdremark_schema boolean DEFAULT false;          /* labeladdremark_schema   */
+ALTER TABLE distribution.pipe ADD COLUMN schema_force_view  boolean default NULL::boolean;     /* schema_force_view    FK */
+ALTER TABLE distribution.pipe ADD COLUMN labelview integer default 2;                          /* label_view           FK */
+ALTER TABLE distribution.pipe ADD COLUMN labelview_schema integer default 2;                   /* label_view_schema    FK */
+ALTER TABLE distribution.pipe ADD COLUMN labeladdremark boolean default false;                 /* labeladdremark          */
+ALTER TABLE distribution.pipe ADD COLUMN labeladdremark_schema boolean default false;          /* labeladdremark_schema   */
 ALTER TABLE distribution.pipe ADD COLUMN year smallint CHECK (year > 1800 AND year < 2100);    /* year                    */
-ALTER TABLE distribution.pipe ADD COLUMN tunnel_or_bridge boolean DEFAULT false;               /* tunnel_or_bridge        */
+ALTER TABLE distribution.pipe ADD COLUMN tunnel_or_bridge boolean default false;               /* tunnel_or_bridge        */
 ALTER TABLE distribution.pipe ADD COLUMN pressure_nominal smallint;                            /* pressure_nominale       */
-ALTER TABLE distribution.pipe ADD COLUMN folder varchar(20) DEFAULT '';                        /* folder                  */
-ALTER TABLE distribution.pipe ADD COLUMN remarks text;                                         /* remarks                 */
-ALTER TABLE distribution.pipe ADD COLUMN _valve_count  smallint DEFAULT NULL;                  /* _valve_count            */
-ALTER TABLE distribution.pipe ADD COLUMN _valve_closed boolean DEFAULT NULL;                   /* _valve_closed           */
-ALTER TABLE distribution.pipe ADD COLUMN _schema_view  boolean DEFAULT NULL;                   /* _schema_view            */
+ALTER TABLE distribution.pipe ADD COLUMN folder varchar(20) default '';                        /* folder                  */
+ALTER TABLE distribution.pipe ADD COLUMN remarks text default '';                                         /* remarks                 */
+ALTER TABLE distribution.pipe ADD COLUMN _valve_count  smallint default NULL;                  /* _valve_count            */
+ALTER TABLE distribution.pipe ADD COLUMN _valve_closed boolean default NULL;                   /* _valve_closed           */
+ALTER TABLE distribution.pipe ADD COLUMN _schema_view  boolean default NULL;                   /* _schema_view            */
 
 
 

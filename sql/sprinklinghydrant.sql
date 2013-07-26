@@ -22,7 +22,7 @@ ALTER TABLE distribution.sprinklinghydrant ADD COLUMN  id_district      integer 
 ALTER TABLE distribution.sprinklinghydrant ADD COLUMN  year smallint    CHECK (year > 1800 AND year < 2100);
 ALTER TABLE distribution.sprinklinghydrant ADD COLUMN  model            varchar(30)             ;
 ALTER TABLE distribution.sprinklinghydrant ADD COLUMN  altitude_real    decimal(10,3)           ;
-ALTER TABLE distribution.sprinklinghydrant ADD COLUMN  remarks          text                    ;
+ALTER TABLE distribution.sprinklinghydrant ADD COLUMN  remarks text default '';
 
 
 

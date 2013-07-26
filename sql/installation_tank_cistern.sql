@@ -33,7 +33,7 @@ ALTER TABLE distribution.installation_tank_cistern ADD COLUMN  name             
 ALTER TABLE distribution.installation_tank_cistern ADD COLUMN  id_distributor    integer                ;
 ALTER TABLE distribution.installation_tank_cistern ADD COLUMN  id_status         integer                ;
 ALTER TABLE distribution.installation_tank_cistern ADD COLUMN  id_type           integer                ;
-ALTER TABLE distribution.installation_tank_cistern ADD COLUMN  remarks           text                   ;
+ALTER TABLE distribution.installation_tank_cistern ADD COLUMN  remarks text default '';
 ALTER TABLE distribution.installation_tank_cistern ADD COLUMN  dimension_1       numeric(10,1)          ;
 ALTER TABLE distribution.installation_tank_cistern ADD COLUMN  dimension_2       numeric(10,1)          ;
 ALTER TABLE distribution.installation_tank_cistern ADD COLUMN  storage           numeric(10,1)          ;
