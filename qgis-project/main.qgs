@@ -4,10 +4,10 @@
     <mapcanvas>
         <units>meters</units>
         <extent>
-            <xmin>554278.68627222965005785</xmin>
-            <ymin>147489.94411990389926359</ymin>
-            <xmax>554281.85507106117438525</xmax>
-            <ymax>147492.20341352612012997</ymax>
+            <xmin>554279.87145289487671107</xmin>
+            <ymin>147489.27817345145740546</ymin>
+            <xmax>554283.04025172640103847</xmax>
+            <ymax>147492.29726525154546835</ymax>
         </extent>
         <projections>1</projections>
         <destinationsrs>
@@ -23,7 +23,7 @@
             </spatialrefsys>
         </destinationsrs>
     </mapcanvas>
-    <legend updateDrawingOrder="false" activeLayer="valve20130304110011497">
+    <legend updateDrawingOrder="false">
         <legendgroup open="true" checked="Qt::PartiallyChecked" name="Réseau">
             <legendlayer drawingOrder="0" open="false" checked="Qt::Unchecked" name="conduites inactives" showFeatureCount="0">
                 <filegroup open="false" hidden="false">
@@ -1015,7 +1015,7 @@
             </pipe>
             <blendMode>0</blendMode>
         </maplayer>
-        <maplayer minimumScale="-4.65661e-10" maximumScale="1e+08" minLabelScale="0" maxLabelScale="1e+08" geometry="Line" type="vector" hasScaleBasedVisibilityFlag="0" scaleBasedLabelVisibilityFlag="0">
+        <maplayer minimumScale="0" maximumScale="1e+08" minLabelScale="0" maxLabelScale="1e+08" geometry="Line" type="vector" hasScaleBasedVisibilityFlag="0" scaleBasedLabelVisibilityFlag="0">
             <id>conduites_copy20130709141244955</id>
             <datasource>dbname='sige' host=172.24.171.203 port=5432 user='sige' password='db4wat$' sslmode=disable key='id' srid=21781 type=LINESTRING table="distribution"."pipe" (geometry) sql=</datasource>
             <title></title>
@@ -1136,7 +1136,7 @@
                 <property key="labeling/minFeatureSize" value="0"/>
                 <property key="labeling/multilineAlign" value="0"/>
                 <property key="labeling/multilineHeight" value="1"/>
-                <property key="labeling/namedStyle" value="Normal"/>
+                <property key="labeling/namedStyle" value="Bold"/>
                 <property key="labeling/obstacle" value="true"/>
                 <property key="labeling/placeDirectionSymbol" value="0"/>
                 <property key="labeling/placement" value="2"/>
@@ -1258,8 +1258,8 @@
                 <edittype labelontop="0" editable="0" type="0" name="id"/>
                 <edittype labelontop="0" editable="1" allowNull="false" orderByValue="false" key="id" layer="distributor20130304114719702" allowMulti="false" filterExpression="" type="15" value="name" name="id_distributor"/>
                 <edittype labelontop="0" editable="0" type="0" name="id_district"/>
-                <edittype labelontop="0" editable="1" allowNull="false" orderByValue="true" key="id" layer="pipe_function20130304110005186" allowMulti="false" filterExpression="" type="15" value="function" name="id_function"/>
-                <edittype labelontop="0" editable="1" allowNull="false" orderByValue="true" key="id" layer="pipe_install_method20130304110005209" allowMulti="false" filterExpression="" type="15" value="name" name="id_install_method"/>
+                <edittype labelontop="0" editable="1" allowNull="false" orderByValue="false" key="id" layer="pipe_function20130304110005186" allowMulti="false" filterExpression="" type="15" value="function" name="id_function"/>
+                <edittype labelontop="0" editable="1" allowNull="false" orderByValue="false" key="id" layer="pipe_install_method20130304110005209" allowMulti="false" filterExpression="" type="15" value="name" name="id_install_method"/>
                 <edittype labelontop="0" editable="1" allowNull="false" orderByValue="true" key="id" layer="pipe_material20130304110005230" allowMulti="false" filterExpression="" type="15" value="_fancy_name" name="id_material"/>
                 <edittype labelontop="0" editable="0" type="0" name="id_node_a"/>
                 <edittype labelontop="0" editable="0" type="0" name="id_node_b"/>
@@ -6402,8 +6402,8 @@
                 <value>disabled</value>
                 <value>enabled</value>
                 <value>enabled</value>
-                <value>disabled</value>
-                <value>disabled</value>
+                <value>enabled</value>
+                <value>enabled</value>
                 <value>disabled</value>
                 <value>disabled</value>
                 <value>disabled</value>
