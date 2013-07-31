@@ -12,9 +12,8 @@ COMMENT ON TABLE distribution.dimension IS 'dimension arcs displays measures don
 
 /* columns */
 ALTER TABLE distribution.dimension ADD COLUMN "type" varchar(12); /* distance or orientation*/ 
-ALTER TABLE distribution.dimension ADD COLUMN _distance_observed double precision;
-ALTER TABLE distribution.dimension ADD COLUMN _distance_terrain  double precision;
-ALTER TABLE distribution.dimension ADD COLUMN _orientation  varchar(50);
+ALTER TABLE distribution.dimension ADD COLUMN observation double precision;
+ALTER TABLE distribution.dimension ADD COLUMN distance_extremities double precision;
 
 /* geometry */
 SELECT AddGeometryColumn('distribution','dimension','geometry',21781,'LINESTRING',2);
@@ -30,7 +29,7 @@ CREATE OR REPLACE FUNCTION distribution.dimension_distance() RETURNS trigger AS
 $BODY$
 	BEGIN
 		UPDATE distribution.dimension SET 
-			_distance_terrain = ST_Distance( ST_GeometryN(NEW.geometry, 1), ST_GeometryN(NEW.geometry, ST_NumGeometry(NEW.geometry)) )
+			distance_extremities = ST_Distance( ST_GeometryN(NEW.geometry, 1), ST_GeometryN(NEW.geometry, ST_NumGeometries(NEW.geometry)) )
 		WHERE id = NEW.id;
 		RETURN NEW;
 	END;
