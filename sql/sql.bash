@@ -29,8 +29,6 @@ read -p "Press any key to continue..."
 
 psql -h 172.24.171.$ip -U sige -f dimension.sql
 read -p "Press any key to continue..."
-psql -h 172.24.171.$ip -U sige -f dimension_view.sql
-read -p "Press any key to continue..."
 psql -h 172.24.171.$ip -U sige -f pressurezone.sql
 read -p "Press any key to continue..."
 psql -h 172.24.171.$ip -U sige -f pressurezone_child_parent.sql
