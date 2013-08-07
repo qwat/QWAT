@@ -14,10 +14,11 @@ COMMENT ON TABLE distribution.dimension IS 'dimension arcs displays measures don
 ALTER TABLE distribution.dimension ADD COLUMN "type" varchar(12); /* distance or orientation*/ 
 ALTER TABLE distribution.dimension ADD COLUMN observation double precision;
 ALTER TABLE distribution.dimension ADD COLUMN distance_extremities double precision;
+ALTER TABLE distribution.dimension ADD COLUMN remarks text;
 
 /* geometry */
 SELECT AddGeometryColumn('distribution','dimension','geometry',21781,'LINESTRING',2);
-CREATE INDEX dimension_geoidx2 ON distribution.dimension USING GIST ( geometry );
+CREATE INDEX dimension_geoidx ON distribution.dimension USING GIST ( geometry );
 
 
 /* primary key */
