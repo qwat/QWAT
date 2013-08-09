@@ -1,5 +1,0 @@
-
-To merge parts of a multipolygon:
-sige203 -c "SELECT ST_NumGeometry(geometry) FROM distribution.pressurezone WHERE id=XXX;"
-sige203 -c "SELECT ST_CollectionHomogenize(ST_Union(ST_GeometryN(geometry,n))) FROM distribution.pressurezone CROSS JOIN generate_series(1,XXX) n WHERE id = 30;" > x
-sige203 -c "UPDATE distribution.pressurezone SET geometry = XXX WHERE id = XXX"
