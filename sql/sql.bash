@@ -22,6 +22,16 @@ read -p "Press any key to continue..."
 psql -h 172.24.171.$ip -U sige -f labelview.sql
 read -p "Press any key to continue..."
 
+
+psql -h 172.24.171.$ip -U sige -f leak_type.sql
+read -p "Press any key to continue..."
+psql -h 172.24.171.$ip -U sige -f leak_cause.sql
+read -p "Press any key to continue..."
+psql -h 172.24.171.$ip -U sige -f leak_damage.sql
+read -p "Press any key to continue..."
+psql -h 172.24.171.$ip -U sige -f leak.sql
+read -p "Press any key to continue..."
+
 psql -h 172.24.171.$ip -U sige -f node.sql
 read -p "Press any key to continue..."
 psql -h 172.24.171.$ip -U sige -f node_fcn.sql
