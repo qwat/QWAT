@@ -1,5 +1,3 @@
-#read -p "Press any key to continue..."
-#$PSQLCOMMAND -f roles.sql
 read -p "REMEMBER TO BACKUP!!! CONTINUE? (y/n) " answ
 if [[ "$answ" == "y" ]]
 then
@@ -13,7 +11,7 @@ $PSQLCOMMAND -c "CREATE SCHEMA distribution;"
 
 rm create.sql
 touch create.sql
-echo -e "BEGIN;\n" >> create.sql
+echo -e "BEGIN;\n\nDROP SCHEMA distribution CASCADE;\nCREATE SCHEMA distribution;\n\n" >> create.sql
 for f in *
 do
 	if test -d "$f"; then
@@ -25,8 +23,6 @@ done
 echo -e "COMMIT;\n" >> create.sql
 
 $PSQLCOMMAND -f create.sql
-
-#echo -e "read -p 'Press any key to continue...'" >> tmp.bash
 
 
 fi
