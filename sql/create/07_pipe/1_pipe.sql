@@ -27,7 +27,7 @@ ALTER TABLE distribution.pipe ADD COLUMN year smallint CHECK (year > 1800 AND ye
 ALTER TABLE distribution.pipe ADD COLUMN tunnel_or_bridge boolean default false;               /* tunnel_or_bridge        */
 ALTER TABLE distribution.pipe ADD COLUMN pressure_nominal smallint default 16;                 /* pressure_nominale       */
 ALTER TABLE distribution.pipe ADD COLUMN folder varchar(20) default '';                        /* folder                  */
-ALTER TABLE distribution.pipe ADD COLUMN remarks text default '';                              /* remarks                 */
+ALTER TABLE distribution.pipe ADD COLUMN remarks text;                              /* remarks                 */
 ALTER TABLE distribution.pipe ADD COLUMN _valve_count  smallint default NULL;                  /* _valve_count            */
 ALTER TABLE distribution.pipe ADD COLUMN _valve_closed boolean default NULL;                   /* _valve_closed           */
 

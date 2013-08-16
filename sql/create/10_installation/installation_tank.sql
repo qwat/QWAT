@@ -51,7 +51,7 @@ COMMENT ON TABLE distribution.installation_tank IS 'storage tanks. These are rel
 
 /* columns */
 ALTER TABLE distribution.installation_tank ADD COLUMN  id_installation   integer             ;
-ALTER TABLE distribution.installation_tank ADD COLUMN  remarks text default '';
+ALTER TABLE distribution.installation_tank ADD COLUMN  remarks text;
 ALTER TABLE distribution.installation_tank ADD COLUMN  id_overflow       integer             ;
 ALTER TABLE distribution.installation_tank ADD COLUMN  id_firestorage    integer             ;
 ALTER TABLE distribution.installation_tank ADD COLUMN  storage_total     numeric(10,1)       ; COMMENT ON COLUMN distribution.installation_tank.storage_total  IS 'litres';

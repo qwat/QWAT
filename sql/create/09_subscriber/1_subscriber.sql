@@ -17,7 +17,7 @@ ALTER TABLE distribution.subscriber ADD COLUMN   id_pipe integer;									/* id_
 ALTER TABLE distribution.subscriber ADD COLUMN   client_identification character varying (12);
 ALTER TABLE distribution.subscriber ADD COLUMN   _client_identification_full character varying (16);
 ALTER TABLE distribution.subscriber ADD COLUMN   parcel character varying (12) ;
-ALTER TABLE distribution.subscriber ADD COLUMN   remarks text default '';
+ALTER TABLE distribution.subscriber ADD COLUMN   remarks text;
 
 /* geometry */
 SELECT distribution.geom_tool_point('subscriber',false,false,false,false,false);

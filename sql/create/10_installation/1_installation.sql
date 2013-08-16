@@ -19,7 +19,7 @@ ALTER TABLE distribution.installation ADD COLUMN  id_remote         integer     
 ALTER TABLE distribution.installation ADD COLUMN  id_status          integer                ;
 ALTER TABLE distribution.installation ADD COLUMN  id_distributor     integer                ;
 ALTER TABLE distribution.installation ADD COLUMN  id_type            integer                ;
-ALTER TABLE distribution.installation ADD COLUMN  remarks text default '';
+ALTER TABLE distribution.installation ADD COLUMN  remarks text;
 ALTER TABLE distribution.installation ADD COLUMN  links              text                   ;
 ALTER TABLE distribution.installation ADD COLUMN  year smallint CHECK (year > 1800 AND year < 2100);
 ALTER TABLE distribution.installation ADD COLUMN  altitude_real      decimal(10,3)          ;

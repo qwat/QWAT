@@ -19,7 +19,7 @@ ALTER TABLE distribution.valve ADD COLUMN diameter_nominal  varchar(10) ;
 ALTER TABLE distribution.valve ADD COLUMN year              smallint CHECK (year > 1800 AND year < 2100);
 ALTER TABLE distribution.valve ADD COLUMN closed            boolean     default false ;
 ALTER TABLE distribution.valve ADD COLUMN altitude_real     decimal(10,3)  ;
-ALTER TABLE distribution.valve ADD COLUMN remarks text default '';
+ALTER TABLE distribution.valve ADD COLUMN remarks text;
 ALTER TABLE distribution.valve ADD COLUMN labelview integer DEFAULT 2;              
 ALTER TABLE distribution.valve ADD COLUMN labelview_schema integer DEFAULT 2;         
 
