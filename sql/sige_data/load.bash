@@ -29,5 +29,7 @@ psql -h 172.24.171.203 -U sige -f data_installation_treatment.sql -v ON_ERROR_ST
 read -p " continuer..."
 psql -h 172.24.171.203 -U sige -f data_installation_pump.sql -v ON_ERROR_STOP=1
 read -p " continuer..."
+psql -h 172.24.171.203 -U sige -f data_installation_source.sql -v ON_ERROR_STOP=1
+read -p " continuer..."
 
 fi
