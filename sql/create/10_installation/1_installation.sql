@@ -22,12 +22,14 @@ ALTER TABLE distribution.installation ADD COLUMN  id_type            integer    
 ALTER TABLE distribution.installation ADD COLUMN  remarks text default '';
 ALTER TABLE distribution.installation ADD COLUMN  links              text                   ;
 ALTER TABLE distribution.installation ADD COLUMN  year smallint CHECK (year > 1800 AND year < 2100);
-ALTER TABLE distribution.installation ADD COLUMN  schema_force_view  boolean DEFAULT NULL::boolean;
 ALTER TABLE distribution.installation ADD COLUMN  altitude_real      decimal(10,3)          ;
 ALTER TABLE distribution.installation ADD COLUMN  open_water_surface boolean DEFAULT False  ;
 ALTER TABLE distribution.installation ADD COLUMN  parcel             varchar(30)            ;
 ALTER TABLE distribution.installation ADD COLUMN  eca                varchar(30)            ;
 ALTER TABLE distribution.installation ADD COLUMN  _complete_name     varchar(50)            ;
+
+/* schema view */
+SELECT distribution.create_schema_view('installation','type');
 
 /* geometry */
 SELECT distribution.geom_tool_point('installation',true,true,true,false,true);

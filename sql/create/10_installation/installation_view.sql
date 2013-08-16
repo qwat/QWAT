@@ -28,16 +28,13 @@ CREATE VIEW distribution.installation_view AS
 		installation.id_printmap                        ,
 		installation._printmaps                         ,
 		installation._districts                         ,
+		installation._schema_view                       ,
 		installation.geometry::geometry(Point,21781)    ,
 		installation_type.name      AS _type            ,
 		installation_type.shortname AS _type_shortname  ,
 		status.status               AS _status          ,
 		status.active               AS _status_active   ,
 		distributor.name            AS _distributor     ,
-		CASE 
-			WHEN installation.schema_force_view IS NULL THEN installation_type.schema_view
-			ELSE installation.schema_force_view
-		END AS _schema_view,
 		node.altitude_dtm          AS _altitude_dtm,
 		district.name              AS _district,
 		pressurezone.name          AS _pressurezone,

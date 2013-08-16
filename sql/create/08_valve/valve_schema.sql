@@ -45,8 +45,7 @@ CREATE VIEW distribution.valve_schema AS
 		LEFT OUTER JOIN distribution.node           ON valve.id_node         = node.id       
 		LEFT OUTER JOIN distribution.district       ON valve.id_district     = district.id       
 		LEFT OUTER JOIN distribution.pressurezone   ON valve.id_pressurezone = pressurezone.id
-		WHERE  valve.schema_force_view IS TRUE 
-		   OR (valve.schema_force_view IS NULL AND valve_function.schema_view IS TRUE);
+		WHERE valve._schema_view IS TRUE;
 		
 		
 CREATE OR REPLACE RULE valve_update_alternative AS

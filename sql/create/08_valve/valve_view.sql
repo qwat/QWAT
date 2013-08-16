@@ -30,6 +30,7 @@ SELECT
 	valve.id_printmap       ,
 	valve._printmaps        ,
 	valve._districts        ,
+	valve._schema_view      ,
 	valve.geometry::geometry(Point,21781)    ,
 	valve_function.function  AS _function    ,
 	valve_function.shortname AS _function_shortname ,
@@ -38,10 +39,6 @@ SELECT
 		WHEN valve_function.shortname IS NULL THEN valve.identification::varchar
 		ELSE valve_function.shortname || valve.identification::varchar
 	END AS _label,
-	CASE 
-		WHEN valve.schema_force_view IS NULL THEN valve_function.schema_view
-		ELSE valve.schema_force_view
-	END AS _schema_view,
 	node.altitude_dtm          AS _altitude_dtm,
 	district.name              AS _district,
 	pressurezone.name          AS _pressurezone,
