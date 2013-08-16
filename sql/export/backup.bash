@@ -35,8 +35,12 @@ rm tempfile
 pg_dump --host 172.24.171.203 --port 5432 --username "sige" --no-password  --format plain --data-only --inserts --column-inserts --verbose --file tempfile --table "distribution.installation_tank" "sige"
 cat tempfile | sed 's/INSERT INTO installation_tank/INSERT INTO distribution.installation_tank/g' > /home/denis/Documents/qgis/qwat/sql/sige_data/data_installation_tank.sql
 rm tempfile
-
-
+pg_dump --host 172.24.171.203 --port 5432 --username "sige" --no-password  --format plain --data-only --inserts --column-inserts --verbose --file tempfile --table "distribution.installation_treatment" "sige"
+cat tempfile | sed 's/INSERT INTO installation_treatment/INSERT INTO distribution.installation_treatment/g' > /home/denis/Documents/qgis/qwat/sql/sige_data/data_installation_treatment.sql
+rm tempfile
+pg_dump --host 172.24.171.203 --port 5432 --username "sige" --no-password  --format plain --data-only --inserts --column-inserts --verbose --file tempfile --table "distribution.installation_pump" "sige"
+cat tempfile | sed 's/INSERT INTO installation_pump/INSERT INTO distribution.installation_pump/g' > /home/denis/Documents/qgis/qwat/sql/sige_data/data_installation_pump.sql
+rm tempfile
 
 read -p "Push to github=== " answ
 	if [[ "$answ" == "y" ]]
