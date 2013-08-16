@@ -25,6 +25,7 @@ COMMENT ON TABLE distribution.installation_pump IS '';
 ALTER TABLE distribution.installation_pump ADD COLUMN id_installation               smallint     ;
 ALTER TABLE distribution.installation_pump ADD COLUMN id_type                       smallint     ;
 ALTER TABLE distribution.installation_pump ADD COLUMN id_operating                  smallint     ;
+ALTER TABLE distribution.installation_pump ADD COLUMN altitude                      decimal(10,3);
 ALTER TABLE distribution.installation_pump ADD COLUMN nb_pump                       smallint     ;
 ALTER TABLE distribution.installation_pump ADD COLUMN rejected_flow                 decimal(10,2);
 ALTER TABLE distribution.installation_pump ADD COLUMN manometric_height             decimal(10,2);

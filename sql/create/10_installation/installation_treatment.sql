@@ -15,6 +15,7 @@ COMMENT ON TABLE distribution.installation_treatment IS 'storage treatments. The
 
 /* columns */
 ALTER TABLE distribution.installation_treatment ADD COLUMN id_installation               integer      ;
+ALTER TABLE distribution.installation_treatment ADD COLUMN altitude                      decimal(10,3);
 ALTER TABLE distribution.installation_treatment ADD COLUMN sanitization_uv               boolean      ;
 ALTER TABLE distribution.installation_treatment ADD COLUMN sanitization_chlorine_liquid  boolean      ;
 ALTER TABLE distribution.installation_treatment ADD COLUMN sanitization_chlorine_gazeous boolean      ;
