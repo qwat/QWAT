@@ -32,7 +32,7 @@ CREATE VIEW distribution.installation_view AS
 		installation.geometry::geometry(Point,21781)    ,
 		installation_type.name      AS _type            ,
 		installation_type.shortname AS _type_shortname  ,
-		status.status               AS _status          ,
+		status.name               AS _status          ,
 		status.active               AS _status_active   ,
 		distributor.name            AS _distributor     ,
 		node.altitude_dtm          AS _altitude_dtm,

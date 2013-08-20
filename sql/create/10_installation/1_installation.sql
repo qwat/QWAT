@@ -29,7 +29,7 @@ ALTER TABLE distribution.installation ADD COLUMN  eca                varchar(30)
 ALTER TABLE distribution.installation ADD COLUMN  _complete_name     varchar(50)            ;
 
 /* schema view */
-SELECT distribution.create_schema_view('installation','type');
+SELECT distribution.enable_schemaview('installation','type');
 
 /* geometry */
 SELECT distribution.geom_tool_point('installation',true,true,true,false,true);

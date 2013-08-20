@@ -24,7 +24,7 @@ ALTER TABLE distribution.valve ADD COLUMN labelview integer DEFAULT 2;
 ALTER TABLE distribution.valve ADD COLUMN labelview_schema integer DEFAULT 2;         
 
 /* schema view */
-SELECT distribution.create_schema_view('valve','function');
+SELECT distribution.enable_schemaview('valve','function');
 
 /* geometry */
 SELECT distribution.geom_tool_point('valve',true,false,true,true,true);

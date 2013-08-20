@@ -40,6 +40,6 @@ $BODY$
 	END;
 $BODY$
 LANGUAGE 'plpgsql';
-COMMENT ON FUNCTION distribution.pipe_get_id(geometry) IS 'Returns the pipe at a given position. If several pipe, return NULL.';
+COMMENT ON FUNCTION distribution.pipe_get_id(geometry) IS 'Returns the pipe at a given position.';
 
 

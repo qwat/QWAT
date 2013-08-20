@@ -28,7 +28,7 @@ CREATE VIEW distribution.hydrant_view AS
 		hydrant.geometry::geometry(Point,21781),
 		hydrant_type.name          AS _type, 
 		distributor.name           AS _distributor,
-		status.status              AS _status_name,
+		status.name              AS _status_name,
 		status.active              AS _status_active,
 		hydrant_provider.name      AS _provider,
 		node.altitude_dtm          AS _altitude_dtm,

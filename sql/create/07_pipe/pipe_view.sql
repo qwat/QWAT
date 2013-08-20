@@ -25,7 +25,7 @@ CREATE VIEW distribution.pipe_view AS
 		pipe.folder            ,
 		pipe.remarks           ,
 		pipe._valve_count      ,
-		pipe._valve_closed     ,
+		pipe._closed     ,
 		pipe._schema_view      ,
 		pipe.id_node_a         ,
 		pipe.id_node_b         ,
@@ -39,15 +39,17 @@ CREATE VIEW distribution.pipe_view AS
 		pipe._districts        ,
 		pipe.geometry::geometry(LineString,21781),
  		pipe_function.function          AS _function_name, 
+ 		pipe_function.code_sire         AS _function_code_sire, 
 		pipe_install_method.name        AS _install_method,
 		pipe_material._fancy_name       AS _material_name,
 		pipe_material.name              AS _material_longname,
 		pipe_material.diameter          AS _material_diameter,
 		pipe_material.diameter_internal AS _material_diameter_internal,
+		pipe_material.code_sire         AS _material_code_sire,
 		distributor.name                AS _distributor,
 		"precision".name                AS _precision,
 		pipe_protection.name            AS _protection,
-		status.status                   AS _status_name,
+		status.name                   AS _status_name,
 		status.active                   AS _status_active,
 		pressurezone.name               AS _pressurezone,
 		pressurezone.shortname          AS _pressurezone_shortname,
@@ -65,48 +67,6 @@ CREATE VIEW distribution.pipe_view AS
 		LEFT OUTER JOIN distribution.node AS node_b      ON pipe.id_node_b         = node_b.id;
 /*----------------!!!---!!!----------------*/
 /* Comment */
-COMMENT ON VIEW distribution.pipe_view IS 'View for pipe. This view is editable (a rule exists to forwad changes to the table). 
-		schema_view is a boolean to define if the pipe is visible in the schematic view. This field is usually determined by the pipe''s function attribute schema_view,
-		but it can be overridden by the pipe''s attribute schema_force_view.';
+COMMENT ON VIEW distribution.pipe_view IS 'View for pipe. This view is not editable';
 
-
-/*----------------!!!---!!!----------------*/
-/* INSERT,UPDATE,DELETE RULES */
-/*
-CREATE OR REPLACE RULE pipe_update AS
-	ON UPDATE TO distribution.pipe_view DO INSTEAD
-		UPDATE distribution.pipe SET 
-			id_function        = NEW.id_function        ,
-			id_material        = NEW.id_material        ,
-			id_status          = NEW.id_status          ,
-			id_distributor     = NEW.id_distributor     ,
-			id_pressurezone    = NEW.id_pressurezone    ,
-			id_precision       = NEW.id_precision       ,
-			id_protection      = NEW.id_protection      ,
-			id_install_method  = NEW.id_install_method  ,
-			year               = NEW.year               ,
-			tunnel_or_bridge   = NEW.tunnel_or_bridge   ,
-			pressure_nominal   = NEW.pressure_nominal   ,
-			schema_force_view  = NEW.schema_force_view  ,
-			folder             = NEW.folder             ,
-			remarks            = NEW.remarks            ,
-			geometry           = NEW.geometry           ,
-			id_parent          = NULLIF(NEW.id_parent,0)::integer	
-		WHERE id = NEW.id;
-CREATE OR REPLACE RULE pipe_insert AS
-	ON INSERT TO distribution.pipe_view DO INSTEAD
-		INSERT INTO distribution.pipe 
-			(    id_function,    id_material,    id_status,    id_parent,    id_distributor,    id_pressurezone,    id_precision,    id_protection,    id_install_method,    year,    tunnel_or_bridge,    pressure_nominal,    schema_force_view,    folder,    remarks,    geometry)     
-		VALUES
-			(NEW.id_function,NEW.id_material,NEW.id_status,NEW.id_parent,NEW.id_distributor,NEW.id_pressurezone,NEW.id_precision,NEW.id_protection,NEW.id_install_method,NEW.year,NEW.tunnel_or_bridge,NEW.pressure_nominal,NEW.schema_force_view,NEW.folder,NEW.remarks,NEW.geometry);
-CREATE OR REPLACE RULE pipe_delete AS
-	ON DELETE TO distribution.pipe_view DO INSTEAD
-		DELETE FROM distribution.pipe WHERE id = OLD.id;
-		*/
-/* Comments */	
-/*
-COMMENT ON RULE pipe_update IS 'Rule to forward changes for pipe_view to the table pipe.';
-COMMENT ON RULE pipe_insert IS 'Rule to forward insert of pipe_view to the table pipe.';
-COMMENT ON RULE pipe_delete IS 'Rule to forward deletion of pipe_view to the table pipe.';
-*/
 
