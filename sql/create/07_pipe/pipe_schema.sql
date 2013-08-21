@@ -124,7 +124,7 @@ CREATE VIEW distribution.pipe_schema AS
 			pipe_schema_merged.number_of_pipe    ,
 			pipe_schema_merged.tunnel_or_bridge  ,
 			pipe_schema_merged._valve_count      ,
-			pipe_schema_merged._closed     ,
+			pipe_schema_merged._valve_closed     ,
 			pipe_schema_merged.geometry::geometry(LineString,21781) AS geometry
 	  FROM distribution.pipe_schema_merged
 	 INNER JOIN distribution.pipe ON pipe.id = pipe_schema_merged.id;

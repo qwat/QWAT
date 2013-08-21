@@ -16,7 +16,7 @@ ALTER TABLE distribution.status ADD COLUMN sire      smallint default null;
 ALTER TABLE distribution.status ADD COLUMN comment   text;
 
 /* Constraints */
-ALTER TABLE distribution.status ADD CONSTRAINT status_name UNIQUE (status);
+ALTER TABLE distribution.status ADD CONSTRAINT status_name UNIQUE (name);
 
 
 /* Predefined functions list */
