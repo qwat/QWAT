@@ -325,7 +325,6 @@ BEGIN;
  UPDATE distribution.pipe SET id_parent=16104 WHERE id=2983;
  UPDATE distribution.pipe SET id_parent=2986 WHERE id=2988;
  UPDATE distribution.pipe SET id_parent=30058 WHERE id=3003;
- UPDATE distribution.pipe SET id_parent=3032 WHERE id=3010;
  UPDATE distribution.pipe SET id_parent=3018 WHERE id=3019;
  UPDATE distribution.pipe SET id_parent=3044 WHERE id=3045;
  UPDATE distribution.pipe SET id_parent=3054 WHERE id=3053;

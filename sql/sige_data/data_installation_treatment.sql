@@ -4,7 +4,7 @@
 
 -- Dumped from database version 9.1.9
 -- Dumped by pg_dump version 9.2.4
--- Started on 2013-08-16 14:22:24 CEST
+-- Started on 2013-08-21 07:15:03 CEST
 
 SET statement_timeout = 0;
 SET client_encoding = 'UTF8';
@@ -15,7 +15,7 @@ SET client_min_messages = warning;
 SET search_path = distribution, pg_catalog;
 
 --
--- TOC entry 4073 (class 0 OID 138666)
+-- TOC entry 4089 (class 0 OID 138666)
 -- Dependencies: 513
 -- Data for Name: installation_treatment; Type: TABLE DATA; Schema: distribution; Owner: sige
 --
@@ -47,7 +47,7 @@ INSERT INTO distribution.installation_treatment (id, id_installation, remarks, s
 
 
 --
--- TOC entry 4078 (class 0 OID 0)
+-- TOC entry 4094 (class 0 OID 0)
 -- Dependencies: 512
 -- Name: installation_treatment_id_seq; Type: SEQUENCE SET; Schema: distribution; Owner: sige
 --
@@ -55,7 +55,7 @@ INSERT INTO distribution.installation_treatment (id, id_installation, remarks, s
 SELECT pg_catalog.setval('installation_treatment_id_seq', 157, true);
 
 
--- Completed on 2013-08-16 14:22:25 CEST
+-- Completed on 2013-08-21 07:15:03 CEST
 
 --
 -- PostgreSQL database dump complete
