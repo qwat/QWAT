@@ -22,14 +22,14 @@ SELECT setval('distribution.installation_pump_id_seq', 100, true);
 COMMENT ON TABLE distribution.installation_pump IS '';
 
 /* columns */
-ALTER TABLE distribution.installation_pump ADD COLUMN id_installation               smallint     ;
-ALTER TABLE distribution.installation_pump ADD COLUMN id_type                       smallint     ;
-ALTER TABLE distribution.installation_pump ADD COLUMN id_operating                  smallint     ;
-ALTER TABLE distribution.installation_pump ADD COLUMN altitude                      decimal(10,3);
-ALTER TABLE distribution.installation_pump ADD COLUMN nb_pump                       smallint     ;
-ALTER TABLE distribution.installation_pump ADD COLUMN rejected_flow                 decimal(10,2);
-ALTER TABLE distribution.installation_pump ADD COLUMN manometric_height             decimal(10,2);
-ALTER TABLE distribution.installation_pump ADD COLUMN remarks                       text         ;
+ALTER TABLE distribution.installation_pump ADD COLUMN id_installation   smallint     ;
+ALTER TABLE distribution.installation_pump ADD COLUMN id_type           smallint     ;
+ALTER TABLE distribution.installation_pump ADD COLUMN id_operating      smallint     ;
+ALTER TABLE distribution.installation_pump ADD COLUMN altitude          decimal(10,3);
+ALTER TABLE distribution.installation_pump ADD COLUMN nb_pump           smallint     ;
+ALTER TABLE distribution.installation_pump ADD COLUMN rejected_flow     decimal(10,2);
+ALTER TABLE distribution.installation_pump ADD COLUMN manometric_height decimal(10,2);
+ALTER TABLE distribution.installation_pump ADD COLUMN remarks           text         ;
 
 /* geometry */
 SELECT AddGeometryColumn('distribution', 'installation_pump', 'geometry', 21781, 'POINT', 2);
