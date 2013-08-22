@@ -16,7 +16,8 @@ CREATE VIEW distribution.leak_view AS
 		address         ,
 		pipe_replaced   ,
 		description     ,
-		repair        
+		repair          ,
+		geometry::geometry(Point,21781)
 	FROM distribution.leak
 	INNER      JOIN distribution.leak_type   ON leak.id_type  = leak_type.id
 	LEFT OUTER JOIN distribution.leak_cause  ON leak.id_cause = leak_cause.id
