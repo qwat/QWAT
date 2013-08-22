@@ -49,7 +49,7 @@ read -p "Push to github=== " answ
 	if [[ "$answ" == "y" ]]
 	then
 		cd /home/denis/Documents/qgis/qwat/sql/sige_data/
-		git add data_pressurezone.sql data_pipe_id_parent.sql data_installation_tank.sql
+		git add .
 		git commit -m "sige data"
 		git push
 	fi

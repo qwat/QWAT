@@ -1,19 +1,20 @@
 export db_address=172.24.171.203
 export shapeoutput=/home/denis/Documents/PPDE/out
 
-export PGCLIENTENCODING=ISO-8859-1
+#export PGCLIENTENCODING=ISO-8859-1
 export PGCLIENTENCODING=LATIN1
+#export PGCLIENTENCODING=UTF8
 
 
 rm $shapeoutput/*
 
-# vannes: prendre fermée + vanne régulation/secour (fct) 
+# vannes: prendre fermée + vanne régulation/secour (fct)
 
 # save schema in a table
 psql -h $db_address -U sige -c "DROP TABLE IF EXISTS distribution.pipe_schema_temp; CREATE TABLE distribution.pipe_schema_temp AS SELECT * FROM distribution.pipe_schema_node;"
 read -p "Press any key to continue..."
 
- # vannes 
+ # vannes
 pgsql2shp -h $db_address -g geom -f $shapeoutput/vannes -P db4wat$ -u sige sige "\
 SELECT \
  'VA_' || id::varchar   AS ID,               \
@@ -35,7 +36,7 @@ SELECT \
  END AS ALTITUDE,                            \
  _district AS COMMUNNE,                      \
  _pressurezone AS ZONE_PRES                  \
-FROM distribution.valve_schema WHERE closed IS TRUE OR _function = 'vanne de régulation' " 
+FROM distribution.valve_schema WHERE closed IS TRUE OR _function = 'vanne de régulation' "
 read -p "Press any key to continue..."
 
 # zones
@@ -43,28 +44,30 @@ pgsql2shp -h $db_address -g geom -f $shapeoutput/zones -P db4wat$ -u sige sige "
 SELECT                                     \
  id AS ID,                                  \
  name AS NOM,                               \
- geometry::geometry(Polygon,21781) AS geom  \
+ geometry::geometry(MultiPolygon,21781) AS geom  \
 FROM distribution.pressurezone "
 read -p "Press any key to continue..."
 
 # conduites
 pgsql2shp -h $db_address -g geom -f $shapeoutput/conduites -P db4wat$ -u sige sige "\
 SELECT                                         \
- 'CO_' || id::varchar        AS ID,            \
+ 'CO_' || pipe_schema_temp.id::varchar        AS ID,            \
  geometry::geometry(LineString,21781) AS geom, \
  _length2d                   AS LONGU_2D,      \
  _length3d                   AS LONGU_3D,      \
  remarks                     AS REMARQUE,      \
- _precision                  AS PRECISIO,      \
- _status_name                AS STATUT,        \
- _function_name              AS FONCTION,      \
- _material_longname          AS MATERIAU,      \
+ precision.name              AS PRECISIO,      \
+ status.name                 AS STATUT,        \
+ pipe_function.name          AS FONCTION,      \
+ pipe_function.code_sire     AS SIRE_FONCT,      \
+ pipe_material.name          AS MATERIAU,      \
+ pipe_material.code_sire     AS SIRE_MATER,      \
  CASE \
-    WHEN _status_name = 'fictif' THEN 20000::varchar \
-    ELSE _material_diameter_internal \
+    WHEN status.name = 'fictif' THEN 20000::varchar \
+    ELSE pipe_material.diameter_internal \
  END AS DIAM_INT,      \
- _pressurezone               AS ZONE_PRES,     \
- _valve_closed               AS VAN_FERM,      \
+ id_pressurezone             AS ZONE_PRES,     \
+ _valve_closed                     AS VAN_FERM,      \
  year                        AS ANNEE,         \
  id_node_a                   AS NOEUD_A,       \
  id_node_b                   AS NOEUD_B,       \
@@ -72,47 +75,21 @@ SELECT                                         \
  NULL::varchar(10)           AS RUGOSITE,      \
  NULL::boolean               AS CALC_HYD,      \
  NULL::boolean               AS A_DESAFE       \
-FROM distribution.pipe_schema_temp WHERE id_distributor = 1 "
-read -p "Press any key to continue..."
-
-# ouvrages
-# TODO proprio etrangers
-#export ouvtype=( "Inconnu" "R�servoir" "Source" "Pompage" "Chambres de vannes" "Chambre compteur" "Chambre de traitement" "Chambre réducteur" "Chambre coupe pression" "Chambre de rassemblement")
-export ouvtype=(S P CV CC CT CR CCP CRA)
-for i in "${ouvtype[@]}"
-do :
-pgsql2shp -h $db_address -g geom -f $shapeoutput/ouvrages_${i// /_} -P db4wat$ -u sige sige "\
-SELECT                                      \
- 'OU_' || id::varchar   AS ID,              \
- id_node AS NOEUD,                          \
- geometry::geometry(Point,21781) AS geom,   \
- _type_shortname || '. ' || name    AS NOM, \
- _type   AS TYPE,                           \
- CASE                                       \
-    WHEN altitude_real IS NOT NULL THEN altitude_real \
-    ELSE _altitude_dtm                      \
- END           AS ALTITUDE,                 \
- _districts     AS COMMUNNE,                 \
- _pressurezone AS ZONE_PRES                 \
-FROM distribution.installation_view WHERE _type_shortname = '$i' AND id_distributor=1 AND _status_active IS TRUE"        
-done
+FROM distribution.pipe_schema_temp \
+INNER      JOIN distribution.pipe_function       ON pipe_schema_temp.id_function       = pipe_function.id \
+INNER      JOIN distribution.pipe_material       ON pipe_schema_temp.id_material       = pipe_material.id \
+INNER      JOIN distribution.precision         ON pipe_schema_temp.id_precision      = precision.id \
+INNER      JOIN distribution.status              ON pipe_schema_temp.id_status         = status.id \
+WHERE id_distributor = 1 "
 read -p "Press any key to continue..."
 
 #reservoir
 pgsql2shp -h $db_address -g geom -f $shapeoutput/ouvrages_reservoir -P db4wat$ -u sige sige "\
 SELECT                                      \
- 'OU_' || installation_view.id::varchar   AS ID,              \
+ 'RE_' || identification::varchar   AS ID,              \
  id_node AS NOEUD,                          \
- installation_view.geometry::geometry(Point,21781) AS geom,   \
- _type_shortname || '. ' || name    AS NOM, \
- _type   AS TYPE,                           \
- CASE                                       \
-    WHEN altitude_real IS NOT NULL THEN altitude_real \
-    ELSE _altitude_dtm                      \
- END           AS ALTITUDE,                 \
- _districts     AS COMMUNNE,                 \
- _pressurezone AS ZONE_PRES,                 \
-installation_tank.remarks              AS REMARKS         , \
+ installation_tank.geometry::geometry(Point,21781) AS geom,   \
+ installation.remarks || installation_tank.remarks              AS REMARKS         , \
 CASE                                                                                  \
     WHEN installation_tank.id_overflow = 1 THEN 'alimentation command�e'::VARCHAR(100)    \
     WHEN installation_tank.id_overflow = 2 THEN 'en d�charge'::VARCHAR(100)               \
@@ -147,8 +124,74 @@ installation_tank.cistern2_dimension_1 AS CUV2_DIM1,                            
 installation_tank.cistern2_dimension_2 AS CUV2_DIM2,                                                 \
 installation_tank.cistern2_storage     AS CUV2_VOLU    ,                                             \
 installation_tank._cistern2_litrepercm AS CUV2_LPCM                                                 \
-FROM distribution.installation_view LEFT OUTER JOIN distribution.installation_tank ON installation_tank.id_installation = installation_view.id\
- WHERE _type_shortname = 'R' AND id_distributor=1 AND _status_active IS TRUE"
+FROM distribution.installation_tank INNER JOIN distribution.installation ON installation_tank.id_installation = installation.id\
+ WHERE id_distributor=1 AND id_status = 1"
+read -p "Press any key to continue..."
+
+#source
+pgsql2shp -h $db_address -g geom -f $shapeoutput/ouvrages_source -P db4wat$ -u sige sige "\
+SELECT                                      \
+ 'SR_' || identification::varchar   AS ID,  \
+ name,                                      \
+ id_node AS NOEUD,                          \
+ installation_source.geometry::geometry(Point,21781) AS geom,\
+ installation_source.id_type    ,                     \
+ CASE                                                 \
+        WHEN id_quality = 1 THEN 'a'                  \
+        WHEN id_quality = 2 THEN 'b'                  \
+        WHEN id_quality = 3 THEN 'c'                  \
+        ELSE ''                                       \
+ END,                                                 \
+ altitude       ,                                     \
+ flow_lowest  AS ETIAGE,                              \
+ flow_mean    AS Q_MOY,                               \
+ flow_concession  AS Q_CONCESS,                       \
+ contract_end     AS FIN_CONCES,                      \
+ gathering_chamber AS CHB_RASSEMB,                    \
+ installation.remarks || installation_source.remarks      AS REMARQUE  \
+FROM distribution.installation_source INNER JOIN distribution.installation ON installation_source.id_installation = installation.id\
+ WHERE id_distributor=1 AND id_status = 1"
+read -p "Press any key to continue..."
+
+# traitement
+pgsql2shp -h $db_address -g geom -f $shapeoutput/ouvrages_traitement -P db4wat$ -u sige sige "\
+SELECT                                      \
+ 'TR_' || identification::varchar   AS ID,  \
+ name,                                      \
+ id_node AS NOEUD,                          \
+ installation_treatment.geometry::geometry(Point,21781) AS geom,\
+altitude                                                       ,\
+sanitization_uv     AS DESIN_UV                                ,\
+sanitization_chlorine_liquid DESIN_CL_L                        ,\
+sanitization_chlorine_gazeous DESIN_CL_G                       ,\
+sanitization_ozone        DESIN_O3                             ,\
+filtration_membrane          FILTR_MEM                         ,\
+filtration_sandorgravel      FILTR_SABL                        ,\
+flocculation                 FLOCULAT                          ,\
+activatedcharcoal            CHARB_ACT                         ,\
+settling                     DECANTAT                          ,\
+treatment_capacity           TRAIT_CAPA                        ,\
+ installation.remarks || installation_treatment.remarks        \
+ FROM distribution.installation_treatment INNER JOIN distribution.installation ON installation_treatment.id_installation = installation.id\
+ WHERE id_distributor=1 AND id_status = 1"
+read -p "Press any key to continue..."
+
+# pompage
+pgsql2shp -h $db_address -g geom -f $shapeoutput/ouvrages_pompage -P db4wat$ -u sige sige "\
+SELECT                                      \
+ 'PO_' || identification::varchar   AS ID,  \
+ name,                                      \
+ id_node AS NOEUD,                          \
+ installation_pump.geometry::geometry(Point,21781) AS geom,\
+ installation_pump.id_type          AS TYPE               ,\
+ id_operating     AS FONCTION                             ,\
+ altitude                                                 ,\
+ nb_pump                                                  ,\
+ rejected_flow    AS Q_REFOUL                             ,\
+ manometric_height AS H_MANOMETR                          ,\
+  installation.remarks || installation_pump.remarks       \
+ FROM distribution.installation_pump INNER JOIN distribution.installation ON installation_pump.id_installation = installation.id\
+ WHERE id_distributor=1 AND id_status = 1"
 read -p "Press any key to continue..."
 
 # noeuds
@@ -175,7 +218,7 @@ WHERE _schema_view IS TRUE                                       \
   )
  "
 read -p "Press any key to continue..."
-    
+
 # hydrante
 # TODO: bouche arrosage, 8 Noville, retirer etrangers
 pgsql2shp -h $db_address -g geom -f $shapeoutput/hydrantes -P db4wat$ -u sige sige "\

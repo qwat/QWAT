@@ -85,7 +85,7 @@ PG:"dbname='sige' host='172.24.171.203' port='5432' user='sige' password='db4wat
 # print maps
 ogr2ogr -sql "SELECT * FROM distribution.printmap" \
 -overwrite -a_srs EPSG:21781 -f SQLite $sqliteoutput \
--nln printmap -nlt POLYGON -progress \
+-nln printmap -nlt MULTIPOLYGON -progress \
 PG:"dbname='sige' host='172.24.171.203' port='5432' user='sige' password='db4wat$'" \
 -dsco SPATIALITE=no -lco "SPATIAL_INDEX=no FORMAT=SPATIALITE" -gt 65536
 
@@ -104,6 +104,13 @@ PG:"dbname='sige' host=$db_address port='5432' user='sige' password='db4wat$'" \
 ogr2ogr -sql "SELECT * FROM distribution.protectionzone_view"  \
 -overwrite -a_srs EPSG:21781 -f SQLite $sqliteoutput \
 -nln protectionzone -nlt MULTIPOLYGON -progress -preserve_fid \
+PG:"dbname='sige' host=$db_address port='5432' user='sige' password='db4wat$'" \
+-dsco SPATIALITE=no -lco "SPATIAL_INDEX=no FORMAT=SPATIALITE" -gt 65536
+
+# leaks
+ogr2ogr -sql "SELECT * FROM distribution.leak_view"  \
+-overwrite -a_srs EPSG:21781 -f SQLite $sqliteoutput \
+-nln leak -nlt POINT -progress -preserve_fid \
 PG:"dbname='sige' host=$db_address port='5432' user='sige' password='db4wat$'" \
 -dsco SPATIALITE=no -lco "SPATIAL_INDEX=no FORMAT=SPATIALITE" -gt 65536
 
