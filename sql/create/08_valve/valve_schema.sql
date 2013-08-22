@@ -26,8 +26,9 @@ CREATE VIEW distribution.valve_schema AS
 		valve.id_district,
 		valve.id_pressurezone,
 		valve._districts,
-		valve._printmaps,		valve.geometry_schematic::geometry(Point,21781) AS geometry,
-		valve_function.function  AS _function,
+		valve._printmaps,		
+		valve.geometry_schematic::geometry(Point,21781) AS geometry,
+		valve_function.name      AS _function,
 		valve_function.shortname AS _function_shortname,
 		valve_type.type          AS _type,
 		CASE 

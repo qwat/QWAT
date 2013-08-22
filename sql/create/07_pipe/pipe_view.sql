@@ -38,7 +38,7 @@ CREATE VIEW distribution.pipe_view AS
 		pipe._printmaps        ,
 		pipe._districts        ,
 		pipe.geometry::geometry(LineString,21781),
- 		pipe_function.function          AS _function_name, 
+ 		pipe_function.name              AS _function_name, 
  		pipe_function.code_sire         AS _function_code_sire, 
 		pipe_install_method.name        AS _install_method,
 		pipe_material._fancy_name       AS _material_name,

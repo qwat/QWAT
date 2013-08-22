@@ -32,7 +32,7 @@ SELECT
 	valve._districts        ,
 	valve._schema_view      ,
 	valve.geometry::geometry(Point,21781)    ,
-	valve_function.function  AS _function    ,
+	valve_function.name      AS _function    ,
 	valve_function.shortname AS _function_shortname ,
 	valve_type.type          AS _type        ,
 	CASE 
