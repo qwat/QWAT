@@ -4,8 +4,6 @@
 	SQL file :: leak view
 */
 
-
-
 DROP VIEW IF EXISTS distribution.leak_view CASCADE;
 CREATE VIEW distribution.leak_view AS 
 	SELECT  
