@@ -25,35 +25,27 @@
 #
 #---------------------------------------------------------------------
 
-from PyQt4.QtCore import QCoreApplication
-from PyQt4.QtGui import QDialog, QTabWidget, QGridLayout
-from tabnode import TabNode
-from tabschematic import TabSchematic
-from tabvalve import TabValve
-from tabsettings import TabSettings
+from PyQt4.QtGui import QWidget
+from qgis.core import QGis
+
+from ..qgissettingmanager import SettingDialog
+from ..qgiscombomanager import VectorLayerCombo
+
+from ..core.mysettings import MySettings
+from ..ui.ui_tabsettings import Ui_TabSettings
 
 
-class MainDialog(QDialog):
-    def __init__(self):
-        QDialog.__init__(self)
-        self.setWindowTitle("qWat")
-        self.resize(360, 500)
-        self.layout = QGridLayout(self)
-        self.tabWidget = QTabWidget()
-        self.tabWidget.addTab(TabNode(), QCoreApplication.translate("main dialog tab", "Nodes"))
-        self.tabWidget.addTab(TabValve(), QCoreApplication.translate("main dialog tab", "Valves"))
-        self.tabWidget.addTab(TabSchematic(), QCoreApplication.translate("main dialog tab", "Schematic"))
-        self.tabWidget.addTab(TabSettings(), QCoreApplication.translate("main dialog tab", "Settings"))
-        self.layout.addWidget(self.tabWidget)
+class TabSettings(QWidget, Ui_TabSettings, SettingDialog):
 
+    def __init__(self, parent=None):
+        QWidget.__init__(self, parent)
+        self.setupUi(self)
+        self.settings = MySettings()
+        SettingDialog.__init__(self, self.settings, False, True)
 
-
-
-
-
-
-
-
+        self.nodeLayerComboManager = VectorLayerCombo(self.nodeLayer, lambda: self.settings.value("nodeLayer"), {"geomType": QGis.Point})
+        self.valveLayerComboManager = VectorLayerCombo(self.valveLayer, lambda: self.settings.value("valveLayer"), {"geomType": QGis.Point})
+        self.pipeLayerComboManager = VectorLayerCombo(self.pipeLayer, lambda: self.settings.value("pipeLayer"), {"geomType": QGis.Line})
 
 
 

@@ -25,35 +25,15 @@
 #
 #---------------------------------------------------------------------
 
-from PyQt4.QtCore import QCoreApplication
-from PyQt4.QtGui import QDialog, QTabWidget, QGridLayout
-from tabnode import TabNode
-from tabschematic import TabSchematic
-from tabvalve import TabValve
-from tabsettings import TabSettings
+
+from PyQt4.QtGui import QWidget
+from ..core.mysettings import MySettings
+from ..ui.ui_tabschematic import Ui_TabSchematic
 
 
-class MainDialog(QDialog):
-    def __init__(self):
-        QDialog.__init__(self)
-        self.setWindowTitle("qWat")
-        self.resize(360, 500)
-        self.layout = QGridLayout(self)
-        self.tabWidget = QTabWidget()
-        self.tabWidget.addTab(TabNode(), QCoreApplication.translate("main dialog tab", "Nodes"))
-        self.tabWidget.addTab(TabValve(), QCoreApplication.translate("main dialog tab", "Valves"))
-        self.tabWidget.addTab(TabSchematic(), QCoreApplication.translate("main dialog tab", "Schematic"))
-        self.tabWidget.addTab(TabSettings(), QCoreApplication.translate("main dialog tab", "Settings"))
-        self.layout.addWidget(self.tabWidget)
+class TabSchematic(QWidget, Ui_TabSchematic):
 
-
-
-
-
-
-
-
-
-
-
-
+    def __init__(self, parent=None):
+        QWidget.__init__(self, parent)
+        self.setupUi(self)
+        self.settings = MySettings()
