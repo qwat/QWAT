@@ -39,20 +39,20 @@ class TabNode(QWidget, Ui_TabNode):
         self.setupUi(self)
         self.settings = MySettings()
 
-        self.nodeInfoLabel.hide()
-        self.nodeUnusedFrame.setEnabled(False)
-        self.nodeErrorFrame.setEnabled(False)
-        self.nodeTypeFrame.setEnabled(False)
+        self.infoLabel.hide()
+        self.unusedFrame.setEnabled(False)
+        self.errorFrame.setEnabled(False)
+        self.typeFrame.setEnabled(False)
 
     @pyqtSlot(name="on_nodeStartButton_pressed")
     def startNode(self):
         layerid = self.settings.value("nodeLayer")
         layer = QgsMapLayerRegistry.instance().mapLayer(layerid)
         if layer is None:
-            self.nodeInfoLabel.setText(QCoreApplication.translate("node", "Please choose a node layer in qWat settings first."))
-            self.nodeInfoLabel.show()
+            self.infoLabel.setText(QCoreApplication.translate("node", "Please choose a node layer in qWat settings first."))
+            self.infoLabel.show()
             return
-        self.nodeInfoLabel.hide()
+        self.infoLabel.hide()
         self.unusedFrame.setEnabled(True)
         self.errorFrame.setEnabled(True)
         self.typeFrame.setEnabled(True)

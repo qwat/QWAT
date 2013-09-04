@@ -51,10 +51,7 @@ class ValveClosePipes(QObject):
         valve = QgsFeature()
         pipeIterator = self.pipeLayer.getFeatures(pFeatReq)
         k = 1
-        while pipeIterator.nextFeature(pipe):
-            if not self.goOn:
-                self.finished.emit()
-                return
+        while pipeIterator.nextFeature(pipe) and self.goOn:
             self.progress.emit(k)
             closed = False
             bbox = pipe.geometry().boundingBox()
