@@ -30,7 +30,7 @@ CREATE OR REPLACE FUNCTION distribution.dimension_distance() RETURNS trigger AS
 $BODY$
 	BEGIN
 		UPDATE distribution.dimension SET 
-			distance_extremities = ST_Distance( ST_GeometryN(NEW.geometry, 1), ST_GeometryN(NEW.geometry, ST_NumGeometries(NEW.geometry)) )
+			distance_extremities = ST_Distance( ST_StartPoint(NEW.geometry), ST_EndPoint(NEW.geometry) )
 		WHERE id = NEW.id;
 		RETURN NEW;
 	END;
