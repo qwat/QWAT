@@ -24,7 +24,7 @@ $BODY$
 		
 		/* Enables geometry */
 		PERFORM addGeometryColumn('distribution', table_name, 'geometry', 21781, 'POINT', 2);
-		EXECUTE 'CREATE INDEX '||table_name||'_geoidx     ON distribution.'||table_name||' USING GIST ( geometry );';
+		EXECUTE 'CREATE INDEX '||table_name||'_geoidx ON distribution.'||table_name||' USING GIST ( geometry );';
 		IF create_schematic IS TRUE THEN
 			PERFORM addGeometryColumn('distribution', table_name, 'geometry_schematic', 21781, 'POINT', 2);
 			EXECUTE 'CREATE INDEX '||table_name||'_geoidx_sch ON distribution.'||table_name||' USING GIST ( geometry_schematic );';		
