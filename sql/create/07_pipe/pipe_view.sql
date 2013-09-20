@@ -41,7 +41,7 @@ CREATE VIEW distribution.pipe_view AS
  		pipe_function.name              AS _function_name, 
  		pipe_function.code_sire         AS _function_code_sire, 
 		pipe_install_method.name        AS _install_method,
-		pipe_material._fancy_name       AS _material_name,
+		pipe_material._fancyname       AS _material_name,
 		pipe_material.name              AS _material_longname,
 		pipe_material.diameter          AS _material_diameter,
 		pipe_material.diameter_internal AS _material_diameter_internal,

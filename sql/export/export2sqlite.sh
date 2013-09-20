@@ -59,7 +59,7 @@ rm $sqliteoutput
   PG:"dbname='sige' host=$db_address port='5432' user='sige' password='db4wat$'" \
   -dsco SPATIALITE=yes -lco "SPATIAL_INDEX=yes FORMAT=wkb" -gt 65536
 
- ogr2ogr -sql "SELECT shortname,name,diameter,diameter_internal,diameter_external,_fancy_name AS fancy_name FROM distribution.pipe_material"  \
+ ogr2ogr -sql "SELECT shortname,name,diameter,diameter_internal,diameter_external,_fancyname AS fancy_name FROM distribution.pipe_material"  \
   -overwrite -a_srs EPSG:21781 -f SQLite $sqliteoutput \
   -nln pipe_material -nlt NONE -progress \
   PG:"dbname='sige' host=$db_address port='5432' user='sige' password='db4wat$'" \

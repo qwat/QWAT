@@ -13,11 +13,12 @@ SELECT setval('distribution.node_id_seq', 40000, true);
 COMMENT ON TABLE distribution.node IS 'Nodes. Type:If three pipe or more arrives at the node: three. If one pipe: one. If two: depends on characteristics of pipe: two_same (everything same), two_year (year is different), two_material (and year is/are different), two_diameter (and material/year are different). Orientation is calculated if two pipe arrives to place the symbol in theright direction.';
 
 /* columns */
-ALTER TABLE distribution.node ADD COLUMN  altitude_dtm       DECIMAL(10,3)              ;
-ALTER TABLE distribution.node ADD COLUMN  _type              VARCHAR(20)   DEFAULT NULL ;
-ALTER TABLE distribution.node ADD COLUMN  _orientation       FLOAT         DEFAULT 0    ;
-ALTER TABLE distribution.node ADD COLUMN  _schema_view       BOOLEAN       DEFAULT False;
-ALTER TABLE distribution.node ADD COLUMN  _status_active     BOOLEAN       DEFAULT False;
+ALTER TABLE distribution.node ADD COLUMN altitude_dtm   decimal(10,3)              ;
+ALTER TABLE distribution.node ADD COLUMN _type          varchar(20)   default null ;
+ALTER TABLE distribution.node ADD COLUMN _orientation   float         default 0    ;
+ALTER TABLE distribution.node ADD COLUMN _schema_view   boolean       default false;
+ALTER TABLE distribution.node ADD COLUMN _status_active boolean       default false;
+ALTER TABLE distribution.node ADD COLUMN _under_object  boolean       default false;
 
 /* geometry */
 SELECT AddGeometryColumn('distribution', 'node', 'geometry', 21781, 'POINT', 2)  ;
