@@ -1,4 +1,4 @@
-export schema=qgep
+export schema=distribution
 export db=sige
 
 postgresql_autodoc -d $db -f $schema -h 172.24.171.203 -u $db -s $schema

@@ -2,63 +2,93 @@ digraph g {
 node [ fontsize = "10", shape = record ];
 edge [];
 
-"dimension" [shape = record, label = "{<col0> \N| id:  serial\ldistance_observed:  character varying(12)\l_distance_terrain:  double precision\llbl_x:  double precision\llbl_y:  double precision\llbl_a:  double precision\lgeometry:  geometry(MultiPoint,21781)\l}" ];
+"constructionpoint" [shape = record, label = "{<col0> \N| id:  serial\lremarks:  text\lgeometry:  geometry(Point,21781)\l}" ];
+
+"dimension" [shape = record, label = "{<col0> \N| id:  serial\ltype:  character varying(12)\lobservation:  double precision\ldistance_extremities:  double precision\lremarks:  text\lgeometry:  geometry(LineString,21781)\lobservation_text:  character varying(100)\l}" ];
 
 "distributor" [shape = record, label = "{<col0> \N| id:  serial\lname:  character varying(30)\l}" ];
 
-"district" [shape = record, label = "{<col0> \N| id:  serial\lname:  character varying(40)\lshortname:  character varying(12)\lzip:  character varying(12)\lland_registry:  character varying(12)\lsubscriber_prefix:  character varying(12)\lgeometry:  geometry(Polygon,21781)\l}" ];
+"district" [shape = record, label = "{<col0> \N| id:  serial\lname:  character varying(40)\lshortname:  character varying(12)\lzip:  character varying(12)\lland_registry:  character varying(12)\lsubscriber_prefix:  character varying(12)\lcolorcode:  smallint\lgeometry:  geometry(Polygon,21781)\l}" ];
 
-"hydrant" [shape = record, label = "{<col0> \N| id:  serial\lsige:  character varying(15)\lid_type:  integer\lid_distributor:  integer\lid_status:  integer\lid_provider:  integer\lyear:  smallint\lmodel:  character varying(30)\laltitude_real:  numeric(10,3)\lremarks:  text\lid_node:  integer\lid_district:  integer\lid_pressurezone:  integer\lid_printmap:  integer[]\l_printmaps:  character varying(100)\l_districts:  character varying(255)\lgeometry:  geometry(Point,21781)\lgeometry_schematic:  geometry(Point,21781)\l}" ];
+"hydrant" [shape = record, label = "{<col0> \N| id:  serial\lidentification:  character varying(15)\lid_type:  integer\lid_distributor:  integer\lid_status:  integer\lid_provider:  integer\lyear:  smallint\lmodel:  character varying(30)\laltitude_real:  numeric(10,3)\lremarks:  text\lid_node:  integer\lid_district:  integer\lid_pressurezone:  integer\lid_printmap:  integer[]\l_printmaps:  character varying(100)\l_districts:  character varying(255)\lgeometry:  geometry(Point,21781)\lgeometry_schematic:  geometry(Point,21781)\l}" ];
 
 "hydrant_provider" [shape = record, label = "{<col0> \N| id:  serial\lname:  character varying(30)\l}" ];
 
 "hydrant_type" [shape = record, label = "{<col0> \N| id:  serial\lname:  character varying(30)\lshortname:  character varying(12)\l}" ];
 
-"installation" [shape = record, label = "{<col0> \N| id:  serial\lname:  character varying(30)\lsige:  integer\lid_status:  integer\lid_distributor:  integer\lid_type:  integer\lremarks:  text\llinks:  text\lyear:  smallint\lschema_force_view:  boolean\laltitude_real:  numeric(10,3)\lopen_water_surface:  boolean\lparcel:  character varying(30)\leca:  character varying(30)\lid_node:  integer\lid_district:  integer\lid_pressurezone:  integer\lid_printmap:  integer[]\l_printmaps:  character varying(100)\l_districts:  character varying(255)\lgeometry:  geometry(Point,21781)\lgeometry_schematic:  geometry(Point,21781)\l}" ];
+"installation" [shape = record, label = "{<col0> \N| id:  serial\lname:  character varying(40)\lidentification:  integer\lid_remote:  integer\lid_status:  integer\lid_distributor:  integer\lid_type:  integer\lremarks:  text\llinks:  text\lyear:  smallint\laltitude_real:  numeric(10,3)\lopen_water_surface:  boolean\lparcel:  character varying(30)\leca:  character varying(30)\l_complete_name:  character varying(50)\lschema_force_view:  boolean\l_schema_view:  boolean\lid_node:  integer\lid_district:  integer\lid_pressurezone:  integer\lid_printmap:  integer[]\l_printmaps:  character varying(100)\l_districts:  character varying(255)\lgeometry:  geometry(Point,21781)\lgeometry_schematic:  geometry(Point,21781)\l}" ];
 
-"installation_tank" [shape = record, label = "{<col0> \N| id:  serial\lid_installation:  integer\lname:  character varying(30)\lid_distributor:  integer\lid_status:  integer\lremarks:  text\lstorage_total:  numeric(10,1)\lstorage_activ:  numeric(10,1)\lstorage_fire:  numeric(10,1)\lheight_max:  numeric(7,3)\llitres_per_cm:  numeric(7,3)\lgeometry:  geometry(Point,21781)\l}" ];
+"installation_pump" [shape = record, label = "{<col0> \N| id:  serial\lid_installation:  smallint\lid_type:  smallint\lid_operating:  smallint\laltitude:  numeric(10,3)\lnb_pump:  smallint\lrejected_flow:  numeric(10,2)\lmanometric_height:  numeric(10,2)\lremarks:  text\lgeometry:  geometry(Point,21781)\l}" ];
 
-"installation_tank_cistern" [shape = record, label = "{<col0> \N| id:  serial\lid_installation:  integer\lname:  character varying(30)\lid_distributor:  integer\lid_status:  integer\lid_type:  integer\lremarks:  text\ldimension_1:  numeric(10,1)\ldimension_2:  numeric(10,1)\lstorage:  numeric(10,1)\llitres_per_cm:  numeric(7,3)\l}" ];
+"installation_pump_type" [shape = record, label = "{<col0> \N| id:  serial\lname:  character varying(30)\l}" ];
 
-"installation_tank_cistern_type" [shape = record, label = "{<col0> \N| id:  serial\lname:  character varying(30)\l}" ];
+"installation_source" [shape = record, label = "{<col0> \N| id:  serial\lid_installation:  smallint\lid_type:  smallint\lid_quality:  smallint\laltitude:  numeric(10,3)\lflow_lowest:  numeric(10,3)\lflow_mean:  numeric(10,3)\lflow_concession:  numeric(10,2)\lcontract_end:  date\lgathering_chamber:  boolean\lremarks:  text\lgeometry:  geometry(Point,21781)\l}" ];
 
-"installation_type" [shape = record, label = "{<col0> \N| id:  serial\lshort_name:  character varying(5)\lname:  character varying(30)\lschema_view:  boolean\l}" ];
+"installation_source_quality" [shape = record, label = "{<col0> \N| id:  serial\lname:  character varying(30)\l}" ];
 
-"node" [shape = record, label = "{<col0> \N| id:  serial\laltitude_dtm:  numeric(10,3)\l_type:  character varying(20)\l_orientation:  double precision\l_schema_view:  boolean\l_status_active:  boolean\lgeometry:  geometry(Point,21781)\l}" ];
+"installation_source_type" [shape = record, label = "{<col0> \N| id:  serial\lname:  character varying(30)\l}" ];
 
-"pipe" [shape = record, label = "{<col0> \N| id:  serial\lid_parent:  integer\lid_function:  integer\lid_install_method:  integer\lid_material:  integer\lid_distributor:  integer\lid_precision:  integer\lid_protection:  integer\lid_status:  integer\lschema_force_view:  boolean\lyear:  smallint\ltunnel_or_bridge:  boolean\lpressure_nominale:  smallint\lfolder:  character varying(20)\lremarks:  text\lid_node_a:  integer\lid_node_b:  integer\lid_district:  integer\lid_pressurezone:  integer\lid_printmap:  integer[]\l_length2d:  numeric(8,2)\l_length3d:  numeric(8,2)\l_printmaps:  character varying(100)\l_districts:  character varying(255)\lgeometry:  geometry(LineString,21781)\lgeometry_schematic:  geometry(LineString,21781)\lcoating_internal_material_id:  character(20)\lcoating_external_material_id:  character(20)\l}" ];
+"installation_tank" [shape = record, label = "{<col0> \N| id:  serial\lid_installation:  integer\lremarks:  text\lid_overflow:  integer\lid_firestorage:  integer\lstorage_total:  numeric(10,1)\lstorage_supply:  numeric(10,1)\lstorage_fire:  numeric(10,1)\laltitude_overflow:  numeric(7,3)\laltitude_apron:  numeric(7,3)\lheight_max:  numeric(7,3)\lfire_valve:  boolean\lfire_remote:  boolean\l_litrepercm:  numeric(9,3)\lcistern1_id_type:  integer\lcistern1_dimension_1:  numeric(10,2)\lcistern1_dimension_2:  numeric(10,2)\lcistern1_storage:  numeric(10,2)\l_cistern1_litrepercm:  numeric(9,3)\lcistern2_id_type:  integer\lcistern2_dimension_1:  numeric(10,2)\lcistern2_dimension_2:  numeric(10,2)\lcistern2_storage:  numeric(10,2)\l_cistern2_litrepercm:  numeric(9,3)\lgeometry:  geometry(Point,21781)\l}" ];
 
-"pipe_function" [shape = record, label = "{<col0> \N| id:  serial\lfunction:  character varying(30)\lschema_view:  boolean\l}" ];
+"installation_tank_cisterntype" [shape = record, label = "{<col0> \N| id:  serial\lname:  character varying(30)\l}" ];
+
+"installation_tank_firestoragetype" [shape = record, label = "{<col0> \N| id:  serial\lname:  character varying(30)\l}" ];
+
+"installation_tank_overflowtype" [shape = record, label = "{<col0> \N| id:  serial\lname:  character varying(30)\l}" ];
+
+"installation_treatment" [shape = record, label = "{<col0> \N| id:  serial\lid_installation:  integer\laltitude:  numeric(10,3)\lsanitization_uv:  boolean\lsanitization_chlorine_liquid:  boolean\lsanitization_chlorine_gazeous:  boolean\lsanitization_ozone:  boolean\lfiltration_membrane:  boolean\lfiltration_sandorgravel:  boolean\lflocculation:  boolean\lactivatedcharcoal:  boolean\lsettling:  boolean\ltreatment_capacity:  numeric(10,2)\lremarks:  text\lgeometry:  geometry(Point,21781)\l}" ];
+
+"installation_type" [shape = record, label = "{<col0> \N| id:  serial\lshortname:  character varying(5)\lname:  character varying(30)\lschema_view:  boolean\l}" ];
+
+"labelview" [shape = record, label = "{<col0> \N| id:  serial\lname:  character varying(50)\l}" ];
+
+"leak" [shape = record, label = "{<col0> \N| id:  serial\lid_district:  integer\lid_pressurezone:  integer\lid_printmap:  integer[]\lid_pipe:  integer\l_printmaps:  character varying(100)\l_districts:  character varying(255)\lgeometry:  geometry(Point,21781)\lid_type:  integer\lid_cause:  integer\lid_damage:  integer\ldetection_date:  date\lrepair_date:  date\l_repaired:  boolean\laddress:  text\lpipe_replaced:  boolean\ldescription:  text\lrepair:  text\l}" ];
+
+"leak_cause" [shape = record, label = "{<col0> \N| id:  serial\lname:  character varying(30)\l}" ];
+
+"leak_damage" [shape = record, label = "{<col0> \N| id:  serial\lname:  character varying(30)\l}" ];
+
+"leak_type" [shape = record, label = "{<col0> \N| id:  serial\lname:  character varying(30)\l}" ];
+
+"logged_actions" [shape = record, label = "{<col0> \N| event_id:  bigserial\lschema_name:  text\ltable_name:  text\lrelid:  oid\lsession_user_name:  text\laction_tstamp_tx:  timestamp with time zone\laction_tstamp_stm:  timestamp with time zone\laction_tstamp_clk:  timestamp with time zone\ltransaction_id:  bigint\lapplication_name:  text\lclient_addr:  inet\lclient_port:  integer\lclient_query:  text\laction:  text\lrow_data:  hstore\lchanged_fields:  hstore\lstatement_only:  boolean\l}" ];
+
+"node" [shape = record, label = "{<col0> \N| id:  serial\laltitude_dtm:  numeric(10,3)\l_type:  character varying(20)\l_orientation:  double precision\l_schema_view:  boolean\l_status_active:  boolean\lgeometry:  geometry(Point,21781)\l_under_object:  boolean\l}" ];
+
+"pipe" [shape = record, label = "{<col0> \N| id:  serial\lid_parent:  integer\lid_function:  integer\lid_install_method:  integer\lid_material:  integer\lid_distributor:  integer\lid_precision:  integer\lid_protection:  integer\lid_status:  integer\llabelview:  integer\llabelview_schema:  integer\llabeladdremark:  boolean\llabeladdremark_schema:  boolean\lyear:  smallint\ltunnel_or_bridge:  boolean\lpressure_nominal:  smallint\lfolder:  character varying(20)\lremarks:  text\l_valve_count:  smallint\l_valve_closed:  boolean\lschema_force_view:  boolean\l_schema_view:  boolean\lid_node_a:  integer\lid_node_b:  integer\lid_district:  integer\lid_pressurezone:  integer\lid_printmap:  integer[]\l_length2d:  numeric(8,2)\l_length3d:  numeric(8,2)\l_diff_elevation:  numeric(8,2)\l_printmaps:  character varying(100)\l_districts:  character varying(255)\lgeometry:  geometry(LineString,21781)\lgeometry_schematic:  geometry(LineString,21781)\lcoating_internal_material_id:  character(20)\lcoating_external_material_id:  character(20)\l}" ];
+
+"pipe_function" [shape = record, label = "{<col0> \N| id:  serial\lname:  character varying(30)\lschema_view:  boolean\lcode_sire:  smallint\l}" ];
 
 "pipe_install_method" [shape = record, label = "{<col0> \N| id:  serial\lname:  character varying(30)\l}" ];
 
-"pipe_material" [shape = record, label = "{<col0> \N| id:  serial\lshort_name:  character varying(8)\lname:  character varying(30)\ldiameter:  character varying(10)\ldiameter_internal:  character varying(10)\ldiameter_external:  character varying(10)\l_fancy_name:  character varying(18)\l}" ];
+"pipe_material" [shape = record, label = "{<col0> \N| id:  serial\lshortname:  character varying(8)\lname:  character varying(30)\ldiameter:  character varying(10)\ldiameter_internal:  character varying(10)\ldiameter_external:  character varying(10)\l_fancyname:  character varying(18)\lcode_sire:  smallint\l}" ];
 
 "pipe_protection" [shape = record, label = "{<col0> \N| id:  serial\lname:  character varying(30)\l}" ];
 
-"pipe_schema_temp" [shape = record, label = "{<col0> \N| id:  integer\lid_parent:  integer\lid_function:  integer\lid_install_method:  integer\lid_material:  integer\lid_distributor:  integer\lid_precision:  integer\lid_protection:  integer\lid_status:  integer\lid_pressurezone:  integer\lschema_force_view:  boolean\lyear:  smallint\lpressure_nominale:  smallint\lfolder:  character varying(20)\lremarks:  text\lid_printmap:  integer[]\l_printmaps:  character varying(100)\lid_district:  integer\l_districts:  character varying(255)\l_function_name:  character varying(30)\l_install_method:  character varying(30)\l_material_name:  character varying(18)\l_material_longname:  character varying(30)\l_material_diameter:  character varying(10)\l_material_diameter_internal:  character varying(10)\l_distributor:  character varying(30)\l_precision:  character varying(30)\l_protection:  character varying(30)\l_status_name:  character varying(30)\l_status_active:  boolean\l_pressurezone:  character varying(30)\l_pressurezone_shortname:  character varying(10)\l_consummerzone:  character varying(30)\l_pressurezone_colorcode:  smallint\l_schema_view:  boolean\l_length2d:  numeric\l_length3d:  numeric\lnumber_of_pipe:  bigint\ltunnel_or_bridge:  boolean\l_valve_count:  bigint\l_valve_closed:  boolean\lgeometry:  geometry(LineString,21781)\lid_node_a:  integer\lid_node_b:  integer\l_diff_elevation:  numeric\l_slope:  numeric\l}" ];
+"pipe_schema_temp" [shape = record, label = "{<col0> \N| id:  integer\lid_function:  integer\lid_install_method:  integer\lid_material:  integer\lid_distributor:  integer\lid_precision:  integer\lid_protection:  integer\lid_status:  integer\lid_pressurezone:  integer\llabelview:  integer\llabelview_schema:  integer\lyear:  smallint\lpressure_nominal:  smallint\lfolder:  character varying(20)\lremarks:  text\lid_printmap:  integer[]\l_printmaps:  character varying(100)\lid_district:  integer\l_districts:  character varying(255)\l_length2d:  numeric\l_length3d:  numeric\lnumber_of_pipe:  bigint\ltunnel_or_bridge:  boolean\l_valve_count:  bigint\l_valve_closed:  boolean\lgeometry:  geometry(LineString,21781)\lid_node_a:  integer\lid_node_b:  integer\l_diff_elevation:  numeric\l_slope:  numeric\l}" ];
 
 "precision" [shape = record, label = "{<col0> \N| id:  serial\lname:  character varying(30)\l}" ];
 
-"pressurezone" [shape = record, label = "{<col0> \N| id:  serial\lshortname:  character varying(10)\lname:  character varying(30)\lconsummerzone:  character varying(30)\lcolorcode:  smallint\lgeometry:  geometry(Polygon,21781)\l}" ];
+"pressurezone" [shape = record, label = "{<col0> \N| id:  serial\lshortname:  character varying(10)\lname:  character varying(30)\lid_parent:  integer\lcolorcode:  smallint\lgeometry:  geometry(MultiPolygon,21781)\l}" ];
 
-"printmap" [shape = record, label = "{<col0> \N| id:  serial\lshort_name:  character varying(20)\llong_name:  text\ltemplate:  character varying(50)\l_east:  double precision\l_north:  double precision\lgeometry:  geometry(Polygon,21781)\l}" ];
+"printmap" [shape = record, label = "{<col0> \N| id:  serial\lname:  character varying(20)\lgeometry:  geometry(Polygon,21781)\lversion_date:  date\lid_district:  smallint\lremarks:  text\l}" ];
 
 "protectionzone" [shape = record, label = "{<col0> \N| id:  serial\lid_type:  integer\lname:  character varying(40)\lvalidated:  boolean\ldate:  date\lagent:  character varying(40)\lgeometry:  geometry(MultiPolygon,21781)\l}" ];
 
 "protectionzone_type" [shape = record, label = "{<col0> \N| id:  serial\lname:  character varying(50)\lshortname:  character varying(255)\l}" ];
 
-"samplingpoint" [shape = record, label = "{<col0> \N| id:  serial\lsige:  integer\lremarks:  text\lid_district:  integer\lid_pressurezone:  integer\lid_printmap:  integer[]\l_printmaps:  character varying(100)\l_districts:  character varying(255)\lgeometry:  geometry(Point,21781)\l}" ];
+"remote_type" [shape = record, label = "{<col0> \N| id:  serial\lremote:  character varying(30)\l}" ];
 
-"status" [shape = record, label = "{<col0> \N| id:  serial\lstatus:  character varying(30)\lactive:  boolean\lsire:  smallint\lcomment:  text\l}" ];
+"samplingpoint" [shape = record, label = "{<col0> \N| id:  serial\lidentification:  integer\lremarks:  text\lid_district:  integer\lid_pressurezone:  integer\lid_printmap:  integer[]\l_printmaps:  character varying(100)\l_districts:  character varying(255)\lgeometry:  geometry(Point,21781)\l}" ];
 
-"subscriber" [shape = record, label = "{<col0> \N| id:  serial\lid_type:  integer\lid_pipe:  integer\lid_client:  character varying(12)\lparcel:  character varying(12)\lid_district:  integer\lid_pressurezone:  integer\lid_printmap:  integer[]\l_printmaps:  character varying(100)\l_districts:  character varying(255)\lgeometry:  geometry(Point,21781)\l}" ];
+"status" [shape = record, label = "{<col0> \N| id:  serial\lname:  character varying(30)\lactive:  boolean\lsire:  smallint\lcomment:  text\l}" ];
 
-"subscriber_type" [shape = record, label = "{<col0> \N| id:  serial\lname:  character varying(30)\lshort_name:  character varying(30)\l}" ];
+"subscriber" [shape = record, label = "{<col0> \N| id:  serial\lid_type:  integer\lid_status:  integer\lid_pipe:  integer\lclient_identification:  character varying(12)\l_client_identification_full:  character varying(16)\lparcel:  character varying(12)\lremarks:  text\lid_district:  integer\lid_pressurezone:  integer\lid_printmap:  integer[]\l_printmaps:  character varying(100)\l_districts:  character varying(255)\lgeometry:  geometry(Point,21781)\l}" ];
 
-"valve" [shape = record, label = "{<col0> \N| id:  serial\lsige:  integer\lid_type:  integer\lid_function:  integer\lid_maintenance:  integer[]\lid_pipe:  integer\ldiameter_nominal:  character varying(10)\lyear:  smallint\lclosed:  boolean\laltitude_real:  numeric(10,3)\lremarks:  text\lschema_force_view:  boolean\lid_node:  integer\lid_district:  integer\lid_pressurezone:  integer\lid_printmap:  integer[]\l_printmaps:  character varying(100)\l_districts:  character varying(255)\lgeometry:  geometry(Point,21781)\lgeometry_schematic:  geometry(Point,21781)\l}" ];
+"subscriber_type" [shape = record, label = "{<col0> \N| id:  serial\lname:  character varying(30)\lshortname:  character varying(30)\l}" ];
 
-"valve_function" [shape = record, label = "{<col0> \N| id:  serial\lfunction:  character varying(30)\lshortname:  character varying(5)\lschema_view:  boolean\l}" ];
+"valve" [shape = record, label = "{<col0> \N| id:  serial\lidentification:  integer\lid_type:  integer\lid_function:  integer\lid_maintenance:  integer[]\ldiameter_nominal:  character varying(10)\lyear:  smallint\lclosed:  boolean\laltitude_real:  numeric(10,3)\lremarks:  text\llabelview:  integer\llabelview_schema:  integer\lschema_force_view:  boolean\l_schema_view:  boolean\lid_node:  integer\lid_district:  integer\lid_pressurezone:  integer\lid_printmap:  integer[]\lid_pipe:  integer\l_printmaps:  character varying(100)\l_districts:  character varying(255)\lgeometry:  geometry(Point,21781)\lgeometry_schematic:  geometry(Point,21781)\l}" ];
+
+"valve_function" [shape = record, label = "{<col0> \N| id:  serial\lname:  character varying(30)\lshortname:  character varying(5)\lschema_view:  boolean\l}" ];
 
 "valve_maintenance" [shape = record, label = "{<col0> \N| id:  serial\lname:  character varying(35)\lpriority:  smallint\lcomment:  text\l}" ];
 
@@ -74,19 +104,31 @@ edge [];
 "hydrant" -> "node" [label="hydrant_id_node"];
 "hydrant" -> "district" [label="hydrant_id_district"];
 "hydrant" -> "pressurezone" [label="hydrant_id_pressurezone"];
+"installation" -> "remote_type" [label="installation_id_remote"];
 "installation" -> "status" [label="installation_id_status"];
 "installation" -> "distributor" [label="installation_id_distributor"];
 "installation" -> "installation_type" [label="installation_id_type"];
+"installation" -> "visible" [label="installation_schema_force_view"];
 "installation" -> "node" [label="installation_id_node"];
 "installation" -> "district" [label="installation_id_district"];
 "installation" -> "pressurezone" [label="installation_id_pressurezone"];
+"installation_pump" -> "installation" [label="installation_pump_id_installation"];
+"installation_pump" -> "installation_pump_type" [label="installation_pump_id_type"];
+"installation_source" -> "installation" [label="installation_source_id_installation"];
+"installation_source" -> "installation_source_type" [label="installation_source_id_type"];
+"installation_source" -> "installation_source_quality" [label="installation_source_id_quality"];
 "installation_tank" -> "installation" [label="installation_tank_id_installation"];
-"installation_tank" -> "distributor" [label="installation_tank_id_distributor"];
-"installation_tank" -> "status" [label="installation_tank_id_status"];
-"installation_tank_cistern" -> "installation" [label="installation_tank_cistern_id_installation"];
-"installation_tank_cistern" -> "distributor" [label="installation_tank_cistern_id_distributor"];
-"installation_tank_cistern" -> "status" [label="installation_tank_cistern_id_status"];
-"installation_tank_cistern" -> "installation_tank_cistern_type" [label="installation_tank_cistern_id_type"];
+"installation_tank" -> "installation_tank_overflowtype" [label="installation_tank_id_overflow"];
+"installation_tank" -> "installation_tank_firestoragetype" [label="installation_tank_id_firestorage"];
+"installation_tank" -> "installation_tank_cisterntype" [label="installation_tank_cistern1type"];
+"installation_tank" -> "installation_tank_cisterntype" [label="installation_tank_cistern2type"];
+"installation_treatment" -> "installation" [label="installation_treatment_id_installation"];
+"leak" -> "district" [label="leak_id_district"];
+"leak" -> "pressurezone" [label="leak_id_pressurezone"];
+"leak" -> "pipe" [label="leak_id_pipe"];
+"leak" -> "leak_type" [label="leak_id_type"];
+"leak" -> "leak_cause" [label="leak_id_cause"];
+"leak" -> "leak_damage" [label="leak_id_damage"];
 "pipe" -> "pipe" [label="pipe_id_parent"];
 "pipe" -> "pipe_function" [label="pipe_id_function"];
 "pipe" -> "pipe_install_method" [label="pipe_id_install_method"];
@@ -95,23 +137,32 @@ edge [];
 "pipe" -> "precision" [label="pipe_id_precision"];
 "pipe" -> "pipe_protection" [label="pipe_id_protection"];
 "pipe" -> "status" [label="pipe_id_status"];
+"pipe" -> "labelview" [label="pipe_labelview"];
+"pipe" -> "labelview" [label="pipe_labelview_schema"];
+"pipe" -> "visible" [label="pipe_schema_force_view"];
 "pipe" -> "node" [label="pipe_id_node_a"];
 "pipe" -> "node" [label="pipe_id_node_b"];
 "pipe" -> "district" [label="pipe_id_district"];
 "pipe" -> "pressurezone" [label="pipe_id_pressurezone"];
+"pressurezone" -> "pressurezone" [label="pressurezone_id_parent"];
+"printmap" -> "district" [label="printmap_id_district"];
 "protectionzone" -> "protectionzone_type" [label="protectionzone_id_type"];
 "samplingpoint" -> "district" [label="samplingpoint_id_district"];
 "samplingpoint" -> "pressurezone" [label="samplingpoint_id_pressurezone"];
 "subscriber" -> "subscriber_type" [label="subscriber_id_type"];
+"subscriber" -> "status" [label="pipe_id_status"];
 "subscriber" -> "pipe" [label="subscriber_id_pipe"];
 "subscriber" -> "district" [label="subscriber_id_district"];
 "subscriber" -> "pressurezone" [label="subscriber_id_pressurezone"];
 "valve" -> "valve_type" [label="valve_id_type"];
 "valve" -> "valve_function" [label="valve_id_function"];
-"valve" -> "pipe" [label="valve_id_pipe"];
+"valve" -> "labelview" [label="valve_labelview"];
+"valve" -> "labelview" [label="valve_labelview_schema"];
+"valve" -> "visible" [label="valve_schema_force_view"];
 "valve" -> "node" [label="valve_id_node"];
 "valve" -> "district" [label="valve_id_district"];
 "valve" -> "pressurezone" [label="valve_id_pressurezone"];
+"valve" -> "pipe" [label="valve_id_pipe"];
 }
 
 
