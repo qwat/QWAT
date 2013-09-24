@@ -22,4 +22,4 @@ CREATE INDEX printmap_geoidx ON distribution.printmap USING GIST ( geometry );
 
 /* Constraints */
 ALTER TABLE distribution.printmap ADD CONSTRAINT print_pkey PRIMARY KEY (id);
-ALTER TABLE distribution.printmap ADD CONSTRAINT printmap_id_district FOREIGN KEY (id_district) REFERENCES distribution.printmap (id) MATCH SIMPLE ; CREATE INDEX fki_printmap_id_district ON distribution.district(id);
+ALTER TABLE distribution.printmap ADD CONSTRAINT printmap_id_district FOREIGN KEY (id_district) REFERENCES distribution.district (id) MATCH SIMPLE ; CREATE INDEX fki_printmap_id_district ON distribution.printmap(id);
