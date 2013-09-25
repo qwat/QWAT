@@ -40,21 +40,24 @@ class TabNode(QWidget, Ui_TabNode):
         self.settings = MySettings()
 
         self.infoLabel.hide()
-        self.unusedFrame.setEnabled(False)
-        self.errorFrame.setEnabled(False)
-        self.typeFrame.setEnabled(False)
+        self.typeStopButton.hide()
 
-    @pyqtSlot(name="on_nodeStartButton_pressed")
-    def startNode(self):
-        layerid = self.settings.value("nodeLayer")
-        layer = QgsMapLayerRegistry.instance().mapLayer(layerid)
-        if layer is None:
-            self.infoLabel.setText(QCoreApplication.translate("node", "Please choose a node layer in qWat settings first."))
+    @pyqtSlot(name="on_typeStartButton_pressed")
+    def startType(self):
+        nodeLayerId = self.settings.value("nodeLayer")
+        nodeLayer = QgsMapLayerRegistry.instance().mapLayer(nodeLayerId)
+        pipeLayerId = self.settings.value("pipeLayer")
+        pipeLayer = QgsMapLayerRegistry.instance().mapLayer(pipeLayerId)
+        if nodeLayer is None or pipeLayer is None:
+            self.infoLabel.setText(QCoreApplication.translate("node", "Please define layers in settings first."))
             self.infoLabel.show()
             return
         self.infoLabel.hide()
-        self.unusedFrame.setEnabled(True)
-        self.errorFrame.setEnabled(True)
-        self.typeFrame.setEnabled(True)
+        self.typeStopButton.show()
+        self.typeStartButton.hide()
+        self.deletedNodesCount.setText("%u" % 0)
+
+
+
 
 
