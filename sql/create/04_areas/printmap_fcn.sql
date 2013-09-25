@@ -14,7 +14,7 @@ $BODY$
 		geom ALIAS FOR $1;
 		result text;
 	BEGIN
-		SELECT string_agg(printmap.shortname , ', ') INTO result
+		SELECT string_agg(printmap.name , ', ') INTO result
 			FROM  distribution.printmap
 			WHERE ST_Intersects(geom,printmap.geometry) IS TRUE;
 		RETURN result;
