@@ -4,10 +4,10 @@
     <mapcanvas>
         <units>meters</units>
         <extent>
-            <xmin>557534.41043777135200799</xmin>
-            <ymin>143886.30670152921811678</ymin>
-            <xmax>557618.576805166201666</xmax>
-            <ymax>143946.83013909260625951</ymax>
+            <xmin>553999.6368381503270939</xmin>
+            <ymin>146063.65825076462351717</ymin>
+            <xmax>554018.12834330589976162</xmax>
+            <ymax>146075.58384151398786344</ymax>
         </extent>
         <projections>1</projections>
         <destinationsrs>
@@ -23,7 +23,7 @@
             </spatialrefsys>
         </destinationsrs>
     </mapcanvas>
-    <legend updateDrawingOrder="false">
+    <legend updateDrawingOrder="false" activeLayer="node20130304110005126">
         <legendgroup open="true" checked="Qt::PartiallyChecked" name="Réseau">
             <legendlayer drawingOrder="0" open="false" checked="Qt::Checked" name="conduites actives" showFeatureCount="0">
                 <filegroup open="false" hidden="false">
@@ -326,7 +326,7 @@
             </legendlayer>
         </legendgroup>
         <legendgroup embedded="1" drawingOrder="21" open="false" checked="Qt::Checked" name="base" project="../../../data/cadastre/cadastre.qgs"/>
-        <legendgroup embedded="1" drawingOrder="23" open="false" checked="Qt::PartiallyChecked" name="complément" project="../../../data/cadastre/cadastre.qgs"/>
+        <legendgroup embedded="1" drawingOrder="25" open="false" checked="Qt::PartiallyChecked" name="complément" project="../../../data/cadastre/cadastre.qgs"/>
     </legend>
     <Composer title="folio" visible="0">
         <Composition printResolution="300" paperWidth="1030" snapGridOffsetX="0" snapGridResolution="10" snapGridOffsetY="0" alignmentSnap="1" snapping="0" numPages="1" paperHeight="917" alignmentSnapTolerance="2" printAsRaster="0">
@@ -1919,7 +1919,7 @@
                 <property key="labeling/distInMapUnits" value="false"/>
                 <property key="labeling/enabled" value="true"/>
                 <property key="labeling/fieldName" value=" CASE WHEN &quot;_length2d&quot; > 6 THEN &quot;Conduites - matériaux__fancyname&quot;||' ' ||&quot;year&quot; ELSE &quot;Conduites - matériaux__fancyname&quot; END"/>
-                <property key="labeling/fontBold" value="true"/>
+                <property key="labeling/fontBold" value="false"/>
                 <property key="labeling/fontCapitals" value="0"/>
                 <property key="labeling/fontFamily" value="Arial"/>
                 <property key="labeling/fontItalic" value="false"/>
@@ -1927,11 +1927,11 @@
                 <property key="labeling/fontLimitPixelSize" value="false"/>
                 <property key="labeling/fontMaxPixelSize" value="10000"/>
                 <property key="labeling/fontMinPixelSize" value="3"/>
-                <property key="labeling/fontSize" value="6.5"/>
+                <property key="labeling/fontSize" value="7"/>
                 <property key="labeling/fontSizeInMapUnits" value="false"/>
                 <property key="labeling/fontStrikeout" value="false"/>
                 <property key="labeling/fontUnderline" value="false"/>
-                <property key="labeling/fontWeight" value="75"/>
+                <property key="labeling/fontWeight" value="50"/>
                 <property key="labeling/fontWordSpacing" value="0"/>
                 <property key="labeling/formatNumbers" value="false"/>
                 <property key="labeling/isExpression" value="true"/>
@@ -1946,7 +1946,7 @@
                 <property key="labeling/minFeatureSize" value="0"/>
                 <property key="labeling/multilineAlign" value="1"/>
                 <property key="labeling/multilineHeight" value="1"/>
-                <property key="labeling/namedStyle" value="Bold"/>
+                <property key="labeling/namedStyle" value="Regular"/>
                 <property key="labeling/obstacle" value="true"/>
                 <property key="labeling/placeDirectionSymbol" value="0"/>
                 <property key="labeling/placement" value="2"/>
@@ -2673,7 +2673,7 @@
                 <actionsetting action="qgis.utils.plugins['postgres91plusauditor'].showHistory('district20130304110004764',[% $id %])" capture="0" type="1" name="History audit"/>
             </attributeactions>
         </maplayer>
-        <maplayer minimumScale="-4.65661e-10" maximumScale="10000" minLabelScale="1" maxLabelScale="1e+08" geometry="Point" type="vector" hasScaleBasedVisibilityFlag="1" scaleBasedLabelVisibilityFlag="0">
+        <maplayer minimumScale="0" maximumScale="10000" minLabelScale="1" maxLabelScale="1e+08" geometry="Point" type="vector" hasScaleBasedVisibilityFlag="1" scaleBasedLabelVisibilityFlag="0">
             <id>hydrant20130304110004848</id>
             <datasource>dbname='sige' host=172.24.171.203 port=5432 user='sige' password='db4wat$' sslmode=allow key='id' srid=21781 type=POINT table="distribution"."hydrant" (geometry) sql=</datasource>
             <title></title>
@@ -2700,17 +2700,16 @@
             <renderer-v2 symbollevels="0" type="singleSymbol">
                 <symbols>
                     <symbol alpha="1" type="marker" name="0">
-                        <layer pass="0" class="SimpleMarker" locked="0">
+                        <layer pass="0" class="SvgMarker" locked="0">
                             <prop k="angle" v="0"/>
-                            <prop k="color" v="212,241,154,255"/>
-                            <prop k="color_border" v="0,0,0,255"/>
-                            <prop k="name" v="circle"/>
+                            <prop k="fill" v="#000000"/>
+                            <prop k="name" v="./symbols/hydrant.svg"/>
                             <prop k="offset" v="0,0"/>
                             <prop k="offset_unit" v="MM"/>
-                            <prop k="outline_width" v="0"/>
+                            <prop k="outline" v="#000000"/>
+                            <prop k="outline-width" v="1"/>
                             <prop k="outline_width_unit" v="MM"/>
-                            <prop k="scale_method" v="area"/>
-                            <prop k="size" v="2"/>
+                            <prop k="size" v="4"/>
                             <prop k="size_unit" v="MM"/>
                         </layer>
                     </symbol>
@@ -2738,7 +2737,7 @@
                 <property key="labeling/centroidWhole" value="false"/>
                 <property key="labeling/decimals" value="0"/>
                 <property key="labeling/displayAll" value="false"/>
-                <property key="labeling/dist" value="0"/>
+                <property key="labeling/dist" value="1"/>
                 <property key="labeling/distInMapUnits" value="false"/>
                 <property key="labeling/enabled" value="true"/>
                 <property key="labeling/fieldName" value="identification"/>
@@ -2750,7 +2749,7 @@
                 <property key="labeling/fontLimitPixelSize" value="false"/>
                 <property key="labeling/fontMaxPixelSize" value="10000"/>
                 <property key="labeling/fontMinPixelSize" value="3"/>
-                <property key="labeling/fontSize" value="8"/>
+                <property key="labeling/fontSize" value="7"/>
                 <property key="labeling/fontSizeInMapUnits" value="false"/>
                 <property key="labeling/fontStrikeout" value="false"/>
                 <property key="labeling/fontUnderline" value="false"/>
@@ -2828,7 +2827,7 @@
                 <property key="labeling/shapeTransparency" value="0"/>
                 <property key="labeling/shapeType" value="0"/>
                 <property key="labeling/textColorA" value="255"/>
-                <property key="labeling/textColorB" value="0"/>
+                <property key="labeling/textColorB" value="255"/>
                 <property key="labeling/textColorG" value="0"/>
                 <property key="labeling/textColorR" value="0"/>
                 <property key="labeling/textTransp" value="0"/>
@@ -4990,7 +4989,7 @@
                 <actionsetting action="qgis.utils.plugins['postgres91plusauditor'].showHistory('logged_actions20130304110005081',[% $id %])" capture="0" type="1" name="History audit"/>
             </attributeactions>
         </maplayer>
-        <maplayer minimumScale="0" maximumScale="1000" minLabelScale="1" maxLabelScale="1e+08" geometry="Point" type="vector" hasScaleBasedVisibilityFlag="1" scaleBasedLabelVisibilityFlag="0">
+        <maplayer minimumScale="-4.65661e-10" maximumScale="1000" minLabelScale="1" maxLabelScale="1e+08" geometry="Point" type="vector" hasScaleBasedVisibilityFlag="1" scaleBasedLabelVisibilityFlag="0">
             <id>node20130304110005126</id>
             <datasource>dbname='sige' host=172.24.171.203 port=5432 user='sige' password='db4wat$' sslmode=allow key='id' srid=21781 type=POINT table="distribution"."node" (geometry) sql=</datasource>
             <title></title>
@@ -5267,6 +5266,7 @@
                 <edittype labelontop="0" editable="1" type="0" name="_schema_view"/>
                 <edittype labelontop="0" editable="1" type="0" name="_status_active"/>
                 <edittype labelontop="0" editable="1" type="0" name="_type"/>
+                <edittype labelontop="0" editable="1" type="0" name="_under_object"/>
                 <edittype labelontop="0" editable="1" type="0" name="altitude_dtm"/>
                 <edittype labelontop="0" editable="1" type="0" name="id"/>
             </edittypes>
@@ -7094,7 +7094,7 @@
                 <property key="labeling/fontLimitPixelSize" value="false"/>
                 <property key="labeling/fontMaxPixelSize" value="10000"/>
                 <property key="labeling/fontMinPixelSize" value="3"/>
-                <property key="labeling/fontSize" value="7"/>
+                <property key="labeling/fontSize" value="7.5"/>
                 <property key="labeling/fontSizeInMapUnits" value="false"/>
                 <property key="labeling/fontStrikeout" value="false"/>
                 <property key="labeling/fontUnderline" value="false"/>
@@ -7363,7 +7363,7 @@
                 <actionsetting action="qgis.utils.plugins['postgres91plusauditor'].showHistory('subscriber_type20130304110011480',[% $id %])" capture="0" type="1" name="History audit"/>
             </attributeactions>
         </maplayer>
-        <maplayer minimumScale="0" maximumScale="1e+08" minLabelScale="1" maxLabelScale="1e+08" geometry="Point" type="vector" hasScaleBasedVisibilityFlag="0" scaleBasedLabelVisibilityFlag="0">
+        <maplayer minimumScale="-4.65661e-10" maximumScale="10000" minLabelScale="1" maxLabelScale="1e+08" geometry="Point" type="vector" hasScaleBasedVisibilityFlag="1" scaleBasedLabelVisibilityFlag="0">
             <id>valve20130304110011497</id>
             <datasource>dbname='sige' host=172.24.171.203 port=5432 user='sige' password='db4wat$' sslmode=allow key='id' srid=21781 type=POINT table="distribution"."valve" (geometry) sql=</datasource>
             <title></title>
@@ -7391,7 +7391,9 @@
             </vectorjoins>
             <renderer-v2 symbollevels="0" type="RuleRenderer">
                 <rules>
-                    <rule scalemaxdenom="10000" filter=" &quot;Vannes - fonction_name&quot; != 'organe abonné'" symbol="0" label="Schématique"/>
+                    <rule scalemaxdenom="10000" filter=" &quot;Vannes - fonction_name&quot; != 'organe abonné'" symbol="0" label="Schématique">
+                        <rule filter="closed = 't'" symbol="1" label="Fermée"/>
+                    </rule>
                 </rules>
                 <symbols>
                     <symbol alpha="1" type="marker" name="0">
@@ -7399,14 +7401,28 @@
                             <prop k="angle" v="0"/>
                             <prop k="color" v="0,0,255,255"/>
                             <prop k="color_border" v="0,0,0,255"/>
-                            <prop k="color_expression" v="CASE WHEN &quot;closed&quot; = 't' THEN '#ff0000' ELSE '#0000ff' END"/>
                             <prop k="name" v="circle"/>
                             <prop k="offset" v="0,0"/>
                             <prop k="offset_unit" v="MM"/>
                             <prop k="outline_width" v="0"/>
                             <prop k="outline_width_unit" v="MM"/>
                             <prop k="scale_method" v="area"/>
-                            <prop k="size" v="2.5"/>
+                            <prop k="size" v="2"/>
+                            <prop k="size_unit" v="MM"/>
+                        </layer>
+                    </symbol>
+                    <symbol alpha="1" type="marker" name="1">
+                        <layer pass="0" class="SimpleMarker" locked="0">
+                            <prop k="angle" v="0"/>
+                            <prop k="color" v="217,0,0,255"/>
+                            <prop k="color_border" v="0,0,0,255"/>
+                            <prop k="name" v="cross2"/>
+                            <prop k="offset" v="0,0"/>
+                            <prop k="offset_unit" v="MM"/>
+                            <prop k="outline_width" v="0"/>
+                            <prop k="outline_width_unit" v="MM"/>
+                            <prop k="scale_method" v="area"/>
+                            <prop k="size" v="4"/>
                             <prop k="size_unit" v="MM"/>
                         </layer>
                     </symbol>
@@ -7440,7 +7456,7 @@
                 <property key="labeling/distInMapUnits" value="false"/>
                 <property key="labeling/enabled" value="true"/>
                 <property key="labeling/fieldName" value="CASE WHEN &quot;Vannes - fonction_shortname&quot; IS NOT NULL THEN &quot;Vannes - fonction_shortname&quot; || identification ELSE identification END"/>
-                <property key="labeling/fontBold" value="true"/>
+                <property key="labeling/fontBold" value="false"/>
                 <property key="labeling/fontCapitals" value="0"/>
                 <property key="labeling/fontFamily" value="Arial"/>
                 <property key="labeling/fontItalic" value="false"/>
@@ -7452,7 +7468,7 @@
                 <property key="labeling/fontSizeInMapUnits" value="false"/>
                 <property key="labeling/fontStrikeout" value="false"/>
                 <property key="labeling/fontUnderline" value="false"/>
-                <property key="labeling/fontWeight" value="75"/>
+                <property key="labeling/fontWeight" value="50"/>
                 <property key="labeling/fontWordSpacing" value="0"/>
                 <property key="labeling/formatNumbers" value="false"/>
                 <property key="labeling/isExpression" value="true"/>
@@ -7467,7 +7483,7 @@
                 <property key="labeling/minFeatureSize" value="0"/>
                 <property key="labeling/multilineAlign" value="0"/>
                 <property key="labeling/multilineHeight" value="1"/>
-                <property key="labeling/namedStyle" value="Bold"/>
+                <property key="labeling/namedStyle" value="Regular"/>
                 <property key="labeling/obstacle" value="true"/>
                 <property key="labeling/placeDirectionSymbol" value="0"/>
                 <property key="labeling/placement" value="0"/>
@@ -7999,7 +8015,7 @@
                 <actionsetting action="qgis.utils.plugins['postgres91plusauditor'].showHistory('valve_type20130304110011685',[% $id %])" capture="0" type="1" name="History audit"/>
             </attributeactions>
         </maplayer>
-        <maplayer minimumScale="-4.65661e-10" maximumScale="1e+08" minLabelScale="1" maxLabelScale="1e+08" geometry="Point" type="vector" hasScaleBasedVisibilityFlag="0" scaleBasedLabelVisibilityFlag="0">
+        <maplayer minimumScale="0" maximumScale="3000" minLabelScale="1" maxLabelScale="1e+08" geometry="Point" type="vector" hasScaleBasedVisibilityFlag="1" scaleBasedLabelVisibilityFlag="0">
             <id>vannes_copy20130924083714343</id>
             <datasource>dbname='sige' host=172.24.171.203 port=5432 user='sige' password='db4wat$' sslmode=allow key='id' srid=21781 type=POINT table="distribution"."valve" (geometry) sql=</datasource>
             <title></title>
@@ -8027,22 +8043,38 @@
             </vectorjoins>
             <renderer-v2 symbollevels="0" type="RuleRenderer">
                 <rules>
-                    <rule scalemaxdenom="10000" filter=" &quot;Vannes - fonction_name&quot; = 'organe abonné'" symbol="0" label="Schématique"/>
+                    <rule scalemaxdenom="10000" filter=" &quot;Vannes - fonction_name&quot; = 'organe abonné'" symbol="0" label="Schématique">
+                        <rule filter="closed = 't'" symbol="1" label="Fermée"/>
+                    </rule>
                 </rules>
                 <symbols>
                     <symbol alpha="1" type="marker" name="0">
                         <layer pass="0" class="SimpleMarker" locked="0">
                             <prop k="angle" v="0"/>
-                            <prop k="color" v="35,171,255,255"/>
+                            <prop k="color" v="35,170,255,255"/>
                             <prop k="color_border" v="0,0,0,255"/>
-                            <prop k="color_expression" v="CASE WHEN &quot;closed&quot; = 't' THEN '#ff0000' ELSE '#0000ff' END"/>
                             <prop k="name" v="circle"/>
                             <prop k="offset" v="0,0"/>
                             <prop k="offset_unit" v="MM"/>
                             <prop k="outline_width" v="0"/>
                             <prop k="outline_width_unit" v="MM"/>
                             <prop k="scale_method" v="area"/>
-                            <prop k="size" v="2.5"/>
+                            <prop k="size" v="2"/>
+                            <prop k="size_unit" v="MM"/>
+                        </layer>
+                    </symbol>
+                    <symbol alpha="1" type="marker" name="1">
+                        <layer pass="0" class="SimpleMarker" locked="0">
+                            <prop k="angle" v="0"/>
+                            <prop k="color" v="255,0,0,255"/>
+                            <prop k="color_border" v="0,0,0,255"/>
+                            <prop k="name" v="cross2"/>
+                            <prop k="offset" v="0,0"/>
+                            <prop k="offset_unit" v="MM"/>
+                            <prop k="outline_width" v="0"/>
+                            <prop k="outline_width_unit" v="MM"/>
+                            <prop k="scale_method" v="area"/>
+                            <prop k="size" v="3"/>
                             <prop k="size_unit" v="MM"/>
                         </layer>
                     </symbol>
@@ -8073,7 +8105,7 @@
                 <property key="labeling/distInMapUnits" value="false"/>
                 <property key="labeling/enabled" value="true"/>
                 <property key="labeling/fieldName" value="CASE WHEN &quot;Vannes - fonction_shortname&quot; IS NOT NULL THEN &quot;Vannes - fonction_shortname&quot; || identification ELSE identification END"/>
-                <property key="labeling/fontBold" value="true"/>
+                <property key="labeling/fontBold" value="false"/>
                 <property key="labeling/fontCapitals" value="0"/>
                 <property key="labeling/fontFamily" value="Arial"/>
                 <property key="labeling/fontItalic" value="false"/>
@@ -8085,7 +8117,7 @@
                 <property key="labeling/fontSizeInMapUnits" value="false"/>
                 <property key="labeling/fontStrikeout" value="false"/>
                 <property key="labeling/fontUnderline" value="false"/>
-                <property key="labeling/fontWeight" value="75"/>
+                <property key="labeling/fontWeight" value="50"/>
                 <property key="labeling/fontWordSpacing" value="0"/>
                 <property key="labeling/formatNumbers" value="false"/>
                 <property key="labeling/isExpression" value="true"/>
@@ -8100,7 +8132,7 @@
                 <property key="labeling/minFeatureSize" value="0"/>
                 <property key="labeling/multilineAlign" value="0"/>
                 <property key="labeling/multilineHeight" value="1"/>
-                <property key="labeling/namedStyle" value="Bold"/>
+                <property key="labeling/namedStyle" value="Regular"/>
                 <property key="labeling/obstacle" value="true"/>
                 <property key="labeling/placeDirectionSymbol" value="0"/>
                 <property key="labeling/placement" value="0"/>
