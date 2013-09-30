@@ -31,5 +31,6 @@ INSERT INTO distribution.valve_function ( name )               VALUES ('inconnu'
 INSERT INTO distribution.valve_function ( name , shortname )   VALUES ('vidange'            ,'Vi');          /* 10 VID  */
 INSERT INTO distribution.valve_function ( name )               VALUES ('organe réseau');                     /* 11 VR   */
 INSERT INTO distribution.valve_function ( name , shortname )   VALUES ('vidange-ventouse'   ,'ViVe');        /* 12 VIVE */
+INSERT INTO distribution.valve_function ( name )               VALUES ('vanne clapet');                      /* 13      */
 
 
