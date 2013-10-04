@@ -14,7 +14,12 @@ pg_dump --host 172.24.171.203 --port 5432 --username "sige" --no-password  --for
 cat tempfile | sed 's/INSERT INTO node/INSERT INTO distribution.node/g' > /home/denis/Documents/qgis/qwat/sql/sige_data/data_node.sql
 rm tempfile
 
-# parent chld relations
+#  export printmaps
+pg_dump --host 172.24.171.203 --port 5432 --username "sige" --no-password  --format plain --data-only --inserts --column-inserts --verbose --file tempfile --table "distribution.printmap" "sige"
+cat tempfile | sed 's/INSERT INTO node/INSERT INTO distribution.printmap/g' > /home/denis/Documents/qgis/qwat/sql/sige_data/data_printmap.sql
+rm tempfile
+
+# parent child relations
 psql -h 172.24.171.203 -U "sige" -c "SELECT COUNT(id) AS current_relations_in_pipe FROM distribution.pipe WHERE id_parent IS NOT NULL;"
 read -p "Are you sure to export relations? Previous SQL file will deleted! (y/n) " answ
 if [[ "$answ" == "y" ]]
