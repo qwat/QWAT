@@ -31,7 +31,7 @@
 #! BEGIN_TCL=""
 #! FME_STROKE_MAX_DEVIATION="0"
 #! LOG_FILE=""
-#! VIEW_POSITION="0 0"
+#! VIEW_POSITION="0 -587"
 #! SOURCE_ROUTING_FILE=""
 #! ZOOM_SCALE="100"
 #! PASSWORD=""
@@ -2725,7 +2725,7 @@
 #! <XFORM_ATTR ATTR_NAME="address" IS_USER_CREATED="false" FEAT_INDEX="0"/>
 #! <XFORM_ATTR ATTR_NAME="id_damage" IS_USER_CREATED="false" FEAT_INDEX="0"/>
 #! <XFORM_ATTR ATTR_NAME="id_cause" IS_USER_CREATED="false" FEAT_INDEX="0"/>
-#! <XFORM_PARM PARM_NAME="LUT" PARM_VALUE="2,4,3,3,4,2,5,3,6,1,,NULL"/>
+#! <XFORM_PARM PARM_NAME="LUT" PARM_VALUE="2,4,3,3,4,2,5,3,6,1,,3"/>
 #! <XFORM_PARM PARM_NAME="XFORMER_NAME" PARM_VALUE="AttributeValueMapper_4"/>
 #! <XFORM_PARM PARM_NAME="SRC" PARM_VALUE="ID_SCHADENBEHEBUNG"/>
 #! <XFORM_PARM PARM_NAME="VAL_ATTR" PARM_VALUE="id_damage"/>
@@ -3188,7 +3188,7 @@ Lookup AttributeValueMapper_3_LOOKUP_TABLE   C               1   M              
 FACTORY_DEF * TeeFactory    FACTORY_NAME AttributeValueMapper_3    INPUT  FEATURE_TYPE AttributeValueMapper_2_OUTPUT    OUTPUT FEATURE_TYPE AttributeValueMapper_3_OUTPUT         "id_cause" @Lookup(AttributeValueMapper_3_LOOKUP_TABLE,"STOERUNGSURSACHE",FORWARD|ENCODED_ATTR)
 
 # -------------------------------------------------------------------------
-Lookup AttributeValueMapper_4_LOOKUP_TABLE   2               4   3               3   4               2   5               3   6               1   ""              NULL   ENCODED
+Lookup AttributeValueMapper_4_LOOKUP_TABLE   2               4   3               3   4               2   5               3   6               1   ""              3   ENCODED
 
 FACTORY_DEF * TeeFactory    FACTORY_NAME AttributeValueMapper_4    INPUT  FEATURE_TYPE AttributeValueMapper_3_OUTPUT    OUTPUT FEATURE_TYPE AttributeValueMapper_4_OUTPUT         "id_damage" @Lookup(AttributeValueMapper_4_LOOKUP_TABLE,"ID_SCHADENBEHEBUNG",FORWARD|ENCODED_ATTR)
 
