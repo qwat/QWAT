@@ -8,6 +8,8 @@ then
 # SIGE DATA
 psql -h 172.24.171.203 -U sige -f data_district.sql -v ON_ERROR_STOP=1
 read -p "Press any key to continue..."
+psql -h 172.24.171.203 -U sige -f data_printmap.sql -v ON_ERROR_STOP=1
+read -p "Press any key to continue..."
 psql -h 172.24.171.203 -U sige -f data_distributor.sql -v ON_ERROR_STOP=1
 read -p "Press any key to continue..."
 psql -h 172.24.171.203 -U sige -f data_pressurezone.sql -v ON_ERROR_STOP=1

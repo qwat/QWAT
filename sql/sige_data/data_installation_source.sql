@@ -4,7 +4,7 @@
 
 -- Dumped from database version 9.1.9
 -- Dumped by pg_dump version 9.2.4
--- Started on 2013-10-04 07:45:11 CEST
+-- Started on 2013-10-25 13:26:29 CEST
 
 SET statement_timeout = 0;
 SET client_encoding = 'UTF8';
@@ -15,8 +15,8 @@ SET client_min_messages = warning;
 SET search_path = distribution, pg_catalog;
 
 --
--- TOC entry 4107 (class 0 OID 149557)
--- Dependencies: 497
+-- TOC entry 4108 (class 0 OID 158721)
+-- Dependencies: 501
 -- Data for Name: installation_source; Type: TABLE DATA; Schema: distribution; Owner: sige
 --
 
@@ -67,15 +67,15 @@ INSERT INTO distribution.installation_source (id, id_installation, id_type, id_q
 
 
 --
--- TOC entry 4112 (class 0 OID 0)
--- Dependencies: 496
+-- TOC entry 4113 (class 0 OID 0)
+-- Dependencies: 500
 -- Name: installation_source_id_seq; Type: SEQUENCE SET; Schema: distribution; Owner: sige
 --
 
 SELECT pg_catalog.setval('installation_source_id_seq', 144, true);
 
 
--- Completed on 2013-10-04 07:45:11 CEST
+-- Completed on 2013-10-25 13:26:29 CEST
 
 --
 -- PostgreSQL database dump complete
