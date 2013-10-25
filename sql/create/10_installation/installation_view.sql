@@ -4,15 +4,13 @@
 	SQL file :: installation view
 */
 
-
-
-
 DROP VIEW IF EXISTS distribution.installation_view ;
 CREATE VIEW distribution.installation_view AS 
 	SELECT
 		installation.id                                 ,
 		installation.name                               ,
-		installation.identification                               ,
+		installation.identification                     ,
+		installation.id_type                            ,
 		installation.id_status                          ,
 		installation.id_distributor                     ,
 		installation.remarks                            ,
@@ -48,6 +46,5 @@ CREATE VIEW distribution.installation_view AS
 	LEFT OUTER JOIN distribution.district          ON installation.id_district     = district.id       
 	LEFT OUTER JOIN distribution.pressurezone      ON installation.id_pressurezone = pressurezone.id;
 
--- no rules
 
 

@@ -21,8 +21,8 @@ ALTER TABLE distribution.pipe ADD COLUMN id_protection integer;                 
 ALTER TABLE distribution.pipe ADD COLUMN id_status integer;                                    /* id_status            FK */
 ALTER TABLE distribution.pipe ADD COLUMN labelview integer default 2;                          /* label_view           FK */
 ALTER TABLE distribution.pipe ADD COLUMN labelview_schema integer default 2;                   /* label_view_schema    FK */
-ALTER TABLE distribution.pipe ADD COLUMN labeladdremark boolean default false;                 /* labeladdremark          */
-ALTER TABLE distribution.pipe ADD COLUMN labeladdremark_schema boolean default false;          /* labeladdremark_schema   */
+ALTER TABLE distribution.pipe ADD COLUMN labelremark varchar(150);                             /* labelemark              */
+ALTER TABLE distribution.pipe ADD COLUMN labelremark_schema boolean default false;             /* labelremark_schema      */
 ALTER TABLE distribution.pipe ADD COLUMN year smallint CHECK (year > 1800 AND year < 2100);    /* year                    */
 ALTER TABLE distribution.pipe ADD COLUMN tunnel_or_bridge boolean default false;               /* tunnel_or_bridge        */
 ALTER TABLE distribution.pipe ADD COLUMN pressure_nominal smallint default 16;                 /* pressure_nominale       */

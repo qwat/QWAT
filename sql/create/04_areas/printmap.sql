@@ -16,6 +16,11 @@ ALTER TABLE distribution.printmap ADD COLUMN id_district  smallint;
 ALTER TABLE distribution.printmap ADD COLUMN remarks      text;
 ALTER TABLE distribution.printmap ADD COLUMN version_date date;
 
+ALTER TABLE distribution.printmap ADD COLUMN x_min double precision;
+ALTER TABLE distribution.printmap ADD COLUMN y_min double precision;
+ALTER TABLE distribution.printmap ADD COLUMN x_max double precision;
+ALTER TABLE distribution.printmap ADD COLUMN y_max double precision;
+
 /* geometry */
 SELECT AddGeometryColumn('distribution', 'printmap', 'geometry', 21781, 'POLYGON', 2);
 CREATE INDEX printmap_geoidx ON distribution.printmap USING GIST ( geometry ); 

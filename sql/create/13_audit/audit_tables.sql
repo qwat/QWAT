@@ -4,7 +4,6 @@ SELECT distribution.audit_table('distribution.distributor');
 SELECT distribution.audit_table('distribution.district');
 SELECT distribution.audit_table('distribution.hydrant');
 SELECT distribution.audit_table('distribution.hydrant_provider');
-SELECT distribution.audit_table('distribution.hydrant_type');
 SELECT distribution.audit_table('distribution.installation');
 SELECT distribution.audit_table('distribution.installation_type');
 SELECT distribution.audit_table('distribution.installation_tank');

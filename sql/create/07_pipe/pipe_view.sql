@@ -23,6 +23,7 @@ CREATE VIEW distribution.pipe_view AS
 		pipe.tunnel_or_bridge  ,
 		pipe.pressure_nominal  ,
 		pipe.folder            ,
+		pipe.labelremark       ,
 		pipe.remarks           ,
 		pipe._valve_count      ,
 		pipe._valve_closed     ,
