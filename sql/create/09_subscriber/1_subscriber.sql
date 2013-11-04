@@ -12,7 +12,7 @@ COMMENT ON TABLE distribution.subscriber IS 'Table for subscriber. This should n
 SELECT setval('distribution.subscriber_id_seq', 8000, true);
 
 ALTER TABLE distribution.subscriber ADD COLUMN   id_type integer;                                   /* id_type       FK FULL */
-ALTER TABLE distribution.subscriber ADD COLUMN   id_status integer DEFAULT 1;                       /* id_status       FK FULL */
+ALTER TABLE distribution.subscriber ADD COLUMN   id_status integer default 1;                       /* id_status       FK FULL */
 ALTER TABLE distribution.subscriber ADD COLUMN   id_pipe integer;									/* id_pipe       FK SIMPLE*/
 ALTER TABLE distribution.subscriber ADD COLUMN   client_identification character varying (12);
 ALTER TABLE distribution.subscriber ADD COLUMN   _client_identification_full character varying (16);
@@ -26,7 +26,7 @@ SELECT distribution.geom_tool_point('subscriber',false,false,false,false,false);
 /* Add constraints */
 ALTER TABLE distribution.subscriber ADD CONSTRAINT subscriber_pkey PRIMARY KEY (id);
 ALTER TABLE distribution.subscriber ADD CONSTRAINT subscriber_id_type  FOREIGN KEY (id_type)   REFERENCES distribution.subscriber_type (id) MATCH FULL  ; CREATE INDEX fki_id_type   ON distribution.subscriber(id_type)        ;
-ALTER TABLE distribution.subscriber ADD CONSTRAINT pipe_id_status      FOREIGN KEY (id_status) REFERENCES distribution.status(id)           MATCH FULL  ; CREATE INDEX fki_id_status ON distribution.subscriber(id_status)	  	;
+ALTER TABLE distribution.subscriber ADD CONSTRAINT pipe_id_status      FOREIGN KEY (id_status) REFERENCES distribution.vl_status(id)           MATCH FULL  ; CREATE INDEX fki_id_status ON distribution.subscriber(id_status)	  	;
 ALTER TABLE distribution.subscriber ADD CONSTRAINT subscriber_id_pipe  FOREIGN KEY (id_pipe)   REFERENCES distribution.pipe (id)            MATCH SIMPLE; CREATE INDEX fki_id_pipe   ON distribution.subscriber(id_pipe)        ;
 
 

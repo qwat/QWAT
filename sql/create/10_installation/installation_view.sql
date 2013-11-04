@@ -40,7 +40,7 @@ CREATE VIEW distribution.installation_view AS
 		pressurezone.colorcode     AS _pressurezone_colorcode
 	FROM distribution.installation 
 	INNER      JOIN distribution.installation_type ON installation.id_type         = installation_type.id 
-	INNER      JOIN distribution.status            ON installation.id_status       = status.id 
+	INNER      JOIN distribution.vl_status            ON installation.id_status       = vl_status.id 
 	LEFT OUTER JOIN distribution.distributor       ON installation.id_distributor  = distributor.id 
 	LEFT OUTER JOIN distribution.node              ON installation.id_node         = node.id       
 	LEFT OUTER JOIN distribution.district          ON installation.id_district     = district.id       

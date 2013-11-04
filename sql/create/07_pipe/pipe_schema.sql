@@ -25,7 +25,7 @@ CREATE VIEW distribution.pipe_schema_viewableitems AS
 		pipe._valve_count,
 		pipe._valve_closed
 	FROM distribution.pipe
-	INNER JOIN distribution.status ON pipe.id_status = status.id
+	INNER JOIN distribution.vl_status ON pipe.id_status = vl_status.id
 	WHERE _schema_view IS TRUE
 	AND status.active IS TRUE;
 COMMENT ON VIEW distribution.pipe_schema_viewableitems IS 'viewable pipe in the schematic view (before merge)';
@@ -102,15 +102,15 @@ CREATE VIEW distribution.pipe_schema AS
 	SELECT	
 			pipe.id				                 ,
 			pipe.id_function                     ,
-			pipe.id_install_method               ,
+			pipe.id_installmethod               ,
 			pipe.id_material                     ,
 			pipe.id_distributor                  ,
 			pipe.id_precision                    ,
 			pipe.id_protection                   ,
 			pipe.id_status                       ,
 			pipe.id_pressurezone                 ,
-			pipe.labelview                       ,
-			pipe.labelview_schema                ,
+			pipe.id_labelview                       ,
+			pipe.id_labelview_schema                ,
 			pipe.year                            ,
 			pipe.pressure_nominal                ,
 			pipe.folder                          ,

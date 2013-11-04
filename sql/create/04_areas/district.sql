@@ -17,7 +17,7 @@ ALTER TABLE distribution.district ADD COLUMN  shortname          varchar(12);
 ALTER TABLE distribution.district ADD COLUMN  zip                varchar(12);
 ALTER TABLE distribution.district ADD COLUMN  land_registry      varchar(12);
 ALTER TABLE distribution.district ADD COLUMN  subscriber_prefix  varchar(12);
-ALTER TABLE distribution.district ADD COLUMN  colorcode          smallint DEFAULT 1;
+ALTER TABLE distribution.district ADD COLUMN  colorcode          smallint default 1;
 
 /* geometry */
 SELECT AddGeometryColumn('distribution', 'district', 'geometry', 21781, 'POLYGON', 2);

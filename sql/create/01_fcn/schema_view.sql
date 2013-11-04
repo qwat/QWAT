@@ -12,7 +12,7 @@ $BODY$
 		EXECUTE 'ALTER TABLE distribution.'||main_table||' ADD COLUMN schema_force_view boolean default NULL;';
 		EXECUTE 'ALTER TABLE distribution.'||main_table||' ADD COLUMN _schema_view boolean default NULL;';
 		/* Constraint */
-		EXECUTE 'ALTER TABLE distribution.'||main_table||' ADD CONSTRAINT '||main_table||'_schema_force_view FOREIGN KEY (schema_force_view) REFERENCES distribution.visible(id) MATCH FULL;';
+		EXECUTE 'ALTER TABLE distribution.'||main_table||' ADD CONSTRAINT '||main_table||'_schema_force_view FOREIGN KEY (schema_force_view) REFERENCES distribution.vl_visible(vl_code) MATCH FULL;';
 		EXECUTE ' CREATE INDEX fki_'||main_table||'_schema_force_view ON distribution.'||main_table||'(schema_force_view);';
 		
 		/* trigger */

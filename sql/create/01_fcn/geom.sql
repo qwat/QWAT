@@ -1,9 +1,6 @@
 
-/* 
-POINT and NODE
-a point is not on a node: do not create id_node and so on
-*/ 
 
+/*                        (table_name, is_node, create_node, create_schematic, get_pipe, auto_district)*/
 CREATE OR REPLACE FUNCTION distribution.geom_tool_point(table_name varchar, is_node boolean, create_node boolean, create_schematic boolean, get_pipe boolean, auto_district boolean) RETURNS void AS
 $BODY$
 	DECLARE

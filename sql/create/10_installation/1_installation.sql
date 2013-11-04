@@ -13,7 +13,7 @@ SELECT setval('distribution.installation_id_seq', 100, true);
 COMMENT ON TABLE distribution.installation IS 'installation.';
 
 /* columns */
-ALTER TABLE distribution.installation ADD COLUMN  name               varchar(40) DEFAULT '' ;
+ALTER TABLE distribution.installation ADD COLUMN  name               varchar(40) default '' ;
 ALTER TABLE distribution.installation ADD COLUMN  identification     integer                ;
 ALTER TABLE distribution.installation ADD COLUMN  id_remote         integer                ;
 ALTER TABLE distribution.installation ADD COLUMN  id_status          integer                ;
@@ -22,8 +22,7 @@ ALTER TABLE distribution.installation ADD COLUMN  id_type            integer    
 ALTER TABLE distribution.installation ADD COLUMN  remarks text;
 ALTER TABLE distribution.installation ADD COLUMN  links              text                   ;
 ALTER TABLE distribution.installation ADD COLUMN  year smallint CHECK (year > 1800 AND year < 2100);
-ALTER TABLE distribution.installation ADD COLUMN  altitude_real      decimal(10,3)          ;
-ALTER TABLE distribution.installation ADD COLUMN  open_water_surface boolean DEFAULT False  ;
+ALTER TABLE distribution.installation ADD COLUMN  open_water_surface boolean default False  ;
 ALTER TABLE distribution.installation ADD COLUMN  parcel             varchar(30)            ;
 ALTER TABLE distribution.installation ADD COLUMN  eca                varchar(30)            ;
 ALTER TABLE distribution.installation ADD COLUMN  _complete_name     varchar(50)            ;
@@ -32,7 +31,8 @@ ALTER TABLE distribution.installation ADD COLUMN  _complete_name     varchar(50)
 SELECT distribution.enable_schemaview('installation','type');
 
 /* geometry */
-SELECT distribution.geom_tool_point('installation',true,true,true,false,true);
+/*                                 (table_name,    is_node, create_node, create_schematic, get_pipe, auto_district)*/
+SELECT distribution.geom_tool_point('installation',true,    true,        true,             false,    true);
 
 /* primary key */
 ALTER TABLE distribution.installation ADD CONSTRAINT installation_pkey PRIMARY KEY (id);
@@ -40,8 +40,8 @@ ALTER TABLE distribution.installation ADD CONSTRAINT installation_pkey PRIMARY K
 /* Constraints */
 /* id_type */
 ALTER TABLE distribution.installation ADD CONSTRAINT installation_id_distributor  FOREIGN KEY (id_distributor)  REFERENCES distribution.distributor(id)       MATCH FULL; CREATE INDEX fki_installation_id_distributor    ON distribution.installation(id_distributor) ;
-ALTER TABLE distribution.installation ADD CONSTRAINT installation_id_status       FOREIGN KEY (id_status)       REFERENCES distribution.status(id)            MATCH FULL; CREATE INDEX fki_installation_id_status         ON distribution.installation(id_status)      ;
-ALTER TABLE distribution.installation ADD CONSTRAINT installation_id_remote       FOREIGN KEY (id_remote)       REFERENCES distribution.remote_type(id)       MATCH SIMPLE; CREATE INDEX fki_installation_id_remote_type  ON distribution.installation(id_remote)      ;
+ALTER TABLE distribution.installation ADD CONSTRAINT installation_id_status       FOREIGN KEY (id_status)       REFERENCES distribution.vl_status(id)            MATCH FULL; CREATE INDEX fki_installation_id_status         ON distribution.installation(id_status)      ;
+ALTER TABLE distribution.installation ADD CONSTRAINT installation_id_remote       FOREIGN KEY (id_remote)       REFERENCES distribution.vl_remote(id)       MATCH SIMPLE; CREATE INDEX fki_installation_id_remote  ON distribution.installation(id_remote)      ;
 ALTER TABLE distribution.installation ADD CONSTRAINT installation_id_type         FOREIGN KEY (id_type)         REFERENCES distribution.installation_type(id) MATCH FULL; CREATE INDEX fki_installation_id_type           ON distribution.installation(id_type)        ;
 
 

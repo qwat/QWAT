@@ -13,7 +13,7 @@ COMMENT ON TABLE distribution.valve_function IS 'Types of valve';
 /* Columns*/
 ALTER TABLE distribution.valve_function ADD COLUMN name VARCHAR(30);
 ALTER TABLE distribution.valve_function ADD COLUMN shortname VARCHAR(5);
-ALTER TABLE distribution.valve_function ADD COLUMN schema_view BOOLEAN NOT NULL DEFAULT true;
+ALTER TABLE distribution.valve_function ADD COLUMN schema_view BOOLEAN NOT NULL default true;
 
 /* Constraints*/
 ALTER TABLE distribution.valve_function ADD CONSTRAINT unique_function UNIQUE (name);

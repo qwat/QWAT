@@ -1,30 +1,8 @@
 /*
 	qWat - QGIS Water Module
 
-	SQL file :: installation <- source
+	SQL file :: installation source
 */
-
-/* source type */
-DROP TABLE IF EXISTS distribution.installation_source_type CASCADE;
-CREATE TABLE distribution.installation_source_type (id serial NOT NULL);
-ALTER TABLE distribution.installation_source_type ADD COLUMN name varchar(30) DEFAULT '' ;
-/* primary key */
-ALTER TABLE distribution.installation_source_type ADD CONSTRAINT installation_source_type_pkey PRIMARY KEY (id);
-/* content */
-INSERT INTO distribution.installation_source_type ("name") VALUES ('1');
-INSERT INTO distribution.installation_source_type ("name") VALUES ('2');
-
-/* source quality */
-DROP TABLE IF EXISTS distribution.installation_source_quality CASCADE;
-CREATE TABLE distribution.installation_source_quality (id serial NOT NULL);
-ALTER TABLE distribution.installation_source_quality ADD COLUMN name varchar(30) DEFAULT '' ;
-/* primary key */
-ALTER TABLE distribution.installation_source_quality ADD CONSTRAINT installation_source_quality_pkey PRIMARY KEY (id);
-/* content */
-INSERT INTO distribution.installation_source_quality ("name") VALUES ('a');
-INSERT INTO distribution.installation_source_quality ("name") VALUES ('b');
-INSERT INTO distribution.installation_source_quality ("name") VALUES ('c');
-
 
 /* CREATE TABLE */
 DROP TABLE IF EXISTS distribution.installation_source CASCADE;
@@ -32,8 +10,20 @@ CREATE TABLE distribution.installation_source (id serial NOT NULL);
 SELECT setval('distribution.installation_source_id_seq', 100, true);
 COMMENT ON TABLE distribution.installation_source IS '';
 
-/* columns */
-ALTER TABLE distribution.installation_source ADD COLUMN id_installation   smallint     ;
+/* common columns to all installations*/
+ALTER TABLE distribution.installation_source ADD COLUMN name               varchar(40) default '' ;
+ALTER TABLE distribution.installation_source ADD COLUMN identification     integer                ;
+ALTER TABLE distribution.installation_source ADD COLUMN id_status          integer                ;
+ALTER TABLE distribution.installation_source ADD COLUMN id_distributor     integer                ;
+ALTER TABLE distribution.installation_source ADD COLUMN id_remote          integer                ;
+ALTER TABLE distribution.installation_source ADD COLUMN view_schema        boolean                ;
+ALTER TABLE distribution.installation_source ADD COLUMN remarks text default '' ;
+ALTER TABLE distribution.installation_source ADD COLUMN links              text                   ;
+ALTER TABLE distribution.installation_source ADD COLUMN year smallint CHECK (year > 1800 AND year < 2100);
+ALTER TABLE distribution.installation_source ADD COLUMN open_water_surface boolean default False  ;
+ALTER TABLE distribution.installation_source ADD COLUMN parcel             varchar(30)            ;
+ALTER TABLE distribution.installation_source ADD COLUMN eca                varchar(30)            ;
+/* specific to sources */
 ALTER TABLE distribution.installation_source ADD COLUMN id_type           smallint     ;
 ALTER TABLE distribution.installation_source ADD COLUMN id_quality        smallint     ;
 ALTER TABLE distribution.installation_source ADD COLUMN altitude          decimal(10,3);
@@ -42,19 +32,20 @@ ALTER TABLE distribution.installation_source ADD COLUMN flow_mean         decima
 ALTER TABLE distribution.installation_source ADD COLUMN flow_concession   decimal(10,2);
 ALTER TABLE distribution.installation_source ADD COLUMN contract_end      date         ;
 ALTER TABLE distribution.installation_source ADD COLUMN gathering_chamber boolean      ;
-ALTER TABLE distribution.installation_source ADD COLUMN remarks           text         ;
 
 /* geometry */
-SELECT AddGeometryColumn('distribution', 'installation_source', 'geometry', 21781, 'POINT', 2);
-CREATE INDEX installation_source_geoidx ON distribution.installation_source USING GIST ( geometry );
+/*                                 (table_name,         is_node, create_node, create_schematic, get_pipe, auto_district)*/
+SELECT distribution.geom_tool_point('installation_source',true,    true,        true,             false,    true);
 
 /* primary key */
 ALTER TABLE distribution.installation_source ADD CONSTRAINT installation_source_pkey PRIMARY KEY (id);
 
 /* Constraints */
-ALTER TABLE distribution.installation_source ADD CONSTRAINT installation_source_id_installation	FOREIGN KEY (id_installation) REFERENCES distribution.installation(id)                MATCH FULL; CREATE INDEX fki_installation_source_id_installation ON distribution.installation_source(id_installation);
-ALTER TABLE distribution.installation_source ADD CONSTRAINT installation_source_id_type         FOREIGN KEY (id_type)         REFERENCES distribution.installation_source_type(id)    MATCH FULL; CREATE INDEX fki_installation_source_type            ON distribution.installation_source(id_type);
-ALTER TABLE distribution.installation_source ADD CONSTRAINT installation_source_id_quality      FOREIGN KEY (id_quality)      REFERENCES distribution.installation_source_quality(id) MATCH SIMPLE; CREATE INDEX fki_installation_source_quality         ON distribution.installation_source(id_quality);
+ALTER TABLE distribution.installation_source ADD CONSTRAINT installation_source_id_status       FOREIGN KEY (id_status)       REFERENCES distribution.vl_status(id)                      MATCH FULL;   CREATE INDEX fki_installation_source_id_status       ON distribution.installation_source(id_status)      ;
+ALTER TABLE distribution.installation_source ADD CONSTRAINT installation_source_id_distributor  FOREIGN KEY (id_distributor)  REFERENCES distribution.distributor(id)                 MATCH FULL;   CREATE INDEX fki_installation_source_id_distributor  ON distribution.installation_source(id_distributor) ;
+ALTER TABLE distribution.installation_source ADD CONSTRAINT installation_source_id_remote       FOREIGN KEY (id_remote)       REFERENCES distribution.vl_remote(id)                 MATCH SIMPLE; CREATE INDEX fki_installation_source_id_remote  ON distribution.installation_source(id_remote)      ;
+ALTER TABLE distribution.installation_source ADD CONSTRAINT installation_source_id_type         FOREIGN KEY (id_type)         REFERENCES distribution.vl_sourcetype(id)    MATCH FULL;   CREATE INDEX fki_vl_sourcetype            ON distribution.installation_source(id_type)        ;
+ALTER TABLE distribution.installation_source ADD CONSTRAINT installation_source_id_quality      FOREIGN KEY (id_quality)      REFERENCES distribution.vl_sourcequality(id) MATCH SIMPLE; CREATE INDEX fki_vl_sourcequality         ON distribution.installation_source(id_quality)     ;
 
 
 

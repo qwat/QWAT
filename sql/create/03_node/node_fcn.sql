@@ -75,7 +75,7 @@ $BODY$
 			bool_or(status.active) AS status_active
 			INTO grouped
 			FROM distribution.pipe
-			INNER JOIN distribution.status ON pipe.id_status = status.id
+			INNER JOIN distribution.vl_status ON pipe.id_status = vl_status.id
 			WHERE (id_node_a = node_id OR id_node_b = node_id)
 			AND status.active IS TRUE;
 		/* if not connected, deleted if not under_object */
@@ -94,7 +94,7 @@ $BODY$
 						ST_StartPoint(geometry) AS point_2
 						FROM distribution.pipe
 						INNER JOIN distribution.pipe_material ON pipe.id_material = pipe_material.id
-						INNER JOIN distribution.status ON pipe.id_status = status.id
+						INNER JOIN distribution.vl_status ON pipe.id_status = vl_status.id
 						WHERE id_node_a = node_id AND status.active IS TRUE
 				UNION ALL
 				SELECT	pipe.id, pipe.year, pipe_material._fancyname, pipe_material.diameter,
@@ -102,7 +102,7 @@ $BODY$
 						ST_EndPoint(geometry)                      AS point_2
 						FROM distribution.pipe
 						INNER JOIN distribution.pipe_material ON pipe.id_material = pipe_material.id
-						INNER JOIN distribution.status ON pipe.id_status = status.id
+						INNER JOIN distribution.vl_status ON pipe.id_status = vl_status.id
 						WHERE id_node_b = node_id AND status.active IS TRUE
 			) LOOP
 				IF looppos=0 THEN

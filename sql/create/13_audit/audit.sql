@@ -135,9 +135,9 @@ Track changes TO a TABLE at the statement AND/OR row level.
  
 Optional parameters TO TRIGGER IN CREATE TRIGGER call:
  
-param 0: BOOLEAN, whether TO log the query text. DEFAULT 't'.
+param 0: BOOLEAN, whether TO log the query text. default 't'.
  
-param 1: text[], COLUMNS TO IGNORE IN updates. DEFAULT [].
+param 1: text[], COLUMNS TO IGNORE IN updates. default [].
  
          Updates TO ignored cols are omitted FROM changed_fields.
  

@@ -38,7 +38,7 @@ CREATE VIEW distribution.hydrant_view AS
 		pressurezone.colorcode     AS _pressurezone_colorcode
 		FROM distribution.hydrant
 		INNER JOIN distribution.distributor           ON hydrant.id_distributor  = distributor.id
-		INNER JOIN distribution.status                ON hydrant.id_status       = status.id
+		INNER JOIN distribution.vl_status                ON hydrant.id_status       = vl_status.id
 		LEFT OUTER JOIN distribution.hydrant_provider ON hydrant.id_provider     = hydrant_provider.id
 		LEFT OUTER JOIN distribution.node             ON hydrant.id_node         = node.id       
 		LEFT OUTER JOIN distribution.district         ON hydrant.id_district     = district.id       
