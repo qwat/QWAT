@@ -1,6 +1,6 @@
 
 
-
+/*
 CREATE OR REPLACE VIEW distribution.search_view AS
 	SELECT 
 		'Ouvrage' as layer_name,
@@ -24,3 +24,4 @@ CREATE OR REPLACE VIEW distribution.search_view AS
 		FROM distribution.valve_view WHERE identification IS NOT NULL;
 
 
+*/

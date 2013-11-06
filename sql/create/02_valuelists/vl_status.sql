@@ -4,12 +4,12 @@
 	SQL file :: status table
 */
 
-
+/* CREATE */
 DROP TABLE IF EXISTS distribution.vl_status CASCADE;
 CREATE TABLE distribution.vl_status ( id SERIAL, CONSTRAINT status_pk PRIMARY KEY (id) );
 COMMENT ON TABLE distribution.vl_status IS 'Status table, with SIRE id.';
 
-/* Columns */
+/* COLUMNS */
 ALTER TABLE distribution.vl_status ADD COLUMN value_en  varchar(30);
 ALTER TABLE distribution.vl_status ADD COLUMN value_fr  varchar(30);
 ALTER TABLE distribution.vl_status ADD COLUMN active    boolean default true;
@@ -17,11 +17,7 @@ ALTER TABLE distribution.vl_status ADD COLUMN sire      smallint default null;
 ALTER TABLE distribution.vl_status ADD COLUMN helper_en text;
 ALTER TABLE distribution.vl_status ADD COLUMN helper_fr text;
 
-/* Constraints */
-ALTER TABLE distribution.vl_status ADD CONSTRAINT status_name UNIQUE (name);
-
-
-/* values */
+/* VALUES */
 INSERT INTO distribution.vl_status (value_en,value_fr,active,sire,helper_en,helper_fr) VALUES ('', 'en service'  , true , 1    , '', 'Contribue actuellement au réseau.');   /*  */
 INSERT INTO distribution.vl_status (value_en,value_fr,active,sire,helper_en,helper_fr) VALUES ('', 'hors service', false, NULL , '', 'Ne contribue actuellement pas au réseau, mais peut être remis en service sans opération spéciale. La mise hors service est considérée comme temporaire. Par exemple, une source mise hors service pour des problèmes de qualité.');   /*  */
 INSERT INTO distribution.vl_status (value_en,value_fr,active,sire,helper_en,helper_fr) VALUES ('', 'désaffecté'  , false, NULL , '', 'La mise hors service est quasi-définitive et une remise en service nécessiterai des opérations spéciales. Par exemple, une source non-captée est considérée comme désaffectée. Ou encore, une conduite n''étant plus raccordée maism étant toutefois dans état propre à son utilisation.');   /*  */

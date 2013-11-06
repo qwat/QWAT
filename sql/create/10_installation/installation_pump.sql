@@ -17,7 +17,8 @@ ALTER TABLE distribution.installation_pump ADD COLUMN identification     integer
 ALTER TABLE distribution.installation_pump ADD COLUMN id_status          integer                ;
 ALTER TABLE distribution.installation_pump ADD COLUMN id_distributor     integer                ;
 ALTER TABLE distribution.installation_pump ADD COLUMN id_remote          integer                ;
-ALTER TABLE distribution.installation_pump ADD COLUMN view_schema        boolean                ;
+ALTER TABLE distribution.installation_pump ADD COLUMN view_schema        boolean      default true ;
+ALTER TABLE distribution.installation_pump ADD COLUMN altitude_real      decimal(10,3)          ;
 ALTER TABLE distribution.installation_pump ADD COLUMN remarks            text default '' ;
 ALTER TABLE distribution.installation_pump ADD COLUMN links              text                   ;
 ALTER TABLE distribution.installation_pump ADD COLUMN year smallint CHECK (year > 1800 AND year < 2100);
@@ -44,7 +45,7 @@ ALTER TABLE distribution.installation_pump ADD CONSTRAINT installation_pump_pkey
 ALTER TABLE distribution.installation_pump ADD CONSTRAINT installation_pump_id_status       FOREIGN KEY (id_status)       REFERENCES distribution.vl_status(id)                 MATCH FULL;   CREATE INDEX fki_installation_pump_id_status       ON distribution.installation_pump(id_status)      ;
 ALTER TABLE distribution.installation_pump ADD CONSTRAINT installation_pump_id_distributor  FOREIGN KEY (id_distributor)  REFERENCES distribution.distributor(id)            MATCH FULL;   CREATE INDEX fki_installation_pump_id_distributor  ON distribution.installation_pump(id_distributor) ;
 ALTER TABLE distribution.installation_pump ADD CONSTRAINT installation_pump_id_remote       FOREIGN KEY (id_remote)       REFERENCES distribution.vl_remote(id)            MATCH SIMPLE; CREATE INDEX fki_installation_pump_id_remote  ON distribution.installation_pump(id_remote)      ;
-ALTER TABLE distribution.installation_pump ADD CONSTRAINT installation_pump_id_type         FOREIGN KEY (id_type)         REFERENCES distribution.vl_pumptype(id) MATCH FULL;   CREATE INDEX fki_vl_pumptype            ON distribution.installation_pump(id_type)        ;
+ALTER TABLE distribution.installation_pump ADD CONSTRAINT installation_pump_id_type         FOREIGN KEY (id_type)         REFERENCES distribution.vl_pump_type(id) MATCH FULL;   CREATE INDEX fki_vl_pump_type            ON distribution.installation_pump(id_type)        ;
 
 
 

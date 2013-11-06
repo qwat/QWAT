@@ -9,14 +9,11 @@
 DROP TABLE IF EXISTS distribution.vl_pipe_installmethod CASCADE;
 CREATE TABLE distribution.vl_pipe_installmethod (id serial NOT NULL);
 COMMENT ON TABLE distribution.vl_pipe_installmethod IS 'Installation methods.';
+ALTER TABLE distribution.vl_pipe_installmethod ADD CONSTRAINT vl_pipe_installmethod_pkey PRIMARY KEY (id);
 
 /* COLUMNS */
 ALTER TABLE distribution.vl_pipe_installmethod ADD COLUMN value_en varchar(30) default '';
 ALTER TABLE distribution.vl_pipe_installmethod ADD COLUMN value_fr varchar(30) default '';
-
-/* ADD CONSTRAINTS */
-ALTER TABLE distribution.vl_pipe_installmethod ADD CONSTRAINT vl_pipe_installmethod_pkey PRIMARY KEY (id);
-ALTER TABLE distribution.vl_pipe_installmethod ADD CONSTRAINT vl_pipe_installmethod_name UNIQUE (name);
 
 /* VALUES */
 INSERT INTO distribution.vl_pipe_installmethod (value_fr) VALUES ('En fouille');   /*TB: F   => 1 */

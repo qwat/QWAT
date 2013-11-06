@@ -4,38 +4,23 @@
 	SQL file :: node functions
 */
 
-
-
-
-/* set node altitude */
-CREATE OR REPLACE FUNCTION distribution.node_altitude() RETURNS void AS
-$BODY$
-	BEGIN
-		UPDATE distribution.node SET altitude_dtm = altitude.altitude(geometry) WHERE altitude_dtm IS NULL ;
-	END;
-$BODY$
-LANGUAGE 'plpgsql';
-COMMENT ON FUNCTION distribution.node_altitude() IS 'Fill the altitude of the node.';
-
-
 /* get node id */
-CREATE OR REPLACE FUNCTION distribution.node_get_id(geometry,boolean) RETURNS integer AS
+CREATE OR REPLACE FUNCTION distribution.node_get_id(point geometry, place_node boolean) RETURNS integer AS
 $BODY$
 	DECLARE
-		point ALIAS for $1;
-		place_node ALIAS for $2;
 		node_id integer;
 	BEGIN
-		SELECT id FROM distribution.node WHERE ST_DWithin(point,geometry,0) IS TRUE LIMIT 1 INTO node_id;
+		SELECT id FROM distribution.node WHERE ST_DWithin(point,geometry,0.0) IS TRUE LIMIT 1 INTO node_id;
 		IF node_id IS NULL AND place_node IS TRUE THEN
 			INSERT INTO distribution.node (geometry) VALUES (point);
-			SELECT id FROM distribution.node WHERE ST_DWithin(point,geometry,0) IS TRUE LIMIT 1 INTO node_id;
+			SELECT id FROM distribution.node WHERE ST_DWithin(point,geometry,0.0) IS TRUE LIMIT 1 INTO node_id;
 		END IF;
 		RETURN node_id;
 	END;
 $BODY$
 LANGUAGE 'plpgsql';
 COMMENT ON FUNCTION distribution.node_get_id(geometry,boolean) IS 'Returns the node for a given geometry (point). If node does not exist and if specified in argument, it is created.';
+
 
 /* define node type */
 /* node type: end, intersection, year, material, diameter */
@@ -61,8 +46,18 @@ $BODY$
 		IF node_id IN (SELECT id_node FROM distribution.valve) THEN
 			type := 'valve';
 			is_under_object := true;
-		ELSEIF node_id IN (SELECT id_node FROM distribution.installation) THEN
+		ELSEIF node_id IN (
+				SELECT id_node FROM distribution.installation_pressurecontrol UNION
+				SELECT id_node FROM distribution.installation_pump UNION
+				SELECT id_node FROM distribution.installation_source UNION
+				SELECT id_node FROM distribution.installation_tank UNION
+				SELECT id_node FROM distribution.installation_treatment UNION
+				SELECT id_node FROM distribution.installation_valvechamber
+				) THEN
 			type := 'installation';
+			is_under_object := true;
+		ELSEIF node_id IN (SELECT id_node FROM distribution.wateringoutput) THEN
+			type := 'wateringoutput';
 			is_under_object := true;
 		ELSEIF node_id IN (SELECT id_node FROM distribution.hydrant) THEN
 			type := 'hydrant';
@@ -72,12 +67,12 @@ $BODY$
 		SELECT
 			COUNT(pipe.id)         AS count        ,
 			bool_or(_schema_view)  AS schema_view  ,
-			bool_or(status.active) AS status_active
+			bool_or(vl_status.active) AS status_active
 			INTO grouped
 			FROM distribution.pipe
 			INNER JOIN distribution.vl_status ON pipe.id_status = vl_status.id
 			WHERE (id_node_a = node_id OR id_node_b = node_id)
-			AND status.active IS TRUE;
+			AND vl_status.active IS TRUE;
 		/* if not connected, deleted if not under_object */
 		IF grouped.count = 0 AND is_under_object IS false THEN
 			/* check it is not associated to inactive pipes */
@@ -89,27 +84,27 @@ $BODY$
 		ELSEIF grouped.count <= 2 THEN
 			/* loop over them, and take the 2 first/last points of the pipe to determine orientation */
 			FOR pipeitem IN (
-				SELECT 	pipe.id, pipe.year, pipe_material._fancyname, pipe_material.diameter,
+				SELECT 	pipe.id, pipe.year, vl_pipe_material._displayname_fr, vl_pipe_material.diameter,
 						ST_PointN(geometry,2)   AS point_1,
 						ST_StartPoint(geometry) AS point_2
 						FROM distribution.pipe
-						INNER JOIN distribution.pipe_material ON pipe.id_material = pipe_material.id
+						INNER JOIN distribution.vl_pipe_material ON pipe.id_material = vl_pipe_material.id
 						INNER JOIN distribution.vl_status ON pipe.id_status = vl_status.id
-						WHERE id_node_a = node_id AND status.active IS TRUE
+						WHERE id_node_a = node_id AND vl_status.active IS TRUE
 				UNION ALL
-				SELECT	pipe.id, pipe.year, pipe_material._fancyname, pipe_material.diameter,
+				SELECT	pipe.id, pipe.year, vl_pipe_material._displayname_fr, vl_pipe_material.diameter,
 						ST_PointN(geometry,ST_NPoints(geometry)-1) AS point_1,
 						ST_EndPoint(geometry)                      AS point_2
 						FROM distribution.pipe
-						INNER JOIN distribution.pipe_material ON pipe.id_material = pipe_material.id
+						INNER JOIN distribution.vl_pipe_material ON pipe.id_material = vl_pipe_material.id
 						INNER JOIN distribution.vl_status ON pipe.id_status = vl_status.id
-						WHERE id_node_b = node_id AND status.active IS TRUE
+						WHERE id_node_b = node_id AND vl_status.active IS TRUE
 			) LOOP
 				IF looppos=0 THEN
 					/* first pipe */
 					type := 'one';
 					Tyear     := pipeitem.year;
-					Tmaterial := pipeitem._fancyname;
+					Tmaterial := pipeitem._displayname_fr;
 					Tdiameter := pipeitem.diameter;
 					pipe_id   := pipeitem.id;
 					looppos   := 1;
@@ -118,7 +113,7 @@ $BODY$
 					/* second pipe if exists */
 					type := 'two_same';
 					IF Tyear     != pipeitem.year       THEN type := 'two_year'    ; END IF;
-					IF Tmaterial != pipeitem._fancyname THEN type := 'two_material'; END IF;
+					IF Tmaterial != pipeitem._displayname_fr THEN type := 'two_material'; END IF;
 					IF Tdiameter != pipeitem.diameter   THEN type := 'two_diameter'; END IF;
 					SELECT ST_Azimuth(pipeitem.point_1,pipeitem.point_2) INTO ori2 ;
 					SELECT ATAN2( (SIN(orientation)+SIN(ori2))/2 , (COS(orientation)+COS(ori2))/2 ) INTO orientation;

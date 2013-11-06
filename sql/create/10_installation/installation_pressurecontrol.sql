@@ -16,15 +16,16 @@ ALTER TABLE distribution.installation_pressurecontrol ADD COLUMN identification 
 ALTER TABLE distribution.installation_pressurecontrol ADD COLUMN id_status          integer                ;
 ALTER TABLE distribution.installation_pressurecontrol ADD COLUMN id_distributor     integer                ;
 ALTER TABLE distribution.installation_pressurecontrol ADD COLUMN id_remote          integer                ;
-ALTER TABLE distribution.installation_pressurecontrol ADD COLUMN view_schema        boolean                ;
-ALTER TABLE distribution.installation_pressurecontrol ADD COLUMN remarks text default '' ;
+ALTER TABLE distribution.installation_pressurecontrol ADD COLUMN view_schema        boolean      default true ;
+ALTER TABLE distribution.installation_pressurecontrol ADD COLUMN altitude_real      decimal(10,3)          ;
+ALTER TABLE distribution.installation_pressurecontrol ADD COLUMN remarks            text        default '' ;
 ALTER TABLE distribution.installation_pressurecontrol ADD COLUMN links              text                   ;
-ALTER TABLE distribution.installation_pressurecontrol ADD COLUMN year smallint CHECK (year > 1800 AND year < 2100);
-ALTER TABLE distribution.installation_pressurecontrol ADD COLUMN open_water_surface boolean default False  ;
+ALTER TABLE distribution.installation_pressurecontrol ADD COLUMN year               smallint    check (year > 1800 AND year < 2100);
+ALTER TABLE distribution.installation_pressurecontrol ADD COLUMN open_water_surface boolean     default false  ;
 ALTER TABLE distribution.installation_pressurecontrol ADD COLUMN parcel             varchar(30)            ;
 ALTER TABLE distribution.installation_pressurecontrol ADD COLUMN eca                varchar(30)            ;
 /* specific to pressurecontrol */
-ALTER TABLE distribution.installation_pressurecontrol ADD COLUMN id_type            smallint      ;
+ALTER TABLE distribution.installation_pressurecontrol ADD COLUMN id_type            smallint               ;
 
 
 /* geometry */
@@ -39,6 +40,4 @@ ALTER TABLE distribution.installation_pressurecontrol ADD CONSTRAINT installatio
 ALTER TABLE distribution.installation_pressurecontrol ADD CONSTRAINT installation_pressurecontrol_id_distributor FOREIGN KEY (id_distributor) REFERENCES distribution.distributor(id)        MATCH FULL;   CREATE INDEX fki_installation_pressurecontrol_id_distributor  ON distribution.installation_pressurecontrol(id_distributor) ;
 ALTER TABLE distribution.installation_pressurecontrol ADD CONSTRAINT installation_pressurecontrol_id_remote      FOREIGN KEY (id_remote)      REFERENCES distribution.vl_remote(id)          MATCH SIMPLE; CREATE INDEX fki_installation_pressurecontrol_id_remote       ON distribution.installation_pressurecontrol(id_remote)      ;
 ALTER TABLE distribution.installation_pressurecontrol ADD CONSTRAINT installation_pressurecontrol_id_type        FOREIGN KEY (id_type)        REFERENCES distribution.vl_pressurecontrol(id) MATCH SIMPLE; CREATE INDEX fki_installation_pressurecontrol_vl_type         ON distribution.installation_pressurecontrol(id_type)        ;
-
-
 

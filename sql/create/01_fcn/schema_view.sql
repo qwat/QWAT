@@ -5,7 +5,7 @@
 */
 
 
-CREATE OR REPLACE FUNCTION distribution.enable_schemaview(main_table varchar, auxiliary varchar) RETURNS VOID AS 
+CREATE OR REPLACE FUNCTION distribution.enable_schemaview(main_table varchar, auxiliary varchar, keyfield varchar) RETURNS VOID AS 
 $BODY$
 	BEGIN
 		/* Add columns */
@@ -22,7 +22,7 @@ $BODY$
 				force_view boolean;
 			BEGIN
 				IF NEW.schema_force_view IS NULL THEN
-					SELECT schema_view FROM distribution.'||main_table||'_'||auxiliary||' WHERE id = NEW.id_'||auxiliary||' INTO force_view;
+					SELECT schema_view FROM distribution.'||auxiliary||' WHERE id = NEW.'||keyfield||' INTO force_view;
 				ELSE 
 					force_view := NEW.schema_force_view;
 				END IF;
@@ -32,12 +32,12 @@ $BODY$
 		'' LANGUAGE ''plpgsql'';
 		
 		CREATE TRIGGER '||main_table||'_schemaview_trigger
-			AFTER INSERT OR UPDATE OF schema_force_view,id_'||auxiliary||' ON distribution.'||main_table||'
+			AFTER INSERT OR UPDATE OF schema_force_view,'||keyfield||' ON distribution.'||main_table||'
 			FOR EACH ROW EXECUTE PROCEDURE distribution.'||main_table||'_schemaview();
 		COMMENT ON TRIGGER '||main_table||'_schemaview_trigger ON distribution.'||main_table||' IS ''Schema view depends on pipe function and on manual changes.'';
 		';
 	END;
 $BODY$
 LANGUAGE 'plpgsql';
-COMMENT ON FUNCTION distribution.enable_schemaview(varchar,varchar) IS 'Add a column schema_force_view and _schema_view in given table. _schema_view is a boolean determined by the corresponding auxiliary table and might be overriden by _schema_force_view.';	
+COMMENT ON FUNCTION distribution.enable_schemaview(varchar,varchar,varchar) IS 'Add a column schema_force_view and _schema_view in given table. _schema_view is a boolean determined by the corresponding auxiliary table and might be overriden by _schema_force_view.';	
 

@@ -32,7 +32,7 @@ ALTER TABLE distribution.pipe ADD COLUMN _valve_count        smallint default NU
 ALTER TABLE distribution.pipe ADD COLUMN _valve_closed       boolean default NULL;                         /* _valve_closed           */
 
 /* schema view */
-SELECT distribution.enable_schemaview('pipe','function');
+SELECT distribution.enable_schemaview( 'pipe', 'vl_pipe_function', 'id_function' );
 
 /* geometry */
 SELECT distribution.geom_tool_line('pipe');
@@ -44,12 +44,12 @@ ALTER TABLE distribution.pipe ADD COLUMN coating_external_material_id character(
 /* Constraints */
 ALTER TABLE distribution.pipe ADD CONSTRAINT pipe_pkey PRIMARY KEY (id);
 ALTER TABLE distribution.pipe ADD CONSTRAINT pipe_id_parent           FOREIGN KEY (id_parent)           REFERENCES distribution.pipe (id)                 MATCH SIMPLE ; CREATE INDEX fki_pipe_id_parent           ON distribution.pipe(id_parent);
-ALTER TABLE distribution.pipe ADD CONSTRAINT pipe_id_function         FOREIGN KEY (id_function)         REFERENCES distribution.pipe_function(id)         MATCH FULL   ; CREATE INDEX fki_pipe_id_function         ON distribution.pipe(id_function);
+ALTER TABLE distribution.pipe ADD CONSTRAINT pipe_id_function         FOREIGN KEY (id_function)         REFERENCES distribution.vl_pipe_function(id)         MATCH FULL   ; CREATE INDEX fki_pipe_id_function         ON distribution.pipe(id_function);
 ALTER TABLE distribution.pipe ADD CONSTRAINT pipe_id_installmethod    FOREIGN KEY (id_installmethod)    REFERENCES distribution.vl_pipe_installmethod(id) MATCH FULL   ; CREATE INDEX fki_pipe_id_installmethod    ON distribution.pipe(id_installmethod);
-ALTER TABLE distribution.pipe ADD CONSTRAINT pipe_id_material         FOREIGN KEY (id_material)         REFERENCES distribution.pipe_material(id)         MATCH FULL   ; CREATE INDEX fki_pipe_id_material         ON distribution.pipe(id_material);
+ALTER TABLE distribution.pipe ADD CONSTRAINT pipe_id_material         FOREIGN KEY (id_material)         REFERENCES distribution.vl_pipe_material(id)         MATCH FULL   ; CREATE INDEX fki_pipe_id_material         ON distribution.pipe(id_material);
 ALTER TABLE distribution.pipe ADD CONSTRAINT pipe_id_distributor      FOREIGN KEY (id_distributor)      REFERENCES distribution.distributor(id)           MATCH FULL   ; CREATE INDEX fki_pipe_id_distributor      ON distribution.pipe(id_distributor);
 ALTER TABLE distribution.pipe ADD CONSTRAINT pipe_id_precision        FOREIGN KEY (id_precision)        REFERENCES distribution.vl_precision(id)          MATCH FULL   ; CREATE INDEX fki_pipe_id_precision        ON distribution.pipe(id_precision);
-ALTER TABLE distribution.pipe ADD CONSTRAINT pipe_id_protection       FOREIGN KEY (id_protection)       REFERENCES distribution.pipe_protection(id)       MATCH SIMPLE ; CREATE INDEX fki_pipe_id_protection       ON distribution.pipe(id_protection);
+ALTER TABLE distribution.pipe ADD CONSTRAINT pipe_id_protection       FOREIGN KEY (id_protection)       REFERENCES distribution.vl_pipe_protection(id)       MATCH SIMPLE ; CREATE INDEX fki_pipe_id_protection       ON distribution.pipe(id_protection);
 ALTER TABLE distribution.pipe ADD CONSTRAINT pipe_id_status           FOREIGN KEY (id_status)           REFERENCES distribution.vl_status(id)             MATCH FULL   ; CREATE INDEX fki_pipe_id_status           ON distribution.pipe(id_status);
 ALTER TABLE distribution.pipe ADD CONSTRAINT pipe_id_labelview        FOREIGN KEY (id_labelview)        REFERENCES distribution.vl_labelview(id)          MATCH FULL   ; CREATE INDEX fki_pipe_id_labelview        ON distribution.pipe(id_labelview);
 ALTER TABLE distribution.pipe ADD CONSTRAINT pipe_id_labelview_schema FOREIGN KEY (id_labelview_schema) REFERENCES distribution.vl_labelview(id)          MATCH FULL   ; CREATE INDEX fki_pipe_id_labelview_schema ON distribution.pipe(id_labelview_schema);

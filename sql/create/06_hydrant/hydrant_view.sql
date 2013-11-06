@@ -27,8 +27,8 @@ CREATE VIEW distribution.hydrant_view AS
 		hydrant._districts     ,
 		hydrant.geometry::geometry(Point,21781),
 		distributor.name           AS _distributor,
-		status.name                AS _status_name,
-		status.active              AS _status_active,
+		vl_status.value_fr         AS _status,
+		vl_status.active           AS _status_active,
 		hydrant_provider.name      AS _provider,
 		node.altitude_dtm          AS _altitude_dtm,
 		district.name              AS _district,
@@ -38,7 +38,7 @@ CREATE VIEW distribution.hydrant_view AS
 		pressurezone.colorcode     AS _pressurezone_colorcode
 		FROM distribution.hydrant
 		INNER JOIN distribution.distributor           ON hydrant.id_distributor  = distributor.id
-		INNER JOIN distribution.vl_status                ON hydrant.id_status       = vl_status.id
+		INNER JOIN distribution.vl_status             ON hydrant.id_status       = vl_status.id
 		LEFT OUTER JOIN distribution.hydrant_provider ON hydrant.id_provider     = hydrant_provider.id
 		LEFT OUTER JOIN distribution.node             ON hydrant.id_node         = node.id       
 		LEFT OUTER JOIN distribution.district         ON hydrant.id_district     = district.id       

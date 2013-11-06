@@ -37,6 +37,6 @@ ALTER TABLE distribution.hydrant ADD CONSTRAINT hydrant_pkey PRIMARY KEY (id);
 ALTER TABLE distribution.hydrant ADD CONSTRAINT hydrant_id_distributor  FOREIGN KEY (id_distributor)  REFERENCES distribution.distributor(id)      MATCH FULL  ; CREATE INDEX fki_hydrant_id_distributor  ON distribution.hydrant(id_distributor) ;
 ALTER TABLE distribution.hydrant ADD CONSTRAINT hydrant_id_status       FOREIGN KEY (id_status)       REFERENCES distribution.vl_status(id)           MATCH FULL  ; CREATE INDEX fki_hydrant_id_status       ON distribution.hydrant(id_status)      ;
 ALTER TABLE distribution.hydrant ADD CONSTRAINT hydrant_id_provider     FOREIGN KEY (id_provider)     REFERENCES distribution.hydrant_provider(id) MATCH SIMPLE; CREATE INDEX fki_hydrant_id_provider     ON distribution.hydrant(id_provider)    ;
-ALTER TABLE distribution.hydrant ADD CONSTRAINT hydrant_id_precision    FOREIGN KEY (id_precision)    REFERENCES distribution.precision(id)        MATCH FULL  ; CREATE INDEX fki_hydrant_id_precision    ON distribution.hydrant(id_precision)   ;
+ALTER TABLE distribution.hydrant ADD CONSTRAINT hydrant_id_precision    FOREIGN KEY (id_precision)    REFERENCES distribution.vl_precision(id)        MATCH FULL  ; CREATE INDEX fki_hydrant_id_precision    ON distribution.hydrant(id_precision)   ;
 
 

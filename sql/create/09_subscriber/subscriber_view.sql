@@ -21,15 +21,15 @@ CREATE VIEW distribution.subscriber_view AS
 		subscriber._printmaps      ,
 		subscriber._districts      ,
 		subscriber.geometry::geometry(Point,21781),	
-		subscriber_type.name  AS _type     ,
-		district.name         AS _district ,
-		pressurezone.name          AS _pressurezone,
-		pressurezone.shortname     AS _pressurezone_shortname,
-		pressurezone.colorcode     AS _pressurezone_colorcode
+		vl_subscriber_type.value_fr AS _type     ,
+		district.name               AS _district ,
+		pressurezone.name           AS _pressurezone,
+		pressurezone.shortname      AS _pressurezone_shortname,
+		pressurezone.colorcode      AS _pressurezone_colorcode
 		FROM distribution.subscriber
-		INNER      JOIN distribution.subscriber_type ON subscriber.id_type         = subscriber_type.id 
-		LEFT OUTER JOIN distribution.district        ON subscriber.id_district     = district.id
-		LEFT OUTER JOIN distribution.pressurezone    ON subscriber.id_pressurezone = pressurezone.id;
+		INNER      JOIN distribution.vl_subscriber_type ON subscriber.id_type         = vl_subscriber_type.id 
+		LEFT OUTER JOIN distribution.district           ON subscriber.id_district     = district.id
+		LEFT OUTER JOIN distribution.pressurezone       ON subscriber.id_pressurezone = pressurezone.id;
 /* Comment */	
 COMMENT ON VIEW distribution.subscriber_view IS 'View for subscriber. This view is editable (a rule exists to forward changes to the table).';
 

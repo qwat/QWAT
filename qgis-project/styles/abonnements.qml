@@ -110,7 +110,7 @@
     <edittype type="10" name="id"/>
     <edittype type="0" name="id_client"/>
     <edittype type="0" name="id_pipe"/>
-    <edittype allowNull="false" orderByValue="false" key="id" layer="subscriber_type20120220074657628" type="15" value="name" name="id_type"/>
+    <edittype allowNull="false" orderByValue="false" key="id" layer="vl_subscriber_type20120220074657628" type="15" value="name" name="id_type"/>
     <edittype type="0" name="parcel"/>
   </edittypes>
   <editform>../project</editform>

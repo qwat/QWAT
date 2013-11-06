@@ -25,7 +25,7 @@ SELECT distribution.geom_tool_point('subscriber',false,false,false,false,false);
 /*----------------!!!---!!!----------------*/
 /* Add constraints */
 ALTER TABLE distribution.subscriber ADD CONSTRAINT subscriber_pkey PRIMARY KEY (id);
-ALTER TABLE distribution.subscriber ADD CONSTRAINT subscriber_id_type  FOREIGN KEY (id_type)   REFERENCES distribution.subscriber_type (id) MATCH FULL  ; CREATE INDEX fki_id_type   ON distribution.subscriber(id_type)        ;
+ALTER TABLE distribution.subscriber ADD CONSTRAINT subscriber_id_type  FOREIGN KEY (id_type)   REFERENCES distribution.vl_subscriber_type (id) MATCH FULL  ; CREATE INDEX fki_id_type   ON distribution.subscriber(id_type)        ;
 ALTER TABLE distribution.subscriber ADD CONSTRAINT pipe_id_status      FOREIGN KEY (id_status) REFERENCES distribution.vl_status(id)           MATCH FULL  ; CREATE INDEX fki_id_status ON distribution.subscriber(id_status)	  	;
 ALTER TABLE distribution.subscriber ADD CONSTRAINT subscriber_id_pipe  FOREIGN KEY (id_pipe)   REFERENCES distribution.pipe (id)            MATCH SIMPLE; CREATE INDEX fki_id_pipe   ON distribution.subscriber(id_pipe)        ;
 
