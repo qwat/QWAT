@@ -14,6 +14,7 @@ CREATE VIEW distribution.valve_schema AS
 		valve.identification,
 		valve.id_type,
 		valve.id_function,
+		valve.id_precision,
 		valve.id_pipe,
 		valve.id_maintenance,
 		valve.diameter_nominal,

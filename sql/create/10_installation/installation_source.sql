@@ -16,7 +16,7 @@ ALTER TABLE distribution.installation_source ADD COLUMN identification     integ
 ALTER TABLE distribution.installation_source ADD COLUMN id_status          integer                ;
 ALTER TABLE distribution.installation_source ADD COLUMN id_distributor     integer                ;
 ALTER TABLE distribution.installation_source ADD COLUMN id_remote          integer                ;
-ALTER TABLE distribution.installation_source ADD COLUMN view_schema        boolean      default true ;
+ALTER TABLE distribution.installation_source ADD COLUMN view_schema        boolean NOT NULL default true ;
 ALTER TABLE distribution.installation_source ADD COLUMN altitude_real      decimal(10,3)          ;
 ALTER TABLE distribution.installation_source ADD COLUMN remarks            text default '' ;
 ALTER TABLE distribution.installation_source ADD COLUMN links              text                   ;
@@ -27,7 +27,6 @@ ALTER TABLE distribution.installation_source ADD COLUMN eca                varch
 /* specific to sources */
 ALTER TABLE distribution.installation_source ADD COLUMN id_type           smallint     ;
 ALTER TABLE distribution.installation_source ADD COLUMN id_quality        smallint     ;
-ALTER TABLE distribution.installation_source ADD COLUMN altitude          decimal(10,3);
 ALTER TABLE distribution.installation_source ADD COLUMN flow_lowest       decimal(10,3);
 ALTER TABLE distribution.installation_source ADD COLUMN flow_mean         decimal(10,3);
 ALTER TABLE distribution.installation_source ADD COLUMN flow_concession   decimal(10,2);

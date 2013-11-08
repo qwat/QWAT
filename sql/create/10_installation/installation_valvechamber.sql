@@ -16,7 +16,7 @@ ALTER TABLE distribution.installation_valvechamber ADD COLUMN identification    
 ALTER TABLE distribution.installation_valvechamber ADD COLUMN id_status          integer                ;
 ALTER TABLE distribution.installation_valvechamber ADD COLUMN id_distributor     integer                ;
 ALTER TABLE distribution.installation_valvechamber ADD COLUMN id_remote          integer                ;
-ALTER TABLE distribution.installation_valvechamber ADD COLUMN view_schema        boolean      default true ;
+ALTER TABLE distribution.installation_valvechamber ADD COLUMN view_schema        boolean NOT NULL default true ;
 ALTER TABLE distribution.installation_valvechamber ADD COLUMN altitude_real      decimal(10,3)          ;
 ALTER TABLE distribution.installation_valvechamber ADD COLUMN remarks            text        default '' ;
 ALTER TABLE distribution.installation_valvechamber ADD COLUMN links              text                   ;

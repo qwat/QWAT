@@ -16,8 +16,7 @@ ALTER TABLE distribution.installation_tank ADD COLUMN identification       integ
 ALTER TABLE distribution.installation_tank ADD COLUMN id_status            integer                ;
 ALTER TABLE distribution.installation_tank ADD COLUMN id_distributor       integer                ;
 ALTER TABLE distribution.installation_tank ADD COLUMN id_remote            integer                ;
-ALTER TABLE distribution.installation_tank ADD COLUMN view_schema          boolean      default true ;
-ALTER TABLE distribution.installation_tank ADD COLUMN altitude_real        decimal(10,3)          ;
+ALTER TABLE distribution.installation_tank ADD COLUMN view_schema          boolean   default true ;
 ALTER TABLE distribution.installation_tank ADD COLUMN remarks              text        default '' ;
 ALTER TABLE distribution.installation_tank ADD COLUMN links                text                   ;
 ALTER TABLE distribution.installation_tank ADD COLUMN year                 smallint CHECK (year > 1800 AND year < 2100);

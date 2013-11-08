@@ -11,9 +11,10 @@ DROP VIEW IF EXISTS distribution.valve_view CASCADE;
 CREATE VIEW distribution.valve_view AS 
 SELECT  
 	valve.id                ,
-	valve.identification              ,
+	valve.identification    ,
 	valve.id_type           ,
 	valve.id_function       ,
+	valve.id_precision      ,
 	valve.id_maintenance    ,
 	valve.id_pipe           ,
 	valve.diameter_nominal  ,
@@ -43,8 +44,8 @@ SELECT
 	pressurezone.shortname     AS _pressurezone_shortname,
 	pressurezone.colorcode     AS _pressurezone_colorcode
 	FROM distribution.valve
-	INNER JOIN      distribution.vl_valve_type     ON valve.id_type         = vl_valve_type.id
-	INNER JOIN      distribution.vl_valve_function ON valve.id_function     = vl_valve_function.id
+	INNER JOIN      distribution.vl_valve_type     ON valve.id_type      = vl_valve_type.id
+	INNER JOIN      distribution.vl_valve_function ON valve.id_function  = vl_valve_function.id
 	LEFT OUTER JOIN distribution.node           ON valve.id_node         = node.id       
 	LEFT OUTER JOIN distribution.district       ON valve.id_district     = district.id       
 	LEFT OUTER JOIN distribution.pressurezone   ON valve.id_pressurezone = pressurezone.id;

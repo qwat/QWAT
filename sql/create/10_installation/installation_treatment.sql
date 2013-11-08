@@ -16,7 +16,7 @@ ALTER TABLE distribution.installation_treatment ADD COLUMN identification     in
 ALTER TABLE distribution.installation_treatment ADD COLUMN id_status          integer                ;
 ALTER TABLE distribution.installation_treatment ADD COLUMN id_distributor     integer                ;
 ALTER TABLE distribution.installation_treatment ADD COLUMN id_remote          integer                ;
-ALTER TABLE distribution.installation_treatment ADD COLUMN view_schema        boolean      default true ;
+ALTER TABLE distribution.installation_treatment ADD COLUMN view_schema        boolean NOT NULL default true ;
 ALTER TABLE distribution.installation_treatment ADD COLUMN altitude_real      decimal(10,3)          ;
 ALTER TABLE distribution.installation_treatment ADD COLUMN remarks            text        default '' ;
 ALTER TABLE distribution.installation_treatment ADD COLUMN links              text                   ;
@@ -25,7 +25,6 @@ ALTER TABLE distribution.installation_treatment ADD COLUMN open_water_surface bo
 ALTER TABLE distribution.installation_treatment ADD COLUMN parcel             varchar(30)            ;
 ALTER TABLE distribution.installation_treatment ADD COLUMN eca                varchar(30)            ;
 /* specific to treatment */
-ALTER TABLE distribution.installation_treatment ADD COLUMN id_installation               integer      ;
 ALTER TABLE distribution.installation_treatment ADD COLUMN sanitization_uv               boolean      ;
 ALTER TABLE distribution.installation_treatment ADD COLUMN sanitization_chlorine_liquid  boolean      ;
 ALTER TABLE distribution.installation_treatment ADD COLUMN sanitization_chlorine_gazeous boolean      ;

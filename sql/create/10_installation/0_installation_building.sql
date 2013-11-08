@@ -18,7 +18,7 @@ ALTER TABLE distribution.installation_building ADD COLUMN _displayname_en varcha
 ALTER TABLE distribution.installation_building ADD COLUMN _displayname_fr varchar(50);
 
 /* geometry */
-SELECT AddGeometryColumn('distribution', 'installation_building', 'geometry', 21781, 'POLYGON', 2);
+SELECT AddGeometryColumn('distribution', 'installation_building', 'geometry', 21781, 'MULTIPOLYGON', 2);
 CREATE INDEX installation_building_geoidx ON distribution.installation_building USING GIST ( geometry ); 
 
 /* Constraints */
