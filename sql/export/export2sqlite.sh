@@ -19,7 +19,7 @@ rm $sqliteoutput
   PG:"dbname='sige' host=$db_address port='5432' user='sige' password='db4wat$'" \
   -dsco SPATIALITE=yes -lco "SPATIAL_INDEX=yes FORMAT=wkb" -gt 65536
   
- ogr2ogr -sql "SELECT identification,id_type,id_distributor,id_status,id_provider,year,model,altitude_real,remarks,id_district,id_pressurezone,geometry FROM distribution.hydrant"  \
+ ogr2ogr -sql "SELECT identification,id_type,id_distributor,vl_status,id_provider,year,model,altitude_real,remarks,id_district,id_pressurezone,geometry FROM distribution.hydrant"  \
   -overwrite -a_srs EPSG:21781 -f SQLite $sqliteoutput \
   -nln hydrant -nlt POINT -progress \
   PG:"dbname='sige' host=$db_address port='5432' user='sige' password='db4wat$'" \
@@ -38,7 +38,7 @@ rm $sqliteoutput
   PG:"dbname='sige' host=$db_address port='5432' user='sige' password='db4wat$'" \
   -dsco SPATIALITE=yes -lco "SPATIAL_INDEX=yes FORMAT=wkb" -gt 65536
   
-  ogr2ogr -sql "SELECT id_function,id_install_method,id_material,id_distributor,id_precision,id_protection,id_status,year,tunnel_or_bridge,pressure_nominal,folder,remarks,id_district,id_pressurezone,geometry FROM distribution.pipe"  \
+  ogr2ogr -sql "SELECT id_function,id_installmethod,id_material,id_distributor,id_precision,id_protection,vl_status,year,tunnel_or_bridge,pressure_nominal,folder,remarks,id_district,id_pressurezone,geometry FROM distribution.pipe"  \
   -overwrite -a_srs EPSG:21781 -f SQLite $sqliteoutput \
   -nln pipe -nlt LINESTRING -progress \
   PG:"dbname='sige' host=$db_address port='5432' user='sige' password='db4wat$'" \
@@ -83,7 +83,7 @@ rm $sqliteoutput
   PG:"dbname='sige' host=$db_address port='5432' user='sige' password='db4wat$'" \
   -dsco SPATIALITE=yes -lco "SPATIAL_INDEX=yes FORMAT=wkb" -gt 65536
 
- ogr2ogr -sql "SELECT status,active,sire,comment FROM distribution.status"  \
+ ogr2ogr -sql "SELECT status,active,sire,comment FROM distribution.vl_status"  \
   -overwrite -a_srs EPSG:21781 -f SQLite $sqliteoutput \
   -nln status -nlt NONE -progress \
   PG:"dbname='sige' host=$db_address port='5432' user='sige' password='db4wat$'" \
@@ -113,9 +113,9 @@ rm $sqliteoutput
   PG:"dbname='sige' host=$db_address port='5432' user='sige' password='db4wat$'" \
   -dsco SPATIALITE=yes -lco "SPATIAL_INDEX=yes FORMAT=wkb" -gt 65536
 
- ogr2ogr -sql "SELECT id,name FROM distribution.visible"  \
+ ogr2ogr -sql "SELECT id,name FROM distribution.vl_visible"  \
   -overwrite -a_srs EPSG:21781 -f SQLite $sqliteoutput \
-  -nln visible -nlt NONE -progress \
+  -nln vl_visible -nlt NONE -progress \
   PG:"dbname='sige' host=$db_address port='5432' user='sige' password='db4wat$'" \
   -dsco SPATIALITE=yes -lco "SPATIAL_INDEX=yes FORMAT=wkb" -gt 65536
 

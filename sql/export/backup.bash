@@ -49,6 +49,12 @@ rm tempfile
 pg_dump --host 172.24.171.203 --port 5432 --username "sige" --no-password  --format plain --data-only --inserts --column-inserts --verbose --file tempfile --table "distribution.installation_source" "sige"
 cat tempfile | sed 's/INSERT INTO installation_source/INSERT INTO distribution.installation_source/g' > /home/denis/Documents/qgis/qwat/sql/sige_data/data_installation_source.sql
 rm tempfile
+pg_dump --host 172.24.171.203 --port 5432 --username "sige" --no-password  --format plain --data-only --inserts --column-inserts --verbose --file tempfile --table "distribution.installation_pressurecontrol" "sige"
+cat tempfile | sed 's/INSERT INTO installation_pressurecontrol/INSERT INTO distribution.installation_pressurecontrol/g' > /home/denis/Documents/qgis/qwat/sql/sige_data/data_installation_pressurecontrol.sql
+rm tempfile
+pg_dump --host 172.24.171.203 --port 5432 --username "sige" --no-password  --format plain --data-only --inserts --column-inserts --verbose --file tempfile --table "distribution.installation_valvechamber" "sige"
+cat tempfile | sed 's/INSERT INTO installation_valvechamber/INSERT INTO distribution.installation_valvechamber/g' > /home/denis/Documents/qgis/qwat/sql/sige_data/data_installation_valvechamber.sql
+rm tempfile
 
 read -p "Push to github=== " answ
 	if [[ "$answ" == "y" ]]
