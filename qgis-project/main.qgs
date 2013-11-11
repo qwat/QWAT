@@ -279,7 +279,7 @@
             </legendlayer>
             <legendlayer drawingOrder="47" open="true" checked="Qt::Unchecked" name="Ouvrage - réservoir - type incendie" showFeatureCount="0">
                 <filegroup open="true" hidden="false">
-                    <legendlayerfile isInOverview="0" layerid="vl_tankfirestorage20130304170704030" visible="0"/>
+                    <legendlayerfile isInOverview="0" layerid="vl_tank_firestorage20130304170704030" visible="0"/>
                 </filegroup>
             </legendlayer>
             <legendlayer drawingOrder="48" open="true" checked="Qt::Unchecked" name="Ouvrage - réservoir - type de cuve" showFeatureCount="0">
@@ -309,7 +309,7 @@
             </legendlayer>
             <legendlayer drawingOrder="53" open="true" checked="Qt::Unchecked" name="Vannes - maintenance" showFeatureCount="0">
                 <filegroup open="true" hidden="false">
-                    <legendlayerfile isInOverview="0" layerid="vl_valvemaintenance20130304110011567" visible="0"/>
+                    <legendlayerfile isInOverview="0" layerid="vl_valve_maintenance20130304110011567" visible="0"/>
                 </filegroup>
             </legendlayer>
             <legendlayer drawingOrder="54" open="true" checked="Qt::Unchecked" name="Vannes - type" showFeatureCount="0">
@@ -1309,8 +1309,8 @@
             </vectorjoins>
             <renderer-v2 symbollevels="0" type="RuleRenderer">
                 <rules>
-                    <rule filter="id_distributor= 1 and &quot;Statut_active&quot; = 'f' and _schema_view = 't'" symbol="0" label="Schématique"/>
-                    <rule scalemaxdenom="3000" filter="id_distributor= 1 and  &quot;Statut_active&quot; ='f' and _schema_view = 'f'" symbol="1" label="Non schématique"/>
+                    <rule filter="id_distributor= 1 and &quot;Statut_active&quot; = 'f' and _schema_visible = 't'" symbol="0" label="Schématique"/>
+                    <rule scalemaxdenom="3000" filter="id_distributor= 1 and  &quot;Statut_active&quot; ='f' and _schema_visible = 'f'" symbol="1" label="Non schématique"/>
                 </rules>
                 <symbols>
                     <symbol alpha="1" type="line" name="0">
@@ -1516,7 +1516,7 @@
                 <edittype labelontop="0" editable="0" type="0" name="_length2d"/>
                 <edittype labelontop="0" editable="0" type="0" name="_length3d"/>
                 <edittype labelontop="0" editable="0" type="0" name="_printmaps"/>
-                <edittype labelontop="0" editable="0" unchecked="f" type="7" checked="t" name="_schema_view"/>
+                <edittype labelontop="0" editable="0" unchecked="f" type="7" checked="t" name="_schema_visible"/>
                 <edittype labelontop="0" editable="0" type="0" name="_valve_closed"/>
                 <edittype labelontop="0" editable="0" type="0" name="_valve_count"/>
                 <edittype labelontop="0" editable="0" type="0" name="abonnés__client_identification_full"/>
@@ -1547,7 +1547,7 @@
                 <edittype labelontop="0" editable="1" allowNull="false" orderByValue="false" key="id" layer="vl_pipe_function20130304110005186" allowMulti="false" filterExpression="" type="15" value="value_fr" name="id_function"/>
                 <edittype labelontop="0" editable="1" allowNull="false" orderByValue="false" key="id" layer="vl_pipe_installmethod20130304110005209" allowMulti="false" filterExpression="" type="15" value="value_fr" name="id_installmethod"/>
                 <edittype labelontop="0" editable="1" allowNull="false" orderByValue="false" key="id" layer="vl_labelview20130613095751932" allowMulti="false" filterExpression="" type="15" value="value_fr" name="id_labelview"/>
-                <edittype labelontop="0" editable="1" allowNull="false" orderByValue="false" key="id" layer="vl_labelview20130613095751932" allowMulti="false" filterExpression="" type="15" value="value_fr" name="id_labelview_schema"/>
+                <edittype labelontop="0" editable="1" allowNull="false" orderByValue="false" key="id" layer="vl_labelview20130613095751932" allowMulti="false" filterExpression="" type="15" value="value_fr" name="id_labelschema_visible"/>
                 <edittype labelontop="0" editable="1" allowNull="false" orderByValue="true" key="id" layer="vl_pipe_material20130304110005230" allowMulti="false" filterExpression="" type="15" value="_displayname_fr" name="id_material"/>
                 <edittype labelontop="0" editable="0" type="0" name="id_node_a"/>
                 <edittype labelontop="0" editable="0" type="0" name="id_node_b"/>
@@ -1609,8 +1609,8 @@
             </vectorjoins>
             <renderer-v2 symbollevels="0" type="RuleRenderer">
                 <rules>
-                    <rule filter="id_distributor != 1 and _schema_view = 't'" symbol="0" label="Schématique"/>
-                    <rule scalemaxdenom="3000" filter="id_distributor != 1 and _schema_view = 'f'" symbol="1" label="Non schématique"/>
+                    <rule filter="id_distributor != 1 and _schema_visible = 't'" symbol="0" label="Schématique"/>
+                    <rule scalemaxdenom="3000" filter="id_distributor != 1 and _schema_visible = 'f'" symbol="1" label="Non schématique"/>
                 </rules>
                 <symbols>
                     <symbol alpha="1" type="line" name="0">
@@ -1820,7 +1820,7 @@
                 <edittype labelontop="0" editable="0" type="0" name="_length2d"/>
                 <edittype labelontop="0" editable="0" type="0" name="_length3d"/>
                 <edittype labelontop="0" editable="0" type="0" name="_printmaps"/>
-                <edittype labelontop="0" editable="0" unchecked="f" type="7" checked="t" name="_schema_view"/>
+                <edittype labelontop="0" editable="0" unchecked="f" type="7" checked="t" name="_schema_visible"/>
                 <edittype labelontop="0" editable="0" type="0" name="_valve_closed"/>
                 <edittype labelontop="0" editable="0" type="0" name="_valve_count"/>
                 <edittype labelontop="0" editable="0" type="0" name="coating_external_material_id"/>
@@ -1833,7 +1833,7 @@
                 <edittype labelontop="0" editable="1" allowNull="false" orderByValue="false" key="id" layer="vl_pipe_function20130304110005186" allowMulti="false" filterExpression="" type="15" value="value_fr" name="id_function"/>
                 <edittype labelontop="0" editable="1" allowNull="false" orderByValue="false" key="id" layer="vl_pipe_installmethod20130304110005209" allowMulti="false" filterExpression="" type="15" value="value_fr" name="id_installmethod"/>
                 <edittype labelontop="0" editable="1" allowNull="false" orderByValue="false" key="id" layer="vl_labelview20130613095751932" allowMulti="false" filterExpression="" type="15" value="value_fr" name="id_labelview"/>
-                <edittype labelontop="0" editable="1" allowNull="false" orderByValue="false" key="id" layer="vl_labelview20130613095751932" allowMulti="false" filterExpression="" type="15" value="value_fr" name="id_labelview_schema"/>
+                <edittype labelontop="0" editable="1" allowNull="false" orderByValue="false" key="id" layer="vl_labelview20130613095751932" allowMulti="false" filterExpression="" type="15" value="value_fr" name="id_labelschema_visible"/>
                 <edittype labelontop="0" editable="1" allowNull="false" orderByValue="true" key="id" layer="vl_pipe_material20130304110005230" allowMulti="false" filterExpression="" type="15" value="_displayname_fr" name="id_material"/>
                 <edittype labelontop="0" editable="0" type="0" name="id_node_a"/>
                 <edittype labelontop="0" editable="0" type="0" name="id_node_b"/>
@@ -1895,8 +1895,8 @@
             </vectorjoins>
             <renderer-v2 symbollevels="0" type="RuleRenderer">
                 <rules>
-                    <rule filter="id_distributor= 1 and &quot;Statut_active&quot; = 't' and _schema_view = 't'" symbol="0" label="Schématique"/>
-                    <rule scalemaxdenom="3000" filter="id_distributor= 1 and  &quot;Statut_active&quot; ='t' and _schema_view = 'f'" symbol="1" label="Non schématique"/>
+                    <rule filter="id_distributor= 1 and &quot;Statut_active&quot; = 't' and _schema_visible = 't'" symbol="0" label="Schématique"/>
+                    <rule scalemaxdenom="3000" filter="id_distributor= 1 and  &quot;Statut_active&quot; ='t' and _schema_visible = 'f'" symbol="1" label="Non schématique"/>
                 </rules>
                 <symbols>
                     <symbol alpha="1" type="line" name="0">
@@ -2111,7 +2111,7 @@
                 <edittype labelontop="0" editable="0" type="0" name="_length2d"/>
                 <edittype labelontop="0" editable="0" type="0" name="_length3d"/>
                 <edittype labelontop="0" editable="0" type="0" name="_printmaps"/>
-                <edittype labelontop="0" editable="0" unchecked="f" type="7" checked="t" name="_schema_view"/>
+                <edittype labelontop="0" editable="0" unchecked="f" type="7" checked="t" name="_schema_visible"/>
                 <edittype labelontop="0" editable="0" type="0" name="_valve_closed"/>
                 <edittype labelontop="0" editable="0" type="0" name="_valve_count"/>
                 <edittype labelontop="0" editable="0" type="0" name="coating_external_material_id"/>
@@ -2124,7 +2124,7 @@
                 <edittype labelontop="0" editable="1" allowNull="false" orderByValue="false" key="id" layer="vl_pipe_function20130304110005186" allowMulti="false" filterExpression="" type="15" value="value_fr" name="id_function"/>
                 <edittype labelontop="0" editable="1" allowNull="false" orderByValue="false" key="id" layer="vl_pipe_installmethod20130304110005209" allowMulti="false" filterExpression="" type="15" value="value_fr" name="id_installmethod"/>
                 <edittype labelontop="0" editable="1" allowNull="false" orderByValue="false" key="id" layer="vl_labelview20130613095751932" allowMulti="false" filterExpression="" type="15" value="value_fr" name="id_labelview"/>
-                <edittype labelontop="0" editable="1" allowNull="false" orderByValue="false" key="id" layer="vl_labelview20130613095751932" allowMulti="false" filterExpression="" type="15" value="value_fr" name="id_labelview_schema"/>
+                <edittype labelontop="0" editable="1" allowNull="false" orderByValue="false" key="id" layer="vl_labelview20130613095751932" allowMulti="false" filterExpression="" type="15" value="value_fr" name="id_labelschema_visible"/>
                 <edittype labelontop="0" editable="1" allowNull="false" orderByValue="true" key="id" layer="vl_pipe_material20130304110005230" allowMulti="false" filterExpression="" type="15" value="_displayname_fr" name="id_material"/>
                 <edittype labelontop="0" editable="0" type="0" name="id_node_a"/>
                 <edittype labelontop="0" editable="0" type="0" name="id_node_b"/>
@@ -3383,12 +3383,12 @@
             </labelattributes>
             <edittypes>
                 <edittype labelontop="0" editable="0" type="0" name="Ouvrages - type_name"/>
-                <edittype labelontop="0" editable="0" type="0" name="Ouvrages - type_schema_view"/>
+                <edittype labelontop="0" editable="0" type="0" name="Ouvrages - type_schema_visible"/>
                 <edittype labelontop="0" editable="0" type="0" name="Ouvrages - type_shortname"/>
                 <edittype labelontop="0" editable="0" type="0" name="_complete_name"/>
                 <edittype labelontop="0" editable="0" type="0" name="_districts"/>
                 <edittype labelontop="0" editable="0" type="0" name="_printmaps"/>
-                <edittype labelontop="0" editable="1" type="0" name="_schema_view"/>
+                <edittype labelontop="0" editable="1" type="0" name="_schema_visible"/>
                 <edittype labelontop="0" editable="1" type="0" name="altitude_real"/>
                 <edittype labelontop="0" editable="1" type="0" name="eca"/>
                 <edittype labelontop="0" editable="0" type="0" name="geometry_schematic"/>
@@ -3447,12 +3447,12 @@
             <vectorjoins/>
             <renderer-v2 symbollevels="0" type="RuleRenderer">
                 <rules>
-                    <rule filter="view_schema = 't'" label="Schématique">
+                    <rule filter="schema_visible = 't'" label="Schématique">
                         <rule filter="id_type = 1" symbol="0" label="Réduction de pression"/>
                         <rule filter="id_type = 2" symbol="1" label="Coupe pression"/>
                         <rule filter="id_type = 3" symbol="2" label="Rassemblement"/>
                     </rule>
-                    <rule scalemaxdenom="300" filter="schema_view = 'f'" label="Détail">
+                    <rule scalemaxdenom="300" filter="schema_visible = 'f'" label="Détail">
                         <rule filter="id_type = 1" symbol="3" label="Réduction de pression"/>
                         <rule filter="id_type = 2" symbol="4" label="Coupe pression"/>
                         <rule filter="id_type = 3" symbol="5" label="Rassemblement"/>
@@ -3721,7 +3721,7 @@
                 <edittype labelontop="0" editable="1" type="0" name="open_water_surface"/>
                 <edittype labelontop="0" editable="1" type="0" name="parcel"/>
                 <edittype labelontop="0" editable="1" type="0" name="remarks"/>
-                <edittype labelontop="0" editable="1" type="0" name="view_schema"/>
+                <edittype labelontop="0" editable="1" type="0" name="schema_visible"/>
                 <edittype labelontop="0" editable="1" type="0" name="year"/>
             </edittypes>
             <editform>.</editform>
@@ -3761,8 +3761,8 @@
             <vectorjoins/>
             <renderer-v2 symbollevels="0" type="RuleRenderer">
                 <rules>
-                    <rule filter="view_schema = 't'" symbol="0" label="Scématique"/>
-                    <rule scalemaxdenom="300" filter="view_schema = 'f'" symbol="1" label="Détail"/>
+                    <rule filter="schema_visible = 't'" symbol="0" label="Scématique"/>
+                    <rule scalemaxdenom="300" filter="schema_visible = 'f'" symbol="1" label="Détail"/>
                 </rules>
                 <symbols>
                     <symbol alpha="1" type="marker" name="0">
@@ -3969,7 +3969,7 @@
                 <edittype labelontop="0" editable="1" type="0" name="parcel"/>
                 <edittype labelontop="0" editable="1" type="0" name="rejected_flow"/>
                 <edittype labelontop="0" editable="1" type="12" name="remarks"/>
-                <edittype labelontop="0" editable="1" type="0" name="view_schema"/>
+                <edittype labelontop="0" editable="1" type="0" name="schema_visible"/>
                 <edittype labelontop="0" editable="1" type="0" name="year"/>
             </edittypes>
             <editform>.</editform>
@@ -4009,8 +4009,8 @@
             <vectorjoins/>
             <renderer-v2 symbollevels="0" type="RuleRenderer">
                 <rules>
-                    <rule filter="view_schema = 't'" symbol="0" label="Scématique"/>
-                    <rule scalemaxdenom="300" filter="view_schema = 'f'" symbol="1" label="Détail"/>
+                    <rule filter="schema_visible = 't'" symbol="0" label="Scématique"/>
+                    <rule scalemaxdenom="300" filter="schema_visible = 'f'" symbol="1" label="Détail"/>
                 </rules>
                 <symbols>
                     <symbol alpha="1" type="marker" name="0">
@@ -4219,7 +4219,7 @@
                 <edittype labelontop="0" editable="1" type="0" name="open_water_surface"/>
                 <edittype labelontop="0" editable="1" type="0" name="parcel"/>
                 <edittype labelontop="0" editable="1" type="12" name="remarks"/>
-                <edittype labelontop="0" editable="1" type="0" name="view_schema"/>
+                <edittype labelontop="0" editable="1" type="0" name="schema_visible"/>
                 <edittype labelontop="0" editable="1" type="0" name="year"/>
             </edittypes>
             <editform>.</editform>
@@ -4261,8 +4261,8 @@
             </vectorjoins>
             <renderer-v2 symbollevels="0" type="RuleRenderer">
                 <rules>
-                    <rule filter="view_schema = 't'" symbol="0" label="Scématique"/>
-                    <rule scalemaxdenom="300" filter="view_schema = 'f'" symbol="1" label="Détail"/>
+                    <rule filter="schema_visible = 't'" symbol="0" label="Scématique"/>
+                    <rule scalemaxdenom="300" filter="schema_visible = 'f'" symbol="1" label="Détail"/>
                 </rules>
                 <symbols>
                     <symbol alpha="1" type="marker" name="0">
@@ -4470,7 +4470,7 @@
                 <edittype labelontop="0" editable="0" type="0" name="id"/>
                 <edittype labelontop="0" editable="1" type="0" name="id_distributor"/>
                 <edittype labelontop="0" editable="1" type="0" name="id_district"/>
-                <edittype labelontop="0" editable="1" allowNull="true" orderByValue="false" key="id" layer="vl_tankfirestorage20130304170704030" allowMulti="false" filterExpression="" type="15" value="name" name="id_firestorage"/>
+                <edittype labelontop="0" editable="1" allowNull="true" orderByValue="false" key="id" layer="vl_tank_firestorage20130304170704030" allowMulti="false" filterExpression="" type="15" value="name" name="id_firestorage"/>
                 <edittype labelontop="0" editable="1" allowNull="false" orderByValue="true" key="id" layer="installation20130304110004938" allowMulti="false" filterExpression="id_type = 1" type="15" value="_complete_name" name="id_installation"/>
                 <edittype labelontop="0" editable="1" type="0" name="id_node"/>
                 <edittype labelontop="0" editable="1" allowNull="true" orderByValue="false" key="id" layer="vl_overflow20130304170704046" allowMulti="false" filterExpression="" type="15" value="name" name="id_overflow"/>
@@ -4488,12 +4488,12 @@
                 <edittype labelontop="0" editable="0" type="0" name="ouvrage_id_type"/>
                 <edittype labelontop="0" editable="0" type="0" name="ouvrage_name"/>
                 <edittype labelontop="0" editable="0" type="0" name="ouvrages_Ouvrages - type_name"/>
-                <edittype labelontop="0" editable="0" type="0" name="ouvrages_Ouvrages - type_schema_view"/>
+                <edittype labelontop="0" editable="0" type="0" name="ouvrages_Ouvrages - type_schema_visible"/>
                 <edittype labelontop="0" editable="0" type="0" name="ouvrages_Ouvrages - type_shortname"/>
                 <edittype labelontop="0" editable="0" type="0" name="ouvrages__complete_name"/>
                 <edittype labelontop="0" editable="0" type="0" name="ouvrages__districts"/>
                 <edittype labelontop="0" editable="0" type="0" name="ouvrages__printmaps"/>
-                <edittype labelontop="0" editable="0" type="0" name="ouvrages__schema_view"/>
+                <edittype labelontop="0" editable="0" type="0" name="ouvrages__schema_visible"/>
                 <edittype labelontop="0" editable="0" type="0" name="ouvrages_altitude_real"/>
                 <edittype labelontop="0" editable="0" type="0" name="ouvrages_eca"/>
                 <edittype labelontop="0" editable="0" type="0" name="ouvrages_geometry_schematic"/>
@@ -4518,7 +4518,7 @@
                 <edittype labelontop="0" editable="1" type="0" name="storage_fire"/>
                 <edittype labelontop="0" editable="1" type="0" name="storage_supply"/>
                 <edittype labelontop="0" editable="1" type="0" name="storage_total"/>
-                <edittype labelontop="0" editable="1" type="0" name="view_schema"/>
+                <edittype labelontop="0" editable="1" type="0" name="schema_visible"/>
                 <edittype labelontop="0" editable="1" type="0" name="year"/>
             </edittypes>
             <editform>./ui_forms/installation_tank.ui</editform>
@@ -4583,8 +4583,8 @@
             <vectorjoins/>
             <renderer-v2 symbollevels="0" type="RuleRenderer">
                 <rules>
-                    <rule filter="view_schema = 't'" symbol="0" label="Scématique"/>
-                    <rule scalemaxdenom="300" filter="view_schema = 'f'" symbol="1" label="Détail"/>
+                    <rule filter="schema_visible = 't'" symbol="0" label="Scématique"/>
+                    <rule scalemaxdenom="300" filter="schema_visible = 'f'" symbol="1" label="Détail"/>
                 </rules>
                 <symbols>
                     <symbol alpha="1" type="marker" name="0">
@@ -4796,7 +4796,7 @@
                 <edittype labelontop="0" editable="1" unchecked="f" type="7" checked="t" name="sanitization_uv"/>
                 <edittype labelontop="0" editable="1" unchecked="f" type="7" checked="t" name="settling"/>
                 <edittype labelontop="0" editable="1" type="0" name="treatment_capacity"/>
-                <edittype labelontop="0" editable="1" type="0" name="view_schema"/>
+                <edittype labelontop="0" editable="1" type="0" name="schema_visible"/>
                 <edittype labelontop="0" editable="1" type="0" name="year"/>
             </edittypes>
             <editform>.</editform>
@@ -4872,11 +4872,11 @@
             <vectorjoins/>
             <renderer-v2 symbollevels="0" type="RuleRenderer">
                 <rules>
-                    <rule filter="view_schema = 't'" label="Schématique">
+                    <rule filter="schema_visible = 't'" label="Schématique">
                         <rule filter="meter = 't'" symbol="0" label="Compteur"/>
                         <rule filter="meter != 't'" symbol="1" label="Chambre"/>
                     </rule>
-                    <rule scalemaxdenom="300" filter="view_schema = 'f'" label="Détail">
+                    <rule scalemaxdenom="300" filter="schema_visible = 'f'" label="Détail">
                         <rule filter="meter = 't'" symbol="2" label="Compteur"/>
                         <rule filter="meter != 't'" symbol="3" label="Chambre"/>
                     </rule>
@@ -5114,7 +5114,7 @@
                 <edittype labelontop="0" editable="1" type="0" name="open_water_surface"/>
                 <edittype labelontop="0" editable="1" type="0" name="parcel"/>
                 <edittype labelontop="0" editable="1" type="0" name="remarks"/>
-                <edittype labelontop="0" editable="1" type="0" name="view_schema"/>
+                <edittype labelontop="0" editable="1" type="0" name="schema_visible"/>
                 <edittype labelontop="0" editable="1" type="0" name="year"/>
             </edittypes>
             <editform>.</editform>
@@ -5691,7 +5691,7 @@
             </labelattributes>
             <edittypes>
                 <edittype labelontop="0" editable="1" type="0" name="_orientation"/>
-                <edittype labelontop="0" editable="1" type="0" name="_schema_view"/>
+                <edittype labelontop="0" editable="1" type="0" name="_schema_visible"/>
                 <edittype labelontop="0" editable="1" type="0" name="_status_active"/>
                 <edittype labelontop="0" editable="1" type="0" name="_type"/>
                 <edittype labelontop="0" editable="1" type="0" name="_under_object"/>
@@ -6019,8 +6019,8 @@
                 <property key="labeling/bufferSizeInMapUnits" value="false"/>
                 <property key="labeling/bufferTransp" value="0"/>
                 <property key="labeling/centroidWhole" value="false"/>
-                <property key="labeling/dataDefined/AlwaysShow" value="1~~1~~case when &quot;id_labelview_schema&quot;  = 3 THEN 1 ELSE 0 END~~"/>
-                <property key="labeling/dataDefined/Show" value="1~~1~~case when &quot;id_labelview_schema&quot;  = 2 THEN 1 ELSE 0 END~~"/>
+                <property key="labeling/dataDefined/AlwaysShow" value="1~~1~~case when &quot;id_labelschema_visible&quot;  = 3 THEN 1 ELSE 0 END~~"/>
+                <property key="labeling/dataDefined/Show" value="1~~1~~case when &quot;id_labelschema_visible&quot;  = 2 THEN 1 ELSE 0 END~~"/>
                 <property key="labeling/decimals" value="3"/>
                 <property key="labeling/displayAll" value="false"/>
                 <property key="labeling/dist" value="0.1"/>
@@ -6171,7 +6171,7 @@
                 <edittype labelontop="0" editable="1" type="0" name="_pressurezone_shortname"/>
                 <edittype labelontop="0" editable="1" type="0" name="_printmaps"/>
                 <edittype labelontop="0" editable="1" type="0" name="_protection"/>
-                <edittype labelontop="0" editable="1" type="0" name="_schema_view"/>
+                <edittype labelontop="0" editable="1" type="0" name="_schema_visible"/>
                 <edittype labelontop="0" editable="1" type="0" name="_status_active"/>
                 <edittype labelontop="0" editable="1" type="0" name="_status_name"/>
                 <edittype labelontop="0" editable="1" type="0" name="_valve_closed"/>
@@ -6183,7 +6183,7 @@
                 <edittype labelontop="0" editable="1" type="0" name="id_function"/>
                 <edittype labelontop="0" editable="1" type="0" name="id_installmethod"/>
                 <edittype labelontop="0" editable="1" type="0" name="id_labelview"/>
-                <edittype labelontop="0" editable="1" type="0" name="id_labelview_schema"/>
+                <edittype labelontop="0" editable="1" type="0" name="id_labelschema_visible"/>
                 <edittype labelontop="0" editable="1" type="0" name="id_material"/>
                 <edittype labelontop="0" editable="1" type="0" name="id_parent"/>
                 <edittype labelontop="0" editable="1" type="0" name="id_precision"/>
@@ -7748,11 +7748,11 @@
             </labelattributes>
             <edittypes>
                 <edittype labelontop="0" editable="0" type="0" name="Vannes - fonction_name"/>
-                <edittype labelontop="0" editable="0" type="0" name="Vannes - fonction_schema_view"/>
+                <edittype labelontop="0" editable="0" type="0" name="Vannes - fonction_schema_visible"/>
                 <edittype labelontop="0" editable="0" type="0" name="Vannes - fonction_shortname"/>
                 <edittype labelontop="0" editable="0" type="0" name="_districts"/>
                 <edittype labelontop="0" editable="0" type="0" name="_printmaps"/>
-                <edittype labelontop="0" editable="0" unchecked="'f'" type="7" checked="'t'" name="_schema_view"/>
+                <edittype labelontop="0" editable="0" unchecked="'f'" type="7" checked="'t'" name="_schema_visible"/>
                 <edittype labelontop="0" editable="1" type="0" name="altitude_real"/>
                 <edittype labelontop="0" editable="1" unchecked="f" type="7" checked="t" name="closed"/>
                 <edittype labelontop="0" editable="1" type="0" name="diameter_nominal"/>
@@ -7761,8 +7761,8 @@
                 <edittype labelontop="0" editable="0" type="0" name="id_district"/>
                 <edittype labelontop="0" editable="1" allowNull="false" orderByValue="false" key="id" layer="vl_valve_function20130304110011544" allowMulti="false" filterExpression="" type="15" value="value_fr" name="id_function"/>
                 <edittype labelontop="0" editable="1" type="0" name="id_labelview"/>
-                <edittype labelontop="0" editable="1" type="0" name="id_labelview_schema"/>
-                <edittype labelontop="0" editable="1" allowNull="true" orderByValue="false" key="id" layer="vl_valvemaintenance20130304110011567" allowMulti="true" filterExpression="" type="15" value="value_fr" name="id_maintenance"/>
+                <edittype labelontop="0" editable="1" type="0" name="id_labelschema_visible"/>
+                <edittype labelontop="0" editable="1" allowNull="true" orderByValue="false" key="id" layer="vl_valve_maintenance20130304110011567" allowMulti="true" filterExpression="" type="15" value="value_fr" name="id_maintenance"/>
                 <edittype labelontop="0" editable="0" type="0" name="id_node"/>
                 <edittype labelontop="0" editable="0" type="0" name="id_pipe"/>
                 <edittype labelontop="0" editable="0" allowNull="false" orderByValue="true" key="id" layer="pressurezone20130417133612105" allowMulti="false" filterExpression="" type="15" value="name" name="id_pressurezone"/>
@@ -7781,14 +7781,14 @@
             <aliases>
                 <alias field="_districts" index="21" name="communes"/>
                 <alias field="_printmaps" index="20" name="folios"/>
-                <alias field="_schema_view" index="14" name="visible schéma"/>
+                <alias field="_schema_visible" index="14" name="visible schéma"/>
                 <alias field="altitude_real" index="9" name="altitude"/>
                 <alias field="closed" index="8" name="fermée"/>
                 <alias field="diameter_nominal" index="6" name="diamètre nominal"/>
                 <alias field="id_district" index="16" name="commune"/>
                 <alias field="id_function" index="3" name="fonction"/>
                 <alias field="id_labelview" index="11" name="visibilité label"/>
-                <alias field="id_labelview_schema" index="12" name="visibilité label shéma"/>
+                <alias field="id_labelschema_visible" index="12" name="visibilité label shéma"/>
                 <alias field="id_maintenance" index="5" name="entretien"/>
                 <alias field="id_node" index="15" name="ID noeud"/>
                 <alias field="id_pipe" index="19" name="ID conduite"/>
@@ -8273,11 +8273,11 @@
             </labelattributes>
             <edittypes>
                 <edittype labelontop="0" editable="0" type="0" name="Vannes - fonction_name"/>
-                <edittype labelontop="0" editable="0" type="0" name="Vannes - fonction_schema_view"/>
+                <edittype labelontop="0" editable="0" type="0" name="Vannes - fonction_schema_visible"/>
                 <edittype labelontop="0" editable="0" type="0" name="Vannes - fonction_shortname"/>
                 <edittype labelontop="0" editable="0" type="0" name="_districts"/>
                 <edittype labelontop="0" editable="0" type="0" name="_printmaps"/>
-                <edittype labelontop="0" editable="0" unchecked="'f'" type="7" checked="'t'" name="_schema_view"/>
+                <edittype labelontop="0" editable="0" unchecked="'f'" type="7" checked="'t'" name="_schema_visible"/>
                 <edittype labelontop="0" editable="1" type="0" name="altitude_real"/>
                 <edittype labelontop="0" editable="1" unchecked="f" type="7" checked="t" name="closed"/>
                 <edittype labelontop="0" editable="1" type="0" name="diameter_nominal"/>
@@ -8286,8 +8286,8 @@
                 <edittype labelontop="0" editable="0" type="0" name="id_district"/>
                 <edittype labelontop="0" editable="1" allowNull="false" orderByValue="false" key="id" layer="vl_valve_function20130304110011544" allowMulti="false" filterExpression="" type="15" value="value_fr" name="id_function"/>
                 <edittype labelontop="0" editable="1" type="0" name="id_labelview"/>
-                <edittype labelontop="0" editable="1" type="0" name="id_labelview_schema"/>
-                <edittype labelontop="0" editable="1" allowNull="true" orderByValue="false" key="id" layer="vl_valvemaintenance20130304110011567" allowMulti="true" filterExpression="" type="15" value="value_fr" name="id_maintenance"/>
+                <edittype labelontop="0" editable="1" type="0" name="id_labelschema_visible"/>
+                <edittype labelontop="0" editable="1" allowNull="true" orderByValue="false" key="id" layer="vl_valve_maintenance20130304110011567" allowMulti="true" filterExpression="" type="15" value="value_fr" name="id_maintenance"/>
                 <edittype labelontop="0" editable="0" type="0" name="id_node"/>
                 <edittype labelontop="0" editable="0" type="0" name="id_pipe"/>
                 <edittype labelontop="0" editable="0" allowNull="false" orderByValue="true" key="id" layer="pressurezone20130417133612105" allowMulti="false" filterExpression="" type="15" value="name" name="id_pressurezone"/>
@@ -8306,14 +8306,14 @@
             <aliases>
                 <alias field="_districts" index="21" name="communes"/>
                 <alias field="_printmaps" index="20" name="folios"/>
-                <alias field="_schema_view" index="14" name="visible schéma"/>
+                <alias field="_schema_visible" index="14" name="visible schéma"/>
                 <alias field="altitude_real" index="9" name="altitude"/>
                 <alias field="closed" index="8" name="fermée"/>
                 <alias field="diameter_nominal" index="6" name="diamètre nominal"/>
                 <alias field="id_district" index="16" name="commune"/>
                 <alias field="id_function" index="3" name="fonction"/>
                 <alias field="id_labelview" index="11" name="visibilité label"/>
-                <alias field="id_labelview_schema" index="12" name="visibilité label shéma"/>
+                <alias field="id_labelschema_visible" index="12" name="visibilité label shéma"/>
                 <alias field="id_maintenance" index="5" name="entretien"/>
                 <alias field="id_node" index="15" name="ID noeud"/>
                 <alias field="id_pipe" index="19" name="ID conduite"/>
@@ -8604,7 +8604,7 @@
             <edittypes>
                 <edittype labelontop="0" editable="1" type="0" name="id"/>
                 <edittype labelontop="0" editable="1" type="0" name="name"/>
-                <edittype labelontop="0" editable="1" type="0" name="schema_view"/>
+                <edittype labelontop="0" editable="1" type="0" name="schema_visible"/>
             </edittypes>
             <editform>.</editform>
             <editforminit></editforminit>
@@ -8992,8 +8992,8 @@
             </attributeactions>
         </maplayer>
         <maplayer minimumScale="-4.65661e-10" maximumScale="1e+08" geometry="No geometry" type="vector" hasScaleBasedVisibilityFlag="0">
-            <id>vl_tankfirestorage20130304170704030</id>
-            <datasource>dbname='sige' host=172.24.171.203 port=5432 user='sige' password='db4wat$' sslmode=allow key='id' table="distribution"."vl_tankfirestorage" sql=</datasource>
+            <id>vl_tank_firestorage20130304170704030</id>
+            <datasource>dbname='sige' host=172.24.171.203 port=5432 user='sige' password='db4wat$' sslmode=allow key='id' table="distribution"."vl_tank_firestorage" sql=</datasource>
             <title></title>
             <abstract></abstract>
             <keywordList>
@@ -9030,7 +9030,7 @@
             <excludeAttributesWMS/>
             <excludeAttributesWFS/>
             <attributeactions>
-                <actionsetting action="qgis.utils.plugins['postgres91plusauditor'].showHistory('vl_tankfirestorage20130304170704030',[% $id %])" capture="0" type="1" name="History audit"/>
+                <actionsetting action="qgis.utils.plugins['postgres91plusauditor'].showHistory('vl_tank_firestorage20130304170704030',[% $id %])" capture="0" type="1" name="History audit"/>
             </attributeactions>
         </maplayer>
         <maplayer minimumScale="-4.65661e-10" maximumScale="1e+08" geometry="No geometry" type="vector" hasScaleBasedVisibilityFlag="0">
@@ -9063,7 +9063,7 @@
             <edittypes>
                 <edittype labelontop="0" editable="1" type="0" name="id"/>
                 <edittype labelontop="0" editable="1" type="0" name="name"/>
-                <edittype labelontop="0" editable="1" type="0" name="schema_view"/>
+                <edittype labelontop="0" editable="1" type="0" name="schema_visible"/>
                 <edittype labelontop="0" editable="1" type="0" name="shortname"/>
             </edittypes>
             <editform>.</editform>
@@ -9120,8 +9120,8 @@
             </attributeactions>
         </maplayer>
         <maplayer minimumScale="-4.65661e-10" maximumScale="1e+08" geometry="No geometry" type="vector" hasScaleBasedVisibilityFlag="0">
-            <id>vl_valvemaintenance20130304110011567</id>
-            <datasource>dbname='sige' host=172.24.171.203 port=5432 user='sige' password='db4wat$' sslmode=allow key='id' table="distribution"."vl_valvemaintenance" sql=</datasource>
+            <id>vl_valve_maintenance20130304110011567</id>
+            <datasource>dbname='sige' host=172.24.171.203 port=5432 user='sige' password='db4wat$' sslmode=allow key='id' table="distribution"."vl_valve_maintenance" sql=</datasource>
             <title></title>
             <abstract></abstract>
             <keywordList>
@@ -9164,7 +9164,7 @@
             <excludeAttributesWMS/>
             <excludeAttributesWFS/>
             <attributeactions>
-                <actionsetting action="qgis.utils.plugins['postgres91plusauditor'].showHistory('vl_valvemaintenance20130304110011567',[% $id %])" capture="0" type="1" name="History audit"/>
+                <actionsetting action="qgis.utils.plugins['postgres91plusauditor'].showHistory('vl_valve_maintenance20130304110011567',[% $id %])" capture="0" type="1" name="History audit"/>
             </attributeactions>
         </maplayer>
         <maplayer minimumScale="-4.65661e-10" maximumScale="1e+08" geometry="No geometry" type="vector" hasScaleBasedVisibilityFlag="0">
@@ -9564,14 +9564,14 @@
                         <value>installation_type20130514104730101</value>
                         <value>vl_pumptype20130816140237776</value>
                         <value>vl_overflow20130304170704046</value>
-                        <value>vl_tankfirestorage20130304170704030</value>
+                        <value>vl_tank_firestorage20130304170704030</value>
                         <value>vl_cistern20130304110005061</value>
                         <value>vl_sourcequality20130820110518810</value>
                         <value>vl_sourcetype20130820110518791</value>
                         <value>vl_precision20130304110011372</value>
                         <value>status20130304110011436</value>
                         <value>vl_remote20130304110004987</value>
-                        <value>vl_valvemaintenance20130304110011567</value>
+                        <value>vl_valve_maintenance20130304110011567</value>
                         <value>vl_valve_type20130304110011685</value>
                         <value>vl_valve_function20130304110011544</value>
                         <value>vl_visible20130304110011703</value>
@@ -9632,14 +9632,14 @@
                         <value>installation_type20130514104730101</value>
                         <value>vl_pumptype20130816140237776</value>
                         <value>vl_overflow20130304170704046</value>
-                        <value>vl_tankfirestorage20130304170704030</value>
+                        <value>vl_tank_firestorage20130304170704030</value>
                         <value>vl_cistern20130304110005061</value>
                         <value>vl_sourcequality20130820110518810</value>
                         <value>vl_sourcetype20130820110518791</value>
                         <value>vl_precision20130304110011372</value>
                         <value>status20130304110011436</value>
                         <value>vl_remote20130304110004987</value>
-                        <value>vl_valvemaintenance20130304110011567</value>
+                        <value>vl_valve_maintenance20130304110011567</value>
                         <value>vl_valve_type20130304110011685</value>
                         <value>vl_valve_function20130304110011544</value>
                         <value>vl_visible20130304110011703</value>

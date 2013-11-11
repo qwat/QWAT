@@ -66,7 +66,7 @@ $BODY$
 		/* count the active pipes associated to this node */
 		SELECT
 			COUNT(pipe.id)         AS count        ,
-			bool_or(_schema_view)  AS schema_view  ,
+			bool_or(_schema_visible)  AS schema_visible  ,
 			bool_or(vl_status.active) AS status_active
 			INTO grouped
 			FROM distribution.pipe
@@ -137,7 +137,7 @@ $BODY$
 		UPDATE distribution.node SET
 			_type          = type,
 			_orientation   = orientation,
-			_schema_view   = grouped.schema_view,
+			_schema_visible   = grouped.schema_visible,
 			_status_active = grouped.status_active,
 			_under_object  = is_under_object
 			WHERE id = node_id;

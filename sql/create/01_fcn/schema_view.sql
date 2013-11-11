@@ -10,7 +10,7 @@ $BODY$
 	BEGIN
 		/* Add columns */
 		EXECUTE 'ALTER TABLE distribution.'||main_table||' ADD COLUMN schema_force_view boolean default NULL;';
-		EXECUTE 'ALTER TABLE distribution.'||main_table||' ADD COLUMN _schema_view boolean default NULL;';
+		EXECUTE 'ALTER TABLE distribution.'||main_table||' ADD COLUMN _schema_visible boolean default NULL;';
 		/* Constraint */
 		EXECUTE 'ALTER TABLE distribution.'||main_table||' ADD CONSTRAINT '||main_table||'_schema_force_view FOREIGN KEY (schema_force_view) REFERENCES distribution.vl_visible(vl_code) MATCH FULL;';
 		EXECUTE ' CREATE INDEX fki_'||main_table||'_schema_force_view ON distribution.'||main_table||'(schema_force_view);';
@@ -22,11 +22,11 @@ $BODY$
 				force_view boolean;
 			BEGIN
 				IF NEW.schema_force_view IS NULL THEN
-					SELECT schema_view FROM distribution.'||auxiliary||' WHERE id = NEW.'||keyfield||' INTO force_view;
+					SELECT schema_visible FROM distribution.'||auxiliary||' WHERE id = NEW.'||keyfield||' INTO force_view;
 				ELSE 
 					force_view := NEW.schema_force_view;
 				END IF;
-				UPDATE distribution.'||main_table||' SET _schema_view = force_view WHERE id = NEW.id;
+				UPDATE distribution.'||main_table||' SET _schema_visible = force_view WHERE id = NEW.id;
 				RETURN NEW;
 			END;
 		'' LANGUAGE ''plpgsql'';
@@ -39,5 +39,5 @@ $BODY$
 	END;
 $BODY$
 LANGUAGE 'plpgsql';
-COMMENT ON FUNCTION distribution.enable_schemaview(varchar,varchar,varchar) IS 'Add a column schema_force_view and _schema_view in given table. _schema_view is a boolean determined by the corresponding auxiliary table and might be overriden by _schema_force_view.';	
+COMMENT ON FUNCTION distribution.enable_schemaview(varchar,varchar,varchar) IS 'Add a column schema_force_view and _schema_visible in given table. _schema_visible is a boolean determined by the corresponding auxiliary table and might be overriden by _schema_force_view.';	
 

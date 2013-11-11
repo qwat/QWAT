@@ -29,7 +29,7 @@ SELECT
 	valve.id_printmap       ,
 	valve._printmaps        ,
 	valve._districts        ,
-	valve._schema_view      ,
+	valve._schema_visible      ,
 	valve.geometry::geometry(Point,21781)    ,
 	vl_valve_function.value_fr AS _function    ,
 	vl_valve_function.short_fr AS _function_shortname ,

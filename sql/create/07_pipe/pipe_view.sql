@@ -27,7 +27,7 @@ CREATE VIEW distribution.pipe_view AS
 		pipe.remarks           ,
 		pipe._valve_count      ,
 		pipe._valve_closed     ,
-		pipe._schema_view      ,
+		pipe._schema_visible      ,
 		pipe.id_node_a         ,
 		pipe.id_node_b         ,
 		pipe.id_district       ,

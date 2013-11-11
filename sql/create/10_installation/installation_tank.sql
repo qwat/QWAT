@@ -13,10 +13,11 @@ COMMENT ON TABLE distribution.installation_tank IS 'storage tanks. These are rel
 /* common columns to all installations*/
 ALTER TABLE distribution.installation_tank ADD COLUMN name                 varchar(40) default '' ;
 ALTER TABLE distribution.installation_tank ADD COLUMN identification       integer                ;
-ALTER TABLE distribution.installation_tank ADD COLUMN id_status            integer                ;
-ALTER TABLE distribution.installation_tank ADD COLUMN id_distributor       integer                ;
-ALTER TABLE distribution.installation_tank ADD COLUMN id_remote            integer                ;
-ALTER TABLE distribution.installation_tank ADD COLUMN view_schema          boolean   default true ;
+ALTER TABLE distribution.installation_tank ADD COLUMN id_status            smallint not null      ;
+ALTER TABLE distribution.installation_tank ADD COLUMN id_distributor       smallint not null      ;
+ALTER TABLE distribution.installation_tank ADD COLUMN id_remote            smallint               ;
+ALTER TABLE distribution.installation_tank ADD COLUMN id_watertype         smallint not null      ;
+ALTER TABLE distribution.installation_tank ADD COLUMN schema_visible          boolean   default true ;
 ALTER TABLE distribution.installation_tank ADD COLUMN remarks              text        default '' ;
 ALTER TABLE distribution.installation_tank ADD COLUMN links                text                   ;
 ALTER TABLE distribution.installation_tank ADD COLUMN year                 smallint CHECK (year > 1800 AND year < 2100);
@@ -57,13 +58,14 @@ SELECT distribution.geom_tool_point('installation_tank',true,    true,        tr
 ALTER TABLE distribution.installation_tank ADD CONSTRAINT installation_tank_pkey PRIMARY KEY (id);
 
 /* Constraints */
-ALTER TABLE distribution.installation_tank ADD CONSTRAINT installation_tank_id_status       FOREIGN KEY (id_status)        REFERENCES distribution.vl_status(id)                            MATCH FULL;   CREATE INDEX fki_installation_tank_id_status       ON distribution.installation_tank(id_status)      ;
-ALTER TABLE distribution.installation_tank ADD CONSTRAINT installation_tank_id_distributor  FOREIGN KEY (id_distributor)   REFERENCES distribution.distributor(id)                       MATCH FULL;   CREATE INDEX fki_installation_tank_id_distributor  ON distribution.installation_tank(id_distributor) ;
-ALTER TABLE distribution.installation_tank ADD CONSTRAINT installation_tank_id_remote       FOREIGN KEY (id_remote)        REFERENCES distribution.vl_remote(id)                       MATCH SIMPLE; CREATE INDEX fki_installation_tank_id_remote  ON distribution.installation_tank(id_remote)      ;
-ALTER TABLE distribution.installation_tank ADD CONSTRAINT installation_tank_id_overflow     FOREIGN KEY (id_overflow)      REFERENCES distribution.vl_overflow(id)    MATCH SIMPLE; CREATE INDEX fki_installation_tank_id_overflow     ON distribution.installation_tank(id_overflow);
-ALTER TABLE distribution.installation_tank ADD CONSTRAINT installation_tank_id_firestorage  FOREIGN KEY (id_firestorage)   REFERENCES distribution.vl_tankfirestorage(id) MATCH SIMPLE; CREATE INDEX fki_installation_tank_id_firestorage  ON distribution.installation_tank(id_firestorage);
-ALTER TABLE distribution.installation_tank ADD CONSTRAINT installation_tank_cistern1type    FOREIGN KEY (cistern1_id_type) REFERENCES distribution.vl_cistern(id)     MATCH SIMPLE; CREATE INDEX fki_installation_tank_cistern1type    ON distribution.installation_tank(cistern1_id_type);
-ALTER TABLE distribution.installation_tank ADD CONSTRAINT installation_tank_cistern2type    FOREIGN KEY (cistern2_id_type) REFERENCES distribution.vl_cistern(id)     MATCH SIMPLE; CREATE INDEX fki_installation_tank_cistern2type    ON distribution.installation_tank(cistern2_id_type);
+ALTER TABLE distribution.installation_tank ADD CONSTRAINT installation_tank_id_status       FOREIGN KEY (id_status)        REFERENCES distribution.vl_status(id)          MATCH FULL;   CREATE INDEX fki_installation_tank_id_status      ON distribution.installation_tank(id_status)       ;
+ALTER TABLE distribution.installation_tank ADD CONSTRAINT installation_tank_id_distributor  FOREIGN KEY (id_distributor)   REFERENCES distribution.distributor(id)        MATCH FULL;   CREATE INDEX fki_installation_tank_id_distributor ON distribution.installation_tank(id_distributor)  ;
+ALTER TABLE distribution.installation_tank ADD CONSTRAINT installation_tank_id_remote       FOREIGN KEY (id_remote)        REFERENCES distribution.vl_remote(id)          MATCH SIMPLE; CREATE INDEX fki_installation_tank_id_remote      ON distribution.installation_tank(id_remote)       ;
+ALTER TABLE distribution.installation_tank ADD CONSTRAINT installation_tank_id_watertype    FOREIGN KEY (id_watertype)     REFERENCES distribution.vl_watertype(id)       MATCH FULL;   CREATE INDEX fki_installation_tank_vl_watertype   ON distribution.installation_tank(id_watertype)    ;
+ALTER TABLE distribution.installation_tank ADD CONSTRAINT installation_tank_id_overflow     FOREIGN KEY (id_overflow)      REFERENCES distribution.vl_overflow(id)        MATCH SIMPLE; CREATE INDEX fki_installation_tank_id_overflow    ON distribution.installation_tank(id_overflow)     ;
+ALTER TABLE distribution.installation_tank ADD CONSTRAINT installation_tank_id_firestorage  FOREIGN KEY (id_firestorage)   REFERENCES distribution.vl_tank_firestorage(id) MATCH SIMPLE; CREATE INDEX fki_installation_tank_id_firestorage ON distribution.installation_tank(id_firestorage)  ;
+ALTER TABLE distribution.installation_tank ADD CONSTRAINT installation_tank_cistern1type    FOREIGN KEY (cistern1_id_type) REFERENCES distribution.vl_cistern(id)         MATCH SIMPLE; CREATE INDEX fki_installation_tank_cistern1type   ON distribution.installation_tank(cistern1_id_type);
+ALTER TABLE distribution.installation_tank ADD CONSTRAINT installation_tank_cistern2type    FOREIGN KEY (cistern2_id_type) REFERENCES distribution.vl_cistern(id)         MATCH SIMPLE; CREATE INDEX fki_installation_tank_cistern2type   ON distribution.installation_tank(cistern2_id_type);
 
 
 /* Function */

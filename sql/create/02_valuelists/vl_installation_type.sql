@@ -14,7 +14,7 @@ ALTER TABLE distribution.vl_installation_type ADD COLUMN short_en varchar(5);
 ALTER TABLE distribution.vl_installation_type ADD COLUMN short_fr varchar(5);
 ALTER TABLE distribution.vl_installation_type ADD COLUMN value_en varchar(30);
 ALTER TABLE distribution.vl_installation_type ADD COLUMN value_fr varchar(30);
-ALTER TABLE distribution.vl_installation_type ADD COLUMN schema_view boolean default true;
+ALTER TABLE distribution.vl_installation_type ADD COLUMN schema_visible boolean default true;
 
 /* VALUES */
 INSERT INTO distribution.vl_installation_type (short_fr,value_fr) VALUES ('R'  ,'Réservoir'               );

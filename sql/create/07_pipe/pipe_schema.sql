@@ -4,7 +4,7 @@
 	SQL file :: schematic network view
 
 Creation of schema
-view pipe_schema_viewableitems select pipe which are viewable in schema with the alternative geometry
+view pipe_schema_visibleableitems select pipe which are viewable in schema with the alternative geometry
 view pipe_schema_items         get the parent id of each pipe
 view pipe_schema_merged        merge the pipe by grouping by id
 view pipe_schema               join with pipe_view to get pipe properties
@@ -13,8 +13,8 @@ view pipe_schema               join with pipe_view to get pipe properties
 
 
 /* create a view with the viewable items */
-DROP VIEW IF EXISTS distribution.pipe_schema_viewableitems CASCADE;
-CREATE VIEW distribution.pipe_schema_viewableitems AS 
+DROP VIEW IF EXISTS distribution.pipe_schema_visibleableitems CASCADE;
+CREATE VIEW distribution.pipe_schema_visibleableitems AS 
 	SELECT 	
 		pipe.id,
 		pipe.id_parent,
@@ -26,12 +26,12 @@ CREATE VIEW distribution.pipe_schema_viewableitems AS
 		pipe._valve_closed
 	FROM distribution.pipe
 	INNER JOIN distribution.vl_status ON pipe.id_status = vl_status.id
-	WHERE _schema_view IS TRUE
+	WHERE _schema_visible IS TRUE
 	AND vl_status.active IS TRUE;
-COMMENT ON VIEW distribution.pipe_schema_viewableitems IS 'viewable pipe in the schematic view (before merge)';
+COMMENT ON VIEW distribution.pipe_schema_visibleableitems IS 'viewable pipe in the schematic view (before merge)';
 
 CREATE OR REPLACE RULE pipe_update_alternative AS
-	ON UPDATE TO distribution.pipe_schema_viewableitems DO INSTEAD
+	ON UPDATE TO distribution.pipe_schema_visibleableitems DO INSTEAD
 		UPDATE distribution.pipe SET 
 			geometry_schematic = NEW.geometry
 		WHERE id = NEW.id;
@@ -51,7 +51,7 @@ CREATE OR REPLACE FUNCTION distribution.get_parent(integer,integer) RETURNS inte
 		END IF;
 		LOOP
 			SELECT id_parent INTO childid 
-			FROM distribution.pipe_schema_viewableitems
+			FROM distribution.pipe_schema_visibleableitems
 			WHERE id = parentid;
 
 			IF childid IS NOT NULL THEN
@@ -76,7 +76,7 @@ CREATE OR REPLACE VIEW distribution.pipe_schema_items AS
 		tunnel_or_bridge,
 		_valve_count,
 		_valve_closed
-	  FROM distribution.pipe_schema_viewableitems;
+	  FROM distribution.pipe_schema_visibleableitems;
 	  
 /* 
 Merging of pipe based on the group ID
@@ -110,7 +110,7 @@ CREATE VIEW distribution.pipe_schema AS
 			pipe.id_status                     ,
 			pipe.id_pressurezone               ,
 			pipe.id_labelview                  ,
-			pipe.id_labelview_schema           ,
+			pipe.id_labelschema_visible           ,
 			pipe.year                          ,
 			pipe.pressure_nominal              ,
 			pipe.folder                        ,

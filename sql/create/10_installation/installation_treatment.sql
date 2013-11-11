@@ -13,10 +13,11 @@ COMMENT ON TABLE distribution.installation_treatment IS 'storage treatments. The
 /* common columns to all installations*/
 ALTER TABLE distribution.installation_treatment ADD COLUMN name               varchar(40) default '' ;
 ALTER TABLE distribution.installation_treatment ADD COLUMN identification     integer                ;
-ALTER TABLE distribution.installation_treatment ADD COLUMN id_status          integer                ;
-ALTER TABLE distribution.installation_treatment ADD COLUMN id_distributor     integer                ;
-ALTER TABLE distribution.installation_treatment ADD COLUMN id_remote          integer                ;
-ALTER TABLE distribution.installation_treatment ADD COLUMN view_schema        boolean NOT NULL default true ;
+ALTER TABLE distribution.installation_treatment ADD COLUMN id_status          smallint not null      ;
+ALTER TABLE distribution.installation_treatment ADD COLUMN id_distributor     smallint not null      ;
+ALTER TABLE distribution.installation_treatment ADD COLUMN id_remote          smallint               ;
+ALTER TABLE distribution.installation_treatment ADD COLUMN id_watertype       smallint not null      ;
+ALTER TABLE distribution.installation_treatment ADD COLUMN schema_visible        boolean NOT NULL default true ;
 ALTER TABLE distribution.installation_treatment ADD COLUMN altitude_real      decimal(10,3)          ;
 ALTER TABLE distribution.installation_treatment ADD COLUMN remarks            text        default '' ;
 ALTER TABLE distribution.installation_treatment ADD COLUMN links              text                   ;
@@ -44,9 +45,9 @@ SELECT distribution.geom_tool_point('installation_treatment',true,    true,     
 ALTER TABLE distribution.installation_treatment ADD CONSTRAINT installation_treatment_pkey PRIMARY KEY (id);
 
 /* Constraints */
-ALTER TABLE distribution.installation_treatment ADD CONSTRAINT installation_treatment_id_status       FOREIGN KEY (id_status)       REFERENCES distribution.vl_status(id)       MATCH FULL;   CREATE INDEX fki_installation_treatment_id_status       ON distribution.installation_treatment(id_status)      ;
-ALTER TABLE distribution.installation_treatment ADD CONSTRAINT installation_treatment_id_distributor  FOREIGN KEY (id_distributor)  REFERENCES distribution.distributor(id)  MATCH FULL;   CREATE INDEX fki_installation_treatment_id_distributor  ON distribution.installation_treatment(id_distributor) ;
-ALTER TABLE distribution.installation_treatment ADD CONSTRAINT installation_treatment_id_remote       FOREIGN KEY (id_remote)       REFERENCES distribution.vl_remote(id)  MATCH SIMPLE; CREATE INDEX fki_installation_treatment_id_remote  ON distribution.installation_treatment(id_remote)      ;
-
+ALTER TABLE distribution.installation_treatment ADD CONSTRAINT installation_treatment_id_status       FOREIGN KEY (id_status)       REFERENCES distribution.vl_status(id)    MATCH FULL;   CREATE INDEX fki_installation_treatment_id_status      ON distribution.installation_treatment(id_status)      ;
+ALTER TABLE distribution.installation_treatment ADD CONSTRAINT installation_treatment_id_distributor  FOREIGN KEY (id_distributor)  REFERENCES distribution.distributor(id)  MATCH FULL;   CREATE INDEX fki_installation_treatment_id_distributor ON distribution.installation_treatment(id_distributor) ;
+ALTER TABLE distribution.installation_treatment ADD CONSTRAINT installation_treatment_id_remote       FOREIGN KEY (id_remote)       REFERENCES distribution.vl_remote(id)    MATCH SIMPLE; CREATE INDEX fki_installation_treatment_id_remote      ON distribution.installation_treatment(id_remote)      ;
+ALTER TABLE distribution.installation_treatment ADD CONSTRAINT installation_treatment_id_watertype    FOREIGN KEY (id_watertype)    REFERENCES distribution.vl_watertype(id) MATCH FULL;   CREATE INDEX fki_installation_treatment_vl_watertype   ON distribution.installation_treatment(id_watertype)   ;
 
 
