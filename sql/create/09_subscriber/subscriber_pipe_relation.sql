@@ -10,7 +10,7 @@
 CREATE OR REPLACE VIEW distribution.subscriber_pipe_relation AS
 	SELECT
 		a.id as id,
-		a._client_identification_full as _client_identification_full,
+		a._identification_full as _identification_full,
 		ST_MakeLine(a.geometry,ST_Line_Interpolate_Point(b.geometry,.5))::geometry(LineString,21781) AS geometry
 	FROM 
 		distribution.subscriber a

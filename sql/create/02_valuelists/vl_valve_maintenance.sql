@@ -6,7 +6,7 @@
 
 /* CREATE */
 DROP TABLE IF EXISTS distribution.vl_valve_maintenance CASCADE;
-CREATE TABLE distribution.vl_valve_maintenance ( id SERIAL, CONSTRAINT vl_valve_maintenance_pk PRIMARY KEY (id) );
+CREATE TABLE distribution.vl_valve_maintenance ( id integer not null, CONSTRAINT vl_valve_maintenance_pk PRIMARY KEY (id) );
 COMMENT ON TABLE distribution.vl_valve_maintenance IS 'valve maintenance table.';
 
 /* COLUMNS */
@@ -16,8 +16,8 @@ ALTER TABLE distribution.vl_valve_maintenance ADD COLUMN priority SMALLINT CHECK
 ALTER TABLE distribution.vl_valve_maintenance ADD COLUMN comment  text;
 
 /* VALUES */
-INSERT INTO distribution.vl_valve_maintenance (value_fr,priority,comment) VALUES ('Cape fendue',3,'');
-INSERT INTO distribution.vl_valve_maintenance (value_fr,priority,comment) VALUES ('Joint manquant',2,'');
-INSERT INTO distribution.vl_valve_maintenance (value_fr,priority,comment) VALUES ('Bloquée',1,'');
+INSERT INTO distribution.vl_valve_maintenance (id,value_fr,priority,comment) VALUES (6201,'Cape fendue',3,'');
+INSERT INTO distribution.vl_valve_maintenance (id,value_fr,priority,comment) VALUES (6202,'Joint manquant',2,'');
+INSERT INTO distribution.vl_valve_maintenance (id,value_fr,priority,comment) VALUES (6203,'Bloquée',1,'');
 
 

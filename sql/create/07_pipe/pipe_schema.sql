@@ -109,7 +109,7 @@ CREATE VIEW distribution.pipe_schema AS
 			pipe.id_protection                 ,
 			pipe.id_status                     ,
 			pipe.id_pressurezone               ,
-			pipe.id_labelview                  ,
+			pipe.id_label_visible                  ,
 			pipe.id_labelschema_visible           ,
 			pipe.year                          ,
 			pipe.pressure_nominal              ,

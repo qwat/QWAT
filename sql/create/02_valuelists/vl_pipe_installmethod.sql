@@ -7,22 +7,22 @@
 
 /* CREATE TABLE */
 DROP TABLE IF EXISTS distribution.vl_pipe_installmethod CASCADE;
-CREATE TABLE distribution.vl_pipe_installmethod (id serial NOT NULL);
+CREATE TABLE distribution.vl_pipe_installmethod (id integer not null, CONSTRAINT "vl_pipe_installmethod_pk" PRIMARY KEY (id) );
 COMMENT ON TABLE distribution.vl_pipe_installmethod IS 'Installation methods.';
-ALTER TABLE distribution.vl_pipe_installmethod ADD CONSTRAINT vl_pipe_installmethod_pkey PRIMARY KEY (id);
 
 /* COLUMNS */
+ALTER TABLE distribution.vl_pipe_installmethod ADD COLUMN vl_active boolean defaut true;
 ALTER TABLE distribution.vl_pipe_installmethod ADD COLUMN value_en varchar(30) default '';
 ALTER TABLE distribution.vl_pipe_installmethod ADD COLUMN value_fr varchar(30) default '';
 
 /* VALUES */
-INSERT INTO distribution.vl_pipe_installmethod (value_fr) VALUES ('En fouille');   /*TB: F   => 1 */
-INSERT INTO distribution.vl_pipe_installmethod (value_fr) VALUES ('Chemisé');      /*TB: CH  => 2 */
-INSERT INTO distribution.vl_pipe_installmethod (value_fr) VALUES ('Air libre');    /*TB: AL  => 3 */
-INSERT INTO distribution.vl_pipe_installmethod (value_fr) VALUES ('Sous pont');    /*TB: SP  => 4 */
-INSERT INTO distribution.vl_pipe_installmethod (value_fr) VALUES ('Protégé');      /*TB: PRO => 5 */
-INSERT INTO distribution.vl_pipe_installmethod (value_fr) VALUES ('Bétoné');       /*TB: B   => 6 */
-INSERT INTO distribution.vl_pipe_installmethod (value_fr) VALUES ('Galerie');      /*TB: G   => 7 */
-INSERT INTO distribution.vl_pipe_installmethod (value_fr) VALUES ('Inconnu');      /*TB: I   => 8 */
+INSERT INTO distribution.vl_pipe_installmethod (id,value_fr) VALUES (4201,'En fouille');   /*TB: F   => 1 */
+INSERT INTO distribution.vl_pipe_installmethod (id,value_fr) VALUES (4202,'Chemisé');      /*TB: CH  => 2 */
+INSERT INTO distribution.vl_pipe_installmethod (id,value_fr) VALUES (4203,'Air libre');    /*TB: AL  => 3 */
+INSERT INTO distribution.vl_pipe_installmethod (id,value_fr) VALUES (4204,'Sous pont');    /*TB: SP  => 4 */
+INSERT INTO distribution.vl_pipe_installmethod (id,value_fr) VALUES (4205,'Protégé');      /*TB: PRO => 5 */
+INSERT INTO distribution.vl_pipe_installmethod (id,value_fr) VALUES (4206,'Bétoné');       /*TB: B   => 6 */
+INSERT INTO distribution.vl_pipe_installmethod (id,value_fr) VALUES (4207,'Galerie');      /*TB: G   => 7 */
+INSERT INTO distribution.vl_pipe_installmethod (id,value_fr) VALUES (4208,'Inconnu');      /*TB: I   => 8 */
 
 

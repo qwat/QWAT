@@ -227,11 +227,6 @@
                     <legendlayerfile isInOverview="0" layerid="vl_pipe_function20130304110005186" visible="0"/>
                 </filegroup>
             </legendlayer>
-            <legendlayer drawingOrder="37" open="true" checked="Qt::Unchecked" name="Configuration labels" showFeatureCount="0">
-                <filegroup open="true" hidden="false">
-                    <legendlayerfile isInOverview="0" layerid="vl_labelview20130613095751932" visible="0"/>
-                </filegroup>
-            </legendlayer>
             <legendlayer drawingOrder="38" open="true" checked="Qt::Unchecked" name="Distributeur" showFeatureCount="0">
                 <filegroup open="true" hidden="false">
                     <legendlayerfile isInOverview="0" layerid="distributor20130304114719702" visible="0"/>
@@ -1362,8 +1357,8 @@
                 <property key="labeling/bufferSizeInMapUnits" value="false"/>
                 <property key="labeling/bufferTransp" value="0"/>
                 <property key="labeling/centroidWhole" value="false"/>
-                <property key="labeling/dataDefined/AlwaysShow" value="1~~1~~CASE WHEN &quot;id_labelview&quot; = 3 THEN 1 ELSE 0 END~~"/>
-                <property key="labeling/dataDefined/Show" value="1~~1~~CASE WHEN &quot;id_labelview&quot; = 1 THEN 0 ELSE 1 END~~"/>
+                <property key="labeling/dataDefined/AlwaysShow" value="1~~1~~CASE WHEN &quot;id_label_visible&quot; = 3 THEN 1 ELSE 0 END~~"/>
+                <property key="labeling/dataDefined/Show" value="1~~1~~CASE WHEN &quot;id_label_visible&quot; = 1 THEN 0 ELSE 1 END~~"/>
                 <property key="labeling/decimals" value="0"/>
                 <property key="labeling/displayAll" value="false"/>
                 <property key="labeling/dist" value="0.5"/>
@@ -1519,15 +1514,15 @@
                 <edittype labelontop="0" editable="0" unchecked="f" type="7" checked="t" name="_schema_visible"/>
                 <edittype labelontop="0" editable="0" type="0" name="_valve_closed"/>
                 <edittype labelontop="0" editable="0" type="0" name="_valve_count"/>
-                <edittype labelontop="0" editable="0" type="0" name="abonnés__client_identification_full"/>
+                <edittype labelontop="0" editable="0" type="0" name="abonnés__identification_full"/>
                 <edittype labelontop="0" editable="0" type="0" name="abonnés__districts"/>
                 <edittype labelontop="0" editable="0" type="0" name="abonnés__printmaps"/>
-                <edittype labelontop="0" editable="0" type="0" name="abonnés_client_identification"/>
+                <edittype labelontop="0" editable="0" type="0" name="abonnés_identification"/>
                 <edittype labelontop="0" editable="0" type="0" name="abonnés_communes_colorcode"/>
                 <edittype labelontop="0" editable="0" type="0" name="abonnés_communes_land_registry"/>
                 <edittype labelontop="0" editable="0" type="0" name="abonnés_communes_name"/>
                 <edittype labelontop="0" editable="0" type="0" name="abonnés_communes_shortname"/>
-                <edittype labelontop="0" editable="0" type="0" name="abonnés_communes_subscriber_prefix"/>
+                <edittype labelontop="0" editable="0" type="0" name="abonnés_communes_prefix"/>
                 <edittype labelontop="0" editable="0" type="0" name="abonnés_communes_zip"/>
                 <edittype labelontop="0" editable="0" type="0" name="abonnés_id_district"/>
                 <edittype labelontop="0" editable="0" type="0" name="abonnés_id_pipe"/>
@@ -1546,8 +1541,8 @@
                 <edittype labelontop="0" editable="0" allowNull="true" orderByValue="false" key="id" layer="district20130304110004764" allowMulti="false" filterExpression="" type="15" value="name" name="id_district"/>
                 <edittype labelontop="0" editable="1" allowNull="false" orderByValue="false" key="id" layer="vl_pipe_function20130304110005186" allowMulti="false" filterExpression="" type="15" value="value_fr" name="id_function"/>
                 <edittype labelontop="0" editable="1" allowNull="false" orderByValue="false" key="id" layer="vl_pipe_installmethod20130304110005209" allowMulti="false" filterExpression="" type="15" value="value_fr" name="id_installmethod"/>
-                <edittype labelontop="0" editable="1" allowNull="false" orderByValue="false" key="id" layer="vl_labelview20130613095751932" allowMulti="false" filterExpression="" type="15" value="value_fr" name="id_labelview"/>
-                <edittype labelontop="0" editable="1" allowNull="false" orderByValue="false" key="id" layer="vl_labelview20130613095751932" allowMulti="false" filterExpression="" type="15" value="value_fr" name="id_labelschema_visible"/>
+                <edittype labelontop="0" editable="1" allowNull="false" orderByValue="false" key="vl_code" layer="vl_visible20130304110011703" allowMulti="false" filterExpression="" type="15" value="value_fr" name="id_label_visible"/>
+                <edittype labelontop="0" editable="1" allowNull="false" orderByValue="false" key="vl_code" layer="vl_visible20130304110011703" allowMulti="false" filterExpression="" type="15" value="value_fr" name="id_labelschema_visible"/>
                 <edittype labelontop="0" editable="1" allowNull="false" orderByValue="true" key="id" layer="vl_pipe_material20130304110005230" allowMulti="false" filterExpression="" type="15" value="_displayname_fr" name="id_material"/>
                 <edittype labelontop="0" editable="0" type="0" name="id_node_a"/>
                 <edittype labelontop="0" editable="0" type="0" name="id_node_b"/>
@@ -1563,7 +1558,7 @@
                 <edittype labelontop="0" editable="1" type="0" name="labelremark_schema"/>
                 <edittype labelontop="0" editable="0" type="0" name="pressure_nominal"/>
                 <edittype labelontop="0" editable="0" type="0" name="remarks"/>
-                <edittype labelontop="0" editable="1" allowNull="false" orderByValue="false" key="id" layer="vl_visible20130304110011703" allowMulti="false" filterExpression="" type="15" value="value_fr" name="schema_force_view"/>
+                <edittype labelontop="0" editable="1" allowNull="false" orderByValue="false" key="vl_code" layer="vl_visible20130304110011703" allowMulti="false" filterExpression="" type="15" value="value_fr" name="schema_force_view"/>
                 <edittype labelontop="0" editable="1" type="0" name="tunnel_or_bridge"/>
                 <edittype labelontop="0" editable="1" type="0" name="year"/>
             </edittypes>
@@ -1662,8 +1657,8 @@
                 <property key="labeling/bufferSizeInMapUnits" value="false"/>
                 <property key="labeling/bufferTransp" value="0"/>
                 <property key="labeling/centroidWhole" value="false"/>
-                <property key="labeling/dataDefined/AlwaysShow" value="1~~1~~CASE WHEN &quot;id_labelview&quot; = 3 THEN 1 ELSE 0 END~~"/>
-                <property key="labeling/dataDefined/Show" value="1~~1~~CASE WHEN &quot;id_labelview&quot; = 1 THEN 0 ELSE 1 END~~"/>
+                <property key="labeling/dataDefined/AlwaysShow" value="1~~1~~CASE WHEN &quot;id_label_visible&quot; = 3 THEN 1 ELSE 0 END~~"/>
+                <property key="labeling/dataDefined/Show" value="1~~1~~CASE WHEN &quot;id_label_visible&quot; = 1 THEN 0 ELSE 1 END~~"/>
                 <property key="labeling/decimals" value="0"/>
                 <property key="labeling/displayAll" value="false"/>
                 <property key="labeling/dist" value="0.5"/>
@@ -1832,8 +1827,8 @@
                 <edittype labelontop="0" editable="0" allowNull="true" orderByValue="false" key="id" layer="district20130304110004764" allowMulti="false" filterExpression="" type="15" value="name" name="id_district"/>
                 <edittype labelontop="0" editable="1" allowNull="false" orderByValue="false" key="id" layer="vl_pipe_function20130304110005186" allowMulti="false" filterExpression="" type="15" value="value_fr" name="id_function"/>
                 <edittype labelontop="0" editable="1" allowNull="false" orderByValue="false" key="id" layer="vl_pipe_installmethod20130304110005209" allowMulti="false" filterExpression="" type="15" value="value_fr" name="id_installmethod"/>
-                <edittype labelontop="0" editable="1" allowNull="false" orderByValue="false" key="id" layer="vl_labelview20130613095751932" allowMulti="false" filterExpression="" type="15" value="value_fr" name="id_labelview"/>
-                <edittype labelontop="0" editable="1" allowNull="false" orderByValue="false" key="id" layer="vl_labelview20130613095751932" allowMulti="false" filterExpression="" type="15" value="value_fr" name="id_labelschema_visible"/>
+                <edittype labelontop="0" editable="1" allowNull="false" orderByValue="false" key="vl_code" layer="vl_visible20130304110011703" allowMulti="false" filterExpression="" type="15" value="value_fr" name="id_label_visible"/>
+                <edittype labelontop="0" editable="1" allowNull="false" orderByValue="false" key="vl_code" layer="vl_visible20130304110011703" allowMulti="false" filterExpression="" type="15" value="value_fr" name="id_labelschema_visible"/>
                 <edittype labelontop="0" editable="1" allowNull="false" orderByValue="true" key="id" layer="vl_pipe_material20130304110005230" allowMulti="false" filterExpression="" type="15" value="_displayname_fr" name="id_material"/>
                 <edittype labelontop="0" editable="0" type="0" name="id_node_a"/>
                 <edittype labelontop="0" editable="0" type="0" name="id_node_b"/>
@@ -1849,7 +1844,7 @@
                 <edittype labelontop="0" editable="1" type="0" name="labelremark_schema"/>
                 <edittype labelontop="0" editable="0" type="0" name="pressure_nominal"/>
                 <edittype labelontop="0" editable="0" type="0" name="remarks"/>
-                <edittype labelontop="0" editable="1" allowNull="false" orderByValue="false" key="id" layer="vl_visible20130304110011703" allowMulti="false" filterExpression="" type="15" value="value_fr" name="schema_force_view"/>
+                <edittype labelontop="0" editable="1" allowNull="false" orderByValue="false" key="vl_code" layer="vl_visible20130304110011703" allowMulti="false" filterExpression="" type="15" value="value_fr" name="schema_force_view"/>
                 <edittype labelontop="0" editable="1" type="0" name="tunnel_or_bridge"/>
                 <edittype labelontop="0" editable="1" type="0" name="year"/>
             </edittypes>
@@ -1953,8 +1948,8 @@
                 <property key="labeling/bufferSizeInMapUnits" value="false"/>
                 <property key="labeling/bufferTransp" value="0"/>
                 <property key="labeling/centroidWhole" value="false"/>
-                <property key="labeling/dataDefined/AlwaysShow" value="1~~1~~CASE WHEN &quot;id_labelview&quot; = 3 THEN 1 ELSE 0 END~~"/>
-                <property key="labeling/dataDefined/Show" value="1~~1~~CASE WHEN &quot;id_labelview&quot; = 1 THEN 0 ELSE 1 END~~"/>
+                <property key="labeling/dataDefined/AlwaysShow" value="1~~1~~CASE WHEN &quot;id_label_visible&quot; = 3 THEN 1 ELSE 0 END~~"/>
+                <property key="labeling/dataDefined/Show" value="1~~1~~CASE WHEN &quot;id_label_visible&quot; = 1 THEN 0 ELSE 1 END~~"/>
                 <property key="labeling/decimals" value="0"/>
                 <property key="labeling/displayAll" value="false"/>
                 <property key="labeling/dist" value="0.5"/>
@@ -2123,8 +2118,8 @@
                 <edittype labelontop="0" editable="0" allowNull="true" orderByValue="false" key="id" layer="district20130304110004764" allowMulti="false" filterExpression="" type="15" value="name" name="id_district"/>
                 <edittype labelontop="0" editable="1" allowNull="false" orderByValue="false" key="id" layer="vl_pipe_function20130304110005186" allowMulti="false" filterExpression="" type="15" value="value_fr" name="id_function"/>
                 <edittype labelontop="0" editable="1" allowNull="false" orderByValue="false" key="id" layer="vl_pipe_installmethod20130304110005209" allowMulti="false" filterExpression="" type="15" value="value_fr" name="id_installmethod"/>
-                <edittype labelontop="0" editable="1" allowNull="false" orderByValue="false" key="id" layer="vl_labelview20130613095751932" allowMulti="false" filterExpression="" type="15" value="value_fr" name="id_labelview"/>
-                <edittype labelontop="0" editable="1" allowNull="false" orderByValue="false" key="id" layer="vl_labelview20130613095751932" allowMulti="false" filterExpression="" type="15" value="value_fr" name="id_labelschema_visible"/>
+                <edittype labelontop="0" editable="1" allowNull="false" orderByValue="false" key="vl_code" layer="vl_visible20130304110011703" allowMulti="false" filterExpression="" type="15" value="value_fr" name="id_label_visible"/>
+                <edittype labelontop="0" editable="1" allowNull="false" orderByValue="false" key="vl_code" layer="vl_visible20130304110011703" allowMulti="false" filterExpression="" type="15" value="value_fr" name="id_labelschema_visible"/>
                 <edittype labelontop="0" editable="1" allowNull="false" orderByValue="true" key="id" layer="vl_pipe_material20130304110005230" allowMulti="false" filterExpression="" type="15" value="_displayname_fr" name="id_material"/>
                 <edittype labelontop="0" editable="0" type="0" name="id_node_a"/>
                 <edittype labelontop="0" editable="0" type="0" name="id_node_b"/>
@@ -2140,7 +2135,7 @@
                 <edittype labelontop="0" editable="1" type="0" name="labelremark_schema"/>
                 <edittype labelontop="0" editable="0" type="0" name="pressure_nominal"/>
                 <edittype labelontop="0" editable="0" type="0" name="remarks"/>
-                <edittype labelontop="0" editable="1" allowNull="false" orderByValue="false" key="id" layer="vl_visible20130304110011703" allowMulti="false" filterExpression="" type="15" value="value_fr" name="schema_force_view"/>
+                <edittype labelontop="0" editable="1" allowNull="false" orderByValue="false" key="vl_code" layer="vl_visible20130304110011703" allowMulti="false" filterExpression="" type="15" value="value_fr" name="schema_force_view"/>
                 <edittype labelontop="0" editable="1" type="0" name="tunnel_or_bridge"/>
                 <edittype labelontop="0" editable="1" type="0" name="year"/>
             </edittypes>
@@ -2719,7 +2714,7 @@
                 <edittype labelontop="0" editable="1" type="0" name="land_registry"/>
                 <edittype labelontop="0" editable="1" type="0" name="name"/>
                 <edittype labelontop="0" editable="1" type="0" name="shortname"/>
-                <edittype labelontop="0" editable="1" type="0" name="subscriber_prefix"/>
+                <edittype labelontop="0" editable="1" type="0" name="prefix"/>
                 <edittype labelontop="0" editable="1" type="0" name="zip"/>
             </edittypes>
             <editform>.</editform>
@@ -3407,7 +3402,7 @@
                 <edittype labelontop="0" editable="1" unchecked="0" type="7" checked="1" name="open_water_surface"/>
                 <edittype labelontop="0" editable="1" type="0" name="parcel"/>
                 <edittype labelontop="0" editable="1" type="12" name="remarks"/>
-                <edittype labelontop="0" editable="1" allowNull="false" orderByValue="false" key="id" layer="vl_visible20130304110011703" allowMulti="false" filterExpression="" type="15" value="value_fr" name="schema_force_view"/>
+                <edittype labelontop="0" editable="1" allowNull="false" orderByValue="false" key="vl_code" layer="vl_visible20130304110011703" allowMulti="false" filterExpression="" type="15" value="value_fr" name="schema_force_view"/>
                 <edittype labelontop="0" editable="1" type="0" name="year"/>
             </edittypes>
             <editform>.</editform>
@@ -6182,7 +6177,7 @@
                 <edittype labelontop="0" editable="1" type="0" name="id_district"/>
                 <edittype labelontop="0" editable="1" type="0" name="id_function"/>
                 <edittype labelontop="0" editable="1" type="0" name="id_installmethod"/>
-                <edittype labelontop="0" editable="1" type="0" name="id_labelview"/>
+                <edittype labelontop="0" editable="1" type="0" name="id_label_visible"/>
                 <edittype labelontop="0" editable="1" type="0" name="id_labelschema_visible"/>
                 <edittype labelontop="0" editable="1" type="0" name="id_material"/>
                 <edittype labelontop="0" editable="1" type="0" name="id_parent"/>
@@ -6905,7 +6900,7 @@
                 <edittype labelontop="0" editable="0" type="0" name="communes_land_registry"/>
                 <edittype labelontop="0" editable="0" type="0" name="communes_name"/>
                 <edittype labelontop="0" editable="0" type="0" name="communes_shortname"/>
-                <edittype labelontop="0" editable="0" type="0" name="communes_subscriber_prefix"/>
+                <edittype labelontop="0" editable="0" type="0" name="communes_prefix"/>
                 <edittype labelontop="0" editable="0" type="0" name="communes_zip"/>
                 <edittype labelontop="0" editable="0" type="0" name="id"/>
                 <edittype labelontop="0" editable="1" allowNull="true" orderByValue="true" key="id" layer="district20130304110004764" allowMulti="false" filterExpression="" type="15" value="name" name="id_district"/>
@@ -7285,7 +7280,7 @@
                 <property key="labeling/dist" value="0"/>
                 <property key="labeling/distInMapUnits" value="false"/>
                 <property key="labeling/enabled" value="true"/>
-                <property key="labeling/fieldName" value="_client_identification_full"/>
+                <property key="labeling/fieldName" value="_identification_full"/>
                 <property key="labeling/fontBold" value="true"/>
                 <property key="labeling/fontCapitals" value="0"/>
                 <property key="labeling/fontFamily" value="Arial"/>
@@ -7411,17 +7406,17 @@
             <edittypes>
                 <edittype labelontop="0" editable="0" type="0" name="Abonnés - type_name"/>
                 <edittype labelontop="0" editable="0" type="0" name="Abonnés - type_shortname"/>
-                <edittype labelontop="0" editable="0" type="0" name="_client_identification_full"/>
+                <edittype labelontop="0" editable="0" type="0" name="_identification_full"/>
                 <edittype labelontop="0" editable="1" type="0" name="_districts"/>
                 <edittype labelontop="0" editable="1" type="0" name="_printmaps"/>
                 <edittype labelontop="0" editable="0" type="0" name="altitude"/>
                 <edittype labelontop="0" editable="1" type="0" name="altitude_dtm"/>
-                <edittype labelontop="0" editable="0" type="0" name="client_identification"/>
+                <edittype labelontop="0" editable="0" type="0" name="identification"/>
                 <edittype labelontop="0" editable="0" type="0" name="communes_colorcode"/>
                 <edittype labelontop="0" editable="0" type="0" name="communes_land_registry"/>
                 <edittype labelontop="0" editable="0" type="0" name="communes_name"/>
                 <edittype labelontop="0" editable="0" type="0" name="communes_shortname"/>
-                <edittype labelontop="0" editable="0" type="0" name="communes_subscriber_prefix"/>
+                <edittype labelontop="0" editable="0" type="0" name="communes_prefix"/>
                 <edittype labelontop="0" editable="0" type="0" name="communes_zip"/>
                 <edittype labelontop="0" editable="0" type="0" name="id"/>
                 <edittype labelontop="0" editable="1" type="0" name="id_client"/>
@@ -7616,8 +7611,8 @@
                 <property key="labeling/bufferSizeInMapUnits" value="false"/>
                 <property key="labeling/bufferTransp" value="0"/>
                 <property key="labeling/centroidWhole" value="false"/>
-                <property key="labeling/dataDefined/AlwaysShow" value="1~~1~~CASE WHEN &quot;id_labelview&quot; = 3 THEN 0 ELSE 1 END~~"/>
-                <property key="labeling/dataDefined/Show" value="1~~1~~CASE WHEN &quot;id_labelview&quot; = 1 THEN 0 ELSE 1 END~~"/>
+                <property key="labeling/dataDefined/AlwaysShow" value="1~~1~~CASE WHEN &quot;id_label_visible&quot; = 3 THEN 0 ELSE 1 END~~"/>
+                <property key="labeling/dataDefined/Show" value="1~~1~~CASE WHEN &quot;id_label_visible&quot; = 1 THEN 0 ELSE 1 END~~"/>
                 <property key="labeling/decimals" value="0"/>
                 <property key="labeling/displayAll" value="false"/>
                 <property key="labeling/dist" value="1.5"/>
@@ -7760,7 +7755,7 @@
                 <edittype labelontop="0" editable="0" type="0" name="id"/>
                 <edittype labelontop="0" editable="0" type="0" name="id_district"/>
                 <edittype labelontop="0" editable="1" allowNull="false" orderByValue="false" key="id" layer="vl_valve_function20130304110011544" allowMulti="false" filterExpression="" type="15" value="value_fr" name="id_function"/>
-                <edittype labelontop="0" editable="1" type="0" name="id_labelview"/>
+                <edittype labelontop="0" editable="1" type="0" name="id_label_visible"/>
                 <edittype labelontop="0" editable="1" type="0" name="id_labelschema_visible"/>
                 <edittype labelontop="0" editable="1" allowNull="true" orderByValue="false" key="id" layer="vl_valve_maintenance20130304110011567" allowMulti="true" filterExpression="" type="15" value="value_fr" name="id_maintenance"/>
                 <edittype labelontop="0" editable="0" type="0" name="id_node"/>
@@ -7770,7 +7765,7 @@
                 <edittype labelontop="0" editable="1" allowNull="false" orderByValue="false" key="id" layer="vl_valve_type20130304110011685" allowMulti="false" filterExpression="" type="15" value="value_fr" name="id_type"/>
                 <edittype labelontop="0" editable="1" type="0" name="identification"/>
                 <edittype labelontop="0" editable="1" type="12" name="remarks"/>
-                <edittype labelontop="0" editable="1" allowNull="false" orderByValue="false" key="id" layer="vl_visible20130304110011703" allowMulti="false" filterExpression="" type="15" value="value_fr" name="schema_force_view"/>
+                <edittype labelontop="0" editable="1" allowNull="false" orderByValue="false" key="vl_code" layer="vl_visible20130304110011703" allowMulti="false" filterExpression="" type="15" value="value_fr" name="schema_force_view"/>
                 <edittype labelontop="0" editable="1" type="0" name="year"/>
             </edittypes>
             <editform>./ui_forms/valve.ui</editform>
@@ -7787,7 +7782,7 @@
                 <alias field="diameter_nominal" index="6" name="diamètre nominal"/>
                 <alias field="id_district" index="16" name="commune"/>
                 <alias field="id_function" index="3" name="fonction"/>
-                <alias field="id_labelview" index="11" name="visibilité label"/>
+                <alias field="id_label_visible" index="11" name="visibilité label"/>
                 <alias field="id_labelschema_visible" index="12" name="visibilité label shéma"/>
                 <alias field="id_maintenance" index="5" name="entretien"/>
                 <alias field="id_node" index="15" name="ID noeud"/>
@@ -8141,8 +8136,8 @@
                 <property key="labeling/bufferSizeInMapUnits" value="false"/>
                 <property key="labeling/bufferTransp" value="0"/>
                 <property key="labeling/centroidWhole" value="false"/>
-                <property key="labeling/dataDefined/AlwaysShow" value="1~~1~~CASE WHEN &quot;id_labelview&quot; = 3 THEN 0 ELSE 1 END~~"/>
-                <property key="labeling/dataDefined/Show" value="1~~1~~CASE WHEN &quot;id_labelview&quot; = 1 THEN 0 ELSE 1 END~~"/>
+                <property key="labeling/dataDefined/AlwaysShow" value="1~~1~~CASE WHEN &quot;id_label_visible&quot; = 3 THEN 0 ELSE 1 END~~"/>
+                <property key="labeling/dataDefined/Show" value="1~~1~~CASE WHEN &quot;id_label_visible&quot; = 1 THEN 0 ELSE 1 END~~"/>
                 <property key="labeling/decimals" value="0"/>
                 <property key="labeling/displayAll" value="false"/>
                 <property key="labeling/dist" value="1.5"/>
@@ -8285,7 +8280,7 @@
                 <edittype labelontop="0" editable="0" type="0" name="id"/>
                 <edittype labelontop="0" editable="0" type="0" name="id_district"/>
                 <edittype labelontop="0" editable="1" allowNull="false" orderByValue="false" key="id" layer="vl_valve_function20130304110011544" allowMulti="false" filterExpression="" type="15" value="value_fr" name="id_function"/>
-                <edittype labelontop="0" editable="1" type="0" name="id_labelview"/>
+                <edittype labelontop="0" editable="1" type="0" name="id_label_visible"/>
                 <edittype labelontop="0" editable="1" type="0" name="id_labelschema_visible"/>
                 <edittype labelontop="0" editable="1" allowNull="true" orderByValue="false" key="id" layer="vl_valve_maintenance20130304110011567" allowMulti="true" filterExpression="" type="15" value="value_fr" name="id_maintenance"/>
                 <edittype labelontop="0" editable="0" type="0" name="id_node"/>
@@ -8295,7 +8290,7 @@
                 <edittype labelontop="0" editable="1" allowNull="false" orderByValue="false" key="id" layer="vl_valve_type20130304110011685" allowMulti="false" filterExpression="" type="15" value="value_fr" name="id_type"/>
                 <edittype labelontop="0" editable="1" type="0" name="identification"/>
                 <edittype labelontop="0" editable="1" type="12" name="remarks"/>
-                <edittype labelontop="0" editable="1" allowNull="false" orderByValue="false" key="id" layer="vl_visible20130304110011703" allowMulti="false" filterExpression="" type="15" value="value_fr" name="schema_force_view"/>
+                <edittype labelontop="0" editable="1" allowNull="false" orderByValue="false" key="vl_code" layer="vl_visible20130304110011703" allowMulti="false" filterExpression="" type="15" value="value_fr" name="schema_force_view"/>
                 <edittype labelontop="0" editable="1" type="0" name="year"/>
             </edittypes>
             <editform>./ui_forms/valve.ui</editform>
@@ -8312,7 +8307,7 @@
                 <alias field="diameter_nominal" index="6" name="diamètre nominal"/>
                 <alias field="id_district" index="16" name="commune"/>
                 <alias field="id_function" index="3" name="fonction"/>
-                <alias field="id_labelview" index="11" name="visibilité label"/>
+                <alias field="id_label_visible" index="11" name="visibilité label"/>
                 <alias field="id_labelschema_visible" index="12" name="visibilité label shéma"/>
                 <alias field="id_maintenance" index="5" name="entretien"/>
                 <alias field="id_node" index="15" name="ID noeud"/>
@@ -8370,46 +8365,6 @@
             <excludeAttributesWFS/>
             <attributeactions>
                 <actionsetting action="qgis.utils.plugins['postgres91plusauditor'].showHistory('vl_cistern20130304110005061',[% $id %])" capture="0" type="1" name="History audit"/>
-            </attributeactions>
-        </maplayer>
-        <maplayer minimumScale="0" maximumScale="1e+08" geometry="No geometry" type="vector" hasScaleBasedVisibilityFlag="0">
-            <id>vl_labelview20130613095751932</id>
-            <datasource>dbname='sige' host=172.24.171.203 port=5432 user='sige' password='db4wat$' sslmode=disable key='id' table="distribution"."vl_labelview" sql=</datasource>
-            <title></title>
-            <abstract></abstract>
-            <keywordList>
-                <value></value>
-            </keywordList>
-            <layername>Configuration labels</layername>
-            <srs>
-                <spatialrefsys>
-                    <proj4>+proj=longlat +datum=WGS84 +no_defs</proj4>
-                    <srsid>3452</srsid>
-                    <srid>4326</srid>
-                    <authid>EPSG:4326</authid>
-                    <description>WGS 84</description>
-                    <projectionacronym>longlat</projectionacronym>
-                    <ellipsoidacronym>WGS84</ellipsoidacronym>
-                    <geographicflag>true</geographicflag>
-                </spatialrefsys>
-            </srs>
-            <customproperties/>
-            <provider encoding="System">postgres</provider>
-            <previewExpression>"id"</previewExpression>
-            <vectorjoins/>
-            <edittypes>
-                <edittype labelontop="0" editable="0" type="0" name="id"/>
-                <edittype labelontop="0" editable="1" type="0" name="name"/>
-            </edittypes>
-            <editform>.</editform>
-            <editforminit></editforminit>
-            <featformsuppress>0</featformsuppress>
-            <annotationform>.</annotationform>
-            <editorlayout>generatedlayout</editorlayout>
-            <excludeAttributesWMS/>
-            <excludeAttributesWFS/>
-            <attributeactions>
-                <actionsetting action="qgis.utils.plugins['postgres91plusauditor'].audit('vl_labelview20130613095751932',[% $id %])" capture="0" type="1" name="History audit"/>
             </attributeactions>
         </maplayer>
         <maplayer minimumScale="-4.65661e-10" maximumScale="1e+08" geometry="No geometry" type="vector" hasScaleBasedVisibilityFlag="0">
@@ -9553,7 +9508,6 @@
                         <value>vl_pipe_material20130304110005230</value>
                         <value>vl_pipe_installmethod20130304110005209</value>
                         <value>vl_pipe_function20130304110005186</value>
-                        <value>vl_labelview20130613095751932</value>
                         <value>distributor20130304114719702</value>
                         <value>vl_leak_cause20130822081237639</value>
                         <value>vl_leak_type20130822081237675</value>
@@ -9621,7 +9575,6 @@
                         <value>vl_pipe_material20130304110005230</value>
                         <value>vl_pipe_installmethod20130304110005209</value>
                         <value>vl_pipe_function20130304110005186</value>
-                        <value>vl_labelview20130613095751932</value>
                         <value>distributor20130304114719702</value>
                         <value>vl_leak_cause20130822081237639</value>
                         <value>vl_leak_type20130822081237675</value>
