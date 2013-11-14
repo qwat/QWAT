@@ -31,7 +31,7 @@
 #! BEGIN_TCL=""
 #! FME_STROKE_MAX_DEVIATION="0"
 #! LOG_FILE=""
-#! VIEW_POSITION="0 -587"
+#! VIEW_POSITION="0 0"
 #! SOURCE_ROUTING_FILE=""
 #! ZOOM_SCALE="100"
 #! PASSWORD=""
@@ -2070,7 +2070,7 @@
 #! <XFORM_ATTR ATTR_NAME="repair_date" IS_USER_CREATED="false" FEAT_INDEX="0"/>
 #! <XFORM_ATTR ATTR_NAME="description" IS_USER_CREATED="false" FEAT_INDEX="0"/>
 #! <XFORM_ATTR ATTR_NAME="address" IS_USER_CREATED="false" FEAT_INDEX="0"/>
-#! <XFORM_PARM PARM_NAME="LUT" PARM_VALUE="CF,1,CL,2,CA,3,TC,4,DEF,5,,5"/>
+#! <XFORM_PARM PARM_NAME="LUT" PARM_VALUE="CF,9301,CL,9302,CA,9303,TC,9304,DEF,9305,,5"/>
 #! <XFORM_PARM PARM_NAME="XFORMER_NAME" PARM_VALUE="AttributeValueMapper_2"/>
 #! <XFORM_PARM PARM_NAME="SRC" PARM_VALUE="STOERUNGSART"/>
 #! <XFORM_PARM PARM_NAME="VAL_ATTR" PARM_VALUE="id_type"/>
@@ -2127,7 +2127,7 @@
 #! <XFORM_ATTR ATTR_NAME="description" IS_USER_CREATED="false" FEAT_INDEX="0"/>
 #! <XFORM_ATTR ATTR_NAME="address" IS_USER_CREATED="false" FEAT_INDEX="0"/>
 #! <XFORM_ATTR ATTR_NAME="id_cause" IS_USER_CREATED="false" FEAT_INDEX="0"/>
-#! <XFORM_PARM PARM_NAME="LUT" PARM_VALUE="C,1,M,2,F,3,P,4,S,5,,NULL"/>
+#! <XFORM_PARM PARM_NAME="LUT" PARM_VALUE="C,9101,M,9102,F,9103,P,9104,S,9105,,NULL"/>
 #! <XFORM_PARM PARM_NAME="XFORMER_NAME" PARM_VALUE="AttributeValueMapper_3"/>
 #! <XFORM_PARM PARM_NAME="SRC" PARM_VALUE="STOERUNGSURSACHE"/>
 #! <XFORM_PARM PARM_NAME="VAL_ATTR" PARM_VALUE="id_cause"/>
@@ -2725,7 +2725,7 @@
 #! <XFORM_ATTR ATTR_NAME="address" IS_USER_CREATED="false" FEAT_INDEX="0"/>
 #! <XFORM_ATTR ATTR_NAME="id_damage" IS_USER_CREATED="false" FEAT_INDEX="0"/>
 #! <XFORM_ATTR ATTR_NAME="id_cause" IS_USER_CREATED="false" FEAT_INDEX="0"/>
-#! <XFORM_PARM PARM_NAME="LUT" PARM_VALUE="2,4,3,3,4,2,5,3,6,1,,3"/>
+#! <XFORM_PARM PARM_NAME="LUT" PARM_VALUE="2,9204,3,9203,4,9202,5,9203,6,9201,,3"/>
 #! <XFORM_PARM PARM_NAME="XFORMER_NAME" PARM_VALUE="AttributeValueMapper_4"/>
 #! <XFORM_PARM PARM_NAME="SRC" PARM_VALUE="ID_SCHADENBEHEBUNG"/>
 #! <XFORM_PARM PARM_NAME="VAL_ATTR" PARM_VALUE="id_damage"/>
@@ -3178,17 +3178,17 @@ FACTORY_DEF * TeeFactory    FACTORY_NAME StringConcatenator_3    INPUT  FEATURE_
 FACTORY_DEF * TeeFactory    FACTORY_NAME AttributeRenamer    INPUT  FEATURE_TYPE StringConcatenator_3_OUTPUT    OUTPUT FEATURE_TYPE AttributeRenamer_OUTPUT         @RenameAttributes(id,FID,repair,REPARATURMATERIAL,detection_date,STOERUNGSDATUM,repair_date,STOERUNG_BEHOBEN_AM,pipe_replaced,CONDUITE_REMPLACEE)
 
 # -------------------------------------------------------------------------
-Lookup AttributeValueMapper_2_LOOKUP_TABLE   CF              1   CL              2   CA              3   TC              4   DEF             5   ""              5   ENCODED
+Lookup AttributeValueMapper_2_LOOKUP_TABLE   CF              9301   CL              9302   CA              9303   TC              9304   DEF             9305   ""              5   ENCODED
 
 FACTORY_DEF * TeeFactory    FACTORY_NAME AttributeValueMapper_2    INPUT  FEATURE_TYPE AttributeRenamer_OUTPUT    OUTPUT FEATURE_TYPE AttributeValueMapper_2_OUTPUT         "id_type" @Lookup(AttributeValueMapper_2_LOOKUP_TABLE,"STOERUNGSART",FORWARD|ENCODED_ATTR)
 
 # -------------------------------------------------------------------------
-Lookup AttributeValueMapper_3_LOOKUP_TABLE   C               1   M               2   F               3   P               4   S               5   ""              NULL   ENCODED
+Lookup AttributeValueMapper_3_LOOKUP_TABLE   C               9101   M               9102   F               9103   P               9104   S               9105   ""              NULL   ENCODED
 
 FACTORY_DEF * TeeFactory    FACTORY_NAME AttributeValueMapper_3    INPUT  FEATURE_TYPE AttributeValueMapper_2_OUTPUT    OUTPUT FEATURE_TYPE AttributeValueMapper_3_OUTPUT         "id_cause" @Lookup(AttributeValueMapper_3_LOOKUP_TABLE,"STOERUNGSURSACHE",FORWARD|ENCODED_ATTR)
 
 # -------------------------------------------------------------------------
-Lookup AttributeValueMapper_4_LOOKUP_TABLE   2               4   3               3   4               2   5               3   6               1   ""              3   ENCODED
+Lookup AttributeValueMapper_4_LOOKUP_TABLE   2               9204   3               9203   4               9202   5               9203   6               9201   ""              3   ENCODED
 
 FACTORY_DEF * TeeFactory    FACTORY_NAME AttributeValueMapper_4    INPUT  FEATURE_TYPE AttributeValueMapper_3_OUTPUT    OUTPUT FEATURE_TYPE AttributeValueMapper_4_OUTPUT         "id_damage" @Lookup(AttributeValueMapper_4_LOOKUP_TABLE,"ID_SCHADENBEHEBUNG",FORWARD|ENCODED_ATTR)
 
