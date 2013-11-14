@@ -2070,7 +2070,7 @@
 #! <XFORM_ATTR ATTR_NAME="repair_date" IS_USER_CREATED="false" FEAT_INDEX="0"/>
 #! <XFORM_ATTR ATTR_NAME="description" IS_USER_CREATED="false" FEAT_INDEX="0"/>
 #! <XFORM_ATTR ATTR_NAME="address" IS_USER_CREATED="false" FEAT_INDEX="0"/>
-#! <XFORM_PARM PARM_NAME="LUT" PARM_VALUE="CF,9301,CL,9302,CA,9303,TC,9304,DEF,9305,,5"/>
+#! <XFORM_PARM PARM_NAME="LUT" PARM_VALUE="CF,9141,CL,9142,CA,9143,TC,9144,DEF,9145,,5"/>
 #! <XFORM_PARM PARM_NAME="XFORMER_NAME" PARM_VALUE="AttributeValueMapper_2"/>
 #! <XFORM_PARM PARM_NAME="SRC" PARM_VALUE="STOERUNGSART"/>
 #! <XFORM_PARM PARM_NAME="VAL_ATTR" PARM_VALUE="id_type"/>
@@ -2725,7 +2725,7 @@
 #! <XFORM_ATTR ATTR_NAME="address" IS_USER_CREATED="false" FEAT_INDEX="0"/>
 #! <XFORM_ATTR ATTR_NAME="id_damage" IS_USER_CREATED="false" FEAT_INDEX="0"/>
 #! <XFORM_ATTR ATTR_NAME="id_cause" IS_USER_CREATED="false" FEAT_INDEX="0"/>
-#! <XFORM_PARM PARM_NAME="LUT" PARM_VALUE="2,9204,3,9203,4,9202,5,9203,6,9201,,3"/>
+#! <XFORM_PARM PARM_NAME="LUT" PARM_VALUE="2,9124,3,9123,4,9122,5,9123,6,9121,,3"/>
 #! <XFORM_PARM PARM_NAME="XFORMER_NAME" PARM_VALUE="AttributeValueMapper_4"/>
 #! <XFORM_PARM PARM_NAME="SRC" PARM_VALUE="ID_SCHADENBEHEBUNG"/>
 #! <XFORM_PARM PARM_NAME="VAL_ATTR" PARM_VALUE="id_damage"/>
@@ -3178,7 +3178,7 @@ FACTORY_DEF * TeeFactory    FACTORY_NAME StringConcatenator_3    INPUT  FEATURE_
 FACTORY_DEF * TeeFactory    FACTORY_NAME AttributeRenamer    INPUT  FEATURE_TYPE StringConcatenator_3_OUTPUT    OUTPUT FEATURE_TYPE AttributeRenamer_OUTPUT         @RenameAttributes(id,FID,repair,REPARATURMATERIAL,detection_date,STOERUNGSDATUM,repair_date,STOERUNG_BEHOBEN_AM,pipe_replaced,CONDUITE_REMPLACEE)
 
 # -------------------------------------------------------------------------
-Lookup AttributeValueMapper_2_LOOKUP_TABLE   CF              9301   CL              9302   CA              9303   TC              9304   DEF             9305   ""              5   ENCODED
+Lookup AttributeValueMapper_2_LOOKUP_TABLE   CF              9141   CL              9142   CA              9143   TC              9144   DEF             9145   ""              5   ENCODED
 
 FACTORY_DEF * TeeFactory    FACTORY_NAME AttributeValueMapper_2    INPUT  FEATURE_TYPE AttributeRenamer_OUTPUT    OUTPUT FEATURE_TYPE AttributeValueMapper_2_OUTPUT         "id_type" @Lookup(AttributeValueMapper_2_LOOKUP_TABLE,"STOERUNGSART",FORWARD|ENCODED_ATTR)
 
@@ -3188,7 +3188,7 @@ Lookup AttributeValueMapper_3_LOOKUP_TABLE   C               9101   M           
 FACTORY_DEF * TeeFactory    FACTORY_NAME AttributeValueMapper_3    INPUT  FEATURE_TYPE AttributeValueMapper_2_OUTPUT    OUTPUT FEATURE_TYPE AttributeValueMapper_3_OUTPUT         "id_cause" @Lookup(AttributeValueMapper_3_LOOKUP_TABLE,"STOERUNGSURSACHE",FORWARD|ENCODED_ATTR)
 
 # -------------------------------------------------------------------------
-Lookup AttributeValueMapper_4_LOOKUP_TABLE   2               9204   3               9203   4               9202   5               9203   6               9201   ""              3   ENCODED
+Lookup AttributeValueMapper_4_LOOKUP_TABLE   2               9124   3               9123   4               9122   5               9123   6               9121   ""              3   ENCODED
 
 FACTORY_DEF * TeeFactory    FACTORY_NAME AttributeValueMapper_4    INPUT  FEATURE_TYPE AttributeValueMapper_3_OUTPUT    OUTPUT FEATURE_TYPE AttributeValueMapper_4_OUTPUT         "id_damage" @Lookup(AttributeValueMapper_4_LOOKUP_TABLE,"ID_SCHADENBEHEBUNG",FORWARD|ENCODED_ATTR)
 
