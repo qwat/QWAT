@@ -20,7 +20,7 @@ ALTER TABLE distribution.district ADD COLUMN prefix        varchar(12);
 ALTER TABLE distribution.district ADD COLUMN colorcode     smallint default 1;
 
 /* geometry */
-SELECT AddGeometryColumn('distribution', 'district', 'geometry', 21781, 'POLYGON', 2);
+SELECT AddGeometryColumn('distribution', 'district', 'geometry', 21781, 'MULTIPOLYGON', 2);
 CREATE INDEX district_geoidx ON distribution.district USING GIST ( geometry );
 
 /* contraints */
