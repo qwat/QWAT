@@ -1,16 +1,15 @@
 code formulation for vl_code fields
 
-vl_code is an integer of at list 4 digits.
-first 3 represent a table prefix
-last 3 are in table unique values.
+vl_code is an integer of usually 4 digits.
+ranges for tables are defined here.
 
 
 * Global tables *  
-11 vl_precision
-12 vl_remote
-13 vl_status
-14 vl_visible
-15 vl_watertype
+11xx vl_precision
+12xx vl_remote
+13xx vl_status
+14xx vl_visible
+15xx vl_watertype
 
 * Installation related *
 20 vl_installation_type
@@ -35,8 +34,9 @@ last 3 are in table unique values.
 63 vl_valve_type
 
 /* various */
-91 vl_leak_cause
-92 vl_leak_damage
-93 vl_leak_type
+9100-9120 vl_leak_cause
+9121-9140 vl_leak_damage
+9141-9160 vl_leak_type
 94 vl_subscriber_type
 95 vl_protectionzone_type
+96 vl_hydrant_provider

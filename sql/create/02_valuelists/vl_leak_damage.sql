@@ -16,10 +16,10 @@ ALTER TABLE distribution.vl_leak_damage ADD COLUMN value_en VARCHAR(30) default 
 
 
 /* VALUES */
-INSERT INTO distribution.vl_leak_damage (id,value_fr) VALUES (9201,'aucun');  
-INSERT INTO distribution.vl_leak_damage (id,value_fr) VALUES (9202,'faible'); 
-INSERT INTO distribution.vl_leak_damage (id,value_fr) VALUES (9203,'moyen');  
-INSERT INTO distribution.vl_leak_damage (id,value_fr) VALUES (9204,'important');  
+INSERT INTO distribution.vl_leak_damage (id,value_fr) VALUES (9121,'aucun');  
+INSERT INTO distribution.vl_leak_damage (id,value_fr) VALUES (9122,'faible'); 
+INSERT INTO distribution.vl_leak_damage (id,value_fr) VALUES (9123,'moyen');  
+INSERT INTO distribution.vl_leak_damage (id,value_fr) VALUES (9124,'important');  
 
 
 

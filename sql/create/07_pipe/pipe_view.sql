@@ -6,8 +6,8 @@
 
 
 
-DROP VIEW IF EXISTS distribution.pipe_view CASCADE;
-CREATE VIEW distribution.pipe_view AS 
+DROP VIEW IF EXISTS distribution.vw_pipe CASCADE;
+CREATE VIEW distribution.vw_pipe AS 
 	SELECT  
 		pipe.id                ,
 		pipe.id_parent         ,
@@ -56,19 +56,19 @@ CREATE VIEW distribution.pipe_view AS
 		pressurezone.name           AS _pressurezone,
 		pressurezone.shortname      AS _pressurezone_shortname,
 		pressurezone.colorcode      AS _pressurezone_colorcode
-		FROM distribution.pipe
+		FROM distribution.od_pipe
 		INNER      JOIN distribution.vl_pipe_function      ON pipe.id_function      = vl_pipe_function.id
 		INNER      JOIN distribution.vl_pipe_installmethod ON pipe.id_installmethod = vl_pipe_installmethod.id
 		INNER      JOIN distribution.vl_pipe_material      ON pipe.id_material      = vl_pipe_material.id
-		INNER      JOIN distribution.distributor           ON pipe.id_distributor   = distributor.id
+		INNER      JOIN distribution.od_distributor           ON pipe.id_distributor   = distributor.id
 		INNER      JOIN distribution.vl_precision          ON pipe.id_precision     = vl_precision.id
 		LEFT OUTER JOIN distribution.vl_pipe_protection    ON pipe.id_protection    = vl_pipe_protection.id
 		INNER      JOIN distribution.vl_status             ON pipe.id_status        = vl_status.id
-		LEFT OUTER JOIN distribution.pressurezone          ON pipe.id_pressurezone  = pressurezone.id 
-		LEFT OUTER JOIN distribution.node AS node_a        ON pipe.id_node_a        = node_a.id
-		LEFT OUTER JOIN distribution.node AS node_b        ON pipe.id_node_b        = node_b.id;
+		LEFT OUTER JOIN distribution.od_pressurezone          ON pipe.id_pressurezone  = pressurezone.id 
+		LEFT OUTER JOIN distribution.od_node AS node_a        ON pipe.id_node_a        = node_a.id
+		LEFT OUTER JOIN distribution.od_node AS node_b        ON pipe.id_node_b        = node_b.id;
 /*----------------!!!---!!!----------------*/
 /* Comment */
-COMMENT ON VIEW distribution.pipe_view IS 'View for pipe. This view is not editable';
+COMMENT ON VIEW distribution.vw_pipe IS 'View for pipe. This view is not editable';
 
 

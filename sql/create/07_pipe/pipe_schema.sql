@@ -13,8 +13,8 @@ view pipe_schema               join with pipe_view to get pipe properties
 
 
 /* create a view with the visible items */
-DROP VIEW IF EXISTS distribution.pipe_schema_visibleitems CASCADE;
-CREATE VIEW distribution.pipe_schema_visibleitems AS 
+DROP VIEW IF EXISTS distribution.vw_pipe_schema_visibleitems CASCADE;
+CREATE VIEW distribution.vw_pipe_schema_visibleitems AS 
 	SELECT 	
 		pipe.id,
 		pipe.id_parent,
@@ -24,15 +24,15 @@ CREATE VIEW distribution.pipe_schema_visibleitems AS
 		pipe.geometry_schematic::geometry(LineString,21781) AS geometry,
 		pipe._valve_count,
 		pipe._valve_closed
-	FROM distribution.pipe
+	FROM distribution.od_pipe
 	INNER JOIN distribution.vl_status ON pipe.id_status = vl_status.id
 	WHERE _schema_visible IS TRUE
 	AND vl_status.active IS TRUE;
-COMMENT ON VIEW distribution.pipe_schema_visibleitems IS 'visible pipe in the schematic view (before merge)';
+COMMENT ON VIEW distribution.vw_pipe_schema_visibleitems IS 'visible pipe in the schematic view (before merge)';
 
 CREATE OR REPLACE RULE pipe_update_alternative AS
-	ON UPDATE TO distribution.pipe_schema_visibleitems DO INSTEAD
-		UPDATE distribution.pipe SET 
+	ON UPDATE TO distribution.vw_pipe_schema_visibleitems DO INSTEAD
+		UPDATE distribution.od_pipe SET 
 			geometry_schematic = NEW.geometry
 		WHERE id = NEW.id;
 		
@@ -51,7 +51,7 @@ CREATE OR REPLACE FUNCTION distribution.get_parent(integer,integer) RETURNS inte
 		END IF;
 		LOOP
 			SELECT id_parent INTO childid 
-			FROM distribution.pipe_schema_visibleitems
+			FROM distribution.vw_pipe_schema_visibleitems
 			WHERE id = parentid;
 
 			IF childid IS NOT NULL THEN
@@ -67,7 +67,7 @@ COMMENT ON FUNCTION distribution.get_parent(integer,integer) IS 'Function to get
 /* 
 View of pipe with group ID
 */
-CREATE OR REPLACE VIEW distribution.pipe_schema_items AS 
+CREATE OR REPLACE VIEW distribution.vw_pipe_schema_items AS 
 	SELECT 
 		geometry::geometry(LineString,21781),
 		distribution.get_parent(id,id_parent) AS groupid,
@@ -76,12 +76,12 @@ CREATE OR REPLACE VIEW distribution.pipe_schema_items AS
 		tunnel_or_bridge,
 		_valve_count,
 		_valve_closed
-	  FROM distribution.pipe_schema_visibleitems;
+	  FROM distribution.vw_pipe_schema_visibleitems;
 	  
 /* 
 Merging of pipe based on the group ID
 */
-CREATE OR REPLACE VIEW distribution.pipe_schema_merged AS
+CREATE OR REPLACE VIEW distribution.vw_pipe_schema_merged AS
 	SELECT	groupid AS id, 
 			ST_LineMerge(ST_Union(geometry))::geometry(LineString,21781) AS geometry,
 			COUNT(groupid) AS number_of_pipe,
@@ -90,15 +90,15 @@ CREATE OR REPLACE VIEW distribution.pipe_schema_merged AS
 			bool_or(tunnel_or_bridge) AS tunnel_or_bridge,
 			SUM(_valve_count) AS _valve_count,
 			bool_or(_valve_closed) AS _valve_closed
-	  FROM distribution.pipe_schema_items
+	  FROM distribution.vw_pipe_schema_items
 	 GROUP BY groupid ;
-COMMENT ON VIEW distribution.pipe_schema_merged IS 'Merging of pipe based on the group ID';
+COMMENT ON VIEW distribution.vw_pipe_schema_merged IS 'Merging of pipe based on the group ID';
 
 /* 
 Join with pipe_view to get pipe properties
 */
-DROP VIEW IF EXISTS distribution.pipe_schema ;
-CREATE VIEW distribution.pipe_schema AS
+DROP VIEW IF EXISTS distribution.vw_pipe_schema ;
+CREATE VIEW distribution.vw_pipe_schema AS
 	SELECT	
 			pipe.id				               ,
 			pipe.id_function                   ,
@@ -126,16 +126,16 @@ CREATE VIEW distribution.pipe_schema AS
 			pipe_schema_merged._valve_count    ,
 			pipe_schema_merged._valve_closed   ,
 			pipe_schema_merged.geometry::geometry(LineString,21781) AS geometry
-	  FROM distribution.pipe_schema_merged
-	 INNER JOIN distribution.pipe ON pipe.id = pipe_schema_merged.id;
-COMMENT ON VIEW distribution.pipe_schema IS 'Final view for schema';
+	  FROM distribution.vw_pipe_schema_merged
+	 INNER JOIN distribution.od_pipe ON pipe.id = pipe_schema_merged.id;
+COMMENT ON VIEW distribution.vw_pipe_schema IS 'Final view for schema';
 
 
 /* 
 Add node id
 */
-DROP VIEW IF EXISTS distribution.pipe_schema_node ;
-CREATE VIEW distribution.pipe_schema_node AS
+DROP VIEW IF EXISTS distribution.vw_pipe_schema_node ;
+CREATE VIEW distribution.vw_pipe_schema_node AS
 	SELECT 
 		foo.*,
 		CASE
@@ -149,26 +149,26 @@ CREATE VIEW distribution.pipe_schema_node AS
 	FROM
 		( SELECT	
 			pipe_schema.*,
-			distribution.node_get_id(ST_StartPoint(geometry),true) AS id_node_a,
-			distribution.node_get_id(ST_EndPoint(  geometry),true) AS id_node_b	
-			FROM distribution.pipe_schema 
+			distribution.od_node_get_id(ST_StartPoint(geometry),true) AS id_node_a,
+			distribution.od_node_get_id(ST_EndPoint(  geometry),true) AS id_node_b	
+			FROM distribution.vw_pipe_schema 
 		) AS foo
-		LEFT OUTER JOIN distribution.node AS node_a ON id_node_a = node_a.id
-		LEFT OUTER JOIN distribution.node AS node_b ON id_node_b = node_b.id; 
-COMMENT ON VIEW distribution.pipe_schema_node IS 'Final view for schema completed with node.';
+		LEFT OUTER JOIN distribution.od_node AS node_a ON id_node_a = node_a.id
+		LEFT OUTER JOIN distribution.od_node AS node_b ON id_node_b = node_b.id; 
+COMMENT ON VIEW distribution.vw_pipe_schema_node IS 'Final view for schema completed with node.';
 
 /*
 Report schema errors
 */
-CREATE OR REPLACE VIEW distribution.pipe_schema_error AS
+CREATE OR REPLACE VIEW distribution.vw_pipe_schema_error AS
 	SELECT id FROM 
 	 ( 	SELECT 	groupid AS id, 
 				ST_Multi(ST_LineMerge(ST_Union(geometry)))::geometry(MultiLineString,21781) AS geometry
-		  FROM distribution.pipe_schema_items
+		  FROM distribution.vw_pipe_schema_items
 		 GROUP BY groupid 
 	 ) AS foo
 	 WHERE geometryType(ST_CollectionHomogenize(geometry)) != 'LINESTRING';
-COMMENT ON VIEW distribution.pipe_schema_error IS 'Report IDs of parent pipe where pipe concatenation leads to a MultiLineString and not to a LineString.';
+COMMENT ON VIEW distribution.vw_pipe_schema_error IS 'Report IDs of parent pipe where pipe concatenation leads to a MultiLineString and not to a LineString.';
 
 
 

@@ -7,24 +7,24 @@
 
 
 /* CREATE TABLE */
-DROP TABLE IF EXISTS distribution.pressurezone CASCADE;
-CREATE TABLE distribution.pressurezone (id serial NOT NULL);
-COMMENT ON TABLE distribution.pressurezone IS 'Pressure zones.';
+DROP TABLE IF EXISTS distribution.od_pressurezone CASCADE;
+CREATE TABLE distribution.od_pressurezone (id serial NOT NULL);
+COMMENT ON TABLE distribution.od_pressurezone IS 'Pressure zones.';
 
 /* columns */
-ALTER TABLE distribution.pressurezone ADD COLUMN shortname  varchar(10);
-ALTER TABLE distribution.pressurezone ADD COLUMN name       varchar(30);
-ALTER TABLE distribution.pressurezone ADD COLUMN id_parent  integer;     /* FK self reference */
-ALTER TABLE distribution.pressurezone ADD COLUMN colorcode  smallint;
+ALTER TABLE distribution.od_pressurezone ADD COLUMN shortname  varchar(10);
+ALTER TABLE distribution.od_pressurezone ADD COLUMN name       varchar(30);
+ALTER TABLE distribution.od_pressurezone ADD COLUMN id_parent  integer;     /* FK self reference */
+ALTER TABLE distribution.od_pressurezone ADD COLUMN colorcode  smallint;
 
 /* geometry */
 SELECT AddGeometryColumn('distribution', 'pressurezone', 'geometry', 21781, 'MULTIPOLYGON', 2);
-CREATE INDEX pressurezone_geoidx ON distribution.pressurezone USING GIST ( geometry ); 
+CREATE INDEX pressurezone_geoidx ON distribution.od_pressurezone USING GIST ( geometry ); 
 
 /* constraints */
-ALTER TABLE distribution.pressurezone ADD CONSTRAINT pressurezone_pkey PRIMARY KEY (id);
-ALTER TABLE distribution.pressurezone ADD CONSTRAINT pressurezone_name UNIQUE (name);
-ALTER TABLE distribution.pressurezone ADD CONSTRAINT pressurezone_id_parent FOREIGN KEY (id_parent) REFERENCES distribution.pressurezone (id) MATCH SIMPLE ; CREATE INDEX fki_pressurezone_id_parent  ON distribution.pressurezone(id_parent);
+ALTER TABLE distribution.od_pressurezone ADD CONSTRAINT pressurezone_pkey PRIMARY KEY (id);
+ALTER TABLE distribution.od_pressurezone ADD CONSTRAINT pressurezone_name UNIQUE (name);
+ALTER TABLE distribution.od_pressurezone ADD CONSTRAINT pressurezone_id_parent FOREIGN KEY (id_parent) REFERENCES distribution.od_pressurezone (id) MATCH SIMPLE ; CREATE INDEX fki_pressurezone_id_parent  ON distribution.od_pressurezone(id_parent);
         
 /* get pressurezone id function */
 CREATE OR REPLACE FUNCTION distribution.get_pressurezone_id(geometry) RETURNS integer AS
@@ -34,7 +34,7 @@ $BODY$
 		id_pressurezone integer;
 	BEGIN
 		SELECT pressurezone.id INTO id_pressurezone
-			FROM  distribution.pressurezone
+			FROM  distribution.od_pressurezone
 			WHERE ST_Intersects(geom,pressurezone.geometry) IS TRUE
 			ORDER BY ST_Length(ST_Intersection(geom,pressurezone.geometry)) DESC
 			LIMIT 1;

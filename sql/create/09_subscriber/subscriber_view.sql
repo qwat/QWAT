@@ -6,8 +6,8 @@
 
 
 
-DROP VIEW IF EXISTS distribution.subscriber_view CASCADE;
-CREATE VIEW distribution.subscriber_view AS 
+DROP VIEW IF EXISTS distribution.vw_subscriber CASCADE;
+CREATE VIEW distribution.vw_subscriber AS 
 	SELECT 
 		subscriber.id			   ,
 		subscriber.id_type         ,
@@ -28,17 +28,17 @@ CREATE VIEW distribution.subscriber_view AS
 		pressurezone.colorcode      AS _pressurezone_colorcode
 		FROM distribution.subscriber
 		INNER      JOIN distribution.vl_subscriber_type ON subscriber.id_type         = vl_subscriber_type.id 
-		LEFT OUTER JOIN distribution.district           ON subscriber.id_district     = district.id
-		LEFT OUTER JOIN distribution.pressurezone       ON subscriber.id_pressurezone = pressurezone.id;
+		LEFT OUTER JOIN distribution.od_district           ON subscriber.id_district     = district.id
+		LEFT OUTER JOIN distribution.od_pressurezone       ON subscriber.id_pressurezone = pressurezone.id;
 /* Comment */	
-COMMENT ON VIEW distribution.subscriber_view IS 'View for subscriber. This view is editable (a rule exists to forward changes to the table).';
+COMMENT ON VIEW distribution.vw_subscriber IS 'View for subscriber. This view is editable (a rule exists to forward changes to the table).';
 
 
 --/*----------------!!!---!!!----------------*/
 --/* INSERT,UPDATE,DELETE RULES */
 --
 --CREATE OR REPLACE RULE subscriber_update AS
---	ON UPDATE TO distribution.subscriber_view DO INSTEAD
+--	ON UPDATE TO distribution.vw_subscriber DO INSTEAD
 --		UPDATE distribution.subscriber SET 
 --			id_type     = NEW.id_type                      ,
 --			id_pipe     = NULLIF(NEW.id_pipe,0)::integer   ,
@@ -48,13 +48,13 @@ COMMENT ON VIEW distribution.subscriber_view IS 'View for subscriber. This view 
 --			geometry    = NEW.geometry
 --		WHERE id = NEW.id;
 --CREATE OR REPLACE RULE subscriber_insert AS
---	ON INSERT TO distribution.subscriber_view DO INSTEAD
+--	ON INSERT TO distribution.vw_subscriber DO INSTEAD
 --		INSERT INTO distribution.subscriber 
 --			(    id_type,    id_pipe,    id_client,    id_district,    parcel,    geometry)
 --		VALUES
 --			(NEW.id_type,NEW.id_pipe,NEW.id_client,NEW.id_district,NEW.parcel,NEW.geometry);
 --CREATE OR REPLACE RULE subscriber_delete AS
---	ON DELETE TO distribution.subscriber_view DO INSTEAD
+--	ON DELETE TO distribution.vw_subscriber DO INSTEAD
 --		DELETE FROM distribution.subscriber WHERE id = OLD.id;
 --/* Comments */	
 --COMMENT ON RULE subscriber_update IS 'Rule to forward changes for subscriber_view to the table subscriber.';

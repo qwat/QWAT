@@ -6,8 +6,8 @@
 
 
 
-DROP VIEW IF EXISTS distribution.hydrant_view CASCADE;
-CREATE VIEW distribution.hydrant_view AS 
+DROP VIEW IF EXISTS distribution.vw_hydrant CASCADE;
+CREATE VIEW distribution.vw_hydrant AS 
 	SELECT  
 		hydrant.id             ,
 		hydrant.identification ,
@@ -42,13 +42,13 @@ CREATE VIEW distribution.hydrant_view AS
 		pressurezone.shortname     AS _pressurezone_shortname,
 		pressurezone.colorcode     AS _pressurezone_colorcode
 		FROM distribution.hydrant
-		INNER JOIN distribution.distributor           ON hydrant.id_distributor  = distributor.id
+		INNER JOIN distribution.od_distributor           ON hydrant.id_distributor  = distributor.id
 		INNER JOIN distribution.vl_status             ON hydrant.id_status       = vl_status.id
-		LEFT OUTER JOIN distribution.hydrant_provider ON hydrant.id_provider     = hydrant_provider.id
-		LEFT OUTER JOIN distribution.node             ON hydrant.id_node         = node.id       
-		LEFT OUTER JOIN distribution.district         ON hydrant.id_district     = district.id       
-		LEFT OUTER JOIN distribution.pressurezone     ON hydrant.id_pressurezone = pressurezone.id;
+		LEFT OUTER JOIN distribution.vl_hydrant_provider ON hydrant.id_provider     = hydrant_provider.id
+		LEFT OUTER JOIN distribution.od_node             ON hydrant.id_node         = node.id       
+		LEFT OUTER JOIN distribution.od_district         ON hydrant.id_district     = district.id       
+		LEFT OUTER JOIN distribution.od_pressurezone     ON hydrant.id_pressurezone = pressurezone.id;
 /*----------------!!!---!!!----------------*/
 /* Comment */
-COMMENT ON VIEW distribution.hydrant_view IS 'View for hydrant. This view is editable (a rule exists to forwad changes to the table).';
+COMMENT ON VIEW distribution.vw_hydrant IS 'View for hydrant. This view is editable (a rule exists to forwad changes to the table).';
 

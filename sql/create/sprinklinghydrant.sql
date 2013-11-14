@@ -35,7 +35,7 @@ ALTER TABLE distribution.sprinklinghydrant ADD CONSTRAINT sprinklinghydrant_pkey
 /* Constraints */
 /* id_type */
 ALTER TABLE distribution.sprinklinghydrant ADD CONSTRAINT sprinklinghydrant_id_type         FOREIGN KEY (id_type)         REFERENCES distribution.sprinklinghydrant_type(id)     MATCH FULL  ; CREATE INDEX fki_sprinklinghydrant_id_type         ON distribution.sprinklinghydrant(id_type)        ;
-ALTER TABLE distribution.sprinklinghydrant ADD CONSTRAINT sprinklinghydrant_id_distributor  FOREIGN KEY (id_distributor)  REFERENCES distribution.distributor(id)      MATCH FULL  ; CREATE INDEX fki_sprinklinghydrant_id_distributor  ON distribution.sprinklinghydrant(id_distributor) ;
+ALTER TABLE distribution.sprinklinghydrant ADD CONSTRAINT sprinklinghydrant_id_distributor  FOREIGN KEY (id_distributor)  REFERENCES distribution.od_distributor(id)      MATCH FULL  ; CREATE INDEX fki_sprinklinghydrant_id_distributor  ON distribution.sprinklinghydrant(id_distributor) ;
 ALTER TABLE distribution.sprinklinghydrant ADD CONSTRAINT sprinklinghydrant_vl_status       FOREIGN KEY (vl_status)       REFERENCES distribution.vl_status(id)           MATCH FULL  ; CREATE INDEX fki_sprinklinghydrant_vl_status       ON distribution.sprinklinghydrant(vl_status)      ;
 ALTER TABLE distribution.sprinklinghydrant ADD CONSTRAINT sprinklinghydrant_id_provider     FOREIGN KEY (id_provider)     REFERENCES distribution.sprinklinghydrant_provider(id) MATCH SIMPLE; CREATE INDEX fki_sprinklinghydrant_id_provider     ON distribution.sprinklinghydrant(id_provider)    ;
 

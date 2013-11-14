@@ -15,11 +15,11 @@ ALTER TABLE distribution.vl_leak_type ADD COLUMN value_fr VARCHAR(30) default ''
 ALTER TABLE distribution.vl_leak_type ADD COLUMN value_en VARCHAR(30) default '';
 
 /* VALUES */
-INSERT INTO distribution.vl_leak_type (id, value_fr ) VALUES (9301,'cassure fendue');            /* 1  CF  */
-INSERT INTO distribution.vl_leak_type (id, value_fr ) VALUES (9302,'cassure longitudinale');     /* 2  CL  */
-INSERT INTO distribution.vl_leak_type (id, value_fr ) VALUES (9303,'conduites arrachée');        /* 3  CA  */
-INSERT INTO distribution.vl_leak_type (id, value_fr ) VALUES (9304,'trou de corrosion')   ;      /* 4  TC  */
-INSERT INTO distribution.vl_leak_type (id, value_fr ) VALUES (9305,'défectuosité');              /* 5  DEF */
+INSERT INTO distribution.vl_leak_type (id, value_fr ) VALUES (9141,'cassure fendue');            /* 1  CF  */
+INSERT INTO distribution.vl_leak_type (id, value_fr ) VALUES (9142,'cassure longitudinale');     /* 2  CL  */
+INSERT INTO distribution.vl_leak_type (id, value_fr ) VALUES (9143,'conduites arrachée');        /* 3  CA  */
+INSERT INTO distribution.vl_leak_type (id, value_fr ) VALUES (9144,'trou de corrosion')   ;      /* 4  TC  */
+INSERT INTO distribution.vl_leak_type (id, value_fr ) VALUES (9145,'défectuosité');              /* 5  DEF */
 
 
 

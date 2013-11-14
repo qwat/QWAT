@@ -7,7 +7,7 @@
 
 
 
-CREATE OR REPLACE VIEW distribution.subscriber_pipe_relation AS
+CREATE OR REPLACE VIEW distribution.od_subscriber_pipe_relation AS
 	SELECT
 		a.id as id,
 		a._identification_full as _identification_full,
@@ -15,7 +15,7 @@ CREATE OR REPLACE VIEW distribution.subscriber_pipe_relation AS
 	FROM 
 		distribution.subscriber a
 	INNER JOIN 
-		distribution.pipe b ON a.id_pipe = b.id
+		distribution.od_pipe b ON a.id_pipe = b.id
 	WHERE 
 		a.id_pipe IS NOT NULL;	
 

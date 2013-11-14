@@ -7,44 +7,44 @@
 
 
 /* CREATE TABLE */
-DROP TABLE IF EXISTS distribution.node CASCADE;
-CREATE TABLE distribution.node (id serial NOT NULL);
-SELECT setval('distribution.node_id_seq', 40000, true);
-COMMENT ON TABLE distribution.node IS 'Nodes. Type:If three pipe or more arrives at the node: three. If one pipe: one. If two: depends on characteristics of pipe: two_same (everything same), two_year (year is different), two_material (and year is/are different), two_diameter (and material/year are different). Orientation is calculated if two pipe arrives to place the symbol in theright direction.';
+DROP TABLE IF EXISTS distribution.od_node CASCADE;
+CREATE TABLE distribution.od_node (id serial NOT NULL);
+SELECT setval('distribution.od_node_id_seq', 40000, true);
+COMMENT ON TABLE distribution.od_node IS 'Nodes. Type:If three pipe or more arrives at the node: three. If one pipe: one. If two: depends on characteristics of pipe: two_same (everything same), two_year (year is different), two_material (and year is/are different), two_diameter (and material/year are different). Orientation is calculated if two pipe arrives to place the symbol in theright direction.';
 
 /* columns */
-ALTER TABLE distribution.node ADD COLUMN altitude_dtm   decimal(10,3)              ;
-ALTER TABLE distribution.node ADD COLUMN _type          varchar(20)   default null ;
-ALTER TABLE distribution.node ADD COLUMN _orientation   float         default 0    ;
-ALTER TABLE distribution.node ADD COLUMN _schema_visible   boolean       default false;
-ALTER TABLE distribution.node ADD COLUMN _status_active boolean       default false;
-ALTER TABLE distribution.node ADD COLUMN _under_object  boolean       default false;
+ALTER TABLE distribution.od_node ADD COLUMN altitude_dtm   decimal(10,3)              ;
+ALTER TABLE distribution.od_node ADD COLUMN _type          varchar(20)   default null ;
+ALTER TABLE distribution.od_node ADD COLUMN _orientation   float         default 0    ;
+ALTER TABLE distribution.od_node ADD COLUMN _schema_visible   boolean       default false;
+ALTER TABLE distribution.od_node ADD COLUMN _status_active boolean       default false;
+ALTER TABLE distribution.od_node ADD COLUMN _under_object  boolean       default false;
 
 /* geometry */
 SELECT AddGeometryColumn('distribution', 'node', 'geometry', 21781, 'POINT', 2)  ;
-CREATE INDEX node_geoidx ON distribution.node USING GIST ( geometry );
+CREATE INDEX node_geoidx ON distribution.od_node USING GIST ( geometry );
 
 /* constraints */
-ALTER TABLE distribution.node ADD CONSTRAINT node_pkey PRIMARY KEY (id);
+ALTER TABLE distribution.od_node ADD CONSTRAINT node_pkey PRIMARY KEY (id);
 
 
 /*----------------!!!---!!!----------------*/
 /* Trigger for geometry (=> altitude) */
-CREATE OR REPLACE FUNCTION distribution.node_geom() RETURNS trigger AS ' 
+CREATE OR REPLACE FUNCTION distribution.od_node_geom() RETURNS trigger AS ' 
 	BEGIN
-		UPDATE distribution.node SET
+		UPDATE distribution.od_node SET
 			altitude_dtm = NULL
 		WHERE id = NEW.id ;
 		RETURN NEW;
 	END;
 ' LANGUAGE 'plpgsql';
-COMMENT ON FUNCTION distribution.node_geom() IS 'Fcn/Trigger: set uptodate to false for altitude when geometry changes.';
+COMMENT ON FUNCTION distribution.od_node_geom() IS 'Fcn/Trigger: set uptodate to false for altitude when geometry changes.';
 
 CREATE TRIGGER node_geom_trigger 
-	AFTER UPDATE OF geometry ON distribution.node
+	AFTER UPDATE OF geometry ON distribution.od_node
 		FOR EACH ROW
-		EXECUTE PROCEDURE distribution.node_geom();
-COMMENT ON TRIGGER node_geom_trigger ON distribution.node IS 'Trigger: uset uptodate to false for altitude when geometry changes.';
+		EXECUTE PROCEDURE distribution.od_node_geom();
+COMMENT ON TRIGGER node_geom_trigger ON distribution.od_node IS 'Trigger: uset uptodate to false for altitude when geometry changes.';
 
 
 

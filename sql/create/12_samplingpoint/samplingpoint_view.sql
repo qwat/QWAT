@@ -6,8 +6,8 @@
 
 
 
-DROP VIEW IF EXISTS distribution.samplingpoint_view CASCADE;
-CREATE VIEW distribution.samplingpoint_view AS 
+DROP VIEW IF EXISTS distribution.vw_samplingpoint CASCADE;
+CREATE VIEW distribution.vw_samplingpoint AS 
 	SELECT  
 		samplingpoint.id             ,
 		samplingpoint.identification        ,
@@ -22,30 +22,30 @@ CREATE VIEW distribution.samplingpoint_view AS
 		pressurezone.name          AS _pressurezone,
 		pressurezone.shortname     AS _pressurezone_shortname,
 		pressurezone.colorcode     AS _pressurezone_colorcode
-		FROM distribution.samplingpoint
-		LEFT OUTER JOIN distribution.district      ON samplingpoint.id_district     = district.id       
-		LEFT OUTER JOIN  distribution.pressurezone ON samplingpoint.id_pressurezone = pressurezone.id;
+		FROM distribution.od_samplingpoint
+		LEFT OUTER JOIN distribution.od_district      ON samplingpoint.id_district     = district.id       
+		LEFT OUTER JOIN  distribution.od_pressurezone ON samplingpoint.id_pressurezone = pressurezone.id;
 /*----------------!!!---!!!----------------*/
 /* Comment */
-COMMENT ON VIEW distribution.samplingpoint_view IS 'View for samplingpoint. This view is editable (a rule exists to forwad changes to the table).';
+COMMENT ON VIEW distribution.vw_samplingpoint IS 'View for samplingpoint. This view is editable (a rule exists to forwad changes to the table).';
 
 --/*----------------!!!---!!!----------------*/
 --/* INSERT,UPDATE,DELETE RULES */
 --CREATE OR REPLACE RULE samplingpoint_update AS
---	ON UPDATE TO distribution.samplingpoint_view DO INSTEAD
---		UPDATE distribution.samplingpoint SET 
+--	ON UPDATE TO distribution.vw_samplingpoint DO INSTEAD
+--		UPDATE distribution.od_samplingpoint SET 
 --			identification      = NEW.identification ,
 --			remarks   = NEW.remarks 
 --		WHERE id = NEW.id;
 --CREATE OR REPLACE RULE samplingpoint_insert AS
---	ON INSERT TO distribution.samplingpoint_view DO INSTEAD
---		INSERT INTO distribution.samplingpoint 
+--	ON INSERT TO distribution.vw_samplingpoint DO INSTEAD
+--		INSERT INTO distribution.od_samplingpoint 
 --			(    identification,    remarks,    geometry)     
 --		VALUES
 --			(NEW.identification,NEW.remarks,NEW.geometry);
 --CREATE OR REPLACE RULE samplingpoint_delete AS
---	ON DELETE TO distribution.samplingpoint_view DO INSTEAD
---		DELETE FROM distribution.samplingpoint WHERE id = OLD.id;
+--	ON DELETE TO distribution.vw_samplingpoint DO INSTEAD
+--		DELETE FROM distribution.od_samplingpoint WHERE id = OLD.id;
 --/* Comments */	
 --COMMENT ON RULE samplingpoint_update IS 'Rule to forward changes for samplingpoint_view to the table samplingpoint.';
 --COMMENT ON RULE samplingpoint_insert IS 'Rule to forward insert of samplingpoint_view to the table samplingpoint.';

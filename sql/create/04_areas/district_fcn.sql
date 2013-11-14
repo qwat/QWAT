@@ -15,7 +15,7 @@ $BODY$
 		result text;
 	BEGIN
 		SELECT string_agg(district.name , ', ') INTO result
-			FROM  distribution.district
+			FROM  distribution.od_district
 			WHERE ST_Intersects(geom,district.geometry) IS TRUE;
 		RETURN result;
 	END;
@@ -31,7 +31,7 @@ $BODY$
 		id_district integer;
 	BEGIN
 		SELECT district.id INTO id_district
-			FROM  distribution.district
+			FROM  distribution.od_district
 			WHERE ST_Intersects(geom,district.geometry) IS TRUE
 			LIMIT 1;
 		RETURN id_district;

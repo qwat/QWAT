@@ -8,7 +8,7 @@
 DROP TABLE IF EXISTS distribution.valve CASCADE;
 CREATE TABLE distribution.valve (id serial , CONSTRAINT valve_pkey PRIMARY KEY (id));
 COMMENT ON TABLE distribution.valve IS 'Table for valve.';
-SELECT setval('distribution.pipe_id_seq', 20000, true);
+SELECT setval('distribution.od_pipe_id_seq', 20000, true);
 
 /* columns */
 ALTER TABLE distribution.valve ADD COLUMN identification         integer ;

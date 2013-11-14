@@ -1281,7 +1281,7 @@
 #! </FEATURE_TYPE>
 #! <FEATURE_TYPE
 #! IS_SOURCE="false"
-#! NODE_NAME="distribution.pipe"
+#! NODE_NAME="distribution.od_pipe"
 #! IS_EDITABLE="true"
 #! IDENTIFIER="47"
 #! FEAT_GEOMTYPE="&lt;NO_GEOMETRY&gt;"
@@ -1439,7 +1439,7 @@
 #! </FEATURE_TYPE>
 #! <FEATURE_TYPE
 #! IS_SOURCE="true"
-#! NODE_NAME="distribution.pipe_material"
+#! NODE_NAME="distribution.od_pipe_material"
 #! IS_EDITABLE="false"
 #! IDENTIFIER="56"
 #! FEAT_GEOMTYPE="postgres_none"
@@ -1487,7 +1487,7 @@
 #! </FEATURE_TYPE>
 #! <FEATURE_TYPE
 #! IS_SOURCE="true"
-#! NODE_NAME="distribution.pipe_function"
+#! NODE_NAME="distribution.od_pipe_function"
 #! IS_EDITABLE="false"
 #! IDENTIFIER="63"
 #! FEAT_GEOMTYPE="postgres_none"
@@ -1582,7 +1582,7 @@
 #! />
 #! <COMMENT
 #! IDENTIFIER="64"
-#! COMMENT_VALUE="distribution.pipe_function"
+#! COMMENT_VALUE="distribution.od_pipe_function"
 #! POSITION="2178 -497"
 #! ORDER="31"
 #! FOLLOW_ANCHOR="true"
@@ -1612,7 +1612,7 @@
 #! />
 #! <COMMENT
 #! IDENTIFIER="57"
-#! COMMENT_VALUE="distribution.pipe_material"
+#! COMMENT_VALUE="distribution.od_pipe_material"
 #! POSITION="869 -992"
 #! ORDER="36"
 #! FOLLOW_ANCHOR="true"
@@ -6202,10 +6202,10 @@ MULTI_READER_KEYWORD{1} ORACLE8I_DB_2
 MULTI_READER_GEN_DIRECTIVES{1} REMOVE_SCHEMA_QUALIFIER,NO,TABLELIST,SIGE_DISTRIBUTION.WA_STRANG,ORACLE8I_DB_EXPOSE_FORMAT_ATTRS,,SERVER_TYPE,ORACLE8i,USER_NAME,system,WORKSPACELIST,LIVE,_MERGE_SCHEMAS,YES
 MULTI_READER_TYPE{2} POSTGRES
 MULTI_READER_KEYWORD{2} POSTGRES_1
-MULTI_READER_GEN_DIRECTIVES{2} TABLELIST,distribution.pipe_function,USER_NAME,sige,PORT,5432,POSTGRES_EXPOSE_FORMAT_ATTRS,,_MERGE_SCHEMAS,YES,HOST,172.24.171.202
+MULTI_READER_GEN_DIRECTIVES{2} TABLELIST,distribution.od_pipe_function,USER_NAME,sige,PORT,5432,POSTGRES_EXPOSE_FORMAT_ATTRS,,_MERGE_SCHEMAS,YES,HOST,172.24.171.202
 MULTI_READER_TYPE{3} POSTGRES
 MULTI_READER_KEYWORD{3} POSTGRES_2
-MULTI_READER_GEN_DIRECTIVES{3} TABLELIST,distribution.pipe_material,USER_NAME,sige,PORT,5432,POSTGRES_EXPOSE_FORMAT_ATTRS,,_MERGE_SCHEMAS,YES,HOST,172.24.171.202
+MULTI_READER_GEN_DIRECTIVES{3} TABLELIST,distribution.od_pipe_material,USER_NAME,sige,PORT,5432,POSTGRES_EXPOSE_FORMAT_ATTRS,,_MERGE_SCHEMAS,YES,HOST,172.24.171.202
 WRITER_TYPE MULTI_WRITER
 MULTI_WRITER_DATASET_ORDER BY_ID
 MULTI_WRITER_FIRST_WRITER_ID 0
@@ -6664,13 +6664,13 @@ ORACLE8I_DB_1_DEF SIGE_DISTRIBUTION.WA_STRANG_GEO   ACCURACY_LEVEL              
 # -------------------------------------------------------------------------
 ORACLE8I_DB_2_DEF SIGE_DISTRIBUTION.WA_STRANG   AREA_NOMINAL                 number(20,8)   AUFMASSSKIZZE                number(1,0)   A_DESAFFECTER_PDDE           number(1,0)   BAUJAHR                      number(20,0)   BAUTEILTYP_ID                number(20,0)   BEMERKUNG                    varchar2(255)   BESCHICHTUNG_AUSSEN          varchar2(5)   BESCHICHTUNG_INNEN           varchar2(5)   BETTUNG                      varchar2(5)   BEZEICHNUNG1                 varchar2(40)   BEZEICHNUNG2                 varchar2(40)   BEZEICHNUNG3                 varchar2(40)   BEZEICHNUNG4                 varchar2(40)   BEZEICHNUNG5                 varchar2(40)   BEZEICHNUNG6                 varchar2(40)   CALCUL_HYDRAULIQUE           number(1,0)   COMMUNE                      varchar2(50)   DELETED                      number(1,0)   DIAM_INT_PDDE                number(20,5)   DOSSIER                      varchar2(10)   DRUCKZONE_ID                 number(20,0)   DURCHMESSER_AUSSEN           number(20,5)   DURCHMESSER_INNEN            number(20,5)   EIGENTUMSVERHAELTNIS         varchar2(5)   F1                           varchar2(20)   F2                           varchar2(20)   F3                           varchar2(20)   F4                           varchar2(20)   FABRIKATIONSDATUM            date   FID                          number(10,0)   FID_LAGEBEZEICHNUNG          number(10,0)   FLST_KENNZEICHEN_OF          varchar2(25)   FLST_NENNER                  number(20,0)   FLST_NR                      number(20,0)   FLST_ZAEHLER                 number(20,0)   FOLIO                        varchar2(15)   FUNKTION                     varchar2(5)   GEFAELLE                     number(20,5)   GEMARKUNG                    number(20,0)   GID                          number(10,0)   HERSTELLER_ID                number(20,0)   ID_VERLEGESTATUS             number(10,0)   ISOLATION                    varchar2(30)   KORROSSIONSSCHUTZ            number(20,0)   LAENGE_NICHTOEFFENTLICH      number(10,5)   LAENGE_OEFFENTLICH           number(10,5)   LAGE                         varchar2(5)   LAGEGENAUIGKEIT              varchar2(5)   LEITUNGSANFANG               varchar2(25)   LEITUNGSENDE                 varchar2(25)   MATERIAL                     varchar2(10)   MATERIALQUALITAET            varchar2(15)   NAME                         varchar2(61)   NAME2                        varchar2(50)   NENNDRUCK                    number(20,5)   NENNWEITE                    varchar2(15)   NK_ID                        number(20,0)   ORTSTEIL                     varchar2(20)   POOL                         number(20,0)   ROHRRAUHEIT                  number(20,5)   SCHUBSICHERUNG_ID            number(20,0)   STANDORT                     varchar2(50)   STATUS                       varchar2(5)   STRANGLAENGE                 number(20,5)   STRANGLAENGE_BERECHNET       number(20,5)   TUYAU_PROTECTEUR             number(10,0)   VERBINDUNGSART               varchar2(15)   VERLEGEART                   varchar2(5)   VERLEGEDATUM                 date   VERLEGEFIRMA_ID              number(10,0)   VERSORGUNGSGEBIET_ID         number(20,0)   VK_ID                        number(20,0)   V_COMMUNE                    number(10,0)   WANDSTAERKE                  number(20,5)   WASSERQUALITAET              varchar2(5)
 # -------------------------------------------------------------------------
-POSTGRES_1_DEF distribution.pipe_function   postgres_type                postgres_none   postgres_sql_where_clause    ""   postgres_sql_statement       ""   id                           serial,PRIKEY   name                         varchar(30),PRIKEY   schema_visible                  bool   code_sire                    int2
+POSTGRES_1_DEF distribution.od_pipe_function   postgres_type                postgres_none   postgres_sql_where_clause    ""   postgres_sql_statement       ""   id                           serial,PRIKEY   name                         varchar(30),PRIKEY   schema_visible                  bool   code_sire                    int2
 # -------------------------------------------------------------------------
-POSTGRES_2_DEF distribution.pipe_material   postgres_type                postgres_none   postgres_sql_where_clause    ""   postgres_sql_statement       ""   id                           serial,PRIKEY   shortname                    varchar(8)   name                         varchar(30)   diameter                     varchar(10)   diameter_internal            varchar(10)   diameter_external            varchar(10)   _fancyname                   varchar(18)   code_sire                    int2
+POSTGRES_2_DEF distribution.od_pipe_material   postgres_type                postgres_none   postgres_sql_where_clause    ""   postgres_sql_statement       ""   id                           serial,PRIKEY   shortname                    varchar(8)   name                         varchar(30)   diameter                     varchar(10)   diameter_internal            varchar(10)   diameter_external            varchar(10)   _fancyname                   varchar(18)   code_sire                    int2
 
 # -------------------------------------------------------------------------
 
-Lookup ___KnownFeatureTypes___   "$(DATASET_KEYWORD_ORACLE8I_DB_2)_SIGE_DISTRIBUTION.WA_STRANG" yes   "$(DATASET_KEYWORD_POSTGRES_1)_distribution.pipe_function" yes   "$(DATASET_KEYWORD_ORACLE8I_DB_1)_SIGE_DISTRIBUTION.WA_STRANG_GEO" yes   "$(DATASET_KEYWORD_POSTGRES_2)_distribution.pipe_material" yes   "" no
+Lookup ___KnownFeatureTypes___   "$(DATASET_KEYWORD_ORACLE8I_DB_2)_SIGE_DISTRIBUTION.WA_STRANG" yes   "$(DATASET_KEYWORD_POSTGRES_1)_distribution.od_pipe_function" yes   "$(DATASET_KEYWORD_ORACLE8I_DB_1)_SIGE_DISTRIBUTION.WA_STRANG_GEO" yes   "$(DATASET_KEYWORD_POSTGRES_2)_distribution.od_pipe_material" yes   "" no
 # -------------------------------------------------------------------------
 
 FACTORY_DEF * TestFactory   FACTORY_NAME "Unexpected Input Remover"   INPUT FEATURE_TYPE *   TEST @Lookup(___KnownFeatureTypes___,@Concatenate(&multi_reader_keyword,"_",@FeatureType())) == yes   OUTPUT PASSED FEATURE_TYPE *
@@ -6802,7 +6802,7 @@ FACTORY_DEF * TeeFactory    FACTORY_NAME AttributeRemover    INPUT  FEATURE_TYPE
 
 # -------------------------------------------------------------------------
 FACTORY_DEF * TeeFactory   FACTORY_NAME "pipe_function pipe Input Collector"   INPUT FEATURE_TYPE AttributeRemover_OUTPUT   OUTPUT FEATURE_TYPE pipe_function_pipe
-FACTORY_DEF * TeeFactory   FACTORY_NAME "pipe_function function Input Collector"   INPUT FEATURE_TYPE distribution.pipe_function   OUTPUT FEATURE_TYPE pipe_function_function
+FACTORY_DEF * TeeFactory   FACTORY_NAME "pipe_function function Input Collector"   INPUT FEATURE_TYPE distribution.od_pipe_function   OUTPUT FEATURE_TYPE pipe_function_function
 MACRO pipe_function_WORKSPACE_NAME pipe_function
 MACRO $(pipe_function_WORKSPACE_NAME)_XFORMER_NAME pipe_function
 MACRO $(pipe_function_WORKSPACE_NAME)_TRANSFORMER_GROUP 
@@ -6865,7 +6865,7 @@ FACTORY_DEF * TeeFactory    FACTORY_NAME AttributeValueMapper_3    INPUT  FEATUR
 
 # -------------------------------------------------------------------------
 FACTORY_DEF * TeeFactory   FACTORY_NAME "pipe_material TOPOBASE Input Collector"   INPUT FEATURE_TYPE AttributeValueMapper_3_OUTPUT   OUTPUT FEATURE_TYPE pipe_material_TOPOBASE
-FACTORY_DEF * TeeFactory   FACTORY_NAME "pipe_material POSTGIS_MATERIAL Input Collector"   INPUT FEATURE_TYPE distribution.pipe_material   OUTPUT FEATURE_TYPE pipe_material_POSTGIS_MATERIAL
+FACTORY_DEF * TeeFactory   FACTORY_NAME "pipe_material POSTGIS_MATERIAL Input Collector"   INPUT FEATURE_TYPE distribution.od_pipe_material   OUTPUT FEATURE_TYPE pipe_material_POSTGIS_MATERIAL
 MACRO pipe_material_WORKSPACE_NAME pipe_material
 MACRO $(pipe_material_WORKSPACE_NAME)_XFORMER_NAME pipe_material
 MACRO $(pipe_material_WORKSPACE_NAME)_TRANSFORMER_GROUP 
@@ -6999,7 +6999,7 @@ FACTORY_DEF * ReferenceFactory    FACTORY_NAME FeatureMerger    GROUP_BY GID    
 
 # -------------------------------------------------------------------------
 
-FACTORY_DEF * TeeFactory    FACTORY_NAME "FeatureMerger_COMPLETE -> distribution.pipe Correlator"    INPUT FEATURE_TYPE FeatureMerger_COMPLETE    OUTPUT FEATURE_TYPE __GO_TO_FINAL_OUTPUT_ROUTER__       multi_writer_id 0       @Transform(FME_GENERIC,POSTGIS)       @SupplyAttributes(__wb_out_feat_type__,distribution.pipe)
+FACTORY_DEF * TeeFactory    FACTORY_NAME "FeatureMerger_COMPLETE -> distribution.od_pipe Correlator"    INPUT FEATURE_TYPE FeatureMerger_COMPLETE    OUTPUT FEATURE_TYPE __GO_TO_FINAL_OUTPUT_ROUTER__       multi_writer_id 0       @Transform(FME_GENERIC,POSTGIS)       @SupplyAttributes(__wb_out_feat_type__,distribution.od_pipe)
 # -------------------------------------------------------------------------
 
 FACTORY_DEF * TeeFactory    FACTORY_NAME "pipe_function_unused_function -> funcerror Correlator"    INPUT FEATURE_TYPE pipe_function_unused_function    OUTPUT FEATURE_TYPE __GO_TO_FINAL_OUTPUT_ROUTER__       multi_writer_id 2       @Transform(FME_GENERIC,CSV)       @SupplyAttributes(__wb_out_feat_type__,funcerror)
@@ -7017,7 +7017,7 @@ FACTORY_DEF * TestFactory   FACTORY_NAME "Final Output Feature Type Router"   IN
 FACTORY_DEF * TeeFactory   FACTORY_NAME "Final Output Nuker"   INPUT FEATURE_TYPE __nuke_me__
 
 # -------------------------------------------------------------------------
-POSTGIS_1_DEF distribution.pipe   postgis_type                 postgis_geometry   postgis_mode                 INHERIT_FROM_WRITER   postgis_spatial_column_type  geometry   postgis_spatial_column       geometry   postgis_srid                 21781   postgis_drop_table           NO   postgis_truncate_table       NO   postgis_create_with_oids     NO   postgis_create_gist_index    YES   postgis_vacuum_analyze       YES   postgis_allow_serial_writing YES   coating_external_material_id char(20)   coating_internal_material_id char(20)   folder                       char(20)   id                           serial,PRIKEY   id_function                  int4   id_install_method            char(20)   id_material                  int4   id_distributor               char(20)   id_parent                    int4   id_precision                 char(20)   id_status                    int4   material_ext_diam            char(20)   material_int_diam            char(20)   material_nominal_diam        char(20)   material_thickness           char(20)   pressure_nominale            char(20)   protection_coating_detail    char(20)   remarks                      char(20)   schema_force_view            bool   year                         char(20)
+POSTGIS_1_DEF distribution.od_pipe   postgis_type                 postgis_geometry   postgis_mode                 INHERIT_FROM_WRITER   postgis_spatial_column_type  geometry   postgis_spatial_column       geometry   postgis_srid                 21781   postgis_drop_table           NO   postgis_truncate_table       NO   postgis_create_with_oids     NO   postgis_create_gist_index    YES   postgis_vacuum_analyze       YES   postgis_allow_serial_writing YES   coating_external_material_id char(20)   coating_internal_material_id char(20)   folder                       char(20)   id                           serial,PRIKEY   id_function                  int4   id_install_method            char(20)   id_material                  int4   id_distributor               char(20)   id_parent                    int4   id_precision                 char(20)   id_status                    int4   material_ext_diam            char(20)   material_int_diam            char(20)   material_nominal_diam        char(20)   material_thickness           char(20)   pressure_nominale            char(20)   protection_coating_detail    char(20)   remarks                      char(20)   schema_force_view            bool   year                         char(20)
 # -------------------------------------------------------------------------
 CSV_1_DEF materror   csv_append_mode              INHERIT_FROM_WRITER   csv_field_names              INHERIT_FROM_WRITER   joined_material_text         char(30)   FID                          char(30)   FOLIO                        char(30)
 # -------------------------------------------------------------------------

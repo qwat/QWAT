@@ -1109,7 +1109,7 @@
 #! </FEATURE_TYPE>
 #! <FEATURE_TYPE
 #! IS_SOURCE="true"
-#! NODE_NAME="distribution.district"
+#! NODE_NAME="distribution.od_district"
 #! IS_EDITABLE="false"
 #! IDENTIFIER="54"
 #! FEAT_GEOMTYPE="postgres_none"
@@ -1202,7 +1202,7 @@
 #! </FEATURE_TYPE>
 #! <FEATURE_TYPE
 #! IS_SOURCE="false"
-#! NODE_NAME="distribution.meter"
+#! NODE_NAME="distribution.od_meter"
 #! IS_EDITABLE="true"
 #! IDENTIFIER="59"
 #! FEAT_GEOMTYPE="&lt;NO_GEOMETRY&gt;"
@@ -2642,7 +2642,7 @@ MULTI_READER_KEYWORD{2} ORACLE8I_DB_3
 MULTI_READER_GEN_DIRECTIVES{2} REMOVE_SCHEMA_QUALIFIER,NO,TABLELIST,SIGE_DISTRIBUTION.V_COMMUNES,ORACLE8I_DB_EXPOSE_FORMAT_ATTRS,,SERVER_TYPE,ORACLE8i,USER_NAME,system,WORKSPACELIST,LIVE,_MERGE_SCHEMAS,YES
 MULTI_READER_TYPE{3} POSTGRES
 MULTI_READER_KEYWORD{3} POSTGRES_1
-MULTI_READER_GEN_DIRECTIVES{3} TABLELIST,distribution.district,USER_NAME,sige,PORT,5432,POSTGRES_EXPOSE_FORMAT_ATTRS,,_MERGE_SCHEMAS,YES,HOST,172.24.171.203
+MULTI_READER_GEN_DIRECTIVES{3} TABLELIST,distribution.od_district,USER_NAME,sige,PORT,5432,POSTGRES_EXPOSE_FORMAT_ATTRS,,_MERGE_SCHEMAS,YES,HOST,172.24.171.203
 WRITER_TYPE POSTGIS
 WRITER_KEYWORD POSTGIS_1
 #! END_WB_HEADER
@@ -2992,11 +2992,11 @@ ORACLE8I_DB_2_DEF SIGE_DISTRIBUTION.WA_GEBEINFUEHR_GEO   ACCURACY_LEVEL         
 # -------------------------------------------------------------------------
 ORACLE8I_DB_3_DEF SIGE_DISTRIBUTION.V_COMMUNES   ABREGE                       varchar2(3)   AREA_GERECHNET               number(20,8)   AREA_NOMINAL                 number(20,8)   CANTON                       varchar2(2)   DELETED                      number(1,0)   FID                          number(10,0)   GID                          number(10,0)   INTITULE_LISTE               varchar2(10)   NOM                          varchar2(30)   NO_RF                        number(3,0)   NPA                          number(4,0)   PREFIXE_ABT                  number(2,0)   STATUT_ASSAIN                varchar2(20)   STATUT_DISTRIB               varchar2(20)
 # -------------------------------------------------------------------------
-POSTGRES_1_DEF distribution.district   postgres_type                postgres_none   postgres_sql_where_clause    ""   postgres_sql_statement       ""   id                           serial,PRIKEY   name                         varchar(40),PRIKEY   shortname                    varchar(12)   zip                          varchar(12)   land_registry                varchar(12)   subscriber_prefix            varchar(12)   colorcode                    int2   geometry                     char(5575944),GIST
+POSTGRES_1_DEF distribution.od_district   postgres_type                postgres_none   postgres_sql_where_clause    ""   postgres_sql_statement       ""   id                           serial,PRIKEY   name                         varchar(40),PRIKEY   shortname                    varchar(12)   zip                          varchar(12)   land_registry                varchar(12)   subscriber_prefix            varchar(12)   colorcode                    int2   geometry                     char(5575944),GIST
 
 # -------------------------------------------------------------------------
 
-Lookup ___KnownFeatureTypes___   "$(DATASET_KEYWORD_ORACLE8I_DB_2)_SIGE_DISTRIBUTION.WA_GEBEINFUEHR_GEO" yes   "$(DATASET_KEYWORD_ORACLE8I_DB_3)_SIGE_DISTRIBUTION.V_COMMUNES" yes   "$(DATASET_KEYWORD_POSTGRES_1)_distribution.district" yes   "$(DATASET_KEYWORD_ORACLE8I_DB_1)_SIGE_DISTRIBUTION.WA_GEBEINFUEHR" yes   "" no
+Lookup ___KnownFeatureTypes___   "$(DATASET_KEYWORD_ORACLE8I_DB_2)_SIGE_DISTRIBUTION.WA_GEBEINFUEHR_GEO" yes   "$(DATASET_KEYWORD_ORACLE8I_DB_3)_SIGE_DISTRIBUTION.V_COMMUNES" yes   "$(DATASET_KEYWORD_POSTGRES_1)_distribution.od_district" yes   "$(DATASET_KEYWORD_ORACLE8I_DB_1)_SIGE_DISTRIBUTION.WA_GEBEINFUEHR" yes   "" no
 # -------------------------------------------------------------------------
 
 FACTORY_DEF * TestFactory   FACTORY_NAME "Unexpected Input Remover"   INPUT FEATURE_TYPE *   TEST @Lookup(___KnownFeatureTypes___,@Concatenate(&multi_reader_keyword,"_",@FeatureType())) == yes   OUTPUT PASSED FEATURE_TYPE *
@@ -3092,7 +3092,7 @@ FACTORY_DEF * ReferenceFactory    FACTORY_NAME FeatureMerger_2    INPUT REFERENC
 
 # -------------------------------------------------------------------------
 
-FACTORY_DEF * TeeFactory    FACTORY_NAME AttributeRenamer_2    INPUT  FEATURE_TYPE distribution.district    OUTPUT FEATURE_TYPE AttributeRenamer_2_OUTPUT         @RenameAttributes(id_district,id)
+FACTORY_DEF * TeeFactory    FACTORY_NAME AttributeRenamer_2    INPUT  FEATURE_TYPE distribution.od_district    OUTPUT FEATURE_TYPE AttributeRenamer_2_OUTPUT         @RenameAttributes(id_district,id)
 
 # -------------------------------------------------------------------------
 
@@ -3111,7 +3111,7 @@ FACTORY_DEF * TeeFactory   FACTORY_NAME "AttributeFilter_3 <UNFILTERED> Output N
 FACTORY_DEF * TeeFactory    FACTORY_NAME "AttributeFilter_3_<BLANK> -> distribution.subscriber Correlator"    INPUT FEATURE_TYPE AttributeFilter_3_<BLANK>    OUTPUT FEATURE_TYPE __GO_TO_FINAL_OUTPUT_ROUTER__       @Reproject("EPSG:21781","EPSG:21781")       @Transform(FME_GENERIC,POSTGIS)       @SupplyAttributes(__wb_out_feat_type__,distribution.subscriber)
 # -------------------------------------------------------------------------
 
-FACTORY_DEF * TeeFactory    FACTORY_NAME "AttributeFilter_3_6 -> distribution.meter Correlator"    INPUT FEATURE_TYPE AttributeFilter_3_6    OUTPUT FEATURE_TYPE __GO_TO_FINAL_OUTPUT_ROUTER__       @Reproject("EPSG:21781","EPSG:21781")       @Transform(FME_GENERIC,POSTGIS)       @SupplyAttributes(__wb_out_feat_type__,distribution.meter)
+FACTORY_DEF * TeeFactory    FACTORY_NAME "AttributeFilter_3_6 -> distribution.od_meter Correlator"    INPUT FEATURE_TYPE AttributeFilter_3_6    OUTPUT FEATURE_TYPE __GO_TO_FINAL_OUTPUT_ROUTER__       @Reproject("EPSG:21781","EPSG:21781")       @Transform(FME_GENERIC,POSTGIS)       @SupplyAttributes(__wb_out_feat_type__,distribution.od_meter)
 # -------------------------------------------------------------------------
 
 FACTORY_DEF * TestFactory   FACTORY_NAME "Final Output Feature Type Router"   INPUT FEATURE_TYPE *   TEST @Value(__wb_out_feat_type__) != ""   OUTPUT PASSED FEATURE_TYPE *     @FeatureType(@Value(__wb_out_feat_type__))   OUTPUT FAILED FEATURE_TYPE __nuke_me__ @Tcl2("FME_StatMessage 818059 {@Value(fme_template_feature_type)} 818060 818061 fme_warn")
@@ -3126,6 +3126,6 @@ INCLUDE [ if {{$(WORKSPACE_TEMP_DIR)} == {}} { puts {MACRO __WB_ENABLE_VISUALIZE
 FACTORY_DEF $(__WB_ENABLE_VISUALIZER__) CreationFactory   CREATE_AT_END   OUTPUT FEATURE_TYPE __NUKEME__   @TCL("if [info exists ::gVisualizerFilesToView] {eval FME_Execute System \173\042$(FME_HOME_UNIX)/fmeview\042 /ownffs {$(WORKSPACE_TEMP_DIR)} $::gVisualizerFilesToView & \175 }")
 FACTORY_DEF * TeeFactory   INPUT FEATURE_TYPE __NUKEME__
 # -------------------------------------------------------------------------
-POSTGIS_1_DEF distribution.meter   postgis_type                 postgis_geometry   postgis_mode                 INHERIT_FROM_WRITER   postgis_spatial_column_type  geometry   postgis_spatial_column       geometry   postgis_srid                 INHERIT_FROM_WRITER   postgis_drop_table           NO   postgis_truncate_table       YES   postgis_create_with_oids     NO   postgis_create_gist_index    YES   postgis_vacuum_analyze       YES   postgis_allow_serial_writing NO   id_pipe                      int8   parcel                       char(30)   client_identification        int8   remarks                      text   id_district                  int4
+POSTGIS_1_DEF distribution.od_meter   postgis_type                 postgis_geometry   postgis_mode                 INHERIT_FROM_WRITER   postgis_spatial_column_type  geometry   postgis_spatial_column       geometry   postgis_srid                 INHERIT_FROM_WRITER   postgis_drop_table           NO   postgis_truncate_table       YES   postgis_create_with_oids     NO   postgis_create_gist_index    YES   postgis_vacuum_analyze       YES   postgis_allow_serial_writing NO   id_pipe                      int8   parcel                       char(30)   client_identification        int8   remarks                      text   id_district                  int4
 # -------------------------------------------------------------------------
 POSTGIS_1_DEF distribution.subscriber   postgis_type                 postgis_geometry   postgis_mode                 INHERIT_FROM_WRITER   postgis_spatial_column_type  geometry   postgis_spatial_column       geometry   postgis_srid                 INHERIT_FROM_WRITER   postgis_drop_table           NO   postgis_truncate_table       YES   postgis_create_with_oids     NO   postgis_create_gist_index    YES   postgis_vacuum_analyze       YES   postgis_allow_serial_writing NO   id_type                      int8   id_pipe                      int8   parcel                       char(30)   client_identification        int8   remarks                      text   id_district                  int4

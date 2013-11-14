@@ -29,12 +29,12 @@ $BODY$
 				
 		/* Add constraints and indexes */
 		IF is_node IS TRUE THEN
-			EXECUTE 'ALTER TABLE distribution.'||table_name||' ADD CONSTRAINT '||table_name||'_id_node         FOREIGN KEY (id_node)         REFERENCES distribution.node(id)         MATCH SIMPLE;';
+			EXECUTE 'ALTER TABLE distribution.'||table_name||' ADD CONSTRAINT '||table_name||'_id_node         FOREIGN KEY (id_node)         REFERENCES distribution.od_node(id)         MATCH SIMPLE;';
 		END IF;
-		EXECUTE 'ALTER TABLE distribution.'||table_name||' ADD CONSTRAINT '||table_name||'_id_district     FOREIGN KEY (id_district)     REFERENCES distribution.district(id)     MATCH SIMPLE;';
-		EXECUTE 'ALTER TABLE distribution.'||table_name||' ADD CONSTRAINT '||table_name||'_id_pressurezone FOREIGN KEY (id_pressurezone) REFERENCES distribution.pressurezone(id) MATCH SIMPLE;';
+		EXECUTE 'ALTER TABLE distribution.'||table_name||' ADD CONSTRAINT '||table_name||'_id_district     FOREIGN KEY (id_district)     REFERENCES distribution.od_district(id)     MATCH SIMPLE;';
+		EXECUTE 'ALTER TABLE distribution.'||table_name||' ADD CONSTRAINT '||table_name||'_id_pressurezone FOREIGN KEY (id_pressurezone) REFERENCES distribution.od_pressurezone(id) MATCH SIMPLE;';
 		IF get_pipe IS TRUE THEN
-			EXECUTE 'ALTER TABLE distribution.'||table_name||' ADD CONSTRAINT '||table_name||'_id_pipe FOREIGN KEY (id_pipe) REFERENCES distribution.pipe(id) MATCH SIMPLE;';
+			EXECUTE 'ALTER TABLE distribution.'||table_name||' ADD CONSTRAINT '||table_name||'_id_pipe FOREIGN KEY (id_pipe) REFERENCES distribution.od_pipe(id) MATCH SIMPLE;';
 		END IF;
 		IF is_node IS TRUE THEN
 			EXECUTE 'CREATE INDEX fki_'||table_name||'_id_node     ON distribution.'||table_name||'(id_node);';
@@ -52,7 +52,7 @@ $BODY$
 					UPDATE distribution.'||table_name||' SET';
 		IF is_node IS TRUE AND create_node IS TRUE THEN
 			sql_trigger := sql_trigger || '
-						id_node            = distribution.node_get_id(NEW.geometry,'||create_node||'),
+						id_node            = distribution.od_node_get_id(NEW.geometry,'||create_node||'),
 			';
 		END IF;
 		IF auto_district IS TRUE THEN
@@ -65,7 +65,7 @@ $BODY$
 						id_printmap        = distribution.get_printmap_id(NEW.geometry),';
 		IF get_pipe IS TRUE THEN
 			sql_trigger := sql_trigger || '
-						id_pipe            = distribution.pipe_get_id(NEW.geometry),
+						id_pipe            = distribution.od_pipe_get_id(NEW.geometry),
 			';
 		END IF;		IF create_schematic IS TRUE THEN
 			sql_trigger := sql_trigger || '
@@ -128,10 +128,10 @@ $BODY$
 		EXECUTE 'CREATE INDEX '||table_name||'_geoidx_sch ON distribution.'||table_name||' USING GIST ( geometry_schematic );';		
 
 		/* Add constraints and indexes */
-		EXECUTE 'ALTER TABLE distribution.'||table_name||' ADD CONSTRAINT '||table_name||'_id_node_a       FOREIGN KEY (id_node_a)       REFERENCES distribution.node(id)         MATCH SIMPLE;';
-		EXECUTE 'ALTER TABLE distribution.'||table_name||' ADD CONSTRAINT '||table_name||'_id_node_b       FOREIGN KEY (id_node_b)       REFERENCES distribution.node(id)         MATCH SIMPLE;';
-		EXECUTE 'ALTER TABLE distribution.'||table_name||' ADD CONSTRAINT '||table_name||'_id_district     FOREIGN KEY (id_district)     REFERENCES distribution.district(id)     MATCH SIMPLE;';
-		EXECUTE 'ALTER TABLE distribution.'||table_name||' ADD CONSTRAINT '||table_name||'_id_pressurezone FOREIGN KEY (id_pressurezone) REFERENCES distribution.pressurezone(id) MATCH SIMPLE;';
+		EXECUTE 'ALTER TABLE distribution.'||table_name||' ADD CONSTRAINT '||table_name||'_id_node_a       FOREIGN KEY (id_node_a)       REFERENCES distribution.od_node(id)         MATCH SIMPLE;';
+		EXECUTE 'ALTER TABLE distribution.'||table_name||' ADD CONSTRAINT '||table_name||'_id_node_b       FOREIGN KEY (id_node_b)       REFERENCES distribution.od_node(id)         MATCH SIMPLE;';
+		EXECUTE 'ALTER TABLE distribution.'||table_name||' ADD CONSTRAINT '||table_name||'_id_district     FOREIGN KEY (id_district)     REFERENCES distribution.od_district(id)     MATCH SIMPLE;';
+		EXECUTE 'ALTER TABLE distribution.'||table_name||' ADD CONSTRAINT '||table_name||'_id_pressurezone FOREIGN KEY (id_pressurezone) REFERENCES distribution.od_pressurezone(id) MATCH SIMPLE;';
 		EXECUTE 'CREATE INDEX fki_'||table_name||'_id_node_a       ON distribution.'||table_name||'(id_node_a);';
 		EXECUTE 'CREATE INDEX fki_'||table_name||'_id_node_b       ON distribution.'||table_name||'(id_node_b);';
 		EXECUTE 'CREATE INDEX fki_'||table_name||'_id_district     ON distribution.'||table_name||'(id_district);';
@@ -143,8 +143,8 @@ $BODY$
 				''
 				BEGIN
 					UPDATE distribution.'||table_name||' SET
-						id_node_a          = distribution.node_get_id(ST_StartPoint(NEW.geometry),true),
-						id_node_b          = distribution.node_get_id(ST_EndPoint(  NEW.geometry),true),
+						id_node_a          = distribution.od_node_get_id(ST_StartPoint(NEW.geometry),true),
+						id_node_b          = distribution.od_node_get_id(ST_EndPoint(  NEW.geometry),true),
 						id_district        = distribution.get_district_id(NEW.geometry),
 						id_pressurezone    = distribution.get_pressurezone_id(NEW.geometry),
 						id_printmap        = distribution.get_printmap_id(NEW.geometry),

@@ -7,8 +7,8 @@
 
 /* TODO: maintenance */
 
-DROP VIEW IF EXISTS distribution.valve_view CASCADE;
-CREATE VIEW distribution.valve_view AS 
+DROP VIEW IF EXISTS distribution.vw_valve CASCADE;
+CREATE VIEW distribution.vw_valve AS 
 SELECT  
 	valve.id                ,
 	valve.identification    ,
@@ -46,7 +46,7 @@ SELECT
 	FROM distribution.valve
 	INNER JOIN      distribution.vl_valve_type     ON valve.id_type      = vl_valve_type.id
 	INNER JOIN      distribution.vl_valve_function ON valve.id_function  = vl_valve_function.id
-	LEFT OUTER JOIN distribution.node           ON valve.id_node         = node.id       
-	LEFT OUTER JOIN distribution.district       ON valve.id_district     = district.id       
-	LEFT OUTER JOIN distribution.pressurezone   ON valve.id_pressurezone = pressurezone.id;
+	LEFT OUTER JOIN distribution.od_node           ON valve.id_node         = node.id       
+	LEFT OUTER JOIN distribution.od_district       ON valve.id_district     = district.id       
+	LEFT OUTER JOIN distribution.od_pressurezone   ON valve.id_pressurezone = pressurezone.id;
 	

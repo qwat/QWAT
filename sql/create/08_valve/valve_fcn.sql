@@ -7,7 +7,7 @@
 
 
 /* count pipes for a valve */
-CREATE OR REPLACE FUNCTION distribution.pipe_count_valve(integer) RETURNS integer AS
+CREATE OR REPLACE FUNCTION distribution.od_pipe_count_valve(integer) RETURNS integer AS
 $BODY$
 	DECLARE
 		pipe_id ALIAS for $1;
@@ -18,11 +18,11 @@ $BODY$
 	END
 $BODY$
 LANGUAGE 'plpgsql';
-COMMENT ON FUNCTION distribution.pipe_count_valve(integer) IS 'Count the number of valves related to a given pipe.';
+COMMENT ON FUNCTION distribution.od_pipe_count_valve(integer) IS 'Count the number of valves related to a given pipe.';
 
 
 /* is a pipe closed */
-CREATE OR REPLACE FUNCTION distribution.pipe_isClosed(integer) RETURNS boolean AS
+CREATE OR REPLACE FUNCTION distribution.od_pipe_isClosed(integer) RETURNS boolean AS
 $BODY$
 	DECLARE
 		pipe_id ALIAS for $1;
@@ -33,7 +33,7 @@ $BODY$
 	END
 $BODY$
 LANGUAGE 'plpgsql';
-COMMENT ON FUNCTION distribution.pipe_count_valve(integer) IS 'Determine if a pipe is closed by a valve or not.';
+COMMENT ON FUNCTION distribution.od_pipe_count_valve(integer) IS 'Determine if a pipe is closed by a valve or not.';
 
   
 

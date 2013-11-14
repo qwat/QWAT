@@ -29,7 +29,7 @@ ALTER TABLE distribution.wateringoutput ADD CONSTRAINT wateringoutput_pkey PRIMA
 
 /* Constraints */
 /* id_type */
-ALTER TABLE distribution.wateringoutput ADD CONSTRAINT wateringoutput_id_distributor  FOREIGN KEY (id_distributor)  REFERENCES distribution.distributor(id)      MATCH FULL  ; CREATE INDEX fki_wateringoutput_id_distributor  ON distribution.wateringoutput(id_distributor) ;
+ALTER TABLE distribution.wateringoutput ADD CONSTRAINT wateringoutput_id_distributor  FOREIGN KEY (id_distributor)  REFERENCES distribution.od_distributor(id)      MATCH FULL  ; CREATE INDEX fki_wateringoutput_id_distributor  ON distribution.wateringoutput(id_distributor) ;
 ALTER TABLE distribution.wateringoutput ADD CONSTRAINT wateringoutput_id_status       FOREIGN KEY (id_status)       REFERENCES distribution.vl_status(id)           MATCH FULL  ; CREATE INDEX fki_wateringoutput_id_status       ON distribution.wateringoutput(id_status)      ;
 
 

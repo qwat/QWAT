@@ -6,25 +6,25 @@
 
 
 /* CREATE TABLE */
-DROP TABLE IF EXISTS distribution.printmap CASCADE;
-CREATE TABLE distribution.printmap (id serial NOT NULL);
-COMMENT ON TABLE distribution.printmap IS 'This table is used for polygons for predefined printable maps. shortname would be used as label string, and long_mame would be used in the print composer.';
+DROP TABLE IF EXISTS distribution.od_printmap CASCADE;
+CREATE TABLE distribution.od_printmap (id serial NOT NULL);
+COMMENT ON TABLE distribution.od_printmap IS 'This table is used for polygons for predefined printable maps. shortname would be used as label string, and long_mame would be used in the print composer.';
 
 /* columns */
-ALTER TABLE distribution.printmap ADD COLUMN name         varchar(20);
-ALTER TABLE distribution.printmap ADD COLUMN id_district  smallint;
-ALTER TABLE distribution.printmap ADD COLUMN remarks      text;
-ALTER TABLE distribution.printmap ADD COLUMN version_date date;
+ALTER TABLE distribution.od_printmap ADD COLUMN name         varchar(20);
+ALTER TABLE distribution.od_printmap ADD COLUMN id_district  smallint;
+ALTER TABLE distribution.od_printmap ADD COLUMN remarks      text;
+ALTER TABLE distribution.od_printmap ADD COLUMN version_date date;
 
-ALTER TABLE distribution.printmap ADD COLUMN x_min double precision;
-ALTER TABLE distribution.printmap ADD COLUMN y_min double precision;
-ALTER TABLE distribution.printmap ADD COLUMN x_max double precision;
-ALTER TABLE distribution.printmap ADD COLUMN y_max double precision;
+ALTER TABLE distribution.od_printmap ADD COLUMN x_min double precision;
+ALTER TABLE distribution.od_printmap ADD COLUMN y_min double precision;
+ALTER TABLE distribution.od_printmap ADD COLUMN x_max double precision;
+ALTER TABLE distribution.od_printmap ADD COLUMN y_max double precision;
 
 /* geometry */
 SELECT AddGeometryColumn('distribution', 'printmap', 'geometry', 21781, 'POLYGON', 2);
-CREATE INDEX printmap_geoidx ON distribution.printmap USING GIST ( geometry ); 
+CREATE INDEX printmap_geoidx ON distribution.od_printmap USING GIST ( geometry ); 
 
 /* Constraints */
-ALTER TABLE distribution.printmap ADD CONSTRAINT print_pkey PRIMARY KEY (id);
-ALTER TABLE distribution.printmap ADD CONSTRAINT printmap_id_district FOREIGN KEY (id_district) REFERENCES distribution.district (id) MATCH SIMPLE ; CREATE INDEX fki_printmap_id_district ON distribution.printmap(id);
+ALTER TABLE distribution.od_printmap ADD CONSTRAINT print_pkey PRIMARY KEY (id);
+ALTER TABLE distribution.od_printmap ADD CONSTRAINT printmap_id_district FOREIGN KEY (id_district) REFERENCES distribution.od_district (id) MATCH SIMPLE ; CREATE INDEX fki_printmap_id_district ON distribution.od_printmap(id);

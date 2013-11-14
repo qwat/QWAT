@@ -7,8 +7,8 @@
 
 
 
-DROP VIEW IF EXISTS distribution.valve_schema CASCADE;		
-CREATE VIEW distribution.valve_schema AS 
+DROP VIEW IF EXISTS distribution.od_valve_schema CASCADE;		
+CREATE VIEW distribution.od_valve_schema AS 
 	SELECT  
 		valve.id , 
 		valve.identification,
@@ -44,14 +44,14 @@ CREATE VIEW distribution.valve_schema AS
 		FROM distribution.valve
 		INNER JOIN distribution.vl_valve_type     ON valve.id_function = vl_valve_type.id
 		INNER JOIN distribution.vl_valve_function ON valve.id_function = vl_valve_function.id
-		LEFT OUTER JOIN distribution.node         ON valve.id_node         = node.id       
-		LEFT OUTER JOIN distribution.district     ON valve.id_district     = district.id       
-		LEFT OUTER JOIN distribution.pressurezone ON valve.id_pressurezone = pressurezone.id
+		LEFT OUTER JOIN distribution.od_node         ON valve.id_node         = node.id       
+		LEFT OUTER JOIN distribution.od_district     ON valve.id_district     = district.id       
+		LEFT OUTER JOIN distribution.od_pressurezone ON valve.id_pressurezone = pressurezone.id
 		WHERE valve._schema_visible IS TRUE;
 		
 		
 CREATE OR REPLACE RULE valve_update_alternative AS
-	ON UPDATE TO distribution.valve_schema DO INSTEAD
+	ON UPDATE TO distribution.od_valve_schema DO INSTEAD
 		UPDATE distribution.valve SET 
 			geometry_schematic = NEW.geometry
 		WHERE id = NEW.id;

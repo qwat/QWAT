@@ -25,14 +25,14 @@ SELECT distribution.geom_tool_point('subscriber',false,false,false,false,false);
 /* CONSTRAINTS */
 ALTER TABLE distribution.subscriber ADD CONSTRAINT subscriber_id_type  FOREIGN KEY (id_type)   REFERENCES distribution.vl_subscriber_type (id) MATCH FULL  ; CREATE INDEX fki_id_type   ON distribution.subscriber(id_type)        ;
 ALTER TABLE distribution.subscriber ADD CONSTRAINT pipe_id_status      FOREIGN KEY (id_status) REFERENCES distribution.vl_status(id)           MATCH FULL  ; CREATE INDEX fki_id_status ON distribution.subscriber(id_status)	  	;
-ALTER TABLE distribution.subscriber ADD CONSTRAINT subscriber_id_pipe  FOREIGN KEY (id_pipe)   REFERENCES distribution.pipe (id)            MATCH SIMPLE; CREATE INDEX fki_id_pipe   ON distribution.subscriber(id_pipe)        ;
+ALTER TABLE distribution.subscriber ADD CONSTRAINT subscriber_id_pipe  FOREIGN KEY (id_pipe)   REFERENCES distribution.od_pipe (id)            MATCH SIMPLE; CREATE INDEX fki_id_pipe   ON distribution.subscriber(id_pipe)        ;
 
 
 /* Trigger */
 CREATE OR REPLACE FUNCTION distribution.subscriber_fullid() RETURNS trigger AS
 $BODY$
 	BEGIN
-		 UPDATE distribution.subscriber SET _identification_full = district.prefix||'_'||NEW.identification FROM distribution.district WHERE subscriber.id = NEW.id AND district.id = NEW.id_district ;
+		 UPDATE distribution.subscriber SET _identification_full = district.prefix||'_'||NEW.identification FROM distribution.od_district WHERE subscriber.id = NEW.id AND district.id = NEW.id_district ;
 		 RETURN NEW;
 	END;
 $BODY$
