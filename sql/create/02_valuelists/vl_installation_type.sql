@@ -10,7 +10,7 @@ CREATE TABLE distribution.vl_installation_type ( id integer not null, CONSTRAINT
 COMMENT ON TABLE distribution.vl_installation_type IS 'type for installation.';
 
 /* COLUMNS*/
-ALTER TABLE distribution.vl_installation_type ADD COLUMN vl_active boolean defaut true;
+ALTER TABLE distribution.vl_installation_type ADD COLUMN vl_active boolean default true;
 ALTER TABLE distribution.vl_installation_type ADD COLUMN short_en varchar(5);
 ALTER TABLE distribution.vl_installation_type ADD COLUMN short_fr varchar(5);
 ALTER TABLE distribution.vl_installation_type ADD COLUMN value_en varchar(30);

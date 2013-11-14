@@ -10,7 +10,7 @@ CREATE TABLE distribution.vl_precision (id integer not null, CONSTRAINT "precisi
 COMMENT ON TABLE distribution.vl_precision IS 'pressure vl_precision.';
 
 /* COLUMNS */
-ALTER TABLE distribution.vl_precision ADD COLUMN vl_active boolean defaut true;
+ALTER TABLE distribution.vl_precision ADD COLUMN vl_active boolean default true;
 ALTER TABLE distribution.vl_precision ADD COLUMN value_en  varchar(30) default '';
 ALTER TABLE distribution.vl_precision ADD COLUMN value_fr  varchar(30) default '';
 ALTER TABLE distribution.vl_precision ADD COLUMN code_sire smallint ;

@@ -10,7 +10,7 @@ CREATE TABLE distribution.vl_pipe_function ( id integer not null, CONSTRAINT "pi
 COMMENT ON TABLE distribution.vl_pipe_function IS 'Function for pipe. Here is determined if pipe should be visible or not in the schematic view, but this can be overidden by the pipe attribute schema_force_view.';
 
 /* COLUMNS*/
-ALTER TABLE distribution.vl_pipe_function ADD COLUMN vl_active boolean defaut true;
+ALTER TABLE distribution.vl_pipe_function ADD COLUMN vl_active boolean default true;
 ALTER TABLE distribution.vl_pipe_function ADD COLUMN value_fr varchar(30) default '';
 ALTER TABLE distribution.vl_pipe_function ADD COLUMN value_en varchar(30) default '';
 ALTER TABLE distribution.vl_pipe_function ADD COLUMN schema_visible boolean not null default true;

@@ -8,7 +8,7 @@
 DROP TABLE IF EXISTS distribution.vl_cistern CASCADE;
 CREATE TABLE distribution.vl_cistern (id integer not null, CONSTRAINT "vl_cistern_pk" PRIMARY KEY (id) );
 
-ALTER TABLE distribution.vl_cistern ADD COLUMN vl_active boolean defaut true;
+ALTER TABLE distribution.vl_cistern ADD COLUMN vl_active boolean default true;
 ALTER TABLE distribution.vl_cistern ADD COLUMN value_en varchar(30) default '' ;
 ALTER TABLE distribution.vl_cistern ADD COLUMN value_fr varchar(30) default '' ;
 

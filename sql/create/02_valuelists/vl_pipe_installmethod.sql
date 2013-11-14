@@ -11,7 +11,7 @@ CREATE TABLE distribution.vl_pipe_installmethod (id integer not null, CONSTRAINT
 COMMENT ON TABLE distribution.vl_pipe_installmethod IS 'Installation methods.';
 
 /* COLUMNS */
-ALTER TABLE distribution.vl_pipe_installmethod ADD COLUMN vl_active boolean defaut true;
+ALTER TABLE distribution.vl_pipe_installmethod ADD COLUMN vl_active boolean default true;
 ALTER TABLE distribution.vl_pipe_installmethod ADD COLUMN value_en varchar(30) default '';
 ALTER TABLE distribution.vl_pipe_installmethod ADD COLUMN value_fr varchar(30) default '';
 

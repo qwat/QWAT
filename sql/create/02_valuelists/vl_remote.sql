@@ -9,7 +9,7 @@ DROP TABLE IF EXISTS distribution.vl_remote CASCADE;
 CREATE TABLE distribution.vl_remote (id integer not nullCONSTRAINT "vl_remote_pk" PRIMARY KEY (id) );
 
 /* COLUMNS */
-ALTER TABLE distribution.vl_remote ADD COLUMN vl_active boolean defaut true;
+ALTER TABLE distribution.vl_remote ADD COLUMN vl_active boolean default true;
 ALTER TABLE distribution.vl_remote ADD COLUMN value_fr varchar(30) default '' ;
 ALTER TABLE distribution.vl_remote ADD COLUMN value_en varchar(30) default '' ;
 

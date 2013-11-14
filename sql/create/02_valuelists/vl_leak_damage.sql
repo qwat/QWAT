@@ -10,7 +10,7 @@ CREATE TABLE distribution.vl_leak_damage ( id integer not null, CONSTRAINT "vl_l
 COMMENT ON TABLE distribution.vl_leak_damage IS 'Damages to leak';
 
 /* COLUMNS*/
-ALTER TABLE distribution.vl_leak_damage ADD COLUMN vl_active boolean defaut true;
+ALTER TABLE distribution.vl_leak_damage ADD COLUMN vl_active boolean default true;
 ALTER TABLE distribution.vl_leak_damage ADD COLUMN value_fr VARCHAR(30) default '';
 ALTER TABLE distribution.vl_leak_damage ADD COLUMN value_en VARCHAR(30) default '';
 

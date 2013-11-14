@@ -10,7 +10,7 @@ DROP TABLE IF EXISTS distribution.vl_pipe_protection CASCADE;
 CREATE TABLE distribution.vl_pipe_protection (id integer not null, CONSTRAINT "vl_pipe_protection_pk" PRIMARY KEY (id) );
 COMMENT ON TABLE distribution.vl_pipe_protection IS 'Pipe prtoection details.';
 
-ALTER TABLE distribution.vl_pipe_protection ADD COLUMN vl_active boolean defaut true;
+ALTER TABLE distribution.vl_pipe_protection ADD COLUMN vl_active boolean default true;
 ALTER TABLE distribution.vl_pipe_protection ADD COLUMN value_en varchar(30) default '';
 ALTER TABLE distribution.vl_pipe_protection ADD COLUMN value_fr varchar(30) default '';
 

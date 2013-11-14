@@ -11,7 +11,7 @@ CREATE TABLE distribution.vl_valve_function ( id integer not null, CONSTRAINT "v
 COMMENT ON TABLE distribution.vl_valve_function IS 'Types of valve';
 
 /* COLUMNS*/
-ALTER TABLE distribution.vl_valve_function ADD COLUMN vl_active boolean defaut true;
+ALTER TABLE distribution.vl_valve_function ADD COLUMN vl_active boolean default true;
 ALTER TABLE distribution.vl_valve_function ADD COLUMN value_en VARCHAR(30) default '';
 ALTER TABLE distribution.vl_valve_function ADD COLUMN value_fr VARCHAR(30) default '';
 ALTER TABLE distribution.vl_valve_function ADD COLUMN short_fr VARCHAR(5);
