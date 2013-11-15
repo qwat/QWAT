@@ -13,7 +13,7 @@ $BODY$
 		pipe_id ALIAS for $1;
 		valve_count integer;
 	BEGIN
-		SELECT COUNT(id) FROM distribution.valve WHERE id_pipe = pipe_id INTO valve_count;
+		SELECT COUNT(id) FROM distribution.od_valve WHERE id_pipe = pipe_id INTO valve_count;
 		RETURN valve_count ;
 	END
 $BODY$
@@ -28,7 +28,7 @@ $BODY$
 		pipe_id ALIAS for $1;
 		isClosed boolean;
 	BEGIN
-		SELECT bool_or(closed) FROM distribution.valve WHERE id_pipe = pipe_id INTO isClosed;
+		SELECT bool_or(closed) FROM distribution.od_valve WHERE id_pipe = pipe_id INTO isClosed;
 		RETURN isClosed ;
 	END
 $BODY$

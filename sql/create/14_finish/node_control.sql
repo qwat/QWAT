@@ -7,9 +7,9 @@ CREATE OR REPLACE VIEW distribution.vw_node_control AS
 	/* Node with no pipe/valve connected */
 	SELECT 'Node with no pipe/valve connected' AS problem, id, 'node id' AS comment 
 		FROM distribution.od_node 
-		WHERE node.id NOT IN (SELECT DISTINCT(id_node_a) FROM distribution.od_pipe) 
-		AND   node.id NOT IN (SELECT DISTINCT(id_node_b) FROM distribution.od_pipe)
-		/*AND   node.id NOT IN (SELECT DISTINCT(id_node) FROM distribution.valve)*/
+		WHERE od_node.id NOT IN (SELECT DISTINCT(id_node_a) FROM distribution.od_pipe) 
+		AND   od_node.id NOT IN (SELECT DISTINCT(id_node_b) FROM distribution.od_pipe)
+		/*AND   node.id NOT IN (SELECT DISTINCT(id_node) FROM distribution.od_valve)*/
 	UNION
 	/* Pipe with unreferenced node*/
 	/*SELECT 'Pipe with unreferenced node' AS problem, id, 'pipe id' AS comment
@@ -21,7 +21,7 @@ CREATE OR REPLACE VIEW distribution.vw_node_control AS
 	/* Valve with unreferenced node*/
 	/*
 	SELECT 'Valve with unreferenced node' AS problem, id, 'valve id' AS comment
-		FROM distribution.valve 
+		FROM distribution.od_valve 
 		WHERE id_node NOT IN (SELECT id FROM distribution.od_node) 
 	UNION
 	*/

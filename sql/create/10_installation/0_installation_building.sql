@@ -6,23 +6,22 @@
 
 
 /* CREATE TABLE */
-DROP TABLE IF EXISTS distribution.installation_building CASCADE;
-CREATE TABLE distribution.installation_building (id serial NOT NULL);
-COMMENT ON TABLE distribution.installation_building IS 'This table is used to define the buildings of installation.';
-ALTER TABLE distribution.installation_building ADD CONSTRAINT print_pkey PRIMARY KEY (id);
+DROP TABLE IF EXISTS distribution.od_installation_building CASCADE;
+CREATE TABLE distribution.od_installation_building (id serial NOT NULL, CONSTRAINT installation_building_pk PRIMARY KEY (id) );
+COMMENT ON TABLE distribution.od_installation_building IS 'This table is used to define the buildings of installation.';
 
 /* columns */
-ALTER TABLE distribution.installation_building ADD COLUMN name            varchar(50);
-ALTER TABLE distribution.installation_building ADD COLUMN id_type         smallint;
-ALTER TABLE distribution.installation_building ADD COLUMN _displayname_en varchar(50);
-ALTER TABLE distribution.installation_building ADD COLUMN _displayname_fr varchar(50);
+ALTER TABLE distribution.od_installation_building ADD COLUMN name            varchar(50);
+ALTER TABLE distribution.od_installation_building ADD COLUMN id_type         smallint;
+ALTER TABLE distribution.od_installation_building ADD COLUMN _displayname_en varchar(50);
+ALTER TABLE distribution.od_installation_building ADD COLUMN _displayname_fr varchar(50);
 
 /* geometry */
-SELECT AddGeometryColumn('distribution', 'installation_building', 'geometry', 21781, 'MULTIPOLYGON', 2);
-CREATE INDEX installation_building_geoidx ON distribution.installation_building USING GIST ( geometry ); 
+SELECT AddGeometryColumn('distribution', 'od_installation_building', 'geometry', 21781, 'MULTIPOLYGON', 2);
+CREATE INDEX installation_building_geoidx ON distribution.od_installation_building USING GIST ( geometry ); 
 
 /* Constraints */
-ALTER TABLE distribution.installation_building ADD CONSTRAINT installation_id_type FOREIGN KEY (id_type) REFERENCES distribution.vl_installation_type(id) MATCH FULL; CREATE INDEX fki_installation_id_type ON distribution.installation_building(id_type)        ;
+ALTER TABLE distribution.od_installation_building ADD CONSTRAINT installation_id_type FOREIGN KEY (id_type) REFERENCES distribution.vl_installation_type(id) MATCH FULL; CREATE INDEX fki_installation_id_type ON distribution.od_installation_building(id_type)        ;
 
 
 /* TRIGGERS */
@@ -40,6 +39,6 @@ CREATE OR REPLACE FUNCTION distribution.installation_building_trigger_fcn() RETU
 ' LANGUAGE 'plpgsql';
 
 CREATE TRIGGER installation_building_trigger 
-        AFTER INSERT OR UPDATE OF id_type ON distribution.installation_building 
+        AFTER INSERT OR UPDATE OF id_type ON distribution.od_installation_building 
         FOR EACH ROW
         EXECUTE PROCEDURE distribution.installation_building_trigger_fcn();

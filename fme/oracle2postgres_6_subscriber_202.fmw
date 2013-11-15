@@ -1171,7 +1171,7 @@
 #! </FEATURE_TYPE>
 #! <FEATURE_TYPE
 #! IS_SOURCE="false"
-#! NODE_NAME="distribution.subscriber"
+#! NODE_NAME="distribution.od_subscriber"
 #! IS_EDITABLE="true"
 #! IDENTIFIER="40"
 #! FEAT_GEOMTYPE="&lt;NO_GEOMETRY&gt;"
@@ -3108,7 +3108,7 @@ FACTORY_DEF * TestFactory    FACTORY_NAME AttributeFilter_3_BlankFilter    INPUT
 FACTORY_DEF * TeeFactory   FACTORY_NAME "AttributeFilter_3 <UNFILTERED> Output Nuker"   INPUT FEATURE_TYPE AttributeFilter_3_<UNFILTERED>
 # -------------------------------------------------------------------------
 
-FACTORY_DEF * TeeFactory    FACTORY_NAME "AttributeFilter_3_<BLANK> -> distribution.subscriber Correlator"    INPUT FEATURE_TYPE AttributeFilter_3_<BLANK>    OUTPUT FEATURE_TYPE __GO_TO_FINAL_OUTPUT_ROUTER__       @Reproject("EPSG:21781","EPSG:21781")       @Transform(FME_GENERIC,POSTGIS)       @SupplyAttributes(__wb_out_feat_type__,distribution.subscriber)
+FACTORY_DEF * TeeFactory    FACTORY_NAME "AttributeFilter_3_<BLANK> -> distribution.od_subscriber Correlator"    INPUT FEATURE_TYPE AttributeFilter_3_<BLANK>    OUTPUT FEATURE_TYPE __GO_TO_FINAL_OUTPUT_ROUTER__       @Reproject("EPSG:21781","EPSG:21781")       @Transform(FME_GENERIC,POSTGIS)       @SupplyAttributes(__wb_out_feat_type__,distribution.od_subscriber)
 # -------------------------------------------------------------------------
 
 FACTORY_DEF * TeeFactory    FACTORY_NAME "AttributeFilter_3_6 -> distribution.od_meter Correlator"    INPUT FEATURE_TYPE AttributeFilter_3_6    OUTPUT FEATURE_TYPE __GO_TO_FINAL_OUTPUT_ROUTER__       @Reproject("EPSG:21781","EPSG:21781")       @Transform(FME_GENERIC,POSTGIS)       @SupplyAttributes(__wb_out_feat_type__,distribution.od_meter)
@@ -3128,4 +3128,4 @@ FACTORY_DEF * TeeFactory   INPUT FEATURE_TYPE __NUKEME__
 # -------------------------------------------------------------------------
 POSTGIS_1_DEF distribution.od_meter   postgis_type                 postgis_geometry   postgis_mode                 INHERIT_FROM_WRITER   postgis_spatial_column_type  geometry   postgis_spatial_column       geometry   postgis_srid                 INHERIT_FROM_WRITER   postgis_drop_table           NO   postgis_truncate_table       YES   postgis_create_with_oids     NO   postgis_create_gist_index    YES   postgis_vacuum_analyze       YES   postgis_allow_serial_writing NO   id_pipe                      int8   parcel                       char(30)   client_identification        int8   remarks                      text   id_district                  int4
 # -------------------------------------------------------------------------
-POSTGIS_1_DEF distribution.subscriber   postgis_type                 postgis_geometry   postgis_mode                 INHERIT_FROM_WRITER   postgis_spatial_column_type  geometry   postgis_spatial_column       geometry   postgis_srid                 INHERIT_FROM_WRITER   postgis_drop_table           NO   postgis_truncate_table       YES   postgis_create_with_oids     NO   postgis_create_gist_index    YES   postgis_vacuum_analyze       YES   postgis_allow_serial_writing NO   id_type                      int8   id_pipe                      int8   parcel                       char(30)   client_identification        int8   remarks                      text   id_district                  int4
+POSTGIS_1_DEF distribution.od_subscriber   postgis_type                 postgis_geometry   postgis_mode                 INHERIT_FROM_WRITER   postgis_spatial_column_type  geometry   postgis_spatial_column       geometry   postgis_srid                 INHERIT_FROM_WRITER   postgis_drop_table           NO   postgis_truncate_table       YES   postgis_create_with_oids     NO   postgis_create_gist_index    YES   postgis_vacuum_analyze       YES   postgis_allow_serial_writing NO   id_type                      int8   id_pipe                      int8   parcel                       char(30)   client_identification        int8   remarks                      text   id_district                  int4

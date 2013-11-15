@@ -8,7 +8,7 @@
 
 
 DROP TABLE IF EXISTS distribution.vl_visible;
-CREATE TABLE distribution.vl_visible ( id integer not null, CONSTRAINT "vl_visible_pk" PRIMARY KEY (x) );
+CREATE TABLE distribution.vl_visible ( id integer not null, CONSTRAINT "vl_visible_pk" PRIMARY KEY (id) );
 COMMENT ON TABLE distribution.vl_visible IS 'Table for editing in qgis tri state boolean (NULL/True/False) by using value relation.';
 
 /* COLUMNS */

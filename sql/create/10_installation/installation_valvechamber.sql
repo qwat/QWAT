@@ -6,7 +6,7 @@
 
 /* CREATE TABLE */
 DROP TABLE IF EXISTS distribution.od_installation_valvechamber CASCADE;
-CREATE TABLE distribution.od_installation_valvechamber (id serial NOT NULL);
+CREATE TABLE distribution.od_installation_valvechamber (id serial NOT NULL, CONSTRAINT installation_valvechamber_pk PRIMARY KEY (id) );
 SELECT setval('distribution.od_installation_valvechamber_id_seq', 100, true);
 COMMENT ON TABLE distribution.od_installation_valvechamber IS '';
 
@@ -32,10 +32,7 @@ ALTER TABLE distribution.od_installation_valvechamber ADD COLUMN meter          
 
 /* geometry */
 /*                                 (table_name,                 is_node, create_node, create_schematic, get_pipe, auto_district)*/
-SELECT distribution.geom_tool_point('installation_valvechamber',true,    true,        true,             false,    true);
-
-/* primary key */
-ALTER TABLE distribution.od_installation_valvechamber ADD CONSTRAINT installation_valvechamber_pkey PRIMARY KEY (id);
+SELECT distribution.geom_tool_point('od_installation_valvechamber',true,    true,        true,             false,    true);
 
 /* Constraints */
 ALTER TABLE distribution.od_installation_valvechamber ADD CONSTRAINT installation_valvechamber_id_status      FOREIGN KEY (id_status)      REFERENCES distribution.vl_status(id)    MATCH FULL;   CREATE INDEX fki_installation_valvechamber_id_status      ON distribution.od_installation_valvechamber(id_status)      ;

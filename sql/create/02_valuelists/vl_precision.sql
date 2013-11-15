@@ -15,9 +15,6 @@ ALTER TABLE distribution.vl_precision ADD COLUMN value_en  varchar(30) default '
 ALTER TABLE distribution.vl_precision ADD COLUMN value_fr  varchar(30) default '';
 ALTER TABLE distribution.vl_precision ADD COLUMN code_sire smallint ;
 
-/* ADD CONSTRAINTS */
-ALTER TABLE distribution.vl_precision ADD CONSTRAINT precision_vl_code UNIQUE (vl_code);
-
 /* VALUES */
 INSERT INTO distribution.vl_precision (id,code_sire,value_en,value_fr) VALUES (1101,1, 'Unprecised',  'Imprécis');    /*TB: IP => 1 */
 INSERT INTO distribution.vl_precision (id,code_sire,value_en,value_fr) VALUES (1102,0, 'Precised',    'Précis');      /*TB: P  => 2 */

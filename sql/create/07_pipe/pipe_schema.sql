@@ -16,16 +16,16 @@ view pipe_schema               join with pipe_view to get pipe properties
 DROP VIEW IF EXISTS distribution.vw_pipe_schema_visibleitems CASCADE;
 CREATE VIEW distribution.vw_pipe_schema_visibleitems AS 
 	SELECT 	
-		pipe.id,
-		pipe.id_parent,
-		pipe._length2d,
-		pipe._length3d,
-		pipe.tunnel_or_bridge,
-		pipe.geometry_schematic::geometry(LineString,21781) AS geometry,
-		pipe._valve_count,
-		pipe._valve_closed
+		od_pipe.id,
+		od_pipe.id_parent,
+		od_pipe._length2d,
+		od_pipe._length3d,
+		od_pipe.tunnel_or_bridge,
+		od_pipe.geometry_schematic::geometry(LineString,21781) AS geometry,
+		od_pipe._valve_count,
+		od_pipe._valve_closed
 	FROM distribution.od_pipe
-	INNER JOIN distribution.vl_status ON pipe.id_status = vl_status.id
+	INNER JOIN distribution.vl_status ON od_pipe.id_status = vl_status.id
 	WHERE _schema_visible IS TRUE
 	AND vl_status.active IS TRUE;
 COMMENT ON VIEW distribution.vw_pipe_schema_visibleitems IS 'visible pipe in the schematic view (before merge)';
@@ -100,34 +100,34 @@ Join with pipe_view to get pipe properties
 DROP VIEW IF EXISTS distribution.vw_pipe_schema ;
 CREATE VIEW distribution.vw_pipe_schema AS
 	SELECT	
-			pipe.id				               ,
-			pipe.id_function                   ,
-			pipe.id_installmethod              ,
-			pipe.id_material                   ,
-			pipe.id_distributor                ,
-			pipe.id_precision                  ,
-			pipe.id_protection                 ,
-			pipe.id_status                     ,
-			pipe.id_pressurezone               ,
-			pipe.id_label_visible                  ,
-			pipe.id_labelschema_visible           ,
-			pipe.year                          ,
-			pipe.pressure_nominal              ,
-			pipe.folder                        ,
-			pipe.remarks                       , 
-			pipe.id_printmap                   ,
-			pipe._printmaps                    ,
-			pipe.id_district                   ,
-			pipe._districts                    ,
-			pipe_schema_merged._length2d       ,
-			pipe_schema_merged._length3d       ,
-			pipe_schema_merged.number_of_pipe  ,
-			pipe_schema_merged.tunnel_or_bridge,
-			pipe_schema_merged._valve_count    ,
-			pipe_schema_merged._valve_closed   ,
-			pipe_schema_merged.geometry::geometry(LineString,21781) AS geometry
+			od_pipe.id				               ,
+			od_pipe.id_function                   ,
+			od_pipe.id_installmethod              ,
+			od_pipe.id_material                   ,
+			od_pipe.id_distributor                ,
+			od_pipe.id_precision                  ,
+			od_pipe.id_protection                 ,
+			od_pipe.id_status                     ,
+			od_pipe.id_pressurezone               ,
+			od_pipe.id_label_visible                  ,
+			od_pipe.id_labelschema_visible           ,
+			od_pipe.year                          ,
+			od_pipe.pressure_nominal              ,
+			od_pipe.folder                        ,
+			od_pipe.remarks                       , 
+			od_pipe.id_printmap                   ,
+			od_pipe._printmaps                    ,
+			od_pipe.id_district                   ,
+			od_pipe._districts                    ,
+			vw_pipe_schema_merged._length2d       ,
+			vw_pipe_schema_merged._length3d       ,
+			vw_pipe_schema_merged.number_of_pipe  ,
+			vw_pipe_schema_merged.tunnel_or_bridge,
+			vw_pipe_schema_merged._valve_count    ,
+			vw_pipe_schema_merged._valve_closed   ,
+			vw_pipe_schema_merged.geometry::geometry(LineString,21781) AS geometry
 	  FROM distribution.vw_pipe_schema_merged
-	 INNER JOIN distribution.od_pipe ON pipe.id = pipe_schema_merged.id;
+	 INNER JOIN distribution.od_pipe ON od_pipe.id = vw_pipe_schema_merged.id;
 COMMENT ON VIEW distribution.vw_pipe_schema IS 'Final view for schema';
 
 
@@ -148,7 +148,7 @@ CREATE VIEW distribution.vw_pipe_schema_node AS
 		END AS _slope
 	FROM
 		( SELECT	
-			pipe_schema.*,
+			vw_pipe_schema.*,
 			distribution.od_node_get_id(ST_StartPoint(geometry),true) AS id_node_a,
 			distribution.od_node_get_id(ST_EndPoint(  geometry),true) AS id_node_b	
 			FROM distribution.vw_pipe_schema 

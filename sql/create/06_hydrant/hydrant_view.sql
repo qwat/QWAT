@@ -9,45 +9,45 @@
 DROP VIEW IF EXISTS distribution.vw_hydrant CASCADE;
 CREATE VIEW distribution.vw_hydrant AS 
 	SELECT  
-		hydrant.id             ,
-		hydrant.identification ,
-		hydrant.id_distributor ,
-		hydrant.id_status      ,
-		hydrant.id_provider    ,
-		hydrant.year           ,
-		hydrant.model          ,
-		hydrant.underground    ,
-		hydrant.altitude_real  ,
-		hydrant.remarks        ,
-		hydrant.pressure_static   ,
-		hydrant.pressure_dynamic  ,
-		hydrant.flow              ,
-		hydrant.observation_date  ,
-		hydrant.observation_source,
-		hydrant.id_node        ,
-		hydrant.id_district    ,
-		hydrant.id_pressurezone,
-		hydrant.id_printmap    ,
-		hydrant._printmaps     ,
-		hydrant._districts     ,
-		hydrant.geometry::geometry(Point,21781),
-		distributor.name           AS _distributor,
-		vl_status.value_fr         AS _status,
-		vl_status.active           AS _status_active,
-		hydrant_provider.name      AS _provider,
-		node.altitude_dtm          AS _altitude_dtm,
-		district.name              AS _district,
-		district.shortname         AS _district_shortname,
-		pressurezone.name          AS _pressurezone,
-		pressurezone.shortname     AS _pressurezone_shortname,
-		pressurezone.colorcode     AS _pressurezone_colorcode
-		FROM distribution.hydrant
-		INNER JOIN distribution.od_distributor           ON hydrant.id_distributor  = distributor.id
-		INNER JOIN distribution.vl_status             ON hydrant.id_status       = vl_status.id
-		LEFT OUTER JOIN distribution.vl_hydrant_provider ON hydrant.id_provider     = hydrant_provider.id
-		LEFT OUTER JOIN distribution.od_node             ON hydrant.id_node         = node.id       
-		LEFT OUTER JOIN distribution.od_district         ON hydrant.id_district     = district.id       
-		LEFT OUTER JOIN distribution.od_pressurezone     ON hydrant.id_pressurezone = pressurezone.id;
+		od_hydrant.id             ,
+		od_hydrant.identification ,
+		od_hydrant.id_distributor ,
+		od_hydrant.id_status      ,
+		od_hydrant.id_provider    ,
+		od_hydrant.year           ,
+		od_hydrant.model          ,
+		od_hydrant.underground    ,
+		od_hydrant.altitude_real  ,
+		od_hydrant.remarks        ,
+		od_hydrant.pressure_static   ,
+		od_hydrant.pressure_dynamic  ,
+		od_hydrant.flow              ,
+		od_hydrant.observation_date  ,
+		od_hydrant.observation_source,
+		od_hydrant.id_node        ,
+		od_hydrant.id_district    ,
+		od_hydrant.id_pressurezone,
+		od_hydrant.id_printmap    ,
+		od_hydrant._printmaps     ,
+		od_hydrant._districts     ,
+		od_hydrant.geometry::geometry(Point,21781),
+		od_distributor.name       AS _distributor,
+		vl_status.value_fr        AS _status,
+		vl_status.active          AS _status_active,
+		vl_hydrant_provider.name  AS _provider,
+		od_node.altitude_dtm      AS _altitude_dtm,
+		od_district.name          AS _district,
+		od_district.shortname     AS _district_shortname,
+		od_pressurezone.name      AS _pressurezone,
+		od_pressurezone.shortname AS _pressurezone_shortname,
+		od_pressurezone.colorcode AS _pressurezone_colorcode
+		FROM distribution.od_hydrant
+		INNER JOIN distribution.od_distributor           ON od_hydrant.id_distributor  = od_distributor.id
+		INNER JOIN distribution.vl_status                ON od_hydrant.id_status       = vl_status.id
+		LEFT OUTER JOIN distribution.vl_hydrant_provider ON od_hydrant.id_provider     = vl_hydrant_provider.id
+		LEFT OUTER JOIN distribution.od_node             ON od_hydrant.id_node         = od_node.id       
+		LEFT OUTER JOIN distribution.od_district         ON od_hydrant.id_district     = od_district.id       
+		LEFT OUTER JOIN distribution.od_pressurezone     ON od_hydrant.id_pressurezone = od_pressurezone.id;
 /*----------------!!!---!!!----------------*/
 /* Comment */
 COMMENT ON VIEW distribution.vw_hydrant IS 'View for hydrant. This view is editable (a rule exists to forwad changes to the table).';

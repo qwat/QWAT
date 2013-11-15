@@ -6,7 +6,7 @@
 
 /* Cistern types */
 DROP TABLE IF EXISTS distribution.vl_remote CASCADE;
-CREATE TABLE distribution.vl_remote (id integer not nullCONSTRAINT "vl_remote_pk" PRIMARY KEY (id) );
+CREATE TABLE distribution.vl_remote (id integer not null, CONSTRAINT "vl_remote_pk" PRIMARY KEY (id) );
 
 /* COLUMNS */
 ALTER TABLE distribution.vl_remote ADD COLUMN vl_active boolean default true;

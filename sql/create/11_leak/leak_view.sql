@@ -19,9 +19,9 @@ CREATE VIEW distribution.od_leak_view AS
 		repair          ,
 		geometry::geometry(Point,21781)
 	FROM distribution.od_leak
-	INNER      JOIN distribution.vl_leak_type   ON leak.id_type   = vl_leak_type.id
-	LEFT OUTER JOIN distribution.vl_leak_cause  ON leak.id_cause  = vl_leak_cause.id
-	INNER      JOIN distribution.vl_leak_damage ON leak.id_damage = vl_leak_damage.id;
+	INNER      JOIN distribution.vl_leak_type   ON od_leak.id_type   = vl_leak_type.id
+	LEFT OUTER JOIN distribution.vl_leak_cause  ON od_leak.id_cause  = vl_leak_cause.id
+	INNER      JOIN distribution.vl_leak_damage ON od_leak.id_damage = vl_leak_damage.id;
 
 
 

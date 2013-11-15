@@ -43,7 +43,7 @@ $BODY$
 		intersects      boolean                  ;
 	BEGIN
 		/* determine if the node is under an object (hydrant, valve, etc.) */
-		IF node_id IN (SELECT id_node FROM distribution.valve) THEN
+		IF node_id IN (SELECT id_node FROM distribution.od_valve) THEN
 			type := 'valve';
 			is_under_object := true;
 		ELSEIF node_id IN (
@@ -56,10 +56,10 @@ $BODY$
 				) THEN
 			type := 'installation';
 			is_under_object := true;
-		ELSEIF node_id IN (SELECT id_node FROM distribution.wateringoutput) THEN
+		ELSEIF node_id IN (SELECT id_node FROM distribution.od_wateringoutput) THEN
 			type := 'wateringoutput';
 			is_under_object := true;
-		ELSEIF node_id IN (SELECT id_node FROM distribution.hydrant) THEN
+		ELSEIF node_id IN (SELECT id_node FROM distribution.od_hydrant) THEN
 			type := 'hydrant';
 			is_under_object := true;
 		END IF;

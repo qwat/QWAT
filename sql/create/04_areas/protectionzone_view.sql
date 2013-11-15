@@ -4,50 +4,21 @@
 	SQL file :: protection view
 */
 
-
-
 DROP VIEW IF EXISTS distribution.vw_protectionzone CASCADE;
 CREATE VIEW distribution.vw_protectionzone AS 
 	SELECT 
-		protectionzone.id			   ,
-		protectionzone.id_type         ,
-		protectionzone.name            ,
-		protectionzone.validated       ,
-		protectionzone.date            ,
-		protectionzone.agent           ,
-		protectionzone.geometry::geometry(MultiPolygon,21781),	
-		protectionzone_type.shortname  AS _type     ,
-		protectionzone_type.name       AS _type_long
+		od_protectionzone.id         ,
+		od_protectionzone.id_type    ,
+		od_protectionzone.name       ,
+		od_protectionzone.validated  ,
+		od_protectionzone.date       ,
+		od_protectionzone.agent      ,
+		od_protectionzone.geometry::geometry(MultiPolygon,21781),	
+		vl_protectionzone_type.short_fr AS _type     ,
+		vl_protectionzone_type.value_fr AS _typelong
 		FROM distribution.od_protectionzone
-		INNER JOIN distribution.vl_protectionzone_type ON protectionzone.id_type = protectionzone_type.id;
+		INNER JOIN distribution.vl_protectionzone_type ON od_protectionzone.id_type = vl_protectionzone_type.id;
 /* Comment */	
-COMMENT ON VIEW distribution.vw_protectionzone IS 'View for protectionzone. This view is editable (a rule exists to forward changes to the table).';
-
-
---/*----------------!!!---!!!----------------*/
---/* INSERT,UPDATE,DELETE RULES */
---CREATE OR REPLACE RULE protectionzone_update AS
---	ON UPDATE TO distribution.vw_protectionzone DO INSTEAD
---		UPDATE distribution.od_protectionzone SET 
---			id_type    = NEW.id_type  ,
---			name       = NEW.name     ,
---			validated  = NEW.validated,
---			date       = NEW.date     ,
---			agent      = NEW.agent    ,
---			geometry   = NEW.geometry
---		WHERE id = NEW.id;
---CREATE OR REPLACE RULE protectionzone_insert AS
---	ON INSERT TO distribution.vw_protectionzone DO INSTEAD
---		INSERT INTO distribution.od_protectionzone 
---			(    id_type,    name,    validated,    date,    agent,    geometry)
---		VALUES
---			(NEW.id_type,NEW.name,NEW.validated,NEW.date,NEW.agent,NEW.geometry);
---CREATE OR REPLACE RULE protectionzone_delete AS
---	ON DELETE TO distribution.vw_protectionzone DO INSTEAD
---		DELETE FROM distribution.od_protectionzone WHERE id = OLD.id;
---/* Comments */	
---COMMENT ON RULE protectionzone_update IS 'Rule to forward changes for protectionzone_view to the table protectionzone.';
---COMMENT ON RULE protectionzone_insert IS 'Rule to forward insert of protectionzone_view to the table protectionzone.';
---COMMENT ON RULE protectionzone_delete IS 'Rule to forward deletion of protectionzone_view to the table protectionzone.';
+COMMENT ON VIEW distribution.vw_protectionzone IS 'View for protectionzone. This view is not editable.';
 
 

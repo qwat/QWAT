@@ -6,7 +6,7 @@
 
 /* CREATE TABLE */
 DROP TABLE IF EXISTS distribution.od_installation_treatment CASCADE;
-CREATE TABLE distribution.od_installation_treatment (id serial NOT NULL);
+CREATE TABLE distribution.od_installation_treatment (id serial NOT NULL, CONSTRAINT installation_treatment_pk PRIMARY KEY (id) );
 SELECT setval('distribution.od_installation_treatment_id_seq', 100, true);
 COMMENT ON TABLE distribution.od_installation_treatment IS 'storage treatments. These are related to installations and are made of cisterns';
 
@@ -39,10 +39,7 @@ ALTER TABLE distribution.od_installation_treatment ADD COLUMN treatment_capacity
 
 /* geometry */
 /*                                 (table_name,              is_node, create_node, create_schematic, get_pipe, auto_district)*/
-SELECT distribution.geom_tool_point('installation_treatment',true,    true,        true,             false,    true);
-
-/* primary key */
-ALTER TABLE distribution.od_installation_treatment ADD CONSTRAINT installation_treatment_pkey PRIMARY KEY (id);
+SELECT distribution.geom_tool_point('od_installation_treatment',true,    true,        true,             false,    true);
 
 /* Constraints */
 ALTER TABLE distribution.od_installation_treatment ADD CONSTRAINT installation_treatment_id_status       FOREIGN KEY (id_status)       REFERENCES distribution.vl_status(id)    MATCH FULL;   CREATE INDEX fki_installation_treatment_id_status      ON distribution.od_installation_treatment(id_status)      ;

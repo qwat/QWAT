@@ -4,51 +4,25 @@
 	SQL file :: samplingpoint view
 */
 
-
-
 DROP VIEW IF EXISTS distribution.vw_samplingpoint CASCADE;
 CREATE VIEW distribution.vw_samplingpoint AS 
 	SELECT  
-		samplingpoint.id             ,
-		samplingpoint.identification        ,
-		samplingpoint.id_district    ,
-		samplingpoint.id_printmap    ,
-		samplingpoint.id_pressurezone,
-		samplingpoint._printmaps     ,
-		samplingpoint._districts     ,
-		samplingpoint.remarks        ,
-		samplingpoint.geometry::geometry(Point,21781),
-		district.name              AS _district,
-		pressurezone.name          AS _pressurezone,
-		pressurezone.shortname     AS _pressurezone_shortname,
-		pressurezone.colorcode     AS _pressurezone_colorcode
+		od_samplingpoint.id             ,
+		od_samplingpoint.identification        ,
+		od_samplingpoint.id_district    ,
+		od_samplingpoint.id_printmap    ,
+		od_samplingpoint.id_pressurezone,
+		od_samplingpoint._printmaps     ,
+		od_samplingpoint._districts     ,
+		od_samplingpoint.remarks        ,
+		od_samplingpoint.geometry::geometry(Point,21781),
+		od_district.name              AS _district,
+		od_pressurezone.name          AS _pressurezone,
+		od_pressurezone.shortname     AS _pressurezone_shortname,
+		od_pressurezone.colorcode     AS _pressurezone_colorcode
 		FROM distribution.od_samplingpoint
-		LEFT OUTER JOIN distribution.od_district      ON samplingpoint.id_district     = district.id       
-		LEFT OUTER JOIN  distribution.od_pressurezone ON samplingpoint.id_pressurezone = pressurezone.id;
+		LEFT OUTER JOIN distribution.od_district      ON od_samplingpoint.id_district     = od_district.id       
+		LEFT OUTER JOIN  distribution.od_pressurezone ON od_samplingpoint.id_pressurezone = od_pressurezone.id;
 /*----------------!!!---!!!----------------*/
 /* Comment */
-COMMENT ON VIEW distribution.vw_samplingpoint IS 'View for samplingpoint. This view is editable (a rule exists to forwad changes to the table).';
-
---/*----------------!!!---!!!----------------*/
---/* INSERT,UPDATE,DELETE RULES */
---CREATE OR REPLACE RULE samplingpoint_update AS
---	ON UPDATE TO distribution.vw_samplingpoint DO INSTEAD
---		UPDATE distribution.od_samplingpoint SET 
---			identification      = NEW.identification ,
---			remarks   = NEW.remarks 
---		WHERE id = NEW.id;
---CREATE OR REPLACE RULE samplingpoint_insert AS
---	ON INSERT TO distribution.vw_samplingpoint DO INSTEAD
---		INSERT INTO distribution.od_samplingpoint 
---			(    identification,    remarks,    geometry)     
---		VALUES
---			(NEW.identification,NEW.remarks,NEW.geometry);
---CREATE OR REPLACE RULE samplingpoint_delete AS
---	ON DELETE TO distribution.vw_samplingpoint DO INSTEAD
---		DELETE FROM distribution.od_samplingpoint WHERE id = OLD.id;
---/* Comments */	
---COMMENT ON RULE samplingpoint_update IS 'Rule to forward changes for samplingpoint_view to the table samplingpoint.';
---COMMENT ON RULE samplingpoint_insert IS 'Rule to forward insert of samplingpoint_view to the table samplingpoint.';
---COMMENT ON RULE samplingpoint_delete IS 'Rule to forward deletion of samplingpoint_view to the table samplingpoint.';
-
-
+COMMENT ON VIEW distribution.vw_samplingpoint IS 'View for samplingpoint. This view is not editable.';

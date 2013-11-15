@@ -7,11 +7,11 @@
 
 /* CREATE TABLE */
 DROP TABLE IF EXISTS distribution.od_leak CASCADE;
-CREATE TABLE distribution.od_leak (id serial NOT NULL);
+CREATE TABLE distribution.od_leak (id serial NOT NULL, CONSTRAINT vl_leak_pk PRIMARY KEY (id) );
 COMMENT ON TABLE distribution.od_leak IS 'pipe leaks';
 
 /* geometry */
-SELECT distribution.geom_tool_point('leak', false, false, false, true, true);
+SELECT distribution.geom_tool_point('od_leak', false, false, false, true, true);
 
 /* columns */
 ALTER TABLE distribution.od_leak ADD COLUMN id_type        integer;
@@ -24,9 +24,6 @@ ALTER TABLE distribution.od_leak ADD COLUMN address        text;
 ALTER TABLE distribution.od_leak ADD COLUMN pipe_replaced  boolean;
 ALTER TABLE distribution.od_leak ADD COLUMN description    text;
 ALTER TABLE distribution.od_leak ADD COLUMN repair         text;
-
-/* primary key */
-ALTER TABLE distribution.od_leak ADD CONSTRAINT vl_leak_pkey PRIMARY KEY (id);
 
 /* constraints */
 ALTER TABLE distribution.od_leak ADD CONSTRAINT vl_leak_id_type   FOREIGN KEY (id_type)   REFERENCES distribution.vl_leak_type(id)   MATCH FULL;   CREATE INDEX fki_vl_leak_id_type   ON distribution.od_leak(id_type)  ;

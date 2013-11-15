@@ -6,7 +6,7 @@
 
 /* create */
 DROP TABLE IF EXISTS distribution.od_pipe CASCADE;
-CREATE TABLE distribution.od_pipe (id serial NOT NULL);
+CREATE TABLE distribution.od_pipe (id serial NOT NULL, CONSTRAINT pipe_pk PRIMARY KEY (id) );
 COMMENT ON TABLE distribution.od_pipe IS 'Table for pipe. This should not be used for editing/viewing, as a more complete view (pipe_view) exists.';
 SELECT setval('distribution.od_pipe_id_seq', 35000, true);
 
@@ -20,8 +20,8 @@ ALTER TABLE distribution.od_pipe ADD COLUMN id_precision           integer not n
 ALTER TABLE distribution.od_pipe ADD COLUMN id_protection          integer not null;                             /* id_protection        FK */
 ALTER TABLE distribution.od_pipe ADD COLUMN id_status              integer not null;                             /* id_status            FK */
 ALTER TABLE distribution.od_pipe ADD COLUMN id_watertype           integer not null;                             /* id_watertype         FK */
-ALTER TABLE distribution.od_pipe ADD COLUMN id_label_visible       integer default 2;                            /* label_view           FK */
-ALTER TABLE distribution.od_pipe ADD COLUMN id_labelschema_visible integer default 2;                            /* label_schema_visible FK */
+ALTER TABLE distribution.od_pipe ADD COLUMN id_label_visible       boolean default null;                         /* label_view           FK */
+ALTER TABLE distribution.od_pipe ADD COLUMN id_labelschema_visible boolean default null;                         /* label_schema_visible FK */
 ALTER TABLE distribution.od_pipe ADD COLUMN labelremark            varchar(150);                                 /* labelemark              */
 ALTER TABLE distribution.od_pipe ADD COLUMN labelremark_schema     boolean default false;                        /* labelremark_schema      */
 ALTER TABLE distribution.od_pipe ADD COLUMN year                   smallint CHECK (year > 1800 AND year < 2100); /* year                    */
@@ -33,26 +33,25 @@ ALTER TABLE distribution.od_pipe ADD COLUMN _valve_count           smallint defa
 ALTER TABLE distribution.od_pipe ADD COLUMN _valve_closed          boolean default NULL;                         /* _valve_closed           */
 
 /* schema view */
-SELECT distribution.enable_schemaview( 'pipe', 'vl_pipe_function', 'id_function' );
+SELECT distribution.enable_schemaview( 'od_pipe', 'vl_pipe_function', 'id_function' );
 
 /* geometry */
-SELECT distribution.geom_tool_line('pipe');
+SELECT distribution.geom_tool_line('od_pipe');
 
 /* old columns */
 ALTER TABLE distribution.od_pipe ADD COLUMN coating_internal_material_id character(20);
 ALTER TABLE distribution.od_pipe ADD COLUMN coating_external_material_id character(20);
 
 /* Constraints */
-ALTER TABLE distribution.od_pipe ADD CONSTRAINT pipe_pkey PRIMARY KEY (id);
-ALTER TABLE distribution.od_pipe ADD CONSTRAINT pipe_id_parent              FOREIGN KEY (id_parent)              REFERENCES distribution.od_pipe (id)                 MATCH SIMPLE ; CREATE INDEX fki_pipe_id_parent              ON distribution.od_pipe(id_parent);
-ALTER TABLE distribution.od_pipe ADD CONSTRAINT pipe_id_function            FOREIGN KEY (id_function)            REFERENCES distribution.vl_pipe_function(id)      MATCH FULL   ; CREATE INDEX fki_pipe_id_function            ON distribution.od_pipe(id_function);
-ALTER TABLE distribution.od_pipe ADD CONSTRAINT pipe_id_installmethod       FOREIGN KEY (id_installmethod)       REFERENCES distribution.vl_pipe_installmethod(id) MATCH FULL   ; CREATE INDEX fki_pipe_id_installmethod       ON distribution.od_pipe(id_installmethod);
-ALTER TABLE distribution.od_pipe ADD CONSTRAINT pipe_id_material            FOREIGN KEY (id_material)            REFERENCES distribution.vl_pipe_material(id)      MATCH FULL   ; CREATE INDEX fki_pipe_id_material            ON distribution.od_pipe(id_material);
-ALTER TABLE distribution.od_pipe ADD CONSTRAINT pipe_id_distributor         FOREIGN KEY (id_distributor)         REFERENCES distribution.od_distributor(id)           MATCH FULL   ; CREATE INDEX fki_pipe_id_distributor         ON distribution.od_pipe(id_distributor);
-ALTER TABLE distribution.od_pipe ADD CONSTRAINT pipe_id_precision           FOREIGN KEY (id_precision)           REFERENCES distribution.vl_precision(id)          MATCH FULL   ; CREATE INDEX fki_pipe_id_precision           ON distribution.od_pipe(id_precision);
-ALTER TABLE distribution.od_pipe ADD CONSTRAINT pipe_id_protection          FOREIGN KEY (id_protection)          REFERENCES distribution.vl_pipe_protection(id)    MATCH SIMPLE ; CREATE INDEX fki_pipe_id_protection          ON distribution.od_pipe(id_protection);
-ALTER TABLE distribution.od_pipe ADD CONSTRAINT pipe_id_status              FOREIGN KEY (id_status)              REFERENCES distribution.vl_status(id)             MATCH FULL   ; CREATE INDEX fki_pipe_id_status              ON distribution.od_pipe(id_status);
-ALTER TABLE distribution.od_pipe ADD CONSTRAINT pipe_id_watertype           FOREIGN KEY (id_watertype)           REFERENCES distribution.vl_watertype(id)          MATCH FULL   ; CREATE INDEX fki_pipe_id_watertype           ON distribution.od_pipe(id_watertype);
+ALTER TABLE distribution.od_pipe ADD CONSTRAINT pipe_id_parent              FOREIGN KEY (id_parent)              REFERENCES distribution.od_pipe (id)              MATCH SIMPLE ; CREATE INDEX fki_pipe_id_parent        ON distribution.od_pipe(id_parent);
+ALTER TABLE distribution.od_pipe ADD CONSTRAINT pipe_id_function            FOREIGN KEY (id_function)            REFERENCES distribution.vl_pipe_function(id)      MATCH FULL   ; CREATE INDEX fki_pipe_id_function      ON distribution.od_pipe(id_function);
+ALTER TABLE distribution.od_pipe ADD CONSTRAINT pipe_id_installmethod       FOREIGN KEY (id_installmethod)       REFERENCES distribution.vl_pipe_installmethod(id) MATCH FULL   ; CREATE INDEX fki_pipe_id_installmethod ON distribution.od_pipe(id_installmethod);
+ALTER TABLE distribution.od_pipe ADD CONSTRAINT pipe_id_material            FOREIGN KEY (id_material)            REFERENCES distribution.vl_pipe_material(id)      MATCH FULL   ; CREATE INDEX fki_pipe_id_material      ON distribution.od_pipe(id_material);
+ALTER TABLE distribution.od_pipe ADD CONSTRAINT pipe_id_distributor         FOREIGN KEY (id_distributor)         REFERENCES distribution.od_distributor(id)        MATCH FULL   ; CREATE INDEX fki_pipe_id_distributor   ON distribution.od_pipe(id_distributor);
+ALTER TABLE distribution.od_pipe ADD CONSTRAINT pipe_id_precision           FOREIGN KEY (id_precision)           REFERENCES distribution.vl_precision(id)          MATCH FULL   ; CREATE INDEX fki_pipe_id_precision     ON distribution.od_pipe(id_precision);
+ALTER TABLE distribution.od_pipe ADD CONSTRAINT pipe_id_protection          FOREIGN KEY (id_protection)          REFERENCES distribution.vl_pipe_protection(id)    MATCH SIMPLE ; CREATE INDEX fki_pipe_id_protection    ON distribution.od_pipe(id_protection);
+ALTER TABLE distribution.od_pipe ADD CONSTRAINT pipe_id_status              FOREIGN KEY (id_status)              REFERENCES distribution.vl_status(id)             MATCH FULL   ; CREATE INDEX fki_pipe_id_status        ON distribution.od_pipe(id_status);
+ALTER TABLE distribution.od_pipe ADD CONSTRAINT pipe_id_watertype           FOREIGN KEY (id_watertype)           REFERENCES distribution.vl_watertype(id)          MATCH FULL   ; CREATE INDEX fki_pipe_id_watertype     ON distribution.od_pipe(id_watertype);
 ALTER TABLE distribution.od_pipe ADD CONSTRAINT pipe_id_label_visible       FOREIGN KEY (id_label_visible)       REFERENCES distribution.vl_visible(vl_code) MATCH FULL   ; CREATE INDEX fki_pipe_id_label_visible       ON distribution.od_pipe(id_label_visible);
 ALTER TABLE distribution.od_pipe ADD CONSTRAINT pipe_id_labelschema_visible FOREIGN KEY (id_labelschema_visible) REFERENCES distribution.vl_visible(vl_code) MATCH FULL   ; CREATE INDEX fki_pipe_id_labelschema_visible ON distribution.od_pipe(id_labelschema_visible);
 

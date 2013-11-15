@@ -21,11 +21,11 @@ ALTER TABLE distribution.od_node ADD COLUMN _status_active boolean       default
 ALTER TABLE distribution.od_node ADD COLUMN _under_object  boolean       default false;
 
 /* geometry */
-SELECT AddGeometryColumn('distribution', 'node', 'geometry', 21781, 'POINT', 2)  ;
+SELECT AddGeometryColumn('distribution', 'od_node', 'geometry', 21781, 'POINT', 2)  ;
 CREATE INDEX node_geoidx ON distribution.od_node USING GIST ( geometry );
 
 /* constraints */
-ALTER TABLE distribution.od_node ADD CONSTRAINT node_pkey PRIMARY KEY (id);
+ALTER TABLE distribution.od_node ADD CONSTRAINT node_pk PRIMARY KEY (id);
 
 
 /*----------------!!!---!!!----------------*/

@@ -4,61 +4,31 @@
 	SQL file :: subscriber view
 */
 
-
-
 DROP VIEW IF EXISTS distribution.vw_subscriber CASCADE;
 CREATE VIEW distribution.vw_subscriber AS 
 	SELECT 
-		subscriber.id			   ,
-		subscriber.id_type         ,
-		subscriber.id_pipe         ,
-		subscriber.identification       ,
-		subscriber._identification_full ,
-		subscriber.parcel          ,
-		subscriber.id_district     ,
-		subscriber.id_pressurezone ,
-		subscriber.id_printmap     ,
-		subscriber._printmaps      ,
-		subscriber._districts      ,
-		subscriber.geometry::geometry(Point,21781),	
+		od_subscriber.id			   ,
+		od_subscriber.id_type         ,
+		od_subscriber.id_pipe         ,
+		od_subscriber.identification       ,
+		od_subscriber._identification_full ,
+		od_subscriber.parcel          ,
+		od_subscriber.id_district     ,
+		od_subscriber.id_pressurezone ,
+		od_subscriber.id_printmap     ,
+		od_subscriber._printmaps      ,
+		od_subscriber._districts      ,
+		od_subscriber.geometry::geometry(Point,21781),	
 		vl_subscriber_type.value_fr AS _type     ,
-		district.name               AS _district ,
-		pressurezone.name           AS _pressurezone,
-		pressurezone.shortname      AS _pressurezone_shortname,
-		pressurezone.colorcode      AS _pressurezone_colorcode
-		FROM distribution.subscriber
-		INNER      JOIN distribution.vl_subscriber_type ON subscriber.id_type         = vl_subscriber_type.id 
-		LEFT OUTER JOIN distribution.od_district           ON subscriber.id_district     = district.id
-		LEFT OUTER JOIN distribution.od_pressurezone       ON subscriber.id_pressurezone = pressurezone.id;
+		od_district.name            AS _district ,
+		od_pressurezone.name        AS _pressurezone,
+		od_pressurezone.shortname   AS _pressurezone_shortname,
+		od_pressurezone.colorcode   AS _pressurezone_colorcode
+		FROM distribution.od_subscriber
+		INNER      JOIN distribution.vl_subscriber_type ON od_subscriber.id_type         = vl_subscriber_type.id 
+		LEFT OUTER JOIN distribution.od_district        ON od_subscriber.id_district     = od_district.id
+		LEFT OUTER JOIN distribution.od_pressurezone    ON od_subscriber.id_pressurezone = od_pressurezone.id;
 /* Comment */	
-COMMENT ON VIEW distribution.vw_subscriber IS 'View for subscriber. This view is editable (a rule exists to forward changes to the table).';
-
-
---/*----------------!!!---!!!----------------*/
---/* INSERT,UPDATE,DELETE RULES */
---
---CREATE OR REPLACE RULE subscriber_update AS
---	ON UPDATE TO distribution.vw_subscriber DO INSTEAD
---		UPDATE distribution.subscriber SET 
---			id_type     = NEW.id_type                      ,
---			id_pipe     = NULLIF(NEW.id_pipe,0)::integer   ,
---			id_client   = NEW.id_client                    ,
---			id_district = NEW.id_district                  ,
---			parcel      = NEW.parcel                       ,
---			geometry    = NEW.geometry
---		WHERE id = NEW.id;
---CREATE OR REPLACE RULE subscriber_insert AS
---	ON INSERT TO distribution.vw_subscriber DO INSTEAD
---		INSERT INTO distribution.subscriber 
---			(    id_type,    id_pipe,    id_client,    id_district,    parcel,    geometry)
---		VALUES
---			(NEW.id_type,NEW.id_pipe,NEW.id_client,NEW.id_district,NEW.parcel,NEW.geometry);
---CREATE OR REPLACE RULE subscriber_delete AS
---	ON DELETE TO distribution.vw_subscriber DO INSTEAD
---		DELETE FROM distribution.subscriber WHERE id = OLD.id;
---/* Comments */	
---COMMENT ON RULE subscriber_update IS 'Rule to forward changes for subscriber_view to the table subscriber.';
---COMMENT ON RULE subscriber_insert IS 'Rule to forward insert of subscriber_view to the table subscriber.';
---COMMENT ON RULE subscriber_delete IS 'Rule to forward deletion of subscriber_view to the table subscriber.';
+COMMENT ON VIEW distribution.vw_subscriber IS 'View for subscriber. This view is not editable ';
 
 

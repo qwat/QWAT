@@ -7,7 +7,7 @@
 
 /* CREATE TABLE */
 DROP TABLE IF EXISTS distribution.od_dimension CASCADE;
-CREATE TABLE distribution.od_dimension (id serial NOT NULL);
+CREATE TABLE distribution.od_dimension (id serial NOT NULL, CONSTRAINT dimension_pk PRIMARY KEY (id) );
 COMMENT ON TABLE distribution.od_dimension IS 'dimension arcs displays measures done on the field. For example: distances to buildings corner';
 
 /* columns */
@@ -17,12 +17,9 @@ ALTER TABLE distribution.od_dimension ADD COLUMN distance_extremities double pre
 ALTER TABLE distribution.od_dimension ADD COLUMN remarks text;
 
 /* geometry */
-SELECT AddGeometryColumn('distribution','dimension','geometry',21781,'LINESTRING',2);
+SELECT AddGeometryColumn('distribution', 'od_dimension','geometry',21781,'LINESTRING',2);
 CREATE INDEX dimension_geoidx ON distribution.od_dimension USING GIST ( geometry );
 
-
-/* primary key */
-ALTER TABLE distribution.od_dimension ADD CONSTRAINT dimension_pkey PRIMARY KEY (id);
 
 /* --------- !! !! ----------*/
 /* Trigger for 2d length */

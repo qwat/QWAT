@@ -5,31 +5,25 @@
 */
 
 
-
 /* CREATE TABLE */
-DROP TABLE IF EXISTS distribution.wateringoutput CASCADE;
-CREATE TABLE distribution.wateringoutput (id serial NOT NULL);
-SELECT setval('distribution.wateringoutput_id_seq', 100, true);
-COMMENT ON TABLE distribution.wateringoutput IS 'wateringoutput.';
+DROP TABLE IF EXISTS distribution.od_wateringoutput CASCADE;
+CREATE TABLE distribution.od_wateringoutput (id serial NOT NULL, CONSTRAINT wateringoutput_pk PRIMARY KEY (id) );
+SELECT setval('distribution.od_wateringoutput_id_seq', 100, true);
+COMMENT ON TABLE distribution.od_wateringoutput IS 'wateringoutput.';
 
-/* columns */
-ALTER TABLE distribution.wateringoutput ADD COLUMN  identification  varchar (15)  ;
-ALTER TABLE distribution.wateringoutput ADD COLUMN  id_distributor  integer                 ;
-ALTER TABLE distribution.wateringoutput ADD COLUMN  id_status       integer                 ;
-ALTER TABLE distribution.wateringoutput ADD COLUMN  year smallint   CHECK (year > 1800 AND year < 2100);
-ALTER TABLE distribution.wateringoutput ADD COLUMN  altitude_real   decimal(10,3)           ;
-ALTER TABLE distribution.wateringoutput ADD COLUMN  remarks         text;
+/* COLUMNS */
+ALTER TABLE distribution.od_wateringoutput ADD COLUMN identification  varchar (15)  ;
+ALTER TABLE distribution.od_wateringoutput ADD COLUMN id_distributor  integer                 ;
+ALTER TABLE distribution.od_wateringoutput ADD COLUMN id_status       integer                 ;
+ALTER TABLE distribution.od_wateringoutput ADD COLUMN year smallint   CHECK (year > 1800 AND year < 2100);
+ALTER TABLE distribution.od_wateringoutput ADD COLUMN altitude_real   decimal(10,3)           ;
+ALTER TABLE distribution.od_wateringoutput ADD COLUMN remarks         text;
 
-/* geometry                        (table_name, is_node, create_node, create_schematic, get_pipe, auto_district)*/
-SELECT distribution.geom_tool_point('wateringoutput',  true,    true,        false,            false,    true);
+/* GEOMETRY                        (table_name, is_node, create_node, create_schematic, get_pipe, auto_district)*/
+SELECT distribution.geom_tool_point('od_wateringoutput',  true,    true,        false,            false,    true);
 
-/* primary key */
-ALTER TABLE distribution.wateringoutput ADD CONSTRAINT wateringoutput_pkey PRIMARY KEY (id);
-
-
-/* Constraints */
-/* id_type */
-ALTER TABLE distribution.wateringoutput ADD CONSTRAINT wateringoutput_id_distributor  FOREIGN KEY (id_distributor)  REFERENCES distribution.od_distributor(id)      MATCH FULL  ; CREATE INDEX fki_wateringoutput_id_distributor  ON distribution.wateringoutput(id_distributor) ;
-ALTER TABLE distribution.wateringoutput ADD CONSTRAINT wateringoutput_id_status       FOREIGN KEY (id_status)       REFERENCES distribution.vl_status(id)           MATCH FULL  ; CREATE INDEX fki_wateringoutput_id_status       ON distribution.wateringoutput(id_status)      ;
+/* CONSTRAINTS */
+ALTER TABLE distribution.od_wateringoutput ADD CONSTRAINT wateringoutput_id_distributor  FOREIGN KEY (id_distributor)  REFERENCES distribution.od_distributor(id)      MATCH FULL  ; CREATE INDEX fki_wateringoutput_id_distributor  ON distribution.od_wateringoutput(id_distributor) ;
+ALTER TABLE distribution.od_wateringoutput ADD CONSTRAINT wateringoutput_id_status       FOREIGN KEY (id_status)       REFERENCES distribution.vl_status(id)           MATCH FULL  ; CREATE INDEX fki_wateringoutput_id_status       ON distribution.od_wateringoutput(id_status)      ;
 
 

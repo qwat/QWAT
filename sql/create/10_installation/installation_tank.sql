@@ -6,7 +6,7 @@
 
 /* CREATE TABLE */
 DROP TABLE IF EXISTS distribution.od_installation_tank CASCADE;
-CREATE TABLE distribution.od_installation_tank (id serial NOT NULL);
+CREATE TABLE distribution.od_installation_tank (id serial NOT NULL, CONSTRAINT installation_tank_pk PRIMARY KEY (id) );
 SELECT setval('distribution.od_installation_tank_id_seq', 100, true);
 COMMENT ON TABLE distribution.od_installation_tank IS 'storage tanks. These are related to installations and are made of cisterns';
 
@@ -52,10 +52,7 @@ ALTER TABLE distribution.od_installation_tank ADD COLUMN _cistern2_litrepercm nu
 
 /* geometry */
 /*                                 (table_name,         is_node, create_node, create_schematic, get_pipe, auto_district)*/
-SELECT distribution.geom_tool_point('installation_tank',true,    true,        true,             false,    true);
-
-/* primary key */
-ALTER TABLE distribution.od_installation_tank ADD CONSTRAINT installation_tank_pkey PRIMARY KEY (id);
+SELECT distribution.geom_tool_point('od_installation_tank',true,    true,        true,             false,    true);
 
 /* Constraints */
 ALTER TABLE distribution.od_installation_tank ADD CONSTRAINT installation_tank_id_status       FOREIGN KEY (id_status)        REFERENCES distribution.vl_status(id)          MATCH FULL;   CREATE INDEX fki_installation_tank_id_status      ON distribution.od_installation_tank(id_status)       ;

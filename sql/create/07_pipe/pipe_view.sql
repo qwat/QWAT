@@ -9,36 +9,36 @@
 DROP VIEW IF EXISTS distribution.vw_pipe CASCADE;
 CREATE VIEW distribution.vw_pipe AS 
 	SELECT  
-		pipe.id                ,
-		pipe.id_parent         ,
-		pipe.id_function       ,
-		pipe.id_installmethod ,
-		pipe.id_material       ,
-		pipe.id_distributor    ,
-		pipe.id_precision      ,
-		pipe.id_protection     ,
-		pipe.id_status         ,
-		pipe.schema_force_view ,
-		pipe.year              ,
-		pipe.tunnel_or_bridge  ,
-		pipe.pressure_nominal  ,
-		pipe.folder            ,
-		pipe.labelremark       ,
-		pipe.remarks           ,
-		pipe._valve_count      ,
-		pipe._valve_closed     ,
-		pipe._schema_visible      ,
-		pipe.id_node_a         ,
-		pipe.id_node_b         ,
-		pipe.id_district       ,
-		pipe.id_pressurezone   ,
-		pipe.id_printmap       ,
-		pipe._length2d         ,
-		pipe._length3d         ,
-		pipe._diff_elevation   ,
-		pipe._printmaps        ,
-		pipe._districts        ,
-		pipe.geometry::geometry(LineString,21781),
+		od_pipe.id                ,
+		od_pipe.id_parent         ,
+		od_pipe.id_function       ,
+		od_pipe.id_installmethod ,
+		od_pipe.id_material       ,
+		od_pipe.id_distributor    ,
+		od_pipe.id_precision      ,
+		od_pipe.id_protection     ,
+		od_pipe.id_status         ,
+		od_pipe.schema_force_view ,
+		od_pipe.year              ,
+		od_pipe.tunnel_or_bridge  ,
+		od_pipe.pressure_nominal  ,
+		od_pipe.folder            ,
+		od_pipe.labelremark       ,
+		od_pipe.remarks           ,
+		od_pipe._valve_count      ,
+		od_pipe._valve_closed     ,
+		od_pipe._schema_visible      ,
+		od_pipe.id_node_a         ,
+		od_pipe.id_node_b         ,
+		od_pipe.id_district       ,
+		od_pipe.id_pressurezone   ,
+		od_pipe.id_printmap       ,
+		od_pipe._length2d         ,
+		od_pipe._length3d         ,
+		od_pipe._diff_elevation   ,
+		od_pipe._printmaps        ,
+		od_pipe._districts        ,
+		od_pipe.geometry::geometry(LineString,21781),
  		vl_pipe_function.value_fr          AS _function, 
  		vl_pipe_function.code_sire         AS _function_code_sire, 
 		vl_pipe_installmethod.value_fr     AS _install_method,
@@ -48,25 +48,25 @@ CREATE VIEW distribution.vw_pipe AS
 		vl_pipe_material.diameter_internal AS _material_diameter_internal,
 		vl_pipe_material.diameter_external AS _material_diameter_external,
 		vl_pipe_material.code_sire         AS _material_code_sire,
-		distributor.name            AS _distributor,
+		od_distributor.name         AS _distributor,
 		vl_precision.value_fr       AS _precision,
 		vl_pipe_protection.value_fr AS _protection,
 		vl_status.value_fr          AS _status,
 		vl_status.active            AS _status_active,
-		pressurezone.name           AS _pressurezone,
-		pressurezone.shortname      AS _pressurezone_shortname,
-		pressurezone.colorcode      AS _pressurezone_colorcode
+		od_pressurezone.name        AS _pressurezone,
+		od_pressurezone.shortname   AS _pressurezone_shortname,
+		od_pressurezone.colorcode   AS _pressurezone_colorcode
 		FROM distribution.od_pipe
-		INNER      JOIN distribution.vl_pipe_function      ON pipe.id_function      = vl_pipe_function.id
-		INNER      JOIN distribution.vl_pipe_installmethod ON pipe.id_installmethod = vl_pipe_installmethod.id
-		INNER      JOIN distribution.vl_pipe_material      ON pipe.id_material      = vl_pipe_material.id
-		INNER      JOIN distribution.od_distributor           ON pipe.id_distributor   = distributor.id
-		INNER      JOIN distribution.vl_precision          ON pipe.id_precision     = vl_precision.id
-		LEFT OUTER JOIN distribution.vl_pipe_protection    ON pipe.id_protection    = vl_pipe_protection.id
-		INNER      JOIN distribution.vl_status             ON pipe.id_status        = vl_status.id
-		LEFT OUTER JOIN distribution.od_pressurezone          ON pipe.id_pressurezone  = pressurezone.id 
-		LEFT OUTER JOIN distribution.od_node AS node_a        ON pipe.id_node_a        = node_a.id
-		LEFT OUTER JOIN distribution.od_node AS node_b        ON pipe.id_node_b        = node_b.id;
+		INNER      JOIN distribution.vl_pipe_function      ON od_pipe.id_function      = vl_pipe_function.id
+		INNER      JOIN distribution.vl_pipe_installmethod ON od_pipe.id_installmethod = vl_pipe_installmethod.id
+		INNER      JOIN distribution.vl_pipe_material      ON od_pipe.id_material      = vl_pipe_material.id
+		INNER      JOIN distribution.od_distributor        ON od_pipe.id_distributor   = od_distributor.id
+		INNER      JOIN distribution.vl_precision          ON od_pipe.id_precision     = vl_precision.id
+		LEFT OUTER JOIN distribution.vl_pipe_protection    ON od_pipe.id_protection    = vl_pipe_protection.id
+		INNER      JOIN distribution.vl_status             ON od_pipe.id_status        = vl_status.id
+		LEFT OUTER JOIN distribution.od_pressurezone       ON od_pipe.id_pressurezone  = od_pressurezone.id 
+		LEFT OUTER JOIN distribution.od_node AS node_a     ON od_pipe.id_node_a        = node_a.id
+		LEFT OUTER JOIN distribution.od_node AS node_b     ON od_pipe.id_node_b        = node_b.id;
 /*----------------!!!---!!!----------------*/
 /* Comment */
 COMMENT ON VIEW distribution.vw_pipe IS 'View for pipe. This view is not editable';
