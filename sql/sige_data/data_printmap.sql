@@ -2,9 +2,9 @@
 -- PostgreSQL database dump
 --
 
--- Dumped from database version 9.1.9
+-- Dumped from database version 9.1.10
 -- Dumped by pg_dump version 9.2.4
--- Started on 2013-11-04 14:17:55 CET
+-- Started on 2013-11-15 10:40:02 CET
 
 SET statement_timeout = 0;
 SET client_encoding = 'UTF8';
@@ -15,8 +15,8 @@ SET client_min_messages = warning;
 SET search_path = distribution, pg_catalog;
 
 --
--- TOC entry 4133 (class 0 OID 166960)
--- Dependencies: 439
+-- TOC entry 4131 (class 0 OID 215734)
+-- Dependencies: 477
 -- Data for Name: printmap; Type: TABLE DATA; Schema: distribution; Owner: sige
 --
 
@@ -2060,15 +2060,15 @@ INSERT INTO printmap (id, name, id_district, remarks, version_date, x_min, y_min
 
 
 --
--- TOC entry 4138 (class 0 OID 0)
--- Dependencies: 438
+-- TOC entry 4136 (class 0 OID 0)
+-- Dependencies: 476
 -- Name: printmap_id_seq; Type: SEQUENCE SET; Schema: distribution; Owner: sige
 --
 
 SELECT pg_catalog.setval('printmap_id_seq', 2037, true);
 
 
--- Completed on 2013-11-04 14:17:55 CET
+-- Completed on 2013-11-15 10:40:02 CET
 
 --
 -- PostgreSQL database dump complete
