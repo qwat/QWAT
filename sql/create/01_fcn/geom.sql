@@ -24,7 +24,8 @@ $BODY$
 		EXECUTE 'CREATE INDEX '||table_name||'_geoidx ON distribution.'||table_name||' USING GIST ( geometry );';
 		IF create_schematic IS TRUE THEN
 			PERFORM addGeometryColumn('distribution', table_name, 'geometry_schematic', 21781, 'POINT', 2);
-			EXECUTE 'CREATE INDEX '||table_name||'_geoidx_sch ON distribution.'||table_name||' USING GIST ( geometry_schematic );';		
+			EXECUTE 'CREATE INDEX '||table_name||'_geoidx_sch ON distribution.'||table_name||' USING GIST ( geometry_schematic );';
+			EXECUTE 'ALTER TABLE distribution.'||table_name||' ADD COLUMN _geometry_schematic_used boolean;';
 		END IF;
 				
 		/* Add constraints and indexes */
@@ -45,7 +46,7 @@ $BODY$
 			EXECUTE 'CREATE INDEX fki_'||table_name||'_id_pipe ON distribution.'||table_name||'(id_pipe);';
 		END IF;
 		
-		/* Geometric triggers */
+		/* Geometric trigger function */
 		sql_trigger := 'CREATE OR REPLACE FUNCTION distribution.'||table_name||'_geom() RETURNS TRIGGER AS
 				''
 				BEGIN
@@ -70,6 +71,7 @@ $BODY$
 		END IF;		IF create_schematic IS TRUE THEN
 			sql_trigger := sql_trigger || '
 						geometry_schematic = NEW.geometry,
+						_geometry_schematic_used = false,
 			';
 		END IF;
 		sql_trigger := sql_trigger || '
@@ -83,6 +85,7 @@ $BODY$
 		';
 		EXECUTE sql_trigger;
 		
+		/* create triggers */
 		EXECUTE 'CREATE TRIGGER '||table_name||'_geom_trigger_insert
 			AFTER INSERT ON distribution.'||table_name||'
 			FOR EACH ROW
@@ -95,6 +98,27 @@ $BODY$
 			WHEN (ST_AsBinary(NEW.geometry) <> ST_AsBinary(OLD.geometry))
 			EXECUTE PROCEDURE distribution.'||table_name||'_geom();';
 		EXECUTE 'COMMENT ON TRIGGER '||table_name||'_geom_trigger_update ON distribution.'||table_name||' IS ''Trigger: updates auto fields of the '||table_name||' after geom update.'';';
+
+		/* detect if schematic is used */
+		IF create_schematic IS TRUE THEN
+			EXECUTE '	
+				CREATE OR REPLACE FUNCTION distribution.'||table_name||'_geom_schematic() RETURNS TRIGGER AS
+					''
+					BEGIN
+						UPDATE distribution.'||table_name||' SET 
+							_geometry_schematic_used = ST_AsBinary(NEW.geometry_schematic) <> ST_AsBinary(NEW.geometry) 
+							WHERE id = NEW.id;
+						RETURN NEW;
+					END;
+					''
+					LANGUAGE ''plpgsql'';		
+			';
+			EXECUTE 'CREATE TRIGGER '||table_name||'_geom_schematic_trigger
+				AFTER UPDATE OF geometry_schematic ON distribution.'||table_name||' 
+				FOR EACH ROW
+				EXECUTE PROCEDURE distribution.'||table_name||'_geom_schematic();';
+			EXECUTE 'COMMENT ON TRIGGER '||table_name||'_geom_schematic_trigger ON distribution.'||table_name||' IS ''Trigger: when updating, check if geometry_schematic is different to fill the boolean field.'';';
+		END IF;
 	END;
 $BODY$
 LANGUAGE 'plpgsql';
@@ -120,7 +144,8 @@ $BODY$
 		EXECUTE 'ALTER TABLE distribution.'||table_name||' ADD COLUMN _diff_elevation decimal(8,2) ;';	
 		EXECUTE 'ALTER TABLE distribution.'||table_name||' ADD COLUMN _printmaps      varchar(100) ;';
 		EXECUTE 'ALTER TABLE distribution.'||table_name||' ADD COLUMN _districts      varchar(255) ;';
-			
+		EXECUTE 'ALTER TABLE distribution.'||table_name||' ADD COLUMN _geometry_schematic_used boolean;';
+		
 		/* Enables geometry */
 		PERFORM addGeometryColumn('distribution', table_name, 'geometry', 21781, 'LINESTRING', 2);
 		PERFORM addGeometryColumn('distribution', table_name, 'geometry_schematic', 21781, 'LINESTRING', 2);
@@ -137,23 +162,24 @@ $BODY$
 		EXECUTE 'CREATE INDEX fki_'||table_name||'_id_district     ON distribution.'||table_name||'(id_district);';
 		EXECUTE 'CREATE INDEX fki_'||table_name||'_id_pressurezone ON distribution.'||table_name||'(id_pressurezone);';
 		
-		/* Geometric triggers */
+		/* Geometric trigger function */
 		EXECUTE '
 			CREATE OR REPLACE FUNCTION distribution.'||table_name||'_geom() RETURNS TRIGGER AS
 				''
 				BEGIN
 					UPDATE distribution.'||table_name||' SET
-						id_node_a          = distribution.od_node_get_id(ST_StartPoint(NEW.geometry),true),
-						id_node_b          = distribution.od_node_get_id(ST_EndPoint(  NEW.geometry),true),
-						id_district        = distribution.get_district_id(NEW.geometry),
-						id_pressurezone    = distribution.get_pressurezone_id(NEW.geometry),
-						id_printmap        = distribution.get_printmap_id(NEW.geometry),
-						geometry_schematic = NEW.geometry,
-						_printmaps         = distribution.get_printmaps(NEW.geometry),
-						_districts         = distribution.get_districts(NEW.geometry),
-						_length2d          = ST_Length(NEW.geometry),
-						_length3d          = NULL,
-						_diff_elevation    = NULL
+						id_node_a                = distribution.od_node_get_id(ST_StartPoint(NEW.geometry),true),
+						id_node_b                = distribution.od_node_get_id(ST_EndPoint(  NEW.geometry),true),
+						id_district              = distribution.get_district_id(NEW.geometry),
+						id_pressurezone          = distribution.get_pressurezone_id(NEW.geometry),
+						id_printmap              = distribution.get_printmap_id(NEW.geometry),
+						geometry_schematic       = NEW.geometry,
+						_geometry_schematic_used = false,
+						_printmaps               = distribution.get_printmaps(NEW.geometry),
+						_districts               = distribution.get_districts(NEW.geometry),
+						_length2d                = ST_Length(NEW.geometry),
+						_length3d                = NULL,
+						_diff_elevation          = NULL
 						WHERE id = NEW.id ;
 					RETURN NEW;				
 				END;
@@ -161,6 +187,7 @@ $BODY$
 				LANGUAGE ''plpgsql'';		
 		';
 		
+		/* create triggers */
 		EXECUTE 'CREATE TRIGGER '||table_name||'_geom_trigger_insert
 			AFTER INSERT ON distribution.'||table_name||'
 			FOR EACH ROW
@@ -173,6 +200,27 @@ $BODY$
 			WHEN (ST_AsBinary(NEW.geometry) <> ST_AsBinary(OLD.geometry))
 			EXECUTE PROCEDURE distribution.'||table_name||'_geom();';
 		EXECUTE 'COMMENT ON TRIGGER '||table_name||'_geom_trigger_update ON distribution.'||table_name||' IS ''Trigger: updates auto fields of the '||table_name||' after geom update.'';';
+		
+		
+		/* detect if schematic is used */
+		EXECUTE '	
+			CREATE OR REPLACE FUNCTION distribution.'||table_name||'_geom_schematic() RETURNS TRIGGER AS
+				''
+				BEGIN
+					UPDATE distribution.'||table_name||' SET 
+						_geometry_schematic_used = ST_AsBinary(NEW.geometry_schematic) <> ST_AsBinary(NEW.geometry) 
+						WHERE id = NEW.id;
+					RETURN NEW;
+				END;
+				''
+				LANGUAGE ''plpgsql'';		
+		';
+		EXECUTE 'CREATE TRIGGER '||table_name||'_geom_schematic_trigger
+			AFTER UPDATE OF geometry_schematic ON distribution.'||table_name||' 
+			FOR EACH ROW
+			EXECUTE PROCEDURE distribution.'||table_name||'_geom_schematic();';
+		EXECUTE 'COMMENT ON TRIGGER '||table_name||'_geom_schematic_trigger ON distribution.'||table_name||' IS ''Trigger: when updating, check if geometry_schematic is different to fill the boolean field.'';';
+		
 	END;
 $BODY$
 LANGUAGE 'plpgsql';
