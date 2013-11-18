@@ -14,9 +14,9 @@ COMMENT ON TABLE distribution.od_leak IS 'pipe leaks';
 SELECT distribution.geom_tool_point('od_leak', false, false, false, true, true);
 
 /* columns */
-ALTER TABLE distribution.od_leak ADD COLUMN id_type        integer;
+ALTER TABLE distribution.od_leak ADD COLUMN id_type        integer not null;
 ALTER TABLE distribution.od_leak ADD COLUMN id_cause       integer;
-ALTER TABLE distribution.od_leak ADD COLUMN id_damage      integer;
+ALTER TABLE distribution.od_leak ADD COLUMN id_damage      integer not null;
 ALTER TABLE distribution.od_leak ADD COLUMN detection_date date;
 ALTER TABLE distribution.od_leak ADD COLUMN repair_date    date;
 ALTER TABLE distribution.od_leak ADD COLUMN _repaired      boolean;

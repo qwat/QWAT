@@ -41,7 +41,7 @@ CREATE VIEW distribution.vw_pipe AS
 		od_pipe.geometry::geometry(LineString,21781),
  		vl_pipe_function.value_fr          AS _function, 
  		vl_pipe_function.code_sire         AS _function_code_sire, 
-		vl_pipe_installmethod.value_fr     AS _install_method,
+		vl_pipe_installmethod.value_fr     AS _installmethod,
 		vl_pipe_material._displayname_fr   AS _material_name,
 		vl_pipe_material.value_fr          AS _material_longname,
 		vl_pipe_material.diameter          AS _material_diameter,

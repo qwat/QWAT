@@ -31,7 +31,7 @@ ALTER TABLE distribution.od_meter ADD CONSTRAINT meter_id_pipe  FOREIGN KEY (id_
 CREATE OR REPLACE FUNCTION distribution.od_meter_fullid() RETURNS trigger AS
 $BODY$
 	BEGIN
-		 UPDATE distribution.od_meter SET _identification_full = district.prefix||'_'||NEW.identification FROM distribution.od_district WHERE meter.id = NEW.id AND district.id = NEW.id_district ;
+		 UPDATE distribution.od_meter SET _identification_full = od_district.prefix||'_'||NEW.identification FROM distribution.od_district WHERE od_meter.id = NEW.id AND od_district.id = NEW.id_district ;
 		 RETURN NEW;
 	END;
 $BODY$

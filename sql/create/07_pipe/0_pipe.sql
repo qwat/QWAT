@@ -17,7 +17,7 @@ ALTER TABLE distribution.od_pipe ADD COLUMN id_installmethod       integer not n
 ALTER TABLE distribution.od_pipe ADD COLUMN id_material            integer not null;                             /* id_material          FK */
 ALTER TABLE distribution.od_pipe ADD COLUMN id_distributor         integer not null;                             /* id_distributor       FK */
 ALTER TABLE distribution.od_pipe ADD COLUMN id_precision           integer not null;                             /* id_precision         FK */
-ALTER TABLE distribution.od_pipe ADD COLUMN id_protection          integer not null;                             /* id_protection        FK */
+ALTER TABLE distribution.od_pipe ADD COLUMN id_protection          integer;                                      /* id_protection        FK */
 ALTER TABLE distribution.od_pipe ADD COLUMN id_status              integer not null;                             /* id_status            FK */
 ALTER TABLE distribution.od_pipe ADD COLUMN id_watertype           integer not null;                             /* id_watertype         FK */
 ALTER TABLE distribution.od_pipe ADD COLUMN id_label_visible       boolean default null;                         /* label_view           FK */

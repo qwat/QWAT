@@ -32,7 +32,7 @@ ALTER TABLE distribution.od_subscriber ADD CONSTRAINT subscriber_id_pipe  FOREIG
 CREATE OR REPLACE FUNCTION distribution.od_subscriber_fullid() RETURNS trigger AS
 $BODY$
 	BEGIN
-		 UPDATE distribution.od_subscriber SET _identification_full = district.prefix||'_'||NEW.identification FROM distribution.od_district WHERE subscriber.id = NEW.id AND district.id = NEW.id_district ;
+		 UPDATE distribution.od_subscriber SET _identification_full = od_district.prefix||'_'||NEW.identification FROM distribution.od_district WHERE subscriber.id = NEW.id AND od_district.id = NEW.id_district ;
 		 RETURN NEW;
 	END;
 $BODY$

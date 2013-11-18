@@ -90,7 +90,7 @@ INSERT INTO distribution.od_installation_valvechamber (id, name, identification,
 -- Name: installation_valvechamber_id_seq; Type: SEQUENCE SET; Schema: distribution; Owner: sige
 --
 
-SELECT pg_catalog.setval('installation_valvechamber_id_seq', 100, true);
+SELECT pg_catalog.setval('distribution.od_installation_valvechamber_id_seq', 100, true);
 
 
 -- Completed on 2013-11-04 14:18:17 CET

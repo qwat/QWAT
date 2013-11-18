@@ -14,9 +14,9 @@ $BODY$
 		geom ALIAS FOR $1;
 		result text;
 	BEGIN
-		SELECT string_agg(district.name , ', ') INTO result
+		SELECT string_agg(od_district.name , ', ') INTO result
 			FROM  distribution.od_district
-			WHERE ST_Intersects(geom,district.geometry) IS TRUE;
+			WHERE ST_Intersects(geom,od_district.geometry) IS TRUE;
 		RETURN result;
 	END;
 $BODY$
@@ -30,9 +30,9 @@ $BODY$
 		geom ALIAS FOR $1;
 		id_district integer;
 	BEGIN
-		SELECT district.id INTO id_district
+		SELECT od_district.id INTO id_district
 			FROM  distribution.od_district
-			WHERE ST_Intersects(geom,district.geometry) IS TRUE
+			WHERE ST_Intersects(geom,od_district.geometry) IS TRUE
 			LIMIT 1;
 		RETURN id_district;
 	END;

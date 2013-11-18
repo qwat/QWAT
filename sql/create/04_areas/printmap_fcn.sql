@@ -14,9 +14,9 @@ $BODY$
 		geom ALIAS FOR $1;
 		result text;
 	BEGIN
-		SELECT string_agg(printmap.name , ', ') INTO result
+		SELECT string_agg(od_printmap.name , ', ') INTO result
 			FROM  distribution.od_printmap
-			WHERE ST_Intersects(geom,printmap.geometry) IS TRUE;
+			WHERE ST_Intersects(geom,od_printmap.geometry) IS TRUE;
 		RETURN result;
 	END;
 $BODY$
@@ -30,7 +30,7 @@ $BODY$
 	DECLARE
 		geom ALIAS FOR $1;
 	BEGIN
-		RETURN ARRAY( SELECT printmap.id FROM  distribution.od_printmap WHERE ST_Intersects(geom,printmap.geometry) IS TRUE);
+		RETURN ARRAY( SELECT od_printmap.id FROM  distribution.od_printmap WHERE ST_Intersects(geom,od_printmap.geometry) IS TRUE);
 	END;
 $BODY$
 LANGUAGE 'plpgsql';

@@ -95,7 +95,7 @@ $BODY$
 			SET _cistern1_litrepercm = lpc1,
 			    _cistern2_litrepercm = lpc2,
 				_litrepercm = COALESCE(lpc1,0)+COALESCE(lpc2,0)
-			WHERE installation_tank.id = NEW.id;
+			WHERE od_installation_tank.id = NEW.id;
 		 RETURN NEW;
 	END;
 $BODY$
