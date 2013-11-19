@@ -23,7 +23,7 @@ ALTER TABLE distribution.od_pipe ADD COLUMN id_watertype           integer not n
 ALTER TABLE distribution.od_pipe ADD COLUMN id_labelvisible        boolean default null;                         /* label_view           FK */
 ALTER TABLE distribution.od_pipe ADD COLUMN id_labelvisible_schema boolean default null;                         /* label_schema_visible FK */
 ALTER TABLE distribution.od_pipe ADD COLUMN labelremark            varchar(150);                                 /* labelemark              */
-ALTER TABLE distribution.od_pipe ADD COLUMN labelremark_schema     boolean default false;                        /* labelremark_schema      */
+ALTER TABLE distribution.od_pipe ADD COLUMN labelremark_schema     varchar(150);                                 /* labelremark_schema      */
 ALTER TABLE distribution.od_pipe ADD COLUMN year                   smallint CHECK (year > 1800 AND year < 2100); /* year                    */
 ALTER TABLE distribution.od_pipe ADD COLUMN tunnel_or_bridge       boolean default false;                        /* tunnel_or_bridge        */
 ALTER TABLE distribution.od_pipe ADD COLUMN pressure_nominal       smallint default 16;                          /* pressure_nominale       */
