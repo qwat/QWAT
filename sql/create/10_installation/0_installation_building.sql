@@ -17,8 +17,11 @@ ALTER TABLE distribution.od_installation_building ADD COLUMN _displayname_en var
 ALTER TABLE distribution.od_installation_building ADD COLUMN _displayname_fr varchar(50);
 
 /* geometry */
-SELECT AddGeometryColumn('distribution', 'od_installation_building', 'geometry', 21781, 'MULTIPOLYGON', 2);
-CREATE INDEX installation_building_geoidx ON distribution.od_installation_building USING GIST ( geometry ); 
+/* point                           (table_name,             is_node, create_node, create_schematic, get_pipe, auto_district)*/
+SELECT distribution.geom_tool_point('installation_building',true,    true,        true,             false,    true);
+/* polygon */
+SELECT AddGeometryColumn('distribution', 'od_installation_building', 'geometry_polygon', 21781, 'MULTIPOLYGON', 2);
+CREATE INDEX installation_building_geoidx ON distribution.od_installation_building USING GIST ( geometry_polygon ); 
 
 /* Constraints */
 ALTER TABLE distribution.od_installation_building ADD CONSTRAINT installation_id_type FOREIGN KEY (id_type) REFERENCES distribution.vl_installation_type(id) MATCH FULL; CREATE INDEX fki_installation_id_type ON distribution.od_installation_building(id_type)        ;
