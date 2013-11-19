@@ -20,7 +20,7 @@ ALTER TABLE distribution.od_installation_pump ADD COLUMN id_remote          smal
 ALTER TABLE distribution.od_installation_pump ADD COLUMN id_watertype       smallint not null      ;
 ALTER TABLE distribution.od_installation_pump ADD COLUMN schema_visible        boolean NOT NULL default true ;
 ALTER TABLE distribution.od_installation_pump ADD COLUMN altitude_real      decimal(10,3)          ;
-ALTER TABLE distribution.od_installation_pump ADD COLUMN remarks            text default '' ;
+ALTER TABLE distribution.od_installation_pump ADD COLUMN remark             text default '' ;
 ALTER TABLE distribution.od_installation_pump ADD COLUMN links              text                   ;
 ALTER TABLE distribution.od_installation_pump ADD COLUMN year smallint CHECK (year > 1800 AND year < 2100);
 ALTER TABLE distribution.od_installation_pump ADD COLUMN open_water_surface boolean default False  ;

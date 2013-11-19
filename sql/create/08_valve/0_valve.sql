@@ -21,7 +21,7 @@ ALTER TABLE distribution.od_valve ADD COLUMN year                   smallint CHE
 ALTER TABLE distribution.od_valve ADD COLUMN closed                 boolean       default false ;
 ALTER TABLE distribution.od_valve ADD COLUMN networkseparation      boolean       default false ;
 ALTER TABLE distribution.od_valve ADD COLUMN altitude_real          decimal(10,3)  ;
-ALTER TABLE distribution.od_valve ADD COLUMN remarks                text          default '';
+ALTER TABLE distribution.od_valve ADD COLUMN remark                 text          default '';
 ALTER TABLE distribution.od_valve ADD COLUMN id_labelvisible        boolean       default null;
 ALTER TABLE distribution.od_valve ADD COLUMN id_labelvisible_schema boolean       default null;
 ALTER TABLE distribution.od_valve ADD COLUMN labelremark            varchar(150);

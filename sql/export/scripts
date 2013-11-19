@@ -1,2 +1,2 @@
  SHP export abo sans compteurs réseau
- pgsql2shp -h 172.24.171.203 -g geometry -f subscriber -P db4wat$ -u sige sige "SELECT * FROM distribution.subscriber WHERE id_type !=6"
+ pgsql2shp -h 172.24.171.203 -g geometry -f subscriber -P db4wat$ -u sige sige "SELECT * FROM distribution.od_subscriber WHERE id_type !=6"

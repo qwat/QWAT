@@ -17,7 +17,7 @@ ALTER TABLE distribution.od_wateringoutput ADD COLUMN id_distributor  integer   
 ALTER TABLE distribution.od_wateringoutput ADD COLUMN id_status       integer                 ;
 ALTER TABLE distribution.od_wateringoutput ADD COLUMN year smallint   CHECK (year > 1800 AND year < 2100);
 ALTER TABLE distribution.od_wateringoutput ADD COLUMN altitude_real   decimal(10,3)           ;
-ALTER TABLE distribution.od_wateringoutput ADD COLUMN remarks         text;
+ALTER TABLE distribution.od_wateringoutput ADD COLUMN remark          text;
 
 /* GEOMETRY                        (table_name, is_node, create_node, create_schematic, get_pipe, auto_district)*/
 SELECT distribution.geom_tool_point('od_wateringoutput',  true,    true,        false,            false,    true);

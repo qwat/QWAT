@@ -14,7 +14,7 @@ CREATE VIEW distribution.vw_samplingpoint AS
 		od_samplingpoint.id_pressurezone,
 		od_samplingpoint._printmaps     ,
 		od_samplingpoint._districts     ,
-		od_samplingpoint.remarks        ,
+		od_samplingpoint.remark         ,
 		od_samplingpoint.geometry::geometry(Point,21781),
 		od_district.name              AS _district,
 		od_pressurezone.name          AS _pressurezone,

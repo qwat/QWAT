@@ -13,7 +13,7 @@ SELECT setval('distribution.od_samplingpoint_id_seq', 200, true);
 /* columns */
 ALTER TABLE distribution.od_samplingpoint ADD COLUMN  identification             integer       ;
 
-ALTER TABLE distribution.od_samplingpoint ADD COLUMN  remarks text;
+ALTER TABLE distribution.od_samplingpoint ADD COLUMN  remark  text;
 
 /* geometry */
 SELECT distribution.geom_tool_point('od_samplingpoint',false,false,false,false,true);

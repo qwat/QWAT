@@ -14,7 +14,7 @@ COMMENT ON TABLE distribution.od_dimension IS 'dimension arcs displays measures 
 ALTER TABLE distribution.od_dimension ADD COLUMN "type" varchar(12); /* distance or orientation*/ 
 ALTER TABLE distribution.od_dimension ADD COLUMN observation double precision;
 ALTER TABLE distribution.od_dimension ADD COLUMN distance_extremities double precision;
-ALTER TABLE distribution.od_dimension ADD COLUMN remarks text;
+ALTER TABLE distribution.od_dimension ADD COLUMN remark  text;
 
 /* geometry */
 SELECT AddGeometryColumn('distribution', 'od_dimension','geometry',21781,'LINESTRING',2);

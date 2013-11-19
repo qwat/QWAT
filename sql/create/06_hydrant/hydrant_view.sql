@@ -18,7 +18,7 @@ CREATE VIEW distribution.vw_hydrant AS
 		od_hydrant.model          ,
 		od_hydrant.underground    ,
 		od_hydrant.altitude_real  ,
-		od_hydrant.remarks        ,
+		od_hydrant.remark         ,
 		od_hydrant.pressure_static   ,
 		od_hydrant.pressure_dynamic  ,
 		od_hydrant.flow              ,

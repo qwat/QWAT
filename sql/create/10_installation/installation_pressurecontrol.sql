@@ -19,7 +19,7 @@ ALTER TABLE distribution.od_installation_pressurecontrol ADD COLUMN id_remote   
 ALTER TABLE distribution.od_installation_pressurecontrol ADD COLUMN id_watertype       smallint not null      ;
 ALTER TABLE distribution.od_installation_pressurecontrol ADD COLUMN schema_visible        boolean NOT NULL default true ;
 ALTER TABLE distribution.od_installation_pressurecontrol ADD COLUMN altitude_real      decimal(10,3)          ;
-ALTER TABLE distribution.od_installation_pressurecontrol ADD COLUMN remarks            text        default '' ;
+ALTER TABLE distribution.od_installation_pressurecontrol ADD COLUMN remark             text        default '' ;
 ALTER TABLE distribution.od_installation_pressurecontrol ADD COLUMN links              text                   ;
 ALTER TABLE distribution.od_installation_pressurecontrol ADD COLUMN year               smallint    check (year > 1800 AND year < 2100);
 ALTER TABLE distribution.od_installation_pressurecontrol ADD COLUMN open_water_surface boolean     default false  ;

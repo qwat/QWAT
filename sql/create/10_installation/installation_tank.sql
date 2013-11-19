@@ -18,7 +18,7 @@ ALTER TABLE distribution.od_installation_tank ADD COLUMN id_distributor       sm
 ALTER TABLE distribution.od_installation_tank ADD COLUMN id_remote            smallint               ;
 ALTER TABLE distribution.od_installation_tank ADD COLUMN id_watertype         smallint not null      ;
 ALTER TABLE distribution.od_installation_tank ADD COLUMN schema_visible          boolean   default true ;
-ALTER TABLE distribution.od_installation_tank ADD COLUMN remarks              text        default '' ;
+ALTER TABLE distribution.od_installation_tank ADD COLUMN remark               text        default '' ;
 ALTER TABLE distribution.od_installation_tank ADD COLUMN links                text                   ;
 ALTER TABLE distribution.od_installation_tank ADD COLUMN year                 smallint CHECK (year > 1800 AND year < 2100);
 ALTER TABLE distribution.od_installation_tank ADD COLUMN open_water_surface   boolean default False  ;

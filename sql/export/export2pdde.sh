@@ -9,21 +9,21 @@ rm $shapeoutput/*
 
 
 # save schema in a table
-#psql -h $db_address -U sige -c "DROP TABLE IF EXISTS distribution.pipe_schema_temp; CREATE TABLE distribution.pipe_schema_temp AS SELECT * FROM distribution.pipe_schema_node;"
+#psql -h $db_address -U sige -c "DROP TABLE IF EXISTS distribution.vw_pipe_schema_temp; CREATE TABLE distribution.vw_pipe_schema_temp AS SELECT * FROM distribution.vw_pipe_schema_node;"
 read -p "Press any key to continue..."
 
  # vannes
 pgsql2shp -h $db_address -g geom -f $shapeoutput/vannes -P db4wat$ -u sige sige "\
 SELECT \
- valve_view.id,                                         \
- 'VA_' || valve_view.id::varchar   AS IDTXT,            \
+ vw_valve.id,                              \
+ 'VA_' || vw_valve.id::varchar   AS IDTXT, \
  identification         AS identification,   \
  id_pipe                AS CONDUTE,          \
  id_node                AS NOEUD,            \
  closed                 AS FERMEE,           \
  diameter_nominal,                           \
  year,                                       \
- remarks,                                    \
+ remark ,                                    \
  _districts,                                 \
  geometry::geometry(Point,21781) AS geom,    \
  _function,                                  \
@@ -32,11 +32,11 @@ SELECT \
  altitude_real,                              \
  _altitude_dtm,                              \
  _district AS COMMUNNE,                      \
- _pressurezone AS ZONE_PRES,                  \
- vl_precision.value_fr          AS PRECISIO      \
- FROM distribution.valve_view  \
- INNER JOIN distribution.vl_precision ON valve_view.id_precision = vl_precision.id\
- WHERE id_function != 11 AND _schema_view IS TRUE "
+ _pressurezone AS ZONE_PRES,                 \
+ vl_precision.value_fr          AS PRECISIO  \
+ FROM distribution.vw_valve  \
+ INNER JOIN distribution.vl_precision ON vw_valve.id_precision = vl_precision.id\
+ WHERE id_function != 6105 AND _schema_visible IS TRUE "
 read -p "Press any key to continue..."
 
 # zones
@@ -45,7 +45,7 @@ SELECT                                     \
  id AS ID,                                  \
  name AS NOM,                               \
  geometry::geometry(MultiPolygon,21781) AS geom  \
-FROM distribution.pressurezone "
+FROM distribution.od_pressurezone "
 read -p "Press any key to continue..."
 
 # conduites
@@ -54,18 +54,17 @@ SELECT                                         \
  pipe_schema_temp.id,                          \
  'CO_' || pipe_schema_temp.id::varchar AS IDTXT,\
  geometry::geometry(LineString,21781) AS geom, \
- _length2d                        AS LONGU_2D,      \
- _length3d                        AS LONGU_3D,      \
- remarks                          AS REMARQUE,      \
- vl_precision.value_fr            AS PRECISIO,      \
- vl_status.value_fr               AS STATUT,        \
- vl_pipe_function.value_fr        AS FONCTION,      \
- vl_pipe_function.code_sire       AS SIRE_FONCT,    \
- vl_pipe_material._displayname_fr AS MATERIAU,      \
- vl_pipe_material.code_sire       AS SIRE_MATER,    \
+ _length2d                        AS LONGU_2D,    \
+ _length3d                        AS LONGU_3D,    \
+ remark                           AS REMARQUE,    \
+ vl_precision.value_fr            AS PRECISIO,    \
+ vl_status.value_fr               AS STATUT,      \
+ vl_pipe_function.value_fr        AS FONCTION,    \
+ vl_pipe_function.code_sire       AS SIRE_FONCT,  \
+ vl_pipe_material._displayname_fr AS MATERIAU,    \
+ vl_pipe_material.code_sire       AS SIRE_MATER,  \
  vl_pipe_material.diameter_external AS DIAM_EXTER,\
- vl_pipe_material.diameter_internal AS DIAM_INTER,\
- CASE                                          \
+ CASE                                             \
     WHEN vl_status.value_fr = 'fictif' THEN 20000 \
     ELSE vl_pipe_material.diameter_internal       \
  END AS DIAM_INT,                              \
@@ -78,7 +77,7 @@ SELECT                                         \
  NULL::varchar(10)           AS RUGOSITE,      \
  NULL::boolean               AS CALC_HYD,      \
  NULL::boolean               AS A_DESAFE       \
-FROM distribution.pipe_schema_temp \
+FROM distribution.vw_pipe_schema_temp \
 INNER      JOIN distribution.vl_pipe_function     ON pipe_schema_temp.id_function       = vl_pipe_function.id \
 INNER      JOIN distribution.vl_pipe_material     ON pipe_schema_temp.id_material       = vl_pipe_material.id \
 INNER      JOIN distribution.vl_precision         ON pipe_schema_temp.id_precision      = vl_precision.id \
@@ -97,30 +96,30 @@ SELECT                                                           \
  altitude_dtm AS ALTITUDE,                                       \
  geometry::geometry(Point,21781) AS geom                         \
 FROM distribution.node                                           \
-WHERE _schema_view IS TRUE                                       \
+WHERE _schema_visible IS TRUE                                       \
   AND _status_active IS TRUE                                     \
   AND id IN (                                                    \
     SELECT DISTINCT(id_node_a)                                   \
-    FROM distribution.pipe_schema_temp WHERE id_distributor = 1  \
+    FROM distribution.vw_pipe_schema_temp WHERE id_distributor = 1  \
     UNION SELECT DISTINCT(id_node_b)                             \
-    FROM distribution.pipe_schema_temp WHERE id_distributor = 1  \
+    FROM distribution.vw_pipe_schema_temp WHERE id_distributor = 1  \
   )                                                              \
   AND id NOT IN (                                                \
-    SELECT id_node FROM distribution.installation_pump WHERE id_node IS NOT NULL \
+    SELECT id_node FROM distribution.od_installation_pump WHERE id_node IS NOT NULL \
     UNION                                                        \
-    SELECT id_node FROM distribution.installation_tank WHERE id_node IS NOT NULL \
+    SELECT id_node FROM distribution.od_installation_tank WHERE id_node IS NOT NULL \
     UNION                                                        \
-    SELECT id_node FROM distribution.installation_source WHERE id_node IS NOT NULL \
+    SELECT id_node FROM distribution.od_installation_source WHERE id_node IS NOT NULL \
     UNION                                                        \
-    SELECT id_node FROM distribution.installation_treatment WHERE id_node IS NOT NULL \
+    SELECT id_node FROM distribution.od_installation_treatment WHERE id_node IS NOT NULL \
     UNION                                                        \
-    SELECT id_node FROM distribution.installation_pressurecontrol WHERE id_node IS NOT NULL \
+    SELECT id_node FROM distribution.od_installation_pressurecontrol WHERE id_node IS NOT NULL \
     UNION                                                        \
-    SELECT id_node FROM distribution.installation_valvechamber WHERE id_node IS NOT NULL \
+    SELECT id_node FROM distribution.od_installation_valvechamber WHERE id_node IS NOT NULL \
     UNION                                                        \
-    SELECT id_node FROM distribution.hydrant WHERE id_node IS NOT NULL \
+    SELECT id_node FROM distribution.od_hydrant WHERE id_node IS NOT NULL \
     UNION                                                        \
-    SELECT id_node FROM distribution.valve_schema WHERE id_node IS NOT NULL AND ( closed IS TRUE OR _function = 'vanne de régulation' ) \
+    SELECT id_node FROM distribution.od_valve_schema WHERE id_node IS NOT NULL AND ( closed IS TRUE OR _function = 'vanne de régulation' ) \
   )
  "
 read -p "Press any key to continue..."
@@ -135,7 +134,7 @@ SELECT                                    \
  id_node        AS NOEUD,                 \
  year           AS ANNEE,                 \
  model          AS MODELE,                \
- remarks        AS REMARQUE,              \
+ remark         AS REMARQUE,              \
  underground    AS SOUTERRAIN,            \
  geometry::geometry(Point,21781) AS geom, \
  _distributor   AS FOURNISS,              \
@@ -153,7 +152,7 @@ SELECT                                    \
  flow  AS SOUTIRAGE,                      \
  observation_date  AS CALC_DATE,          \
  observation_source  AS CALC_SOURCE       \
-FROM distribution.hydrant_view"
+FROM distribution.vw_hydrant"
 read -p "Press any key to continue..."
 
 
@@ -165,10 +164,10 @@ SELECT                                    \
  'PP_' || id::varchar   AS IDTXT,         \
  identification AS ID_SIGE               ,\
  id_pressurezone AS ZONE_PRES            ,\
- remarks        AS REMARQUE,              \
+ remark         AS REMARQUE,              \
  geometry::geometry(Point,21781) AS geom, \
  _districts      AS COMMUNNE             \
-FROM distribution.samplingpoint"
+FROM distribution.od_samplingpoint"
 read -p "Press any key to continue..."
 
 
@@ -203,7 +202,7 @@ SELECT                                     \
  id_node AS NOEUD                         ,\
   name                                    ,\
  id_distributor                           ,\
- remarks                                  ,\
+ remark                                   ,\
  year                                     ,\
  open_water_surface                       ,\
  parcel                                   ,\
@@ -244,7 +243,7 @@ installation_tank.cistern2_dimension_1 AS CUV2_DIM1                             
 installation_tank.cistern2_dimension_2 AS CUV2_DIM2                                 ,\
 installation_tank.cistern2_storage     AS CUV2_VOLU                                 ,\
 installation_tank._cistern2_litrepercm AS CUV2_LPCM                                  \
-FROM distribution.installation_tank INNER JOIN distribution.node ON installation_tank.id_node = node.id\
+FROM distribution.od_installation_tank INNER JOIN distribution.node ON installation_tank.id_node = node.id\
  WHERE id_distributor=1 AND id_status = 1"
 read -p "Press any key to continue..."
 
@@ -257,7 +256,7 @@ SELECT                                     \
  id_node AS NOEUD                         ,\
   name                                    ,\
  id_distributor                           ,\
- remarks                                  ,\
+ remark                                   ,\
  year                                     ,\
  altitude_real                            ,\
  node.altitude_dtm AS ALTI_DTM            ,\
@@ -266,19 +265,14 @@ SELECT                                     \
  eca                                      ,\
  installation_source.geometry::geometry(Point,21781) AS geom  ,\
  id_pressurezone AS ZONE_PRES            ,\
- id_type    ,                     \
- CASE                                                 \
-        WHEN id_quality = 1 THEN 'a'                  \
-        WHEN id_quality = 2 THEN 'b'                  \
-        WHEN id_quality = 3 THEN 'c'                  \
-        ELSE ''                                       \
- END AS QUALITE,                                      \
+ id_type -1 AS GENRE   ,                     \
+ id_quality -1 AS QUAL_CAPT   ,                     \
  flow_lowest  AS ETIAGE,                              \
  flow_mean    AS Q_MOY,                               \
  flow_concession  AS Q_CONCESS,                       \
  contract_end     AS FIN_CONCES,                      \
  gathering_chamber AS CHB_RASSEMB                     \
- FROM distribution.installation_source INNER JOIN distribution.node ON installation_source.id_node = node.id\
+ FROM distribution.od_installation_source INNER JOIN distribution.node ON installation_source.id_node = node.id\
  WHERE id_distributor=1 AND id_status = 1"
 read -p "Press any key to continue..."
 
@@ -291,7 +285,7 @@ SELECT                                     \
  id_node AS NOEUD                         ,\
   name                                    ,\
  id_distributor                           ,\
- remarks                                  ,\
+ remark                                   ,\
  year                                     ,\
  altitude_real                            ,\
  node.altitude_dtm AS ALTI_DTM            ,\
@@ -310,7 +304,7 @@ SELECT                                     \
  activatedcharcoal            CHARB_ACT                         ,\
  settling                     DECANTAT                          ,\
  treatment_capacity           TRAIT_CAPA                        \
-  FROM distribution.installation_treatment INNER JOIN distribution.node ON installation_treatment.id_node = node.id\
+  FROM distribution.od_installation_treatment INNER JOIN distribution.node ON installation_treatment.id_node = node.id\
   WHERE id_distributor=1 AND id_status = 1"
 read -p "Press any key to continue..."
 
@@ -323,7 +317,7 @@ SELECT                                     \
  id_node AS NOEUD                         ,\
   name                                    ,\
  id_distributor                           ,\
- remarks                                  ,\
+ remark                                   ,\
  year                                     ,\
  altitude_real                            ,\
  node.altitude_dtm AS ALTI_DTM            ,\
@@ -332,12 +326,12 @@ SELECT                                     \
  eca                                      ,\
  installation_pump.geometry::geometry(Point,21781) AS geom  ,\
  id_pressurezone AS ZONE_PRES            ,\
- installation_pump.id_type          AS TYPE               ,\
+ installation_pump.id_type -1         AS GENRE            ,\
  id_operating     AS FONCTION                             ,\
  nb_pump                                                  ,\
  rejected_flow    AS Q_REFOUL                             ,\
  manometric_height AS H_MANOMETR                          \
- FROM distribution.installation_pump  INNER JOIN distribution.node ON installation_pump.id_node = node.id\
+ FROM distribution.od_installation_pump  INNER JOIN distribution.node ON installation_pump.id_node = node.id\
  WHERE id_distributor=1 AND id_status = 1"
 read -p "Press any key to continue..."
 
@@ -350,7 +344,7 @@ SELECT                                     \
  id_node AS NOEUD                         ,\
   name                                    ,\
  id_distributor                           ,\
- remarks                                  ,\
+ remark                                   ,\
  year                                     ,\
  altitude_real                            ,\
  node.altitude_dtm AS ALTI_DTM            ,\
@@ -365,7 +359,7 @@ SELECT                                     \
         WHEN id_type = 3 THEN 'rassemblement'         \
         ELSE ''                                       \
  END AS type                                          \
- FROM distribution.installation_pressurecontrol  INNER JOIN distribution.node ON installation_pressurecontrol.id_node = node.id\
+ FROM distribution.od_installation_pressurecontrol  INNER JOIN distribution.node ON installation_pressurecontrol.id_node = node.id\
  WHERE id_distributor=1 AND id_status = 1"
 read -p "Press any key to continue..."
 
@@ -378,7 +372,7 @@ SELECT                                     \
  id_node AS NOEUD                         ,\
   name                                    ,\
  id_distributor                           ,\
- remarks                                  ,\
+ remark                                   ,\
  year                                     ,\
  altitude_real                            ,\
  node.altitude_dtm AS ALTI_DTM            ,\
@@ -388,8 +382,7 @@ SELECT                                     \
  installation_valvechamber.geometry::geometry(Point,21781) AS geom  ,\
  id_pressurezone AS ZONE_PRES             ,\
  networkseparation  AS SEPAR_RESO         ,\
- closed             AS FERME              ,\
  meter              AS COMPTEUR            \
- FROM distribution.installation_valvechamber  INNER JOIN distribution.node ON installation_valvechamber.id_node = node.id\
+ FROM distribution.od_installation_valvechamber  INNER JOIN distribution.node ON installation_valvechamber.id_node = node.id\
  WHERE id_distributor=1 AND id_status = 1"
 read -p "Press any key to continue..."

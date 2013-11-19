@@ -17,7 +17,7 @@ ALTER TABLE distribution.od_subscriber ADD COLUMN id_pipe integer;									/* id
 ALTER TABLE distribution.od_subscriber ADD COLUMN identification varchar (12);
 ALTER TABLE distribution.od_subscriber ADD COLUMN _identification_full varchar (16);
 ALTER TABLE distribution.od_subscriber ADD COLUMN parcel varchar (12) ;
-ALTER TABLE distribution.od_subscriber ADD COLUMN remarks text;
+ALTER TABLE distribution.od_subscriber ADD COLUMN remark  text;
 
 /* GEOMETRY */
 SELECT distribution.geom_tool_point('od_subscriber',false,false,false,false,false);

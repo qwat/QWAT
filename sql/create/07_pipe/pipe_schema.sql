@@ -114,7 +114,7 @@ CREATE VIEW distribution.vw_pipe_schema AS
 			od_pipe.year                          ,
 			od_pipe.pressure_nominal              ,
 			od_pipe.folder                        ,
-			od_pipe.remarks                       , 
+			od_pipe.remark                        , 
 			od_pipe.id_printmap                   ,
 			od_pipe._printmaps                    ,
 			od_pipe.id_district                   ,

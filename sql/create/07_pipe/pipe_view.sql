@@ -24,7 +24,7 @@ CREATE VIEW distribution.vw_pipe AS
 		od_pipe.pressure_nominal  ,
 		od_pipe.folder            ,
 		od_pipe.labelremark       ,
-		od_pipe.remarks           ,
+		od_pipe.remark            ,
 		od_pipe._valve_count      ,
 		od_pipe._valve_closed     ,
 		od_pipe._schema_visible      ,

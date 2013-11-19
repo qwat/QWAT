@@ -11,7 +11,7 @@ CREATE TABLE distribution.od_constructionpoint (id serial NOT NULL, CONSTRAINT c
 COMMENT ON TABLE distribution.od_constructionpoint IS 'construction points are artificials points to build objects.';
 
 /* columns */
-ALTER TABLE distribution.od_constructionpoint ADD COLUMN remarks text;
+ALTER TABLE distribution.od_constructionpoint ADD COLUMN remark  text;
 
 /* geometry */
 SELECT AddGeometryColumn('distribution','od_constructionpoint','geometry',21781,'POINT',2);

@@ -13,7 +13,7 @@ COMMENT ON TABLE distribution.od_printmap IS 'This table is used for polygons fo
 /* columns */
 ALTER TABLE distribution.od_printmap ADD COLUMN name         varchar(20);
 ALTER TABLE distribution.od_printmap ADD COLUMN id_district  smallint;
-ALTER TABLE distribution.od_printmap ADD COLUMN remarks      text;
+ALTER TABLE distribution.od_printmap ADD COLUMN remark       text;
 ALTER TABLE distribution.od_printmap ADD COLUMN version_date date;
 
 ALTER TABLE distribution.od_printmap ADD COLUMN x_min double precision;

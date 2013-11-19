@@ -21,7 +21,7 @@ SELECT
 	od_valve.year              ,
 	od_valve.closed            ,
 	od_valve.altitude_real     ,
-	od_valve.remarks           ,
+	od_valve.remark            ,
 	od_valve.schema_force_view ,
 	od_valve.id_node           ,
 	od_valve.id_district       ,
