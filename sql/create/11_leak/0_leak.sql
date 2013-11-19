@@ -11,7 +11,7 @@ CREATE TABLE distribution.od_leak (id serial NOT NULL, CONSTRAINT vl_leak_pk PRI
 COMMENT ON TABLE distribution.od_leak IS 'pipe leaks';
 
 /* geometry */
-SELECT distribution.geom_tool_point('od_leak', false, false, false, true, true);
+SELECT distribution.geom_tool_point('od_leak', false, false, false, true, true, true);
 
 /* columns */
 ALTER TABLE distribution.od_leak ADD COLUMN id_type        integer not null;

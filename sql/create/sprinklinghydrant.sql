@@ -26,7 +26,7 @@ ALTER TABLE distribution.sprinklinghydrant ADD COLUMN  remark  text;
 
 
 /* geometry */
-SELECT distribution.geom_tool_point('sprinklinghydrant',true,false,false,false,true);
+SELECT distribution.geom_tool_point('sprinklinghydrant',true,false,false,false,true, true);
 
 /* primary key */
 ALTER TABLE distribution.sprinklinghydrant ADD CONSTRAINT sprinklinghydrant_pkey PRIMARY KEY (id);

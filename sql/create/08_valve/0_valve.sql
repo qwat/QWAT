@@ -30,8 +30,8 @@ ALTER TABLE distribution.od_valve ADD COLUMN labelremark_schema     varchar(150)
 /* schema view */
 SELECT distribution.enable_schemaview('od_valve','vl_valve_function','id_function');
 
-/* geometry */
-SELECT distribution.geom_tool_point('od_valve',true,false,true,true,true);
+/* geometry (table_name, is_node, create_node, create_schematic, get_pipe, auto_district, auto_pressurezone)*/
+SELECT distribution.geom_tool_point('od_valve',true,false,true,true,true,true);
 
 /* constraints */
 ALTER TABLE distribution.od_valve ADD CONSTRAINT valve_id_type                FOREIGN KEY (id_type)                REFERENCES distribution.vl_valve_type(id)     MATCH FULL; CREATE INDEX fki_valve_id_type                ON distribution.od_valve(id_type)               ;
