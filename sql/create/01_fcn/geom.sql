@@ -133,8 +133,8 @@ $BODY$
 		table_name ALIAS for $1;
 	BEGIN
 		/* Creates columns */
-		EXECUTE 'ALTER TABLE distribution.'||table_name||' ADD COLUMN id_node_a       integer   ;';
-		EXECUTE 'ALTER TABLE distribution.'||table_name||' ADD COLUMN id_node_b       integer   ;';
+		EXECUTE 'ALTER TABLE distribution.'||table_name||' ADD COLUMN id_node_a       integer    not null;';
+		EXECUTE 'ALTER TABLE distribution.'||table_name||' ADD COLUMN id_node_b       integer    not null;';
 		EXECUTE 'ALTER TABLE distribution.'||table_name||' ADD COLUMN id_district     integer   ;';
 		EXECUTE 'ALTER TABLE distribution.'||table_name||' ADD COLUMN id_pressurezone integer   ;';
 		EXECUTE 'ALTER TABLE distribution.'||table_name||' ADD COLUMN id_printmap     integer[] ;';
@@ -152,8 +152,8 @@ $BODY$
 		EXECUTE 'CREATE INDEX '||table_name||'_geoidx_sch ON distribution.'||table_name||' USING GIST ( geometry_schematic );';		
 
 		/* Add constraints and indexes */
-		EXECUTE 'ALTER TABLE distribution.'||table_name||' ADD CONSTRAINT '||table_name||'_id_node_a       FOREIGN KEY (id_node_a)       REFERENCES distribution.od_node(id)         MATCH SIMPLE;';
-		EXECUTE 'ALTER TABLE distribution.'||table_name||' ADD CONSTRAINT '||table_name||'_id_node_b       FOREIGN KEY (id_node_b)       REFERENCES distribution.od_node(id)         MATCH SIMPLE;';
+		EXECUTE 'ALTER TABLE distribution.'||table_name||' ADD CONSTRAINT '||table_name||'_id_node_a       FOREIGN KEY (id_node_a)       REFERENCES distribution.od_node(id)         MATCH FULL;';
+		EXECUTE 'ALTER TABLE distribution.'||table_name||' ADD CONSTRAINT '||table_name||'_id_node_b       FOREIGN KEY (id_node_b)       REFERENCES distribution.od_node(id)         MATCH FULL;';
 		EXECUTE 'ALTER TABLE distribution.'||table_name||' ADD CONSTRAINT '||table_name||'_id_district     FOREIGN KEY (id_district)     REFERENCES distribution.od_district(id)     MATCH SIMPLE;';
 		EXECUTE 'ALTER TABLE distribution.'||table_name||' ADD CONSTRAINT '||table_name||'_id_pressurezone FOREIGN KEY (id_pressurezone) REFERENCES distribution.od_pressurezone(id) MATCH SIMPLE;';
 		EXECUTE 'CREATE INDEX fki_'||table_name||'_id_node_a       ON distribution.'||table_name||'(id_node_a);';

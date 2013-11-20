@@ -5,7 +5,7 @@
 */
 
 /* get node id */
-CREATE OR REPLACE FUNCTION distribution.od_node_get_id(point geometry, place_node boolean) RETURNS integer AS
+CREATE OR REPLACE FUNCTION distribution.od_node_get_id( point geometry, place_node boolean ) RETURNS integer AS
 $BODY$
 	DECLARE
 		node_id integer;
@@ -47,6 +47,7 @@ $BODY$
 			type := 'valve';
 			is_under_object := true;
 		ELSEIF node_id IN (
+				SELECT id_node FROM distribution.od_installation_building UNION
 				SELECT id_node FROM distribution.od_installation_pressurecontrol UNION
 				SELECT id_node FROM distribution.od_installation_pump UNION
 				SELECT id_node FROM distribution.od_installation_source UNION
@@ -65,8 +66,8 @@ $BODY$
 		END IF;
 		/* count the active pipes associated to this node */
 		SELECT
-			COUNT(pipe.id)         AS count        ,
-			bool_or(_schema_visible)  AS schema_visible  ,
+			COUNT(pipe.id)            AS count         ,
+			bool_or(_schema_visible)  AS schema_visible,
 			bool_or(vl_status.active) AS status_active
 			INTO grouped
 			FROM distribution.od_pipe
@@ -113,8 +114,8 @@ $BODY$
 					/* second pipe if exists */
 					type := 'two_same';
 					IF Tyear     != pipeitem.year       THEN type := 'two_year'    ; END IF;
-					IF Tmaterial != pipeitem._displayname_fr THEN type := 'two_material'; END IF;
 					IF Tdiameter != pipeitem.diameter   THEN type := 'two_diameter'; END IF;
+					IF Tmaterial != pipeitem._displayname_fr THEN type := 'two_material'; END IF;
 					SELECT ST_Azimuth(pipeitem.point_1,pipeitem.point_2) INTO ori2 ;
 					SELECT ATAN2( (SIN(orientation)+SIN(ori2))/2 , (COS(orientation)+COS(ori2))/2 ) INTO orientation;
 				END IF;
