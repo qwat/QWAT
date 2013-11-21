@@ -11,13 +11,13 @@ COMMENT ON TABLE distribution.od_subscriber IS 'Table for subscriber.';
 
 SELECT setval('distribution.od_subscriber_id_seq', 8000, true);
 
-ALTER TABLE distribution.od_subscriber ADD COLUMN id_type integer;                                 /* id_type       FK FULL */
-ALTER TABLE distribution.od_subscriber ADD COLUMN id_status integer default 1;                     /* id_status       FK FULL */
-ALTER TABLE distribution.od_subscriber ADD COLUMN id_pipe integer;									/* id_pipe       FK SIMPLE*/
-ALTER TABLE distribution.od_subscriber ADD COLUMN identification varchar (12);
+ALTER TABLE distribution.od_subscriber ADD COLUMN id_type              integer not null;
+ALTER TABLE distribution.od_subscriber ADD COLUMN id_status            integer not null default 1301;
+ALTER TABLE distribution.od_subscriber ADD COLUMN id_pipe              integer;
+ALTER TABLE distribution.od_subscriber ADD COLUMN identification       varchar (12);
 ALTER TABLE distribution.od_subscriber ADD COLUMN _identification_full varchar (16);
-ALTER TABLE distribution.od_subscriber ADD COLUMN parcel varchar (12) ;
-ALTER TABLE distribution.od_subscriber ADD COLUMN remark  text;
+ALTER TABLE distribution.od_subscriber ADD COLUMN parcel               varchar (12) ;
+ALTER TABLE distribution.od_subscriber ADD COLUMN remark               text;
 
 /* GEOMETRY                        (table_name,      is_node, create_node, create_schematic, get_pipe, auto_district, auto_pressurezone)*/
 SELECT distribution.geom_tool_point('od_subscriber', false,   false,       false,            false,    false,         true);
