@@ -20,7 +20,7 @@ ALTER TABLE distribution.od_subscriber ADD COLUMN parcel               varchar (
 ALTER TABLE distribution.od_subscriber ADD COLUMN remark               text;
 
 /* GEOMETRY                        (table_name,      is_node, create_node, create_schematic, get_pipe, auto_district, auto_pressurezone)*/
-SELECT distribution.geom_tool_point('od_subscriber', false,   false,       false,            false,    false,         true);
+SELECT distribution.fn_geom_tool_point('od_subscriber', false,   false,       false,            false,    false,         true);
 
 /* CONSTRAINTS */
 ALTER TABLE distribution.od_subscriber ADD CONSTRAINT subscriber_id_type  FOREIGN KEY (id_type)   REFERENCES distribution.vl_subscriber_type (id) MATCH FULL  ; CREATE INDEX fki_subscriber_id_type   ON distribution.od_subscriber(id_type)        ;

@@ -5,7 +5,7 @@
 */
 
 /* get node id */
-CREATE OR REPLACE FUNCTION distribution.od_node_get_id( point geometry, place_node boolean ) RETURNS integer AS
+CREATE OR REPLACE FUNCTION distribution.fn_node_get_id( point geometry, place_node boolean ) RETURNS integer AS
 $BODY$
 	DECLARE
 		node_id integer;
@@ -19,12 +19,12 @@ $BODY$
 	END;
 $BODY$
 LANGUAGE 'plpgsql';
-COMMENT ON FUNCTION distribution.od_node_get_id(geometry,boolean) IS 'Returns the node for a given geometry (point). If node does not exist and if specified in argument, it is created.';
+COMMENT ON FUNCTION distribution.fn_node_get_id(geometry,boolean) IS 'Returns the node for a given geometry (point). If node does not exist and if specified in argument, it is created.';
 
 
 /* define node type */
 /* node type: end, intersection, year, material, diameter */
-CREATE OR REPLACE FUNCTION distribution.od_node_type(node_id integer) RETURNS void AS
+CREATE OR REPLACE FUNCTION distribution.fn_node_type(node_id integer) RETURNS void AS
 $BODY$
 	DECLARE
 		pipeitem        record                   ;
@@ -146,21 +146,21 @@ $BODY$
 	END;
 $BODY$
 LANGUAGE 'plpgsql';
-COMMENT ON FUNCTION distribution.od_node_type(integer) IS 'Set the orientation and type for a node. If three pipe arrives at the node: intersection. If one pipe: end. If two: depends on characteristics of pipe: year (is different), material (and year), diameter(and material/year)';
+COMMENT ON FUNCTION distribution.fn_node_type(integer) IS 'Set the orientation and type for a node. If three pipe arrives at the node: intersection. If one pipe: end. If two: depends on characteristics of pipe: year (is different), material (and year), diameter(and material/year)';
 
 /* reset all node type */
-CREATE OR REPLACE FUNCTION distribution.od_node_set_type() RETURNS void AS
+CREATE OR REPLACE FUNCTION distribution.fn_node_set_type() RETURNS void AS
 $BODY$
 	DECLARE
 		node record;
 	BEGIN
 		FOR node IN SELECT id FROM distribution.od_node ORDER BY id LOOP
-			PERFORM distribution.od_node_type(node.id);
+			PERFORM distribution.fn_node_type(node.id);
 		END LOOP;
 	END;
 $BODY$
 LANGUAGE 'plpgsql';
-COMMENT ON FUNCTION distribution.od_node_set_type() IS 'Set the type and orientation for node. If three pipe arrives at the node: intersection. If one pipe: end. If two: depends on characteristics of pipe: year (is different), material (and year), diameter(and material/year)';
+COMMENT ON FUNCTION distribution.fn_node_set_type() IS 'Set the type and orientation for node. If three pipe arrives at the node: intersection. If one pipe: end. If two: depends on characteristics of pipe: year (is different), material (and year), diameter(and material/year)';
 
 
 

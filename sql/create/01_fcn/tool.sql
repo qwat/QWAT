@@ -6,7 +6,7 @@
 
 
 /* List all columns from a table */
-CREATE OR REPLACE FUNCTION distribution.table_fields(varchar,VARIADIC exclude varchar[]) RETURNS text AS
+CREATE OR REPLACE FUNCTION distribution.fn_table_fields(varchar,VARIADIC exclude varchar[]) RETURNS text AS
 $BODY$
 	DECLARE
 		ftable ALIAS FOR $1;
@@ -26,21 +26,21 @@ $BODY$
 	END
 $BODY$
 LANGUAGE 'plpgsql';
-COMMENT ON FUNCTION distribution.table_fields(varchar,varchar[]) IS 'Returns field names from a table except those listed in arguments.';
+COMMENT ON FUNCTION distribution.fn_table_fields(varchar,varchar[]) IS 'Returns field names from a table except those listed in arguments.';
 
 
-CREATE OR REPLACE FUNCTION distribution.table_fields(varchar) RETURNS text AS
+CREATE OR REPLACE FUNCTION distribution.fn_table_fields(varchar) RETURNS text AS
 $BODY$
 	DECLARE
 		ftable ALIAS FOR $1;
 		result text;
 	BEGIN
-		SELECT distribution.table_fields(ftable,'''') INTO result;
+		SELECT distribution.fn_table_fields(ftable,'''') INTO result;
 		RETURN result;
 	END			;
 $BODY$
 LANGUAGE 'plpgsql';
-COMMENT ON FUNCTION distribution.table_fields(varchar,varchar[]) IS 'Returns field names from a table.';
+COMMENT ON FUNCTION distribution.fn_table_fields(varchar,varchar[]) IS 'Returns field names from a table.';
 
 
 

@@ -33,7 +33,7 @@ ALTER TABLE distribution.od_installation_valvechamber ADD COLUMN meter          
 
 /* geometry */
 /*                                 ( table_name,                   is_node, create_node, create_schematic, get_pipe, auto_district, auto_pressurezone)*/
-SELECT distribution.geom_tool_point('od_installation_valvechamber',true,    true,        true,             false,    true,          false);
+SELECT distribution.fn_geom_tool_point('od_installation_valvechamber',true,    true,        true,             false,    true,          false);
 
 /* Constraints */
 ALTER TABLE distribution.od_installation_valvechamber ADD CONSTRAINT installation_valvechamber_id_installation FOREIGN KEY (id_installation) REFERENCES distribution.od_installation_building(id) MATCH SIMPLE; CREATE INDEX fki_installation_valvechamber_id_installation ON distribution.od_installation_valvechamber(id_installation);

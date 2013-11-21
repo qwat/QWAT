@@ -52,7 +52,7 @@ ALTER TABLE distribution.od_installation_tank ADD COLUMN _cistern2_litrepercm nu
 
 /* geometry */
 /*                                 (table_name,            is_node, create_node, create_schematic, get_pipe, auto_district, auto_pressurezone)*/
-SELECT distribution.geom_tool_point('od_installation_tank',true,    true,        true,             false,    true,          false);
+SELECT distribution.fn_geom_tool_point('od_installation_tank',true,    true,        true,             false,    true,          false);
 
 /* Constraints */
 ALTER TABLE distribution.od_installation_tank ADD CONSTRAINT installation_tank_id_installation FOREIGN KEY (id_installation)  REFERENCES distribution.od_installation_building(id) MATCH SIMPLE; CREATE INDEX fki_installation_tank_id_installation ON distribution.od_installation_tank(id_installation) ;
@@ -68,7 +68,7 @@ ALTER TABLE distribution.od_installation_tank ADD CONSTRAINT installation_tank_c
 
 
 /* Function */
-CREATE OR REPLACE FUNCTION distribution.litres_per_cm(id_type integer,dim1 double precision, dim2 double precision) RETURNS double precision AS
+CREATE OR REPLACE FUNCTION distribution.fn_litres_per_cm(id_type integer,dim1 double precision, dim2 double precision) RETURNS double precision AS
 $BODY$
 	BEGIN
 		IF id_type = 1 THEN
@@ -81,7 +81,7 @@ $BODY$
 	END
 $BODY$
 LANGUAGE 'plpgsql';
-COMMENT ON FUNCTION distribution.litres_per_cm(integer, double precision, double precision) IS 'Calculate the litres_per_cm of a tank cistern.';
+COMMENT ON FUNCTION distribution.fn_litres_per_cm(integer, double precision, double precision) IS 'Calculate the litres_per_cm of a tank cistern.';
 
 /* Triggers */
 
@@ -91,8 +91,8 @@ $BODY$
 		lpc1 double precision;
 		lpc2 double precision;
 	BEGIN
-		SELECT distribution.litres_per_cm(NEW.cistern1_id_type,NEW.cistern1_dimension_1,NEW.cistern1_dimension_2) INTO lpc1;
-		SELECT distribution.litres_per_cm(NEW.cistern2_id_type,NEW.cistern2_dimension_1,NEW.cistern2_dimension_2) INTO lpc2;
+		SELECT distribution.fn_litres_per_cm(NEW.cistern1_id_type,NEW.cistern1_dimension_1,NEW.cistern1_dimension_2) INTO lpc1;
+		SELECT distribution.fn_litres_per_cm(NEW.cistern2_id_type,NEW.cistern2_dimension_1,NEW.cistern2_dimension_2) INTO lpc2;
 		 UPDATE distribution.od_installation_tank
 			SET _cistern1_litrepercm = lpc1,
 			    _cistern2_litrepercm = lpc2,

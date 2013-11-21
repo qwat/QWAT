@@ -1,7 +1,7 @@
 
 
 /*                        (table_name, is_node, create_node, create_schematic, get_pipe, auto_district, auto_pressurezone)*/
-CREATE OR REPLACE FUNCTION distribution.geom_tool_point(table_name varchar, is_node boolean, create_node boolean, create_schematic boolean, get_pipe boolean, auto_district boolean, auto_pressurezone boolean) RETURNS void AS
+CREATE OR REPLACE FUNCTION distribution.fn_geom_tool_point(table_name varchar, is_node boolean, create_node boolean, create_schematic boolean, get_pipe boolean, auto_district boolean, auto_pressurezone boolean) RETURNS void AS
 $BODY$
 	DECLARE
 		sql_trigger varchar;
@@ -53,29 +53,29 @@ $BODY$
 					UPDATE distribution.'||table_name||' SET';
 		IF is_node IS TRUE AND create_node IS TRUE THEN
 			sql_trigger := sql_trigger || '
-						id_node            = distribution.od_node_get_id(NEW.geometry,'||create_node||'),';
+						id_node            = distribution.fn_node_get_id(NEW.geometry,'||create_node||'),';
 		END IF;
 		IF auto_district IS TRUE THEN
 			sql_trigger := sql_trigger || '
-						id_district        = distribution.get_district_id(NEW.geometry),';
+						id_district        = distribution.fn_get_district_id(NEW.geometry),';
 		END IF;
 		IF auto_pressurezone IS TRUE THEN
 			sql_trigger := sql_trigger || '
-						id_pressurezone    = distribution.get_pressurezone_id(NEW.geometry),';
+						id_pressurezone    = distribution.fn_get_pressurezone_id(NEW.geometry),';
 		END IF;
 		sql_trigger := sql_trigger || '
-						id_printmap        = distribution.get_printmap_id(NEW.geometry),';
+						id_printmap        = distribution.fn_get_printmap_id(NEW.geometry),';
 		IF get_pipe IS TRUE THEN
 			sql_trigger := sql_trigger || '
-						id_pipe            = distribution.od_pipe_get_id(NEW.geometry),	';
+						id_pipe            = distribution.fn_pipe_get_id(NEW.geometry),	';
 		END IF;		IF create_schematic IS TRUE THEN
 			sql_trigger := sql_trigger || '
 						geometry_schematic = NEW.geometry,
 						_geometry_schematic_used = false,';
 		END IF;
 		sql_trigger := sql_trigger || '
-						_printmaps         = distribution.get_printmaps(NEW.geometry),
-						_districts         = distribution.get_districts(NEW.geometry)
+						_printmaps         = distribution.fn_get_printmaps(NEW.geometry),
+						_districts         = distribution.fn_get_districts(NEW.geometry)
 						WHERE id = NEW.id ;
 					RETURN NEW;				
 				END;
@@ -121,13 +121,13 @@ $BODY$
 	END;
 $BODY$
 LANGUAGE 'plpgsql';
-COMMENT ON FUNCTION distribution.geom_tool_point(varchar,boolean,boolean,boolean,boolean,boolean,boolean) IS 'Create geometric columns, constraint and triggers for tables with point on node items. Second argument determines if node has to be created or not if not found.  (table_name, is_node, create_node, create_schematic, get_pipe, auto_district, auto_pressurezone)';
+COMMENT ON FUNCTION distribution.fn_geom_tool_point(varchar,boolean,boolean,boolean,boolean,boolean,boolean) IS 'Create geometric columns, constraint and triggers for tables with point on node items. Second argument determines if node has to be created or not if not found.  (table_name, is_node, create_node, create_schematic, get_pipe, auto_district, auto_pressurezone)';
 
 
 /* LINES */
 
 
-CREATE OR REPLACE FUNCTION distribution.geom_tool_line(varchar) RETURNS void AS
+CREATE OR REPLACE FUNCTION distribution.fn_geom_tool_line(varchar) RETURNS void AS
 $BODY$
 	DECLARE
 		table_name ALIAS for $1;
@@ -167,15 +167,15 @@ $BODY$
 				''
 				BEGIN
 					UPDATE distribution.'||table_name||' SET
-						id_node_a                = distribution.od_node_get_id(ST_StartPoint(NEW.geometry),true),
-						id_node_b                = distribution.od_node_get_id(ST_EndPoint(  NEW.geometry),true),
-						id_district              = distribution.get_district_id(NEW.geometry),
-						id_pressurezone          = distribution.get_pressurezone_id(NEW.geometry),
-						id_printmap              = distribution.get_printmap_id(NEW.geometry),
+						id_node_a                = distribution.fn_node_get_id(ST_StartPoint(NEW.geometry),true),
+						id_node_b                = distribution.fn_node_get_id(ST_EndPoint(  NEW.geometry),true),
+						id_district              = distribution.fn_get_district_id(NEW.geometry),
+						id_pressurezone          = distribution.fn_get_pressurezone_id(NEW.geometry),
+						id_printmap              = distribution.fn_get_printmap_id(NEW.geometry),
 						geometry_schematic       = NEW.geometry,
 						_geometry_schematic_used = false,
-						_printmaps               = distribution.get_printmaps(NEW.geometry),
-						_districts               = distribution.get_districts(NEW.geometry),
+						_printmaps               = distribution.fn_get_printmaps(NEW.geometry),
+						_districts               = distribution.fn_get_districts(NEW.geometry),
 						_length2d                = ST_Length(NEW.geometry),
 						_length3d                = NULL,
 						_diff_elevation          = NULL
@@ -223,7 +223,7 @@ $BODY$
 	END;
 $BODY$
 LANGUAGE 'plpgsql';
-COMMENT ON FUNCTION distribution.geom_tool_line(varchar) IS 'Create geometric columns, constraint and triggers for tables with line items.';
+COMMENT ON FUNCTION distribution.fn_geom_tool_line(varchar) IS 'Create geometric columns, constraint and triggers for tables with line items.';
 
 
 

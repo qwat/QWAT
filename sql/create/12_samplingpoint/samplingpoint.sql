@@ -16,7 +16,7 @@ ALTER TABLE distribution.od_samplingpoint ADD COLUMN  identification            
 ALTER TABLE distribution.od_samplingpoint ADD COLUMN  remark  text;
 
 /* geometry */
-SELECT distribution.geom_tool_point('od_samplingpoint',false,false,false,false,true, true);
+SELECT distribution.fn_geom_tool_point('od_samplingpoint',false,false,false,false,true, true);
 
 
 

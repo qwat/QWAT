@@ -31,7 +31,7 @@ ALTER TABLE distribution.od_hydrant ADD COLUMN observation_source varchar(45)   
 
 
 /* geometry                        (table_name,  is_node, create_node, create_schematic, get_pipe, auto_district, auto_pressurezone)*/
-SELECT distribution.geom_tool_point('od_hydrant',true,    true,        true,             false,    true,          true);
+SELECT distribution.fn_geom_tool_point('od_hydrant',true,    true,        true,             false,    true,          true);
 
 
 /* Constraints */

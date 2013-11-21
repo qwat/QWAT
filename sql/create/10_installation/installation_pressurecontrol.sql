@@ -32,7 +32,7 @@ ALTER TABLE distribution.od_installation_pressurecontrol ADD COLUMN id_type     
 
 /* geometry */
 /*                                 (table_name,                       is_node, create_node, create_schematic, get_pipe, auto_district, auto_pressurezone)*/
-SELECT distribution.geom_tool_point('od_installation_pressurecontrol',true,    true,        true,             false,    true,          false);
+SELECT distribution.fn_geom_tool_point('od_installation_pressurecontrol',true,    true,        true,             false,    true,          false);
 
 /* Constraints */
 ALTER TABLE distribution.od_installation_pressurecontrol ADD CONSTRAINT installation_pressurecontrol_id_installation FOREIGN KEY (id_installation) REFERENCES distribution.od_installation_building(id) MATCH SIMPLE; CREATE INDEX fki_installation_pressurecontrol_id_installation ON distribution.od_installation_pressurecontrol(id_installation);

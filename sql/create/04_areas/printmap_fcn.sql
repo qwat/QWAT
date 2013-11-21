@@ -8,7 +8,7 @@
 
 
 /* get printmaps names */
-CREATE OR REPLACE FUNCTION distribution.get_printmaps(geometry) RETURNS text AS
+CREATE OR REPLACE FUNCTION distribution.fn_get_printmaps(geometry) RETURNS text AS
 $BODY$
 	DECLARE
 		geom ALIAS FOR $1;
@@ -21,11 +21,11 @@ $BODY$
 	END;
 $BODY$
 LANGUAGE 'plpgsql';
-COMMENT ON FUNCTION distribution.get_printmaps(geometry) IS 'Returns a string contaning all the short names of the polygons in table printmap which overlap the given geometry.';
+COMMENT ON FUNCTION distribution.fn_get_printmaps(geometry) IS 'Returns a string contaning all the short names of the polygons in table printmap which overlap the given geometry.';
 
 
 /* get printmap id function */
-CREATE OR REPLACE FUNCTION distribution.get_printmap_id(geometry) RETURNS integer[] AS
+CREATE OR REPLACE FUNCTION distribution.fn_get_printmap_id(geometry) RETURNS integer[] AS
 $BODY$
 	DECLARE
 		geom ALIAS FOR $1;
@@ -34,6 +34,6 @@ $BODY$
 	END;
 $BODY$
 LANGUAGE 'plpgsql';
-COMMENT ON FUNCTION distribution.get_printmap_id(geometry) IS 'Returns the id of the first overlapping printmap.';
+COMMENT ON FUNCTION distribution.fn_get_printmap_id(geometry) IS 'Returns the id of the first overlapping printmap.';
 
 

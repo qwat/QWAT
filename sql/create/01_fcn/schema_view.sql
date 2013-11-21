@@ -5,7 +5,7 @@
 */
 
 
-CREATE OR REPLACE FUNCTION distribution.enable_schemaview(main_table varchar, auxiliary varchar, keyfield varchar) RETURNS VOID AS 
+CREATE OR REPLACE FUNCTION distribution.fn_enable_schemaview(main_table varchar, auxiliary varchar, keyfield varchar) RETURNS VOID AS 
 $BODY$
 	BEGIN
 		/* Add columns */
@@ -39,5 +39,5 @@ $BODY$
 	END;
 $BODY$
 LANGUAGE 'plpgsql';
-COMMENT ON FUNCTION distribution.enable_schemaview(varchar,varchar,varchar) IS 'Add a column schema_force_view and _schema_visible in given table. _schema_visible is a boolean determined by the corresponding auxiliary table and might be overriden by _schema_force_view.';	
+COMMENT ON FUNCTION distribution.fn_enable_schemaview(varchar,varchar,varchar) IS 'Add a column schema_force_view and _schema_visible in given table. _schema_visible is a boolean determined by the corresponding auxiliary table and might be overriden by _schema_force_view.';	
 

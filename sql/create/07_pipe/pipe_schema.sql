@@ -41,7 +41,7 @@ CREATE OR REPLACE RULE pipe_update_alternative AS
 Function to get a group ID (parent/children).
 Also works in case of sub-parent
 */
-CREATE OR REPLACE FUNCTION distribution.get_parent(integer,integer) RETURNS integer AS '
+CREATE OR REPLACE FUNCTION distribution.fn_get_parent(integer,integer) RETURNS integer AS '
 	DECLARE
 		childid ALIAS FOR $1;
 		parentid ALIAS FOR $2;
@@ -62,7 +62,7 @@ CREATE OR REPLACE FUNCTION distribution.get_parent(integer,integer) RETURNS inte
 		END LOOP;
 	END
 ' LANGUAGE 'plpgsql';
-COMMENT ON FUNCTION distribution.get_parent(integer,integer) IS 'Function to get a group ID (parent/children). Also works in case of sub-parent';
+COMMENT ON FUNCTION distribution.fn_get_parent(integer,integer) IS 'Function to get a group ID (parent/children). Also works in case of sub-parent';
 
 /* 
 View of pipe with group ID
@@ -70,7 +70,7 @@ View of pipe with group ID
 CREATE OR REPLACE VIEW distribution.vw_pipe_schema_items AS 
 	SELECT 
 		geometry::geometry(LineString,21781),
-		distribution.get_parent(id,id_parent) AS groupid,
+		distribution.fn_get_parent(id,id_parent) AS groupid,
 		_length2d,
 		_length3d,
 		tunnel_or_bridge,
@@ -149,8 +149,8 @@ CREATE VIEW distribution.vw_pipe_schema_node AS
 	FROM
 		( SELECT	
 			vw_pipe_schema.*,
-			distribution.od_node_get_id(ST_StartPoint(geometry),true) AS id_node_a,
-			distribution.od_node_get_id(ST_EndPoint(  geometry),true) AS id_node_b	
+			distribution.fn_node_get_id(ST_StartPoint(geometry),true) AS id_node_a,
+			distribution.fn_node_get_id(ST_EndPoint(  geometry),true) AS id_node_b	
 			FROM distribution.vw_pipe_schema 
 		) AS foo
 		LEFT OUTER JOIN distribution.od_node AS node_a ON id_node_a = node_a.id

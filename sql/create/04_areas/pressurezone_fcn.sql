@@ -6,7 +6,7 @@
 
 
 /* get pressurezone id function */
-CREATE OR REPLACE FUNCTION distribution.get_pressurezone_id(geometry) RETURNS integer AS
+CREATE OR REPLACE FUNCTION distribution.fn_get_pressurezone_id(geometry) RETURNS integer AS
 $BODY$ 
 	DECLARE
 		geom ALIAS FOR $1;
@@ -21,4 +21,4 @@ $BODY$
 	END
 $BODY$
 LANGUAGE 'plpgsql';
-COMMENT ON FUNCTION distribution.get_pressurezone_id(geometry) IS 'Returns the id of the first overlapping pressurezone.';
+COMMENT ON FUNCTION distribution.fn_get_pressurezone_id(geometry) IS 'Returns the id of the first overlapping pressurezone.';

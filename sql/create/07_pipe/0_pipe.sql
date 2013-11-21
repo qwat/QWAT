@@ -33,10 +33,10 @@ ALTER TABLE distribution.od_pipe ADD COLUMN _valve_count           smallint defa
 ALTER TABLE distribution.od_pipe ADD COLUMN _valve_closed          boolean default NULL;                         /* _valve_closed           */
 
 /* schema view */
-SELECT distribution.enable_schemaview( 'od_pipe', 'vl_pipe_function', 'id_function' );
+SELECT distribution.fn_enable_schemaview( 'od_pipe', 'vl_pipe_function', 'id_function' );
 
 /* geometry */
-SELECT distribution.geom_tool_line('od_pipe');
+SELECT distribution.fn_geom_tool_line('od_pipe');
 
 /* old columns */
 ALTER TABLE distribution.od_pipe ADD COLUMN coating_internal_material_id character(20);

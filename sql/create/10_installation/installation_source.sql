@@ -37,7 +37,7 @@ ALTER TABLE distribution.od_installation_source ADD COLUMN gathering_chamber boo
 
 /* geometry */
 /*                                 (table_name,              is_node, create_node, create_schematic, get_pipe, auto_district, auto_pressurezone)*/
-SELECT distribution.geom_tool_point('od_installation_source',true,    true,        true,             false,    true,          false);
+SELECT distribution.fn_geom_tool_point('od_installation_source',true,    true,        true,             false,    true,          false);
 
 /* Constraints */
 ALTER TABLE distribution.od_installation_source ADD CONSTRAINT installation_source_id_installation FOREIGN KEY (id_installation) REFERENCES distribution.od_installation_building(id) MATCH SIMPLE; CREATE INDEX fki_installation_source_id_installation   ON distribution.od_installation_source(id_installation);

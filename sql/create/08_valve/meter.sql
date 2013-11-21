@@ -20,7 +20,7 @@ ALTER TABLE distribution.od_meter ADD COLUMN parcel varchar (12) ;
 ALTER TABLE distribution.od_meter ADD COLUMN remark  text;
 
 /* GEOMETRY                        (table_name, is_node, create_node, create_schematic, get_pipe, auto_district, auto_pressurezone)*/
-SELECT distribution.geom_tool_point('od_meter', false,  false,        false,            false,    false,         true);
+SELECT distribution.fn_geom_tool_point('od_meter', false,  false,        false,            false,    false,         true);
 
 /* CONSTRAINTS */
 ALTER TABLE distribution.od_meter ADD CONSTRAINT pipe_id_status FOREIGN KEY (id_status) REFERENCES distribution.vl_status(id)      MATCH FULL  ; CREATE INDEX fki_id_status ON distribution.od_meter(id_status);
