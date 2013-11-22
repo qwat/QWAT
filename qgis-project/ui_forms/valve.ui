@@ -30,20 +30,13 @@
    <item row="0" column="0">
     <widget class="QTabWidget" name="tabWidget">
      <property name="currentIndex">
-      <number>1</number>
+      <number>0</number>
      </property>
      <widget class="QWidget" name="tab">
       <attribute name="title">
        <string>Général</string>
       </attribute>
       <layout class="QGridLayout" name="gridLayout_3">
-       <item row="0" column="2" rowspan="5">
-        <widget class="Line" name="line_2">
-         <property name="orientation">
-          <enum>Qt::Vertical</enum>
-         </property>
-        </widget>
-       </item>
        <item row="3" column="0">
         <widget class="QLabel" name="label_7">
          <property name="text">
@@ -74,13 +67,6 @@
          </property>
         </widget>
        </item>
-       <item row="2" column="3" rowspan="3">
-        <widget class="QLabel" name="label_10">
-         <property name="text">
-          <string>Maintenance</string>
-         </property>
-        </widget>
-       </item>
        <item row="0" column="4">
         <widget class="QComboBox" name="id_type"/>
        </item>
@@ -100,9 +86,6 @@
        </item>
        <item row="1" column="4">
         <widget class="QComboBox" name="id_function"/>
-       </item>
-       <item row="2" column="4" rowspan="3">
-        <widget class="QListWidget" name="id_maintenance"/>
        </item>
        <item row="2" column="1">
         <widget class="QLineEdit" name="diameter_nominal"/>
@@ -129,9 +112,26 @@
         </widget>
        </item>
        <item row="5" column="0" colspan="2">
-        <widget class="QCheckBox" name="checkBox">
+        <widget class="QCheckBox" name="networkseparation">
          <property name="text">
           <string>Séparation réseau</string>
+         </property>
+        </widget>
+       </item>
+       <item row="0" column="2" rowspan="6">
+        <widget class="Line" name="line_2">
+         <property name="orientation">
+          <enum>Qt::Vertical</enum>
+         </property>
+        </widget>
+       </item>
+       <item row="2" column="4" rowspan="4">
+        <widget class="QListWidget" name="id_maintenance"/>
+       </item>
+       <item row="2" column="3" rowspan="4">
+        <widget class="QLabel" name="label_10">
+         <property name="text">
+          <string>Maintenance</string>
          </property>
         </widget>
        </item>
@@ -142,82 +142,38 @@
        <string>Géométrie</string>
       </attribute>
       <layout class="QGridLayout" name="gridLayout_2">
-       <item row="0" column="0">
+       <item row="6" column="1">
+        <widget class="QComboBox" name="id_precision">
+         <property name="sizeAdjustPolicy">
+          <enum>QComboBox::AdjustToContents</enum>
+         </property>
+        </widget>
+       </item>
+       <item row="6" column="0">
+        <widget class="QLabel" name="label_19">
+         <property name="text">
+          <string>Précision</string>
+         </property>
+        </widget>
+       </item>
+       <item row="2" column="2" rowspan="5">
+        <widget class="Line" name="line">
+         <property name="orientation">
+          <enum>Qt::Vertical</enum>
+         </property>
+        </widget>
+       </item>
+       <item row="2" column="1">
+        <widget class="QLineEdit" name="altitude_real"/>
+       </item>
+       <item row="2" column="0">
         <widget class="QLabel" name="label_5">
          <property name="text">
           <string>Altitude réelle</string>
          </property>
         </widget>
        </item>
-       <item row="1" column="0">
-        <widget class="QLabel" name="label_11">
-         <property name="text">
-          <string>Noeud</string>
-         </property>
-        </widget>
-       </item>
-       <item row="0" column="3">
-        <widget class="QLabel" name="label_15">
-         <property name="text">
-          <string>Folios</string>
-         </property>
-        </widget>
-       </item>
-       <item row="1" column="1">
-        <widget class="QLineEdit" name="id_node">
-         <property name="enabled">
-          <bool>true</bool>
-         </property>
-         <property name="readOnly">
-          <bool>true</bool>
-         </property>
-        </widget>
-       </item>
-       <item row="0" column="1">
-        <widget class="QLineEdit" name="altitude_real"/>
-       </item>
-       <item row="0" column="4">
-        <widget class="QLineEdit" name="_printmaps">
-         <property name="enabled">
-          <bool>true</bool>
-         </property>
-         <property name="readOnly">
-          <bool>true</bool>
-         </property>
-        </widget>
-       </item>
-       <item row="1" column="4">
-        <widget class="QLineEdit" name="_districts">
-         <property name="enabled">
-          <bool>true</bool>
-         </property>
-         <property name="readOnly">
-          <bool>true</bool>
-         </property>
-        </widget>
-       </item>
-       <item row="1" column="3">
-        <widget class="QLabel" name="label_12">
-         <property name="text">
-          <string>Communes</string>
-         </property>
-        </widget>
-       </item>
-       <item row="2" column="3">
-        <widget class="QLabel" name="label_14">
-         <property name="text">
-          <string>Zone de pression</string>
-         </property>
-        </widget>
-       </item>
-       <item row="2" column="4">
-        <widget class="QComboBox" name="id_pressurezone">
-         <property name="enabled">
-          <bool>false</bool>
-         </property>
-        </widget>
-       </item>
-       <item row="2" column="1">
+       <item row="4" column="1">
         <widget class="QLineEdit" name="id_pipe">
          <property name="enabled">
           <bool>true</bool>
@@ -227,14 +183,14 @@
          </property>
         </widget>
        </item>
-       <item row="2" column="0">
+       <item row="4" column="0">
         <widget class="QLabel" name="label_13">
          <property name="text">
           <string>Conduite</string>
          </property>
         </widget>
        </item>
-       <item row="4" column="1">
+       <item row="7" column="1">
         <spacer name="verticalSpacer_3">
          <property name="orientation">
           <enum>Qt::Vertical</enum>
@@ -247,24 +203,78 @@
          </property>
         </spacer>
        </item>
-       <item row="3" column="1">
-        <widget class="QComboBox" name="id_precision">
-         <property name="sizeAdjustPolicy">
-          <enum>QComboBox::AdjustToContents</enum>
+       <item row="6" column="3">
+        <widget class="QLabel" name="label_14">
+         <property name="text">
+          <string>Zone de pression</string>
          </property>
         </widget>
+       </item>
+       <item row="6" column="4">
+        <widget class="QComboBox" name="id_pressurezone">
+         <property name="enabled">
+          <bool>false</bool>
+         </property>
+        </widget>
+       </item>
+       <item row="4" column="4">
+        <widget class="QLineEdit" name="_districts">
+         <property name="enabled">
+          <bool>true</bool>
+         </property>
+         <property name="readOnly">
+          <bool>true</bool>
+         </property>
+        </widget>
+       </item>
+       <item row="3" column="4">
+        <widget class="QLineEdit" name="_printmaps">
+         <property name="enabled">
+          <bool>true</bool>
+         </property>
+         <property name="readOnly">
+          <bool>true</bool>
+         </property>
+        </widget>
+       </item>
+       <item row="4" column="3">
+        <widget class="QLabel" name="label_12">
+         <property name="text">
+          <string>Communes</string>
+         </property>
+        </widget>
+       </item>
+       <item row="3" column="3">
+        <widget class="QLabel" name="label_15">
+         <property name="text">
+          <string>Folios</string>
+         </property>
+        </widget>
+       </item>
+       <item row="2" column="3">
+        <widget class="QLabel" name="label_11">
+         <property name="text">
+          <string>Noeud</string>
+         </property>
+        </widget>
+       </item>
+       <item row="2" column="4">
+        <widget class="QLineEdit" name="id_node">
+         <property name="enabled">
+          <bool>true</bool>
+         </property>
+         <property name="readOnly">
+          <bool>true</bool>
+         </property>
+        </widget>
+       </item>
+       <item row="3" column="1">
+        <widget class="QComboBox" name="id_precisionalti"/>
        </item>
        <item row="3" column="0">
-        <widget class="QLabel" name="label_19">
+        <widget class="QLabel" name="label_6">
          <property name="text">
-          <string>Précision</string>
-         </property>
-        </widget>
-       </item>
-       <item row="0" column="2" rowspan="4">
-        <widget class="Line" name="line">
-         <property name="orientation">
-          <enum>Qt::Vertical</enum>
+          <string>Précision alti.</string>
          </property>
         </widget>
        </item>
