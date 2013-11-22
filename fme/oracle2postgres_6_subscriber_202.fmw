@@ -932,7 +932,7 @@
 #! IDENTIFIER="42"
 #! FEAT_GEOMTYPE="oracle_nil"
 #! POSITION="57 -1578"
-#! ORDER="40"
+#! ORDER="41"
 #! COLLAPSED="true"
 #! KEYWORD="ORACLE8I_DB_2"
 #! ENABLED="true"
@@ -1047,7 +1047,7 @@
 #! IDENTIFIER="0"
 #! FEAT_GEOMTYPE="oracle_nil"
 #! POSITION="6 -81"
-#! ORDER="42"
+#! ORDER="43"
 #! COLLAPSED="true"
 #! KEYWORD="ORACLE8I_DB_1"
 #! ENABLED="true"
@@ -1114,7 +1114,7 @@
 #! IDENTIFIER="54"
 #! FEAT_GEOMTYPE="postgres_none"
 #! POSITION="794 -753"
-#! ORDER="48"
+#! ORDER="49"
 #! COLLAPSED="true"
 #! KEYWORD="POSTGRES_1"
 #! ENABLED="true"
@@ -1171,11 +1171,11 @@
 #! </FEATURE_TYPE>
 #! <FEATURE_TYPE
 #! IS_SOURCE="false"
-#! NODE_NAME="distribution.od_subscriber"
+#! NODE_NAME="distribution.od_meter"
 #! IS_EDITABLE="true"
-#! IDENTIFIER="40"
+#! IDENTIFIER="59"
 #! FEAT_GEOMTYPE="&lt;NO_GEOMETRY&gt;"
-#! POSITION="3225 -874"
+#! POSITION="3057 -1662"
 #! ORDER="55"
 #! COLLAPSED="false"
 #! KEYWORD="POSTGIS_1"
@@ -1183,10 +1183,9 @@
 #! FANOUT="No"
 #! FANOUT_ID_ATTR=""
 #! >
-#! <FEAT_ATTRIBUTE ATTR_NAME="id_type" ATTR_TYPE="int8"/>
 #! <FEAT_ATTRIBUTE ATTR_NAME="id_pipe" ATTR_TYPE="int8"/>
 #! <FEAT_ATTRIBUTE ATTR_NAME="parcel" ATTR_TYPE="char(30)"/>
-#! <FEAT_ATTRIBUTE ATTR_NAME="client_identification" ATTR_TYPE="int8"/>
+#! <FEAT_ATTRIBUTE ATTR_NAME="identification" ATTR_TYPE="int8"/>
 #! <FEAT_ATTRIBUTE ATTR_NAME="remark" ATTR_TYPE="text"/>
 #! <FEAT_ATTRIBUTE ATTR_NAME="id_district" ATTR_TYPE="int4"/>
 #! <DEFLINE_PARM PARM_NAME="postgis_truncate_table" PARM_VALUE="YES"/>
@@ -1202,21 +1201,22 @@
 #! </FEATURE_TYPE>
 #! <FEATURE_TYPE
 #! IS_SOURCE="false"
-#! NODE_NAME="distribution.od_meter"
+#! NODE_NAME="distribution.od_subscriber"
 #! IS_EDITABLE="true"
-#! IDENTIFIER="59"
+#! IDENTIFIER="40"
 #! FEAT_GEOMTYPE="&lt;NO_GEOMETRY&gt;"
-#! POSITION="3057 -1662"
-#! ORDER="56"
+#! POSITION="3331 -702"
+#! ORDER="57"
 #! COLLAPSED="false"
 #! KEYWORD="POSTGIS_1"
 #! ENABLED="true"
 #! FANOUT="No"
 #! FANOUT_ID_ATTR=""
 #! >
+#! <FEAT_ATTRIBUTE ATTR_NAME="id_type" ATTR_TYPE="int8"/>
 #! <FEAT_ATTRIBUTE ATTR_NAME="id_pipe" ATTR_TYPE="int8"/>
 #! <FEAT_ATTRIBUTE ATTR_NAME="parcel" ATTR_TYPE="char(30)"/>
-#! <FEAT_ATTRIBUTE ATTR_NAME="client_identification" ATTR_TYPE="int8"/>
+#! <FEAT_ATTRIBUTE ATTR_NAME="identification" ATTR_TYPE="int8"/>
 #! <FEAT_ATTRIBUTE ATTR_NAME="remark" ATTR_TYPE="text"/>
 #! <FEAT_ATTRIBUTE ATTR_NAME="id_district" ATTR_TYPE="int4"/>
 #! <DEFLINE_PARM PARM_NAME="postgis_truncate_table" PARM_VALUE="YES"/>
@@ -1265,7 +1265,7 @@
 #! IDENTIFIER="5"
 #! COMMENT_VALUE="supprimer DELETED"
 #! POSITION="527 -42"
-#! ORDER="26"
+#! ORDER="27"
 #! FOLLOW_ANCHOR="true"
 #! INFO_NODE="false"
 #! COMMENT_TYPE="REGULAR"
@@ -1275,7 +1275,7 @@
 #! IDENTIFIER="9"
 #! COMMENT_VALUE="Pastille: coché (= -1) = info bord de plan"
 #! POSITION="1681 -51"
-#! ORDER="27"
+#! ORDER="28"
 #! FOLLOW_ANCHOR="true"
 #! INFO_NODE="false"
 #! COMMENT_TYPE="REGULAR"
@@ -1285,7 +1285,7 @@
 #! IDENTIFIER="10"
 #! COMMENT_VALUE="enlever champs inutiles"
 #! POSITION="1094 -21"
-#! ORDER="28"
+#! ORDER="29"
 #! FOLLOW_ANCHOR="true"
 #! INFO_NODE="false"
 #! COMMENT_TYPE="REGULAR"
@@ -1295,7 +1295,7 @@
 #! IDENTIFIER="48"
 #! COMMENT_VALUE="commune TB"
 #! POSITION="1847 -1881"
-#! ORDER="41"
+#! ORDER="42"
 #! FOLLOW_ANCHOR="true"
 #! INFO_NODE="false"
 #! COMMENT_TYPE="REGULAR"
@@ -1305,7 +1305,7 @@
 #! IDENTIFIER="58"
 #! COMMENT_VALUE="Communne 203"
 #! POSITION="794 -653"
-#! ORDER="43"
+#! ORDER="44"
 #! FOLLOW_ANCHOR="true"
 #! INFO_NODE="false"
 #! COMMENT_TYPE="REGULAR"
@@ -1342,7 +1342,7 @@
 #! TYPE="StringFormatter"
 #! VERSION="1"
 #! POSITION="45 -2078"
-#! ORDER="29"
+#! ORDER="30"
 #! PARMS_EDITED="true"
 #! ENABLED="true"
 #! >
@@ -1364,7 +1364,7 @@
 #! TYPE="StringConcatenator"
 #! VERSION="5"
 #! POSITION="44 -2374"
-#! ORDER="30"
+#! ORDER="31"
 #! PARMS_EDITED="true"
 #! ENABLED="true"
 #! >
@@ -1385,7 +1385,7 @@
 #! TYPE="GeometryOGCValidator"
 #! VERSION="0"
 #! POSITION="646 -1884"
-#! ORDER="31"
+#! ORDER="32"
 #! PARMS_EDITED="true"
 #! ENABLED="true"
 #! >
@@ -1419,7 +1419,7 @@
 #! TYPE="CoordinateSystemSetter"
 #! VERSION="0"
 #! POSITION="670 -2205"
-#! ORDER="32"
+#! ORDER="33"
 #! PARMS_EDITED="true"
 #! ENABLED="true"
 #! >
@@ -1441,7 +1441,7 @@
 #! TYPE="GeometryExtractor"
 #! VERSION="2"
 #! POSITION="673 -2464"
-#! ORDER="33"
+#! ORDER="34"
 #! PARMS_EDITED="true"
 #! ENABLED="true"
 #! >
@@ -1466,7 +1466,7 @@
 #! TYPE="AttributeFilter"
 #! VERSION="2"
 #! POSITION="527 -116"
-#! ORDER="34"
+#! ORDER="35"
 #! PARMS_EDITED="true"
 #! ENABLED="true"
 #! >
@@ -1626,7 +1626,7 @@
 #! TYPE="AttributeFilter"
 #! VERSION="2"
 #! POSITION="1651 -85"
-#! ORDER="35"
+#! ORDER="36"
 #! PARMS_EDITED="true"
 #! ENABLED="true"
 #! >
@@ -1691,7 +1691,7 @@
 #! TYPE="AttributeValueMapper"
 #! VERSION="2"
 #! POSITION="41 -492"
-#! ORDER="36"
+#! ORDER="37"
 #! PARMS_EDITED="true"
 #! ENABLED="true"
 #! >
@@ -1709,7 +1709,7 @@
 #! <XFORM_ATTR ATTR_NAME="TYP" IS_USER_CREATED="false" FEAT_INDEX="0"/>
 #! <XFORM_ATTR ATTR_NAME="V_COMMUNE" IS_USER_CREATED="false" FEAT_INDEX="0"/>
 #! <XFORM_ATTR ATTR_NAME="BEMERKUNG" IS_USER_CREATED="false" FEAT_INDEX="0"/>
-#! <XFORM_PARM PARM_NAME="LUT" PARM_VALUE="ARR,2,FONT,3,WC,4,SPK,5,RES,6,,1"/>
+#! <XFORM_PARM PARM_NAME="LUT" PARM_VALUE="ARR,9402,FONT,9403,WC,9404,SPK,9405,RES,6,,9401"/>
 #! <XFORM_PARM PARM_NAME="XFORMER_NAME" PARM_VALUE="AttributeValueMapper"/>
 #! <XFORM_PARM PARM_NAME="SRC" PARM_VALUE="TYP"/>
 #! <XFORM_PARM PARM_NAME="VAL_ATTR" PARM_VALUE="id_type"/>
@@ -1720,7 +1720,7 @@
 #! TYPE="AttributeRemover"
 #! VERSION="0"
 #! POSITION="24 -1772"
-#! ORDER="37"
+#! ORDER="38"
 #! PARMS_EDITED="true"
 #! ENABLED="true"
 #! >
@@ -1741,7 +1741,7 @@
 #! TYPE="GeometryReplacer"
 #! VERSION="2"
 #! POSITION="639 -1616"
-#! ORDER="38"
+#! ORDER="39"
 #! PARMS_EDITED="true"
 #! ENABLED="true"
 #! >
@@ -1764,7 +1764,7 @@
 #! TYPE="AttributeRemover"
 #! VERSION="0"
 #! POSITION="1091 -88"
-#! ORDER="39"
+#! ORDER="40"
 #! PARMS_EDITED="true"
 #! ENABLED="true"
 #! >
@@ -1791,7 +1791,7 @@
 #! TYPE="Visualizer"
 #! VERSION="2"
 #! POSITION="2643 -143"
-#! ORDER="44"
+#! ORDER="45"
 #! PARMS_EDITED="false"
 #! ENABLED="true"
 #! >
@@ -1816,7 +1816,7 @@
 #! TYPE="FeatureMerger"
 #! VERSION="8"
 #! POSITION="1245 -1397"
-#! ORDER="45"
+#! ORDER="46"
 #! PARMS_EDITED="true"
 #! ENABLED="true"
 #! >
@@ -1836,7 +1836,7 @@
 #! <XFORM_ATTR ATTR_NAME="id_pipe" IS_USER_CREATED="false" FEAT_INDEX="0"/>
 #! <XFORM_ATTR ATTR_NAME="V_COMMUNE" IS_USER_CREATED="false" FEAT_INDEX="0"/>
 #! <XFORM_ATTR ATTR_NAME="remark" IS_USER_CREATED="false" FEAT_INDEX="0"/>
-#! <XFORM_ATTR ATTR_NAME="client_identification" IS_USER_CREATED="false" FEAT_INDEX="0"/>
+#! <XFORM_ATTR ATTR_NAME="identification" IS_USER_CREATED="false" FEAT_INDEX="0"/>
 #! <OUTPUT_FEAT NAME="INCOMPLETE"/>
 #! <FEAT_COLLAPSED COLLAPSED="1"/>
 #! <XFORM_ATTR ATTR_NAME="id_type" IS_USER_CREATED="false" FEAT_INDEX="1"/>
@@ -1848,7 +1848,7 @@
 #! <XFORM_ATTR ATTR_NAME="id_pipe" IS_USER_CREATED="false" FEAT_INDEX="1"/>
 #! <XFORM_ATTR ATTR_NAME="V_COMMUNE" IS_USER_CREATED="false" FEAT_INDEX="1"/>
 #! <XFORM_ATTR ATTR_NAME="remark" IS_USER_CREATED="false" FEAT_INDEX="1"/>
-#! <XFORM_ATTR ATTR_NAME="client_identification" IS_USER_CREATED="false" FEAT_INDEX="1"/>
+#! <XFORM_ATTR ATTR_NAME="identification" IS_USER_CREATED="false" FEAT_INDEX="1"/>
 #! <OUTPUT_FEAT NAME="EMPTY"/>
 #! <FEAT_COLLAPSED COLLAPSED="2"/>
 #! <XFORM_ATTR ATTR_NAME="id_type" IS_USER_CREATED="false" FEAT_INDEX="2"/>
@@ -1860,7 +1860,7 @@
 #! <XFORM_ATTR ATTR_NAME="id_pipe" IS_USER_CREATED="false" FEAT_INDEX="2"/>
 #! <XFORM_ATTR ATTR_NAME="V_COMMUNE" IS_USER_CREATED="false" FEAT_INDEX="2"/>
 #! <XFORM_ATTR ATTR_NAME="remark" IS_USER_CREATED="false" FEAT_INDEX="2"/>
-#! <XFORM_ATTR ATTR_NAME="client_identification" IS_USER_CREATED="false" FEAT_INDEX="2"/>
+#! <XFORM_ATTR ATTR_NAME="identification" IS_USER_CREATED="false" FEAT_INDEX="2"/>
 #! <OUTPUT_FEAT NAME="REFERENCED"/>
 #! <FEAT_COLLAPSED COLLAPSED="3"/>
 #! <XFORM_ATTR ATTR_NAME="_concatenated" IS_USER_CREATED="false" FEAT_INDEX="3"/>
@@ -1904,7 +1904,7 @@
 #! TYPE="AttributeRenamer"
 #! VERSION="1"
 #! POSITION="124 -773"
-#! ORDER="46"
+#! ORDER="47"
 #! PARMS_EDITED="true"
 #! ENABLED="true"
 #! >
@@ -1921,16 +1921,16 @@
 #! <XFORM_ATTR ATTR_NAME="TYP" IS_USER_CREATED="false" FEAT_INDEX="0"/>
 #! <XFORM_ATTR ATTR_NAME="V_COMMUNE" IS_USER_CREATED="false" FEAT_INDEX="0"/>
 #! <XFORM_ATTR ATTR_NAME="remark" IS_USER_CREATED="false" FEAT_INDEX="0"/>
-#! <XFORM_ATTR ATTR_NAME="client_identification" IS_USER_CREATED="false" FEAT_INDEX="0"/>
+#! <XFORM_ATTR ATTR_NAME="identification" IS_USER_CREATED="false" FEAT_INDEX="0"/>
 #! <XFORM_PARM PARM_NAME="XFORMER_NAME" PARM_VALUE="AttributeRenamer"/>
-#! <XFORM_PARM PARM_NAME="ATTR_LIST" PARM_VALUE="id_pipe,STRANG_ID,client_identification,KUNDENNUMMER,parcel,PARCELLE,remark,BEMERKUNG"/>
+#! <XFORM_PARM PARM_NAME="ATTR_LIST" PARM_VALUE="id_pipe,STRANG_ID,identification,KUNDENNUMMER,parcel,PARCELLE,remark,BEMERKUNG"/>
 #! </TRANSFORMER>
 #! <TRANSFORMER
 #! IDENTIFIER="20"
 #! TYPE="AttributeRemover"
 #! VERSION="0"
 #! POSITION="8 -1102"
-#! ORDER="47"
+#! ORDER="48"
 #! PARMS_EDITED="true"
 #! ENABLED="true"
 #! >
@@ -1945,7 +1945,7 @@
 #! <XFORM_ATTR ATTR_NAME="id_pipe" IS_USER_CREATED="false" FEAT_INDEX="0"/>
 #! <XFORM_ATTR ATTR_NAME="V_COMMUNE" IS_USER_CREATED="false" FEAT_INDEX="0"/>
 #! <XFORM_ATTR ATTR_NAME="remark" IS_USER_CREATED="false" FEAT_INDEX="0"/>
-#! <XFORM_ATTR ATTR_NAME="client_identification" IS_USER_CREATED="false" FEAT_INDEX="0"/>
+#! <XFORM_ATTR ATTR_NAME="identification" IS_USER_CREATED="false" FEAT_INDEX="0"/>
 #! <XFORM_PARM PARM_NAME="PARAMETERS_GROUP" PARM_VALUE=""/>
 #! <XFORM_PARM PARM_NAME="XFORMER_NAME" PARM_VALUE="AttributeRemover_2"/>
 #! <XFORM_PARM PARM_NAME="REMOVE_ATTRS" PARM_VALUE="PASTILLE,TYP"/>
@@ -1956,7 +1956,7 @@
 #! TYPE="AttributeRenamer"
 #! VERSION="1"
 #! POSITION="999 -946"
-#! ORDER="49"
+#! ORDER="50"
 #! PARMS_EDITED="true"
 #! ENABLED="true"
 #! >
@@ -1978,7 +1978,7 @@
 #! TYPE="FeatureMerger"
 #! VERSION="8"
 #! POSITION="1658 -531"
-#! ORDER="50"
+#! ORDER="51"
 #! PARMS_EDITED="true"
 #! ENABLED="true"
 #! >
@@ -2015,9 +2015,9 @@
 #! <XFORM_ATTR ATTR_NAME="parcel" IS_USER_CREATED="false" FEAT_INDEX="0"/>
 #! <XFORM_ATTR ATTR_NAME="id_pipe" IS_USER_CREATED="false" FEAT_INDEX="0"/>
 #! <XFORM_ATTR ATTR_NAME="V_COMMUNE" IS_USER_CREATED="false" FEAT_INDEX="0"/>
-#! <XFORM_ATTR ATTR_NAME="remark" IS_USER_CREATED="false" FEAT_INDEX="0"/>
-#! <XFORM_ATTR ATTR_NAME="client_identification" IS_USER_CREATED="false" FEAT_INDEX="0"/>
 #! <XFORM_ATTR ATTR_NAME="id_district" IS_USER_CREATED="false" FEAT_INDEX="0"/>
+#! <XFORM_ATTR ATTR_NAME="remark" IS_USER_CREATED="false" FEAT_INDEX="0"/>
+#! <XFORM_ATTR ATTR_NAME="identification" IS_USER_CREATED="false" FEAT_INDEX="0"/>
 #! <OUTPUT_FEAT NAME="INCOMPLETE"/>
 #! <FEAT_COLLAPSED COLLAPSED="1"/>
 #! <XFORM_ATTR ATTR_NAME="FID" IS_USER_CREATED="false" FEAT_INDEX="1"/>
@@ -2046,7 +2046,7 @@
 #! <XFORM_ATTR ATTR_NAME="id_pipe" IS_USER_CREATED="false" FEAT_INDEX="1"/>
 #! <XFORM_ATTR ATTR_NAME="V_COMMUNE" IS_USER_CREATED="false" FEAT_INDEX="1"/>
 #! <XFORM_ATTR ATTR_NAME="remark" IS_USER_CREATED="false" FEAT_INDEX="1"/>
-#! <XFORM_ATTR ATTR_NAME="client_identification" IS_USER_CREATED="false" FEAT_INDEX="1"/>
+#! <XFORM_ATTR ATTR_NAME="identification" IS_USER_CREATED="false" FEAT_INDEX="1"/>
 #! <OUTPUT_FEAT NAME="EMPTY"/>
 #! <FEAT_COLLAPSED COLLAPSED="2"/>
 #! <XFORM_ATTR ATTR_NAME="FID" IS_USER_CREATED="false" FEAT_INDEX="2"/>
@@ -2075,7 +2075,7 @@
 #! <XFORM_ATTR ATTR_NAME="id_pipe" IS_USER_CREATED="false" FEAT_INDEX="2"/>
 #! <XFORM_ATTR ATTR_NAME="V_COMMUNE" IS_USER_CREATED="false" FEAT_INDEX="2"/>
 #! <XFORM_ATTR ATTR_NAME="remark" IS_USER_CREATED="false" FEAT_INDEX="2"/>
-#! <XFORM_ATTR ATTR_NAME="client_identification" IS_USER_CREATED="false" FEAT_INDEX="2"/>
+#! <XFORM_ATTR ATTR_NAME="identification" IS_USER_CREATED="false" FEAT_INDEX="2"/>
 #! <OUTPUT_FEAT NAME="REFERENCED"/>
 #! <FEAT_COLLAPSED COLLAPSED="3"/>
 #! <XFORM_ATTR ATTR_NAME="name" IS_USER_CREATED="false" FEAT_INDEX="3"/>
@@ -2118,11 +2118,132 @@
 #! <XFORM_PARM PARM_NAME="REFERATTR" PARM_VALUE="NOM"/>
 #! </TRANSFORMER>
 #! <TRANSFORMER
+#! IDENTIFIER="60"
+#! TYPE="AttributeFilter"
+#! VERSION="2"
+#! POSITION="2556 -603"
+#! ORDER="56"
+#! PARMS_EDITED="true"
+#! ENABLED="true"
+#! >
+#! <OUTPUT_FEAT NAME="6"/>
+#! <FEAT_COLLAPSED COLLAPSED="0"/>
+#! <XFORM_ATTR ATTR_NAME="geometry" IS_USER_CREATED="false" FEAT_INDEX="0"/>
+#! <XFORM_ATTR ATTR_NAME="name" IS_USER_CREATED="false" FEAT_INDEX="0"/>
+#! <XFORM_ATTR ATTR_NAME="shortname" IS_USER_CREATED="false" FEAT_INDEX="0"/>
+#! <XFORM_ATTR ATTR_NAME="zip" IS_USER_CREATED="false" FEAT_INDEX="0"/>
+#! <XFORM_ATTR ATTR_NAME="land_registry" IS_USER_CREATED="false" FEAT_INDEX="0"/>
+#! <XFORM_ATTR ATTR_NAME="subscriber_prefix" IS_USER_CREATED="false" FEAT_INDEX="0"/>
+#! <XFORM_ATTR ATTR_NAME="colorcode" IS_USER_CREATED="false" FEAT_INDEX="0"/>
+#! <XFORM_ATTR ATTR_NAME="FID" IS_USER_CREATED="false" FEAT_INDEX="0"/>
+#! <XFORM_ATTR ATTR_NAME="GID" IS_USER_CREATED="false" FEAT_INDEX="0"/>
+#! <XFORM_ATTR ATTR_NAME="ABREGE" IS_USER_CREATED="false" FEAT_INDEX="0"/>
+#! <XFORM_ATTR ATTR_NAME="AREA_GERECHNET" IS_USER_CREATED="false" FEAT_INDEX="0"/>
+#! <XFORM_ATTR ATTR_NAME="AREA_NOMINAL" IS_USER_CREATED="false" FEAT_INDEX="0"/>
+#! <XFORM_ATTR ATTR_NAME="CANTON" IS_USER_CREATED="false" FEAT_INDEX="0"/>
+#! <XFORM_ATTR ATTR_NAME="DELETED" IS_USER_CREATED="false" FEAT_INDEX="0"/>
+#! <XFORM_ATTR ATTR_NAME="INTITULE_LISTE" IS_USER_CREATED="false" FEAT_INDEX="0"/>
+#! <XFORM_ATTR ATTR_NAME="NOM" IS_USER_CREATED="false" FEAT_INDEX="0"/>
+#! <XFORM_ATTR ATTR_NAME="NO_RF" IS_USER_CREATED="false" FEAT_INDEX="0"/>
+#! <XFORM_ATTR ATTR_NAME="NPA" IS_USER_CREATED="false" FEAT_INDEX="0"/>
+#! <XFORM_ATTR ATTR_NAME="PREFIXE_ABT" IS_USER_CREATED="false" FEAT_INDEX="0"/>
+#! <XFORM_ATTR ATTR_NAME="STATUT_ASSAIN" IS_USER_CREATED="false" FEAT_INDEX="0"/>
+#! <XFORM_ATTR ATTR_NAME="STATUT_DISTRIB" IS_USER_CREATED="false" FEAT_INDEX="0"/>
+#! <XFORM_ATTR ATTR_NAME="_concatenated" IS_USER_CREATED="false" FEAT_INDEX="0"/>
+#! <XFORM_ATTR ATTR_NAME="id_type" IS_USER_CREATED="false" FEAT_INDEX="0"/>
+#! <XFORM_ATTR ATTR_NAME="X1" IS_USER_CREATED="false" FEAT_INDEX="0"/>
+#! <XFORM_ATTR ATTR_NAME="Y1" IS_USER_CREATED="false" FEAT_INDEX="0"/>
+#! <XFORM_ATTR ATTR_NAME="Z1" IS_USER_CREATED="false" FEAT_INDEX="0"/>
+#! <XFORM_ATTR ATTR_NAME="BEZEICHNUNG" IS_USER_CREATED="false" FEAT_INDEX="0"/>
+#! <XFORM_ATTR ATTR_NAME="FACTEUR_ECHELLE" IS_USER_CREATED="false" FEAT_INDEX="0"/>
+#! <XFORM_ATTR ATTR_NAME="parcel" IS_USER_CREATED="false" FEAT_INDEX="0"/>
+#! <XFORM_ATTR ATTR_NAME="id_pipe" IS_USER_CREATED="false" FEAT_INDEX="0"/>
+#! <XFORM_ATTR ATTR_NAME="V_COMMUNE" IS_USER_CREATED="false" FEAT_INDEX="0"/>
+#! <XFORM_ATTR ATTR_NAME="id_district" IS_USER_CREATED="false" FEAT_INDEX="0"/>
+#! <XFORM_ATTR ATTR_NAME="remark" IS_USER_CREATED="false" FEAT_INDEX="0"/>
+#! <XFORM_ATTR ATTR_NAME="identification" IS_USER_CREATED="false" FEAT_INDEX="0"/>
+#! <OUTPUT_FEAT NAME="&lt;BLANK&gt;"/>
+#! <FEAT_COLLAPSED COLLAPSED="1"/>
+#! <XFORM_ATTR ATTR_NAME="geometry" IS_USER_CREATED="false" FEAT_INDEX="1"/>
+#! <XFORM_ATTR ATTR_NAME="name" IS_USER_CREATED="false" FEAT_INDEX="1"/>
+#! <XFORM_ATTR ATTR_NAME="shortname" IS_USER_CREATED="false" FEAT_INDEX="1"/>
+#! <XFORM_ATTR ATTR_NAME="zip" IS_USER_CREATED="false" FEAT_INDEX="1"/>
+#! <XFORM_ATTR ATTR_NAME="land_registry" IS_USER_CREATED="false" FEAT_INDEX="1"/>
+#! <XFORM_ATTR ATTR_NAME="subscriber_prefix" IS_USER_CREATED="false" FEAT_INDEX="1"/>
+#! <XFORM_ATTR ATTR_NAME="colorcode" IS_USER_CREATED="false" FEAT_INDEX="1"/>
+#! <XFORM_ATTR ATTR_NAME="FID" IS_USER_CREATED="false" FEAT_INDEX="1"/>
+#! <XFORM_ATTR ATTR_NAME="GID" IS_USER_CREATED="false" FEAT_INDEX="1"/>
+#! <XFORM_ATTR ATTR_NAME="ABREGE" IS_USER_CREATED="false" FEAT_INDEX="1"/>
+#! <XFORM_ATTR ATTR_NAME="AREA_GERECHNET" IS_USER_CREATED="false" FEAT_INDEX="1"/>
+#! <XFORM_ATTR ATTR_NAME="AREA_NOMINAL" IS_USER_CREATED="false" FEAT_INDEX="1"/>
+#! <XFORM_ATTR ATTR_NAME="CANTON" IS_USER_CREATED="false" FEAT_INDEX="1"/>
+#! <XFORM_ATTR ATTR_NAME="DELETED" IS_USER_CREATED="false" FEAT_INDEX="1"/>
+#! <XFORM_ATTR ATTR_NAME="INTITULE_LISTE" IS_USER_CREATED="false" FEAT_INDEX="1"/>
+#! <XFORM_ATTR ATTR_NAME="NOM" IS_USER_CREATED="false" FEAT_INDEX="1"/>
+#! <XFORM_ATTR ATTR_NAME="NO_RF" IS_USER_CREATED="false" FEAT_INDEX="1"/>
+#! <XFORM_ATTR ATTR_NAME="NPA" IS_USER_CREATED="false" FEAT_INDEX="1"/>
+#! <XFORM_ATTR ATTR_NAME="PREFIXE_ABT" IS_USER_CREATED="false" FEAT_INDEX="1"/>
+#! <XFORM_ATTR ATTR_NAME="STATUT_ASSAIN" IS_USER_CREATED="false" FEAT_INDEX="1"/>
+#! <XFORM_ATTR ATTR_NAME="STATUT_DISTRIB" IS_USER_CREATED="false" FEAT_INDEX="1"/>
+#! <XFORM_ATTR ATTR_NAME="_concatenated" IS_USER_CREATED="false" FEAT_INDEX="1"/>
+#! <XFORM_ATTR ATTR_NAME="id_type" IS_USER_CREATED="false" FEAT_INDEX="1"/>
+#! <XFORM_ATTR ATTR_NAME="X1" IS_USER_CREATED="false" FEAT_INDEX="1"/>
+#! <XFORM_ATTR ATTR_NAME="Y1" IS_USER_CREATED="false" FEAT_INDEX="1"/>
+#! <XFORM_ATTR ATTR_NAME="Z1" IS_USER_CREATED="false" FEAT_INDEX="1"/>
+#! <XFORM_ATTR ATTR_NAME="BEZEICHNUNG" IS_USER_CREATED="false" FEAT_INDEX="1"/>
+#! <XFORM_ATTR ATTR_NAME="FACTEUR_ECHELLE" IS_USER_CREATED="false" FEAT_INDEX="1"/>
+#! <XFORM_ATTR ATTR_NAME="parcel" IS_USER_CREATED="false" FEAT_INDEX="1"/>
+#! <XFORM_ATTR ATTR_NAME="id_pipe" IS_USER_CREATED="false" FEAT_INDEX="1"/>
+#! <XFORM_ATTR ATTR_NAME="V_COMMUNE" IS_USER_CREATED="false" FEAT_INDEX="1"/>
+#! <XFORM_ATTR ATTR_NAME="id_district" IS_USER_CREATED="false" FEAT_INDEX="1"/>
+#! <XFORM_ATTR ATTR_NAME="remark" IS_USER_CREATED="false" FEAT_INDEX="1"/>
+#! <XFORM_ATTR ATTR_NAME="identification" IS_USER_CREATED="false" FEAT_INDEX="1"/>
+#! <OUTPUT_FEAT NAME="&lt;UNFILTERED&gt;"/>
+#! <FEAT_COLLAPSED COLLAPSED="2"/>
+#! <XFORM_ATTR ATTR_NAME="geometry" IS_USER_CREATED="false" FEAT_INDEX="2"/>
+#! <XFORM_ATTR ATTR_NAME="name" IS_USER_CREATED="false" FEAT_INDEX="2"/>
+#! <XFORM_ATTR ATTR_NAME="shortname" IS_USER_CREATED="false" FEAT_INDEX="2"/>
+#! <XFORM_ATTR ATTR_NAME="zip" IS_USER_CREATED="false" FEAT_INDEX="2"/>
+#! <XFORM_ATTR ATTR_NAME="land_registry" IS_USER_CREATED="false" FEAT_INDEX="2"/>
+#! <XFORM_ATTR ATTR_NAME="subscriber_prefix" IS_USER_CREATED="false" FEAT_INDEX="2"/>
+#! <XFORM_ATTR ATTR_NAME="colorcode" IS_USER_CREATED="false" FEAT_INDEX="2"/>
+#! <XFORM_ATTR ATTR_NAME="FID" IS_USER_CREATED="false" FEAT_INDEX="2"/>
+#! <XFORM_ATTR ATTR_NAME="GID" IS_USER_CREATED="false" FEAT_INDEX="2"/>
+#! <XFORM_ATTR ATTR_NAME="ABREGE" IS_USER_CREATED="false" FEAT_INDEX="2"/>
+#! <XFORM_ATTR ATTR_NAME="AREA_GERECHNET" IS_USER_CREATED="false" FEAT_INDEX="2"/>
+#! <XFORM_ATTR ATTR_NAME="AREA_NOMINAL" IS_USER_CREATED="false" FEAT_INDEX="2"/>
+#! <XFORM_ATTR ATTR_NAME="CANTON" IS_USER_CREATED="false" FEAT_INDEX="2"/>
+#! <XFORM_ATTR ATTR_NAME="DELETED" IS_USER_CREATED="false" FEAT_INDEX="2"/>
+#! <XFORM_ATTR ATTR_NAME="INTITULE_LISTE" IS_USER_CREATED="false" FEAT_INDEX="2"/>
+#! <XFORM_ATTR ATTR_NAME="NOM" IS_USER_CREATED="false" FEAT_INDEX="2"/>
+#! <XFORM_ATTR ATTR_NAME="NO_RF" IS_USER_CREATED="false" FEAT_INDEX="2"/>
+#! <XFORM_ATTR ATTR_NAME="NPA" IS_USER_CREATED="false" FEAT_INDEX="2"/>
+#! <XFORM_ATTR ATTR_NAME="PREFIXE_ABT" IS_USER_CREATED="false" FEAT_INDEX="2"/>
+#! <XFORM_ATTR ATTR_NAME="STATUT_ASSAIN" IS_USER_CREATED="false" FEAT_INDEX="2"/>
+#! <XFORM_ATTR ATTR_NAME="STATUT_DISTRIB" IS_USER_CREATED="false" FEAT_INDEX="2"/>
+#! <XFORM_ATTR ATTR_NAME="_concatenated" IS_USER_CREATED="false" FEAT_INDEX="2"/>
+#! <XFORM_ATTR ATTR_NAME="id_type" IS_USER_CREATED="false" FEAT_INDEX="2"/>
+#! <XFORM_ATTR ATTR_NAME="X1" IS_USER_CREATED="false" FEAT_INDEX="2"/>
+#! <XFORM_ATTR ATTR_NAME="Y1" IS_USER_CREATED="false" FEAT_INDEX="2"/>
+#! <XFORM_ATTR ATTR_NAME="Z1" IS_USER_CREATED="false" FEAT_INDEX="2"/>
+#! <XFORM_ATTR ATTR_NAME="BEZEICHNUNG" IS_USER_CREATED="false" FEAT_INDEX="2"/>
+#! <XFORM_ATTR ATTR_NAME="FACTEUR_ECHELLE" IS_USER_CREATED="false" FEAT_INDEX="2"/>
+#! <XFORM_ATTR ATTR_NAME="parcel" IS_USER_CREATED="false" FEAT_INDEX="2"/>
+#! <XFORM_ATTR ATTR_NAME="id_pipe" IS_USER_CREATED="false" FEAT_INDEX="2"/>
+#! <XFORM_ATTR ATTR_NAME="V_COMMUNE" IS_USER_CREATED="false" FEAT_INDEX="2"/>
+#! <XFORM_ATTR ATTR_NAME="id_district" IS_USER_CREATED="false" FEAT_INDEX="2"/>
+#! <XFORM_ATTR ATTR_NAME="remark" IS_USER_CREATED="false" FEAT_INDEX="2"/>
+#! <XFORM_ATTR ATTR_NAME="identification" IS_USER_CREATED="false" FEAT_INDEX="2"/>
+#! <XFORM_PARM PARM_NAME="XFORMER_NAME" PARM_VALUE="AttributeFilter_3"/>
+#! <XFORM_PARM PARM_NAME="ATTR_NAME" PARM_VALUE="id_type"/>
+#! <XFORM_PARM PARM_NAME="ATTR_VALUES" PARM_VALUE="6"/>
+#! </TRANSFORMER>
+#! <TRANSFORMER
 #! IDENTIFIER="45"
 #! TYPE="FeatureMerger"
 #! VERSION="8"
-#! POSITION="1842 -1270"
-#! ORDER="51"
+#! POSITION="1980 -1192"
+#! ORDER="58"
 #! PARMS_EDITED="true"
 #! ENABLED="true"
 #! >
@@ -2154,7 +2275,7 @@
 #! <XFORM_ATTR ATTR_NAME="id_pipe" IS_USER_CREATED="false" FEAT_INDEX="0"/>
 #! <XFORM_ATTR ATTR_NAME="V_COMMUNE" IS_USER_CREATED="false" FEAT_INDEX="0"/>
 #! <XFORM_ATTR ATTR_NAME="remark" IS_USER_CREATED="false" FEAT_INDEX="0"/>
-#! <XFORM_ATTR ATTR_NAME="client_identification" IS_USER_CREATED="false" FEAT_INDEX="0"/>
+#! <XFORM_ATTR ATTR_NAME="identification" IS_USER_CREATED="false" FEAT_INDEX="0"/>
 #! <OUTPUT_FEAT NAME="INCOMPLETE"/>
 #! <FEAT_COLLAPSED COLLAPSED="1"/>
 #! <XFORM_ATTR ATTR_NAME="FID" IS_USER_CREATED="false" FEAT_INDEX="1"/>
@@ -2171,7 +2292,7 @@
 #! <XFORM_ATTR ATTR_NAME="id_pipe" IS_USER_CREATED="false" FEAT_INDEX="1"/>
 #! <XFORM_ATTR ATTR_NAME="V_COMMUNE" IS_USER_CREATED="false" FEAT_INDEX="1"/>
 #! <XFORM_ATTR ATTR_NAME="remark" IS_USER_CREATED="false" FEAT_INDEX="1"/>
-#! <XFORM_ATTR ATTR_NAME="client_identification" IS_USER_CREATED="false" FEAT_INDEX="1"/>
+#! <XFORM_ATTR ATTR_NAME="identification" IS_USER_CREATED="false" FEAT_INDEX="1"/>
 #! <OUTPUT_FEAT NAME="EMPTY"/>
 #! <FEAT_COLLAPSED COLLAPSED="2"/>
 #! <XFORM_ATTR ATTR_NAME="FID" IS_USER_CREATED="false" FEAT_INDEX="2"/>
@@ -2188,7 +2309,7 @@
 #! <XFORM_ATTR ATTR_NAME="id_pipe" IS_USER_CREATED="false" FEAT_INDEX="2"/>
 #! <XFORM_ATTR ATTR_NAME="V_COMMUNE" IS_USER_CREATED="false" FEAT_INDEX="2"/>
 #! <XFORM_ATTR ATTR_NAME="remark" IS_USER_CREATED="false" FEAT_INDEX="2"/>
-#! <XFORM_ATTR ATTR_NAME="client_identification" IS_USER_CREATED="false" FEAT_INDEX="2"/>
+#! <XFORM_ATTR ATTR_NAME="identification" IS_USER_CREATED="false" FEAT_INDEX="2"/>
 #! <OUTPUT_FEAT NAME="REFERENCED"/>
 #! <FEAT_COLLAPSED COLLAPSED="3"/>
 #! <XFORM_ATTR ATTR_NAME="ABREGE" IS_USER_CREATED="false" FEAT_INDEX="3"/>
@@ -2247,127 +2368,6 @@
 #! <XFORM_PARM PARM_NAME="TRANSFORMER_GROUP" PARM_VALUE=""/>
 #! <XFORM_PARM PARM_NAME="BUILD_INCOMPLETE" PARM_VALUE="No"/>
 #! <XFORM_PARM PARM_NAME="REFERATTR" PARM_VALUE="V_COMMUNE"/>
-#! </TRANSFORMER>
-#! <TRANSFORMER
-#! IDENTIFIER="60"
-#! TYPE="AttributeFilter"
-#! VERSION="2"
-#! POSITION="2556 -603"
-#! ORDER="57"
-#! PARMS_EDITED="true"
-#! ENABLED="true"
-#! >
-#! <OUTPUT_FEAT NAME="6"/>
-#! <FEAT_COLLAPSED COLLAPSED="0"/>
-#! <XFORM_ATTR ATTR_NAME="geometry" IS_USER_CREATED="false" FEAT_INDEX="0"/>
-#! <XFORM_ATTR ATTR_NAME="name" IS_USER_CREATED="false" FEAT_INDEX="0"/>
-#! <XFORM_ATTR ATTR_NAME="shortname" IS_USER_CREATED="false" FEAT_INDEX="0"/>
-#! <XFORM_ATTR ATTR_NAME="zip" IS_USER_CREATED="false" FEAT_INDEX="0"/>
-#! <XFORM_ATTR ATTR_NAME="land_registry" IS_USER_CREATED="false" FEAT_INDEX="0"/>
-#! <XFORM_ATTR ATTR_NAME="subscriber_prefix" IS_USER_CREATED="false" FEAT_INDEX="0"/>
-#! <XFORM_ATTR ATTR_NAME="colorcode" IS_USER_CREATED="false" FEAT_INDEX="0"/>
-#! <XFORM_ATTR ATTR_NAME="FID" IS_USER_CREATED="false" FEAT_INDEX="0"/>
-#! <XFORM_ATTR ATTR_NAME="GID" IS_USER_CREATED="false" FEAT_INDEX="0"/>
-#! <XFORM_ATTR ATTR_NAME="ABREGE" IS_USER_CREATED="false" FEAT_INDEX="0"/>
-#! <XFORM_ATTR ATTR_NAME="AREA_GERECHNET" IS_USER_CREATED="false" FEAT_INDEX="0"/>
-#! <XFORM_ATTR ATTR_NAME="AREA_NOMINAL" IS_USER_CREATED="false" FEAT_INDEX="0"/>
-#! <XFORM_ATTR ATTR_NAME="CANTON" IS_USER_CREATED="false" FEAT_INDEX="0"/>
-#! <XFORM_ATTR ATTR_NAME="DELETED" IS_USER_CREATED="false" FEAT_INDEX="0"/>
-#! <XFORM_ATTR ATTR_NAME="INTITULE_LISTE" IS_USER_CREATED="false" FEAT_INDEX="0"/>
-#! <XFORM_ATTR ATTR_NAME="NOM" IS_USER_CREATED="false" FEAT_INDEX="0"/>
-#! <XFORM_ATTR ATTR_NAME="NO_RF" IS_USER_CREATED="false" FEAT_INDEX="0"/>
-#! <XFORM_ATTR ATTR_NAME="NPA" IS_USER_CREATED="false" FEAT_INDEX="0"/>
-#! <XFORM_ATTR ATTR_NAME="PREFIXE_ABT" IS_USER_CREATED="false" FEAT_INDEX="0"/>
-#! <XFORM_ATTR ATTR_NAME="STATUT_ASSAIN" IS_USER_CREATED="false" FEAT_INDEX="0"/>
-#! <XFORM_ATTR ATTR_NAME="STATUT_DISTRIB" IS_USER_CREATED="false" FEAT_INDEX="0"/>
-#! <XFORM_ATTR ATTR_NAME="_concatenated" IS_USER_CREATED="false" FEAT_INDEX="0"/>
-#! <XFORM_ATTR ATTR_NAME="id_type" IS_USER_CREATED="false" FEAT_INDEX="0"/>
-#! <XFORM_ATTR ATTR_NAME="X1" IS_USER_CREATED="false" FEAT_INDEX="0"/>
-#! <XFORM_ATTR ATTR_NAME="Y1" IS_USER_CREATED="false" FEAT_INDEX="0"/>
-#! <XFORM_ATTR ATTR_NAME="Z1" IS_USER_CREATED="false" FEAT_INDEX="0"/>
-#! <XFORM_ATTR ATTR_NAME="BEZEICHNUNG" IS_USER_CREATED="false" FEAT_INDEX="0"/>
-#! <XFORM_ATTR ATTR_NAME="FACTEUR_ECHELLE" IS_USER_CREATED="false" FEAT_INDEX="0"/>
-#! <XFORM_ATTR ATTR_NAME="parcel" IS_USER_CREATED="false" FEAT_INDEX="0"/>
-#! <XFORM_ATTR ATTR_NAME="id_pipe" IS_USER_CREATED="false" FEAT_INDEX="0"/>
-#! <XFORM_ATTR ATTR_NAME="V_COMMUNE" IS_USER_CREATED="false" FEAT_INDEX="0"/>
-#! <XFORM_ATTR ATTR_NAME="remark" IS_USER_CREATED="false" FEAT_INDEX="0"/>
-#! <XFORM_ATTR ATTR_NAME="client_identification" IS_USER_CREATED="false" FEAT_INDEX="0"/>
-#! <XFORM_ATTR ATTR_NAME="id_district" IS_USER_CREATED="false" FEAT_INDEX="0"/>
-#! <OUTPUT_FEAT NAME="&lt;BLANK&gt;"/>
-#! <FEAT_COLLAPSED COLLAPSED="1"/>
-#! <XFORM_ATTR ATTR_NAME="geometry" IS_USER_CREATED="false" FEAT_INDEX="1"/>
-#! <XFORM_ATTR ATTR_NAME="name" IS_USER_CREATED="false" FEAT_INDEX="1"/>
-#! <XFORM_ATTR ATTR_NAME="shortname" IS_USER_CREATED="false" FEAT_INDEX="1"/>
-#! <XFORM_ATTR ATTR_NAME="zip" IS_USER_CREATED="false" FEAT_INDEX="1"/>
-#! <XFORM_ATTR ATTR_NAME="land_registry" IS_USER_CREATED="false" FEAT_INDEX="1"/>
-#! <XFORM_ATTR ATTR_NAME="subscriber_prefix" IS_USER_CREATED="false" FEAT_INDEX="1"/>
-#! <XFORM_ATTR ATTR_NAME="colorcode" IS_USER_CREATED="false" FEAT_INDEX="1"/>
-#! <XFORM_ATTR ATTR_NAME="FID" IS_USER_CREATED="false" FEAT_INDEX="1"/>
-#! <XFORM_ATTR ATTR_NAME="GID" IS_USER_CREATED="false" FEAT_INDEX="1"/>
-#! <XFORM_ATTR ATTR_NAME="ABREGE" IS_USER_CREATED="false" FEAT_INDEX="1"/>
-#! <XFORM_ATTR ATTR_NAME="AREA_GERECHNET" IS_USER_CREATED="false" FEAT_INDEX="1"/>
-#! <XFORM_ATTR ATTR_NAME="AREA_NOMINAL" IS_USER_CREATED="false" FEAT_INDEX="1"/>
-#! <XFORM_ATTR ATTR_NAME="CANTON" IS_USER_CREATED="false" FEAT_INDEX="1"/>
-#! <XFORM_ATTR ATTR_NAME="DELETED" IS_USER_CREATED="false" FEAT_INDEX="1"/>
-#! <XFORM_ATTR ATTR_NAME="INTITULE_LISTE" IS_USER_CREATED="false" FEAT_INDEX="1"/>
-#! <XFORM_ATTR ATTR_NAME="NOM" IS_USER_CREATED="false" FEAT_INDEX="1"/>
-#! <XFORM_ATTR ATTR_NAME="NO_RF" IS_USER_CREATED="false" FEAT_INDEX="1"/>
-#! <XFORM_ATTR ATTR_NAME="NPA" IS_USER_CREATED="false" FEAT_INDEX="1"/>
-#! <XFORM_ATTR ATTR_NAME="PREFIXE_ABT" IS_USER_CREATED="false" FEAT_INDEX="1"/>
-#! <XFORM_ATTR ATTR_NAME="STATUT_ASSAIN" IS_USER_CREATED="false" FEAT_INDEX="1"/>
-#! <XFORM_ATTR ATTR_NAME="STATUT_DISTRIB" IS_USER_CREATED="false" FEAT_INDEX="1"/>
-#! <XFORM_ATTR ATTR_NAME="_concatenated" IS_USER_CREATED="false" FEAT_INDEX="1"/>
-#! <XFORM_ATTR ATTR_NAME="id_type" IS_USER_CREATED="false" FEAT_INDEX="1"/>
-#! <XFORM_ATTR ATTR_NAME="X1" IS_USER_CREATED="false" FEAT_INDEX="1"/>
-#! <XFORM_ATTR ATTR_NAME="Y1" IS_USER_CREATED="false" FEAT_INDEX="1"/>
-#! <XFORM_ATTR ATTR_NAME="Z1" IS_USER_CREATED="false" FEAT_INDEX="1"/>
-#! <XFORM_ATTR ATTR_NAME="BEZEICHNUNG" IS_USER_CREATED="false" FEAT_INDEX="1"/>
-#! <XFORM_ATTR ATTR_NAME="FACTEUR_ECHELLE" IS_USER_CREATED="false" FEAT_INDEX="1"/>
-#! <XFORM_ATTR ATTR_NAME="parcel" IS_USER_CREATED="false" FEAT_INDEX="1"/>
-#! <XFORM_ATTR ATTR_NAME="id_pipe" IS_USER_CREATED="false" FEAT_INDEX="1"/>
-#! <XFORM_ATTR ATTR_NAME="V_COMMUNE" IS_USER_CREATED="false" FEAT_INDEX="1"/>
-#! <XFORM_ATTR ATTR_NAME="remark" IS_USER_CREATED="false" FEAT_INDEX="1"/>
-#! <XFORM_ATTR ATTR_NAME="client_identification" IS_USER_CREATED="false" FEAT_INDEX="1"/>
-#! <XFORM_ATTR ATTR_NAME="id_district" IS_USER_CREATED="false" FEAT_INDEX="1"/>
-#! <OUTPUT_FEAT NAME="&lt;UNFILTERED&gt;"/>
-#! <FEAT_COLLAPSED COLLAPSED="2"/>
-#! <XFORM_ATTR ATTR_NAME="geometry" IS_USER_CREATED="false" FEAT_INDEX="2"/>
-#! <XFORM_ATTR ATTR_NAME="name" IS_USER_CREATED="false" FEAT_INDEX="2"/>
-#! <XFORM_ATTR ATTR_NAME="shortname" IS_USER_CREATED="false" FEAT_INDEX="2"/>
-#! <XFORM_ATTR ATTR_NAME="zip" IS_USER_CREATED="false" FEAT_INDEX="2"/>
-#! <XFORM_ATTR ATTR_NAME="land_registry" IS_USER_CREATED="false" FEAT_INDEX="2"/>
-#! <XFORM_ATTR ATTR_NAME="subscriber_prefix" IS_USER_CREATED="false" FEAT_INDEX="2"/>
-#! <XFORM_ATTR ATTR_NAME="colorcode" IS_USER_CREATED="false" FEAT_INDEX="2"/>
-#! <XFORM_ATTR ATTR_NAME="FID" IS_USER_CREATED="false" FEAT_INDEX="2"/>
-#! <XFORM_ATTR ATTR_NAME="GID" IS_USER_CREATED="false" FEAT_INDEX="2"/>
-#! <XFORM_ATTR ATTR_NAME="ABREGE" IS_USER_CREATED="false" FEAT_INDEX="2"/>
-#! <XFORM_ATTR ATTR_NAME="AREA_GERECHNET" IS_USER_CREATED="false" FEAT_INDEX="2"/>
-#! <XFORM_ATTR ATTR_NAME="AREA_NOMINAL" IS_USER_CREATED="false" FEAT_INDEX="2"/>
-#! <XFORM_ATTR ATTR_NAME="CANTON" IS_USER_CREATED="false" FEAT_INDEX="2"/>
-#! <XFORM_ATTR ATTR_NAME="DELETED" IS_USER_CREATED="false" FEAT_INDEX="2"/>
-#! <XFORM_ATTR ATTR_NAME="INTITULE_LISTE" IS_USER_CREATED="false" FEAT_INDEX="2"/>
-#! <XFORM_ATTR ATTR_NAME="NOM" IS_USER_CREATED="false" FEAT_INDEX="2"/>
-#! <XFORM_ATTR ATTR_NAME="NO_RF" IS_USER_CREATED="false" FEAT_INDEX="2"/>
-#! <XFORM_ATTR ATTR_NAME="NPA" IS_USER_CREATED="false" FEAT_INDEX="2"/>
-#! <XFORM_ATTR ATTR_NAME="PREFIXE_ABT" IS_USER_CREATED="false" FEAT_INDEX="2"/>
-#! <XFORM_ATTR ATTR_NAME="STATUT_ASSAIN" IS_USER_CREATED="false" FEAT_INDEX="2"/>
-#! <XFORM_ATTR ATTR_NAME="STATUT_DISTRIB" IS_USER_CREATED="false" FEAT_INDEX="2"/>
-#! <XFORM_ATTR ATTR_NAME="_concatenated" IS_USER_CREATED="false" FEAT_INDEX="2"/>
-#! <XFORM_ATTR ATTR_NAME="id_type" IS_USER_CREATED="false" FEAT_INDEX="2"/>
-#! <XFORM_ATTR ATTR_NAME="X1" IS_USER_CREATED="false" FEAT_INDEX="2"/>
-#! <XFORM_ATTR ATTR_NAME="Y1" IS_USER_CREATED="false" FEAT_INDEX="2"/>
-#! <XFORM_ATTR ATTR_NAME="Z1" IS_USER_CREATED="false" FEAT_INDEX="2"/>
-#! <XFORM_ATTR ATTR_NAME="BEZEICHNUNG" IS_USER_CREATED="false" FEAT_INDEX="2"/>
-#! <XFORM_ATTR ATTR_NAME="FACTEUR_ECHELLE" IS_USER_CREATED="false" FEAT_INDEX="2"/>
-#! <XFORM_ATTR ATTR_NAME="parcel" IS_USER_CREATED="false" FEAT_INDEX="2"/>
-#! <XFORM_ATTR ATTR_NAME="id_pipe" IS_USER_CREATED="false" FEAT_INDEX="2"/>
-#! <XFORM_ATTR ATTR_NAME="V_COMMUNE" IS_USER_CREATED="false" FEAT_INDEX="2"/>
-#! <XFORM_ATTR ATTR_NAME="remark" IS_USER_CREATED="false" FEAT_INDEX="2"/>
-#! <XFORM_ATTR ATTR_NAME="client_identification" IS_USER_CREATED="false" FEAT_INDEX="2"/>
-#! <XFORM_ATTR ATTR_NAME="id_district" IS_USER_CREATED="false" FEAT_INDEX="2"/>
-#! <XFORM_PARM PARM_NAME="XFORMER_NAME" PARM_VALUE="AttributeFilter_3"/>
-#! <XFORM_PARM PARM_NAME="ATTR_NAME" PARM_VALUE="id_type"/>
-#! <XFORM_PARM PARM_NAME="ATTR_VALUES" PARM_VALUE="6"/>
 #! </TRANSFORMER>
 #! </TRANSFORMERS>
 #! <FEAT_LINKS>
@@ -2601,6 +2601,15 @@
 #! SOURCE_NODE="60"
 #! TARGET_NODE="59"
 #! SOURCE_PORT_DESC="fo 0"
+#! TARGET_PORT_DESC="-1"
+#! ENABLED="true"
+#! EXTRA_POINTS=""
+#! />
+#! <FEAT_LINK
+#! IDENTIFIER="66"
+#! SOURCE_NODE="60"
+#! TARGET_NODE="40"
+#! SOURCE_PORT_DESC="fo 2"
 #! TARGET_PORT_DESC="-1"
 #! ENABLED="true"
 #! EXTRA_POINTS=""
@@ -2996,7 +3005,7 @@ POSTGRES_1_DEF distribution.od_district   postgres_type                postgres_
 
 # -------------------------------------------------------------------------
 
-Lookup ___KnownFeatureTypes___   "$(DATASET_KEYWORD_ORACLE8I_DB_2)_SIGE_DISTRIBUTION.WA_GEBEINFUEHR_GEO" yes   "$(DATASET_KEYWORD_ORACLE8I_DB_3)_SIGE_DISTRIBUTION.V_COMMUNES" yes   "$(DATASET_KEYWORD_POSTGRES_1)_distribution.od_district" yes   "$(DATASET_KEYWORD_ORACLE8I_DB_1)_SIGE_DISTRIBUTION.WA_GEBEINFUEHR" yes   "" no
+Lookup ___KnownFeatureTypes___   "$(DATASET_KEYWORD_ORACLE8I_DB_2)_SIGE_DISTRIBUTION.WA_GEBEINFUEHR_GEO" yes   "$(DATASET_KEYWORD_ORACLE8I_DB_3)_SIGE_DISTRIBUTION.V_COMMUNES" yes   "$(DATASET_KEYWORD_ORACLE8I_DB_1)_SIGE_DISTRIBUTION.WA_GEBEINFUEHR" yes   "$(DATASET_KEYWORD_POSTGRES_1)_distribution.od_district" yes   "" no
 # -------------------------------------------------------------------------
 
 FACTORY_DEF * TestFactory   FACTORY_NAME "Unexpected Input Remover"   INPUT FEATURE_TYPE *   TEST @Lookup(___KnownFeatureTypes___,@Concatenate(&multi_reader_keyword,"_",@FeatureType())) == yes   OUTPUT PASSED FEATURE_TYPE *
@@ -3070,13 +3079,13 @@ FACTORY_DEF * TestFactory    FACTORY_NAME AttributeFilter_2_BlankFilter    INPUT
 FACTORY_DEF * TeeFactory   FACTORY_NAME "AttributeFilter_2 -1 Output Nuker"   INPUT FEATURE_TYPE AttributeFilter_2_-1
 FACTORY_DEF * TeeFactory   FACTORY_NAME "AttributeFilter_2 <UNFILTERED> Output Nuker"   INPUT FEATURE_TYPE AttributeFilter_2_<UNFILTERED>
 # -------------------------------------------------------------------------
-Lookup AttributeValueMapper_LOOKUP_TABLE   ARR             2   FONT            3   WC              4   SPK             5   RES             6   ""              1   ENCODED
+Lookup AttributeValueMapper_LOOKUP_TABLE   ARR             9402   FONT            9403   WC              9404   SPK             9405   RES             6   ""              9401   ENCODED
 
 FACTORY_DEF * TeeFactory    FACTORY_NAME AttributeValueMapper    INPUT  FEATURE_TYPE AttributeFilter_2_0    INPUT  FEATURE_TYPE AttributeFilter_2_<BLANK>    OUTPUT FEATURE_TYPE AttributeValueMapper_OUTPUT         "id_type" @Lookup(AttributeValueMapper_LOOKUP_TABLE,"TYP",FORWARD|ENCODED_ATTR)
 
 # -------------------------------------------------------------------------
 
-FACTORY_DEF * TeeFactory    FACTORY_NAME AttributeRenamer    INPUT  FEATURE_TYPE AttributeValueMapper_OUTPUT    OUTPUT FEATURE_TYPE AttributeRenamer_OUTPUT         @RenameAttributes(id_pipe,STRANG_ID,client_identification,KUNDENNUMMER,parcel,PARCELLE,remark,BEMERKUNG)
+FACTORY_DEF * TeeFactory    FACTORY_NAME AttributeRenamer    INPUT  FEATURE_TYPE AttributeValueMapper_OUTPUT    OUTPUT FEATURE_TYPE AttributeRenamer_OUTPUT         @RenameAttributes(id_pipe,STRANG_ID,identification,KUNDENNUMMER,parcel,PARCELLE,remark,BEMERKUNG)
 
 # -------------------------------------------------------------------------
 
@@ -3105,13 +3114,15 @@ Tcl2 proc AttributeFilter_3_setFeatType {} {     global FME_FeatureType;     set
 FACTORY_DEF * TestFactory    FACTORY_NAME AttributeFilter_3    INPUT  FEATURE_TYPE FeatureMerger_3_COMPLETE    INPUT  FEATURE_TYPE FeatureMerger_2_INCOMPLETE    INPUT  FEATURE_TYPE FeatureMerger_2_EMPTY    TEST @Lookup(AttributeFilter_3_AttributeFilterLut,"id_type",ENCODED_ATTR) == "ok"    OUTPUT PASSED FEATURE_TYPE * @Tcl2(AttributeFilter_3_setFeatType)    OUTPUT FAILED FEATURE_TYPE AttributeFilter_3_<UNFILTERED>
 FACTORY_DEF * TestFactory    FACTORY_NAME AttributeFilter_3_BlankFilter    INPUT FEATURE_TYPE AttributeFilter_3_<UNFILTERED>    TEST @Value("id_type") == ""    OUTPUT PASSED FEATURE_TYPE AttributeFilter_3_<BLANK>    OUTPUT FAILED FEATURE_TYPE AttributeFilter_3_<UNFILTERED>
 
-FACTORY_DEF * TeeFactory   FACTORY_NAME "AttributeFilter_3 <UNFILTERED> Output Nuker"   INPUT FEATURE_TYPE AttributeFilter_3_<UNFILTERED>
+# -------------------------------------------------------------------------
+
+FACTORY_DEF * TeeFactory    FACTORY_NAME "AttributeFilter_3_6 -> distribution.od_meter Correlator"    INPUT FEATURE_TYPE AttributeFilter_3_6    OUTPUT FEATURE_TYPE __GO_TO_FINAL_OUTPUT_ROUTER__       @Reproject("EPSG:21781","EPSG:21781")       @Transform(FME_GENERIC,POSTGIS)       @SupplyAttributes(__wb_out_feat_type__,distribution.od_meter)
 # -------------------------------------------------------------------------
 
 FACTORY_DEF * TeeFactory    FACTORY_NAME "AttributeFilter_3_<BLANK> -> distribution.od_subscriber Correlator"    INPUT FEATURE_TYPE AttributeFilter_3_<BLANK>    OUTPUT FEATURE_TYPE __GO_TO_FINAL_OUTPUT_ROUTER__       @Reproject("EPSG:21781","EPSG:21781")       @Transform(FME_GENERIC,POSTGIS)       @SupplyAttributes(__wb_out_feat_type__,distribution.od_subscriber)
 # -------------------------------------------------------------------------
 
-FACTORY_DEF * TeeFactory    FACTORY_NAME "AttributeFilter_3_6 -> distribution.od_meter Correlator"    INPUT FEATURE_TYPE AttributeFilter_3_6    OUTPUT FEATURE_TYPE __GO_TO_FINAL_OUTPUT_ROUTER__       @Reproject("EPSG:21781","EPSG:21781")       @Transform(FME_GENERIC,POSTGIS)       @SupplyAttributes(__wb_out_feat_type__,distribution.od_meter)
+FACTORY_DEF * TeeFactory    FACTORY_NAME "AttributeFilter_3_<UNFILTERED> -> distribution.od_subscriber Correlator"    INPUT FEATURE_TYPE AttributeFilter_3_<UNFILTERED>    OUTPUT FEATURE_TYPE __GO_TO_FINAL_OUTPUT_ROUTER__       @Reproject("EPSG:21781","EPSG:21781")       @Transform(FME_GENERIC,POSTGIS)       @SupplyAttributes(__wb_out_feat_type__,distribution.od_subscriber)
 # -------------------------------------------------------------------------
 
 FACTORY_DEF * TestFactory   FACTORY_NAME "Final Output Feature Type Router"   INPUT FEATURE_TYPE *   TEST @Value(__wb_out_feat_type__) != ""   OUTPUT PASSED FEATURE_TYPE *     @FeatureType(@Value(__wb_out_feat_type__))   OUTPUT FAILED FEATURE_TYPE __nuke_me__ @Tcl2("FME_StatMessage 818059 {@Value(fme_template_feature_type)} 818060 818061 fme_warn")
@@ -3126,6 +3137,6 @@ INCLUDE [ if {{$(WORKSPACE_TEMP_DIR)} == {}} { puts {MACRO __WB_ENABLE_VISUALIZE
 FACTORY_DEF $(__WB_ENABLE_VISUALIZER__) CreationFactory   CREATE_AT_END   OUTPUT FEATURE_TYPE __NUKEME__   @TCL("if [info exists ::gVisualizerFilesToView] {eval FME_Execute System \173\042$(FME_HOME_UNIX)/fmeview\042 /ownffs {$(WORKSPACE_TEMP_DIR)} $::gVisualizerFilesToView & \175 }")
 FACTORY_DEF * TeeFactory   INPUT FEATURE_TYPE __NUKEME__
 # -------------------------------------------------------------------------
-POSTGIS_1_DEF distribution.od_meter   postgis_type                 postgis_geometry   postgis_mode                 INHERIT_FROM_WRITER   postgis_spatial_column_type  geometry   postgis_spatial_column       geometry   postgis_srid                 INHERIT_FROM_WRITER   postgis_drop_table           NO   postgis_truncate_table       YES   postgis_create_with_oids     NO   postgis_create_gist_index    YES   postgis_vacuum_analyze       YES   postgis_allow_serial_writing NO   id_pipe                      int8   parcel                       char(30)   client_identification        int8   remark                      text   id_district                  int4
+POSTGIS_1_DEF distribution.od_meter   postgis_type                 postgis_geometry   postgis_mode                 INHERIT_FROM_WRITER   postgis_spatial_column_type  geometry   postgis_spatial_column       geometry   postgis_srid                 INHERIT_FROM_WRITER   postgis_drop_table           NO   postgis_truncate_table       YES   postgis_create_with_oids     NO   postgis_create_gist_index    YES   postgis_vacuum_analyze       YES   postgis_allow_serial_writing NO   id_pipe                      int8   parcel                       char(30)   identification               int8   remark                       text   id_district                  int4
 # -------------------------------------------------------------------------
-POSTGIS_1_DEF distribution.od_subscriber   postgis_type                 postgis_geometry   postgis_mode                 INHERIT_FROM_WRITER   postgis_spatial_column_type  geometry   postgis_spatial_column       geometry   postgis_srid                 INHERIT_FROM_WRITER   postgis_drop_table           NO   postgis_truncate_table       YES   postgis_create_with_oids     NO   postgis_create_gist_index    YES   postgis_vacuum_analyze       YES   postgis_allow_serial_writing NO   id_type                      int8   id_pipe                      int8   parcel                       char(30)   client_identification        int8   remark                      text   id_district                  int4
+POSTGIS_1_DEF distribution.od_subscriber   postgis_type                 postgis_geometry   postgis_mode                 INHERIT_FROM_WRITER   postgis_spatial_column_type  geometry   postgis_spatial_column       geometry   postgis_srid                 INHERIT_FROM_WRITER   postgis_drop_table           NO   postgis_truncate_table       YES   postgis_create_with_oids     NO   postgis_create_gist_index    YES   postgis_vacuum_analyze       YES   postgis_allow_serial_writing NO   id_type                      int8   id_pipe                      int8   parcel                       char(30)   identification               int8   remark                       text   id_district                  int4
