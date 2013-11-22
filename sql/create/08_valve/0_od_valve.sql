@@ -15,6 +15,7 @@ ALTER TABLE distribution.od_valve ADD COLUMN identification         integer ;
 ALTER TABLE distribution.od_valve ADD COLUMN id_type                integer not null ;
 ALTER TABLE distribution.od_valve ADD COLUMN id_function            integer not null ;
 ALTER TABLE distribution.od_valve ADD COLUMN id_precision           integer not null ;
+ALTER TABLE distribution.od_valve ADD COLUMN id_precisionalti       integer not null ;
 ALTER TABLE distribution.od_valve ADD COLUMN id_maintenance         integer[];
 ALTER TABLE distribution.od_valve ADD COLUMN diameter_nominal       varchar(10) ;
 ALTER TABLE distribution.od_valve ADD COLUMN year                   smallint CHECK (year > 1800 AND year < 2100);
@@ -37,6 +38,7 @@ SELECT distribution.fn_geom_tool_point('od_valve',true,false,true,true,true,true
 ALTER TABLE distribution.od_valve ADD CONSTRAINT valve_id_type                FOREIGN KEY (id_type)                REFERENCES distribution.vl_valve_type(id)     MATCH FULL; CREATE INDEX fki_valve_id_type                ON distribution.od_valve(id_type)               ;
 ALTER TABLE distribution.od_valve ADD CONSTRAINT valve_id_function            FOREIGN KEY (id_function)            REFERENCES distribution.vl_valve_function(id) MATCH FULL; CREATE INDEX fki_valve_id_function            ON distribution.od_valve(id_function)           ;
 ALTER TABLE distribution.od_valve ADD CONSTRAINT valve_id_precision           FOREIGN KEY (id_precision)           REFERENCES distribution.vl_precision(id)      MATCH FULL; CREATE INDEX fki_valve_id_precision           ON distribution.od_valve(id_precision)          ;
+ALTER TABLE distribution.od_valve ADD CONSTRAINT valve_id_precisionalti       FOREIGN KEY (id_precisionalti)       REFERENCES distribution.vl_precisionalti(id)  MATCH FULL; CREATE INDEX fki_valve_id_precisionalti       ON distribution.od_valve(id_precisionalti)      ;
 ALTER TABLE distribution.od_valve ADD CONSTRAINT valve_id_labelvisible        FOREIGN KEY (id_labelvisible)        REFERENCES distribution.vl_visible(vl_code)   MATCH FULL; CREATE INDEX fki_valve_id_labelvisible        ON distribution.od_valve(id_labelvisible)       ;
 ALTER TABLE distribution.od_valve ADD CONSTRAINT valve_id_labelvisible_schema FOREIGN KEY (id_labelvisible_schema) REFERENCES distribution.vl_visible(vl_code)   MATCH FULL; CREATE INDEX fki_valve_id_labelvisible_schema ON distribution.od_valve(id_labelvisible_schema);
 /* cannot create constraint on arrays yet

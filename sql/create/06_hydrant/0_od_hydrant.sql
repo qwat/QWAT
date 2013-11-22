@@ -14,10 +14,11 @@ COMMENT ON TABLE distribution.od_hydrant IS 'hydrant.';
 
 /* columns */
 ALTER TABLE distribution.od_hydrant ADD COLUMN identification     varchar(15)           ;
-ALTER TABLE distribution.od_hydrant ADD COLUMN id_distributor     integer               ;
-ALTER TABLE distribution.od_hydrant ADD COLUMN id_status          integer               ;
+ALTER TABLE distribution.od_hydrant ADD COLUMN id_distributor     integer not null      ;
+ALTER TABLE distribution.od_hydrant ADD COLUMN id_status          integer not null      ;
 ALTER TABLE distribution.od_hydrant ADD COLUMN id_provider        integer               ;
-ALTER TABLE distribution.od_hydrant ADD COLUMN id_precision       integer               ;
+ALTER TABLE distribution.od_hydrant ADD COLUMN id_precision       integer not null      ;
+ALTER TABLE distribution.od_hydrant ADD COLUMN id_precisionalti   integer not null      ;
 ALTER TABLE distribution.od_hydrant ADD COLUMN year smallint      CHECK (year > 1800 AND year < 2100);
 ALTER TABLE distribution.od_hydrant ADD COLUMN model              varchar(30)           ;
 ALTER TABLE distribution.od_hydrant ADD COLUMN underground        boolean default false ;
@@ -35,9 +36,10 @@ SELECT distribution.fn_geom_tool_point('od_hydrant',true,    true,        true, 
 
 
 /* Constraints */
-ALTER TABLE distribution.od_hydrant ADD CONSTRAINT hydrant_id_distributor  FOREIGN KEY (id_distributor)  REFERENCES distribution.od_distributor(id)      MATCH FULL  ; CREATE INDEX fki_hydrant_id_distributor  ON distribution.od_hydrant(id_distributor) ;
-ALTER TABLE distribution.od_hydrant ADD CONSTRAINT hydrant_id_status       FOREIGN KEY (id_status)       REFERENCES distribution.vl_status(id)           MATCH FULL  ; CREATE INDEX fki_hydrant_id_status       ON distribution.od_hydrant(id_status)      ;
-ALTER TABLE distribution.od_hydrant ADD CONSTRAINT hydrant_id_provider     FOREIGN KEY (id_provider)     REFERENCES distribution.vl_hydrant_provider(id) MATCH SIMPLE; CREATE INDEX fki_hydrant_id_provider     ON distribution.od_hydrant(id_provider)    ;
-ALTER TABLE distribution.od_hydrant ADD CONSTRAINT hydrant_id_precision    FOREIGN KEY (id_precision)    REFERENCES distribution.vl_precision(id)        MATCH FULL  ; CREATE INDEX fki_hydrant_id_precision    ON distribution.od_hydrant(id_precision)   ;
+ALTER TABLE distribution.od_hydrant ADD CONSTRAINT hydrant_id_distributor   FOREIGN KEY (id_distributor)   REFERENCES distribution.od_distributor(id)      MATCH FULL  ; CREATE INDEX fki_hydrant_id_distributor   ON distribution.od_hydrant(id_distributor)  ;
+ALTER TABLE distribution.od_hydrant ADD CONSTRAINT hydrant_id_status        FOREIGN KEY (id_status)        REFERENCES distribution.vl_status(id)           MATCH FULL  ; CREATE INDEX fki_hydrant_id_status        ON distribution.od_hydrant(id_status)       ;
+ALTER TABLE distribution.od_hydrant ADD CONSTRAINT hydrant_id_provider      FOREIGN KEY (id_provider)      REFERENCES distribution.vl_hydrant_provider(id) MATCH SIMPLE; CREATE INDEX fki_hydrant_id_provider      ON distribution.od_hydrant(id_provider)     ;
+ALTER TABLE distribution.od_hydrant ADD CONSTRAINT hydrant_id_precision     FOREIGN KEY (id_precision)     REFERENCES distribution.vl_precision(id)        MATCH FULL  ; CREATE INDEX fki_hydrant_id_precision     ON distribution.od_hydrant(id_precision)    ;
+ALTER TABLE distribution.od_hydrant ADD CONSTRAINT hydrant_id_precisionalti FOREIGN KEY (id_precisionalti) REFERENCES distribution.vl_precisionalti(id)    MATCH FULL  ; CREATE INDEX fki_hydrant_id_precisionalti ON distribution.od_hydrant(id_precisionalti);
 
 
