@@ -36,19 +36,14 @@ ALTER TABLE distribution.od_installation_building ADD CONSTRAINT installation_id
 CREATE OR REPLACE FUNCTION distribution.installation_building_trigger_fcn() RETURNS trigger AS
 $BODY$
 BEGIN
-	 UPDATE distribution.od_installation_building
-		SET 
-			_displayname_en = vl_installation_type.short_en||' '||NEW.name,
-			_displayname_fr = vl_installation_type.short_fr||' '||NEW.name
-		FROM distribution.vl_installation_type 
-		WHERE od_installation_building.id = NEW.id
-		AND od_installation_building.id_type = vl_installation_type.id;
+	 NEW._displayname_en = vl_installation_type.short_en||' '||NEW.name FROM distribution.vl_installation_type WHERE NEW.id_type = vl_installation_type.id;
+	 NEW._displayname_fr = vl_installation_type.short_fr||' '||NEW.name FROM distribution.vl_installation_type WHERE NEW.id_type = vl_installation_type.id;
 	 RETURN NEW;
 END;
 $BODY$
 LANGUAGE 'plpgsql';
 
 CREATE TRIGGER installation_building_trigger 
-        AFTER INSERT OR UPDATE OF id_type ON distribution.od_installation_building 
+        BEFORE INSERT OR UPDATE OF id_type ON distribution.od_installation_building 
         FOR EACH ROW
         EXECUTE PROCEDURE distribution.installation_building_trigger_fcn();

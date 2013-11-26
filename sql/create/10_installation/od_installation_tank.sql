@@ -87,25 +87,18 @@ COMMENT ON FUNCTION distribution.fn_litres_per_cm(integer, double precision, dou
 
 CREATE OR REPLACE FUNCTION distribution.od_installation_tank_trigger_fcn() RETURNS trigger AS
 $BODY$
-	DECLARE
-		lpc1 double precision;
-		lpc2 double precision;
 	BEGIN
-		SELECT distribution.fn_litres_per_cm(NEW.cistern1_id_type,NEW.cistern1_dimension_1,NEW.cistern1_dimension_2) INTO lpc1;
-		SELECT distribution.fn_litres_per_cm(NEW.cistern2_id_type,NEW.cistern2_dimension_1,NEW.cistern2_dimension_2) INTO lpc2;
-		 UPDATE distribution.od_installation_tank
-			SET _cistern1_litrepercm = lpc1,
-			    _cistern2_litrepercm = lpc2,
-				_litrepercm = COALESCE(lpc1,0)+COALESCE(lpc2,0)
-			WHERE od_installation_tank.id = NEW.id;
-		 RETURN NEW;
+		NEW._cistern1_litrepercm := distribution.fn_litres_per_cm(NEW.cistern1_id_type,NEW.cistern1_dimension_1,NEW.cistern1_dimension_2);
+		NEW._cistern2_litrepercm := distribution.fn_litres_per_cm(NEW.cistern2_id_type,NEW.cistern2_dimension_1,NEW.cistern2_dimension_2);
+		NEW._litrepercm := COALESCE(lpc1,0)+COALESCE(lpc2,0);
+		RETURN NEW;
 	END;
 $BODY$
 LANGUAGE 'plpgsql';
 
 CREATE TRIGGER installation_trigger 
-	AFTER INSERT OR UPDATE OF cistern1_id_type,cistern1_dimension_1,cistern1_dimension_2,
-							  cistern2_id_type,cistern2_dimension_1,cistern2_dimension_2
+	BEFORE INSERT OR UPDATE OF cistern1_id_type,cistern1_dimension_1,cistern1_dimension_2,
+							   cistern2_id_type,cistern2_dimension_1,cistern2_dimension_2
 	ON distribution.od_installation_tank
 	FOR EACH ROW
 	EXECUTE PROCEDURE distribution.od_installation_tank_trigger_fcn();

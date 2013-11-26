@@ -31,15 +31,15 @@ ALTER TABLE distribution.od_meter ADD CONSTRAINT meter_id_pipe  FOREIGN KEY (id_
 CREATE OR REPLACE FUNCTION distribution.od_meter_fullid() RETURNS trigger AS
 $BODY$
 	BEGIN
-		 UPDATE distribution.od_meter SET _identification_full = od_district.prefix||'_'||NEW.identification FROM distribution.od_district WHERE od_meter.id = NEW.id AND od_district.id = NEW.id_district ;
-		 RETURN NEW;
+		NEW._identification_full := od_district.prefix||'_'||NEW.identification FROM distribution.od_district WHERE od_district.id = NEW.id_district ;
+		RETURN NEW;
 	END;
 $BODY$
 LANGUAGE 'plpgsql';
 COMMENT ON FUNCTION distribution.od_meter_fullid() IS 'Fcn/Trigger: updates the full identification (district prefix) of the client.';
 
 CREATE TRIGGER meter_fullid_trigger
-	AFTER INSERT OR UPDATE OF id_district,identification ON distribution.od_meter
+	BEFORE INSERT OR UPDATE OF id_district,identification ON distribution.od_meter
 	FOR EACH ROW
 	EXECUTE PROCEDURE distribution.od_meter_fullid();
 COMMENT ON TRIGGER meter_fullid_trigger ON distribution.od_meter IS 'Trigger: updates the full identification (district prefix) of the meter.';

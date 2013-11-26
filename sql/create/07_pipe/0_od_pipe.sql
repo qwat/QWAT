@@ -61,13 +61,14 @@ ALTER TABLE distribution.od_pipe ADD CONSTRAINT pipe_id_labelvisible_schema FORE
 CREATE OR REPLACE FUNCTION distribution.od_pipe_tunnelbridge() RETURNS trigger AS
 $BODY$ 
  BEGIN
-  UPDATE distribution.od_pipe SET _length3d = NULL, _diff_elevation = NULL WHERE id = NEW.id;
+  NEW._length3d := NULL;
+  NEW._diff_elevation := NULL;
   RETURN NEW;
  END;
 $BODY$ LANGUAGE 'plpgsql';
 
 CREATE TRIGGER pipe_tunnelbridge_trigger
- AFTER INSERT OR UPDATE OF tunnel_or_bridge ON distribution.od_pipe
+ BEFORE INSERT OR UPDATE OF tunnel_or_bridge ON distribution.od_pipe
  FOR EACH ROW EXECUTE PROCEDURE distribution.od_pipe_tunnelbridge();
 COMMENT ON TRIGGER pipe_tunnelbridge_trigger ON distribution.od_pipe IS 'For tunnel and bridges, 3d length is the 2d length (i.e. pipes are considered as horinzontal).';
 

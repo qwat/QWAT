@@ -28,17 +28,15 @@ ALTER TABLE distribution.vl_pipe_material ADD COLUMN code_sire smallint;
 CREATE OR REPLACE FUNCTION distribution.vl_pipe_material_displayname_fr() RETURNS trigger AS 
 $BODY$
 	BEGIN
-		 UPDATE distribution.vl_pipe_material SET 
-		 _displayname_en = NEW.short_en||' '||NEW.diameter,
-		 _displayname_fr = NEW.short_fr||' '||NEW.diameter 
-		 WHERE id = NEW.id ;
+		 NEW._displayname_en := NEW.short_en||' '||NEW.diameter;
+		 NEW._displayname_fr := NEW.short_fr||' '||NEW.diameter;
 		 RETURN NEW;
 	END;
 $BODY$ LANGUAGE 'plpgsql';
 COMMENT ON FUNCTION distribution.vl_pipe_material_displayname_fr() IS 'Fcn/Trigger: updates the fancy value_fr in the material table.';
 
 CREATE TRIGGER fancy_value_fr_trigger
-	AFTER INSERT OR UPDATE OF short_fr, diameter ON distribution.vl_pipe_material
+	BEFORE INSERT OR UPDATE OF short_fr, diameter ON distribution.vl_pipe_material
 	FOR EACH ROW
 	EXECUTE PROCEDURE distribution.vl_pipe_material_displayname_fr();
 COMMENT ON TRIGGER fancy_value_fr_trigger ON distribution.vl_pipe_material IS 'Trigger: updates the fancy value_fr in the material table.';

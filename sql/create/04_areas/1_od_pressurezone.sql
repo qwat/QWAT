@@ -28,15 +28,15 @@ ALTER TABLE distribution.od_pressurezone ADD CONSTRAINT pressurezone_id_distribu
 CREATE OR REPLACE FUNCTION distribution.fn_pressurezone_consumptionzone() RETURNS TRIGGER AS
 $BODY$
 	BEGIN
-		UPDATE distribution.od_pressurezone 
-			SET consumptionzone = name
-			WHERE (consumptionzone IS NULL OR consumptionzone = '') AND id = NEW.id;
+		IF NEW.consumptionzone = '' OR NEW.consumptionzone IS NULL THEN
+			NEW.consumptionzone := NEW.name;
+		END IF;
 		RETURN NEW;
 	END;
 $BODY$
 LANGUAGE plpgsql;
 
-CREATE TRIGGER pressurezone_trigger AFTER UPDATE OR INSERT ON distribution.od_pressurezone 
+CREATE TRIGGER pressurezone_trigger 
+	BEFORE INSERT OR UPDATE ON distribution.od_pressurezone 
 	FOR EACH ROW
-	WHEN (NEW.consumptionzone = '' OR NEW.consumptionzone IS NULL)
 	EXECUTE PROCEDURE distribution.fn_pressurezone_consumptionzone();

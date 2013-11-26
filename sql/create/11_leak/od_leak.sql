@@ -34,15 +34,18 @@ ALTER TABLE distribution.od_leak ADD CONSTRAINT vl_leak_id_damage FOREIGN KEY (i
 CREATE OR REPLACE FUNCTION distribution.od_leak_repaired() RETURNS trigger AS 
 $BODY$
 	BEGIN
-		 UPDATE distribution.od_leak SET _repaired = CASE WHEN repair_date IS NULL THEN false ELSE true END 
-			WHERE id = NEW.id;
+		IF NEW.repair_date IS NULL THEN
+			NEW._repaired := false;
+		ELSE
+			NEW._repaired := true;
+		END IF;
 		 RETURN NEW;
 	END;
 $BODY$LANGUAGE 'plpgsql';
 COMMENT ON FUNCTION distribution.od_leak_repaired() IS 'Fcn/Trigger: updates the repaired status of the leak.';
 
 CREATE TRIGGER leak_repaired_trigger
-	AFTER INSERT OR UPDATE OF repair_date ON distribution.od_leak
+	BEFORE INSERT OR UPDATE OF repair_date ON distribution.od_leak
 	FOR EACH ROW
 	EXECUTE PROCEDURE distribution.od_leak_repaired();
 COMMENT ON TRIGGER leak_repaired_trigger ON distribution.od_leak IS 'Trigger: updates the repaired status of the leak.';

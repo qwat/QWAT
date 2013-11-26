@@ -32,7 +32,7 @@ ALTER TABLE distribution.od_subscriber ADD CONSTRAINT subscriber_id_pipe  FOREIG
 CREATE OR REPLACE FUNCTION distribution.od_subscriber_fullid() RETURNS trigger AS
 $BODY$
 	BEGIN
-		 UPDATE distribution.od_subscriber SET _identification_full = od_district.prefix||'_'||NEW.identification FROM distribution.od_district WHERE od_subscriber.id = NEW.id AND od_district.id = NEW.id_district ;
+		 NEW._identification_full := od_district.prefix||'_'||NEW.identification FROM distribution.od_district WHERE od_district.id = NEW.id_district ;
 		 RETURN NEW;
 	END;
 $BODY$
@@ -40,7 +40,7 @@ LANGUAGE 'plpgsql';
 COMMENT ON FUNCTION distribution.od_subscriber_fullid() IS 'Fcn/Trigger: updates the full identification (district prefix) of the client.';
 
 CREATE TRIGGER subscriber_fullid_trigger
-	AFTER INSERT OR UPDATE OF id_district,identification ON distribution.od_subscriber
+	BEFORE INSERT OR UPDATE OF id_district,identification ON distribution.od_subscriber
 	FOR EACH ROW
 	EXECUTE PROCEDURE distribution.od_subscriber_fullid();
 COMMENT ON TRIGGER subscriber_fullid_trigger ON distribution.od_subscriber IS 'Trigger: updates the full identification (district prefix) of the client.';
