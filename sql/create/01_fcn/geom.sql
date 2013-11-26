@@ -49,34 +49,33 @@ $BODY$
 		/* Geometric trigger function */
 		sql_trigger := 'CREATE OR REPLACE FUNCTION distribution.'||table_name||'_geom() RETURNS TRIGGER AS
 				''
-				BEGIN
-					UPDATE distribution.'||table_name||' SET';
+				BEGIN';
 		IF is_node IS TRUE AND create_node IS TRUE THEN
 			sql_trigger := sql_trigger || '
-						id_node            = distribution.fn_node_get_id(NEW.geometry,'||create_node||'),';
+						NEW.id_node            := distribution.fn_node_get_id(NEW.geometry,'||create_node||');';
 		END IF;
 		IF auto_district IS TRUE THEN
 			sql_trigger := sql_trigger || '
-						id_district        = distribution.fn_get_district_id(NEW.geometry),';
+						NEW.id_district        := distribution.fn_get_district_id(NEW.geometry);';
 		END IF;
 		IF auto_pressurezone IS TRUE THEN
 			sql_trigger := sql_trigger || '
-						id_pressurezone    = distribution.fn_get_pressurezone_id(NEW.geometry),';
+						NEW.id_pressurezone    := distribution.fn_get_pressurezone_id(NEW.geometry);';
 		END IF;
 		sql_trigger := sql_trigger || '
-						id_printmap        = distribution.fn_get_printmap_id(NEW.geometry),';
+						NEW.id_printmap        := distribution.fn_get_printmap_id(NEW.geometry);';
 		IF get_pipe IS TRUE THEN
 			sql_trigger := sql_trigger || '
-						id_pipe            = distribution.fn_pipe_get_id(NEW.geometry),	';
+						NEW.id_pipe            := distribution.fn_pipe_get_id(NEW.geometry);';
 		END IF;		IF create_schematic IS TRUE THEN
 			sql_trigger := sql_trigger || '
-						geometry_schematic = NEW.geometry,
-						_geometry_schematic_used = false,';
+						NEW.geometry_schematic       := NEW.geometry;
+						NEW._geometry_schematic_used := false;';
 		END IF;
 		sql_trigger := sql_trigger || '
-						_printmaps         = distribution.fn_get_printmaps(NEW.geometry),
-						_districts         = distribution.fn_get_districts(NEW.geometry)
-						WHERE id = NEW.id ;
+						NEW._printmaps        := distribution.fn_get_printmaps(NEW.geometry);
+						NEW._districts        := distribution.fn_get_districts(NEW.geometry);
+
 					RETURN NEW;				
 				END;
 				''
@@ -127,10 +126,8 @@ COMMENT ON FUNCTION distribution.fn_geom_tool_point(varchar,boolean,boolean,bool
 /* LINES */
 
 
-CREATE OR REPLACE FUNCTION distribution.fn_geom_tool_line(varchar) RETURNS void AS
+CREATE OR REPLACE FUNCTION distribution.fn_geom_tool_line(table_name varchar) RETURNS void AS
 $BODY$
-	DECLARE
-		table_name ALIAS for $1;
 	BEGIN
 		/* Creates columns */
 		EXECUTE 'ALTER TABLE distribution.'||table_name||' ADD COLUMN id_node_a       integer    not null;';
@@ -166,20 +163,19 @@ $BODY$
 			CREATE OR REPLACE FUNCTION distribution.'||table_name||'_geom() RETURNS TRIGGER AS
 				''
 				BEGIN
-					UPDATE distribution.'||table_name||' SET
-						id_node_a                = distribution.fn_node_get_id(ST_StartPoint(NEW.geometry),true),
-						id_node_b                = distribution.fn_node_get_id(ST_EndPoint(  NEW.geometry),true),
-						id_district              = distribution.fn_get_district_id(NEW.geometry),
-						id_pressurezone          = distribution.fn_get_pressurezone_id(NEW.geometry),
-						id_printmap              = distribution.fn_get_printmap_id(NEW.geometry),
-						geometry_schematic       = NEW.geometry,
-						_geometry_schematic_used = false,
-						_printmaps               = distribution.fn_get_printmaps(NEW.geometry),
-						_districts               = distribution.fn_get_districts(NEW.geometry),
-						_length2d                = ST_Length(NEW.geometry),
-						_length3d                = NULL,
-						_diff_elevation          = NULL
-						WHERE id = NEW.id ;
+					NEW.id_node_a                := distribution.fn_node_get_id(ST_StartPoint(NEW.geometry),true);
+					NEW.id_node_b                := distribution.fn_node_get_id(ST_EndPoint(  NEW.geometry),true);
+					NEW.id_district              := distribution.fn_get_district_id(NEW.geometry)                ;
+					NEW.id_pressurezone          := distribution.fn_get_pressurezone_id(NEW.geometry)            ;
+					NEW.id_printmap              := distribution.fn_get_printmap_id(NEW.geometry)                ;
+					NEW.geometry_schematic       := NEW.geometry                                                 ;
+					NEW._geometry_schematic_used := false                                                        ;
+					NEW._printmaps               := distribution.fn_get_printmaps(NEW.geometry)                  ;
+					NEW._districts               := distribution.fn_get_districts(NEW.geometry)                  ;
+					NEW._length2d                := ST_Length(NEW.geometry)                                      ;
+					NEW._length3d                := NULL                                                         ;
+					NEW._diff_elevation          := NULL                                                         ;
+					
 					RETURN NEW;				
 				END;
 				''
@@ -188,13 +184,13 @@ $BODY$
 		
 		/* create triggers */
 		EXECUTE 'CREATE TRIGGER '||table_name||'_geom_trigger_insert
-			AFTER INSERT ON distribution.'||table_name||'
+			BEFORE INSERT ON distribution.'||table_name||'
 			FOR EACH ROW
 			EXECUTE PROCEDURE distribution.'||table_name||'_geom();';
 		EXECUTE 'COMMENT ON TRIGGER '||table_name||'_geom_trigger_insert ON distribution.'||table_name||' IS ''Trigger: updates auto fields of the '||table_name||' after insert.'';';
 
 		EXECUTE 'CREATE TRIGGER '||table_name||'_geom_trigger_update
-			AFTER UPDATE OF geometry ON distribution.'||table_name||' 
+			BEFORE UPDATE OF geometry ON distribution.'||table_name||' 
 			FOR EACH ROW
 			WHEN (ST_AsBinary(NEW.geometry) <> ST_AsBinary(OLD.geometry))
 			EXECUTE PROCEDURE distribution.'||table_name||'_geom();';
@@ -206,16 +202,14 @@ $BODY$
 			CREATE OR REPLACE FUNCTION distribution.'||table_name||'_geom_schematic() RETURNS TRIGGER AS
 				''
 				BEGIN
-					UPDATE distribution.'||table_name||' SET 
-						_geometry_schematic_used = ST_AsBinary(NEW.geometry_schematic) <> ST_AsBinary(NEW.geometry) 
-						WHERE id = NEW.id;
+					NEW._geometry_schematic_used := ST_AsBinary(NEW.geometry_schematic) <> ST_AsBinary(NEW.geometry);
 					RETURN NEW;
 				END;
 				''
 				LANGUAGE ''plpgsql'';		
 		';
 		EXECUTE 'CREATE TRIGGER '||table_name||'_geom_schematic_trigger
-			AFTER UPDATE OF geometry_schematic ON distribution.'||table_name||' 
+			BEFORE UPDATE OF geometry_schematic ON distribution.'||table_name||' 
 			FOR EACH ROW
 			EXECUTE PROCEDURE distribution.'||table_name||'_geom_schematic();';
 		EXECUTE 'COMMENT ON TRIGGER '||table_name||'_geom_schematic_trigger ON distribution.'||table_name||' IS ''Trigger: when updating, check if geometry_schematic is different to fill the boolean field.'';';
