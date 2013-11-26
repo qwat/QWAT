@@ -11,11 +11,13 @@ COMMENT ON TABLE distribution.od_valve IS 'Table for valve.';
 SELECT setval('distribution.od_pipe_id_seq', 20000, true);
 
 /* columns */
-ALTER TABLE distribution.od_valve ADD COLUMN identification         integer ;
+ALTER TABLE distribution.od_valve ADD COLUMN identification         varchar(20);
 ALTER TABLE distribution.od_valve ADD COLUMN id_type                integer not null ;
 ALTER TABLE distribution.od_valve ADD COLUMN id_function            integer not null ;
 ALTER TABLE distribution.od_valve ADD COLUMN id_precision           integer not null ;
 ALTER TABLE distribution.od_valve ADD COLUMN id_precisionalti       integer not null ;
+ALTER TABLE distribution.od_valve ADD COLUMN id_labelvisible        boolean default null;
+ALTER TABLE distribution.od_valve ADD COLUMN id_labelvisible_schema boolean default null;
 ALTER TABLE distribution.od_valve ADD COLUMN id_maintenance         integer[];
 ALTER TABLE distribution.od_valve ADD COLUMN diameter_nominal       varchar(10) ;
 ALTER TABLE distribution.od_valve ADD COLUMN year                   smallint CHECK (year > 1800 AND year < 2100);
@@ -23,8 +25,6 @@ ALTER TABLE distribution.od_valve ADD COLUMN closed                 boolean     
 ALTER TABLE distribution.od_valve ADD COLUMN networkseparation      boolean       default false ;
 ALTER TABLE distribution.od_valve ADD COLUMN altitude_real          decimal(10,3)  ;
 ALTER TABLE distribution.od_valve ADD COLUMN remark                 text          default '';
-ALTER TABLE distribution.od_valve ADD COLUMN id_labelvisible        boolean       default null;
-ALTER TABLE distribution.od_valve ADD COLUMN id_labelvisible_schema boolean       default null;
 ALTER TABLE distribution.od_valve ADD COLUMN labelremark            varchar(150);
 ALTER TABLE distribution.od_valve ADD COLUMN labelremark_schema     varchar(150);
 

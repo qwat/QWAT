@@ -39,7 +39,6 @@ CREATE VIEW distribution.od_valve_schema AS
 		od_node.altitude_dtm       AS _altitude_dtm,
 		od_district.name           AS _district,
 		od_pressurezone.name       AS _pressurezone,
-		od_pressurezone.shortname  AS _pressurezone_shortname,
 		od_pressurezone.colorcode  AS _pressurezone_colorcode
 		FROM distribution.od_valve
 		INNER JOIN distribution.vl_valve_type        ON od_valve.id_function     = vl_valve_type.id

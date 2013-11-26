@@ -54,7 +54,6 @@ CREATE VIEW distribution.vw_pipe AS
 		vl_status.value_fr          AS _status,
 		vl_status.active            AS _status_active,
 		od_pressurezone.name        AS _pressurezone,
-		od_pressurezone.shortname   AS _pressurezone_shortname,
 		od_pressurezone.colorcode   AS _pressurezone_colorcode
 		FROM distribution.od_pipe
 		INNER      JOIN distribution.vl_pipe_function      ON od_pipe.id_function      = vl_pipe_function.id

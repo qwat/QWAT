@@ -39,7 +39,6 @@ CREATE VIEW distribution.vw_hydrant AS
 		od_district.name          AS _district,
 		od_district.shortname     AS _district_shortname,
 		od_pressurezone.name      AS _pressurezone,
-		od_pressurezone.shortname AS _pressurezone_shortname,
 		od_pressurezone.colorcode AS _pressurezone_colorcode
 		FROM distribution.od_hydrant
 		INNER JOIN distribution.od_distributor           ON od_hydrant.id_distributor  = od_distributor.id
