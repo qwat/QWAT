@@ -1067,7 +1067,6 @@ BEGIN;
  UPDATE distribution.od_pipe SET id_parent=732 WHERE id=29498;
  UPDATE distribution.od_pipe SET id_parent=24252 WHERE id=29506;
  UPDATE distribution.od_pipe SET id_parent=29053 WHERE id=29516;
- UPDATE distribution.od_pipe SET id_parent=14913 WHERE id=29533;
  UPDATE distribution.od_pipe SET id_parent=24641 WHERE id=29567;
  UPDATE distribution.od_pipe SET id_parent=25173 WHERE id=29576;
  UPDATE distribution.od_pipe SET id_parent=11147 WHERE id=29577;
