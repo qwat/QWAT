@@ -4,8 +4,8 @@
 	SQL file :: leak view
 */
 
-DROP VIEW IF EXISTS distribution.od_leak_view CASCADE;
-CREATE VIEW distribution.od_leak_view AS 
+DROP VIEW IF EXISTS distribution.vw_leak CASCADE;
+CREATE VIEW distribution.vw_leak AS 
 	SELECT  
 		vl_leak_type.value_fr   AS type,  
 		vl_leak_cause.value_fr  AS cause,

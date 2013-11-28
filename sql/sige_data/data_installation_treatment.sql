@@ -4,7 +4,7 @@
 
 -- Dumped from database version 9.1.10
 -- Dumped by pg_dump version 9.2.4
--- Started on 2013-11-26 09:32:00 CET
+-- Started on 2013-11-28 14:46:04 CET
 
 SET statement_timeout = 0;
 SET client_encoding = 'UTF8';
@@ -15,7 +15,7 @@ SET client_min_messages = warning;
 SET search_path = distribution, pg_catalog;
 
 --
--- TOC entry 4122 (class 0 OID 288880)
+-- TOC entry 4123 (class 0 OID 325689)
 -- Dependencies: 501
 -- Data for Name: od_installation_treatment; Type: TABLE DATA; Schema: distribution; Owner: sige
 --
@@ -47,15 +47,15 @@ INSERT INTO od_installation_treatment (id, name, identification, id_installation
 
 
 --
--- TOC entry 4127 (class 0 OID 0)
+-- TOC entry 4128 (class 0 OID 0)
 -- Dependencies: 500
 -- Name: od_installation_treatment_id_seq; Type: SEQUENCE SET; Schema: distribution; Owner: sige
 --
 
-SELECT pg_catalog.setval('od_installation_treatment_id_seq', 129, true);
+SELECT pg_catalog.setval('od_installation_treatment_id_seq', 100, true);
 
 
--- Completed on 2013-11-26 09:32:00 CET
+-- Completed on 2013-11-28 14:46:04 CET
 
 --
 -- PostgreSQL database dump complete

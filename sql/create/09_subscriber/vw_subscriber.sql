@@ -7,7 +7,7 @@
 DROP VIEW IF EXISTS distribution.vw_subscriber CASCADE;
 CREATE VIEW distribution.vw_subscriber AS 
 	SELECT 
-		od_subscriber.id			   ,
+		od_subscriber.id			  ,
 		od_subscriber.id_type         ,
 		od_subscriber.id_pipe         ,
 		od_subscriber.identification       ,

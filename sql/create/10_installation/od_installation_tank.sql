@@ -1,7 +1,7 @@
 /*
 	qWat - QGIS Water Module
-	
-	SQL file :: installation tank 
+
+	SQL file :: installation tank
 */
 
 /* CREATE TABLE */
@@ -60,7 +60,7 @@ ALTER TABLE distribution.od_installation_tank ADD CONSTRAINT installation_tank_i
 ALTER TABLE distribution.od_installation_tank ADD CONSTRAINT installation_tank_id_distributor  FOREIGN KEY (id_distributor)   REFERENCES distribution.od_distributor(id)           MATCH FULL;   CREATE INDEX fki_installation_tank_id_distributor  ON distribution.od_installation_tank(id_distributor)  ;
 ALTER TABLE distribution.od_installation_tank ADD CONSTRAINT installation_tank_id_remote       FOREIGN KEY (id_remote)        REFERENCES distribution.vl_remote(id)                MATCH SIMPLE; CREATE INDEX fki_installation_tank_id_remote       ON distribution.od_installation_tank(id_remote)       ;
 ALTER TABLE distribution.od_installation_tank ADD CONSTRAINT installation_tank_id_watertype    FOREIGN KEY (id_watertype)     REFERENCES distribution.vl_watertype(id)             MATCH FULL;   CREATE INDEX fki_installation_tank_vl_watertype    ON distribution.od_installation_tank(id_watertype)    ;
-/* specific */                                                                                                                                                                                                                                      
+/* specific */
 ALTER TABLE distribution.od_installation_tank ADD CONSTRAINT installation_tank_id_overflow     FOREIGN KEY (id_overflow)      REFERENCES distribution.vl_overflow(id)              MATCH SIMPLE; CREATE INDEX fki_installation_tank_id_overflow     ON distribution.od_installation_tank(id_overflow)     ;
 ALTER TABLE distribution.od_installation_tank ADD CONSTRAINT installation_tank_id_firestorage  FOREIGN KEY (id_firestorage)   REFERENCES distribution.vl_tank_firestorage(id)      MATCH SIMPLE; CREATE INDEX fki_installation_tank_id_firestorage  ON distribution.od_installation_tank(id_firestorage)  ;
 ALTER TABLE distribution.od_installation_tank ADD CONSTRAINT installation_tank_cistern1type    FOREIGN KEY (cistern1_id_type) REFERENCES distribution.vl_cistern(id)               MATCH SIMPLE; CREATE INDEX fki_installation_tank_cistern1type    ON distribution.od_installation_tank(cistern1_id_type);
@@ -96,12 +96,36 @@ $BODY$
 $BODY$
 LANGUAGE 'plpgsql';
 
-CREATE TRIGGER installation_trigger 
+CREATE TRIGGER installation_trigger
 	BEFORE INSERT OR UPDATE OF cistern1_id_type,cistern1_dimension_1,cistern1_dimension_2,
 							   cistern2_id_type,cistern2_dimension_1,cistern2_dimension_2
 	ON distribution.od_installation_tank
 	FOR EACH ROW
 	EXECUTE PROCEDURE distribution.od_installation_tank_trigger_fcn();
 
+
+
+/* VIEW */
+CREATE OR REPLACE VIEW distribution.vw_installation_tank_fr AS
+SELECT
+	od_installation_tank.*,
+	vl_status.value_fr AS status,
+	vl_status.active AS active,
+	od_distributor.name AS distributor,
+	vl_remote.value_fr AS remote,
+	vl_watertype.value_fr AS watertype,
+	vl_overflow.value_fr AS overflow,
+	vl_tank_firestorage.value_fr AS firestorage,
+	cis1.value_fr AS cistern1,
+	cis2.value_fr AS cistern2
+	FROM distribution.od_installation_tank
+	INNER JOIN      distribution.vl_status           ON vl_status.id           = od_installation_tank.id_status
+	INNER JOIN      distribution.od_distributor      ON od_distributor.id      = od_installation_tank.id_distributor
+	LEFT OUTER JOIN distribution.vl_remote           ON vl_remote.id           = od_installation_tank.id_remote
+	INNER JOIN      distribution.vl_watertype        ON vl_watertype.id        = od_installation_tank.id_watertype
+	LEFT OUTER JOIN distribution.vl_overflow         ON vl_overflow.id         = od_installation_tank.id_overflow    
+	LEFT OUTER JOIN distribution.vl_tank_firestorage ON vl_tank_firestorage.id = od_installation_tank.id_firestorage
+	LEFT OUTER JOIN distribution.vl_cistern    cis1  ON cis1.id          = od_installation_tank.cistern1_id_type
+	LEFT OUTER JOIN distribution.vl_cistern    cis2  ON cis2.id          = od_installation_tank.cistern2_id_type;
 
 

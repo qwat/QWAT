@@ -35,7 +35,7 @@ fi
 
 # export installation
 pg_dump --host 172.24.171.203 --port 5432 --username "sige" --no-password  --format plain --data-only --inserts --column-inserts --verbose --file tempfile --table "distribution.installation" "sige"
-cat tempfile | sed 's/INSERT INTO installation/INSERT INTO distribution.od_installation_building/g' > /home/denis/Documents/qgis/qwat/sql/sige_data/data_installation_tank.sql
+cat tempfile | sed 's/INSERT INTO installation/INSERT INTO distribution.od_installation_building/g' > /home/denis/Documents/qgis/qwat/sql/sige_data/data_installation_building.sql
 rm tempfile
 pg_dump --host 172.24.171.203 --port 5432 --username "sige" --no-password  --format plain --data-only --inserts --column-inserts --verbose --file tempfile --table "distribution.od_installation_tank" "sige"
 cat tempfile | sed 's/INSERT INTO installation_tank/INSERT INTO distribution.od_installation_tank/g' > /home/denis/Documents/qgis/qwat/sql/sige_data/data_installation_tank.sql

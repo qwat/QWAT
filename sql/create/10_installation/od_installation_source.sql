@@ -45,9 +45,28 @@ ALTER TABLE distribution.od_installation_source ADD CONSTRAINT installation_sour
 ALTER TABLE distribution.od_installation_source ADD CONSTRAINT installation_source_id_distributor  FOREIGN KEY (id_distributor)  REFERENCES distribution.od_distributor(id)           MATCH FULL;   CREATE INDEX fki_installation_source_id_distributor    ON distribution.od_installation_source(id_distributor) ;
 ALTER TABLE distribution.od_installation_source ADD CONSTRAINT installation_source_id_remote       FOREIGN KEY (id_remote)       REFERENCES distribution.vl_remote(id)                MATCH SIMPLE; CREATE INDEX fki_installation_source_id_remote         ON distribution.od_installation_source(id_remote)      ;
 ALTER TABLE distribution.od_installation_source ADD CONSTRAINT installation_source_id_watertype    FOREIGN KEY (id_watertype)    REFERENCES distribution.vl_watertype(id)             MATCH FULL;   CREATE INDEX fki_installation_source_vl_watertype      ON distribution.od_installation_source(id_watertype)   ;
-/* specific */                                                                                                                                                                        
+/* specific */
 ALTER TABLE distribution.od_installation_source ADD CONSTRAINT installation_source_id_type         FOREIGN KEY (id_type)         REFERENCES distribution.vl_source_type(id)           MATCH FULL;   CREATE INDEX fki_installation_source_vl_source_type    ON distribution.od_installation_source(id_type)        ;
 ALTER TABLE distribution.od_installation_source ADD CONSTRAINT installation_source_id_quality      FOREIGN KEY (id_quality)      REFERENCES distribution.vl_source_quality(id)        MATCH SIMPLE; CREATE INDEX fki_installation_source_vl_source_quality ON distribution.od_installation_source(id_quality)     ;
 
 
+
+/* VIEW */
+CREATE OR REPLACE VIEW distribution.vw_installation_source_fr AS
+SELECT
+	od_installation_source.*,
+	vl_status.value_fr AS status,
+	vl_status.active AS active,
+	od_distributor.name AS distributor,
+	vl_remote.value_fr AS remote,
+	vl_watertype.value_fr AS watertype,
+	vl_source_type.value_fr AS type,
+	vl_source_quality.value_fr AS quality
+	FROM distribution.od_installation_source
+	INNER JOIN      distribution.vl_status         ON vl_status.id         = od_installation_source.id_status
+	INNER JOIN      distribution.od_distributor    ON od_distributor.id    = od_installation_source.id_distributor
+	LEFT OUTER JOIN distribution.vl_remote         ON vl_remote.id         = od_installation_source.id_remote
+	INNER JOIN      distribution.vl_watertype      ON vl_watertype.id      = od_installation_source.id_watertype
+	INNER JOIN      distribution.vl_source_type    ON vl_source_type.id    = od_installation_source.id_type
+	LEFT OUTER JOIN distribution.vl_source_quality ON vl_source_quality.id = od_installation_source.id_quality;
 

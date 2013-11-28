@@ -49,4 +49,21 @@ ALTER TABLE distribution.od_installation_pump ADD CONSTRAINT installation_pump_i
 ALTER TABLE distribution.od_installation_pump ADD CONSTRAINT installation_pump_id_type         FOREIGN KEY (id_type)         REFERENCES distribution.vl_pump_type(id)             MATCH FULL;   CREATE INDEX fki_installation_pump_vl_pump_type    ON distribution.od_installation_pump(id_type)        ;
 
 
+/* VIEW */
+CREATE OR REPLACE VIEW distribution.vw_installation_pump_fr AS
+SELECT
+	od_installation_pump.*,
+	vl_status.value_fr AS status,
+	vl_status.active AS active,
+	od_distributor.name AS distributor,
+	vl_remote.value_fr AS remote,
+	vl_watertype.value_fr AS watertype,
+	vl_pump_type.value_fr AS type
+	FROM distribution.od_installation_pump
+	INNER JOIN      distribution.vl_status          ON vl_status.id      = od_installation_pump.id_status
+	INNER JOIN      distribution.od_distributor     ON od_distributor.id = od_installation_pump.id_distributor
+	LEFT OUTER JOIN distribution.vl_remote          ON vl_remote.id      = od_installation_pump.id_remote
+	INNER JOIN      distribution.vl_watertype       ON vl_watertype.id   = od_installation_pump.id_watertype
+	INNER JOIN      distribution.vl_pump_type       ON vl_pump_type.id   = od_installation_pump.id_type;
+
 
