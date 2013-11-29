@@ -66,6 +66,6 @@ CREATE OR REPLACE VIEW distribution.vw_search_view AS
 		
 	UNION SELECT
 		'Vannes' as layer_name,
-		_function || ' ' || identification as search_text,
+		_function || ' ' || identification || ' ' || _districts as search_text,
 		geometry
 		FROM distribution.vw_valve WHERE identification IS NOT NULL;

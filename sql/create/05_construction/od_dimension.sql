@@ -12,7 +12,7 @@ COMMENT ON TABLE distribution.od_dimension IS 'dimension arcs displays measures 
 
 /* columns */
 ALTER TABLE distribution.od_dimension ADD COLUMN "type"                varchar(20); /* distance or orientation*/ 
-ALTER TABLE distribution.od_dimension ADD COLUMN observation           double precision;
+ALTER TABLE distribution.od_dimension ADD COLUMN observation           varchar(120);
 ALTER TABLE distribution.od_dimension ADD COLUMN _distance_extremities double precision;
 ALTER TABLE distribution.od_dimension ADD COLUMN remark                text;
 

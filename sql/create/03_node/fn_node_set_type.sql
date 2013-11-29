@@ -17,7 +17,7 @@ $BODY$
 		Tmaterial       varchar(30)              ;
 		Tdiameter       varchar(10)              ;
 		looppos         integer          := 0    ;
-		type            varchar(20)              ;
+		type            distribution.tp_node     ;
 		ori1            double precision := 0    ;
 		ori2            double precision := 0    ;
 		orientation     float            := 0    ;
@@ -49,12 +49,12 @@ $BODY$
 		END IF;
 		/* count the active pipes associated to this node */
 		SELECT
-			COUNT(pipe.id)            AS count         ,
+			COUNT(od_pipe.id)         AS count         ,
 			bool_or(_schema_visible)  AS schema_visible,
 			bool_or(vl_status.active) AS status_active
 			INTO grouped
 			FROM distribution.od_pipe
-			INNER JOIN distribution.vl_status ON pipe.id_status = vl_status.id
+			INNER JOIN distribution.vl_status ON od_pipe.id_status = vl_status.id
 			WHERE (id_node_a = node_id OR id_node_b = node_id)
 			AND vl_status.active IS TRUE;
 		/* if not connected, deleted if not under_object */
@@ -68,20 +68,20 @@ $BODY$
 		ELSEIF grouped.count <= 2 THEN
 			/* loop over them, and take the 2 first/last points of the pipe to determine orientation */
 			FOR pipeitem IN (
-				SELECT 	pipe.id, pipe.year, vl_pipe_material._displayname_fr, vl_pipe_material.diameter,
+				SELECT 	od_pipe.id, od_pipe.year, vl_pipe_material._displayname_fr, vl_pipe_material.diameter,
 						ST_PointN(geometry,2)   AS point_1,
 						ST_StartPoint(geometry) AS point_2
 						FROM distribution.od_pipe
-						INNER JOIN distribution.vl_pipe_material ON pipe.id_material = vl_pipe_material.id
-						INNER JOIN distribution.vl_status ON pipe.id_status = vl_status.id
+						INNER JOIN distribution.vl_pipe_material ON od_pipe.id_material = vl_pipe_material.id
+						INNER JOIN distribution.vl_status        ON od_pipe.id_status = vl_status.id
 						WHERE id_node_a = node_id AND vl_status.active IS TRUE
 				UNION ALL
-				SELECT	pipe.id, pipe.year, vl_pipe_material._displayname_fr, vl_pipe_material.diameter,
+				SELECT	od_pipe.id, od_pipe.year, vl_pipe_material._displayname_fr, vl_pipe_material.diameter,
 						ST_PointN(geometry,ST_NPoints(geometry)-1) AS point_1,
 						ST_EndPoint(geometry)                      AS point_2
 						FROM distribution.od_pipe
-						INNER JOIN distribution.vl_pipe_material ON pipe.id_material = vl_pipe_material.id
-						INNER JOIN distribution.vl_status ON pipe.id_status = vl_status.id
+						INNER JOIN distribution.vl_pipe_material ON od_pipe.id_material = vl_pipe_material.id
+						INNER JOIN distribution.vl_status        ON od_pipe.id_status = vl_status.id
 						WHERE id_node_b = node_id AND vl_status.active IS TRUE
 			) LOOP
 				IF looppos=0 THEN
@@ -108,7 +108,7 @@ $BODY$
 				/* if the node is only on 1 pipe, check if it intersects another pipe. If yes, hide it */
 				SELECT geometry FROM distribution.od_node WHERE id = node_id INTO node_geom;
 				/* st_intersects does not work as expected. */
-				SELECT bool_or(ST_DWithin(node_geom, pipe.geometry, 0.0001)) FROM distribution.od_pipe WHERE id != pipe_id INTO intersects;
+				SELECT bool_or(ST_DWithin(node_geom, od_pipe.geometry, 0.0001)) FROM distribution.od_pipe WHERE id != pipe_id INTO intersects;
 				IF intersects IS TRUE THEN
 					type := 'one_hidden';
 				END IF;
@@ -119,11 +119,11 @@ $BODY$
 		END IF;
 		/* update the node table */
 		UPDATE distribution.od_node SET
-			_type          = type,
-			_orientation   = orientation,
-			_schema_visible   = grouped.schema_visible,
-			_status_active = grouped.status_active,
-			_under_object  = is_under_object
+			_type           = type,
+			_orientation    = orientation,
+			_schema_visible = grouped.schema_visible,
+			_status_active  = grouped.status_active,
+			_under_object   = is_under_object
 			WHERE id = node_id;
 		/*RAISE NOTICE '% %' , node_id , orientation;*/
 	END;
@@ -138,7 +138,7 @@ $BODY$
 		node record;
 	BEGIN
 		FOR node IN SELECT id FROM distribution.od_node ORDER BY id LOOP
-			PERFORM distribution.fn_node_type(node.id);
+			PERFORM distribution.fn_node_set_type(node.id);
 		END LOOP;
 	END;
 $BODY$
