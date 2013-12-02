@@ -919,24 +919,6 @@
 #! <FEATURE_TYPES>
 #! <FEATURE_TYPE
 #! IS_SOURCE="true"
-#! NODE_NAME="COTE"
-#! IS_EDITABLE="false"
-#! IDENTIFIER="3"
-#! FEAT_GEOMTYPE="autocad_line autocad_point autocad_ellipse autocad_shape autocad_text autocad_arc autocad_trace autocad_solid autocad_insert autocad_polygon autocad_face autocad_ray autocad_xline autocad_spline autocad_multi_line autocad_multi_text autocad_dimension autocad_hatch autocad_mpolygon autocad_surface autocad_solid3d"
-#! POSITION="4 -221"
-#! ORDER="18"
-#! COLLAPSED="false"
-#! KEYWORD="ACAD_1"
-#! ENABLED="true"
-#! MERGE="false"
-#! MERGE_FILTER=""
-#! MERGE_FILTER_TYPE="FILTER_TYPE_GLOB"
-#! MERGE_FILTER_CASE_SENSITIVE="false"
-#! DYNAMIC_SCHEMA="false"
-#! >
-#! </FEATURE_TYPE>
-#! <FEATURE_TYPE
-#! IS_SOURCE="true"
 #! NODE_NAME="COTE_TEXTE"
 #! IS_EDITABLE="false"
 #! IDENTIFIER="0"
@@ -955,7 +937,7 @@
 #! </FEATURE_TYPE>
 #! <FEATURE_TYPE
 #! IS_SOURCE="false"
-#! NODE_NAME="distribution.dimension"
+#! NODE_NAME="distribution.od_dimension"
 #! IS_EDITABLE="true"
 #! IDENTIFIER="5"
 #! FEAT_GEOMTYPE="&lt;NO_GEOMETRY&gt;"
@@ -968,7 +950,7 @@
 #! FANOUT_ID_ATTR=""
 #! >
 #! <FEAT_ATTRIBUTE ATTR_NAME="type" ATTR_TYPE="char(30)"/>
-#! <FEAT_ATTRIBUTE ATTR_NAME="observation_text" ATTR_TYPE="char(30)"/>
+#! <FEAT_ATTRIBUTE ATTR_NAME="observation" ATTR_TYPE="char(30)"/>
 #! <DEFLINE_PARM PARM_NAME="postgis_truncate_table" PARM_VALUE="YES"/>
 #! <DEFLINE_PARM PARM_NAME="postgis_spatial_column" PARM_VALUE="geometry"/>
 #! <DEFLINE_PARM PARM_NAME="postgis_drop_table" PARM_VALUE="NO"/>
@@ -995,6 +977,24 @@
 #! FANOUT_ID_ATTR=""
 #! >
 #! <FEAT_ATTRIBUTE ATTR_NAME="geomtext" ATTR_TYPE="buffer"/>
+#! </FEATURE_TYPE>
+#! <FEATURE_TYPE
+#! IS_SOURCE="true"
+#! NODE_NAME="COTE"
+#! IS_EDITABLE="false"
+#! IDENTIFIER="3"
+#! FEAT_GEOMTYPE="autocad_line autocad_point autocad_ellipse autocad_shape autocad_text autocad_arc autocad_trace autocad_solid autocad_insert autocad_polygon autocad_face autocad_ray autocad_xline autocad_spline autocad_multi_line autocad_multi_text autocad_dimension autocad_hatch autocad_mpolygon autocad_surface autocad_solid3d"
+#! POSITION="4 -221"
+#! ORDER="39"
+#! COLLAPSED="false"
+#! KEYWORD="ACAD_1"
+#! ENABLED="true"
+#! MERGE="false"
+#! MERGE_FILTER=""
+#! MERGE_FILTER_TYPE="FILTER_TYPE_GLOB"
+#! MERGE_FILTER_CASE_SENSITIVE="false"
+#! DYNAMIC_SCHEMA="false"
+#! >
 #! </FEATURE_TYPE>
 #! </FEATURE_TYPES>
 #! <FMESERVER>
@@ -1219,13 +1219,13 @@
 #! <OUTPUT_FEAT NAME="OUTPUT"/>
 #! <FEAT_COLLAPSED COLLAPSED="0"/>
 #! <XFORM_ATTR ATTR_NAME="text_uuid" IS_USER_CREATED="false" FEAT_INDEX="0"/>
-#! <XFORM_ATTR ATTR_NAME="observation_text" IS_USER_CREATED="false" FEAT_INDEX="0"/>
+#! <XFORM_ATTR ATTR_NAME="observation" IS_USER_CREATED="false" FEAT_INDEX="0"/>
 #! <XFORM_PARM PARM_NAME="PARAMETERS_GROUP" PARM_VALUE=""/>
 #! <XFORM_PARM PARM_NAME="TEXT_SIZE" PARM_VALUE=""/>
 #! <XFORM_PARM PARM_NAME="XFORMER_NAME" PARM_VALUE="TextPropertyExtractor"/>
 #! <XFORM_PARM PARM_NAME="TEXT_ROTATION" PARM_VALUE=""/>
 #! <XFORM_PARM PARM_NAME="TRANSFORMER_GROUP" PARM_VALUE=""/>
-#! <XFORM_PARM PARM_NAME="TEXT_STRING" PARM_VALUE="observation_text"/>
+#! <XFORM_PARM PARM_NAME="TEXT_STRING" PARM_VALUE="observation"/>
 #! </TRANSFORMER>
 #! <TRANSFORMER
 #! IDENTIFIER="29"
@@ -1259,8 +1259,8 @@
 #! <XFORM_ATTR ATTR_NAME="cote_length" IS_USER_CREATED="false" FEAT_INDEX="0"/>
 #! <XFORM_ATTR ATTR_NAME="text_uuid" IS_USER_CREATED="false" FEAT_INDEX="0"/>
 #! <XFORM_ATTR ATTR_NAME="list{}.text_uuid" IS_USER_CREATED="false" FEAT_INDEX="0"/>
-#! <XFORM_ATTR ATTR_NAME="observation_text" IS_USER_CREATED="false" FEAT_INDEX="0"/>
-#! <XFORM_ATTR ATTR_NAME="list{}.observation_text" IS_USER_CREATED="false" FEAT_INDEX="0"/>
+#! <XFORM_ATTR ATTR_NAME="observation" IS_USER_CREATED="false" FEAT_INDEX="0"/>
+#! <XFORM_ATTR ATTR_NAME="list{}.observation" IS_USER_CREATED="false" FEAT_INDEX="0"/>
 #! <OUTPUT_FEAT NAME="UNMATCHED_BASE"/>
 #! <FEAT_COLLAPSED COLLAPSED="1"/>
 #! <XFORM_ATTR ATTR_NAME="type" IS_USER_CREATED="false" FEAT_INDEX="1"/>
@@ -1269,7 +1269,7 @@
 #! <OUTPUT_FEAT NAME="UNMATCHED_CANDIDATE"/>
 #! <FEAT_COLLAPSED COLLAPSED="2"/>
 #! <XFORM_ATTR ATTR_NAME="text_uuid" IS_USER_CREATED="false" FEAT_INDEX="2"/>
-#! <XFORM_ATTR ATTR_NAME="observation_text" IS_USER_CREATED="false" FEAT_INDEX="2"/>
+#! <XFORM_ATTR ATTR_NAME="observation" IS_USER_CREATED="false" FEAT_INDEX="2"/>
 #! <XFORM_PARM PARM_NAME="GROUP_BY" PARM_VALUE=""/>
 #! <XFORM_PARM PARM_NAME="TEST_LIST_NAME" PARM_VALUE=""/>
 #! <XFORM_PARM PARM_NAME="PARAMETERS_GROUP" PARM_VALUE=""/>
@@ -1312,11 +1312,11 @@
 #! <OUTPUT_FEAT NAME="OUTPUT"/>
 #! <FEAT_COLLAPSED COLLAPSED="0"/>
 #! <XFORM_ATTR ATTR_NAME="text_uuid" IS_USER_CREATED="false" FEAT_INDEX="0"/>
-#! <XFORM_ATTR ATTR_NAME="observation_text" IS_USER_CREATED="false" FEAT_INDEX="0"/>
+#! <XFORM_ATTR ATTR_NAME="observation" IS_USER_CREATED="false" FEAT_INDEX="0"/>
 #! <XFORM_PARM PARM_NAME="PARAMETERS_GROUP" PARM_VALUE=""/>
 #! <XFORM_PARM PARM_NAME="FIND_TEXT" PARM_VALUE="-"/>
 #! <XFORM_PARM PARM_NAME="XFORMER_NAME" PARM_VALUE="StringReplacer"/>
-#! <XFORM_PARM PARM_NAME="SRC_ATTRS" PARM_VALUE="observation_text"/>
+#! <XFORM_PARM PARM_NAME="SRC_ATTRS" PARM_VALUE="observation"/>
 #! <XFORM_PARM PARM_NAME="TRANSFORMER_GROUP" PARM_VALUE=""/>
 #! <XFORM_PARM PARM_NAME="REPLACE_TEXT" PARM_VALUE=""/>
 #! <XFORM_PARM PARM_NAME="REGEXP" PARM_VALUE="no"/>
@@ -1334,11 +1334,11 @@
 #! <OUTPUT_FEAT NAME="OUTPUT"/>
 #! <FEAT_COLLAPSED COLLAPSED="0"/>
 #! <XFORM_ATTR ATTR_NAME="text_uuid" IS_USER_CREATED="false" FEAT_INDEX="0"/>
-#! <XFORM_ATTR ATTR_NAME="observation_text" IS_USER_CREATED="false" FEAT_INDEX="0"/>
+#! <XFORM_ATTR ATTR_NAME="observation" IS_USER_CREATED="false" FEAT_INDEX="0"/>
 #! <XFORM_PARM PARM_NAME="PARAMETERS_GROUP" PARM_VALUE=""/>
 #! <XFORM_PARM PARM_NAME="FIND_TEXT" PARM_VALUE="&lt;openparen&gt;"/>
 #! <XFORM_PARM PARM_NAME="XFORMER_NAME" PARM_VALUE="StringReplacer_2"/>
-#! <XFORM_PARM PARM_NAME="SRC_ATTRS" PARM_VALUE="observation_text"/>
+#! <XFORM_PARM PARM_NAME="SRC_ATTRS" PARM_VALUE="observation"/>
 #! <XFORM_PARM PARM_NAME="TRANSFORMER_GROUP" PARM_VALUE=""/>
 #! <XFORM_PARM PARM_NAME="REPLACE_TEXT" PARM_VALUE=""/>
 #! <XFORM_PARM PARM_NAME="REGEXP" PARM_VALUE="no"/>
@@ -1356,11 +1356,11 @@
 #! <OUTPUT_FEAT NAME="OUTPUT"/>
 #! <FEAT_COLLAPSED COLLAPSED="0"/>
 #! <XFORM_ATTR ATTR_NAME="text_uuid" IS_USER_CREATED="false" FEAT_INDEX="0"/>
-#! <XFORM_ATTR ATTR_NAME="observation_text" IS_USER_CREATED="false" FEAT_INDEX="0"/>
+#! <XFORM_ATTR ATTR_NAME="observation" IS_USER_CREATED="false" FEAT_INDEX="0"/>
 #! <XFORM_PARM PARM_NAME="PARAMETERS_GROUP" PARM_VALUE=""/>
 #! <XFORM_PARM PARM_NAME="FIND_TEXT" PARM_VALUE="&lt;closeparen&gt;"/>
 #! <XFORM_PARM PARM_NAME="XFORMER_NAME" PARM_VALUE="StringReplacer_3"/>
-#! <XFORM_PARM PARM_NAME="SRC_ATTRS" PARM_VALUE="observation_text"/>
+#! <XFORM_PARM PARM_NAME="SRC_ATTRS" PARM_VALUE="observation"/>
 #! <XFORM_PARM PARM_NAME="TRANSFORMER_GROUP" PARM_VALUE=""/>
 #! <XFORM_PARM PARM_NAME="REPLACE_TEXT" PARM_VALUE=""/>
 #! <XFORM_PARM PARM_NAME="REGEXP" PARM_VALUE="no"/>
@@ -1378,7 +1378,7 @@
 #! <OUTPUT_FEAT NAME="OUTPUT"/>
 #! <FEAT_COLLAPSED COLLAPSED="0"/>
 #! <XFORM_ATTR ATTR_NAME="text_uuid" IS_USER_CREATED="false" FEAT_INDEX="0"/>
-#! <XFORM_ATTR ATTR_NAME="observation_text" IS_USER_CREATED="false" FEAT_INDEX="0"/>
+#! <XFORM_ATTR ATTR_NAME="observation" IS_USER_CREATED="false" FEAT_INDEX="0"/>
 #! <XFORM_PARM PARM_NAME="XFORMER_NAME" PARM_VALUE="TextLocationExtractor"/>
 #! <XFORM_PARM PARM_NAME="TRANSFORMER_GROUP" PARM_VALUE=""/>
 #! </TRANSFORMER>
@@ -1925,6 +1925,39 @@ FACTORY_DEF * TeeFactory    FACTORY_NAME "Source -> Generic"    INPUT FEATURE_TY
 DEFAULT_MACRO WB_CURRENT_CONTEXT
 # -------------------------------------------------------------------------
 
+FACTORY_DEF * TeeFactory    FACTORY_NAME UUIDGenerator_2    INPUT  FEATURE_TYPE COTE_TEXTE    OUTPUT FEATURE_TYPE UUIDGenerator_2_OUTPUT         text_uuid @UUID()
+
+# -------------------------------------------------------------------------
+
+FACTORY_DEF * TeeFactory    FACTORY_NAME TextPropertyExtractor    INPUT  FEATURE_TYPE UUIDGenerator_2_OUTPUT    OUTPUT FEATURE_TYPE TextPropertyExtractor_OUTPUT         @Geometry(GET_PROPERTIES,TEXT,observation,,)
+
+# -------------------------------------------------------------------------
+
+MACRO casemac
+INCLUDE [ if { {no} == {no} } { puts {MACRO casemac -nocase}} ]
+Tcl2 proc StringReplacer_replacer {} {     set attrs [split \"observation\" {,}];     set findValue [FME_DecodeTextOrAttr {-}];     set replaceValue [FME_DecodeTextOrAttr {}];     foreach attr $attrs {       set attrVal [FME_GetAttribute $attr];       set length [string length $attrVal];       if {$length > 0} {          if {{no} == {yes}} {             FME_SetAttribute $attr [regsub $(casemac) -all $findValue [FME_GetAttribute $attr] $replaceValue];          } else {             FME_SetAttribute $attr [string map $(casemac) [list $findValue $replaceValue] [FME_GetAttribute $attr]];          };       };     }; }
+FACTORY_DEF * TeeFactory    FACTORY_NAME StringReplacer    INPUT  FEATURE_TYPE TextPropertyExtractor_OUTPUT    OUTPUT FEATURE_TYPE StringReplacer_OUTPUT         @Tcl2(StringReplacer_replacer)
+
+# -------------------------------------------------------------------------
+
+MACRO casemac
+INCLUDE [ if { {no} == {no} } { puts {MACRO casemac -nocase}} ]
+Tcl2 proc StringReplacer_2_replacer {} {     set attrs [split \"observation\" {,}];     set findValue [FME_DecodeTextOrAttr {<openparen>}];     set replaceValue [FME_DecodeTextOrAttr {}];     foreach attr $attrs {       set attrVal [FME_GetAttribute $attr];       set length [string length $attrVal];       if {$length > 0} {          if {{no} == {yes}} {             FME_SetAttribute $attr [regsub $(casemac) -all $findValue [FME_GetAttribute $attr] $replaceValue];          } else {             FME_SetAttribute $attr [string map $(casemac) [list $findValue $replaceValue] [FME_GetAttribute $attr]];          };       };     }; }
+FACTORY_DEF * TeeFactory    FACTORY_NAME StringReplacer_2    INPUT  FEATURE_TYPE StringReplacer_OUTPUT    OUTPUT FEATURE_TYPE StringReplacer_2_OUTPUT         @Tcl2(StringReplacer_2_replacer)
+
+# -------------------------------------------------------------------------
+
+MACRO casemac
+INCLUDE [ if { {no} == {no} } { puts {MACRO casemac -nocase}} ]
+Tcl2 proc StringReplacer_3_replacer {} {     set attrs [split \"observation\" {,}];     set findValue [FME_DecodeTextOrAttr {<closeparen>}];     set replaceValue [FME_DecodeTextOrAttr {}];     foreach attr $attrs {       set attrVal [FME_GetAttribute $attr];       set length [string length $attrVal];       if {$length > 0} {          if {{no} == {yes}} {             FME_SetAttribute $attr [regsub $(casemac) -all $findValue [FME_GetAttribute $attr] $replaceValue];          } else {             FME_SetAttribute $attr [string map $(casemac) [list $findValue $replaceValue] [FME_GetAttribute $attr]];          };       };     }; }
+FACTORY_DEF * TeeFactory    FACTORY_NAME StringReplacer_3    INPUT  FEATURE_TYPE StringReplacer_2_OUTPUT    OUTPUT FEATURE_TYPE StringReplacer_3_OUTPUT         @Tcl2(StringReplacer_3_replacer)
+
+# -------------------------------------------------------------------------
+
+FACTORY_DEF * TeeFactory    FACTORY_NAME TextLocationExtractor    INPUT  FEATURE_TYPE StringReplacer_3_OUTPUT    OUTPUT FEATURE_TYPE TextLocationExtractor_OUTPUT         @Geometry(REMOVE_TEXT)
+
+# -------------------------------------------------------------------------
+
 INCLUDE [          if { ({TOLERANCE} == {TOLERANCE}) } {             if { ({No} == {Yes}) } {                puts {MACRO ArcStroker_func @Arc(MAX_DEVIATION, .01, MAKEPOLY_FOR_360ARC)};             } else {               puts {MACRO ArcStroker_func @Arc(MAX_DEVIATION, .01)};             }          }          else {             if { ({No} == {Yes}) } {                puts {MACRO ArcStroker_func @Arc(<Unused>, MAKEPOLY_FOR_360ARC)};             } else {               puts {MACRO ArcStroker_func @Arc(<Unused>)};             }          }         ]
 FACTORY_DEF * TeeFactory    FACTORY_NAME ArcStroker    INPUT  FEATURE_TYPE COTE    OUTPUT FEATURE_TYPE ArcStroker_STROKED         $(ArcStroker_func)
 
@@ -1983,44 +2016,11 @@ FACTORY_DEF * TeeFactory    FACTORY_NAME LengthCalculator    INPUT  FEATURE_TYPE
 
 # -------------------------------------------------------------------------
 
-FACTORY_DEF * TeeFactory    FACTORY_NAME UUIDGenerator_2    INPUT  FEATURE_TYPE COTE_TEXTE    OUTPUT FEATURE_TYPE UUIDGenerator_2_OUTPUT         text_uuid @UUID()
-
-# -------------------------------------------------------------------------
-
-FACTORY_DEF * TeeFactory    FACTORY_NAME TextPropertyExtractor    INPUT  FEATURE_TYPE UUIDGenerator_2_OUTPUT    OUTPUT FEATURE_TYPE TextPropertyExtractor_OUTPUT         @Geometry(GET_PROPERTIES,TEXT,observation_text,,)
-
-# -------------------------------------------------------------------------
-
-MACRO casemac
-INCLUDE [ if { {no} == {no} } { puts {MACRO casemac -nocase}} ]
-Tcl2 proc StringReplacer_replacer {} {     set attrs [split \"observation_text\" {,}];     set findValue [FME_DecodeTextOrAttr {-}];     set replaceValue [FME_DecodeTextOrAttr {}];     foreach attr $attrs {       set attrVal [FME_GetAttribute $attr];       set length [string length $attrVal];       if {$length > 0} {          if {{no} == {yes}} {             FME_SetAttribute $attr [regsub $(casemac) -all $findValue [FME_GetAttribute $attr] $replaceValue];          } else {             FME_SetAttribute $attr [string map $(casemac) [list $findValue $replaceValue] [FME_GetAttribute $attr]];          };       };     }; }
-FACTORY_DEF * TeeFactory    FACTORY_NAME StringReplacer    INPUT  FEATURE_TYPE TextPropertyExtractor_OUTPUT    OUTPUT FEATURE_TYPE StringReplacer_OUTPUT         @Tcl2(StringReplacer_replacer)
-
-# -------------------------------------------------------------------------
-
-MACRO casemac
-INCLUDE [ if { {no} == {no} } { puts {MACRO casemac -nocase}} ]
-Tcl2 proc StringReplacer_2_replacer {} {     set attrs [split \"observation_text\" {,}];     set findValue [FME_DecodeTextOrAttr {<openparen>}];     set replaceValue [FME_DecodeTextOrAttr {}];     foreach attr $attrs {       set attrVal [FME_GetAttribute $attr];       set length [string length $attrVal];       if {$length > 0} {          if {{no} == {yes}} {             FME_SetAttribute $attr [regsub $(casemac) -all $findValue [FME_GetAttribute $attr] $replaceValue];          } else {             FME_SetAttribute $attr [string map $(casemac) [list $findValue $replaceValue] [FME_GetAttribute $attr]];          };       };     }; }
-FACTORY_DEF * TeeFactory    FACTORY_NAME StringReplacer_2    INPUT  FEATURE_TYPE StringReplacer_OUTPUT    OUTPUT FEATURE_TYPE StringReplacer_2_OUTPUT         @Tcl2(StringReplacer_2_replacer)
-
-# -------------------------------------------------------------------------
-
-MACRO casemac
-INCLUDE [ if { {no} == {no} } { puts {MACRO casemac -nocase}} ]
-Tcl2 proc StringReplacer_3_replacer {} {     set attrs [split \"observation_text\" {,}];     set findValue [FME_DecodeTextOrAttr {<closeparen>}];     set replaceValue [FME_DecodeTextOrAttr {}];     foreach attr $attrs {       set attrVal [FME_GetAttribute $attr];       set length [string length $attrVal];       if {$length > 0} {          if {{no} == {yes}} {             FME_SetAttribute $attr [regsub $(casemac) -all $findValue [FME_GetAttribute $attr] $replaceValue];          } else {             FME_SetAttribute $attr [string map $(casemac) [list $findValue $replaceValue] [FME_GetAttribute $attr]];          };       };     }; }
-FACTORY_DEF * TeeFactory    FACTORY_NAME StringReplacer_3    INPUT  FEATURE_TYPE StringReplacer_2_OUTPUT    OUTPUT FEATURE_TYPE StringReplacer_3_OUTPUT         @Tcl2(StringReplacer_3_replacer)
-
-# -------------------------------------------------------------------------
-
-FACTORY_DEF * TeeFactory    FACTORY_NAME TextLocationExtractor    INPUT  FEATURE_TYPE StringReplacer_3_OUTPUT    OUTPUT FEATURE_TYPE TextLocationExtractor_OUTPUT         @Geometry(REMOVE_TEXT)
-
-# -------------------------------------------------------------------------
-
 FACTORY_DEF * ProximityFactory    FACTORY_NAME NeighborFinder    INPUT BASE FEATURE_TYPE LengthCalculator_OUTPUT    INPUT CANDIDATE FEATURE_TYPE TextLocationExtractor_OUTPUT    SPATIAL_MATCH CLOSEST .7    INSERT_VERTEX_ON_BASE No    CANDIDATE_FEATURES_FIRST No    CLOSE_CANDIDATES_LIST  list{}    DISTANCE_ATTR _distance    TREAT_POLYGON_AS LINE    NEVER_OVERWRITE_MERGED_ATTRS Yes    OUTPUT MATCHED FEATURE_TYPE NeighborFinder_MATCHED        @RenameAttributes(_angle,angle,_candidate_angle,candidate_angle,_candidate_label_angle,candidate_label_angle,_closest_candidate_x,closest_candidate_x,_closest_candidate_y,closest_candidate_y,_closest_base_x,closest_base_x,_closest_base_y,closest_base_y)
 
 # -------------------------------------------------------------------------
 
-FACTORY_DEF * TeeFactory    FACTORY_NAME "NeighborFinder_MATCHED -> distribution.dimension Correlator"    INPUT FEATURE_TYPE NeighborFinder_MATCHED    OUTPUT FEATURE_TYPE __GO_TO_FINAL_OUTPUT_ROUTER__       multi_writer_id 0       @Transform(FME_GENERIC,POSTGIS)       @SupplyAttributes(__wb_out_feat_type__,distribution.dimension)
+FACTORY_DEF * TeeFactory    FACTORY_NAME "NeighborFinder_MATCHED -> distribution.od_dimension Correlator"    INPUT FEATURE_TYPE NeighborFinder_MATCHED    OUTPUT FEATURE_TYPE __GO_TO_FINAL_OUTPUT_ROUTER__       multi_writer_id 0       @Transform(FME_GENERIC,POSTGIS)       @SupplyAttributes(__wb_out_feat_type__,distribution.od_dimension)
 # -------------------------------------------------------------------------
 
 FACTORY_DEF * TestFactory   FACTORY_NAME "Final Output Feature Type Router"   INPUT FEATURE_TYPE *   TEST @Value(__wb_out_feat_type__) != ""   OUTPUT PASSED FEATURE_TYPE *     @FeatureType(@Value(__wb_out_feat_type__))   OUTPUT FAILED FEATURE_TYPE __nuke_me__ @Tcl2("FME_StatMessage 818059 {@Value(fme_template_feature_type)} 818060 818061 fme_warn")
@@ -2035,4 +2035,4 @@ INCLUDE [ if {{$(WORKSPACE_TEMP_DIR)} == {}} { puts {MACRO __WB_ENABLE_VISUALIZE
 FACTORY_DEF $(__WB_ENABLE_VISUALIZER__) CreationFactory   CREATE_AT_END   OUTPUT FEATURE_TYPE __NUKEME__   @TCL("if [info exists ::gVisualizerFilesToView] {eval FME_Execute System \173\042$(FME_HOME_UNIX)/fmeview\042 /ownffs {$(WORKSPACE_TEMP_DIR)} $::gVisualizerFilesToView & \175 }")
 FACTORY_DEF * TeeFactory   INPUT FEATURE_TYPE __NUKEME__
 # -------------------------------------------------------------------------
-POSTGIS_1_DEF distribution.dimension   postgis_type                 postgis_geometry   postgis_mode                 INHERIT_FROM_WRITER   postgis_spatial_column_type  geometry   postgis_spatial_column       geometry   postgis_srid                 INHERIT_FROM_WRITER   postgis_drop_table           NO   postgis_truncate_table       YES   postgis_create_with_oids     NO   postgis_create_gist_index    YES   postgis_vacuum_analyze       YES   postgis_allow_serial_writing NO   type                         char(30)   observation_text             char(30)
+POSTGIS_1_DEF distribution.od_dimension   postgis_type                 postgis_geometry   postgis_mode                 INHERIT_FROM_WRITER   postgis_spatial_column_type  geometry   postgis_spatial_column       geometry   postgis_srid                 INHERIT_FROM_WRITER   postgis_drop_table           NO   postgis_truncate_table       YES   postgis_create_with_oids     NO   postgis_create_gist_index    YES   postgis_vacuum_analyze       YES   postgis_allow_serial_writing NO   type                         char(30)   observation                  char(30)
