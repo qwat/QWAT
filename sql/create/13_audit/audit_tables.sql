@@ -1,6 +1,7 @@
 /* Audit */
 SELECT distribution.audit_table('distribution.od_constructionpoint');
-SELECT distribution.audit_table('distribution.od_dimension');
+SELECT distribution.audit_table('distribution.od_dimension_distance');
+SELECT distribution.audit_table('distribution.od_dimension_orientation');
 SELECT distribution.audit_table('distribution.od_distributor');
 SELECT distribution.audit_table('distribution.od_district');
 SELECT distribution.audit_table('distribution.od_hydrant');

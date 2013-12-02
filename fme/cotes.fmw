@@ -937,7 +937,7 @@
 #! </FEATURE_TYPE>
 #! <FEATURE_TYPE
 #! IS_SOURCE="false"
-#! NODE_NAME="distribution.od_dimension"
+#! NODE_NAME="distribution.od_dimension_distance"
 #! IS_EDITABLE="true"
 #! IDENTIFIER="5"
 #! FEAT_GEOMTYPE="&lt;NO_GEOMETRY&gt;"
@@ -2020,7 +2020,7 @@ FACTORY_DEF * ProximityFactory    FACTORY_NAME NeighborFinder    INPUT BASE FEAT
 
 # -------------------------------------------------------------------------
 
-FACTORY_DEF * TeeFactory    FACTORY_NAME "NeighborFinder_MATCHED -> distribution.od_dimension Correlator"    INPUT FEATURE_TYPE NeighborFinder_MATCHED    OUTPUT FEATURE_TYPE __GO_TO_FINAL_OUTPUT_ROUTER__       multi_writer_id 0       @Transform(FME_GENERIC,POSTGIS)       @SupplyAttributes(__wb_out_feat_type__,distribution.od_dimension)
+FACTORY_DEF * TeeFactory    FACTORY_NAME "NeighborFinder_MATCHED -> distribution.od_dimension_distance Correlator"    INPUT FEATURE_TYPE NeighborFinder_MATCHED    OUTPUT FEATURE_TYPE __GO_TO_FINAL_OUTPUT_ROUTER__       multi_writer_id 0       @Transform(FME_GENERIC,POSTGIS)       @SupplyAttributes(__wb_out_feat_type__,distribution.od_dimension_distance)
 # -------------------------------------------------------------------------
 
 FACTORY_DEF * TestFactory   FACTORY_NAME "Final Output Feature Type Router"   INPUT FEATURE_TYPE *   TEST @Value(__wb_out_feat_type__) != ""   OUTPUT PASSED FEATURE_TYPE *     @FeatureType(@Value(__wb_out_feat_type__))   OUTPUT FAILED FEATURE_TYPE __nuke_me__ @Tcl2("FME_StatMessage 818059 {@Value(fme_template_feature_type)} 818060 818061 fme_warn")
@@ -2035,4 +2035,4 @@ INCLUDE [ if {{$(WORKSPACE_TEMP_DIR)} == {}} { puts {MACRO __WB_ENABLE_VISUALIZE
 FACTORY_DEF $(__WB_ENABLE_VISUALIZER__) CreationFactory   CREATE_AT_END   OUTPUT FEATURE_TYPE __NUKEME__   @TCL("if [info exists ::gVisualizerFilesToView] {eval FME_Execute System \173\042$(FME_HOME_UNIX)/fmeview\042 /ownffs {$(WORKSPACE_TEMP_DIR)} $::gVisualizerFilesToView & \175 }")
 FACTORY_DEF * TeeFactory   INPUT FEATURE_TYPE __NUKEME__
 # -------------------------------------------------------------------------
-POSTGIS_1_DEF distribution.od_dimension   postgis_type                 postgis_geometry   postgis_mode                 INHERIT_FROM_WRITER   postgis_spatial_column_type  geometry   postgis_spatial_column       geometry   postgis_srid                 INHERIT_FROM_WRITER   postgis_drop_table           NO   postgis_truncate_table       YES   postgis_create_with_oids     NO   postgis_create_gist_index    YES   postgis_vacuum_analyze       YES   postgis_allow_serial_writing NO   type                         char(30)   observation                  char(30)
+POSTGIS_1_DEF distribution.od_dimension_distance   postgis_type                 postgis_geometry   postgis_mode                 INHERIT_FROM_WRITER   postgis_spatial_column_type  geometry   postgis_spatial_column       geometry   postgis_srid                 INHERIT_FROM_WRITER   postgis_drop_table           NO   postgis_truncate_table       YES   postgis_create_with_oids     NO   postgis_create_gist_index    YES   postgis_vacuum_analyze       YES   postgis_allow_serial_writing NO   type                         char(30)   observation                  char(30)
