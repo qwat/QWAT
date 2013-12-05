@@ -7,7 +7,7 @@
 
 /* CREATE TABLE */
 DROP TABLE IF EXISTS distribution.od_dimension_orientation CASCADE;
-CREATE TABLE distribution.od_dimension_orientation (id serial NOT NULL, CONSTRAINT dimension_pk PRIMARY KEY (id) );
+CREATE TABLE distribution.od_dimension_orientation (id serial PRIMARY KEY);
 COMMENT ON TABLE distribution.od_dimension_orientation IS 'dimension arcs displays measures done on the field. For example: orientations to buildings corner';
 
 /* columns */

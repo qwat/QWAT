@@ -7,7 +7,7 @@
 
 /* CREATE TABLE */
 DROP TABLE IF EXISTS distribution.od_constructionpoint CASCADE;
-CREATE TABLE distribution.od_constructionpoint (id serial NOT NULL, CONSTRAINT constructionpoint_pk PRIMARY KEY (id) );
+CREATE TABLE distribution.od_constructionpoint (id serial PRIMARY KEY);
 COMMENT ON TABLE distribution.od_constructionpoint IS 'construction points are artificials points to build objects.';
 
 /* columns */

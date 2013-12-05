@@ -6,7 +6,7 @@
 
 /* CREATE TABLE */
 DROP TABLE IF EXISTS distribution.od_installation_source CASCADE;
-CREATE TABLE distribution.od_installation_source (id serial NOT NULL, CONSTRAINT installation_source_pk PRIMARY KEY (id) );
+CREATE TABLE distribution.od_installation_source (id serial PRIMARY KEY);
 SELECT setval('distribution.od_installation_source_id_seq', 100, true);
 COMMENT ON TABLE distribution.od_installation_source IS '';
 

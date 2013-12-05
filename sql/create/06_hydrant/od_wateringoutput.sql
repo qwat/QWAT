@@ -7,7 +7,7 @@
 
 /* CREATE TABLE */
 DROP TABLE IF EXISTS distribution.od_wateringoutput CASCADE;
-CREATE TABLE distribution.od_wateringoutput (id serial NOT NULL, CONSTRAINT wateringoutput_pk PRIMARY KEY (id) );
+CREATE TABLE distribution.od_wateringoutput (id serial PRIMARY KEY);
 SELECT setval('distribution.od_wateringoutput_id_seq', 100, true);
 COMMENT ON TABLE distribution.od_wateringoutput IS 'wateringoutput.';
 

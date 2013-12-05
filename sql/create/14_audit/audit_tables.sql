@@ -1,4 +1,6 @@
 /* Audit */
+SELECT distribution.audit_table('distribution.od_annotationline');
+SELECT distribution.audit_table('distribution.od_annotationpoint');
 SELECT distribution.audit_table('distribution.od_constructionpoint');
 SELECT distribution.audit_table('distribution.od_dimension_distance');
 SELECT distribution.audit_table('distribution.od_dimension_orientation');

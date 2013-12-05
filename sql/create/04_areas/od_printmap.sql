@@ -7,7 +7,7 @@
 
 /* CREATE TABLE */
 DROP TABLE IF EXISTS distribution.od_printmap CASCADE;
-CREATE TABLE distribution.od_printmap (id serial NOT NULL, CONSTRAINT print_pk PRIMARY KEY (id) );
+CREATE TABLE distribution.od_printmap (id serial PRIMARY KEY);
 COMMENT ON TABLE distribution.od_printmap IS 'This table is used for polygons for predefined printable maps. shortname would be used as label string, and long_mame would be used in the print composer.';
 
 /* columns */

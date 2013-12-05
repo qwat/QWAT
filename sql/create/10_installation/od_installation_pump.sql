@@ -7,7 +7,7 @@
 
 /* CREATE TABLE */
 DROP TABLE IF EXISTS distribution.od_installation_pump CASCADE;
-CREATE TABLE distribution.od_installation_pump (id serial NOT NULL, CONSTRAINT installation_pump_pk PRIMARY KEY (id) );
+CREATE TABLE distribution.od_installation_pump (id serial PRIMARY KEY);
 SELECT setval('distribution.od_installation_pump_id_seq', 100, true);
 COMMENT ON TABLE distribution.od_installation_pump IS '';
 

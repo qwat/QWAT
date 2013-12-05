@@ -6,7 +6,7 @@
 
 /* CREATE TABLE */
 DROP TABLE IF EXISTS distribution.od_installation_tank CASCADE;
-CREATE TABLE distribution.od_installation_tank (id serial NOT NULL, CONSTRAINT installation_tank_pk PRIMARY KEY (id) );
+CREATE TABLE distribution.od_installation_tank (id serial PRIMARY KEY);
 SELECT setval('distribution.od_installation_tank_id_seq', 100, true);
 COMMENT ON TABLE distribution.od_installation_tank IS 'storage tanks. These are related to installations and are made of cisterns';
 

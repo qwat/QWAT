@@ -7,7 +7,7 @@
 
 /* CREATE TABLE */
 DROP TABLE IF EXISTS distribution.od_leak CASCADE;
-CREATE TABLE distribution.od_leak (id serial NOT NULL, CONSTRAINT vl_leak_pk PRIMARY KEY (id) );
+CREATE TABLE distribution.od_leak (id serial PRIMARY KEY);
 COMMENT ON TABLE distribution.od_leak IS 'pipe leaks';
 
 /* geometry */

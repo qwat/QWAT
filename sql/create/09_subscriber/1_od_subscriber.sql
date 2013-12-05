@@ -6,7 +6,7 @@
 
 
 DROP TABLE IF EXISTS distribution.od_subscriber CASCADE;
-CREATE TABLE distribution.od_subscriber (id serial NOT NULL, CONSTRAINT subscriber_pk PRIMARY KEY (id) );
+CREATE TABLE distribution.od_subscriber (id serial PRIMARY KEY);
 COMMENT ON TABLE distribution.od_subscriber IS 'Table for subscriber.';
 
 SELECT setval('distribution.od_subscriber_id_seq', 8000, true);

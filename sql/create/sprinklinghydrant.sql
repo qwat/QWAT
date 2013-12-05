@@ -8,7 +8,7 @@
 
 /* CREATE TABLE */
 DROP TABLE IF EXISTS distribution.sprinklinghydrant CASCADE;
-CREATE TABLE distribution.sprinklinghydrant (id serial NOT NULL);
+CREATE TABLE distribution.sprinklinghydrant (id serial PRIMARY KEY);
 SELECT setval('distribution.sprinklinghydrant_id_seq', 100, true);
 COMMENT ON TABLE distribution.sprinklinghydrant IS 'sprinklinghydrant.';
 

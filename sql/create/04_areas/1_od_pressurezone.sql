@@ -6,7 +6,7 @@
 
 /* CREATE TABLE */
 DROP TABLE IF EXISTS distribution.od_pressurezone CASCADE;
-CREATE TABLE distribution.od_pressurezone (id serial NOT NULL, CONSTRAINT pressurezone_pk PRIMARY KEY (id) );
+CREATE TABLE distribution.od_pressurezone (id serial PRIMARY KEY);
 COMMENT ON TABLE distribution.od_pressurezone IS 'Pressure zones.';
 
 /* COLUMNS */

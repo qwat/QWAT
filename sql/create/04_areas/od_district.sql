@@ -8,7 +8,7 @@
 
 /* CREATE TABLE */
 DROP TABLE IF EXISTS distribution.od_district CASCADE;
-CREATE TABLE distribution.od_district (id serial NOT NULL, CONSTRAINT district_pk PRIMARY KEY (id) );
+CREATE TABLE distribution.od_district (id serial PRIMARY KEY);
 COMMENT ON TABLE distribution.od_district IS 'Districts.';
 
 /* columns */

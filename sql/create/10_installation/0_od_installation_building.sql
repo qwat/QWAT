@@ -7,7 +7,7 @@
 
 /* CREATE TABLE */
 DROP TABLE IF EXISTS distribution.od_installation_building CASCADE;
-CREATE TABLE distribution.od_installation_building (id serial NOT NULL, CONSTRAINT installation_building_pk PRIMARY KEY (id) );
+CREATE TABLE distribution.od_installation_building (id serial PRIMARY KEY);
 COMMENT ON TABLE distribution.od_installation_building IS 'This table is used to define the buildings of installation.';
 
 /* columns */
