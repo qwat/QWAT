@@ -24,10 +24,10 @@
     <mapcanvas>
         <units>meters</units>
         <extent>
-            <xmin>555654.04009177733678371</xmin>
-            <ymin>145452.63859642832539976</ymin>
-            <xmax>555675.73592513322364539</xmax>
-            <ymax>145467.62062769389012828</ymax>
+            <xmin>555435.80845092562958598</xmin>
+            <ymin>145263.34575768979266286</ymin>
+            <xmax>555782.94178461981937289</xmax>
+            <ymax>145503.05825793906114995</ymax>
         </extent>
         <projections>1</projections>
         <destinationsrs>
@@ -44,7 +44,7 @@
         </destinationsrs>
         <layer_coordinate_transform_info/>
     </mapcanvas>
-    <legend updateDrawingOrder="false" activeLayer="dimension20130807094904783">
+    <legend updateDrawingOrder="false" activeLayer="od_annotationpoint20131203095020392">
         <legendgroup open="true" checked="Qt::PartiallyChecked" name="Réseau">
             <legendgroup open="true" checked="Qt::PartiallyChecked" name="Conduites">
                 <legendlayer drawingOrder="0" open="false" checked="Qt::Checked" name="noeuds" showFeatureCount="0">
@@ -5961,7 +5961,7 @@
                 <actionsetting action="qgis.utils.plugins['postgres91plusauditor'].audit('od_annotationline20131203095020365',[% $id %])" capture="0" type="1" name="History audit"/>
             </attributeactions>
         </maplayer>
-        <maplayer minimumScale="0" maximumScale="1e+08" minLabelScale="0" maxLabelScale="1e+08" geometry="Point" type="vector" hasScaleBasedVisibilityFlag="0" scaleBasedLabelVisibilityFlag="0">
+        <maplayer minimumScale="-4.65661e-10" maximumScale="1e+08" minLabelScale="0" maxLabelScale="1e+08" geometry="Point" type="vector" hasScaleBasedVisibilityFlag="0" scaleBasedLabelVisibilityFlag="0">
             <id>od_annotationpoint20131203095020392</id>
             <datasource>dbname='sige' host=172.24.171.203 port=5432 user='sige' sslmode=disable key='id' estimatedmetadata=true srid=21781 type=POINT table="distribution"."od_annotationpoint" (geometry) sql=</datasource>
             <title></title>
@@ -6036,7 +6036,7 @@
                 <property key="labeling/fieldName" value="annotation"/>
                 <property key="labeling/fontBold" value="true"/>
                 <property key="labeling/fontCapitals" value="0"/>
-                <property key="labeling/fontFamily" value="Ubuntu"/>
+                <property key="labeling/fontFamily" value="Arial"/>
                 <property key="labeling/fontItalic" value="true"/>
                 <property key="labeling/fontLetterSpacing" value="0"/>
                 <property key="labeling/fontLimitPixelSize" value="false"/>
@@ -6120,9 +6120,9 @@
                 <property key="labeling/shapeTransparency" value="0"/>
                 <property key="labeling/shapeType" value="0"/>
                 <property key="labeling/textColorA" value="255"/>
-                <property key="labeling/textColorB" value="0"/>
-                <property key="labeling/textColorG" value="0"/>
-                <property key="labeling/textColorR" value="0"/>
+                <property key="labeling/textColorB" value="91"/>
+                <property key="labeling/textColorG" value="91"/>
+                <property key="labeling/textColorR" value="91"/>
                 <property key="labeling/textTransp" value="0"/>
                 <property key="labeling/upsidedownLabels" value="0"/>
                 <property key="labeling/wrapChar" value=""/>
