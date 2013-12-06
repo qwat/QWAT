@@ -20,12 +20,12 @@ $BODY$
 		IF get_pipe IS TRUE THEN
 			EXECUTE 'ALTER TABLE distribution.'||table_name||' ADD COLUMN id_pipe         integer   ;';
 		END IF;
-		EXECUTE 'ALTER TABLE distribution.'||table_name||' ADD COLUMN _printmaps      varchar(100) ;';
+		EXECUTE 'ALTER TABLE distribution.'||table_name||' ADD COLUMN _printmaps      varchar(100) default '''' ;';
 		IF auto_distric IS TRUE THEN
-			EXECUTE 'ALTER TABLE distribution.'||table_name||' ADD COLUMN _district       varchar(255) ;';
+			EXECUTE 'ALTER TABLE distribution.'||table_name||' ADD COLUMN _district       varchar(255) default '''' ;';
 		END IF;
 		IF auto_pressurezone IS TRUE THEN:
-			EXECUTE 'ALTER TABLE distribution.'||table_name||' ADD COLUMN _pressurezone   varchar(255) ;';
+			EXECUTE 'ALTER TABLE distribution.'||table_name||' ADD COLUMN _pressurezone   varchar(255) default '''' ;';
 		END IF;		
 		
 		/* Enables geometry */
@@ -155,8 +155,8 @@ $BODY$
 		EXECUTE 'ALTER TABLE distribution.'||table_name||' ADD COLUMN _length2d       decimal(8,2) ;';
 		EXECUTE 'ALTER TABLE distribution.'||table_name||' ADD COLUMN _length3d       decimal(8,2) ;';	
 		EXECUTE 'ALTER TABLE distribution.'||table_name||' ADD COLUMN _diff_elevation decimal(8,2) ;';	
-		EXECUTE 'ALTER TABLE distribution.'||table_name||' ADD COLUMN _printmaps      varchar(100) ;';
-		EXECUTE 'ALTER TABLE distribution.'||table_name||' ADD COLUMN _districts      varchar(255) ;';
+		EXECUTE 'ALTER TABLE distribution.'||table_name||' ADD COLUMN _printmaps      varchar(100) default '''' ;';
+		EXECUTE 'ALTER TABLE distribution.'||table_name||' ADD COLUMN _districts      varchar(255) default '''' ;';
 		EXECUTE 'ALTER TABLE distribution.'||table_name||' ADD COLUMN _geometry_schematic_used boolean;';
 		
 		/* Enables geometry */

@@ -11,8 +11,8 @@ COMMENT ON TABLE distribution.od_pressurezone IS 'Pressure zones.';
 
 /* COLUMNS */
 ALTER TABLE distribution.od_pressurezone ADD COLUMN id_distributor  integer not null;
-ALTER TABLE distribution.od_pressurezone ADD COLUMN name            varchar(50);
-ALTER TABLE distribution.od_pressurezone ADD COLUMN consumptionzone varchar(50);
+ALTER TABLE distribution.od_pressurezone ADD COLUMN name            varchar(50) default '';
+ALTER TABLE distribution.od_pressurezone ADD COLUMN consumptionzone varchar(50) default '';
 ALTER TABLE distribution.od_pressurezone ADD COLUMN colorcode       smallint;
 
 /* GEOMETRY */

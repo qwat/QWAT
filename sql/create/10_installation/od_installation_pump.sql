@@ -13,7 +13,7 @@ COMMENT ON TABLE distribution.od_installation_pump IS '';
 
 /* common columns to all installations*/
 ALTER TABLE distribution.od_installation_pump ADD COLUMN name               varchar(40) default '' ;
-ALTER TABLE distribution.od_installation_pump ADD COLUMN identification     varchar(25)            ;
+ALTER TABLE distribution.od_installation_pump ADD COLUMN identification     varchar(25) not null default '';
 ALTER TABLE distribution.od_installation_pump ADD COLUMN id_installation    integer                ;
 ALTER TABLE distribution.od_installation_pump ADD COLUMN id_status          integer not null       ;
 ALTER TABLE distribution.od_installation_pump ADD COLUMN id_distributor     integer not null       ;
@@ -25,8 +25,8 @@ ALTER TABLE distribution.od_installation_pump ADD COLUMN remark             text
 ALTER TABLE distribution.od_installation_pump ADD COLUMN links              text                   ;
 ALTER TABLE distribution.od_installation_pump ADD COLUMN year smallint CHECK (year > 1800 AND year < 2100);
 ALTER TABLE distribution.od_installation_pump ADD COLUMN open_water_surface boolean default False  ;
-ALTER TABLE distribution.od_installation_pump ADD COLUMN parcel             varchar(30)            ;
-ALTER TABLE distribution.od_installation_pump ADD COLUMN eca                varchar(30)            ;
+ALTER TABLE distribution.od_installation_pump ADD COLUMN parcel             varchar(30) default '' ;
+ALTER TABLE distribution.od_installation_pump ADD COLUMN eca                varchar(30) default '' ;
 /* specific to pumps */
 ALTER TABLE distribution.od_installation_pump ADD COLUMN id_type           smallint     ;
 ALTER TABLE distribution.od_installation_pump ADD COLUMN id_operating      smallint     ;

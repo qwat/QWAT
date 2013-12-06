@@ -68,7 +68,7 @@ $BODY$
 		ELSEIF grouped.count <= 2 THEN
 			/* loop over them, and take the 2 first/last points of the pipe to determine orientation */
 			FOR pipeitem IN (
-				SELECT 	od_pipe.id, od_pipe.year, vl_pipe_material.value_fr AS material, vl_pipe_material.diameter_nominal AS diameter,
+				SELECT 	od_pipe.id, od_pipe.year, vl_pipe_material.value_fr AS material, vl_pipe_material.diameter AS diameter,
 						ST_PointN(geometry,2)   AS point_1,
 						ST_StartPoint(geometry) AS point_2
 						FROM distribution.od_pipe
@@ -76,7 +76,7 @@ $BODY$
 						INNER JOIN distribution.vl_status        ON od_pipe.id_status = vl_status.id
 						WHERE id_node_a = node_id AND vl_status.active IS TRUE
 				UNION ALL
-				SELECT	od_pipe.id, od_pipe.year, vl_pipe_material.value_fr AS material, vl_pipe_material.diameter_nominal AS diameter,
+				SELECT	od_pipe.id, od_pipe.year, vl_pipe_material.value_fr AS material, vl_pipe_material.diameter AS diameter,
 						ST_PointN(geometry,ST_NPoints(geometry)-1) AS point_1,
 						ST_EndPoint(geometry)                      AS point_2
 						FROM distribution.od_pipe
@@ -101,7 +101,7 @@ $BODY$
 					IF Tmaterial != pipeitem.material THEN type := 'two_material'; END IF;
 					SELECT ST_Azimuth(pipeitem.point_1,pipeitem.point_2) INTO ori2 ;
 					SELECT ATAN2( (SIN(orientation)+SIN(ori2))/2 , (COS(orientation)+COS(ori2))/2 ) INTO orientation;
-					/* orientation of arrow */
+					/* reverse arrow according to diameter reduction */
 					IF type = 'two_diameter' AND pipeitem.diameter < Tdiameter THEN
 						orientation := orientation + pi();
 					END IF;

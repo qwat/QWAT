@@ -11,7 +11,7 @@ CREATE TABLE distribution.od_printmap (id serial PRIMARY KEY);
 COMMENT ON TABLE distribution.od_printmap IS 'This table is used for polygons for predefined printable maps. shortname would be used as label string, and long_mame would be used in the print composer.';
 
 /* columns */
-ALTER TABLE distribution.od_printmap ADD COLUMN name         varchar(20);
+ALTER TABLE distribution.od_printmap ADD COLUMN name         varchar(20) default '';
 ALTER TABLE distribution.od_printmap ADD COLUMN id_district  smallint;
 ALTER TABLE distribution.od_printmap ADD COLUMN remark       text;
 ALTER TABLE distribution.od_printmap ADD COLUMN version_date date;

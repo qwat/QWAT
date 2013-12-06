@@ -13,10 +13,10 @@ COMMENT ON TABLE distribution.od_protectionzone IS 'protectionzones.';
 
 /* columns */
 ALTER TABLE distribution.od_protectionzone ADD COLUMN id_type   integer;
-ALTER TABLE distribution.od_protectionzone ADD COLUMN name      varchar(40);
+ALTER TABLE distribution.od_protectionzone ADD COLUMN name      varchar(40) default '';
 ALTER TABLE distribution.od_protectionzone ADD COLUMN validated boolean     default True;
 ALTER TABLE distribution.od_protectionzone ADD COLUMN date      date;
-ALTER TABLE distribution.od_protectionzone ADD COLUMN agent     varchar(40);
+ALTER TABLE distribution.od_protectionzone ADD COLUMN agent     varchar(40) default '';
 
 /* geometry */
 SELECT AddGeometryColumn('distribution', 'od_protectionzone', 'geometry', 21781, 'MULTIPOLYGON', 2);

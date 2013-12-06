@@ -12,10 +12,10 @@ COMMENT ON TABLE distribution.vl_subscriber_type IS 'type for subscriber.';
 
 /* COLUMNS*/
 ALTER TABLE distribution.vl_subscriber_type ADD COLUMN vl_active boolean default true;
-ALTER TABLE distribution.vl_subscriber_type ADD COLUMN value_fr VARCHAR(30);
-ALTER TABLE distribution.vl_subscriber_type ADD COLUMN value_en VARCHAR(30);
-ALTER TABLE distribution.vl_subscriber_type ADD COLUMN short_fr VARCHAR(6);
-ALTER TABLE distribution.vl_subscriber_type ADD COLUMN short_en VARCHAR(6);
+ALTER TABLE distribution.vl_subscriber_type ADD COLUMN value_fr VARCHAR(30) default '';
+ALTER TABLE distribution.vl_subscriber_type ADD COLUMN value_en VARCHAR(30) default '';
+ALTER TABLE distribution.vl_subscriber_type ADD COLUMN short_fr VARCHAR(6) default '';
+ALTER TABLE distribution.vl_subscriber_type ADD COLUMN short_en VARCHAR(6) default '';
 
 /* VALUES */
 INSERT INTO distribution.vl_subscriber_type (id, value_fr,short_fr) VALUES (9401, 'Abonnement','abo');

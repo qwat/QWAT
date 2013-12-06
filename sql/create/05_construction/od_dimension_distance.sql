@@ -11,7 +11,7 @@ CREATE TABLE distribution.od_dimension_distance (id serial PRIMARY KEY);
 COMMENT ON TABLE distribution.od_dimension_distance IS 'dimension arcs displays measures done on the field. For example: distances to buildings corner';
 
 /* columns */
-ALTER TABLE distribution.od_dimension_distance ADD COLUMN observation  varchar(120);
+ALTER TABLE distribution.od_dimension_distance ADD COLUMN observation  varchar(120) default '';
 ALTER TABLE distribution.od_dimension_distance ADD COLUMN _calculation double precision;
 ALTER TABLE distribution.od_dimension_distance ADD COLUMN remark       text;
 

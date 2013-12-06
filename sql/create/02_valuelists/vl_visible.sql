@@ -13,8 +13,8 @@ COMMENT ON TABLE distribution.vl_visible IS 'Table for editing in qgis tri state
 
 /* COLUMNS */
 ALTER TABLE distribution.vl_visible ADD COLUMN vl_code  boolean;
-ALTER TABLE distribution.vl_visible ADD COLUMN value_en varchar(30);
-ALTER TABLE distribution.vl_visible ADD COLUMN value_fr varchar(30);
+ALTER TABLE distribution.vl_visible ADD COLUMN value_en varchar(30) default '';
+ALTER TABLE distribution.vl_visible ADD COLUMN value_fr varchar(30) default '';
 
 /* CONSTRAINT */
 ALTER TABLE distribution.vl_visible ADD CONSTRAINT vl_visible_code UNIQUE (vl_code);

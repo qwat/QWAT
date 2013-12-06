@@ -13,15 +13,15 @@ SELECT setval('distribution.sprinklinghydrant_id_seq', 100, true);
 COMMENT ON TABLE distribution.sprinklinghydrant IS 'sprinklinghydrant.';
 
 /* columns */
-ALTER TABLE distribution.sprinklinghydrant ADD COLUMN  identification             varchar (15)  ;
+ALTER TABLE distribution.sprinklinghydrant ADD COLUMN  identification   varchar(15)  not null default '' ;
 ALTER TABLE distribution.sprinklinghydrant ADD COLUMN  id_type          integer                 ;
 ALTER TABLE distribution.sprinklinghydrant ADD COLUMN  id_distributor   integer                 ;
 ALTER TABLE distribution.sprinklinghydrant ADD COLUMN  vl_status        integer                 ;
 ALTER TABLE distribution.sprinklinghydrant ADD COLUMN  id_provider      integer                 ;
 ALTER TABLE distribution.sprinklinghydrant ADD COLUMN  year smallint    CHECK (year > 1800 AND year < 2100);
-ALTER TABLE distribution.sprinklinghydrant ADD COLUMN  model            varchar(30)             ;
+ALTER TABLE distribution.sprinklinghydrant ADD COLUMN  model            varchar(30) default ''  ;
 ALTER TABLE distribution.sprinklinghydrant ADD COLUMN  altitude_real    decimal(10,3)           ;
-ALTER TABLE distribution.sprinklinghydrant ADD COLUMN  remark  text;
+ALTER TABLE distribution.sprinklinghydrant ADD COLUMN  remark           text;
 
 
 

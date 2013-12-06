@@ -11,16 +11,16 @@ CREATE TABLE distribution.od_installation_building (id serial PRIMARY KEY);
 COMMENT ON TABLE distribution.od_installation_building IS 'This table is used to define the buildings of installation.';
 
 /* columns */
-ALTER TABLE distribution.od_installation_building ADD COLUMN name            varchar(60);
-ALTER TABLE distribution.od_installation_building ADD COLUMN identification  varchar(25);
+ALTER TABLE distribution.od_installation_building ADD COLUMN name            varchar(60) default '';
+ALTER TABLE distribution.od_installation_building ADD COLUMN identification  varchar(25) not null default '';
 ALTER TABLE distribution.od_installation_building ADD COLUMN id_type         integer not null;
-ALTER TABLE distribution.od_installation_building ADD COLUMN _displayname_en varchar(50);
-ALTER TABLE distribution.od_installation_building ADD COLUMN _displayname_fr varchar(50);
+ALTER TABLE distribution.od_installation_building ADD COLUMN _displayname_en varchar(50) default '';
+ALTER TABLE distribution.od_installation_building ADD COLUMN _displayname_fr varchar(50) default '';
 ALTER TABLE distribution.od_installation_building ADD COLUMN schema_visible  boolean not null default true ;
 ALTER TABLE distribution.od_installation_building ADD COLUMN links           text                   ;
 ALTER TABLE distribution.od_installation_building ADD COLUMN year            smallint    check (year > 1800 AND year < 2100);
-ALTER TABLE distribution.od_installation_building ADD COLUMN parcel          varchar(30);
-ALTER TABLE distribution.od_installation_building ADD COLUMN eca             varchar(30);
+ALTER TABLE distribution.od_installation_building ADD COLUMN parcel          varchar(30) default '';
+ALTER TABLE distribution.od_installation_building ADD COLUMN eca             varchar(30) default '';
 
 /* geometry */
 /* point                              ( table_name,               is_node, create_node, create_schematic, get_pipe, auto_district, auto_pressurezone)*/

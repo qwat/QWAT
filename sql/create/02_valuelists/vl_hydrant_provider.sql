@@ -11,7 +11,7 @@ COMMENT ON TABLE distribution.vl_hydrant_provider IS 'hydrant providers list.';
 
 /* Columns */
 ALTER TABLE distribution.vl_hydrant_provider ADD COLUMN vl_active boolean default true;
-ALTER TABLE distribution.vl_hydrant_provider ADD COLUMN name varchar(30);
+ALTER TABLE distribution.vl_hydrant_provider ADD COLUMN name varchar(30) default '';
 
 /* Constraints */
 ALTER TABLE distribution.vl_hydrant_provider ADD CONSTRAINT hydrant_provider_name UNIQUE (name);

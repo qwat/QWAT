@@ -14,9 +14,9 @@ SELECT setval('distribution.od_meter_id_seq', 8000, true);
 /* COLUMNS */
 ALTER TABLE distribution.od_meter ADD COLUMN id_status integer default 1;          /* id_status     FK FULL */
 ALTER TABLE distribution.od_meter ADD COLUMN id_pipe integer;						/* id_pipe       FK SIMPLE*/
-ALTER TABLE distribution.od_meter ADD COLUMN identification varchar (12);
-ALTER TABLE distribution.od_meter ADD COLUMN _identification_full varchar (16);
-ALTER TABLE distribution.od_meter ADD COLUMN parcel varchar (12) ;
+ALTER TABLE distribution.od_meter ADD COLUMN identification varchar(12)  not null default '';
+ALTER TABLE distribution.od_meter ADD COLUMN _identification_full varchar(16) default '';
+ALTER TABLE distribution.od_meter ADD COLUMN parcel varchar(12) not null default '' ;
 ALTER TABLE distribution.od_meter ADD COLUMN remark  text;
 
 /* GEOMETRY                        (table_name, is_node, create_node, create_schematic, get_pipe, auto_district, auto_pressurezone)*/

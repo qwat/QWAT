@@ -12,7 +12,7 @@ SELECT setval('distribution.od_wateringoutput_id_seq', 100, true);
 COMMENT ON TABLE distribution.od_wateringoutput IS 'wateringoutput.';
 
 /* COLUMNS */
-ALTER TABLE distribution.od_wateringoutput ADD COLUMN identification  varchar (15)  ;
+ALTER TABLE distribution.od_wateringoutput ADD COLUMN identification  varchar(15) not null default ''  ;
 ALTER TABLE distribution.od_wateringoutput ADD COLUMN id_distributor  integer                 ;
 ALTER TABLE distribution.od_wateringoutput ADD COLUMN id_status       integer                 ;
 ALTER TABLE distribution.od_wateringoutput ADD COLUMN year smallint   CHECK (year > 1800 AND year < 2100);

@@ -8,7 +8,7 @@ DROP VIEW IF EXISTS distribution.vw_samplingpoint CASCADE;
 CREATE VIEW distribution.vw_samplingpoint AS 
 	SELECT  
 		od_samplingpoint.id             ,
-		od_samplingpoint.identification        ,
+		od_samplingpoint.identification ,
 		od_samplingpoint.id_district    ,
 		od_samplingpoint.id_printmap    ,
 		od_samplingpoint.id_pressurezone,

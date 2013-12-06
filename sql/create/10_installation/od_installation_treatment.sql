@@ -12,7 +12,7 @@ COMMENT ON TABLE distribution.od_installation_treatment IS 'storage treatments. 
 
 /* common columns to all installations*/
 ALTER TABLE distribution.od_installation_treatment ADD COLUMN name               varchar(40) default '' ;
-ALTER TABLE distribution.od_installation_treatment ADD COLUMN identification     varchar(25)            ;
+ALTER TABLE distribution.od_installation_treatment ADD COLUMN identification     varchar(25) not null default '' ;
 ALTER TABLE distribution.od_installation_treatment ADD COLUMN id_installation    integer                ;
 ALTER TABLE distribution.od_installation_treatment ADD COLUMN id_status          integer not null       ;
 ALTER TABLE distribution.od_installation_treatment ADD COLUMN id_distributor     integer not null       ;
@@ -24,8 +24,8 @@ ALTER TABLE distribution.od_installation_treatment ADD COLUMN remark            
 ALTER TABLE distribution.od_installation_treatment ADD COLUMN links              text                   ;
 ALTER TABLE distribution.od_installation_treatment ADD COLUMN year               smallint CHECK (year > 1800 AND year < 2100);
 ALTER TABLE distribution.od_installation_treatment ADD COLUMN open_water_surface boolean default False  ;
-ALTER TABLE distribution.od_installation_treatment ADD COLUMN parcel             varchar(30)            ;
-ALTER TABLE distribution.od_installation_treatment ADD COLUMN eca                varchar(30)            ;
+ALTER TABLE distribution.od_installation_treatment ADD COLUMN parcel             varchar(30) default '' ;
+ALTER TABLE distribution.od_installation_treatment ADD COLUMN eca                varchar(30) default '' ;
 /* specific to treatment */
 ALTER TABLE distribution.od_installation_treatment ADD COLUMN sanitization_uv               boolean      ;
 ALTER TABLE distribution.od_installation_treatment ADD COLUMN sanitization_chlorine_liquid  boolean      ;

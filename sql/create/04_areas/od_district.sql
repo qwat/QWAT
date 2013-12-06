@@ -12,11 +12,11 @@ CREATE TABLE distribution.od_district (id serial PRIMARY KEY);
 COMMENT ON TABLE distribution.od_district IS 'Districts.';
 
 /* columns */
-ALTER TABLE distribution.od_district ADD COLUMN name          varchar(40);
-ALTER TABLE distribution.od_district ADD COLUMN shortname     varchar(12);
-ALTER TABLE distribution.od_district ADD COLUMN zip           varchar(12);
-ALTER TABLE distribution.od_district ADD COLUMN land_registry varchar(12);
-ALTER TABLE distribution.od_district ADD COLUMN prefix        varchar(12);
+ALTER TABLE distribution.od_district ADD COLUMN name          varchar(40) default '';
+ALTER TABLE distribution.od_district ADD COLUMN shortname     varchar(12) default '';
+ALTER TABLE distribution.od_district ADD COLUMN zip           varchar(12) default '';
+ALTER TABLE distribution.od_district ADD COLUMN land_registry varchar(12) default '';
+ALTER TABLE distribution.od_district ADD COLUMN prefix        varchar(12) default '';
 ALTER TABLE distribution.od_district ADD COLUMN colorcode     smallint default 1;
 
 /* geometry */

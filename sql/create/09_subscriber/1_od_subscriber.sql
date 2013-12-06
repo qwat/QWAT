@@ -14,9 +14,9 @@ SELECT setval('distribution.od_subscriber_id_seq', 8000, true);
 ALTER TABLE distribution.od_subscriber ADD COLUMN id_type              integer not null;
 ALTER TABLE distribution.od_subscriber ADD COLUMN id_status            integer not null default 1301;
 ALTER TABLE distribution.od_subscriber ADD COLUMN id_pipe              integer;
-ALTER TABLE distribution.od_subscriber ADD COLUMN identification       varchar (12);
-ALTER TABLE distribution.od_subscriber ADD COLUMN _identification_full varchar (16);
-ALTER TABLE distribution.od_subscriber ADD COLUMN parcel               varchar (12) ;
+ALTER TABLE distribution.od_subscriber ADD COLUMN identification       varchar(12) not null default '' ;
+ALTER TABLE distribution.od_subscriber ADD COLUMN _identification_full varchar(16) not null default '' ;
+ALTER TABLE distribution.od_subscriber ADD COLUMN parcel               varchar(12) not null default '' ;
 ALTER TABLE distribution.od_subscriber ADD COLUMN remark               text;
 
 /* GEOMETRY                        (table_name,      is_node, create_node, create_schematic, get_pipe, auto_district, auto_pressurezone)*/

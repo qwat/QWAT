@@ -10,7 +10,7 @@ CREATE TABLE distribution.od_distributor ( id SERIAL, CONSTRAINT distributor_pk 
 COMMENT ON TABLE distribution.od_distributor IS 'Companies and distributors list.';
 
 /* Columns */
-ALTER TABLE distribution.od_distributor ADD COLUMN name VARCHAR(30);
+ALTER TABLE distribution.od_distributor ADD COLUMN name VARCHAR(30) default '';
 
 /* Constraints */
 ALTER TABLE distribution.od_distributor ADD CONSTRAINT distributor_name UNIQUE (name);

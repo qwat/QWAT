@@ -11,8 +11,8 @@ COMMENT ON TABLE distribution.vl_watertype IS 'Water type table, with SIRE code.
 
 /* COLUMNS */
 ALTER TABLE distribution.vl_watertype ADD COLUMN vl_active boolean default true;
-ALTER TABLE distribution.vl_watertype ADD COLUMN value_en  varchar(30);
-ALTER TABLE distribution.vl_watertype ADD COLUMN value_fr  varchar(30);
+ALTER TABLE distribution.vl_watertype ADD COLUMN value_en  varchar(30) default '';
+ALTER TABLE distribution.vl_watertype ADD COLUMN value_fr  varchar(30) default '';
 ALTER TABLE distribution.vl_watertype ADD COLUMN code_sire smallint;
 
 /* VALUES */
