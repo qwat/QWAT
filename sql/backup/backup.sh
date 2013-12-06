@@ -1,5 +1,7 @@
 
-pg_dump --host 172.24.171.203 --port 5432 --username "sige" --no-password --format tar --inserts --column-inserts --verbose --file "distribution.backup" --schema "distribution" "sige"
+today=`date '+%Y%m%d'`
+
+pg_dump --host 172.24.171.203 --port 5432 --username "sige" --no-password --format tar --inserts --column-inserts --verbose --file "../sige_data/distribution_$today.backup" --schema "distribution" "sige"
 
 # # plain text
 # 
