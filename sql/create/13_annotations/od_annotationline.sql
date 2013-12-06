@@ -10,10 +10,7 @@ CREATE TABLE distribution.od_annotationline (id serial PRIMARY KEY);
 COMMENT ON TABLE distribution.od_annotationline IS 'Table for annotationlines.';
 
 /* COLUMNS */
-ALTER TABLE distribution.od_annotationline ADD COLUMN visible             boolean not null default true; 
-ALTER TABLE distribution.od_annotationline ADD COLUMN visible_schema      boolean not null default true;
 ALTER TABLE distribution.od_annotationline ADD COLUMN labelvisible        boolean not null default true; 
-ALTER TABLE distribution.od_annotationline ADD COLUMN labelvisible_schema boolean not null default true;
 ALTER TABLE distribution.od_annotationline ADD COLUMN text_size           decimal(7,2);
 ALTER TABLE distribution.od_annotationline ADD COLUMN text_orientation    decimal(7,2);
 ALTER TABLE distribution.od_annotationline ADD COLUMN annotation          text;
