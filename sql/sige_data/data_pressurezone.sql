@@ -4,7 +4,7 @@
 
 -- Dumped from database version 9.1.10
 -- Dumped by pg_dump version 9.2.4
--- Started on 2013-11-28 14:45:56 CET
+-- Started on 2013-12-06 10:42:18 CET
 
 SET statement_timeout = 0;
 SET client_encoding = 'UTF8';
@@ -15,7 +15,7 @@ SET client_min_messages = warning;
 SET search_path = distribution, pg_catalog;
 
 --
--- TOC entry 4103 (class 0 OID 324561)
+-- TOC entry 4146 (class 0 OID 343763)
 -- Dependencies: 453
 -- Data for Name: od_pressurezone; Type: TABLE DATA; Schema: distribution; Owner: sige
 --
@@ -117,7 +117,7 @@ INSERT INTO od_pressurezone (id, id_distributor, name, consumptionzone, colorcod
 
 
 --
--- TOC entry 4108 (class 0 OID 0)
+-- TOC entry 4151 (class 0 OID 0)
 -- Dependencies: 452
 -- Name: od_pressurezone_id_seq; Type: SEQUENCE SET; Schema: distribution; Owner: sige
 --
@@ -125,7 +125,7 @@ INSERT INTO od_pressurezone (id, id_distributor, name, consumptionzone, colorcod
 SELECT pg_catalog.setval('od_pressurezone_id_seq', 146, true);
 
 
--- Completed on 2013-11-28 14:45:57 CET
+-- Completed on 2013-12-06 10:42:18 CET
 
 --
 -- PostgreSQL database dump complete
