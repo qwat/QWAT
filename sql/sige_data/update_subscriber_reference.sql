@@ -16,4 +16,6 @@ LANGUAGE plpgsql;
 
 UPDATE distribution.od_subscriber_reference SET id_subscriber = distribution.getsubref(reference,geometry);
 
+DROP FUNCTION distribution.getsubref(varchar,geometry);
+
 COMMIT;
