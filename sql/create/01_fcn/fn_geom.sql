@@ -10,23 +10,23 @@ $BODY$
 		IF is_node IS TRUE THEN
 			EXECUTE 'ALTER TABLE distribution.'||table_name||' ADD COLUMN id_node         integer   ;';
 		END IF;
-		IF auto_distric IS FALSE THEN
+		IF auto_district IS FALSE THEN
 			EXECUTE 'ALTER TABLE distribution.'||table_name||' ADD COLUMN id_district     integer   ;';
-		END IF;
-		IF auto_pressurezone IS FALSE THEN:
+		END IF;
+		IF auto_pressurezone IS FALSE THEN
 			EXECUTE 'ALTER TABLE distribution.'||table_name||' ADD COLUMN id_pressurezone integer   ;';
-		END IF;
+		END IF;
 		EXECUTE 'ALTER TABLE distribution.'||table_name||' ADD COLUMN id_printmap     integer[] ;';
 		IF get_pipe IS TRUE THEN
 			EXECUTE 'ALTER TABLE distribution.'||table_name||' ADD COLUMN id_pipe         integer   ;';
 		END IF;
-		EXECUTE 'ALTER TABLE distribution.'||table_name||' ADD COLUMN _printmaps      varchar(100) default '''' ;';
-		IF auto_distric IS TRUE THEN
+		IF auto_district IS TRUE THEN
 			EXECUTE 'ALTER TABLE distribution.'||table_name||' ADD COLUMN _district       varchar(255) default '''' ;';
-		END IF;
-		IF auto_pressurezone IS TRUE THEN:
+		END IF;
+		IF auto_pressurezone IS TRUE THEN
 			EXECUTE 'ALTER TABLE distribution.'||table_name||' ADD COLUMN _pressurezone   varchar(255) default '''' ;';
-		END IF;		
+		END IF;		
+		EXECUTE 'ALTER TABLE distribution.'||table_name||' ADD COLUMN _printmaps      varchar(100) default '''' ;';
 		
 		/* Enables geometry */
 		PERFORM addGeometryColumn('distribution', table_name, 'geometry', 21781, 'POINT', 2);
@@ -49,12 +49,12 @@ $BODY$
 		IF is_node IS TRUE THEN
 			EXECUTE 'CREATE INDEX fki_'||table_name||'_id_node     ON distribution.'||table_name||'(id_node);';
 		END IF;
-		IF auto_distric IS FALSE THEN
+		IF auto_district IS FALSE THEN
 			EXECUTE 'CREATE INDEX fki_'||table_name||'_id_district     ON distribution.'||table_name||'(id_district);';
-		END IF;
-		IF auto_pressurezone IS FALSE THEN:
+		END IF;
+		IF auto_pressurezone IS FALSE THEN
 			EXECUTE 'CREATE INDEX fki_'||table_name||'_id_pressurezone ON distribution.'||table_name||'(id_pressurezone);';
-		END IF;
+		END IF;
 		IF get_pipe IS TRUE THEN
 			EXECUTE 'CREATE INDEX fki_'||table_name||'_id_pipe ON distribution.'||table_name||'(id_pipe);';
 		END IF;
