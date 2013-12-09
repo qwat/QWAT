@@ -11,7 +11,7 @@ CREATE TABLE distribution.od_samplingpoint (id serial PRIMARY KEY);
 SELECT setval('distribution.od_samplingpoint_id_seq', 200, true);
 
 /* columns */
-ALTER TABLE distribution.od_samplingpoint ADD COLUMN identification varchar(20) not null default '';
+ALTER TABLE distribution.od_samplingpoint ADD COLUMN identification varchar(20) default '';
 ALTER TABLE distribution.od_samplingpoint ADD COLUMN remark         text default '';
 
 /* geometry */

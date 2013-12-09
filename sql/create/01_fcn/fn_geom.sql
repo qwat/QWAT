@@ -61,7 +61,7 @@ $BODY$
 		END IF;
 		IF auto_district IS TRUE THEN
 			sql_trigger := sql_trigger || '
-						NEW._district          := distribution.fn_get_district(NEW.geometry);';
+						NEW._district          := distribution.fn_get_districts(NEW.geometry);';
 		END IF;
 		sql_trigger := sql_trigger || '
 						NEW.id_district        := distribution.fn_get_district_id(NEW.geometry);';

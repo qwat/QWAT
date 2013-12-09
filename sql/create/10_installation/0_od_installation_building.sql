@@ -12,7 +12,7 @@ COMMENT ON TABLE distribution.od_installation_building IS 'This table is used to
 
 /* columns */
 ALTER TABLE distribution.od_installation_building ADD COLUMN name            varchar(60) default '';
-ALTER TABLE distribution.od_installation_building ADD COLUMN identification  varchar(25) not null default '';
+ALTER TABLE distribution.od_installation_building ADD COLUMN identification  varchar(25) default '';
 ALTER TABLE distribution.od_installation_building ADD COLUMN id_type         integer not null;
 ALTER TABLE distribution.od_installation_building ADD COLUMN _displayname_en varchar(50) default '';
 ALTER TABLE distribution.od_installation_building ADD COLUMN _displayname_fr varchar(50) default '';

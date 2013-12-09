@@ -11,7 +11,7 @@ COMMENT ON TABLE distribution.od_valve IS 'Table for valve.';
 SELECT setval('distribution.od_pipe_id_seq', 20000, true);
 
 /* columns */
-ALTER TABLE distribution.od_valve ADD COLUMN identification         varchar(20) not null default '';
+ALTER TABLE distribution.od_valve ADD COLUMN identification         varchar(20) default '';
 ALTER TABLE distribution.od_valve ADD COLUMN id_type                integer not null ;
 ALTER TABLE distribution.od_valve ADD COLUMN id_function            integer not null ;
 ALTER TABLE distribution.od_valve ADD COLUMN id_precision           integer not null ;

@@ -13,7 +13,7 @@ SELECT setval('distribution.od_hydrant_id_seq', 100, true);
 COMMENT ON TABLE distribution.od_hydrant IS 'hydrant.';
 
 /* COLUMNS */
-ALTER TABLE distribution.od_hydrant ADD COLUMN identification     varchar(15) not null default '';
+ALTER TABLE distribution.od_hydrant ADD COLUMN identification     varchar(15) default '';
 ALTER TABLE distribution.od_hydrant ADD COLUMN id_distributor     integer not null      ;
 ALTER TABLE distribution.od_hydrant ADD COLUMN id_status          integer not null      ;
 ALTER TABLE distribution.od_hydrant ADD COLUMN id_provider        integer               ;

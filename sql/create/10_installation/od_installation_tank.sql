@@ -12,7 +12,7 @@ COMMENT ON TABLE distribution.od_installation_tank IS 'storage tanks. These are 
 
 /* common columns to all installations*/
 ALTER TABLE distribution.od_installation_tank ADD COLUMN name                 varchar(40) default '' ;
-ALTER TABLE distribution.od_installation_tank ADD COLUMN identification       varchar(25) not null default '' ;
+ALTER TABLE distribution.od_installation_tank ADD COLUMN identification       varchar(25) default '' ;
 ALTER TABLE distribution.od_installation_tank ADD COLUMN id_installation      integer                ;
 ALTER TABLE distribution.od_installation_tank ADD COLUMN id_status            integer not null       ;
 ALTER TABLE distribution.od_installation_tank ADD COLUMN id_distributor       integer not null       ;
