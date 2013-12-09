@@ -7,7 +7,7 @@
 
 
 /*----------------!!!---!!!----------------*/
-/* get district function */
+/* get districts name function */
 CREATE OR REPLACE FUNCTION distribution.fn_get_districts(geometry) RETURNS text AS
 $BODY$
 	DECLARE

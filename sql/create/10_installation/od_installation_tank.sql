@@ -20,7 +20,7 @@ ALTER TABLE distribution.od_installation_tank ADD COLUMN id_remote            in
 ALTER TABLE distribution.od_installation_tank ADD COLUMN id_watertype         integer not null       ;
 ALTER TABLE distribution.od_installation_tank ADD COLUMN schema_visible       boolean not null default true ;
 ALTER TABLE distribution.od_installation_tank ADD COLUMN remark               text        default '' ;
-ALTER TABLE distribution.od_installation_tank ADD COLUMN links                text                   ;
+ALTER TABLE distribution.od_installation_tank ADD COLUMN links                text default '';
 ALTER TABLE distribution.od_installation_tank ADD COLUMN year                 smallint CHECK (year > 1800 AND year < 2100);
 ALTER TABLE distribution.od_installation_tank ADD COLUMN open_water_surface   boolean default False  ;
 ALTER TABLE distribution.od_installation_tank ADD COLUMN parcel               varchar(30) default '' ;

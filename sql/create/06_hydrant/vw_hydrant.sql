@@ -29,7 +29,6 @@ CREATE VIEW distribution.vw_hydrant AS
 		od_hydrant.id_pressurezone,
 		od_hydrant.id_printmap    ,
 		od_hydrant._printmaps     ,
-		od_hydrant._districts     ,
 		od_hydrant.geometry::geometry(Point,21781),
 		od_distributor.name       AS _distributor,
 		vl_status.value_fr        AS _status,

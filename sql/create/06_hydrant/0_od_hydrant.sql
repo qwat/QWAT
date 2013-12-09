@@ -23,7 +23,7 @@ ALTER TABLE distribution.od_hydrant ADD COLUMN year               smallint CHECK
 ALTER TABLE distribution.od_hydrant ADD COLUMN model              varchar(30)           default '';
 ALTER TABLE distribution.od_hydrant ADD COLUMN underground        boolean default false ;
 ALTER TABLE distribution.od_hydrant ADD COLUMN altitude_real      decimal(10,3)         ;
-ALTER TABLE distribution.od_hydrant ADD COLUMN remark             text                  ;
+ALTER TABLE distribution.od_hydrant ADD COLUMN remark             text    default ''    ;
 ALTER TABLE distribution.od_hydrant ADD COLUMN pressure_static    decimal(5,2)          ; COMMENT ON COLUMN distribution.od_hydrant.pressure_static IS 'pression statique [bar]';
 ALTER TABLE distribution.od_hydrant ADD COLUMN pressure_dynamic   decimal(5,2)          ; COMMENT ON COLUMN distribution.od_hydrant.pressure_dynamic IS 'pression dynamique [bar]';
 ALTER TABLE distribution.od_hydrant ADD COLUMN flow               decimal(8,2)          ; COMMENT ON COLUMN distribution.od_hydrant.flow IS 'debit [l/min]';

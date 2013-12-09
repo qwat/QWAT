@@ -10,12 +10,8 @@ $BODY$
 		IF is_node IS TRUE THEN
 			EXECUTE 'ALTER TABLE distribution.'||table_name||' ADD COLUMN id_node         integer   ;';
 		END IF;
-		IF auto_district IS FALSE THEN
-			EXECUTE 'ALTER TABLE distribution.'||table_name||' ADD COLUMN id_district     integer   ;';
-		END IF;
-		IF auto_pressurezone IS FALSE THEN
-			EXECUTE 'ALTER TABLE distribution.'||table_name||' ADD COLUMN id_pressurezone integer   ;';
-		END IF;
+		EXECUTE 'ALTER TABLE distribution.'||table_name||' ADD COLUMN id_district     integer   ;';
+		EXECUTE 'ALTER TABLE distribution.'||table_name||' ADD COLUMN id_pressurezone integer   ;';
 		EXECUTE 'ALTER TABLE distribution.'||table_name||' ADD COLUMN id_printmap     integer[] ;';
 		IF get_pipe IS TRUE THEN
 			EXECUTE 'ALTER TABLE distribution.'||table_name||' ADD COLUMN id_pipe         integer   ;';
@@ -49,12 +45,8 @@ $BODY$
 		IF is_node IS TRUE THEN
 			EXECUTE 'CREATE INDEX fki_'||table_name||'_id_node     ON distribution.'||table_name||'(id_node);';
 		END IF;
-		IF auto_district IS FALSE THEN
-			EXECUTE 'CREATE INDEX fki_'||table_name||'_id_district     ON distribution.'||table_name||'(id_district);';
-		END IF;
-		IF auto_pressurezone IS FALSE THEN
-			EXECUTE 'CREATE INDEX fki_'||table_name||'_id_pressurezone ON distribution.'||table_name||'(id_pressurezone);';
-		END IF;
+		EXECUTE 'CREATE INDEX fki_'||table_name||'_id_district     ON distribution.'||table_name||'(id_district);';
+		EXECUTE 'CREATE INDEX fki_'||table_name||'_id_pressurezone ON distribution.'||table_name||'(id_pressurezone);';
 		IF get_pipe IS TRUE THEN
 			EXECUTE 'CREATE INDEX fki_'||table_name||'_id_pipe ON distribution.'||table_name||'(id_pipe);';
 		END IF;
@@ -70,17 +62,15 @@ $BODY$
 		IF auto_district IS TRUE THEN
 			sql_trigger := sql_trigger || '
 						NEW._district          := distribution.fn_get_district(NEW.geometry);';
-		ELSE
-			sql_trigger := sql_trigger || '
-						NEW.id_district        := distribution.fn_get_district_id(NEW.geometry);';
 		END IF;
+		sql_trigger := sql_trigger || '
+						NEW.id_district        := distribution.fn_get_district_id(NEW.geometry);';
 		IF auto_pressurezone IS TRUE THEN
 			sql_trigger := sql_trigger || '
 						NEW._pressurezone      := distribution.fn_get_pressurezone(NEW.geometry);';
-		ELSE
-			sql_trigger := sql_trigger || '
-						NEW.id_pressurezone    := distribution.fn_get_pressurezone_id(NEW.geometry);';
 		END IF;
+		sql_trigger := sql_trigger || '
+						NEW.id_pressurezone    := distribution.fn_get_pressurezone_id(NEW.geometry);';
 		sql_trigger := sql_trigger || '
 						NEW.id_printmap        := distribution.fn_get_printmap_id(NEW.geometry);';
 		IF get_pipe IS TRUE THEN
@@ -155,8 +145,9 @@ $BODY$
 		EXECUTE 'ALTER TABLE distribution.'||table_name||' ADD COLUMN _length2d       decimal(8,2) ;';
 		EXECUTE 'ALTER TABLE distribution.'||table_name||' ADD COLUMN _length3d       decimal(8,2) ;';	
 		EXECUTE 'ALTER TABLE distribution.'||table_name||' ADD COLUMN _diff_elevation decimal(8,2) ;';	
+		EXECUTE 'ALTER TABLE distribution.'||table_name||' ADD COLUMN _district       varchar(255) default '''' ;';
+		EXECUTE 'ALTER TABLE distribution.'||table_name||' ADD COLUMN _pressurezone   varchar(100) default '''' ;';
 		EXECUTE 'ALTER TABLE distribution.'||table_name||' ADD COLUMN _printmaps      varchar(100) default '''' ;';
-		EXECUTE 'ALTER TABLE distribution.'||table_name||' ADD COLUMN _districts      varchar(255) default '''' ;';
 		EXECUTE 'ALTER TABLE distribution.'||table_name||' ADD COLUMN _geometry_schematic_used boolean;';
 		
 		/* Enables geometry */
@@ -187,8 +178,9 @@ $BODY$
 					NEW.id_printmap              := distribution.fn_get_printmap_id(NEW.geometry)                ;
 					NEW.geometry_schematic       := NEW.geometry                                                 ;
 					NEW._geometry_schematic_used := false                                                        ;
+					NEW._district                := distribution.fn_get_districts(NEW.geometry)                  ;
+					NEW._pressurezone            := distribution.fn_get_pressurezone(NEW.geometry)               ;
 					NEW._printmaps               := distribution.fn_get_printmaps(NEW.geometry)                  ;
-					NEW._districts               := distribution.fn_get_districts(NEW.geometry)                  ;
 					NEW._length2d                := ST_Length(NEW.geometry)                                      ;
 					NEW._length3d                := NULL                                                         ;
 					NEW._diff_elevation          := NULL                                                         ;

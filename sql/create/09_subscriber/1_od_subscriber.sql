@@ -17,7 +17,7 @@ ALTER TABLE distribution.od_subscriber ADD COLUMN id_pipe              integer;
 ALTER TABLE distribution.od_subscriber ADD COLUMN identification       varchar(12) not null default '' ;
 ALTER TABLE distribution.od_subscriber ADD COLUMN _identification_full varchar(16) not null default '' ;
 ALTER TABLE distribution.od_subscriber ADD COLUMN parcel               varchar(12) not null default '' ;
-ALTER TABLE distribution.od_subscriber ADD COLUMN remark               text;
+ALTER TABLE distribution.od_subscriber ADD COLUMN remark               text default '';
 
 /* GEOMETRY                        (table_name,      is_node, create_node, create_schematic, get_pipe, auto_district, auto_pressurezone)*/
 SELECT distribution.fn_geom_tool_point('od_subscriber', false,   false,       false,            false,    false,         true);

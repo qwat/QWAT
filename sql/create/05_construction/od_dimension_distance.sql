@@ -13,11 +13,11 @@ COMMENT ON TABLE distribution.od_dimension_distance IS 'dimension arcs displays 
 /* columns */
 ALTER TABLE distribution.od_dimension_distance ADD COLUMN observation  varchar(120) default '';
 ALTER TABLE distribution.od_dimension_distance ADD COLUMN _calculation double precision;
-ALTER TABLE distribution.od_dimension_distance ADD COLUMN remark       text;
+ALTER TABLE distribution.od_dimension_distance ADD COLUMN remark       text default '';
 
 /* geometry */
 SELECT AddGeometryColumn('distribution', 'od_dimension_distance','geometry',21781,'LINESTRING',2);
-CREATE INDEX dimension_geoidx ON distribution.od_dimension_distance USING GIST ( geometry );
+CREATE INDEX dimension_distance_geoidx ON distribution.od_dimension_distance USING GIST ( geometry );
 
 
 /* --------- !! !! ----------*/

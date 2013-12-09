@@ -20,10 +20,10 @@ ALTER TABLE distribution.od_leak ADD COLUMN id_damage      integer not null;
 ALTER TABLE distribution.od_leak ADD COLUMN detection_date date;
 ALTER TABLE distribution.od_leak ADD COLUMN repair_date    date;
 ALTER TABLE distribution.od_leak ADD COLUMN _repaired      boolean;
-ALTER TABLE distribution.od_leak ADD COLUMN address        text;
+ALTER TABLE distribution.od_leak ADD COLUMN address        text default '';
 ALTER TABLE distribution.od_leak ADD COLUMN pipe_replaced  boolean;
-ALTER TABLE distribution.od_leak ADD COLUMN description    text;
-ALTER TABLE distribution.od_leak ADD COLUMN repair         text;
+ALTER TABLE distribution.od_leak ADD COLUMN description    text default '';
+ALTER TABLE distribution.od_leak ADD COLUMN repair         text default '';
 
 /* constraints */
 ALTER TABLE distribution.od_leak ADD CONSTRAINT vl_leak_id_type   FOREIGN KEY (id_type)   REFERENCES distribution.vl_leak_type(id)   MATCH FULL;   CREATE INDEX fki_vl_leak_id_type   ON distribution.od_leak(id_type)  ;

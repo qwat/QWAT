@@ -27,8 +27,9 @@ SELECT
 	od_valve.id_district       ,
 	od_valve.id_pressurezone   ,
 	od_valve.id_printmap       ,
+	od_valve._district         ,
+	od_valve._pressurezone     ,
 	od_valve._printmaps        ,
-	od_valve._districts        ,
 	od_valve._schema_visible      ,
 	od_valve.geometry::geometry(Point,21781)    ,
 	vl_valve_function.value_fr AS _function    ,
@@ -39,8 +40,6 @@ SELECT
 		ELSE vl_valve_function.short_fr || od_valve.identification::varchar
 	END AS _label,
 	od_node.altitude_dtm       AS _altitude_dtm,
-	od_district.name           AS _district,
-	od_pressurezone.name       AS _pressurezone,
 	od_pressurezone.colorcode  AS _pressurezone_colorcode
 	FROM distribution.od_valve
 	INNER JOIN      distribution.vl_valve_type     ON od_valve.id_type         = vl_valve_type.id

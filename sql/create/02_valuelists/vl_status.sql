@@ -15,8 +15,8 @@ ALTER TABLE distribution.vl_status ADD COLUMN value_en  varchar(30) default '';
 ALTER TABLE distribution.vl_status ADD COLUMN value_fr  varchar(30) default '';
 ALTER TABLE distribution.vl_status ADD COLUMN active    boolean default true;
 ALTER TABLE distribution.vl_status ADD COLUMN sire      smallint default null;
-ALTER TABLE distribution.vl_status ADD COLUMN helper_en text;
-ALTER TABLE distribution.vl_status ADD COLUMN helper_fr text;
+ALTER TABLE distribution.vl_status ADD COLUMN helper_en text default '';
+ALTER TABLE distribution.vl_status ADD COLUMN helper_fr text default '';
 
 /* VALUES */
 INSERT INTO distribution.vl_status (id,value_en,value_fr,active,sire,helper_en,helper_fr) VALUES (1301,'', 'en service'  , true , 1    , '', 'Contribue actuellement au réseau.');   /*  */

@@ -21,7 +21,7 @@ ALTER TABLE distribution.od_installation_treatment ADD COLUMN id_watertype      
 ALTER TABLE distribution.od_installation_treatment ADD COLUMN schema_visible     boolean not null default true ;
 ALTER TABLE distribution.od_installation_treatment ADD COLUMN altitude_real      decimal(10,3)          ;
 ALTER TABLE distribution.od_installation_treatment ADD COLUMN remark             text        default '' ;
-ALTER TABLE distribution.od_installation_treatment ADD COLUMN links              text                   ;
+ALTER TABLE distribution.od_installation_treatment ADD COLUMN links              text default '';
 ALTER TABLE distribution.od_installation_treatment ADD COLUMN year               smallint CHECK (year > 1800 AND year < 2100);
 ALTER TABLE distribution.od_installation_treatment ADD COLUMN open_water_surface boolean default False  ;
 ALTER TABLE distribution.od_installation_treatment ADD COLUMN parcel             varchar(30) default '' ;

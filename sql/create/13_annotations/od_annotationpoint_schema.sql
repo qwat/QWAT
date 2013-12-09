@@ -12,7 +12,7 @@ COMMENT ON TABLE distribution.od_annotationpoint_schema IS 'Table for annotation
 /* COLUMNS */
 ALTER TABLE distribution.od_annotationpoint_schema ADD COLUMN text_size        decimal(7,2);
 ALTER TABLE distribution.od_annotationpoint_schema ADD COLUMN text_orientation decimal(7,2);
-ALTER TABLE distribution.od_annotationpoint_schema ADD COLUMN annotation       text;
+ALTER TABLE distribution.od_annotationpoint_schema ADD COLUMN annotation       text default '';
 
 /* GEOMETRY */
 SELECT AddGeometryColumn('distribution', 'od_annotationpoint_schema', 'geometry', 21781, 'POINT', 2)  ;
