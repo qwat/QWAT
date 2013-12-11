@@ -71,8 +71,8 @@ $BODY$
 						WHERE id_node_a = node_id AND vl_status.active IS TRUE
 				UNION ALL
 				SELECT	od_pipe.id, od_pipe.year, vl_pipe_material.value_fr AS material, vl_pipe_material.diameter_nominal AS diameter,
-						ST_PointN(geometry,ST_NPoints(geometry)-1) AS point_1,
-						ST_EndPoint(geometry)                      AS point_2
+						ST_EndPoint(geometry)                      AS point_1,
+						ST_PointN(geometry,ST_NPoints(geometry)-1) AS point_2
 						FROM distribution.od_pipe
 						INNER JOIN distribution.vl_pipe_material ON od_pipe.id_material = vl_pipe_material.id
 						INNER JOIN distribution.vl_status        ON od_pipe.id_status = vl_status.id
@@ -105,7 +105,6 @@ $BODY$
 					END IF;
 				END IF;
 			END LOOP;
-			SELECT degrees(orientation) INTO orientation;
 			IF keep_type IS FALSE AND grouped.count = 1 THEN
 				/* if the node is only on 1 pipe, check if it intersects another pipe. If yes, hide it */
 				SELECT geometry FROM distribution.od_node WHERE id = node_id INTO node_geom;
@@ -122,7 +121,7 @@ $BODY$
 		/* update the node table */
 		UPDATE distribution.od_node SET
 			_type           = type,
-			_orientation    = orientation,
+			_orientation    = degrees(orientation)+90,
 			_schema_visible = grouped.schema_visible,
 			_status_active  = grouped.status_active,
 			_under_object   = is_under_object
