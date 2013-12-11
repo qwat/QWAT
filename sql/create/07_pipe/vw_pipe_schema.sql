@@ -118,7 +118,6 @@ CREATE VIEW distribution.vw_pipe_schema AS
 			od_pipe.id_pressurezone               ,
 			od_pipe.id_printmap                   ,
 			od_pipe._district                     ,
-			od_pipe._pressurezone                 ,
 			od_pipe._printmaps                    ,
 			vw_pipe_schema_merged._length2d       ,
 			vw_pipe_schema_merged._length3d       ,
@@ -126,9 +125,12 @@ CREATE VIEW distribution.vw_pipe_schema AS
 			vw_pipe_schema_merged.tunnel_or_bridge,
 			vw_pipe_schema_merged._valve_count    ,
 			vw_pipe_schema_merged._valve_closed   ,
+			od_pressurezone.name AS _pressurezone ,
+			od_pressurezone.colorcode AS _pressurezone_colorcode,
 			vw_pipe_schema_merged.geometry::geometry(LineString,21781) AS geometry
 	  FROM distribution.vw_pipe_schema_merged
-	 INNER JOIN distribution.od_pipe ON od_pipe.id = vw_pipe_schema_merged.id;
+	 INNER JOIN distribution.od_pipe         ON od_pipe.id = vw_pipe_schema_merged.id
+	 INNER JOIN distribution.od_pressurezone ON od_pipe.id_pressurezone = od_pressurezone.id;
 COMMENT ON VIEW distribution.vw_pipe_schema IS 'Final view for schema';
 
 
