@@ -6,7 +6,9 @@
 #    
 #    
 #    fme.exe details.fmw
-#          --SourceDataset_ACAD F:\Details_distribution_pour_denis.dwg
+#          --SourceDataset_ACAD F:\fme\input\Details_distribution_pour_denis.dwg
+#          --DestDataset_POSTGIS sige
+#          --DestDataset_POSTGIS_3 sige
 #    
 #    
 #! MAX_LOG_FEATURES="200"
@@ -80,6 +82,62 @@
 #! VALUE="ACAD_IN_USE_BLOCK_HEADER_LAYER ACAD_IN_RESOLVE_ENTITY_COLOR _OUTPUT_BLOCKS_AT_START _STORE_BULGE_INFO _BULGES_AS_ARCS ACAD_IN_READ_PAPER_SPACE ACAD_IN_READ_GROUPS _CONVERT_ZERO_LENGTH_ARCS_TO_POINTS _OUTPUT_ZERO_LENGTH_LINES_AS_LINES ACAD_IN_IGNORE_UCS ACAD_IN_PRESERVE_COMPLEX_HATCHES _STORE_SPLINE_DEFS _USE_DXF_HEADER _ACADResolveDimensions APPLY_WORLD_FILE ACAD_IN_STORE_LAYER_INFO ACAD_IN_STORE_INSERT_POINT ACAD_IN_SEARCH_ENVELOPE_MINX ACAD_IN_SEARCH_ENVELOPE_MINY ACAD_IN_SEARCH_ENVELOPE_MAXX ACAD_IN_SEARCH_ENVELOPE_MAXY ACAD_IN_CLIP_TO_ENVELOPE"
 #! />
 #! </DATASET>
+#! <DATASET
+#! IS_SOURCE="false"
+#! ROLE="WRITER"
+#! FORMAT="POSTGIS"
+#! DATASET="$(DestDataset_POSTGIS)"
+#! KEYWORD="POSTGIS_1"
+#! MULTI_GEOM_ALLOWED="true"
+#! ATTR_MAX_LENGTH="63"
+#! ATTR_CASE="LOWER"
+#! ALLOWED_FEAT_TYPES=""
+#! WRITE_DEFS="true"
+#! DEFLINE_TEMPLATE="postgis_type postgis_geometry postgis_mode INHERIT_FROM_WRITER postgis_spatial_column_type geometry postgis_spatial_column geom postgis_srid INHERIT_FROM_WRITER postgis_drop_table NO postgis_truncate_table NO postgis_create_with_oids YES postgis_create_gist_index YES postgis_vacuum_analyze YES postgis_allow_serial_writing NO"
+#! DEFLINE_ATTRS="true"
+#! EXPOSABLE_ATTRS="fme_type char(50) postgis_collection_id int fme_text_string char(50) fme_db_operation char(8) fme_feature_type char(50) fme_basename char(50) fme_where char(254) fme_geometry fme_char(50) postgis_collection_part_id int fme_sweep_angle float8 fme_rotation float8 postgis_type char(50) fme_secondary_axis float8 fme_fill_color char(50) fme_dataset char(50) fme_primary_axis float8 fme_start_angle float8 fme_text_size float8 fme_color char(50)"
+#! DEFLINE_PARMS="&quot;GUI CHOICE postgis_mode INHERIT_FROM_WRITER%INSERT%UPDATE%DELETE Writer Mode&quot; INHERIT_FROM_WRITER &quot;GUI CHOICE postgis_spatial_column_type geometry%geography Spatial Column Type&quot; geometry &quot;GUI TEXT postgis_spatial_column Spatial Column Name&quot; geometry &quot;GUI OPTIONAL FLOAT postgis_srid Spatial Column SRID&quot; INHERIT_FROM_WRITER &quot;GUI CHOICE postgis_drop_table YES%NO Drop Table First&quot; NO &quot;GUI CHOICE postgis_truncate_table YES%NO Truncate Table First&quot; NO &quot;GUI CHOICE postgis_create_with_oids YES%NO Create With OIDs&quot; YES &quot;GUI CHOICE postgis_create_gist_index YES%NO Create GiST Index&quot; YES &quot;GUI CHOICE postgis_vacuum_analyze YES%NO Vacuum Analyze Table&quot; YES &quot;GUI CHOICE postgis_allow_serial_writing YES%NO Allow serial Column Writing&quot; NO "
+#! ATTR_INDEX_TYPES="BTREE RTREE HASH PRIKEY"
+#! ATTR_NAME_INVALID_CHARS=". %-#[]&quot;()!?*&apos;&amp;+\/"
+#! SUPPORTS_FEATURE_TYPE_FANOUT="true"
+#! ENABLED="true"
+#! DYNAMIC_FEATURE_TYPES_LIST_ON_MERGE="true"
+#! GENERATE_FME_BUILD_NUM="6501"
+#! FANOUT_SUFFIX=""
+#! FANOUT_ID_ATTR=""
+#! COORDSYS="EPSG:21781"
+#! FANOUT="No"
+#! FANOUT_DIRECTORY=""
+#! FANOUT_PREFIX=""
+#! />
+#! <DATASET
+#! IS_SOURCE="false"
+#! ROLE="WRITER"
+#! FORMAT="POSTGIS"
+#! DATASET="$(DestDataset_POSTGIS_3)"
+#! KEYWORD="POSTGIS_2"
+#! MULTI_GEOM_ALLOWED="true"
+#! ATTR_MAX_LENGTH="63"
+#! ATTR_CASE="LOWER"
+#! ALLOWED_FEAT_TYPES=""
+#! WRITE_DEFS="true"
+#! DEFLINE_TEMPLATE="postgis_type postgis_geometry postgis_mode INHERIT_FROM_WRITER postgis_spatial_column_type geometry postgis_spatial_column geom postgis_srid INHERIT_FROM_WRITER postgis_drop_table NO postgis_truncate_table NO postgis_create_with_oids YES postgis_create_gist_index YES postgis_vacuum_analyze YES postgis_allow_serial_writing NO"
+#! DEFLINE_ATTRS="true"
+#! EXPOSABLE_ATTRS="fme_type char(50) postgis_collection_id int fme_text_string char(50) fme_db_operation char(8) fme_feature_type char(50) fme_basename char(50) fme_where char(254) fme_geometry fme_char(50) postgis_collection_part_id int fme_sweep_angle float8 fme_rotation float8 postgis_type char(50) fme_secondary_axis float8 fme_fill_color char(50) fme_dataset char(50) fme_primary_axis float8 fme_start_angle float8 fme_text_size float8 fme_color char(50)"
+#! DEFLINE_PARMS="&quot;GUI CHOICE postgis_mode INHERIT_FROM_WRITER%INSERT%UPDATE%DELETE Writer Mode&quot; INHERIT_FROM_WRITER &quot;GUI CHOICE postgis_spatial_column_type geometry%geography Spatial Column Type&quot; geometry &quot;GUI TEXT postgis_spatial_column Spatial Column Name&quot; geometry &quot;GUI OPTIONAL FLOAT postgis_srid Spatial Column SRID&quot; INHERIT_FROM_WRITER &quot;GUI CHOICE postgis_drop_table YES%NO Drop Table First&quot; NO &quot;GUI CHOICE postgis_truncate_table YES%NO Truncate Table First&quot; NO &quot;GUI CHOICE postgis_create_with_oids YES%NO Create With OIDs&quot; YES &quot;GUI CHOICE postgis_create_gist_index YES%NO Create GiST Index&quot; YES &quot;GUI CHOICE postgis_vacuum_analyze YES%NO Vacuum Analyze Table&quot; YES &quot;GUI CHOICE postgis_allow_serial_writing YES%NO Allow serial Column Writing&quot; NO "
+#! ATTR_INDEX_TYPES="BTREE RTREE HASH PRIKEY"
+#! ATTR_NAME_INVALID_CHARS=". %-#[]&quot;()!?*&apos;&amp;+\/"
+#! SUPPORTS_FEATURE_TYPE_FANOUT="true"
+#! ENABLED="true"
+#! DYNAMIC_FEATURE_TYPES_LIST_ON_MERGE="true"
+#! GENERATE_FME_BUILD_NUM="6501"
+#! FANOUT_SUFFIX=""
+#! FANOUT_ID_ATTR=""
+#! COORDSYS="EPSG:21781"
+#! FANOUT="No"
+#! FANOUT_DIRECTORY=""
+#! FANOUT_PREFIX=""
+#! />
 #! </DATASETS>
 #! <DATA_TYPES>
 #! <DATA_TYPE
@@ -153,6 +211,120 @@
 #! FORMAT_TYPE="number(width,decimal)"
 #! FME_TYPE="fme_decimal(width,decimal)"
 #! FORMAT="ACAD"
+#! />
+#! <DATA_TYPE
+#! IS_SOURCE="false"
+#! FORMAT_TYPE="bool"
+#! FME_TYPE="fme_boolean"
+#! FORMAT="POSTGIS"
+#! />
+#! <DATA_TYPE
+#! IS_SOURCE="false"
+#! FORMAT_TYPE="char(width)"
+#! FME_TYPE="fme_char(width)"
+#! FORMAT="POSTGIS"
+#! />
+#! <DATA_TYPE
+#! IS_SOURCE="false"
+#! FORMAT_TYPE="varchar(width)"
+#! FME_TYPE="fme_varchar(width)"
+#! FORMAT="POSTGIS"
+#! />
+#! <DATA_TYPE
+#! IS_SOURCE="false"
+#! FORMAT_TYPE="text"
+#! FME_TYPE="fme_buffer"
+#! FORMAT="POSTGIS"
+#! />
+#! <DATA_TYPE
+#! IS_SOURCE="false"
+#! FORMAT_TYPE="bytea"
+#! FME_TYPE="fme_buffer"
+#! FORMAT="POSTGIS"
+#! />
+#! <DATA_TYPE
+#! IS_SOURCE="false"
+#! FORMAT_TYPE="int2"
+#! FME_TYPE="fme_int16"
+#! FORMAT="POSTGIS"
+#! />
+#! <DATA_TYPE
+#! IS_SOURCE="false"
+#! FORMAT_TYPE="int4"
+#! FME_TYPE="fme_int32"
+#! FORMAT="POSTGIS"
+#! />
+#! <DATA_TYPE
+#! IS_SOURCE="false"
+#! FORMAT_TYPE="int8"
+#! FME_TYPE="fme_int32"
+#! FORMAT="POSTGIS"
+#! />
+#! <DATA_TYPE
+#! IS_SOURCE="false"
+#! FORMAT_TYPE="oid"
+#! FME_TYPE="fme_int32"
+#! FORMAT="POSTGIS"
+#! />
+#! <DATA_TYPE
+#! IS_SOURCE="false"
+#! FORMAT_TYPE="serial"
+#! FME_TYPE="fme_int32"
+#! FORMAT="POSTGIS"
+#! />
+#! <DATA_TYPE
+#! IS_SOURCE="false"
+#! FORMAT_TYPE="float4"
+#! FME_TYPE="fme_real32"
+#! FORMAT="POSTGIS"
+#! />
+#! <DATA_TYPE
+#! IS_SOURCE="false"
+#! FORMAT_TYPE="money"
+#! FME_TYPE="fme_real32"
+#! FORMAT="POSTGIS"
+#! />
+#! <DATA_TYPE
+#! IS_SOURCE="false"
+#! FORMAT_TYPE="float8"
+#! FME_TYPE="fme_real64"
+#! FORMAT="POSTGIS"
+#! />
+#! <DATA_TYPE
+#! IS_SOURCE="false"
+#! FORMAT_TYPE="float8"
+#! FME_TYPE="fme_decimal(width,decimal)"
+#! FORMAT="POSTGIS"
+#! />
+#! <DATA_TYPE
+#! IS_SOURCE="false"
+#! FORMAT_TYPE="date"
+#! FME_TYPE="fme_date"
+#! FORMAT="POSTGIS"
+#! />
+#! <DATA_TYPE
+#! IS_SOURCE="false"
+#! FORMAT_TYPE="time"
+#! FME_TYPE="fme_time"
+#! FORMAT="POSTGIS"
+#! />
+#! <DATA_TYPE
+#! IS_SOURCE="false"
+#! FORMAT_TYPE="timetz"
+#! FME_TYPE="fme_time"
+#! FORMAT="POSTGIS"
+#! />
+#! <DATA_TYPE
+#! IS_SOURCE="false"
+#! FORMAT_TYPE="timestamp"
+#! FME_TYPE="fme_datetime"
+#! FORMAT="POSTGIS"
+#! />
+#! <DATA_TYPE
+#! IS_SOURCE="false"
+#! FORMAT_TYPE="timestamptz"
+#! FME_TYPE="fme_datetime"
+#! FORMAT="POSTGIS"
 #! />
 #! </DATA_TYPES>
 #! <GEOM_TYPES>
@@ -444,17 +616,223 @@
 #! FME_TYPE="fme_point_cloud"
 #! FORMAT="ACAD"
 #! />
+#! <GEOM_TYPE
+#! IS_SOURCE="false"
+#! FORMAT_TYPE="postgis_multipoint"
+#! FME_TYPE="fme_point"
+#! FORMAT="POSTGIS"
+#! />
+#! <GEOM_TYPE
+#! IS_SOURCE="false"
+#! FORMAT_TYPE="postgis_point"
+#! FME_TYPE="fme_point"
+#! FORMAT="POSTGIS"
+#! />
+#! <GEOM_TYPE
+#! IS_SOURCE="false"
+#! FORMAT_TYPE="postgis_multilinestring"
+#! FME_TYPE="fme_line"
+#! FORMAT="POSTGIS"
+#! />
+#! <GEOM_TYPE
+#! IS_SOURCE="false"
+#! FORMAT_TYPE="postgis_multicurve"
+#! FME_TYPE="fme_line"
+#! FORMAT="POSTGIS"
+#! />
+#! <GEOM_TYPE
+#! IS_SOURCE="false"
+#! FORMAT_TYPE="postgis_linestring"
+#! FME_TYPE="fme_line"
+#! FORMAT="POSTGIS"
+#! />
+#! <GEOM_TYPE
+#! IS_SOURCE="false"
+#! FORMAT_TYPE="postgis_circularstring"
+#! FME_TYPE="fme_line"
+#! FORMAT="POSTGIS"
+#! />
+#! <GEOM_TYPE
+#! IS_SOURCE="false"
+#! FORMAT_TYPE="postgis_compoundcurve"
+#! FME_TYPE="fme_line"
+#! FORMAT="POSTGIS"
+#! />
+#! <GEOM_TYPE
+#! IS_SOURCE="false"
+#! FORMAT_TYPE="postgis_multipolygon"
+#! FME_TYPE="fme_area"
+#! FORMAT="POSTGIS"
+#! />
+#! <GEOM_TYPE
+#! IS_SOURCE="false"
+#! FORMAT_TYPE="postgis_multisurface"
+#! FME_TYPE="fme_area"
+#! FORMAT="POSTGIS"
+#! />
+#! <GEOM_TYPE
+#! IS_SOURCE="false"
+#! FORMAT_TYPE="postgis_polygon"
+#! FME_TYPE="fme_area"
+#! FORMAT="POSTGIS"
+#! />
+#! <GEOM_TYPE
+#! IS_SOURCE="false"
+#! FORMAT_TYPE="postgis_curvepolygon"
+#! FME_TYPE="fme_area"
+#! FORMAT="POSTGIS"
+#! />
+#! <GEOM_TYPE
+#! IS_SOURCE="false"
+#! FORMAT_TYPE="postgis_multipolygon"
+#! FME_TYPE="fme_rectangle"
+#! FORMAT="POSTGIS"
+#! />
+#! <GEOM_TYPE
+#! IS_SOURCE="false"
+#! FORMAT_TYPE="postgis_multipolygon"
+#! FME_TYPE="fme_rounded_rectangle"
+#! FORMAT="POSTGIS"
+#! />
+#! <GEOM_TYPE
+#! IS_SOURCE="false"
+#! FORMAT_TYPE="postgis_multipoint"
+#! FME_TYPE="fme_text"
+#! FORMAT="POSTGIS"
+#! />
+#! <GEOM_TYPE
+#! IS_SOURCE="false"
+#! FORMAT_TYPE="postgis_multipolygon"
+#! FME_TYPE="fme_ellipse"
+#! FORMAT="POSTGIS"
+#! />
+#! <GEOM_TYPE
+#! IS_SOURCE="false"
+#! FORMAT_TYPE="postgis_multilinestring"
+#! FME_TYPE="fme_arc"
+#! FORMAT="POSTGIS"
+#! />
+#! <GEOM_TYPE
+#! IS_SOURCE="false"
+#! FORMAT_TYPE="postgis_none"
+#! FME_TYPE="fme_no_geom"
+#! FORMAT="POSTGIS"
+#! />
+#! <GEOM_TYPE
+#! IS_SOURCE="false"
+#! FORMAT_TYPE="postgis_geometry"
+#! FME_TYPE="fme_no_geom"
+#! FORMAT="POSTGIS"
+#! />
+#! <GEOM_TYPE
+#! IS_SOURCE="false"
+#! FORMAT_TYPE="postgis_geometrycollection"
+#! FME_TYPE="fme_collection"
+#! FORMAT="POSTGIS"
+#! />
+#! <GEOM_TYPE
+#! IS_SOURCE="false"
+#! FORMAT_TYPE="postgis_multipolygon"
+#! FME_TYPE="fme_raster"
+#! FORMAT="POSTGIS"
+#! />
+#! <GEOM_TYPE
+#! IS_SOURCE="false"
+#! FORMAT_TYPE="postgis_multilinestring"
+#! FME_TYPE="fme_surface"
+#! FORMAT="POSTGIS"
+#! />
+#! <GEOM_TYPE
+#! IS_SOURCE="false"
+#! FORMAT_TYPE="postgis_multilinestring"
+#! FME_TYPE="fme_solid"
+#! FORMAT="POSTGIS"
+#! />
+#! <GEOM_TYPE
+#! IS_SOURCE="false"
+#! FORMAT_TYPE="postgis_multipolygon"
+#! FME_TYPE="fme_point_cloud"
+#! FORMAT="POSTGIS"
+#! />
 #! </GEOM_TYPES>
 #! <FEATURE_TYPES>
+#! <FEATURE_TYPE
+#! IS_SOURCE="true"
+#! NODE_NAME="Texte_multi"
+#! IS_EDITABLE="false"
+#! IDENTIFIER="0"
+#! FEAT_GEOMTYPE="autocad_line autocad_point autocad_ellipse autocad_shape autocad_text autocad_arc autocad_trace autocad_solid autocad_insert autocad_polygon autocad_face autocad_ray autocad_xline autocad_spline autocad_multi_line autocad_multi_text autocad_dimension autocad_hatch autocad_mpolygon autocad_surface autocad_solid3d"
+#! POSITION="71 -1481"
+#! ORDER="33"
+#! COLLAPSED="true"
+#! KEYWORD="ACAD_1"
+#! ENABLED="true"
+#! MERGE="false"
+#! MERGE_FILTER=""
+#! MERGE_FILTER_TYPE="FILTER_TYPE_GLOB"
+#! MERGE_FILTER_CASE_SENSITIVE="false"
+#! DYNAMIC_SCHEMA="false"
+#! >
+#! </FEATURE_TYPE>
+#! <FEATURE_TYPE
+#! IS_SOURCE="true"
+#! NODE_NAME="Text"
+#! IS_EDITABLE="false"
+#! IDENTIFIER="1"
+#! FEAT_GEOMTYPE="autocad_line autocad_point autocad_ellipse autocad_shape autocad_text autocad_arc autocad_trace autocad_solid autocad_insert autocad_polygon autocad_face autocad_ray autocad_xline autocad_spline autocad_multi_line autocad_multi_text autocad_dimension autocad_hatch autocad_mpolygon autocad_surface autocad_solid3d"
+#! POSITION="0 -2172"
+#! ORDER="36"
+#! COLLAPSED="true"
+#! KEYWORD="ACAD_1"
+#! ENABLED="true"
+#! MERGE="false"
+#! MERGE_FILTER=""
+#! MERGE_FILTER_TYPE="FILTER_TYPE_GLOB"
+#! MERGE_FILTER_CASE_SENSITIVE="false"
+#! DYNAMIC_SCHEMA="false"
+#! >
+#! </FEATURE_TYPE>
+#! <FEATURE_TYPE
+#! IS_SOURCE="false"
+#! NODE_NAME="distribution.od_annotationpoint"
+#! IS_EDITABLE="true"
+#! IDENTIFIER="12"
+#! FEAT_GEOMTYPE="&lt;NO_GEOMETRY&gt;"
+#! POSITION="2965 -901"
+#! ORDER="56"
+#! COLLAPSED="false"
+#! KEYWORD="POSTGIS_1"
+#! ENABLED="true"
+#! FANOUT="No"
+#! FANOUT_ID_ATTR=""
+#! >
+#! <FEAT_ATTRIBUTE ATTR_NAME="text_size" ATTR_TYPE="char(20)"/>
+#! <FEAT_ATTRIBUTE ATTR_NAME="text_orientation" ATTR_TYPE="char(20)"/>
+#! <FEAT_ATTRIBUTE ATTR_NAME="annotation" ATTR_TYPE="char(20)"/>
+#! <FEAT_ATTRIBUTE ATTR_NAME="visible" ATTR_TYPE="char(20)"/>
+#! <FEAT_ATTRIBUTE ATTR_NAME="labelvisible" ATTR_TYPE="char(20)"/>
+#! <FEAT_ATTRIBUTE ATTR_NAME="visible_schema" ATTR_TYPE="char(20)"/>
+#! <FEAT_ATTRIBUTE ATTR_NAME="labelvisible_schema" ATTR_TYPE="char(20)"/>
+#! <DEFLINE_PARM PARM_NAME="postgis_truncate_table" PARM_VALUE="YES"/>
+#! <DEFLINE_PARM PARM_NAME="postgis_spatial_column" PARM_VALUE="geometry"/>
+#! <DEFLINE_PARM PARM_NAME="postgis_drop_table" PARM_VALUE="NO"/>
+#! <DEFLINE_PARM PARM_NAME="postgis_spatial_column_type" PARM_VALUE="geometry"/>
+#! <DEFLINE_PARM PARM_NAME="postgis_vacuum_analyze" PARM_VALUE="YES"/>
+#! <DEFLINE_PARM PARM_NAME="postgis_allow_serial_writing" PARM_VALUE="NO"/>
+#! <DEFLINE_PARM PARM_NAME="postgis_srid" PARM_VALUE="INHERIT_FROM_WRITER"/>
+#! <DEFLINE_PARM PARM_NAME="postgis_create_gist_index" PARM_VALUE="YES"/>
+#! <DEFLINE_PARM PARM_NAME="postgis_create_with_oids" PARM_VALUE="NO"/>
+#! <DEFLINE_PARM PARM_NAME="postgis_mode" PARM_VALUE="INHERIT_FROM_WRITER"/>
+#! </FEATURE_TYPE>
 #! <FEATURE_TYPE
 #! IS_SOURCE="true"
 #! NODE_NAME="GALERIE"
 #! IS_EDITABLE="false"
 #! IDENTIFIER="13"
 #! FEAT_GEOMTYPE="autocad_line autocad_point autocad_ellipse autocad_shape autocad_text autocad_arc autocad_trace autocad_solid autocad_insert autocad_polygon autocad_face autocad_ray autocad_xline autocad_spline autocad_multi_line autocad_multi_text autocad_dimension autocad_hatch autocad_mpolygon autocad_surface autocad_solid3d"
-#! POSITION="200 -200"
-#! ORDER="0"
-#! COLLAPSED="true"
+#! POSITION="94 -68"
+#! ORDER="59"
+#! COLLAPSED="false"
 #! KEYWORD="ACAD_1"
 #! ENABLED="true"
 #! MERGE="false"
@@ -470,8 +848,8 @@
 #! IS_EDITABLE="false"
 #! IDENTIFIER="14"
 #! FEAT_GEOMTYPE="autocad_line autocad_point autocad_ellipse autocad_shape autocad_text autocad_arc autocad_trace autocad_solid autocad_insert autocad_polygon autocad_face autocad_ray autocad_xline autocad_spline autocad_multi_line autocad_multi_text autocad_dimension autocad_hatch autocad_mpolygon autocad_surface autocad_solid3d"
-#! POSITION="200 -725"
-#! ORDER="1"
+#! POSITION="41 -267"
+#! ORDER="60"
 #! COLLAPSED="true"
 #! KEYWORD="ACAD_1"
 #! ENABLED="true"
@@ -483,40 +861,33 @@
 #! >
 #! </FEATURE_TYPE>
 #! <FEATURE_TYPE
-#! IS_SOURCE="true"
-#! NODE_NAME="Text"
-#! IS_EDITABLE="false"
-#! IDENTIFIER="1"
-#! FEAT_GEOMTYPE="autocad_line autocad_point autocad_ellipse autocad_shape autocad_text autocad_arc autocad_trace autocad_solid autocad_insert autocad_polygon autocad_face autocad_ray autocad_xline autocad_spline autocad_multi_line autocad_multi_text autocad_dimension autocad_hatch autocad_mpolygon autocad_surface autocad_solid3d"
-#! POSITION="190 -1838"
-#! ORDER="2"
-#! COLLAPSED="true"
-#! KEYWORD="ACAD_1"
+#! IS_SOURCE="false"
+#! NODE_NAME="distribution.od_annotationline"
+#! IS_EDITABLE="true"
+#! IDENTIFIER="63"
+#! FEAT_GEOMTYPE="&lt;NO_GEOMETRY&gt;"
+#! POSITION="2516 -288"
+#! ORDER="65"
+#! COLLAPSED="false"
+#! KEYWORD="POSTGIS_2"
 #! ENABLED="true"
-#! MERGE="false"
-#! MERGE_FILTER=""
-#! MERGE_FILTER_TYPE="FILTER_TYPE_GLOB"
-#! MERGE_FILTER_CASE_SENSITIVE="false"
-#! DYNAMIC_SCHEMA="false"
+#! FANOUT="No"
+#! FANOUT_ID_ATTR=""
 #! >
-#! </FEATURE_TYPE>
-#! <FEATURE_TYPE
-#! IS_SOURCE="true"
-#! NODE_NAME="Texte_multi"
-#! IS_EDITABLE="false"
-#! IDENTIFIER="0"
-#! FEAT_GEOMTYPE="autocad_line autocad_point autocad_ellipse autocad_shape autocad_text autocad_arc autocad_trace autocad_solid autocad_insert autocad_polygon autocad_face autocad_ray autocad_xline autocad_spline autocad_multi_line autocad_multi_text autocad_dimension autocad_hatch autocad_mpolygon autocad_surface autocad_solid3d"
-#! POSITION="146 -1531"
-#! ORDER="3"
-#! COLLAPSED="true"
-#! KEYWORD="ACAD_1"
-#! ENABLED="true"
-#! MERGE="false"
-#! MERGE_FILTER=""
-#! MERGE_FILTER_TYPE="FILTER_TYPE_GLOB"
-#! MERGE_FILTER_CASE_SENSITIVE="false"
-#! DYNAMIC_SCHEMA="false"
-#! >
+#! <FEAT_ATTRIBUTE ATTR_NAME="visible" ATTR_TYPE="char(20)"/>
+#! <FEAT_ATTRIBUTE ATTR_NAME="labelvisible" ATTR_TYPE="char(20)"/>
+#! <FEAT_ATTRIBUTE ATTR_NAME="visible_schema" ATTR_TYPE="char(20)"/>
+#! <FEAT_ATTRIBUTE ATTR_NAME="labelvisible_schema" ATTR_TYPE="char(20)"/>
+#! <DEFLINE_PARM PARM_NAME="postgis_truncate_table" PARM_VALUE="YES"/>
+#! <DEFLINE_PARM PARM_NAME="postgis_spatial_column" PARM_VALUE="geometry"/>
+#! <DEFLINE_PARM PARM_NAME="postgis_drop_table" PARM_VALUE="NO"/>
+#! <DEFLINE_PARM PARM_NAME="postgis_spatial_column_type" PARM_VALUE="geometry"/>
+#! <DEFLINE_PARM PARM_NAME="postgis_vacuum_analyze" PARM_VALUE="YES"/>
+#! <DEFLINE_PARM PARM_NAME="postgis_allow_serial_writing" PARM_VALUE="NO"/>
+#! <DEFLINE_PARM PARM_NAME="postgis_srid" PARM_VALUE="INHERIT_FROM_WRITER"/>
+#! <DEFLINE_PARM PARM_NAME="postgis_create_gist_index" PARM_VALUE="YES"/>
+#! <DEFLINE_PARM PARM_NAME="postgis_create_with_oids" PARM_VALUE="NO"/>
+#! <DEFLINE_PARM PARM_NAME="postgis_mode" PARM_VALUE="INHERIT_FROM_WRITER"/>
 #! </FEATURE_TYPE>
 #! </FEATURE_TYPES>
 #! <FMESERVER>
@@ -524,19 +895,1148 @@
 #! <GLOBAL_PARAMETERS>
 #! <GLOBAL_PARAMETER
 #! GUI_LINE="GUI MULTIFILE SourceDataset_ACAD DWG_Files(*.dwg)/DXF_Files(*.dxf)|*.dwg;*.dxf|DWG_Files(*.dwg)|*.dwg|DXF_Files(*.dxf)|*.dxf|All_Files|*.* Source Autodesk AutoCAD DWG/DXF File(s):"
-#! DEFAULT_VALUE="F:\Details_distribution_pour_denis.dwg"
+#! DEFAULT_VALUE="F:\fme\input\Details_distribution_pour_denis.dwg"
+#! IS_STAND_ALONE="false"
+#! />
+#! <GLOBAL_PARAMETER
+#! GUI_LINE="GUI TEXT DestDataset_POSTGIS Destination PostGIS Dataset:"
+#! DEFAULT_VALUE="sige"
+#! IS_STAND_ALONE="false"
+#! />
+#! <GLOBAL_PARAMETER
+#! GUI_LINE="GUI TEXT DestDataset_POSTGIS_3 Destination PostGIS Dataset:"
+#! DEFAULT_VALUE="sige"
 #! IS_STAND_ALONE="false"
 #! />
 #! </GLOBAL_PARAMETERS>
 #! <COMMENTS>
+#! <COMMENT
+#! IDENTIFIER="9"
+#! COMMENT_VALUE="Text"
+#! POSITION="3 -2072"
+#! ORDER="31"
+#! FOLLOW_ANCHOR="true"
+#! INFO_NODE="false"
+#! COMMENT_TYPE="REGULAR"
+#! ANCHORED_NODE="1"
+#! />
+#! <COMMENT
+#! IDENTIFIER="10"
+#! COMMENT_VALUE="Texte_multi"
+#! POSITION="71 -1401"
+#! ORDER="32"
+#! FOLLOW_ANCHOR="true"
+#! INFO_NODE="false"
+#! COMMENT_TYPE="REGULAR"
+#! ANCHORED_NODE="0"
+#! />
+#! <COMMENT
+#! IDENTIFIER="39"
+#! COMMENT_VALUE="faire cercle 2m"
+#! POSITION="850 -3477"
+#! ORDER="38"
+#! FOLLOW_ANCHOR="true"
+#! INFO_NODE="false"
+#! COMMENT_TYPE="REGULAR"
+#! />
 #! </COMMENTS>
 #! <CONSTANTS>
 #! </CONSTANTS>
 #! <BOOKMARKS>
 #! </BOOKMARKS>
 #! <TRANSFORMERS>
+#! <TRANSFORMER
+#! IDENTIFIER="5"
+#! TYPE="TextPropertyExtractor"
+#! VERSION="0"
+#! POSITION="291 -1085"
+#! ORDER="34"
+#! PARMS_EDITED="true"
+#! ENABLED="true"
+#! >
+#! <OUTPUT_FEAT NAME="OUTPUT"/>
+#! <FEAT_COLLAPSED COLLAPSED="0"/>
+#! <XFORM_ATTR ATTR_NAME="text_orientation" IS_USER_CREATED="false" FEAT_INDEX="0"/>
+#! <XFORM_ATTR ATTR_NAME="text_size" IS_USER_CREATED="false" FEAT_INDEX="0"/>
+#! <XFORM_ATTR ATTR_NAME="annotation" IS_USER_CREATED="false" FEAT_INDEX="0"/>
+#! <XFORM_PARM PARM_NAME="PARAMETERS_GROUP" PARM_VALUE=""/>
+#! <XFORM_PARM PARM_NAME="TEXT_SIZE" PARM_VALUE="text_size"/>
+#! <XFORM_PARM PARM_NAME="XFORMER_NAME" PARM_VALUE="TextPropertyExtractor_2"/>
+#! <XFORM_PARM PARM_NAME="TEXT_ROTATION" PARM_VALUE="text_orientation"/>
+#! <XFORM_PARM PARM_NAME="TRANSFORMER_GROUP" PARM_VALUE=""/>
+#! <XFORM_PARM PARM_NAME="TEXT_STRING" PARM_VALUE="annotation"/>
+#! </TRANSFORMER>
+#! <TRANSFORMER
+#! IDENTIFIER="31"
+#! TYPE="AttributeCreator"
+#! VERSION="2"
+#! POSITION="15 -3054"
+#! ORDER="35"
+#! PARMS_EDITED="true"
+#! ENABLED="true"
+#! >
+#! <OUTPUT_FEAT NAME="OUTPUT"/>
+#! <FEAT_COLLAPSED COLLAPSED="0"/>
+#! <XFORM_ATTR ATTR_NAME="_x" IS_USER_CREATED="false" FEAT_INDEX="0"/>
+#! <XFORM_ATTR ATTR_NAME="_y" IS_USER_CREATED="false" FEAT_INDEX="0"/>
+#! <XFORM_ATTR ATTR_NAME="_z" IS_USER_CREATED="false" FEAT_INDEX="0"/>
+#! <XFORM_ATTR ATTR_NAME="text_orientation" IS_USER_CREATED="false" FEAT_INDEX="0"/>
+#! <XFORM_ATTR ATTR_NAME="text_size" IS_USER_CREATED="false" FEAT_INDEX="0"/>
+#! <XFORM_ATTR ATTR_NAME="r" IS_USER_CREATED="false" FEAT_INDEX="0"/>
+#! <XFORM_ATTR ATTR_NAME="text" IS_USER_CREATED="false" FEAT_INDEX="0"/>
+#! <XFORM_PARM PARM_NAME="XFORMER_NAME" PARM_VALUE="AttributeCreator"/>
+#! <XFORM_PARM PARM_NAME="ATTR_LIST" PARM_VALUE="r,2"/>
+#! </TRANSFORMER>
+#! <TRANSFORMER
+#! IDENTIFIER="46"
+#! TYPE="2DEllipseReplacer"
+#! VERSION="0"
+#! POSITION="109 -3507"
+#! ORDER="37"
+#! PARMS_EDITED="true"
+#! ENABLED="true"
+#! >
+#! <OUTPUT_FEAT NAME="ELLIPSE"/>
+#! <FEAT_COLLAPSED COLLAPSED="0"/>
+#! <XFORM_ATTR ATTR_NAME="fme_primary_axis" IS_USER_CREATED="false" FEAT_INDEX="0"/>
+#! <XFORM_ATTR ATTR_NAME="fme_secondary_axis" IS_USER_CREATED="false" FEAT_INDEX="0"/>
+#! <XFORM_ATTR ATTR_NAME="fme_rotation" IS_USER_CREATED="false" FEAT_INDEX="0"/>
+#! <XFORM_ATTR ATTR_NAME="_count" IS_USER_CREATED="false" FEAT_INDEX="0"/>
+#! <XFORM_ATTR ATTR_NAME="_x" IS_USER_CREATED="false" FEAT_INDEX="0"/>
+#! <XFORM_ATTR ATTR_NAME="_y" IS_USER_CREATED="false" FEAT_INDEX="0"/>
+#! <XFORM_ATTR ATTR_NAME="_z" IS_USER_CREATED="false" FEAT_INDEX="0"/>
+#! <XFORM_ATTR ATTR_NAME="text_orientation" IS_USER_CREATED="false" FEAT_INDEX="0"/>
+#! <XFORM_ATTR ATTR_NAME="text_size" IS_USER_CREATED="false" FEAT_INDEX="0"/>
+#! <XFORM_ATTR ATTR_NAME="r" IS_USER_CREATED="false" FEAT_INDEX="0"/>
+#! <XFORM_ATTR ATTR_NAME="text" IS_USER_CREATED="false" FEAT_INDEX="0"/>
+#! <XFORM_PARM PARM_NAME="ROT" PARM_VALUE="0"/>
+#! <XFORM_PARM PARM_NAME="YVALATTR" PARM_VALUE="@Value(_y)"/>
+#! <XFORM_PARM PARM_NAME="XFORMER_NAME" PARM_VALUE="2DEllipseReplacer"/>
+#! <XFORM_PARM PARM_NAME="PRIMAXIS" PARM_VALUE="@Value(r)"/>
+#! <XFORM_PARM PARM_NAME="TRANSFORMER_GROUP" PARM_VALUE=""/>
+#! <XFORM_PARM PARM_NAME="PARAMETER_GROUP" PARM_VALUE=""/>
+#! <XFORM_PARM PARM_NAME="XVALATTR" PARM_VALUE="@Value(_x)"/>
+#! <XFORM_PARM PARM_NAME="SECAXIS" PARM_VALUE="@Value(r)"/>
+#! </TRANSFORMER>
+#! <TRANSFORMER
+#! IDENTIFIER="41"
+#! TYPE="ArcStroker"
+#! VERSION="5"
+#! POSITION="754 -3550"
+#! ORDER="39"
+#! PARMS_EDITED="true"
+#! ENABLED="true"
+#! >
+#! <OUTPUT_FEAT NAME="STROKED"/>
+#! <FEAT_COLLAPSED COLLAPSED="0"/>
+#! <XFORM_ATTR ATTR_NAME="fme_primary_axis" IS_USER_CREATED="false" FEAT_INDEX="0"/>
+#! <XFORM_ATTR ATTR_NAME="fme_secondary_axis" IS_USER_CREATED="false" FEAT_INDEX="0"/>
+#! <XFORM_ATTR ATTR_NAME="fme_rotation" IS_USER_CREATED="false" FEAT_INDEX="0"/>
+#! <XFORM_ATTR ATTR_NAME="_count" IS_USER_CREATED="false" FEAT_INDEX="0"/>
+#! <XFORM_ATTR ATTR_NAME="_x" IS_USER_CREATED="false" FEAT_INDEX="0"/>
+#! <XFORM_ATTR ATTR_NAME="_y" IS_USER_CREATED="false" FEAT_INDEX="0"/>
+#! <XFORM_ATTR ATTR_NAME="_z" IS_USER_CREATED="false" FEAT_INDEX="0"/>
+#! <XFORM_ATTR ATTR_NAME="text_orientation" IS_USER_CREATED="false" FEAT_INDEX="0"/>
+#! <XFORM_ATTR ATTR_NAME="text_size" IS_USER_CREATED="false" FEAT_INDEX="0"/>
+#! <XFORM_ATTR ATTR_NAME="r" IS_USER_CREATED="false" FEAT_INDEX="0"/>
+#! <XFORM_ATTR ATTR_NAME="text" IS_USER_CREATED="false" FEAT_INDEX="0"/>
+#! <XFORM_PARM PARM_NAME="PARAMETERS_GROUP" PARM_VALUE=""/>
+#! <XFORM_PARM PARM_NAME="STROKE_CHOICE" PARM_VALUE="Number of Interpolated Edges"/>
+#! <XFORM_PARM PARM_NAME="XFORMER_NAME" PARM_VALUE="ArcStroker"/>
+#! <XFORM_PARM PARM_NAME="NUM" PARM_VALUE="0"/>
+#! <XFORM_PARM PARM_NAME="TOLERANCE_VAL" PARM_VALUE="&lt;Unused&gt;"/>
+#! <XFORM_PARM PARM_NAME="TRANSFORMER_GROUP" PARM_VALUE=""/>
+#! <XFORM_PARM PARM_NAME="MAKE_POLY" PARM_VALUE="Yes"/>
+#! </TRANSFORMER>
+#! <TRANSFORMER
+#! IDENTIFIER="64"
+#! TYPE="Counter"
+#! VERSION="2"
+#! POSITION="629 -3173"
+#! ORDER="40"
+#! PARMS_EDITED="true"
+#! ENABLED="true"
+#! >
+#! <OUTPUT_FEAT NAME="OUTPUT"/>
+#! <FEAT_COLLAPSED COLLAPSED="0"/>
+#! <XFORM_ATTR ATTR_NAME="_count" IS_USER_CREATED="false" FEAT_INDEX="0"/>
+#! <XFORM_ATTR ATTR_NAME="_x" IS_USER_CREATED="false" FEAT_INDEX="0"/>
+#! <XFORM_ATTR ATTR_NAME="_y" IS_USER_CREATED="false" FEAT_INDEX="0"/>
+#! <XFORM_ATTR ATTR_NAME="_z" IS_USER_CREATED="false" FEAT_INDEX="0"/>
+#! <XFORM_ATTR ATTR_NAME="text_orientation" IS_USER_CREATED="false" FEAT_INDEX="0"/>
+#! <XFORM_ATTR ATTR_NAME="text_size" IS_USER_CREATED="false" FEAT_INDEX="0"/>
+#! <XFORM_ATTR ATTR_NAME="r" IS_USER_CREATED="false" FEAT_INDEX="0"/>
+#! <XFORM_ATTR ATTR_NAME="text" IS_USER_CREATED="false" FEAT_INDEX="0"/>
+#! <XFORM_PARM PARM_NAME="PARAMETERS_GROUP" PARM_VALUE=""/>
+#! <XFORM_PARM PARM_NAME="SCOPE" PARM_VALUE="Global"/>
+#! <XFORM_PARM PARM_NAME="CNT_ATTR" PARM_VALUE="_count"/>
+#! <XFORM_PARM PARM_NAME="XFORMER_NAME" PARM_VALUE="Counter"/>
+#! <XFORM_PARM PARM_NAME="DOMAIN" PARM_VALUE="counter"/>
+#! <XFORM_PARM PARM_NAME="TRANSFORMER_GROUP" PARM_VALUE=""/>
+#! <XFORM_PARM PARM_NAME="START" PARM_VALUE="0"/>
+#! </TRANSFORMER>
+#! <TRANSFORMER
+#! IDENTIFIER="55"
+#! TYPE="Sorter"
+#! VERSION="2"
+#! POSITION="487 -2861"
+#! ORDER="41"
+#! PARMS_EDITED="true"
+#! ENABLED="true"
+#! >
+#! <OUTPUT_FEAT NAME="SORTED"/>
+#! <FEAT_COLLAPSED COLLAPSED="0"/>
+#! <XFORM_ATTR ATTR_NAME="_x" IS_USER_CREATED="false" FEAT_INDEX="0"/>
+#! <XFORM_ATTR ATTR_NAME="_y" IS_USER_CREATED="false" FEAT_INDEX="0"/>
+#! <XFORM_ATTR ATTR_NAME="_z" IS_USER_CREATED="false" FEAT_INDEX="0"/>
+#! <XFORM_ATTR ATTR_NAME="text_orientation" IS_USER_CREATED="false" FEAT_INDEX="0"/>
+#! <XFORM_ATTR ATTR_NAME="text_size" IS_USER_CREATED="false" FEAT_INDEX="0"/>
+#! <XFORM_ATTR ATTR_NAME="text" IS_USER_CREATED="false" FEAT_INDEX="0"/>
+#! <XFORM_PARM PARM_NAME="SORT_PARM" PARM_VALUE="_y NUMERIC DESCENDING"/>
+#! <XFORM_PARM PARM_NAME="XFORMER_NAME" PARM_VALUE="Sorter"/>
+#! </TRANSFORMER>
+#! <TRANSFORMER
+#! IDENTIFIER="60"
+#! TYPE="ListConcatenator"
+#! VERSION="1"
+#! POSITION="1872 -3676"
+#! ORDER="42"
+#! PARMS_EDITED="true"
+#! ENABLED="true"
+#! >
+#! <OUTPUT_FEAT NAME="OUTPUT"/>
+#! <FEAT_COLLAPSED COLLAPSED="0"/>
+#! <XFORM_ATTR ATTR_NAME="nb_merged" IS_USER_CREATED="false" FEAT_INDEX="0"/>
+#! <XFORM_ATTR ATTR_NAME="fme_primary_axis" IS_USER_CREATED="false" FEAT_INDEX="0"/>
+#! <XFORM_ATTR ATTR_NAME="fme_secondary_axis" IS_USER_CREATED="false" FEAT_INDEX="0"/>
+#! <XFORM_ATTR ATTR_NAME="fme_rotation" IS_USER_CREATED="false" FEAT_INDEX="0"/>
+#! <XFORM_ATTR ATTR_NAME="_count" IS_USER_CREATED="false" FEAT_INDEX="0"/>
+#! <XFORM_ATTR ATTR_NAME="_x" IS_USER_CREATED="false" FEAT_INDEX="0"/>
+#! <XFORM_ATTR ATTR_NAME="_y" IS_USER_CREATED="false" FEAT_INDEX="0"/>
+#! <XFORM_ATTR ATTR_NAME="_z" IS_USER_CREATED="false" FEAT_INDEX="0"/>
+#! <XFORM_ATTR ATTR_NAME="text_orientation" IS_USER_CREATED="false" FEAT_INDEX="0"/>
+#! <XFORM_ATTR ATTR_NAME="text_size" IS_USER_CREATED="false" FEAT_INDEX="0"/>
+#! <XFORM_ATTR ATTR_NAME="r" IS_USER_CREATED="false" FEAT_INDEX="0"/>
+#! <XFORM_ATTR ATTR_NAME="list{}.fme_primary_axis" IS_USER_CREATED="false" FEAT_INDEX="0"/>
+#! <XFORM_ATTR ATTR_NAME="list{}.fme_secondary_axis" IS_USER_CREATED="false" FEAT_INDEX="0"/>
+#! <XFORM_ATTR ATTR_NAME="list{}.fme_rotation" IS_USER_CREATED="false" FEAT_INDEX="0"/>
+#! <XFORM_ATTR ATTR_NAME="list{}._count" IS_USER_CREATED="false" FEAT_INDEX="0"/>
+#! <XFORM_ATTR ATTR_NAME="list{}._x" IS_USER_CREATED="false" FEAT_INDEX="0"/>
+#! <XFORM_ATTR ATTR_NAME="list{}._y" IS_USER_CREATED="false" FEAT_INDEX="0"/>
+#! <XFORM_ATTR ATTR_NAME="list{}._z" IS_USER_CREATED="false" FEAT_INDEX="0"/>
+#! <XFORM_ATTR ATTR_NAME="list{}.text_orientation" IS_USER_CREATED="false" FEAT_INDEX="0"/>
+#! <XFORM_ATTR ATTR_NAME="list{}.text_size" IS_USER_CREATED="false" FEAT_INDEX="0"/>
+#! <XFORM_ATTR ATTR_NAME="list{}.r" IS_USER_CREATED="false" FEAT_INDEX="0"/>
+#! <XFORM_ATTR ATTR_NAME="text" IS_USER_CREATED="false" FEAT_INDEX="0"/>
+#! <XFORM_ATTR ATTR_NAME="list{}.text" IS_USER_CREATED="false" FEAT_INDEX="0"/>
+#! <XFORM_ATTR ATTR_NAME="annotation" IS_USER_CREATED="false" FEAT_INDEX="0"/>
+#! <XFORM_PARM PARM_NAME="PARAMETERS_GROUP" PARM_VALUE=""/>
+#! <XFORM_PARM PARM_NAME="SEP" PARM_VALUE="&lt;space&gt;"/>
+#! <XFORM_PARM PARM_NAME="XFORMER_NAME" PARM_VALUE="ListConcatenator"/>
+#! <XFORM_PARM PARM_NAME="VAL_ATTR" PARM_VALUE="annotation"/>
+#! <XFORM_PARM PARM_NAME="LIST_ATTR" PARM_VALUE="list{}.text"/>
+#! <XFORM_PARM PARM_NAME="TRANSFORMER_GROUP" PARM_VALUE=""/>
+#! </TRANSFORMER>
+#! <TRANSFORMER
+#! IDENTIFIER="56"
+#! TYPE="CoordinateExtractor"
+#! VERSION="1"
+#! POSITION="1240 -3082"
+#! ORDER="43"
+#! PARMS_EDITED="true"
+#! ENABLED="true"
+#! >
+#! <OUTPUT_FEAT NAME="OUTPUT"/>
+#! <FEAT_COLLAPSED COLLAPSED="0"/>
+#! <XFORM_ATTR ATTR_NAME="_x" IS_USER_CREATED="false" FEAT_INDEX="0"/>
+#! <XFORM_ATTR ATTR_NAME="_y" IS_USER_CREATED="false" FEAT_INDEX="0"/>
+#! <XFORM_ATTR ATTR_NAME="_z" IS_USER_CREATED="false" FEAT_INDEX="0"/>
+#! <XFORM_ATTR ATTR_NAME="nb_merged" IS_USER_CREATED="false" FEAT_INDEX="0"/>
+#! <XFORM_ATTR ATTR_NAME="fme_primary_axis" IS_USER_CREATED="false" FEAT_INDEX="0"/>
+#! <XFORM_ATTR ATTR_NAME="fme_secondary_axis" IS_USER_CREATED="false" FEAT_INDEX="0"/>
+#! <XFORM_ATTR ATTR_NAME="fme_rotation" IS_USER_CREATED="false" FEAT_INDEX="0"/>
+#! <XFORM_ATTR ATTR_NAME="_count" IS_USER_CREATED="false" FEAT_INDEX="0"/>
+#! <XFORM_ATTR ATTR_NAME="text_orientation" IS_USER_CREATED="false" FEAT_INDEX="0"/>
+#! <XFORM_ATTR ATTR_NAME="text_size" IS_USER_CREATED="false" FEAT_INDEX="0"/>
+#! <XFORM_ATTR ATTR_NAME="r" IS_USER_CREATED="false" FEAT_INDEX="0"/>
+#! <XFORM_ATTR ATTR_NAME="list{}.fme_primary_axis" IS_USER_CREATED="false" FEAT_INDEX="0"/>
+#! <XFORM_ATTR ATTR_NAME="list{}.fme_secondary_axis" IS_USER_CREATED="false" FEAT_INDEX="0"/>
+#! <XFORM_ATTR ATTR_NAME="list{}.fme_rotation" IS_USER_CREATED="false" FEAT_INDEX="0"/>
+#! <XFORM_ATTR ATTR_NAME="list{}._count" IS_USER_CREATED="false" FEAT_INDEX="0"/>
+#! <XFORM_ATTR ATTR_NAME="list{}._x" IS_USER_CREATED="false" FEAT_INDEX="0"/>
+#! <XFORM_ATTR ATTR_NAME="list{}._y" IS_USER_CREATED="false" FEAT_INDEX="0"/>
+#! <XFORM_ATTR ATTR_NAME="list{}._z" IS_USER_CREATED="false" FEAT_INDEX="0"/>
+#! <XFORM_ATTR ATTR_NAME="list{}.text_orientation" IS_USER_CREATED="false" FEAT_INDEX="0"/>
+#! <XFORM_ATTR ATTR_NAME="list{}.text_size" IS_USER_CREATED="false" FEAT_INDEX="0"/>
+#! <XFORM_ATTR ATTR_NAME="list{}.r" IS_USER_CREATED="false" FEAT_INDEX="0"/>
+#! <XFORM_ATTR ATTR_NAME="x" IS_USER_CREATED="false" FEAT_INDEX="0"/>
+#! <XFORM_ATTR ATTR_NAME="y" IS_USER_CREATED="false" FEAT_INDEX="0"/>
+#! <XFORM_ATTR ATTR_NAME="text" IS_USER_CREATED="false" FEAT_INDEX="0"/>
+#! <XFORM_ATTR ATTR_NAME="list{}.text" IS_USER_CREATED="false" FEAT_INDEX="0"/>
+#! <XFORM_ATTR ATTR_NAME="annotation" IS_USER_CREATED="false" FEAT_INDEX="0"/>
+#! <XFORM_PARM PARM_NAME="Z_DEFAULT" PARM_VALUE="-9999"/>
+#! <XFORM_PARM PARM_NAME="PARAMETERS_GROUP" PARM_VALUE=""/>
+#! <XFORM_PARM PARM_NAME="IND" PARM_VALUE="0"/>
+#! <XFORM_PARM PARM_NAME="XFORMER_NAME" PARM_VALUE="CoordinateExtractor_2"/>
+#! <XFORM_PARM PARM_NAME="Y_ATTR" PARM_VALUE="y"/>
+#! <XFORM_PARM PARM_NAME="TRANSFORMER_GROUP" PARM_VALUE=""/>
+#! <XFORM_PARM PARM_NAME="X_ATTR" PARM_VALUE="x"/>
+#! <XFORM_PARM PARM_NAME="Z_ATTR" PARM_VALUE="_z"/>
+#! </TRANSFORMER>
+#! <TRANSFORMER
+#! IDENTIFIER="74"
+#! TYPE="Sorter"
+#! VERSION="2"
+#! POSITION="1789 -2904"
+#! ORDER="44"
+#! PARMS_EDITED="true"
+#! ENABLED="true"
+#! >
+#! <OUTPUT_FEAT NAME="SORTED"/>
+#! <FEAT_COLLAPSED COLLAPSED="0"/>
+#! <XFORM_ATTR ATTR_NAME="_x" IS_USER_CREATED="false" FEAT_INDEX="0"/>
+#! <XFORM_ATTR ATTR_NAME="_y" IS_USER_CREATED="false" FEAT_INDEX="0"/>
+#! <XFORM_ATTR ATTR_NAME="_z" IS_USER_CREATED="false" FEAT_INDEX="0"/>
+#! <XFORM_ATTR ATTR_NAME="nb_merged" IS_USER_CREATED="false" FEAT_INDEX="0"/>
+#! <XFORM_ATTR ATTR_NAME="fme_primary_axis" IS_USER_CREATED="false" FEAT_INDEX="0"/>
+#! <XFORM_ATTR ATTR_NAME="fme_secondary_axis" IS_USER_CREATED="false" FEAT_INDEX="0"/>
+#! <XFORM_ATTR ATTR_NAME="fme_rotation" IS_USER_CREATED="false" FEAT_INDEX="0"/>
+#! <XFORM_ATTR ATTR_NAME="_count" IS_USER_CREATED="false" FEAT_INDEX="0"/>
+#! <XFORM_ATTR ATTR_NAME="text_orientation" IS_USER_CREATED="false" FEAT_INDEX="0"/>
+#! <XFORM_ATTR ATTR_NAME="text_size" IS_USER_CREATED="false" FEAT_INDEX="0"/>
+#! <XFORM_ATTR ATTR_NAME="r" IS_USER_CREATED="false" FEAT_INDEX="0"/>
+#! <XFORM_ATTR ATTR_NAME="list{}.fme_primary_axis" IS_USER_CREATED="false" FEAT_INDEX="0"/>
+#! <XFORM_ATTR ATTR_NAME="list{}.fme_secondary_axis" IS_USER_CREATED="false" FEAT_INDEX="0"/>
+#! <XFORM_ATTR ATTR_NAME="list{}.fme_rotation" IS_USER_CREATED="false" FEAT_INDEX="0"/>
+#! <XFORM_ATTR ATTR_NAME="list{}._count" IS_USER_CREATED="false" FEAT_INDEX="0"/>
+#! <XFORM_ATTR ATTR_NAME="list{}._x" IS_USER_CREATED="false" FEAT_INDEX="0"/>
+#! <XFORM_ATTR ATTR_NAME="list{}._y" IS_USER_CREATED="false" FEAT_INDEX="0"/>
+#! <XFORM_ATTR ATTR_NAME="list{}._z" IS_USER_CREATED="false" FEAT_INDEX="0"/>
+#! <XFORM_ATTR ATTR_NAME="list{}.text_orientation" IS_USER_CREATED="false" FEAT_INDEX="0"/>
+#! <XFORM_ATTR ATTR_NAME="list{}.text_size" IS_USER_CREATED="false" FEAT_INDEX="0"/>
+#! <XFORM_ATTR ATTR_NAME="list{}.r" IS_USER_CREATED="false" FEAT_INDEX="0"/>
+#! <XFORM_ATTR ATTR_NAME="x" IS_USER_CREATED="false" FEAT_INDEX="0"/>
+#! <XFORM_ATTR ATTR_NAME="y" IS_USER_CREATED="false" FEAT_INDEX="0"/>
+#! <XFORM_ATTR ATTR_NAME="text" IS_USER_CREATED="false" FEAT_INDEX="0"/>
+#! <XFORM_ATTR ATTR_NAME="list{}.text" IS_USER_CREATED="false" FEAT_INDEX="0"/>
+#! <XFORM_ATTR ATTR_NAME="annotation" IS_USER_CREATED="false" FEAT_INDEX="0"/>
+#! <XFORM_PARM PARM_NAME="SORT_PARM" PARM_VALUE="y NUMERIC ASCENDING"/>
+#! <XFORM_PARM PARM_NAME="XFORMER_NAME" PARM_VALUE="Sorter_2"/>
+#! </TRANSFORMER>
+#! <TRANSFORMER
+#! IDENTIFIER="66"
+#! TYPE="CoordinateSystemSetter"
+#! VERSION="0"
+#! POSITION="1259 -2615"
+#! ORDER="45"
+#! PARMS_EDITED="false"
+#! ENABLED="true"
+#! >
+#! <OUTPUT_FEAT NAME="OUTPUT"/>
+#! <FEAT_COLLAPSED COLLAPSED="0"/>
+#! <XFORM_ATTR ATTR_NAME="_x" IS_USER_CREATED="false" FEAT_INDEX="0"/>
+#! <XFORM_ATTR ATTR_NAME="_y" IS_USER_CREATED="false" FEAT_INDEX="0"/>
+#! <XFORM_ATTR ATTR_NAME="_z" IS_USER_CREATED="false" FEAT_INDEX="0"/>
+#! <XFORM_ATTR ATTR_NAME="nb_merged" IS_USER_CREATED="false" FEAT_INDEX="0"/>
+#! <XFORM_ATTR ATTR_NAME="fme_primary_axis" IS_USER_CREATED="false" FEAT_INDEX="0"/>
+#! <XFORM_ATTR ATTR_NAME="fme_secondary_axis" IS_USER_CREATED="false" FEAT_INDEX="0"/>
+#! <XFORM_ATTR ATTR_NAME="fme_rotation" IS_USER_CREATED="false" FEAT_INDEX="0"/>
+#! <XFORM_ATTR ATTR_NAME="_count" IS_USER_CREATED="false" FEAT_INDEX="0"/>
+#! <XFORM_ATTR ATTR_NAME="text_orientation" IS_USER_CREATED="false" FEAT_INDEX="0"/>
+#! <XFORM_ATTR ATTR_NAME="text_size" IS_USER_CREATED="false" FEAT_INDEX="0"/>
+#! <XFORM_ATTR ATTR_NAME="r" IS_USER_CREATED="false" FEAT_INDEX="0"/>
+#! <XFORM_ATTR ATTR_NAME="list{}.fme_primary_axis" IS_USER_CREATED="false" FEAT_INDEX="0"/>
+#! <XFORM_ATTR ATTR_NAME="list{}.fme_secondary_axis" IS_USER_CREATED="false" FEAT_INDEX="0"/>
+#! <XFORM_ATTR ATTR_NAME="list{}.fme_rotation" IS_USER_CREATED="false" FEAT_INDEX="0"/>
+#! <XFORM_ATTR ATTR_NAME="list{}._count" IS_USER_CREATED="false" FEAT_INDEX="0"/>
+#! <XFORM_ATTR ATTR_NAME="list{}._x" IS_USER_CREATED="false" FEAT_INDEX="0"/>
+#! <XFORM_ATTR ATTR_NAME="list{}._y" IS_USER_CREATED="false" FEAT_INDEX="0"/>
+#! <XFORM_ATTR ATTR_NAME="list{}._z" IS_USER_CREATED="false" FEAT_INDEX="0"/>
+#! <XFORM_ATTR ATTR_NAME="list{}.text_orientation" IS_USER_CREATED="false" FEAT_INDEX="0"/>
+#! <XFORM_ATTR ATTR_NAME="list{}.text_size" IS_USER_CREATED="false" FEAT_INDEX="0"/>
+#! <XFORM_ATTR ATTR_NAME="list{}.r" IS_USER_CREATED="false" FEAT_INDEX="0"/>
+#! <XFORM_ATTR ATTR_NAME="x" IS_USER_CREATED="false" FEAT_INDEX="0"/>
+#! <XFORM_ATTR ATTR_NAME="y" IS_USER_CREATED="false" FEAT_INDEX="0"/>
+#! <XFORM_ATTR ATTR_NAME="text" IS_USER_CREATED="false" FEAT_INDEX="0"/>
+#! <XFORM_ATTR ATTR_NAME="list{}.text" IS_USER_CREATED="false" FEAT_INDEX="0"/>
+#! <XFORM_ATTR ATTR_NAME="annotation" IS_USER_CREATED="false" FEAT_INDEX="0"/>
+#! <XFORM_PARM PARM_NAME="PARAMETERS_GROUP" PARM_VALUE=""/>
+#! <XFORM_PARM PARM_NAME="XFORMER_NAME" PARM_VALUE="CoordinateSystemSetter_2"/>
+#! <XFORM_PARM PARM_NAME="TRANSFORMER_GROUP" PARM_VALUE=""/>
+#! <XFORM_PARM PARM_NAME="COORDSYS" PARM_VALUE="EPSG:21781"/>
+#! </TRANSFORMER>
+#! <TRANSFORMER
+#! IDENTIFIER="51"
+#! TYPE="CenterPointReplacer"
+#! VERSION="0"
+#! POSITION="1816 -3309"
+#! ORDER="46"
+#! PARMS_EDITED="false"
+#! ENABLED="true"
+#! >
+#! <OUTPUT_FEAT NAME="CENTERPOINT"/>
+#! <FEAT_COLLAPSED COLLAPSED="0"/>
+#! <XFORM_ATTR ATTR_NAME="nb_merged" IS_USER_CREATED="false" FEAT_INDEX="0"/>
+#! <XFORM_ATTR ATTR_NAME="fme_primary_axis" IS_USER_CREATED="false" FEAT_INDEX="0"/>
+#! <XFORM_ATTR ATTR_NAME="fme_secondary_axis" IS_USER_CREATED="false" FEAT_INDEX="0"/>
+#! <XFORM_ATTR ATTR_NAME="fme_rotation" IS_USER_CREATED="false" FEAT_INDEX="0"/>
+#! <XFORM_ATTR ATTR_NAME="_count" IS_USER_CREATED="false" FEAT_INDEX="0"/>
+#! <XFORM_ATTR ATTR_NAME="_x" IS_USER_CREATED="false" FEAT_INDEX="0"/>
+#! <XFORM_ATTR ATTR_NAME="_y" IS_USER_CREATED="false" FEAT_INDEX="0"/>
+#! <XFORM_ATTR ATTR_NAME="_z" IS_USER_CREATED="false" FEAT_INDEX="0"/>
+#! <XFORM_ATTR ATTR_NAME="text_orientation" IS_USER_CREATED="false" FEAT_INDEX="0"/>
+#! <XFORM_ATTR ATTR_NAME="text_size" IS_USER_CREATED="false" FEAT_INDEX="0"/>
+#! <XFORM_ATTR ATTR_NAME="r" IS_USER_CREATED="false" FEAT_INDEX="0"/>
+#! <XFORM_ATTR ATTR_NAME="list{}.fme_primary_axis" IS_USER_CREATED="false" FEAT_INDEX="0"/>
+#! <XFORM_ATTR ATTR_NAME="list{}.fme_secondary_axis" IS_USER_CREATED="false" FEAT_INDEX="0"/>
+#! <XFORM_ATTR ATTR_NAME="list{}.fme_rotation" IS_USER_CREATED="false" FEAT_INDEX="0"/>
+#! <XFORM_ATTR ATTR_NAME="list{}._count" IS_USER_CREATED="false" FEAT_INDEX="0"/>
+#! <XFORM_ATTR ATTR_NAME="list{}._x" IS_USER_CREATED="false" FEAT_INDEX="0"/>
+#! <XFORM_ATTR ATTR_NAME="list{}._y" IS_USER_CREATED="false" FEAT_INDEX="0"/>
+#! <XFORM_ATTR ATTR_NAME="list{}._z" IS_USER_CREATED="false" FEAT_INDEX="0"/>
+#! <XFORM_ATTR ATTR_NAME="list{}.text_orientation" IS_USER_CREATED="false" FEAT_INDEX="0"/>
+#! <XFORM_ATTR ATTR_NAME="list{}.text_size" IS_USER_CREATED="false" FEAT_INDEX="0"/>
+#! <XFORM_ATTR ATTR_NAME="list{}.r" IS_USER_CREATED="false" FEAT_INDEX="0"/>
+#! <XFORM_ATTR ATTR_NAME="text" IS_USER_CREATED="false" FEAT_INDEX="0"/>
+#! <XFORM_ATTR ATTR_NAME="list{}.text" IS_USER_CREATED="false" FEAT_INDEX="0"/>
+#! <XFORM_ATTR ATTR_NAME="annotation" IS_USER_CREATED="false" FEAT_INDEX="0"/>
+#! <XFORM_PARM PARM_NAME="XFORMER_NAME" PARM_VALUE="CenterPointReplacer"/>
+#! <XFORM_PARM PARM_NAME="TRANSFORMER_GROUP" PARM_VALUE=""/>
+#! </TRANSFORMER>
+#! <TRANSFORMER
+#! IDENTIFIER="57"
+#! TYPE="GeometryExtractor"
+#! VERSION="2"
+#! POSITION="1784 -2506"
+#! ORDER="47"
+#! PARMS_EDITED="true"
+#! ENABLED="true"
+#! >
+#! <OUTPUT_FEAT NAME="OUTPUT"/>
+#! <FEAT_COLLAPSED COLLAPSED="0"/>
+#! <XFORM_ATTR ATTR_NAME="nb_merged" IS_USER_CREATED="false" FEAT_INDEX="0"/>
+#! <XFORM_ATTR ATTR_NAME="fme_primary_axis" IS_USER_CREATED="false" FEAT_INDEX="0"/>
+#! <XFORM_ATTR ATTR_NAME="fme_secondary_axis" IS_USER_CREATED="false" FEAT_INDEX="0"/>
+#! <XFORM_ATTR ATTR_NAME="fme_rotation" IS_USER_CREATED="false" FEAT_INDEX="0"/>
+#! <XFORM_ATTR ATTR_NAME="_count" IS_USER_CREATED="false" FEAT_INDEX="0"/>
+#! <XFORM_ATTR ATTR_NAME="_x" IS_USER_CREATED="false" FEAT_INDEX="0"/>
+#! <XFORM_ATTR ATTR_NAME="_y" IS_USER_CREATED="false" FEAT_INDEX="0"/>
+#! <XFORM_ATTR ATTR_NAME="_z" IS_USER_CREATED="false" FEAT_INDEX="0"/>
+#! <XFORM_ATTR ATTR_NAME="text_orientation" IS_USER_CREATED="false" FEAT_INDEX="0"/>
+#! <XFORM_ATTR ATTR_NAME="text_size" IS_USER_CREATED="false" FEAT_INDEX="0"/>
+#! <XFORM_ATTR ATTR_NAME="r" IS_USER_CREATED="false" FEAT_INDEX="0"/>
+#! <XFORM_ATTR ATTR_NAME="list{}.fme_primary_axis" IS_USER_CREATED="false" FEAT_INDEX="0"/>
+#! <XFORM_ATTR ATTR_NAME="list{}.fme_secondary_axis" IS_USER_CREATED="false" FEAT_INDEX="0"/>
+#! <XFORM_ATTR ATTR_NAME="list{}.fme_rotation" IS_USER_CREATED="false" FEAT_INDEX="0"/>
+#! <XFORM_ATTR ATTR_NAME="list{}._count" IS_USER_CREATED="false" FEAT_INDEX="0"/>
+#! <XFORM_ATTR ATTR_NAME="list{}._x" IS_USER_CREATED="false" FEAT_INDEX="0"/>
+#! <XFORM_ATTR ATTR_NAME="list{}._y" IS_USER_CREATED="false" FEAT_INDEX="0"/>
+#! <XFORM_ATTR ATTR_NAME="list{}._z" IS_USER_CREATED="false" FEAT_INDEX="0"/>
+#! <XFORM_ATTR ATTR_NAME="list{}.text_orientation" IS_USER_CREATED="false" FEAT_INDEX="0"/>
+#! <XFORM_ATTR ATTR_NAME="list{}.text_size" IS_USER_CREATED="false" FEAT_INDEX="0"/>
+#! <XFORM_ATTR ATTR_NAME="list{}.r" IS_USER_CREATED="false" FEAT_INDEX="0"/>
+#! <XFORM_ATTR ATTR_NAME="x" IS_USER_CREATED="false" FEAT_INDEX="0"/>
+#! <XFORM_ATTR ATTR_NAME="y" IS_USER_CREATED="false" FEAT_INDEX="0"/>
+#! <XFORM_ATTR ATTR_NAME="geometry" IS_USER_CREATED="false" FEAT_INDEX="0"/>
+#! <XFORM_ATTR ATTR_NAME="text" IS_USER_CREATED="false" FEAT_INDEX="0"/>
+#! <XFORM_ATTR ATTR_NAME="list{}.text" IS_USER_CREATED="false" FEAT_INDEX="0"/>
+#! <XFORM_ATTR ATTR_NAME="annotation" IS_USER_CREATED="false" FEAT_INDEX="0"/>
+#! <XFORM_PARM PARM_NAME="PARAMETERS_GROUP" PARM_VALUE=""/>
+#! <XFORM_PARM PARM_NAME="KIND_LONG" PARM_VALUE="OGC Well Known Binary"/>
+#! <XFORM_PARM PARM_NAME="ATTR" PARM_VALUE="geometry"/>
+#! <XFORM_PARM PARM_NAME="XFORMER_NAME" PARM_VALUE="GeometryExtractor"/>
+#! <XFORM_PARM PARM_NAME="OGCVERSION" PARM_VALUE="1.1"/>
+#! <XFORM_PARM PARM_NAME="TRANSFORMER_GROUP" PARM_VALUE=""/>
+#! </TRANSFORMER>
+#! <TRANSFORMER
+#! IDENTIFIER="4"
+#! TYPE="TextPropertyExtractor"
+#! VERSION="0"
+#! POSITION="406 -1899"
+#! ORDER="48"
+#! PARMS_EDITED="true"
+#! ENABLED="true"
+#! >
+#! <OUTPUT_FEAT NAME="OUTPUT"/>
+#! <XFORM_ATTR ATTR_NAME="text_orientation" IS_USER_CREATED="false" FEAT_INDEX="0"/>
+#! <XFORM_ATTR ATTR_NAME="text_size" IS_USER_CREATED="false" FEAT_INDEX="0"/>
+#! <XFORM_ATTR ATTR_NAME="text" IS_USER_CREATED="false" FEAT_INDEX="0"/>
+#! <XFORM_PARM PARM_NAME="PARAMETERS_GROUP" PARM_VALUE=""/>
+#! <XFORM_PARM PARM_NAME="TEXT_SIZE" PARM_VALUE="text_size"/>
+#! <XFORM_PARM PARM_NAME="XFORMER_NAME" PARM_VALUE="TextPropertyExtractor"/>
+#! <XFORM_PARM PARM_NAME="TEXT_ROTATION" PARM_VALUE="text_orientation"/>
+#! <XFORM_PARM PARM_NAME="TRANSFORMER_GROUP" PARM_VALUE=""/>
+#! <XFORM_PARM PARM_NAME="TEXT_STRING" PARM_VALUE="text"/>
+#! </TRANSFORMER>
+#! <TRANSFORMER
+#! IDENTIFIER="40"
+#! TYPE="Dissolver"
+#! VERSION="4"
+#! POSITION="1309 -3580"
+#! ORDER="49"
+#! PARMS_EDITED="true"
+#! ENABLED="true"
+#! >
+#! <OUTPUT_FEAT NAME="AREA"/>
+#! <FEAT_COLLAPSED COLLAPSED="0"/>
+#! <XFORM_ATTR ATTR_NAME="nb_merged" IS_USER_CREATED="false" FEAT_INDEX="0"/>
+#! <XFORM_ATTR ATTR_NAME="fme_primary_axis" IS_USER_CREATED="false" FEAT_INDEX="0"/>
+#! <XFORM_ATTR ATTR_NAME="fme_secondary_axis" IS_USER_CREATED="false" FEAT_INDEX="0"/>
+#! <XFORM_ATTR ATTR_NAME="fme_rotation" IS_USER_CREATED="false" FEAT_INDEX="0"/>
+#! <XFORM_ATTR ATTR_NAME="_count" IS_USER_CREATED="false" FEAT_INDEX="0"/>
+#! <XFORM_ATTR ATTR_NAME="_x" IS_USER_CREATED="false" FEAT_INDEX="0"/>
+#! <XFORM_ATTR ATTR_NAME="_y" IS_USER_CREATED="false" FEAT_INDEX="0"/>
+#! <XFORM_ATTR ATTR_NAME="_z" IS_USER_CREATED="false" FEAT_INDEX="0"/>
+#! <XFORM_ATTR ATTR_NAME="text_orientation" IS_USER_CREATED="false" FEAT_INDEX="0"/>
+#! <XFORM_ATTR ATTR_NAME="text_size" IS_USER_CREATED="false" FEAT_INDEX="0"/>
+#! <XFORM_ATTR ATTR_NAME="r" IS_USER_CREATED="false" FEAT_INDEX="0"/>
+#! <XFORM_ATTR ATTR_NAME="list{}.fme_primary_axis" IS_USER_CREATED="false" FEAT_INDEX="0"/>
+#! <XFORM_ATTR ATTR_NAME="list{}.fme_secondary_axis" IS_USER_CREATED="false" FEAT_INDEX="0"/>
+#! <XFORM_ATTR ATTR_NAME="list{}.fme_rotation" IS_USER_CREATED="false" FEAT_INDEX="0"/>
+#! <XFORM_ATTR ATTR_NAME="list{}._count" IS_USER_CREATED="false" FEAT_INDEX="0"/>
+#! <XFORM_ATTR ATTR_NAME="list{}._x" IS_USER_CREATED="false" FEAT_INDEX="0"/>
+#! <XFORM_ATTR ATTR_NAME="list{}._y" IS_USER_CREATED="false" FEAT_INDEX="0"/>
+#! <XFORM_ATTR ATTR_NAME="list{}._z" IS_USER_CREATED="false" FEAT_INDEX="0"/>
+#! <XFORM_ATTR ATTR_NAME="list{}.text_orientation" IS_USER_CREATED="false" FEAT_INDEX="0"/>
+#! <XFORM_ATTR ATTR_NAME="list{}.text_size" IS_USER_CREATED="false" FEAT_INDEX="0"/>
+#! <XFORM_ATTR ATTR_NAME="list{}.r" IS_USER_CREATED="false" FEAT_INDEX="0"/>
+#! <XFORM_ATTR ATTR_NAME="text" IS_USER_CREATED="false" FEAT_INDEX="0"/>
+#! <XFORM_ATTR ATTR_NAME="list{}.text" IS_USER_CREATED="false" FEAT_INDEX="0"/>
+#! <OUTPUT_FEAT NAME="INTERIOR_LINE"/>
+#! <FEAT_COLLAPSED COLLAPSED="1"/>
+#! <XFORM_ATTR ATTR_NAME="nb_merged" IS_USER_CREATED="false" FEAT_INDEX="1"/>
+#! <XFORM_ATTR ATTR_NAME="fme_primary_axis" IS_USER_CREATED="false" FEAT_INDEX="1"/>
+#! <XFORM_ATTR ATTR_NAME="fme_secondary_axis" IS_USER_CREATED="false" FEAT_INDEX="1"/>
+#! <XFORM_ATTR ATTR_NAME="fme_rotation" IS_USER_CREATED="false" FEAT_INDEX="1"/>
+#! <XFORM_ATTR ATTR_NAME="_count" IS_USER_CREATED="false" FEAT_INDEX="1"/>
+#! <XFORM_ATTR ATTR_NAME="_x" IS_USER_CREATED="false" FEAT_INDEX="1"/>
+#! <XFORM_ATTR ATTR_NAME="_y" IS_USER_CREATED="false" FEAT_INDEX="1"/>
+#! <XFORM_ATTR ATTR_NAME="_z" IS_USER_CREATED="false" FEAT_INDEX="1"/>
+#! <XFORM_ATTR ATTR_NAME="text_orientation" IS_USER_CREATED="false" FEAT_INDEX="1"/>
+#! <XFORM_ATTR ATTR_NAME="text_size" IS_USER_CREATED="false" FEAT_INDEX="1"/>
+#! <XFORM_ATTR ATTR_NAME="r" IS_USER_CREATED="false" FEAT_INDEX="1"/>
+#! <XFORM_ATTR ATTR_NAME="text" IS_USER_CREATED="false" FEAT_INDEX="1"/>
+#! <OUTPUT_FEAT NAME="NON_POLYGON"/>
+#! <FEAT_COLLAPSED COLLAPSED="2"/>
+#! <XFORM_ATTR ATTR_NAME="nb_merged" IS_USER_CREATED="false" FEAT_INDEX="2"/>
+#! <XFORM_ATTR ATTR_NAME="fme_primary_axis" IS_USER_CREATED="false" FEAT_INDEX="2"/>
+#! <XFORM_ATTR ATTR_NAME="fme_secondary_axis" IS_USER_CREATED="false" FEAT_INDEX="2"/>
+#! <XFORM_ATTR ATTR_NAME="fme_rotation" IS_USER_CREATED="false" FEAT_INDEX="2"/>
+#! <XFORM_ATTR ATTR_NAME="_count" IS_USER_CREATED="false" FEAT_INDEX="2"/>
+#! <XFORM_ATTR ATTR_NAME="_x" IS_USER_CREATED="false" FEAT_INDEX="2"/>
+#! <XFORM_ATTR ATTR_NAME="_y" IS_USER_CREATED="false" FEAT_INDEX="2"/>
+#! <XFORM_ATTR ATTR_NAME="_z" IS_USER_CREATED="false" FEAT_INDEX="2"/>
+#! <XFORM_ATTR ATTR_NAME="text_orientation" IS_USER_CREATED="false" FEAT_INDEX="2"/>
+#! <XFORM_ATTR ATTR_NAME="text_size" IS_USER_CREATED="false" FEAT_INDEX="2"/>
+#! <XFORM_ATTR ATTR_NAME="r" IS_USER_CREATED="false" FEAT_INDEX="2"/>
+#! <XFORM_ATTR ATTR_NAME="text" IS_USER_CREATED="false" FEAT_INDEX="2"/>
+#! <XFORM_PARM PARM_NAME="GROUP_BY" PARM_VALUE=""/>
+#! <XFORM_PARM PARM_NAME="DIS_ATTR" PARM_VALUE="nb_merged"/>
+#! <XFORM_PARM PARM_NAME="PARAMETERS_GROUP" PARM_VALUE=""/>
+#! <XFORM_PARM PARM_NAME="LIST_NAME" PARM_VALUE="list"/>
+#! <XFORM_PARM PARM_NAME="XFORMER_NAME" PARM_VALUE="Dissolver"/>
+#! <XFORM_PARM PARM_NAME="WEIGHT" PARM_VALUE=""/>
+#! <XFORM_PARM PARM_NAME="OVRLP" PARM_VALUE="Overlap"/>
+#! <XFORM_PARM PARM_NAME="TRANSFORMER_GROUP" PARM_VALUE=""/>
+#! <XFORM_PARM PARM_NAME="SUM" PARM_VALUE=""/>
+#! <XFORM_PARM PARM_NAME="AV" PARM_VALUE=""/>
+#! </TRANSFORMER>
+#! <TRANSFORMER
+#! IDENTIFIER="7"
+#! TYPE="TextLocationExtractor"
+#! VERSION="0"
+#! POSITION="24 -2460"
+#! ORDER="50"
+#! PARMS_EDITED="false"
+#! ENABLED="true"
+#! >
+#! <OUTPUT_FEAT NAME="OUTPUT"/>
+#! <XFORM_ATTR ATTR_NAME="text_orientation" IS_USER_CREATED="false" FEAT_INDEX="0"/>
+#! <XFORM_ATTR ATTR_NAME="text_size" IS_USER_CREATED="false" FEAT_INDEX="0"/>
+#! <XFORM_ATTR ATTR_NAME="text" IS_USER_CREATED="false" FEAT_INDEX="0"/>
+#! <XFORM_PARM PARM_NAME="XFORMER_NAME" PARM_VALUE="TextLocationExtractor_2"/>
+#! <XFORM_PARM PARM_NAME="TRANSFORMER_GROUP" PARM_VALUE=""/>
+#! </TRANSFORMER>
+#! <TRANSFORMER
+#! IDENTIFIER="76"
+#! TYPE="GeometryReplacer"
+#! VERSION="2"
+#! POSITION="2413 -2805"
+#! ORDER="51"
+#! PARMS_EDITED="true"
+#! ENABLED="true"
+#! >
+#! <OUTPUT_FEAT NAME="OUTPUT"/>
+#! <FEAT_COLLAPSED COLLAPSED="0"/>
+#! <XFORM_ATTR ATTR_NAME="nb_merged" IS_USER_CREATED="false" FEAT_INDEX="0"/>
+#! <XFORM_ATTR ATTR_NAME="fme_primary_axis" IS_USER_CREATED="false" FEAT_INDEX="0"/>
+#! <XFORM_ATTR ATTR_NAME="fme_secondary_axis" IS_USER_CREATED="false" FEAT_INDEX="0"/>
+#! <XFORM_ATTR ATTR_NAME="fme_rotation" IS_USER_CREATED="false" FEAT_INDEX="0"/>
+#! <XFORM_ATTR ATTR_NAME="_count" IS_USER_CREATED="false" FEAT_INDEX="0"/>
+#! <XFORM_ATTR ATTR_NAME="_x" IS_USER_CREATED="false" FEAT_INDEX="0"/>
+#! <XFORM_ATTR ATTR_NAME="_y" IS_USER_CREATED="false" FEAT_INDEX="0"/>
+#! <XFORM_ATTR ATTR_NAME="_z" IS_USER_CREATED="false" FEAT_INDEX="0"/>
+#! <XFORM_ATTR ATTR_NAME="text_orientation" IS_USER_CREATED="false" FEAT_INDEX="0"/>
+#! <XFORM_ATTR ATTR_NAME="text_size" IS_USER_CREATED="false" FEAT_INDEX="0"/>
+#! <XFORM_ATTR ATTR_NAME="r" IS_USER_CREATED="false" FEAT_INDEX="0"/>
+#! <XFORM_ATTR ATTR_NAME="list{}.fme_primary_axis" IS_USER_CREATED="false" FEAT_INDEX="0"/>
+#! <XFORM_ATTR ATTR_NAME="list{}.fme_secondary_axis" IS_USER_CREATED="false" FEAT_INDEX="0"/>
+#! <XFORM_ATTR ATTR_NAME="list{}.fme_rotation" IS_USER_CREATED="false" FEAT_INDEX="0"/>
+#! <XFORM_ATTR ATTR_NAME="list{}._count" IS_USER_CREATED="false" FEAT_INDEX="0"/>
+#! <XFORM_ATTR ATTR_NAME="list{}._x" IS_USER_CREATED="false" FEAT_INDEX="0"/>
+#! <XFORM_ATTR ATTR_NAME="list{}._y" IS_USER_CREATED="false" FEAT_INDEX="0"/>
+#! <XFORM_ATTR ATTR_NAME="list{}._z" IS_USER_CREATED="false" FEAT_INDEX="0"/>
+#! <XFORM_ATTR ATTR_NAME="list{}.text_orientation" IS_USER_CREATED="false" FEAT_INDEX="0"/>
+#! <XFORM_ATTR ATTR_NAME="list{}.text_size" IS_USER_CREATED="false" FEAT_INDEX="0"/>
+#! <XFORM_ATTR ATTR_NAME="list{}.r" IS_USER_CREATED="false" FEAT_INDEX="0"/>
+#! <XFORM_ATTR ATTR_NAME="x" IS_USER_CREATED="false" FEAT_INDEX="0"/>
+#! <XFORM_ATTR ATTR_NAME="y" IS_USER_CREATED="false" FEAT_INDEX="0"/>
+#! <XFORM_ATTR ATTR_NAME="geometry" IS_USER_CREATED="false" FEAT_INDEX="0"/>
+#! <XFORM_ATTR ATTR_NAME="text" IS_USER_CREATED="false" FEAT_INDEX="0"/>
+#! <XFORM_ATTR ATTR_NAME="list{}.text" IS_USER_CREATED="false" FEAT_INDEX="0"/>
+#! <XFORM_ATTR ATTR_NAME="annotation" IS_USER_CREATED="false" FEAT_INDEX="0"/>
+#! <XFORM_PARM PARM_NAME="PARAMETERS_GROUP" PARM_VALUE=""/>
+#! <XFORM_PARM PARM_NAME="KIND_LONG" PARM_VALUE="OGC Well Known Binary"/>
+#! <XFORM_PARM PARM_NAME="ATTR" PARM_VALUE="geometry"/>
+#! <XFORM_PARM PARM_NAME="XFORMER_NAME" PARM_VALUE="GeometryReplacer"/>
+#! <XFORM_PARM PARM_NAME="TRANSFORMER_GROUP" PARM_VALUE=""/>
+#! </TRANSFORMER>
+#! <TRANSFORMER
+#! IDENTIFIER="61"
+#! TYPE="Visualizer"
+#! VERSION="2"
+#! POSITION="2682 -2273"
+#! ORDER="52"
+#! PARMS_EDITED="false"
+#! ENABLED="true"
+#! >
+#! <XFORM_PARM PARM_NAME="RASTER_NUM_ROWS" PARM_VALUE="&lt;Unused&gt;"/>
+#! <XFORM_PARM PARM_NAME="RASTER_START_ROW" PARM_VALUE="&lt;Unused&gt;"/>
+#! <XFORM_PARM PARM_NAME="RASTER_GROUP" PARM_VALUE=""/>
+#! <XFORM_PARM PARM_NAME="RASTER_START_COL" PARM_VALUE="&lt;Unused&gt;"/>
+#! <XFORM_PARM PARM_NAME="XFORMER_NAME" PARM_VALUE="Visualizer"/>
+#! <XFORM_PARM PARM_NAME="VECTOR_GROUP" PARM_VALUE=""/>
+#! <XFORM_PARM PARM_NAME="RASTER_VISUALIZATION_OPTION" PARM_VALUE="No Reduction"/>
+#! <XFORM_PARM PARM_NAME="TRANSFORMER_GROUP" PARM_VALUE=""/>
+#! <XFORM_PARM PARM_NAME="THINNER_TYPE_DISPLAY" PARM_VALUE="No Thinning"/>
+#! <XFORM_PARM PARM_NAME="TACKATTRS" PARM_VALUE=""/>
+#! <XFORM_PARM PARM_NAME="AREA_COLOR" PARM_VALUE=""/>
+#! <XFORM_PARM PARM_NAME="RASTER_NUM_COLS" PARM_VALUE="&lt;Unused&gt;"/>
+#! <XFORM_PARM PARM_NAME="THINNER_RATE" PARM_VALUE="1"/>
+#! <XFORM_PARM PARM_NAME="PEN_COLOR" PARM_VALUE=""/>
+#! <XFORM_PARM PARM_NAME="POINTCLOUD_GROUP" PARM_VALUE=""/>
+#! </TRANSFORMER>
+#! <TRANSFORMER
+#! IDENTIFIER="52"
+#! TYPE="AttributeRenamer"
+#! VERSION="1"
+#! POSITION="1459 -1861"
+#! ORDER="53"
+#! PARMS_EDITED="true"
+#! ENABLED="true"
+#! >
+#! <OUTPUT_FEAT NAME="OUTPUT"/>
+#! <XFORM_ATTR ATTR_NAME="text_orientation" IS_USER_CREATED="false" FEAT_INDEX="0"/>
+#! <XFORM_ATTR ATTR_NAME="text_size" IS_USER_CREATED="false" FEAT_INDEX="0"/>
+#! <XFORM_ATTR ATTR_NAME="annotation" IS_USER_CREATED="false" FEAT_INDEX="0"/>
+#! <XFORM_PARM PARM_NAME="XFORMER_NAME" PARM_VALUE="AttributeRenamer"/>
+#! <XFORM_PARM PARM_NAME="ATTR_LIST" PARM_VALUE="annotation,text"/>
+#! </TRANSFORMER>
+#! <TRANSFORMER
+#! IDENTIFIER="19"
+#! TYPE="2DForcer"
+#! VERSION="0"
+#! POSITION="1998 -1458"
+#! ORDER="54"
+#! PARMS_EDITED="false"
+#! ENABLED="true"
+#! >
+#! <OUTPUT_FEAT NAME="2D"/>
+#! <XFORM_ATTR ATTR_NAME="text_orientation" IS_USER_CREATED="false" FEAT_INDEX="0"/>
+#! <XFORM_ATTR ATTR_NAME="text_size" IS_USER_CREATED="false" FEAT_INDEX="0"/>
+#! <XFORM_ATTR ATTR_NAME="annotation" IS_USER_CREATED="false" FEAT_INDEX="0"/>
+#! <XFORM_PARM PARM_NAME="XFORMER_NAME" PARM_VALUE="2DForcer"/>
+#! <XFORM_PARM PARM_NAME="TRANSFORMER_GROUP" PARM_VALUE=""/>
+#! </TRANSFORMER>
+#! <TRANSFORMER
+#! IDENTIFIER="26"
+#! TYPE="CoordinateExtractor"
+#! VERSION="1"
+#! POSITION="720 -2595"
+#! ORDER="55"
+#! PARMS_EDITED="false"
+#! ENABLED="true"
+#! >
+#! <OUTPUT_FEAT NAME="OUTPUT"/>
+#! <FEAT_COLLAPSED COLLAPSED="0"/>
+#! <XFORM_ATTR ATTR_NAME="_x" IS_USER_CREATED="false" FEAT_INDEX="0"/>
+#! <XFORM_ATTR ATTR_NAME="_y" IS_USER_CREATED="false" FEAT_INDEX="0"/>
+#! <XFORM_ATTR ATTR_NAME="_z" IS_USER_CREATED="false" FEAT_INDEX="0"/>
+#! <XFORM_ATTR ATTR_NAME="text_orientation" IS_USER_CREATED="false" FEAT_INDEX="0"/>
+#! <XFORM_ATTR ATTR_NAME="text_size" IS_USER_CREATED="false" FEAT_INDEX="0"/>
+#! <XFORM_ATTR ATTR_NAME="text" IS_USER_CREATED="false" FEAT_INDEX="0"/>
+#! <XFORM_PARM PARM_NAME="Z_DEFAULT" PARM_VALUE="-9999"/>
+#! <XFORM_PARM PARM_NAME="PARAMETERS_GROUP" PARM_VALUE=""/>
+#! <XFORM_PARM PARM_NAME="IND" PARM_VALUE="0"/>
+#! <XFORM_PARM PARM_NAME="XFORMER_NAME" PARM_VALUE="CoordinateExtractor"/>
+#! <XFORM_PARM PARM_NAME="Y_ATTR" PARM_VALUE="_y"/>
+#! <XFORM_PARM PARM_NAME="TRANSFORMER_GROUP" PARM_VALUE=""/>
+#! <XFORM_PARM PARM_NAME="X_ATTR" PARM_VALUE="_x"/>
+#! <XFORM_PARM PARM_NAME="Z_ATTR" PARM_VALUE="_z"/>
+#! </TRANSFORMER>
+#! <TRANSFORMER
+#! IDENTIFIER="82"
+#! TYPE="AttributeCreator"
+#! VERSION="2"
+#! POSITION="2487 -1439"
+#! ORDER="57"
+#! PARMS_EDITED="true"
+#! ENABLED="true"
+#! >
+#! <OUTPUT_FEAT NAME="OUTPUT"/>
+#! <XFORM_ATTR ATTR_NAME="labelvisible" IS_USER_CREATED="false" FEAT_INDEX="0"/>
+#! <XFORM_ATTR ATTR_NAME="visible" IS_USER_CREATED="false" FEAT_INDEX="0"/>
+#! <XFORM_ATTR ATTR_NAME="visible_schema" IS_USER_CREATED="false" FEAT_INDEX="0"/>
+#! <XFORM_ATTR ATTR_NAME="text_orientation" IS_USER_CREATED="false" FEAT_INDEX="0"/>
+#! <XFORM_ATTR ATTR_NAME="text_size" IS_USER_CREATED="false" FEAT_INDEX="0"/>
+#! <XFORM_ATTR ATTR_NAME="annotation" IS_USER_CREATED="false" FEAT_INDEX="0"/>
+#! <XFORM_ATTR ATTR_NAME="labelvisible_schema" IS_USER_CREATED="false" FEAT_INDEX="0"/>
+#! <XFORM_PARM PARM_NAME="XFORMER_NAME" PARM_VALUE="AttributeCreator_3"/>
+#! <XFORM_PARM PARM_NAME="ATTR_LIST" PARM_VALUE="labelvisible,true,labelvisible_schema,true,visible,true,visible_schema,true"/>
+#! </TRANSFORMER>
+#! <TRANSFORMER
+#! IDENTIFIER="6"
+#! TYPE="TextLocationExtractor"
+#! VERSION="0"
+#! POSITION="1024 -1309"
+#! ORDER="58"
+#! PARMS_EDITED="false"
+#! ENABLED="true"
+#! >
+#! <OUTPUT_FEAT NAME="OUTPUT"/>
+#! <XFORM_ATTR ATTR_NAME="text_orientation" IS_USER_CREATED="false" FEAT_INDEX="0"/>
+#! <XFORM_ATTR ATTR_NAME="text_size" IS_USER_CREATED="false" FEAT_INDEX="0"/>
+#! <XFORM_ATTR ATTR_NAME="annotation" IS_USER_CREATED="false" FEAT_INDEX="0"/>
+#! <XFORM_PARM PARM_NAME="XFORMER_NAME" PARM_VALUE="TextLocationExtractor"/>
+#! <XFORM_PARM PARM_NAME="TRANSFORMER_GROUP" PARM_VALUE=""/>
+#! </TRANSFORMER>
+#! <TRANSFORMER
+#! IDENTIFIER="80"
+#! TYPE="GeometryFilter"
+#! VERSION="3"
+#! POSITION="607 -18"
+#! ORDER="61"
+#! PARMS_EDITED="false"
+#! ENABLED="true"
+#! >
+#! <OUTPUT_FEAT NAME="POINT"/>
+#! <FEAT_COLLAPSED COLLAPSED="0"/>
+#! <OUTPUT_FEAT NAME="LINE"/>
+#! <OUTPUT_FEAT NAME="ARC"/>
+#! <FEAT_COLLAPSED COLLAPSED="2"/>
+#! <OUTPUT_FEAT NAME="AREA"/>
+#! <FEAT_COLLAPSED COLLAPSED="3"/>
+#! <OUTPUT_FEAT NAME="ELLIPSE"/>
+#! <FEAT_COLLAPSED COLLAPSED="4"/>
+#! <OUTPUT_FEAT NAME="TEXT"/>
+#! <FEAT_COLLAPSED COLLAPSED="5"/>
+#! <XFORM_ATTR ATTR_NAME="fme_text_string" IS_USER_CREATED="false" FEAT_INDEX="5"/>
+#! <XFORM_ATTR ATTR_NAME="fme_rotation" IS_USER_CREATED="false" FEAT_INDEX="5"/>
+#! <XFORM_ATTR ATTR_NAME="fme_text_size" IS_USER_CREATED="false" FEAT_INDEX="5"/>
+#! <OUTPUT_FEAT NAME="RASTER"/>
+#! <FEAT_COLLAPSED COLLAPSED="6"/>
+#! <OUTPUT_FEAT NAME="SURFACE"/>
+#! <FEAT_COLLAPSED COLLAPSED="7"/>
+#! <OUTPUT_FEAT NAME="SOLID"/>
+#! <FEAT_COLLAPSED COLLAPSED="8"/>
+#! <OUTPUT_FEAT NAME="COLLECTION"/>
+#! <FEAT_COLLAPSED COLLAPSED="9"/>
+#! <OUTPUT_FEAT NAME="NULL"/>
+#! <FEAT_COLLAPSED COLLAPSED="10"/>
+#! <XFORM_PARM PARM_NAME="PARAMETERS_GROUP" PARM_VALUE=""/>
+#! <XFORM_PARM PARM_NAME="XFORMER_NAME" PARM_VALUE="GeometryFilter"/>
+#! <XFORM_PARM PARM_NAME="BREAK_AGG" PARM_VALUE="No"/>
+#! <XFORM_PARM PARM_NAME="TRANSFORMER_GROUP" PARM_VALUE=""/>
+#! </TRANSFORMER>
+#! <TRANSFORMER
+#! IDENTIFIER="65"
+#! TYPE="AttributeCreator"
+#! VERSION="2"
+#! POSITION="1143 -123"
+#! ORDER="62"
+#! PARMS_EDITED="true"
+#! ENABLED="true"
+#! >
+#! <OUTPUT_FEAT NAME="OUTPUT"/>
+#! <XFORM_ATTR ATTR_NAME="labelvisible" IS_USER_CREATED="false" FEAT_INDEX="0"/>
+#! <XFORM_ATTR ATTR_NAME="visible" IS_USER_CREATED="false" FEAT_INDEX="0"/>
+#! <XFORM_ATTR ATTR_NAME="visible_schema" IS_USER_CREATED="false" FEAT_INDEX="0"/>
+#! <XFORM_ATTR ATTR_NAME="labelvisible_schema" IS_USER_CREATED="false" FEAT_INDEX="0"/>
+#! <XFORM_PARM PARM_NAME="XFORMER_NAME" PARM_VALUE="AttributeCreator_2"/>
+#! <XFORM_PARM PARM_NAME="ATTR_LIST" PARM_VALUE="labelvisible,true,labelvisible_schema,true,visible,true,visible_schema,true"/>
+#! </TRANSFORMER>
+#! <TRANSFORMER
+#! IDENTIFIER="87"
+#! TYPE="GeometryExtractor"
+#! VERSION="2"
+#! POSITION="1090 -652"
+#! ORDER="63"
+#! PARMS_EDITED="true"
+#! ENABLED="true"
+#! >
+#! <OUTPUT_FEAT NAME="OUTPUT"/>
+#! <XFORM_ATTR ATTR_NAME="_geometry" IS_USER_CREATED="false" FEAT_INDEX="0"/>
+#! <XFORM_ATTR ATTR_NAME="labelvisible" IS_USER_CREATED="false" FEAT_INDEX="0"/>
+#! <XFORM_ATTR ATTR_NAME="visible" IS_USER_CREATED="false" FEAT_INDEX="0"/>
+#! <XFORM_ATTR ATTR_NAME="visible_schema" IS_USER_CREATED="false" FEAT_INDEX="0"/>
+#! <XFORM_ATTR ATTR_NAME="labelvisible_schema" IS_USER_CREATED="false" FEAT_INDEX="0"/>
+#! <XFORM_PARM PARM_NAME="PARAMETERS_GROUP" PARM_VALUE=""/>
+#! <XFORM_PARM PARM_NAME="KIND_LONG" PARM_VALUE="OGC Well Known Text"/>
+#! <XFORM_PARM PARM_NAME="ATTR" PARM_VALUE="_geometry"/>
+#! <XFORM_PARM PARM_NAME="XFORMER_NAME" PARM_VALUE="GeometryExtractor_2"/>
+#! <XFORM_PARM PARM_NAME="OGCVERSION" PARM_VALUE="1.1"/>
+#! <XFORM_PARM PARM_NAME="TRANSFORMER_GROUP" PARM_VALUE=""/>
+#! </TRANSFORMER>
+#! <TRANSFORMER
+#! IDENTIFIER="89"
+#! TYPE="GeometryRemover"
+#! VERSION="0"
+#! POSITION="1757 -119"
+#! ORDER="64"
+#! PARMS_EDITED="false"
+#! ENABLED="true"
+#! >
+#! <OUTPUT_FEAT NAME="OUTPUT"/>
+#! <XFORM_ATTR ATTR_NAME="_geometry" IS_USER_CREATED="false" FEAT_INDEX="0"/>
+#! <XFORM_ATTR ATTR_NAME="labelvisible" IS_USER_CREATED="false" FEAT_INDEX="0"/>
+#! <XFORM_ATTR ATTR_NAME="visible" IS_USER_CREATED="false" FEAT_INDEX="0"/>
+#! <XFORM_ATTR ATTR_NAME="visible_schema" IS_USER_CREATED="false" FEAT_INDEX="0"/>
+#! <XFORM_ATTR ATTR_NAME="labelvisible_schema" IS_USER_CREATED="false" FEAT_INDEX="0"/>
+#! <XFORM_PARM PARM_NAME="XFORMER_NAME" PARM_VALUE="GeometryRemover"/>
+#! <XFORM_PARM PARM_NAME="TRANSFORMER_GROUP" PARM_VALUE=""/>
+#! </TRANSFORMER>
+#! <TRANSFORMER
+#! IDENTIFIER="88"
+#! TYPE="GeometryReplacer"
+#! VERSION="2"
+#! POSITION="1601 -746"
+#! ORDER="66"
+#! PARMS_EDITED="true"
+#! ENABLED="true"
+#! >
+#! <OUTPUT_FEAT NAME="OUTPUT"/>
+#! <XFORM_ATTR ATTR_NAME="_geometry" IS_USER_CREATED="false" FEAT_INDEX="0"/>
+#! <XFORM_ATTR ATTR_NAME="labelvisible" IS_USER_CREATED="false" FEAT_INDEX="0"/>
+#! <XFORM_ATTR ATTR_NAME="visible" IS_USER_CREATED="false" FEAT_INDEX="0"/>
+#! <XFORM_ATTR ATTR_NAME="visible_schema" IS_USER_CREATED="false" FEAT_INDEX="0"/>
+#! <XFORM_ATTR ATTR_NAME="labelvisible_schema" IS_USER_CREATED="false" FEAT_INDEX="0"/>
+#! <XFORM_PARM PARM_NAME="PARAMETERS_GROUP" PARM_VALUE=""/>
+#! <XFORM_PARM PARM_NAME="KIND_LONG" PARM_VALUE="OGC Well Known Text"/>
+#! <XFORM_PARM PARM_NAME="ATTR" PARM_VALUE="_geometry"/>
+#! <XFORM_PARM PARM_NAME="XFORMER_NAME" PARM_VALUE="GeometryReplacer_2"/>
+#! <XFORM_PARM PARM_NAME="TRANSFORMER_GROUP" PARM_VALUE=""/>
+#! </TRANSFORMER>
+#! <TRANSFORMER
+#! IDENTIFIER="92"
+#! TYPE="CoordinateSystemSetter"
+#! VERSION="0"
+#! POSITION="2187 -733"
+#! ORDER="67"
+#! PARMS_EDITED="false"
+#! ENABLED="true"
+#! >
+#! <OUTPUT_FEAT NAME="OUTPUT"/>
+#! <XFORM_ATTR ATTR_NAME="_geometry" IS_USER_CREATED="false" FEAT_INDEX="0"/>
+#! <XFORM_ATTR ATTR_NAME="labelvisible" IS_USER_CREATED="false" FEAT_INDEX="0"/>
+#! <XFORM_ATTR ATTR_NAME="visible" IS_USER_CREATED="false" FEAT_INDEX="0"/>
+#! <XFORM_ATTR ATTR_NAME="visible_schema" IS_USER_CREATED="false" FEAT_INDEX="0"/>
+#! <XFORM_ATTR ATTR_NAME="labelvisible_schema" IS_USER_CREATED="false" FEAT_INDEX="0"/>
+#! <XFORM_PARM PARM_NAME="PARAMETERS_GROUP" PARM_VALUE=""/>
+#! <XFORM_PARM PARM_NAME="XFORMER_NAME" PARM_VALUE="CoordinateSystemSetter_3"/>
+#! <XFORM_PARM PARM_NAME="TRANSFORMER_GROUP" PARM_VALUE=""/>
+#! <XFORM_PARM PARM_NAME="COORDSYS" PARM_VALUE="EPSG:21781"/>
+#! </TRANSFORMER>
 #! </TRANSFORMERS>
 #! <FEAT_LINKS>
+#! <FEAT_LINK
+#! IDENTIFIER="8"
+#! SOURCE_NODE="1"
+#! TARGET_NODE="4"
+#! SOURCE_PORT_DESC="-1"
+#! TARGET_PORT_DESC="fi 0"
+#! ENABLED="true"
+#! EXTRA_POINTS=""
+#! />
+#! <FEAT_LINK
+#! IDENTIFIER="11"
+#! SOURCE_NODE="4"
+#! TARGET_NODE="7"
+#! SOURCE_PORT_DESC="fo 0"
+#! TARGET_PORT_DESC="fi 0"
+#! ENABLED="true"
+#! EXTRA_POINTS=""
+#! />
+#! <FEAT_LINK
+#! IDENTIFIER="16"
+#! SOURCE_NODE="0"
+#! TARGET_NODE="5"
+#! SOURCE_PORT_DESC="-1"
+#! TARGET_PORT_DESC="fi 0"
+#! ENABLED="true"
+#! EXTRA_POINTS=""
+#! />
+#! <FEAT_LINK
+#! IDENTIFIER="17"
+#! SOURCE_NODE="5"
+#! TARGET_NODE="6"
+#! SOURCE_PORT_DESC="fo 0"
+#! TARGET_PORT_DESC="fi 0"
+#! ENABLED="true"
+#! EXTRA_POINTS=""
+#! />
+#! <FEAT_LINK
+#! IDENTIFIER="36"
+#! SOURCE_NODE="7"
+#! TARGET_NODE="26"
+#! SOURCE_PORT_DESC="fo 0"
+#! TARGET_PORT_DESC="fi 0"
+#! ENABLED="true"
+#! EXTRA_POINTS=""
+#! />
+#! <FEAT_LINK
+#! IDENTIFIER="42"
+#! SOURCE_NODE="46"
+#! TARGET_NODE="41"
+#! SOURCE_PORT_DESC="fo 0"
+#! TARGET_PORT_DESC="fi 0"
+#! ENABLED="true"
+#! EXTRA_POINTS=""
+#! />
+#! <FEAT_LINK
+#! IDENTIFIER="47"
+#! SOURCE_NODE="41"
+#! TARGET_NODE="40"
+#! SOURCE_PORT_DESC="fo 0"
+#! TARGET_PORT_DESC="fi 0"
+#! ENABLED="true"
+#! EXTRA_POINTS=""
+#! />
+#! <FEAT_LINK
+#! IDENTIFIER="53"
+#! SOURCE_NODE="6"
+#! TARGET_NODE="19"
+#! SOURCE_PORT_DESC="fo 0"
+#! TARGET_PORT_DESC="fi 0"
+#! ENABLED="true"
+#! EXTRA_POINTS=""
+#! />
+#! <FEAT_LINK
+#! IDENTIFIER="59"
+#! SOURCE_NODE="31"
+#! TARGET_NODE="64"
+#! SOURCE_PORT_DESC="fo 0"
+#! TARGET_PORT_DESC="fi 0"
+#! ENABLED="true"
+#! EXTRA_POINTS=""
+#! />
+#! <FEAT_LINK
+#! IDENTIFIER="62"
+#! SOURCE_NODE="64"
+#! TARGET_NODE="46"
+#! SOURCE_PORT_DESC="fo 0"
+#! TARGET_PORT_DESC="fi 0"
+#! ENABLED="true"
+#! EXTRA_POINTS=""
+#! />
+#! <FEAT_LINK
+#! IDENTIFIER="68"
+#! SOURCE_NODE="51"
+#! TARGET_NODE="56"
+#! SOURCE_PORT_DESC="fo 0"
+#! TARGET_PORT_DESC="fi 0"
+#! ENABLED="true"
+#! EXTRA_POINTS=""
+#! />
+#! <FEAT_LINK
+#! IDENTIFIER="70"
+#! SOURCE_NODE="40"
+#! TARGET_NODE="60"
+#! SOURCE_PORT_DESC="fo 0"
+#! TARGET_PORT_DESC="fi 0"
+#! ENABLED="true"
+#! EXTRA_POINTS=""
+#! />
+#! <FEAT_LINK
+#! IDENTIFIER="72"
+#! SOURCE_NODE="26"
+#! TARGET_NODE="55"
+#! SOURCE_PORT_DESC="fo 0"
+#! TARGET_PORT_DESC="fi 0"
+#! ENABLED="true"
+#! EXTRA_POINTS=""
+#! />
+#! <FEAT_LINK
+#! IDENTIFIER="73"
+#! SOURCE_NODE="55"
+#! TARGET_NODE="31"
+#! SOURCE_PORT_DESC="fo 0"
+#! TARGET_PORT_DESC="fi 0"
+#! ENABLED="true"
+#! EXTRA_POINTS=""
+#! />
+#! <FEAT_LINK
+#! IDENTIFIER="75"
+#! SOURCE_NODE="56"
+#! TARGET_NODE="74"
+#! SOURCE_PORT_DESC="fo 0"
+#! TARGET_PORT_DESC="fi 0"
+#! ENABLED="true"
+#! EXTRA_POINTS=""
+#! />
+#! <FEAT_LINK
+#! IDENTIFIER="69"
+#! SOURCE_NODE="74"
+#! TARGET_NODE="66"
+#! SOURCE_PORT_DESC="fo 0"
+#! TARGET_PORT_DESC="fi 0"
+#! ENABLED="true"
+#! EXTRA_POINTS=""
+#! />
+#! <FEAT_LINK
+#! IDENTIFIER="77"
+#! SOURCE_NODE="66"
+#! TARGET_NODE="57"
+#! SOURCE_PORT_DESC="fo 0"
+#! TARGET_PORT_DESC="fi 0"
+#! ENABLED="true"
+#! EXTRA_POINTS=""
+#! />
+#! <FEAT_LINK
+#! IDENTIFIER="78"
+#! SOURCE_NODE="57"
+#! TARGET_NODE="76"
+#! SOURCE_PORT_DESC="fo 0"
+#! TARGET_PORT_DESC="fi 0"
+#! ENABLED="true"
+#! EXTRA_POINTS=""
+#! />
+#! <FEAT_LINK
+#! IDENTIFIER="71"
+#! SOURCE_NODE="60"
+#! TARGET_NODE="51"
+#! SOURCE_PORT_DESC="fo 0"
+#! TARGET_PORT_DESC="fi 0"
+#! ENABLED="true"
+#! EXTRA_POINTS=""
+#! />
+#! <FEAT_LINK
+#! IDENTIFIER="67"
+#! SOURCE_NODE="52"
+#! TARGET_NODE="19"
+#! SOURCE_PORT_DESC="fo 0"
+#! TARGET_PORT_DESC="fi 0"
+#! ENABLED="true"
+#! EXTRA_POINTS=""
+#! />
+#! <FEAT_LINK
+#! IDENTIFIER="54"
+#! SOURCE_NODE="7"
+#! TARGET_NODE="52"
+#! SOURCE_PORT_DESC="fo 0"
+#! TARGET_PORT_DESC="fi 0"
+#! ENABLED="true"
+#! EXTRA_POINTS=""
+#! />
+#! <FEAT_LINK
+#! IDENTIFIER="81"
+#! SOURCE_NODE="14"
+#! TARGET_NODE="80"
+#! SOURCE_PORT_DESC="-1"
+#! TARGET_PORT_DESC="fi 0"
+#! ENABLED="true"
+#! EXTRA_POINTS=""
+#! />
+#! <FEAT_LINK
+#! IDENTIFIER="79"
+#! SOURCE_NODE="13"
+#! TARGET_NODE="80"
+#! SOURCE_PORT_DESC="-1"
+#! TARGET_PORT_DESC="fi 0"
+#! ENABLED="true"
+#! EXTRA_POINTS=""
+#! />
+#! <FEAT_LINK
+#! IDENTIFIER="83"
+#! SOURCE_NODE="80"
+#! TARGET_NODE="65"
+#! SOURCE_PORT_DESC="fo 1"
+#! TARGET_PORT_DESC="fi 0"
+#! ENABLED="true"
+#! EXTRA_POINTS=""
+#! />
+#! <FEAT_LINK
+#! IDENTIFIER="85"
+#! SOURCE_NODE="19"
+#! TARGET_NODE="82"
+#! SOURCE_PORT_DESC="fo 0"
+#! TARGET_PORT_DESC="fi 0"
+#! ENABLED="true"
+#! EXTRA_POINTS=""
+#! />
+#! <FEAT_LINK
+#! IDENTIFIER="86"
+#! SOURCE_NODE="82"
+#! TARGET_NODE="12"
+#! SOURCE_PORT_DESC="fo 0"
+#! TARGET_PORT_DESC="-1"
+#! ENABLED="true"
+#! EXTRA_POINTS=""
+#! />
+#! <FEAT_LINK
+#! IDENTIFIER="90"
+#! SOURCE_NODE="65"
+#! TARGET_NODE="87"
+#! SOURCE_PORT_DESC="fo 0"
+#! TARGET_PORT_DESC="fi 0"
+#! ENABLED="true"
+#! EXTRA_POINTS=""
+#! />
+#! <FEAT_LINK
+#! IDENTIFIER="84"
+#! SOURCE_NODE="87"
+#! TARGET_NODE="89"
+#! SOURCE_PORT_DESC="fo 0"
+#! TARGET_PORT_DESC="fi 0"
+#! ENABLED="true"
+#! EXTRA_POINTS=""
+#! />
+#! <FEAT_LINK
+#! IDENTIFIER="91"
+#! SOURCE_NODE="89"
+#! TARGET_NODE="88"
+#! SOURCE_PORT_DESC="fo 0"
+#! TARGET_PORT_DESC="fi 0"
+#! ENABLED="true"
+#! EXTRA_POINTS=""
+#! />
+#! <FEAT_LINK
+#! IDENTIFIER="94"
+#! SOURCE_NODE="88"
+#! TARGET_NODE="92"
+#! SOURCE_PORT_DESC="fo 0"
+#! TARGET_PORT_DESC="fi 0"
+#! ENABLED="true"
+#! EXTRA_POINTS=""
+#! />
+#! <FEAT_LINK
+#! IDENTIFIER="95"
+#! SOURCE_NODE="92"
+#! TARGET_NODE="63"
+#! SOURCE_PORT_DESC="fo 0"
+#! TARGET_PORT_DESC="-1"
+#! ENABLED="true"
+#! EXTRA_POINTS=""
+#! />
 #! </FEAT_LINKS>
 #! <BREAKPOINTS>
 #! </BREAKPOINTS>
@@ -548,18 +2048,28 @@
 #! </LOOKUP_TABLES>
 #! </WORKSPACE>
 #! 
-GUI IGNORE SourceDataset_ACAD_1,_OUTPUT_BLOCKS_AT_START_ACAD_1,_PRESERVE_INSERTS_ACAD_1,_CONVERT_ZERO_LENGTH_ARCS_TO_POINTS_ACAD_1,_OUTPUT_ZERO_LENGTH_LINES_AS_LINES_ACAD_1,_USE_DXF_HEADER_ACAD_1,ACAD_IN_RESOLVE_BLOCKS_ACAD_1,ACAD_IN_USE_BLOCK_HEADER_LAYER_ACAD_1,ACAD_IN_STORE_INSERT_POINT_ACAD_1,ACAD_IN_RESOLVE_ENTITY_COLOR_ACAD_1,ACAD_IN_VISIBLE_ATTRIBUTES_AS_TEXT_ACAD_1,ACAD_IN_EXPLODE_MTEXT_ACAD_1,ACAD_IN_READ_AS_2_5D_ACAD_1,ACAD_IN_PRESERVE_COMPLEX_HATCHES_ACAD_1,ACAD_IN_READ_GROUPS_ACAD_1,ACAD_IN_READ_PAPER_SPACE_ACAD_1,ACAD_IN_IGNORE_UCS_ACAD_1,ACAD_IN_APPLY_WORLD_FILE_ACAD_1,ACAD_IN_SEARCH_ENVELOPE_MINX_ACAD_1,ACAD_IN_SEARCH_ENVELOPE_MINY_ACAD_1,ACAD_IN_SEARCH_ENVELOPE_MAXX_ACAD_1,ACAD_IN_SEARCH_ENVELOPE_MAXY_ACAD_1,ACAD_IN_CLIP_TO_ENVELOPE_ACAD_1,ACAD_IN_STORE_LAYER_INFO_ACAD_1,_STORE_SPLINE_DEFS_ACAD_1,_ACADResolveDimensions_ACAD_1
-DEFAULT_MACRO SourceDataset_ACAD F:\Details_distribution_pour_denis.dwg
+GUI IGNORE SourceDataset_ACAD_1,_OUTPUT_BLOCKS_AT_START_ACAD_1,_PRESERVE_INSERTS_ACAD_1,_CONVERT_ZERO_LENGTH_ARCS_TO_POINTS_ACAD_1,_OUTPUT_ZERO_LENGTH_LINES_AS_LINES_ACAD_1,_USE_DXF_HEADER_ACAD_1,ACAD_IN_RESOLVE_BLOCKS_ACAD_1,ACAD_IN_USE_BLOCK_HEADER_LAYER_ACAD_1,ACAD_IN_STORE_INSERT_POINT_ACAD_1,ACAD_IN_RESOLVE_ENTITY_COLOR_ACAD_1,ACAD_IN_VISIBLE_ATTRIBUTES_AS_TEXT_ACAD_1,ACAD_IN_EXPLODE_MTEXT_ACAD_1,ACAD_IN_READ_AS_2_5D_ACAD_1,ACAD_IN_PRESERVE_COMPLEX_HATCHES_ACAD_1,ACAD_IN_READ_GROUPS_ACAD_1,ACAD_IN_READ_PAPER_SPACE_ACAD_1,ACAD_IN_IGNORE_UCS_ACAD_1,ACAD_IN_APPLY_WORLD_FILE_ACAD_1,ACAD_IN_SEARCH_ENVELOPE_MINX_ACAD_1,ACAD_IN_SEARCH_ENVELOPE_MINY_ACAD_1,ACAD_IN_SEARCH_ENVELOPE_MAXX_ACAD_1,ACAD_IN_SEARCH_ENVELOPE_MAXY_ACAD_1,ACAD_IN_CLIP_TO_ENVELOPE_ACAD_1,ACAD_IN_STORE_LAYER_INFO_ACAD_1,_STORE_SPLINE_DEFS_ACAD_1,_ACADResolveDimensions_ACAD_1,DestDataset_POSTGIS_1,POSTGIS_OUT_HOST_POSTGIS_1,POSTGIS_OUT_PORT_POSTGIS_1,POSTGIS_OUT_USER_NAME_POSTGIS_1,POSTGIS_OUT_PASSWORD_POSTGIS_1,POSTGIS_OUT_SPATIAL_COLUMN_TYPE_POSTGIS_1,POSTGIS_OUT_SPATIAL_COLUMN_NAME_POSTGIS_1,POSTGIS_OUT_WRITER_MODE_POSTGIS_1,POSTGIS_OUT_START_TRANSACTION_POSTGIS_1,POSTGIS_OUT_TRANSACTION_INTERVAL_POSTGIS_1,POSTGIS_OUT_BULK_COPY_POSTGIS_1,POSTGIS_OUT_INSERT_TEXT_GEOMETRY_POSTGIS_1,DestDataset_POSTGIS_2,POSTGIS_OUT_HOST_POSTGIS_2,POSTGIS_OUT_PORT_POSTGIS_2,POSTGIS_OUT_USER_NAME_POSTGIS_2,POSTGIS_OUT_PASSWORD_POSTGIS_2,POSTGIS_OUT_SPATIAL_COLUMN_TYPE_POSTGIS_2,POSTGIS_OUT_SPATIAL_COLUMN_NAME_POSTGIS_2,POSTGIS_OUT_WRITER_MODE_POSTGIS_2,POSTGIS_OUT_START_TRANSACTION_POSTGIS_2,POSTGIS_OUT_TRANSACTION_INTERVAL_POSTGIS_2,POSTGIS_OUT_BULK_COPY_POSTGIS_2,POSTGIS_OUT_INSERT_TEXT_GEOMETRY_POSTGIS_2
+DEFAULT_MACRO SourceDataset_ACAD F:\fme\input\Details_distribution_pour_denis.dwg
 GUI MULTIFILE SourceDataset_ACAD DWG_Files(*.dwg)/DXF_Files(*.dxf)|*.dwg;*.dxf|DWG_Files(*.dwg)|*.dwg|DXF_Files(*.dxf)|*.dxf|All_Files|*.* Source Autodesk AutoCAD DWG/DXF File(s):
+DEFAULT_MACRO DestDataset_POSTGIS sige
+GUI TEXT DestDataset_POSTGIS Destination PostGIS Dataset:
+DEFAULT_MACRO DestDataset_POSTGIS_3 sige
+GUI TEXT DestDataset_POSTGIS_3 Destination PostGIS Dataset:
 INCLUDE [ if {{$(SourceDataset_ACAD)} == {}} { puts_real {Parameter 'SourceDataset_ACAD' must be given a value.}; exit 1; }; ]
+INCLUDE [ if {{$(DestDataset_POSTGIS)} == {}} { puts_real {Parameter 'DestDataset_POSTGIS' must be given a value.}; exit 1; }; ]
+INCLUDE [ if {{$(DestDataset_POSTGIS_3)} == {}} { puts_real {Parameter 'DestDataset_POSTGIS_3' must be given a value.}; exit 1; }; ]
 #! START_HEADER
 #! START_WB_HEADER
 READER_TYPE ACAD
 READER_KEYWORD ACAD_1
 READER_GEN_DIRECTIVES PRESERVE_COMPLEX_HATCHES,no,USE_SEARCH_ENVELOPE,NO,_MERGE_SCHEMAS,YES,RESOLVE_ENTITY_COLOR,yes,READ_GROUPS,no,SEARCH_ENVELOPE_MAXY,0,APPLY_WORLD_FILE,yes,SEARCH_ENVELOPE_MAXX,0,STORE_INSERT_POINT,no,ACAD_EXPOSE_FORMAT_ATTRS,,SEARCH_ENVELOPE_MINX,0,USE_BLOCK_HEADER_LAYER,yes,RESOLVE_BLOCKS,yes,IGNORE_UCS,no,EXPLODE_MTEXT,yes,READ_AS_2_5D,no,METAFILE,acad,CLIP_TO_ENVELOPE,NO,STORE_LAYER_INFO,no,SEARCH_ENVELOPE_MINY,0,VISIBLE_ATTRIBUTES_AS_TEXT,yes,READ_PAPER_SPACE,no
-WRITER_TYPE NULL
-WRITER_KEYWORD NULL_DEST
-NULL_DEST_DATASET null
+WRITER_TYPE MULTI_WRITER
+MULTI_WRITER_DATASET_ORDER BY_ID
+MULTI_WRITER_FIRST_WRITER_ID 0
+MULTI_WRITER_TYPE{0} POSTGIS
+MULTI_WRITER_KEYWORD{0} POSTGIS_1
+MULTI_WRITER_TYPE{1} POSTGIS
+MULTI_WRITER_KEYWORD{1} POSTGIS_2
 #! END_WB_HEADER
 #! START_WB_HEADER
 MACRO WB_KEYWORD "ACAD_1"
@@ -746,6 +2256,126 @@ GUI CHOICE _ACADResolveDimensions_ACAD_1 yes%no Resolve Dimensions:
 ACAD_1_RESOLVE_DIMENSIONS $(_ACADResolveDimensions_ACAD_1)
 ACAD_1_DATASET "$(SourceDataset_ACAD_1)"
 #! END_SOURCE_HEADER
+#! START_WB_HEADER
+MACRO WB_KEYWORD "POSTGIS_1"
+#! END_WB_HEADER
+#! START_DEST_HEADER POSTGIS POSTGIS_1
+POSTGIS_1_COORDINATE_SYSTEM_GRANULARITY FEATURE_TYPE
+# ============================================================================
+# The user input is stored in a macro, which is then used to define
+# the dataset to be written.
+# 20050928: Added default macro for the dest dataset
+#! END_DEST_HEADER
+#! START_WB_HEADER
+DEFAULT_MACRO DestDataset
+INCLUDE [ if {"$(DestDataset)" != ""} {                          \
+ puts {DEFAULT_MACRO DestDataset_POSTGIS_1 $(DestDataset)}         \
+ } ]
+#! END_WB_HEADER
+#! START_DEST_HEADER POSTGIS POSTGIS_1
+DEFAULT_MACRO DestDataset_POSTGIS_1 $(DestDataset_POSTGIS)
+GUI TEXT DestDataset_POSTGIS_1 Destination PostGIS Dataset:
+DEFAULT_MACRO POSTGIS_OUT_HOST_POSTGIS_1 172.24.171.203
+POSTGIS_1_HOST "$(POSTGIS_OUT_HOST_POSTGIS_1)"
+GUI TEXT POSTGIS_OUT_HOST_POSTGIS_1 Host:
+DEFAULT_MACRO POSTGIS_OUT_PORT_POSTGIS_1 5432
+POSTGIS_1_PORT "$(POSTGIS_OUT_PORT_POSTGIS_1)"
+GUI OPTIONAL INTEGER POSTGIS_OUT_PORT_POSTGIS_1 Port:
+DEFAULT_MACRO POSTGIS_OUT_USER_NAME_POSTGIS_1 sige
+POSTGIS_1_USER_NAME "$(POSTGIS_OUT_USER_NAME_POSTGIS_1)"
+GUI TEXT POSTGIS_OUT_USER_NAME_POSTGIS_1 Username:
+DEFAULT_MACRO POSTGIS_OUT_PASSWORD_POSTGIS_1 db4wat$
+POSTGIS_1_PASSWORD "$(POSTGIS_OUT_PASSWORD_POSTGIS_1)"
+GUI OPTIONAL PASSWORD POSTGIS_OUT_PASSWORD_POSTGIS_1 Password:
+# ============================================================================
+# Write geometry (planar) or geography (geodetic) column
+DEFAULT_MACRO POSTGIS_OUT_SPATIAL_COLUMN_TYPE_POSTGIS_1 geometry
+POSTGIS_1_SPATIAL_COLUMN_TYPE "$(POSTGIS_OUT_SPATIAL_COLUMN_TYPE_POSTGIS_1)"
+GUI LOOKUP_CHOICE POSTGIS_OUT_SPATIAL_COLUMN_TYPE_POSTGIS_1 geometry%geography Spatial Column Type:
+# ============================================================================
+# Default spatial column name
+DEFAULT_MACRO POSTGIS_OUT_SPATIAL_COLUMN_NAME_POSTGIS_1 geometry
+POSTGIS_1_SPATIAL_COLUMN_NAME "$(POSTGIS_OUT_SPATIAL_COLUMN_NAME_POSTGIS_1)"
+GUI TEXT POSTGIS_OUT_SPATIAL_COLUMN_NAME_POSTGIS_1 Spatial Column Name:
+DEFAULT_MACRO POSTGIS_OUT_GENERIC_GEOMETRY_POSTGIS_1 yes
+POSTGIS_1_GENERIC_GEOMETRY "$(POSTGIS_OUT_GENERIC_GEOMETRY_POSTGIS_1)"
+DEFAULT_MACRO POSTGIS_OUT_WRITER_MODE_POSTGIS_1 INSERT
+GUI CHOICE POSTGIS_OUT_WRITER_MODE_POSTGIS_1 INSERT%UPDATE%DELETE Writer Mode:
+POSTGIS_1_WRITER_MODE $(POSTGIS_OUT_WRITER_MODE_POSTGIS_1)
+DEFAULT_MACRO POSTGIS_OUT_START_TRANSACTION_POSTGIS_1 0
+GUI TEXT POSTGIS_OUT_START_TRANSACTION_POSTGIS_1 Starting Feature:
+POSTGIS_1_START_TRANSACTION $(POSTGIS_OUT_START_TRANSACTION_POSTGIS_1)
+DEFAULT_MACRO POSTGIS_OUT_TRANSACTION_INTERVAL_POSTGIS_1 1000
+GUI TEXT POSTGIS_OUT_TRANSACTION_INTERVAL_POSTGIS_1 Features Per Transaction:
+POSTGIS_1_TRANSACTION_INTERVAL $(POSTGIS_OUT_TRANSACTION_INTERVAL_POSTGIS_1)
+DEFAULT_MACRO POSTGIS_OUT_BULK_COPY_POSTGIS_1 YES
+GUI CHOICE POSTGIS_OUT_BULK_COPY_POSTGIS_1 YES%NO Bulk COPY Insert:
+POSTGIS_1_BULK_COPY $(POSTGIS_OUT_BULK_COPY_POSTGIS_1)
+DEFAULT_MACRO POSTGIS_OUT_INSERT_TEXT_GEOMETRY_POSTGIS_1 NO
+GUI CHOICE POSTGIS_OUT_INSERT_TEXT_GEOMETRY_POSTGIS_1 YES%NO Insert WKT:
+POSTGIS_1_INSERT_TEXT_GEOMETRY $(POSTGIS_OUT_INSERT_TEXT_GEOMETRY_POSTGIS_1)
+POSTGIS_1_DATASET "$(DestDataset_POSTGIS_1)"
+#! END_DEST_HEADER
+#! START_WB_HEADER
+MACRO WB_KEYWORD "POSTGIS_2"
+#! END_WB_HEADER
+#! START_DEST_HEADER POSTGIS POSTGIS_2
+POSTGIS_2_COORDINATE_SYSTEM_GRANULARITY FEATURE_TYPE
+# ============================================================================
+# The user input is stored in a macro, which is then used to define
+# the dataset to be written.
+# 20050928: Added default macro for the dest dataset
+#! END_DEST_HEADER
+#! START_WB_HEADER
+DEFAULT_MACRO DestDataset
+INCLUDE [ if {"$(DestDataset)" != ""} {                          \
+ puts {DEFAULT_MACRO DestDataset_POSTGIS_2 $(DestDataset)}         \
+ } ]
+#! END_WB_HEADER
+#! START_DEST_HEADER POSTGIS POSTGIS_2
+DEFAULT_MACRO DestDataset_POSTGIS_2 $(DestDataset_POSTGIS_3)
+GUI TEXT DestDataset_POSTGIS_2 Destination PostGIS Dataset:
+DEFAULT_MACRO POSTGIS_OUT_HOST_POSTGIS_2 172.24.171.203
+POSTGIS_2_HOST "$(POSTGIS_OUT_HOST_POSTGIS_2)"
+GUI TEXT POSTGIS_OUT_HOST_POSTGIS_2 Host:
+DEFAULT_MACRO POSTGIS_OUT_PORT_POSTGIS_2 5432
+POSTGIS_2_PORT "$(POSTGIS_OUT_PORT_POSTGIS_2)"
+GUI OPTIONAL INTEGER POSTGIS_OUT_PORT_POSTGIS_2 Port:
+DEFAULT_MACRO POSTGIS_OUT_USER_NAME_POSTGIS_2 sige
+POSTGIS_2_USER_NAME "$(POSTGIS_OUT_USER_NAME_POSTGIS_2)"
+GUI TEXT POSTGIS_OUT_USER_NAME_POSTGIS_2 Username:
+DEFAULT_MACRO POSTGIS_OUT_PASSWORD_POSTGIS_2 db4wat$
+POSTGIS_2_PASSWORD "$(POSTGIS_OUT_PASSWORD_POSTGIS_2)"
+GUI OPTIONAL PASSWORD POSTGIS_OUT_PASSWORD_POSTGIS_2 Password:
+# ============================================================================
+# Write geometry (planar) or geography (geodetic) column
+DEFAULT_MACRO POSTGIS_OUT_SPATIAL_COLUMN_TYPE_POSTGIS_2 geometry
+POSTGIS_2_SPATIAL_COLUMN_TYPE "$(POSTGIS_OUT_SPATIAL_COLUMN_TYPE_POSTGIS_2)"
+GUI LOOKUP_CHOICE POSTGIS_OUT_SPATIAL_COLUMN_TYPE_POSTGIS_2 geometry%geography Spatial Column Type:
+# ============================================================================
+# Default spatial column name
+DEFAULT_MACRO POSTGIS_OUT_SPATIAL_COLUMN_NAME_POSTGIS_2 geometry
+POSTGIS_2_SPATIAL_COLUMN_NAME "$(POSTGIS_OUT_SPATIAL_COLUMN_NAME_POSTGIS_2)"
+GUI TEXT POSTGIS_OUT_SPATIAL_COLUMN_NAME_POSTGIS_2 Spatial Column Name:
+DEFAULT_MACRO POSTGIS_OUT_GENERIC_GEOMETRY_POSTGIS_2 yes
+POSTGIS_2_GENERIC_GEOMETRY "$(POSTGIS_OUT_GENERIC_GEOMETRY_POSTGIS_2)"
+DEFAULT_MACRO POSTGIS_OUT_WRITER_MODE_POSTGIS_2 INSERT
+GUI CHOICE POSTGIS_OUT_WRITER_MODE_POSTGIS_2 INSERT%UPDATE%DELETE Writer Mode:
+POSTGIS_2_WRITER_MODE $(POSTGIS_OUT_WRITER_MODE_POSTGIS_2)
+DEFAULT_MACRO POSTGIS_OUT_START_TRANSACTION_POSTGIS_2 0
+GUI TEXT POSTGIS_OUT_START_TRANSACTION_POSTGIS_2 Starting Feature:
+POSTGIS_2_START_TRANSACTION $(POSTGIS_OUT_START_TRANSACTION_POSTGIS_2)
+DEFAULT_MACRO POSTGIS_OUT_TRANSACTION_INTERVAL_POSTGIS_2 1000
+GUI TEXT POSTGIS_OUT_TRANSACTION_INTERVAL_POSTGIS_2 Features Per Transaction:
+POSTGIS_2_TRANSACTION_INTERVAL $(POSTGIS_OUT_TRANSACTION_INTERVAL_POSTGIS_2)
+DEFAULT_MACRO POSTGIS_OUT_BULK_COPY_POSTGIS_2 YES
+GUI CHOICE POSTGIS_OUT_BULK_COPY_POSTGIS_2 YES%NO Bulk COPY Insert:
+POSTGIS_2_BULK_COPY $(POSTGIS_OUT_BULK_COPY_POSTGIS_2)
+DEFAULT_MACRO POSTGIS_OUT_INSERT_TEXT_GEOMETRY_POSTGIS_2 NO
+GUI CHOICE POSTGIS_OUT_INSERT_TEXT_GEOMETRY_POSTGIS_2 YES%NO Insert WKT:
+POSTGIS_2_INSERT_TEXT_GEOMETRY $(POSTGIS_OUT_INSERT_TEXT_GEOMETRY_POSTGIS_2)
+POSTGIS_2_DATASET "$(DestDataset_POSTGIS_2)"
+#! END_DEST_HEADER
 #! END_HEADER
 
 LOG_FILENAME "$(FME_MF_DIR)details.log"
@@ -757,6 +2387,8 @@ FME_GEOMETRY_HANDLING Enhanced
 FME_STROKE_MAX_DEVIATION 0
 LOG_FILTER_MASK -1
 DEFAULT_MACRO DATASET_KEYWORD_ACAD_1 ACAD_1
+DEFAULT_MACRO DATASET_KEYWORD_POSTGIS_1 POSTGIS_1
+DEFAULT_MACRO DATASET_KEYWORD_POSTGIS_2 POSTGIS_2
 # -------------------------------------------------------------------------
 
 ACAD_1_READER_META_ATTRIBUTES fme_feature_type
@@ -764,6 +2396,8 @@ ACAD_1_READER_META_ATTRIBUTES fme_feature_type
 # -------------------------------------------------------------------------
 
 ACAD_1_COORDINATE_SYSTEM EPSG:21781
+POSTGIS_1_COORDINATE_SYSTEM EPSG:21781
+POSTGIS_2_COORDINATE_SYSTEM EPSG:21781
 MULTI_READER_CONTINUE_ON_READER_FAILURE No
 
 # -------------------------------------------------------------------------
@@ -771,36 +2405,192 @@ MULTI_READER_CONTINUE_ON_READER_FAILURE No
 MACRO WORKSPACE_NAME details
 MACRO FME_VIEWER_APP fmeview
 # -------------------------------------------------------------------------
+ACAD_1_DEF DETAIL   autocad_color                10   autocad_linetype             CONTINUOUS
+# -------------------------------------------------------------------------
 ACAD_1_DEF GALERIE   autocad_color                10   autocad_linetype             CONTINUOUS
 # -------------------------------------------------------------------------
 ACAD_1_DEF Texte_multi   autocad_color                10   autocad_linetype             CONTINUOUS
 # -------------------------------------------------------------------------
 ACAD_1_DEF Text   autocad_color                10   autocad_linetype             CONTINUOUS
-# -------------------------------------------------------------------------
-ACAD_1_DEF DETAIL   autocad_color                10   autocad_linetype             CONTINUOUS
 
 # -------------------------------------------------------------------------
 
-Lookup ___KnownFeatureTypes___   Texte_multi yes   GALERIE yes   Text yes   DETAIL yes   "" no
+Lookup ___KnownFeatureTypes___   Texte_multi yes   Text yes   GALERIE yes   DETAIL yes   "" no
 # -------------------------------------------------------------------------
 
 FACTORY_DEF * TestFactory   FACTORY_NAME "Unexpected Input Remover"   INPUT FEATURE_TYPE *   TEST @Lookup(___KnownFeatureTypes___,@FeatureType()) == yes   OUTPUT PASSED FEATURE_TYPE *
 # -------------------------------------------------------------------------
 
-FACTORY_DEF * TeeFactory    FACTORY_NAME "Source -> Generic"    INPUT FEATURE_TYPE *    OUTPUT FEATURE_TYPE *       @Transform(ACAD,FME_GENERIC,PRESERVE_GEOMETRY)
-# -------------------------------------------------------------------------
-
-FACTORY_DEF * TeeFactory    FACTORY_NAME "GALERIE (ACAD_1) Splitter"    INPUT FEATURE_TYPE GALERIE
-# -------------------------------------------------------------------------
-
-FACTORY_DEF * TeeFactory    FACTORY_NAME "DETAIL (ACAD_1) Splitter"    INPUT FEATURE_TYPE DETAIL
-# -------------------------------------------------------------------------
-
-FACTORY_DEF * TeeFactory    FACTORY_NAME "Text (ACAD_1) Splitter"    INPUT FEATURE_TYPE Text
-# -------------------------------------------------------------------------
-
-FACTORY_DEF * TeeFactory    FACTORY_NAME "Texte_multi (ACAD_1) Splitter"    INPUT FEATURE_TYPE Texte_multi
+FACTORY_DEF * TeeFactory    FACTORY_NAME "Source -> Generic"    INPUT FEATURE_TYPE *    OUTPUT FEATURE_TYPE *       @Transform(ACAD,FME_GENERIC,ALIAS_GEOMETRY)
 DEFAULT_MACRO WB_CURRENT_CONTEXT
+# -------------------------------------------------------------------------
+
+FACTORY_DEF * TeeFactory    FACTORY_NAME TextPropertyExtractor_2    INPUT  FEATURE_TYPE Texte_multi    OUTPUT FEATURE_TYPE TextPropertyExtractor_2_OUTPUT         @Geometry(GET_PROPERTIES,TEXT,annotation,text_size,text_orientation)
+
+# -------------------------------------------------------------------------
+
+FACTORY_DEF * TeeFactory    FACTORY_NAME TextLocationExtractor    INPUT  FEATURE_TYPE TextPropertyExtractor_2_OUTPUT    OUTPUT FEATURE_TYPE TextLocationExtractor_OUTPUT         @Geometry(REMOVE_TEXT)
+
+# -------------------------------------------------------------------------
+
+FACTORY_DEF * TeeFactory    FACTORY_NAME TextPropertyExtractor    INPUT  FEATURE_TYPE Text    OUTPUT FEATURE_TYPE TextPropertyExtractor_OUTPUT         @Geometry(GET_PROPERTIES,TEXT,text,text_size,text_orientation)
+
+# -------------------------------------------------------------------------
+
+FACTORY_DEF * TeeFactory    FACTORY_NAME TextLocationExtractor_2    INPUT  FEATURE_TYPE TextPropertyExtractor_OUTPUT    OUTPUT FEATURE_TYPE TextLocationExtractor_2_OUTPUT         @Geometry(REMOVE_TEXT)
+
+FACTORY_DEF * TeeFactory   FACTORY_NAME "TextLocationExtractor_2 OUTPUT Splitter"   INPUT FEATURE_TYPE TextLocationExtractor_2_OUTPUT   OUTPUT FEATURE_TYPE TextLocationExtractor_2_OUTPUT_0   OUTPUT FEATURE_TYPE TextLocationExtractor_2_OUTPUT_1
+# -------------------------------------------------------------------------
+
+FACTORY_DEF * TeeFactory    FACTORY_NAME AttributeRenamer    INPUT  FEATURE_TYPE TextLocationExtractor_2_OUTPUT_1    OUTPUT FEATURE_TYPE AttributeRenamer_OUTPUT         @RenameAttributes(annotation,text)
+
+# -------------------------------------------------------------------------
+
+FACTORY_DEF * TeeFactory    FACTORY_NAME 2DForcer    INPUT  FEATURE_TYPE TextLocationExtractor_OUTPUT    INPUT  FEATURE_TYPE AttributeRenamer_OUTPUT    OUTPUT FEATURE_TYPE 2DForcer_2D         @Dimension(2)
+
+# -------------------------------------------------------------------------
+
+FACTORY_DEF * TeeFactory    FACTORY_NAME AttributeCreator_3    INPUT  FEATURE_TYPE 2DForcer_2D    OUTPUT FEATURE_TYPE AttributeCreator_3_OUTPUT      @SupplyAttributes(ENCODED,labelvisible,true,labelvisible_schema,true,visible,true,visible_schema,true)
+
+# -------------------------------------------------------------------------
+
+FACTORY_DEF * TestFactory    FACTORY_NAME CoordinateExtractor    INPUT  FEATURE_TYPE TextLocationExtractor_2_OUTPUT_0    TEST @Dimension() == 2    OUTPUT PASSED FEATURE_TYPE CoordinateExtractor_OUTPUT         _x @Coordinate(x,0,FLATTEN_AGGREGATE)         _y @Coordinate(y,0,FLATTEN_AGGREGATE)         @SupplyAttributes(_z,-9999)    OUTPUT FAILED FEATURE_TYPE CoordinateExtractor_OUTPUT         _x @Coordinate(x,0,FLATTEN_AGGREGATE)         _y @Coordinate(y,0,FLATTEN_AGGREGATE)         _z @Coordinate(z,0,FLATTEN_AGGREGATE)
+
+# -------------------------------------------------------------------------
+
+FACTORY_DEF * SortFactory    FACTORY_NAME Sorter    INPUT  FEATURE_TYPE CoordinateExtractor_OUTPUT    SORT_BY _y NUMERIC DESCENDING    OUTPUT SORTED FEATURE_TYPE Sorter_SORTED
+
+# -------------------------------------------------------------------------
+
+FACTORY_DEF * TeeFactory    FACTORY_NAME AttributeCreator    INPUT  FEATURE_TYPE Sorter_SORTED    OUTPUT FEATURE_TYPE AttributeCreator_OUTPUT      @SupplyAttributes(ENCODED,r,2)
+
+# -------------------------------------------------------------------------
+
+INCLUDE [   set COMMENT {   -- Determine the pieces which define the @Count domain:      - Global count domains from attributes use @Count(fme_attribute_name,...)      - Count domains with encoded literal values use @Count(fme_encoded,...)      - Other count domains which are not encoded use standard @Count(...) for        efficiency.   };   set domainDirective {};   set domainPrefix {};   set domain [FME_DecodeText {counter}];   if { ($domain != {counter}) && ([string range $domain 0 0] != "&") } {     set domainDirective "fme_encoded,";     set domain {counter};   };   set useTclCommand 0;   if {{Global} == {Local}} {     set domainPrefix {Counter_};     if {[string range $domain 0 0] == "&"} {         set COMMENT {         -- To get encodings right, we have to use @Tcl when working with         -- local counters based on attribute values.         };         set attrName [string range $domain 1 end];         set tempAttrName {__Counter_Domain__};         puts "Tcl2 proc Counter_IncrementCounter {} {FME_SetAttribute {$tempAttrName} \"$domainPrefix\[FME_GetAttribute {$attrName}]\"; set result \[FME_Execute Count fme_attribute_name {$tempAttrName} 0]; FME_UnsetAttributes {$tempAttrName}; return \$result }";         set useTclCommand 1;     }   } elseif {[string range $domain 0 0] == "&"} {     set domainDirective "fme_attribute_name,";     set domain [string range $domain 1 end]   };   if { $useTclCommand } {     puts "MACRO Counter_INCREMENT_FUNCTION @Tcl2(Counter_IncrementCounter)";   } else {     set domainPieces $domainDirective$domainPrefix$domain;     puts "MACRO Counter_INCREMENT_FUNCTION @Count($domainPieces,0)";   }; ]
+FACTORY_DEF * TeeFactory    FACTORY_NAME Counter    INPUT  FEATURE_TYPE AttributeCreator_OUTPUT    OUTPUT FEATURE_TYPE Counter_OUTPUT         "_count" $(Counter_INCREMENT_FUNCTION)
+
+# -------------------------------------------------------------------------
+
+FACTORY_DEF * TeeFactory    FACTORY_NAME 2DEllipseReplacer    INPUT  FEATURE_TYPE Counter_OUTPUT    OUTPUT FEATURE_TYPE 2DEllipseReplacer_ELLIPSE         @XValue("@Value(_x)",RESET) @YValue("@Value(_y)") @Dimension(2)         @GeometryType(fme_ellipse,@Value(r),@Value(r),0,LEFT_HAND_RULE)
+
+# -------------------------------------------------------------------------
+
+INCLUDE [          if { ({NUM_EDGES} == {TOLERANCE}) } {             if { ({Yes} == {Yes}) } {                puts {MACRO ArcStroker_func @Arc(MAX_DEVIATION, <Unused>, MAKEPOLY_FOR_360ARC)};             } else {               puts {MACRO ArcStroker_func @Arc(MAX_DEVIATION, <Unused>)};             }          }          else {             if { ({Yes} == {Yes}) } {                puts {MACRO ArcStroker_func @Arc(0, MAKEPOLY_FOR_360ARC)};             } else {               puts {MACRO ArcStroker_func @Arc(0)};             }          }         ]
+FACTORY_DEF * TeeFactory    FACTORY_NAME ArcStroker    INPUT  FEATURE_TYPE 2DEllipseReplacer_ELLIPSE    OUTPUT FEATURE_TYPE ArcStroker_STROKED         $(ArcStroker_func)
+
+# -------------------------------------------------------------------------
+
+FACTORY_DEF * PolygonDissolveFactory    FACTORY_NAME Dissolver    INPUT  FEATURE_TYPE ArcStroker_STROKED    DISSOLVE_COUNT_ATTRIBUTE nb_merged    LIST_NAME list    NON_OVERLAPPING_INPUT No    MODE COMPLETE    OUTPUT POLYGON FEATURE_TYPE Dissolver_AREA
+
+# -------------------------------------------------------------------------
+
+Tcl2 set ListConcatenator__separator [FME_DecodeText {<space>}];      set ListConcatenator__bracePos [string first {{}}  {list{}.text}]
+Tcl2 proc ListConcatenator__Concatenate {} {    upvar \#0 ListConcatenator__bracePos bracePos              ListConcatenator__separator separator;    set i 0;    set result {};    set nextAttr [string replace {list{}.text} $bracePos $bracePos \"\{0\"];    while { [FME_AttributeExists $nextAttr] }    {       lappend result [FME_GetAttribute $nextAttr];       set nextAttr [string replace {list{}.text} $bracePos $bracePos \"\{[incr i]\"];    };    FME_SetAttribute {annotation} [join $result $separator]; }
+FACTORY_DEF * TeeFactory    FACTORY_NAME ListConcatenator    INPUT  FEATURE_TYPE Dissolver_AREA    OUTPUT FEATURE_TYPE ListConcatenator_OUTPUT         @Tcl2(ListConcatenator__Concatenate)
+
+# -------------------------------------------------------------------------
+
+FACTORY_DEF * TeeFactory    FACTORY_NAME CenterPointReplacer    INPUT  FEATURE_TYPE ListConcatenator_OUTPUT    OUTPUT FEATURE_TYPE CenterPointReplacer_CENTERPOINT         @ConvertToPoint()
+
+# -------------------------------------------------------------------------
+
+FACTORY_DEF * TestFactory    FACTORY_NAME CoordinateExtractor_2    INPUT  FEATURE_TYPE CenterPointReplacer_CENTERPOINT    TEST @Dimension() == 2    OUTPUT PASSED FEATURE_TYPE CoordinateExtractor_2_OUTPUT         x @Coordinate(x,0,FLATTEN_AGGREGATE)         y @Coordinate(y,0,FLATTEN_AGGREGATE)         @SupplyAttributes(_z,-9999)    OUTPUT FAILED FEATURE_TYPE CoordinateExtractor_2_OUTPUT         x @Coordinate(x,0,FLATTEN_AGGREGATE)         y @Coordinate(y,0,FLATTEN_AGGREGATE)         _z @Coordinate(z,0,FLATTEN_AGGREGATE)
+
+# -------------------------------------------------------------------------
+
+FACTORY_DEF * SortFactory    FACTORY_NAME Sorter_2    INPUT  FEATURE_TYPE CoordinateExtractor_2_OUTPUT    SORT_BY y NUMERIC ASCENDING    OUTPUT SORTED FEATURE_TYPE Sorter_2_SORTED
+
+# -------------------------------------------------------------------------
+
+FACTORY_DEF * TeeFactory    FACTORY_NAME CoordinateSystemSetter_2    INPUT  FEATURE_TYPE Sorter_2_SORTED    OUTPUT FEATURE_TYPE CoordinateSystemSetter_2_OUTPUT         @CoordSys(EPSG:21781)
+
+# -------------------------------------------------------------------------
+
+# First determine which function we are going to be using -- we can do
+# this statically at parse time for efficiency sake
+
+MACRO GeometryExtractor_Function
+INCLUDE [ if {{wkb} == {fmebinary} } {               puts {MACRO GeometryExtractor_Function @Geometry(TO_ATTRIBUTE_BINARY,geometry) }           } elseif {{wkb} == {fmehex} } {               puts {MACRO GeometryExtractor_Function @Geometry(TO_ATTRIBUTE_BINARY_HEX,geometry) }           } elseif {{wkb} == {fmexml} } {               puts {MACRO GeometryExtractor_Function @Geometry(TO_ATTRIBUTE,geometry) }           } elseif {{wkb} == {wkt} ||                      {wkb} == {wkb} ||                      {wkb} == {wkbhex} } {               puts {MACRO GeometryExtractor_Function @OGCGeometry(to_attribute,wkb,geometry,1.1) }           } elseif {{wkb} == {GEOJSON} ||                     {wkb} == {ESRIJSON} } {               puts {MACRO GeometryExtractor_Function @JSONGeometry(TO_ATTRIBUTE,wkb,geometry) }           } elseif {{wkb} == {KML} } {               puts {MACRO GeometryExtractor_Function @KMLGeometry(TO_ATTRIBUTE,geometry) }           } elseif {{wkb} == {GEORSS_SIMPLE} } {               puts {MACRO GeometryExtractor_Function @GeoRSSGeometry(TO_ATTRIBUTE,wkb,geometry) }           } elseif {{wkb} == {GML_3.1.1} ||                      {wkb} == {GML_3.2.1} } {               puts {MACRO GeometryExtractor_Function @GMLGeometry(TO_ATTRIBUTE,wkb,geometry) }           }         ]
+FACTORY_DEF * TeeFactory    FACTORY_NAME GeometryExtractor    INPUT  FEATURE_TYPE CoordinateSystemSetter_2_OUTPUT    OUTPUT FEATURE_TYPE GeometryExtractor_OUTPUT         $(GeometryExtractor_Function)
+
+# -------------------------------------------------------------------------
+
+# First determine which function we are going to be using -- we can do
+# this statically at parse time for efficiency sake
+
+MACRO GeometryReplacer_Function
+INCLUDE [ if {{wkb} == {fmebinary} } {               puts {MACRO GeometryReplacer_Function @Geometry(FROM_ATTRIBUTE_BINARY,geometry) }           } elseif {{wkb} == {fmehex} } {               puts {MACRO GeometryReplacer_Function @Geometry(FROM_ATTRIBUTE_BINARY_HEX,geometry) }           } elseif {{wkb} == {fmexml} } {               puts {MACRO GeometryReplacer_Function @Geometry(FROM_ATTRIBUTE,geometry) }           } elseif {{wkb} == {fmexmlencoded} } {               puts {MACRO GeometryReplacer_Function @Geometry(FROM_ENCODED_STRING,&geometry) }           } elseif {{wkb} == {wkt} ||                      {wkb} == {wkb} ||                      {wkb} == {wkbhex} } {               puts {MACRO GeometryReplacer_Function @OGCGeometry(from_attribute,wkb,geometry) }           } elseif {{wkb} == {GEOJSON} ||                     {wkb} == {ESRIJSON} } {               puts {MACRO GeometryReplacer_Function @JSONGeometry(FROM_ATTRIBUTE,wkb,geometry) }           } elseif {{wkb} == {GEORSS} } {               puts {MACRO GeometryReplacer_Function @GeoRSSGeometry(FROM_ATTRIBUTE,geometry) }           } elseif {{wkb} == {KML} } {               puts {MACRO GeometryReplacer_Function @KMLGeometry(FROM_ATTRIBUTE,geometry) }           }         ]
+FACTORY_DEF * TeeFactory    FACTORY_NAME GeometryReplacer    INPUT  FEATURE_TYPE GeometryExtractor_OUTPUT
+
+# -------------------------------------------------------------------------
+
+INCLUDE [    if {"No" == "Yes"} {       puts "MACRO COLLECTION_HANDLING *";    } else {       puts "MACRO COLLECTION_HANDLING NOT_THIS_TIME";    } ]
+MACRO OUTPUT_POINT_FTYPE x
+
+MACRO OUTPUT_LINE_FTYPE x
+MACRO OUTPUT_LINE_FTYPE GeometryFilter_LINE
+MACRO OUTPUT_AREA_FTYPE x
+
+MACRO OUTPUT_ARC_FTYPE x
+
+MACRO OUTPUT_TEXT_FTYPE x
+
+MACRO OUTPUT_ELLIPSE_FTYPE x
+
+MACRO OUTPUT_RASTER_FTYPE x
+
+MACRO OUTPUT_SURFACE_FTYPE x
+
+MACRO OUTPUT_SOLID_FTYPE x
+
+MACRO OUTPUT_COLLECTION_FTYPE x
+
+MACRO OUTPUT_NULL_FTYPE x
+
+Lookup GeometryFilter_RouterTable    ""             "x"    fme_point      $(OUTPUT_POINT_FTYPE)    fme_line       $(OUTPUT_LINE_FTYPE)    fme_area       $(OUTPUT_AREA_FTYPE)    fme_arc        $(OUTPUT_ARC_FTYPE)    fme_text       $(OUTPUT_TEXT_FTYPE)    fme_ellipse    $(OUTPUT_ELLIPSE_FTYPE)    fme_raster     $(OUTPUT_RASTER_FTYPE)    fme_surface    $(OUTPUT_SURFACE_FTYPE)    fme_solid      $(OUTPUT_SOLID_FTYPE)    fme_collection $(OUTPUT_COLLECTION_FTYPE)    fme_no_geom    $(OUTPUT_NULL_FTYPE)
+
+FACTORY_DEF * TeeFactory    FACTORY_NAME GeometryFilter_InputPassThrough    INPUT  FEATURE_TYPE DETAIL    INPUT  FEATURE_TYPE GALERIE    OUTPUT FEATURE_TYPE GeometryFilter_AllInput
+FACTORY_DEF $(COLLECTION_HANDLING) TestFactory    FACTORY_NAME GeometryFilter_CollectionTest    INPUT FEATURE_TYPE GeometryFilter_AllInput    TEST &fme_type == "fme_collection"    OUTPUT FAILED FEATURE_TYPE GeometryFilter___Not_Collection___    OUTPUT PASSED FEATURE_TYPE GeometryFilter___Collection___       GeometryFilter__temp_count @Count(GeometryFilter_COUNT_DOMAIN, 0)
+FACTORY_DEF $(COLLECTION_HANDLING) DeaggregateFactory    FACTORY_NAME GeometryFilter_Deagg    INPUT FEATURE_TYPE GeometryFilter___Collection___    RECURSIVE Yes    SET_FME_TYPE Yes    OUTPUT POINT FEATURE_TYPE GeometryFilter___Deaggregated___    OUTPUT LINE FEATURE_TYPE GeometryFilter___Deaggregated___    OUTPUT POLYGON FEATURE_TYPE GeometryFilter___Deaggregated___    OUTPUT DONUT FEATURE_TYPE GeometryFilter___Deaggregated___    OUTPUT AGGREGATE FEATURE_TYPE GeometryFilter___Deaggregated___
+FACTORY_DEF $(COLLECTION_HANDLING) AggregateFactory    FACTORY_NAME GeometryFilter_AggregateHomo    INPUT FEATURE_TYPE GeometryFilter___Deaggregated___    GROUP_BY fme_type    BREAK_BEFORE_FIELD_CHANGE GeometryFilter__temp_count    OUTPUT AGGREGATE FEATURE_TYPE GeometryFilter___HomogenousAggregate___
+FACTORY_DEF * TestFactory    FACTORY_NAME GeometryFilter_Router    INPUT FEATURE_TYPE GeometryFilter___HomogenousAggregate___    INPUT FEATURE_TYPE GeometryFilter___Not_Collection___    INPUT FEATURE_TYPE GeometryFilter_AllInput    TEST @Concatenate(@FeatureType(@Lookup(GeometryFilter_RouterTable,&fme_type)),@FeatureType()) != "x"    OUTPUT PASSED FEATURE_TYPE *       @RemoveAttributes(GeometryFilter__temp_count)
+
+# -------------------------------------------------------------------------
+
+FACTORY_DEF * TeeFactory    FACTORY_NAME AttributeCreator_2    INPUT  FEATURE_TYPE GeometryFilter_LINE    OUTPUT FEATURE_TYPE AttributeCreator_2_OUTPUT      @SupplyAttributes(ENCODED,labelvisible,true,labelvisible_schema,true,visible,true,visible_schema,true)
+
+# -------------------------------------------------------------------------
+
+# First determine which function we are going to be using -- we can do
+# this statically at parse time for efficiency sake
+
+MACRO GeometryExtractor_2_Function
+INCLUDE [ if {{wkt} == {fmebinary} } {               puts {MACRO GeometryExtractor_2_Function @Geometry(TO_ATTRIBUTE_BINARY,_geometry) }           } elseif {{wkt} == {fmehex} } {               puts {MACRO GeometryExtractor_2_Function @Geometry(TO_ATTRIBUTE_BINARY_HEX,_geometry) }           } elseif {{wkt} == {fmexml} } {               puts {MACRO GeometryExtractor_2_Function @Geometry(TO_ATTRIBUTE,_geometry) }           } elseif {{wkt} == {wkt} ||                      {wkt} == {wkb} ||                      {wkt} == {wkbhex} } {               puts {MACRO GeometryExtractor_2_Function @OGCGeometry(to_attribute,wkt,_geometry,1.1) }           } elseif {{wkt} == {GEOJSON} ||                     {wkt} == {ESRIJSON} } {               puts {MACRO GeometryExtractor_2_Function @JSONGeometry(TO_ATTRIBUTE,wkt,_geometry) }           } elseif {{wkt} == {KML} } {               puts {MACRO GeometryExtractor_2_Function @KMLGeometry(TO_ATTRIBUTE,_geometry) }           } elseif {{wkt} == {GEORSS_SIMPLE} } {               puts {MACRO GeometryExtractor_2_Function @GeoRSSGeometry(TO_ATTRIBUTE,wkt,_geometry) }           } elseif {{wkt} == {GML_3.1.1} ||                      {wkt} == {GML_3.2.1} } {               puts {MACRO GeometryExtractor_2_Function @GMLGeometry(TO_ATTRIBUTE,wkt,_geometry) }           }         ]
+FACTORY_DEF * TeeFactory    FACTORY_NAME GeometryExtractor_2    INPUT  FEATURE_TYPE AttributeCreator_2_OUTPUT    OUTPUT FEATURE_TYPE GeometryExtractor_2_OUTPUT         $(GeometryExtractor_2_Function)
+
+# -------------------------------------------------------------------------
+
+FACTORY_DEF * TeeFactory    FACTORY_NAME GeometryRemover    INPUT  FEATURE_TYPE GeometryExtractor_2_OUTPUT    OUTPUT FEATURE_TYPE GeometryRemover_OUTPUT         @RemoveGeometry()
+
+# -------------------------------------------------------------------------
+
+# First determine which function we are going to be using -- we can do
+# this statically at parse time for efficiency sake
+
+MACRO GeometryReplacer_2_Function
+INCLUDE [ if {{wkt} == {fmebinary} } {               puts {MACRO GeometryReplacer_2_Function @Geometry(FROM_ATTRIBUTE_BINARY,_geometry) }           } elseif {{wkt} == {fmehex} } {               puts {MACRO GeometryReplacer_2_Function @Geometry(FROM_ATTRIBUTE_BINARY_HEX,_geometry) }           } elseif {{wkt} == {fmexml} } {               puts {MACRO GeometryReplacer_2_Function @Geometry(FROM_ATTRIBUTE,_geometry) }           } elseif {{wkt} == {fmexmlencoded} } {               puts {MACRO GeometryReplacer_2_Function @Geometry(FROM_ENCODED_STRING,&_geometry) }           } elseif {{wkt} == {wkt} ||                      {wkt} == {wkb} ||                      {wkt} == {wkbhex} } {               puts {MACRO GeometryReplacer_2_Function @OGCGeometry(from_attribute,wkt,_geometry) }           } elseif {{wkt} == {GEOJSON} ||                     {wkt} == {ESRIJSON} } {               puts {MACRO GeometryReplacer_2_Function @JSONGeometry(FROM_ATTRIBUTE,wkt,_geometry) }           } elseif {{wkt} == {GEORSS} } {               puts {MACRO GeometryReplacer_2_Function @GeoRSSGeometry(FROM_ATTRIBUTE,_geometry) }           } elseif {{wkt} == {KML} } {               puts {MACRO GeometryReplacer_2_Function @KMLGeometry(FROM_ATTRIBUTE,_geometry) }           }         ]
+FACTORY_DEF * TeeFactory    FACTORY_NAME GeometryReplacer_2    INPUT  FEATURE_TYPE GeometryRemover_OUTPUT    OUTPUT FEATURE_TYPE GeometryReplacer_2_OUTPUT         $(GeometryReplacer_2_Function)
+
+# -------------------------------------------------------------------------
+
+FACTORY_DEF * TeeFactory    FACTORY_NAME CoordinateSystemSetter_3    INPUT  FEATURE_TYPE GeometryReplacer_2_OUTPUT    OUTPUT FEATURE_TYPE CoordinateSystemSetter_3_OUTPUT         @CoordSys(EPSG:21781)
+
+# -------------------------------------------------------------------------
+
+FACTORY_DEF * TeeFactory    FACTORY_NAME "AttributeCreator_3_OUTPUT -> distribution.od_annotationpoint Correlator"    INPUT FEATURE_TYPE AttributeCreator_3_OUTPUT    OUTPUT FEATURE_TYPE __GO_TO_FINAL_OUTPUT_ROUTER__       multi_writer_id 0       @Reproject("EPSG:21781","EPSG:21781")       @Transform(FME_GENERIC,POSTGIS)       @SupplyAttributes(__wb_out_feat_type__,distribution.od_annotationpoint)
+# -------------------------------------------------------------------------
+
+FACTORY_DEF * TeeFactory    FACTORY_NAME "CoordinateSystemSetter_3_OUTPUT -> distribution.od_annotationline Correlator"    INPUT FEATURE_TYPE CoordinateSystemSetter_3_OUTPUT    OUTPUT FEATURE_TYPE __GO_TO_FINAL_OUTPUT_ROUTER__       multi_writer_id 1       @Reproject("EPSG:21781","EPSG:21781")       @Transform(FME_GENERIC,POSTGIS)       @SupplyAttributes(__wb_out_feat_type__,distribution.od_annotationline)
 # -------------------------------------------------------------------------
 
 FACTORY_DEF * TestFactory   FACTORY_NAME "Final Output Feature Type Router"   INPUT FEATURE_TYPE *   TEST @Value(__wb_out_feat_type__) != ""   OUTPUT PASSED FEATURE_TYPE *     @FeatureType(@Value(__wb_out_feat_type__))   OUTPUT FAILED FEATURE_TYPE __nuke_me__ @Tcl2("FME_StatMessage 818059 {@Value(fme_template_feature_type)} 818060 818061 fme_warn")
@@ -808,3 +2598,13 @@ FACTORY_DEF * TestFactory   FACTORY_NAME "Final Output Feature Type Router"   IN
 
 FACTORY_DEF * TeeFactory   FACTORY_NAME "Final Output Nuker"   INPUT FEATURE_TYPE __nuke_me__
 
+# -------------------------------------------------------------------------
+
+DEFAULT_MACRO WORKSPACE_TEMP_DIR
+INCLUDE [ if {{$(WORKSPACE_TEMP_DIR)} == {}} { puts {MACRO __WB_ENABLE_VISUALIZER__ no} } else { puts {MACRO __WB_ENABLE_VISUALIZER__ *} } ]
+FACTORY_DEF $(__WB_ENABLE_VISUALIZER__) CreationFactory   CREATE_AT_END   OUTPUT FEATURE_TYPE __NUKEME__   @TCL("if [info exists ::gVisualizerFilesToView] {eval FME_Execute System \173\042$(FME_HOME_UNIX)/fmeview\042 /ownffs {$(WORKSPACE_TEMP_DIR)} $::gVisualizerFilesToView & \175 }")
+FACTORY_DEF * TeeFactory   INPUT FEATURE_TYPE __NUKEME__
+# -------------------------------------------------------------------------
+POSTGIS_1_DEF distribution.od_annotationpoint   postgis_type                 postgis_geometry   postgis_mode                 INHERIT_FROM_WRITER   postgis_spatial_column_type  geometry   postgis_spatial_column       geometry   postgis_srid                 INHERIT_FROM_WRITER   postgis_drop_table           NO   postgis_truncate_table       YES   postgis_create_with_oids     NO   postgis_create_gist_index    YES   postgis_vacuum_analyze       YES   postgis_allow_serial_writing NO   text_size                    char(20)   text_orientation             char(20)   annotation                   char(20)   visible                      char(20)   labelvisible                 char(20)   visible_schema               char(20)   labelvisible_schema          char(20)
+# -------------------------------------------------------------------------
+POSTGIS_2_DEF distribution.od_annotationline   postgis_type                 postgis_geometry   postgis_mode                 INHERIT_FROM_WRITER   postgis_spatial_column_type  geometry   postgis_spatial_column       geometry   postgis_srid                 INHERIT_FROM_WRITER   postgis_drop_table           NO   postgis_truncate_table       YES   postgis_create_with_oids     NO   postgis_create_gist_index    YES   postgis_vacuum_analyze       YES   postgis_allow_serial_writing NO   visible                      char(20)   labelvisible                 char(20)   visible_schema               char(20)   labelvisible_schema          char(20)
