@@ -17,7 +17,6 @@ ALTER TABLE distribution.od_installation_building ADD COLUMN id_type         int
 ALTER TABLE distribution.od_installation_building ADD COLUMN _displayname_en varchar(50) default '';
 ALTER TABLE distribution.od_installation_building ADD COLUMN _displayname_fr varchar(50) default '';
 ALTER TABLE distribution.od_installation_building ADD COLUMN schema_visible  boolean not null default true ;
-ALTER TABLE distribution.od_installation_building ADD COLUMN links           text default '';
 ALTER TABLE distribution.od_installation_building ADD COLUMN year            smallint    check (year > 1800 AND year < 2100);
 ALTER TABLE distribution.od_installation_building ADD COLUMN parcel          varchar(30) default '';
 ALTER TABLE distribution.od_installation_building ADD COLUMN eca             varchar(30) default '';
