@@ -14,8 +14,8 @@ $BODY$
 		pipe_id         integer                  ;
 		grouped         record                   ;
 		Tyear           integer                  ;
-		Tmaterial       varchar(30)              ;
-		Tdiameter       varchar(10)              ;
+		Tmaterial       varchar(50)              ;
+		Tdiameter       smallint                 ;
 		looppos         integer          := 0    ;
 		type            varchar(25)              ;
 		ori1            double precision := 0    ;
@@ -26,12 +26,20 @@ $BODY$
 		intersects      boolean                  ;
 		rtable          record                   ;
 		sqltxt          text                     ;
+		keep_type       boolean          := false;
 	BEGIN
 		/* determine if the node is under an object (hydrant, valve, etc.) */
 		FOR rtable IN SELECT * FROM distribution.od_node_table
 		LOOP
-			sqltxt := 'IF node_id IN (SELECT id_node FROM distribution.' || rtable.table_name || ') THEN type := ''' || rtable.node_type '''; is_under_object := true; END IF;';
-			EXECUTE sqltxt;
+			sqltxt := 'SELECT ' || node_id || 'IN (SELECT id_node FROM distribution.' || rtable.table_name || ');';
+			EXECUTE sqltxt INTO is_under_object;
+			IF is_under_object IS TRUE THEN
+				type := rtable.node_type;
+				IF rtable.overwrite IS true THEN
+					keep_type = true;
+					EXIT;
+				END IF;
+			END IF;
 		END LOOP;
 		/* count the active pipes associated to this node */
 		SELECT
@@ -72,7 +80,9 @@ $BODY$
 			) LOOP
 				IF looppos=0 THEN
 					/* first pipe */
-					type := 'one';
+					IF keep_type IS FALSE THEN
+						type := 'one';
+					END IF;
 					Tyear     := pipeitem.year;
 					Tmaterial := pipeitem.material;
 					Tdiameter := pipeitem.diameter;
@@ -82,9 +92,11 @@ $BODY$
 				ELSE
 					/* second pipe if exists */
 					type := 'two_same';
-					IF Tyear     != pipeitem.year     THEN type := 'two_year'    ; END IF;
-					IF Tmaterial != pipeitem.material THEN type := 'two_material'; END IF;
-					IF Tdiameter != pipeitem.diameter THEN type := 'two_diameter'; END IF;
+					IF keep_type IS FALSE THEN
+						IF Tyear     != pipeitem.year     THEN type := 'two_year'    ; END IF;
+						IF Tmaterial != pipeitem.material THEN type := 'two_material'; END IF;
+						IF Tdiameter != pipeitem.diameter THEN type := 'two_diameter'; END IF;
+					END IF;
 					SELECT ST_Azimuth(pipeitem.point_1,pipeitem.point_2) INTO ori2 ;
 					SELECT ATAN2( (SIN(orientation)+SIN(ori2))/2 , (COS(orientation)+COS(ori2))/2 ) INTO orientation;
 					/* reverse arrow according to diameter reduction */
@@ -94,7 +106,7 @@ $BODY$
 				END IF;
 			END LOOP;
 			SELECT degrees(orientation) INTO orientation;
-			IF grouped.count = 1 THEN
+			IF keep_type IS FALSE AND grouped.count = 1 THEN
 				/* if the node is only on 1 pipe, check if it intersects another pipe. If yes, hide it */
 				SELECT geometry FROM distribution.od_node WHERE id = node_id INTO node_geom;
 				/* st_intersects does not work as expected. */

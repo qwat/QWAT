@@ -5,6 +5,7 @@ CREATE OR REPLACE FUNCTION distribution.fn_geom_tool_point(table_name varchar, i
 $BODY$
 	DECLARE
 		sql_trigger varchar;
+		match_mode varchar;
 	BEGIN
 		/* Creates columns */
 		IF is_node IS TRUE THEN
@@ -35,7 +36,12 @@ $BODY$
 				
 		/* Add constraints and indexes */
 		IF is_node IS TRUE THEN
-			EXECUTE 'ALTER TABLE distribution.'||table_name||' ADD CONSTRAINT '||table_name||'_id_node         FOREIGN KEY (id_node)         REFERENCES distribution.od_node(id)         MATCH SIMPLE;';
+			IF create_node IS TRUE THEN
+				match_mode := 'FULL';
+			ELSE
+				match_mode := 'SIMPLE';
+			END IF;
+			EXECUTE 'ALTER TABLE distribution.'||table_name||' ADD CONSTRAINT '||table_name||'_id_node         FOREIGN KEY (id_node)         REFERENCES distribution.od_node(id)         MATCH ' || match_mode || ';' ;
 		END IF;
 		EXECUTE 'ALTER TABLE distribution.'||table_name||' ADD CONSTRAINT '||table_name||'_id_district     FOREIGN KEY (id_district)     REFERENCES distribution.od_district(id)     MATCH SIMPLE;';
 		EXECUTE 'ALTER TABLE distribution.'||table_name||' ADD CONSTRAINT '||table_name||'_id_pressurezone FOREIGN KEY (id_pressurezone) REFERENCES distribution.od_pressurezone(id) MATCH SIMPLE;';
@@ -55,7 +61,7 @@ $BODY$
 		sql_trigger := 'CREATE OR REPLACE FUNCTION distribution.'||table_name||'_geom() RETURNS TRIGGER AS
 				''
 				BEGIN';
-		IF is_node IS TRUE AND create_node IS TRUE THEN
+		IF is_node IS TRUE THEN
 			sql_trigger := sql_trigger || '
 						NEW.id_node            := distribution.fn_node_get_id(NEW.geometry,'||create_node||');';
 		END IF;
@@ -82,7 +88,7 @@ $BODY$
 						NEW._geometry_schematic_used := false;';
 		END IF;
 		sql_trigger := sql_trigger || '
-						NEW._printmaps        := distribution.fn_get_printmaps(NEW.geometry);
+						NEW._printmaps         := distribution.fn_get_printmaps(NEW.geometry);
 					RETURN NEW;				
 				END;
 				''

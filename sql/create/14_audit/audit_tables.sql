@@ -1,6 +1,8 @@
 /* Audit */
 SELECT distribution.audit_table('distribution.od_annotationline');
+SELECT distribution.audit_table('distribution.od_annotationline_schema');
 SELECT distribution.audit_table('distribution.od_annotationpoint');
+SELECT distribution.audit_table('distribution.od_annotationpoint_schema');
 SELECT distribution.audit_table('distribution.od_constructionpoint');
 SELECT distribution.audit_table('distribution.od_dimension_distance');
 SELECT distribution.audit_table('distribution.od_dimension_orientation');
@@ -16,12 +18,17 @@ SELECT distribution.audit_table('distribution.od_installation_tank');
 SELECT distribution.audit_table('distribution.od_installation_valvechamber');
 SELECT distribution.audit_table('distribution.od_leak');
 SELECT distribution.audit_table('distribution.od_meter');
+SELECT distribution.audit_table('distribution.od_meter_subscriber');
+SELECT distribution.audit_table('distribution.od_node_table');
 SELECT distribution.audit_table('distribution.od_pipe');
 SELECT distribution.audit_table('distribution.od_pressurezone');
 SELECT distribution.audit_table('distribution.od_printmap');
 SELECT distribution.audit_table('distribution.od_protectionzone');
 SELECT distribution.audit_table('distribution.od_samplingpoint');
 SELECT distribution.audit_table('distribution.od_subscriber');
+SELECT distribution.audit_table('distribution.od_subscriber_reference');
+SELECT distribution.audit_table('distribution.od_valve');
+SELECT distribution.audit_table('distribution.od_wateringoutput');
 SELECT distribution.audit_table('distribution.vl_cistern');
 SELECT distribution.audit_table('distribution.vl_hydrant_provider');
 SELECT distribution.audit_table('distribution.vl_installation_type');
