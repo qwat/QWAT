@@ -12,19 +12,19 @@ COMMENT ON TABLE distribution.od_meter IS 'Table for meters.';
 SELECT setval('distribution.od_meter_id_seq', 8000, true);
 
 /* COLUMNS */
-ALTER TABLE distribution.od_meter ADD COLUMN id_status integer default 1;          /* id_status     FK FULL */
-ALTER TABLE distribution.od_meter ADD COLUMN id_pipe integer;						/* id_pipe       FK SIMPLE*/
+ALTER TABLE distribution.od_meter ADD COLUMN id_status integer not null;
+ALTER TABLE distribution.od_meter ADD COLUMN id_pipe integer;
 ALTER TABLE distribution.od_meter ADD COLUMN identification varchar(12) default '';
 ALTER TABLE distribution.od_meter ADD COLUMN _identification_full varchar(16) default '';
 ALTER TABLE distribution.od_meter ADD COLUMN parcel varchar(12) default '' ;
 ALTER TABLE distribution.od_meter ADD COLUMN remark  text default '';
 
-/* GEOMETRY                        (table_name, is_node, create_node, create_schematic, get_pipe, auto_district, auto_pressurezone)*/
-SELECT distribution.fn_geom_tool_point('od_meter', false,  false,        false,            false,    false,         true);
+/* GEOMETRY                           (table_name, is_node, create_node, create_schematic, get_pipe, auto_district, auto_pressurezone)*/
+SELECT distribution.fn_geom_tool_point('od_meter', false,    false,      false,            false,    true,         true);
 
 /* CONSTRAINTS */
-ALTER TABLE distribution.od_meter ADD CONSTRAINT pipe_id_status FOREIGN KEY (id_status) REFERENCES distribution.vl_status(id)      MATCH FULL  ; CREATE INDEX fki_id_status ON distribution.od_meter(id_status);
-ALTER TABLE distribution.od_meter ADD CONSTRAINT meter_id_pipe  FOREIGN KEY (id_pipe)   REFERENCES distribution.od_pipe (id)          MATCH SIMPLE; CREATE INDEX fki_id_pipe   ON distribution.od_meter(id_pipe)  ;
+ALTER TABLE distribution.od_meter ADD CONSTRAINT pipe_id_status FOREIGN KEY (id_status) REFERENCES distribution.vl_status(id) MATCH FULL  ; CREATE INDEX fki_id_status ON distribution.od_meter(id_status);
+ALTER TABLE distribution.od_meter ADD CONSTRAINT meter_id_pipe  FOREIGN KEY (id_pipe)   REFERENCES distribution.od_pipe (id)  MATCH SIMPLE; CREATE INDEX fki_id_pipe   ON distribution.od_meter(id_pipe)  ;
 
 
 /* TRIGGER */
