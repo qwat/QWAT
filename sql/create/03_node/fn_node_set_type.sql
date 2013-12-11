@@ -17,36 +17,22 @@ $BODY$
 		Tmaterial       varchar(30)              ;
 		Tdiameter       varchar(10)              ;
 		looppos         integer          := 0    ;
-		type            distribution.tp_node     ;
+		type            varchar(25)              ;
 		ori1            double precision := 0    ;
 		ori2            double precision := 0    ;
 		orientation     float            := 0    ;
 		is_under_object boolean          := false;
 		node_geom       geometry(Point, 21781)   ;
 		intersects      boolean                  ;
+		rtable          record                   ;
+		sqltxt          text                     ;
 	BEGIN
 		/* determine if the node is under an object (hydrant, valve, etc.) */
-		IF node_id IN (SELECT id_node FROM distribution.od_valve) THEN
-			type := 'valve';
-			is_under_object := true;
-		ELSEIF node_id IN (
-				SELECT id_node FROM distribution.od_installation_building UNION
-				SELECT id_node FROM distribution.od_installation_pressurecontrol UNION
-				SELECT id_node FROM distribution.od_installation_pump UNION
-				SELECT id_node FROM distribution.od_installation_source UNION
-				SELECT id_node FROM distribution.od_installation_tank UNION
-				SELECT id_node FROM distribution.od_installation_treatment UNION
-				SELECT id_node FROM distribution.od_installation_valvechamber
-				) THEN
-			type := 'installation';
-			is_under_object := true;
-		ELSEIF node_id IN (SELECT id_node FROM distribution.od_wateringoutput) THEN
-			type := 'wateringoutput';
-			is_under_object := true;
-		ELSEIF node_id IN (SELECT id_node FROM distribution.od_hydrant) THEN
-			type := 'hydrant';
-			is_under_object := true;
-		END IF;
+		FOR rtable IN SELECT * FROM distribution.od_node_table
+		LOOP
+			sqltxt := 'IF node_id IN (SELECT id_node FROM distribution.' || rtable.table_name || ') THEN type := ''' || rtable.node_type '''; is_under_object := true; END IF;';
+			EXECUTE sqltxt;
+		END LOOP;
 		/* count the active pipes associated to this node */
 		SELECT
 			COUNT(od_pipe.id)         AS count         ,
@@ -68,7 +54,7 @@ $BODY$
 		ELSEIF grouped.count <= 2 THEN
 			/* loop over them, and take the 2 first/last points of the pipe to determine orientation */
 			FOR pipeitem IN (
-				SELECT 	od_pipe.id, od_pipe.year, vl_pipe_material.value_fr AS material, vl_pipe_material.diameter AS diameter,
+				SELECT 	od_pipe.id, od_pipe.year, vl_pipe_material.value_fr AS material, vl_pipe_material.diameter_nominal AS diameter,
 						ST_PointN(geometry,2)   AS point_1,
 						ST_StartPoint(geometry) AS point_2
 						FROM distribution.od_pipe
@@ -76,7 +62,7 @@ $BODY$
 						INNER JOIN distribution.vl_status        ON od_pipe.id_status = vl_status.id
 						WHERE id_node_a = node_id AND vl_status.active IS TRUE
 				UNION ALL
-				SELECT	od_pipe.id, od_pipe.year, vl_pipe_material.value_fr AS material, vl_pipe_material.diameter AS diameter,
+				SELECT	od_pipe.id, od_pipe.year, vl_pipe_material.value_fr AS material, vl_pipe_material.diameter_nominal AS diameter,
 						ST_PointN(geometry,ST_NPoints(geometry)-1) AS point_1,
 						ST_EndPoint(geometry)                      AS point_2
 						FROM distribution.od_pipe
@@ -97,8 +83,8 @@ $BODY$
 					/* second pipe if exists */
 					type := 'two_same';
 					IF Tyear     != pipeitem.year     THEN type := 'two_year'    ; END IF;
-					IF Tdiameter != pipeitem.diameter THEN type := 'two_diameter'; END IF;
 					IF Tmaterial != pipeitem.material THEN type := 'two_material'; END IF;
+					IF Tdiameter != pipeitem.diameter THEN type := 'two_diameter'; END IF;
 					SELECT ST_Azimuth(pipeitem.point_1,pipeitem.point_2) INTO ori2 ;
 					SELECT ATAN2( (SIN(orientation)+SIN(ori2))/2 , (COS(orientation)+COS(ori2))/2 ) INTO orientation;
 					/* reverse arrow according to diameter reduction */

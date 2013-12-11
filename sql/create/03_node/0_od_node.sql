@@ -4,9 +4,6 @@
 	SQL file :: node
 */
 
-CREATE TYPE distribution.tp_node AS ENUM('valve','hydrant','wateringoutput','installation','one','one_hidden','two_same','two_year','two_diameter','two_material','three');
-
-
 /* CREATE TABLE */
 DROP TABLE IF EXISTS distribution.od_node CASCADE;
 CREATE TABLE distribution.od_node (id serial PRIMARY KEY);
@@ -15,11 +12,11 @@ COMMENT ON TABLE distribution.od_node IS 'Nodes. Type:If three pipe or more arri
 
 /* columns */
 ALTER TABLE distribution.od_node ADD COLUMN altitude_dtm    decimal(10,3)              ;
-ALTER TABLE distribution.od_node ADD COLUMN _type           distribution.tp_node default null ;
-ALTER TABLE distribution.od_node ADD COLUMN _orientation    float     default 0    ;
-ALTER TABLE distribution.od_node ADD COLUMN _schema_visible boolean   default false;
-ALTER TABLE distribution.od_node ADD COLUMN _status_active  boolean   default false;
-ALTER TABLE distribution.od_node ADD COLUMN _under_object   boolean   default false;
+ALTER TABLE distribution.od_node ADD COLUMN _type           varchar(20) default null ;
+ALTER TABLE distribution.od_node ADD COLUMN _orientation    float       default 0    ;
+ALTER TABLE distribution.od_node ADD COLUMN _schema_visible boolean     default false;
+ALTER TABLE distribution.od_node ADD COLUMN _status_active  boolean     default false;
+ALTER TABLE distribution.od_node ADD COLUMN _under_object   boolean     default false;
 
 /* geometry */
 SELECT AddGeometryColumn('distribution', 'od_node', 'geometry', 21781, 'POINT', 2)  ;
