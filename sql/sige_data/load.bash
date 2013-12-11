@@ -1,14 +1,10 @@
 
-select backupfile in *.backup; do test -n "$plugin" && break; echo ">>> Invalid Selection"; done
+select backupfile in *.backup; do test -n "$backupfile" && break; echo ">>> Invalid Selection"; done
 
 
 read -p "REMEMBER TO BACKUP!!! CONTINUE? (y/n) " answ
 if [[ "$answ" == "y" ]]
 then
-
-# complete subscriber reference
-psql -h 172.24.171.203 -U sige -f update_subscriber_reference.sql -v ON_ERROR_STOP=1
-
 
 # SIGE DATA
 psql -h 172.24.171.203 -U sige -f data_district.sql -v ON_ERROR_STOP=1
@@ -32,7 +28,8 @@ psql -h 172.24.171.203 -U sige -f data_pipe_id_parent.sql -v ON_ERROR_STOP=1
 read -p " continuer..."
 psql -h 172.24.171.203 -U sige -f data_hydrant_complete.sql -v ON_ERROR_STOP=1
 read -p " continuer..."
-
+# complete subscriber reference
+psql -h 172.24.171.203 -U sige -f update_subscriber_reference.sql -v ON_ERROR_STOP=1
 
 pg_restore --data-only  --disable-triggers --single-transaction --verbose --superuser=sige --schema=distribution \
 --dbname=sige --host 172.24.171.203 --port 5432 --username "sige" --no-password \
