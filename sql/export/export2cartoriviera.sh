@@ -41,7 +41,7 @@ PG:"dbname='sige' host=$db_address port='5432' user='sige' password='db4wat$'" \
 -dsco SPATIALITE=no -lco "SPATIAL_INDEX=no FORMAT=SPATIALITE" -gt 65536
 
 echo "nodes"
-ogr2ogr -sql "SELECT * FROM distribution.od_node WHERE _status_active IS TRUE AND _type != 'one' "  \
+ogr2ogr -sql "SELECT * FROM distribution.od_node"  \
 -overwrite -a_srs EPSG:21781 -f SQLite $sqliteoutput \
 -nln node -nlt POINT -progress -preserve_fid \
 PG:"dbname='sige' host=$db_address port='5432' user='sige' password='db4wat$'" \
