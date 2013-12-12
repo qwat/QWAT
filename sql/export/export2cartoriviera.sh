@@ -83,7 +83,7 @@ PG:"dbname='sige' host='172.24.171.203' port='5432' user='sige' password='db4wat
 -dsco SPATIALITE=no -lco "SPATIAL_INDEX=no FORMAT=SPATIALITE" -gt 65536
 
 echo "print maps"
-ogr2ogr -sql "SELECT * FROM distribution.od_printmap" \
+ogr2ogr -sql "SELECT * FROM distribution.vw_printmap" \
 -overwrite -a_srs EPSG:21781 -f SQLite $sqliteoutput \
 -nln printmap -nlt MULTIPOLYGON -progress \
 PG:"dbname='sige' host='172.24.171.203' port='5432' user='sige' password='db4wat$'" \
@@ -108,7 +108,7 @@ PG:"dbname='sige' host=$db_address port='5432' user='sige' password='db4wat$'" \
 -dsco SPATIALITE=no -lco "SPATIAL_INDEX=no FORMAT=SPATIALITE" -gt 65536
 
 echo "protections zone"
-ogr2ogr -sql "SELECT * FROM distribution.od_protectionzone"  \
+ogr2ogr -sql "SELECT * FROM distribution.vw_protectionzone"  \
 -overwrite -a_srs EPSG:21781 -f SQLite $sqliteoutput \
 -nln protectionzone -nlt MULTIPOLYGON -progress -preserve_fid \
 PG:"dbname='sige' host=$db_address port='5432' user='sige' password='db4wat$'" \
@@ -121,48 +121,71 @@ ogr2ogr -sql "SELECT * FROM distribution.vw_leak"  \
 PG:"dbname='sige' host=$db_address port='5432' user='sige' password='db4wat$'" \
 -dsco SPATIALITE=no -lco "SPATIAL_INDEX=no FORMAT=SPATIALITE" -gt 65536
 
-echo "dimensions"
+echo "dimensions distance"
 ogr2ogr -sql "SELECT * FROM distribution.od_dimension_distance"  \
 -overwrite -a_srs EPSG:21781 -f SQLite $sqliteoutput \
--nln dimension -nlt LINESTRING -progress -preserve_fid \
+-nln dimension_distance -nlt LINESTRING -progress -preserve_fid \
+PG:"dbname='sige' host=$db_address port='5432' user='sige' password='db4wat$'" \
+-dsco SPATIALITE=no -lco "SPATIAL_INDEX=no FORMAT=SPATIALITE" -gt 65536
+echo "dimensions orientation"
+ogr2ogr -sql "SELECT * FROM distribution.od_dimension_orientation"  \
+-overwrite -a_srs EPSG:21781 -f SQLite $sqliteoutput \
+-nln dimension_orientation -nlt LINESTRING -progress -preserve_fid \
+PG:"dbname='sige' host=$db_address port='5432' user='sige' password='db4wat$'" \
+-dsco SPATIALITE=no -lco "SPATIAL_INDEX=no FORMAT=SPATIALITE" -gt 65536
+
+echo "annotation point"
+ogr2ogr -sql "SELECT * FROM distribution.od_annotationpoint"  \
+-overwrite -a_srs EPSG:21781 -f SQLite $sqliteoutput \
+-nln annotationpoint -nlt POINT -progress -preserve_fid \
+PG:"dbname='sige' host=$db_address port='5432' user='sige' password='db4wat$'" \
+-dsco SPATIALITE=no -lco "SPATIAL_INDEX=no FORMAT=SPATIALITE" -gt 65536
+echo "annotation ligne"
+ogr2ogr -sql "SELECT * FROM distribution.od_annotationline"  \
+-overwrite -a_srs EPSG:21781 -f SQLite $sqliteoutput \
+-nln annotationline -nlt LINESTRING -progress -preserve_fid \
 PG:"dbname='sige' host=$db_address port='5432' user='sige' password='db4wat$'" \
 -dsco SPATIALITE=no -lco "SPATIAL_INDEX=no FORMAT=SPATIALITE" -gt 65536
 
 
-
-
 echo "installation tank"
-ogr2ogr -sql "SELECT * FROM distribution.vw_installation_tank_fr WHERE active IS TRUE" \
+ogr2ogr -sql "SELECT *, '<a href=javascript:app.openInfoWindow(\"http://www.cartoriviera.ch/sige/www/gallery.php?type=ouvrage&ouvrage='||identification||
+'\",\"Ouvrage\",600,600)>croquis</a>' as links FROM distribution.vw_installation_tank_fr WHERE active IS TRUE" \
 -overwrite -a_srs EPSG:21781 -f SQLite $sqliteoutput \
 -nln installation_tank -nlt POINT -progress \
 PG:"dbname='sige' host='172.24.171.203' port='5432' user='sige' password='db4wat$'" \
 -dsco SPATIALITE=no -lco "SPATIAL_INDEX=no FORMAT=SPATIALITE" -gt 65536
 echo "installation pump"
-ogr2ogr -sql "SELECT * FROM distribution.vw_installation_pump_fr WHERE active IS TRUE" \
+ogr2ogr -sql "SELECT *, '<a href=javascript:app.openInfoWindow(\"http://www.cartoriviera.ch/sige/www/gallery.php?type=ouvrage&ouvrage='||identification||
+'\",\"Ouvrage\",600,600)>croquis</a>' as links FROM distribution.vw_installation_pump_fr WHERE active IS TRUE" \
 -overwrite -a_srs EPSG:21781 -f SQLite $sqliteoutput \
 -nln installation_pump -nlt POINT -progress \
 PG:"dbname='sige' host='172.24.171.203' port='5432' user='sige' password='db4wat$'" \
 -dsco SPATIALITE=no -lco "SPATIAL_INDEX=no FORMAT=SPATIALITE" -gt 65536
 echo "installation source"
-ogr2ogr -sql "SELECT * FROM distribution.vw_installation_source_fr WHERE active IS TRUE" \
+ogr2ogr -sql "SELECT *, '<a href=javascript:app.openInfoWindow(\"http://www.cartoriviera.ch/sige/www/gallery.php?type=ouvrage&ouvrage='||identification||
+'\",\"Ouvrage\",600,600)>croquis</a>' as links FROM distribution.vw_installation_source_fr WHERE active IS TRUE" \
 -overwrite -a_srs EPSG:21781 -f SQLite $sqliteoutput \
 -nln installation_source -nlt POINT -progress \
 PG:"dbname='sige' host='172.24.171.203' port='5432' user='sige' password='db4wat$'" \
 -dsco SPATIALITE=no -lco "SPATIAL_INDEX=no FORMAT=SPATIALITE" -gt 65536
 echo "installation treatment"
-ogr2ogr -sql "SELECT * FROM distribution.vw_installation_treatment_fr WHERE active IS TRUE" \
+ogr2ogr -sql "SELECT *, '<a href=javascript:app.openInfoWindow(\"http://www.cartoriviera.ch/sige/www/gallery.php?type=ouvrage&ouvrage='||identification||
+'\",\"Ouvrage\",600,600)>croquis</a>' as links FROM distribution.vw_installation_treatment_fr WHERE active IS TRUE" \
 -overwrite -a_srs EPSG:21781 -f SQLite $sqliteoutput \
 -nln installation_treatment -nlt POINT -progress \
 PG:"dbname='sige' host='172.24.171.203' port='5432' user='sige' password='db4wat$'" \
 -dsco SPATIALITE=no -lco "SPATIAL_INDEX=no FORMAT=SPATIALITE" -gt 65536
 echo "installation pressurecontrol"
-ogr2ogr -sql "SELECT * FROM distribution.vw_installation_pressurecontrol_fr WHERE active IS TRUE" \
+ogr2ogr -sql "SELECT *, '<a href=javascript:app.openInfoWindow(\"http://www.cartoriviera.ch/sige/www/gallery.php?type=ouvrage&ouvrage='||identification||
+'\",\"Ouvrage\",600,600)>croquis</a>' as links FROM distribution.vw_installation_pressurecontrol_fr WHERE active IS TRUE" \
 -overwrite -a_srs EPSG:21781 -f SQLite $sqliteoutput \
 -nln installation_pressurecontrol -nlt POINT -progress \
 PG:"dbname='sige' host='172.24.171.203' port='5432' user='sige' password='db4wat$'" \
 -dsco SPATIALITE=no -lco "SPATIAL_INDEX=no FORMAT=SPATIALITE" -gt 65536
 echo "installation valvechamber"
-ogr2ogr -sql "SELECT * FROM distribution.vw_installation_valvechamber_fr WHERE active IS TRUE" \
+ogr2ogr -sql "SELECT *, '<a href=javascript:app.openInfoWindow(\"http://www.cartoriviera.ch/sige/www/gallery.php?type=ouvrage&ouvrage='||identification||
+'\",\"Ouvrage\",600,600)>croquis</a>' as links FROM distribution.vw_installation_valvechamber_fr WHERE active IS TRUE" \
 -overwrite -a_srs EPSG:21781 -f SQLite $sqliteoutput \
 -nln installation_valvechamber -nlt POINT -progress \
 PG:"dbname='sige' host='172.24.171.203' port='5432' user='sige' password='db4wat$'" \
@@ -183,7 +206,7 @@ then
 	prompt
 	binary
 	cd Distribution
-	put $sqliteoutput sige_distribution_v2.sqlite
+	put $sqliteoutput sige_distribution_v3.sqlite
 	bye
 	EOF
 fi
