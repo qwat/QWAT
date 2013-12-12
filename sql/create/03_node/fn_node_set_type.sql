@@ -63,8 +63,8 @@ $BODY$
 			/* loop over them, and take the 2 first/last points of the pipe to determine orientation */
 			FOR pipeitem IN (
 				SELECT 	od_pipe.id, od_pipe.year, vl_pipe_material.value_fr AS material, vl_pipe_material.diameter_nominal AS diameter,
-						ST_PointN(geometry,2)   AS point_1,
-						ST_StartPoint(geometry) AS point_2
+						ST_StartPoint(geometry) AS point_1,
+						ST_PointN(geometry,2)   AS point_2
 						FROM distribution.od_pipe
 						INNER JOIN distribution.vl_pipe_material ON od_pipe.id_material = vl_pipe_material.id
 						INNER JOIN distribution.vl_status        ON od_pipe.id_status = vl_status.id
@@ -121,7 +121,7 @@ $BODY$
 		/* update the node table */
 		UPDATE distribution.od_node SET
 			_type           = type,
-			_orientation    = degrees(orientation)+90,
+			_orientation    = degrees(orientation),
 			_schema_visible = grouped.schema_visible,
 			_status_active  = grouped.status_active,
 			_under_object   = is_under_object
