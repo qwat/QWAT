@@ -84,4 +84,6 @@ pg_restore --data-only  --disable-triggers --single-transaction --verbose --supe
 --schema=distribution $backupfile
 read -p " continuer..."
 
+psql -h 172.24.171.203 -U sige -f ../after_import.sql -v ON_ERROR_STOP=1
+
 fi

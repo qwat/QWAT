@@ -9,7 +9,7 @@
 /* CREATE TABLE */
 DROP TABLE IF EXISTS distribution.od_hydrant CASCADE;
 CREATE TABLE distribution.od_hydrant (id serial PRIMARY KEY);
-SELECT setval('distribution.od_hydrant_id_seq', 100, true);
+
 COMMENT ON TABLE distribution.od_hydrant IS 'hydrant.';
 
 /* COLUMNS */

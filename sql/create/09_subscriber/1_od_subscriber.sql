@@ -9,7 +9,7 @@ DROP TABLE IF EXISTS distribution.od_subscriber CASCADE;
 CREATE TABLE distribution.od_subscriber (id serial PRIMARY KEY);
 COMMENT ON TABLE distribution.od_subscriber IS 'Table for subscriber.';
 
-SELECT setval('distribution.od_subscriber_id_seq', 8000, true);
+
 
 ALTER TABLE distribution.od_subscriber ADD COLUMN id_type              integer not null;
 ALTER TABLE distribution.od_subscriber ADD COLUMN id_status            integer not null default 1301;

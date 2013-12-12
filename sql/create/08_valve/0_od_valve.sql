@@ -8,7 +8,7 @@
 DROP TABLE IF EXISTS distribution.od_valve CASCADE;
 CREATE TABLE distribution.od_valve (id serial , CONSTRAINT valve_pk PRIMARY KEY (id));
 COMMENT ON TABLE distribution.od_valve IS 'Table for valve.';
-SELECT setval('distribution.od_pipe_id_seq', 20000, true);
+
 
 /* columns */
 ALTER TABLE distribution.od_valve ADD COLUMN identification         varchar(20) default '';

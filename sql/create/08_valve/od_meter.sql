@@ -9,7 +9,7 @@ DROP TABLE IF EXISTS distribution.od_meter CASCADE;
 CREATE TABLE distribution.od_meter (id serial PRIMARY KEY);
 COMMENT ON TABLE distribution.od_meter IS 'Table for meters.';
 
-SELECT setval('distribution.od_meter_id_seq', 8000, true);
+
 
 /* COLUMNS */
 ALTER TABLE distribution.od_meter ADD COLUMN id_status integer not null;

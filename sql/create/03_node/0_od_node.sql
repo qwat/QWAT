@@ -7,7 +7,7 @@
 /* CREATE TABLE */
 DROP TABLE IF EXISTS distribution.od_node CASCADE;
 CREATE TABLE distribution.od_node (id serial PRIMARY KEY);
-SELECT setval('distribution.od_node_id_seq', 40000, true);
+
 COMMENT ON TABLE distribution.od_node IS 'Nodes. Type:If three pipe or more arrives at the node: three. If one pipe: one. If two: depends on characteristics of pipe: two_same (everything same), two_year (year is different), two_material (and year is/are different), two_diameter (and material/year are different). Orientation is calculated if two pipe arrives to place the symbol in theright direction.';
 
 /* columns */

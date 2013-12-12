@@ -7,7 +7,7 @@
 /* CREATE TABLE */
 DROP TABLE IF EXISTS distribution.od_installation_treatment CASCADE;
 CREATE TABLE distribution.od_installation_treatment (id serial PRIMARY KEY);
-SELECT setval('distribution.od_installation_treatment_id_seq', 100, true);
+
 COMMENT ON TABLE distribution.od_installation_treatment IS 'storage treatments. These are related to installations and are made of cisterns';
 
 /* common columns to all installations*/

@@ -8,7 +8,7 @@
 DROP TABLE IF EXISTS distribution.od_pipe CASCADE;
 CREATE TABLE distribution.od_pipe (id serial PRIMARY KEY);
 COMMENT ON TABLE distribution.od_pipe IS 'Table for pipe. This should not be used for editing/viewing, as a more complete view (pipe_view) exists.';
-SELECT setval('distribution.od_pipe_id_seq', 35000, true);
+
 
 /* columns */                                                                          
 ALTER TABLE distribution.od_pipe ADD COLUMN id_parent              integer;                                      /* id_parent            FK */
