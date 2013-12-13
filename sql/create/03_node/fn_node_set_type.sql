@@ -24,18 +24,18 @@ $BODY$
 		is_under_object boolean          := false;
 		node_geom       geometry(Point, 21781)   ;
 		intersects      boolean                  ;
-		rtable          record                   ;
-		sqltxt          text                     ;
+		node_table      record                   ;
+		stmt            text                     ;
 		keep_type       boolean          := false;
 	BEGIN
 		/* determine if the node is under an object (hydrant, valve, etc.) */
-		FOR rtable IN SELECT * FROM distribution.od_node_table
+		FOR node_table IN SELECT * FROM distribution.od_node_table
 		LOOP
-			sqltxt := 'SELECT ' || node_id || 'IN (SELECT id_node FROM distribution.' || rtable.table_name || ');';
-			EXECUTE sqltxt INTO is_under_object;
+			stmt := 'SELECT ' || node_id || 'IN (SELECT id_node FROM distribution.' || node_table.table_name || ');';
+			EXECUTE stmt INTO is_under_object;
 			IF is_under_object IS TRUE THEN
-				type := rtable.node_type;
-				IF rtable.overwrite IS true THEN
+				type := node_table.node_type;
+				IF node_table.overwrite IS true THEN
 					keep_type = true;
 					EXIT;
 				END IF;
