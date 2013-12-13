@@ -4,7 +4,7 @@
 
 -- Dumped from database version 9.1.10
 -- Dumped by pg_dump version 9.2.4
--- Started on 2013-12-11 09:31:40 CET
+-- Started on 2013-12-13 09:05:08 CET
 
 SET statement_timeout = 0;
 SET client_encoding = 'UTF8';
@@ -15,8 +15,8 @@ SET client_min_messages = warning;
 SET search_path = distribution, pg_catalog;
 
 --
--- TOC entry 4208 (class 0 OID 396358)
--- Dependencies: 508
+-- TOC entry 4220 (class 0 OID 407656)
+-- Dependencies: 512
 -- Data for Name: od_installation_pump; Type: TABLE DATA; Schema: distribution; Owner: sige
 --
 
@@ -46,15 +46,15 @@ INSERT INTO od_installation_pump (id, name, identification, id_installation, id_
 
 
 --
--- TOC entry 4213 (class 0 OID 0)
--- Dependencies: 507
+-- TOC entry 4225 (class 0 OID 0)
+-- Dependencies: 511
 -- Name: od_installation_pump_id_seq; Type: SEQUENCE SET; Schema: distribution; Owner: sige
 --
 
-SELECT pg_catalog.setval('od_installation_pump_id_seq', 100, true);
+SELECT pg_catalog.setval('od_installation_pump_id_seq', 130, true);
 
 
--- Completed on 2013-12-11 09:31:40 CET
+-- Completed on 2013-12-13 09:05:08 CET
 
 --
 -- PostgreSQL database dump complete

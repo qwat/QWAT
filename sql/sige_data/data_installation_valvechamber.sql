@@ -4,7 +4,7 @@
 
 -- Dumped from database version 9.1.10
 -- Dumped by pg_dump version 9.2.4
--- Started on 2013-12-11 09:31:41 CET
+-- Started on 2013-12-13 09:05:08 CET
 
 SET statement_timeout = 0;
 SET client_encoding = 'UTF8';
@@ -15,8 +15,8 @@ SET client_min_messages = warning;
 SET search_path = distribution, pg_catalog;
 
 --
--- TOC entry 4206 (class 0 OID 396931)
--- Dependencies: 520
+-- TOC entry 4218 (class 0 OID 408229)
+-- Dependencies: 524
 -- Data for Name: od_installation_valvechamber; Type: TABLE DATA; Schema: distribution; Owner: sige
 --
 
@@ -50,7 +50,7 @@ INSERT INTO od_installation_valvechamber (id, name, identification, id_installat
 INSERT INTO od_installation_valvechamber (id, name, identification, id_installation, id_status, id_distributor, id_remote, id_watertype, schema_visible, altitude_real, remark, year, open_water_surface, parcel, eca, networkseparation, meter, id_node, id_district, id_pressurezone, id_printmap, _district, _printmaps, geometry) VALUES (196, 'Mouniaz', '3128', 254, 1301, 14, NULL, 1502, true, 374.000, NULL, 2011, NULL, NULL, NULL, NULL, false, 34279, 13, NULL, '{524}', '', '202B', '010100002015550000F1CB0DFA3E1821417C8BFBD56CCC0041');
 INSERT INTO od_installation_valvechamber (id, name, identification, id_installation, id_status, id_distributor, id_remote, id_watertype, schema_visible, altitude_real, remark, year, open_water_surface, parcel, eca, networkseparation, meter, id_node, id_district, id_pressurezone, id_printmap, _district, _printmaps, geometry) VALUES (197, 'Passerelle', '3130', 255, 1301, 1, NULL, 1502, true, NULL, NULL, 1899, NULL, NULL, NULL, NULL, false, 42326, 13, NULL, '{170,173,1953}', '', '208A, 208B, 23A', '0101000020155500003531343D1EFB2041F36E8FCA4ABF0041');
 INSERT INTO od_installation_valvechamber (id, name, identification, id_installation, id_status, id_distributor, id_remote, id_watertype, schema_visible, altitude_real, remark, year, open_water_surface, parcel, eca, networkseparation, meter, id_node, id_district, id_pressurezone, id_printmap, _district, _printmaps, geometry) VALUES (193, 'Chapelle', '3023', 256, 1301, 1, NULL, 1502, true, 1050.000, NULL, 1899, NULL, '4765', NULL, NULL, false, 33008, 12, NULL, '{665}', '', '178D', '010100002015550000746DFBC8C8252141DA67002D36AB0141');
-INSERT INTO od_installation_valvechamber (id, name, identification, id_installation, id_status, id_distributor, id_remote, id_watertype, schema_visible, altitude_real, remark, year, open_water_surface, parcel, eca, networkseparation, meter, id_node, id_district, id_pressurezone, id_printmap, _district, _printmaps, geometry) VALUES (139, 'Faraz', '3044', 241, 1301, 1, NULL, 1502, true, 420.000, 'régulation réseaux inf-sup', 1899, NULL, NULL, NULL, NULL, false, 32933, 11, NULL, '{373}', '', '15B', '010100002015550000313B3095D4FA20419CB2AA488BB00141');
+INSERT INTO od_installation_valvechamber (id, name, identification, id_installation, id_status, id_distributor, id_remote, id_watertype, schema_visible, altitude_real, remark, year, open_water_surface, parcel, eca, networkseparation, meter, id_node, id_district, id_pressurezone, id_printmap, _district, _printmaps, geometry) VALUES (139, 'Faraz', '3044', 241, 1301, 1, NULL, 1502, true, 420.000, 'régulation réseaux inf-sup', 1899, NULL, NULL, NULL, NULL, false, 44075, 11, NULL, '{373}', '', '15B', '010100002015550000313B3095D4FA20419CB2AA488BB00141');
 INSERT INTO od_installation_valvechamber (id, name, identification, id_installation, id_status, id_distributor, id_remote, id_watertype, schema_visible, altitude_real, remark, year, open_water_surface, parcel, eca, networkseparation, meter, id_node, id_district, id_pressurezone, id_printmap, _district, _printmaps, geometry) VALUES (180, 'Pré', '3099', 292, 1301, 1, NULL, 1502, true, 615.000, NULL, 1899, NULL, NULL, NULL, NULL, true, 42603, 12, NULL, '{592}', '', '153C', '0101000020155500006969972AAA1F2141C34E2D4A8E4C0141');
 INSERT INTO od_installation_valvechamber (id, name, identification, id_installation, id_status, id_distributor, id_remote, id_watertype, schema_visible, altitude_real, remark, year, open_water_surface, parcel, eca, networkseparation, meter, id_node, id_district, id_pressurezone, id_printmap, _district, _printmaps, geometry) VALUES (164, 'Scierie', '3109', 293, 1301, 1, NULL, 1502, true, 1000.000, NULL, 1899, NULL, '4835', NULL, NULL, true, 33036, 12, NULL, '{716}', '', '179D', '0101000020155500004EFE9BC3D4282141999D873BF5AB0141');
 INSERT INTO od_installation_valvechamber (id, name, identification, id_installation, id_status, id_distributor, id_remote, id_watertype, schema_visible, altitude_real, remark, year, open_water_surface, parcel, eca, networkseparation, meter, id_node, id_district, id_pressurezone, id_printmap, _district, _printmaps, geometry) VALUES (145, 'Funiculaire', '3049', 237, 1301, 1, NULL, 1502, true, 390.000, 'Fermeture:clé carrée', 1899, NULL, NULL, NULL, NULL, false, 16680, 22, NULL, '{}', '', NULL, '010100002015550000D4D21E67D8E520414C5EF0FB42E20141');
@@ -81,19 +81,19 @@ INSERT INTO od_installation_valvechamber (id, name, identification, id_installat
 INSERT INTO od_installation_valvechamber (id, name, identification, id_installation, id_status, id_distributor, id_remote, id_watertype, schema_visible, altitude_real, remark, year, open_water_surface, parcel, eca, networkseparation, meter, id_node, id_district, id_pressurezone, id_printmap, _district, _printmaps, geometry) VALUES (170, 'Grand Canal', '3055', 247, 1301, 1, NULL, 1502, true, 376.000, 'couvercle bombé', 1899, NULL, NULL, NULL, NULL, false, 32928, 13, NULL, '{24}', '', '205B', '0101000020155500001647CC9B8908214152A0CB2399B30041');
 INSERT INTO od_installation_valvechamber (id, name, identification, id_installation, id_status, id_distributor, id_remote, id_watertype, schema_visible, altitude_real, remark, year, open_water_surface, parcel, eca, networkseparation, meter, id_node, id_district, id_pressurezone, id_printmap, _district, _printmaps, geometry) VALUES (190, 'Villeneuve', '3123', 294, 1301, 1, NULL, 1502, true, 375.000, 'regard compteur+ triopan', 1899, NULL, NULL, NULL, NULL, true, 4352, 24, NULL, '{530}', '', '201A', '01010000201555000026751B513B1B21418C59E530AAF10041');
 INSERT INTO od_installation_valvechamber (id, name, identification, id_installation, id_status, id_distributor, id_remote, id_watertype, schema_visible, altitude_real, remark, year, open_water_surface, parcel, eca, networkseparation, meter, id_node, id_district, id_pressurezone, id_printmap, _district, _printmaps, geometry) VALUES (194, 'Crottaz', '3127', 249, 1301, 1, NULL, 1502, true, 385.000, 'Fermeture: crochet / Sécurité: triopan+min. 2 pers+échelle', 2010, NULL, NULL, NULL, NULL, false, 32810, 8, NULL, '{1797}', '', '6D', '010100002015550000B27C44A1E3E02041145E8283D1E40141');
-INSERT INTO od_installation_valvechamber (id, name, identification, id_installation, id_status, id_distributor, id_remote, id_watertype, schema_visible, altitude_real, remark, year, open_water_surface, parcel, eca, networkseparation, meter, id_node, id_district, id_pressurezone, id_printmap, _district, _printmaps, geometry) VALUES (195, 'Paix', '3129', 253, 1301, 1, NULL, 1502, true, NULL, 'Fermeture: clé SIGE / chambre transit eau St-Pierre uniquement', 1899, NULL, '1', NULL, NULL, false, 43409, 8, NULL, '{1968}', '', '2B', '010100002015550000AF0C471D6CD92041BEBE39F026E90141');
+INSERT INTO od_installation_valvechamber (id, name, identification, id_installation, id_status, id_distributor, id_remote, id_watertype, schema_visible, altitude_real, remark, year, open_water_surface, parcel, eca, networkseparation, meter, id_node, id_district, id_pressurezone, id_printmap, _district, _printmaps, geometry) VALUES (195, 'Paix', '3129', 253, 1301, 1, NULL, 1502, true, NULL, 'Fermeture: clé SIGE / chambre transit eau St-Pierre uniquement', 1899, NULL, '1', NULL, NULL, false, 42866, 8, NULL, '{1968}', '', '2B', '010100002015550000AF0C471D6CD92041BEBE39F026E90141');
 
 
 --
--- TOC entry 4211 (class 0 OID 0)
--- Dependencies: 519
+-- TOC entry 4223 (class 0 OID 0)
+-- Dependencies: 523
 -- Name: od_installation_valvechamber_id_seq; Type: SEQUENCE SET; Schema: distribution; Owner: sige
 --
 
-SELECT pg_catalog.setval('od_installation_valvechamber_id_seq', 100, true);
+SELECT pg_catalog.setval('od_installation_valvechamber_id_seq', 199, true);
 
 
--- Completed on 2013-12-11 09:31:41 CET
+-- Completed on 2013-12-13 09:05:09 CET
 
 --
 -- PostgreSQL database dump complete
