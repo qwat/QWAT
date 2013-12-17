@@ -24,10 +24,10 @@
     <mapcanvas>
         <units>meters</units>
         <extent>
-            <xmin>556069.03883224166929722</xmin>
-            <ymin>144873.78396259329747409</ymin>
-            <xmax>556092.86786872521042824</xmax>
-            <ymax>144895.05988802504725754</ymax>
+            <xmin>554756.26118180609773844</xmin>
+            <ymin>147274.76021835865685716</ymin>
+            <xmax>554852.83605662116315216</xmax>
+            <ymax>147362.83301615837262943</ymax>
         </extent>
         <projections>1</projections>
         <destinationsrs>
@@ -45,9 +45,10 @@
         <layer_coordinate_transform_info>
             <layer_coordinate_transform destAuthId="EPSG:21781" srcAuthId="EPSG:4326" srcDatumTransform="-1" destDatumTransform="-1" layerid="vl_precisionalti20131211161429510"/>
             <layer_coordinate_transform destAuthId="EPSG:21781" srcAuthId="EPSG:4326" srcDatumTransform="-1" destDatumTransform="-1" layerid="vl_precisionalti20131211161258533"/>
+            <layer_coordinate_transform destAuthId="EPSG:21781" srcAuthId="EPSG:4326" srcDatumTransform="-1" destDatumTransform="-1" layerid="vl_watertype20131217141603877"/>
         </layer_coordinate_transform_info>
     </mapcanvas>
-    <legend updateDrawingOrder="false" activeLayer="valve20130304110011497">
+    <legend updateDrawingOrder="false" activeLayer="conduites_actives_copy20130822080028511">
         <legendgroup open="true" checked="Qt::PartiallyChecked" name="Réseau">
             <legendgroup open="true" checked="Qt::PartiallyChecked" name="ouvrages">
                 <legendlayer drawingOrder="0" open="false" checked="Qt::Unchecked" name="ouvrage" showFeatureCount="0">
@@ -149,7 +150,7 @@
                     </filegroup>
                 </legendlayer>
             </legendgroup>
-            <legendgroup open="true" checked="Qt::PartiallyChecked" name="Conduites">
+            <legendgroup open="true" checked="Qt::Checked" name="Conduites">
                 <legendlayer drawingOrder="18" open="false" checked="Qt::Checked" name="conduites actives" showFeatureCount="0">
                     <filegroup open="false" hidden="false">
                         <legendlayerfile isInOverview="0" layerid="conduites_copy20130709141244955" visible="1"/>
@@ -160,9 +161,9 @@
                         <legendlayerfile isInOverview="0" layerid="conduites_actives_copy_copy20130822080032346" visible="1"/>
                     </filegroup>
                 </legendlayer>
-                <legendlayer drawingOrder="20" open="false" checked="Qt::Unchecked" name="conduites inactives" showFeatureCount="0">
+                <legendlayer drawingOrder="20" open="false" checked="Qt::Checked" name="conduites inactives" showFeatureCount="0">
                     <filegroup open="false" hidden="false">
-                        <legendlayerfile isInOverview="0" layerid="conduites_actives_copy20130822080028511" visible="0"/>
+                        <legendlayerfile isInOverview="0" layerid="conduites_actives_copy20130822080028511" visible="1"/>
                     </filegroup>
                 </legendlayer>
             </legendgroup>
@@ -184,27 +185,27 @@
                 </filegroup>
             </legendlayer>
         </legendgroup>
-        <legendgroup open="false" checked="Qt::Checked" name="Annotations">
-            <legendlayer drawingOrder="24" open="false" checked="Qt::Checked" name="annotation - ligne" showFeatureCount="0">
+        <legendgroup open="false" checked="Qt::Unchecked" name="Annotations">
+            <legendlayer drawingOrder="24" open="false" checked="Qt::Unchecked" name="annotation - ligne" showFeatureCount="0">
                 <filegroup open="false" hidden="false">
-                    <legendlayerfile isInOverview="0" layerid="od_annotationline20131203095020365" visible="1"/>
+                    <legendlayerfile isInOverview="0" layerid="od_annotationline20131203095020365" visible="0"/>
                 </filegroup>
             </legendlayer>
-            <legendlayer drawingOrder="25" open="false" checked="Qt::Checked" name="annotation - point" showFeatureCount="0">
+            <legendlayer drawingOrder="25" open="false" checked="Qt::Unchecked" name="annotation - point" showFeatureCount="0">
                 <filegroup open="false" hidden="false">
-                    <legendlayerfile isInOverview="0" layerid="od_annotationpoint20131203095020392" visible="1"/>
+                    <legendlayerfile isInOverview="0" layerid="od_annotationpoint20131203095020392" visible="0"/>
                 </filegroup>
             </legendlayer>
         </legendgroup>
-        <legendgroup open="true" checked="Qt::PartiallyChecked" name="Côtes">
-            <legendlayer drawingOrder="26" open="false" checked="Qt::Checked" name="côtes distance" showFeatureCount="0">
+        <legendgroup open="true" checked="Qt::Unchecked" name="Côtes">
+            <legendlayer drawingOrder="26" open="false" checked="Qt::Unchecked" name="côtes distance" showFeatureCount="0">
                 <filegroup open="false" hidden="false">
-                    <legendlayerfile isInOverview="0" layerid="dimension20130807094904783" visible="1"/>
+                    <legendlayerfile isInOverview="0" layerid="dimension20130807094904783" visible="0"/>
                 </filegroup>
             </legendlayer>
-            <legendlayer drawingOrder="27" open="false" checked="Qt::Checked" name="côtes orientation" showFeatureCount="0">
+            <legendlayer drawingOrder="27" open="false" checked="Qt::Unchecked" name="côtes orientation" showFeatureCount="0">
                 <filegroup open="false" hidden="false">
-                    <legendlayerfile isInOverview="0" layerid="od_dimension_orientation20131202111155806" visible="1"/>
+                    <legendlayerfile isInOverview="0" layerid="od_dimension_orientation20131202111155806" visible="0"/>
                 </filegroup>
             </legendlayer>
             <legendlayer drawingOrder="28" open="false" checked="Qt::Unchecked" name="points de construction" showFeatureCount="0">
@@ -223,7 +224,7 @@
                 </filegroup>
             </legendlayer>
         </legendgroup>
-        <legendgroup open="false" checked="Qt::PartiallyChecked" name="Zones">
+        <legendgroup open="true" checked="Qt::Unchecked" name="Zones">
             <legendlayer drawingOrder="31" open="false" checked="Qt::Unchecked" name="communes" showFeatureCount="0">
                 <filegroup open="false" hidden="false">
                     <legendlayerfile isInOverview="0" layerid="district20130304110004764" visible="0"/>
@@ -234,9 +235,9 @@
                     <legendlayerfile isInOverview="0" layerid="pressurezone20130417133612105" visible="0"/>
                 </filegroup>
             </legendlayer>
-            <legendlayer drawingOrder="33" open="false" checked="Qt::Checked" name="folios" showFeatureCount="0">
+            <legendlayer drawingOrder="33" open="false" checked="Qt::Unchecked" name="folios" showFeatureCount="0">
                 <filegroup open="false" hidden="false">
-                    <legendlayerfile isInOverview="0" layerid="printmap20130304110011400" visible="1"/>
+                    <legendlayerfile isInOverview="0" layerid="printmap20130304110011400" visible="0"/>
                 </filegroup>
             </legendlayer>
             <legendlayer drawingOrder="34" open="false" checked="Qt::Unchecked" name="zones de protections" showFeatureCount="0">
@@ -370,6 +371,11 @@
                     <legendlayerfile isInOverview="0" layerid="vl_remote20130304110004987" visible="0"/>
                 </filegroup>
             </legendlayer>
+            <legendlayer drawingOrder="-1" open="true" checked="Qt::Unchecked" name="Type d'eau" showFeatureCount="0">
+                <filegroup open="true" hidden="false">
+                    <legendlayerfile isInOverview="0" layerid="vl_watertype20131217141603877" visible="0"/>
+                </filegroup>
+            </legendlayer>
             <legendlayer drawingOrder="59" open="true" checked="Qt::Unchecked" name="Vannes - maintenance" showFeatureCount="0">
                 <filegroup open="true" hidden="false">
                     <legendlayerfile isInOverview="0" layerid="vl_valve_maintenance20130304110011567" visible="0"/>
@@ -394,8 +400,9 @@
         <legendgroup embedded="1" drawingOrder="32" open="false" checked="Qt::Checked" name="base" project="../../../data/cadastre/cadastre.qgs"/>
         <legendgroup embedded="1" drawingOrder="47" open="false" checked="Qt::Unchecked" name="complément" project="../../../data/cadastre/cadastre.qgs"/>
     </legend>
-    <Composer title="folio" visible="0">
+    <Composer title="folio" visible="1">
         <Composition snapGridTolerance="2" gridVisible="1" printResolution="300" paperWidth="1030" snapGridOffsetX="0" guidesVisible="1" snapGridResolution="10" snapGridOffsetY="0" alignmentSnap="1" snapping="0" numPages="1" paperHeight="914" alignmentSnapTolerance="2" smartGuides="1" printAsRaster="1" generateWorldFile="0">
+            <SnapLine y1="0" x1="0" y2="0" x2="0"/>
             <SnapLine y1="0" x1="0" y2="0" x2="0"/>
             <ComposerArrow startMarkerFile="" arrowHeadWidth="0" endMarkerFile="" outlineWidth="0.3" markerMode="1">
                 <ArrowColor alpha="255" red="0" blue="0" green="0"/>
@@ -407,7 +414,7 @@
                 </ComposerItem>
             </ComposerArrow>
             <ComposerShape shapeType="1" cornerRadius="0">
-                <ComposerItem width="70" x="225" transparency="0" y="110" rotation="0" height="30" positionMode="0" frame="true" outlineWidth="0" zValue="13" lastValidViewScaleFactor="0.838251" uuid="{4566e0a1-ec7a-452e-baf0-a45ed15314ff}" id="" background="true" blendMode="0" positionLock="false">
+                <ComposerItem width="70" x="225" transparency="0" y="110" rotation="0" height="30" positionMode="0" frame="true" outlineWidth="0" zValue="13" lastValidViewScaleFactor="0.955191" uuid="{4566e0a1-ec7a-452e-baf0-a45ed15314ff}" id="" background="true" blendMode="0" positionLock="false">
                     <FrameColor alpha="255" red="0" blue="0" green="0"/>
                     <BackgroundColor alpha="255" red="255" blue="255" green="255"/>
                 </ComposerItem>
@@ -420,8 +427,8 @@
                     <BackgroundColor alpha="255" red="255" blue="255" green="255"/>
                 </ComposerItem>
             </ComposerLabel>
-            <ComposerMap keepLayerSet="true" overviewFrameMap="-1" id="1" previewMode="Cache" drawCanvasItems="true">
-                <overviewFrame overviewBlendMode="0" overviewFrameMap="-1" overviewCentered="false" overviewInverted="false">
+            <ComposerMap keepLayerSet="true" overviewFrameMap="0" id="1" previewMode="Render" drawCanvasItems="true">
+                <overviewFrame overviewBlendMode="0" overviewFrameMap="0" overviewCentered="true" overviewInverted="false">
                     <symbol alpha="0.3" type="fill" name="">
                         <layer pass="0" class="SimpleFill" locked="0">
                             <prop k="border_width_unit" v="MM"/>
@@ -435,7 +442,7 @@
                         </layer>
                     </symbol>
                 </overviewFrame>
-                <Extent ymin="145228.65514806870487519" xmin="555345.29580734053160995" ymax="145689.57361213883268647" xmax="555959.85580796736758202"/>
+                <Extent ymin="151519.03966796494205482" xmin="555567.71999969659373164" ymax="151979.95813203506986611" xmax="556182.28000032342970371"/>
                 <LayerSet>
                     <Layer>printmap20130304110011400</Layer>
                 </LayerSet>
@@ -459,13 +466,13 @@
                         <fontColor red="0" blue="0" green="0"/>
                     </Annotation>
                 </Grid>
-                <ComposerItem width="40" x="975" transparency="0" y="110" rotation="0" height="29.9999" positionMode="0" frame="true" outlineWidth="0" zValue="11" lastValidViewScaleFactor="0.838251" uuid="{b970a2fd-9bd7-4a2a-a787-1664811befc7}" id="" background="true" blendMode="0" positionLock="false">
+                <ComposerItem width="40" x="975" transparency="0" y="110" rotation="0" height="29.9999" positionMode="0" frame="true" outlineWidth="0" zValue="11" lastValidViewScaleFactor="0.810929" uuid="{b970a2fd-9bd7-4a2a-a787-1664811befc7}" id="" background="true" blendMode="0" positionLock="false">
                     <FrameColor alpha="255" red="0" blue="0" green="0"/>
                     <BackgroundColor alpha="255" red="255" blue="255" green="255"/>
                 </ComposerItem>
             </ComposerMap>
             <ComposerScaleBar penColor="#000000" style="Double Box" numMapUnitsPerScaleBarUnit="1" alignment="1" brushColor="#000000" numSegments="4" segmentMillimeters="160" fontColor="#000000" font="Ubuntu,12,-1,5,50,0,0,0,0,0" numUnitsPerSegment="5" units="1" labelBarSpace="3" outlineWidth="0.1" numSegmentsLeft="0" height="6" mapId="0" boxContentSpace="1" unitLabel="m">
-                <ComposerItem width="650.337" x="154.831" transparency="0" y="121.776" rotation="0" height="15" positionMode="4" frame="false" outlineWidth="0" zValue="10" lastValidViewScaleFactor="0.981421" uuid="{5b7e8e4a-a087-481b-b0bd-5495102e2fcd}" id="" background="true" blendMode="0" positionLock="false">
+                <ComposerItem width="90.3375" x="434.831" transparency="0" y="121.776" rotation="0" height="15" positionMode="4" frame="false" outlineWidth="0" zValue="10" lastValidViewScaleFactor="1.50161" uuid="{5b7e8e4a-a087-481b-b0bd-5495102e2fcd}" id="" background="true" blendMode="0" positionLock="false">
                     <FrameColor alpha="255" red="0" blue="0" green="0"/>
                     <BackgroundColor alpha="255" red="255" blue="255" green="255"/>
                 </ComposerItem>
@@ -473,7 +480,7 @@
             <ComposerLabel valign="128" labelText="[%'ETABLI SUR LA BASE\nDES DONNEES CADASTRALES'%]" htmlState="0" halign="4" margin="1">
                 <LabelFont description="Arial,20,-1,5,50,0,0,0,0,0"/>
                 <FontColor red="0" blue="0" green="0"/>
-                <ComposerItem width="120" x="855" transparency="0" y="110" rotation="0" height="30" positionMode="0" frame="true" outlineWidth="0" zValue="9" lastValidViewScaleFactor="0.981421" uuid="{9e4aa9dd-b712-43e0-9265-4c36415be189}" id="" background="false" blendMode="0" positionLock="false">
+                <ComposerItem width="120" x="855" transparency="0" y="110" rotation="0" height="30" positionMode="0" frame="true" outlineWidth="0" zValue="9" lastValidViewScaleFactor="1.53297" uuid="{9e4aa9dd-b712-43e0-9265-4c36415be189}" id="" background="false" blendMode="0" positionLock="false">
                     <FrameColor alpha="255" red="0" blue="0" green="0"/>
                     <BackgroundColor alpha="255" red="255" blue="255" green="255"/>
                 </ComposerItem>
@@ -526,8 +533,8 @@
                     <BackgroundColor alpha="255" red="255" blue="255" green="255"/>
                 </ComposerItem>
             </ComposerLabel>
-            <ComposerMap keepLayerSet="false" overviewFrameMap="1" id="0" previewMode="Cache" drawCanvasItems="true">
-                <overviewFrame overviewBlendMode="0" overviewFrameMap="1" overviewCentered="false" overviewInverted="false">
+            <ComposerMap keepLayerSet="false" overviewFrameMap="-1" id="0" previewMode="Render" drawCanvasItems="true">
+                <overviewFrame overviewBlendMode="0" overviewFrameMap="-1" overviewCentered="false" overviewInverted="false">
                     <symbol alpha="0.568627" type="fill" name="">
                         <layer pass="0" class="SimpleFill" locked="0">
                             <prop k="border_width_unit" v="MM"/>
@@ -563,13 +570,13 @@
                         <fontColor red="0" blue="0" green="0"/>
                     </Annotation>
                 </Grid>
-                <ComposerItem width="1000" x="15" transparency="0" y="140" rotation="0" height="666.667" positionMode="0" frame="true" outlineWidth="0" zValue="1" lastValidViewScaleFactor="0.838251" uuid="{27df2cec-4272-4242-93e2-7d5ffc2bbe05}" id="" background="true" blendMode="0" positionLock="false">
+                <ComposerItem width="1000" x="15" transparency="0" y="140" rotation="0" height="666.667" positionMode="0" frame="true" outlineWidth="0" zValue="1" lastValidViewScaleFactor="0.810929" uuid="{27df2cec-4272-4242-93e2-7d5ffc2bbe05}" id="" background="true" blendMode="0" positionLock="false">
                     <FrameColor alpha="255" red="0" blue="0" green="0"/>
                     <BackgroundColor alpha="255" red="255" blue="255" green="255"/>
                 </ComposerItem>
             </ComposerMap>
         </Composition>
-        <Atlas hideCoverage="true" featureFilter="id = 355" coverageLayer="printmap20130304110011400" fixedScale="false" composerMap="0" singleFile="false" filenamePattern=" 'folio_' ||  &quot;communes_name&quot; || '_' || &quot;name&quot;" enabled="true" filterFeatures="true" sortFeatures="false" margin="0"/>
+        <Atlas hideCoverage="true" coverageLayer="printmap20130304110011400" fixedScale="false" composerMap="0" singleFile="false" filenamePattern=" 'folio_' ||  &quot;communes_name&quot; || '_' || &quot;name&quot;" enabled="true" filterFeatures="false" sortFeatures="false" margin="0"/>
     </Composer>
     <Composer title="A0" visible="0">
         <Composition snapGridTolerance="2" gridVisible="1" printResolution="300" paperWidth="1030" snapGridOffsetX="0" guidesVisible="1" snapGridResolution="10" snapGridOffsetY="0" alignmentSnap="1" snapping="0" numPages="1" paperHeight="914" alignmentSnapTolerance="2" smartGuides="1" printAsRaster="1" generateWorldFile="0">
@@ -747,7 +754,7 @@
             </ComposerMap>
         </Composition>
     </Composer>
-    <projectlayers layercount="79">
+    <projectlayers layercount="80">
         <maplayer minimumScale="0" maximumScale="1e+08" minLabelScale="0" maxLabelScale="1e+08" geometry="Line" type="vector" hasScaleBasedVisibilityFlag="0" scaleBasedLabelVisibilityFlag="0">
             <id>IntersectIt_Lines20130618102142813</id>
             <datasource>LineString?crs=EPSG:21781&amp;field=id:string&amp;field=type:string&amp;field=x:double&amp;field=y:double&amp;field=observation:double&amp;field=precision:double&amp;index=yes</datasource>
@@ -1498,7 +1505,7 @@
             </pipe>
             <blendMode>0</blendMode>
         </maplayer>
-        <maplayer minimumScale="-4.65661e-10" maximumScale="1e+08" minLabelScale="0" maxLabelScale="1e+08" geometry="Line" type="vector" hasScaleBasedVisibilityFlag="0" scaleBasedLabelVisibilityFlag="0">
+        <maplayer minimumScale="0" maximumScale="1e+08" minLabelScale="0" maxLabelScale="1e+08" geometry="Line" type="vector" hasScaleBasedVisibilityFlag="0" scaleBasedLabelVisibilityFlag="0">
             <id>conduites_actives_copy20130822080028511</id>
             <datasource>dbname='sige' host=172.24.171.203 port=5432 user='sige' sslmode=disable key='id' srid=21781 type=LINESTRING table="distribution"."od_pipe" (geometry) sql=</datasource>
             <title></title>
@@ -1525,6 +1532,7 @@
                 <join joinFieldName="id" targetFieldName="id_status" memoryCache="0" joinLayerId="vl_status20130304110011436"/>
                 <join joinFieldName="id" targetFieldName="id_material" memoryCache="1" joinLayerId="vl_pipe_material20130304110005230"/>
                 <join joinFieldName="id" targetFieldName="id_status" memoryCache="0" joinLayerId="subscriber20130304110011459"/>
+                <join joinFieldName="id" targetFieldName="id_status" memoryCache="1" joinLayerId="status20130304110011436"/>
             </vectorjoins>
             <renderer-v2 symbollevels="0" type="RuleRenderer">
                 <rules>
@@ -1718,6 +1726,7 @@
                 <edittype labelontop="0" editable="0" type="0" name="Conduites - matériaux_diameter"/>
                 <edittype labelontop="0" editable="0" type="0" name="Conduites - matériaux_diameter_external"/>
                 <edittype labelontop="0" editable="0" type="0" name="Conduites - matériaux_diameter_internal"/>
+                <edittype labelontop="0" editable="0" type="0" name="Conduites - matériaux_diameter_nominal"/>
                 <edittype labelontop="0" editable="0" type="0" name="Conduites - matériaux_name"/>
                 <edittype labelontop="0" editable="0" type="0" name="Conduites - matériaux_short_en"/>
                 <edittype labelontop="0" editable="0" type="0" name="Conduites - matériaux_short_fr"/>
@@ -1728,20 +1737,28 @@
                 <edittype labelontop="0" editable="0" type="0" name="Distributeur_name"/>
                 <edittype labelontop="0" editable="0" type="0" name="Statut_active"/>
                 <edittype labelontop="0" editable="0" type="0" name="Statut_comment"/>
+                <edittype labelontop="0" editable="0" type="0" name="Statut_helper_en"/>
+                <edittype labelontop="0" editable="0" type="0" name="Statut_helper_fr"/>
                 <edittype labelontop="0" editable="0" type="0" name="Statut_name"/>
                 <edittype labelontop="0" editable="0" type="0" name="Statut_sire"/>
                 <edittype labelontop="0" editable="0" type="0" name="Statut_status"/>
+                <edittype labelontop="0" editable="0" type="0" name="Statut_value_en"/>
+                <edittype labelontop="0" editable="0" type="0" name="Statut_value_fr"/>
+                <edittype labelontop="0" editable="0" type="0" name="Statut_vl_active"/>
                 <edittype labelontop="0" editable="0" type="0" name="_diff_elevation"/>
+                <edittype labelontop="0" editable="1" type="0" name="_district"/>
                 <edittype labelontop="0" editable="0" type="0" name="_districts"/>
                 <edittype labelontop="0" editable="1" type="0" name="_geometry_schematic_used"/>
                 <edittype labelontop="0" editable="0" type="0" name="_length2d"/>
                 <edittype labelontop="0" editable="0" type="0" name="_length3d"/>
+                <edittype labelontop="0" editable="1" type="0" name="_pressurezone"/>
                 <edittype labelontop="0" editable="0" type="0" name="_printmaps"/>
                 <edittype labelontop="0" editable="0" unchecked="f" type="7" checked="t" name="_schema_visible"/>
                 <edittype labelontop="0" editable="0" type="0" name="_valve_closed"/>
                 <edittype labelontop="0" editable="0" type="0" name="_valve_count"/>
                 <edittype labelontop="0" editable="0" type="0" name="abonnés__districts"/>
                 <edittype labelontop="0" editable="0" type="0" name="abonnés__identification_full"/>
+                <edittype labelontop="0" editable="0" type="0" name="abonnés__pressurezone"/>
                 <edittype labelontop="0" editable="0" type="0" name="abonnés__printmaps"/>
                 <edittype labelontop="0" editable="0" type="0" name="abonnés_communes_colorcode"/>
                 <edittype labelontop="0" editable="0" type="0" name="abonnés_communes_land_registry"/>
@@ -2091,7 +2108,7 @@
                 <actionsetting action="qgis.utils.plugins['linkit'].linkit('pipe20130507153818274','id_parent','pipe20130507153818274', [% $id %])" capture="0" type="1" name="Conduites schéma parent - enfant"/>
             </attributeactions>
         </maplayer>
-        <maplayer minimumScale="0" maximumScale="1e+08" minLabelScale="0" maxLabelScale="1e+08" geometry="Line" type="vector" hasScaleBasedVisibilityFlag="0" scaleBasedLabelVisibilityFlag="0">
+        <maplayer minimumScale="-4.65661e-10" maximumScale="1e+08" minLabelScale="0" maxLabelScale="1e+08" geometry="Line" type="vector" hasScaleBasedVisibilityFlag="0" scaleBasedLabelVisibilityFlag="0">
             <id>conduites_copy20130709141244955</id>
             <datasource>dbname='sige' host=172.24.171.203 port=5432 user='sige' sslmode=disable key='id' srid=21781 type=LINESTRING table="distribution"."od_pipe" (geometry) sql=</datasource>
             <title></title>
@@ -2365,8 +2382,8 @@
                 <edittype labelontop="0" editable="0" allowNull="true" orderByValue="false" key="id" layer="pressurezone20130417133612105" allowMulti="false" filterExpression="" type="15" value="name" name="id_pressurezone"/>
                 <edittype labelontop="0" editable="0" type="0" name="id_printmap"/>
                 <edittype labelontop="0" editable="1" allowNull="true" orderByValue="true" key="id" layer="vl_pipe_protection20130304110005258" allowMulti="false" filterExpression="" type="15" value="value_fr" name="id_protection"/>
-                <edittype labelontop="0" editable="1" allowNull="false" orderByValue="false" key="id" layer="vl_status20130304110011436" allowMulti="false" filterExpression="" type="15" value="value_fr" name="id_status"/>
-                <edittype labelontop="0" editable="1" type="0" name="id_watertype"/>
+                <edittype labelontop="0" editable="1" allowNull="false" orderByValue="false" key="id" layer="status20130304110011436" allowMulti="false" filterExpression="" type="15" value="value_fr" name="id_status"/>
+                <edittype labelontop="0" editable="1" allowNull="false" orderByValue="false" key="id" layer="vl_watertype20131217141603877" allowMulti="false" filterExpression="" type="15" value="value_fr" name="id_watertype"/>
                 <edittype labelontop="0" editable="1" type="0" name="labeladdremark"/>
                 <edittype labelontop="0" editable="1" type="0" name="labeladdremark_schema"/>
                 <edittype labelontop="0" editable="1" type="0" name="labelremark"/>
@@ -3823,10 +3840,10 @@
                 <property key="labeling/centroidWhole" value="false"/>
                 <property key="labeling/decimals" value="3"/>
                 <property key="labeling/displayAll" value="true"/>
-                <property key="labeling/dist" value="0"/>
+                <property key="labeling/dist" value="5"/>
                 <property key="labeling/distInMapUnits" value="false"/>
                 <property key="labeling/enabled" value="true"/>
-                <property key="labeling/fieldName" value="CASE &#xa;WHEN id_type = 1 THEN 'CR. ' || name&#xa;WHEN id_type = 2 THEN 'CCP. ' || name&#xa;WHEN id_type = 3 THEN 'CRA. ' || name&#xa;ELSE name&#x9;&#xa;END"/>
+                <property key="labeling/fieldName" value="CASE &#xa;WHEN id_type = 2801 THEN 'CR. ' || name&#xa;WHEN id_type = 2802 THEN 'CCP. ' || name&#xa;WHEN id_type = 2803 THEN 'CRA. ' || name&#xa;ELSE name&#x9;&#xa;END"/>
                 <property key="labeling/fontBold" value="false"/>
                 <property key="labeling/fontCapitals" value="0"/>
                 <property key="labeling/fontFamily" value="Arial"/>
@@ -3948,6 +3965,7 @@
                 <selectedonly on=""/>
             </labelattributes>
             <edittypes>
+                <edittype labelontop="0" editable="1" type="0" name="_district"/>
                 <edittype labelontop="0" editable="1" type="0" name="_districts"/>
                 <edittype labelontop="0" editable="1" type="0" name="_geometry_schematic_used"/>
                 <edittype labelontop="0" editable="1" type="0" name="_printmaps"/>
@@ -3985,7 +4003,7 @@
                 <actionsetting action="qgis.utils.plugins['postgres91plusauditor'].audit('installation_pressurecontrol20131107105006792',[% $id %])" capture="0" type="1" name="History audit"/>
             </attributeactions>
         </maplayer>
-        <maplayer minimumScale="0" maximumScale="1e+08" minLabelScale="0" maxLabelScale="1e+08" geometry="Point" type="vector" hasScaleBasedVisibilityFlag="0" scaleBasedLabelVisibilityFlag="0">
+        <maplayer minimumScale="-4.65661e-10" maximumScale="1e+08" minLabelScale="0" maxLabelScale="1e+08" geometry="Point" type="vector" hasScaleBasedVisibilityFlag="0" scaleBasedLabelVisibilityFlag="0">
             <id>installation_pump20130816140237750</id>
             <datasource>dbname='sige' host=172.24.171.203 port=5432 user='sige' sslmode=disable key='id' srid=21781 type=POINT table="distribution"."od_installation_pump" (geometry) sql=</datasource>
             <title></title>
@@ -4068,7 +4086,7 @@
                 <property key="labeling/centroidWhole" value="false"/>
                 <property key="labeling/decimals" value="3"/>
                 <property key="labeling/displayAll" value="true"/>
-                <property key="labeling/dist" value="0"/>
+                <property key="labeling/dist" value="5"/>
                 <property key="labeling/distInMapUnits" value="false"/>
                 <property key="labeling/enabled" value="true"/>
                 <property key="labeling/fieldName" value="'P. ' || name"/>
@@ -4193,6 +4211,7 @@
                 <selectedonly on=""/>
             </labelattributes>
             <edittypes>
+                <edittype labelontop="0" editable="1" type="0" name="_district"/>
                 <edittype labelontop="0" editable="1" type="0" name="_districts"/>
                 <edittype labelontop="0" editable="1" type="0" name="_printmaps"/>
                 <edittype labelontop="0" editable="1" type="0" name="altitude"/>
@@ -4210,6 +4229,7 @@
                 <edittype labelontop="0" editable="1" type="0" name="id_remote"/>
                 <edittype labelontop="0" editable="1" type="0" name="id_status"/>
                 <edittype labelontop="0" editable="1" allowNull="false" orderByValue="false" key="id" layer="vl_pumptype20130816140237776" allowMulti="false" filterExpression="" type="15" value="value_fr" name="id_type"/>
+                <edittype labelontop="0" editable="1" type="0" name="id_watertype"/>
                 <edittype labelontop="0" editable="1" type="0" name="identification"/>
                 <edittype labelontop="0" editable="1" type="0" name="links"/>
                 <edittype labelontop="0" editable="1" type="0" name="manometric_height"/>
@@ -4233,7 +4253,7 @@
                 <actionsetting action="qgis.utils.plugins['postgres91plusauditor'].audit('installation_pump20130816140237750',[% $id %])" capture="0" type="1" name="History audit"/>
             </attributeactions>
         </maplayer>
-        <maplayer minimumScale="0" maximumScale="1e+08" minLabelScale="0" maxLabelScale="1e+08" geometry="Point" type="vector" hasScaleBasedVisibilityFlag="0" scaleBasedLabelVisibilityFlag="0">
+        <maplayer minimumScale="-4.65661e-10" maximumScale="1e+08" minLabelScale="0" maxLabelScale="1e+08" geometry="Point" type="vector" hasScaleBasedVisibilityFlag="0" scaleBasedLabelVisibilityFlag="0">
             <id>installation_source20130820110331647</id>
             <datasource>dbname='sige' host=172.24.171.203 port=5432 user='sige' sslmode=disable key='id' srid=21781 type=POINT table="distribution"."od_installation_source" (geometry) sql=</datasource>
             <title></title>
@@ -4316,7 +4336,7 @@
                 <property key="labeling/centroidWhole" value="false"/>
                 <property key="labeling/decimals" value="3"/>
                 <property key="labeling/displayAll" value="true"/>
-                <property key="labeling/dist" value="0"/>
+                <property key="labeling/dist" value="5"/>
                 <property key="labeling/distInMapUnits" value="false"/>
                 <property key="labeling/enabled" value="true"/>
                 <property key="labeling/fieldName" value="'S. ' || name"/>
@@ -4441,6 +4461,7 @@
                 <selectedonly on=""/>
             </labelattributes>
             <edittypes>
+                <edittype labelontop="0" editable="1" type="0" name="_district"/>
                 <edittype labelontop="0" editable="1" type="0" name="_districts"/>
                 <edittype labelontop="0" editable="1" type="0" name="_printmaps"/>
                 <edittype labelontop="0" editable="1" type="0" name="altitude"/>
@@ -4463,6 +4484,7 @@
                 <edittype labelontop="0" editable="1" type="0" name="id_remote"/>
                 <edittype labelontop="0" editable="1" type="0" name="id_status"/>
                 <edittype labelontop="0" editable="1" allowNull="false" orderByValue="false" key="id" layer="vl_sourcetype20130820110518791" allowMulti="false" filterExpression="" type="15" value="name" name="id_type"/>
+                <edittype labelontop="0" editable="1" type="0" name="id_watertype"/>
                 <edittype labelontop="0" editable="1" type="0" name="identification"/>
                 <edittype labelontop="0" editable="1" type="0" name="links"/>
                 <edittype labelontop="0" editable="1" type="0" name="name"/>
@@ -4483,7 +4505,7 @@
                 <actionsetting action="qgis.utils.plugins['postgres91plusauditor'].audit('installation_source20130820110331647',[% $id %])" capture="0" type="1" name="History audit"/>
             </attributeactions>
         </maplayer>
-        <maplayer minimumScale="0" maximumScale="1e+08" minLabelScale="1" maxLabelScale="1e+08" geometry="Point" type="vector" hasScaleBasedVisibilityFlag="0" scaleBasedLabelVisibilityFlag="0">
+        <maplayer minimumScale="-4.65661e-10" maximumScale="1e+08" minLabelScale="1" maxLabelScale="1e+08" geometry="Point" type="vector" hasScaleBasedVisibilityFlag="0" scaleBasedLabelVisibilityFlag="0">
             <id>installation_tank20130304110005008</id>
             <datasource>dbname='sige' host=172.24.171.203 port=5432 user='sige' password='db4wat$' sslmode=allow key='id' srid=21781 type=POINT table="distribution"."od_installation_tank" (geometry) sql=</datasource>
             <title></title>
@@ -4569,7 +4591,7 @@
                 <property key="labeling/centroidWhole" value="false"/>
                 <property key="labeling/decimals" value="0"/>
                 <property key="labeling/displayAll" value="true"/>
-                <property key="labeling/dist" value="0"/>
+                <property key="labeling/dist" value="5"/>
                 <property key="labeling/distInMapUnits" value="false"/>
                 <property key="labeling/enabled" value="true"/>
                 <property key="labeling/fieldName" value="'R. ' || name"/>
@@ -4698,6 +4720,7 @@
             <edittypes>
                 <edittype labelontop="0" editable="1" type="10" name="_cistern1_litrepercm"/>
                 <edittype labelontop="0" editable="1" type="10" name="_cistern2_litrepercm"/>
+                <edittype labelontop="0" editable="1" type="0" name="_district"/>
                 <edittype labelontop="0" editable="1" type="0" name="_districts"/>
                 <edittype labelontop="0" editable="1" type="10" name="_litrepercm"/>
                 <edittype labelontop="0" editable="1" type="0" name="_printmaps"/>
@@ -4728,6 +4751,7 @@
                 <edittype labelontop="0" editable="1" type="0" name="id_printmap"/>
                 <edittype labelontop="0" editable="1" type="0" name="id_remote"/>
                 <edittype labelontop="0" editable="1" type="0" name="id_status"/>
+                <edittype labelontop="0" editable="1" type="0" name="id_watertype"/>
                 <edittype labelontop="0" editable="1" type="0" name="identification"/>
                 <edittype labelontop="0" editable="1" type="0" name="links"/>
                 <edittype labelontop="0" editable="1" type="0" name="litres_per_cm"/>
@@ -4735,8 +4759,20 @@
                 <edittype labelontop="0" editable="1" type="0" name="open_water_surface"/>
                 <edittype labelontop="0" editable="0" type="0" name="ouvrage__displayname_en"/>
                 <edittype labelontop="0" editable="0" type="0" name="ouvrage__displayname_fr"/>
+                <edittype labelontop="0" editable="0" type="0" name="ouvrage__district"/>
+                <edittype labelontop="0" editable="0" type="0" name="ouvrage__printmaps"/>
+                <edittype labelontop="0" editable="0" type="0" name="ouvrage_eca"/>
+                <edittype labelontop="0" editable="0" type="0" name="ouvrage_geometry_polygon"/>
+                <edittype labelontop="0" editable="0" type="0" name="ouvrage_id_district"/>
+                <edittype labelontop="0" editable="0" type="0" name="ouvrage_id_node"/>
+                <edittype labelontop="0" editable="0" type="0" name="ouvrage_id_pressurezone"/>
+                <edittype labelontop="0" editable="0" type="0" name="ouvrage_id_printmap"/>
                 <edittype labelontop="0" editable="0" type="0" name="ouvrage_id_type"/>
+                <edittype labelontop="0" editable="0" type="0" name="ouvrage_identification"/>
                 <edittype labelontop="0" editable="0" type="0" name="ouvrage_name"/>
+                <edittype labelontop="0" editable="0" type="0" name="ouvrage_parcel"/>
+                <edittype labelontop="0" editable="0" type="0" name="ouvrage_schema_visible"/>
+                <edittype labelontop="0" editable="0" type="0" name="ouvrage_year"/>
                 <edittype labelontop="0" editable="0" type="0" name="ouvrages_Ouvrages - type_name"/>
                 <edittype labelontop="0" editable="0" type="0" name="ouvrages_Ouvrages - type_schema_visible"/>
                 <edittype labelontop="0" editable="0" type="0" name="ouvrages_Ouvrages - type_shortname"/>
@@ -4806,7 +4842,7 @@
                 <actionsetting action="qgis.utils.plugins['postgres91plusauditor'].showHistory('installation_tank20130304110005008',[% $id %])" capture="0" type="1" name="History audit"/>
             </attributeactions>
         </maplayer>
-        <maplayer minimumScale="-4.65661e-10" maximumScale="1e+08" minLabelScale="0" maxLabelScale="1e+08" geometry="Point" type="vector" hasScaleBasedVisibilityFlag="0" scaleBasedLabelVisibilityFlag="0">
+        <maplayer minimumScale="0" maximumScale="1e+08" minLabelScale="0" maxLabelScale="1e+08" geometry="Point" type="vector" hasScaleBasedVisibilityFlag="0" scaleBasedLabelVisibilityFlag="0">
             <id>installation_treatment20130816113039913</id>
             <datasource>dbname='sige' host=172.24.171.203 port=5432 user='sige' sslmode=disable key='id' srid=21781 type=POINT table="distribution"."od_installation_treatment" (geometry) sql=</datasource>
             <title></title>
@@ -4889,7 +4925,7 @@
                 <property key="labeling/centroidWhole" value="false"/>
                 <property key="labeling/decimals" value="3"/>
                 <property key="labeling/displayAll" value="true"/>
-                <property key="labeling/dist" value="0"/>
+                <property key="labeling/dist" value="5"/>
                 <property key="labeling/distInMapUnits" value="false"/>
                 <property key="labeling/enabled" value="true"/>
                 <property key="labeling/fieldName" value="'CT. ' || name"/>
@@ -5014,6 +5050,7 @@
                 <selectedonly on=""/>
             </labelattributes>
             <edittypes>
+                <edittype labelontop="0" editable="1" type="0" name="_district"/>
                 <edittype labelontop="0" editable="1" type="0" name="_districts"/>
                 <edittype labelontop="0" editable="1" type="0" name="_printmaps"/>
                 <edittype labelontop="0" editable="1" unchecked="f" type="7" checked="t" name="activatedcharcoal"/>
@@ -5033,6 +5070,7 @@
                 <edittype labelontop="0" editable="1" type="0" name="id_printmap"/>
                 <edittype labelontop="0" editable="1" type="0" name="id_remote"/>
                 <edittype labelontop="0" editable="1" type="0" name="id_status"/>
+                <edittype labelontop="0" editable="1" type="0" name="id_watertype"/>
                 <edittype labelontop="0" editable="1" type="0" name="identification"/>
                 <edittype labelontop="0" editable="1" type="0" name="links"/>
                 <edittype labelontop="0" editable="1" type="0" name="name"/>
@@ -5059,7 +5097,7 @@
                 <actionsetting action="qgis.utils.plugins['postgres91plusauditor'].audit('installation_treatment20130816113039913',[% $id %])" capture="0" type="1" name="History audit"/>
             </attributeactions>
         </maplayer>
-        <maplayer minimumScale="-4.65661e-10" maximumScale="1e+08" minLabelScale="0" maxLabelScale="1e+08" geometry="Point" type="vector" hasScaleBasedVisibilityFlag="0" scaleBasedLabelVisibilityFlag="0">
+        <maplayer minimumScale="0" maximumScale="1e+08" minLabelScale="0" maxLabelScale="1e+08" geometry="Point" type="vector" hasScaleBasedVisibilityFlag="0" scaleBasedLabelVisibilityFlag="0">
             <id>installation_valvechamber20131107105006707</id>
             <datasource>dbname='sige' host=172.24.171.203 port=5432 user='sige' sslmode=disable key='id' estimatedmetadata=true srid=21781 type=POINT table="distribution"."od_installation_valvechamber" (geometry) sql=</datasource>
             <title></title>
@@ -5180,7 +5218,7 @@
                 <property key="labeling/centroidWhole" value="false"/>
                 <property key="labeling/decimals" value="3"/>
                 <property key="labeling/displayAll" value="true"/>
-                <property key="labeling/dist" value="0"/>
+                <property key="labeling/dist" value="5"/>
                 <property key="labeling/distInMapUnits" value="false"/>
                 <property key="labeling/enabled" value="true"/>
                 <property key="labeling/fieldName" value="CASE &#xa;WHEN meter = 't' THEN 'CC. ' || name&#xa;ELSE 'CV. ' || name&#xa;END"/>
@@ -5305,6 +5343,7 @@
                 <selectedonly on=""/>
             </labelattributes>
             <edittypes>
+                <edittype labelontop="0" editable="1" type="0" name="_district"/>
                 <edittype labelontop="0" editable="1" type="0" name="_districts"/>
                 <edittype labelontop="0" editable="1" type="0" name="_printmaps"/>
                 <edittype labelontop="0" editable="1" type="0" name="altitude_real"/>
@@ -5314,11 +5353,13 @@
                 <edittype labelontop="0" editable="1" type="0" name="id"/>
                 <edittype labelontop="0" editable="1" type="0" name="id_distributor"/>
                 <edittype labelontop="0" editable="1" type="0" name="id_district"/>
+                <edittype labelontop="0" editable="1" type="0" name="id_installation"/>
                 <edittype labelontop="0" editable="1" type="0" name="id_node"/>
                 <edittype labelontop="0" editable="1" type="0" name="id_pressurezone"/>
                 <edittype labelontop="0" editable="1" type="0" name="id_printmap"/>
                 <edittype labelontop="0" editable="1" type="0" name="id_remote"/>
                 <edittype labelontop="0" editable="1" type="0" name="id_status"/>
+                <edittype labelontop="0" editable="1" type="0" name="id_watertype"/>
                 <edittype labelontop="0" editable="1" type="0" name="identification"/>
                 <edittype labelontop="0" editable="1" type="0" name="links"/>
                 <edittype labelontop="0" editable="1" type="0" name="meter"/>
@@ -5618,7 +5659,7 @@
                 <actionsetting action="qgis.utils.plugins['postgres91plusauditor'].showHistory('logged_actions20130304110005081',[% $id %])" capture="0" type="1" name="History audit"/>
             </attributeactions>
         </maplayer>
-        <maplayer minimumScale="-4.65661e-10" maximumScale="501" minLabelScale="1" maxLabelScale="1e+08" geometry="Point" type="vector" hasScaleBasedVisibilityFlag="1" scaleBasedLabelVisibilityFlag="0">
+        <maplayer minimumScale="0" maximumScale="501" minLabelScale="1" maxLabelScale="1e+08" geometry="Point" type="vector" hasScaleBasedVisibilityFlag="1" scaleBasedLabelVisibilityFlag="0">
             <id>node20130304110005126</id>
             <datasource>dbname='sige' host=172.24.171.203 port=5432 user='sige' password='db4wat$' sslmode=allow key='id' srid=21781 type=POINT table="distribution"."od_node" (geometry) sql=</datasource>
             <title></title>
@@ -5741,7 +5782,7 @@
                     <symbol alpha="1" type="marker" name="5">
                         <layer pass="0" class="SvgMarker" locked="0">
                             <prop k="angle" v="0"/>
-                            <prop k="angle_expression" v="&quot;_orientation&quot;"/>
+                            <prop k="angle_expression" v="&quot;_orientation&quot;+90"/>
                             <prop k="fill" v="#000000"/>
                             <prop k="horizontal_anchor_point" v="1"/>
                             <prop k="name" v="./symbols/nodes/meter_subscriber.svg"/>
@@ -6789,7 +6830,7 @@
                 </spatialrefsys>
             </srs>
             <provider encoding="System">postgres</provider>
-            <previewExpression></previewExpression>
+            <previewExpression>COALESCE( "id", '&lt;NULL>' )</previewExpression>
             <vectorjoins/>
             <renderer-v2 symbollevels="0" type="singleSymbol">
                 <symbols>
@@ -10766,6 +10807,49 @@
             <excludeAttributesWFS/>
             <attributeactions>
                 <actionsetting action="qgis.utils.plugins['postgres91plusauditor'].showHistory('vl_visible20130304110011703',[% $id %])" capture="0" type="1" name="History audit"/>
+            </attributeactions>
+        </maplayer>
+        <maplayer minimumScale="-4.65661e-10" maximumScale="1e+08" geometry="No geometry" type="vector" hasScaleBasedVisibilityFlag="0">
+            <id>vl_watertype20131217141603877</id>
+            <datasource>dbname='sige' host=172.24.171.203 port=5432 user='sige' sslmode=disable key='id' estimatedmetadata=true table="distribution"."vl_watertype" sql=</datasource>
+            <title></title>
+            <abstract></abstract>
+            <keywordList>
+                <value></value>
+            </keywordList>
+            <layername>Type d'eau</layername>
+            <srs>
+                <spatialrefsys>
+                    <proj4>+proj=longlat +datum=WGS84 +no_defs</proj4>
+                    <srsid>3452</srsid>
+                    <srid>4326</srid>
+                    <authid>EPSG:4326</authid>
+                    <description>WGS 84</description>
+                    <projectionacronym>longlat</projectionacronym>
+                    <ellipsoidacronym>WGS84</ellipsoidacronym>
+                    <geographicflag>true</geographicflag>
+                </spatialrefsys>
+            </srs>
+            <customproperties/>
+            <provider encoding="System">postgres</provider>
+            <previewExpression></previewExpression>
+            <vectorjoins/>
+            <edittypes>
+                <edittype labelontop="0" editable="1" type="0" name="code_sire"/>
+                <edittype labelontop="0" editable="1" type="0" name="id"/>
+                <edittype labelontop="0" editable="1" type="0" name="value_en"/>
+                <edittype labelontop="0" editable="1" type="0" name="value_fr"/>
+                <edittype labelontop="0" editable="1" type="0" name="vl_active"/>
+            </edittypes>
+            <editform></editform>
+            <editforminit></editforminit>
+            <featformsuppress>0</featformsuppress>
+            <annotationform></annotationform>
+            <editorlayout>generatedlayout</editorlayout>
+            <excludeAttributesWMS/>
+            <excludeAttributesWFS/>
+            <attributeactions>
+                <actionsetting action="qgis.utils.plugins['postgres91plusauditor'].audit('vl_watertype20131217141603877',[% $id %])" capture="0" type="1" name="History audit"/>
             </attributeactions>
         </maplayer>
     </projectlayers>
