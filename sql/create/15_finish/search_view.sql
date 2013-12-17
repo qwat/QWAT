@@ -33,7 +33,7 @@ CREATE OR REPLACE VIEW distribution.vw_search_view AS
 		WHERE vl_status.active IS TRUE
 	UNION SELECT
 		'Ouvrages' as layer_name,
-		'Régukation de pression ' || name as search_text,
+		'Régulation de pression ' || name as search_text,
 		geometry
 		FROM distribution.od_installation_pressurecontrol 
 		INNER JOIN distribution.vl_status ON od_installation_pressurecontrol.id_status = vl_status.id

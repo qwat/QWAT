@@ -98,13 +98,13 @@ $BODY$
 		
 		/* create triggers */
 		EXECUTE 'CREATE TRIGGER '||table_name||'_geom_trigger_insert
-			AFTER INSERT ON distribution.'||table_name||'
+			BEFORE INSERT ON distribution.'||table_name||'
 			FOR EACH ROW
 			EXECUTE PROCEDURE distribution.'||table_name||'_geom();';
 		EXECUTE 'COMMENT ON TRIGGER '||table_name||'_geom_trigger_insert ON distribution.'||table_name||' IS ''Trigger: updates auto fields of the '||table_name||' after insert.'';';
 
 		EXECUTE 'CREATE TRIGGER '||table_name||'_geom_trigger_update
-			AFTER UPDATE OF geometry ON distribution.'||table_name||' 
+			BEFORE UPDATE OF geometry ON distribution.'||table_name||' 
 			FOR EACH ROW
 			WHEN (ST_AsBinary(NEW.geometry) <> ST_AsBinary(OLD.geometry))
 			EXECUTE PROCEDURE distribution.'||table_name||'_geom();';
@@ -125,7 +125,7 @@ $BODY$
 					LANGUAGE ''plpgsql'';		
 			';
 			EXECUTE 'CREATE TRIGGER '||table_name||'_geom_schematic_trigger
-				AFTER UPDATE OF geometry_schematic ON distribution.'||table_name||' 
+				BEFORE UPDATE OF geometry_schematic ON distribution.'||table_name||' 
 				FOR EACH ROW
 				EXECUTE PROCEDURE distribution.'||table_name||'_geom_schematic();';
 			EXECUTE 'COMMENT ON TRIGGER '||table_name||'_geom_schematic_trigger ON distribution.'||table_name||' IS ''Trigger: when updating, check if geometry_schematic is different to fill the boolean field.'';';
