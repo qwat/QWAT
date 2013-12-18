@@ -24,10 +24,10 @@
     <mapcanvas>
         <units>meters</units>
         <extent>
-            <xmin>554756.26118180609773844</xmin>
-            <ymin>147274.76021835865685716</ymin>
-            <xmax>554852.83605662116315216</xmax>
-            <ymax>147362.83301615837262943</ymax>
+            <xmin>555111.48787601455114782</xmin>
+            <ymin>134303.09807846217881888</ymin>
+            <xmax>564500.51918813935481012</xmax>
+            <ymax>141250.29340831277659163</ymax>
         </extent>
         <projections>1</projections>
         <destinationsrs>
@@ -43,12 +43,27 @@
             </spatialrefsys>
         </destinationsrs>
         <layer_coordinate_transform_info>
-            <layer_coordinate_transform destAuthId="EPSG:21781" srcAuthId="EPSG:4326" srcDatumTransform="-1" destDatumTransform="-1" layerid="vl_precisionalti20131211161429510"/>
+            <layer_coordinate_transform destAuthId="EPSG:21781" srcAuthId="EPSG:2056" srcDatumTransform="-1" destDatumTransform="-1" layerid="N_Nom_local_S20131218104825856"/>
+            <layer_coordinate_transform destAuthId="EPSG:21781" srcAuthId="EPSG:2056" srcDatumTransform="-1" destDatumTransform="-1" layerid="PF2_PFP220131218104826136"/>
+            <layer_coordinate_transform destAuthId="EPSG:21781" srcAuthId="EPSG:2056" srcDatumTransform="-1" destDatumTransform="-1" layerid="OD_Element_surfacique_S20131218104826066"/>
+            <layer_coordinate_transform destAuthId="EPSG:21781" srcAuthId="EPSG:2056" srcDatumTransform="-1" destDatumTransform="-1" layerid="PF3_Point_fixe_auxiliaire20131218104826285"/>
+            <layer_coordinate_transform destAuthId="EPSG:21781" srcAuthId="EPSG:2056" srcDatumTransform="-1" destDatumTransform="-1" layerid="BF_Point_limite20131218104825577"/>
+            <layer_coordinate_transform destAuthId="EPSG:21781" srcAuthId="EPSG:2056" srcDatumTransform="-1" destDatumTransform="-1" layerid="PF3_PFP320131218104826208"/>
             <layer_coordinate_transform destAuthId="EPSG:21781" srcAuthId="EPSG:4326" srcDatumTransform="-1" destDatumTransform="-1" layerid="vl_precisionalti20131211161258533"/>
+            <layer_coordinate_transform destAuthId="EPSG:21781" srcAuthId="EPSG:4326" srcDatumTransform="-1" destDatumTransform="-1" layerid="vl_precisionalti20131211161429510"/>
+            <layer_coordinate_transform destAuthId="EPSG:21781" srcAuthId="EPSG:2056" srcDatumTransform="-1" destDatumTransform="-1" layerid="OD_Element_ponctuel20131218104825995"/>
+            <layer_coordinate_transform destAuthId="EPSG:21781" srcAuthId="EPSG:2056" srcDatumTransform="-1" destDatumTransform="-1" layerid="BF_Bien_fondsProj_S20131218104825349"/>
+            <layer_coordinate_transform destAuthId="EPSG:21781" srcAuthId="EPSG:2056" srcDatumTransform="-1" destDatumTransform="-1" layerid="LCO_Point_limite_ter20131218104825784"/>
             <layer_coordinate_transform destAuthId="EPSG:21781" srcAuthId="EPSG:4326" srcDatumTransform="-1" destDatumTransform="-1" layerid="vl_watertype20131217141603877"/>
+            <layer_coordinate_transform destAuthId="EPSG:21781" srcAuthId="EPSG:2056" srcDatumTransform="-1" destDatumTransform="-1" layerid="CS_SurfaceCS_S20131218104825645"/>
+            <layer_coordinate_transform destAuthId="EPSG:21781" srcAuthId="EPSG:2056" srcDatumTransform="-1" destDatumTransform="-1" layerid="LCO_Limite_commune_S20131218104825715"/>
+            <layer_coordinate_transform destAuthId="EPSG:21781" srcAuthId="EPSG:2056" srcDatumTransform="-1" destDatumTransform="-1" layerid="BF_DDP_S20131218104825502"/>
+            <layer_coordinate_transform destAuthId="EPSG:21781" srcAuthId="EPSG:2056" srcDatumTransform="-1" destDatumTransform="-1" layerid="BF_Bien_fonds_S20131218104825435"/>
+            <layer_coordinate_transform destAuthId="EPSG:21781" srcAuthId="EPSG:2056" srcDatumTransform="-1" destDatumTransform="-1" layerid="OD_Element_lineaire20131218104825923"/>
+            <layer_coordinate_transform destAuthId="EPSG:21781" srcAuthId="EPSG:2056" srcDatumTransform="-1" destDatumTransform="-1" layerid="RP_Geometrie_plan_S20131218104826361"/>
         </layer_coordinate_transform_info>
     </mapcanvas>
-    <legend updateDrawingOrder="false" activeLayer="conduites_actives_copy20130822080028511">
+    <legend updateDrawingOrder="false" activeLayer="leak20130821111917060">
         <legendgroup open="true" checked="Qt::PartiallyChecked" name="Réseau">
             <legendgroup open="true" checked="Qt::PartiallyChecked" name="ouvrages">
                 <legendlayer drawingOrder="0" open="false" checked="Qt::Unchecked" name="ouvrage" showFeatureCount="0">
@@ -126,7 +141,7 @@
                     </filegroup>
                 </legendlayer>
             </legendgroup>
-            <legendgroup open="false" checked="Qt::Checked" name="Abonnés">
+            <legendgroup open="true" checked="Qt::Checked" name="Abonnés">
                 <legendlayer drawingOrder="14" open="false" checked="Qt::Checked" name="abonnés - renvoi" showFeatureCount="0">
                     <filegroup open="false" hidden="false">
                         <legendlayerfile isInOverview="0" layerid="od_subscriber_reference20131206105928067" visible="1"/>
@@ -371,36 +386,38 @@
                     <legendlayerfile isInOverview="0" layerid="vl_remote20130304110004987" visible="0"/>
                 </filegroup>
             </legendlayer>
-            <legendlayer drawingOrder="-1" open="true" checked="Qt::Unchecked" name="Type d'eau" showFeatureCount="0">
+            <legendlayer drawingOrder="59" open="true" checked="Qt::Unchecked" name="Type d'eau" showFeatureCount="0">
                 <filegroup open="true" hidden="false">
                     <legendlayerfile isInOverview="0" layerid="vl_watertype20131217141603877" visible="0"/>
                 </filegroup>
             </legendlayer>
-            <legendlayer drawingOrder="59" open="true" checked="Qt::Unchecked" name="Vannes - maintenance" showFeatureCount="0">
+            <legendlayer drawingOrder="60" open="true" checked="Qt::Unchecked" name="Vannes - maintenance" showFeatureCount="0">
                 <filegroup open="true" hidden="false">
                     <legendlayerfile isInOverview="0" layerid="vl_valve_maintenance20130304110011567" visible="0"/>
                 </filegroup>
             </legendlayer>
-            <legendlayer drawingOrder="60" open="true" checked="Qt::Unchecked" name="Vannes - type" showFeatureCount="0">
+            <legendlayer drawingOrder="61" open="true" checked="Qt::Unchecked" name="Vannes - type" showFeatureCount="0">
                 <filegroup open="true" hidden="false">
                     <legendlayerfile isInOverview="0" layerid="vl_valve_type20130304110011685" visible="0"/>
                 </filegroup>
             </legendlayer>
-            <legendlayer drawingOrder="61" open="true" checked="Qt::Unchecked" name="Vannes - fonction" showFeatureCount="0">
+            <legendlayer drawingOrder="62" open="true" checked="Qt::Unchecked" name="Vannes - fonction" showFeatureCount="0">
                 <filegroup open="true" hidden="false">
                     <legendlayerfile isInOverview="0" layerid="vl_valve_function20130304110011544" visible="0"/>
                 </filegroup>
             </legendlayer>
-            <legendlayer drawingOrder="62" open="true" checked="Qt::Unchecked" name="Visibilité" showFeatureCount="0">
+            <legendlayer drawingOrder="63" open="true" checked="Qt::Unchecked" name="Visibilité" showFeatureCount="0">
                 <filegroup open="true" hidden="false">
                     <legendlayerfile isInOverview="0" layerid="vl_visible20130304110011703" visible="0"/>
                 </filegroup>
             </legendlayer>
         </legendgroup>
-        <legendgroup embedded="1" drawingOrder="32" open="false" checked="Qt::Checked" name="base" project="../../../data/cadastre/cadastre.qgs"/>
-        <legendgroup embedded="1" drawingOrder="47" open="false" checked="Qt::Unchecked" name="complément" project="../../../data/cadastre/cadastre.qgs"/>
+        <legendgroup embedded="1" drawingOrder="32" open="false" checked="Qt::Checked" name="base" project="../../../data/cadastre/valais/valais.qgs"/>
+        <legendgroup embedded="1" drawingOrder="47" open="false" checked="Qt::Unchecked" name="complément" project="../../../data/cadastre/valais/valais.qgs"/>
+        <legendgroup embedded="1" drawingOrder="-1" open="false" checked="Qt::Checked" name="base" project="../../../data/cadastre/valais/valais.qgs"/>
+        <legendgroup embedded="1" drawingOrder="-1" open="false" checked="Qt::Unchecked" name="complément" project="../../../data/cadastre/valais/valais.qgs"/>
     </legend>
-    <Composer title="folio" visible="1">
+    <Composer title="folio" visible="0">
         <Composition snapGridTolerance="2" gridVisible="1" printResolution="300" paperWidth="1030" snapGridOffsetX="0" guidesVisible="1" snapGridResolution="10" snapGridOffsetY="0" alignmentSnap="1" snapping="0" numPages="1" paperHeight="914" alignmentSnapTolerance="2" smartGuides="1" printAsRaster="1" generateWorldFile="0">
             <SnapLine y1="0" x1="0" y2="0" x2="0"/>
             <SnapLine y1="0" x1="0" y2="0" x2="0"/>
@@ -414,7 +431,7 @@
                 </ComposerItem>
             </ComposerArrow>
             <ComposerShape shapeType="1" cornerRadius="0">
-                <ComposerItem width="70" x="225" transparency="0" y="110" rotation="0" height="30" positionMode="0" frame="true" outlineWidth="0" zValue="13" lastValidViewScaleFactor="0.955191" uuid="{4566e0a1-ec7a-452e-baf0-a45ed15314ff}" id="" background="true" blendMode="0" positionLock="false">
+                <ComposerItem width="70" x="225" transparency="0" y="110" rotation="0" height="30" positionMode="0" frame="true" outlineWidth="0" zValue="13" lastValidViewScaleFactor="0.854645" uuid="{4566e0a1-ec7a-452e-baf0-a45ed15314ff}" id="" background="true" blendMode="0" positionLock="false">
                     <FrameColor alpha="255" red="0" blue="0" green="0"/>
                     <BackgroundColor alpha="255" red="255" blue="255" green="255"/>
                 </ComposerItem>
@@ -466,7 +483,7 @@
                         <fontColor red="0" blue="0" green="0"/>
                     </Annotation>
                 </Grid>
-                <ComposerItem width="40" x="975" transparency="0" y="110" rotation="0" height="29.9999" positionMode="0" frame="true" outlineWidth="0" zValue="11" lastValidViewScaleFactor="0.810929" uuid="{b970a2fd-9bd7-4a2a-a787-1664811befc7}" id="" background="true" blendMode="0" positionLock="false">
+                <ComposerItem width="40" x="975" transparency="0" y="110" rotation="0" height="29.9999" positionMode="0" frame="true" outlineWidth="0" zValue="11" lastValidViewScaleFactor="0.854645" uuid="{b970a2fd-9bd7-4a2a-a787-1664811befc7}" id="" background="true" blendMode="0" positionLock="false">
                     <FrameColor alpha="255" red="0" blue="0" green="0"/>
                     <BackgroundColor alpha="255" red="255" blue="255" green="255"/>
                 </ComposerItem>
@@ -570,7 +587,7 @@
                         <fontColor red="0" blue="0" green="0"/>
                     </Annotation>
                 </Grid>
-                <ComposerItem width="1000" x="15" transparency="0" y="140" rotation="0" height="666.667" positionMode="0" frame="true" outlineWidth="0" zValue="1" lastValidViewScaleFactor="0.810929" uuid="{27df2cec-4272-4242-93e2-7d5ffc2bbe05}" id="" background="true" blendMode="0" positionLock="false">
+                <ComposerItem width="1000" x="15" transparency="0" y="140" rotation="0" height="666.667" positionMode="0" frame="true" outlineWidth="0" zValue="1" lastValidViewScaleFactor="0.854645" uuid="{27df2cec-4272-4242-93e2-7d5ffc2bbe05}" id="" background="true" blendMode="0" positionLock="false">
                     <FrameColor alpha="255" red="0" blue="0" green="0"/>
                     <BackgroundColor alpha="255" red="255" blue="255" green="255"/>
                 </ComposerItem>
@@ -754,7 +771,7 @@
             </ComposerMap>
         </Composition>
     </Composer>
-    <projectlayers layercount="80">
+    <projectlayers layercount="95">
         <maplayer minimumScale="0" maximumScale="1e+08" minLabelScale="0" maxLabelScale="1e+08" geometry="Line" type="vector" hasScaleBasedVisibilityFlag="0" scaleBasedLabelVisibilityFlag="0">
             <id>IntersectIt_Lines20130618102142813</id>
             <datasource>LineString?crs=EPSG:21781&amp;field=id:string&amp;field=type:string&amp;field=x:double&amp;field=y:double&amp;field=observation:double&amp;field=precision:double&amp;index=yes</datasource>
@@ -5382,7 +5399,7 @@
                 <actionsetting action="qgis.utils.plugins['postgres91plusauditor'].audit('installation_valvechamber20131107105006707',[% $id %])" capture="0" type="1" name="History audit"/>
             </attributeactions>
         </maplayer>
-        <maplayer minimumScale="0" maximumScale="1e+08" minLabelScale="0" maxLabelScale="1e+08" geometry="Point" type="vector" hasScaleBasedVisibilityFlag="0" scaleBasedLabelVisibilityFlag="0">
+        <maplayer minimumScale="-4.65661e-10" maximumScale="1e+08" minLabelScale="0" maxLabelScale="1e+08" geometry="Point" type="vector" hasScaleBasedVisibilityFlag="0" scaleBasedLabelVisibilityFlag="0">
             <id>leak20130821111917060</id>
             <datasource>dbname='sige' host=172.24.171.203 port=5432 user='sige' sslmode=disable key='id' srid=21781 type=POINT table="distribution"."od_leak" (geometry) sql=</datasource>
             <title></title>
@@ -5411,16 +5428,16 @@
                     <symbol alpha="1" type="marker" name="0">
                         <layer pass="0" class="SimpleMarker" locked="0">
                             <prop k="angle" v="0"/>
-                            <prop k="color" v="85,255,255,255"/>
+                            <prop k="color" v="255,0,255,255"/>
                             <prop k="color_border" v="0,0,0,255"/>
                             <prop k="horizontal_anchor_point" v="1"/>
                             <prop k="name" v="diamond"/>
                             <prop k="offset" v="0,0"/>
                             <prop k="offset_unit" v="MM"/>
-                            <prop k="outline_width" v="0.5"/>
+                            <prop k="outline_width" v="0.2"/>
                             <prop k="outline_width_unit" v="MM"/>
                             <prop k="scale_method" v="area"/>
-                            <prop k="size" v="4"/>
+                            <prop k="size" v="3"/>
                             <prop k="size_unit" v="MM"/>
                             <prop k="vertical_anchor_point" v="1"/>
                         </layer>
@@ -5450,21 +5467,21 @@
                 <property key="labeling/displayAll" value="false"/>
                 <property key="labeling/dist" value="0"/>
                 <property key="labeling/distInMapUnits" value="false"/>
-                <property key="labeling/enabled" value="false"/>
-                <property key="labeling/fieldName" value=""/>
-                <property key="labeling/fontBold" value="true"/>
+                <property key="labeling/enabled" value="true"/>
+                <property key="labeling/fieldName" value="detection_date"/>
+                <property key="labeling/fontBold" value="false"/>
                 <property key="labeling/fontCapitals" value="0"/>
-                <property key="labeling/fontFamily" value="Ubuntu"/>
-                <property key="labeling/fontItalic" value="true"/>
+                <property key="labeling/fontFamily" value="Arial"/>
+                <property key="labeling/fontItalic" value="false"/>
                 <property key="labeling/fontLetterSpacing" value="0"/>
                 <property key="labeling/fontLimitPixelSize" value="false"/>
                 <property key="labeling/fontMaxPixelSize" value="10000"/>
                 <property key="labeling/fontMinPixelSize" value="3"/>
-                <property key="labeling/fontSize" value="11"/>
+                <property key="labeling/fontSize" value="8"/>
                 <property key="labeling/fontSizeInMapUnits" value="false"/>
                 <property key="labeling/fontStrikeout" value="false"/>
                 <property key="labeling/fontUnderline" value="false"/>
-                <property key="labeling/fontWeight" value="75"/>
+                <property key="labeling/fontWeight" value="50"/>
                 <property key="labeling/fontWordSpacing" value="0"/>
                 <property key="labeling/formatNumbers" value="false"/>
                 <property key="labeling/isExpression" value="false"/>
@@ -5479,7 +5496,7 @@
                 <property key="labeling/minFeatureSize" value="0"/>
                 <property key="labeling/multilineAlign" value="0"/>
                 <property key="labeling/multilineHeight" value="1"/>
-                <property key="labeling/namedStyle" value="Bold Italic"/>
+                <property key="labeling/namedStyle" value="Regular"/>
                 <property key="labeling/obstacle" value="true"/>
                 <property key="labeling/placeDirectionSymbol" value="0"/>
                 <property key="labeling/placement" value="0"/>
@@ -5538,9 +5555,9 @@
                 <property key="labeling/shapeTransparency" value="0"/>
                 <property key="labeling/shapeType" value="0"/>
                 <property key="labeling/textColorA" value="255"/>
-                <property key="labeling/textColorB" value="0"/>
+                <property key="labeling/textColorB" value="255"/>
                 <property key="labeling/textColorG" value="0"/>
-                <property key="labeling/textColorR" value="0"/>
+                <property key="labeling/textColorR" value="255"/>
                 <property key="labeling/textTransp" value="0"/>
                 <property key="labeling/upsidedownLabels" value="0"/>
                 <property key="labeling/wrapChar" value=""/>
@@ -5573,20 +5590,22 @@
                 <selectedonly on=""/>
             </labelattributes>
             <edittypes>
+                <edittype labelontop="0" editable="1" type="0" name="_district"/>
                 <edittype labelontop="0" editable="0" type="0" name="_districts"/>
+                <edittype labelontop="0" editable="1" type="0" name="_pressurezone"/>
                 <edittype labelontop="0" editable="0" type="0" name="_printmaps"/>
                 <edittype labelontop="0" editable="0" unchecked="f" type="7" checked="t" name="_repaired"/>
                 <edittype labelontop="0" editable="1" type="12" name="address"/>
                 <edittype labelontop="0" editable="1" type="12" name="description"/>
                 <edittype labelontop="0" editable="1" dateFormat="yyyy-MM-dd" type="13" name="detection_date"/>
                 <edittype labelontop="0" editable="0" type="0" name="id"/>
-                <edittype labelontop="0" editable="1" allowNull="true" orderByValue="false" key="id" layer="vl_leak_cause20130822081237639" allowMulti="false" filterExpression="" type="15" value="name" name="id_cause"/>
-                <edittype labelontop="0" editable="1" allowNull="false" orderByValue="false" key="id" layer="vl_leak_damage20130822081237691" allowMulti="false" filterExpression="" type="15" value="name" name="id_damage"/>
+                <edittype labelontop="0" editable="1" allowNull="true" orderByValue="false" key="id" layer="vl_leak_cause20130822081237639" allowMulti="false" filterExpression="" type="15" value="value_fr" name="id_cause"/>
+                <edittype labelontop="0" editable="1" allowNull="false" orderByValue="false" key="id" layer="vl_leak_damage20130822081237691" allowMulti="false" filterExpression="" type="15" value="value_fr" name="id_damage"/>
                 <edittype labelontop="0" editable="0" allowNull="true" orderByValue="false" key="id" layer="district20130304110004764" allowMulti="false" filterExpression="" type="15" value="name" name="id_district"/>
                 <edittype labelontop="0" editable="1" type="0" name="id_pipe"/>
                 <edittype labelontop="0" editable="0" allowNull="true" orderByValue="false" key="id" layer="pressurezone20130417133612105" allowMulti="false" filterExpression="" type="15" value="name" name="id_pressurezone"/>
-                <edittype labelontop="0" editable="1" type="0" name="id_printmap"/>
-                <edittype labelontop="0" editable="1" allowNull="false" orderByValue="false" key="id" layer="vl_leak_type20130822081237675" allowMulti="false" filterExpression="" type="15" value="name" name="id_type"/>
+                <edittype labelontop="0" editable="1" allowNull="true" orderByValue="false" key="id" layer="printmap20130304110011400" allowMulti="true" filterExpression="" type="15" value="name" name="id_printmap"/>
+                <edittype labelontop="0" editable="1" allowNull="false" orderByValue="false" key="id" layer="vl_leak_type20130822081237675" allowMulti="false" filterExpression="" type="15" value="value_fr" name="id_type"/>
                 <edittype labelontop="0" editable="1" unchecked="f" type="7" checked="t" name="pipe_replaced"/>
                 <edittype labelontop="0" editable="1" type="12" name="repair"/>
                 <edittype labelontop="0" editable="1" dateFormat="yyyy-MM-dd" type="13" name="repair_date"/>
@@ -5596,6 +5615,25 @@
             <featformsuppress>0</featformsuppress>
             <annotationform>.</annotationform>
             <editorlayout>generatedlayout</editorlayout>
+            <aliases>
+                <alias field="_district" index="5" name="Commune"/>
+                <alias field="_pressurezone" index="6" name="Zone de pression"/>
+                <alias field="_printmaps" index="7" name="Folios"/>
+                <alias field="_repaired" index="13" name="Réparé"/>
+                <alias field="address" index="14" name="Adresse"/>
+                <alias field="description" index="16" name="Description"/>
+                <alias field="detection_date" index="11" name="Date de détection"/>
+                <alias field="id_cause" index="9" name="Cause"/>
+                <alias field="id_damage" index="10" name="Dommage"/>
+                <alias field="id_district" index="1" name="Commune"/>
+                <alias field="id_pipe" index="4" name="Conduite"/>
+                <alias field="id_pressurezone" index="2" name="Zone de pression"/>
+                <alias field="id_printmap" index="3" name="Folio"/>
+                <alias field="id_type" index="8" name="Type"/>
+                <alias field="pipe_replaced" index="15" name="Conduite remplacée"/>
+                <alias field="repair" index="17" name="Réparation"/>
+                <alias field="repair_date" index="12" name="Date de réparation"/>
+            </aliases>
             <excludeAttributesWMS/>
             <excludeAttributesWFS/>
             <attributeactions>
@@ -8953,7 +8991,18 @@
             <annotationform>.</annotationform>
             <editorlayout>generatedlayout</editorlayout>
             <aliases>
+                <alias field="_identification_full" index="5" name="Identification complète"/>
+                <alias field="_pressurezone" index="11" name="Zone de pression"/>
+                <alias field="_printmaps" index="12" name="Folios"/>
+                <alias field="id_district" index="8" name="Commune"/>
+                <alias field="id_pipe" index="3" name="Conduite"/>
+                <alias field="id_pressurezone" index="9" name="Zone de pression"/>
+                <alias field="id_printmap" index="10" name="Folios"/>
+                <alias field="id_status" index="2" name="Statut"/>
                 <alias field="id_type" index="1" name="Type"/>
+                <alias field="identification" index="4" name="Idenitifcation"/>
+                <alias field="parcel" index="6" name="Parcelle"/>
+                <alias field="remark" index="7" name="Remarque"/>
             </aliases>
             <excludeAttributesWMS/>
             <excludeAttributesWFS/>
@@ -10069,7 +10118,7 @@
             </srs>
             <customproperties/>
             <provider encoding="System">postgres</provider>
-            <previewExpression></previewExpression>
+            <previewExpression>COALESCE("id", '&lt;NULL>')</previewExpression>
             <vectorjoins/>
             <edittypes>
                 <edittype labelontop="0" editable="1" type="0" name="id"/>
@@ -10841,10 +10890,10 @@
                 <edittype labelontop="0" editable="1" type="0" name="value_fr"/>
                 <edittype labelontop="0" editable="1" type="0" name="vl_active"/>
             </edittypes>
-            <editform></editform>
+            <editform>.</editform>
             <editforminit></editforminit>
             <featformsuppress>0</featformsuppress>
-            <annotationform></annotationform>
+            <annotationform>.</annotationform>
             <editorlayout>generatedlayout</editorlayout>
             <excludeAttributesWMS/>
             <excludeAttributesWFS/>
