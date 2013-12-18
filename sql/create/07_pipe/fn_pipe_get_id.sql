@@ -12,7 +12,7 @@ $BODY$
 		point ALIAS for $1;
 		pipe_id integer;
 	BEGIN
-		SELECT id FROM distribution.od_pipe WHERE ST_Intersects(point,geometry) LIMIT 1 INTO pipe_id ;
+		SELECT id FROM distribution.od_pipe WHERE ST_DWithin(point,geometry,0.0001) ORDER BY ST_Distance(point,geometry) ASC LIMIT 1 INTO pipe_id ;
 		RETURN pipe_id;	
 	END;
 $BODY$
