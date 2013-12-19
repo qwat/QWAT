@@ -24,10 +24,10 @@
     <mapcanvas>
         <units>meters</units>
         <extent>
-            <xmin>555111.48787601455114782</xmin>
-            <ymin>134303.09807846217881888</ymin>
-            <xmax>564500.51918813935481012</xmax>
-            <ymax>141250.29340831277659163</ymax>
+            <xmin>558068.70227381819859147</xmin>
+            <ymin>143321.67447196308057755</ymin>
+            <xmax>558310.63614552794024348</xmax>
+            <ymax>143514.53032969741616398</ymax>
         </extent>
         <projections>1</projections>
         <destinationsrs>
@@ -63,7 +63,7 @@
             <layer_coordinate_transform destAuthId="EPSG:21781" srcAuthId="EPSG:2056" srcDatumTransform="-1" destDatumTransform="-1" layerid="RP_Geometrie_plan_S20131218104826361"/>
         </layer_coordinate_transform_info>
     </mapcanvas>
-    <legend updateDrawingOrder="false" activeLayer="leak20130821111917060">
+    <legend updateDrawingOrder="false">
         <legendgroup open="true" checked="Qt::PartiallyChecked" name="Réseau">
             <legendgroup open="true" checked="Qt::PartiallyChecked" name="ouvrages">
                 <legendlayer drawingOrder="0" open="false" checked="Qt::Unchecked" name="ouvrage" showFeatureCount="0">
@@ -71,7 +71,7 @@
                         <legendlayerfile isInOverview="0" layerid="installation20130304110004938" visible="0"/>
                     </filegroup>
                 </legendlayer>
-                <legendgroup open="false" checked="Qt::Checked" name="détail">
+                <legendgroup open="true" checked="Qt::Checked" name="détail">
                     <legendlayer drawingOrder="1" open="false" checked="Qt::Checked" name="ouvrage - réservoirs" showFeatureCount="0">
                         <filegroup open="false" hidden="false">
                             <legendlayerfile isInOverview="0" layerid="installation_tank20130304110005008" visible="1"/>
@@ -212,7 +212,7 @@
                 </filegroup>
             </legendlayer>
         </legendgroup>
-        <legendgroup open="true" checked="Qt::Unchecked" name="Côtes">
+        <legendgroup open="false" checked="Qt::Unchecked" name="Côtes">
             <legendlayer drawingOrder="26" open="false" checked="Qt::Unchecked" name="côtes distance" showFeatureCount="0">
                 <filegroup open="false" hidden="false">
                     <legendlayerfile isInOverview="0" layerid="dimension20130807094904783" visible="0"/>
@@ -239,7 +239,7 @@
                 </filegroup>
             </legendlayer>
         </legendgroup>
-        <legendgroup open="true" checked="Qt::Unchecked" name="Zones">
+        <legendgroup open="false" checked="Qt::Unchecked" name="Zones">
             <legendlayer drawingOrder="31" open="false" checked="Qt::Unchecked" name="communes" showFeatureCount="0">
                 <filegroup open="false" hidden="false">
                     <legendlayerfile isInOverview="0" layerid="district20130304110004764" visible="0"/>
@@ -412,10 +412,8 @@
                 </filegroup>
             </legendlayer>
         </legendgroup>
-        <legendgroup embedded="1" drawingOrder="32" open="false" checked="Qt::Checked" name="base" project="../../../data/cadastre/valais/valais.qgs"/>
-        <legendgroup embedded="1" drawingOrder="47" open="false" checked="Qt::Unchecked" name="complément" project="../../../data/cadastre/valais/valais.qgs"/>
-        <legendgroup embedded="1" drawingOrder="-1" open="false" checked="Qt::Checked" name="base" project="../../../data/cadastre/valais/valais.qgs"/>
-        <legendgroup embedded="1" drawingOrder="-1" open="false" checked="Qt::Unchecked" name="complément" project="../../../data/cadastre/valais/valais.qgs"/>
+        <legendgroup embedded="1" drawingOrder="65" open="false" checked="Qt::Checked" name="base" project="../../../data/cadastre/riviera/riviera.qgs"/>
+        <legendgroup embedded="1" drawingOrder="0" open="false" checked="Qt::Unchecked" name="complément" project="../../../data/cadastre/riviera/riviera.qgs"/>
     </legend>
     <Composer title="folio" visible="0">
         <Composition snapGridTolerance="2" gridVisible="1" printResolution="300" paperWidth="1030" snapGridOffsetX="0" guidesVisible="1" snapGridResolution="10" snapGridOffsetY="0" alignmentSnap="1" snapping="0" numPages="1" paperHeight="914" alignmentSnapTolerance="2" smartGuides="1" printAsRaster="1" generateWorldFile="0">
@@ -771,7 +769,7 @@
             </ComposerMap>
         </Composition>
     </Composer>
-    <projectlayers layercount="95">
+    <projectlayers layercount="80">
         <maplayer minimumScale="0" maximumScale="1e+08" minLabelScale="0" maxLabelScale="1e+08" geometry="Line" type="vector" hasScaleBasedVisibilityFlag="0" scaleBasedLabelVisibilityFlag="0">
             <id>IntersectIt_Lines20130618102142813</id>
             <datasource>LineString?crs=EPSG:21781&amp;field=id:string&amp;field=type:string&amp;field=x:double&amp;field=y:double&amp;field=observation:double&amp;field=precision:double&amp;index=yes</datasource>
@@ -3001,7 +2999,7 @@
                 <actionsetting action="qgis.utils.plugins['postgres91plusauditor'].showHistory('district20130304110004764',[% $id %])" capture="0" type="1" name="History audit"/>
             </attributeactions>
         </maplayer>
-        <maplayer minimumScale="0" maximumScale="10000" minLabelScale="1" maxLabelScale="1e+08" geometry="Point" type="vector" hasScaleBasedVisibilityFlag="1" scaleBasedLabelVisibilityFlag="0">
+        <maplayer minimumScale="-4.65661e-10" maximumScale="10001" minLabelScale="1" maxLabelScale="1e+08" geometry="Point" type="vector" hasScaleBasedVisibilityFlag="1" scaleBasedLabelVisibilityFlag="0">
             <id>hydrant20130304110004848</id>
             <datasource>dbname='sige' host=172.24.171.203 port=5432 user='sige' password='db4wat$' sslmode=allow key='id' srid=21781 type=POINT table="distribution"."od_hydrant" (geometry) sql=</datasource>
             <title></title>
@@ -3203,8 +3201,10 @@
                 <edittype labelontop="0" editable="0" type="0" name="Statut_value_en"/>
                 <edittype labelontop="0" editable="0" type="0" name="Statut_value_fr"/>
                 <edittype labelontop="0" editable="0" type="0" name="Statut_vl_active"/>
+                <edittype labelontop="0" editable="1" type="0" name="_district"/>
                 <edittype labelontop="0" editable="1" type="0" name="_districts"/>
                 <edittype labelontop="0" editable="1" type="0" name="_geometry_schematic_used"/>
+                <edittype labelontop="0" editable="1" type="0" name="_pressurezone"/>
                 <edittype labelontop="0" editable="1" type="0" name="_printmaps"/>
                 <edittype labelontop="0" editable="1" type="0" name="altitude_real"/>
                 <edittype labelontop="0" editable="1" type="0" name="flow"/>
@@ -4859,7 +4859,7 @@
                 <actionsetting action="qgis.utils.plugins['postgres91plusauditor'].showHistory('installation_tank20130304110005008',[% $id %])" capture="0" type="1" name="History audit"/>
             </attributeactions>
         </maplayer>
-        <maplayer minimumScale="0" maximumScale="1e+08" minLabelScale="0" maxLabelScale="1e+08" geometry="Point" type="vector" hasScaleBasedVisibilityFlag="0" scaleBasedLabelVisibilityFlag="0">
+        <maplayer minimumScale="-4.65661e-10" maximumScale="1e+08" minLabelScale="0" maxLabelScale="1e+08" geometry="Point" type="vector" hasScaleBasedVisibilityFlag="0" scaleBasedLabelVisibilityFlag="0">
             <id>installation_treatment20130816113039913</id>
             <datasource>dbname='sige' host=172.24.171.203 port=5432 user='sige' sslmode=disable key='id' srid=21781 type=POINT table="distribution"."od_installation_treatment" (geometry) sql=</datasource>
             <title></title>
@@ -5086,7 +5086,7 @@
                 <edittype labelontop="0" editable="1" type="0" name="id_pressurezone"/>
                 <edittype labelontop="0" editable="1" type="0" name="id_printmap"/>
                 <edittype labelontop="0" editable="1" type="0" name="id_remote"/>
-                <edittype labelontop="0" editable="1" type="0" name="id_status"/>
+                <edittype labelontop="0" editable="1" allowNull="false" orderByValue="false" key="id" layer="status20130304110011436" allowMulti="false" filterExpression="" type="15" value="value_fr" name="id_status"/>
                 <edittype labelontop="0" editable="1" type="0" name="id_watertype"/>
                 <edittype labelontop="0" editable="1" type="0" name="identification"/>
                 <edittype labelontop="0" editable="1" type="0" name="links"/>
@@ -5399,7 +5399,7 @@
                 <actionsetting action="qgis.utils.plugins['postgres91plusauditor'].audit('installation_valvechamber20131107105006707',[% $id %])" capture="0" type="1" name="History audit"/>
             </attributeactions>
         </maplayer>
-        <maplayer minimumScale="-4.65661e-10" maximumScale="1e+08" minLabelScale="0" maxLabelScale="1e+08" geometry="Point" type="vector" hasScaleBasedVisibilityFlag="0" scaleBasedLabelVisibilityFlag="0">
+        <maplayer minimumScale="0" maximumScale="5001" minLabelScale="0" maxLabelScale="1e+08" geometry="Point" type="vector" hasScaleBasedVisibilityFlag="1" scaleBasedLabelVisibilityFlag="0">
             <id>leak20130821111917060</id>
             <datasource>dbname='sige' host=172.24.171.203 port=5432 user='sige' sslmode=disable key='id' srid=21781 type=POINT table="distribution"."od_leak" (geometry) sql=</datasource>
             <title></title>
@@ -6628,7 +6628,7 @@
                 <actionsetting action="qgis.utils.plugins['postgres91plusauditor'].audit('od_dimension_orientation20131202111155806',[% $id %])" capture="0" type="1" name="History audit"/>
             </attributeactions>
         </maplayer>
-        <maplayer minimumScale="0" maximumScale="1e+08" minLabelScale="0" maxLabelScale="1e+08" geometry="Point" type="vector" hasScaleBasedVisibilityFlag="0" scaleBasedLabelVisibilityFlag="0">
+        <maplayer minimumScale="-4.65661e-10" maximumScale="3001" minLabelScale="0" maxLabelScale="1e+08" geometry="Point" type="vector" hasScaleBasedVisibilityFlag="1" scaleBasedLabelVisibilityFlag="0">
             <id>od_meter20131120073630165</id>
             <datasource>dbname='sige' host=172.24.171.203 port=5432 user='sige' sslmode=disable key='id' estimatedmetadata=true srid=21781 type=POINT table="distribution"."od_meter" (geometry) sql=</datasource>
             <title></title>
@@ -6821,6 +6821,7 @@
                 <selectedonly on=""/>
             </labelattributes>
             <edittypes>
+                <edittype labelontop="0" editable="1" type="0" name="_district"/>
                 <edittype labelontop="0" editable="1" type="0" name="_districts"/>
                 <edittype labelontop="0" editable="1" type="0" name="_identification_full"/>
                 <edittype labelontop="0" editable="1" type="0" name="_pressurezone"/>
@@ -7285,7 +7286,7 @@
                 <actionsetting action="qgis.utils.plugins['postgres91plusauditor'].audit('od_subscriber_reference20131206105928067',[% $id %])" capture="0" type="1" name="History audit"/>
             </attributeactions>
         </maplayer>
-        <maplayer minimumScale="-4.65661e-10" maximumScale="25000" minLabelScale="0" maxLabelScale="1e+08" geometry="Point" type="vector" hasScaleBasedVisibilityFlag="1" scaleBasedLabelVisibilityFlag="0">
+        <maplayer minimumScale="0" maximumScale="3001" minLabelScale="0" maxLabelScale="1e+08" geometry="Point" type="vector" hasScaleBasedVisibilityFlag="1" scaleBasedLabelVisibilityFlag="0">
             <id>od_wateringoutput20131127080906318</id>
             <datasource>dbname='sige' host=172.24.171.203 port=5432 user='sige' sslmode=disable key='id' estimatedmetadata=true srid=21781 type=POINT table="distribution"."od_wateringoutput" (geometry) sql=</datasource>
             <title></title>
@@ -7476,7 +7477,9 @@
                 <selectedonly on=""/>
             </labelattributes>
             <edittypes>
+                <edittype labelontop="0" editable="1" type="0" name="_district"/>
                 <edittype labelontop="0" editable="0" type="0" name="_districts"/>
+                <edittype labelontop="0" editable="1" type="0" name="_pressurezone"/>
                 <edittype labelontop="0" editable="0" type="0" name="_printmaps"/>
                 <edittype labelontop="0" editable="1" type="0" name="altitude_real"/>
                 <edittype labelontop="0" editable="0" type="0" name="id"/>
@@ -9092,7 +9095,7 @@
                 <actionsetting action="qgis.utils.plugins['postgres91plusauditor'].showHistory('subscriber_pipe_relation20130417092124312',[% $id %])" capture="0" type="1" name="History audit"/>
             </attributeactions>
         </maplayer>
-        <maplayer minimumScale="-4.65661e-10" maximumScale="10000" minLabelScale="1" maxLabelScale="1e+08" geometry="Point" type="vector" hasScaleBasedVisibilityFlag="1" scaleBasedLabelVisibilityFlag="0">
+        <maplayer minimumScale="0" maximumScale="10001" minLabelScale="1" maxLabelScale="1e+08" geometry="Point" type="vector" hasScaleBasedVisibilityFlag="1" scaleBasedLabelVisibilityFlag="0">
             <id>valve20130304110011497</id>
             <datasource>dbname='sige' host=172.24.171.203 port=5432 user='sige' password='db4wat$' sslmode=allow key='id' srid=21781 type=POINT table="distribution"."od_valve" (geometry) sql=</datasource>
             <title></title>
@@ -9632,7 +9635,7 @@
                 <actionsetting action="qgis.utils.plugins['postgres91plusauditor'].showHistory('valve_schema20130304110011584',[% $id %])" capture="0" type="1" name="History audit"/>
             </attributeactions>
         </maplayer>
-        <maplayer minimumScale="0" maximumScale="3000" minLabelScale="1" maxLabelScale="1e+08" geometry="Point" type="vector" hasScaleBasedVisibilityFlag="1" scaleBasedLabelVisibilityFlag="0">
+        <maplayer minimumScale="-4.65661e-10" maximumScale="3001" minLabelScale="1" maxLabelScale="1e+08" geometry="Point" type="vector" hasScaleBasedVisibilityFlag="1" scaleBasedLabelVisibilityFlag="0">
             <id>vannes_copy20130924083714343</id>
             <datasource>dbname='sige' host=172.24.171.203 port=5432 user='sige' password='db4wat$' sslmode=allow key='id' srid=21781 type=POINT table="distribution"."od_valve" (geometry) sql=</datasource>
             <title></title>
