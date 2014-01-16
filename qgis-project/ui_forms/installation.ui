@@ -17,16 +17,6 @@
    <double>1.000000000000000</double>
   </property>
   <layout class="QGridLayout" name="gridLayout">
-   <item row="3" column="3">
-    <widget class="QLineEdit" name="eca"/>
-   </item>
-   <item row="0" column="0">
-    <widget class="QLabel" name="label">
-     <property name="text">
-      <string>ID</string>
-     </property>
-    </widget>
-   </item>
    <item row="2" column="0" colspan="2">
     <widget class="QCheckBox" name="schema_visible">
      <property name="layoutDirection">
@@ -37,10 +27,31 @@
      </property>
     </widget>
    </item>
+   <item row="2" column="2">
+    <widget class="QLabel" name="label_6">
+     <property name="text">
+      <string>Parcelle</string>
+     </property>
+    </widget>
+   </item>
+   <item row="1" column="0">
+    <widget class="QLabel" name="label_2">
+     <property name="text">
+      <string>Nom</string>
+     </property>
+    </widget>
+   </item>
+   <item row="0" column="2">
+    <widget class="QLabel" name="label_4">
+     <property name="text">
+      <string>Identification</string>
+     </property>
+    </widget>
+   </item>
    <item row="4" column="0" colspan="4">
     <widget class="QTabWidget" name="tabWidget">
      <property name="currentIndex">
-      <number>0</number>
+      <number>2</number>
      </property>
      <widget class="QWidget" name="tab">
       <attribute name="title">
@@ -48,14 +59,8 @@
       </attribute>
       <layout class="QGridLayout" name="gridLayout_3">
        <item row="0" column="0">
-        <widget class="QFrame" name="frame">
-         <property name="frameShape">
-          <enum>QFrame::StyledPanel</enum>
-         </property>
-         <property name="frameShadow">
-          <enum>QFrame::Raised</enum>
-         </property>
-         <property name="relation" stdset="0">
+        <widget class="QWidget" name="widget" native="true">
+         <property name="qgisRelation" stdset="0">
           <string>relation_ouvrage_tank</string>
          </property>
         </widget>
@@ -71,6 +76,15 @@
       <attribute name="title">
        <string>Pompage</string>
       </attribute>
+      <layout class="QGridLayout" name="gridLayout_4">
+       <item row="0" column="0">
+        <widget class="QWidget" name="widget_2" native="true">
+         <property name="qgisRelation" stdset="0">
+          <string>relation_ouvrage_pump</string>
+         </property>
+        </widget>
+       </item>
+      </layout>
      </widget>
      <widget class="QWidget" name="tab_5">
       <attribute name="title">
@@ -101,16 +115,13 @@
      </widget>
     </widget>
    </item>
-   <item row="2" column="3">
-    <widget class="QLineEdit" name="parcel"/>
+   <item row="0" column="3">
+    <widget class="QLineEdit" name="identification"/>
    </item>
-   <item row="3" column="1">
-    <widget class="QLineEdit" name="year"/>
-   </item>
-   <item row="0" column="2">
-    <widget class="QLabel" name="label_4">
+   <item row="3" column="0">
+    <widget class="QLabel" name="label_5">
      <property name="text">
-      <string>Identification</string>
+      <string>Année</string>
      </property>
     </widget>
    </item>
@@ -128,37 +139,10 @@
      </property>
     </widget>
    </item>
-   <item row="1" column="0">
-    <widget class="QLabel" name="label_2">
-     <property name="text">
-      <string>Nom</string>
-     </property>
-    </widget>
-   </item>
-   <item row="1" column="1">
-    <widget class="QLineEdit" name="name"/>
-   </item>
    <item row="3" column="2">
     <widget class="QLabel" name="label_7">
      <property name="text">
       <string>ECA</string>
-     </property>
-    </widget>
-   </item>
-   <item row="1" column="3">
-    <widget class="QComboBox" name="id_type"/>
-   </item>
-   <item row="2" column="2">
-    <widget class="QLabel" name="label_6">
-     <property name="text">
-      <string>Parcelle</string>
-     </property>
-    </widget>
-   </item>
-   <item row="3" column="0">
-    <widget class="QLabel" name="label_5">
-     <property name="text">
-      <string>Année</string>
      </property>
     </widget>
    </item>
@@ -172,8 +156,30 @@
      </property>
     </widget>
    </item>
-   <item row="0" column="3">
-    <widget class="QLineEdit" name="identification"/>
+   <item row="2" column="3">
+    <widget class="QLineEdit" name="parcel"/>
+   </item>
+   <item row="1" column="1">
+    <widget class="QLineEdit" name="name"/>
+   </item>
+   <item row="1" column="3">
+    <widget class="QComboBox" name="id_type"/>
+   </item>
+   <item row="3" column="3">
+    <widget class="QLineEdit" name="eca"/>
+   </item>
+   <item row="3" column="1">
+    <widget class="QLineEdit" name="year"/>
+   </item>
+   <item row="6" column="0">
+    <widget class="QWidget" name="widget_3" native="true"/>
+   </item>
+   <item row="0" column="0">
+    <widget class="QLabel" name="label">
+     <property name="text">
+      <string>ID</string>
+     </property>
+    </widget>
    </item>
   </layout>
  </widget>

@@ -24,10 +24,10 @@
     <mapcanvas>
         <units>meters</units>
         <extent>
-            <xmin>560352.50683608243707567</xmin>
-            <ymin>141977.15150022527086549</ymin>
-            <xmax>560524.35371125873643905</xmax>
-            <ymax>142100.44733368509332649</ymax>
+            <xmin>554306.29717068828176707</xmin>
+            <ymin>147149.057872865407262</ymin>
+            <xmax>554650.19974273385014385</xmax>
+            <ymax>147395.64953979093115777</ymax>
         </extent>
         <projections>1</projections>
         <destinationsrs>
@@ -42,13 +42,14 @@
                 <geographicflag>false</geographicflag>
             </spatialrefsys>
         </destinationsrs>
+        <layer_coordinate_transform_info/>
     </mapcanvas>
-    <legend updateDrawingOrder="false" activeLayer="ligne20140113144941233">
+    <legend updateDrawingOrder="false" activeLayer="od_meter20131120073630165">
         <legendgroup open="true" checked="Qt::PartiallyChecked" name="Réseau">
-            <legendgroup open="true" checked="Qt::PartiallyChecked" name="ouvrages">
-                <legendlayer drawingOrder="0" open="false" checked="Qt::Unchecked" name="ouvrage" showFeatureCount="0">
+            <legendgroup open="true" checked="Qt::Checked" name="ouvrages">
+                <legendlayer drawingOrder="0" open="false" checked="Qt::Checked" name="ouvrage" showFeatureCount="0">
                     <filegroup open="false" hidden="false">
-                        <legendlayerfile isInOverview="0" layerid="installation20130304110004938" visible="0"/>
+                        <legendlayerfile isInOverview="0" layerid="installation20130304110004938" visible="1"/>
                     </filegroup>
                 </legendlayer>
                 <legendgroup open="true" checked="Qt::Checked" name="détail">
@@ -414,19 +415,43 @@
     </legend>
     <Composer title="folio" visible="0">
         <Composition snapGridTolerance="2" gridVisible="1" printResolution="300" paperWidth="1030" snapGridOffsetX="0" guidesVisible="1" snapGridResolution="10" snapGridOffsetY="0" alignmentSnap="1" snapping="0" numPages="1" paperHeight="914" alignmentSnapTolerance="2" smartGuides="1" printAsRaster="1" generateWorldFile="0">
+            <symbol alpha="1" type="fill" name="">
+                <layer pass="0" class="SimpleFill" locked="0">
+                    <prop k="border_width_unit" v="MM"/>
+                    <prop k="color" v="255,255,255,255"/>
+                    <prop k="color_border" v="0,0,0,255"/>
+                    <prop k="offset" v="0,0"/>
+                    <prop k="offset_unit" v="MM"/>
+                    <prop k="style" v="solid"/>
+                    <prop k="style_border" v="no"/>
+                    <prop k="width_border" v="0.26"/>
+                </layer>
+            </symbol>
             <SnapLine y1="0" x1="0" y2="0" x2="0"/>
             <SnapLine y1="0" x1="0" y2="0" x2="0"/>
             <ComposerArrow startMarkerFile="" arrowHeadWidth="0" endMarkerFile="" outlineWidth="0.3" markerMode="1">
                 <ArrowColor alpha="255" red="0" blue="0" green="0"/>
                 <StartPoint x="15.15" y="407"/>
                 <StopPoint x="34.85" y="407"/>
-                <ComposerItem width="20" x="15" transparency="0" y="406.85" rotation="0" height="0.3" positionMode="3" frame="false" outlineWidth="0" zValue="14" lastValidViewScaleFactor="9.29985" uuid="{dbbbb19e-bbae-45e9-a631-b11648d004a9}" id="" background="true" blendMode="0" positionLock="true">
+                <ComposerItem width="20" x="15" transparency="0" y="406.85" height="0.3" positionMode="3" frame="false" outlineWidth="0" zValue="14" itemRotation="0" lastValidViewScaleFactor="9.29985" uuid="{dbbbb19e-bbae-45e9-a631-b11648d004a9}" id="" background="true" blendMode="0" positionLock="true">
                     <FrameColor alpha="0" red="255" blue="255" green="255"/>
                     <BackgroundColor alpha="0" red="255" blue="255" green="255"/>
                 </ComposerItem>
             </ComposerArrow>
             <ComposerShape shapeType="1" cornerRadius="0">
-                <ComposerItem width="70" x="225" transparency="0" y="110" rotation="0" height="30" positionMode="0" frame="true" outlineWidth="0" zValue="13" lastValidViewScaleFactor="0.854645" uuid="{4566e0a1-ec7a-452e-baf0-a45ed15314ff}" id="" background="true" blendMode="0" positionLock="false">
+                <symbol alpha="1" type="fill" name="">
+                    <layer pass="0" class="SimpleFill" locked="0">
+                        <prop k="border_width_unit" v="MM"/>
+                        <prop k="color" v="255,255,255,255"/>
+                        <prop k="color_border" v="0,0,0,255"/>
+                        <prop k="offset" v="0,0"/>
+                        <prop k="offset_unit" v="MM"/>
+                        <prop k="style" v="solid"/>
+                        <prop k="style_border" v="solid"/>
+                        <prop k="width_border" v="0"/>
+                    </layer>
+                </symbol>
+                <ComposerItem width="70" x="225" transparency="0" y="110" height="30" positionMode="0" frame="false" outlineWidth="0" zValue="13" itemRotation="0" lastValidViewScaleFactor="0.854645" uuid="{4566e0a1-ec7a-452e-baf0-a45ed15314ff}" id="" background="true" blendMode="0" positionLock="false">
                     <FrameColor alpha="255" red="0" blue="0" green="0"/>
                     <BackgroundColor alpha="255" red="255" blue="255" green="255"/>
                 </ComposerItem>
@@ -434,12 +459,12 @@
             <ComposerLabel valign="128" labelText="[%&quot;communes_name&quot;%]" htmlState="0" halign="4" margin="1">
                 <LabelFont description="Arial,24,-1,5,50,0,0,0,0,0"/>
                 <FontColor red="0" blue="0" green="0"/>
-                <ComposerItem width="145" x="80" transparency="0" y="110" rotation="0" height="30" positionMode="0" frame="true" outlineWidth="0" zValue="12" lastValidViewScaleFactor="0.981421" uuid="{1781241a-f04c-4c36-8698-34b012f69283}" id="" background="false" blendMode="0" positionLock="false">
+                <ComposerItem width="145" x="80" transparency="0" y="110" height="30" positionMode="0" frame="true" outlineWidth="0" zValue="12" itemRotation="0" lastValidViewScaleFactor="0.981421" uuid="{1781241a-f04c-4c36-8698-34b012f69283}" id="" background="false" blendMode="0" positionLock="false">
                     <FrameColor alpha="255" red="0" blue="0" green="0"/>
                     <BackgroundColor alpha="255" red="255" blue="255" green="255"/>
                 </ComposerItem>
             </ComposerLabel>
-            <ComposerMap keepLayerSet="true" overviewFrameMap="0" id="1" previewMode="Render" drawCanvasItems="true">
+            <ComposerMap mapRotation="0" keepLayerSet="true" overviewFrameMap="0" id="1" previewMode="Render" drawCanvasItems="true">
                 <overviewFrame overviewBlendMode="0" overviewFrameMap="0" overviewCentered="true" overviewInverted="false">
                     <symbol alpha="0.3" type="fill" name="">
                         <layer pass="0" class="SimpleFill" locked="0">
@@ -458,7 +483,10 @@
                 <LayerSet>
                     <Layer>printmap20130304110011400</Layer>
                 </LayerSet>
-                <Grid gridStyle="0" crossLength="3" intervalX="0" offsetX="0" intervalY="0" offsetY="0" gridFrameStyle="0" gridFrameWidth="2" gridBlendMode="0" show="0">
+                <Grid gridStyle="0" crossLength="3" gridFramePenThickness="0.5" intervalX="0" offsetX="0" intervalY="0" offsetY="0" gridFrameStyle="0" gridFrameWidth="2" gridBlendMode="0" show="0">
+                    <framePenColor alpha="255" red="0" blue="0" green="0"/>
+                    <frameFillColor1 alpha="255" red="255" blue="255" green="255"/>
+                    <frameFillColor2 alpha="255" red="0" blue="0" green="0"/>
                     <symbol alpha="1" type="line" name="">
                         <layer pass="0" class="SimpleLine" locked="0">
                             <prop k="capstyle" v="flat"/>
@@ -475,16 +503,17 @@
                         </layer>
                     </symbol>
                     <Annotation rightDirection="0" bottomDirection="0" format="0" topPosition="1" precision="3" leftDirection="0" rightPosition="1" bottomPosition="1" frameDistance="1" show="0" font="Ubuntu,11,-1,5,50,0,0,0,0,0" leftPosition="1" topDirection="0">
-                        <fontColor red="0" blue="0" green="0"/>
+                        <fontColor alpha="255" red="0" blue="0" green="0"/>
                     </Annotation>
                 </Grid>
-                <ComposerItem width="40" x="975" transparency="0" y="110" rotation="0" height="29.9999" positionMode="0" frame="true" outlineWidth="0" zValue="11" lastValidViewScaleFactor="0.854645" uuid="{b970a2fd-9bd7-4a2a-a787-1664811befc7}" id="" background="true" blendMode="0" positionLock="false">
+                <AtlasMap fixedScale="0" atlasDriven="0" margin="0.10000000000000001"/>
+                <ComposerItem width="40" x="975" transparency="0" y="110" height="29.9999" positionMode="0" frame="true" outlineWidth="0" zValue="11" itemRotation="0" lastValidViewScaleFactor="0.854645" uuid="{b970a2fd-9bd7-4a2a-a787-1664811befc7}" id="" background="true" blendMode="0" positionLock="false">
                     <FrameColor alpha="255" red="0" blue="0" green="0"/>
                     <BackgroundColor alpha="255" red="255" blue="255" green="255"/>
                 </ComposerItem>
             </ComposerMap>
             <ComposerScaleBar penColor="#000000" style="Double Box" numMapUnitsPerScaleBarUnit="1" alignment="1" brushColor="#000000" numSegments="4" segmentMillimeters="160" fontColor="#000000" font="Ubuntu,12,-1,5,50,0,0,0,0,0" numUnitsPerSegment="5" units="1" labelBarSpace="3" outlineWidth="0.1" numSegmentsLeft="0" height="6" mapId="0" boxContentSpace="1" unitLabel="m">
-                <ComposerItem width="650.337" x="434.831" transparency="0" y="121.776" rotation="0" height="15" positionMode="4" frame="false" outlineWidth="0" zValue="10" lastValidViewScaleFactor="1.50161" uuid="{5b7e8e4a-a087-481b-b0bd-5495102e2fcd}" id="" background="true" blendMode="0" positionLock="false">
+                <ComposerItem width="650.337" x="434.831" transparency="0" y="121.776" height="15" positionMode="4" frame="false" outlineWidth="0" zValue="10" itemRotation="0" lastValidViewScaleFactor="1.50161" uuid="{5b7e8e4a-a087-481b-b0bd-5495102e2fcd}" id="" background="true" blendMode="0" positionLock="false">
                     <FrameColor alpha="255" red="0" blue="0" green="0"/>
                     <BackgroundColor alpha="255" red="255" blue="255" green="255"/>
                 </ComposerItem>
@@ -492,7 +521,7 @@
             <ComposerLabel valign="128" labelText="[%'ETABLI SUR LA BASE\nDES DONNEES CADASTRALES'%]" htmlState="0" halign="4" margin="1">
                 <LabelFont description="Arial,20,-1,5,50,0,0,0,0,0"/>
                 <FontColor red="0" blue="0" green="0"/>
-                <ComposerItem width="120" x="855" transparency="0" y="110" rotation="0" height="30" positionMode="0" frame="true" outlineWidth="0" zValue="9" lastValidViewScaleFactor="1.53297" uuid="{9e4aa9dd-b712-43e0-9265-4c36415be189}" id="" background="false" blendMode="0" positionLock="false">
+                <ComposerItem width="120" x="855" transparency="0" y="110" height="30" positionMode="0" frame="true" outlineWidth="0" zValue="9" itemRotation="0" lastValidViewScaleFactor="1.53297" uuid="{9e4aa9dd-b712-43e0-9265-4c36415be189}" id="" background="false" blendMode="0" positionLock="false">
                     <FrameColor alpha="255" red="0" blue="0" green="0"/>
                     <BackgroundColor alpha="255" red="255" blue="255" green="255"/>
                 </ComposerItem>
@@ -500,7 +529,7 @@
             <ComposerLabel valign="128" labelText="[% &quot;name&quot;%]" htmlState="0" halign="4" margin="1">
                 <LabelFont description="Arial,24,-1,5,50,0,0,0,0,0"/>
                 <FontColor red="0" blue="0" green="0"/>
-                <ComposerItem width="65" x="15" transparency="0" y="110" rotation="0" height="30" positionMode="0" frame="true" outlineWidth="0" zValue="8" lastValidViewScaleFactor="0.981421" uuid="{8577cde4-0e86-49ca-86b7-1abfeda58ceb}" id="" background="false" blendMode="0" positionLock="false">
+                <ComposerItem width="65" x="15" transparency="0" y="110" height="30" positionMode="0" frame="true" outlineWidth="0" zValue="8" itemRotation="0" lastValidViewScaleFactor="0.981421" uuid="{8577cde4-0e86-49ca-86b7-1abfeda58ceb}" id="" background="false" blendMode="0" positionLock="false">
                     <FrameColor alpha="255" red="0" blue="0" green="0"/>
                     <BackgroundColor alpha="255" red="255" blue="255" green="255"/>
                 </ComposerItem>
@@ -508,7 +537,7 @@
             <ComposerLabel valign="128" labelText="[%'SERVICE INTERCOMMUNAL\nDE GESTION'%]" htmlState="0" halign="1" margin="1">
                 <LabelFont description="Arial,24,-1,5,50,0,0,0,0,0"/>
                 <FontColor red="0" blue="0" green="0"/>
-                <ComposerItem width="140" x="295" transparency="0" y="110" rotation="0" height="30" positionMode="0" frame="true" outlineWidth="0" zValue="7" lastValidViewScaleFactor="0.981421" uuid="{a31f21c3-4592-4602-8133-b11daf6fb156}" id="" background="false" blendMode="0" positionLock="false">
+                <ComposerItem width="140" x="295" transparency="0" y="110" height="30" positionMode="0" frame="true" outlineWidth="0" zValue="7" itemRotation="0" lastValidViewScaleFactor="0.981421" uuid="{a31f21c3-4592-4602-8133-b11daf6fb156}" id="" background="false" blendMode="0" positionLock="false">
                     <FrameColor alpha="255" red="0" blue="0" green="0"/>
                     <BackgroundColor alpha="255" red="255" blue="255" green="255"/>
                 </ComposerItem>
@@ -516,7 +545,7 @@
             <ComposerLabel valign="32" labelText="[%'ECHELLE 1/250'%]" htmlState="0" halign="4" margin="1">
                 <LabelFont description="Arial,24,-1,5,50,0,0,0,0,0"/>
                 <FontColor red="0" blue="0" green="0"/>
-                <ComposerItem width="100" x="435" transparency="0" y="110" rotation="0" height="30" positionMode="0" frame="true" outlineWidth="0" zValue="6" lastValidViewScaleFactor="0.981421" uuid="{39ade073-5a25-4b82-a791-73b952b630df}" id="" background="false" blendMode="0" positionLock="false">
+                <ComposerItem width="100" x="435" transparency="0" y="110" height="30" positionMode="0" frame="true" outlineWidth="0" zValue="6" itemRotation="0" lastValidViewScaleFactor="0.981421" uuid="{39ade073-5a25-4b82-a791-73b952b630df}" id="" background="false" blendMode="0" positionLock="false">
                     <FrameColor alpha="255" red="0" blue="0" green="0"/>
                     <BackgroundColor alpha="255" red="255" blue="255" green="255"/>
                 </ComposerItem>
@@ -524,7 +553,7 @@
             <ComposerLabel valign="128" labelText="[%'TRACE ET PROFOND.\nAPPROIMATIFS'%]" htmlState="0" halign="4" margin="1">
                 <LabelFont description="Arial,24,-1,5,50,0,0,0,0,0"/>
                 <FontColor red="0" blue="0" green="0"/>
-                <ComposerItem width="110" x="535" transparency="0" y="110" rotation="0" height="30" positionMode="0" frame="true" outlineWidth="0" zValue="5" lastValidViewScaleFactor="0.981421" uuid="{e395f9cd-9962-4440-8cd0-e77abd9d39da}" id="" background="false" blendMode="0" positionLock="false">
+                <ComposerItem width="110" x="535" transparency="0" y="110" height="30" positionMode="0" frame="true" outlineWidth="0" zValue="5" itemRotation="0" lastValidViewScaleFactor="0.981421" uuid="{e395f9cd-9962-4440-8cd0-e77abd9d39da}" id="" background="false" blendMode="0" positionLock="false">
                     <FrameColor alpha="255" red="0" blue="0" green="0"/>
                     <BackgroundColor alpha="255" red="255" blue="255" green="255"/>
                 </ComposerItem>
@@ -532,7 +561,7 @@
             <ComposerLabel valign="128" labelText="[%'MIS A  JOUR LE\n ' ||  day( &quot;version_date&quot;) || '.'||  month( &quot;version_date&quot;) ||'.'|| year(  &quot;version_date&quot;)%]" htmlState="0" halign="4" margin="1">
                 <LabelFont description="Arial,24,-1,5,50,0,0,0,0,0"/>
                 <FontColor red="0" blue="0" green="0"/>
-                <ComposerItem width="105" x="645" transparency="0" y="110" rotation="0" height="30" positionMode="0" frame="true" outlineWidth="0" zValue="4" lastValidViewScaleFactor="0.981421" uuid="{92166850-c714-4977-b1e4-c9377fcbaf55}" id="" background="false" blendMode="0" positionLock="false">
+                <ComposerItem width="105" x="645" transparency="0" y="110" height="30" positionMode="0" frame="true" outlineWidth="0" zValue="4" itemRotation="0" lastValidViewScaleFactor="0.981421" uuid="{92166850-c714-4977-b1e4-c9377fcbaf55}" id="" background="false" blendMode="0" positionLock="false">
                     <FrameColor alpha="255" red="0" blue="0" green="0"/>
                     <BackgroundColor alpha="255" red="255" blue="255" green="255"/>
                 </ComposerItem>
@@ -540,12 +569,12 @@
             <ComposerLabel valign="128" labelText="[%'IMPRIME LE \n' || day($now) || '.' || month($now) || '.' || year($now)%]" htmlState="0" halign="4" margin="1">
                 <LabelFont description="Arial,24,-1,5,50,0,0,0,0,0"/>
                 <FontColor red="0" blue="0" green="0"/>
-                <ComposerItem width="105" x="750" transparency="0" y="110" rotation="0" height="29.9999" positionMode="0" frame="true" outlineWidth="0" zValue="3" lastValidViewScaleFactor="0.981421" uuid="{3acb823f-e7f1-4ba3-8a21-613a84412d7d}" id="" background="false" blendMode="0" positionLock="false">
+                <ComposerItem width="105" x="750" transparency="0" y="110" height="29.9999" positionMode="0" frame="true" outlineWidth="0" zValue="3" itemRotation="0" lastValidViewScaleFactor="0.981421" uuid="{3acb823f-e7f1-4ba3-8a21-613a84412d7d}" id="" background="false" blendMode="0" positionLock="false">
                     <FrameColor alpha="255" red="0" blue="0" green="0"/>
                     <BackgroundColor alpha="255" red="255" blue="255" green="255"/>
                 </ComposerItem>
             </ComposerLabel>
-            <ComposerMap keepLayerSet="false" overviewFrameMap="-1" id="0" previewMode="Render" drawCanvasItems="true">
+            <ComposerMap mapRotation="0" keepLayerSet="false" overviewFrameMap="-1" id="0" previewMode="Render" drawCanvasItems="true">
                 <overviewFrame overviewBlendMode="0" overviewFrameMap="-1" overviewCentered="false" overviewInverted="false">
                     <symbol alpha="0.568627" type="fill" name="">
                         <layer pass="0" class="SimpleFill" locked="0">
@@ -562,7 +591,10 @@
                 </overviewFrame>
                 <Extent ymin="145451.48972879946813919" xmin="555648.95716485881712288" ymax="145472.32307257072534412" xmax="555680.20716489071492106"/>
                 <LayerSet/>
-                <Grid gridStyle="0" crossLength="3" intervalX="0" offsetX="0" intervalY="0" offsetY="0" gridFrameStyle="0" gridFrameWidth="4" gridBlendMode="0" show="0">
+                <Grid gridStyle="0" crossLength="3" gridFramePenThickness="0.5" intervalX="0" offsetX="0" intervalY="0" offsetY="0" gridFrameStyle="0" gridFrameWidth="4" gridBlendMode="0" show="0">
+                    <framePenColor alpha="255" red="0" blue="0" green="0"/>
+                    <frameFillColor1 alpha="255" red="255" blue="255" green="255"/>
+                    <frameFillColor2 alpha="255" red="0" blue="0" green="0"/>
                     <symbol alpha="1" type="line" name="">
                         <layer pass="0" class="SimpleLine" locked="0">
                             <prop k="capstyle" v="flat"/>
@@ -579,31 +611,56 @@
                         </layer>
                     </symbol>
                     <Annotation rightDirection="0" bottomDirection="1" format="0" topPosition="0" precision="0" leftDirection="0" rightPosition="0" bottomPosition="0" frameDistance="1" show="1" font="Arial,10,-1,5,50,0,0,0,0,0" leftPosition="0" topDirection="1">
-                        <fontColor red="0" blue="0" green="0"/>
+                        <fontColor alpha="255" red="0" blue="0" green="0"/>
                     </Annotation>
                 </Grid>
-                <ComposerItem width="1000" x="15" transparency="0" y="140" rotation="0" height="666.667" positionMode="0" frame="true" outlineWidth="0" zValue="1" lastValidViewScaleFactor="0.854645" uuid="{27df2cec-4272-4242-93e2-7d5ffc2bbe05}" id="" background="true" blendMode="0" positionLock="false">
+                <AtlasMap fixedScale="0" atlasDriven="0" margin="0.10000000000000001"/>
+                <ComposerItem width="1000" x="15" transparency="0" y="140" height="666.667" positionMode="0" frame="true" outlineWidth="0" zValue="1" itemRotation="0" lastValidViewScaleFactor="0.854645" uuid="{27df2cec-4272-4242-93e2-7d5ffc2bbe05}" id="" background="true" blendMode="0" positionLock="false">
                     <FrameColor alpha="255" red="0" blue="0" green="0"/>
                     <BackgroundColor alpha="255" red="255" blue="255" green="255"/>
                 </ComposerItem>
             </ComposerMap>
         </Composition>
-        <Atlas hideCoverage="true" coverageLayer="printmap20130304110011400" fixedScale="false" composerMap="0" singleFile="false" filenamePattern=" 'folio_' ||  &quot;communes_name&quot; || '_' || &quot;name&quot;" enabled="true" filterFeatures="false" sortFeatures="false" margin="0"/>
+        <Atlas hideCoverage="true" coverageLayer="printmap20130304110011400" singleFile="false" filenamePattern=" 'folio_' ||  &quot;communes_name&quot; || '_' || &quot;name&quot;" enabled="true" filterFeatures="false" sortFeatures="false"/>
     </Composer>
     <Composer title="A0" visible="0">
         <Composition snapGridTolerance="2" gridVisible="1" printResolution="300" paperWidth="1030" snapGridOffsetX="0" guidesVisible="1" snapGridResolution="10" snapGridOffsetY="0" alignmentSnap="1" snapping="0" numPages="1" paperHeight="914" alignmentSnapTolerance="2" smartGuides="1" printAsRaster="1" generateWorldFile="0">
+            <symbol alpha="1" type="fill" name="">
+                <layer pass="0" class="SimpleFill" locked="0">
+                    <prop k="border_width_unit" v="MM"/>
+                    <prop k="color" v="255,255,255,255"/>
+                    <prop k="color_border" v="0,0,0,255"/>
+                    <prop k="offset" v="0,0"/>
+                    <prop k="offset_unit" v="MM"/>
+                    <prop k="style" v="solid"/>
+                    <prop k="style_border" v="no"/>
+                    <prop k="width_border" v="0.26"/>
+                </layer>
+            </symbol>
             <SnapLine y1="0" x1="0" y2="0" x2="0"/>
             <ComposerArrow startMarkerFile="" arrowHeadWidth="0" endMarkerFile="" outlineWidth="0.3" markerMode="1">
                 <ArrowColor alpha="255" red="0" blue="0" green="0"/>
                 <StartPoint x="15.15" y="407"/>
                 <StopPoint x="34.85" y="407"/>
-                <ComposerItem width="20" x="15" transparency="0" y="406.85" rotation="0" height="0.3" positionMode="3" frame="false" outlineWidth="0" zValue="14" lastValidViewScaleFactor="9.29985" uuid="{06c51928-3ce8-46f4-b18f-899c94bf863b}" id="" background="true" blendMode="0" positionLock="true">
+                <ComposerItem width="20" x="15" transparency="0" y="406.85" height="0.3" positionMode="3" frame="false" outlineWidth="0" zValue="14" itemRotation="0" lastValidViewScaleFactor="9.29985" uuid="{06c51928-3ce8-46f4-b18f-899c94bf863b}" id="" background="true" blendMode="0" positionLock="true">
                     <FrameColor alpha="0" red="255" blue="255" green="255"/>
                     <BackgroundColor alpha="0" red="255" blue="255" green="255"/>
                 </ComposerItem>
             </ComposerArrow>
             <ComposerShape shapeType="1" cornerRadius="0">
-                <ComposerItem width="70" x="225" transparency="0" y="110" rotation="0" height="30" positionMode="0" frame="true" outlineWidth="0" zValue="13" lastValidViewScaleFactor="0.820765" uuid="{74819690-842b-43a5-9158-8e55510f965a}" id="" background="true" blendMode="0" positionLock="false">
+                <symbol alpha="1" type="fill" name="">
+                    <layer pass="0" class="SimpleFill" locked="0">
+                        <prop k="border_width_unit" v="MM"/>
+                        <prop k="color" v="255,255,255,255"/>
+                        <prop k="color_border" v="0,0,0,255"/>
+                        <prop k="offset" v="0,0"/>
+                        <prop k="offset_unit" v="MM"/>
+                        <prop k="style" v="solid"/>
+                        <prop k="style_border" v="solid"/>
+                        <prop k="width_border" v="0"/>
+                    </layer>
+                </symbol>
+                <ComposerItem width="70" x="225" transparency="0" y="110" height="30" positionMode="0" frame="false" outlineWidth="0" zValue="13" itemRotation="0" lastValidViewScaleFactor="0.820765" uuid="{74819690-842b-43a5-9158-8e55510f965a}" id="" background="true" blendMode="0" positionLock="false">
                     <FrameColor alpha="255" red="0" blue="0" green="0"/>
                     <BackgroundColor alpha="255" red="255" blue="255" green="255"/>
                 </ComposerItem>
@@ -611,12 +668,12 @@
             <ComposerLabel valign="128" labelText="!!! DESCRIPTION !!!" htmlState="0" halign="4" margin="1">
                 <LabelFont description="Arial,24,-1,5,50,0,0,0,0,0"/>
                 <FontColor red="0" blue="0" green="0"/>
-                <ComposerItem width="145" x="80" transparency="0" y="110" rotation="0" height="30" positionMode="0" frame="true" outlineWidth="0" zValue="12" lastValidViewScaleFactor="1.05725" uuid="{609c7a89-e836-4fa3-9c10-941b4d2e9bdf}" id="" background="false" blendMode="0" positionLock="false">
+                <ComposerItem width="145" x="80" transparency="0" y="110" height="30" positionMode="0" frame="true" outlineWidth="0" zValue="12" itemRotation="0" lastValidViewScaleFactor="1.05725" uuid="{609c7a89-e836-4fa3-9c10-941b4d2e9bdf}" id="" background="false" blendMode="0" positionLock="false">
                     <FrameColor alpha="255" red="0" blue="0" green="0"/>
                     <BackgroundColor alpha="255" red="255" blue="255" green="255"/>
                 </ComposerItem>
             </ComposerLabel>
-            <ComposerMap keepLayerSet="true" overviewFrameMap="-1" id="1" previewMode="Cache" drawCanvasItems="true">
+            <ComposerMap mapRotation="0" keepLayerSet="true" overviewFrameMap="-1" id="1" previewMode="Cache" drawCanvasItems="true">
                 <overviewFrame overviewBlendMode="0" overviewFrameMap="-1" overviewCentered="false" overviewInverted="false">
                     <symbol alpha="0.3" type="fill" name="">
                         <layer pass="0" class="SimpleFill" locked="0">
@@ -635,7 +692,10 @@
                 <LayerSet>
                     <Layer>printmap20130304110011400</Layer>
                 </LayerSet>
-                <Grid gridStyle="0" crossLength="3" intervalX="0" offsetX="0" intervalY="0" offsetY="0" gridFrameStyle="0" gridFrameWidth="2" gridBlendMode="0" show="0">
+                <Grid gridStyle="0" crossLength="3" gridFramePenThickness="0.5" intervalX="0" offsetX="0" intervalY="0" offsetY="0" gridFrameStyle="0" gridFrameWidth="2" gridBlendMode="0" show="0">
+                    <framePenColor alpha="255" red="0" blue="0" green="0"/>
+                    <frameFillColor1 alpha="255" red="255" blue="255" green="255"/>
+                    <frameFillColor2 alpha="255" red="0" blue="0" green="0"/>
                     <symbol alpha="1" type="line" name="">
                         <layer pass="0" class="SimpleLine" locked="0">
                             <prop k="capstyle" v="flat"/>
@@ -652,16 +712,17 @@
                         </layer>
                     </symbol>
                     <Annotation rightDirection="0" bottomDirection="0" format="0" topPosition="1" precision="3" leftDirection="0" rightPosition="1" bottomPosition="1" frameDistance="1" show="0" font="Ubuntu,11,-1,5,50,0,0,0,0,0" leftPosition="1" topDirection="0">
-                        <fontColor red="0" blue="0" green="0"/>
+                        <fontColor alpha="255" red="0" blue="0" green="0"/>
                     </Annotation>
                 </Grid>
-                <ComposerItem width="40" x="975" transparency="0" y="110" rotation="0" height="29.9999" positionMode="0" frame="true" outlineWidth="0" zValue="11" lastValidViewScaleFactor="0.820765" uuid="{9756ecd3-ebe0-45e8-be9c-f3ee21f7dcea}" id="" background="true" blendMode="0" positionLock="false">
+                <AtlasMap fixedScale="0" atlasDriven="0" margin="0.10000000000000001"/>
+                <ComposerItem width="40" x="975" transparency="0" y="110" height="29.9999" positionMode="0" frame="true" outlineWidth="0" zValue="11" itemRotation="0" lastValidViewScaleFactor="0.820765" uuid="{9756ecd3-ebe0-45e8-be9c-f3ee21f7dcea}" id="" background="true" blendMode="0" positionLock="false">
                     <FrameColor alpha="255" red="0" blue="0" green="0"/>
                     <BackgroundColor alpha="255" red="255" blue="255" green="255"/>
                 </ComposerItem>
             </ComposerMap>
             <ComposerScaleBar penColor="#000000" style="Double Box" numMapUnitsPerScaleBarUnit="1" alignment="1" brushColor="#000000" numSegments="4" segmentMillimeters="20" fontColor="#000000" font="Ubuntu,12,-1,5,50,0,0,0,0,0" numUnitsPerSegment="5" units="1" labelBarSpace="3" outlineWidth="0.1" numSegmentsLeft="0" height="10" mapId="0" boxContentSpace="1" unitLabel="m">
-                <ComposerItem width="90.3375" x="439.831" transparency="0" y="121" rotation="0" height="19" positionMode="4" frame="false" outlineWidth="0" zValue="10" lastValidViewScaleFactor="4.27416" uuid="{32575ccf-af11-4d66-b5d9-ca8b4e01c32d}" id="" background="true" blendMode="0" positionLock="false">
+                <ComposerItem width="90.3375" x="439.831" transparency="0" y="121" height="19" positionMode="4" frame="false" outlineWidth="0" zValue="10" itemRotation="0" lastValidViewScaleFactor="4.27416" uuid="{32575ccf-af11-4d66-b5d9-ca8b4e01c32d}" id="" background="true" blendMode="0" positionLock="false">
                     <FrameColor alpha="255" red="0" blue="0" green="0"/>
                     <BackgroundColor alpha="255" red="255" blue="255" green="255"/>
                 </ComposerItem>
@@ -669,7 +730,7 @@
             <ComposerLabel valign="128" labelText="[%'ETABLI SUR LA BASE\nDES DONNEES CADASTRALES'%]" htmlState="0" halign="4" margin="1">
                 <LabelFont description="Arial,20,-1,5,50,0,0,0,0,0"/>
                 <FontColor red="0" blue="0" green="0"/>
-                <ComposerItem width="120" x="855" transparency="0" y="110" rotation="0" height="30" positionMode="0" frame="true" outlineWidth="0" zValue="9" lastValidViewScaleFactor="0.981421" uuid="{07200ea2-8a3f-4820-b06f-1cb33a841e4b}" id="" background="false" blendMode="0" positionLock="false">
+                <ComposerItem width="120" x="855" transparency="0" y="110" height="30" positionMode="0" frame="true" outlineWidth="0" zValue="9" itemRotation="0" lastValidViewScaleFactor="0.981421" uuid="{07200ea2-8a3f-4820-b06f-1cb33a841e4b}" id="" background="false" blendMode="0" positionLock="false">
                     <FrameColor alpha="255" red="0" blue="0" green="0"/>
                     <BackgroundColor alpha="255" red="255" blue="255" green="255"/>
                 </ComposerItem>
@@ -677,7 +738,7 @@
             <ComposerLabel valign="128" labelText="" htmlState="0" halign="4" margin="1">
                 <LabelFont description="Arial,24,-1,5,50,0,0,0,0,0"/>
                 <FontColor red="0" blue="0" green="0"/>
-                <ComposerItem width="65" x="15" transparency="0" y="110" rotation="0" height="30" positionMode="0" frame="true" outlineWidth="0" zValue="8" lastValidViewScaleFactor="1.05725" uuid="{421e49dc-5874-4a5d-b12b-e48690725681}" id="" background="false" blendMode="0" positionLock="false">
+                <ComposerItem width="65" x="15" transparency="0" y="110" height="30" positionMode="0" frame="true" outlineWidth="0" zValue="8" itemRotation="0" lastValidViewScaleFactor="1.05725" uuid="{421e49dc-5874-4a5d-b12b-e48690725681}" id="" background="false" blendMode="0" positionLock="false">
                     <FrameColor alpha="255" red="0" blue="0" green="0"/>
                     <BackgroundColor alpha="255" red="255" blue="255" green="255"/>
                 </ComposerItem>
@@ -685,7 +746,7 @@
             <ComposerLabel valign="128" labelText="[%'SERVICE INTERCOMMUNAL\nDE GESTION'%]" htmlState="0" halign="4" margin="1">
                 <LabelFont description="Arial,24,-1,5,50,0,0,0,0,0"/>
                 <FontColor red="0" blue="0" green="0"/>
-                <ComposerItem width="140" x="295" transparency="0" y="110" rotation="0" height="30" positionMode="0" frame="true" outlineWidth="0" zValue="7" lastValidViewScaleFactor="1.05725" uuid="{4d5033e6-8497-4c35-973c-9f858733b492}" id="" background="false" blendMode="0" positionLock="false">
+                <ComposerItem width="140" x="295" transparency="0" y="110" height="30" positionMode="0" frame="true" outlineWidth="0" zValue="7" itemRotation="0" lastValidViewScaleFactor="1.05725" uuid="{4d5033e6-8497-4c35-973c-9f858733b492}" id="" background="false" blendMode="0" positionLock="false">
                     <FrameColor alpha="255" red="0" blue="0" green="0"/>
                     <BackgroundColor alpha="255" red="255" blue="255" green="255"/>
                 </ComposerItem>
@@ -693,7 +754,7 @@
             <ComposerLabel valign="32" labelText="[%'ECHELLE 1/250'%]" htmlState="0" halign="4" margin="1">
                 <LabelFont description="Arial,24,-1,5,50,0,0,0,0,0"/>
                 <FontColor red="0" blue="0" green="0"/>
-                <ComposerItem width="100" x="435" transparency="0" y="110" rotation="0" height="30" positionMode="0" frame="true" outlineWidth="0" zValue="6" lastValidViewScaleFactor="0.981421" uuid="{4a7d8d2e-02d1-4916-8d24-9c7a0560db6e}" id="" background="false" blendMode="0" positionLock="false">
+                <ComposerItem width="100" x="435" transparency="0" y="110" height="30" positionMode="0" frame="true" outlineWidth="0" zValue="6" itemRotation="0" lastValidViewScaleFactor="0.981421" uuid="{4a7d8d2e-02d1-4916-8d24-9c7a0560db6e}" id="" background="false" blendMode="0" positionLock="false">
                     <FrameColor alpha="255" red="0" blue="0" green="0"/>
                     <BackgroundColor alpha="255" red="255" blue="255" green="255"/>
                 </ComposerItem>
@@ -701,7 +762,7 @@
             <ComposerLabel valign="128" labelText="[%'TRACE ET PROFOND.\nAPPROIMATIFS'%]" htmlState="0" halign="4" margin="1">
                 <LabelFont description="Arial,24,-1,5,50,0,0,0,0,0"/>
                 <FontColor red="0" blue="0" green="0"/>
-                <ComposerItem width="110" x="535" transparency="0" y="110" rotation="0" height="30" positionMode="0" frame="true" outlineWidth="0" zValue="5" lastValidViewScaleFactor="0.981421" uuid="{58b72d31-14ba-4ac5-8665-59477e008540}" id="" background="false" blendMode="0" positionLock="false">
+                <ComposerItem width="110" x="535" transparency="0" y="110" height="30" positionMode="0" frame="true" outlineWidth="0" zValue="5" itemRotation="0" lastValidViewScaleFactor="0.981421" uuid="{58b72d31-14ba-4ac5-8665-59477e008540}" id="" background="false" blendMode="0" positionLock="false">
                     <FrameColor alpha="255" red="0" blue="0" green="0"/>
                     <BackgroundColor alpha="255" red="255" blue="255" green="255"/>
                 </ComposerItem>
@@ -709,7 +770,7 @@
             <ComposerLabel valign="128" labelText="" htmlState="0" halign="4" margin="1">
                 <LabelFont description="Arial,24,-1,5,50,0,0,0,0,0"/>
                 <FontColor red="0" blue="0" green="0"/>
-                <ComposerItem width="105" x="645" transparency="0" y="110" rotation="0" height="30" positionMode="0" frame="true" outlineWidth="0" zValue="4" lastValidViewScaleFactor="1.05725" uuid="{0b3ea045-8a20-4bca-96e1-377d5dcc4bef}" id="" background="false" blendMode="0" positionLock="false">
+                <ComposerItem width="105" x="645" transparency="0" y="110" height="30" positionMode="0" frame="true" outlineWidth="0" zValue="4" itemRotation="0" lastValidViewScaleFactor="1.05725" uuid="{0b3ea045-8a20-4bca-96e1-377d5dcc4bef}" id="" background="false" blendMode="0" positionLock="false">
                     <FrameColor alpha="255" red="0" blue="0" green="0"/>
                     <BackgroundColor alpha="255" red="255" blue="255" green="255"/>
                 </ComposerItem>
@@ -717,12 +778,12 @@
             <ComposerLabel valign="128" labelText="[%'IMPRIME LE \n' || day($now) || '.' || month($now) || '.' || year($now)%]" htmlState="0" halign="4" margin="1">
                 <LabelFont description="Arial,24,-1,5,50,0,0,0,0,0"/>
                 <FontColor red="0" blue="0" green="0"/>
-                <ComposerItem width="105" x="750" transparency="0" y="110" rotation="0" height="29.9999" positionMode="0" frame="true" outlineWidth="0" zValue="3" lastValidViewScaleFactor="0.981421" uuid="{f8762e76-c904-4942-93ef-395b9e398d15}" id="" background="false" blendMode="0" positionLock="false">
+                <ComposerItem width="105" x="750" transparency="0" y="110" height="29.9999" positionMode="0" frame="true" outlineWidth="0" zValue="3" itemRotation="0" lastValidViewScaleFactor="0.981421" uuid="{f8762e76-c904-4942-93ef-395b9e398d15}" id="" background="false" blendMode="0" positionLock="false">
                     <FrameColor alpha="255" red="0" blue="0" green="0"/>
                     <BackgroundColor alpha="255" red="255" blue="255" green="255"/>
                 </ComposerItem>
             </ComposerLabel>
-            <ComposerMap keepLayerSet="false" overviewFrameMap="1" id="0" previewMode="Cache" drawCanvasItems="true">
+            <ComposerMap mapRotation="0" keepLayerSet="false" overviewFrameMap="1" id="0" previewMode="Cache" drawCanvasItems="true">
                 <overviewFrame overviewBlendMode="0" overviewFrameMap="1" overviewCentered="false" overviewInverted="false">
                     <symbol alpha="0.568627" type="fill" name="">
                         <layer pass="0" class="SimpleFill" locked="0">
@@ -739,7 +800,10 @@
                 </overviewFrame>
                 <Extent ymin="145380.69462704847683199" xmin="555543.7376191052608192" ymax="145547.36137721859267913" xmax="555793.73761936044320464"/>
                 <LayerSet/>
-                <Grid gridStyle="0" crossLength="3" intervalX="0" offsetX="0" intervalY="0" offsetY="0" gridFrameStyle="0" gridFrameWidth="4" gridBlendMode="0" show="0">
+                <Grid gridStyle="0" crossLength="3" gridFramePenThickness="0.5" intervalX="0" offsetX="0" intervalY="0" offsetY="0" gridFrameStyle="0" gridFrameWidth="4" gridBlendMode="0" show="0">
+                    <framePenColor alpha="255" red="0" blue="0" green="0"/>
+                    <frameFillColor1 alpha="255" red="255" blue="255" green="255"/>
+                    <frameFillColor2 alpha="255" red="0" blue="0" green="0"/>
                     <symbol alpha="1" type="line" name="">
                         <layer pass="0" class="SimpleLine" locked="0">
                             <prop k="capstyle" v="flat"/>
@@ -756,10 +820,11 @@
                         </layer>
                     </symbol>
                     <Annotation rightDirection="0" bottomDirection="1" format="0" topPosition="0" precision="0" leftDirection="0" rightPosition="0" bottomPosition="0" frameDistance="1" show="1" font="Arial,10,-1,5,50,0,0,0,0,0" leftPosition="0" topDirection="1">
-                        <fontColor red="0" blue="0" green="0"/>
+                        <fontColor alpha="255" red="0" blue="0" green="0"/>
                     </Annotation>
                 </Grid>
-                <ComposerItem width="1000" x="15" transparency="0" y="140" rotation="0" height="666.667" positionMode="0" frame="true" outlineWidth="0" zValue="1" lastValidViewScaleFactor="0.820765" uuid="{84a7ea50-21b6-4f75-bddb-2b8e5b69d733}" id="" background="true" blendMode="0" positionLock="false">
+                <AtlasMap fixedScale="0" atlasDriven="0" margin="0.10000000000000001"/>
+                <ComposerItem width="1000" x="15" transparency="0" y="140" height="666.667" positionMode="0" frame="true" outlineWidth="0" zValue="1" itemRotation="0" lastValidViewScaleFactor="0.820765" uuid="{84a7ea50-21b6-4f75-bddb-2b8e5b69d733}" id="" background="true" blendMode="0" positionLock="false">
                     <FrameColor alpha="255" red="0" blue="0" green="0"/>
                     <BackgroundColor alpha="255" red="255" blue="255" green="255"/>
                 </ComposerItem>
@@ -767,7 +832,7 @@
         </Composition>
     </Composer>
     <projectlayers layercount="83">
-        <maplayer minimumScale="0" maximumScale="1e+08" minLabelScale="0" maxLabelScale="1e+08" geometry="Line" type="vector" hasScaleBasedVisibilityFlag="0" scaleBasedLabelVisibilityFlag="0">
+        <maplayer minimumScale="0" maximumScale="1e+08" simplifyDrawingHints="1" minLabelScale="0" maxLabelScale="1e+08" simplifyDrawingTol="1" geometry="Line" type="vector" hasScaleBasedVisibilityFlag="0" simplifyLocal="1" scaleBasedLabelVisibilityFlag="0">
             <id>IntersectIt_Lines20130618102142813</id>
             <datasource>LineString?crs=EPSG:21781&amp;field=id:string&amp;field=type:string&amp;field=x:double&amp;field=y:double&amp;field=observation:double&amp;field=precision:double&amp;index=yes</datasource>
             <title></title>
@@ -847,7 +912,7 @@
             <excludeAttributesWFS/>
             <attributeactions/>
         </maplayer>
-        <maplayer minimumScale="0" maximumScale="1e+08" minLabelScale="0" maxLabelScale="1e+08" geometry="Point" type="vector" hasScaleBasedVisibilityFlag="0" scaleBasedLabelVisibilityFlag="0">
+        <maplayer minimumScale="0" maximumScale="1e+08" simplifyDrawingHints="1" minLabelScale="0" maxLabelScale="1e+08" simplifyDrawingTol="1" geometry="Point" type="vector" hasScaleBasedVisibilityFlag="0" simplifyLocal="1" scaleBasedLabelVisibilityFlag="0">
             <id>IntersectIt_Points20130618102143276</id>
             <datasource>Point?crs=EPSG:21781&amp;field=id:string&amp;index=yes</datasource>
             <title></title>
@@ -882,6 +947,7 @@
                             <prop k="name" v="circle"/>
                             <prop k="offset" v="0,0"/>
                             <prop k="offset_unit" v="MM"/>
+                            <prop k="outline_style" v="solid"/>
                             <prop k="outline_width" v="0"/>
                             <prop k="outline_width_unit" v="MM"/>
                             <prop k="scale_method" v="area"/>
@@ -929,7 +995,7 @@
             <excludeAttributesWFS/>
             <attributeactions/>
         </maplayer>
-        <maplayer minimumScale="-4.65661e-10" maximumScale="4000" minLabelScale="0" maxLabelScale="1e+08" geometry="Point" type="vector" hasScaleBasedVisibilityFlag="1" scaleBasedLabelVisibilityFlag="0">
+        <maplayer minimumScale="-4.65661e-10" maximumScale="4000" simplifyDrawingHints="1" minLabelScale="0" maxLabelScale="1e+08" simplifyDrawingTol="1" geometry="Point" type="vector" hasScaleBasedVisibilityFlag="1" simplifyLocal="1" scaleBasedLabelVisibilityFlag="0">
             <id>camac20140113144941208</id>
             <datasource>dbname='sige' host=172.24.171.203 port=5432 user='sige' sslmode=disable key='id' estimatedmetadata=true srid=21781 type=POINT table="enquete"."camac" (geometry) sql=</datasource>
             <title></title>
@@ -968,6 +1034,7 @@
                             <prop k="name" v="diamond"/>
                             <prop k="offset" v="0,0"/>
                             <prop k="offset_unit" v="MM"/>
+                            <prop k="outline_style" v="solid"/>
                             <prop k="outline_width" v="0.4"/>
                             <prop k="outline_width_unit" v="MM"/>
                             <prop k="scale_method" v="area"/>
@@ -985,6 +1052,7 @@
                             <prop k="name" v="circle"/>
                             <prop k="offset" v="0,0"/>
                             <prop k="offset_unit" v="MM"/>
+                            <prop k="outline_style" v="solid"/>
                             <prop k="outline_width" v="0.6"/>
                             <prop k="outline_width_unit" v="MM"/>
                             <prop k="scale_method" v="area"/>
@@ -1746,7 +1814,7 @@
             </pipe>
             <blendMode>0</blendMode>
         </maplayer>
-        <maplayer minimumScale="0" maximumScale="1e+08" minLabelScale="0" maxLabelScale="1e+08" geometry="Line" type="vector" hasScaleBasedVisibilityFlag="0" scaleBasedLabelVisibilityFlag="0">
+        <maplayer minimumScale="0" maximumScale="1e+08" simplifyDrawingHints="1" minLabelScale="0" maxLabelScale="1e+08" simplifyDrawingTol="1" geometry="Line" type="vector" hasScaleBasedVisibilityFlag="0" simplifyLocal="1" scaleBasedLabelVisibilityFlag="0">
             <id>conduites_actives_copy20130822080028511</id>
             <datasource>dbname='sige' host=172.24.171.203 port=5432 user='sige' sslmode=disable key='id' srid=21781 type=LINESTRING table="distribution"."od_pipe" (geometry) sql=</datasource>
             <title></title>
@@ -2059,7 +2127,7 @@
                 <actionsetting action="qgis.utils.plugins['linkit'].linkit('pipe20130507153818274','id_parent','pipe20130507153818274', [% $id %])" capture="0" type="1" name="Conduites schéma parent - enfant"/>
             </attributeactions>
         </maplayer>
-        <maplayer minimumScale="-4.65661e-10" maximumScale="1e+08" minLabelScale="0" maxLabelScale="1e+08" geometry="Line" type="vector" hasScaleBasedVisibilityFlag="0" scaleBasedLabelVisibilityFlag="0">
+        <maplayer minimumScale="-4.65661e-10" maximumScale="1e+08" simplifyDrawingHints="1" minLabelScale="0" maxLabelScale="1e+08" simplifyDrawingTol="1" geometry="Line" type="vector" hasScaleBasedVisibilityFlag="0" simplifyLocal="1" scaleBasedLabelVisibilityFlag="0">
             <id>conduites_actives_copy_copy20130822080032346</id>
             <datasource>dbname='sige' host=172.24.171.203 port=5432 user='sige' sslmode=disable key='id' srid=21781 type=LINESTRING table="distribution"."od_pipe" (geometry) sql=</datasource>
             <title></title>
@@ -2349,7 +2417,7 @@
                 <actionsetting action="qgis.utils.plugins['linkit'].linkit('pipe20130507153818274','id_parent','pipe20130507153818274', [% $id %])" capture="0" type="1" name="Conduites schéma parent - enfant"/>
             </attributeactions>
         </maplayer>
-        <maplayer minimumScale="0" maximumScale="1e+08" minLabelScale="0" maxLabelScale="1e+08" geometry="Line" type="vector" hasScaleBasedVisibilityFlag="0" scaleBasedLabelVisibilityFlag="0">
+        <maplayer minimumScale="0" maximumScale="1e+08" simplifyDrawingHints="1" minLabelScale="0" maxLabelScale="1e+08" simplifyDrawingTol="1" geometry="Line" type="vector" hasScaleBasedVisibilityFlag="0" simplifyLocal="1" scaleBasedLabelVisibilityFlag="0">
             <id>conduites_copy20130709141244955</id>
             <datasource>dbname='sige' host=172.24.171.203 port=5432 user='sige' sslmode=disable key='id' srid=21781 type=LINESTRING table="distribution"."od_pipe" (geometry) sql=</datasource>
             <title></title>
@@ -2647,7 +2715,7 @@
                 <actionsetting action="qgis.utils.plugins['linkit'].linkit('conduites_copy20130709141244955','id_parent','conduites_copy20130709141244955', [% $id %])" capture="0" type="1" name="Conduites parent"/>
             </attributeactions>
         </maplayer>
-        <maplayer minimumScale="0" maximumScale="1e+08" minLabelScale="0" maxLabelScale="1e+08" geometry="Point" type="vector" hasScaleBasedVisibilityFlag="0" scaleBasedLabelVisibilityFlag="0">
+        <maplayer minimumScale="0" maximumScale="1e+08" simplifyDrawingHints="1" minLabelScale="0" maxLabelScale="1e+08" simplifyDrawingTol="1" geometry="Point" type="vector" hasScaleBasedVisibilityFlag="0" simplifyLocal="1" scaleBasedLabelVisibilityFlag="0">
             <id>constructionpoint20130807094904851</id>
             <datasource>dbname='sige' host=172.24.171.203 port=5432 user='sige' sslmode=disable key='id' srid=21781 type=POINT table="distribution"."od_constructionpoint" (geometry) sql=</datasource>
             <title></title>
@@ -2682,6 +2750,7 @@
                             <prop k="name" v="circle"/>
                             <prop k="offset" v="0,0"/>
                             <prop k="offset_unit" v="MM"/>
+                            <prop k="outline_style" v="solid"/>
                             <prop k="outline_width" v="0"/>
                             <prop k="outline_width_unit" v="MM"/>
                             <prop k="scale_method" v="area"/>
@@ -2731,7 +2800,7 @@
                 <actionsetting action="qgis.utils.plugins['postgres91plusauditor'].audit('constructionpoint20130807094904851',[% $id %])" capture="0" type="1" name="History audit"/>
             </attributeactions>
         </maplayer>
-        <maplayer minimumScale="-4.65661e-10" maximumScale="501" minLabelScale="0" maxLabelScale="1e+08" geometry="Line" type="vector" hasScaleBasedVisibilityFlag="1" scaleBasedLabelVisibilityFlag="0">
+        <maplayer minimumScale="-4.65661e-10" maximumScale="501" simplifyDrawingHints="1" minLabelScale="0" maxLabelScale="1e+08" simplifyDrawingTol="1" geometry="Line" type="vector" hasScaleBasedVisibilityFlag="1" simplifyLocal="1" scaleBasedLabelVisibilityFlag="0">
             <id>dimension20130807094904783</id>
             <datasource>dbname='sige' host=172.24.171.203 port=5432 user='sige' sslmode=disable key='id' srid=21781 type=LINESTRING table="distribution"."od_dimension_distance" (geometry) sql=</datasource>
             <title></title>
@@ -2983,7 +3052,7 @@
                 <actionsetting action="qgis.utils.plugins['postgres91plusauditor'].showHistory('distributor20130304114719702',[% $id %])" capture="0" type="1" name="History audit"/>
             </attributeactions>
         </maplayer>
-        <maplayer minimumScale="0" maximumScale="1e+08" minLabelScale="1" maxLabelScale="1e+08" geometry="Polygon" type="vector" hasScaleBasedVisibilityFlag="0" scaleBasedLabelVisibilityFlag="0">
+        <maplayer minimumScale="0" maximumScale="1e+08" simplifyDrawingHints="1" minLabelScale="1" maxLabelScale="1e+08" simplifyDrawingTol="1" geometry="Polygon" type="vector" hasScaleBasedVisibilityFlag="0" simplifyLocal="1" scaleBasedLabelVisibilityFlag="0">
             <id>district20130304110004764</id>
             <datasource>dbname='sige' host=172.24.171.203 port=5432 user='sige' password='db4wat$' sslmode=allow key='id' srid=21781 type=MULTIPOLYGON table="distribution"."od_district" (geometry) sql=</datasource>
             <title></title>
@@ -3056,6 +3125,7 @@
                     <prop k="colors" v="5"/>
                     <prop k="schemeName" v="Spectral"/>
                 </colorramp>
+                <invertedcolorramp value="0"/>
                 <rotation field=""/>
                 <sizescale field="" scalemethod="area"/>
             </renderer-v2>
@@ -3225,7 +3295,7 @@
                 <actionsetting action="qgis.utils.plugins['postgres91plusauditor'].showHistory('district20130304110004764',[% $id %])" capture="0" type="1" name="History audit"/>
             </attributeactions>
         </maplayer>
-        <maplayer minimumScale="-4.65661e-10" maximumScale="10001" minLabelScale="1" maxLabelScale="1e+08" geometry="Point" type="vector" hasScaleBasedVisibilityFlag="1" scaleBasedLabelVisibilityFlag="0">
+        <maplayer minimumScale="-4.65661e-10" maximumScale="10001" simplifyDrawingHints="1" minLabelScale="1" maxLabelScale="1e+08" simplifyDrawingTol="1" geometry="Point" type="vector" hasScaleBasedVisibilityFlag="1" simplifyLocal="1" scaleBasedLabelVisibilityFlag="0">
             <id>hydrant20130304110004848</id>
             <datasource>dbname='sige' host=172.24.171.203 port=5432 user='sige' password='db4wat$' sslmode=allow key='id' srid=21781 type=POINT table="distribution"."od_hydrant" (geometry) sql=</datasource>
             <title></title>
@@ -3509,7 +3579,7 @@
                 <actionsetting action="qgis.utils.plugins['postgres91plusauditor'].showHistory('hydrant_provider20130304110004893',[% $id %])" capture="0" type="1" name="History audit"/>
             </attributeactions>
         </maplayer>
-        <maplayer minimumScale="-4.65661e-10" maximumScale="1e+08" minLabelScale="1" maxLabelScale="1e+08" geometry="Point" type="vector" hasScaleBasedVisibilityFlag="0" scaleBasedLabelVisibilityFlag="0">
+        <maplayer minimumScale="-4.65661e-10" maximumScale="1e+08" simplifyDrawingHints="1" minLabelScale="1" maxLabelScale="1e+08" simplifyDrawingTol="1" geometry="Point" type="vector" hasScaleBasedVisibilityFlag="0" simplifyLocal="1" scaleBasedLabelVisibilityFlag="0">
             <id>installation20130304110004938</id>
             <datasource>dbname='sige' host=172.24.171.203 port=5432 user='sige' password='db4wat$' sslmode=allow key='id' srid=21781 type=POINT table="distribution"."od_installation_building" (geometry) sql=</datasource>
             <title></title>
@@ -3556,6 +3626,7 @@
                             <prop k="name" v="rectangle"/>
                             <prop k="offset" v="0,0"/>
                             <prop k="offset_unit" v="MM"/>
+                            <prop k="outline_style" v="solid"/>
                             <prop k="outline_width" v="0"/>
                             <prop k="outline_width_unit" v="MM"/>
                             <prop k="scale_method" v="area"/>
@@ -3719,6 +3790,7 @@
                             <prop k="name" v="rectangle"/>
                             <prop k="offset" v="0,0"/>
                             <prop k="offset_unit" v="MM"/>
+                            <prop k="outline_style" v="solid"/>
                             <prop k="outline_width" v="0"/>
                             <prop k="outline_width_unit" v="MM"/>
                             <prop k="scale_method" v="area"/>
@@ -3732,6 +3804,7 @@
                     <prop k="colors" v="5"/>
                     <prop k="schemeName" v="Spectral"/>
                 </colorramp>
+                <invertedcolorramp value="0"/>
                 <rotation field=""/>
                 <sizescale field="" scalemethod="area"/>
             </renderer-v2>
@@ -3928,7 +4001,7 @@
                 <actionsetting action="qgis.utils.plugins['postgres91plusauditor'].showHistory('installation20130304110004938',[% $id %])" capture="0" type="1" name="History audit"/>
             </attributeactions>
         </maplayer>
-        <maplayer minimumScale="0" maximumScale="1e+08" minLabelScale="0" maxLabelScale="1e+08" geometry="Point" type="vector" hasScaleBasedVisibilityFlag="0" scaleBasedLabelVisibilityFlag="0">
+        <maplayer minimumScale="0" maximumScale="1e+08" simplifyDrawingHints="1" minLabelScale="0" maxLabelScale="1e+08" simplifyDrawingTol="1" geometry="Point" type="vector" hasScaleBasedVisibilityFlag="0" simplifyLocal="1" scaleBasedLabelVisibilityFlag="0">
             <id>installation_pressurecontrol20131107105006792</id>
             <datasource>dbname='sige' host=172.24.171.203 port=5432 user='sige' sslmode=disable key='id' estimatedmetadata=true srid=21781 type=POINT table="distribution"."od_installation_pressurecontrol" (geometry) sql=</datasource>
             <title></title>
@@ -4250,7 +4323,7 @@
                 <actionsetting action="qgis.utils.plugins['postgres91plusauditor'].audit('installation_pressurecontrol20131107105006792',[% $id %])" capture="0" type="1" name="History audit"/>
             </attributeactions>
         </maplayer>
-        <maplayer minimumScale="-4.65661e-10" maximumScale="1e+08" minLabelScale="0" maxLabelScale="1e+08" geometry="Point" type="vector" hasScaleBasedVisibilityFlag="0" scaleBasedLabelVisibilityFlag="0">
+        <maplayer minimumScale="-4.65661e-10" maximumScale="1e+08" simplifyDrawingHints="1" minLabelScale="0" maxLabelScale="1e+08" simplifyDrawingTol="1" geometry="Point" type="vector" hasScaleBasedVisibilityFlag="0" simplifyLocal="1" scaleBasedLabelVisibilityFlag="0">
             <id>installation_pump20130816140237750</id>
             <datasource>dbname='sige' host=172.24.171.203 port=5432 user='sige' sslmode=disable key='id' srid=21781 type=POINT table="distribution"."od_installation_pump" (geometry) sql=</datasource>
             <title></title>
@@ -4504,7 +4577,7 @@
                 <actionsetting action="qgis.utils.plugins['postgres91plusauditor'].audit('installation_pump20130816140237750',[% $id %])" capture="0" type="1" name="History audit"/>
             </attributeactions>
         </maplayer>
-        <maplayer minimumScale="-4.65661e-10" maximumScale="1e+08" minLabelScale="0" maxLabelScale="1e+08" geometry="Point" type="vector" hasScaleBasedVisibilityFlag="0" scaleBasedLabelVisibilityFlag="0">
+        <maplayer minimumScale="-4.65661e-10" maximumScale="1e+08" simplifyDrawingHints="1" minLabelScale="0" maxLabelScale="1e+08" simplifyDrawingTol="1" geometry="Point" type="vector" hasScaleBasedVisibilityFlag="0" simplifyLocal="1" scaleBasedLabelVisibilityFlag="0">
             <id>installation_source20130820110331647</id>
             <datasource>dbname='sige' host=172.24.171.203 port=5432 user='sige' sslmode=disable key='id' srid=21781 type=POINT table="distribution"."od_installation_source" (geometry) sql=</datasource>
             <title></title>
@@ -4760,7 +4833,7 @@
                 <actionsetting action="qgis.utils.plugins['postgres91plusauditor'].audit('installation_source20130820110331647',[% $id %])" capture="0" type="1" name="History audit"/>
             </attributeactions>
         </maplayer>
-        <maplayer minimumScale="-4.65661e-10" maximumScale="1e+08" minLabelScale="1" maxLabelScale="1e+08" geometry="Point" type="vector" hasScaleBasedVisibilityFlag="0" scaleBasedLabelVisibilityFlag="0">
+        <maplayer minimumScale="-4.65661e-10" maximumScale="1e+08" simplifyDrawingHints="1" minLabelScale="1" maxLabelScale="1e+08" simplifyDrawingTol="1" geometry="Point" type="vector" hasScaleBasedVisibilityFlag="0" simplifyLocal="1" scaleBasedLabelVisibilityFlag="0">
             <id>installation_tank20130304110005008</id>
             <datasource>dbname='sige' host=172.24.171.203 port=5432 user='sige' password='db4wat$' sslmode=allow key='id' srid=21781 type=POINT table="distribution"."od_installation_tank" (geometry) sql=</datasource>
             <title></title>
@@ -5101,7 +5174,7 @@
                 <actionsetting action="qgis.utils.plugins['postgres91plusauditor'].showHistory('installation_tank20130304110005008',[% $id %])" capture="0" type="1" name="History audit"/>
             </attributeactions>
         </maplayer>
-        <maplayer minimumScale="0" maximumScale="1e+08" minLabelScale="0" maxLabelScale="1e+08" geometry="Point" type="vector" hasScaleBasedVisibilityFlag="0" scaleBasedLabelVisibilityFlag="0">
+        <maplayer minimumScale="0" maximumScale="1e+08" simplifyDrawingHints="1" minLabelScale="0" maxLabelScale="1e+08" simplifyDrawingTol="1" geometry="Point" type="vector" hasScaleBasedVisibilityFlag="0" simplifyLocal="1" scaleBasedLabelVisibilityFlag="0">
             <id>installation_treatment20130816113039913</id>
             <datasource>dbname='sige' host=172.24.171.203 port=5432 user='sige' sslmode=disable key='id' srid=21781 type=POINT table="distribution"."od_installation_treatment" (geometry) sql=</datasource>
             <title></title>
@@ -5361,7 +5434,7 @@
                 <actionsetting action="qgis.utils.plugins['postgres91plusauditor'].audit('installation_treatment20130816113039913',[% $id %])" capture="0" type="1" name="History audit"/>
             </attributeactions>
         </maplayer>
-        <maplayer minimumScale="-4.65661e-10" maximumScale="1e+08" minLabelScale="0" maxLabelScale="1e+08" geometry="Point" type="vector" hasScaleBasedVisibilityFlag="0" scaleBasedLabelVisibilityFlag="0">
+        <maplayer minimumScale="-4.65661e-10" maximumScale="1e+08" simplifyDrawingHints="1" minLabelScale="0" maxLabelScale="1e+08" simplifyDrawingTol="1" geometry="Point" type="vector" hasScaleBasedVisibilityFlag="0" simplifyLocal="1" scaleBasedLabelVisibilityFlag="0">
             <id>installation_valvechamber20131107105006707</id>
             <datasource>dbname='sige' host=172.24.171.203 port=5432 user='sige' sslmode=disable key='id' estimatedmetadata=true srid=21781 type=POINT table="distribution"."od_installation_valvechamber" (geometry) sql=</datasource>
             <title></title>
@@ -5650,7 +5723,7 @@
                 <actionsetting action="qgis.utils.plugins['postgres91plusauditor'].audit('installation_valvechamber20131107105006707',[% $id %])" capture="0" type="1" name="History audit"/>
             </attributeactions>
         </maplayer>
-        <maplayer minimumScale="0" maximumScale="5001" minLabelScale="0" maxLabelScale="1e+08" geometry="Point" type="vector" hasScaleBasedVisibilityFlag="1" scaleBasedLabelVisibilityFlag="0">
+        <maplayer minimumScale="0" maximumScale="5001" simplifyDrawingHints="1" minLabelScale="0" maxLabelScale="1e+08" simplifyDrawingTol="1" geometry="Point" type="vector" hasScaleBasedVisibilityFlag="1" simplifyLocal="1" scaleBasedLabelVisibilityFlag="0">
             <id>leak20130821111917060</id>
             <datasource>dbname='sige' host=172.24.171.203 port=5432 user='sige' sslmode=disable key='id' srid=21781 type=POINT table="distribution"."od_leak" (geometry) sql=</datasource>
             <title></title>
@@ -5685,6 +5758,7 @@
                             <prop k="name" v="diamond"/>
                             <prop k="offset" v="0,0"/>
                             <prop k="offset_unit" v="MM"/>
+                            <prop k="outline_style" v="solid"/>
                             <prop k="outline_width" v="0.2"/>
                             <prop k="outline_width_unit" v="MM"/>
                             <prop k="scale_method" v="area"/>
@@ -5891,7 +5965,7 @@
                 <actionsetting action="qgis.utils.plugins['postgres91plusauditor'].audit('leak20130821111917060',[% $id %])" capture="0" type="1" name="History audit"/>
             </attributeactions>
         </maplayer>
-        <maplayer minimumScale="-4.65661e-10" maximumScale="4000" minLabelScale="0" maxLabelScale="1e+08" geometry="Line" type="vector" hasScaleBasedVisibilityFlag="1" scaleBasedLabelVisibilityFlag="0">
+        <maplayer minimumScale="-4.65661e-10" maximumScale="4000" simplifyDrawingHints="1" minLabelScale="0" maxLabelScale="1e+08" simplifyDrawingTol="1" geometry="Line" type="vector" hasScaleBasedVisibilityFlag="1" simplifyLocal="1" scaleBasedLabelVisibilityFlag="0">
             <id>ligne20140113144941233</id>
             <datasource>dbname='sige' host=172.24.171.203 port=5432 user='sige' sslmode=disable key='id' estimatedmetadata=true srid=21781 type=LINESTRING table="enquete"."ligne" (geometry) sql=</datasource>
             <title></title>
@@ -6151,7 +6225,7 @@
                 <actionsetting action="qgis.utils.plugins['postgres91plusauditor'].showHistory('logged_actions20130304110005081',[% $id %])" capture="0" type="1" name="History audit"/>
             </attributeactions>
         </maplayer>
-        <maplayer minimumScale="0" maximumScale="501" minLabelScale="1" maxLabelScale="1e+08" geometry="Point" type="vector" hasScaleBasedVisibilityFlag="1" scaleBasedLabelVisibilityFlag="0">
+        <maplayer minimumScale="0" maximumScale="501" simplifyDrawingHints="1" minLabelScale="1" maxLabelScale="1e+08" simplifyDrawingTol="1" geometry="Point" type="vector" hasScaleBasedVisibilityFlag="1" simplifyLocal="1" scaleBasedLabelVisibilityFlag="0">
             <id>node20130304110005126</id>
             <datasource>dbname='sige' host=172.24.171.203 port=5432 user='sige' password='db4wat$' sslmode=allow key='id' srid=21781 type=POINT table="distribution"."od_node" (geometry) sql=</datasource>
             <title></title>
@@ -6263,6 +6337,7 @@
                             <prop k="name" v="circle"/>
                             <prop k="offset" v="0,0"/>
                             <prop k="offset_unit" v="MM"/>
+                            <prop k="outline_style" v="solid"/>
                             <prop k="outline_width" v="0"/>
                             <prop k="outline_width_unit" v="MM"/>
                             <prop k="scale_method" v="area"/>
@@ -6456,7 +6531,7 @@
                 <actionsetting action="qgis.utils.plugins['postgres91plusauditor'].showHistory('node20130304110005126',[% $id %])" capture="0" type="1" name="History audit"/>
             </attributeactions>
         </maplayer>
-        <maplayer minimumScale="-4.65661e-10" maximumScale="1001" minLabelScale="0" maxLabelScale="1e+08" geometry="Line" type="vector" hasScaleBasedVisibilityFlag="1" scaleBasedLabelVisibilityFlag="0">
+        <maplayer minimumScale="-4.65661e-10" maximumScale="1001" simplifyDrawingHints="1" minLabelScale="0" maxLabelScale="1e+08" simplifyDrawingTol="1" geometry="Line" type="vector" hasScaleBasedVisibilityFlag="1" simplifyLocal="1" scaleBasedLabelVisibilityFlag="0">
             <id>od_annotationline20131203095020365</id>
             <datasource>dbname='sige' host=172.24.171.203 port=5432 user='sige' sslmode=disable key='id' estimatedmetadata=true srid=21781 type=LINESTRING table="distribution"."od_annotationline" (geometry) sql=</datasource>
             <title></title>
@@ -6665,7 +6740,7 @@
                 <actionsetting action="qgis.utils.plugins['postgres91plusauditor'].audit('od_annotationline20131203095020365',[% $id %])" capture="0" type="1" name="History audit"/>
             </attributeactions>
         </maplayer>
-        <maplayer minimumScale="0" maximumScale="1001" minLabelScale="0" maxLabelScale="1e+08" geometry="Point" type="vector" hasScaleBasedVisibilityFlag="1" scaleBasedLabelVisibilityFlag="0">
+        <maplayer minimumScale="0" maximumScale="1001" simplifyDrawingHints="1" minLabelScale="0" maxLabelScale="1e+08" simplifyDrawingTol="1" geometry="Point" type="vector" hasScaleBasedVisibilityFlag="1" simplifyLocal="1" scaleBasedLabelVisibilityFlag="0">
             <id>od_annotationpoint20131203095020392</id>
             <datasource>dbname='sige' host=172.24.171.203 port=5432 user='sige' sslmode=disable key='id' estimatedmetadata=true srid=21781 type=POINT table="distribution"."od_annotationpoint" (geometry) sql=</datasource>
             <title></title>
@@ -6703,6 +6778,7 @@
                             <prop k="name" v="circle"/>
                             <prop k="offset" v="0,0"/>
                             <prop k="offset_unit" v="MM"/>
+                            <prop k="outline_style" v="solid"/>
                             <prop k="outline_width" v="0"/>
                             <prop k="outline_width_unit" v="MM"/>
                             <prop k="scale_method" v="area"/>
@@ -6879,7 +6955,7 @@
                 <actionsetting action="qgis.utils.plugins['postgres91plusauditor'].audit('od_annotationpoint20131203095020392',[% $id %])" capture="0" type="1" name="History audit"/>
             </attributeactions>
         </maplayer>
-        <maplayer minimumScale="-4.65661e-10" maximumScale="501" minLabelScale="0" maxLabelScale="1e+08" geometry="Line" type="vector" hasScaleBasedVisibilityFlag="1" scaleBasedLabelVisibilityFlag="0">
+        <maplayer minimumScale="-4.65661e-10" maximumScale="501" simplifyDrawingHints="1" minLabelScale="0" maxLabelScale="1e+08" simplifyDrawingTol="1" geometry="Line" type="vector" hasScaleBasedVisibilityFlag="1" simplifyLocal="1" scaleBasedLabelVisibilityFlag="0">
             <id>od_dimension_orientation20131202111155806</id>
             <datasource>dbname='sige' host=172.24.171.203 port=5432 user='sige' sslmode=disable key='id' estimatedmetadata=true srid=21781 type=LINESTRING table="distribution"."od_dimension_orientation" (geometry) sql=</datasource>
             <title></title>
@@ -7083,7 +7159,7 @@
                 <actionsetting action="qgis.utils.plugins['postgres91plusauditor'].audit('od_dimension_orientation20131202111155806',[% $id %])" capture="0" type="1" name="History audit"/>
             </attributeactions>
         </maplayer>
-        <maplayer minimumScale="-4.65661e-10" maximumScale="3001" minLabelScale="0" maxLabelScale="1e+08" geometry="Point" type="vector" hasScaleBasedVisibilityFlag="1" scaleBasedLabelVisibilityFlag="0">
+        <maplayer minimumScale="4" maximumScale="1e+08" simplifyDrawingHints="1" minLabelScale="1" maxLabelScale="1e+08" simplifyDrawingTol="1" geometry="Point" type="vector" hasScaleBasedVisibilityFlag="1" simplifyLocal="1" scaleBasedLabelVisibilityFlag="0">
             <id>od_meter20131120073630165</id>
             <datasource>dbname='sige' host=172.24.171.203 port=5432 user='sige' sslmode=disable key='id' estimatedmetadata=true srid=21781 type=POINT table="distribution"."od_meter" (geometry) sql=</datasource>
             <title></title>
@@ -7107,28 +7183,32 @@
             <provider encoding="System">postgres</provider>
             <previewExpression>COALESCE( "id", '&lt;NULL>' )</previewExpression>
             <vectorjoins/>
-            <renderer-v2 symbollevels="0" type="singleSymbol">
+            <renderer-v2 symbollevels="0" type="RuleRenderer">
+                <rules>
+                    <rule scalemaxdenom="3000" label="Echelle">
+                        <rule symbol="0" label="Compteur réseau"/>
+                    </rule>
+                </rules>
                 <symbols>
                     <symbol alpha="1" type="marker" name="0">
                         <layer pass="0" class="SimpleMarker" locked="0">
                             <prop k="angle" v="0"/>
-                            <prop k="color" v="0,100,0,255"/>
+                            <prop k="color" v="255,255,255,255"/>
                             <prop k="color_border" v="0,0,0,255"/>
                             <prop k="horizontal_anchor_point" v="1"/>
                             <prop k="name" v="circle"/>
                             <prop k="offset" v="0,0"/>
-                            <prop k="offset_unit" v="MM"/>
-                            <prop k="outline_width" v="0"/>
+                            <prop k="offset_unit" v="MapUnit"/>
+                            <prop k="outline_style" v="solid"/>
+                            <prop k="outline_width" v="0.3"/>
                             <prop k="outline_width_unit" v="MM"/>
                             <prop k="scale_method" v="area"/>
-                            <prop k="size" v="2"/>
-                            <prop k="size_unit" v="MM"/>
+                            <prop k="size" v="3.2"/>
+                            <prop k="size_unit" v="MapUnit"/>
                             <prop k="vertical_anchor_point" v="1"/>
                         </layer>
                     </symbol>
                 </symbols>
-                <rotation field=""/>
-                <sizescale field="" scalemethod="area"/>
             </renderer-v2>
             <customproperties>
                 <property key="itemBrowserCurrentItem" value="0"/>
@@ -7145,33 +7225,36 @@
                 <property key="labeling/bufferDraw" value="false"/>
                 <property key="labeling/bufferJoinStyle" value="64"/>
                 <property key="labeling/bufferNoFill" value="false"/>
-                <property key="labeling/bufferSize" value="1"/>
+                <property key="labeling/bufferSize" value="0.05"/>
                 <property key="labeling/bufferSizeInMapUnits" value="false"/>
                 <property key="labeling/bufferTransp" value="0"/>
                 <property key="labeling/centroidWhole" value="false"/>
-                <property key="labeling/decimals" value="3"/>
+                <property key="labeling/dataDefined/AlwaysShow" value="1~~1~~1~~"/>
+                <property key="labeling/dataDefined/PositionX" value="1~~1~~xat( 0)~~"/>
+                <property key="labeling/dataDefined/PositionY" value="1~~1~~yat(0)~~"/>
+                <property key="labeling/decimals" value="0"/>
                 <property key="labeling/displayAll" value="false"/>
                 <property key="labeling/dist" value="0"/>
                 <property key="labeling/distInMapUnits" value="false"/>
-                <property key="labeling/enabled" value="false"/>
-                <property key="labeling/fieldName" value=""/>
-                <property key="labeling/fontBold" value="true"/>
+                <property key="labeling/enabled" value="true"/>
+                <property key="labeling/fieldName" value="identification || '#!#RES'"/>
+                <property key="labeling/fontBold" value="false"/>
                 <property key="labeling/fontCapitals" value="0"/>
-                <property key="labeling/fontFamily" value="Ubuntu"/>
-                <property key="labeling/fontItalic" value="true"/>
+                <property key="labeling/fontFamily" value="Arial"/>
+                <property key="labeling/fontItalic" value="false"/>
                 <property key="labeling/fontLetterSpacing" value="0"/>
                 <property key="labeling/fontLimitPixelSize" value="false"/>
                 <property key="labeling/fontMaxPixelSize" value="10000"/>
                 <property key="labeling/fontMinPixelSize" value="3"/>
-                <property key="labeling/fontSize" value="11"/>
-                <property key="labeling/fontSizeInMapUnits" value="false"/>
+                <property key="labeling/fontSize" value="0.9"/>
+                <property key="labeling/fontSizeInMapUnits" value="true"/>
                 <property key="labeling/fontStrikeout" value="false"/>
                 <property key="labeling/fontUnderline" value="false"/>
-                <property key="labeling/fontWeight" value="75"/>
+                <property key="labeling/fontWeight" value="50"/>
                 <property key="labeling/fontWordSpacing" value="0"/>
                 <property key="labeling/formatNumbers" value="false"/>
-                <property key="labeling/isExpression" value="false"/>
-                <property key="labeling/labelOffsetInMapUnits" value="true"/>
+                <property key="labeling/isExpression" value="true"/>
+                <property key="labeling/labelOffsetInMapUnits" value="false"/>
                 <property key="labeling/labelPerPart" value="false"/>
                 <property key="labeling/leftDirectionSymbol" value="&lt;"/>
                 <property key="labeling/limitNumLabels" value="false"/>
@@ -7180,12 +7263,12 @@
                 <property key="labeling/maxNumLabels" value="2000"/>
                 <property key="labeling/mergeLines" value="false"/>
                 <property key="labeling/minFeatureSize" value="0"/>
-                <property key="labeling/multilineAlign" value="0"/>
-                <property key="labeling/multilineHeight" value="1"/>
-                <property key="labeling/namedStyle" value="Bold Italic"/>
+                <property key="labeling/multilineAlign" value="1"/>
+                <property key="labeling/multilineHeight" value="1.2"/>
+                <property key="labeling/namedStyle" value="Regular"/>
                 <property key="labeling/obstacle" value="true"/>
                 <property key="labeling/placeDirectionSymbol" value="0"/>
-                <property key="labeling/placement" value="0"/>
+                <property key="labeling/placement" value="1"/>
                 <property key="labeling/placementFlags" value="0"/>
                 <property key="labeling/plussign" value="false"/>
                 <property key="labeling/preserveRotation" value="true"/>
@@ -7194,9 +7277,9 @@
                 <property key="labeling/quadOffset" value="4"/>
                 <property key="labeling/reverseDirectionSymbol" value="false"/>
                 <property key="labeling/rightDirectionSymbol" value=">"/>
-                <property key="labeling/scaleMax" value="10000000"/>
+                <property key="labeling/scaleMax" value="1000"/>
                 <property key="labeling/scaleMin" value="1"/>
-                <property key="labeling/scaleVisibility" value="false"/>
+                <property key="labeling/scaleVisibility" value="true"/>
                 <property key="labeling/shadowBlendMode" value="6"/>
                 <property key="labeling/shadowColorB" value="0"/>
                 <property key="labeling/shadowColorG" value="0"/>
@@ -7246,9 +7329,11 @@
                 <property key="labeling/textColorR" value="0"/>
                 <property key="labeling/textTransp" value="0"/>
                 <property key="labeling/upsidedownLabels" value="0"/>
-                <property key="labeling/wrapChar" value=""/>
+                <property key="labeling/wrapChar" value="#!#"/>
                 <property key="labeling/xOffset" value="0"/>
+                <property key="labeling/xQuadOffset" value="0"/>
                 <property key="labeling/yOffset" value="0"/>
+                <property key="labeling/yQuadOffset" value="0"/>
             </customproperties>
             <blendMode>0</blendMode>
             <featureBlendMode>0</featureBlendMode>
@@ -7276,33 +7361,58 @@
                 <selectedonly on=""/>
             </labelattributes>
             <edittypes>
+                <edittype labelontop="0" editable="0" type="0" name="Abonnés - type_name"/>
+                <edittype labelontop="0" editable="0" type="0" name="Abonnés - type_shortname"/>
                 <edittype labelontop="0" editable="1" type="0" name="_district"/>
                 <edittype labelontop="0" editable="1" type="0" name="_districts"/>
-                <edittype labelontop="0" editable="1" type="0" name="_identification_full"/>
-                <edittype labelontop="0" editable="1" type="0" name="_pressurezone"/>
-                <edittype labelontop="0" editable="1" type="0" name="_printmaps"/>
-                <edittype labelontop="0" editable="1" type="0" name="id"/>
-                <edittype labelontop="0" editable="1" type="0" name="id_district"/>
-                <edittype labelontop="0" editable="1" type="0" name="id_pipe"/>
-                <edittype labelontop="0" editable="1" type="0" name="id_pressurezone"/>
-                <edittype labelontop="0" editable="1" type="0" name="id_printmap"/>
-                <edittype labelontop="0" editable="1" type="0" name="id_status"/>
+                <edittype labelontop="0" editable="0" type="0" name="_identification_full"/>
+                <edittype labelontop="0" editable="0" type="0" name="_pressurezone"/>
+                <edittype labelontop="0" editable="0" type="0" name="_printmaps"/>
+                <edittype labelontop="0" editable="0" type="0" name="altitude"/>
+                <edittype labelontop="0" editable="1" type="0" name="altitude_dtm"/>
+                <edittype labelontop="0" editable="0" type="0" name="communes_colorcode"/>
+                <edittype labelontop="0" editable="0" type="0" name="communes_land_registry"/>
+                <edittype labelontop="0" editable="0" type="0" name="communes_name"/>
+                <edittype labelontop="0" editable="0" type="0" name="communes_prefix"/>
+                <edittype labelontop="0" editable="0" type="0" name="communes_shortname"/>
+                <edittype labelontop="0" editable="0" type="0" name="communes_zip"/>
+                <edittype labelontop="0" editable="0" type="0" name="id"/>
+                <edittype labelontop="0" editable="1" type="0" name="id_client"/>
+                <edittype labelontop="0" editable="1" allowNull="false" orderByValue="false" key="id" layer="district20130304110004764" allowMulti="false" filterExpression="" type="15" value="name" name="id_district"/>
+                <edittype labelontop="0" editable="0" type="0" name="id_pipe"/>
+                <edittype labelontop="0" editable="0" allowNull="false" orderByValue="false" key="id" layer="pressurezone20130417133612105" allowMulti="false" filterExpression="" type="15" value="name" name="id_pressurezone"/>
+                <edittype labelontop="0" editable="0" allowNull="true" orderByValue="false" key="id" layer="printmap20130304110011400" allowMulti="true" filterExpression="" type="15" value="name" name="id_printmap"/>
+                <edittype labelontop="0" editable="1" allowNull="false" orderByValue="false" key="id" layer="status20130304110011436" allowMulti="false" filterExpression="" type="15" value="value_fr" name="id_status"/>
+                <edittype labelontop="0" editable="1" allowNull="false" orderByValue="false" key="id" layer="vl_subscriber_type20130304110011480" allowMulti="false" filterExpression="" type="15" value="value_fr" name="id_type"/>
                 <edittype labelontop="0" editable="1" type="0" name="identification"/>
                 <edittype labelontop="0" editable="1" type="0" name="parcel"/>
-                <edittype labelontop="0" editable="1" type="0" name="remark"/>
+                <edittype labelontop="0" editable="1" type="12" name="remark"/>
             </edittypes>
-            <editform>.</editform>
+            <editform>./ui_forms/meter.ui</editform>
             <editforminit></editforminit>
             <featformsuppress>0</featformsuppress>
             <annotationform>.</annotationform>
-            <editorlayout>generatedlayout</editorlayout>
+            <editorlayout>uifilelayout</editorlayout>
+            <aliases>
+                <alias field="_identification_full" index="4" name="Identification complète"/>
+                <alias field="_pressurezone" index="11" name="Zone de pression"/>
+                <alias field="_printmaps" index="12" name="Folios"/>
+                <alias field="id_district" index="7" name="Commune"/>
+                <alias field="id_pipe" index="2" name="Conduite"/>
+                <alias field="id_pressurezone" index="8" name="Zone de pression"/>
+                <alias field="id_printmap" index="9" name="Folios"/>
+                <alias field="id_status" index="1" name="Statut"/>
+                <alias field="identification" index="3" name="Idenitifcation"/>
+                <alias field="parcel" index="5" name="Parcelle"/>
+                <alias field="remark" index="6" name="Remarque"/>
+            </aliases>
             <excludeAttributesWMS/>
             <excludeAttributesWFS/>
             <attributeactions>
-                <actionsetting action="qgis.utils.plugins['postgres91plusauditor'].audit('od_meter20131120073630165',[% $id %])" capture="0" type="1" name="History audit"/>
+                <actionsetting action="qgis.utils.plugins['postgres91plusauditor'].showHistory('subscriber20130304110011459',[% $id %])" capture="0" type="1" name="History audit"/>
             </attributeactions>
         </maplayer>
-        <maplayer minimumScale="-4.65661e-10" maximumScale="1000" minLabelScale="0" maxLabelScale="1e+08" geometry="Point" type="vector" hasScaleBasedVisibilityFlag="1" scaleBasedLabelVisibilityFlag="0">
+        <maplayer minimumScale="-4.65661e-10" maximumScale="1000" simplifyDrawingHints="1" minLabelScale="0" maxLabelScale="1e+08" simplifyDrawingTol="1" geometry="Point" type="vector" hasScaleBasedVisibilityFlag="1" simplifyLocal="1" scaleBasedLabelVisibilityFlag="0">
             <id>od_meter_subscriber20131211104942391</id>
             <datasource>dbname='sige' host=172.24.171.203 port=5432 user='sige' sslmode=disable key='id' estimatedmetadata=true srid=21781 type=POINT table="distribution"."od_meter_subscriber" (geometry) sql=</datasource>
             <title></title>
@@ -7337,6 +7447,7 @@
                             <prop k="name" v="circle"/>
                             <prop k="offset" v="0,0"/>
                             <prop k="offset_unit" v="MM"/>
+                            <prop k="outline_style" v="solid"/>
                             <prop k="outline_width" v="0"/>
                             <prop k="outline_width_unit" v="MM"/>
                             <prop k="scale_method" v="area"/>
@@ -7515,7 +7626,7 @@
                 <actionsetting action="qgis.utils.plugins['postgres91plusauditor'].audit('od_meter_subscriber20131211104942391',[% $id %])" capture="0" type="1" name="History audit"/>
             </attributeactions>
         </maplayer>
-        <maplayer minimumScale="-4.65661e-10" maximumScale="3000" minLabelScale="0" maxLabelScale="1e+08" geometry="Point" type="vector" hasScaleBasedVisibilityFlag="1" scaleBasedLabelVisibilityFlag="0">
+        <maplayer minimumScale="0" maximumScale="3000" simplifyDrawingHints="1" minLabelScale="0" maxLabelScale="1e+08" simplifyDrawingTol="1" geometry="Point" type="vector" hasScaleBasedVisibilityFlag="1" simplifyLocal="1" scaleBasedLabelVisibilityFlag="0">
             <id>od_subscriber_reference20131206105928067</id>
             <datasource>dbname='sige' host=172.24.171.203 port=5432 user='sige' sslmode=disable key='id' estimatedmetadata=true srid=21781 type=POINT table="distribution"."od_subscriber_reference" (geometry) sql=</datasource>
             <title></title>
@@ -7552,6 +7663,7 @@
                             <prop k="name" v="circle"/>
                             <prop k="offset" v="0,0"/>
                             <prop k="offset_unit" v="MM"/>
+                            <prop k="outline_style" v="solid"/>
                             <prop k="outline_width" v="0.3"/>
                             <prop k="outline_width_unit" v="MM"/>
                             <prop k="scale_method" v="area"/>
@@ -7565,6 +7677,9 @@
                 <sizescale field="" scalemethod="area"/>
             </renderer-v2>
             <customproperties>
+                <property key="LinkIt_destinationField" value="id_subscriber"/>
+                <property key="LinkIt_name" value="Abonné - renvoi"/>
+                <property key="LinkIt_sourceLayer" value="subscriber20130304110011459"/>
                 <property key="labeling" value="pal"/>
                 <property key="labeling/addDirectionSymbol" value="false"/>
                 <property key="labeling/angleOffset" value="0"/>
@@ -7586,7 +7701,7 @@
                 <property key="labeling/dist" value="0"/>
                 <property key="labeling/distInMapUnits" value="false"/>
                 <property key="labeling/enabled" value="true"/>
-                <property key="labeling/fieldName" value=" &quot;abonnés__identification_full&quot;"/>
+                <property key="labeling/fieldName" value=" &quot;abonnés_identification&quot;  ||&#xa;CASE &#xa;WHEN  &quot;abonnés_id_type&quot;  = 9401 THEN ''&#xa;WHEN &quot;abonnés_id_type&quot; = 9402 THEN '#!#ARR'&#xa;WHEN &quot;abonnés_id_type&quot; = 9403 THEN '#!#FON'&#xa;WHEN &quot;abonnés_id_type&quot; = 9404 THEN '#!#WC'&#xa;WHEN &quot;abonnés_id_type&quot; = 9405 THEN '#!#SPK'&#xa;ELSE ''&#xa;END"/>
                 <property key="labeling/fontBold" value="false"/>
                 <property key="labeling/fontCapitals" value="0"/>
                 <property key="labeling/fontFamily" value="Arial"/>
@@ -7710,6 +7825,7 @@
             <edittypes>
                 <edittype labelontop="0" editable="0" type="0" name="abonnés__districts"/>
                 <edittype labelontop="0" editable="0" type="0" name="abonnés__identification_full"/>
+                <edittype labelontop="0" editable="0" type="0" name="abonnés__pressurezone"/>
                 <edittype labelontop="0" editable="0" type="0" name="abonnés__printmaps"/>
                 <edittype labelontop="0" editable="0" type="0" name="abonnés_communes_colorcode"/>
                 <edittype labelontop="0" editable="0" type="0" name="abonnés_communes_land_registry"/>
@@ -7739,9 +7855,10 @@
             <excludeAttributesWFS/>
             <attributeactions>
                 <actionsetting action="qgis.utils.plugins['postgres91plusauditor'].audit('od_subscriber_reference20131206105928067',[% $id %])" capture="0" type="1" name="History audit"/>
+                <actionsetting action="qgis.utils.plugins['linkit'].linkit('od_subscriber_reference20131206105928067','id_subscriber','subscriber20130304110011459', [% $id %])" capture="0" type="1" name="Abonné - renvoi"/>
             </attributeactions>
         </maplayer>
-        <maplayer minimumScale="0" maximumScale="3001" minLabelScale="0" maxLabelScale="1e+08" geometry="Point" type="vector" hasScaleBasedVisibilityFlag="1" scaleBasedLabelVisibilityFlag="0">
+        <maplayer minimumScale="0" maximumScale="3001" simplifyDrawingHints="1" minLabelScale="0" maxLabelScale="1e+08" simplifyDrawingTol="1" geometry="Point" type="vector" hasScaleBasedVisibilityFlag="1" simplifyLocal="1" scaleBasedLabelVisibilityFlag="0">
             <id>od_wateringoutput20131127080906318</id>
             <datasource>dbname='sige' host=172.24.171.203 port=5432 user='sige' sslmode=disable key='id' estimatedmetadata=true srid=21781 type=POINT table="distribution"."od_wateringoutput" (geometry) sql=</datasource>
             <title></title>
@@ -7776,6 +7893,7 @@
                             <prop k="name" v="circle"/>
                             <prop k="offset" v="0,0"/>
                             <prop k="offset_unit" v="MM"/>
+                            <prop k="outline_style" v="solid"/>
                             <prop k="outline_width" v="0"/>
                             <prop k="outline_width_unit" v="MM"/>
                             <prop k="scale_method" v="area"/>
@@ -7959,7 +8077,7 @@
                 <actionsetting action="qgis.utils.plugins['postgres91plusauditor'].audit('od_wateringoutput20131127080906318',[% $id %])" capture="0" type="1" name="History audit"/>
             </attributeactions>
         </maplayer>
-        <maplayer minimumScale="0" maximumScale="1500" minLabelScale="0" maxLabelScale="1e+08" geometry="Line" type="vector" hasScaleBasedVisibilityFlag="1" scaleBasedLabelVisibilityFlag="0">
+        <maplayer minimumScale="0" maximumScale="1500" simplifyDrawingHints="1" minLabelScale="0" maxLabelScale="1e+08" simplifyDrawingTol="1" geometry="Line" type="vector" hasScaleBasedVisibilityFlag="1" simplifyLocal="1" scaleBasedLabelVisibilityFlag="0">
             <id>pipe_child_parent20130417092030507</id>
             <datasource>dbname='sige' host=172.24.171.203 port=5432 user='sige' password='db4wat$' sslmode=disable key='child' srid=21781 type=LINESTRING table="distribution"."vw_pipe_child_parent" (geometry) sql=</datasource>
             <title></title>
@@ -8015,6 +8133,7 @@
                                     <prop k="name" v="arrowhead"/>
                                     <prop k="offset" v="0,0"/>
                                     <prop k="offset_unit" v="MM"/>
+                                    <prop k="outline_style" v="solid"/>
                                     <prop k="outline_width" v="0"/>
                                     <prop k="outline_width_unit" v="MM"/>
                                     <prop k="scale_method" v="area"/>
@@ -8187,7 +8306,7 @@
                 <actionsetting action="qgis.utils.plugins['postgres91plusauditor'].showHistory('pipe_child_parent20130417092030507',[% $id %])" capture="0" type="1" name="History audit"/>
             </attributeactions>
         </maplayer>
-        <maplayer minimumScale="0" maximumScale="1e+08" minLabelScale="1" maxLabelScale="1e+08" geometry="Line" type="vector" hasScaleBasedVisibilityFlag="0" scaleBasedLabelVisibilityFlag="0">
+        <maplayer minimumScale="0" maximumScale="1e+08" simplifyDrawingHints="1" minLabelScale="1" maxLabelScale="1e+08" simplifyDrawingTol="1" geometry="Line" type="vector" hasScaleBasedVisibilityFlag="0" simplifyLocal="1" scaleBasedLabelVisibilityFlag="0">
             <id>pipe_schema20130304110005279</id>
             <datasource>dbname='sige' host=172.24.171.203 port=5432 user='sige' password='db4wat$' sslmode=allow key='id' srid=21781 type=LINESTRING table="distribution"."vw_pipe_schema" (geometry) sql=</datasource>
             <title></title>
@@ -8459,7 +8578,7 @@
                 <actionsetting action="qgis.utils.plugins['postgres91plusauditor'].showHistory('pipe_schema20130304110005279',[% $id %])" capture="0" type="1" name="History audit"/>
             </attributeactions>
         </maplayer>
-        <maplayer minimumScale="0" maximumScale="4000" minLabelScale="0" maxLabelScale="1e+08" geometry="Polygon" type="vector" hasScaleBasedVisibilityFlag="1" scaleBasedLabelVisibilityFlag="0">
+        <maplayer minimumScale="0" maximumScale="4000" simplifyDrawingHints="1" minLabelScale="0" maxLabelScale="1e+08" simplifyDrawingTol="1" geometry="Polygon" type="vector" hasScaleBasedVisibilityFlag="1" simplifyLocal="1" scaleBasedLabelVisibilityFlag="0">
             <id>polygone20140113144941251</id>
             <datasource>dbname='sige' host=172.24.171.203 port=5432 user='sige' sslmode=disable key='id' estimatedmetadata=true srid=21781 type=POLYGON table="enquete"."polygone" (geometry) sql=</datasource>
             <title></title>
@@ -8659,7 +8778,7 @@
                 <actionsetting action="qgis.utils.plugins['postgres91plusauditor'].audit('polygone20140107104722803',[% $id %])" capture="0" type="1" name="History audit"/>
             </attributeactions>
         </maplayer>
-        <maplayer minimumScale="-4.65661e-10" maximumScale="1e+08" minLabelScale="1" maxLabelScale="1e+08" geometry="Polygon" type="vector" hasScaleBasedVisibilityFlag="0" scaleBasedLabelVisibilityFlag="0">
+        <maplayer minimumScale="-4.65661e-10" maximumScale="1e+08" simplifyDrawingHints="1" minLabelScale="1" maxLabelScale="1e+08" simplifyDrawingTol="1" geometry="Polygon" type="vector" hasScaleBasedVisibilityFlag="0" simplifyLocal="1" scaleBasedLabelVisibilityFlag="0">
             <id>pressurezone20130417133612105</id>
             <datasource>dbname='sige' host=172.24.171.203 port=5432 user='sige' sslmode=disable key='id' srid=21781 type=MULTIPOLYGON table="distribution"."od_pressurezone" (geometry) sql=</datasource>
             <title></title>
@@ -8758,6 +8877,7 @@
                     <prop k="colors" v="5"/>
                     <prop k="schemeName" v="Spectral"/>
                 </colorramp>
+                <invertedcolorramp value="0"/>
                 <rotation field=""/>
                 <sizescale field="" scalemethod="area"/>
             </renderer-v2>
@@ -8927,7 +9047,7 @@
                 <actionsetting action="qgis.utils.plugins['postgres91plusauditor'].showHistory('pressurezone20130417133612105',[% $id %])" capture="0" type="1" name="History audit"/>
             </attributeactions>
         </maplayer>
-        <maplayer minimumScale="1500" maximumScale="30000" minLabelScale="1" maxLabelScale="1e+08" geometry="Polygon" type="vector" hasScaleBasedVisibilityFlag="1" scaleBasedLabelVisibilityFlag="0">
+        <maplayer minimumScale="1500" maximumScale="30000" simplifyDrawingHints="1" minLabelScale="1" maxLabelScale="1e+08" simplifyDrawingTol="1" geometry="Polygon" type="vector" hasScaleBasedVisibilityFlag="1" simplifyLocal="1" scaleBasedLabelVisibilityFlag="0">
             <id>printmap20130304110011400</id>
             <datasource>dbname='sige' host=172.24.171.203 port=5432 user='sige' password='db4wat$' sslmode=allow key='id' srid=21781 type=POLYGON table="distribution"."od_printmap" (geometry) sql=</datasource>
             <title></title>
@@ -9158,7 +9278,7 @@
                 <actionsetting action="qgis.utils.plugins['postgres91plusauditor'].showHistory('printmap20130304110011400',[% $id %])" capture="0" type="1" name="History audit"/>
             </attributeactions>
         </maplayer>
-        <maplayer minimumScale="0" maximumScale="1e+08" minLabelScale="1" maxLabelScale="1e+08" geometry="Polygon" type="vector" hasScaleBasedVisibilityFlag="0" scaleBasedLabelVisibilityFlag="0">
+        <maplayer minimumScale="0" maximumScale="1e+08" simplifyDrawingHints="1" minLabelScale="1" maxLabelScale="1e+08" simplifyDrawingTol="1" geometry="Polygon" type="vector" hasScaleBasedVisibilityFlag="0" simplifyLocal="1" scaleBasedLabelVisibilityFlag="0">
             <id>protectionzone20130304110011418</id>
             <datasource>dbname='sige' host=172.24.171.203 port=5432 user='sige' password='db4wat$' sslmode=allow key='id' srid=21781 type=MULTIPOLYGON table="distribution"."od_protectionzone" (geometry) sql=</datasource>
             <title></title>
@@ -9324,7 +9444,7 @@
                 <actionsetting action="qgis.utils.plugins['postgres91plusauditor'].showHistory('status20130304110011436',[% $id %])" capture="0" type="1" name="History audit"/>
             </attributeactions>
         </maplayer>
-        <maplayer minimumScale="4" maximumScale="1e+08" minLabelScale="1" maxLabelScale="1e+08" geometry="Point" type="vector" hasScaleBasedVisibilityFlag="1" scaleBasedLabelVisibilityFlag="0">
+        <maplayer minimumScale="4" maximumScale="1e+08" simplifyDrawingHints="1" minLabelScale="1" maxLabelScale="1e+08" simplifyDrawingTol="1" geometry="Point" type="vector" hasScaleBasedVisibilityFlag="1" simplifyLocal="1" scaleBasedLabelVisibilityFlag="0">
             <id>subscriber20130304110011459</id>
             <datasource>dbname='sige' host=172.24.171.203 port=5432 user='sige' password='db4wat$' sslmode=allow key='id' srid=21781 type=POINT table="distribution"."od_subscriber" (geometry) sql=</datasource>
             <title></title>
@@ -9347,9 +9467,7 @@
             </srs>
             <provider encoding="ISO-8859-1">postgres</provider>
             <previewExpression>id</previewExpression>
-            <vectorjoins>
-                <join joinFieldName="id" targetFieldName="id_district" memoryCache="1" joinLayerId="district20130304110004764"/>
-            </vectorjoins>
+            <vectorjoins/>
             <renderer-v2 symbollevels="0" type="RuleRenderer">
                 <rules>
                     <rule scalemaxdenom="3000" label="Echelle">
@@ -9371,6 +9489,7 @@
                             <prop k="name" v="circle"/>
                             <prop k="offset" v="0,0"/>
                             <prop k="offset_unit" v="MapUnit"/>
+                            <prop k="outline_style" v="solid"/>
                             <prop k="outline_width" v="0.3"/>
                             <prop k="outline_width_unit" v="MM"/>
                             <prop k="scale_method" v="area"/>
@@ -9388,6 +9507,7 @@
                             <prop k="name" v="cross2"/>
                             <prop k="offset" v="0,0"/>
                             <prop k="offset_unit" v="MM"/>
+                            <prop k="outline_style" v="solid"/>
                             <prop k="outline_width" v="0"/>
                             <prop k="outline_width_unit" v="MM"/>
                             <prop k="scale_method" v="area"/>
@@ -9405,6 +9525,7 @@
                             <prop k="name" v="circle"/>
                             <prop k="offset" v="0,0"/>
                             <prop k="offset_unit" v="MapUnit"/>
+                            <prop k="outline_style" v="solid"/>
                             <prop k="outline_width" v="0.5"/>
                             <prop k="outline_width_unit" v="MM"/>
                             <prop k="scale_method" v="area"/>
@@ -9422,6 +9543,7 @@
                             <prop k="name" v="circle"/>
                             <prop k="offset" v="0,0"/>
                             <prop k="offset_unit" v="MapUnit"/>
+                            <prop k="outline_style" v="solid"/>
                             <prop k="outline_width" v="0.5"/>
                             <prop k="outline_width_unit" v="MM"/>
                             <prop k="scale_method" v="area"/>
@@ -9439,6 +9561,7 @@
                             <prop k="name" v="circle"/>
                             <prop k="offset" v="0,0"/>
                             <prop k="offset_unit" v="MapUnit"/>
+                            <prop k="outline_style" v="solid"/>
                             <prop k="outline_width" v="0.5"/>
                             <prop k="outline_width_unit" v="MM"/>
                             <prop k="scale_method" v="area"/>
@@ -9456,6 +9579,7 @@
                             <prop k="name" v="circle"/>
                             <prop k="offset" v="0,0"/>
                             <prop k="offset_unit" v="MM"/>
+                            <prop k="outline_style" v="solid"/>
                             <prop k="outline_width" v="0.5"/>
                             <prop k="outline_width_unit" v="MM"/>
                             <prop k="scale_method" v="area"/>
@@ -9467,6 +9591,9 @@
                 </symbols>
             </renderer-v2>
             <customproperties>
+                <property key="LinkIt_destinationField" value="id_pipe"/>
+                <property key="LinkIt_name" value="Abonnés - conduite"/>
+                <property key="LinkIt_sourceLayer" value="conduites_copy20130709141244955"/>
                 <property key="itemBrowserConnected" value="yes"/>
                 <property key="itemBrowserCurrentItem" value="0"/>
                 <property key="itemBrowserSelection" value="[]"/>
@@ -9494,7 +9621,7 @@
                 <property key="labeling/dist" value="0"/>
                 <property key="labeling/distInMapUnits" value="false"/>
                 <property key="labeling/enabled" value="true"/>
-                <property key="labeling/fieldName" value="_identification_full"/>
+                <property key="labeling/fieldName" value="identification ||&#xa;CASE &#xa;WHEN id_type = 9401 THEN ''&#xa;WHEN id_type = 9402 THEN '#!#ARR'&#xa;WHEN id_type = 9403 THEN '#!#FON'&#xa;WHEN id_type = 9404 THEN '#!#WC'&#xa;WHEN id_type = 9405 THEN '#!#SPK'&#xa;ELSE ''&#xa;END"/>
                 <property key="labeling/fontBold" value="false"/>
                 <property key="labeling/fontCapitals" value="0"/>
                 <property key="labeling/fontFamily" value="Arial"/>
@@ -9510,7 +9637,7 @@
                 <property key="labeling/fontWeight" value="50"/>
                 <property key="labeling/fontWordSpacing" value="0"/>
                 <property key="labeling/formatNumbers" value="false"/>
-                <property key="labeling/isExpression" value="false"/>
+                <property key="labeling/isExpression" value="true"/>
                 <property key="labeling/labelOffsetInMapUnits" value="false"/>
                 <property key="labeling/labelPerPart" value="false"/>
                 <property key="labeling/leftDirectionSymbol" value="&lt;"/>
@@ -9586,7 +9713,7 @@
                 <property key="labeling/textColorR" value="0"/>
                 <property key="labeling/textTransp" value="0"/>
                 <property key="labeling/upsidedownLabels" value="0"/>
-                <property key="labeling/wrapChar" value="_"/>
+                <property key="labeling/wrapChar" value="#!#"/>
                 <property key="labeling/xOffset" value="0"/>
                 <property key="labeling/xQuadOffset" value="0"/>
                 <property key="labeling/yOffset" value="0"/>
@@ -9644,11 +9771,11 @@
                 <edittype labelontop="0" editable="1" type="0" name="parcel"/>
                 <edittype labelontop="0" editable="1" type="12" name="remark"/>
             </edittypes>
-            <editform>.</editform>
+            <editform>./ui_forms/subscriber.ui</editform>
             <editforminit></editforminit>
             <featformsuppress>0</featformsuppress>
             <annotationform>.</annotationform>
-            <editorlayout>generatedlayout</editorlayout>
+            <editorlayout>uifilelayout</editorlayout>
             <aliases>
                 <alias field="_identification_full" index="5" name="Identification complète"/>
                 <alias field="_pressurezone" index="11" name="Zone de pression"/>
@@ -9667,9 +9794,10 @@
             <excludeAttributesWFS/>
             <attributeactions>
                 <actionsetting action="qgis.utils.plugins['postgres91plusauditor'].showHistory('subscriber20130304110011459',[% $id %])" capture="0" type="1" name="History audit"/>
+                <actionsetting action="qgis.utils.plugins['linkit'].linkit('subscriber20130304110011459','id_pipe','conduites_copy20130709141244955', [% $id %])" capture="0" type="1" name="Abonnés - conduite"/>
             </attributeactions>
         </maplayer>
-        <maplayer minimumScale="0" maximumScale="1e+08" minLabelScale="0" maxLabelScale="1e+08" geometry="Line" type="vector" hasScaleBasedVisibilityFlag="0" scaleBasedLabelVisibilityFlag="0">
+        <maplayer minimumScale="0" maximumScale="1e+08" simplifyDrawingHints="1" minLabelScale="0" maxLabelScale="1e+08" simplifyDrawingTol="1" geometry="Line" type="vector" hasScaleBasedVisibilityFlag="0" simplifyLocal="1" scaleBasedLabelVisibilityFlag="0">
             <id>subscriber_pipe_relation20130417092124312</id>
             <datasource>dbname='sige' host=172.24.171.203 port=5432 user='sige' sslmode=disable key='id' srid=21781 type=LINESTRING table="distribution"."od_subscriber_pipe_relation" (geometry) sql=</datasource>
             <title></title>
@@ -9751,7 +9879,7 @@
                 <actionsetting action="qgis.utils.plugins['postgres91plusauditor'].showHistory('subscriber_pipe_relation20130417092124312',[% $id %])" capture="0" type="1" name="History audit"/>
             </attributeactions>
         </maplayer>
-        <maplayer minimumScale="0" maximumScale="10001" minLabelScale="1" maxLabelScale="1e+08" geometry="Point" type="vector" hasScaleBasedVisibilityFlag="1" scaleBasedLabelVisibilityFlag="0">
+        <maplayer minimumScale="0" maximumScale="10001" simplifyDrawingHints="1" minLabelScale="1" maxLabelScale="1e+08" simplifyDrawingTol="1" geometry="Point" type="vector" hasScaleBasedVisibilityFlag="1" simplifyLocal="1" scaleBasedLabelVisibilityFlag="0">
             <id>valve20130304110011497</id>
             <datasource>dbname='sige' host=172.24.171.203 port=5432 user='sige' password='db4wat$' sslmode=allow key='id' srid=21781 type=POINT table="distribution"."od_valve" (geometry) sql=</datasource>
             <title></title>
@@ -9793,6 +9921,7 @@
                             <prop k="name" v="circle"/>
                             <prop k="offset" v="0,0"/>
                             <prop k="offset_unit" v="MM"/>
+                            <prop k="outline_style" v="solid"/>
                             <prop k="outline_width" v="0.5"/>
                             <prop k="outline_width_unit" v="MM"/>
                             <prop k="scale_method" v="area"/>
@@ -9810,6 +9939,7 @@
                             <prop k="name" v="line"/>
                             <prop k="offset" v="0,0"/>
                             <prop k="offset_unit" v="MM"/>
+                            <prop k="outline_style" v="solid"/>
                             <prop k="outline_width" v="1"/>
                             <prop k="outline_width_unit" v="MM"/>
                             <prop k="scale_method" v="area"/>
@@ -10041,7 +10171,7 @@
                 <actionsetting action="qgis.utils.plugins['postgres91plusauditor'].showHistory('valve20130304110011497',[% $id %])" capture="0" type="1" name="History audit"/>
             </attributeactions>
         </maplayer>
-        <maplayer minimumScale="-4.65661e-10" maximumScale="1e+08" minLabelScale="1" maxLabelScale="1e+08" geometry="Point" type="vector" hasScaleBasedVisibilityFlag="0" scaleBasedLabelVisibilityFlag="0">
+        <maplayer minimumScale="-4.65661e-10" maximumScale="1e+08" simplifyDrawingHints="1" minLabelScale="1" maxLabelScale="1e+08" simplifyDrawingTol="1" geometry="Point" type="vector" hasScaleBasedVisibilityFlag="0" simplifyLocal="1" scaleBasedLabelVisibilityFlag="0">
             <id>valve_schema20130304110011584</id>
             <datasource>dbname='sige' host=172.24.171.203 port=5432 user='sige' password='db4wat$' sslmode=allow key='id' srid=21781 type=POINT table="distribution"."od_valve_schema" (geometry) sql=</datasource>
             <title></title>
@@ -10079,6 +10209,7 @@
                             <prop k="name" v="circle"/>
                             <prop k="offset" v="0,0"/>
                             <prop k="offset_unit" v="MM"/>
+                            <prop k="outline_style" v="solid"/>
                             <prop k="outline_width" v="0"/>
                             <prop k="outline_width_unit" v="MM"/>
                             <prop k="scale_method" v="area"/>
@@ -10291,7 +10422,7 @@
                 <actionsetting action="qgis.utils.plugins['postgres91plusauditor'].showHistory('valve_schema20130304110011584',[% $id %])" capture="0" type="1" name="History audit"/>
             </attributeactions>
         </maplayer>
-        <maplayer minimumScale="-4.65661e-10" maximumScale="3001" minLabelScale="1" maxLabelScale="1e+08" geometry="Point" type="vector" hasScaleBasedVisibilityFlag="1" scaleBasedLabelVisibilityFlag="0">
+        <maplayer minimumScale="-4.65661e-10" maximumScale="3001" simplifyDrawingHints="1" minLabelScale="1" maxLabelScale="1e+08" simplifyDrawingTol="1" geometry="Point" type="vector" hasScaleBasedVisibilityFlag="1" simplifyLocal="1" scaleBasedLabelVisibilityFlag="0">
             <id>vannes_copy20130924083714343</id>
             <datasource>dbname='sige' host=172.24.171.203 port=5432 user='sige' password='db4wat$' sslmode=allow key='id' srid=21781 type=POINT table="distribution"."od_valve" (geometry) sql=</datasource>
             <title></title>
@@ -10334,6 +10465,7 @@
                             <prop k="name" v="circle"/>
                             <prop k="offset" v="0,0"/>
                             <prop k="offset_unit" v="MM"/>
+                            <prop k="outline_style" v="solid"/>
                             <prop k="outline_width" v="0.4"/>
                             <prop k="outline_width_unit" v="MM"/>
                             <prop k="scale_method" v="area"/>
@@ -10351,6 +10483,7 @@
                             <prop k="name" v="line"/>
                             <prop k="offset" v="0,0"/>
                             <prop k="offset_unit" v="MM"/>
+                            <prop k="outline_style" v="solid"/>
                             <prop k="outline_width" v="1"/>
                             <prop k="outline_width_unit" v="MM"/>
                             <prop k="scale_method" v="area"/>
@@ -10368,6 +10501,7 @@
                             <prop k="name" v="cross2"/>
                             <prop k="offset" v="0,0"/>
                             <prop k="offset_unit" v="MM"/>
+                            <prop k="outline_style" v="solid"/>
                             <prop k="outline_width" v="0.4"/>
                             <prop k="outline_width_unit" v="MM"/>
                             <prop k="scale_method" v="area"/>
