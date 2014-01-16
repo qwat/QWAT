@@ -36,7 +36,7 @@ $BODY$
 			IF is_under_object IS TRUE THEN
 				type := node_table.node_type;
 				IF node_table.overwrite IS true THEN
-					keep_type = true;
+					keep_type := true;
 					EXIT;
 				END IF;
 			END IF;
@@ -91,8 +91,8 @@ $BODY$
 					SELECT ST_Azimuth(pipeitem.point_1,pipeitem.point_2) INTO orientation ;
 				ELSE
 					/* second pipe if exists */
-					type := 'two_same';
 					IF keep_type IS FALSE THEN
+						type := 'two_same';
 						IF Tyear     != pipeitem.year     THEN type := 'two_year'    ; END IF;
 						IF Tmaterial != pipeitem.material THEN type := 'two_material'; END IF;
 						IF Tdiameter != pipeitem.diameter THEN type := 'two_diameter'; END IF;
