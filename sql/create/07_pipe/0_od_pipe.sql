@@ -24,7 +24,7 @@ ALTER TABLE distribution.od_pipe ADD COLUMN id_labelvisible        boolean defau
 ALTER TABLE distribution.od_pipe ADD COLUMN id_labelvisible_schema boolean default null;                         /* label_schema_visible FK */
 ALTER TABLE distribution.od_pipe ADD COLUMN labelremark            varchar(150) default '';                      /* labelemark              */
 ALTER TABLE distribution.od_pipe ADD COLUMN labelremark_schema     varchar(150) default '';                      /* labelremark_schema      */
-ALTER TABLE distribution.od_pipe ADD COLUMN year                   smallint CHECK (year > 1800 AND year < 2100); /* year                    */
+ALTER TABLE distribution.od_pipe ADD COLUMN year                   smallint CHECK ((year > 1800 AND year < 2100) or year is null); /* year  */
 ALTER TABLE distribution.od_pipe ADD COLUMN tunnel_or_bridge       boolean default false;                        /* tunnel_or_bridge        */
 ALTER TABLE distribution.od_pipe ADD COLUMN pressure_nominal       smallint default 16;                          /* pressure_nominale       */
 ALTER TABLE distribution.od_pipe ADD COLUMN folder                 varchar(20) default '';                       /* folder                  */

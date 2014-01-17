@@ -24,10 +24,10 @@
     <mapcanvas>
         <units>meters</units>
         <extent>
-            <xmin>554275.22701680404134095</xmin>
-            <ymin>147124.21816076751565561</ymin>
-            <xmax>554684.06444663321599364</xmax>
-            <ymax>147417.37067406059941277</ymax>
+            <xmin>552744.15403548756148666</xmin>
+            <ymin>147161.05754830467049032</ymin>
+            <xmax>552986.64916891825851053</xmax>
+            <ymax>147334.93609424959868193</ymax>
         </extent>
         <projections>1</projections>
         <destinationsrs>
@@ -44,15 +44,15 @@
         </destinationsrs>
         <layer_coordinate_transform_info/>
     </mapcanvas>
-    <legend updateDrawingOrder="false" activeLayer="printmap20130304110011400">
+    <legend updateDrawingOrder="false" activeLayer="od_meter_subscriber20131211104942391">
         <legendgroup open="true" checked="Qt::PartiallyChecked" name="Réseau">
-            <legendgroup open="true" checked="Qt::Checked" name="ouvrages">
-                <legendlayer drawingOrder="0" open="false" checked="Qt::Checked" name="ouvrage" showFeatureCount="0">
+            <legendgroup open="true" checked="Qt::PartiallyChecked" name="ouvrages">
+                <legendlayer drawingOrder="0" open="false" checked="Qt::Unchecked" name="ouvrage" showFeatureCount="0">
                     <filegroup open="false" hidden="false">
-                        <legendlayerfile isInOverview="0" layerid="installation20130304110004938" visible="1"/>
+                        <legendlayerfile isInOverview="0" layerid="installation20130304110004938" visible="0"/>
                     </filegroup>
                 </legendlayer>
-                <legendgroup open="true" checked="Qt::Checked" name="détail">
+                <legendgroup open="false" checked="Qt::Checked" name="détail">
                     <legendlayer drawingOrder="1" open="false" checked="Qt::Checked" name="ouvrage - réservoirs" showFeatureCount="0">
                         <filegroup open="false" hidden="false">
                             <legendlayerfile isInOverview="0" layerid="installation_tank20130304110005008" visible="1"/>
@@ -145,8 +145,13 @@
                         <legendlayerfile isInOverview="0" layerid="node20130304110005126" visible="1"/>
                     </filegroup>
                 </legendlayer>
+                <legendlayer drawingOrder="-1" open="false" checked="Qt::Unchecked" name="noeuds - tous - controle" showFeatureCount="0">
+                    <filegroup open="false" hidden="false">
+                        <legendlayerfile isInOverview="0" layerid="od_node20140116161508743" visible="0"/>
+                    </filegroup>
+                </legendlayer>
             </legendgroup>
-            <legendgroup open="true" checked="Qt::Checked" name="Conduites">
+            <legendgroup open="true" checked="Qt::PartiallyChecked" name="Conduites">
                 <legendlayer drawingOrder="18" open="false" checked="Qt::Checked" name="conduites actives" showFeatureCount="0">
                     <filegroup open="false" hidden="false">
                         <legendlayerfile isInOverview="0" layerid="conduites_copy20130709141244955" visible="1"/>
@@ -157,9 +162,9 @@
                         <legendlayerfile isInOverview="0" layerid="conduites_actives_copy_copy20130822080032346" visible="1"/>
                     </filegroup>
                 </legendlayer>
-                <legendlayer drawingOrder="20" open="false" checked="Qt::Checked" name="conduites inactives" showFeatureCount="0">
+                <legendlayer drawingOrder="20" open="false" checked="Qt::Unchecked" name="conduites inactives" showFeatureCount="0">
                     <filegroup open="false" hidden="false">
-                        <legendlayerfile isInOverview="0" layerid="conduites_actives_copy20130822080028511" visible="1"/>
+                        <legendlayerfile isInOverview="0" layerid="conduites_actives_copy20130822080028511" visible="0"/>
                     </filegroup>
                 </legendlayer>
             </legendgroup>
@@ -193,15 +198,15 @@
                 </filegroup>
             </legendlayer>
         </legendgroup>
-        <legendgroup open="false" checked="Qt::Unchecked" name="Côtes">
-            <legendlayer drawingOrder="26" open="false" checked="Qt::Unchecked" name="côtes distance" showFeatureCount="0">
+        <legendgroup open="true" checked="Qt::PartiallyChecked" name="Côtes">
+            <legendlayer drawingOrder="26" open="false" checked="Qt::Checked" name="côtes distance" showFeatureCount="0">
                 <filegroup open="false" hidden="false">
-                    <legendlayerfile isInOverview="0" layerid="dimension20130807094904783" visible="0"/>
+                    <legendlayerfile isInOverview="0" layerid="dimension20130807094904783" visible="1"/>
                 </filegroup>
             </legendlayer>
-            <legendlayer drawingOrder="27" open="false" checked="Qt::Unchecked" name="côtes orientation" showFeatureCount="0">
+            <legendlayer drawingOrder="27" open="false" checked="Qt::Checked" name="côtes orientation" showFeatureCount="0">
                 <filegroup open="false" hidden="false">
-                    <legendlayerfile isInOverview="0" layerid="od_dimension_orientation20131202111155806" visible="0"/>
+                    <legendlayerfile isInOverview="0" layerid="od_dimension_orientation20131202111155806" visible="1"/>
                 </filegroup>
             </legendlayer>
             <legendlayer drawingOrder="28" open="false" checked="Qt::Unchecked" name="points de construction" showFeatureCount="0">
@@ -220,7 +225,7 @@
                 </filegroup>
             </legendlayer>
         </legendgroup>
-        <legendgroup open="true" checked="Qt::PartiallyChecked" name="Zones">
+        <legendgroup open="false" checked="Qt::Unchecked" name="Zones">
             <legendlayer drawingOrder="31" open="false" checked="Qt::Unchecked" name="communes" showFeatureCount="0">
                 <filegroup open="false" hidden="false">
                     <legendlayerfile isInOverview="0" layerid="district20130304110004764" visible="0"/>
@@ -231,9 +236,9 @@
                     <legendlayerfile isInOverview="0" layerid="pressurezone20130417133612105" visible="0"/>
                 </filegroup>
             </legendlayer>
-            <legendlayer drawingOrder="33" open="false" checked="Qt::Checked" name="folios" showFeatureCount="0">
+            <legendlayer drawingOrder="33" open="false" checked="Qt::Unchecked" name="folios" showFeatureCount="0">
                 <filegroup open="false" hidden="false">
-                    <legendlayerfile isInOverview="0" layerid="printmap20130304110011400" visible="1"/>
+                    <legendlayerfile isInOverview="0" layerid="printmap20130304110011400" visible="0"/>
                 </filegroup>
             </legendlayer>
             <legendlayer drawingOrder="34" open="false" checked="Qt::Unchecked" name="zones de protections" showFeatureCount="0">
@@ -357,8 +362,8 @@
                     <legendlayerfile isInOverview="0" layerid="vl_precision20130304110011372" visible="0"/>
                 </filegroup>
             </legendlayer>
-            <legendlayer drawingOrder="57" open="true" checked="Qt::Unchecked" name="Précision altimétrique" showFeatureCount="0">
-                <filegroup open="true" hidden="false">
+            <legendlayer drawingOrder="57" open="false" checked="Qt::Unchecked" name="Précision altimétrique" showFeatureCount="0">
+                <filegroup open="false" hidden="false">
                     <legendlayerfile isInOverview="0" layerid="vl_precisionalti20131211161429510" visible="0"/>
                 </filegroup>
             </legendlayer>
@@ -367,8 +372,8 @@
                     <legendlayerfile isInOverview="0" layerid="vl_remote20130304110004987" visible="0"/>
                 </filegroup>
             </legendlayer>
-            <legendlayer drawingOrder="59" open="true" checked="Qt::Unchecked" name="Type d'eau" showFeatureCount="0">
-                <filegroup open="true" hidden="false">
+            <legendlayer drawingOrder="59" open="false" checked="Qt::Unchecked" name="Type d'eau" showFeatureCount="0">
+                <filegroup open="false" hidden="false">
                     <legendlayerfile isInOverview="0" layerid="vl_watertype20131217141603877" visible="0"/>
                 </filegroup>
             </legendlayer>
@@ -393,7 +398,7 @@
                 </filegroup>
             </legendlayer>
         </legendgroup>
-        <legendgroup open="true" checked="Qt::PartiallyChecked" name="enquetes">
+        <legendgroup open="false" checked="Qt::PartiallyChecked" name="enquetes">
             <legendlayer drawingOrder="64" open="false" checked="Qt::Unchecked" name="camac" showFeatureCount="0">
                 <filegroup open="false" hidden="false">
                     <legendlayerfile isInOverview="0" layerid="camac20140113144941208" visible="0"/>
@@ -574,7 +579,7 @@
                     <BackgroundColor alpha="255" red="255" blue="255" green="255"/>
                 </ComposerItem>
             </ComposerLabel>
-            <ComposerMap mapRotation="0" keepLayerSet="false" overviewFrameMap="-1" id="0" previewMode="Render" drawCanvasItems="true">
+            <ComposerMap mapRotation="0" keepLayerSet="true" overviewFrameMap="-1" id="0" previewMode="Render" drawCanvasItems="true">
                 <overviewFrame overviewBlendMode="0" overviewFrameMap="-1" overviewCentered="false" overviewInverted="false">
                     <symbol alpha="0.568627" type="fill" name="">
                         <layer pass="0" class="SimpleFill" locked="0">
@@ -589,8 +594,43 @@
                         </layer>
                     </symbol>
                 </overviewFrame>
-                <Extent ymin="145378.57302560046082363" xmin="555539.58216474729124457" ymax="145545.23977576970355585" xmax="555789.58216500224079937"/>
-                <LayerSet/>
+                <Extent ymin="145378.57302560046082363" xmin="555539.58216474729124457" ymax="145545.23977577043115161" xmax="555789.58216500224079937"/>
+                <LayerSet>
+                    <Layer>installation_tank20130304110005008</Layer>
+                    <Layer>installation_source20130820110331647</Layer>
+                    <Layer>installation_pump20130816140237750</Layer>
+                    <Layer>installation_treatment20130816113039913</Layer>
+                    <Layer>installation_pressurecontrol20131107105006792</Layer>
+                    <Layer>installation_valvechamber20131107105006707</Layer>
+                    <Layer>hydrant20130304110004848</Layer>
+                    <Layer>valve20130304110011497</Layer>
+                    <Layer>vannes_copy20130924083714343</Layer>
+                    <Layer>od_meter20131120073630165</Layer>
+                    <Layer>od_wateringoutput20131127080906318</Layer>
+                    <Layer>od_subscriber_reference20131206105928067</Layer>
+                    <Layer>subscriber20130304110011459</Layer>
+                    <Layer>node20130304110005126</Layer>
+                    <Layer>conduites_copy20130709141244955</Layer>
+                    <Layer>conduites_actives_copy_copy20130822080032346</Layer>
+                    <Layer>od_annotationline20131203095020365</Layer>
+                    <Layer>od_annotationpoint20131203095020392</Layer>
+                    <Layer>dimension20130807094904783</Layer>
+                    <Layer>od_dimension_orientation20131202111155806</Layer>
+                    <Layer>ligne20140113144941233</Layer>
+                    <Layer>polygone20140113144941251</Layer>
+                    <Layer>cs_surfacecs20130514143830750</Layer>
+                    <Layer>cs_batiment20130514143721709</Layer>
+                    <Layer>od_batiment_souterrain20130514143946785</Layer>
+                    <Layer>od_element_lineaire20130514144047075</Layer>
+                    <Layer>no_posnomlocallieudit20130514143906869</Layer>
+                    <Layer>cs_posnumero_de_batiment20130514143756039</Layer>
+                    <Layer>bf_posimmeuble20130514143633121</Layer>
+                    <Layer>bf_bien_fonds20130514143508556</Layer>
+                    <Layer>ad_posnumero_maison20130514143346530</Layer>
+                    <Layer>axe_rue20130514143437774</Layer>
+                    <Layer>pf_pfp20130514144226845</Layer>
+                    <Layer>bf_point_limite20130514143552315</Layer>
+                </LayerSet>
                 <Grid gridStyle="0" crossLength="3" gridFramePenThickness="0.5" intervalX="0" offsetX="0" intervalY="0" offsetY="0" gridFrameStyle="0" gridFrameWidth="4" gridBlendMode="0" show="0">
                     <framePenColor alpha="255" red="0" blue="0" green="0"/>
                     <frameFillColor1 alpha="255" red="255" blue="255" green="255"/>
@@ -831,7 +871,7 @@
             </ComposerMap>
         </Composition>
     </Composer>
-    <projectlayers layercount="83">
+    <projectlayers layercount="84">
         <maplayer minimumScale="0" maximumScale="1e+08" simplifyDrawingHints="1" minLabelScale="0" maxLabelScale="1e+08" simplifyDrawingTol="1" geometry="Line" type="vector" hasScaleBasedVisibilityFlag="0" simplifyLocal="1" scaleBasedLabelVisibilityFlag="0">
             <id>IntersectIt_Lines20130618102142813</id>
             <datasource>LineString?crs=EPSG:21781&amp;field=id:string&amp;field=type:string&amp;field=x:double&amp;field=y:double&amp;field=observation:double&amp;field=precision:double&amp;index=yes</datasource>
@@ -2507,6 +2547,7 @@
                 <property key="labeling/centroidWhole" value="false"/>
                 <property key="labeling/dataDefined/AlwaysShow" value="1~~1~~CASE WHEN &quot;id_labelvisible&quot; = 't' THEN 1 ELSE 0 END~~"/>
                 <property key="labeling/dataDefined/Show" value="1~~1~~CASE WHEN &quot;id_labelvisible&quot; = 'f' THEN 0 ELSE 1 END~~"/>
+                <property key="labeling/dataDefined/Size" value="1~~1~~CASE&#xa;WHEN _schema_visible = 't' THEN 9&#xa;ELSE 7&#xa;END~~"/>
                 <property key="labeling/decimals" value="0"/>
                 <property key="labeling/displayAll" value="false"/>
                 <property key="labeling/dist" value="0.5"/>
@@ -7626,6 +7667,217 @@
                 <actionsetting action="qgis.utils.plugins['postgres91plusauditor'].audit('od_meter_subscriber20131211104942391',[% $id %])" capture="0" type="1" name="History audit"/>
             </attributeactions>
         </maplayer>
+        <maplayer minimumScale="-4.65661e-10" maximumScale="1e+08" simplifyDrawingHints="0" minLabelScale="0" maxLabelScale="1e+08" simplifyDrawingTol="3.6" geometry="Point" type="vector" hasScaleBasedVisibilityFlag="0" simplifyLocal="0" scaleBasedLabelVisibilityFlag="0">
+            <id>od_node20140116161508743</id>
+            <datasource>dbname='sige' host=172.24.171.203 port=5432 user='sige' sslmode=disable key='id' estimatedmetadata=true srid=21781 type=POINT table="distribution"."od_node" (geometry) sql=</datasource>
+            <title></title>
+            <abstract></abstract>
+            <keywordList>
+                <value></value>
+            </keywordList>
+            <layername>noeuds - tous - controle</layername>
+            <srs>
+                <spatialrefsys>
+                    <proj4>+proj=somerc +lat_0=46.95240555555556 +lon_0=7.439583333333333 +k_0=1 +x_0=600000 +y_0=200000 +ellps=bessel +towgs84=674.4,15.1,405.3,0,0,0,0 +units=m +no_defs</proj4>
+                    <srsid>1919</srsid>
+                    <srid>21781</srid>
+                    <authid>EPSG:21781</authid>
+                    <description>CH1903 / LV03</description>
+                    <projectionacronym>somerc</projectionacronym>
+                    <ellipsoidacronym>bessel</ellipsoidacronym>
+                    <geographicflag>false</geographicflag>
+                </spatialrefsys>
+            </srs>
+            <provider encoding="System">postgres</provider>
+            <previewExpression></previewExpression>
+            <vectorjoins/>
+            <renderer-v2 symbollevels="0" type="singleSymbol">
+                <symbols>
+                    <symbol alpha="1" type="marker" name="0">
+                        <layer pass="0" class="SimpleMarker" locked="0">
+                            <prop k="angle" v="0"/>
+                            <prop k="color" v="100,143,110,255"/>
+                            <prop k="color_border" v="0,0,0,255"/>
+                            <prop k="horizontal_anchor_point" v="1"/>
+                            <prop k="name" v="circle"/>
+                            <prop k="offset" v="0,0"/>
+                            <prop k="offset_unit" v="MM"/>
+                            <prop k="outline_style" v="solid"/>
+                            <prop k="outline_width" v="0"/>
+                            <prop k="outline_width_unit" v="MM"/>
+                            <prop k="scale_method" v="area"/>
+                            <prop k="size" v="2"/>
+                            <prop k="size_unit" v="MM"/>
+                            <prop k="vertical_anchor_point" v="1"/>
+                        </layer>
+                    </symbol>
+                </symbols>
+                <rotation field=""/>
+                <sizescale field="" scalemethod="area"/>
+            </renderer-v2>
+            <customproperties>
+                <property key="labeling" value="pal"/>
+                <property key="labeling/addDirectionSymbol" value="false"/>
+                <property key="labeling/angleOffset" value="0"/>
+                <property key="labeling/blendMode" value="0"/>
+                <property key="labeling/bufferBlendMode" value="0"/>
+                <property key="labeling/bufferColorA" value="255"/>
+                <property key="labeling/bufferColorB" value="255"/>
+                <property key="labeling/bufferColorG" value="255"/>
+                <property key="labeling/bufferColorR" value="255"/>
+                <property key="labeling/bufferDraw" value="false"/>
+                <property key="labeling/bufferJoinStyle" value="64"/>
+                <property key="labeling/bufferNoFill" value="false"/>
+                <property key="labeling/bufferSize" value="1"/>
+                <property key="labeling/bufferSizeInMapUnits" value="false"/>
+                <property key="labeling/bufferTransp" value="0"/>
+                <property key="labeling/centroidWhole" value="false"/>
+                <property key="labeling/decimals" value="3"/>
+                <property key="labeling/displayAll" value="false"/>
+                <property key="labeling/dist" value="0"/>
+                <property key="labeling/distInMapUnits" value="false"/>
+                <property key="labeling/enabled" value="true"/>
+                <property key="labeling/fieldName" value="id"/>
+                <property key="labeling/fontBold" value="false"/>
+                <property key="labeling/fontCapitals" value="0"/>
+                <property key="labeling/fontFamily" value="Ubuntu"/>
+                <property key="labeling/fontItalic" value="false"/>
+                <property key="labeling/fontLetterSpacing" value="0"/>
+                <property key="labeling/fontLimitPixelSize" value="false"/>
+                <property key="labeling/fontMaxPixelSize" value="10000"/>
+                <property key="labeling/fontMinPixelSize" value="3"/>
+                <property key="labeling/fontSize" value="11"/>
+                <property key="labeling/fontSizeInMapUnits" value="false"/>
+                <property key="labeling/fontStrikeout" value="false"/>
+                <property key="labeling/fontUnderline" value="false"/>
+                <property key="labeling/fontWeight" value="50"/>
+                <property key="labeling/fontWordSpacing" value="0"/>
+                <property key="labeling/formatNumbers" value="false"/>
+                <property key="labeling/isExpression" value="false"/>
+                <property key="labeling/labelOffsetInMapUnits" value="true"/>
+                <property key="labeling/labelPerPart" value="false"/>
+                <property key="labeling/leftDirectionSymbol" value="&lt;"/>
+                <property key="labeling/limitNumLabels" value="false"/>
+                <property key="labeling/maxCurvedCharAngleIn" value="20"/>
+                <property key="labeling/maxCurvedCharAngleOut" value="-20"/>
+                <property key="labeling/maxNumLabels" value="2000"/>
+                <property key="labeling/mergeLines" value="false"/>
+                <property key="labeling/minFeatureSize" value="0"/>
+                <property key="labeling/multilineAlign" value="0"/>
+                <property key="labeling/multilineHeight" value="1"/>
+                <property key="labeling/namedStyle" value="Bold Italic"/>
+                <property key="labeling/obstacle" value="true"/>
+                <property key="labeling/placeDirectionSymbol" value="0"/>
+                <property key="labeling/placement" value="0"/>
+                <property key="labeling/placementFlags" value="0"/>
+                <property key="labeling/plussign" value="false"/>
+                <property key="labeling/preserveRotation" value="true"/>
+                <property key="labeling/previewBkgrdColor" value="#ffffff"/>
+                <property key="labeling/priority" value="5"/>
+                <property key="labeling/quadOffset" value="4"/>
+                <property key="labeling/reverseDirectionSymbol" value="false"/>
+                <property key="labeling/rightDirectionSymbol" value=">"/>
+                <property key="labeling/scaleMax" value="10000000"/>
+                <property key="labeling/scaleMin" value="1"/>
+                <property key="labeling/scaleVisibility" value="false"/>
+                <property key="labeling/shadowBlendMode" value="6"/>
+                <property key="labeling/shadowColorB" value="0"/>
+                <property key="labeling/shadowColorG" value="0"/>
+                <property key="labeling/shadowColorR" value="0"/>
+                <property key="labeling/shadowDraw" value="false"/>
+                <property key="labeling/shadowOffsetAngle" value="135"/>
+                <property key="labeling/shadowOffsetDist" value="1"/>
+                <property key="labeling/shadowOffsetGlobal" value="true"/>
+                <property key="labeling/shadowOffsetUnits" value="1"/>
+                <property key="labeling/shadowRadius" value="1.5"/>
+                <property key="labeling/shadowRadiusAlphaOnly" value="false"/>
+                <property key="labeling/shadowRadiusUnits" value="1"/>
+                <property key="labeling/shadowScale" value="100"/>
+                <property key="labeling/shadowTransparency" value="30"/>
+                <property key="labeling/shadowUnder" value="0"/>
+                <property key="labeling/shapeBlendMode" value="0"/>
+                <property key="labeling/shapeBorderColorA" value="255"/>
+                <property key="labeling/shapeBorderColorB" value="128"/>
+                <property key="labeling/shapeBorderColorG" value="128"/>
+                <property key="labeling/shapeBorderColorR" value="128"/>
+                <property key="labeling/shapeBorderWidth" value="0"/>
+                <property key="labeling/shapeBorderWidthUnits" value="1"/>
+                <property key="labeling/shapeDraw" value="false"/>
+                <property key="labeling/shapeFillColorA" value="255"/>
+                <property key="labeling/shapeFillColorB" value="255"/>
+                <property key="labeling/shapeFillColorG" value="255"/>
+                <property key="labeling/shapeFillColorR" value="255"/>
+                <property key="labeling/shapeJoinStyle" value="64"/>
+                <property key="labeling/shapeOffsetUnits" value="1"/>
+                <property key="labeling/shapeOffsetX" value="0"/>
+                <property key="labeling/shapeOffsetY" value="0"/>
+                <property key="labeling/shapeRadiiUnits" value="1"/>
+                <property key="labeling/shapeRadiiX" value="0"/>
+                <property key="labeling/shapeRadiiY" value="0"/>
+                <property key="labeling/shapeRotation" value="0"/>
+                <property key="labeling/shapeRotationType" value="0"/>
+                <property key="labeling/shapeSVGFile" value=""/>
+                <property key="labeling/shapeSizeType" value="0"/>
+                <property key="labeling/shapeSizeUnits" value="1"/>
+                <property key="labeling/shapeSizeX" value="0"/>
+                <property key="labeling/shapeSizeY" value="0"/>
+                <property key="labeling/shapeTransparency" value="0"/>
+                <property key="labeling/shapeType" value="0"/>
+                <property key="labeling/textColorA" value="255"/>
+                <property key="labeling/textColorB" value="0"/>
+                <property key="labeling/textColorG" value="0"/>
+                <property key="labeling/textColorR" value="0"/>
+                <property key="labeling/textTransp" value="0"/>
+                <property key="labeling/upsidedownLabels" value="0"/>
+                <property key="labeling/wrapChar" value=""/>
+                <property key="labeling/xOffset" value="0"/>
+                <property key="labeling/yOffset" value="0"/>
+            </customproperties>
+            <blendMode>0</blendMode>
+            <featureBlendMode>0</featureBlendMode>
+            <layerTransparency>0</layerTransparency>
+            <displayfield>id</displayfield>
+            <label>0</label>
+            <labelattributes>
+                <label fieldname="" text="Label"/>
+                <family fieldname="" name="Ubuntu"/>
+                <size fieldname="" units="pt" value="12"/>
+                <bold fieldname="" on="0"/>
+                <italic fieldname="" on="0"/>
+                <underline fieldname="" on="0"/>
+                <strikeout fieldname="" on="0"/>
+                <color fieldname="" red="0" blue="0" green="0"/>
+                <x fieldname=""/>
+                <y fieldname=""/>
+                <offset x="0" y="0" units="pt" yfieldname="" xfieldname=""/>
+                <angle fieldname="" value="0" auto="0"/>
+                <alignment fieldname="" value="center"/>
+                <buffercolor fieldname="" red="255" blue="255" green="255"/>
+                <buffersize fieldname="" units="pt" value="1"/>
+                <bufferenabled fieldname="" on=""/>
+                <multilineenabled fieldname="" on=""/>
+                <selectedonly on=""/>
+            </labelattributes>
+            <edittypes>
+                <edittype labelontop="0" editable="1" type="0" name="_orientation"/>
+                <edittype labelontop="0" editable="1" type="0" name="_schema_visible"/>
+                <edittype labelontop="0" editable="1" type="0" name="_status_active"/>
+                <edittype labelontop="0" editable="1" type="0" name="_type"/>
+                <edittype labelontop="0" editable="1" type="0" name="_under_object"/>
+                <edittype labelontop="0" editable="1" type="0" name="altitude_dtm"/>
+                <edittype labelontop="0" editable="1" type="0" name="id"/>
+            </edittypes>
+            <editform></editform>
+            <editforminit></editforminit>
+            <featformsuppress>0</featformsuppress>
+            <annotationform></annotationform>
+            <editorlayout>generatedlayout</editorlayout>
+            <excludeAttributesWMS/>
+            <excludeAttributesWFS/>
+            <attributeactions>
+                <actionsetting action="qgis.utils.plugins['postgres91plusauditor'].audit('od_node20140116161508743',[% $id %])" capture="0" type="1" name="History audit"/>
+            </attributeactions>
+        </maplayer>
         <maplayer minimumScale="0" maximumScale="3000" simplifyDrawingHints="1" minLabelScale="0" maxLabelScale="1e+08" simplifyDrawingTol="1" geometry="Point" type="vector" hasScaleBasedVisibilityFlag="1" simplifyLocal="1" scaleBasedLabelVisibilityFlag="0">
             <id>od_subscriber_reference20131206105928067</id>
             <datasource>dbname='sige' host=172.24.171.203 port=5432 user='sige' sslmode=disable key='id' estimatedmetadata=true srid=21781 type=POINT table="distribution"."od_subscriber_reference" (geometry) sql=</datasource>
@@ -11796,6 +12048,7 @@
             <LayerSnappingList type="QStringList">
                 <value>IntersectIt_Lines20130618102142813</value>
                 <value>IntersectIt_Points20130618102143276</value>
+                <value>camac20140113144941208</value>
                 <value>conduites_actives_copy20130822080028511</value>
                 <value>conduites_actives_copy_copy20130822080032346</value>
                 <value>conduites_copy20130709141244955</value>
@@ -11811,15 +12064,18 @@
                 <value>installation_treatment20130816113039913</value>
                 <value>installation_valvechamber20131107105006707</value>
                 <value>leak20130821111917060</value>
+                <value>ligne20140113144941233</value>
                 <value>node20130304110005126</value>
                 <value>od_annotationline20131203095020365</value>
                 <value>od_annotationpoint20131203095020392</value>
                 <value>od_dimension_orientation20131202111155806</value>
                 <value>od_meter20131120073630165</value>
+                <value>od_meter_subscriber20131211104942391</value>
                 <value>od_subscriber_reference20131206105928067</value>
                 <value>od_wateringoutput20131127080906318</value>
                 <value>pipe_child_parent20130417092030507</value>
                 <value>pipe_schema20130304110005279</value>
+                <value>polygone20140113144941251</value>
                 <value>pressurezone20130417133612105</value>
                 <value>printmap20130304110011400</value>
                 <value>protectionzone20130304110011418</value>
@@ -11854,18 +12110,22 @@
                 <value>disabled</value>
                 <value>disabled</value>
                 <value>disabled</value>
-                <value>enabled</value>
-                <value>disabled</value>
-                <value>disabled</value>
-                <value>disabled</value>
-                <value>disabled</value>
-                <value>disabled</value>
-                <value>disabled</value>
                 <value>disabled</value>
                 <value>enabled</value>
                 <value>disabled</value>
                 <value>disabled</value>
                 <value>disabled</value>
+                <value>disabled</value>
+                <value>disabled</value>
+                <value>disabled</value>
+                <value>disabled</value>
+                <value>disabled</value>
+                <value>enabled</value>
+                <value>disabled</value>
+                <value>disabled</value>
+                <value>disabled</value>
+                <value>disabled</value>
+                <value>enabled</value>
                 <value>disabled</value>
                 <value>disabled</value>
                 <value>disabled</value>
@@ -11946,6 +12206,10 @@
                 <value>1</value>
                 <value>1</value>
                 <value>1</value>
+                <value>1</value>
+                <value>1</value>
+                <value>1</value>
+                <value>1</value>
             </LayerSnappingToleranceUnitList>
             <LayerSnapToList type="QStringList">
                 <value>to_vertex_and_segment</value>
@@ -11955,12 +12219,9 @@
                 <value>to_vertex_and_segment</value>
                 <value>to_vertex_and_segment</value>
                 <value>to_vertex_and_segment</value>
+                <value>to_vertex_and_segment</value>
                 <value>to_vertex</value>
                 <value>to_vertex</value>
-                <value>to_vertex</value>
-                <value>to_vertex_and_segment</value>
-                <value>to_vertex_and_segment</value>
-                <value>to_vertex_and_segment</value>
                 <value>to_vertex</value>
                 <value>to_vertex_and_segment</value>
                 <value>to_vertex_and_segment</value>
@@ -11970,10 +12231,17 @@
                 <value>to_vertex_and_segment</value>
                 <value>to_vertex_and_segment</value>
                 <value>to_vertex_and_segment</value>
+                <value>to_vertex</value>
+                <value>to_vertex_and_segment</value>
+                <value>to_vertex_and_segment</value>
+                <value>to_vertex_and_segment</value>
+                <value>to_vertex_and_segment</value>
+                <value>to_vertex_and_segment</value>
                 <value>to_vertex_and_segment</value>
                 <value>to_vertex_and_segment</value>
                 <value>to_vertex</value>
                 <value>to_vertex</value>
+                <value>to_vertex_and_segment</value>
                 <value>to_vertex</value>
                 <value>to_vertex</value>
                 <value>to_vertex</value>
@@ -12004,28 +12272,32 @@
                 <value>1.000000</value>
                 <value>6.000000</value>
                 <value>6.000000</value>
-                <value>7.000000</value>
-                <value>6.000000</value>
-                <value>6.000000</value>
-                <value>0.000000</value>
-                <value>0.000000</value>
-                <value>6.000000</value>
-                <value>6.000000</value>
-                <value>6.000000</value>
-                <value>6.000000</value>
-                <value>0.000000</value>
-                <value>6.000000</value>
-                <value>6.000000</value>
                 <value>6.000000</value>
                 <value>7.000000</value>
                 <value>6.000000</value>
                 <value>6.000000</value>
+                <value>0.000000</value>
+                <value>0.000000</value>
+                <value>6.000000</value>
+                <value>6.000000</value>
+                <value>6.000000</value>
+                <value>6.000000</value>
+                <value>0.000000</value>
+                <value>6.000000</value>
+                <value>6.000000</value>
+                <value>6.000000</value>
+                <value>6.000000</value>
+                <value>7.000000</value>
+                <value>6.000000</value>
+                <value>6.000000</value>
+                <value>6.000000</value>
                 <value>6.000000</value>
                 <value>6.000000</value>
                 <value>6.000000</value>
                 <value>6.000000</value>
                 <value>6.000000</value>
                 <value>0.000000</value>
+                <value>6.000000</value>
                 <value>12.000000</value>
                 <value>0.000000</value>
                 <value>0.000000</value>
@@ -12108,7 +12380,6 @@
                 </Combination-a9bb4df936aaddd643f7730de678596f>
                 <Combination-6c9882bbac1c7093bd25041881277658>
                     <VisibleLayers type="QStringList">
-                        <value>od_subscriber_reference20131206105928067</value>
                         <value>installation_tank20130304110005008</value>
                         <value>installation_source20130820110331647</value>
                         <value>installation_pump20130816140237750</value>
@@ -12116,11 +12387,12 @@
                         <value>installation_pressurecontrol20131107105006792</value>
                         <value>installation_valvechamber20131107105006707</value>
                         <value>hydrant20130304110004848</value>
-                        <value>subscriber20130304110011459</value>
                         <value>valve20130304110011497</value>
                         <value>vannes_copy20130924083714343</value>
                         <value>od_meter20131120073630165</value>
                         <value>od_wateringoutput20131127080906318</value>
+                        <value>od_subscriber_reference20131206105928067</value>
+                        <value>subscriber20130304110011459</value>
                         <value>node20130304110005126</value>
                         <value>conduites_copy20130709141244955</value>
                         <value>conduites_actives_copy_copy20130822080032346</value>
@@ -12128,6 +12400,8 @@
                         <value>od_annotationpoint20131203095020392</value>
                         <value>dimension20130807094904783</value>
                         <value>od_dimension_orientation20131202111155806</value>
+                        <value>ligne20140113144941233</value>
+                        <value>polygone20140113144941251</value>
                         <value>cs_surfacecs20130514143830750</value>
                         <value>cs_batiment20130514143721709</value>
                         <value>od_batiment_souterrain20130514143946785</value>
@@ -12143,11 +12417,12 @@
                     </VisibleLayers>
                     <ExpandedGroups type="QStringList">
                         <value>Réseau</value>
-                        <value>Conduites</value>
                         <value>ouvrages</value>
+                        <value>Conduites</value>
                         <value>Annotations</value>
                         <value>Côtes</value>
                         <value>CN</value>
+                        <value>enquetes</value>
                     </ExpandedGroups>
                     <ExpandedLayers type="QStringList">
                         <value>vl_subscriber_type20130304110011480</value>
