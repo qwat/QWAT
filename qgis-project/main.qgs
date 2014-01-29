@@ -24,10 +24,10 @@
     <mapcanvas>
         <units>meters</units>
         <extent>
-            <xmin>560294.26842946326360106</xmin>
-            <ymin>141158.76856313031748869</ymin>
-            <xmax>561123.37890546349808574</xmax>
-            <ymax>141746.02883935291902162</ymax>
+            <xmin>554838.86420555936638266</xmin>
+            <ymin>136636.69188384537119418</ymin>
+            <xmax>554942.50301505939569324</xmax>
+            <ymax>136710.0994183731963858</ymax>
         </extent>
         <projections>1</projections>
         <destinationsrs>
@@ -44,7 +44,7 @@
         </destinationsrs>
         <layer_coordinate_transform_info/>
     </mapcanvas>
-    <legend updateDrawingOrder="false" activeLayer="printmap20130304110011400">
+    <legend updateDrawingOrder="false" activeLayer="od_subscriber_reference20131206105928067">
         <legendgroup open="true" checked="Qt::PartiallyChecked" name="Réseau">
             <legendgroup open="true" checked="Qt::PartiallyChecked" name="ouvrages">
                 <legendlayer drawingOrder="0" open="false" checked="Qt::Unchecked" name="ouvrage" showFeatureCount="0">
@@ -418,7 +418,7 @@
         <legendgroup embedded="1" drawingOrder="68" open="false" checked="Qt::Checked" name="base" project="../../../data/cadastre/riviera/riviera.qgs"/>
         <legendgroup embedded="1" drawingOrder="0" open="false" checked="Qt::Unchecked" name="complément" project="../../../data/cadastre/riviera/riviera.qgs"/>
     </legend>
-    <Composer title="folio" visible="1">
+    <Composer title="folio" visible="0">
         <Composition snapGridTolerance="2" gridVisible="1" printResolution="300" paperWidth="1030" snapGridOffsetX="0" guidesVisible="1" snapGridResolution="10" snapGridOffsetY="0" alignmentSnap="1" snapping="0" numPages="1" paperHeight="914" alignmentSnapTolerance="2" smartGuides="1" printAsRaster="1" generateWorldFile="0">
             <symbol alpha="1" type="fill" name="">
                 <layer pass="0" class="SimpleFill" locked="0">
@@ -456,7 +456,7 @@
                         <prop k="width_border" v="0"/>
                     </layer>
                 </symbol>
-                <ComposerItem width="70" x="225" transparency="0" y="110" height="30" positionMode="0" frame="false" outlineWidth="0" zValue="13" itemRotation="0" lastValidViewScaleFactor="0.845902" uuid="{4566e0a1-ec7a-452e-baf0-a45ed15314ff}" id="" background="true" blendMode="0" positionLock="false">
+                <ComposerItem width="70" x="225" transparency="0" y="110" height="30" positionMode="0" frame="false" outlineWidth="0" zValue="13" itemRotation="0" lastValidViewScaleFactor="0.860109" uuid="{4566e0a1-ec7a-452e-baf0-a45ed15314ff}" id="" background="true" blendMode="0" positionLock="false">
                     <FrameColor alpha="255" red="0" blue="0" green="0"/>
                     <BackgroundColor alpha="255" red="255" blue="255" green="255"/>
                 </ComposerItem>
@@ -513,7 +513,7 @@
                     </Annotation>
                 </Grid>
                 <AtlasMap fixedScale="1" atlasDriven="1" margin="0.10000000000000001"/>
-                <ComposerItem width="40" x="975" transparency="0" y="110" height="29.9999" positionMode="0" frame="true" outlineWidth="0" zValue="11" itemRotation="0" lastValidViewScaleFactor="1.6918" uuid="{b970a2fd-9bd7-4a2a-a787-1664811befc7}" id="" background="true" blendMode="0" positionLock="false">
+                <ComposerItem width="40" x="975" transparency="0" y="110" height="29.9999" positionMode="0" frame="true" outlineWidth="0" zValue="11" itemRotation="0" lastValidViewScaleFactor="0.860109" uuid="{b970a2fd-9bd7-4a2a-a787-1664811befc7}" id="" background="true" blendMode="0" positionLock="false">
                     <FrameColor alpha="255" red="0" blue="0" green="0"/>
                     <BackgroundColor alpha="255" red="255" blue="255" green="255"/>
                 </ComposerItem>
@@ -657,7 +657,7 @@
                     </Annotation>
                 </Grid>
                 <AtlasMap fixedScale="1" atlasDriven="1" margin="0.10000000000000001"/>
-                <ComposerItem width="1000" x="15" transparency="0" y="140" height="666.667" positionMode="0" frame="true" outlineWidth="0" zValue="1" itemRotation="0" lastValidViewScaleFactor="1.6918" uuid="{27df2cec-4272-4242-93e2-7d5ffc2bbe05}" id="" background="true" blendMode="0" positionLock="false">
+                <ComposerItem width="1000" x="15" transparency="0" y="140" height="666.667" positionMode="0" frame="true" outlineWidth="0" zValue="1" itemRotation="0" lastValidViewScaleFactor="0.860109" uuid="{27df2cec-4272-4242-93e2-7d5ffc2bbe05}" id="" background="true" blendMode="0" positionLock="false">
                     <FrameColor alpha="255" red="0" blue="0" green="0"/>
                     <BackgroundColor alpha="255" red="255" blue="255" green="255"/>
                 </ComposerItem>
@@ -7937,7 +7937,7 @@
                 <actionsetting action="qgis.utils.plugins['postgres91plusauditor'].audit('od_node20140116161508743',[% $id %])" capture="0" type="1" name="History audit"/>
             </attributeactions>
         </maplayer>
-        <maplayer minimumScale="0" maximumScale="3000" simplifyDrawingHints="1" minLabelScale="0" maxLabelScale="1e+08" simplifyDrawingTol="1" geometry="Point" type="vector" hasScaleBasedVisibilityFlag="1" simplifyLocal="1" scaleBasedLabelVisibilityFlag="0">
+        <maplayer minimumScale="-4.65661e-10" maximumScale="3000" simplifyDrawingHints="0" minLabelScale="0" maxLabelScale="1e+08" simplifyDrawingTol="1" geometry="Point" type="vector" hasScaleBasedVisibilityFlag="1" simplifyLocal="1" scaleBasedLabelVisibilityFlag="0">
             <id>od_subscriber_reference20131206105928067</id>
             <datasource>dbname='sige' host=172.24.171.203 port=5432 user='sige' sslmode=disable key='id' estimatedmetadata=true srid=21781 type=POINT table="distribution"."od_subscriber_reference" (geometry) sql=</datasource>
             <title></title>
@@ -7961,7 +7961,7 @@
             <provider encoding="System">postgres</provider>
             <previewExpression>COALESCE( "id", '&lt;NULL>' )</previewExpression>
             <vectorjoins>
-                <join joinFieldName="id" targetFieldName="id_subscriber" memoryCache="1" joinLayerId="subscriber20130304110011459"/>
+                <join joinFieldName="id" targetFieldName="id_subscriber" memoryCache="0" joinLayerId="subscriber20130304110011459"/>
             </vectorjoins>
             <renderer-v2 symbollevels="0" type="singleSymbol">
                 <symbols>
