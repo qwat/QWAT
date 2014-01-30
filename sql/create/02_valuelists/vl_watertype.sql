@@ -18,4 +18,4 @@ ALTER TABLE distribution.vl_watertype ADD COLUMN code_sire smallint;
 /* VALUES */
 INSERT INTO distribution.vl_watertype (id,value_en,value_fr,code_sire) VALUES (1501, 'raw'      , 'brute'       , 0 );
 INSERT INTO distribution.vl_watertype (id,value_en,value_fr,code_sire) VALUES (1502, 'drinkable', 'potable'     , 1 );
-INSERT INTO distribution.vl_watertype (id,value_en,value_fr,code_sire) VALUES (1503, 'inustrial', 'industrielle', 2 );
+INSERT INTO distribution.vl_watertype (id,value_en,value_fr,code_sire) VALUES (1503, 'industrial', 'industrielle', 2 );
