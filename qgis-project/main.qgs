@@ -24,10 +24,10 @@
     <mapcanvas>
         <units>meters</units>
         <extent>
-            <xmin>554826.03378730732947588</xmin>
-            <ymin>136532.15044328483054414</ymin>
-            <xmax>555033.31140630738809705</xmax>
-            <ymax>136737.87956353038316593</ymax>
+            <xmin>552267.83182908152230084</xmin>
+            <ymin>146890.85885097127174959</ymin>
+            <xmax>552270.37495550815947354</xmax>
+            <ymax>146893.41849120595725253</ymax>
         </extent>
         <projections>1</projections>
         <destinationsrs>
@@ -44,7 +44,7 @@
         </destinationsrs>
         <layer_coordinate_transform_info/>
     </mapcanvas>
-    <legend updateDrawingOrder="false" activeLayer="conduites_actives_copy20130822080028511">
+    <legend updateDrawingOrder="false" activeLayer="conduites_copy20130709141244955">
         <legendgroup open="true" checked="Qt::PartiallyChecked" name="Réseau">
             <legendgroup open="true" checked="Qt::PartiallyChecked" name="ouvrages">
                 <legendlayer drawingOrder="0" open="false" checked="Qt::Unchecked" name="ouvrage" showFeatureCount="0">
@@ -52,7 +52,7 @@
                         <legendlayerfile isInOverview="0" layerid="installation20130304110004938" visible="0"/>
                     </filegroup>
                 </legendlayer>
-                <legendgroup open="true" checked="Qt::Checked" name="détail">
+                <legendgroup open="false" checked="Qt::Checked" name="détail">
                     <legendlayer drawingOrder="1" open="false" checked="Qt::Checked" name="ouvrage - réservoirs" showFeatureCount="0">
                         <filegroup open="false" hidden="false">
                             <legendlayerfile isInOverview="0" layerid="installation_tank20130304110005008" visible="1"/>
@@ -85,7 +85,7 @@
                     </legendlayer>
                 </legendgroup>
             </legendgroup>
-            <legendgroup open="true" checked="Qt::PartiallyChecked" name="Eléments ponctuels">
+            <legendgroup open="false" checked="Qt::PartiallyChecked" name="Eléments ponctuels">
                 <legendlayer drawingOrder="7" open="false" checked="Qt::Checked" name="hydrantes" showFeatureCount="0">
                     <filegroup open="false" hidden="false">
                         <legendlayerfile isInOverview="0" layerid="hydrant20130304110004848" visible="1"/>
@@ -122,7 +122,7 @@
                     </filegroup>
                 </legendlayer>
             </legendgroup>
-            <legendgroup open="true" checked="Qt::Checked" name="Abonnés">
+            <legendgroup open="false" checked="Qt::Checked" name="Abonnés">
                 <legendlayer drawingOrder="14" open="false" checked="Qt::Checked" name="abonnés - renvoi" showFeatureCount="0">
                     <filegroup open="false" hidden="false">
                         <legendlayerfile isInOverview="0" layerid="od_subscriber_reference20131206105928067" visible="1"/>
@@ -134,7 +134,7 @@
                     </filegroup>
                 </legendlayer>
             </legendgroup>
-            <legendgroup open="true" checked="Qt::PartiallyChecked" name="Noeuds">
+            <legendgroup open="false" checked="Qt::PartiallyChecked" name="Noeuds">
                 <legendlayer drawingOrder="16" open="false" checked="Qt::Unchecked" name="compteur abonné" showFeatureCount="0">
                     <filegroup open="false" hidden="false">
                         <legendlayerfile isInOverview="0" layerid="od_meter_subscriber20131211104942391" visible="0"/>
@@ -198,7 +198,7 @@
                 </filegroup>
             </legendlayer>
         </legendgroup>
-        <legendgroup open="false" checked="Qt::PartiallyChecked" name="Côtes">
+        <legendgroup open="true" checked="Qt::PartiallyChecked" name="Côtes">
             <legendlayer drawingOrder="27" open="false" checked="Qt::Checked" name="côtes distance" showFeatureCount="0">
                 <filegroup open="false" hidden="false">
                     <legendlayerfile isInOverview="0" layerid="dimension20130807094904783" visible="1"/>
@@ -225,7 +225,7 @@
                 </filegroup>
             </legendlayer>
         </legendgroup>
-        <legendgroup open="true" checked="Qt::PartiallyChecked" name="Zones">
+        <legendgroup open="false" checked="Qt::Unchecked" name="Zones">
             <legendlayer drawingOrder="32" open="false" checked="Qt::Unchecked" name="communes" showFeatureCount="0">
                 <filegroup open="false" hidden="false">
                     <legendlayerfile isInOverview="0" layerid="district20130304110004764" visible="0"/>
@@ -236,9 +236,9 @@
                     <legendlayerfile isInOverview="0" layerid="pressurezone20130417133612105" visible="0"/>
                 </filegroup>
             </legendlayer>
-            <legendlayer drawingOrder="34" open="false" checked="Qt::Checked" name="folios" showFeatureCount="0">
+            <legendlayer drawingOrder="34" open="false" checked="Qt::Unchecked" name="folios" showFeatureCount="0">
                 <filegroup open="false" hidden="false">
-                    <legendlayerfile isInOverview="0" layerid="printmap20130304110011400" visible="1"/>
+                    <legendlayerfile isInOverview="0" layerid="printmap20130304110011400" visible="0"/>
                 </filegroup>
             </legendlayer>
             <legendlayer drawingOrder="35" open="false" checked="Qt::Unchecked" name="zones de protections" showFeatureCount="0">
@@ -875,7 +875,7 @@
             </ComposerMap>
         </Composition>
     </Composer>
-    <projectlayers layercount="84">
+    <projectlayers layercount="85">
         <maplayer minimumScale="0" maximumScale="1e+08" simplifyDrawingHints="1" minLabelScale="0" maxLabelScale="1e+08" simplifyDrawingTol="1" geometry="Line" simplifyMaxScale="1" type="vector" hasScaleBasedVisibilityFlag="0" simplifyLocal="1" scaleBasedLabelVisibilityFlag="0">
             <id>IntersectIt_Lines20130618102142813</id>
             <datasource>LineString?crs=EPSG:21781&amp;field=id:string&amp;field=type:string&amp;field=x:double&amp;field=y:double&amp;field=observation:double&amp;field=precision:double&amp;index=yes</datasource>
@@ -1035,6 +1035,89 @@
             <editforminit></editforminit>
             <featformsuppress>0</featformsuppress>
             <annotationform>../../../data</annotationform>
+            <editorlayout>generatedlayout</editorlayout>
+            <excludeAttributesWMS/>
+            <excludeAttributesWFS/>
+            <attributeactions/>
+        </maplayer>
+        <maplayer minimumScale="0" maximumScale="1e+08" simplifyDrawingHints="0" minLabelScale="0" maxLabelScale="1e+08" simplifyDrawingTol="3.6" geometry="Point" simplifyMaxScale="1" type="vector" hasScaleBasedVisibilityFlag="0" simplifyLocal="0" scaleBasedLabelVisibilityFlag="0">
+            <id>_cadinput_techical_snap_layer_20140203092715598</id>
+            <datasource>point</datasource>
+            <title></title>
+            <abstract></abstract>
+            <keywordList>
+                <value></value>
+            </keywordList>
+            <layername>(cadinput_techical_snap_layer)</layername>
+            <srs>
+                <spatialrefsys>
+                    <proj4>+proj=somerc +lat_0=46.95240555555556 +lon_0=7.439583333333333 +k_0=1 +x_0=600000 +y_0=200000 +ellps=bessel +towgs84=674.4,15.1,405.3,0,0,0,0 +units=m +no_defs</proj4>
+                    <srsid>1919</srsid>
+                    <srid>21781</srid>
+                    <authid>EPSG:21781</authid>
+                    <description>CH1903 / LV03</description>
+                    <projectionacronym>somerc</projectionacronym>
+                    <ellipsoidacronym>bessel</ellipsoidacronym>
+                    <geographicflag>false</geographicflag>
+                </spatialrefsys>
+            </srs>
+            <provider encoding="System">memory</provider>
+            <previewExpression></previewExpression>
+            <vectorjoins/>
+            <renderer-v2 symbollevels="0" type="singleSymbol">
+                <symbols>
+                    <symbol alpha="1" type="marker" name="0">
+                        <layer pass="0" class="SimpleMarker" locked="0">
+                            <prop k="angle" v="0"/>
+                            <prop k="color" v="67,49,133,255"/>
+                            <prop k="color_border" v="0,0,0,255"/>
+                            <prop k="horizontal_anchor_point" v="1"/>
+                            <prop k="name" v="circle"/>
+                            <prop k="offset" v="0,0"/>
+                            <prop k="offset_unit" v="MM"/>
+                            <prop k="outline_style" v="solid"/>
+                            <prop k="outline_width" v="0"/>
+                            <prop k="outline_width_unit" v="MM"/>
+                            <prop k="scale_method" v="area"/>
+                            <prop k="size" v="2"/>
+                            <prop k="size_unit" v="MM"/>
+                            <prop k="vertical_anchor_point" v="1"/>
+                        </layer>
+                    </symbol>
+                </symbols>
+                <rotation/>
+                <sizescale scalemethod="area"/>
+            </renderer-v2>
+            <customproperties/>
+            <blendMode>0</blendMode>
+            <featureBlendMode>0</featureBlendMode>
+            <layerTransparency>0</layerTransparency>
+            <displayfield></displayfield>
+            <label>0</label>
+            <labelattributes>
+                <label fieldname="" text="Label"/>
+                <family fieldname="" name="Ubuntu"/>
+                <size fieldname="" units="pt" value="12"/>
+                <bold fieldname="" on="0"/>
+                <italic fieldname="" on="0"/>
+                <underline fieldname="" on="0"/>
+                <strikeout fieldname="" on="0"/>
+                <color fieldname="" red="0" blue="0" green="0"/>
+                <x fieldname=""/>
+                <y fieldname=""/>
+                <offset x="0" y="0" units="pt" yfieldname="" xfieldname=""/>
+                <angle fieldname="" value="0" auto="0"/>
+                <alignment fieldname="" value="center"/>
+                <buffercolor fieldname="" red="255" blue="255" green="255"/>
+                <buffersize fieldname="" units="pt" value="1"/>
+                <bufferenabled fieldname="" on=""/>
+                <multilineenabled fieldname="" on=""/>
+                <selectedonly on=""/>
+            </labelattributes>
+            <editform></editform>
+            <editforminit></editforminit>
+            <featformsuppress>0</featformsuppress>
+            <annotationform></annotationform>
             <editorlayout>generatedlayout</editorlayout>
             <excludeAttributesWMS/>
             <excludeAttributesWFS/>
@@ -3152,7 +3235,7 @@
                 <actionsetting action="qgis.utils.plugins['postgres91plusauditor'].showHistory('distributor20130304114719702',[% $id %])" capture="0" type="1" name="History audit"/>
             </attributeactions>
         </maplayer>
-        <maplayer minimumScale="0" maximumScale="1e+08" simplifyDrawingHints="1" minLabelScale="1" maxLabelScale="1e+08" simplifyDrawingTol="1" geometry="Polygon" simplifyMaxScale="1" type="vector" hasScaleBasedVisibilityFlag="0" simplifyLocal="1" scaleBasedLabelVisibilityFlag="0">
+        <maplayer minimumScale="-4.65661e-10" maximumScale="1e+08" simplifyDrawingHints="1" minLabelScale="1" maxLabelScale="1e+08" simplifyDrawingTol="1" geometry="Polygon" simplifyMaxScale="1" type="vector" hasScaleBasedVisibilityFlag="0" simplifyLocal="1" scaleBasedLabelVisibilityFlag="0">
             <id>district20130304110004764</id>
             <datasource>dbname='sige' host=172.24.171.203 port=5432 user='sige' password='db4wat$' sslmode=allow key='id' srid=21781 type=MULTIPOLYGON table="distribution"."od_district" (geometry) sql=</datasource>
             <title></title>
@@ -3174,58 +3257,23 @@
                 </spatialrefsys>
             </srs>
             <provider encoding="ISO-8859-1">postgres</provider>
-            <previewExpression></previewExpression>
+            <previewExpression>COALESCE( "name", '&lt;NULL>' )</previewExpression>
             <vectorjoins/>
-            <renderer-v2 attr="colorcode" symbollevels="0" type="categorizedSymbol">
-                <categories>
-                    <category symbol="0" value="1" label="1"/>
-                    <category symbol="1" value="" label=""/>
-                </categories>
+            <renderer-v2 symbollevels="0" type="singleSymbol">
                 <symbols>
-                    <symbol alpha="0.45098" type="fill" name="0">
+                    <symbol alpha="1" type="fill" name="0">
                         <layer pass="0" class="SimpleFill" locked="0">
                             <prop k="border_width_unit" v="MM"/>
-                            <prop k="color" v="215,25,28,255"/>
+                            <prop k="color" v="178,209,146,255"/>
                             <prop k="color_border" v="0,0,0,255"/>
                             <prop k="offset" v="0,0"/>
                             <prop k="offset_unit" v="MM"/>
-                            <prop k="style" v="solid"/>
-                            <prop k="style_border" v="solid"/>
-                            <prop k="width_border" v="0.26"/>
-                        </layer>
-                    </symbol>
-                    <symbol alpha="0.45098" type="fill" name="1">
-                        <layer pass="0" class="SimpleFill" locked="0">
-                            <prop k="border_width_unit" v="MM"/>
-                            <prop k="color" v="43,131,186,255"/>
-                            <prop k="color_border" v="0,0,0,255"/>
-                            <prop k="offset" v="0,0"/>
-                            <prop k="offset_unit" v="MM"/>
-                            <prop k="style" v="solid"/>
-                            <prop k="style_border" v="solid"/>
-                            <prop k="width_border" v="0.26"/>
+                            <prop k="style" v="no"/>
+                            <prop k="style_border" v="dash"/>
+                            <prop k="width_border" v="0.4"/>
                         </layer>
                     </symbol>
                 </symbols>
-                <source-symbol>
-                    <symbol alpha="0.45098" type="fill" name="0">
-                        <layer pass="0" class="SimpleFill" locked="0">
-                            <prop k="border_width_unit" v="MM"/>
-                            <prop k="color" v="244,141,23,255"/>
-                            <prop k="color_border" v="0,0,0,255"/>
-                            <prop k="offset" v="0,0"/>
-                            <prop k="offset_unit" v="MM"/>
-                            <prop k="style" v="solid"/>
-                            <prop k="style_border" v="solid"/>
-                            <prop k="width_border" v="0.26"/>
-                        </layer>
-                    </symbol>
-                </source-symbol>
-                <colorramp type="colorbrewer" name="[source]">
-                    <prop k="colors" v="5"/>
-                    <prop k="schemeName" v="Spectral"/>
-                </colorramp>
-                <invertedcolorramp value="0"/>
                 <rotation/>
                 <sizescale scalemethod="area"/>
             </renderer-v2>
@@ -3253,10 +3301,10 @@
                 <property key="labeling/distInMapUnits" value="false"/>
                 <property key="labeling/enabled" value="true"/>
                 <property key="labeling/fieldName" value="name"/>
-                <property key="labeling/fontBold" value="false"/>
+                <property key="labeling/fontBold" value="true"/>
                 <property key="labeling/fontCapitals" value="0"/>
                 <property key="labeling/fontFamily" value="Ubuntu"/>
-                <property key="labeling/fontItalic" value="false"/>
+                <property key="labeling/fontItalic" value="true"/>
                 <property key="labeling/fontLetterSpacing" value="0"/>
                 <property key="labeling/fontLimitPixelSize" value="false"/>
                 <property key="labeling/fontMaxPixelSize" value="10000"/>
@@ -3265,7 +3313,7 @@
                 <property key="labeling/fontSizeInMapUnits" value="false"/>
                 <property key="labeling/fontStrikeout" value="false"/>
                 <property key="labeling/fontUnderline" value="false"/>
-                <property key="labeling/fontWeight" value="50"/>
+                <property key="labeling/fontWeight" value="75"/>
                 <property key="labeling/fontWordSpacing" value="0"/>
                 <property key="labeling/formatNumbers" value="false"/>
                 <property key="labeling/isExpression" value="false"/>
@@ -9433,7 +9481,7 @@
                 <property key="labeling/dist" value="0"/>
                 <property key="labeling/distInMapUnits" value="false"/>
                 <property key="labeling/enabled" value="true"/>
-                <property key="labeling/fieldName" value="name"/>
+                <property key="labeling/fieldName" value="substr( &quot;communes_name&quot; ,1,1) || right( &quot;communes_name&quot; ,1) ||'. '||name"/>
                 <property key="labeling/fontBold" value="false"/>
                 <property key="labeling/fontCapitals" value="0"/>
                 <property key="labeling/fontFamily" value="Arial"/>
@@ -9449,7 +9497,7 @@
                 <property key="labeling/fontWeight" value="50"/>
                 <property key="labeling/fontWordSpacing" value="0"/>
                 <property key="labeling/formatNumbers" value="false"/>
-                <property key="labeling/isExpression" value="false"/>
+                <property key="labeling/isExpression" value="true"/>
                 <property key="labeling/labelOffsetInMapUnits" value="true"/>
                 <property key="labeling/labelPerPart" value="false"/>
                 <property key="labeling/leftDirectionSymbol" value="&lt;"/>
@@ -12116,56 +12164,58 @@
                 <value>IntersectIt_Points20130618102143276</value>
                 <value>camac20140113144941208</value>
                 <value>conduites_actives_copy20130822080028511</value>
-                <value>conduites_actives_copy_copy20130822080032346</value>
-                <value>conduites_copy20130709141244955</value>
                 <value>constructionpoint20130807094904851</value>
-                <value>dimension20130807094904783</value>
                 <value>district20130304110004764</value>
-                <value>hydrant20130304110004848</value>
                 <value>installation20130304110004938</value>
-                <value>installation_pressurecontrol20131107105006792</value>
-                <value>installation_pump20130816140237750</value>
-                <value>installation_source20130820110331647</value>
-                <value>installation_tank20130304110005008</value>
-                <value>installation_treatment20130816113039913</value>
-                <value>installation_valvechamber20131107105006707</value>
                 <value>leak20130821111917060</value>
-                <value>ligne20140113144941233</value>
-                <value>node20130304110005126</value>
-                <value>od_annotationline20131203095020365</value>
-                <value>od_annotationpoint20131203095020392</value>
-                <value>od_dimension_orientation20131202111155806</value>
-                <value>od_meter20131120073630165</value>
                 <value>od_meter_subscriber20131211104942391</value>
                 <value>od_node20140116161508743</value>
-                <value>od_subscriber_reference20131206105928067</value>
-                <value>od_wateringoutput20131127080906318</value>
                 <value>pipe_child_parent20130417092030507</value>
                 <value>pipe_schema20130304110005279</value>
-                <value>polygone20140113144941251</value>
                 <value>pressurezone20130417133612105</value>
-                <value>printmap20130304110011400</value>
                 <value>protectionzone20130304110011418</value>
-                <value>subscriber20130304110011459</value>
                 <value>subscriber_pipe_relation20130417092124312</value>
-                <value>valve20130304110011497</value>
                 <value>valve_schema20130304110011584</value>
-                <value>vannes_copy20130924083714343</value>
-                <value>cs_surfacecs20130514143830750</value>
-                <value>cs_batiment20130514143721709</value>
-                <value>od_batiment_souterrain20130514143946785</value>
-                <value>od_element_lineaire20130514144047075</value>
-                <value>no_posnomlocallieudit20130514143906869</value>
-                <value>cs_posnumero_de_batiment20130514143756039</value>
-                <value>bf_posimmeuble20130514143633121</value>
-                <value>bf_bien_fonds20130514143508556</value>
-                <value>ad_posnumero_maison20130514143346530</value>
-                <value>axe_rue20130514143437774</value>
-                <value>pf_pfp20130514144226845</value>
-                <value>bf_point_limite20130514143552315</value>
                 <value>bf_ddp20130514143538213</value>
                 <value>pf_pfa20130514144154766</value>
                 <value>od_element_surfacique20130514144124647</value>
+                <value>_cadinput_techical_snap_layer_20140130144736838</value>
+                <value>printmap20130304110011400</value>
+                <value>_cadinput_techical_snap_layer_20140203092715598</value>
+                <value>cs_surfacecs20130514143830750</value>
+                <value>node20130304110005126</value>
+                <value>vannes_copy20130924083714343</value>
+                <value>no_posnomlocallieudit20130514143906869</value>
+                <value>axe_rue20130514143437774</value>
+                <value>installation_pump20130816140237750</value>
+                <value>od_subscriber_reference20131206105928067</value>
+                <value>od_element_lineaire20130514144047075</value>
+                <value>dimension20130807094904783</value>
+                <value>conduites_copy20130709141244955</value>
+                <value>cs_batiment20130514143721709</value>
+                <value>od_batiment_souterrain20130514143946785</value>
+                <value>subscriber20130304110011459</value>
+                <value>od_meter20131120073630165</value>
+                <value>installation_source20130820110331647</value>
+                <value>installation_pressurecontrol20131107105006792</value>
+                <value>installation_valvechamber20131107105006707</value>
+                <value>bf_posimmeuble20130514143633121</value>
+                <value>installation_treatment20130816113039913</value>
+                <value>ligne20140113144941233</value>
+                <value>hydrant20130304110004848</value>
+                <value>od_wateringoutput20131127080906318</value>
+                <value>valve20130304110011497</value>
+                <value>polygone20140113144941251</value>
+                <value>od_annotationline20131203095020365</value>
+                <value>pf_pfp20130514144226845</value>
+                <value>cs_posnumero_de_batiment20130514143756039</value>
+                <value>conduites_actives_copy_copy20130822080032346</value>
+                <value>bf_bien_fonds20130514143508556</value>
+                <value>ad_posnumero_maison20130514143346530</value>
+                <value>od_annotationpoint20131203095020392</value>
+                <value>installation_tank20130304110005008</value>
+                <value>bf_point_limite20130514143552315</value>
+                <value>od_dimension_orientation20131202111155806</value>
             </LayerSnappingList>
             <LayerSnappingEnabledList type="QStringList">
                 <value>disabled</value>
@@ -12173,30 +12223,14 @@
                 <value>disabled</value>
                 <value>disabled</value>
                 <value>disabled</value>
-                <value>enabled</value>
-                <value>disabled</value>
-                <value>disabled</value>
-                <value>disabled</value>
                 <value>disabled</value>
                 <value>enabled</value>
-                <value>enabled</value>
-                <value>enabled</value>
-                <value>enabled</value>
-                <value>enabled</value>
-                <value>enabled</value>
-                <value>enabled</value>
-                <value>disabled</value>
                 <value>disabled</value>
                 <value>enabled</value>
                 <value>disabled</value>
                 <value>disabled</value>
                 <value>disabled</value>
-                <value>disabled</value>
                 <value>enabled</value>
-                <value>disabled</value>
-                <value>disabled</value>
-                <value>disabled</value>
-                <value>disabled</value>
                 <value>disabled</value>
                 <value>disabled</value>
                 <value>enabled</value>
@@ -12207,11 +12241,31 @@
                 <value>enabled</value>
                 <value>enabled</value>
                 <value>disabled</value>
+                <value>enabled</value>
+                <value>disabled</value>
+                <value>disabled</value>
+                <value>disabled</value>
+                <value>enabled</value>
+                <value>disabled</value>
+                <value>disabled</value>
+                <value>disabled</value>
+                <value>enabled</value>
                 <value>disabled</value>
                 <value>disabled</value>
                 <value>disabled</value>
                 <value>disabled</value>
+                <value>enabled</value>
+                <value>enabled</value>
+                <value>enabled</value>
                 <value>disabled</value>
+                <value>enabled</value>
+                <value>disabled</value>
+                <value>disabled</value>
+                <value>disabled</value>
+                <value>enabled</value>
+                <value>disabled</value>
+                <value>disabled</value>
+                <value>enabled</value>
                 <value>disabled</value>
                 <value>disabled</value>
                 <value>disabled</value>
@@ -12219,12 +12273,12 @@
                 <value>disabled</value>
                 <value>enabled</value>
                 <value>enabled</value>
-                <value>disabled</value>
-                <value>disabled</value>
                 <value>disabled</value>
             </LayerSnappingEnabledList>
             <AvoidIntersectionsList type="QStringList"/>
             <LayerSnappingToleranceUnitList type="QStringList">
+                <value>1</value>
+                <value>1</value>
                 <value>1</value>
                 <value>1</value>
                 <value>1</value>
@@ -12286,33 +12340,11 @@
                 <value>to_vertex_and_segment</value>
                 <value>to_vertex_and_segment</value>
                 <value>to_vertex_and_segment</value>
-                <value>to_vertex_and_segment</value>
-                <value>to_vertex_and_segment</value>
-                <value>to_vertex_and_segment</value>
-                <value>to_vertex</value>
                 <value>to_vertex</value>
                 <value>to_vertex</value>
                 <value>to_vertex_and_segment</value>
                 <value>to_vertex_and_segment</value>
                 <value>to_vertex_and_segment</value>
-                <value>to_vertex</value>
-                <value>to_vertex_and_segment</value>
-                <value>to_vertex_and_segment</value>
-                <value>to_vertex_and_segment</value>
-                <value>to_vertex_and_segment</value>
-                <value>to_vertex</value>
-                <value>to_vertex_and_segment</value>
-                <value>to_vertex_and_segment</value>
-                <value>to_vertex_and_segment</value>
-                <value>to_vertex_and_segment</value>
-                <value>to_vertex_and_segment</value>
-                <value>to_vertex_and_segment</value>
-                <value>to_vertex_and_segment</value>
-                <value>to_vertex_and_segment</value>
-                <value>to_vertex</value>
-                <value>to_vertex</value>
-                <value>to_vertex_and_segment</value>
-                <value>to_vertex</value>
                 <value>to_vertex</value>
                 <value>to_vertex</value>
                 <value>to_vertex</value>
@@ -12323,6 +12355,10 @@
                 <value>to_vertex_and_segment</value>
                 <value>to_vertex_and_segment</value>
                 <value>to_vertex_and_segment</value>
+                <value>to_vertex</value>
+                <value>to_vertex</value>
+                <value>to_vertex_and_segment</value>
+                <value>to_vertex</value>
                 <value>to_vertex_and_segment</value>
                 <value>to_vertex_and_segment</value>
                 <value>to_vertex_and_segment</value>
@@ -12333,6 +12369,26 @@
                 <value>to_vertex_and_segment</value>
                 <value>to_vertex_and_segment</value>
                 <value>to_vertex_and_segment</value>
+                <value>to_vertex</value>
+                <value>to_vertex_and_segment</value>
+                <value>to_vertex_and_segment</value>
+                <value>to_vertex_and_segment</value>
+                <value>to_vertex_and_segment</value>
+                <value>to_vertex_and_segment</value>
+                <value>to_vertex_and_segment</value>
+                <value>to_vertex_and_segment</value>
+                <value>to_vertex</value>
+                <value>to_vertex_and_segment</value>
+                <value>to_vertex</value>
+                <value>to_vertex_and_segment</value>
+                <value>to_vertex_and_segment</value>
+                <value>to_vertex_and_segment</value>
+                <value>to_vertex_and_segment</value>
+                <value>to_vertex_and_segment</value>
+                <value>to_vertex_and_segment</value>
+                <value>to_vertex_and_segment</value>
+                <value>to_vertex_and_segment</value>
+                <value>to_vertex</value>
                 <value>to_vertex_and_segment</value>
                 <value>to_vertex_and_segment</value>
             </LayerSnapToList>
@@ -12343,55 +12399,57 @@
                 <value>6.000000</value>
                 <value>6.000000</value>
                 <value>6.000000</value>
-                <value>7.000000</value>
-                <value>6.000000</value>
-                <value>6.000000</value>
                 <value>0.000000</value>
-                <value>0.000000</value>
-                <value>6.000000</value>
-                <value>6.000000</value>
-                <value>6.000000</value>
-                <value>6.000000</value>
-                <value>0.000000</value>
-                <value>6.000000</value>
-                <value>6.000000</value>
-                <value>6.000000</value>
-                <value>6.000000</value>
-                <value>7.000000</value>
-                <value>6.000000</value>
-                <value>6.000000</value>
-                <value>6.000000</value>
-                <value>6.000000</value>
                 <value>6.000000</value>
                 <value>6.000000</value>
                 <value>6.000000</value>
                 <value>6.000000</value>
                 <value>6.000000</value>
                 <value>0.000000</value>
-                <value>6.000000</value>
                 <value>12.000000</value>
                 <value>0.000000</value>
-                <value>0.000000</value>
-                <value>0.000000</value>
                 <value>6.000000</value>
                 <value>5.000000</value>
-                <value>5.000000</value>
+                <value>1.000000</value>
+                <value>1.000000</value>
+                <value>1.000000</value>
                 <value>6.000000</value>
-                <value>1.000000</value>
-                <value>1.000000</value>
-                <value>1.000000</value>
-                <value>1.000000</value>
-                <value>1.000000</value>
-                <value>1.000000</value>
-                <value>1.000000</value>
-                <value>1.000000</value>
-                <value>1.000000</value>
-                <value>1.000000</value>
-                <value>1.000000</value>
-                <value>1.000000</value>
-                <value>1.000000</value>
-                <value>1.000000</value>
-                <value>1.000000</value>
+                <value>12</value>
+                <value>20</value>
+                <value>1</value>
+                <value>7</value>
+                <value>6</value>
+                <value>1</value>
+                <value>1</value>
+                <value>6</value>
+                <value>6</value>
+                <value>1</value>
+                <value>6</value>
+                <value>7</value>
+                <value>1</value>
+                <value>1</value>
+                <value>0</value>
+                <value>6</value>
+                <value>6</value>
+                <value>6</value>
+                <value>6</value>
+                <value>1</value>
+                <value>6</value>
+                <value>6</value>
+                <value>0</value>
+                <value>6</value>
+                <value>5</value>
+                <value>6</value>
+                <value>6</value>
+                <value>1</value>
+                <value>1</value>
+                <value>6</value>
+                <value>1</value>
+                <value>1</value>
+                <value>6</value>
+                <value>0</value>
+                <value>1</value>
+                <value>6</value>
             </LayerSnappingToleranceList>
         </Digitizing>
         <rasterInterpolation>
