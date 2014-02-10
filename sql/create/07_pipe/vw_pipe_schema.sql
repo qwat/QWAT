@@ -137,8 +137,8 @@ COMMENT ON VIEW distribution.vw_pipe_schema IS 'Final view for schema';
 /* 
 Add node id
 */
-DROP VIEW IF EXISTS distribution.vw_pipe_schema_node ;
-CREATE VIEW distribution.vw_pipe_schema_node AS
+DROP MATERIALIZED VIEW IF EXISTS distribution.vw_pipe_schema_node ;
+CREATE MATERIALIZED VIEW distribution.vw_pipe_schema_node AS
 	SELECT 
 		foo.*,
 		CASE
@@ -158,7 +158,7 @@ CREATE VIEW distribution.vw_pipe_schema_node AS
 		) AS foo
 		LEFT OUTER JOIN distribution.od_node AS node_a ON id_node_a = node_a.id
 		LEFT OUTER JOIN distribution.od_node AS node_b ON id_node_b = node_b.id; 
-COMMENT ON VIEW distribution.vw_pipe_schema_node IS 'Final view for schema completed with node.';
+COMMENT ON MATERIALIZED VIEW distribution.vw_pipe_schema_node IS 'Final view for schema completed with node.';
 
 /*
 Report schema errors
