@@ -13,6 +13,8 @@ COMMENT ON TABLE distribution.vl_valve_type IS 'Types of valve';
 /* COLUMNS*/
 ALTER TABLE distribution.vl_valve_type ADD COLUMN value_en VARCHAR(30) default '';
 ALTER TABLE distribution.vl_valve_type ADD COLUMN value_fr VARCHAR(30) default '';
+ALTER TABLE distribution.vl_valve_type ADD COLUMN short_fr VARCHAR(5) default '';
+ALTER TABLE distribution.vl_valve_type ADD COLUMN short_en VARCHAR(5) default '';
 
 /* COLUMNS */
 INSERT INTO distribution.vl_valve_type ( id, value_fr ) VALUES (6301, 'vanne à gauche');            /* 1  VG  */
@@ -25,7 +27,7 @@ INSERT INTO distribution.vl_valve_type ( id, value_fr ) VALUES (6307, 'purge'); 
 INSERT INTO distribution.vl_valve_type ( id, value_fr ) VALUES (6308, 'soupape automatique');       /* 8  SA  */
 INSERT INTO distribution.vl_valve_type ( id, value_fr ) VALUES (6309, 'sprinkler');                 /* 9  SP  */
 INSERT INTO distribution.vl_valve_type ( id, value_fr ) VALUES (6310, 'vanne');                     /* 10 V   */
-INSERT INTO distribution.vl_valve_type ( id, value_fr ) VALUES (6311, 'vanne papillon');            /* 11 P   */
+INSERT INTO distribution.vl_valve_type ( id, value_fr, short_fr ) VALUES (6311, 'vanne papillon', 'P'); /* 11 P   */
 INSERT INTO distribution.vl_valve_type ( id, value_fr ) VALUES (6312, 'Elgef');                     /* 12 E   */
 INSERT INTO distribution.vl_valve_type ( id, value_fr ) VALUES (6313, 'arrêt');                     /* 13 A   */
 INSERT INTO distribution.vl_valve_type ( id, value_fr ) VALUES (6314, 'vanne télécommandée');       /* 14 TEL */
