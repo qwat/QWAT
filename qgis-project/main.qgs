@@ -24,10 +24,10 @@
     <mapcanvas>
         <units>meters</units>
         <extent>
-            <xmin>558875.18515781569294631</xmin>
-            <ymin>141902.03748993767658249</ymin>
-            <xmax>561388.83614788181148469</xmax>
-            <ymax>143806.81720908760325983</ymax>
+            <xmin>559761.23006770783104002</xmin>
+            <ymin>142657.65458203596062958</ymin>
+            <xmax>559823.33054969809018075</xmax>
+            <ymax>142704.71272141649387777</ymax>
         </extent>
         <projections>1</projections>
         <destinationsrs>
@@ -44,7 +44,7 @@
         </destinationsrs>
         <layer_coordinate_transform_info/>
     </mapcanvas>
-    <legend updateDrawingOrder="false">
+    <legend updateDrawingOrder="false" activeLayer="node20130304110005126">
         <legendgroup open="true" checked="Qt::PartiallyChecked" name="Réseau">
             <legendgroup open="true" checked="Qt::PartiallyChecked" name="ouvrages">
                 <legendlayer drawingOrder="0" open="false" checked="Qt::Unchecked" name="ouvrage" showFeatureCount="0">
@@ -85,7 +85,7 @@
                     </legendlayer>
                 </legendgroup>
             </legendgroup>
-            <legendgroup open="true" checked="Qt::PartiallyChecked" name="Eléments ponctuels">
+            <legendgroup open="false" checked="Qt::PartiallyChecked" name="Eléments ponctuels">
                 <legendlayer drawingOrder="7" open="false" checked="Qt::Checked" name="hydrantes" showFeatureCount="0">
                     <filegroup open="false" hidden="false">
                         <legendlayerfile isInOverview="0" layerid="hydrant20130304110004848" visible="1"/>
@@ -122,7 +122,7 @@
                     </filegroup>
                 </legendlayer>
             </legendgroup>
-            <legendgroup open="true" checked="Qt::Checked" name="Abonnés">
+            <legendgroup open="false" checked="Qt::Checked" name="Abonnés">
                 <legendlayer drawingOrder="14" open="false" checked="Qt::Checked" name="abonnés - renvoi" showFeatureCount="0">
                     <filegroup open="false" hidden="false">
                         <legendlayerfile isInOverview="0" layerid="od_subscriber_reference20131206105928067" visible="1"/>
@@ -134,7 +134,7 @@
                     </filegroup>
                 </legendlayer>
             </legendgroup>
-            <legendgroup open="false" checked="Qt::PartiallyChecked" name="Noeuds">
+            <legendgroup open="true" checked="Qt::PartiallyChecked" name="Noeuds">
                 <legendlayer drawingOrder="16" open="false" checked="Qt::Unchecked" name="compteur abonné" showFeatureCount="0">
                     <filegroup open="false" hidden="false">
                         <legendlayerfile isInOverview="0" layerid="od_meter_subscriber20131211104942391" visible="0"/>
@@ -225,7 +225,7 @@
                 </filegroup>
             </legendlayer>
         </legendgroup>
-        <legendgroup open="false" checked="Qt::Unchecked" name="Zones">
+        <legendgroup open="true" checked="Qt::Unchecked" name="Zones">
             <legendlayer drawingOrder="32" open="false" checked="Qt::Unchecked" name="communes" showFeatureCount="0">
                 <filegroup open="false" hidden="false">
                     <legendlayerfile isInOverview="0" layerid="district20130304110004764" visible="0"/>
@@ -415,10 +415,10 @@
                 </filegroup>
             </legendlayer>
         </legendgroup>
-        <legendgroup embedded="1" drawingOrder="68" open="false" checked="Qt::Checked" name="base" project="../../../data/cadastre/valais/valais.qgs"/>
-        <legendgroup embedded="1" drawingOrder="71" open="false" checked="Qt::Unchecked" name="complément" project="../../../data/cadastre/valais/valais.qgs"/>
-        <legendgroup embedded="1" drawingOrder="70" open="false" checked="Qt::Checked" name="base" project="../../../data/cadastre/valais/valais.qgs"/>
-        <legendgroup embedded="1" drawingOrder="69" open="false" checked="Qt::Unchecked" name="complément" project="../../../data/cadastre/valais/valais.qgs"/>
+        <legendgroup embedded="1" drawingOrder="69" open="false" checked="Qt::Checked" name="riviera_base" project="../../../data/cadastre/riviera/riviera.qgs"/>
+        <legendgroup embedded="1" drawingOrder="68" open="false" checked="Qt::Unchecked" name="riviera_complément" project="../../../data/cadastre/riviera/riviera.qgs"/>
+        <legendgroup embedded="1" drawingOrder="71" open="false" checked="Qt::Checked" name="valais_base" project="../../../data/cadastre/valais/valais.qgs"/>
+        <legendgroup embedded="1" drawingOrder="70" open="false" checked="Qt::Unchecked" name="valais_complément" project="../../../data/cadastre/valais/valais.qgs"/>
     </legend>
     <Composer title="folio" visible="0">
         <Composition snapGridTolerance="2" gridVisible="1" printResolution="300" paperWidth="1030" snapGridOffsetX="0" guidesVisible="1" snapGridResolution="10" snapGridOffsetY="0" alignmentSnap="1" snapping="0" numPages="1" paperHeight="914" alignmentSnapTolerance="2" smartGuides="1" printAsRaster="1" generateWorldFile="0">
@@ -633,6 +633,16 @@
                     <Layer>axe_rue20130514143437774</Layer>
                     <Layer>pf_pfp20130514144226845</Layer>
                     <Layer>bf_point_limite20130514143552315</Layer>
+                    <Layer>cs_surfacecs20140214143830750</Layer>
+                    <Layer>cs_batiment20140214143721709</Layer>
+                    <Layer>od_batiment_souterrain20140214143946785</Layer>
+                    <Layer>od_element_lineaire20140214144047075</Layer>
+                    <Layer>no_posnomlocallieudit20140214143906869</Layer>
+                    <Layer>cs_posnumero_de_batiment20140214143756039</Layer>
+                    <Layer>bf_posimmeuble20140214143633121</Layer>
+                    <Layer>bf_bien_fonds20140214143508556</Layer>
+                    <Layer>pf_pfp20140214144226845</Layer>
+                    <Layer>bf_point_limite20140214143552315</Layer>
                 </LayerSet>
                 <Grid gridStyle="0" crossLength="3" gridFramePenThickness="0.5" intervalX="0" offsetX="0" intervalY="0" offsetY="0" gridFrameStyle="0" gridFrameWidth="4" gridBlendMode="0" show="0">
                     <framePenColor alpha="255" red="0" blue="0" green="0"/>
@@ -877,7 +887,241 @@
             </ComposerMap>
         </Composition>
     </Composer>
-    <projectlayers layercount="96">
+    <Composer title="extrait_a4_portrait" visible="1">
+        <Composition snapGridTolerance="2" gridVisible="0" printResolution="300" paperWidth="210" snapGridOffsetX="0" guidesVisible="1" snapGridResolution="10" snapGridOffsetY="0" alignmentSnap="1" snapping="0" numPages="1" paperHeight="297" alignmentSnapTolerance="2" smartGuides="1" printAsRaster="0" generateWorldFile="0">
+            <symbol alpha="1" type="fill" name="">
+                <layer pass="0" class="SimpleFill" locked="0">
+                    <prop k="border_width_unit" v="MM"/>
+                    <prop k="color" v="255,255,255,255"/>
+                    <prop k="color_border" v="0,0,0,255"/>
+                    <prop k="offset" v="0,0"/>
+                    <prop k="offset_unit" v="MM"/>
+                    <prop k="style" v="solid"/>
+                    <prop k="style_border" v="no"/>
+                    <prop k="width_border" v="0.26"/>
+                </layer>
+            </symbol>
+            <ComposerLabel valign="128" labelText="ÉTABLI SUR LA BASE DES DONNÉES CADASTRALES" htmlState="0" halign="4" margin="1">
+                <LabelFont description="Arial,7,-1,5,50,0,0,0,0,0"/>
+                <FontColor red="0" blue="0" green="0"/>
+                <ComposerItem width="35.134" x="169.866" transparency="0" y="35" height="10" positionMode="0" frame="true" outlineWidth="0.2" zValue="15" itemRotation="0" lastValidViewScaleFactor="5.64862" uuid="{773c25cf-3ff2-47c9-8138-73f00c2a64e3}" id="" background="true" blendMode="0" positionLock="false">
+                    <FrameColor alpha="255" red="0" blue="0" green="0"/>
+                    <BackgroundColor alpha="255" red="255" blue="255" green="255"/>
+                </ComposerItem>
+            </ComposerLabel>
+            <ComposerLabel valign="128" labelText="PLAN SANS VALEUR OFFICIELLE" htmlState="0" halign="4" margin="1">
+                <LabelFont description="Arial,7,-1,5,50,0,0,0,0,0"/>
+                <FontColor red="0" blue="0" green="0"/>
+                <ComposerItem width="28" x="141.666" transparency="0" y="35" height="10" positionMode="0" frame="true" outlineWidth="0.2" zValue="14" itemRotation="0" lastValidViewScaleFactor="5.64862" uuid="{9d70a8b0-4a1e-481a-a9f3-f2546e0b6048}" id="" background="true" blendMode="0" positionLock="false">
+                    <FrameColor alpha="255" red="0" blue="0" green="0"/>
+                    <BackgroundColor alpha="255" red="255" blue="255" green="255"/>
+                </ComposerItem>
+            </ComposerLabel>
+            <ComposerLabel valign="128" labelText="TRACÉ ET PROFONDEUR APPROXIMATIFS" htmlState="0" halign="4" margin="1">
+                <LabelFont description="Arial,7,-1,5,50,0,0,0,0,0"/>
+                <FontColor red="0" blue="0" green="0"/>
+                <ComposerItem width="36.466" x="105" transparency="0" y="35" height="10" positionMode="0" frame="true" outlineWidth="0.2" zValue="13" itemRotation="0" lastValidViewScaleFactor="5.64862" uuid="{cfb28229-9dbc-49fa-a4b1-1ffcad4ed547}" id="" background="true" blendMode="0" positionLock="false">
+                    <FrameColor alpha="255" red="0" blue="0" green="0"/>
+                    <BackgroundColor alpha="255" red="255" blue="255" green="255"/>
+                </ComposerItem>
+            </ComposerLabel>
+            <ComposerScaleBar penColor="#000000" style="Numeric" numMapUnitsPerScaleBarUnit="1" alignment="1" brushColor="#000000" numSegments="4" segmentMillimeters="400" fontColor="#000000" font="Arial,12,-1,5,50,0,0,0,0,0" numUnitsPerSegment="100" units="1" labelBarSpace="3" outlineWidth="1" numSegmentsLeft="2" height="3" mapId="0" boxContentSpace="1" unitLabel="m">
+                <ComposerItem width="20" x="185" transparency="0" y="25" height="10" positionMode="0" frame="true" outlineWidth="0.2" zValue="12" itemRotation="0" lastValidViewScaleFactor="5.64862" uuid="{2f0360ac-26d4-4f17-8dbe-1d7f6506f910}" id="" background="true" blendMode="0" positionLock="false">
+                    <FrameColor alpha="255" red="0" blue="0" green="0"/>
+                    <BackgroundColor alpha="255" red="255" blue="255" green="255"/>
+                </ComposerItem>
+            </ComposerScaleBar>
+            <ComposerScaleBar penColor="#000000" style="Double Box" numMapUnitsPerScaleBarUnit="1" alignment="0" brushColor="#000000" numSegments="5" segmentMillimeters="8" fontColor="#000000" font="Arial,6,-1,5,50,0,0,0,0,0" numUnitsPerSegment="2" units="1" labelBarSpace="2" outlineWidth="0.01" numSegmentsLeft="0" height="3" mapId="0" boxContentSpace="1" unitLabel="m">
+                <ComposerItem width="46.102" x="131.949" transparency="0" y="25.5" height="9" positionMode="4" frame="false" outlineWidth="0.2" zValue="11" itemRotation="0" lastValidViewScaleFactor="6.65958" uuid="{938279f3-c152-4e8f-a710-08f30f802fd4}" id="" background="true" blendMode="0" positionLock="false">
+                    <FrameColor alpha="255" red="0" blue="0" green="0"/>
+                    <BackgroundColor alpha="255" red="255" blue="255" green="255"/>
+                </ComposerItem>
+            </ComposerScaleBar>
+            <ComposerLabel valign="128" labelText="[% format_date(  $now , 'dd.MM.yyyy')%]" htmlState="0" halign="4" margin="1">
+                <LabelFont description="Arial,10,-1,5,50,0,0,0,0,0"/>
+                <FontColor red="0" blue="0" green="0"/>
+                <ComposerItem width="20" x="105" transparency="0" y="25" height="10" positionMode="0" frame="true" outlineWidth="0.2" zValue="10" itemRotation="0" lastValidViewScaleFactor="5.64862" uuid="{517a7710-57d8-428f-be69-eef734925ad2}" id="" background="true" blendMode="0" positionLock="false">
+                    <FrameColor alpha="255" red="0" blue="0" green="0"/>
+                    <BackgroundColor alpha="255" red="255" blue="255" green="255"/>
+                </ComposerItem>
+            </ComposerLabel>
+            <ComposerLabel valign="128" labelText="XXXX" htmlState="0" halign="4" margin="1">
+                <LabelFont description="Arial,10,-1,5,50,0,0,0,0,0"/>
+                <FontColor red="0" blue="0" green="0"/>
+                <ComposerItem width="100" x="105" transparency="0" y="15" height="10" positionMode="0" frame="true" outlineWidth="0.2" zValue="9" itemRotation="0" lastValidViewScaleFactor="6.65958" uuid="{c08f8f7b-c22e-49f1-81d3-0bd958a42f72}" id="" background="true" blendMode="0" positionLock="false">
+                    <FrameColor alpha="255" red="0" blue="0" green="0"/>
+                    <BackgroundColor alpha="255" red="255" blue="255" green="255"/>
+                </ComposerItem>
+            </ComposerLabel>
+            <ComposerLabel valign="128" labelText="Folio" htmlState="0" halign="4" margin="1">
+                <LabelFont description="Arial,8,-1,5,50,0,0,0,0,0"/>
+                <FontColor red="0" blue="0" green="0"/>
+                <ComposerItem width="20" x="185" transparency="0" y="5" height="10" positionMode="0" frame="true" outlineWidth="0.2" zValue="8" itemRotation="0" lastValidViewScaleFactor="2.82431" uuid="{998532f2-8932-469f-8019-c6713a54b54d}" id="" background="true" blendMode="0" positionLock="false">
+                    <FrameColor alpha="255" red="0" blue="0" green="0"/>
+                    <BackgroundColor alpha="255" red="255" blue="255" green="255"/>
+                </ComposerItem>
+            </ComposerLabel>
+            <ComposerLabel valign="128" labelText="Commune de" htmlState="0" halign="4" margin="1">
+                <LabelFont description="Arial,10,-1,5,50,0,0,0,0,0"/>
+                <FontColor red="0" blue="0" green="0"/>
+                <ComposerItem width="80" x="105" transparency="0" y="5" height="10" positionMode="0" frame="true" outlineWidth="0.2" zValue="7" itemRotation="0" lastValidViewScaleFactor="5.64862" uuid="{771f889a-a67e-4079-9dae-e03752d27918}" id="" background="true" blendMode="0" positionLock="false">
+                    <FrameColor alpha="255" red="0" blue="0" green="0"/>
+                    <BackgroundColor alpha="255" red="255" blue="255" green="255"/>
+                </ComposerItem>
+            </ComposerLabel>
+            <ComposerLabel valign="128" labelText="BUREAU TECHNIQUE CH. DE LA VEYRE D'EN HAUT B8&#xa;&#xa;1806 ST-LÉGIER TEL. 0848 180 180 FAX 021 943 01 61" htmlState="0" halign="4" margin="1">
+                <LabelFont description="Arial,8,-1,5,50,0,0,0,0,0"/>
+                <FontColor red="0" blue="0" green="0"/>
+                <ComposerItem width="98" x="6" transparency="0" y="25.67" height="16.1058" positionMode="0" frame="false" outlineWidth="0.3" zValue="6" itemRotation="0" lastValidViewScaleFactor="5.64862" uuid="{ee213bce-b100-4db8-aa93-f2bb9cd6e61a}" id="" background="true" blendMode="0" positionLock="false">
+                    <FrameColor alpha="255" red="0" blue="0" green="0"/>
+                    <BackgroundColor alpha="255" red="255" blue="255" green="255"/>
+                </ComposerItem>
+            </ComposerLabel>
+            <ComposerPicture pictureRotation="0" pictureWidth="35.6651" file="./composer/Logo_SIGE.png" pictureHeight="8.03777" mapId="-1">
+                <ComposerItem width="35.6651" x="7.55551" transparency="0" y="11.7136" height="13.2864" positionMode="0" frame="false" outlineWidth="0.3" zValue="5" itemRotation="0" lastValidViewScaleFactor="5.64862" uuid="{b6be99f3-75c7-4fac-b431-f87a8cf27e55}" id="" background="true" blendMode="0" positionLock="false">
+                    <FrameColor alpha="255" red="0" blue="0" green="0"/>
+                    <BackgroundColor alpha="255" red="255" blue="255" green="255"/>
+                </ComposerItem>
+            </ComposerPicture>
+            <ComposerLabel valign="128" labelText="SERVICE INTERCOMMUNAL&#xa; DE GESTION" htmlState="0" halign="4" margin="1">
+                <LabelFont description="Arial,12,-1,5,50,0,0,0,0,0"/>
+                <FontColor red="0" blue="0" green="0"/>
+                <ComposerItem width="59.2742" x="43.2206" transparency="0" y="11.3727" height="13.6273" positionMode="0" frame="false" outlineWidth="0.3" zValue="4" itemRotation="0" lastValidViewScaleFactor="5.64862" uuid="{313b5627-7c12-4deb-85de-7d25d0cd23d9}" id="" background="true" blendMode="0" positionLock="false">
+                    <FrameColor alpha="255" red="0" blue="0" green="0"/>
+                    <BackgroundColor alpha="255" red="255" blue="255" green="255"/>
+                </ComposerItem>
+            </ComposerLabel>
+            <ComposerShape shapeType="1" cornerRadius="0">
+                <symbol alpha="1" type="fill" name="">
+                    <layer pass="0" class="SimpleFill" locked="0">
+                        <prop k="border_width_unit" v="MM"/>
+                        <prop k="color" v="255,255,255,255"/>
+                        <prop k="color_border" v="0,0,0,255"/>
+                        <prop k="offset" v="0,0"/>
+                        <prop k="offset_unit" v="MM"/>
+                        <prop k="style" v="solid"/>
+                        <prop k="style_border" v="solid"/>
+                        <prop k="width_border" v="0.2"/>
+                    </layer>
+                </symbol>
+                <ComposerItem width="100" x="105" transparency="0" y="5" height="40" positionMode="0" frame="false" outlineWidth="0.2" zValue="3" itemRotation="0" lastValidViewScaleFactor="2.54658" uuid="{5d083c8e-4cb8-4e32-a8bd-750bdb8e04a9}" id="" background="true" blendMode="0" positionLock="false">
+                    <FrameColor alpha="255" red="0" blue="0" green="0"/>
+                    <BackgroundColor alpha="255" red="255" blue="255" green="255"/>
+                </ComposerItem>
+            </ComposerShape>
+            <ComposerShape shapeType="1" cornerRadius="0">
+                <symbol alpha="1" type="fill" name="">
+                    <layer pass="0" class="SimpleFill" locked="0">
+                        <prop k="border_width_unit" v="MM"/>
+                        <prop k="color" v="255,255,255,255"/>
+                        <prop k="color_border" v="0,0,0,255"/>
+                        <prop k="offset" v="0,0"/>
+                        <prop k="offset_unit" v="MM"/>
+                        <prop k="style" v="solid"/>
+                        <prop k="style_border" v="solid"/>
+                        <prop k="width_border" v="0.2"/>
+                    </layer>
+                </symbol>
+                <ComposerItem width="100" x="5" transparency="0" y="5" height="40" positionMode="0" frame="false" outlineWidth="0.2" zValue="2" itemRotation="0" lastValidViewScaleFactor="2.54658" uuid="{6c243b7e-e6c0-4ba5-84da-da7f29fc59f3}" id="" background="true" blendMode="0" positionLock="false">
+                    <FrameColor alpha="255" red="0" blue="0" green="0"/>
+                    <BackgroundColor alpha="255" red="255" blue="255" green="255"/>
+                </ComposerItem>
+            </ComposerShape>
+            <ComposerMap mapRotation="0" keepLayerSet="true" overviewFrameMap="-1" id="0" previewMode="Cache" drawCanvasItems="true">
+                <overviewFrame overviewBlendMode="0" overviewFrameMap="-1" overviewCentered="false" overviewInverted="false">
+                    <symbol alpha="0.3" type="fill" name="">
+                        <layer pass="0" class="SimpleFill" locked="0">
+                            <prop k="border_width_unit" v="MM"/>
+                            <prop k="color" v="255,0,0,255"/>
+                            <prop k="color_border" v="0,0,0,255"/>
+                            <prop k="offset" v="0,0"/>
+                            <prop k="offset_unit" v="MM"/>
+                            <prop k="style" v="solid"/>
+                            <prop k="style_border" v="no"/>
+                            <prop k="width_border" v="0.26"/>
+                        </layer>
+                    </symbol>
+                </overviewFrame>
+                <Extent ymin="144540.82820692335371859" xmin="557523.36000388278625906" ymax="144602.52820698628784157" xmax="557573.36000393377617002"/>
+                <LayerSet>
+                    <Layer>installation_tank20130304110005008</Layer>
+                    <Layer>installation_source20130820110331647</Layer>
+                    <Layer>installation_pump20130816140237750</Layer>
+                    <Layer>installation_treatment20130816113039913</Layer>
+                    <Layer>installation_pressurecontrol20131107105006792</Layer>
+                    <Layer>installation_valvechamber20131107105006707</Layer>
+                    <Layer>hydrant20130304110004848</Layer>
+                    <Layer>valve20130304110011497</Layer>
+                    <Layer>vannes_copy20130924083714343</Layer>
+                    <Layer>od_meter20131120073630165</Layer>
+                    <Layer>od_wateringoutput20131127080906318</Layer>
+                    <Layer>od_subscriber_reference20131206105928067</Layer>
+                    <Layer>subscriber20130304110011459</Layer>
+                    <Layer>node20130304110005126</Layer>
+                    <Layer>conduites_copy20130709141244955</Layer>
+                    <Layer>conduites_actives_copy_copy20130822080032346</Layer>
+                    <Layer>od_annotationline20131203095020365</Layer>
+                    <Layer>od_annotationpoint20131203095020392</Layer>
+                    <Layer>dimension20130807094904783</Layer>
+                    <Layer>od_dimension_orientation20131202111155806</Layer>
+                    <Layer>ligne20140113144941233</Layer>
+                    <Layer>polygone20140113144941251</Layer>
+                    <Layer>cs_surfacecs20130514143830750</Layer>
+                    <Layer>cs_batiment20130514143721709</Layer>
+                    <Layer>od_batiment_souterrain20130514143946785</Layer>
+                    <Layer>od_element_lineaire20130514144047075</Layer>
+                    <Layer>no_posnomlocallieudit20130514143906869</Layer>
+                    <Layer>cs_posnumero_de_batiment20130514143756039</Layer>
+                    <Layer>bf_posimmeuble20130514143633121</Layer>
+                    <Layer>bf_bien_fonds20130514143508556</Layer>
+                    <Layer>ad_posnumero_maison20130514143346530</Layer>
+                    <Layer>axe_rue20130514143437774</Layer>
+                    <Layer>pf_pfp20130514144226845</Layer>
+                    <Layer>bf_point_limite20130514143552315</Layer>
+                    <Layer>cs_surfacecs20140214143830750</Layer>
+                    <Layer>cs_batiment20140214143721709</Layer>
+                    <Layer>od_batiment_souterrain20140214143946785</Layer>
+                    <Layer>od_element_lineaire20140214144047075</Layer>
+                    <Layer>no_posnomlocallieudit20140214143906869</Layer>
+                    <Layer>cs_posnumero_de_batiment20140214143756039</Layer>
+                    <Layer>bf_posimmeuble20140214143633121</Layer>
+                    <Layer>bf_bien_fonds20140214143508556</Layer>
+                    <Layer>pf_pfp20140214144226845</Layer>
+                    <Layer>bf_point_limite20140214143552315</Layer>
+                </LayerSet>
+                <Grid gridStyle="0" crossLength="3" gridFramePenThickness="0.5" intervalX="0" offsetX="0" intervalY="0" offsetY="0" gridFrameStyle="0" gridFrameWidth="2" gridBlendMode="0" show="0">
+                    <framePenColor alpha="255" red="0" blue="0" green="0"/>
+                    <frameFillColor1 alpha="255" red="255" blue="255" green="255"/>
+                    <frameFillColor2 alpha="255" red="0" blue="0" green="0"/>
+                    <symbol alpha="1" type="line" name="">
+                        <layer pass="0" class="SimpleLine" locked="0">
+                            <prop k="capstyle" v="flat"/>
+                            <prop k="color" v="0,0,0,255"/>
+                            <prop k="customdash" v="5;2"/>
+                            <prop k="customdash_unit" v="MM"/>
+                            <prop k="draw_inside_polygon" v="0"/>
+                            <prop k="joinstyle" v="bevel"/>
+                            <prop k="offset" v="0"/>
+                            <prop k="offset_unit" v="MM"/>
+                            <prop k="penstyle" v="solid"/>
+                            <prop k="use_custom_dash" v="0"/>
+                            <prop k="width" v="0.3"/>
+                            <prop k="width_unit" v="MM"/>
+                        </layer>
+                    </symbol>
+                    <Annotation rightDirection="0" bottomDirection="0" format="0" topPosition="1" precision="3" leftDirection="0" rightPosition="1" bottomPosition="1" frameDistance="1" show="0" font="Ubuntu,11,-1,5,50,0,0,0,0,0" leftPosition="1" topDirection="0">
+                        <fontColor alpha="255" red="0" blue="0" green="0"/>
+                    </Annotation>
+                </Grid>
+                <AtlasMap fixedScale="1" atlasDriven="0" margin="0.10000000000000001"/>
+                <ComposerItem width="200" x="5" transparency="0" y="45.2" height="246.8" positionMode="0" frame="true" outlineWidth="0.2" zValue="1" itemRotation="0" lastValidViewScaleFactor="2.54658" uuid="{721d2a70-0f07-44a5-9f8c-1d2e85025f25}" id="" background="true" blendMode="0" positionLock="false">
+                    <FrameColor alpha="255" red="0" blue="0" green="0"/>
+                    <BackgroundColor alpha="255" red="255" blue="255" green="255"/>
+                </ComposerItem>
+            </ComposerMap>
+        </Composition>
+    </Composer>
+    <projectlayers layercount="97">
         <maplayer minimumScale="0" maximumScale="1e+08" simplifyDrawingHints="1" minLabelScale="0" maxLabelScale="1e+08" simplifyDrawingTol="1" geometry="Line" simplifyMaxScale="1" type="vector" hasScaleBasedVisibilityFlag="0" simplifyLocal="1" scaleBasedLabelVisibilityFlag="0">
             <id>IntersectIt_Lines20130618102142813</id>
             <datasource>LineString?crs=EPSG:21781&amp;field=id:string&amp;field=type:string&amp;field=x:double&amp;field=y:double&amp;field=observation:double&amp;field=precision:double&amp;index=yes</datasource>
@@ -6376,7 +6620,7 @@
                 <actionsetting action="qgis.utils.plugins['postgres91plusauditor'].showHistory('logged_actions20130304110005081',[% $id %])" capture="0" type="1" name="History audit"/>
             </attributeactions>
         </maplayer>
-        <maplayer minimumScale="0" maximumScale="501" simplifyDrawingHints="1" minLabelScale="1" maxLabelScale="1e+08" simplifyDrawingTol="1" geometry="Point" simplifyMaxScale="1" type="vector" hasScaleBasedVisibilityFlag="1" simplifyLocal="1" scaleBasedLabelVisibilityFlag="0">
+        <maplayer minimumScale="-4.65661e-10" maximumScale="501" simplifyDrawingHints="0" minLabelScale="1" maxLabelScale="1e+08" simplifyDrawingTol="1" geometry="Point" simplifyMaxScale="1" type="vector" hasScaleBasedVisibilityFlag="1" simplifyLocal="1" scaleBasedLabelVisibilityFlag="0">
             <id>node20130304110005126</id>
             <datasource>dbname='sige' host=172.24.171.203 port=5432 user='sige' password='db4wat$' sslmode=allow key='id' srid=21781 type=POINT table="distribution"."od_node" (geometry) sql=</datasource>
             <title></title>
@@ -6402,8 +6646,7 @@
             <vectorjoins/>
             <renderer-v2 symbollevels="0" type="RuleRenderer">
                 <rules>
-                    <rule filter="_type = 'one' AND _status_active = 't'" symbol="0" label="Bout de conduite"/>
-                    <rule filter="_type = 'two_same' AND _status_active = 't'" label="Chg. conduite"/>
+                    <rule filter="_type = 'two_same' AND _status_active = 't'" symbol="0" label="Chg. conduite"/>
                     <rule filter="_type = 'two_year' AND _status_active = 't'" symbol="1" label="Chg. année"/>
                     <rule filter="_type = 'two_diameter'  AND _status_active = 't'" symbol="2" label="Chg. diamètre"/>
                     <rule filter="_type = 'two_material' AND _status_active = 't'" symbol="3" label="Chg. matériau"/>
@@ -6414,7 +6657,6 @@
                     <symbol alpha="1" type="marker" name="0">
                         <layer pass="0" class="SvgMarker" locked="0">
                             <prop k="angle" v="0"/>
-                            <prop k="angle_expression" v="_orientation + 90"/>
                             <prop k="fill" v="#000000"/>
                             <prop k="horizontal_anchor_point" v="1"/>
                             <prop k="name" v="./symbols/nodes/change_material.svg"/>
@@ -12260,6 +12502,18 @@
                 <value>bf_ddp20130514143538213</value>
                 <value>pf_pfa20130514144154766</value>
                 <value>od_element_surfacique20130514144124647</value>
+                <value>cs_surfacecs20140214143830750</value>
+                <value>cs_batiment20140214143721709</value>
+                <value>od_batiment_souterrain20140214143946785</value>
+                <value>od_element_lineaire20140214144047075</value>
+                <value>no_posnomlocallieudit20140214143906869</value>
+                <value>cs_posnumero_de_batiment20140214143756039</value>
+                <value>bf_posimmeuble20140214143633121</value>
+                <value>bf_bien_fonds20140214143508556</value>
+                <value>pf_pfp20140214144226845</value>
+                <value>bf_point_limite20140214143552315</value>
+                <value>bf_ddp20140214143538213</value>
+                <value>od_element_surfacique20140214144124647</value>
             </LayerSnappingList>
             <LayerSnappingEnabledList type="QStringList">
                 <value>disabled</value>
@@ -12317,9 +12571,33 @@
                 <value>disabled</value>
                 <value>disabled</value>
                 <value>disabled</value>
+                <value>disabled</value>
+                <value>disabled</value>
+                <value>disabled</value>
+                <value>disabled</value>
+                <value>disabled</value>
+                <value>disabled</value>
+                <value>disabled</value>
+                <value>disabled</value>
+                <value>disabled</value>
+                <value>disabled</value>
+                <value>disabled</value>
+                <value>disabled</value>
             </LayerSnappingEnabledList>
             <AvoidIntersectionsList type="QStringList"/>
             <LayerSnappingToleranceUnitList type="QStringList">
+                <value>1</value>
+                <value>1</value>
+                <value>1</value>
+                <value>1</value>
+                <value>1</value>
+                <value>1</value>
+                <value>1</value>
+                <value>1</value>
+                <value>1</value>
+                <value>1</value>
+                <value>1</value>
+                <value>1</value>
                 <value>1</value>
                 <value>1</value>
                 <value>1</value>
@@ -12432,6 +12710,18 @@
                 <value>to_vertex_and_segment</value>
                 <value>to_vertex_and_segment</value>
                 <value>to_vertex_and_segment</value>
+                <value>to_vertex_and_segment</value>
+                <value>to_vertex_and_segment</value>
+                <value>to_vertex_and_segment</value>
+                <value>to_vertex_and_segment</value>
+                <value>to_vertex_and_segment</value>
+                <value>to_vertex_and_segment</value>
+                <value>to_vertex_and_segment</value>
+                <value>to_vertex_and_segment</value>
+                <value>to_vertex_and_segment</value>
+                <value>to_vertex_and_segment</value>
+                <value>to_vertex_and_segment</value>
+                <value>to_vertex_and_segment</value>
             </LayerSnapToList>
             <TopologicalEditing type="bool">false</TopologicalEditing>
             <LayerSnappingToleranceList type="QStringList">
@@ -12450,7 +12740,7 @@
                 <value>6.000000</value>
                 <value>6.000000</value>
                 <value>6.000000</value>
-                <value>0.000000</value>
+                <value>6.000000</value>
                 <value>6.000000</value>
                 <value>6.000000</value>
                 <value>6.000000</value>
@@ -12490,6 +12780,18 @@
                 <value>1.000000</value>
                 <value>1.000000</value>
                 <value>1.000000</value>
+                <value>6.000000</value>
+                <value>6.000000</value>
+                <value>6.000000</value>
+                <value>6.000000</value>
+                <value>6.000000</value>
+                <value>6.000000</value>
+                <value>6.000000</value>
+                <value>6.000000</value>
+                <value>6.000000</value>
+                <value>6.000000</value>
+                <value>6.000000</value>
+                <value>6.000000</value>
             </LayerSnappingToleranceList>
         </Digitizing>
         <rasterInterpolation>
@@ -12583,6 +12885,16 @@
                         <value>axe_rue20130514143437774</value>
                         <value>pf_pfp20130514144226845</value>
                         <value>bf_point_limite20130514143552315</value>
+                        <value>cs_surfacecs20140214143830750</value>
+                        <value>cs_batiment20140214143721709</value>
+                        <value>od_batiment_souterrain20140214143946785</value>
+                        <value>od_element_lineaire20140214144047075</value>
+                        <value>no_posnomlocallieudit20140214143906869</value>
+                        <value>cs_posnumero_de_batiment20140214143756039</value>
+                        <value>bf_posimmeuble20140214143633121</value>
+                        <value>bf_bien_fonds20140214143508556</value>
+                        <value>pf_pfp20140214144226845</value>
+                        <value>bf_point_limite20140214143552315</value>
                     </VisibleLayers>
                     <ExpandedGroups type="QStringList">
                         <value>Réseau</value>
@@ -12625,6 +12937,7 @@
             <Active type="QString">250</Active>
             <Assignations>
                 <Assignation-27df2cec-4272-4242-93e2-7d5ffc2bbe05 type="QString">250</Assignation-27df2cec-4272-4242-93e2-7d5ffc2bbe05>
+                <Assignation-721d2a70-0f07-44a5-9f8c-1d2e85025f25 type="QString">250</Assignation-721d2a70-0f07-44a5-9f8c-1d2e85025f25>
                 <Assignation-b970a2fd-9bd7-4a2a-a787-1664811befc7 type="QString">folio</Assignation-b970a2fd-9bd7-4a2a-a787-1664811befc7>
             </Assignations>
         </LayerCombinations>
