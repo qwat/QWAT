@@ -1,5 +1,5 @@
 <!DOCTYPE qgis PUBLIC 'http://mrcc.com/qgis.dtd' 'SYSTEM'>
-<qgis projectname="" version="2.1.0-Master">
+<qgis projectname="" version="2.3.0-Master">
     <title></title>
     <relations>
         <relation referencingLayer="installation_pressurecontrol20131107105006792" referencedLayer="installation20130304110004938" id="relation_ouvrage_pressurecontrol" name="Ouvrage - régulation pression">
@@ -24,10 +24,10 @@
     <mapcanvas>
         <units>meters</units>
         <extent>
-            <xmin>559761.23006770783104002</xmin>
-            <ymin>142657.65458203596062958</ymin>
-            <xmax>559823.33054969809018075</xmax>
-            <ymax>142704.71272141649387777</ymax>
+            <xmin>560528.33058766042813659</xmin>
+            <ymin>141610.64353990799281746</ymin>
+            <xmax>560559.3808286557905376</xmax>
+            <ymax>141635.02334159926977009</ymax>
         </extent>
         <projections>1</projections>
         <destinationsrs>
@@ -42,73 +42,72 @@
                 <geographicflag>false</geographicflag>
             </spatialrefsys>
         </destinationsrs>
-        <layer_coordinate_transform_info/>
     </mapcanvas>
-    <legend updateDrawingOrder="false" activeLayer="node20130304110005126">
+    <legend updateDrawingOrder="false" activeLayer="od_subscriber_reference20131206105928067">
         <legendgroup open="true" checked="Qt::PartiallyChecked" name="Réseau">
-            <legendgroup open="true" checked="Qt::PartiallyChecked" name="ouvrages">
+            <legendgroup open="true" checked="Qt::Unchecked" name="ouvrages">
                 <legendlayer drawingOrder="0" open="false" checked="Qt::Unchecked" name="ouvrage" showFeatureCount="0">
                     <filegroup open="false" hidden="false">
                         <legendlayerfile isInOverview="0" layerid="installation20130304110004938" visible="0"/>
                     </filegroup>
                 </legendlayer>
-                <legendgroup open="false" checked="Qt::Checked" name="détail">
-                    <legendlayer drawingOrder="1" open="false" checked="Qt::Checked" name="ouvrage - réservoirs" showFeatureCount="0">
+                <legendgroup open="false" checked="Qt::Unchecked" name="détail">
+                    <legendlayer drawingOrder="1" open="false" checked="Qt::Unchecked" name="ouvrage - réservoirs" showFeatureCount="0">
                         <filegroup open="false" hidden="false">
-                            <legendlayerfile isInOverview="0" layerid="installation_tank20130304110005008" visible="1"/>
+                            <legendlayerfile isInOverview="0" layerid="installation_tank20130304110005008" visible="0"/>
                         </filegroup>
                     </legendlayer>
-                    <legendlayer drawingOrder="2" open="false" checked="Qt::Checked" name="ouvrage - source" showFeatureCount="0">
+                    <legendlayer drawingOrder="2" open="false" checked="Qt::Unchecked" name="ouvrage - source" showFeatureCount="0">
                         <filegroup open="false" hidden="false">
-                            <legendlayerfile isInOverview="0" layerid="installation_source20130820110331647" visible="1"/>
+                            <legendlayerfile isInOverview="0" layerid="installation_source20130820110331647" visible="0"/>
                         </filegroup>
                     </legendlayer>
-                    <legendlayer drawingOrder="3" open="false" checked="Qt::Checked" name="ouvrage - pompe" showFeatureCount="0">
+                    <legendlayer drawingOrder="3" open="false" checked="Qt::Unchecked" name="ouvrage - pompe" showFeatureCount="0">
                         <filegroup open="false" hidden="false">
-                            <legendlayerfile isInOverview="0" layerid="installation_pump20130816140237750" visible="1"/>
+                            <legendlayerfile isInOverview="0" layerid="installation_pump20130816140237750" visible="0"/>
                         </filegroup>
                     </legendlayer>
-                    <legendlayer drawingOrder="4" open="false" checked="Qt::Checked" name="ouvrage - traitement" showFeatureCount="0">
+                    <legendlayer drawingOrder="4" open="false" checked="Qt::Unchecked" name="ouvrage - traitement" showFeatureCount="0">
                         <filegroup open="false" hidden="false">
-                            <legendlayerfile isInOverview="0" layerid="installation_treatment20130816113039913" visible="1"/>
+                            <legendlayerfile isInOverview="0" layerid="installation_treatment20130816113039913" visible="0"/>
                         </filegroup>
                     </legendlayer>
-                    <legendlayer drawingOrder="5" open="false" checked="Qt::Checked" name="ouvrage - régulation de pression" showFeatureCount="0">
+                    <legendlayer drawingOrder="5" open="false" checked="Qt::Unchecked" name="ouvrage - régulation de pression" showFeatureCount="0">
                         <filegroup open="false" hidden="false">
-                            <legendlayerfile isInOverview="0" layerid="installation_pressurecontrol20131107105006792" visible="1"/>
+                            <legendlayerfile isInOverview="0" layerid="installation_pressurecontrol20131107105006792" visible="0"/>
                         </filegroup>
                     </legendlayer>
-                    <legendlayer drawingOrder="6" open="false" checked="Qt::Checked" name="ouvrage - chambre de vannes" showFeatureCount="0">
+                    <legendlayer drawingOrder="6" open="false" checked="Qt::Unchecked" name="ouvrage - chambre de vannes" showFeatureCount="0">
                         <filegroup open="false" hidden="false">
-                            <legendlayerfile isInOverview="0" layerid="installation_valvechamber20131107105006707" visible="1"/>
+                            <legendlayerfile isInOverview="0" layerid="installation_valvechamber20131107105006707" visible="0"/>
                         </filegroup>
                     </legendlayer>
                 </legendgroup>
             </legendgroup>
-            <legendgroup open="false" checked="Qt::PartiallyChecked" name="Eléments ponctuels">
-                <legendlayer drawingOrder="7" open="false" checked="Qt::Checked" name="hydrantes" showFeatureCount="0">
+            <legendgroup open="true" checked="Qt::Unchecked" name="Eléments ponctuels">
+                <legendlayer drawingOrder="7" open="false" checked="Qt::Unchecked" name="hydrantes" showFeatureCount="0">
                     <filegroup open="false" hidden="false">
-                        <legendlayerfile isInOverview="0" layerid="hydrant20130304110004848" visible="1"/>
+                        <legendlayerfile isInOverview="0" layerid="hydrant20130304110004848" visible="0"/>
                     </filegroup>
                 </legendlayer>
-                <legendlayer drawingOrder="8" open="false" checked="Qt::Checked" name="vannes réseau" showFeatureCount="0">
+                <legendlayer drawingOrder="8" open="false" checked="Qt::Unchecked" name="vannes réseau" showFeatureCount="0">
                     <filegroup open="false" hidden="false">
-                        <legendlayerfile isInOverview="0" layerid="valve20130304110011497" visible="1"/>
+                        <legendlayerfile isInOverview="0" layerid="valve20130304110011497" visible="0"/>
                     </filegroup>
                 </legendlayer>
-                <legendlayer drawingOrder="9" open="false" checked="Qt::Checked" name="vannes abonnés" showFeatureCount="0">
+                <legendlayer drawingOrder="9" open="false" checked="Qt::Unchecked" name="vannes abonnés" showFeatureCount="0">
                     <filegroup open="false" hidden="false">
-                        <legendlayerfile isInOverview="0" layerid="vannes_copy20130924083714343" visible="1"/>
+                        <legendlayerfile isInOverview="0" layerid="vannes_copy20130924083714343" visible="0"/>
                     </filegroup>
                 </legendlayer>
-                <legendlayer drawingOrder="10" open="false" checked="Qt::Checked" name="compteur réseau" showFeatureCount="0">
+                <legendlayer drawingOrder="10" open="false" checked="Qt::Unchecked" name="compteur réseau" showFeatureCount="0">
                     <filegroup open="false" hidden="false">
-                        <legendlayerfile isInOverview="0" layerid="od_meter20131120073630165" visible="1"/>
+                        <legendlayerfile isInOverview="0" layerid="od_meter20131120073630165" visible="0"/>
                     </filegroup>
                 </legendlayer>
-                <legendlayer drawingOrder="11" open="false" checked="Qt::Checked" name="bouches d'arrosage" showFeatureCount="0">
+                <legendlayer drawingOrder="11" open="false" checked="Qt::Unchecked" name="bouches d'arrosage" showFeatureCount="0">
                     <filegroup open="false" hidden="false">
-                        <legendlayerfile isInOverview="0" layerid="od_wateringoutput20131127080906318" visible="1"/>
+                        <legendlayerfile isInOverview="0" layerid="od_wateringoutput20131127080906318" visible="0"/>
                     </filegroup>
                 </legendlayer>
                 <legendlayer drawingOrder="12" open="false" checked="Qt::Unchecked" name="fuite" showFeatureCount="0">
@@ -122,27 +121,27 @@
                     </filegroup>
                 </legendlayer>
             </legendgroup>
-            <legendgroup open="false" checked="Qt::Checked" name="Abonnés">
+            <legendgroup open="true" checked="Qt::PartiallyChecked" name="Abonnés">
                 <legendlayer drawingOrder="14" open="false" checked="Qt::Checked" name="abonnés - renvoi" showFeatureCount="0">
                     <filegroup open="false" hidden="false">
                         <legendlayerfile isInOverview="0" layerid="od_subscriber_reference20131206105928067" visible="1"/>
                     </filegroup>
                 </legendlayer>
-                <legendlayer drawingOrder="15" open="false" checked="Qt::Checked" name="abonnés" showFeatureCount="0">
+                <legendlayer drawingOrder="15" open="false" checked="Qt::Unchecked" name="abonnés" showFeatureCount="0">
                     <filegroup open="false" hidden="false">
-                        <legendlayerfile isInOverview="0" layerid="subscriber20130304110011459" visible="1"/>
+                        <legendlayerfile isInOverview="0" layerid="subscriber20130304110011459" visible="0"/>
                     </filegroup>
                 </legendlayer>
             </legendgroup>
-            <legendgroup open="true" checked="Qt::PartiallyChecked" name="Noeuds">
+            <legendgroup open="true" checked="Qt::Unchecked" name="Noeuds">
                 <legendlayer drawingOrder="16" open="false" checked="Qt::Unchecked" name="compteur abonné" showFeatureCount="0">
                     <filegroup open="false" hidden="false">
                         <legendlayerfile isInOverview="0" layerid="od_meter_subscriber20131211104942391" visible="0"/>
                     </filegroup>
                 </legendlayer>
-                <legendlayer drawingOrder="17" open="false" checked="Qt::Checked" name="noeuds" showFeatureCount="0">
+                <legendlayer drawingOrder="17" open="false" checked="Qt::Unchecked" name="noeuds" showFeatureCount="0">
                     <filegroup open="false" hidden="false">
-                        <legendlayerfile isInOverview="0" layerid="node20130304110005126" visible="1"/>
+                        <legendlayerfile isInOverview="0" layerid="node20130304110005126" visible="0"/>
                     </filegroup>
                 </legendlayer>
                 <legendlayer drawingOrder="18" open="false" checked="Qt::Unchecked" name="noeuds - tous - controle" showFeatureCount="0">
@@ -151,15 +150,15 @@
                     </filegroup>
                 </legendlayer>
             </legendgroup>
-            <legendgroup open="true" checked="Qt::PartiallyChecked" name="Conduites">
-                <legendlayer drawingOrder="19" open="false" checked="Qt::Checked" name="conduites actives" showFeatureCount="0">
+            <legendgroup open="true" checked="Qt::Unchecked" name="Conduites">
+                <legendlayer drawingOrder="19" open="false" checked="Qt::Unchecked" name="conduites actives" showFeatureCount="0">
                     <filegroup open="false" hidden="false">
-                        <legendlayerfile isInOverview="0" layerid="conduites_copy20130709141244955" visible="1"/>
+                        <legendlayerfile isInOverview="0" layerid="conduites_copy20130709141244955" visible="0"/>
                     </filegroup>
                 </legendlayer>
-                <legendlayer drawingOrder="20" open="false" checked="Qt::Checked" name="conduites étrangers" showFeatureCount="0">
+                <legendlayer drawingOrder="20" open="false" checked="Qt::Unchecked" name="conduites étrangers" showFeatureCount="0">
                     <filegroup open="false" hidden="false">
-                        <legendlayerfile isInOverview="0" layerid="conduites_actives_copy_copy20130822080032346" visible="1"/>
+                        <legendlayerfile isInOverview="0" layerid="conduites_actives_copy_copy20130822080032346" visible="0"/>
                     </filegroup>
                 </legendlayer>
                 <legendlayer drawingOrder="21" open="false" checked="Qt::Unchecked" name="conduites inactives" showFeatureCount="0">
@@ -186,27 +185,27 @@
                 </filegroup>
             </legendlayer>
         </legendgroup>
-        <legendgroup open="true" checked="Qt::Checked" name="Annotations">
-            <legendlayer drawingOrder="25" open="false" checked="Qt::Checked" name="annotation - ligne" showFeatureCount="0">
+        <legendgroup open="true" checked="Qt::Unchecked" name="Annotations">
+            <legendlayer drawingOrder="25" open="false" checked="Qt::Unchecked" name="annotation - ligne" showFeatureCount="0">
                 <filegroup open="false" hidden="false">
-                    <legendlayerfile isInOverview="0" layerid="od_annotationline20131203095020365" visible="1"/>
+                    <legendlayerfile isInOverview="0" layerid="od_annotationline20131203095020365" visible="0"/>
                 </filegroup>
             </legendlayer>
-            <legendlayer drawingOrder="26" open="false" checked="Qt::Checked" name="annotation - point" showFeatureCount="0">
+            <legendlayer drawingOrder="26" open="false" checked="Qt::Unchecked" name="annotation - point" showFeatureCount="0">
                 <filegroup open="false" hidden="false">
-                    <legendlayerfile isInOverview="0" layerid="od_annotationpoint20131203095020392" visible="1"/>
+                    <legendlayerfile isInOverview="0" layerid="od_annotationpoint20131203095020392" visible="0"/>
                 </filegroup>
             </legendlayer>
         </legendgroup>
-        <legendgroup open="true" checked="Qt::PartiallyChecked" name="Côtes">
-            <legendlayer drawingOrder="27" open="false" checked="Qt::Checked" name="côtes distance" showFeatureCount="0">
+        <legendgroup open="true" checked="Qt::Unchecked" name="Côtes">
+            <legendlayer drawingOrder="27" open="false" checked="Qt::Unchecked" name="côtes distance" showFeatureCount="0">
                 <filegroup open="false" hidden="false">
-                    <legendlayerfile isInOverview="0" layerid="dimension20130807094904783" visible="1"/>
+                    <legendlayerfile isInOverview="0" layerid="dimension20130807094904783" visible="0"/>
                 </filegroup>
             </legendlayer>
-            <legendlayer drawingOrder="28" open="false" checked="Qt::Checked" name="côtes orientation" showFeatureCount="0">
+            <legendlayer drawingOrder="28" open="false" checked="Qt::Unchecked" name="côtes orientation" showFeatureCount="0">
                 <filegroup open="false" hidden="false">
-                    <legendlayerfile isInOverview="0" layerid="od_dimension_orientation20131202111155806" visible="1"/>
+                    <legendlayerfile isInOverview="0" layerid="od_dimension_orientation20131202111155806" visible="0"/>
                 </filegroup>
             </legendlayer>
             <legendlayer drawingOrder="29" open="false" checked="Qt::Unchecked" name="points de construction" showFeatureCount="0">
@@ -398,26 +397,26 @@
                 </filegroup>
             </legendlayer>
         </legendgroup>
-        <legendgroup open="true" checked="Qt::PartiallyChecked" name="enquetes">
+        <legendgroup open="true" checked="Qt::Unchecked" name="enquetes">
             <legendlayer drawingOrder="65" open="false" checked="Qt::Unchecked" name="camac" showFeatureCount="0">
                 <filegroup open="false" hidden="false">
                     <legendlayerfile isInOverview="0" layerid="camac20140113144941208" visible="0"/>
                 </filegroup>
             </legendlayer>
-            <legendlayer drawingOrder="66" open="false" checked="Qt::Checked" name="ligne" showFeatureCount="0">
+            <legendlayer drawingOrder="66" open="false" checked="Qt::Unchecked" name="ligne" showFeatureCount="0">
                 <filegroup open="false" hidden="false">
-                    <legendlayerfile isInOverview="0" layerid="ligne20140113144941233" visible="1"/>
+                    <legendlayerfile isInOverview="0" layerid="ligne20140113144941233" visible="0"/>
                 </filegroup>
             </legendlayer>
-            <legendlayer drawingOrder="67" open="false" checked="Qt::Checked" name="polygone" showFeatureCount="0">
+            <legendlayer drawingOrder="67" open="false" checked="Qt::Unchecked" name="polygone" showFeatureCount="0">
                 <filegroup open="false" hidden="false">
-                    <legendlayerfile isInOverview="0" layerid="polygone20140113144941251" visible="1"/>
+                    <legendlayerfile isInOverview="0" layerid="polygone20140113144941251" visible="0"/>
                 </filegroup>
             </legendlayer>
         </legendgroup>
-        <legendgroup embedded="1" drawingOrder="69" open="false" checked="Qt::Checked" name="riviera_base" project="../../../data/cadastre/riviera/riviera.qgs"/>
+        <legendgroup embedded="1" drawingOrder="69" open="false" checked="Qt::Unchecked" name="riviera_base" project="../../../data/cadastre/riviera/riviera.qgs"/>
         <legendgroup embedded="1" drawingOrder="68" open="false" checked="Qt::Unchecked" name="riviera_complément" project="../../../data/cadastre/riviera/riviera.qgs"/>
-        <legendgroup embedded="1" drawingOrder="71" open="false" checked="Qt::Checked" name="valais_base" project="../../../data/cadastre/valais/valais.qgs"/>
+        <legendgroup embedded="1" drawingOrder="71" open="false" checked="Qt::Unchecked" name="valais_base" project="../../../data/cadastre/valais/valais.qgs"/>
         <legendgroup embedded="1" drawingOrder="70" open="false" checked="Qt::Unchecked" name="valais_complément" project="../../../data/cadastre/valais/valais.qgs"/>
     </legend>
     <Composer title="folio" visible="0">
@@ -887,7 +886,7 @@
             </ComposerMap>
         </Composition>
     </Composer>
-    <Composer title="extrait_a4_portrait" visible="1">
+    <Composer title="extrait_a4_portrait" visible="0">
         <Composition snapGridTolerance="2" gridVisible="0" printResolution="300" paperWidth="210" snapGridOffsetX="0" guidesVisible="1" snapGridResolution="10" snapGridOffsetY="0" alignmentSnap="1" snapping="0" numPages="1" paperHeight="297" alignmentSnapTolerance="2" smartGuides="1" printAsRaster="0" generateWorldFile="0">
             <symbol alpha="1" type="fill" name="">
                 <layer pass="0" class="SimpleFill" locked="0">
@@ -1004,7 +1003,7 @@
                         <prop k="width_border" v="0.2"/>
                     </layer>
                 </symbol>
-                <ComposerItem width="100" x="105" transparency="0" y="5" height="40" positionMode="0" frame="false" outlineWidth="0.2" zValue="3" itemRotation="0" lastValidViewScaleFactor="2.54658" uuid="{5d083c8e-4cb8-4e32-a8bd-750bdb8e04a9}" id="" background="true" blendMode="0" positionLock="false">
+                <ComposerItem width="100" x="105" transparency="0" y="5" height="40" positionMode="0" frame="false" outlineWidth="0.2" zValue="3" itemRotation="0" lastValidViewScaleFactor="2.45652" uuid="{5d083c8e-4cb8-4e32-a8bd-750bdb8e04a9}" id="" background="true" blendMode="0" positionLock="false">
                     <FrameColor alpha="255" red="0" blue="0" green="0"/>
                     <BackgroundColor alpha="255" red="255" blue="255" green="255"/>
                 </ComposerItem>
@@ -1022,7 +1021,7 @@
                         <prop k="width_border" v="0.2"/>
                     </layer>
                 </symbol>
-                <ComposerItem width="100" x="5" transparency="0" y="5" height="40" positionMode="0" frame="false" outlineWidth="0.2" zValue="2" itemRotation="0" lastValidViewScaleFactor="2.54658" uuid="{6c243b7e-e6c0-4ba5-84da-da7f29fc59f3}" id="" background="true" blendMode="0" positionLock="false">
+                <ComposerItem width="100" x="5" transparency="0" y="5" height="40" positionMode="0" frame="false" outlineWidth="0.2" zValue="2" itemRotation="0" lastValidViewScaleFactor="2.45652" uuid="{6c243b7e-e6c0-4ba5-84da-da7f29fc59f3}" id="" background="true" blendMode="0" positionLock="false">
                     <FrameColor alpha="255" red="0" blue="0" green="0"/>
                     <BackgroundColor alpha="255" red="255" blue="255" green="255"/>
                 </ComposerItem>
@@ -1114,7 +1113,7 @@
                     </Annotation>
                 </Grid>
                 <AtlasMap fixedScale="1" atlasDriven="0" margin="0.10000000000000001"/>
-                <ComposerItem width="200" x="5" transparency="0" y="45.2" height="246.8" positionMode="0" frame="true" outlineWidth="0.2" zValue="1" itemRotation="0" lastValidViewScaleFactor="2.54658" uuid="{721d2a70-0f07-44a5-9f8c-1d2e85025f25}" id="" background="true" blendMode="0" positionLock="false">
+                <ComposerItem width="200" x="5" transparency="0" y="45.2" height="246.8" positionMode="0" frame="true" outlineWidth="0.2" zValue="1" itemRotation="0" lastValidViewScaleFactor="2.45652" uuid="{721d2a70-0f07-44a5-9f8c-1d2e85025f25}" id="" background="true" blendMode="0" positionLock="false">
                     <FrameColor alpha="255" red="0" blue="0" green="0"/>
                     <BackgroundColor alpha="255" red="255" blue="255" green="255"/>
                 </ComposerItem>
