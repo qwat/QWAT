@@ -24,10 +24,10 @@
     <mapcanvas>
         <units>meters</units>
         <extent>
-            <xmin>559713.46681799332145602</xmin>
-            <ymin>142629.20672578588710167</ymin>
-            <xmax>559723.2812060242285952</xmax>
-            <ymax>142636.91271537714055739</ymax>
+            <xmin>553841.32774799666367471</xmin>
+            <ymin>142892.34835136972833425</ymin>
+            <xmax>559191.03876995039172471</xmax>
+            <ymax>147092.79542168218176812</ymax>
         </extent>
         <projections>1</projections>
         <destinationsrs>
@@ -43,7 +43,7 @@
             </spatialrefsys>
         </destinationsrs>
     </mapcanvas>
-    <legend updateDrawingOrder="false" activeLayer="node20130304110005126">
+    <legend updateDrawingOrder="false" activeLayer="valve20130304110011497">
         <legendgroup open="true" checked="Qt::PartiallyChecked" name="Réseau">
             <legendgroup open="true" checked="Qt::PartiallyChecked" name="ouvrages">
                 <legendlayer drawingOrder="0" open="false" checked="Qt::Unchecked" name="ouvrage" showFeatureCount="0">
@@ -3227,7 +3227,7 @@
                 <actionsetting action="qgis.utils.plugins['postgres91plusauditor'].audit('constructionpoint20130807094904851',[% $id %])" capture="0" type="1" name="History audit"/>
             </attributeactions>
         </maplayer>
-        <maplayer minimumScale="-4.65661e-10" maximumScale="501" simplifyDrawingHints="1" minLabelScale="0" maxLabelScale="1e+08" simplifyDrawingTol="1" geometry="Line" simplifyMaxScale="1" type="vector" hasScaleBasedVisibilityFlag="1" simplifyLocal="1" scaleBasedLabelVisibilityFlag="0">
+        <maplayer minimumScale="0" maximumScale="501" simplifyDrawingHints="1" minLabelScale="0" maxLabelScale="1e+08" simplifyDrawingTol="1" geometry="Line" simplifyMaxScale="1" type="vector" hasScaleBasedVisibilityFlag="1" simplifyLocal="1" scaleBasedLabelVisibilityFlag="0">
             <id>dimension20130807094904783</id>
             <datasource>dbname='sige' host=172.24.171.203 port=5432 user='sige' sslmode=disable key='id' srid=21781 type=LINESTRING table="distribution"."od_dimension_distance" (geometry) sql=</datasource>
             <title></title>
@@ -10537,7 +10537,7 @@
             </vectorjoins>
             <renderer-v2 symbollevels="0" type="RuleRenderer">
                 <rules>
-                    <rule scalemaxdenom="10000" filter="id_function != 6105" symbol="0" label="réseau">
+                    <rule scalemaxdenom="10000" description="toutes les vannes sauf organe réseau et vanne d'hydrant" filter="id_function != 6105 AND id_function != 6108" symbol="0" label="réseau">
                         <rule filter="closed = 't'" symbol="1" label="Fermée"/>
                         <rule filter="&quot;id_type&quot; = 6312" symbol="2" label="elgelf"/>
                         <rule filter="&quot;id_type&quot; =6313" symbol="3" label="arrêt"/>
@@ -11094,7 +11094,7 @@
                 <actionsetting action="qgis.utils.plugins['postgres91plusauditor'].showHistory('valve_schema20130304110011584',[% $id %])" capture="0" type="1" name="History audit"/>
             </attributeactions>
         </maplayer>
-        <maplayer minimumScale="-4.65661e-10" maximumScale="3001" simplifyDrawingHints="0" minLabelScale="1" maxLabelScale="1e+08" simplifyDrawingTol="1" geometry="Point" simplifyMaxScale="1" type="vector" hasScaleBasedVisibilityFlag="1" simplifyLocal="1" scaleBasedLabelVisibilityFlag="0">
+        <maplayer minimumScale="0" maximumScale="3001" simplifyDrawingHints="0" minLabelScale="1" maxLabelScale="1e+08" simplifyDrawingTol="1" geometry="Point" simplifyMaxScale="1" type="vector" hasScaleBasedVisibilityFlag="1" simplifyLocal="1" scaleBasedLabelVisibilityFlag="0">
             <id>vannes_copy20130924083714343</id>
             <datasource>dbname='sige' host=172.24.171.203 port=5432 user='sige' password='db4wat$' sslmode=allow key='id' srid=21781 type=POINT table="distribution"."od_valve" (geometry) sql=</datasource>
             <title></title>
@@ -11122,7 +11122,7 @@
             </vectorjoins>
             <renderer-v2 symbollevels="0" type="RuleRenderer">
                 <rules>
-                    <rule scalemaxdenom="10000" filter="id_function = 6105" symbol="0" label="abonné">
+                    <rule scalemaxdenom="10000" filter="id_function = 6105 OR id_function = 6108" symbol="0" label="abonné">
                         <rule filter="closed = 't'" symbol="1" label="Fermée"/>
                         <rule filter="&quot;id_type&quot; =6313" symbol="2" label="arrêt"/>
                         <rule filter="id_type = 6312" symbol="3" label="elgelf"/>
