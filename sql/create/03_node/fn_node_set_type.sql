@@ -22,6 +22,7 @@ $BODY$
 		ori2            double precision := 0    ;
 		orientation     float            := 0    ;
 		is_under_object boolean          := false;
+		is_under        boolean          := false;
 		node_geom       geometry(Point, 21781)   ;
 		intersects      boolean                  ;
 		node_table      record                   ;
@@ -32,9 +33,10 @@ $BODY$
 		FOR node_table IN SELECT * FROM distribution.od_node_table
 		LOOP
 			stmt := 'SELECT ' || node_id || 'IN (SELECT id_node FROM distribution.' || node_table.table_name || ');';
-			EXECUTE stmt INTO is_under_object;
-			IF is_under_object IS TRUE THEN
+			EXECUTE stmt INTO is_under;
+			IF is_under IS TRUE THEN
 				type := node_table.node_type;
+				is_under_object := true;
 				IF node_table.overwrite IS true THEN
 					keep_type := true;
 					EXIT;
