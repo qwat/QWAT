@@ -24,10 +24,10 @@
     <mapcanvas>
         <units>meters</units>
         <extent>
-            <xmin>554725.12714527430944145</xmin>
-            <ymin>137253.8483492590894457</ymin>
-            <xmax>554803.64224952110089362</xmax>
-            <ymax>137315.4962659887096379</ymax>
+            <xmin>554616.31724932964425534</xmin>
+            <ymin>137172.22439084239886142</ymin>
+            <xmax>554930.37766631704289466</xmax>
+            <ymax>137418.81605776087963022</ymax>
         </extent>
         <projections>1</projections>
         <destinationsrs>
@@ -43,7 +43,7 @@
             </spatialrefsys>
         </destinationsrs>
     </mapcanvas>
-    <legend updateDrawingOrder="false" activeLayer="od_meter_reference20140304165835390">
+    <legend updateDrawingOrder="false" activeLayer="od_subscriber_reference20131206105928067">
         <legendgroup open="true" checked="Qt::PartiallyChecked" name="Réseau">
             <legendgroup open="true" checked="Qt::PartiallyChecked" name="ouvrages">
                 <legendlayer drawingOrder="0" open="false" checked="Qt::Unchecked" name="ouvrage" showFeatureCount="0">
@@ -8550,8 +8550,8 @@
             </renderer-v2>
             <customproperties>
                 <property key="LinkIt_destinationField" value="id_subscriber"/>
-                <property key="LinkIt_name" value="Abonné - renvoi"/>
-                <property key="LinkIt_sourceLayer" value="subscriber20130304110011459"/>
+                <property key="LinkIt_name" value="Compteur réseau - renvoi"/>
+                <property key="LinkIt_sourceLayer" value="od_meter20131120073630165"/>
                 <property key="labeling" value="pal"/>
                 <property key="labeling/addDirectionSymbol" value="false"/>
                 <property key="labeling/angleOffset" value="0"/>
@@ -8728,7 +8728,7 @@
             <excludeAttributesWFS/>
             <attributeactions>
                 <actionsetting action="qgis.utils.plugins['postgres91plusauditor'].audit('od_subscriber_reference20131206105928067',[% $id %])" capture="0" type="1" name="History audit"/>
-                <actionsetting action="qgis.utils.plugins['linkit'].linkit('od_subscriber_reference20131206105928067','id_subscriber','subscriber20130304110011459', [% $id %])" capture="0" type="1" name="Abonné - renvoi"/>
+                <actionsetting action="qgis.utils.plugins['linkit'].linkit('od_subscriber_reference20131206105928067','id_subscriber','od_meter20131120073630165', [% $id %])" capture="0" type="1" name="Compteur réseau - renvoi"/>
             </attributeactions>
         </maplayer>
         <maplayer minimumScale="0" maximumScale="3001" simplifyDrawingHints="1" minLabelScale="0" maxLabelScale="1e+08" simplifyDrawingTol="1" geometry="Point" simplifyMaxScale="1" type="vector" hasScaleBasedVisibilityFlag="1" simplifyLocal="1" scaleBasedLabelVisibilityFlag="0">
