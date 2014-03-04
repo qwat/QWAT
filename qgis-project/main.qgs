@@ -24,10 +24,10 @@
     <mapcanvas>
         <units>meters</units>
         <extent>
-            <xmin>553841.32774799666367471</xmin>
-            <ymin>142892.34835136972833425</ymin>
-            <xmax>559191.03876995039172471</xmax>
-            <ymax>147092.79542168218176812</ymax>
+            <xmin>559757.68151477805804461</xmin>
+            <ymin>142650.75883426464861259</ymin>
+            <xmax>559836.19661902531515807</xmax>
+            <ymax>142712.40675099467625841</ymax>
         </extent>
         <projections>1</projections>
         <destinationsrs>
@@ -133,7 +133,7 @@
                     </filegroup>
                 </legendlayer>
             </legendgroup>
-            <legendgroup open="true" checked="Qt::PartiallyChecked" name="Noeuds">
+            <legendgroup open="false" checked="Qt::PartiallyChecked" name="Noeuds">
                 <legendlayer drawingOrder="16" open="false" checked="Qt::Unchecked" name="compteur abonné" showFeatureCount="0">
                     <filegroup open="false" hidden="false">
                         <legendlayerfile isInOverview="0" layerid="od_meter_subscriber20131211104942391" visible="0"/>
@@ -197,7 +197,7 @@
                 </filegroup>
             </legendlayer>
         </legendgroup>
-        <legendgroup open="true" checked="Qt::Checked" name="Côtes">
+        <legendgroup open="true" checked="Qt::PartiallyChecked" name="Côtes">
             <legendlayer drawingOrder="27" open="false" checked="Qt::Checked" name="côtes distance" showFeatureCount="0">
                 <filegroup open="false" hidden="false">
                     <legendlayerfile isInOverview="0" layerid="dimension20130807094904783" visible="1"/>
@@ -208,23 +208,23 @@
                     <legendlayerfile isInOverview="0" layerid="od_dimension_orientation20131202111155806" visible="1"/>
                 </filegroup>
             </legendlayer>
-            <legendlayer drawingOrder="29" open="false" checked="Qt::Checked" name="points de construction" showFeatureCount="0">
+            <legendlayer drawingOrder="29" open="false" checked="Qt::Unchecked" name="points de construction" showFeatureCount="0">
                 <filegroup open="false" hidden="false">
-                    <legendlayerfile isInOverview="0" layerid="constructionpoint20130807094904851" visible="1"/>
+                    <legendlayerfile isInOverview="0" layerid="constructionpoint20130807094904851" visible="0"/>
                 </filegroup>
             </legendlayer>
-            <legendlayer drawingOrder="30" open="false" checked="Qt::Checked" name="IntersectIt Lines" showFeatureCount="0">
+            <legendlayer drawingOrder="30" open="false" checked="Qt::Unchecked" name="IntersectIt Lines" showFeatureCount="0">
                 <filegroup open="false" hidden="false">
-                    <legendlayerfile isInOverview="0" layerid="IntersectIt_Lines20130618102142813" visible="1"/>
+                    <legendlayerfile isInOverview="0" layerid="IntersectIt_Lines20130618102142813" visible="0"/>
                 </filegroup>
             </legendlayer>
-            <legendlayer drawingOrder="31" open="false" checked="Qt::Checked" name="IntersectIt Points" showFeatureCount="0">
+            <legendlayer drawingOrder="31" open="false" checked="Qt::Unchecked" name="IntersectIt Points" showFeatureCount="0">
                 <filegroup open="false" hidden="false">
-                    <legendlayerfile isInOverview="0" layerid="IntersectIt_Points20130618102143276" visible="1"/>
+                    <legendlayerfile isInOverview="0" layerid="IntersectIt_Points20130618102143276" visible="0"/>
                 </filegroup>
             </legendlayer>
         </legendgroup>
-        <legendgroup open="true" checked="Qt::PartiallyChecked" name="Zones">
+        <legendgroup open="false" checked="Qt::Unchecked" name="Zones">
             <legendlayer drawingOrder="32" open="false" checked="Qt::Unchecked" name="communes" showFeatureCount="0">
                 <filegroup open="false" hidden="false">
                     <legendlayerfile isInOverview="0" layerid="district20130304110004764" visible="0"/>
@@ -235,9 +235,9 @@
                     <legendlayerfile isInOverview="0" layerid="pressurezone20130417133612105" visible="0"/>
                 </filegroup>
             </legendlayer>
-            <legendlayer drawingOrder="34" open="false" checked="Qt::Checked" name="folios" showFeatureCount="0">
+            <legendlayer drawingOrder="34" open="false" checked="Qt::Unchecked" name="folios" showFeatureCount="0">
                 <filegroup open="false" hidden="false">
-                    <legendlayerfile isInOverview="0" layerid="printmap20130304110011400" visible="1"/>
+                    <legendlayerfile isInOverview="0" layerid="printmap20130304110011400" visible="0"/>
                 </filegroup>
             </legendlayer>
             <legendlayer drawingOrder="35" open="false" checked="Qt::Unchecked" name="zones de protections" showFeatureCount="0">
@@ -457,7 +457,7 @@
                         <prop k="width_border" v="0"/>
                     </layer>
                 </symbol>
-                <ComposerItem width="70" x="225" transparency="0" y="110" height="30" positionMode="0" frame="false" outlineWidth="0" zValue="12" itemRotation="0" lastValidViewScaleFactor="0.660137" uuid="{4566e0a1-ec7a-452e-baf0-a45ed15314ff}" id="" background="true" blendMode="0" positionLock="false">
+                <ComposerItem width="70" x="225" transparency="0" y="110" height="30" positionMode="0" frame="false" outlineWidth="0" zValue="12" itemRotation="0" lastValidViewScaleFactor="0.647405" uuid="{4566e0a1-ec7a-452e-baf0-a45ed15314ff}" id="" background="true" blendMode="0" positionLock="false">
                     <FrameColor alpha="255" red="0" blue="0" green="0"/>
                     <BackgroundColor alpha="255" red="255" blue="255" green="255"/>
                 </ComposerItem>
@@ -620,28 +620,28 @@
                     <Layer>od_dimension_orientation20131202111155806</Layer>
                     <Layer>ligne20140113144941233</Layer>
                     <Layer>polygone20140113144941251</Layer>
-                    <Layer>cs_surfacecs20130514143830750</Layer>
-                    <Layer>cs_batiment20130514143721709</Layer>
                     <Layer>od_batiment_souterrain20130514143946785</Layer>
+                    <Layer>cs_batiment20130514143721709</Layer>
                     <Layer>od_element_lineaire20130514144047075</Layer>
+                    <Layer>cs_surfacecs20130514143830750</Layer>
+                    <Layer>bf_bien_fonds20130514143508556</Layer>
+                    <Layer>pf_pfp20130514144226845</Layer>
+                    <Layer>bf_point_limite20130514143552315</Layer>
+                    <Layer>axe_rue20130514143437774</Layer>
                     <Layer>no_posnomlocallieudit20130514143906869</Layer>
                     <Layer>cs_posnumero_de_batiment20130514143756039</Layer>
                     <Layer>bf_posimmeuble20130514143633121</Layer>
-                    <Layer>bf_bien_fonds20130514143508556</Layer>
                     <Layer>ad_posnumero_maison20130514143346530</Layer>
-                    <Layer>axe_rue20130514143437774</Layer>
-                    <Layer>pf_pfp20130514144226845</Layer>
-                    <Layer>bf_point_limite20130514143552315</Layer>
-                    <Layer>cs_surfacecs20140214143830750</Layer>
-                    <Layer>cs_batiment20140214143721709</Layer>
                     <Layer>od_batiment_souterrain20140214143946785</Layer>
+                    <Layer>cs_batiment20140214143721709</Layer>
                     <Layer>od_element_lineaire20140214144047075</Layer>
-                    <Layer>no_posnomlocallieudit20140214143906869</Layer>
-                    <Layer>cs_posnumero_de_batiment20140214143756039</Layer>
-                    <Layer>bf_posimmeuble20140214143633121</Layer>
+                    <Layer>cs_surfacecs20140214143830750</Layer>
                     <Layer>bf_bien_fonds20140214143508556</Layer>
                     <Layer>pf_pfp20140214144226845</Layer>
                     <Layer>bf_point_limite20140214143552315</Layer>
+                    <Layer>no_posnomlocallieudit20140214143906869</Layer>
+                    <Layer>cs_posnumero_de_batiment20140214143756039</Layer>
+                    <Layer>bf_posimmeuble20140214143633121</Layer>
                 </LayerSet>
                 <Grid gridStyle="0" crossLength="3" gridFramePenThickness="0.5" intervalX="0" offsetX="0" intervalY="0" offsetY="0" gridFrameStyle="0" gridFrameWidth="4" gridBlendMode="0" show="0">
                     <framePenColor alpha="255" red="0" blue="0" green="0"/>
@@ -924,14 +924,14 @@
                     <BackgroundColor alpha="255" red="255" blue="255" green="255"/>
                 </ComposerItem>
             </ComposerLabel>
-            <ComposerScaleBar penColor="#000000" style="Numeric" numMapUnitsPerScaleBarUnit="1" alignment="1" brushColor="#000000" numSegments="4" segmentMillimeters="400" fontColor="#000000" font="Arial,12,-1,5,50,0,0,0,0,0" numUnitsPerSegment="100" units="1" labelBarSpace="3" outlineWidth="1" numSegmentsLeft="2" height="3" mapId="0" boxContentSpace="1" unitLabel="m">
+            <ComposerScaleBar penColor="#000000" style="Numeric" numMapUnitsPerScaleBarUnit="1" alignment="1" brushColor="#000000" numSegments="4" segmentMillimeters="509.456" fontColor="#000000" font="Arial,12,-1,5,50,0,0,0,0,0" numUnitsPerSegment="100" units="1" labelBarSpace="3" outlineWidth="1" numSegmentsLeft="2" height="3" mapId="0" boxContentSpace="1" unitLabel="m">
                 <ComposerItem width="20" x="185" transparency="0" y="25" height="10" positionMode="0" frame="true" outlineWidth="0.2" zValue="12" itemRotation="0" lastValidViewScaleFactor="5.64862" uuid="{2f0360ac-26d4-4f17-8dbe-1d7f6506f910}" id="" background="true" blendMode="0" positionLock="false">
                     <FrameColor alpha="255" red="0" blue="0" green="0"/>
                     <BackgroundColor alpha="255" red="255" blue="255" green="255"/>
                 </ComposerItem>
             </ComposerScaleBar>
-            <ComposerScaleBar penColor="#000000" style="Double Box" numMapUnitsPerScaleBarUnit="1" alignment="0" brushColor="#000000" numSegments="5" segmentMillimeters="8" fontColor="#000000" font="Arial,6,-1,5,50,0,0,0,0,0" numUnitsPerSegment="2" units="1" labelBarSpace="2" outlineWidth="0.01" numSegmentsLeft="0" height="3" mapId="0" boxContentSpace="1" unitLabel="m">
-                <ComposerItem width="46.102" x="131.949" transparency="0" y="25.5" height="9" positionMode="4" frame="false" outlineWidth="0.2" zValue="11" itemRotation="0" lastValidViewScaleFactor="6.65958" uuid="{938279f3-c152-4e8f-a710-08f30f802fd4}" id="" background="true" blendMode="0" positionLock="false">
+            <ComposerScaleBar penColor="#000000" style="Double Box" numMapUnitsPerScaleBarUnit="1" alignment="0" brushColor="#000000" numSegments="5" segmentMillimeters="10.1891" fontColor="#000000" font="Arial,6,-1,5,50,0,0,0,0,0" numUnitsPerSegment="2" units="1" labelBarSpace="2" outlineWidth="0.01" numSegmentsLeft="0" height="3" mapId="0" boxContentSpace="1" unitLabel="m">
+                <ComposerItem width="57.0476" x="131.949" transparency="0" y="25.5" height="9" positionMode="4" frame="false" outlineWidth="0.2" zValue="11" itemRotation="0" lastValidViewScaleFactor="6.65958" uuid="{938279f3-c152-4e8f-a710-08f30f802fd4}" id="" background="true" blendMode="0" positionLock="false">
                     <FrameColor alpha="255" red="0" blue="0" green="0"/>
                     <BackgroundColor alpha="255" red="255" blue="255" green="255"/>
                 </ComposerItem>
@@ -1003,7 +1003,7 @@
                         <prop k="width_border" v="0.2"/>
                     </layer>
                 </symbol>
-                <ComposerItem width="100" x="105" transparency="0" y="5" height="40" positionMode="0" frame="false" outlineWidth="0.2" zValue="3" itemRotation="0" lastValidViewScaleFactor="2.45652" uuid="{5d083c8e-4cb8-4e32-a8bd-750bdb8e04a9}" id="" background="true" blendMode="0" positionLock="false">
+                <ComposerItem width="100" x="105" transparency="0" y="5" height="40" positionMode="0" frame="false" outlineWidth="0.2" zValue="3" itemRotation="0" lastValidViewScaleFactor="2.09317" uuid="{5d083c8e-4cb8-4e32-a8bd-750bdb8e04a9}" id="" background="true" blendMode="0" positionLock="false">
                     <FrameColor alpha="255" red="0" blue="0" green="0"/>
                     <BackgroundColor alpha="255" red="255" blue="255" green="255"/>
                 </ComposerItem>
@@ -1021,7 +1021,7 @@
                         <prop k="width_border" v="0.2"/>
                     </layer>
                 </symbol>
-                <ComposerItem width="100" x="5" transparency="0" y="5" height="40" positionMode="0" frame="false" outlineWidth="0.2" zValue="2" itemRotation="0" lastValidViewScaleFactor="2.45652" uuid="{6c243b7e-e6c0-4ba5-84da-da7f29fc59f3}" id="" background="true" blendMode="0" positionLock="false">
+                <ComposerItem width="100" x="5" transparency="0" y="5" height="40" positionMode="0" frame="false" outlineWidth="0.2" zValue="2" itemRotation="0" lastValidViewScaleFactor="2.09317" uuid="{6c243b7e-e6c0-4ba5-84da-da7f29fc59f3}" id="" background="true" blendMode="0" positionLock="false">
                     <FrameColor alpha="255" red="0" blue="0" green="0"/>
                     <BackgroundColor alpha="255" red="255" blue="255" green="255"/>
                 </ComposerItem>
@@ -1041,7 +1041,7 @@
                         </layer>
                     </symbol>
                 </overviewFrame>
-                <Extent ymin="144540.82820692335371859" xmin="557523.36000388278625906" ymax="144602.52820698628784157" xmax="557573.36000393377617002"/>
+                <Extent ymin="142621.24525793225620873" xmin="559701.75521263724658638" ymax="142669.68907725284225307" xmax="559741.01276476087514311"/>
                 <LayerSet>
                     <Layer>installation_tank20130304110005008</Layer>
                     <Layer>installation_source20130820110331647</Layer>
@@ -1065,28 +1065,28 @@
                     <Layer>od_dimension_orientation20131202111155806</Layer>
                     <Layer>ligne20140113144941233</Layer>
                     <Layer>polygone20140113144941251</Layer>
-                    <Layer>cs_surfacecs20130514143830750</Layer>
-                    <Layer>cs_batiment20130514143721709</Layer>
                     <Layer>od_batiment_souterrain20130514143946785</Layer>
+                    <Layer>cs_batiment20130514143721709</Layer>
                     <Layer>od_element_lineaire20130514144047075</Layer>
+                    <Layer>cs_surfacecs20130514143830750</Layer>
+                    <Layer>bf_bien_fonds20130514143508556</Layer>
+                    <Layer>pf_pfp20130514144226845</Layer>
+                    <Layer>bf_point_limite20130514143552315</Layer>
+                    <Layer>axe_rue20130514143437774</Layer>
                     <Layer>no_posnomlocallieudit20130514143906869</Layer>
                     <Layer>cs_posnumero_de_batiment20130514143756039</Layer>
                     <Layer>bf_posimmeuble20130514143633121</Layer>
-                    <Layer>bf_bien_fonds20130514143508556</Layer>
                     <Layer>ad_posnumero_maison20130514143346530</Layer>
-                    <Layer>axe_rue20130514143437774</Layer>
-                    <Layer>pf_pfp20130514144226845</Layer>
-                    <Layer>bf_point_limite20130514143552315</Layer>
-                    <Layer>cs_surfacecs20140214143830750</Layer>
-                    <Layer>cs_batiment20140214143721709</Layer>
                     <Layer>od_batiment_souterrain20140214143946785</Layer>
+                    <Layer>cs_batiment20140214143721709</Layer>
                     <Layer>od_element_lineaire20140214144047075</Layer>
-                    <Layer>no_posnomlocallieudit20140214143906869</Layer>
-                    <Layer>cs_posnumero_de_batiment20140214143756039</Layer>
-                    <Layer>bf_posimmeuble20140214143633121</Layer>
+                    <Layer>cs_surfacecs20140214143830750</Layer>
                     <Layer>bf_bien_fonds20140214143508556</Layer>
                     <Layer>pf_pfp20140214144226845</Layer>
                     <Layer>bf_point_limite20140214143552315</Layer>
+                    <Layer>no_posnomlocallieudit20140214143906869</Layer>
+                    <Layer>cs_posnumero_de_batiment20140214143756039</Layer>
+                    <Layer>bf_posimmeuble20140214143633121</Layer>
                 </LayerSet>
                 <Grid gridStyle="0" crossLength="3" gridFramePenThickness="0.5" intervalX="0" offsetX="0" intervalY="0" offsetY="0" gridFrameStyle="0" gridFrameWidth="2" gridBlendMode="0" show="0">
                     <framePenColor alpha="255" red="0" blue="0" green="0"/>
@@ -1113,7 +1113,7 @@
                     </Annotation>
                 </Grid>
                 <AtlasMap fixedScale="1" atlasDriven="0" margin="0.10000000000000001"/>
-                <ComposerItem width="200" x="5" transparency="0" y="45.2" height="246.8" positionMode="0" frame="true" outlineWidth="0.2" zValue="1" itemRotation="0" lastValidViewScaleFactor="2.45652" uuid="{721d2a70-0f07-44a5-9f8c-1d2e85025f25}" id="" background="true" blendMode="0" positionLock="false">
+                <ComposerItem width="200" x="5" transparency="0" y="45.2" height="246.8" positionMode="0" frame="true" outlineWidth="0.2" zValue="1" itemRotation="0" lastValidViewScaleFactor="8.37267" uuid="{721d2a70-0f07-44a5-9f8c-1d2e85025f25}" id="" background="true" blendMode="0" positionLock="false">
                     <FrameColor alpha="255" red="0" blue="0" green="0"/>
                     <BackgroundColor alpha="255" red="255" blue="255" green="255"/>
                 </ComposerItem>
@@ -10508,7 +10508,7 @@
                 <actionsetting action="qgis.utils.plugins['postgres91plusauditor'].showHistory('subscriber_pipe_relation20130417092124312',[% $id %])" capture="0" type="1" name="History audit"/>
             </attributeactions>
         </maplayer>
-        <maplayer minimumScale="0" maximumScale="10001" simplifyDrawingHints="0" minLabelScale="1" maxLabelScale="1e+08" simplifyDrawingTol="1" geometry="Point" simplifyMaxScale="1" type="vector" hasScaleBasedVisibilityFlag="1" simplifyLocal="1" scaleBasedLabelVisibilityFlag="0">
+        <maplayer minimumScale="-4.65661e-10" maximumScale="10001" simplifyDrawingHints="0" minLabelScale="1" maxLabelScale="1e+08" simplifyDrawingTol="1" geometry="Point" simplifyMaxScale="1" type="vector" hasScaleBasedVisibilityFlag="1" simplifyLocal="1" scaleBasedLabelVisibilityFlag="0">
             <id>valve20130304110011497</id>
             <datasource>dbname='sige' host=172.24.171.203 port=5432 user='sige' password='db4wat$' sslmode=allow key='id' srid=21781 type=POINT table="distribution"."od_valve" (geometry) sql=</datasource>
             <title></title>
@@ -10548,7 +10548,7 @@
                         <layer pass="1" class="SimpleMarker" locked="0">
                             <prop k="angle" v="0"/>
                             <prop k="color" v="255,255,255,255"/>
-                            <prop k="color_border" v="218,0,0,255"/>
+                            <prop k="color_border" v="217,0,0,255"/>
                             <prop k="horizontal_anchor_point" v="1"/>
                             <prop k="name" v="circle"/>
                             <prop k="offset" v="0,0"/>
@@ -10734,7 +10734,7 @@
                 <property key="labeling/textColorA" value="255"/>
                 <property key="labeling/textColorB" value="0"/>
                 <property key="labeling/textColorG" value="0"/>
-                <property key="labeling/textColorR" value="153"/>
+                <property key="labeling/textColorR" value="217"/>
                 <property key="labeling/textTransp" value="0"/>
                 <property key="labeling/upsidedownLabels" value="0"/>
                 <property key="labeling/wrapChar" value=""/>
@@ -11094,7 +11094,7 @@
                 <actionsetting action="qgis.utils.plugins['postgres91plusauditor'].showHistory('valve_schema20130304110011584',[% $id %])" capture="0" type="1" name="History audit"/>
             </attributeactions>
         </maplayer>
-        <maplayer minimumScale="0" maximumScale="3001" simplifyDrawingHints="0" minLabelScale="1" maxLabelScale="1e+08" simplifyDrawingTol="1" geometry="Point" simplifyMaxScale="1" type="vector" hasScaleBasedVisibilityFlag="1" simplifyLocal="1" scaleBasedLabelVisibilityFlag="0">
+        <maplayer minimumScale="-4.65661e-10" maximumScale="3001" simplifyDrawingHints="0" minLabelScale="1" maxLabelScale="1e+08" simplifyDrawingTol="1" geometry="Point" simplifyMaxScale="1" type="vector" hasScaleBasedVisibilityFlag="1" simplifyLocal="1" scaleBasedLabelVisibilityFlag="0">
             <id>vannes_copy20130924083714343</id>
             <datasource>dbname='sige' host=172.24.171.203 port=5432 user='sige' password='db4wat$' sslmode=allow key='id' srid=21781 type=POINT table="distribution"."od_valve" (geometry) sql=</datasource>
             <title></title>
@@ -11142,7 +11142,7 @@
                             <prop k="outline_width" v="0.4"/>
                             <prop k="outline_width_unit" v="MM"/>
                             <prop k="scale_method" v="area"/>
-                            <prop k="size" v="2"/>
+                            <prop k="size" v="1.8"/>
                             <prop k="size_unit" v="MM"/>
                             <prop k="vertical_anchor_point" v="1"/>
                         </layer>
@@ -11175,7 +11175,7 @@
                             <prop k="offset" v="0,0"/>
                             <prop k="offset_unit" v="MM"/>
                             <prop k="outline_style" v="solid"/>
-                            <prop k="outline_width" v="0.4"/>
+                            <prop k="outline_width" v="0.3"/>
                             <prop k="outline_width_unit" v="MM"/>
                             <prop k="scale_method" v="area"/>
                             <prop k="size" v="1.2"/>
@@ -12910,28 +12910,28 @@
                         <value>od_dimension_orientation20131202111155806</value>
                         <value>ligne20140113144941233</value>
                         <value>polygone20140113144941251</value>
-                        <value>cs_surfacecs20130514143830750</value>
-                        <value>cs_batiment20130514143721709</value>
                         <value>od_batiment_souterrain20130514143946785</value>
+                        <value>cs_batiment20130514143721709</value>
                         <value>od_element_lineaire20130514144047075</value>
+                        <value>cs_surfacecs20130514143830750</value>
+                        <value>bf_bien_fonds20130514143508556</value>
+                        <value>pf_pfp20130514144226845</value>
+                        <value>bf_point_limite20130514143552315</value>
+                        <value>axe_rue20130514143437774</value>
                         <value>no_posnomlocallieudit20130514143906869</value>
                         <value>cs_posnumero_de_batiment20130514143756039</value>
                         <value>bf_posimmeuble20130514143633121</value>
-                        <value>bf_bien_fonds20130514143508556</value>
                         <value>ad_posnumero_maison20130514143346530</value>
-                        <value>axe_rue20130514143437774</value>
-                        <value>pf_pfp20130514144226845</value>
-                        <value>bf_point_limite20130514143552315</value>
-                        <value>cs_surfacecs20140214143830750</value>
-                        <value>cs_batiment20140214143721709</value>
                         <value>od_batiment_souterrain20140214143946785</value>
+                        <value>cs_batiment20140214143721709</value>
                         <value>od_element_lineaire20140214144047075</value>
-                        <value>no_posnomlocallieudit20140214143906869</value>
-                        <value>cs_posnumero_de_batiment20140214143756039</value>
-                        <value>bf_posimmeuble20140214143633121</value>
+                        <value>cs_surfacecs20140214143830750</value>
                         <value>bf_bien_fonds20140214143508556</value>
                         <value>pf_pfp20140214144226845</value>
                         <value>bf_point_limite20140214143552315</value>
+                        <value>no_posnomlocallieudit20140214143906869</value>
+                        <value>cs_posnumero_de_batiment20140214143756039</value>
+                        <value>bf_posimmeuble20140214143633121</value>
                     </VisibleLayers>
                     <ExpandedGroups type="QStringList">
                         <value>Réseau</value>
