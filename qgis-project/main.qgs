@@ -24,10 +24,10 @@
     <mapcanvas>
         <units>meters</units>
         <extent>
-            <xmin>554733.65929104771930724</xmin>
-            <ymin>137228.29690781093086116</ymin>
-            <xmax>554889.89574954041745514</xmax>
-            <ymax>137351.5927412701130379</ymax>
+            <xmin>556954.14184539893176407</xmin>
+            <ymin>144176.44541751389624551</ymin>
+            <xmax>556963.90662405488546938</xmax>
+            <ymax>144184.15140710514970124</ymax>
         </extent>
         <projections>1</projections>
         <destinationsrs>
@@ -43,7 +43,7 @@
             </spatialrefsys>
         </destinationsrs>
     </mapcanvas>
-    <legend updateDrawingOrder="false">
+    <legend updateDrawingOrder="false" activeLayer="conduites_actives_copy20130822080028511">
         <legendgroup open="true" checked="Qt::PartiallyChecked" name="Réseau">
             <legendgroup open="true" checked="Qt::PartiallyChecked" name="ouvrages">
                 <legendlayer drawingOrder="0" open="false" checked="Qt::Unchecked" name="ouvrage" showFeatureCount="0">
@@ -2321,7 +2321,7 @@
             </pipe>
             <blendMode>0</blendMode>
         </maplayer>
-        <maplayer minimumScale="-4.65661e-10" maximumScale="1e+08" simplifyDrawingHints="0" minLabelScale="0" maxLabelScale="1e+08" simplifyDrawingTol="1" geometry="Line" simplifyMaxScale="1" type="vector" hasScaleBasedVisibilityFlag="0" simplifyLocal="1" scaleBasedLabelVisibilityFlag="0">
+        <maplayer minimumScale="0" maximumScale="1e+08" simplifyDrawingHints="0" minLabelScale="0" maxLabelScale="1e+08" simplifyDrawingTol="1" geometry="Line" simplifyMaxScale="1" type="vector" hasScaleBasedVisibilityFlag="0" simplifyLocal="1" scaleBasedLabelVisibilityFlag="0">
             <id>conduites_actives_copy20130822080028511</id>
             <datasource>dbname='sige' host=172.24.171.203 port=5432 user='sige' sslmode=disable key='id' srid=21781 type=LINESTRING table="distribution"."od_pipe" (geometry) sql=</datasource>
             <title></title>
@@ -2414,7 +2414,7 @@
                 <property key="labeling/dist" value="1.2"/>
                 <property key="labeling/distInMapUnits" value="false"/>
                 <property key="labeling/enabled" value="true"/>
-                <property key="labeling/fieldName" value="&quot;Conduites - matériaux__displayname_fr&quot;||&#xa; CASE &#xa;WHEN  $scale  &lt; 1000 AND &quot;year&quot; IS NOT NULL  THEN ' ' ||&quot;year&quot;&#xa; ELSE ''&#xa; END&#xa;||&#xa;CASE&#xa;WHEN  $scale  &lt;= 6000 AND &quot;labelremark&quot; IS NOT NULL  THEN ' ' ||&quot;labelremark&quot;&#xa; ELSE '' &#xa;END"/>
+                <property key="labeling/fieldName" value=" replace( &quot;Conduites - matériaux__displayname_fr&quot;,'Inconnu','')||&#xa; CASE &#xa;WHEN  $scale  &lt; 1000 AND &quot;year&quot; IS NOT NULL  AND  $length &lt; 8 THEN '\n' ||&quot;year&quot;&#xa;WHEN  $scale  &lt; 1000 AND &quot;year&quot; IS NOT NULL  THEN ' ' ||&quot;year&quot;&#xa; ELSE ''&#xa; END&#xa;||&#xa;CASE&#xa;WHEN  $scale  &lt;= 6000 AND &quot;labelremark&quot; IS NOT NULL  THEN ' ' ||&quot;labelremark&quot;&#xa; ELSE '' &#xa;END"/>
                 <property key="labeling/fontBold" value="true"/>
                 <property key="labeling/fontCapitals" value="0"/>
                 <property key="labeling/fontFamily" value="Arial"/>
@@ -2636,7 +2636,7 @@
                 <actionsetting action="qgis.utils.plugins['linkit'].linkit('pipe20130507153818274','id_parent','pipe20130507153818274', [% $id %])" capture="0" type="1" name="Conduites schéma parent - enfant"/>
             </attributeactions>
         </maplayer>
-        <maplayer minimumScale="0" maximumScale="1e+08" simplifyDrawingHints="0" minLabelScale="0" maxLabelScale="1e+08" simplifyDrawingTol="1" geometry="Line" simplifyMaxScale="1" type="vector" hasScaleBasedVisibilityFlag="0" simplifyLocal="1" scaleBasedLabelVisibilityFlag="0">
+        <maplayer minimumScale="-4.65661e-10" maximumScale="1e+08" simplifyDrawingHints="0" minLabelScale="0" maxLabelScale="1e+08" simplifyDrawingTol="1" geometry="Line" simplifyMaxScale="1" type="vector" hasScaleBasedVisibilityFlag="0" simplifyLocal="1" scaleBasedLabelVisibilityFlag="0">
             <id>conduites_actives_copy_copy20130822080032346</id>
             <datasource>dbname='sige' host=172.24.171.203 port=5432 user='sige' sslmode=disable key='id' srid=21781 type=LINESTRING table="distribution"."od_pipe" (geometry) sql=</datasource>
             <title></title>
@@ -2728,7 +2728,7 @@
                 <property key="labeling/dist" value="1.2"/>
                 <property key="labeling/distInMapUnits" value="false"/>
                 <property key="labeling/enabled" value="true"/>
-                <property key="labeling/fieldName" value="&quot;Conduites - matériaux__displayname_fr&quot;||&#xa; CASE &#xa;WHEN  $scale  &lt; 1000 AND &quot;year&quot; IS NOT NULL  THEN ' ' ||&quot;year&quot;&#xa; ELSE ''&#xa; END&#xa;||&#xa;CASE&#xa;WHEN  $scale  &lt;= 6000 AND &quot;labelremark&quot; IS NOT NULL  THEN ' ' ||&quot;labelremark&quot;&#xa; ELSE '' &#xa;END"/>
+                <property key="labeling/fieldName" value=" replace( &quot;Conduites - matériaux__displayname_fr&quot;,'Inconnu','')||&#xa; CASE &#xa;WHEN  $scale  &lt; 1000 AND &quot;year&quot; IS NOT NULL  AND  $length &lt; 8 THEN '\n' ||&quot;year&quot;&#xa;WHEN  $scale  &lt; 1000 AND &quot;year&quot; IS NOT NULL  THEN ' ' ||&quot;year&quot;&#xa; ELSE ''&#xa; END&#xa;||&#xa;CASE&#xa;WHEN  $scale  &lt;= 6000 AND &quot;labelremark&quot; IS NOT NULL  THEN ' ' ||&quot;labelremark&quot;&#xa; ELSE '' &#xa;END"/>
                 <property key="labeling/fontBold" value="true"/>
                 <property key="labeling/fontCapitals" value="0"/>
                 <property key="labeling/fontFamily" value="Arial"/>
@@ -2931,7 +2931,7 @@
                 <actionsetting action="qgis.utils.plugins['linkit'].linkit('pipe20130507153818274','id_parent','pipe20130507153818274', [% $id %])" capture="0" type="1" name="Conduites schéma parent - enfant"/>
             </attributeactions>
         </maplayer>
-        <maplayer minimumScale="-4.65661e-10" maximumScale="1e+08" simplifyDrawingHints="0" minLabelScale="0" maxLabelScale="1e+08" simplifyDrawingTol="1" geometry="Line" simplifyMaxScale="1" type="vector" hasScaleBasedVisibilityFlag="0" simplifyLocal="1" scaleBasedLabelVisibilityFlag="0">
+        <maplayer minimumScale="0" maximumScale="1e+08" simplifyDrawingHints="0" minLabelScale="0" maxLabelScale="1e+08" simplifyDrawingTol="1" geometry="Line" simplifyMaxScale="1" type="vector" hasScaleBasedVisibilityFlag="0" simplifyLocal="1" scaleBasedLabelVisibilityFlag="0">
             <id>conduites_copy20130709141244955</id>
             <datasource>dbname='sige' host=172.24.171.203 port=5432 user='sige' sslmode=disable key='id' srid=21781 type=LINESTRING table="distribution"."od_pipe" (geometry) sql=</datasource>
             <title></title>
@@ -3068,7 +3068,7 @@
                 <property key="labeling/dist" value="1"/>
                 <property key="labeling/distInMapUnits" value="false"/>
                 <property key="labeling/enabled" value="true"/>
-                <property key="labeling/fieldName" value="&quot;Conduites - matériaux__displayname_fr&quot;||&#xa; CASE &#xa;WHEN  $scale  &lt; 1000 AND &quot;year&quot; IS NOT NULL  AND  $length &lt; 8 THEN '\n' ||&quot;year&quot;&#xa;WHEN  $scale  &lt; 1000 AND &quot;year&quot; IS NOT NULL  THEN ' ' ||&quot;year&quot;&#xa; ELSE ''&#xa; END&#xa;||&#xa;CASE&#xa;WHEN  $scale  &lt;= 6000 AND &quot;labelremark&quot; IS NOT NULL  THEN ' ' ||&quot;labelremark&quot;&#xa; ELSE '' &#xa;END"/>
+                <property key="labeling/fieldName" value=" replace( &quot;Conduites - matériaux__displayname_fr&quot;,'Inconnu','')||&#xa; CASE &#xa;WHEN  $scale  &lt; 1000 AND &quot;year&quot; IS NOT NULL  AND  $length &lt; 8 THEN '\n' ||&quot;year&quot;&#xa;WHEN  $scale  &lt; 1000 AND &quot;year&quot; IS NOT NULL  THEN ' ' ||&quot;year&quot;&#xa; ELSE ''&#xa; END&#xa;||&#xa;CASE&#xa;WHEN  $scale  &lt;= 6000 AND &quot;labelremark&quot; IS NOT NULL  THEN ' ' ||&quot;labelremark&quot;&#xa; ELSE '' &#xa;END"/>
                 <property key="labeling/fontBold" value="false"/>
                 <property key="labeling/fontCapitals" value="0"/>
                 <property key="labeling/fontFamily" value="Arial"/>
