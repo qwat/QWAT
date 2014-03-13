@@ -27,7 +27,6 @@ ALTER TABLE distribution.od_installation_tank ADD COLUMN eca                  va
 ALTER TABLE distribution.od_installation_tank ADD COLUMN id_labelvisible        boolean default null;
 ALTER TABLE distribution.od_installation_tank ADD COLUMN id_labelvisible_schema boolean default null;
 ALTER TABLE distribution.od_installation_tank ADD COLUMN labelremark            varchar(150) default '';
-ALTER TABLE distribution.od_installation_tank ADD COLUMN labelremark_schema     varchar(150) default '';
 /* specific to tanks */
 ALTER TABLE distribution.od_installation_tank ADD COLUMN id_overflow          integer             ;
 ALTER TABLE distribution.od_installation_tank ADD COLUMN id_firestorage       integer             ;

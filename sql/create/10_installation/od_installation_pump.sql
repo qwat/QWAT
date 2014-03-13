@@ -29,7 +29,6 @@ ALTER TABLE distribution.od_installation_pump ADD COLUMN eca                varc
 ALTER TABLE distribution.od_installation_pump ADD COLUMN id_labelvisible        boolean default null;
 ALTER TABLE distribution.od_installation_pump ADD COLUMN id_labelvisible_schema boolean default null;
 ALTER TABLE distribution.od_installation_pump ADD COLUMN labelremark            varchar(150) default '';
-ALTER TABLE distribution.od_installation_pump ADD COLUMN labelremark_schema     varchar(150) default '';
 /* specific to pumps */
 ALTER TABLE distribution.od_installation_pump ADD COLUMN id_type           smallint     ;
 ALTER TABLE distribution.od_installation_pump ADD COLUMN id_operating      smallint     ;

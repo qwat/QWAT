@@ -28,7 +28,6 @@ ALTER TABLE distribution.od_installation_source ADD COLUMN eca                va
 ALTER TABLE distribution.od_installation_source ADD COLUMN id_labelvisible        boolean default null;
 ALTER TABLE distribution.od_installation_source ADD COLUMN id_labelvisible_schema boolean default null;
 ALTER TABLE distribution.od_installation_source ADD COLUMN labelremark            varchar(150) default '';
-ALTER TABLE distribution.od_installation_source ADD COLUMN labelremark_schema     varchar(150) default '';
 /* specific to sources */
 ALTER TABLE distribution.od_installation_source ADD COLUMN id_type           smallint     ;
 ALTER TABLE distribution.od_installation_source ADD COLUMN id_quality        smallint     ;

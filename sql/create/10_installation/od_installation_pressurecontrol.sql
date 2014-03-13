@@ -28,7 +28,6 @@ ALTER TABLE distribution.od_installation_pressurecontrol ADD COLUMN eca         
 ALTER TABLE distribution.od_installation_pressurecontrol ADD COLUMN id_labelvisible        boolean default null;
 ALTER TABLE distribution.od_installation_pressurecontrol ADD COLUMN id_labelvisible_schema boolean default null;
 ALTER TABLE distribution.od_installation_pressurecontrol ADD COLUMN labelremark            varchar(150) default '';
-ALTER TABLE distribution.od_installation_pressurecontrol ADD COLUMN labelremark_schema     varchar(150) default '';
 /* specific to pressurecontrol */
 ALTER TABLE distribution.od_installation_pressurecontrol ADD COLUMN id_type            integer not null       ;
 

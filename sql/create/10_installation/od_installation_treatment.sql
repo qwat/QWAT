@@ -28,7 +28,6 @@ ALTER TABLE distribution.od_installation_treatment ADD COLUMN eca               
 ALTER TABLE distribution.od_installation_treatment ADD COLUMN id_labelvisible        boolean default null;
 ALTER TABLE distribution.od_installation_treatment ADD COLUMN id_labelvisible_schema boolean default null;
 ALTER TABLE distribution.od_installation_treatment ADD COLUMN labelremark            varchar(150) default '';
-ALTER TABLE distribution.od_installation_treatment ADD COLUMN labelremark_schema     varchar(150) default '';
 /* specific to treatment */
 ALTER TABLE distribution.od_installation_treatment ADD COLUMN sanitization_uv               boolean      ;
 ALTER TABLE distribution.od_installation_treatment ADD COLUMN sanitization_chlorine_liquid  boolean      ;
