@@ -24,10 +24,10 @@
     <mapcanvas>
         <units>meters</units>
         <extent>
-            <xmin>554501.83723276096861809</xmin>
-            <ymin>146967.23121523862937465</ymin>
-            <xmax>554595.63202452368568629</xmax>
-            <ymax>147041.25047512265155092</ymax>
+            <xmin>553234.04777820641174912</xmin>
+            <ymin>146884.72321969998301938</ymin>
+            <xmax>553327.84256996959447861</xmax>
+            <ymax>146958.74247958423802629</ymax>
         </extent>
         <projections>1</projections>
         <destinationsrs>
@@ -43,7 +43,7 @@
             </spatialrefsys>
         </destinationsrs>
     </mapcanvas>
-    <legend updateDrawingOrder="false" activeLayer="installation_treatment20130816113039913">
+    <legend updateDrawingOrder="false" activeLayer="vannes_copy20130924083714343">
         <legendgroup open="true" checked="Qt::PartiallyChecked" name="Réseau">
             <legendgroup open="true" checked="Qt::PartiallyChecked" name="ouvrages">
                 <legendlayer drawingOrder="0" open="false" checked="Qt::Unchecked" name="ouvrage général" showFeatureCount="0">
@@ -51,7 +51,7 @@
                         <legendlayerfile isInOverview="0" layerid="installation20130304110004938" visible="0"/>
                     </filegroup>
                 </legendlayer>
-                <legendgroup open="true" checked="Qt::Checked" name="détail">
+                <legendgroup open="false" checked="Qt::Checked" name="détail">
                     <legendlayer drawingOrder="1" open="false" checked="Qt::Checked" name="ouvrage - réservoirs" showFeatureCount="0">
                         <filegroup open="false" hidden="false">
                             <legendlayerfile isInOverview="0" layerid="installation_tank20130304110005008" visible="1"/>
@@ -84,7 +84,7 @@
                     </legendlayer>
                 </legendgroup>
             </legendgroup>
-            <legendgroup open="false" checked="Qt::PartiallyChecked" name="Eléments ponctuels">
+            <legendgroup open="true" checked="Qt::PartiallyChecked" name="Eléments ponctuels">
                 <legendlayer drawingOrder="7" open="false" checked="Qt::Checked" name="hydrantes" showFeatureCount="0">
                     <filegroup open="false" hidden="false">
                         <legendlayerfile isInOverview="0" layerid="hydrant20130304110004848" visible="1"/>
@@ -116,7 +116,7 @@
                     </filegroup>
                 </legendlayer>
             </legendgroup>
-            <legendgroup open="false" checked="Qt::PartiallyChecked" name="Abonnés">
+            <legendgroup open="false" checked="Qt::Checked" name="Abonnés">
                 <legendlayer drawingOrder="13" open="false" checked="Qt::Checked" name="abonnés" showFeatureCount="0">
                     <filegroup open="false" hidden="false">
                         <legendlayerfile isInOverview="0" layerid="subscriber20130304110011459" visible="1"/>
@@ -132,13 +132,13 @@
                         <legendlayerfile isInOverview="0" layerid="od_meter20131120073630165" visible="1"/>
                     </filegroup>
                 </legendlayer>
-                <legendlayer drawingOrder="16" open="false" checked="Qt::Unchecked" name="Compteur réseau - renvoi" showFeatureCount="0">
+                <legendlayer drawingOrder="16" open="false" checked="Qt::Checked" name="Compteur réseau - renvoi" showFeatureCount="0">
                     <filegroup open="false" hidden="false">
-                        <legendlayerfile isInOverview="0" layerid="od_meter_reference20140304165835390" visible="0"/>
+                        <legendlayerfile isInOverview="0" layerid="od_meter_reference20140304165835390" visible="1"/>
                     </filegroup>
                 </legendlayer>
             </legendgroup>
-            <legendgroup open="false" checked="Qt::PartiallyChecked" name="Noeuds">
+            <legendgroup open="true" checked="Qt::PartiallyChecked" name="Noeuds">
                 <legendlayer drawingOrder="17" open="false" checked="Qt::Unchecked" name="compteur abonné" showFeatureCount="0">
                     <filegroup open="false" hidden="false">
                         <legendlayerfile isInOverview="0" layerid="od_meter_subscriber20131211104942391" visible="0"/>
@@ -229,7 +229,7 @@
                 </filegroup>
             </legendlayer>
         </legendgroup>
-        <legendgroup open="false" checked="Qt::Unchecked" name="Zones">
+        <legendgroup open="true" checked="Qt::Unchecked" name="Zones">
             <legendlayer drawingOrder="33" open="false" checked="Qt::Unchecked" name="communes" showFeatureCount="0">
                 <filegroup open="false" hidden="false">
                     <legendlayerfile isInOverview="0" layerid="district20130304110004764" visible="0"/>
@@ -1057,6 +1057,7 @@
                     <Layer>subscriber20130304110011459</Layer>
                     <Layer>od_subscriber_reference20131206105928067</Layer>
                     <Layer>od_meter20131120073630165</Layer>
+                    <Layer>od_meter_reference20140304165835390</Layer>
                     <Layer>node20130304110005126</Layer>
                     <Layer>conduites_copy20130709141244955</Layer>
                     <Layer>conduites_actives_copy_copy20130822080032346</Layer>
@@ -3156,16 +3157,18 @@
                 <join joinFieldName="id" targetFieldName="id_material" memoryCache="1" joinLayerId="vl_pipe_material20130304110005230"/>
                 <join joinFieldName="id" targetFieldName="id_status" memoryCache="1" joinLayerId="status20130304110011436"/>
                 <join joinFieldName="id" targetFieldName="id_function" memoryCache="1" joinLayerId="vl_pipe_function20130304110005186"/>
+                <join joinFieldName="id" targetFieldName="id_protection" memoryCache="0" joinLayerId="vl_pipe_protection20130304110005258"/>
             </vectorjoins>
             <renderer-v2 symbollevels="0" type="RuleRenderer">
                 <rules>
                     <rule filter="id_distributor = 1 and &quot;Statut_active&quot; ='t' and &quot;_schema_visible&quot; = 't'" label="Schématique">
                         <rule filter=" &quot;Conduites - fonction_schema_visible&quot; = 't'" symbol="0" label="Transport"/>
                         <rule filter=" &quot;Conduites - fonction_schema_visible&quot; = 'f'" symbol="1" label="Distribution"/>
+                        <rule filter=" &quot;id_protection&quot; IS NOT NULL" symbol="2" label="protégée"/>
                     </rule>
                     <rule scalemaxdenom="3000" filter="id_distributor = 1 and &quot;Statut_active&quot; = 't' and _schema_visible = 'f'" label="Détail">
-                        <rule filter=" &quot;Conduites - fonction_schema_visible&quot; = 't'" symbol="2" label="Transport"/>
-                        <rule filter=" &quot;Conduites - fonction_schema_visible&quot; = 'f'" symbol="3" label="Distribution"/>
+                        <rule filter=" &quot;Conduites - fonction_schema_visible&quot; = 't'" symbol="3" label="Transport"/>
+                        <rule filter=" &quot;Conduites - fonction_schema_visible&quot; = 'f'" symbol="4" label="Distribution"/>
                     </rule>
                 </rules>
                 <symbols>
@@ -3203,6 +3206,22 @@
                     </symbol>
                     <symbol alpha="1" type="line" name="2">
                         <layer pass="0" class="SimpleLine" locked="0">
+                            <prop k="capstyle" v="flat"/>
+                            <prop k="color" v="0,140,255,70"/>
+                            <prop k="customdash" v="5;2"/>
+                            <prop k="customdash_unit" v="MM"/>
+                            <prop k="draw_inside_polygon" v="0"/>
+                            <prop k="joinstyle" v="bevel"/>
+                            <prop k="offset" v="0"/>
+                            <prop k="offset_unit" v="MM"/>
+                            <prop k="penstyle" v="solid"/>
+                            <prop k="use_custom_dash" v="0"/>
+                            <prop k="width" v="2"/>
+                            <prop k="width_unit" v="MM"/>
+                        </layer>
+                    </symbol>
+                    <symbol alpha="1" type="line" name="3">
+                        <layer pass="0" class="SimpleLine" locked="0">
                             <prop k="capstyle" v="square"/>
                             <prop k="color" v="0,140,255,255"/>
                             <prop k="customdash" v="5;2"/>
@@ -3217,7 +3236,7 @@
                             <prop k="width_unit" v="MM"/>
                         </layer>
                     </symbol>
-                    <symbol alpha="1" type="line" name="3">
+                    <symbol alpha="1" type="line" name="4">
                         <layer pass="0" class="SimpleLine" locked="0">
                             <prop k="capstyle" v="square"/>
                             <prop k="color" v="0,140,255,255"/>
@@ -3265,7 +3284,7 @@
                 <property key="labeling/dist" value="1"/>
                 <property key="labeling/distInMapUnits" value="false"/>
                 <property key="labeling/enabled" value="true"/>
-                <property key="labeling/fieldName" value=" replace( &quot;Conduites - matériaux__displayname_fr&quot;,'Inconnu','')||&#xa; CASE &#xa;WHEN  $scale  &lt; 1000 AND &quot;year&quot; IS NOT NULL  AND  $length &lt; 8 THEN '\n' ||&quot;year&quot;&#xa;WHEN  $scale  &lt; 1000 AND &quot;year&quot; IS NOT NULL  THEN ' ' ||&quot;year&quot;&#xa; ELSE ''&#xa; END&#xa;||&#xa;CASE&#xa;WHEN  $scale  &lt;= 6000 AND &quot;labelremark&quot; IS NOT NULL  THEN ' ' ||&quot;labelremark&quot;&#xa; ELSE '' &#xa;END"/>
+                <property key="labeling/fieldName" value=" replace( &quot;Conduites - matériaux__displayname_fr&quot;,'Inconnu','')||&#xa; CASE &#xa;WHEN  $scale  &lt; 1000 AND &quot;year&quot; IS NOT NULL  AND  $length &lt; 8 THEN '\n' ||&quot;year&quot;&#xa;WHEN  $scale  &lt; 1000 AND &quot;year&quot; IS NOT NULL  THEN ' ' ||&quot;year&quot;&#xa; ELSE ''&#xa; END&#xa;||&#xa;CASE&#xa;WHEN  $scale  &lt;= 3000 AND  &quot;Conduites - protection_value_fr&quot;  IS NOT NULL  THEN '\n' || &quot;Conduites - protection_value_fr&quot; &#xa; ELSE '' &#xa;END&#xa;||&#xa;CASE&#xa;WHEN  $scale  &lt;= 6000 AND &quot;labelremark&quot; IS NOT NULL  THEN ' ' ||&quot;labelremark&quot;&#xa; ELSE '' &#xa;END"/>
                 <property key="labeling/fontBold" value="false"/>
                 <property key="labeling/fontCapitals" value="0"/>
                 <property key="labeling/fontFamily" value="Arial"/>
@@ -3408,6 +3427,9 @@
                 <edittype labelontop="0" editable="0" type="0" name="Conduites - matériaux_value_en"/>
                 <edittype labelontop="0" editable="0" type="0" name="Conduites - matériaux_value_fr"/>
                 <edittype labelontop="0" editable="0" type="0" name="Conduites - matériaux_vl_active"/>
+                <edittype labelontop="0" editable="0" type="0" name="Conduites - protection_value_en"/>
+                <edittype labelontop="0" editable="0" type="0" name="Conduites - protection_value_fr"/>
+                <edittype labelontop="0" editable="0" type="0" name="Conduites - protection_vl_active"/>
                 <edittype labelontop="0" editable="0" type="0" name="Distributeur_name"/>
                 <edittype labelontop="0" editable="0" type="0" name="Statut_active"/>
                 <edittype labelontop="0" editable="0" type="0" name="Statut_comment"/>
@@ -4019,7 +4041,7 @@
                 <actionsetting action="qgis.utils.plugins['postgres91plusauditor'].showHistory('district20130304110004764',[% $id %])" capture="0" type="1" name="History audit"/>
             </attributeactions>
         </maplayer>
-        <maplayer minimumScale="-4.65661e-10" maximumScale="10001" simplifyDrawingHints="1" minLabelScale="1" maxLabelScale="1e+08" simplifyDrawingTol="1" geometry="Point" simplifyMaxScale="1" type="vector" hasScaleBasedVisibilityFlag="1" simplifyLocal="1" scaleBasedLabelVisibilityFlag="0">
+        <maplayer minimumScale="0" maximumScale="10001" simplifyDrawingHints="0" minLabelScale="1" maxLabelScale="1e+08" simplifyDrawingTol="1" geometry="Point" simplifyMaxScale="1" type="vector" hasScaleBasedVisibilityFlag="1" simplifyLocal="1" scaleBasedLabelVisibilityFlag="0">
             <id>hydrant20130304110004848</id>
             <datasource>dbname='sige' host=172.24.171.203 port=5432 user='sige' password='db4wat$' sslmode=allow key='id' srid=21781 type=POINT table="distribution"."od_hydrant" (geometry) sql=</datasource>
             <title></title>
@@ -4234,7 +4256,7 @@
                 <edittype labelontop="0" editable="1" type="0" name="id_district"/>
                 <edittype labelontop="0" editable="1" type="0" name="id_node"/>
                 <edittype labelontop="0" editable="1" allowNull="false" orderByValue="false" key="id" layer="vl_precision20130304110011372" allowMulti="false" filterExpression="" type="15" value="value_fr" name="id_precision"/>
-                <edittype labelontop="0" editable="1" type="0" name="id_precisionalti"/>
+                <edittype labelontop="0" editable="1" allowNull="false" orderByValue="false" key="id" layer="vl_precisionalti20131211161429510" allowMulti="false" filterExpression="" type="15" value="value_fr" name="id_precisionalti"/>
                 <edittype labelontop="0" editable="1" allowNull="true" orderByValue="false" key="id" layer="pressurezone20130417133612105" allowMulti="false" filterExpression="" type="15" value="name" name="id_pressurezone"/>
                 <edittype labelontop="0" editable="1" allowNull="false" orderByValue="false" key="id" layer="printmap20130304110011400" allowMulti="true" filterExpression="" type="15" value="name" name="id_printmap"/>
                 <edittype labelontop="0" editable="1" allowNull="true" orderByValue="false" key="id" layer="hydrant_provider20130304110004893" allowMulti="false" filterExpression="" type="15" value="name" name="id_provider"/>
@@ -6775,7 +6797,7 @@
                 <actionsetting action="qgis.utils.plugins['postgres91plusauditor'].showHistory('logged_actions20130304110005081',[% $id %])" capture="0" type="1" name="History audit"/>
             </attributeactions>
         </maplayer>
-        <maplayer minimumScale="0" maximumScale="501" simplifyDrawingHints="0" minLabelScale="1" maxLabelScale="1e+08" simplifyDrawingTol="1" geometry="Point" simplifyMaxScale="1" type="vector" hasScaleBasedVisibilityFlag="1" simplifyLocal="1" scaleBasedLabelVisibilityFlag="0">
+        <maplayer minimumScale="-4.65661e-10" maximumScale="501" simplifyDrawingHints="0" minLabelScale="1" maxLabelScale="1e+08" simplifyDrawingTol="1" geometry="Point" simplifyMaxScale="1" type="vector" hasScaleBasedVisibilityFlag="1" simplifyLocal="1" scaleBasedLabelVisibilityFlag="0">
             <id>node20130304110005126</id>
             <datasource>dbname='sige' host=172.24.171.203 port=5432 user='sige' password='db4wat$' sslmode=allow key='id' srid=21781 type=POINT table="distribution"."od_node" (geometry) sql=</datasource>
             <title></title>
@@ -6806,8 +6828,8 @@
                     <rule filter="_type = 'two_diameter'  AND _status_active = 't' AND  &quot;_under_object&quot; = 'f'" symbol="2" label="Chg. diamètre"/>
                     <rule filter="_type = 'two_material' AND _status_active = 't' AND  &quot;_under_object&quot; = 'f'" symbol="3" label="Chg. matériau"/>
                     <rule filter="_type = 'three' AND _status_active = 't' AND  &quot;_under_object&quot; = 'f'" symbol="4" label="Intersection T"/>
-                    <rule filter="_type = 'meter_subscriber' AND  &quot;_under_object&quot; = 'f'" symbol="5" label="compteur"/>
-                    <rule filter=" &quot;_under_object&quot; = 't'" symbol="6" label="autre"/>
+                    <rule filter="_type = 'meter_subscriber'" symbol="5" label="compteur"/>
+                    <rule filter=" _type != 'meter_subscriber' AND &quot;_under_object&quot; = 't'" symbol="6" label="autre"/>
                 </rules>
                 <symbols>
                     <symbol alpha="1" type="marker" name="0">
@@ -9937,6 +9959,8 @@
                 <property key="labeling/bufferSizeInMapUnits" value="false"/>
                 <property key="labeling/bufferTransp" value="0"/>
                 <property key="labeling/centroidWhole" value="false"/>
+                <property key="labeling/dataDefined/AlwaysShow" value="1~~1~~1~~"/>
+                <property key="labeling/dataDefined/Show" value="1~~1~~1~~"/>
                 <property key="labeling/dataDefined/Size" value="1~~1~~CASE WHEN $scale &lt; 5000 THEN 12&#xa;ELSE 10&#xa;END~~"/>
                 <property key="labeling/decimals" value="0"/>
                 <property key="labeling/displayAll" value="false"/>
@@ -10829,7 +10853,7 @@
                 <actionsetting action="qgis.utils.plugins['postgres91plusauditor'].showHistory('subscriber_pipe_relation20130417092124312',[% $id %])" capture="0" type="1" name="History audit"/>
             </attributeactions>
         </maplayer>
-        <maplayer minimumScale="0" maximumScale="10001" simplifyDrawingHints="0" minLabelScale="1" maxLabelScale="1e+08" simplifyDrawingTol="1" geometry="Point" simplifyMaxScale="1" type="vector" hasScaleBasedVisibilityFlag="1" simplifyLocal="1" scaleBasedLabelVisibilityFlag="0">
+        <maplayer minimumScale="-4.65661e-10" maximumScale="10001" simplifyDrawingHints="0" minLabelScale="1" maxLabelScale="1e+08" simplifyDrawingTol="1" geometry="Point" simplifyMaxScale="1" type="vector" hasScaleBasedVisibilityFlag="1" simplifyLocal="1" scaleBasedLabelVisibilityFlag="0">
             <id>valve20130304110011497</id>
             <datasource>dbname='sige' host=172.24.171.203 port=5432 user='sige' password='db4wat$' sslmode=allow key='id' srid=21781 type=POINT table="distribution"."od_valve" (geometry) sql=</datasource>
             <title></title>
@@ -10966,7 +10990,7 @@
                 <property key="labeling/dist" value="1"/>
                 <property key="labeling/distInMapUnits" value="false"/>
                 <property key="labeling/enabled" value="true"/>
-                <property key="labeling/fieldName" value="CASE WHEN &quot;Vannes - fonction_short_fr&quot; IS NOT NULL THEN &quot;Vannes - fonction_short_fr&quot; END &#xa;||CASE WHEN &quot;Vannes - type_short_fr&quot; IS NOT NULL THEN &quot;Vannes - type_short_fr&quot; END&#xa;|| identification"/>
+                <property key="labeling/fieldName" value="CASE WHEN &quot;Vannes - fonction_short_fr&quot; IS NOT NULL THEN &quot;Vannes - fonction_short_fr&quot; END &#xa;||CASE WHEN &quot;Vannes - type_short_fr&quot; IS NOT NULL THEN &quot;Vannes - type_short_fr&quot; END&#xa;|| identification&#xa;||&#xa;CASE&#xa;WHEN  $scale  &lt;= 6000 AND &quot;labelremark&quot; IS NOT NULL  THEN ' ' ||&quot;labelremark&quot;&#xa; ELSE '' &#xa;END"/>
                 <property key="labeling/fontBold" value="false"/>
                 <property key="labeling/fontCapitals" value="0"/>
                 <property key="labeling/fontFamily" value="Arial"/>
@@ -11139,23 +11163,23 @@
             <annotationform>.</annotationform>
             <editorlayout>uifilelayout</editorlayout>
             <aliases>
-                <alias field="_printmaps" index="26" name="folios"/>
-                <alias field="_schema_visible" index="18" name="visible schéma"/>
+                <alias field="_printmaps" index="25" name="folios"/>
+                <alias field="_schema_visible" index="17" name="visible schéma"/>
                 <alias field="altitude_real" index="13" name="altitude"/>
                 <alias field="closed" index="11" name="fermée"/>
                 <alias field="diameter_nominal" index="9" name="diamètre nominal"/>
-                <alias field="id_district" index="20" name="commune"/>
+                <alias field="id_district" index="19" name="commune"/>
                 <alias field="id_function" index="3" name="fonction"/>
                 <alias field="id_labelvisible" index="6" name="visibilité label"/>
                 <alias field="id_labelvisible_schema" index="7" name="visibilité label shéma"/>
                 <alias field="id_maintenance" index="8" name="entretien"/>
-                <alias field="id_node" index="19" name="ID noeud"/>
-                <alias field="id_pipe" index="23" name="ID conduite"/>
-                <alias field="id_pressurezone" index="21" name="zone de pression"/>
-                <alias field="id_printmap" index="22" name="folio"/>
+                <alias field="id_node" index="18" name="ID noeud"/>
+                <alias field="id_pipe" index="22" name="ID conduite"/>
+                <alias field="id_pressurezone" index="20" name="zone de pression"/>
+                <alias field="id_printmap" index="21" name="folio"/>
                 <alias field="id_type" index="2" name="type"/>
                 <alias field="remark" index="14" name="remarques"/>
-                <alias field="schema_force_view" index="17" name="visibilité schéma"/>
+                <alias field="schema_force_view" index="16" name="visibilité schéma"/>
                 <alias field="year" index="10" name="année"/>
             </aliases>
             <excludeAttributesWMS/>
@@ -11415,7 +11439,7 @@
                 <actionsetting action="qgis.utils.plugins['postgres91plusauditor'].showHistory('valve_schema20130304110011584',[% $id %])" capture="0" type="1" name="History audit"/>
             </attributeactions>
         </maplayer>
-        <maplayer minimumScale="-4.65661e-10" maximumScale="3001" simplifyDrawingHints="0" minLabelScale="1" maxLabelScale="1e+08" simplifyDrawingTol="1" geometry="Point" simplifyMaxScale="1" type="vector" hasScaleBasedVisibilityFlag="1" simplifyLocal="1" scaleBasedLabelVisibilityFlag="0">
+        <maplayer minimumScale="0" maximumScale="3001" simplifyDrawingHints="0" minLabelScale="1" maxLabelScale="1e+08" simplifyDrawingTol="1" geometry="Point" simplifyMaxScale="1" type="vector" hasScaleBasedVisibilityFlag="1" simplifyLocal="1" scaleBasedLabelVisibilityFlag="0">
             <id>vannes_copy20130924083714343</id>
             <datasource>dbname='sige' host=172.24.171.203 port=5432 user='sige' password='db4wat$' sslmode=allow key='id' srid=21781 type=POINT table="distribution"."od_valve" (geometry) sql=</datasource>
             <title></title>
@@ -11548,7 +11572,7 @@
                 <property key="labeling/dist" value="1.5"/>
                 <property key="labeling/distInMapUnits" value="false"/>
                 <property key="labeling/enabled" value="true"/>
-                <property key="labeling/fieldName" value="CASE WHEN &quot;Vannes - fonction_short_fr&quot; IS NOT NULL THEN &quot;Vannes - fonction_short_fr&quot; || identification ELSE identification END"/>
+                <property key="labeling/fieldName" value="CASE WHEN &quot;Vannes - fonction_short_fr&quot; IS NOT NULL THEN &quot;Vannes - fonction_short_fr&quot; || identification ELSE identification END&#xa;||&#xa;CASE&#xa;WHEN  $scale  &lt;= 6000 AND &quot;labelremark&quot; IS NOT NULL  THEN ' ' ||&quot;labelremark&quot;&#xa; ELSE '' &#xa;END"/>
                 <property key="labeling/fontBold" value="false"/>
                 <property key="labeling/fontCapitals" value="0"/>
                 <property key="labeling/fontFamily" value="Arial"/>
@@ -11717,23 +11741,23 @@
             <annotationform>.</annotationform>
             <editorlayout>uifilelayout</editorlayout>
             <aliases>
-                <alias field="_printmaps" index="26" name="folios"/>
-                <alias field="_schema_visible" index="18" name="visible schéma"/>
+                <alias field="_printmaps" index="25" name="folios"/>
+                <alias field="_schema_visible" index="17" name="visible schéma"/>
                 <alias field="altitude_real" index="13" name="altitude"/>
                 <alias field="closed" index="11" name="fermée"/>
                 <alias field="diameter_nominal" index="9" name="diamètre nominal"/>
-                <alias field="id_district" index="20" name="commune"/>
+                <alias field="id_district" index="19" name="commune"/>
                 <alias field="id_function" index="3" name="fonction"/>
                 <alias field="id_labelvisible" index="6" name="visibilité label"/>
                 <alias field="id_labelvisible_schema" index="7" name="visibilité label shéma"/>
                 <alias field="id_maintenance" index="8" name="entretien"/>
-                <alias field="id_node" index="19" name="ID noeud"/>
-                <alias field="id_pipe" index="23" name="ID conduite"/>
-                <alias field="id_pressurezone" index="21" name="zone de pression"/>
-                <alias field="id_printmap" index="22" name="folio"/>
+                <alias field="id_node" index="18" name="ID noeud"/>
+                <alias field="id_pipe" index="22" name="ID conduite"/>
+                <alias field="id_pressurezone" index="20" name="zone de pression"/>
+                <alias field="id_printmap" index="21" name="folio"/>
                 <alias field="id_type" index="2" name="type"/>
                 <alias field="remark" index="14" name="remarques"/>
-                <alias field="schema_force_view" index="17" name="visibilité schéma"/>
+                <alias field="schema_force_view" index="16" name="visibilité schéma"/>
                 <alias field="year" index="10" name="année"/>
             </aliases>
             <excludeAttributesWMS/>
@@ -13222,6 +13246,7 @@
                         <value>subscriber20130304110011459</value>
                         <value>od_subscriber_reference20131206105928067</value>
                         <value>od_meter20131120073630165</value>
+                        <value>od_meter_reference20140304165835390</value>
                         <value>node20130304110005126</value>
                         <value>conduites_copy20130709141244955</value>
                         <value>conduites_actives_copy_copy20130822080032346</value>
