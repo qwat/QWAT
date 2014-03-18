@@ -24,10 +24,10 @@
     <mapcanvas>
         <units>meters</units>
         <extent>
-            <xmin>553234.04777820641174912</xmin>
-            <ymin>146884.72321969998301938</ymin>
-            <xmax>553327.84256996959447861</xmax>
-            <ymax>146958.74247958423802629</ymax>
+            <xmin>550206.56474517204333097</xmin>
+            <ymin>142088.24341127707157284</ymin>
+            <xmax>562212.29809086315799505</xmax>
+            <ymax>151562.70867646264377981</ymax>
         </extent>
         <projections>1</projections>
         <destinationsrs>
@@ -43,7 +43,7 @@
             </spatialrefsys>
         </destinationsrs>
     </mapcanvas>
-    <legend updateDrawingOrder="false" activeLayer="vannes_copy20130924083714343">
+    <legend updateDrawingOrder="false">
         <legendgroup open="true" checked="Qt::PartiallyChecked" name="Réseau">
             <legendgroup open="true" checked="Qt::PartiallyChecked" name="ouvrages">
                 <legendlayer drawingOrder="0" open="false" checked="Qt::Unchecked" name="ouvrage général" showFeatureCount="0">
@@ -138,15 +138,15 @@
                     </filegroup>
                 </legendlayer>
             </legendgroup>
-            <legendgroup open="true" checked="Qt::PartiallyChecked" name="Noeuds">
+            <legendgroup open="false" checked="Qt::Unchecked" name="Noeuds">
                 <legendlayer drawingOrder="17" open="false" checked="Qt::Unchecked" name="compteur abonné" showFeatureCount="0">
                     <filegroup open="false" hidden="false">
                         <legendlayerfile isInOverview="0" layerid="od_meter_subscriber20131211104942391" visible="0"/>
                     </filegroup>
                 </legendlayer>
-                <legendlayer drawingOrder="18" open="false" checked="Qt::Checked" name="noeuds" showFeatureCount="0">
+                <legendlayer drawingOrder="18" open="false" checked="Qt::Unchecked" name="noeuds" showFeatureCount="0">
                     <filegroup open="false" hidden="false">
-                        <legendlayerfile isInOverview="0" layerid="node20130304110005126" visible="1"/>
+                        <legendlayerfile isInOverview="0" layerid="node20130304110005126" visible="0"/>
                     </filegroup>
                 </legendlayer>
                 <legendlayer drawingOrder="19" open="false" checked="Qt::Unchecked" name="noeuds - tous - controle" showFeatureCount="0">
@@ -161,9 +161,9 @@
                         <legendlayerfile isInOverview="0" layerid="conduites_copy20130709141244955" visible="1"/>
                     </filegroup>
                 </legendlayer>
-                <legendlayer drawingOrder="21" open="false" checked="Qt::Checked" name="conduites étrangers" showFeatureCount="0">
+                <legendlayer drawingOrder="21" open="false" checked="Qt::Unchecked" name="conduites étrangers" showFeatureCount="0">
                     <filegroup open="false" hidden="false">
-                        <legendlayerfile isInOverview="0" layerid="conduites_actives_copy_copy20130822080032346" visible="1"/>
+                        <legendlayerfile isInOverview="0" layerid="conduites_actives_copy_copy20130822080032346" visible="0"/>
                     </filegroup>
                 </legendlayer>
                 <legendlayer drawingOrder="22" open="false" checked="Qt::Unchecked" name="conduites inactives" showFeatureCount="0">
@@ -202,7 +202,7 @@
                 </filegroup>
             </legendlayer>
         </legendgroup>
-        <legendgroup open="true" checked="Qt::PartiallyChecked" name="Côtes">
+        <legendgroup open="false" checked="Qt::PartiallyChecked" name="Côtes">
             <legendlayer drawingOrder="28" open="false" checked="Qt::Checked" name="côtes distance" showFeatureCount="0">
                 <filegroup open="false" hidden="false">
                     <legendlayerfile isInOverview="0" layerid="dimension20130807094904783" visible="1"/>
@@ -229,7 +229,7 @@
                 </filegroup>
             </legendlayer>
         </legendgroup>
-        <legendgroup open="true" checked="Qt::Unchecked" name="Zones">
+        <legendgroup open="false" checked="Qt::Unchecked" name="Zones">
             <legendlayer drawingOrder="33" open="false" checked="Qt::Unchecked" name="communes" showFeatureCount="0">
                 <filegroup open="false" hidden="false">
                     <legendlayerfile isInOverview="0" layerid="district20130304110004764" visible="0"/>
@@ -402,7 +402,7 @@
                 </filegroup>
             </legendlayer>
         </legendgroup>
-        <legendgroup open="true" checked="Qt::PartiallyChecked" name="enquetes">
+        <legendgroup open="false" checked="Qt::PartiallyChecked" name="enquetes">
             <legendlayer drawingOrder="66" open="false" checked="Qt::Unchecked" name="camac" showFeatureCount="0">
                 <filegroup open="false" hidden="false">
                     <legendlayerfile isInOverview="0" layerid="camac20140113144941208" visible="0"/>
@@ -2545,7 +2545,7 @@
             <vectorjoins>
                 <join joinFieldName="id" targetFieldName="id_status" memoryCache="0" joinLayerId="vl_status20130304110011436"/>
                 <join joinFieldName="id" targetFieldName="id_material" memoryCache="1" joinLayerId="vl_pipe_material20130304110005230"/>
-                <join joinFieldName="id" targetFieldName="id_status" memoryCache="0" joinLayerId="subscriber20130304110011459"/>
+                <join joinFieldName="id" targetFieldName="id_status" memoryCache="1" joinLayerId="subscriber20130304110011459"/>
                 <join joinFieldName="id" targetFieldName="id_status" memoryCache="1" joinLayerId="status20130304110011436"/>
             </vectorjoins>
             <renderer-v2 symbollevels="0" type="RuleRenderer">
@@ -3129,7 +3129,7 @@
                 <actionsetting action="qgis.utils.plugins['linkit'].linkit('pipe20130507153818274','id_parent','pipe20130507153818274', [% $id %])" capture="0" type="1" name="Conduites schéma parent - enfant"/>
             </attributeactions>
         </maplayer>
-        <maplayer minimumScale="0" maximumScale="1e+08" simplifyDrawingHints="0" minLabelScale="0" maxLabelScale="1e+08" simplifyDrawingTol="1" geometry="Line" simplifyMaxScale="1" type="vector" hasScaleBasedVisibilityFlag="0" simplifyLocal="1" scaleBasedLabelVisibilityFlag="0">
+        <maplayer minimumScale="-4.65661e-10" maximumScale="1e+08" simplifyDrawingHints="0" minLabelScale="0" maxLabelScale="1e+08" simplifyDrawingTol="1" geometry="Line" simplifyMaxScale="1" type="vector" hasScaleBasedVisibilityFlag="0" simplifyLocal="1" scaleBasedLabelVisibilityFlag="0">
             <id>conduites_copy20130709141244955</id>
             <datasource>dbname='sige' host=172.24.171.203 port=5432 user='sige' sslmode=disable key='id' srid=21781 type=LINESTRING table="distribution"."od_pipe" (geometry) sql=</datasource>
             <title></title>
@@ -3157,7 +3157,7 @@
                 <join joinFieldName="id" targetFieldName="id_material" memoryCache="1" joinLayerId="vl_pipe_material20130304110005230"/>
                 <join joinFieldName="id" targetFieldName="id_status" memoryCache="1" joinLayerId="status20130304110011436"/>
                 <join joinFieldName="id" targetFieldName="id_function" memoryCache="1" joinLayerId="vl_pipe_function20130304110005186"/>
-                <join joinFieldName="id" targetFieldName="id_protection" memoryCache="0" joinLayerId="vl_pipe_protection20130304110005258"/>
+                <join joinFieldName="id" targetFieldName="id_protection" memoryCache="1" joinLayerId="vl_pipe_protection20130304110005258"/>
             </vectorjoins>
             <renderer-v2 symbollevels="0" type="RuleRenderer">
                 <rules>
@@ -3169,6 +3169,7 @@
                     <rule scalemaxdenom="3000" filter="id_distributor = 1 and &quot;Statut_active&quot; = 't' and _schema_visible = 'f'" label="Détail">
                         <rule filter=" &quot;Conduites - fonction_schema_visible&quot; = 't'" symbol="3" label="Transport"/>
                         <rule filter=" &quot;Conduites - fonction_schema_visible&quot; = 'f'" symbol="4" label="Distribution"/>
+                        <rule filter=" &quot;id_protection&quot; IS NOT NULL" symbol="5" label="protégée"/>
                     </rule>
                 </rules>
                 <symbols>
@@ -3249,6 +3250,22 @@
                             <prop k="penstyle" v="solid"/>
                             <prop k="use_custom_dash" v="1"/>
                             <prop k="width" v="0.4"/>
+                            <prop k="width_unit" v="MM"/>
+                        </layer>
+                    </symbol>
+                    <symbol alpha="1" type="line" name="5">
+                        <layer pass="0" class="SimpleLine" locked="0">
+                            <prop k="capstyle" v="flat"/>
+                            <prop k="color" v="0,140,255,70"/>
+                            <prop k="customdash" v="5;2"/>
+                            <prop k="customdash_unit" v="MM"/>
+                            <prop k="draw_inside_polygon" v="0"/>
+                            <prop k="joinstyle" v="bevel"/>
+                            <prop k="offset" v="0"/>
+                            <prop k="offset_unit" v="MM"/>
+                            <prop k="penstyle" v="solid"/>
+                            <prop k="use_custom_dash" v="0"/>
+                            <prop k="width" v="2"/>
                             <prop k="width_unit" v="MM"/>
                         </layer>
                     </symbol>
@@ -10878,7 +10895,7 @@
             <previewExpression>id</previewExpression>
             <vectorjoins>
                 <join joinFieldName="id" targetFieldName="id_function" memoryCache="1" joinLayerId="vl_valve_function20130304110011544"/>
-                <join joinFieldName="id" targetFieldName="id_type" memoryCache="0" joinLayerId="vl_valve_type20130304110011685"/>
+                <join joinFieldName="id" targetFieldName="id_type" memoryCache="1" joinLayerId="vl_valve_type20130304110011685"/>
             </vectorjoins>
             <renderer-v2 symbollevels="0" type="RuleRenderer">
                 <rules>
