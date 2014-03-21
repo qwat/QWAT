@@ -24,10 +24,10 @@
     <mapcanvas>
         <units>meters</units>
         <extent>
-            <xmin>550206.56474517204333097</xmin>
-            <ymin>142088.24341127707157284</ymin>
-            <xmax>562212.29809086315799505</xmax>
-            <ymax>151562.70867646264377981</ymax>
+            <xmin>547447.79123263887595385</xmin>
+            <ymin>135794.1687499999825377</ymin>
+            <xmax>569377.95876736112404615</xmax>
+            <ymax>152128.3625000000174623</ymax>
         </extent>
         <projections>1</projections>
         <destinationsrs>
@@ -43,9 +43,9 @@
             </spatialrefsys>
         </destinationsrs>
     </mapcanvas>
-    <legend updateDrawingOrder="false">
-        <legendgroup open="true" checked="Qt::PartiallyChecked" name="Réseau">
-            <legendgroup open="true" checked="Qt::PartiallyChecked" name="ouvrages">
+    <legend updateDrawingOrder="false" activeLayer="leak20130821111917060">
+        <legendgroup open="false" checked="Qt::PartiallyChecked" name="Réseau">
+            <legendgroup open="false" checked="Qt::PartiallyChecked" name="ouvrages">
                 <legendlayer drawingOrder="0" open="false" checked="Qt::Unchecked" name="ouvrage général" showFeatureCount="0">
                     <filegroup open="false" hidden="false">
                         <legendlayerfile isInOverview="0" layerid="installation20130304110004938" visible="0"/>
@@ -84,7 +84,7 @@
                     </legendlayer>
                 </legendgroup>
             </legendgroup>
-            <legendgroup open="true" checked="Qt::PartiallyChecked" name="Eléments ponctuels">
+            <legendgroup open="false" checked="Qt::PartiallyChecked" name="Eléments ponctuels">
                 <legendlayer drawingOrder="7" open="false" checked="Qt::Checked" name="hydrantes" showFeatureCount="0">
                     <filegroup open="false" hidden="false">
                         <legendlayerfile isInOverview="0" layerid="hydrant20130304110004848" visible="1"/>
@@ -116,7 +116,7 @@
                     </filegroup>
                 </legendlayer>
             </legendgroup>
-            <legendgroup open="false" checked="Qt::Checked" name="Abonnés">
+            <legendgroup open="false" checked="Qt::PartiallyChecked" name="Abonnés">
                 <legendlayer drawingOrder="13" open="false" checked="Qt::Checked" name="abonnés" showFeatureCount="0">
                     <filegroup open="false" hidden="false">
                         <legendlayerfile isInOverview="0" layerid="subscriber20130304110011459" visible="1"/>
@@ -127,26 +127,26 @@
                         <legendlayerfile isInOverview="0" layerid="od_subscriber_reference20131206105928067" visible="1"/>
                     </filegroup>
                 </legendlayer>
-                <legendlayer drawingOrder="15" open="false" checked="Qt::Checked" name="compteur réseau" showFeatureCount="0">
+                <legendlayer drawingOrder="15" open="false" checked="Qt::Unchecked" name="compteur réseau" showFeatureCount="0">
                     <filegroup open="false" hidden="false">
-                        <legendlayerfile isInOverview="0" layerid="od_meter20131120073630165" visible="1"/>
+                        <legendlayerfile isInOverview="0" layerid="od_meter20131120073630165" visible="0"/>
                     </filegroup>
                 </legendlayer>
-                <legendlayer drawingOrder="16" open="false" checked="Qt::Checked" name="Compteur réseau - renvoi" showFeatureCount="0">
+                <legendlayer drawingOrder="16" open="false" checked="Qt::Unchecked" name="Compteur réseau - renvoi" showFeatureCount="0">
                     <filegroup open="false" hidden="false">
-                        <legendlayerfile isInOverview="0" layerid="od_meter_reference20140304165835390" visible="1"/>
+                        <legendlayerfile isInOverview="0" layerid="od_meter_reference20140304165835390" visible="0"/>
                     </filegroup>
                 </legendlayer>
             </legendgroup>
-            <legendgroup open="false" checked="Qt::Unchecked" name="Noeuds">
+            <legendgroup open="false" checked="Qt::PartiallyChecked" name="Noeuds">
                 <legendlayer drawingOrder="17" open="false" checked="Qt::Unchecked" name="compteur abonné" showFeatureCount="0">
                     <filegroup open="false" hidden="false">
                         <legendlayerfile isInOverview="0" layerid="od_meter_subscriber20131211104942391" visible="0"/>
                     </filegroup>
                 </legendlayer>
-                <legendlayer drawingOrder="18" open="false" checked="Qt::Unchecked" name="noeuds" showFeatureCount="0">
+                <legendlayer drawingOrder="18" open="false" checked="Qt::Checked" name="noeuds" showFeatureCount="0">
                     <filegroup open="false" hidden="false">
-                        <legendlayerfile isInOverview="0" layerid="node20130304110005126" visible="0"/>
+                        <legendlayerfile isInOverview="0" layerid="node20130304110005126" visible="1"/>
                     </filegroup>
                 </legendlayer>
                 <legendlayer drawingOrder="19" open="false" checked="Qt::Unchecked" name="noeuds - tous - controle" showFeatureCount="0">
@@ -155,15 +155,15 @@
                     </filegroup>
                 </legendlayer>
             </legendgroup>
-            <legendgroup open="true" checked="Qt::PartiallyChecked" name="Conduites">
+            <legendgroup open="false" checked="Qt::PartiallyChecked" name="Conduites">
                 <legendlayer drawingOrder="20" open="false" checked="Qt::Checked" name="conduites actives" showFeatureCount="0">
                     <filegroup open="false" hidden="false">
                         <legendlayerfile isInOverview="0" layerid="conduites_copy20130709141244955" visible="1"/>
                     </filegroup>
                 </legendlayer>
-                <legendlayer drawingOrder="21" open="false" checked="Qt::Unchecked" name="conduites étrangers" showFeatureCount="0">
+                <legendlayer drawingOrder="21" open="false" checked="Qt::Checked" name="conduites étrangers" showFeatureCount="0">
                     <filegroup open="false" hidden="false">
-                        <legendlayerfile isInOverview="0" layerid="conduites_actives_copy_copy20130822080032346" visible="0"/>
+                        <legendlayerfile isInOverview="0" layerid="conduites_actives_copy_copy20130822080032346" visible="1"/>
                     </filegroup>
                 </legendlayer>
                 <legendlayer drawingOrder="22" open="false" checked="Qt::Unchecked" name="conduites inactives" showFeatureCount="0">
@@ -190,7 +190,7 @@
                 </filegroup>
             </legendlayer>
         </legendgroup>
-        <legendgroup open="true" checked="Qt::Checked" name="Annotations">
+        <legendgroup open="false" checked="Qt::Checked" name="Annotations">
             <legendlayer drawingOrder="26" open="false" checked="Qt::Checked" name="annotation - ligne" showFeatureCount="0">
                 <filegroup open="false" hidden="false">
                     <legendlayerfile isInOverview="0" layerid="od_annotationline20131203095020365" visible="1"/>
@@ -229,7 +229,7 @@
                 </filegroup>
             </legendlayer>
         </legendgroup>
-        <legendgroup open="false" checked="Qt::Unchecked" name="Zones">
+        <legendgroup open="false" checked="Qt::PartiallyChecked" name="Zones">
             <legendlayer drawingOrder="33" open="false" checked="Qt::Unchecked" name="communes" showFeatureCount="0">
                 <filegroup open="false" hidden="false">
                     <legendlayerfile isInOverview="0" layerid="district20130304110004764" visible="0"/>
@@ -240,9 +240,9 @@
                     <legendlayerfile isInOverview="0" layerid="pressurezone20130417133612105" visible="0"/>
                 </filegroup>
             </legendlayer>
-            <legendlayer drawingOrder="35" open="false" checked="Qt::Unchecked" name="folios" showFeatureCount="0">
+            <legendlayer drawingOrder="35" open="false" checked="Qt::Checked" name="folios" showFeatureCount="0">
                 <filegroup open="false" hidden="false">
-                    <legendlayerfile isInOverview="0" layerid="printmap20130304110011400" visible="0"/>
+                    <legendlayerfile isInOverview="0" layerid="printmap20130304110011400" visible="1"/>
                 </filegroup>
             </legendlayer>
             <legendlayer drawingOrder="36" open="false" checked="Qt::Unchecked" name="zones de protections" showFeatureCount="0">
@@ -419,7 +419,7 @@
         <legendgroup embedded="1" drawingOrder="71" open="false" checked="Qt::Checked" name="valais_base" project="../../../data/cadastre/valais/valais.qgs"/>
         <legendgroup embedded="1" drawingOrder="70" open="false" checked="Qt::Unchecked" name="valais_complément" project="../../../data/cadastre/valais/valais.qgs"/>
     </legend>
-    <Composer title="folio" visible="0">
+    <Composer title="folio" visible="1">
         <Composition snapGridTolerance="2" gridVisible="1" printResolution="300" paperWidth="1030" snapGridOffsetX="0" guidesVisible="1" snapGridResolution="10" snapGridOffsetY="0" alignmentSnap="1" snapping="0" numPages="1" paperHeight="914" alignmentSnapTolerance="2" smartGuides="1" printAsRaster="1" generateWorldFile="0">
             <symbol alpha="1" type="fill" name="">
                 <layer pass="0" class="SimpleFill" locked="0">
@@ -457,7 +457,7 @@
                         <prop k="width_border" v="0"/>
                     </layer>
                 </symbol>
-                <ComposerItem width="70" x="225" transparency="0" y="110" height="30" positionMode="0" frame="false" outlineWidth="0" zValue="12" itemRotation="0" lastValidViewScaleFactor="0.847209" uuid="{4566e0a1-ec7a-452e-baf0-a45ed15314ff}" id="" background="true" blendMode="0" positionLock="false">
+                <ComposerItem width="70" x="225" transparency="0" y="110" height="30" positionMode="0" frame="false" outlineWidth="0" zValue="12" itemRotation="0" lastValidViewScaleFactor="0.624878" uuid="{4566e0a1-ec7a-452e-baf0-a45ed15314ff}" id="" background="true" blendMode="0" positionLock="false">
                     <FrameColor alpha="255" red="0" blue="0" green="0"/>
                     <BackgroundColor alpha="255" red="255" blue="255" green="255"/>
                 </ComposerItem>
@@ -596,7 +596,7 @@
                         </layer>
                     </symbol>
                 </overviewFrame>
-                <Extent ymin="145378.57302560046082363" xmin="555539.58216474729124457" ymax="145545.23977577043115161" xmax="555789.58216500224079937"/>
+                <Extent ymin="145378.57302560043171979" xmin="555539.58216474729124457" ymax="145545.23977577040204778" xmax="555789.58216500224079937"/>
                 <LayerSet>
                     <Layer>installation_tank20130304110005008</Layer>
                     <Layer>installation_source20130820110331647</Layer>
@@ -669,7 +669,7 @@
                     </Annotation>
                 </Grid>
                 <AtlasMap fixedScale="1" atlasDriven="1" margin="0.10000000000000001"/>
-                <ComposerItem width="1000" x="15" transparency="0" y="140" height="666.667" positionMode="0" frame="true" outlineWidth="0" zValue="1" itemRotation="0" lastValidViewScaleFactor="0.847209" uuid="{27df2cec-4272-4242-93e2-7d5ffc2bbe05}" id="" background="true" blendMode="0" positionLock="false">
+                <ComposerItem width="1000" x="15" transparency="0" y="140" height="666.667" positionMode="0" frame="true" outlineWidth="0" zValue="1" itemRotation="0" lastValidViewScaleFactor="0.624878" uuid="{27df2cec-4272-4242-93e2-7d5ffc2bbe05}" id="" background="true" blendMode="0" positionLock="false">
                     <FrameColor alpha="255" red="0" blue="0" green="0"/>
                     <BackgroundColor alpha="255" red="255" blue="255" green="255"/>
                 </ComposerItem>
@@ -714,7 +714,7 @@
                         <prop k="width_border" v="0"/>
                     </layer>
                 </symbol>
-                <ComposerItem width="70" x="225" transparency="0" y="110" height="30" positionMode="0" frame="false" outlineWidth="0" zValue="12" itemRotation="0" lastValidViewScaleFactor="0.847209" uuid="{74819690-842b-43a5-9158-8e55510f965a}" id="" background="true" blendMode="0" positionLock="false">
+                <ComposerItem width="70" x="225" transparency="0" y="110" height="30" positionMode="0" frame="false" outlineWidth="0" zValue="12" itemRotation="0" lastValidViewScaleFactor="0.624878" uuid="{74819690-842b-43a5-9158-8e55510f965a}" id="" background="true" blendMode="0" positionLock="false">
                     <FrameColor alpha="255" red="0" blue="0" green="0"/>
                     <BackgroundColor alpha="255" red="255" blue="255" green="255"/>
                 </ComposerItem>
@@ -887,7 +887,7 @@
             </ComposerMap>
         </Composition>
     </Composer>
-    <Composer title="extrait_a4_portrait" visible="0">
+    <Composer title="extrait A4 portrait" visible="0">
         <Composition snapGridTolerance="2" gridVisible="0" printResolution="300" paperWidth="210" snapGridOffsetX="0" guidesVisible="1" snapGridResolution="10" snapGridOffsetY="0" alignmentSnap="1" snapping="0" numPages="1" paperHeight="297" alignmentSnapTolerance="2" smartGuides="1" printAsRaster="0" generateWorldFile="0">
             <symbol alpha="1" type="fill" name="">
                 <layer pass="0" class="SimpleFill" locked="0">
@@ -901,6 +901,12 @@
                     <prop k="width_border" v="0.26"/>
                 </layer>
             </symbol>
+            <ComposerPicture pictureRotation="0" pictureWidth="35" file="./symbols/wind_rose.svg" pictureHeight="35" mapId="0">
+                <ComposerItem width="35" x="164.306" transparency="0" y="228.277" height="35" positionMode="0" frame="false" outlineWidth="0.3" zValue="16" itemRotation="0" lastValidViewScaleFactor="2.7764" uuid="{973785d9-e3b3-427b-ba56-be9de77460fb}" id="" background="false" blendMode="0" positionLock="false">
+                    <FrameColor alpha="255" red="0" blue="0" green="0"/>
+                    <BackgroundColor alpha="255" red="255" blue="255" green="255"/>
+                </ComposerItem>
+            </ComposerPicture>
             <ComposerLabel valign="128" labelText="ÉTABLI SUR LA BASE DES DONNÉES CADASTRALES" htmlState="0" halign="4" margin="1">
                 <LabelFont description="Arial,7,-1,5,50,0,0,0,0,0"/>
                 <FontColor red="0" blue="0" green="0"/>
@@ -925,14 +931,14 @@
                     <BackgroundColor alpha="255" red="255" blue="255" green="255"/>
                 </ComposerItem>
             </ComposerLabel>
-            <ComposerScaleBar penColor="#000000" style="Numeric" numMapUnitsPerScaleBarUnit="1" alignment="1" brushColor="#000000" numSegments="4" segmentMillimeters="509.456" fontColor="#000000" font="Arial,12,-1,5,50,0,0,0,0,0" numUnitsPerSegment="100" units="1" labelBarSpace="3" outlineWidth="1" numSegmentsLeft="2" height="3" mapId="0" boxContentSpace="1" unitLabel="m">
+            <ComposerScaleBar penColor="#000000" style="Numeric" numMapUnitsPerScaleBarUnit="1" alignment="1" brushColor="#000000" numSegments="4" segmentMillimeters="510.204" fontColor="#000000" font="Arial,12,-1,5,50,0,0,0,0,0" numUnitsPerSegment="100" units="1" labelBarSpace="3" outlineWidth="1" numSegmentsLeft="2" height="3" mapId="0" boxContentSpace="1" unitLabel="m">
                 <ComposerItem width="20" x="185" transparency="0" y="25" height="10" positionMode="0" frame="true" outlineWidth="0.2" zValue="12" itemRotation="0" lastValidViewScaleFactor="5.64862" uuid="{2f0360ac-26d4-4f17-8dbe-1d7f6506f910}" id="" background="true" blendMode="0" positionLock="false">
                     <FrameColor alpha="255" red="0" blue="0" green="0"/>
                     <BackgroundColor alpha="255" red="255" blue="255" green="255"/>
                 </ComposerItem>
             </ComposerScaleBar>
-            <ComposerScaleBar penColor="#000000" style="Double Box" numMapUnitsPerScaleBarUnit="1" alignment="0" brushColor="#000000" numSegments="5" segmentMillimeters="10.1891" fontColor="#000000" font="Arial,6,-1,5,50,0,0,0,0,0" numUnitsPerSegment="2" units="1" labelBarSpace="2" outlineWidth="0.01" numSegmentsLeft="0" height="3" mapId="0" boxContentSpace="1" unitLabel="m">
-                <ComposerItem width="57.0476" x="131.949" transparency="0" y="25.5" height="9" positionMode="4" frame="false" outlineWidth="0.2" zValue="11" itemRotation="0" lastValidViewScaleFactor="6.65958" uuid="{938279f3-c152-4e8f-a710-08f30f802fd4}" id="" background="true" blendMode="0" positionLock="false">
+            <ComposerScaleBar penColor="#000000" style="Double Box" numMapUnitsPerScaleBarUnit="1" alignment="0" brushColor="#000000" numSegments="5" segmentMillimeters="10.2041" fontColor="#000000" font="Arial,6,-1,5,50,0,0,0,0,0" numUnitsPerSegment="2" units="1" labelBarSpace="2" outlineWidth="0.01" numSegmentsLeft="0" height="3" mapId="0" boxContentSpace="1" unitLabel="m">
+                <ComposerItem width="57.1224" x="131.949" transparency="0" y="25.5" height="9" positionMode="4" frame="false" outlineWidth="0.2" zValue="11" itemRotation="0" lastValidViewScaleFactor="6.65958" uuid="{938279f3-c152-4e8f-a710-08f30f802fd4}" id="" background="true" blendMode="0" positionLock="false">
                     <FrameColor alpha="255" red="0" blue="0" green="0"/>
                     <BackgroundColor alpha="255" red="255" blue="255" green="255"/>
                 </ComposerItem>
@@ -1004,7 +1010,7 @@
                         <prop k="width_border" v="0.2"/>
                     </layer>
                 </symbol>
-                <ComposerItem width="100" x="105" transparency="0" y="5" height="40" positionMode="0" frame="false" outlineWidth="0.2" zValue="3" itemRotation="0" lastValidViewScaleFactor="2.09317" uuid="{5d083c8e-4cb8-4e32-a8bd-750bdb8e04a9}" id="" background="true" blendMode="0" positionLock="false">
+                <ComposerItem width="100" x="105" transparency="0" y="5" height="40" positionMode="0" frame="false" outlineWidth="0.2" zValue="3" itemRotation="0" lastValidViewScaleFactor="2.7764" uuid="{5d083c8e-4cb8-4e32-a8bd-750bdb8e04a9}" id="" background="true" blendMode="0" positionLock="false">
                     <FrameColor alpha="255" red="0" blue="0" green="0"/>
                     <BackgroundColor alpha="255" red="255" blue="255" green="255"/>
                 </ComposerItem>
@@ -1022,7 +1028,7 @@
                         <prop k="width_border" v="0.2"/>
                     </layer>
                 </symbol>
-                <ComposerItem width="100" x="5" transparency="0" y="5" height="40" positionMode="0" frame="false" outlineWidth="0.2" zValue="2" itemRotation="0" lastValidViewScaleFactor="2.09317" uuid="{6c243b7e-e6c0-4ba5-84da-da7f29fc59f3}" id="" background="true" blendMode="0" positionLock="false">
+                <ComposerItem width="100" x="5" transparency="0" y="5" height="40" positionMode="0" frame="false" outlineWidth="0.2" zValue="2" itemRotation="0" lastValidViewScaleFactor="2.7764" uuid="{6c243b7e-e6c0-4ba5-84da-da7f29fc59f3}" id="" background="true" blendMode="0" positionLock="false">
                     <FrameColor alpha="255" red="0" blue="0" green="0"/>
                     <BackgroundColor alpha="255" red="255" blue="255" green="255"/>
                 </ComposerItem>
@@ -1042,7 +1048,250 @@
                         </layer>
                     </symbol>
                 </overviewFrame>
-                <Extent ymin="142621.24525793225620873" xmin="559701.75521263724658638" ymax="142669.68907725281314924" xmax="559741.01276476087514311"/>
+                <Extent ymin="142621.28076756789232604" xmin="559701.78398867906071246" ymax="142669.65356761726434343" xmax="559740.98398871906101704"/>
+                <LayerSet>
+                    <Layer>installation_tank20130304110005008</Layer>
+                    <Layer>installation_source20130820110331647</Layer>
+                    <Layer>installation_pump20130816140237750</Layer>
+                    <Layer>installation_treatment20130816113039913</Layer>
+                    <Layer>installation_pressurecontrol20131107105006792</Layer>
+                    <Layer>installation_valvechamber20131107105006707</Layer>
+                    <Layer>hydrant20130304110004848</Layer>
+                    <Layer>valve20130304110011497</Layer>
+                    <Layer>vannes_copy20130924083714343</Layer>
+                    <Layer>od_wateringoutput20131127080906318</Layer>
+                    <Layer>subscriber20130304110011459</Layer>
+                    <Layer>od_subscriber_reference20131206105928067</Layer>
+                    <Layer>od_meter20131120073630165</Layer>
+                    <Layer>od_meter_reference20140304165835390</Layer>
+                    <Layer>node20130304110005126</Layer>
+                    <Layer>conduites_copy20130709141244955</Layer>
+                    <Layer>conduites_actives_copy_copy20130822080032346</Layer>
+                    <Layer>od_annotationline20131203095020365</Layer>
+                    <Layer>od_annotationpoint20131203095020392</Layer>
+                    <Layer>dimension20130807094904783</Layer>
+                    <Layer>od_dimension_orientation20131202111155806</Layer>
+                    <Layer>printmap20130304110011400</Layer>
+                    <Layer>cadastre20140312152032371</Layer>
+                    <Layer>od_batiment_souterrain20130514143946785</Layer>
+                    <Layer>cs_batiment20130514143721709</Layer>
+                    <Layer>od_element_surfacique20130514144124647</Layer>
+                    <Layer>od_element_lineaire20130514144047075</Layer>
+                    <Layer>cs_surfacecs20130514143830750</Layer>
+                    <Layer>bf_bien_fonds20130514143508556</Layer>
+                    <Layer>pf_pfp20130514144226845</Layer>
+                    <Layer>bf_point_limite20130514143552315</Layer>
+                    <Layer>axe_rue20130514143437774</Layer>
+                    <Layer>no_posnomlocallieudit20130514143906869</Layer>
+                    <Layer>bf_posimmeuble20130514143633121</Layer>
+                    <Layer>cs_posnumero_de_batiment20130514143756039</Layer>
+                    <Layer>ad_posnumero_maison20130514143346530</Layer>
+                    <Layer>od_batiment_souterrain20140214143946785</Layer>
+                    <Layer>cs_batiment20140214143721709</Layer>
+                    <Layer>od_element_surfacique20140214144124647</Layer>
+                    <Layer>od_element_lineaire20140214144047075</Layer>
+                    <Layer>cs_surfacecs20140214143830750</Layer>
+                    <Layer>bf_bien_fonds20140214143508556</Layer>
+                    <Layer>pf_pfp20140214144226845</Layer>
+                    <Layer>bf_point_limite20140214143552315</Layer>
+                    <Layer>no_posnomlocallieudit20140214143906869</Layer>
+                    <Layer>cs_posnumero_de_batiment20140214143756039</Layer>
+                    <Layer>bf_posimmeuble20140214143633121</Layer>
+                </LayerSet>
+                <Grid gridStyle="0" crossLength="3" gridFramePenThickness="0.5" intervalX="0" offsetX="0" intervalY="0" offsetY="0" gridFrameStyle="0" gridFrameWidth="2" gridBlendMode="0" show="0">
+                    <framePenColor alpha="255" red="0" blue="0" green="0"/>
+                    <frameFillColor1 alpha="255" red="255" blue="255" green="255"/>
+                    <frameFillColor2 alpha="255" red="0" blue="0" green="0"/>
+                    <symbol alpha="1" type="line" name="">
+                        <layer pass="0" class="SimpleLine" locked="0">
+                            <prop k="capstyle" v="flat"/>
+                            <prop k="color" v="0,0,0,255"/>
+                            <prop k="customdash" v="5;2"/>
+                            <prop k="customdash_unit" v="MM"/>
+                            <prop k="draw_inside_polygon" v="0"/>
+                            <prop k="joinstyle" v="bevel"/>
+                            <prop k="offset" v="0"/>
+                            <prop k="offset_unit" v="MM"/>
+                            <prop k="penstyle" v="solid"/>
+                            <prop k="use_custom_dash" v="0"/>
+                            <prop k="width" v="0.3"/>
+                            <prop k="width_unit" v="MM"/>
+                        </layer>
+                    </symbol>
+                    <Annotation rightDirection="0" bottomDirection="0" format="0" topPosition="1" precision="3" leftDirection="0" rightPosition="1" bottomPosition="1" frameDistance="1" show="0" font="Ubuntu,11,-1,5,50,0,0,0,0,0" leftPosition="1" topDirection="0">
+                        <fontColor alpha="255" red="0" blue="0" green="0"/>
+                    </Annotation>
+                </Grid>
+                <AtlasMap fixedScale="1" atlasDriven="0" margin="0.10000000000000001"/>
+                <ComposerItem width="200" x="5" transparency="0" y="45.2" height="246.8" positionMode="0" frame="true" outlineWidth="0.2" zValue="1" itemRotation="0" lastValidViewScaleFactor="2.68634" uuid="{721d2a70-0f07-44a5-9f8c-1d2e85025f25}" id="" background="true" blendMode="0" positionLock="false">
+                    <FrameColor alpha="255" red="0" blue="0" green="0"/>
+                    <BackgroundColor alpha="255" red="255" blue="255" green="255"/>
+                </ComposerItem>
+            </ComposerMap>
+        </Composition>
+    </Composer>
+    <Composer title="extrait A4 paysage" visible="0">
+        <Composition snapGridTolerance="2" gridVisible="0" printResolution="300" paperWidth="297" snapGridOffsetX="0" guidesVisible="1" snapGridResolution="10" snapGridOffsetY="0" alignmentSnap="1" snapping="0" numPages="1" paperHeight="210" alignmentSnapTolerance="2" smartGuides="1" printAsRaster="1" generateWorldFile="0">
+            <symbol alpha="1" type="fill" name="">
+                <layer pass="0" class="SimpleFill" locked="0">
+                    <prop k="border_width_unit" v="MM"/>
+                    <prop k="color" v="255,255,255,255"/>
+                    <prop k="color_border" v="0,0,0,255"/>
+                    <prop k="offset" v="0,0"/>
+                    <prop k="offset_unit" v="MM"/>
+                    <prop k="style" v="solid"/>
+                    <prop k="style_border" v="no"/>
+                    <prop k="width_border" v="0.26"/>
+                </layer>
+            </symbol>
+            <ComposerPicture pictureRotation="349" pictureWidth="29.8524" file="./symbols/wind_rose.svg" pictureHeight="29.8524" mapId="0">
+                <ComposerItem width="35" x="248.711" transparency="0" y="22.5" height="35" positionMode="0" frame="false" outlineWidth="0.3" zValue="16" itemRotation="0" lastValidViewScaleFactor="2.27094" uuid="{8d3ba240-9cfb-4183-815f-a851393125db}" id="" background="false" blendMode="0" positionLock="false">
+                    <FrameColor alpha="255" red="0" blue="0" green="0"/>
+                    <BackgroundColor alpha="255" red="255" blue="255" green="255"/>
+                </ComposerItem>
+            </ComposerPicture>
+            <ComposerLabel valign="128" labelText="ÉTABLI SUR LA BASE DES DONNÉES CADASTRALES" htmlState="0" halign="4" margin="1">
+                <LabelFont description="Arial,7,-1,5,50,0,0,0,0,0"/>
+                <FontColor red="0" blue="0" green="0"/>
+                <ComposerItem width="35.134" x="169.866" transparency="0" y="35" height="10" positionMode="0" frame="true" outlineWidth="0.2" zValue="15" itemRotation="0" lastValidViewScaleFactor="5.64862" uuid="{13bb8204-42ae-4720-8ec6-f7d5bca6f631}" id="" background="true" blendMode="0" positionLock="false">
+                    <FrameColor alpha="255" red="0" blue="0" green="0"/>
+                    <BackgroundColor alpha="255" red="255" blue="255" green="255"/>
+                </ComposerItem>
+            </ComposerLabel>
+            <ComposerLabel valign="128" labelText="PLAN SANS VALEUR OFFICIELLE" htmlState="0" halign="4" margin="1">
+                <LabelFont description="Arial,7,-1,5,50,0,0,0,0,0"/>
+                <FontColor red="0" blue="0" green="0"/>
+                <ComposerItem width="28" x="141.666" transparency="0" y="35" height="10" positionMode="0" frame="true" outlineWidth="0.2" zValue="14" itemRotation="0" lastValidViewScaleFactor="5.64862" uuid="{69f95a9a-a231-4bc5-a3a1-e93a9e2a9718}" id="" background="true" blendMode="0" positionLock="false">
+                    <FrameColor alpha="255" red="0" blue="0" green="0"/>
+                    <BackgroundColor alpha="255" red="255" blue="255" green="255"/>
+                </ComposerItem>
+            </ComposerLabel>
+            <ComposerLabel valign="128" labelText="TRACÉ ET PROFONDEUR APPROXIMATIFS" htmlState="0" halign="4" margin="1">
+                <LabelFont description="Arial,7,-1,5,50,0,0,0,0,0"/>
+                <FontColor red="0" blue="0" green="0"/>
+                <ComposerItem width="36.466" x="105" transparency="0" y="35" height="10" positionMode="0" frame="true" outlineWidth="0.2" zValue="13" itemRotation="0" lastValidViewScaleFactor="5.64862" uuid="{711814c1-c1a2-4018-9480-7d5fa1629426}" id="" background="true" blendMode="0" positionLock="false">
+                    <FrameColor alpha="255" red="0" blue="0" green="0"/>
+                    <BackgroundColor alpha="255" red="255" blue="255" green="255"/>
+                </ComposerItem>
+            </ComposerLabel>
+            <ComposerScaleBar penColor="#000000" style="Numeric" numMapUnitsPerScaleBarUnit="1" alignment="1" brushColor="#000000" numSegments="4" segmentMillimeters="400" fontColor="#000000" font="Arial,12,-1,5,50,0,0,0,0,0" numUnitsPerSegment="100" units="1" labelBarSpace="3" outlineWidth="1" numSegmentsLeft="2" height="3" mapId="0" boxContentSpace="1" unitLabel="m">
+                <ComposerItem width="20" x="185" transparency="0" y="25" height="10" positionMode="0" frame="true" outlineWidth="0.2" zValue="12" itemRotation="0" lastValidViewScaleFactor="5.64862" uuid="{cdcaa95d-3562-4cb6-9a9e-40f9eea713ab}" id="" background="true" blendMode="0" positionLock="false">
+                    <FrameColor alpha="255" red="0" blue="0" green="0"/>
+                    <BackgroundColor alpha="255" red="255" blue="255" green="255"/>
+                </ComposerItem>
+            </ComposerScaleBar>
+            <ComposerScaleBar penColor="#000000" style="Double Box" numMapUnitsPerScaleBarUnit="1" alignment="0" brushColor="#000000" numSegments="5" segmentMillimeters="8" fontColor="#000000" font="Arial,6,-1,5,50,0,0,0,0,0" numUnitsPerSegment="2" units="1" labelBarSpace="2" outlineWidth="0.01" numSegmentsLeft="0" height="3" mapId="0" boxContentSpace="1" unitLabel="m">
+                <ComposerItem width="46.102" x="131.949" transparency="0" y="25.5" height="9" positionMode="4" frame="false" outlineWidth="0.2" zValue="11" itemRotation="0" lastValidViewScaleFactor="6.65958" uuid="{425d5d48-6271-4409-a78f-eb823e58b49b}" id="" background="true" blendMode="0" positionLock="false">
+                    <FrameColor alpha="255" red="0" blue="0" green="0"/>
+                    <BackgroundColor alpha="255" red="255" blue="255" green="255"/>
+                </ComposerItem>
+            </ComposerScaleBar>
+            <ComposerLabel valign="128" labelText="[% format_date(  $now , 'dd.MM.yyyy')%]" htmlState="0" halign="4" margin="1">
+                <LabelFont description="Arial,10,-1,5,50,0,0,0,0,0"/>
+                <FontColor red="0" blue="0" green="0"/>
+                <ComposerItem width="20" x="105" transparency="0" y="25" height="10" positionMode="0" frame="true" outlineWidth="0.2" zValue="10" itemRotation="0" lastValidViewScaleFactor="4.54188" uuid="{388060c5-6bd0-47c0-a44f-a5d990a9a744}" id="" background="true" blendMode="0" positionLock="false">
+                    <FrameColor alpha="255" red="0" blue="0" green="0"/>
+                    <BackgroundColor alpha="255" red="255" blue="255" green="255"/>
+                </ComposerItem>
+            </ComposerLabel>
+            <ComposerLabel valign="128" labelText="Ceci est un test!" htmlState="0" halign="4" margin="1">
+                <LabelFont description="Arial,10,-1,5,50,0,0,0,0,0"/>
+                <FontColor red="0" blue="0" green="0"/>
+                <ComposerItem width="100" x="105" transparency="0" y="15" height="10" positionMode="0" frame="true" outlineWidth="0.2" zValue="9" itemRotation="0" lastValidViewScaleFactor="2.1893" uuid="{5b25b823-0a8d-4595-87a4-0c97997ec701}" id="" background="true" blendMode="0" positionLock="false">
+                    <FrameColor alpha="255" red="0" blue="0" green="0"/>
+                    <BackgroundColor alpha="255" red="255" blue="255" green="255"/>
+                </ComposerItem>
+            </ComposerLabel>
+            <ComposerLabel valign="128" labelText="Folio" htmlState="0" halign="4" margin="1">
+                <LabelFont description="Arial,8,-1,5,50,0,0,0,0,0"/>
+                <FontColor red="0" blue="0" green="0"/>
+                <ComposerItem width="20" x="185" transparency="0" y="5" height="10" positionMode="0" frame="true" outlineWidth="0.2" zValue="8" itemRotation="0" lastValidViewScaleFactor="2.82431" uuid="{03475471-adf2-4e93-b2bf-b2b42c79eb99}" id="" background="true" blendMode="0" positionLock="false">
+                    <FrameColor alpha="255" red="0" blue="0" green="0"/>
+                    <BackgroundColor alpha="255" red="255" blue="255" green="255"/>
+                </ComposerItem>
+            </ComposerLabel>
+            <ComposerLabel valign="128" labelText="Commune de" htmlState="0" halign="4" margin="1">
+                <LabelFont description="Arial,10,-1,5,50,0,0,0,0,0"/>
+                <FontColor red="0" blue="0" green="0"/>
+                <ComposerItem width="80" x="105" transparency="0" y="5" height="10" positionMode="0" frame="true" outlineWidth="0.2" zValue="7" itemRotation="0" lastValidViewScaleFactor="5.64862" uuid="{ae079542-0940-4114-8ae0-e26cb61e6e95}" id="" background="true" blendMode="0" positionLock="false">
+                    <FrameColor alpha="255" red="0" blue="0" green="0"/>
+                    <BackgroundColor alpha="255" red="255" blue="255" green="255"/>
+                </ComposerItem>
+            </ComposerLabel>
+            <ComposerLabel valign="128" labelText="BUREAU TECHNIQUE CH. DE LA VEYRE D'EN HAUT B8&#xa;&#xa;1806 ST-LÉGIER TEL. 0848 180 180 FAX 021 943 01 61" htmlState="0" halign="4" margin="1">
+                <LabelFont description="Arial,8,-1,5,50,0,0,0,0,0"/>
+                <FontColor red="0" blue="0" green="0"/>
+                <ComposerItem width="98" x="6" transparency="0" y="25.67" height="16.1058" positionMode="0" frame="false" outlineWidth="0.3" zValue="6" itemRotation="0" lastValidViewScaleFactor="5.64862" uuid="{b196316e-ee94-4c3d-be3b-178990f1c020}" id="" background="true" blendMode="0" positionLock="false">
+                    <FrameColor alpha="255" red="0" blue="0" green="0"/>
+                    <BackgroundColor alpha="255" red="255" blue="255" green="255"/>
+                </ComposerItem>
+            </ComposerLabel>
+            <ComposerPicture pictureRotation="0" pictureWidth="35.6651" file="./composer/Logo_SIGE.png" pictureHeight="8.03777" mapId="-1">
+                <ComposerItem width="35.6651" x="7.55551" transparency="0" y="11.7136" height="13.2864" positionMode="0" frame="false" outlineWidth="0.3" zValue="5" itemRotation="0" lastValidViewScaleFactor="5.64862" uuid="{4bf8c0c9-7ad1-4b72-a195-f79e0048f573}" id="" background="true" blendMode="0" positionLock="false">
+                    <FrameColor alpha="255" red="0" blue="0" green="0"/>
+                    <BackgroundColor alpha="255" red="255" blue="255" green="255"/>
+                </ComposerItem>
+            </ComposerPicture>
+            <ComposerLabel valign="128" labelText="SERVICE INTERCOMMUNAL&#xa; DE GESTION" htmlState="0" halign="4" margin="1">
+                <LabelFont description="Arial,12,-1,5,50,0,0,0,0,0"/>
+                <FontColor red="0" blue="0" green="0"/>
+                <ComposerItem width="59.2742" x="43.2206" transparency="0" y="11.3727" height="13.6273" positionMode="0" frame="false" outlineWidth="0.3" zValue="4" itemRotation="0" lastValidViewScaleFactor="5.64862" uuid="{5de9ff6d-90df-4db0-a44a-c7fd85e2dc35}" id="" background="true" blendMode="0" positionLock="false">
+                    <FrameColor alpha="255" red="0" blue="0" green="0"/>
+                    <BackgroundColor alpha="255" red="255" blue="255" green="255"/>
+                </ComposerItem>
+            </ComposerLabel>
+            <ComposerShape shapeType="1" cornerRadius="0">
+                <symbol alpha="1" type="fill" name="">
+                    <layer pass="0" class="SimpleFill" locked="0">
+                        <prop k="border_width_unit" v="MM"/>
+                        <prop k="color" v="255,255,255,255"/>
+                        <prop k="color_border" v="0,0,0,255"/>
+                        <prop k="offset" v="0,0"/>
+                        <prop k="offset_unit" v="MM"/>
+                        <prop k="style" v="solid"/>
+                        <prop k="style_border" v="solid"/>
+                        <prop k="width_border" v="0.2"/>
+                    </layer>
+                </symbol>
+                <ComposerItem width="100" x="105" transparency="0" y="5" height="40" positionMode="0" frame="false" outlineWidth="0.2" zValue="3" itemRotation="0" lastValidViewScaleFactor="1.13547" uuid="{633cc483-5a98-4c82-8982-068c94de5aeb}" id="" background="true" blendMode="0" positionLock="false">
+                    <FrameColor alpha="255" red="0" blue="0" green="0"/>
+                    <BackgroundColor alpha="255" red="255" blue="255" green="255"/>
+                </ComposerItem>
+            </ComposerShape>
+            <ComposerShape shapeType="1" cornerRadius="0">
+                <symbol alpha="1" type="fill" name="">
+                    <layer pass="0" class="SimpleFill" locked="0">
+                        <prop k="border_width_unit" v="MM"/>
+                        <prop k="color" v="255,255,255,255"/>
+                        <prop k="color_border" v="0,0,0,255"/>
+                        <prop k="offset" v="0,0"/>
+                        <prop k="offset_unit" v="MM"/>
+                        <prop k="style" v="solid"/>
+                        <prop k="style_border" v="solid"/>
+                        <prop k="width_border" v="0.2"/>
+                    </layer>
+                </symbol>
+                <ComposerItem width="100" x="5" transparency="0" y="5" height="40" positionMode="0" frame="false" outlineWidth="0.2" zValue="2" itemRotation="0" lastValidViewScaleFactor="1.13547" uuid="{422451f2-abcc-479b-9826-1b3c9d849b32}" id="" background="true" blendMode="0" positionLock="false">
+                    <FrameColor alpha="255" red="0" blue="0" green="0"/>
+                    <BackgroundColor alpha="255" red="255" blue="255" green="255"/>
+                </ComposerItem>
+            </ComposerShape>
+            <ComposerMap mapRotation="349" keepLayerSet="true" overviewFrameMap="-1" id="0" previewMode="Cache" drawCanvasItems="true">
+                <overviewFrame overviewBlendMode="0" overviewFrameMap="-1" overviewCentered="false" overviewInverted="false">
+                    <symbol alpha="0.3" type="fill" name="">
+                        <layer pass="0" class="SimpleFill" locked="0">
+                            <prop k="border_width_unit" v="MM"/>
+                            <prop k="color" v="255,0,0,255"/>
+                            <prop k="color_border" v="0,0,0,255"/>
+                            <prop k="offset" v="0,0"/>
+                            <prop k="offset_unit" v="MM"/>
+                            <prop k="style" v="solid"/>
+                            <prop k="style_border" v="no"/>
+                            <prop k="width_border" v="0.26"/>
+                        </layer>
+                    </symbol>
+                </overviewFrame>
+                <Extent ymin="144207.95368241233518347" xmin="557103.6978285462828353" ymax="144257.9536824632959906" xmax="557175.44782861939165741"/>
                 <LayerSet>
                     <Layer>installation_tank20130304110005008</Layer>
                     <Layer>installation_source20130820110331647</Layer>
@@ -1116,7 +1365,491 @@
                     </Annotation>
                 </Grid>
                 <AtlasMap fixedScale="1" atlasDriven="0" margin="0.10000000000000001"/>
-                <ComposerItem width="200" x="5" transparency="0" y="45.2" height="246.8" positionMode="0" frame="true" outlineWidth="0.2" zValue="1" itemRotation="0" lastValidViewScaleFactor="8.37267" uuid="{721d2a70-0f07-44a5-9f8c-1d2e85025f25}" id="" background="true" blendMode="0" positionLock="false">
+                <ComposerItem width="287" x="5" transparency="0" y="5" height="200" positionMode="0" frame="true" outlineWidth="0.2" zValue="1" itemRotation="0" lastValidViewScaleFactor="1.13547" uuid="{101eeeca-bcd3-4a42-912c-b550417fb3df}" id="" background="true" blendMode="0" positionLock="false">
+                    <FrameColor alpha="255" red="0" blue="0" green="0"/>
+                    <BackgroundColor alpha="255" red="255" blue="255" green="255"/>
+                </ComposerItem>
+            </ComposerMap>
+        </Composition>
+    </Composer>
+    <Composer title="extrait A3 portrait" visible="0">
+        <Composition snapGridTolerance="2" gridVisible="0" printResolution="300" paperWidth="297" snapGridOffsetX="0" guidesVisible="1" snapGridResolution="10" snapGridOffsetY="0" alignmentSnap="1" snapping="0" numPages="1" paperHeight="420" alignmentSnapTolerance="2" smartGuides="1" printAsRaster="0" generateWorldFile="0">
+            <symbol alpha="1" type="fill" name="">
+                <layer pass="0" class="SimpleFill" locked="0">
+                    <prop k="border_width_unit" v="MM"/>
+                    <prop k="color" v="255,255,255,255"/>
+                    <prop k="color_border" v="0,0,0,255"/>
+                    <prop k="offset" v="0,0"/>
+                    <prop k="offset_unit" v="MM"/>
+                    <prop k="style" v="solid"/>
+                    <prop k="style_border" v="no"/>
+                    <prop k="width_border" v="0.26"/>
+                </layer>
+            </symbol>
+            <ComposerPicture pictureRotation="0" pictureWidth="35" file="./symbols/wind_rose.svg" pictureHeight="35" mapId="0">
+                <ComposerItem width="35" x="250.338" transparency="0" y="353.045" height="35" positionMode="0" frame="false" outlineWidth="0.3" zValue="16" itemRotation="0" lastValidViewScaleFactor="2.22011" uuid="{11f7444e-daed-4c7b-9666-3c634c3844b3}" id="" background="false" blendMode="0" positionLock="false">
+                    <FrameColor alpha="255" red="0" blue="0" green="0"/>
+                    <BackgroundColor alpha="255" red="255" blue="255" green="255"/>
+                </ComposerItem>
+            </ComposerPicture>
+            <ComposerLabel valign="128" labelText="ÉTABLI SUR LA BASE DES DONNÉES CADASTRALES" htmlState="0" halign="4" margin="1">
+                <LabelFont description="Arial,7,-1,5,50,0,0,0,0,0"/>
+                <FontColor red="0" blue="0" green="0"/>
+                <ComposerItem width="35.134" x="169.866" transparency="0" y="35" height="10" positionMode="0" frame="true" outlineWidth="0.2" zValue="15" itemRotation="0" lastValidViewScaleFactor="5.64862" uuid="{5ebec5c6-4c15-4add-8925-fe8b4569dc96}" id="" background="true" blendMode="0" positionLock="false">
+                    <FrameColor alpha="255" red="0" blue="0" green="0"/>
+                    <BackgroundColor alpha="255" red="255" blue="255" green="255"/>
+                </ComposerItem>
+            </ComposerLabel>
+            <ComposerLabel valign="128" labelText="PLAN SANS VALEUR OFFICIELLE" htmlState="0" halign="4" margin="1">
+                <LabelFont description="Arial,7,-1,5,50,0,0,0,0,0"/>
+                <FontColor red="0" blue="0" green="0"/>
+                <ComposerItem width="28" x="141.666" transparency="0" y="35" height="10" positionMode="0" frame="true" outlineWidth="0.2" zValue="14" itemRotation="0" lastValidViewScaleFactor="5.64862" uuid="{735d2872-c9ab-4ab4-932c-53da2765ca46}" id="" background="true" blendMode="0" positionLock="false">
+                    <FrameColor alpha="255" red="0" blue="0" green="0"/>
+                    <BackgroundColor alpha="255" red="255" blue="255" green="255"/>
+                </ComposerItem>
+            </ComposerLabel>
+            <ComposerLabel valign="128" labelText="TRACÉ ET PROFONDEUR APPROXIMATIFS" htmlState="0" halign="4" margin="1">
+                <LabelFont description="Arial,7,-1,5,50,0,0,0,0,0"/>
+                <FontColor red="0" blue="0" green="0"/>
+                <ComposerItem width="36.466" x="105" transparency="0" y="35" height="10" positionMode="0" frame="true" outlineWidth="0.2" zValue="13" itemRotation="0" lastValidViewScaleFactor="5.64862" uuid="{dd2145da-abc2-4d94-b567-bda2c998024e}" id="" background="true" blendMode="0" positionLock="false">
+                    <FrameColor alpha="255" red="0" blue="0" green="0"/>
+                    <BackgroundColor alpha="255" red="255" blue="255" green="255"/>
+                </ComposerItem>
+            </ComposerLabel>
+            <ComposerScaleBar penColor="#000000" style="Numeric" numMapUnitsPerScaleBarUnit="1" alignment="1" brushColor="#000000" numSegments="4" segmentMillimeters="729.927" fontColor="#000000" font="Arial,12,-1,5,50,0,0,0,0,0" numUnitsPerSegment="100" units="1" labelBarSpace="3" outlineWidth="1" numSegmentsLeft="2" height="3" mapId="0" boxContentSpace="1" unitLabel="m">
+                <ComposerItem width="20" x="185" transparency="0" y="25" height="10" positionMode="0" frame="true" outlineWidth="0.2" zValue="12" itemRotation="0" lastValidViewScaleFactor="5.64862" uuid="{7721aa87-b473-4859-b07e-781c731c064e}" id="" background="true" blendMode="0" positionLock="false">
+                    <FrameColor alpha="255" red="0" blue="0" green="0"/>
+                    <BackgroundColor alpha="255" red="255" blue="255" green="255"/>
+                </ComposerItem>
+            </ComposerScaleBar>
+            <ComposerScaleBar penColor="#000000" style="Double Box" numMapUnitsPerScaleBarUnit="1" alignment="0" brushColor="#000000" numSegments="5" segmentMillimeters="14.5985" fontColor="#000000" font="Arial,6,-1,5,50,0,0,0,0,0" numUnitsPerSegment="2" units="1" labelBarSpace="2" outlineWidth="0.01" numSegmentsLeft="0" height="3" mapId="0" boxContentSpace="1" unitLabel="m">
+                <ComposerItem width="79.0947" x="131.949" transparency="0" y="25.5" height="9" positionMode="4" frame="false" outlineWidth="0.2" zValue="11" itemRotation="0" lastValidViewScaleFactor="6.65958" uuid="{ef994c02-5abc-4762-9c7a-e57c24fd8ea8}" id="" background="true" blendMode="0" positionLock="false">
+                    <FrameColor alpha="255" red="0" blue="0" green="0"/>
+                    <BackgroundColor alpha="255" red="255" blue="255" green="255"/>
+                </ComposerItem>
+            </ComposerScaleBar>
+            <ComposerLabel valign="128" labelText="[% format_date(  $now , 'dd.MM.yyyy')%]" htmlState="0" halign="4" margin="1">
+                <LabelFont description="Arial,10,-1,5,50,0,0,0,0,0"/>
+                <FontColor red="0" blue="0" green="0"/>
+                <ComposerItem width="20" x="105" transparency="0" y="25" height="10" positionMode="0" frame="true" outlineWidth="0.2" zValue="10" itemRotation="0" lastValidViewScaleFactor="5.64862" uuid="{a01ac9ec-2c7e-4b7b-815a-f6ca077e956a}" id="" background="true" blendMode="0" positionLock="false">
+                    <FrameColor alpha="255" red="0" blue="0" green="0"/>
+                    <BackgroundColor alpha="255" red="255" blue="255" green="255"/>
+                </ComposerItem>
+            </ComposerLabel>
+            <ComposerLabel valign="128" labelText="XXXX" htmlState="0" halign="4" margin="1">
+                <LabelFont description="Arial,10,-1,5,50,0,0,0,0,0"/>
+                <FontColor red="0" blue="0" green="0"/>
+                <ComposerItem width="100" x="105" transparency="0" y="15" height="10" positionMode="0" frame="true" outlineWidth="0.2" zValue="9" itemRotation="0" lastValidViewScaleFactor="6.65958" uuid="{585125ee-ef99-4d9c-a124-92f616c94963}" id="" background="true" blendMode="0" positionLock="false">
+                    <FrameColor alpha="255" red="0" blue="0" green="0"/>
+                    <BackgroundColor alpha="255" red="255" blue="255" green="255"/>
+                </ComposerItem>
+            </ComposerLabel>
+            <ComposerLabel valign="128" labelText="Folio" htmlState="0" halign="4" margin="1">
+                <LabelFont description="Arial,8,-1,5,50,0,0,0,0,0"/>
+                <FontColor red="0" blue="0" green="0"/>
+                <ComposerItem width="20" x="185" transparency="0" y="5" height="10" positionMode="0" frame="true" outlineWidth="0.2" zValue="8" itemRotation="0" lastValidViewScaleFactor="2.82431" uuid="{a4bc7681-5793-449f-ade3-96e16d51b33b}" id="" background="true" blendMode="0" positionLock="false">
+                    <FrameColor alpha="255" red="0" blue="0" green="0"/>
+                    <BackgroundColor alpha="255" red="255" blue="255" green="255"/>
+                </ComposerItem>
+            </ComposerLabel>
+            <ComposerLabel valign="128" labelText="Commune de" htmlState="0" halign="4" margin="1">
+                <LabelFont description="Arial,10,-1,5,50,0,0,0,0,0"/>
+                <FontColor red="0" blue="0" green="0"/>
+                <ComposerItem width="80" x="105" transparency="0" y="5" height="10" positionMode="0" frame="true" outlineWidth="0.2" zValue="7" itemRotation="0" lastValidViewScaleFactor="5.64862" uuid="{8a211312-a570-43d4-a574-e0921dd063de}" id="" background="true" blendMode="0" positionLock="false">
+                    <FrameColor alpha="255" red="0" blue="0" green="0"/>
+                    <BackgroundColor alpha="255" red="255" blue="255" green="255"/>
+                </ComposerItem>
+            </ComposerLabel>
+            <ComposerLabel valign="128" labelText="BUREAU TECHNIQUE CH. DE LA VEYRE D'EN HAUT B8&#xa;&#xa;1806 ST-LÉGIER TEL. 0848 180 180 FAX 021 943 01 61" htmlState="0" halign="4" margin="1">
+                <LabelFont description="Arial,8,-1,5,50,0,0,0,0,0"/>
+                <FontColor red="0" blue="0" green="0"/>
+                <ComposerItem width="98" x="6" transparency="0" y="25.67" height="16.1058" positionMode="0" frame="false" outlineWidth="0.3" zValue="6" itemRotation="0" lastValidViewScaleFactor="5.64862" uuid="{fb4346bb-a3a5-4553-bb81-651542b11be8}" id="" background="true" blendMode="0" positionLock="false">
+                    <FrameColor alpha="255" red="0" blue="0" green="0"/>
+                    <BackgroundColor alpha="255" red="255" blue="255" green="255"/>
+                </ComposerItem>
+            </ComposerLabel>
+            <ComposerPicture pictureRotation="0" pictureWidth="35.6651" file="./composer/Logo_SIGE.png" pictureHeight="8.03777" mapId="-1">
+                <ComposerItem width="35.6651" x="7.55551" transparency="0" y="11.7136" height="13.2864" positionMode="0" frame="false" outlineWidth="0.3" zValue="5" itemRotation="0" lastValidViewScaleFactor="5.64862" uuid="{4e3f39cf-2b41-4a58-970c-31f7f923057e}" id="" background="true" blendMode="0" positionLock="false">
+                    <FrameColor alpha="255" red="0" blue="0" green="0"/>
+                    <BackgroundColor alpha="255" red="255" blue="255" green="255"/>
+                </ComposerItem>
+            </ComposerPicture>
+            <ComposerLabel valign="128" labelText="SERVICE INTERCOMMUNAL&#xa; DE GESTION" htmlState="0" halign="4" margin="1">
+                <LabelFont description="Arial,12,-1,5,50,0,0,0,0,0"/>
+                <FontColor red="0" blue="0" green="0"/>
+                <ComposerItem width="59.2742" x="43.2206" transparency="0" y="11.3727" height="13.6273" positionMode="0" frame="false" outlineWidth="0.3" zValue="4" itemRotation="0" lastValidViewScaleFactor="5.64862" uuid="{2120a3a5-e998-4302-b929-dddafe8a9144}" id="" background="true" blendMode="0" positionLock="false">
+                    <FrameColor alpha="255" red="0" blue="0" green="0"/>
+                    <BackgroundColor alpha="255" red="255" blue="255" green="255"/>
+                </ComposerItem>
+            </ComposerLabel>
+            <ComposerShape shapeType="1" cornerRadius="0">
+                <symbol alpha="1" type="fill" name="">
+                    <layer pass="0" class="SimpleFill" locked="0">
+                        <prop k="border_width_unit" v="MM"/>
+                        <prop k="color" v="255,255,255,255"/>
+                        <prop k="color_border" v="0,0,0,255"/>
+                        <prop k="offset" v="0,0"/>
+                        <prop k="offset_unit" v="MM"/>
+                        <prop k="style" v="solid"/>
+                        <prop k="style_border" v="solid"/>
+                        <prop k="width_border" v="0.2"/>
+                    </layer>
+                </symbol>
+                <ComposerItem width="100" x="105" transparency="0" y="5" height="40" positionMode="0" frame="false" outlineWidth="0.2" zValue="3" itemRotation="0" lastValidViewScaleFactor="2.22011" uuid="{194b992f-1350-483d-b166-ff6719f8d295}" id="" background="true" blendMode="0" positionLock="false">
+                    <FrameColor alpha="255" red="0" blue="0" green="0"/>
+                    <BackgroundColor alpha="255" red="255" blue="255" green="255"/>
+                </ComposerItem>
+            </ComposerShape>
+            <ComposerShape shapeType="1" cornerRadius="0">
+                <symbol alpha="1" type="fill" name="">
+                    <layer pass="0" class="SimpleFill" locked="0">
+                        <prop k="border_width_unit" v="MM"/>
+                        <prop k="color" v="255,255,255,255"/>
+                        <prop k="color_border" v="0,0,0,255"/>
+                        <prop k="offset" v="0,0"/>
+                        <prop k="offset_unit" v="MM"/>
+                        <prop k="style" v="solid"/>
+                        <prop k="style_border" v="solid"/>
+                        <prop k="width_border" v="0.2"/>
+                    </layer>
+                </symbol>
+                <ComposerItem width="100" x="5" transparency="0" y="5" height="40" positionMode="0" frame="false" outlineWidth="0.2" zValue="2" itemRotation="0" lastValidViewScaleFactor="2.22011" uuid="{a97ace0d-18e3-414b-bc22-25f6eecc7438}" id="" background="true" blendMode="0" positionLock="false">
+                    <FrameColor alpha="255" red="0" blue="0" green="0"/>
+                    <BackgroundColor alpha="255" red="255" blue="255" green="255"/>
+                </ComposerItem>
+            </ComposerShape>
+            <ComposerMap mapRotation="0" keepLayerSet="true" overviewFrameMap="-1" id="0" previewMode="Cache" drawCanvasItems="true">
+                <overviewFrame overviewBlendMode="0" overviewFrameMap="-1" overviewCentered="false" overviewInverted="false">
+                    <symbol alpha="0.3" type="fill" name="">
+                        <layer pass="0" class="SimpleFill" locked="0">
+                            <prop k="border_width_unit" v="MM"/>
+                            <prop k="color" v="255,0,0,255"/>
+                            <prop k="color_border" v="0,0,0,255"/>
+                            <prop k="offset" v="0,0"/>
+                            <prop k="offset_unit" v="MM"/>
+                            <prop k="style" v="solid"/>
+                            <prop k="style_border" v="no"/>
+                            <prop k="width_border" v="0.26"/>
+                        </layer>
+                    </symbol>
+                </overviewFrame>
+                <Extent ymin="142621.19576756781316362" xmin="559701.72448867897037417" ymax="142677.36576762521872297" xmax="559741.04348871915135533"/>
+                <LayerSet>
+                    <Layer>installation_tank20130304110005008</Layer>
+                    <Layer>installation_source20130820110331647</Layer>
+                    <Layer>installation_pump20130816140237750</Layer>
+                    <Layer>installation_treatment20130816113039913</Layer>
+                    <Layer>installation_pressurecontrol20131107105006792</Layer>
+                    <Layer>installation_valvechamber20131107105006707</Layer>
+                    <Layer>hydrant20130304110004848</Layer>
+                    <Layer>valve20130304110011497</Layer>
+                    <Layer>vannes_copy20130924083714343</Layer>
+                    <Layer>od_wateringoutput20131127080906318</Layer>
+                    <Layer>subscriber20130304110011459</Layer>
+                    <Layer>od_subscriber_reference20131206105928067</Layer>
+                    <Layer>od_meter20131120073630165</Layer>
+                    <Layer>od_meter_reference20140304165835390</Layer>
+                    <Layer>node20130304110005126</Layer>
+                    <Layer>conduites_copy20130709141244955</Layer>
+                    <Layer>conduites_actives_copy_copy20130822080032346</Layer>
+                    <Layer>od_annotationline20131203095020365</Layer>
+                    <Layer>od_annotationpoint20131203095020392</Layer>
+                    <Layer>dimension20130807094904783</Layer>
+                    <Layer>od_dimension_orientation20131202111155806</Layer>
+                    <Layer>cadastre20140312152032371</Layer>
+                    <Layer>od_batiment_souterrain20130514143946785</Layer>
+                    <Layer>cs_batiment20130514143721709</Layer>
+                    <Layer>od_element_surfacique20130514144124647</Layer>
+                    <Layer>od_element_lineaire20130514144047075</Layer>
+                    <Layer>cs_surfacecs20130514143830750</Layer>
+                    <Layer>bf_bien_fonds20130514143508556</Layer>
+                    <Layer>pf_pfp20130514144226845</Layer>
+                    <Layer>bf_point_limite20130514143552315</Layer>
+                    <Layer>axe_rue20130514143437774</Layer>
+                    <Layer>no_posnomlocallieudit20130514143906869</Layer>
+                    <Layer>bf_posimmeuble20130514143633121</Layer>
+                    <Layer>cs_posnumero_de_batiment20130514143756039</Layer>
+                    <Layer>ad_posnumero_maison20130514143346530</Layer>
+                    <Layer>od_batiment_souterrain20140214143946785</Layer>
+                    <Layer>cs_batiment20140214143721709</Layer>
+                    <Layer>od_element_surfacique20140214144124647</Layer>
+                    <Layer>od_element_lineaire20140214144047075</Layer>
+                    <Layer>cs_surfacecs20140214143830750</Layer>
+                    <Layer>bf_bien_fonds20140214143508556</Layer>
+                    <Layer>pf_pfp20140214144226845</Layer>
+                    <Layer>bf_point_limite20140214143552315</Layer>
+                    <Layer>no_posnomlocallieudit20140214143906869</Layer>
+                    <Layer>cs_posnumero_de_batiment20140214143756039</Layer>
+                    <Layer>bf_posimmeuble20140214143633121</Layer>
+                </LayerSet>
+                <Grid gridStyle="0" crossLength="3" gridFramePenThickness="0.5" intervalX="0" offsetX="0" intervalY="0" offsetY="0" gridFrameStyle="0" gridFrameWidth="2" gridBlendMode="0" show="0">
+                    <framePenColor alpha="255" red="0" blue="0" green="0"/>
+                    <frameFillColor1 alpha="255" red="255" blue="255" green="255"/>
+                    <frameFillColor2 alpha="255" red="0" blue="0" green="0"/>
+                    <symbol alpha="1" type="line" name="">
+                        <layer pass="0" class="SimpleLine" locked="0">
+                            <prop k="capstyle" v="flat"/>
+                            <prop k="color" v="0,0,0,255"/>
+                            <prop k="customdash" v="5;2"/>
+                            <prop k="customdash_unit" v="MM"/>
+                            <prop k="draw_inside_polygon" v="0"/>
+                            <prop k="joinstyle" v="bevel"/>
+                            <prop k="offset" v="0"/>
+                            <prop k="offset_unit" v="MM"/>
+                            <prop k="penstyle" v="solid"/>
+                            <prop k="use_custom_dash" v="0"/>
+                            <prop k="width" v="0.3"/>
+                            <prop k="width_unit" v="MM"/>
+                        </layer>
+                    </symbol>
+                    <Annotation rightDirection="0" bottomDirection="0" format="0" topPosition="1" precision="3" leftDirection="0" rightPosition="1" bottomPosition="1" frameDistance="1" show="0" font="Ubuntu,11,-1,5,50,0,0,0,0,0" leftPosition="1" topDirection="0">
+                        <fontColor alpha="255" red="0" blue="0" green="0"/>
+                    </Annotation>
+                </Grid>
+                <AtlasMap fixedScale="1" atlasDriven="0" margin="0.10000000000000001"/>
+                <ComposerItem width="287" x="5" transparency="0" y="5" height="410" positionMode="0" frame="true" outlineWidth="0.2" zValue="1" itemRotation="0" lastValidViewScaleFactor="2.22011" uuid="{faf9a9c8-9637-4df4-af99-53bd92cf2048}" id="" background="true" blendMode="0" positionLock="false">
+                    <FrameColor alpha="255" red="0" blue="0" green="0"/>
+                    <BackgroundColor alpha="255" red="255" blue="255" green="255"/>
+                </ComposerItem>
+            </ComposerMap>
+        </Composition>
+    </Composer>
+    <Composer title="extrait A3 paysage" visible="0">
+        <Composition snapGridTolerance="2" gridVisible="0" printResolution="300" paperWidth="420" snapGridOffsetX="0" guidesVisible="1" snapGridResolution="10" snapGridOffsetY="0" alignmentSnap="1" snapping="0" numPages="1" paperHeight="297" alignmentSnapTolerance="2" smartGuides="1" printAsRaster="0" generateWorldFile="0">
+            <symbol alpha="1" type="fill" name="">
+                <layer pass="0" class="SimpleFill" locked="0">
+                    <prop k="border_width_unit" v="MM"/>
+                    <prop k="color" v="255,255,255,255"/>
+                    <prop k="color_border" v="0,0,0,255"/>
+                    <prop k="offset" v="0,0"/>
+                    <prop k="offset_unit" v="MM"/>
+                    <prop k="style" v="solid"/>
+                    <prop k="style_border" v="no"/>
+                    <prop k="width_border" v="0.26"/>
+                </layer>
+            </symbol>
+            <ComposerPicture pictureRotation="0" pictureWidth="35" file="./symbols/wind_rose.svg" pictureHeight="35" mapId="0">
+                <ComposerItem width="35" x="372.549" transparency="0" y="250.766" height="35" positionMode="0" frame="false" outlineWidth="0.3" zValue="16" itemRotation="0" lastValidViewScaleFactor="1.90655" uuid="{02f4883c-455f-48d7-a2ee-d28d29160034}" id="" background="false" blendMode="0" positionLock="false">
+                    <FrameColor alpha="255" red="0" blue="0" green="0"/>
+                    <BackgroundColor alpha="255" red="255" blue="255" green="255"/>
+                </ComposerItem>
+            </ComposerPicture>
+            <ComposerLabel valign="128" labelText="ÉTABLI SUR LA BASE DES DONNÉES CADASTRALES" htmlState="0" halign="4" margin="1">
+                <LabelFont description="Arial,7,-1,5,50,0,0,0,0,0"/>
+                <FontColor red="0" blue="0" green="0"/>
+                <ComposerItem width="35.134" x="169.866" transparency="0" y="35" height="10" positionMode="0" frame="true" outlineWidth="0.2" zValue="15" itemRotation="0" lastValidViewScaleFactor="5.64862" uuid="{d4b49670-a37b-4524-9437-86b8b500806c}" id="" background="true" blendMode="0" positionLock="false">
+                    <FrameColor alpha="255" red="0" blue="0" green="0"/>
+                    <BackgroundColor alpha="255" red="255" blue="255" green="255"/>
+                </ComposerItem>
+            </ComposerLabel>
+            <ComposerLabel valign="128" labelText="PLAN SANS VALEUR OFFICIELLE" htmlState="0" halign="4" margin="1">
+                <LabelFont description="Arial,7,-1,5,50,0,0,0,0,0"/>
+                <FontColor red="0" blue="0" green="0"/>
+                <ComposerItem width="28" x="141.666" transparency="0" y="35" height="10" positionMode="0" frame="true" outlineWidth="0.2" zValue="14" itemRotation="0" lastValidViewScaleFactor="5.64862" uuid="{df4b10f1-b2a5-4c0d-9e73-769eb394a0a3}" id="" background="true" blendMode="0" positionLock="false">
+                    <FrameColor alpha="255" red="0" blue="0" green="0"/>
+                    <BackgroundColor alpha="255" red="255" blue="255" green="255"/>
+                </ComposerItem>
+            </ComposerLabel>
+            <ComposerLabel valign="128" labelText="TRACÉ ET PROFONDEUR APPROXIMATIFS" htmlState="0" halign="4" margin="1">
+                <LabelFont description="Arial,7,-1,5,50,0,0,0,0,0"/>
+                <FontColor red="0" blue="0" green="0"/>
+                <ComposerItem width="36.466" x="105" transparency="0" y="35" height="10" positionMode="0" frame="true" outlineWidth="0.2" zValue="13" itemRotation="0" lastValidViewScaleFactor="5.64862" uuid="{ba02bfca-67bf-4cd8-b39b-16b32c961105}" id="" background="true" blendMode="0" positionLock="false">
+                    <FrameColor alpha="255" red="0" blue="0" green="0"/>
+                    <BackgroundColor alpha="255" red="255" blue="255" green="255"/>
+                </ComposerItem>
+            </ComposerLabel>
+            <ComposerScaleBar penColor="#000000" style="Numeric" numMapUnitsPerScaleBarUnit="1" alignment="1" brushColor="#000000" numSegments="4" segmentMillimeters="400" fontColor="#000000" font="Arial,12,-1,5,50,0,0,0,0,0" numUnitsPerSegment="100" units="1" labelBarSpace="3" outlineWidth="1" numSegmentsLeft="2" height="3" mapId="0" boxContentSpace="1" unitLabel="m">
+                <ComposerItem width="20" x="185" transparency="0" y="25" height="10" positionMode="0" frame="true" outlineWidth="0.2" zValue="12" itemRotation="0" lastValidViewScaleFactor="5.64862" uuid="{1f8b8020-95a9-46cc-a314-85cbbaffbead}" id="" background="true" blendMode="0" positionLock="false">
+                    <FrameColor alpha="255" red="0" blue="0" green="0"/>
+                    <BackgroundColor alpha="255" red="255" blue="255" green="255"/>
+                </ComposerItem>
+            </ComposerScaleBar>
+            <ComposerScaleBar penColor="#000000" style="Double Box" numMapUnitsPerScaleBarUnit="1" alignment="0" brushColor="#000000" numSegments="5" segmentMillimeters="8" fontColor="#000000" font="Arial,6,-1,5,50,0,0,0,0,0" numUnitsPerSegment="2" units="1" labelBarSpace="2" outlineWidth="0.01" numSegmentsLeft="0" height="3" mapId="0" boxContentSpace="1" unitLabel="m">
+                <ComposerItem width="46.102" x="131.949" transparency="0" y="25.5" height="9" positionMode="4" frame="false" outlineWidth="0.2" zValue="11" itemRotation="0" lastValidViewScaleFactor="6.65958" uuid="{6f598429-cabf-4706-b52a-eaa1c461d09f}" id="" background="true" blendMode="0" positionLock="false">
+                    <FrameColor alpha="255" red="0" blue="0" green="0"/>
+                    <BackgroundColor alpha="255" red="255" blue="255" green="255"/>
+                </ComposerItem>
+            </ComposerScaleBar>
+            <ComposerLabel valign="128" labelText="[% format_date(  $now , 'dd.MM.yyyy')%]" htmlState="0" halign="4" margin="1">
+                <LabelFont description="Arial,10,-1,5,50,0,0,0,0,0"/>
+                <FontColor red="0" blue="0" green="0"/>
+                <ComposerItem width="20" x="105" transparency="0" y="25" height="10" positionMode="0" frame="true" outlineWidth="0.2" zValue="10" itemRotation="0" lastValidViewScaleFactor="5.64862" uuid="{ee87c505-f155-419a-82f1-9cb544af4398}" id="" background="true" blendMode="0" positionLock="false">
+                    <FrameColor alpha="255" red="0" blue="0" green="0"/>
+                    <BackgroundColor alpha="255" red="255" blue="255" green="255"/>
+                </ComposerItem>
+            </ComposerLabel>
+            <ComposerLabel valign="128" labelText="XXXX" htmlState="0" halign="4" margin="1">
+                <LabelFont description="Arial,10,-1,5,50,0,0,0,0,0"/>
+                <FontColor red="0" blue="0" green="0"/>
+                <ComposerItem width="100" x="105" transparency="0" y="15" height="10" positionMode="0" frame="true" outlineWidth="0.2" zValue="9" itemRotation="0" lastValidViewScaleFactor="6.65958" uuid="{beebd425-a2d3-45b4-811e-688f55701c08}" id="" background="true" blendMode="0" positionLock="false">
+                    <FrameColor alpha="255" red="0" blue="0" green="0"/>
+                    <BackgroundColor alpha="255" red="255" blue="255" green="255"/>
+                </ComposerItem>
+            </ComposerLabel>
+            <ComposerLabel valign="128" labelText="Folio" htmlState="0" halign="4" margin="1">
+                <LabelFont description="Arial,8,-1,5,50,0,0,0,0,0"/>
+                <FontColor red="0" blue="0" green="0"/>
+                <ComposerItem width="20" x="185" transparency="0" y="5" height="10" positionMode="0" frame="true" outlineWidth="0.2" zValue="8" itemRotation="0" lastValidViewScaleFactor="2.82431" uuid="{4e916068-bc52-4b5d-a77e-082fb23c3a77}" id="" background="true" blendMode="0" positionLock="false">
+                    <FrameColor alpha="255" red="0" blue="0" green="0"/>
+                    <BackgroundColor alpha="255" red="255" blue="255" green="255"/>
+                </ComposerItem>
+            </ComposerLabel>
+            <ComposerLabel valign="128" labelText="Commune de" htmlState="0" halign="4" margin="1">
+                <LabelFont description="Arial,10,-1,5,50,0,0,0,0,0"/>
+                <FontColor red="0" blue="0" green="0"/>
+                <ComposerItem width="80" x="105" transparency="0" y="5" height="10" positionMode="0" frame="true" outlineWidth="0.2" zValue="7" itemRotation="0" lastValidViewScaleFactor="5.64862" uuid="{6946be3f-30b5-407e-b4af-697180148dd6}" id="" background="true" blendMode="0" positionLock="false">
+                    <FrameColor alpha="255" red="0" blue="0" green="0"/>
+                    <BackgroundColor alpha="255" red="255" blue="255" green="255"/>
+                </ComposerItem>
+            </ComposerLabel>
+            <ComposerLabel valign="128" labelText="BUREAU TECHNIQUE CH. DE LA VEYRE D'EN HAUT B8&#xa;&#xa;1806 ST-LÉGIER TEL. 0848 180 180 FAX 021 943 01 61" htmlState="0" halign="4" margin="1">
+                <LabelFont description="Arial,8,-1,5,50,0,0,0,0,0"/>
+                <FontColor red="0" blue="0" green="0"/>
+                <ComposerItem width="98" x="6" transparency="0" y="25.67" height="16.1058" positionMode="0" frame="false" outlineWidth="0.3" zValue="6" itemRotation="0" lastValidViewScaleFactor="5.64862" uuid="{c326048c-816f-41cb-87cd-a73c2599cfa9}" id="" background="true" blendMode="0" positionLock="false">
+                    <FrameColor alpha="255" red="0" blue="0" green="0"/>
+                    <BackgroundColor alpha="255" red="255" blue="255" green="255"/>
+                </ComposerItem>
+            </ComposerLabel>
+            <ComposerPicture pictureRotation="0" pictureWidth="35.6651" file="./composer/Logo_SIGE.png" pictureHeight="8.03777" mapId="-1">
+                <ComposerItem width="35.6651" x="7.55551" transparency="0" y="11.7136" height="13.2864" positionMode="0" frame="false" outlineWidth="0.3" zValue="5" itemRotation="0" lastValidViewScaleFactor="5.64862" uuid="{21772b89-fc4a-4cca-b88a-53319e3cc212}" id="" background="true" blendMode="0" positionLock="false">
+                    <FrameColor alpha="255" red="0" blue="0" green="0"/>
+                    <BackgroundColor alpha="255" red="255" blue="255" green="255"/>
+                </ComposerItem>
+            </ComposerPicture>
+            <ComposerLabel valign="128" labelText="SERVICE INTERCOMMUNAL&#xa; DE GESTION" htmlState="0" halign="4" margin="1">
+                <LabelFont description="Arial,12,-1,5,50,0,0,0,0,0"/>
+                <FontColor red="0" blue="0" green="0"/>
+                <ComposerItem width="59.2742" x="43.2206" transparency="0" y="11.3727" height="13.6273" positionMode="0" frame="false" outlineWidth="0.3" zValue="4" itemRotation="0" lastValidViewScaleFactor="5.64862" uuid="{6977e769-274c-4dbc-9742-118f60bd4368}" id="" background="true" blendMode="0" positionLock="false">
+                    <FrameColor alpha="255" red="0" blue="0" green="0"/>
+                    <BackgroundColor alpha="255" red="255" blue="255" green="255"/>
+                </ComposerItem>
+            </ComposerLabel>
+            <ComposerShape shapeType="1" cornerRadius="0">
+                <symbol alpha="1" type="fill" name="">
+                    <layer pass="0" class="SimpleFill" locked="0">
+                        <prop k="border_width_unit" v="MM"/>
+                        <prop k="color" v="255,255,255,255"/>
+                        <prop k="color_border" v="0,0,0,255"/>
+                        <prop k="offset" v="0,0"/>
+                        <prop k="offset_unit" v="MM"/>
+                        <prop k="style" v="solid"/>
+                        <prop k="style_border" v="solid"/>
+                        <prop k="width_border" v="0.2"/>
+                    </layer>
+                </symbol>
+                <ComposerItem width="100" x="105" transparency="0" y="5" height="40" positionMode="0" frame="false" outlineWidth="0.2" zValue="3" itemRotation="0" lastValidViewScaleFactor="1.54936" uuid="{52245790-ced9-4612-a508-66a2231f6641}" id="" background="true" blendMode="0" positionLock="false">
+                    <FrameColor alpha="255" red="0" blue="0" green="0"/>
+                    <BackgroundColor alpha="255" red="255" blue="255" green="255"/>
+                </ComposerItem>
+            </ComposerShape>
+            <ComposerShape shapeType="1" cornerRadius="0">
+                <symbol alpha="1" type="fill" name="">
+                    <layer pass="0" class="SimpleFill" locked="0">
+                        <prop k="border_width_unit" v="MM"/>
+                        <prop k="color" v="255,255,255,255"/>
+                        <prop k="color_border" v="0,0,0,255"/>
+                        <prop k="offset" v="0,0"/>
+                        <prop k="offset_unit" v="MM"/>
+                        <prop k="style" v="solid"/>
+                        <prop k="style_border" v="solid"/>
+                        <prop k="width_border" v="0.2"/>
+                    </layer>
+                </symbol>
+                <ComposerItem width="100" x="5" transparency="0" y="5" height="40" positionMode="0" frame="false" outlineWidth="0.2" zValue="2" itemRotation="0" lastValidViewScaleFactor="1.54936" uuid="{9b030bc9-687d-4907-a4d2-767615a40c8e}" id="" background="true" blendMode="0" positionLock="false">
+                    <FrameColor alpha="255" red="0" blue="0" green="0"/>
+                    <BackgroundColor alpha="255" red="255" blue="255" green="255"/>
+                </ComposerItem>
+            </ComposerShape>
+            <ComposerMap mapRotation="0" keepLayerSet="true" overviewFrameMap="-1" id="0" previewMode="Cache" drawCanvasItems="true">
+                <overviewFrame overviewBlendMode="0" overviewFrameMap="-1" overviewCentered="false" overviewInverted="false">
+                    <symbol alpha="0.3" type="fill" name="">
+                        <layer pass="0" class="SimpleFill" locked="0">
+                            <prop k="border_width_unit" v="MM"/>
+                            <prop k="color" v="255,0,0,255"/>
+                            <prop k="color_border" v="0,0,0,255"/>
+                            <prop k="offset" v="0,0"/>
+                            <prop k="offset_unit" v="MM"/>
+                            <prop k="style" v="solid"/>
+                            <prop k="style_border" v="no"/>
+                            <prop k="width_border" v="0.26"/>
+                        </layer>
+                    </symbol>
+                </overviewFrame>
+                <Extent ymin="142599.08241754528717138" xmin="559670.13398864679038525" ymax="142670.83241761845420115" xmax="559772.63398875133134425"/>
+                <LayerSet>
+                    <Layer>installation_tank20130304110005008</Layer>
+                    <Layer>installation_source20130820110331647</Layer>
+                    <Layer>installation_pump20130816140237750</Layer>
+                    <Layer>installation_treatment20130816113039913</Layer>
+                    <Layer>installation_pressurecontrol20131107105006792</Layer>
+                    <Layer>installation_valvechamber20131107105006707</Layer>
+                    <Layer>hydrant20130304110004848</Layer>
+                    <Layer>valve20130304110011497</Layer>
+                    <Layer>vannes_copy20130924083714343</Layer>
+                    <Layer>od_wateringoutput20131127080906318</Layer>
+                    <Layer>subscriber20130304110011459</Layer>
+                    <Layer>od_subscriber_reference20131206105928067</Layer>
+                    <Layer>od_meter20131120073630165</Layer>
+                    <Layer>od_meter_reference20140304165835390</Layer>
+                    <Layer>node20130304110005126</Layer>
+                    <Layer>conduites_copy20130709141244955</Layer>
+                    <Layer>conduites_actives_copy_copy20130822080032346</Layer>
+                    <Layer>od_annotationline20131203095020365</Layer>
+                    <Layer>od_annotationpoint20131203095020392</Layer>
+                    <Layer>dimension20130807094904783</Layer>
+                    <Layer>od_dimension_orientation20131202111155806</Layer>
+                    <Layer>cadastre20140312152032371</Layer>
+                    <Layer>od_batiment_souterrain20130514143946785</Layer>
+                    <Layer>cs_batiment20130514143721709</Layer>
+                    <Layer>od_element_surfacique20130514144124647</Layer>
+                    <Layer>od_element_lineaire20130514144047075</Layer>
+                    <Layer>cs_surfacecs20130514143830750</Layer>
+                    <Layer>bf_bien_fonds20130514143508556</Layer>
+                    <Layer>pf_pfp20130514144226845</Layer>
+                    <Layer>bf_point_limite20130514143552315</Layer>
+                    <Layer>axe_rue20130514143437774</Layer>
+                    <Layer>no_posnomlocallieudit20130514143906869</Layer>
+                    <Layer>bf_posimmeuble20130514143633121</Layer>
+                    <Layer>cs_posnumero_de_batiment20130514143756039</Layer>
+                    <Layer>ad_posnumero_maison20130514143346530</Layer>
+                    <Layer>od_batiment_souterrain20140214143946785</Layer>
+                    <Layer>cs_batiment20140214143721709</Layer>
+                    <Layer>od_element_surfacique20140214144124647</Layer>
+                    <Layer>od_element_lineaire20140214144047075</Layer>
+                    <Layer>cs_surfacecs20140214143830750</Layer>
+                    <Layer>bf_bien_fonds20140214143508556</Layer>
+                    <Layer>pf_pfp20140214144226845</Layer>
+                    <Layer>bf_point_limite20140214143552315</Layer>
+                    <Layer>no_posnomlocallieudit20140214143906869</Layer>
+                    <Layer>cs_posnumero_de_batiment20140214143756039</Layer>
+                    <Layer>bf_posimmeuble20140214143633121</Layer>
+                </LayerSet>
+                <Grid gridStyle="0" crossLength="3" gridFramePenThickness="0.5" intervalX="0" offsetX="0" intervalY="0" offsetY="0" gridFrameStyle="0" gridFrameWidth="2" gridBlendMode="0" show="0">
+                    <framePenColor alpha="255" red="0" blue="0" green="0"/>
+                    <frameFillColor1 alpha="255" red="255" blue="255" green="255"/>
+                    <frameFillColor2 alpha="255" red="0" blue="0" green="0"/>
+                    <symbol alpha="1" type="line" name="">
+                        <layer pass="0" class="SimpleLine" locked="0">
+                            <prop k="capstyle" v="flat"/>
+                            <prop k="color" v="0,0,0,255"/>
+                            <prop k="customdash" v="5;2"/>
+                            <prop k="customdash_unit" v="MM"/>
+                            <prop k="draw_inside_polygon" v="0"/>
+                            <prop k="joinstyle" v="bevel"/>
+                            <prop k="offset" v="0"/>
+                            <prop k="offset_unit" v="MM"/>
+                            <prop k="penstyle" v="solid"/>
+                            <prop k="use_custom_dash" v="0"/>
+                            <prop k="width" v="0.3"/>
+                            <prop k="width_unit" v="MM"/>
+                        </layer>
+                    </symbol>
+                    <Annotation rightDirection="0" bottomDirection="0" format="0" topPosition="1" precision="3" leftDirection="0" rightPosition="1" bottomPosition="1" frameDistance="1" show="0" font="Ubuntu,11,-1,5,50,0,0,0,0,0" leftPosition="1" topDirection="0">
+                        <fontColor alpha="255" red="0" blue="0" green="0"/>
+                    </Annotation>
+                </Grid>
+                <AtlasMap fixedScale="1" atlasDriven="0" margin="0.10000000000000001"/>
+                <ComposerItem width="410" x="5" transparency="0" y="5" height="287" positionMode="0" frame="true" outlineWidth="0.2" zValue="1" itemRotation="0" lastValidViewScaleFactor="1.90655" uuid="{a6c3b03e-58a2-49e8-9660-8174a1254130}" id="" background="true" blendMode="0" positionLock="false">
                     <FrameColor alpha="255" red="0" blue="0" green="0"/>
                     <BackgroundColor alpha="255" red="255" blue="255" green="255"/>
                 </ComposerItem>
@@ -2543,10 +3276,9 @@
             <provider encoding="System">postgres</provider>
             <previewExpression>COALESCE( "id", '&lt;NULL>' )</previewExpression>
             <vectorjoins>
-                <join joinFieldName="id" targetFieldName="id_status" memoryCache="0" joinLayerId="vl_status20130304110011436"/>
                 <join joinFieldName="id" targetFieldName="id_material" memoryCache="1" joinLayerId="vl_pipe_material20130304110005230"/>
                 <join joinFieldName="id" targetFieldName="id_status" memoryCache="1" joinLayerId="subscriber20130304110011459"/>
-                <join joinFieldName="id" targetFieldName="id_status" memoryCache="1" joinLayerId="status20130304110011436"/>
+                <join joinFieldName="id" targetFieldName="id_status" memoryCache="1" joinLayerId="vl_status20130304110011436"/>
             </vectorjoins>
             <renderer-v2 symbollevels="0" type="RuleRenderer">
                 <rules>
@@ -2858,9 +3590,8 @@
             <provider encoding="System">postgres</provider>
             <previewExpression></previewExpression>
             <vectorjoins>
-                <join joinFieldName="id" targetFieldName="id_status" memoryCache="0" joinLayerId="vl_status20130304110011436"/>
                 <join joinFieldName="id" targetFieldName="id_material" memoryCache="1" joinLayerId="vl_pipe_material20130304110005230"/>
-                <join joinFieldName="id" targetFieldName="id_status" memoryCache="1" joinLayerId="status20130304110011436"/>
+                <join joinFieldName="id" targetFieldName="id_status" memoryCache="1" joinLayerId="vl_status20130304110011436"/>
             </vectorjoins>
             <renderer-v2 symbollevels="0" type="RuleRenderer">
                 <rules>
@@ -3153,9 +3884,8 @@
             <provider encoding="System">postgres</provider>
             <previewExpression>id</previewExpression>
             <vectorjoins>
-                <join joinFieldName="id" targetFieldName="id_status" memoryCache="0" joinLayerId="vl_status20130304110011436"/>
                 <join joinFieldName="id" targetFieldName="id_material" memoryCache="1" joinLayerId="vl_pipe_material20130304110005230"/>
-                <join joinFieldName="id" targetFieldName="id_status" memoryCache="1" joinLayerId="status20130304110011436"/>
+                <join joinFieldName="id" targetFieldName="id_status" memoryCache="1" joinLayerId="vl_status20130304110011436"/>
                 <join joinFieldName="id" targetFieldName="id_function" memoryCache="1" joinLayerId="vl_pipe_function20130304110005186"/>
                 <join joinFieldName="id" targetFieldName="id_protection" memoryCache="1" joinLayerId="vl_pipe_protection20130304110005258"/>
             </vectorjoins>
@@ -3488,7 +4218,7 @@
                 <edittype labelontop="0" editable="0" allowNull="true" orderByValue="false" key="id" layer="pressurezone20130417133612105" allowMulti="false" filterExpression="" type="15" value="name" name="id_pressurezone"/>
                 <edittype labelontop="0" editable="0" type="0" name="id_printmap"/>
                 <edittype labelontop="0" editable="1" allowNull="true" orderByValue="true" key="id" layer="vl_pipe_protection20130304110005258" allowMulti="false" filterExpression="" type="15" value="value_fr" name="id_protection"/>
-                <edittype labelontop="0" editable="1" allowNull="false" orderByValue="false" key="id" layer="status20130304110011436" allowMulti="false" filterExpression="" type="15" value="value_fr" name="id_status"/>
+                <edittype labelontop="0" editable="1" allowNull="false" orderByValue="false" key="id" layer="vl_status20130304110011436" allowMulti="false" filterExpression="" type="15" value="value_fr" name="id_status"/>
                 <edittype labelontop="0" editable="1" allowNull="false" orderByValue="false" key="id" layer="vl_watertype20131217141603877" allowMulti="false" filterExpression="" type="15" value="value_fr" name="id_watertype"/>
                 <edittype labelontop="0" editable="1" type="0" name="labeladdremark"/>
                 <edittype labelontop="0" editable="1" type="0" name="labeladdremark_schema"/>
@@ -4082,7 +4812,7 @@
             <provider encoding="ISO-8859-1">postgres</provider>
             <previewExpression>id</previewExpression>
             <vectorjoins>
-                <join joinFieldName="id" targetFieldName="id_status" memoryCache="1" joinLayerId="status20130304110011436"/>
+                <join joinFieldName="id" targetFieldName="id_status" memoryCache="1" joinLayerId="vl_status20130304110011436"/>
             </vectorjoins>
             <renderer-v2 symbollevels="0" type="singleSymbol">
                 <symbols>
@@ -4277,7 +5007,7 @@
                 <edittype labelontop="0" editable="1" allowNull="true" orderByValue="false" key="id" layer="pressurezone20130417133612105" allowMulti="false" filterExpression="" type="15" value="name" name="id_pressurezone"/>
                 <edittype labelontop="0" editable="1" allowNull="false" orderByValue="false" key="id" layer="printmap20130304110011400" allowMulti="true" filterExpression="" type="15" value="name" name="id_printmap"/>
                 <edittype labelontop="0" editable="1" allowNull="true" orderByValue="false" key="id" layer="hydrant_provider20130304110004893" allowMulti="false" filterExpression="" type="15" value="name" name="id_provider"/>
-                <edittype labelontop="0" editable="1" allowNull="false" orderByValue="false" key="id" layer="status20130304110011436" allowMulti="false" filterExpression="" type="15" value="value_fr" name="id_status"/>
+                <edittype labelontop="0" editable="1" allowNull="false" orderByValue="false" key="id" layer="vl_status20130304110011436" allowMulti="false" filterExpression="" type="15" value="value_fr" name="id_status"/>
                 <edittype labelontop="0" editable="1" type="0" name="id_type"/>
                 <edittype labelontop="0" editable="1" type="0" name="identification"/>
                 <edittype labelontop="0" editable="1" type="0" name="model"/>
@@ -5064,7 +5794,7 @@
                 <edittype labelontop="0" editable="1" type="0" name="id_pressurezone"/>
                 <edittype labelontop="0" editable="1" type="0" name="id_printmap"/>
                 <edittype labelontop="0" editable="1" allowNull="false" orderByValue="false" key="id" layer="vl_remote20130304110004987" allowMulti="false" filterExpression="" type="15" value="value_fr" name="id_remote"/>
-                <edittype labelontop="0" editable="1" allowNull="false" orderByValue="false" key="id" layer="status20130304110011436" allowMulti="false" filterExpression="" type="15" value="value_fr" name="id_status"/>
+                <edittype labelontop="0" editable="1" allowNull="false" orderByValue="false" key="id" layer="vl_status20130304110011436" allowMulti="false" filterExpression="" type="15" value="value_fr" name="id_status"/>
                 <edittype labelontop="0" editable="1" type="0" name="id_type"/>
                 <edittype labelontop="0" editable="1" allowNull="false" orderByValue="false" key="id" layer="vl_watertype20131217141603877" allowMulti="false" filterExpression="" type="15" value="value_fr" name="id_watertype"/>
                 <edittype labelontop="0" editable="1" type="0" name="identification"/>
@@ -6194,7 +6924,7 @@
                 <edittype labelontop="0" editable="1" type="0" name="id_pressurezone"/>
                 <edittype labelontop="0" editable="1" type="0" name="id_printmap"/>
                 <edittype labelontop="0" editable="1" allowNull="false" orderByValue="false" key="id" layer="vl_remote20130304110004987" allowMulti="false" filterExpression="" type="15" value="value_fr" name="id_remote"/>
-                <edittype labelontop="0" editable="1" allowNull="false" orderByValue="false" key="id" layer="status20130304110011436" allowMulti="false" filterExpression="" type="15" value="value_fr" name="id_status"/>
+                <edittype labelontop="0" editable="1" allowNull="false" orderByValue="false" key="id" layer="vl_status20130304110011436" allowMulti="false" filterExpression="" type="15" value="value_fr" name="id_status"/>
                 <edittype labelontop="0" editable="1" allowNull="false" orderByValue="false" key="id" layer="vl_watertype20131217141603877" allowMulti="false" filterExpression="" type="15" value="value_fr" name="id_watertype"/>
                 <edittype labelontop="0" editable="1" type="0" name="identification"/>
                 <edittype labelontop="0" editable="1" type="0" name="labelremark"/>
@@ -6489,7 +7219,7 @@
                 <edittype labelontop="0" editable="1" type="0" name="id_pressurezone"/>
                 <edittype labelontop="0" editable="1" type="0" name="id_printmap"/>
                 <edittype labelontop="0" editable="1" allowNull="false" orderByValue="false" key="id" layer="vl_remote20130304110004987" allowMulti="false" filterExpression="" type="15" value="value_fr" name="id_remote"/>
-                <edittype labelontop="0" editable="1" allowNull="false" orderByValue="false" key="id" layer="status20130304110011436" allowMulti="false" filterExpression="" type="15" value="value_fr" name="id_status"/>
+                <edittype labelontop="0" editable="1" allowNull="false" orderByValue="false" key="id" layer="vl_status20130304110011436" allowMulti="false" filterExpression="" type="15" value="value_fr" name="id_status"/>
                 <edittype labelontop="0" editable="1" allowNull="false" orderByValue="false" key="id" layer="vl_watertype20131217141603877" allowMulti="false" filterExpression="" type="15" value="value_fr" name="id_watertype"/>
                 <edittype labelontop="0" editable="1" type="0" name="identification"/>
                 <edittype labelontop="0" editable="1" type="0" name="labelremark"/>
@@ -6515,7 +7245,7 @@
                 <actionsetting action="qgis.utils.plugins['postgres91plusauditor'].audit('installation_valvechamber20131107105006707',[% $id %])" capture="0" type="1" name="History audit"/>
             </attributeactions>
         </maplayer>
-        <maplayer minimumScale="0" maximumScale="5001" simplifyDrawingHints="1" minLabelScale="0" maxLabelScale="1e+08" simplifyDrawingTol="1" geometry="Point" simplifyMaxScale="1" type="vector" hasScaleBasedVisibilityFlag="1" simplifyLocal="1" scaleBasedLabelVisibilityFlag="0">
+        <maplayer minimumScale="-4.65661e-10" maximumScale="5001" simplifyDrawingHints="0" minLabelScale="0" maxLabelScale="1e+08" simplifyDrawingTol="1" geometry="Point" simplifyMaxScale="1" type="vector" hasScaleBasedVisibilityFlag="1" simplifyLocal="1" scaleBasedLabelVisibilityFlag="0">
             <id>leak20130821111917060</id>
             <datasource>dbname='sige' host=172.24.171.203 port=5432 user='sige' sslmode=disable key='id' srid=21781 type=POINT table="distribution"."od_leak" (geometry) sql=</datasource>
             <title></title>
@@ -6727,7 +7457,7 @@
                 <edittype labelontop="0" editable="1" type="12" name="repair"/>
                 <edittype labelontop="0" editable="1" dateFormat="yyyy-MM-dd" type="13" name="repair_date"/>
             </edittypes>
-            <editform>.</editform>
+            <editform>./ui_forms/leak.ui</editform>
             <editforminit></editforminit>
             <featformsuppress>0</featformsuppress>
             <annotationform>.</annotationform>
@@ -6753,6 +7483,11 @@
             </aliases>
             <excludeAttributesWMS/>
             <excludeAttributesWFS/>
+            <attributeEditorForm>
+                <attributeEditorContainer name="hgf">
+                    <attributeEditorField index="0" name="id"/>
+                </attributeEditorContainer>
+            </attributeEditorForm>
             <attributeactions>
                 <actionsetting action="qgis.utils.plugins['postgres91plusauditor'].audit('leak20130821111917060',[% $id %])" capture="0" type="1" name="History audit"/>
             </attributeactions>
@@ -7990,7 +8725,7 @@
                 <edittype labelontop="0" editable="0" type="0" name="id_pipe"/>
                 <edittype labelontop="0" editable="0" allowNull="false" orderByValue="false" key="id" layer="pressurezone20130417133612105" allowMulti="false" filterExpression="" type="15" value="name" name="id_pressurezone"/>
                 <edittype labelontop="0" editable="0" allowNull="true" orderByValue="false" key="id" layer="printmap20130304110011400" allowMulti="true" filterExpression="" type="15" value="name" name="id_printmap"/>
-                <edittype labelontop="0" editable="1" allowNull="false" orderByValue="false" key="id" layer="status20130304110011436" allowMulti="false" filterExpression="" type="15" value="value_fr" name="id_status"/>
+                <edittype labelontop="0" editable="1" allowNull="false" orderByValue="false" key="id" layer="vl_status20130304110011436" allowMulti="false" filterExpression="" type="15" value="value_fr" name="id_status"/>
                 <edittype labelontop="0" editable="1" allowNull="false" orderByValue="false" key="id" layer="vl_subscriber_type20130304110011480" allowMulti="false" filterExpression="" type="15" value="value_fr" name="id_type"/>
                 <edittype labelontop="0" editable="1" type="0" name="identification"/>
                 <edittype labelontop="0" editable="1" type="0" name="parcel"/>
@@ -8312,6 +9047,8 @@
                 <sizescale scalemethod="area"/>
             </renderer-v2>
             <customproperties>
+                <property key="itemBrowserCurrentItem" value="71"/>
+                <property key="itemBrowserSelection" value="[]"/>
                 <property key="labeling" value="pal"/>
                 <property key="labeling/addDirectionSymbol" value="false"/>
                 <property key="labeling/angleOffset" value="0"/>
@@ -9124,7 +9861,7 @@
                 <edittype labelontop="0" editable="0" type="0" name="id_node"/>
                 <edittype labelontop="0" editable="1" allowNull="false" orderByValue="false" key="id" layer="pressurezone20130417133612105" allowMulti="false" filterExpression="" type="15" value="name" name="id_pressurezone"/>
                 <edittype labelontop="0" editable="1" allowNull="false" orderByValue="false" key="id" layer="printmap20130304110011400" allowMulti="true" filterExpression="" type="15" value="name" name="id_printmap"/>
-                <edittype labelontop="0" editable="1" allowNull="false" orderByValue="false" key="id" layer="status20130304110011436" allowMulti="false" filterExpression="" type="15" value="value_fr" name="id_status"/>
+                <edittype labelontop="0" editable="1" allowNull="false" orderByValue="false" key="id" layer="vl_status20130304110011436" allowMulti="false" filterExpression="" type="15" value="value_fr" name="id_status"/>
                 <edittype labelontop="0" editable="1" type="0" name="identification"/>
                 <edittype labelontop="0" editable="1" type="12" name="remark"/>
                 <edittype labelontop="0" editable="1" type="0" name="year"/>
@@ -10268,51 +11005,6 @@
             </pipe>
             <blendMode>0</blendMode>
         </maplayer>
-        <maplayer minimumScale="-4.65661e-10" maximumScale="1e+08" geometry="No geometry" type="vector" hasScaleBasedVisibilityFlag="0">
-            <id>status20130304110011436</id>
-            <datasource>dbname='sige' host=172.24.171.203 port=5432 user='sige' password='db4wat$' sslmode=allow key='id' table="distribution"."vl_status" sql=</datasource>
-            <title></title>
-            <abstract></abstract>
-            <keywordList>
-                <value></value>
-            </keywordList>
-            <layername>Statut</layername>
-            <srs>
-                <spatialrefsys>
-                    <proj4>+proj=longlat +datum=WGS84 +no_defs</proj4>
-                    <srsid>3452</srsid>
-                    <srid>4326</srid>
-                    <authid>EPSG:4326</authid>
-                    <description>WGS 84</description>
-                    <projectionacronym>longlat</projectionacronym>
-                    <ellipsoidacronym>WGS84</ellipsoidacronym>
-                    <geographicflag>true</geographicflag>
-                </spatialrefsys>
-            </srs>
-            <customproperties>
-                <property key="itemBrowserConnected" value="no"/>
-            </customproperties>
-            <provider encoding="ISO-8859-1">postgres</provider>
-            <previewExpression></previewExpression>
-            <vectorjoins/>
-            <edittypes>
-                <edittype labelontop="0" editable="1" type="0" name="active"/>
-                <edittype labelontop="0" editable="1" type="0" name="comment"/>
-                <edittype labelontop="0" editable="1" type="0" name="id"/>
-                <edittype labelontop="0" editable="1" type="0" name="sire"/>
-                <edittype labelontop="0" editable="1" type="0" name="status"/>
-            </edittypes>
-            <editform>.</editform>
-            <editforminit></editforminit>
-            <featformsuppress>0</featformsuppress>
-            <annotationform>.</annotationform>
-            <editorlayout>generatedlayout</editorlayout>
-            <excludeAttributesWMS/>
-            <excludeAttributesWFS/>
-            <attributeactions>
-                <actionsetting action="qgis.utils.plugins['postgres91plusauditor'].showHistory('status20130304110011436',[% $id %])" capture="0" type="1" name="History audit"/>
-            </attributeactions>
-        </maplayer>
         <maplayer minimumScale="4" maximumScale="1e+08" simplifyDrawingHints="1" minLabelScale="1" maxLabelScale="1e+08" simplifyDrawingTol="1" geometry="Point" simplifyMaxScale="1" type="vector" hasScaleBasedVisibilityFlag="1" simplifyLocal="1" scaleBasedLabelVisibilityFlag="0">
             <id>subscriber20130304110011459</id>
             <datasource>dbname='sige' host=172.24.171.203 port=5432 user='sige' password='db4wat$' sslmode=allow key='id' srid=21781 type=POINT table="distribution"."od_subscriber" (geometry) sql=</datasource>
@@ -10634,7 +11326,7 @@
                 <edittype labelontop="0" editable="0" type="0" name="id_pipe"/>
                 <edittype labelontop="0" editable="0" allowNull="false" orderByValue="false" key="id" layer="pressurezone20130417133612105" allowMulti="false" filterExpression="" type="15" value="name" name="id_pressurezone"/>
                 <edittype labelontop="0" editable="0" allowNull="true" orderByValue="false" key="id" layer="printmap20130304110011400" allowMulti="true" filterExpression="" type="15" value="name" name="id_printmap"/>
-                <edittype labelontop="0" editable="1" allowNull="false" orderByValue="false" key="id" layer="status20130304110011436" allowMulti="false" filterExpression="" type="15" value="value_fr" name="id_status"/>
+                <edittype labelontop="0" editable="1" allowNull="false" orderByValue="false" key="id" layer="vl_status20130304110011436" allowMulti="false" filterExpression="" type="15" value="value_fr" name="id_status"/>
                 <edittype labelontop="0" editable="1" allowNull="false" orderByValue="false" key="id" layer="vl_subscriber_type20130304110011480" allowMulti="false" filterExpression="" type="15" value="value_fr" name="id_type"/>
                 <edittype labelontop="0" editable="1" type="0" name="identification"/>
                 <edittype labelontop="0" editable="1" type="0" name="parcel"/>
@@ -12446,6 +13138,51 @@
                 <actionsetting action="qgis.utils.plugins['postgres91plusauditor'].audit('vl_sourcetype20130820110518791',[% $id %])" capture="0" type="1" name="History audit"/>
             </attributeactions>
         </maplayer>
+        <maplayer minimumScale="-4.65661e-10" maximumScale="1e+08" geometry="No geometry" type="vector" hasScaleBasedVisibilityFlag="0">
+            <id>vl_status20130304110011436</id>
+            <datasource>dbname='sige' host=172.24.171.203 port=5432 user='sige' password='db4wat$' sslmode=allow key='id' table="distribution"."vl_status" sql=</datasource>
+            <title></title>
+            <abstract></abstract>
+            <keywordList>
+                <value></value>
+            </keywordList>
+            <layername>Statut</layername>
+            <srs>
+                <spatialrefsys>
+                    <proj4>+proj=longlat +datum=WGS84 +no_defs</proj4>
+                    <srsid>3452</srsid>
+                    <srid>4326</srid>
+                    <authid>EPSG:4326</authid>
+                    <description>WGS 84</description>
+                    <projectionacronym>longlat</projectionacronym>
+                    <ellipsoidacronym>WGS84</ellipsoidacronym>
+                    <geographicflag>true</geographicflag>
+                </spatialrefsys>
+            </srs>
+            <customproperties>
+                <property key="itemBrowserConnected" value="no"/>
+            </customproperties>
+            <provider encoding="ISO-8859-1">postgres</provider>
+            <previewExpression></previewExpression>
+            <vectorjoins/>
+            <edittypes>
+                <edittype labelontop="0" editable="1" type="0" name="active"/>
+                <edittype labelontop="0" editable="1" type="0" name="comment"/>
+                <edittype labelontop="0" editable="1" type="0" name="id"/>
+                <edittype labelontop="0" editable="1" type="0" name="sire"/>
+                <edittype labelontop="0" editable="1" type="0" name="status"/>
+            </edittypes>
+            <editform>.</editform>
+            <editforminit></editforminit>
+            <featformsuppress>0</featformsuppress>
+            <annotationform>.</annotationform>
+            <editorlayout>generatedlayout</editorlayout>
+            <excludeAttributesWMS/>
+            <excludeAttributesWFS/>
+            <attributeactions>
+                <actionsetting action="qgis.utils.plugins['postgres91plusauditor'].showHistory('vl_status20130304110011436',[% $id %])" capture="0" type="1" name="History audit"/>
+            </attributeactions>
+        </maplayer>
         <maplayer minimumScale="0" maximumScale="1e+08" geometry="No geometry" type="vector" hasScaleBasedVisibilityFlag="0">
             <id>vl_subscriber_type20130304110011480</id>
             <datasource>dbname='sige' host=172.24.171.203 port=5432 user='sige' password='db4wat$' sslmode=allow key='id' table="distribution"."vl_subscriber_type" sql=</datasource>
@@ -12817,6 +13554,12 @@
         <WMSServiceCapabilities type="bool">false</WMSServiceCapabilities>
         <WMSServiceAbstract type="QString"></WMSServiceAbstract>
         <WMSAddWktGeometry type="bool">false</WMSAddWktGeometry>
+        <NorthArrow>
+            <Rotation type="int">0</Rotation>
+            <Enabled type="bool">false</Enabled>
+            <Placement type="int">2</Placement>
+            <Automatic type="bool">true</Automatic>
+        </NorthArrow>
         <Measure>
             <Ellipsoid type="QString">NONE</Ellipsoid>
         </Measure>
@@ -13239,7 +13982,7 @@
                         <value>vl_sourcequality20130820110518810</value>
                         <value>vl_sourcetype20130820110518791</value>
                         <value>vl_precision20130304110011372</value>
-                        <value>status20130304110011436</value>
+                        <value>vl_status20130304110011436</value>
                         <value>vl_remote20130304110004987</value>
                         <value>vl_valve_maintenance20130304110011567</value>
                         <value>vl_valve_type20130304110011685</value>
@@ -13271,6 +14014,7 @@
                         <value>od_annotationpoint20131203095020392</value>
                         <value>dimension20130807094904783</value>
                         <value>od_dimension_orientation20131202111155806</value>
+                        <value>printmap20130304110011400</value>
                         <value>cadastre20140312152032371</value>
                         <value>od_batiment_souterrain20130514143946785</value>
                         <value>cs_batiment20130514143721709</value>
