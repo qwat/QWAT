@@ -14,6 +14,7 @@ SELECT
 	od_valve.identification    ,
 	od_valve.id_type           ,
 	od_valve.id_function       ,
+	od_valve.id_status         ,
 	od_valve.id_precision      ,
 	od_valve.id_maintenance    ,
 	od_valve.id_pipe           ,
@@ -39,11 +40,14 @@ SELECT
 		WHEN vl_valve_function.short_fr IS NULL THEN od_valve.identification::varchar
 		ELSE vl_valve_function.short_fr || od_valve.identification::varchar
 	END AS _label,
+	vl_status.value_fr          AS _status,
+	vl_status.active            AS _status_active,
 	od_node.altitude_dtm       AS _altitude_dtm,
 	od_pressurezone.colorcode  AS _pressurezone_colorcode
 	FROM distribution.od_valve
 	INNER JOIN      distribution.vl_valve_type     ON od_valve.id_type         = vl_valve_type.id
 	INNER JOIN      distribution.vl_valve_function ON od_valve.id_function     = vl_valve_function.id
+	INNER      JOIN distribution.vl_status         ON od_valve.id_status       = vl_status.id
 	LEFT OUTER JOIN distribution.od_node           ON od_valve.id_node         = od_node.id       
 	LEFT OUTER JOIN distribution.od_district       ON od_valve.id_district     = od_district.id       
 	LEFT OUTER JOIN distribution.od_pressurezone   ON od_valve.id_pressurezone = od_pressurezone.id;
