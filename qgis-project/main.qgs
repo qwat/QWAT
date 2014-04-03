@@ -43,8 +43,8 @@
             </spatialrefsys>
         </destinationsrs>
     </mapcanvas>
-    <legend updateDrawingOrder="false" activeLayer="leak20130821111917060">
-        <legendgroup open="false" checked="Qt::PartiallyChecked" name="Réseau">
+    <legend updateDrawingOrder="false" activeLayer="vannes_copy20130924083714343">
+        <legendgroup open="true" checked="Qt::PartiallyChecked" name="Réseau">
             <legendgroup open="false" checked="Qt::PartiallyChecked" name="ouvrages">
                 <legendlayer drawingOrder="0" open="false" checked="Qt::Unchecked" name="ouvrage général" showFeatureCount="0">
                     <filegroup open="false" hidden="false">
@@ -84,7 +84,7 @@
                     </legendlayer>
                 </legendgroup>
             </legendgroup>
-            <legendgroup open="false" checked="Qt::PartiallyChecked" name="Eléments ponctuels">
+            <legendgroup open="true" checked="Qt::PartiallyChecked" name="Eléments ponctuels">
                 <legendlayer drawingOrder="7" open="false" checked="Qt::Checked" name="hydrantes" showFeatureCount="0">
                     <filegroup open="false" hidden="false">
                         <legendlayerfile isInOverview="0" layerid="hydrant20130304110004848" visible="1"/>
@@ -414,9 +414,9 @@
                 </filegroup>
             </legendlayer>
         </legendgroup>
-        <legendgroup embedded="1" drawingOrder="69" open="false" checked="Qt::Checked" name="riviera_base" project="../../../data/cadastre/riviera/riviera.qgs"/>
+        <legendgroup embedded="1" drawingOrder="69" open="false" checked="Qt::Unchecked" name="riviera_base" project="../../../data/cadastre/riviera/riviera.qgs"/>
         <legendgroup embedded="1" drawingOrder="68" open="false" checked="Qt::Unchecked" name="riviera_complément" project="../../../data/cadastre/riviera/riviera.qgs"/>
-        <legendgroup embedded="1" drawingOrder="71" open="false" checked="Qt::Checked" name="valais_base" project="../../../data/cadastre/valais/valais.qgs"/>
+        <legendgroup embedded="1" drawingOrder="71" open="false" checked="Qt::Unchecked" name="valais_base" project="../../../data/cadastre/valais/valais.qgs"/>
         <legendgroup embedded="1" drawingOrder="70" open="false" checked="Qt::Unchecked" name="valais_complément" project="../../../data/cadastre/valais/valais.qgs"/>
     </legend>
     <Composer title="folio" visible="1">
@@ -11562,7 +11562,7 @@
                 <actionsetting action="qgis.utils.plugins['postgres91plusauditor'].showHistory('subscriber_pipe_relation20130417092124312',[% $id %])" capture="0" type="1" name="History audit"/>
             </attributeactions>
         </maplayer>
-        <maplayer minimumScale="-4.65661e-10" maximumScale="10001" simplifyDrawingHints="0" minLabelScale="1" maxLabelScale="1e+08" simplifyDrawingTol="1" geometry="Point" simplifyMaxScale="1" type="vector" hasScaleBasedVisibilityFlag="1" simplifyLocal="1" scaleBasedLabelVisibilityFlag="0">
+        <maplayer minimumScale="0" maximumScale="10001" simplifyDrawingHints="0" minLabelScale="1" maxLabelScale="1e+08" simplifyDrawingTol="1" geometry="Point" simplifyMaxScale="1" type="vector" hasScaleBasedVisibilityFlag="1" simplifyLocal="1" scaleBasedLabelVisibilityFlag="0">
             <id>valve20130304110011497</id>
             <datasource>dbname='sige' host=172.24.171.203 port=5432 user='sige' password='db4wat$' sslmode=allow key='id' srid=21781 type=POINT table="distribution"."od_valve" (geometry) sql=</datasource>
             <title></title>
@@ -11857,6 +11857,7 @@
                 <edittype labelontop="0" editable="1" allowNull="false" orderByValue="false" key="id" layer="vl_precisionalti20131211161429510" allowMulti="false" filterExpression="" type="15" value="value_fr" name="id_precisionalti"/>
                 <edittype labelontop="0" editable="0" allowNull="false" orderByValue="true" key="id" layer="pressurezone20130417133612105" allowMulti="false" filterExpression="" type="15" value="name" name="id_pressurezone"/>
                 <edittype labelontop="0" editable="0" type="0" name="id_printmap"/>
+                <edittype labelontop="0" editable="1" allowNull="false" orderByValue="false" key="id" layer="vl_status20130304110011436" allowMulti="false" filterExpression="" type="15" value="value_fr" name="id_status"/>
                 <edittype labelontop="0" editable="1" allowNull="false" orderByValue="false" key="id" layer="vl_valve_type20130304110011685" allowMulti="false" filterExpression="" type="15" value="value_fr" name="id_type"/>
                 <edittype labelontop="0" editable="1" type="0" name="identification"/>
                 <edittype labelontop="0" editable="1" type="0" name="labelremark"/>
@@ -12148,7 +12149,7 @@
                 <actionsetting action="qgis.utils.plugins['postgres91plusauditor'].showHistory('valve_schema20130304110011584',[% $id %])" capture="0" type="1" name="History audit"/>
             </attributeactions>
         </maplayer>
-        <maplayer minimumScale="0" maximumScale="3001" simplifyDrawingHints="0" minLabelScale="1" maxLabelScale="1e+08" simplifyDrawingTol="1" geometry="Point" simplifyMaxScale="1" type="vector" hasScaleBasedVisibilityFlag="1" simplifyLocal="1" scaleBasedLabelVisibilityFlag="0">
+        <maplayer minimumScale="-4.65661e-10" maximumScale="3001" simplifyDrawingHints="0" minLabelScale="1" maxLabelScale="1e+08" simplifyDrawingTol="1" geometry="Point" simplifyMaxScale="1" type="vector" hasScaleBasedVisibilityFlag="1" simplifyLocal="1" scaleBasedLabelVisibilityFlag="0">
             <id>vannes_copy20130924083714343</id>
             <datasource>dbname='sige' host=172.24.171.203 port=5432 user='sige' password='db4wat$' sslmode=allow key='id' srid=21781 type=POINT table="distribution"."od_valve" (geometry) sql=</datasource>
             <title></title>
@@ -12435,6 +12436,7 @@
                 <edittype labelontop="0" editable="1" allowNull="false" orderByValue="false" key="id" layer="vl_precisionalti20131211161429510" allowMulti="false" filterExpression="" type="15" value="value_fr" name="id_precisionalti"/>
                 <edittype labelontop="0" editable="0" allowNull="false" orderByValue="true" key="id" layer="pressurezone20130417133612105" allowMulti="false" filterExpression="" type="15" value="name" name="id_pressurezone"/>
                 <edittype labelontop="0" editable="0" type="0" name="id_printmap"/>
+                <edittype labelontop="0" editable="1" allowNull="false" orderByValue="false" key="id" layer="vl_status20130304110011436" allowMulti="false" filterExpression="" type="15" value="value_fr" name="id_status"/>
                 <edittype labelontop="0" editable="1" allowNull="false" orderByValue="false" key="id" layer="vl_valve_type20130304110011685" allowMulti="false" filterExpression="" type="15" value="value_fr" name="id_type"/>
                 <edittype labelontop="0" editable="1" type="0" name="identification"/>
                 <edittype labelontop="0" editable="1" type="0" name="labelremark"/>

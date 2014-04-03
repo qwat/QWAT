@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>577</width>
-    <height>392</height>
+    <width>526</width>
+    <height>375</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -37,23 +37,10 @@
        <string>Général</string>
       </attribute>
       <layout class="QGridLayout" name="gridLayout_3">
-       <item row="3" column="0">
-        <widget class="QLabel" name="label_7">
+       <item row="0" column="0">
+        <widget class="QLabel" name="label">
          <property name="text">
-          <string>Année</string>
-         </property>
-        </widget>
-       </item>
-       <item row="3" column="1">
-        <widget class="QLineEdit" name="year"/>
-       </item>
-       <item row="1" column="1">
-        <widget class="QLineEdit" name="identification"/>
-       </item>
-       <item row="2" column="0">
-        <widget class="QLabel" name="label_8">
-         <property name="text">
-          <string>Diamètre nominal</string>
+          <string>ID</string>
          </property>
         </widget>
        </item>
@@ -67,13 +54,10 @@
          </property>
         </widget>
        </item>
-       <item row="0" column="4">
-        <widget class="QComboBox" name="id_type"/>
-       </item>
-       <item row="1" column="3">
-        <widget class="QLabel" name="label_4">
-         <property name="text">
-          <string>Fonction</string>
+       <item row="0" column="2" rowspan="7">
+        <widget class="Line" name="line_2">
+         <property name="orientation">
+          <enum>Qt::Vertical</enum>
          </property>
         </widget>
        </item>
@@ -84,11 +68,8 @@
          </property>
         </widget>
        </item>
-       <item row="1" column="4">
-        <widget class="QComboBox" name="id_function"/>
-       </item>
-       <item row="2" column="1">
-        <widget class="QLineEdit" name="diameter_nominal"/>
+       <item row="0" column="4">
+        <widget class="QComboBox" name="id_type"/>
        </item>
        <item row="1" column="0">
         <widget class="QLabel" name="label_2">
@@ -97,38 +78,67 @@
          </property>
         </widget>
        </item>
-       <item row="0" column="0">
-        <widget class="QLabel" name="label">
+       <item row="1" column="1">
+        <widget class="QLineEdit" name="identification"/>
+       </item>
+       <item row="1" column="3">
+        <widget class="QLabel" name="label_4">
          <property name="text">
-          <string>ID</string>
+          <string>Fonction</string>
          </property>
         </widget>
        </item>
-       <item row="4" column="0" colspan="2">
+       <item row="1" column="4">
+        <widget class="QComboBox" name="id_function"/>
+       </item>
+       <item row="2" column="0">
+        <widget class="QLabel" name="label_8">
+         <property name="text">
+          <string>Diamètre nominal</string>
+         </property>
+        </widget>
+       </item>
+       <item row="2" column="1">
+        <widget class="QLineEdit" name="diameter_nominal"/>
+       </item>
+       <item row="2" column="3">
+        <widget class="QLabel" name="label_16">
+         <property name="text">
+          <string>Statut</string>
+         </property>
+        </widget>
+       </item>
+       <item row="2" column="4">
+        <widget class="QComboBox" name="id_status"/>
+       </item>
+       <item row="3" column="0">
+        <widget class="QLabel" name="label_7">
+         <property name="text">
+          <string>Année</string>
+         </property>
+        </widget>
+       </item>
+       <item row="3" column="1">
+        <widget class="QLineEdit" name="year"/>
+       </item>
+       <item row="3" column="4" rowspan="4">
+        <widget class="QListWidget" name="id_maintenance"/>
+       </item>
+       <item row="4" column="0">
         <widget class="QCheckBox" name="closed">
          <property name="text">
           <string>Fermée</string>
          </property>
         </widget>
        </item>
-       <item row="5" column="0" colspan="2">
+       <item row="5" column="0">
         <widget class="QCheckBox" name="networkseparation">
          <property name="text">
           <string>Séparation réseau</string>
          </property>
         </widget>
        </item>
-       <item row="0" column="2" rowspan="6">
-        <widget class="Line" name="line_2">
-         <property name="orientation">
-          <enum>Qt::Vertical</enum>
-         </property>
-        </widget>
-       </item>
-       <item row="2" column="4" rowspan="4">
-        <widget class="QListWidget" name="id_maintenance"/>
-       </item>
-       <item row="2" column="3" rowspan="4">
+       <item row="3" column="3" rowspan="3">
         <widget class="QLabel" name="label_10">
          <property name="text">
           <string>Maintenance</string>
