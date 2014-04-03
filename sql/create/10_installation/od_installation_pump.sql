@@ -31,6 +31,8 @@ ALTER TABLE distribution.od_installation_pump ADD COLUMN id_labelvisible_schema 
 ALTER TABLE distribution.od_installation_pump ADD COLUMN labelremark            varchar(150) default '';
 /* specific to pumps */
 ALTER TABLE distribution.od_installation_pump ADD COLUMN id_type           smallint     ;
+ALTER TABLE distribution.od_installation_pump ADD COLUMN id_pipe_in        integer      ;
+ALTER TABLE distribution.od_installation_pump ADD COLUMN id_pipe_out       integer      ;
 ALTER TABLE distribution.od_installation_pump ADD COLUMN id_operating      smallint     ;
 ALTER TABLE distribution.od_installation_pump ADD COLUMN altitude          decimal(10,3);
 ALTER TABLE distribution.od_installation_pump ADD COLUMN nb_pump           smallint     ;
@@ -50,7 +52,9 @@ ALTER TABLE distribution.od_installation_pump ADD CONSTRAINT installation_pump_i
 ALTER TABLE distribution.od_installation_pump ADD CONSTRAINT installation_pump_id_labelvisible        FOREIGN KEY (id_labelvisible)        REFERENCES distribution.vl_visible(vl_code)   MATCH FULL; CREATE INDEX fki_installation_pump_id_labelvisible        ON distribution.od_installation_pump(id_labelvisible)       ;
 ALTER TABLE distribution.od_installation_pump ADD CONSTRAINT installation_pump_id_labelvisible_schema FOREIGN KEY (id_labelvisible_schema) REFERENCES distribution.vl_visible(vl_code)   MATCH FULL; CREATE INDEX fki_installation_pump_id_labelvisible_schema ON distribution.od_installation_pump(id_labelvisible_schema);
 /* specific */                                                                                                                                                                                                                                     
-ALTER TABLE distribution.od_installation_pump ADD CONSTRAINT installation_pump_id_type         FOREIGN KEY (id_type)         REFERENCES distribution.vl_pump_type(id)             MATCH FULL;   CREATE INDEX fki_installation_pump_vl_pump_type    ON distribution.od_installation_pump(id_type)        ;
+ALTER TABLE distribution.od_installation_pump ADD CONSTRAINT installation_pump_id_type     FOREIGN KEY (id_type)     REFERENCES distribution.vl_pump_type(id) MATCH FULL;   CREATE INDEX fki_installation_pump_vl_pump_type ON distribution.od_installation_pump(id_type)     ;
+ALTER TABLE distribution.od_installation_pump ADD CONSTRAINT installation_pump_id_pipe_in  FOREIGN KEY (id_pipe_in)  REFERENCES distribution.od_pipe(id)      MATCH SIMPLE; CREATE INDEX fki_installation_pump_od_pipe_in   ON distribution.od_installation_pump(id_pipe_in)  ;
+ALTER TABLE distribution.od_installation_pump ADD CONSTRAINT installation_pump_id_pipe_out FOREIGN KEY (id_pipe_out) REFERENCES distribution.od_pipe(id)      MATCH SIMPLE; CREATE INDEX fki_installation_pump_od_pipe_out  ON distribution.od_installation_pump(id_pipe_out) ;
 
 
 /* VIEW */
