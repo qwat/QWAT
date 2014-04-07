@@ -18,6 +18,7 @@ ALTER TABLE distribution.od_meter ADD COLUMN identification varchar(12) default 
 ALTER TABLE distribution.od_meter ADD COLUMN _identification_full varchar(16) default '';
 ALTER TABLE distribution.od_meter ADD COLUMN parcel varchar(12) default '' ;
 ALTER TABLE distribution.od_meter ADD COLUMN remark  text default '';
+ALTER TABLE distribution.od_meter ADD COLUMN year smallint CHECK (year > 1800 AND year < 2100);
 
 /* GEOMETRY                           (table_name, is_node, create_node, create_schematic, get_pipe, auto_district, auto_pressurezone)*/
 SELECT distribution.fn_geom_tool_point('od_meter', false,    false,      false,            false,    true,         true);
