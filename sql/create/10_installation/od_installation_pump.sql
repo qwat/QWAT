@@ -34,7 +34,7 @@ ALTER TABLE distribution.od_installation_pump ADD COLUMN labelremark_schema     
 ALTER TABLE distribution.od_installation_pump ADD COLUMN id_type           smallint     ;
 ALTER TABLE distribution.od_installation_pump ADD COLUMN id_operating      smallint     ;
 ALTER TABLE distribution.od_installation_pump ADD COLUMN altitude          decimal(10,3);
-ALTER TABLE distribution.od_installation_pump ADD COLUMN nb_pump           smallint     ;
+ALTER TABLE distribution.od_installation_pump ADD COLUMN no_pumps          smallint     ;
 ALTER TABLE distribution.od_installation_pump ADD COLUMN rejected_flow     decimal(10,2);
 ALTER TABLE distribution.od_installation_pump ADD COLUMN manometric_height decimal(10,2);
 
