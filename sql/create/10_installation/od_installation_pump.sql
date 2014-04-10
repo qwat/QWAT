@@ -25,7 +25,7 @@ ALTER TABLE distribution.od_installation_pump ADD COLUMN remark             text
 ALTER TABLE distribution.od_installation_pump ADD COLUMN year smallint CHECK (year > 1800 AND year < 2100);
 ALTER TABLE distribution.od_installation_pump ADD COLUMN open_water_surface boolean default False  ;
 ALTER TABLE distribution.od_installation_pump ADD COLUMN parcel             varchar(30) default '' ;
-ALTER TABLE distribution.od_installation_pump ADD COLUMN eca                varchar(30) default '' ;
+ALTER TABLE distribution.od_installation_pump ADD COLUMN eca                varchar(30) default '' ; COMMENT ON COLUMN distribution.od_installation_pump.eca IS 'fire brigade id';
 ALTER TABLE distribution.od_installation_pump ADD COLUMN id_labelvisible        boolean default null;
 ALTER TABLE distribution.od_installation_pump ADD COLUMN id_labelvisible_schema boolean default null;
 ALTER TABLE distribution.od_installation_pump ADD COLUMN labelremark            varchar(150) default '';
