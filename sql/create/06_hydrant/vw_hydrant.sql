@@ -18,6 +18,7 @@ CREATE VIEW distribution.vw_hydrant AS
 		od_hydrant.model          ,
 		od_hydrant.underground    ,
 		od_hydrant.altitude_real  ,
+		od_hydrant.marked         ,
 		od_hydrant.remark         ,
 		od_hydrant.pressure_static   ,
 		od_hydrant.pressure_dynamic  ,
@@ -48,5 +49,5 @@ CREATE VIEW distribution.vw_hydrant AS
 		LEFT OUTER JOIN distribution.od_pressurezone     ON od_hydrant.id_pressurezone = od_pressurezone.id;
 /*----------------!!!---!!!----------------*/
 /* Comment */
-COMMENT ON VIEW distribution.vw_hydrant IS 'View for hydrant. This view is editable (a rule exists to forwad changes to the table).';
+COMMENT ON VIEW distribution.vw_hydrant IS 'View for hydrant. This view is editable (a rule exists to forward changes to the table).';
 
