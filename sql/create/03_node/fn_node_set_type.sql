@@ -117,7 +117,7 @@ $BODY$
 				END IF;
 			END IF;
 		/* more than 2 pipes connected, nothing to calculate */
-		ELSEIF grouped.count > 2 THEN
+		ELSEIF keep_type IS FALSE AND grouped.count > 2 THEN
 			type := 'three';
 		END IF;
 		/* update the node table */
