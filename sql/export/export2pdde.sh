@@ -328,7 +328,7 @@ SELECT                                     \
  id_pressurezone AS ZONE_PRES            ,\
  installation_pump.id_type -1         AS GENRE            ,\
  id_operating     AS FONCTION                             ,\
- nb_pump                                                  ,\
+ no_pumps                                                 ,\
  rejected_flow    AS Q_REFOUL                             ,\
  manometric_height AS H_MANOMETR                          \
  FROM distribution.od_installation_pump  INNER JOIN distribution.node ON installation_pump.id_node = node.id\
