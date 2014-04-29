@@ -42,7 +42,7 @@ END;
 $BODY$
 LANGUAGE 'plpgsql';
 
-CREATE TRIGGER installation_building_trigger 
-        BEFORE INSERT OR UPDATE OF id_type ON distribution.od_installation_building 
+CREATE TRIGGER installation_building_name_trigger 
+        BEFORE INSERT OR UPDATE OF id_type, name ON distribution.od_installation_building 
         FOR EACH ROW
         EXECUTE PROCEDURE distribution.installation_building_trigger_fcn();
