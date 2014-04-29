@@ -24,10 +24,10 @@
     <mapcanvas>
         <units>meters</units>
         <extent>
-            <xmin>555982.24898176395799965</xmin>
-            <ymin>145628.64296465489314869</ymin>
-            <xmax>556062.15314851456787437</xmax>
-            <ymax>145698.50289280834840611</ymax>
+            <xmin>555981.18318685668054968</xmin>
+            <ymin>145638.63801271791453473</ymin>
+            <xmax>556061.08735360729042441</xmax>
+            <ymax>145708.49794087136979215</ymax>
         </extent>
         <projections>1</projections>
         <destinationsrs>
@@ -43,7 +43,7 @@
             </spatialrefsys>
         </destinationsrs>
     </mapcanvas>
-    <legend updateDrawingOrder="false" activeLayer="node20130304110005126">
+    <legend updateDrawingOrder="false">
         <legendgroup open="true" checked="Qt::PartiallyChecked" name="Réseau">
             <legendgroup open="true" checked="Qt::Checked" name="ouvrages">
                 <legendlayer drawingOrder="0" open="false" checked="Qt::Checked" name="ouvrage général" showFeatureCount="0">
@@ -51,7 +51,7 @@
                         <legendlayerfile isInOverview="0" layerid="installation20130304110004938" visible="1"/>
                     </filegroup>
                 </legendlayer>
-                <legendgroup open="true" checked="Qt::Checked" name="détail">
+                <legendgroup open="false" checked="Qt::Checked" name="détail">
                     <legendlayer drawingOrder="1" open="false" checked="Qt::Checked" name="ouvrage - réservoirs" showFeatureCount="0">
                         <filegroup open="false" hidden="false">
                             <legendlayerfile isInOverview="0" layerid="installation_tank20130304110005008" visible="1"/>
@@ -138,10 +138,10 @@
                     </filegroup>
                 </legendlayer>
             </legendgroup>
-            <legendgroup open="true" checked="Qt::PartiallyChecked" name="Noeuds">
-                <legendlayer drawingOrder="-1" open="false" checked="Qt::Unchecked" name="Pièces d'installations" showFeatureCount="0">
+            <legendgroup open="false" checked="Qt::PartiallyChecked" name="Noeuds">
+                <legendlayer drawingOrder="-1" open="false" checked="Qt::Checked" name="Pièces d'installations" showFeatureCount="0">
                     <filegroup open="false" hidden="false">
-                        <legendlayerfile isInOverview="0" layerid="od_installationpart20140429113327995" visible="0"/>
+                        <legendlayerfile isInOverview="0" layerid="od_installationpart20140429113327995" visible="1"/>
                     </filegroup>
                 </legendlayer>
                 <legendlayer drawingOrder="18" open="false" checked="Qt::Checked" name="noeuds" showFeatureCount="0">
@@ -229,7 +229,7 @@
                 </filegroup>
             </legendlayer>
         </legendgroup>
-        <legendgroup open="true" checked="Qt::PartiallyChecked" name="Zones">
+        <legendgroup open="false" checked="Qt::PartiallyChecked" name="Zones">
             <legendlayer drawingOrder="33" open="false" checked="Qt::Unchecked" name="communes" showFeatureCount="0">
                 <filegroup open="false" hidden="false">
                     <legendlayerfile isInOverview="0" layerid="district20130304110004764" visible="0"/>
@@ -270,7 +270,7 @@
                 </legendlayer>
             </legendgroup>
         </legendgroup>
-        <legendgroup open="true" checked="Qt::Unchecked" name="Tables auxiliaires">
+        <legendgroup open="false" checked="Qt::Unchecked" name="Tables auxiliaires">
             <legendlayer drawingOrder="40" open="true" checked="Qt::Unchecked" name="Abonnés - type" showFeatureCount="0">
                 <filegroup open="true" hidden="false">
                     <legendlayerfile isInOverview="0" layerid="vl_subscriber_type20130304110011480" visible="0"/>
@@ -419,7 +419,7 @@
                 </filegroup>
             </legendlayer>
         </legendgroup>
-        <legendgroup embedded="1" drawingOrder="69" open="false" checked="Qt::Unchecked" name="riviera_base" project="../../../data/cadastre/riviera/riviera.qgs"/>
+        <legendgroup embedded="1" drawingOrder="69" open="false" checked="Qt::Checked" name="riviera_base" project="../../../data/cadastre/riviera/riviera.qgs"/>
         <legendgroup embedded="1" drawingOrder="68" open="false" checked="Qt::Unchecked" name="riviera_complément" project="../../../data/cadastre/riviera/riviera.qgs"/>
         <legendgroup embedded="1" drawingOrder="71" open="false" checked="Qt::Unchecked" name="valais_base" project="../../../data/cadastre/valais/valais.qgs"/>
         <legendgroup embedded="1" drawingOrder="70" open="false" checked="Qt::Checked" name="valais_complément" project="../../../data/cadastre/valais/valais.qgs"/>
@@ -7556,7 +7556,7 @@
                 <actionsetting action="qgis.utils.plugins['postgres91plusauditor'].showHistory('logged_actions20130304110005081',[% $id %])" capture="0" type="1" name="History audit"/>
             </attributeactions>
         </maplayer>
-        <maplayer minimumScale="0" maximumScale="501" simplifyDrawingHints="0" minLabelScale="1" maxLabelScale="1e+08" simplifyDrawingTol="1" geometry="Point" simplifyMaxScale="1" type="vector" hasScaleBasedVisibilityFlag="1" simplifyLocal="1" scaleBasedLabelVisibilityFlag="0">
+        <maplayer minimumScale="-4.65661e-10" maximumScale="501" simplifyDrawingHints="0" minLabelScale="1" maxLabelScale="1e+08" simplifyDrawingTol="1" geometry="Point" simplifyMaxScale="1" type="vector" hasScaleBasedVisibilityFlag="1" simplifyLocal="1" scaleBasedLabelVisibilityFlag="0">
             <id>node20130304110005126</id>
             <datasource>dbname='sige' host=172.24.171.203 port=5432 user='sige' password='db4wat$' sslmode=allow key='id' srid=21781 type=POINT table="distribution"."od_node" (geometry) sql=</datasource>
             <title></title>
@@ -7705,7 +7705,7 @@
                             <prop k="offset" v="0,0"/>
                             <prop k="offset_unit" v="MM"/>
                             <prop k="outline_style" v="solid"/>
-                            <prop k="outline_width" v="0.6"/>
+                            <prop k="outline_width" v="0.4"/>
                             <prop k="outline_width_unit" v="MM"/>
                             <prop k="scale_method" v="area"/>
                             <prop k="size" v="3"/>
@@ -7719,13 +7719,13 @@
                             <prop k="color_border" v="0,140,255,255"/>
                             <prop k="horizontal_anchor_point" v="1"/>
                             <prop k="name" v="line"/>
-                            <prop k="offset" v="1.2,0"/>
+                            <prop k="offset" v="1,0"/>
                             <prop k="offset_unit" v="MM"/>
                             <prop k="outline_style" v="solid"/>
-                            <prop k="outline_width" v="0.4"/>
+                            <prop k="outline_width" v="0.3"/>
                             <prop k="outline_width_unit" v="MM"/>
                             <prop k="scale_method" v="area"/>
-                            <prop k="size" v="2"/>
+                            <prop k="size" v="2.2"/>
                             <prop k="size_unit" v="MM"/>
                             <prop k="vertical_anchor_point" v="1"/>
                         </layer>
@@ -8568,7 +8568,7 @@
                 </spatialrefsys>
             </srs>
             <provider encoding="UTF-8">postgres</provider>
-            <previewExpression></previewExpression>
+            <previewExpression>COALESCE( "id", '&lt;NULL>' )</previewExpression>
             <vectorjoins/>
             <renderer-v2 symbollevels="0" type="singleSymbol">
                 <symbols>
