@@ -13,6 +13,7 @@ COMMENT ON TABLE distribution.od_node IS' Node tables. it is used to know which 
 
 /* columns */
 ALTER TABLE distribution.od_node_table ADD COLUMN table_name varchar(60);
+ALTER TABLE distribution.od_node_table ADD COLUMN complement_column  varchar(60);
 ALTER TABLE distribution.od_node_table ADD COLUMN node_type  varchar(60);
 ALTER TABLE distribution.od_node_table ADD COLUMN overwrite  boolean default false not null; COMMENT ON COLUMN distribution.od_node_table.overwrite IS 'if true, the type will be affected to the node even if two pipes are on it. e.g. useful for meters (node should be meter and not a two_XXXX).';
 

@@ -22,20 +22,26 @@ $BODY$
 		ori2            double precision := 0    ;
 		orientation     float            := 0    ;
 		is_under_object boolean          := false;
-		is_under        boolean          := false;
+		is_under_count  integer          := 0    ;
 		node_geom       geometry(Point, 21781)   ;
 		intersects      boolean                  ;
 		node_table      record                   ;
 		stmt            text                     ;
 		keep_type       boolean          := false;
+		complement_col  varchar(50)      := ''   ;
 	BEGIN
 		/* determine if the node is under an object (hydrant, valve, etc.) */
 		FOR node_table IN SELECT * FROM distribution.od_node_table
 		LOOP
-			stmt := 'SELECT ' || node_id || 'IN (SELECT id_node FROM distribution.' || node_table.table_name || ');';
-			EXECUTE stmt INTO is_under;
-			IF is_under IS TRUE THEN
+			stmt := 'SELECT COUNT(id) FROM distribution.' || node_table.table_name || ' WHERE id_node='|| node_id || ';';
+			EXECUTE stmt INTO is_under_count;
+			IF is_under_count > 0 THEN
 				type := node_table.node_type;
+				IF node_table.complement_column IS NOT NULL THEN
+					stmt := 'SELECT ' || node_table.complement_column || ' FROM distribution.' || node_table.table_name || ' WHERE id_node=' || node_id || ' LIMIT 1';
+					EXECUTE stmt into complement_col;
+					type := type || '_' || complement_col;
+				END IF;
 				is_under_object := true;
 				IF node_table.overwrite IS true THEN
 					keep_type := true;

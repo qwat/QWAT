@@ -12,7 +12,7 @@ COMMENT ON TABLE distribution.od_node IS 'Nodes. Type:If three pipe or more arri
 
 /* columns */
 ALTER TABLE distribution.od_node ADD COLUMN altitude_dtm    decimal(10,3)              ;
-ALTER TABLE distribution.od_node ADD COLUMN _type           varchar(20) default null ;
+ALTER TABLE distribution.od_node ADD COLUMN _type           varchar(40) default null ;
 ALTER TABLE distribution.od_node ADD COLUMN _orientation    float       default 0    ;
 ALTER TABLE distribution.od_node ADD COLUMN _schema_visible boolean     default false;
 ALTER TABLE distribution.od_node ADD COLUMN _status_active  boolean     default false;
