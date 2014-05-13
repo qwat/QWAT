@@ -96,7 +96,7 @@ $BODY$
 					Tdiameter := pipeitem.diameter;
 					pipe_id   := pipeitem.id;
 					looppos   := 1;
-					SELECT ST_Azimuth(pipeitem.point_1,pipeitem.point_2) INTO orientation ;
+					ori1 := 3*pi()/2-ST_Azimuth(pipeitem.point_1,pipeitem.point_2) ; /* this line must be shifted by 180 */
 				ELSE
 					/* second pipe if exists */
 					IF keep_type IS FALSE THEN
@@ -105,19 +105,19 @@ $BODY$
 						IF Tmaterial != pipeitem.material THEN type := 'two_material'; END IF;
 						IF Tdiameter != pipeitem.diameter THEN type := 'two_diameter'; END IF;
 					END IF;
-					SELECT ST_Azimuth(pipeitem.point_1,pipeitem.point_2) INTO ori2 ;
-					SELECT ATAN2( (SIN(orientation)+SIN(ori2))/2 , (COS(orientation)+COS(ori2))/2 ) INTO orientation;
+					ori2 := pi()/2 - ST_Azimuth(pipeitem.point_1,pipeitem.point_2) ;
+					orientation := -pi()/2 + ATAN2( (COS(ori1)+COS(ori2))/2 , (SIN(ori1)+SIN(ori2))/2 ) ;
 					/* reverse arrow according to diameter reduction */
-					IF type = 'two_diameter' AND pipeitem.diameter < Tdiameter THEN
+					IF type = 'two_diameter' AND pipeitem.diameter > Tdiameter THEN
 						orientation := orientation + pi();
 					END IF;
 				END IF;
 			END LOOP;
 			IF keep_type IS FALSE AND grouped.count = 1 THEN
 				/* if the node is only on 1 pipe, check if it intersects another pipe. If yes, hide it */
-				SELECT geometry FROM distribution.od_node WHERE id = node_id INTO node_geom;
+				node_geom := geometry FROM distribution.od_node WHERE id = node_id;
 				/* st_intersects does not work as expected. */
-				SELECT bool_or(ST_DWithin(node_geom, od_pipe.geometry, 0.0001)) FROM distribution.od_pipe WHERE id != pipe_id INTO intersects;
+				intersects := bool_or(ST_DWithin(node_geom, od_pipe.geometry, 0.0001)) FROM distribution.od_pipe WHERE id != pipe_id;
 				IF intersects IS TRUE THEN
 					type := 'one_hidden';
 				END IF;
@@ -129,7 +129,7 @@ $BODY$
 		/* update the node table */
 		UPDATE distribution.od_node SET
 			_type           = type,
-			_orientation    = degrees(orientation),
+			_orientation    = degrees*(orientation),
 			_schema_visible = grouped.schema_visible,
 			_status_active  = grouped.status_active,
 			_under_object   = is_under_object
