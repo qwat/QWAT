@@ -24,10 +24,10 @@
     <mapcanvas>
         <units>meters</units>
         <extent>
-            <xmin>554776.47765681438613683</xmin>
-            <ymin>136983.77766667958348989</ymin>
-            <xmax>555224.18867464468348771</xmax>
-            <ymax>137263.21737930097151548</ymax>
+            <xmin>559061.92915692890528589</xmin>
+            <ymin>142086.07407493560458533</ymin>
+            <xmax>560621.91249191260430962</xmax>
+            <ymax>143131.7074093752016779</ymax>
         </extent>
         <projections>1</projections>
         <destinationsrs>
@@ -138,10 +138,10 @@
                     </filegroup>
                 </legendlayer>
             </legendgroup>
-            <legendgroup open="false" checked="Qt::PartiallyChecked" name="Noeuds">
-                <legendlayer drawingOrder="17" open="false" checked="Qt::Checked" name="Pièces d'installations" showFeatureCount="0">
+            <legendgroup open="true" checked="Qt::PartiallyChecked" name="Noeuds">
+                <legendlayer drawingOrder="17" open="false" checked="Qt::Unchecked" name="Pièces d'installations" showFeatureCount="0">
                     <filegroup open="false" hidden="false">
-                        <legendlayerfile isInOverview="0" layerid="od_installationpart20140429113327995" visible="1"/>
+                        <legendlayerfile isInOverview="0" layerid="od_installationpart20140429113327995" visible="0"/>
                     </filegroup>
                 </legendlayer>
                 <legendlayer drawingOrder="18" open="false" checked="Qt::Checked" name="noeuds" showFeatureCount="0">
@@ -155,7 +155,7 @@
                     </filegroup>
                 </legendlayer>
             </legendgroup>
-            <legendgroup open="true" checked="Qt::PartiallyChecked" name="Conduites">
+            <legendgroup open="true" checked="Qt::Checked" name="Conduites">
                 <legendlayer drawingOrder="20" open="false" checked="Qt::Checked" name="conduites actives" showFeatureCount="0">
                     <filegroup open="false" hidden="false">
                         <legendlayerfile isInOverview="0" layerid="conduites_copy20130709141244955" visible="1"/>
@@ -166,9 +166,9 @@
                         <legendlayerfile isInOverview="0" layerid="conduites_actives_copy_copy20130822080032346" visible="1"/>
                     </filegroup>
                 </legendlayer>
-                <legendlayer drawingOrder="22" open="false" checked="Qt::Unchecked" name="conduites inactives" showFeatureCount="0">
+                <legendlayer drawingOrder="22" open="false" checked="Qt::Checked" name="conduites inactives" showFeatureCount="0">
                     <filegroup open="false" hidden="false">
-                        <legendlayerfile isInOverview="0" layerid="conduites_actives_copy20130822080028511" visible="0"/>
+                        <legendlayerfile isInOverview="0" layerid="conduites_actives_copy20130822080028511" visible="1"/>
                     </filegroup>
                 </legendlayer>
             </legendgroup>
@@ -414,9 +414,9 @@
                 </filegroup>
             </legendlayer>
         </legendgroup>
-        <legendgroup embedded="1" drawingOrder="69" open="false" checked="Qt::Unchecked" name="riviera_base" project="../../../data/cadastre/riviera/riviera.qgs"/>
+        <legendgroup embedded="1" drawingOrder="69" open="false" checked="Qt::Checked" name="riviera_base" project="../../../data/cadastre/riviera/riviera.qgs"/>
         <legendgroup embedded="1" drawingOrder="68" open="false" checked="Qt::Unchecked" name="riviera_complément" project="../../../data/cadastre/riviera/riviera.qgs"/>
-        <legendgroup embedded="1" drawingOrder="71" open="false" checked="Qt::Unchecked" name="valais_base" project="../../../data/cadastre/valais/valais.qgs"/>
+        <legendgroup embedded="1" drawingOrder="71" open="false" checked="Qt::Checked" name="valais_base" project="../../../data/cadastre/valais/valais.qgs"/>
     </legend>
     <Composer title="folio" visible="0">
         <Composition snapGridTolerance="2" gridVisible="1" printResolution="300" paperWidth="1030" snapGridOffsetX="0" guidesVisible="1" snapGridResolution="10" snapGridOffsetY="0" alignmentSnap="1" snapping="0" numPages="1" paperHeight="914" alignmentSnapTolerance="2" smartGuides="1" printAsRaster="1" generateWorldFile="0">
@@ -3340,7 +3340,7 @@
             </pipe>
             <blendMode>0</blendMode>
         </maplayer>
-        <maplayer minimumScale="0" maximumScale="1e+08" simplifyDrawingHints="0" minLabelScale="0" maxLabelScale="1e+08" simplifyDrawingTol="1" geometry="Line" simplifyMaxScale="1" type="vector" hasScaleBasedVisibilityFlag="0" simplifyLocal="1" scaleBasedLabelVisibilityFlag="0">
+        <maplayer minimumScale="-4.65661e-10" maximumScale="1e+08" simplifyDrawingHints="0" minLabelScale="0" maxLabelScale="1e+08" simplifyDrawingTol="1" geometry="Line" simplifyMaxScale="1" type="vector" hasScaleBasedVisibilityFlag="0" simplifyLocal="1" scaleBasedLabelVisibilityFlag="0">
             <id>conduites_actives_copy20130822080028511</id>
             <datasource>dbname='sige' host=172.24.171.203 port=5432 user='sige' sslmode=disable key='id' srid=21781 type=LINESTRING table="distribution"."od_pipe" (geometry) sql=</datasource>
             <title></title>
@@ -3429,6 +3429,8 @@
                 <property key="labeling/bufferNoFill" value="false"/>
                 <property key="labeling/bufferSize" value="0.4"/>
                 <property key="labeling/bufferSizeInMapUnits" value="false"/>
+                <property key="labeling/bufferSizeMapUnitMaxScale" value="0"/>
+                <property key="labeling/bufferSizeMapUnitMinScale" value="0"/>
                 <property key="labeling/bufferTransp" value="0"/>
                 <property key="labeling/centroidWhole" value="false"/>
                 <property key="labeling/dataDefined/AlwaysShow" value="1~~1~~CASE WHEN &quot;id_labelvisible&quot; = 't' THEN 1 ELSE 0 END~~"/>
@@ -3437,11 +3439,13 @@
                 <property key="labeling/displayAll" value="false"/>
                 <property key="labeling/dist" value="1.2"/>
                 <property key="labeling/distInMapUnits" value="false"/>
+                <property key="labeling/distMapUnitMaxScale" value="0"/>
+                <property key="labeling/distMapUnitMinScale" value="0"/>
                 <property key="labeling/enabled" value="true"/>
                 <property key="labeling/fieldName" value=" replace( &quot;Conduites - matériaux__displayname_fr&quot;,'Inconnu','')||&#xa; CASE &#xa;WHEN  $scale  &lt; 1000 AND &quot;year&quot; IS NOT NULL  AND  $length &lt; 8 THEN '\n' ||&quot;year&quot;&#xa;WHEN  $scale  &lt; 1000 AND &quot;year&quot; IS NOT NULL  THEN ' ' ||&quot;year&quot;&#xa; ELSE ''&#xa; END&#xa;||&#xa;CASE&#xa;WHEN  $scale  &lt;= 6000 AND &quot;labelremark&quot; IS NOT NULL  THEN ' ' ||&quot;labelremark&quot;&#xa; ELSE '' &#xa;END"/>
                 <property key="labeling/fontBold" value="true"/>
                 <property key="labeling/fontCapitals" value="0"/>
-                <property key="labeling/fontFamily" value="Arial"/>
+                <property key="labeling/fontFamily" value="Ubuntu"/>
                 <property key="labeling/fontItalic" value="false"/>
                 <property key="labeling/fontLetterSpacing" value="0"/>
                 <property key="labeling/fontLimitPixelSize" value="false"/>
@@ -3449,6 +3453,8 @@
                 <property key="labeling/fontMinPixelSize" value="3"/>
                 <property key="labeling/fontSize" value="6"/>
                 <property key="labeling/fontSizeInMapUnits" value="false"/>
+                <property key="labeling/fontSizeMapUnitMaxScale" value="0"/>
+                <property key="labeling/fontSizeMapUnitMinScale" value="0"/>
                 <property key="labeling/fontStrikeout" value="false"/>
                 <property key="labeling/fontUnderline" value="false"/>
                 <property key="labeling/fontWeight" value="75"/>
@@ -3456,6 +3462,8 @@
                 <property key="labeling/formatNumbers" value="false"/>
                 <property key="labeling/isExpression" value="true"/>
                 <property key="labeling/labelOffsetInMapUnits" value="true"/>
+                <property key="labeling/labelOffsetMapUnitMaxScale" value="0"/>
+                <property key="labeling/labelOffsetMapUnitMinScale" value="0"/>
                 <property key="labeling/labelPerPart" value="false"/>
                 <property key="labeling/leftDirectionSymbol" value="&lt;"/>
                 <property key="labeling/limitNumLabels" value="false"/>
@@ -3489,9 +3497,13 @@
                 <property key="labeling/shadowOffsetAngle" value="135"/>
                 <property key="labeling/shadowOffsetDist" value="1"/>
                 <property key="labeling/shadowOffsetGlobal" value="true"/>
+                <property key="labeling/shadowOffsetMapUnitMaxScale" value="0"/>
+                <property key="labeling/shadowOffsetMapUnitMinScale" value="0"/>
                 <property key="labeling/shadowOffsetUnits" value="1"/>
                 <property key="labeling/shadowRadius" value="1.5"/>
                 <property key="labeling/shadowRadiusAlphaOnly" value="false"/>
+                <property key="labeling/shadowRadiusMapUnitMaxScale" value="0"/>
+                <property key="labeling/shadowRadiusMapUnitMinScale" value="0"/>
                 <property key="labeling/shadowRadiusUnits" value="1"/>
                 <property key="labeling/shadowScale" value="100"/>
                 <property key="labeling/shadowTransparency" value="30"/>
@@ -3502,6 +3514,8 @@
                 <property key="labeling/shapeBorderColorG" value="128"/>
                 <property key="labeling/shapeBorderColorR" value="128"/>
                 <property key="labeling/shapeBorderWidth" value="0"/>
+                <property key="labeling/shapeBorderWidthMapUnitMaxScale" value="0"/>
+                <property key="labeling/shapeBorderWidthMapUnitMinScale" value="0"/>
                 <property key="labeling/shapeBorderWidthUnits" value="1"/>
                 <property key="labeling/shapeDraw" value="false"/>
                 <property key="labeling/shapeFillColorA" value="255"/>
@@ -3509,15 +3523,21 @@
                 <property key="labeling/shapeFillColorG" value="255"/>
                 <property key="labeling/shapeFillColorR" value="255"/>
                 <property key="labeling/shapeJoinStyle" value="64"/>
+                <property key="labeling/shapeOffsetMapUnitMaxScale" value="0"/>
+                <property key="labeling/shapeOffsetMapUnitMinScale" value="0"/>
                 <property key="labeling/shapeOffsetUnits" value="1"/>
                 <property key="labeling/shapeOffsetX" value="0"/>
                 <property key="labeling/shapeOffsetY" value="0"/>
+                <property key="labeling/shapeRadiiMapUnitMaxScale" value="0"/>
+                <property key="labeling/shapeRadiiMapUnitMinScale" value="0"/>
                 <property key="labeling/shapeRadiiUnits" value="1"/>
                 <property key="labeling/shapeRadiiX" value="0"/>
                 <property key="labeling/shapeRadiiY" value="0"/>
                 <property key="labeling/shapeRotation" value="0"/>
                 <property key="labeling/shapeRotationType" value="0"/>
                 <property key="labeling/shapeSVGFile" value=""/>
+                <property key="labeling/shapeSizeMapUnitMaxScale" value="0"/>
+                <property key="labeling/shapeSizeMapUnitMinScale" value="0"/>
                 <property key="labeling/shapeSizeType" value="0"/>
                 <property key="labeling/shapeSizeUnits" value="1"/>
                 <property key="labeling/shapeSizeX" value="0"/>
@@ -3637,7 +3657,7 @@
                 <edittype labelontop="0" editable="0" type="0" name="id_printmap"/>
                 <edittype labelontop="0" editable="1" allowNull="true" orderByValue="true" key="id" layer="vl_pipe_protection20130304110005258" allowMulti="false" filterExpression="" type="15" value="value_fr" name="id_protection"/>
                 <edittype labelontop="0" editable="1" allowNull="false" orderByValue="false" key="id" layer="vl_status20130304110011436" allowMulti="false" filterExpression="" type="15" value="value_fr" name="id_status"/>
-                <edittype labelontop="0" editable="1" type="0" name="id_watertype"/>
+                <edittype labelontop="0" editable="1" allowNull="false" orderByValue="false" key="id" layer="vl_watertype20131217141603877" allowMulti="false" filterExpression="" type="15" value="value_fr" name="id_watertype"/>
                 <edittype labelontop="0" editable="1" type="0" name="labeladdremark"/>
                 <edittype labelontop="0" editable="1" type="0" name="labeladdremark_schema"/>
                 <edittype labelontop="0" editable="1" type="0" name="labelremark"/>
@@ -7771,7 +7791,7 @@
                 <actionsetting action="qgis.utils.plugins['postgres91plusauditor'].showHistory('logged_actions20130304110005081',[% $id %])" capture="0" type="1" name="History audit"/>
             </attributeactions>
         </maplayer>
-        <maplayer minimumScale="-4.65661e-10" maximumScale="501" simplifyDrawingHints="0" minLabelScale="1" maxLabelScale="1e+08" simplifyDrawingTol="1" geometry="Point" simplifyMaxScale="1" type="vector" hasScaleBasedVisibilityFlag="1" simplifyLocal="1" scaleBasedLabelVisibilityFlag="0">
+        <maplayer minimumScale="0" maximumScale="501" simplifyDrawingHints="0" minLabelScale="1" maxLabelScale="1e+08" simplifyDrawingTol="1" geometry="Point" simplifyMaxScale="1" type="vector" hasScaleBasedVisibilityFlag="1" simplifyLocal="1" scaleBasedLabelVisibilityFlag="0">
             <id>node20130304110005126</id>
             <datasource>dbname='sige' host=172.24.171.203 port=5432 user='sige' password='db4wat$' sslmode=allow key='id' srid=21781 type=POINT table="distribution"."od_node" (geometry) sql=</datasource>
             <title></title>
@@ -7795,24 +7815,23 @@
             <provider encoding="ISO-8859-1">postgres</provider>
             <previewExpression>COALESCE( "id", '&lt;NULL>' )</previewExpression>
             <vectorjoins/>
-            <renderer-v2 symbollevels="0" type="RuleRenderer">
-                <rules>
-                    <rule filter="_type = 'two_same' AND _status_active = 't'  AND  &quot;_under_object&quot; = 'f'" symbol="0" label="Chg. conduite"/>
-                    <rule filter="_type = 'two_year' AND _status_active = 't'  AND  &quot;_under_object&quot; = 'f'" symbol="1" label="Chg. année"/>
-                    <rule filter="_type = 'two_diameter'  AND _status_active = 't' AND  &quot;_under_object&quot; = 'f'" symbol="2" label="Chg. diamètre"/>
-                    <rule filter="_type = 'two_material' AND _status_active = 't' AND  &quot;_under_object&quot; = 'f'" symbol="3" label="Chg. matériau"/>
-                    <rule filter="_type = 'three' AND _status_active = 't' AND  &quot;_under_object&quot; = 'f'" symbol="4" label="Intersection T"/>
-                    <rule filter="_type = 'installationpart_9200'" symbol="5" label="compteur"/>
-                    <rule filter="_type = 'installationpart_9201'" symbol="6" label="bouchon"/>
-                    <rule filter=" _type != 'meter_subscriber' AND &quot;_under_object&quot; = 't'" symbol="7" label="autre"/>
-                </rules>
+            <renderer-v2 attr="_type" symbollevels="0" type="categorizedSymbol">
+                <categories>
+                    <category symbol="0" value="three" label="three"/>
+                    <category symbol="1" value="installationpart_9200" label="Compteur abonné"/>
+                    <category symbol="2" value="installationpart_9201" label="Bouchon"/>
+                    <category symbol="3" value="diff_material" label="Chg. matériau"/>
+                    <category symbol="4" value="diff_year" label="Chg. année"/>
+                    <category symbol="5" value="diff_diameter_material" label="Chg. diamètre + matériau"/>
+                    <category symbol="6" value="diff_diameter" label="Chg. diamètre"/>
+                </categories>
                 <symbols>
                     <symbol alpha="1" type="marker" name="0">
                         <layer pass="0" class="SvgMarker" locked="0">
                             <prop k="angle" v="0"/>
                             <prop k="fill" v="#000000"/>
                             <prop k="horizontal_anchor_point" v="1"/>
-                            <prop k="name" v="./symbols/nodes/change_material.svg"/>
+                            <prop k="name" v="./symbols/nodes/three.svg"/>
                             <prop k="offset" v="0,0"/>
                             <prop k="offset_map_unit_scale" v="0,0"/>
                             <prop k="offset_unit" v="MM"/>
@@ -7820,7 +7839,7 @@
                             <prop k="outline-width" v="1"/>
                             <prop k="outline_width_map_unit_scale" v="0,0"/>
                             <prop k="outline_width_unit" v="MM"/>
-                            <prop k="size" v="2.8"/>
+                            <prop k="size" v="4"/>
                             <prop k="size_map_unit_scale" v="0,0"/>
                             <prop k="size_unit" v="MM"/>
                             <prop k="vertical_anchor_point" v="1"/>
@@ -7832,7 +7851,7 @@
                             <prop k="angle_expression" v="_orientation"/>
                             <prop k="fill" v="#000000"/>
                             <prop k="horizontal_anchor_point" v="1"/>
-                            <prop k="name" v="./symbols/nodes/change_year.svg"/>
+                            <prop k="name" v="./symbols/nodes/installationpart_9200.svg"/>
                             <prop k="offset" v="0,0"/>
                             <prop k="offset_map_unit_scale" v="0,0"/>
                             <prop k="offset_unit" v="MM"/>
@@ -7840,7 +7859,7 @@
                             <prop k="outline-width" v="1"/>
                             <prop k="outline_width_map_unit_scale" v="0,0"/>
                             <prop k="outline_width_unit" v="MM"/>
-                            <prop k="size" v="2.8"/>
+                            <prop k="size" v="4"/>
                             <prop k="size_map_unit_scale" v="0,0"/>
                             <prop k="size_unit" v="MM"/>
                             <prop k="vertical_anchor_point" v="1"/>
@@ -7852,7 +7871,7 @@
                             <prop k="angle_expression" v="_orientation"/>
                             <prop k="fill" v="#000000"/>
                             <prop k="horizontal_anchor_point" v="1"/>
-                            <prop k="name" v="./symbols/nodes/change_diameter.svg"/>
+                            <prop k="name" v="./symbols/nodes/installationpart_9201.svg"/>
                             <prop k="offset" v="0,0"/>
                             <prop k="offset_map_unit_scale" v="0,0"/>
                             <prop k="offset_unit" v="MM"/>
@@ -7872,7 +7891,7 @@
                             <prop k="angle_expression" v="_orientation"/>
                             <prop k="fill" v="#000000"/>
                             <prop k="horizontal_anchor_point" v="1"/>
-                            <prop k="name" v="./symbols/nodes/change_material.svg"/>
+                            <prop k="name" v="./symbols/nodes/diff_material.svg"/>
                             <prop k="offset" v="0,0"/>
                             <prop k="offset_map_unit_scale" v="0,0"/>
                             <prop k="offset_unit" v="MM"/>
@@ -7880,28 +7899,27 @@
                             <prop k="outline-width" v="1"/>
                             <prop k="outline_width_map_unit_scale" v="0,0"/>
                             <prop k="outline_width_unit" v="MM"/>
-                            <prop k="size" v="2.8"/>
+                            <prop k="size" v="4"/>
                             <prop k="size_map_unit_scale" v="0,0"/>
                             <prop k="size_unit" v="MM"/>
                             <prop k="vertical_anchor_point" v="1"/>
                         </layer>
                     </symbol>
                     <symbol alpha="1" type="marker" name="4">
-                        <layer pass="0" class="SimpleMarker" locked="0">
+                        <layer pass="0" class="SvgMarker" locked="0">
                             <prop k="angle" v="0"/>
-                            <prop k="color" v="0,140,255,255"/>
-                            <prop k="color_border" v="0,140,255,255"/>
+                            <prop k="angle_expression" v="_orientation"/>
+                            <prop k="fill" v="#000000"/>
                             <prop k="horizontal_anchor_point" v="1"/>
-                            <prop k="name" v="circle"/>
+                            <prop k="name" v="./symbols/nodes/diff_year.svg"/>
                             <prop k="offset" v="0,0"/>
                             <prop k="offset_map_unit_scale" v="0,0"/>
                             <prop k="offset_unit" v="MM"/>
-                            <prop k="outline_style" v="solid"/>
-                            <prop k="outline_width" v="0"/>
+                            <prop k="outline" v="#000000"/>
+                            <prop k="outline-width" v="1"/>
                             <prop k="outline_width_map_unit_scale" v="0,0"/>
                             <prop k="outline_width_unit" v="MM"/>
-                            <prop k="scale_method" v="area"/>
-                            <prop k="size" v="1"/>
+                            <prop k="size" v="4"/>
                             <prop k="size_map_unit_scale" v="0,0"/>
                             <prop k="size_unit" v="MM"/>
                             <prop k="vertical_anchor_point" v="1"/>
@@ -7910,10 +7928,10 @@
                     <symbol alpha="1" type="marker" name="5">
                         <layer pass="0" class="SvgMarker" locked="0">
                             <prop k="angle" v="0"/>
-                            <prop k="angle_expression" v="_orientation + 90"/>
+                            <prop k="angle_expression" v="_orientation"/>
                             <prop k="fill" v="#000000"/>
                             <prop k="horizontal_anchor_point" v="1"/>
-                            <prop k="name" v="./symbols/nodes/meter_subscriber.svg"/>
+                            <prop k="name" v="./symbols/nodes/diff_diameter_material.svg"/>
                             <prop k="offset" v="0,0"/>
                             <prop k="offset_map_unit_scale" v="0,0"/>
                             <prop k="offset_unit" v="MM"/>
@@ -7921,79 +7939,62 @@
                             <prop k="outline-width" v="1"/>
                             <prop k="outline_width_map_unit_scale" v="0,0"/>
                             <prop k="outline_width_unit" v="MM"/>
-                            <prop k="size" v="5"/>
+                            <prop k="size" v="4"/>
                             <prop k="size_map_unit_scale" v="0,0"/>
                             <prop k="size_unit" v="MM"/>
                             <prop k="vertical_anchor_point" v="1"/>
                         </layer>
                     </symbol>
                     <symbol alpha="1" type="marker" name="6">
-                        <layer pass="0" class="SimpleMarker" locked="0">
+                        <layer pass="0" class="SvgMarker" locked="0">
                             <prop k="angle" v="0"/>
-                            <prop k="angle_expression" v="_orientation + 90"/>
-                            <prop k="color" v="0,140,255,255"/>
-                            <prop k="color_border" v="0,140,255,255"/>
+                            <prop k="angle_expression" v="_orientation"/>
+                            <prop k="fill" v="#000000"/>
                             <prop k="horizontal_anchor_point" v="1"/>
-                            <prop k="name" v="line"/>
+                            <prop k="name" v="./symbols/nodes/diff_diameter.svg"/>
                             <prop k="offset" v="0,0"/>
                             <prop k="offset_map_unit_scale" v="0,0"/>
                             <prop k="offset_unit" v="MM"/>
-                            <prop k="outline_style" v="solid"/>
-                            <prop k="outline_width" v="0.4"/>
+                            <prop k="outline" v="#000000"/>
+                            <prop k="outline-width" v="1"/>
                             <prop k="outline_width_map_unit_scale" v="0,0"/>
                             <prop k="outline_width_unit" v="MM"/>
-                            <prop k="scale_method" v="area"/>
-                            <prop k="size" v="3"/>
-                            <prop k="size_map_unit_scale" v="0,0"/>
-                            <prop k="size_unit" v="MM"/>
-                            <prop k="vertical_anchor_point" v="1"/>
-                        </layer>
-                        <layer pass="0" class="SimpleMarker" locked="0">
-                            <prop k="angle" v="0"/>
-                            <prop k="angle_expression" v="_orientation + 90"/>
-                            <prop k="color" v="0,140,255,255"/>
-                            <prop k="color_border" v="0,140,255,255"/>
-                            <prop k="horizontal_anchor_point" v="1"/>
-                            <prop k="name" v="line"/>
-                            <prop k="offset" v="1,0"/>
-                            <prop k="offset_map_unit_scale" v="0,0"/>
-                            <prop k="offset_unit" v="MM"/>
-                            <prop k="outline_style" v="solid"/>
-                            <prop k="outline_width" v="0.3"/>
-                            <prop k="outline_width_map_unit_scale" v="0,0"/>
-                            <prop k="outline_width_unit" v="MM"/>
-                            <prop k="scale_method" v="area"/>
-                            <prop k="size" v="2.2"/>
-                            <prop k="size_map_unit_scale" v="0,0"/>
-                            <prop k="size_unit" v="MM"/>
-                            <prop k="vertical_anchor_point" v="1"/>
-                        </layer>
-                    </symbol>
-                    <symbol alpha="1" type="marker" name="7">
-                        <layer pass="0" class="SimpleMarker" locked="0">
-                            <prop k="angle" v="0"/>
-                            <prop k="color" v="0,140,255,255"/>
-                            <prop k="color_border" v="0,140,255,255"/>
-                            <prop k="horizontal_anchor_point" v="1"/>
-                            <prop k="name" v="circle"/>
-                            <prop k="offset" v="0,0"/>
-                            <prop k="offset_map_unit_scale" v="0,0"/>
-                            <prop k="offset_unit" v="MM"/>
-                            <prop k="outline_style" v="solid"/>
-                            <prop k="outline_width" v="0"/>
-                            <prop k="outline_width_map_unit_scale" v="0,0"/>
-                            <prop k="outline_width_unit" v="MM"/>
-                            <prop k="scale_method" v="area"/>
-                            <prop k="size" v="0.5"/>
+                            <prop k="size" v="4"/>
                             <prop k="size_map_unit_scale" v="0,0"/>
                             <prop k="size_unit" v="MM"/>
                             <prop k="vertical_anchor_point" v="1"/>
                         </layer>
                     </symbol>
                 </symbols>
+                <source-symbol>
+                    <symbol alpha="1" type="marker" name="0">
+                        <layer pass="0" class="SvgMarker" locked="0">
+                            <prop k="angle" v="0"/>
+                            <prop k="angle_expression" v="_orientation"/>
+                            <prop k="fill" v="#000000"/>
+                            <prop k="horizontal_anchor_point" v="1"/>
+                            <prop k="name" v="./symbols/nodes/diff_diameter_material.svg"/>
+                            <prop k="offset" v="0,0"/>
+                            <prop k="offset_map_unit_scale" v="0,0"/>
+                            <prop k="offset_unit" v="MM"/>
+                            <prop k="outline" v="#000000"/>
+                            <prop k="outline-width" v="1"/>
+                            <prop k="outline_width_map_unit_scale" v="0,0"/>
+                            <prop k="outline_width_unit" v="MM"/>
+                            <prop k="size" v="4"/>
+                            <prop k="size_map_unit_scale" v="0,0"/>
+                            <prop k="size_unit" v="MM"/>
+                            <prop k="vertical_anchor_point" v="1"/>
+                        </layer>
+                    </symbol>
+                </source-symbol>
+                <rotation/>
+                <sizescale scalemethod="area"/>
             </renderer-v2>
             <customproperties>
                 <property key="itemBrowserConnected" value="no"/>
+                <property key="itemBrowserCurrentItem" value="20"/>
+                <property key="itemBrowserSelection" value="[]"/>
                 <property key="labeling" value="pal"/>
                 <property key="labeling/addDirectionSymbol" value="false"/>
                 <property key="labeling/angleOffset" value="0"/>
@@ -8008,14 +8009,18 @@
                 <property key="labeling/bufferNoFill" value="false"/>
                 <property key="labeling/bufferSize" value="1"/>
                 <property key="labeling/bufferSizeInMapUnits" value="false"/>
+                <property key="labeling/bufferSizeMapUnitMaxScale" value="0"/>
+                <property key="labeling/bufferSizeMapUnitMinScale" value="0"/>
                 <property key="labeling/bufferTransp" value="0"/>
                 <property key="labeling/centroidWhole" value="false"/>
                 <property key="labeling/decimals" value="0"/>
                 <property key="labeling/displayAll" value="false"/>
                 <property key="labeling/dist" value="0"/>
                 <property key="labeling/distInMapUnits" value="false"/>
+                <property key="labeling/distMapUnitMaxScale" value="0"/>
+                <property key="labeling/distMapUnitMinScale" value="0"/>
                 <property key="labeling/enabled" value="false"/>
-                <property key="labeling/fieldName" value=""/>
+                <property key="labeling/fieldName" value="id"/>
                 <property key="labeling/fontBold" value="true"/>
                 <property key="labeling/fontCapitals" value="0"/>
                 <property key="labeling/fontFamily" value="Ubuntu"/>
@@ -8026,6 +8031,8 @@
                 <property key="labeling/fontMinPixelSize" value="3"/>
                 <property key="labeling/fontSize" value="11"/>
                 <property key="labeling/fontSizeInMapUnits" value="false"/>
+                <property key="labeling/fontSizeMapUnitMaxScale" value="0"/>
+                <property key="labeling/fontSizeMapUnitMinScale" value="0"/>
                 <property key="labeling/fontStrikeout" value="false"/>
                 <property key="labeling/fontUnderline" value="false"/>
                 <property key="labeling/fontWeight" value="75"/>
@@ -8033,6 +8040,8 @@
                 <property key="labeling/formatNumbers" value="false"/>
                 <property key="labeling/isExpression" value="false"/>
                 <property key="labeling/labelOffsetInMapUnits" value="true"/>
+                <property key="labeling/labelOffsetMapUnitMaxScale" value="0"/>
+                <property key="labeling/labelOffsetMapUnitMinScale" value="0"/>
                 <property key="labeling/labelPerPart" value="false"/>
                 <property key="labeling/leftDirectionSymbol" value="&lt;"/>
                 <property key="labeling/limitNumLabels" value="false"/>
@@ -8066,9 +8075,13 @@
                 <property key="labeling/shadowOffsetAngle" value="135"/>
                 <property key="labeling/shadowOffsetDist" value="1"/>
                 <property key="labeling/shadowOffsetGlobal" value="true"/>
+                <property key="labeling/shadowOffsetMapUnitMaxScale" value="0"/>
+                <property key="labeling/shadowOffsetMapUnitMinScale" value="0"/>
                 <property key="labeling/shadowOffsetUnits" value="1"/>
                 <property key="labeling/shadowRadius" value="1.5"/>
                 <property key="labeling/shadowRadiusAlphaOnly" value="false"/>
+                <property key="labeling/shadowRadiusMapUnitMaxScale" value="0"/>
+                <property key="labeling/shadowRadiusMapUnitMinScale" value="0"/>
                 <property key="labeling/shadowRadiusUnits" value="1"/>
                 <property key="labeling/shadowScale" value="100"/>
                 <property key="labeling/shadowTransparency" value="30"/>
@@ -8079,6 +8092,8 @@
                 <property key="labeling/shapeBorderColorG" value="128"/>
                 <property key="labeling/shapeBorderColorR" value="128"/>
                 <property key="labeling/shapeBorderWidth" value="0"/>
+                <property key="labeling/shapeBorderWidthMapUnitMaxScale" value="0"/>
+                <property key="labeling/shapeBorderWidthMapUnitMinScale" value="0"/>
                 <property key="labeling/shapeBorderWidthUnits" value="1"/>
                 <property key="labeling/shapeDraw" value="false"/>
                 <property key="labeling/shapeFillColorA" value="255"/>
@@ -8086,15 +8101,21 @@
                 <property key="labeling/shapeFillColorG" value="255"/>
                 <property key="labeling/shapeFillColorR" value="255"/>
                 <property key="labeling/shapeJoinStyle" value="64"/>
+                <property key="labeling/shapeOffsetMapUnitMaxScale" value="0"/>
+                <property key="labeling/shapeOffsetMapUnitMinScale" value="0"/>
                 <property key="labeling/shapeOffsetUnits" value="1"/>
                 <property key="labeling/shapeOffsetX" value="0"/>
                 <property key="labeling/shapeOffsetY" value="0"/>
+                <property key="labeling/shapeRadiiMapUnitMaxScale" value="0"/>
+                <property key="labeling/shapeRadiiMapUnitMinScale" value="0"/>
                 <property key="labeling/shapeRadiiUnits" value="1"/>
                 <property key="labeling/shapeRadiiX" value="0"/>
                 <property key="labeling/shapeRadiiY" value="0"/>
                 <property key="labeling/shapeRotation" value="0"/>
                 <property key="labeling/shapeRotationType" value="0"/>
                 <property key="labeling/shapeSVGFile" value=""/>
+                <property key="labeling/shapeSizeMapUnitMaxScale" value="0"/>
+                <property key="labeling/shapeSizeMapUnitMinScale" value="0"/>
                 <property key="labeling/shapeSizeType" value="0"/>
                 <property key="labeling/shapeSizeUnits" value="1"/>
                 <property key="labeling/shapeSizeX" value="0"/>
@@ -9323,6 +9344,9 @@
                 <sizescale scalemethod="area"/>
             </renderer-v2>
             <customproperties>
+                <property key="LinkIt_destinationField" value="id_meter"/>
+                <property key="LinkIt_name" value="Compteur réseau - renvoi"/>
+                <property key="LinkIt_sourceLayer" value="od_meter20131120073630165"/>
                 <property key="labeling" value="pal"/>
                 <property key="labeling/addDirectionSymbol" value="false"/>
                 <property key="labeling/angleOffset" value="0"/>
@@ -9512,7 +9536,7 @@
             <excludeAttributesWFS/>
             <attributeactions>
                 <actionsetting action="qgis.utils.plugins['postgres91plusauditor'].audit('od_subscriber_reference20131206105928067',[% $id %])" capture="0" type="1" name="History audit"/>
-                <actionsetting action="qgis.utils.plugins['linkit'].linkit('od_subscriber_reference20131206105928067','id_subscriber','subscriber20130304110011459', [% $id %])" capture="0" type="1" name="Abonné - renvoi"/>
+                <actionsetting action="qgis.utils.plugins['linkit'].linkit('od_meter_reference20140304165835390','id_meter','od_meter20131120073630165', [% $id %])" capture="0" type="1" name="Compteur réseau - renvoi"/>
             </attributeactions>
         </maplayer>
         <maplayer minimumScale="-4.65661e-10" maximumScale="1e+08" simplifyDrawingHints="0" minLabelScale="0" maxLabelScale="1e+08" simplifyDrawingTol="3.6" geometry="Point" simplifyMaxScale="1" type="vector" hasScaleBasedVisibilityFlag="0" simplifyLocal="0" scaleBasedLabelVisibilityFlag="0">
@@ -9537,7 +9561,7 @@
                 </spatialrefsys>
             </srs>
             <provider encoding="System">postgres</provider>
-            <previewExpression></previewExpression>
+            <previewExpression>COALESCE( "id", '&lt;NULL>' )</previewExpression>
             <vectorjoins/>
             <renderer-v2 symbollevels="0" type="singleSymbol">
                 <symbols>
@@ -9784,8 +9808,8 @@
             </renderer-v2>
             <customproperties>
                 <property key="LinkIt_destinationField" value="id_subscriber"/>
-                <property key="LinkIt_name" value="Compteur réseau - renvoi"/>
-                <property key="LinkIt_sourceLayer" value="od_meter20131120073630165"/>
+                <property key="LinkIt_name" value="Abonné - renvoi"/>
+                <property key="LinkIt_sourceLayer" value="subscriber20130304110011459"/>
                 <property key="labeling" value="pal"/>
                 <property key="labeling/addDirectionSymbol" value="false"/>
                 <property key="labeling/angleOffset" value="0"/>
@@ -9962,7 +9986,7 @@
             <excludeAttributesWFS/>
             <attributeactions>
                 <actionsetting action="qgis.utils.plugins['postgres91plusauditor'].audit('od_subscriber_reference20131206105928067',[% $id %])" capture="0" type="1" name="History audit"/>
-                <actionsetting action="qgis.utils.plugins['linkit'].linkit('od_subscriber_reference20131206105928067','id_subscriber','od_meter20131120073630165', [% $id %])" capture="0" type="1" name="Compteur réseau - renvoi"/>
+                <actionsetting action="qgis.utils.plugins['linkit'].linkit('od_subscriber_reference20131206105928067','id_subscriber','subscriber20130304110011459', [% $id %])" capture="0" type="1" name="Abonné - renvoi"/>
             </attributeactions>
         </maplayer>
         <maplayer minimumScale="0" maximumScale="3001" simplifyDrawingHints="1" minLabelScale="0" maxLabelScale="1e+08" simplifyDrawingTol="1" geometry="Point" simplifyMaxScale="1" type="vector" hasScaleBasedVisibilityFlag="1" simplifyLocal="1" scaleBasedLabelVisibilityFlag="0">
@@ -12988,7 +13012,7 @@
                 <property key="itemBrowserConnected" value="no"/>
             </customproperties>
             <provider encoding="ISO-8859-1">postgres</provider>
-            <previewExpression></previewExpression>
+            <previewExpression>COALESCE("id", '&lt;NULL>')</previewExpression>
             <vectorjoins/>
             <edittypes>
                 <edittype labelontop="0" editable="1" type="0" name="_displayname_fr"/>

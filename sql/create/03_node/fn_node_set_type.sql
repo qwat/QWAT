@@ -18,9 +18,8 @@ $BODY$
 		Tdiameter       smallint                 ;
 		looppos         integer          := 0    ;
 		type            varchar(25)              ;
-		ori1            double precision := 0    ;
-		ori2            double precision := 0    ;
-		orientation     float            := 0    ;
+		orientation     double precision := 0    ;
+		orientation2    double precision := 0    ;
 		is_under_object boolean          := false;
 		is_under_count  integer          := 0    ;
 		node_geom       geometry(Point, 21781)   ;
@@ -96,19 +95,25 @@ $BODY$
 					Tdiameter := pipeitem.diameter;
 					pipe_id   := pipeitem.id;
 					looppos   := 1;
-					ori1 := 3*pi()/2-ST_Azimuth(pipeitem.point_1,pipeitem.point_2) ; /* this line must be shifted by 180 */
+					orientation := pi()/2 + ST_Azimuth(pipeitem.point_1,pipeitem.point_2) ;
 				ELSE
 					/* second pipe if exists */
 					IF keep_type IS FALSE THEN
-						type := 'two_same';
-						IF Tyear     != pipeitem.year     THEN type := 'two_year'    ; END IF;
-						IF Tmaterial != pipeitem.material THEN type := 'two_material'; END IF;
-						IF Tdiameter != pipeitem.diameter THEN type := 'two_diameter'; END IF;
+						IF Tmaterial = pipeitem.material AND Tdiameter = pipeitem.diameter THEN
+							type := 'diff_year';
+						ELSIF Tmaterial = pipeitem.material THEN
+							type := 'diff_diameter';
+						ELSIF Tdiameter = pipeitem.diameter THEN
+							type := 'diff_material';
+						ELSE
+							type := 'diff_diameter_material';
+						END IF;
 					END IF;
-					ori2 := pi()/2 - ST_Azimuth(pipeitem.point_1,pipeitem.point_2) ;
-					orientation := -pi()/2 + ATAN2( (COS(ori1)+COS(ori2))/2 , (SIN(ori1)+SIN(ori2))/2 ) ;
+					orientation := -orientation; /* not azimuth but angle + switch direction */
+					orientation2 := pi()/2 - ST_Azimuth(pipeitem.point_1,pipeitem.point_2) ;
+					orientation := -pi()/2 + ATAN2( (COS(orientation)+COS(orientation))/2 , (SIN(orientation)+SIN(orientation2))/2 ) ;
 					/* reverse arrow according to diameter reduction */
-					IF type = 'two_diameter' AND pipeitem.diameter > Tdiameter THEN
+					IF pipeitem.diameter > Tdiameter THEN
 						orientation := orientation + pi();
 					END IF;
 				END IF;
@@ -129,7 +134,7 @@ $BODY$
 		/* update the node table */
 		UPDATE distribution.od_node SET
 			_type           = type,
-			_orientation    = degrees*(orientation),
+			_orientation    = degrees(orientation),
 			_schema_visible = grouped.schema_visible,
 			_status_active  = grouped.status_active,
 			_under_object   = is_under_object
