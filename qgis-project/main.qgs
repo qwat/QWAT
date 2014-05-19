@@ -20,14 +20,20 @@
         <relation referencingLayer="installation_valvechamber20131107105006707" referencedLayer="installation20130304110004938" id="relation_ouvrage_valvechamber" name="Ouvrage - chambres de vannes">
             <fieldRef referencedField="id" referencingField="id_installation"/>
         </relation>
+        <relation referencingLayer="leak20130821111917060" referencedLayer="conduites_copy20130709141244955" id="relation_pipe_leak" name="Conduite - fuites">
+            <fieldRef referencedField="id" referencingField="id_pipe"/>
+        </relation>
+        <relation referencingLayer="subscriber20130304110011459" referencedLayer="conduites_copy20130709141244955" id="relation_pipe_subscriber" name="Conduite - abonnés">
+            <fieldRef referencedField="id" referencingField="id_pipe"/>
+        </relation>
     </relations>
     <mapcanvas>
         <units>meters</units>
         <extent>
-            <xmin>559061.92915692890528589</xmin>
-            <ymin>142086.07407493560458533</ymin>
-            <xmax>560621.91249191260430962</xmax>
-            <ymax>143131.7074093752016779</ymax>
+            <xmin>559700.1041576040443033</xmin>
+            <ymin>142704.73605475676595233</ymin>
+            <xmax>559799.98436604300513864</xmax>
+            <ymax>142770.08813815927715041</ymax>
         </extent>
         <projections>1</projections>
         <destinationsrs>
@@ -43,7 +49,7 @@
             </spatialrefsys>
         </destinationsrs>
     </mapcanvas>
-    <legend updateDrawingOrder="false">
+    <legend updateDrawingOrder="false" activeLayer="conduites_copy20130709141244955">
         <legendgroup open="true" checked="Qt::PartiallyChecked" name="Réseau">
             <legendgroup open="true" checked="Qt::Checked" name="ouvrages">
                 <legendlayer drawingOrder="0" open="false" checked="Qt::Checked" name="ouvrage général" showFeatureCount="0">
@@ -414,7 +420,7 @@
                 </filegroup>
             </legendlayer>
         </legendgroup>
-        <legendgroup embedded="1" drawingOrder="69" open="false" checked="Qt::Checked" name="riviera_base" project="../../../data/cadastre/riviera/riviera.qgs"/>
+        <legendgroup embedded="1" drawingOrder="69" open="false" checked="Qt::Unchecked" name="riviera_base" project="../../../data/cadastre/riviera/riviera.qgs"/>
         <legendgroup embedded="1" drawingOrder="68" open="false" checked="Qt::Unchecked" name="riviera_complément" project="../../../data/cadastre/riviera/riviera.qgs"/>
         <legendgroup embedded="1" drawingOrder="71" open="false" checked="Qt::Checked" name="valais_base" project="../../../data/cadastre/valais/valais.qgs"/>
     </legend>
@@ -13737,16 +13743,17 @@
             <Automatic type="bool">true</Automatic>
             <DegreeFormat type="QString">D</DegreeFormat>
         </PositionPrecision>
-        <WMSContactPhone type="QString"></WMSContactPhone>
+        <WCSUrl type="QString"></WCSUrl>
         <WMSServiceCapabilities type="bool">false</WMSServiceCapabilities>
-        <WMSServiceAbstract type="QString"></WMSServiceAbstract>
-        <WMSAddWktGeometry type="bool">false</WMSAddWktGeometry>
+        <WMSContactPhone type="QString"></WMSContactPhone>
         <NorthArrow>
             <Rotation type="int">0</Rotation>
             <Enabled type="bool">false</Enabled>
             <Placement type="int">2</Placement>
             <Automatic type="bool">true</Automatic>
         </NorthArrow>
+        <WMSServiceAbstract type="QString"></WMSServiceAbstract>
+        <WMSAddWktGeometry type="bool">false</WMSAddWktGeometry>
         <Measure>
             <Ellipsoid type="QString">NONE</Ellipsoid>
         </Measure>
@@ -14273,6 +14280,7 @@
             </Assignations>
         </LayerCombinations>
         <WMSAccessConstraints type="QString"></WMSAccessConstraints>
+        <WCSLayers type="QStringList"/>
         <SpatialRefSys>
             <ProjectCRSProj4String type="QString">+proj=somerc +lat_0=46.95240555555556 +lon_0=7.439583333333333 +k_0=1 +x_0=600000 +y_0=200000 +ellps=bessel +towgs84=674.4,15.1,405.3,0,0,0,0 +units=m +no_defs</ProjectCRSProj4String>
             <ProjectCrs type="QString">EPSG:21781</ProjectCrs>
