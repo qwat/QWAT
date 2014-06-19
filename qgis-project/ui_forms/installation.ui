@@ -51,7 +51,7 @@
    <item row="4" column="0" colspan="4">
     <widget class="QTabWidget" name="tabWidget">
      <property name="currentIndex">
-      <number>2</number>
+      <number>5</number>
      </property>
      <widget class="QWidget" name="tab">
       <attribute name="title">
@@ -71,6 +71,15 @@
       <attribute name="title">
        <string>Source</string>
       </attribute>
+      <layout class="QGridLayout" name="gridLayout_5">
+       <item row="0" column="0">
+        <widget class="QWidget" name="widget_4" native="true">
+         <property name="qgisRelation" stdset="0">
+          <string>relation_ouvrage_source</string>
+         </property>
+        </widget>
+       </item>
+      </layout>
      </widget>
      <widget class="QWidget" name="tab_4">
       <attribute name="title">
@@ -90,11 +99,29 @@
       <attribute name="title">
        <string>Traitement</string>
       </attribute>
+      <layout class="QGridLayout" name="gridLayout_6">
+       <item row="0" column="0">
+        <widget class="QWidget" name="widget_5" native="true">
+         <property name="qgisRelation" stdset="0">
+          <string>relation_ouvrage_treatment</string>
+         </property>
+        </widget>
+       </item>
+      </layout>
      </widget>
      <widget class="QWidget" name="tab_6">
       <attribute name="title">
        <string>Régulation de pression</string>
       </attribute>
+      <layout class="QGridLayout" name="gridLayout_7">
+       <item row="0" column="0">
+        <widget class="QWidget" name="widget_6" native="true">
+         <property name="qgisRelation" stdset="0">
+          <string>relation_ouvrage_pressurecontrol</string>
+         </property>
+        </widget>
+       </item>
+      </layout>
      </widget>
      <widget class="QWidget" name="tab_2">
       <attribute name="title">
@@ -102,12 +129,9 @@
       </attribute>
       <layout class="QGridLayout" name="gridLayout_2">
        <item row="0" column="0">
-        <widget class="QFrame" name="widget">
-         <property name="frameShape">
-          <enum>QFrame::StyledPanel</enum>
-         </property>
-         <property name="frameShadow">
-          <enum>QFrame::Raised</enum>
+        <widget class="QWidget" name="widget_7" native="true">
+         <property name="qgisRelation" stdset="0">
+          <string>relation_ouvrage_valvechamber</string>
          </property>
         </widget>
        </item>
