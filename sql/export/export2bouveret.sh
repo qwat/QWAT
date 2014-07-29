@@ -34,6 +34,6 @@ SELECT                                         \
  id   AS ID,               \
  geometry::geometry(LineString,21781) AS geom, \
  _material_name          AS MATERIAU,      \
- _function_name AS FONCTION       \
+ _function               AS FONCTION       \
 FROM distribution.vw_pipe WHERE _status_active IS TRUE AND ST_Intersects(geometry,$box)"
 read -p "Press any key to continue..."
