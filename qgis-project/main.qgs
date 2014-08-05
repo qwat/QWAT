@@ -913,7 +913,57 @@
             <ComposerMap mapRotation="0" keepLayerSet="true" id="1" previewMode="Render" drawCanvasItems="true">
                 <Extent ymin="145174.34327699668938294" xmin="555252.08216445404104888" ymax="145622.07867851707851514" xmax="556077.08216529549099505"/>
                 <LayerSet>
+                    <Layer>installation20130304110004938</Layer>
+                    <Layer>installation_tank20130304110005008</Layer>
+                    <Layer>installation_source20130820110331647</Layer>
+                    <Layer>installation_pump20130816140237750</Layer>
+                    <Layer>installation_treatment20130816113039913</Layer>
+                    <Layer>installation_pressurecontrol20131107105006792</Layer>
+                    <Layer>installation_valvechamber20131107105006707</Layer>
+                    <Layer>hydrant20130304110004848</Layer>
+                    <Layer>valve20130304110011497</Layer>
+                    <Layer>vannes_copy20130924083714343</Layer>
+                    <Layer>od_wateringoutput20131127080906318</Layer>
+                    <Layer>leak20130821111917060</Layer>
+                    <Layer>subscriber20130304110011459</Layer>
+                    <Layer>od_subscriber_reference20131206105928067</Layer>
+                    <Layer>od_meter20131120073630165</Layer>
+                    <Layer>od_meter_reference20140304165835390</Layer>
+                    <Layer>node20130304110005126</Layer>
+                    <Layer>conduites_copy20130709141244955</Layer>
+                    <Layer>conduites_actives_copy_copy20130822080032346</Layer>
+                    <Layer>od_annotationline20131203095020365</Layer>
+                    <Layer>od_annotationpoint20131203095020392</Layer>
+                    <Layer>dimension20130807094904783</Layer>
+                    <Layer>od_dimension_orientation20131202111155806</Layer>
                     <Layer>printmap20130304110011400</Layer>
+                    <Layer>cadastre20140312152032371</Layer>
+                    <Layer>ad_posnumero_maison20130514143346530</Layer>
+                    <Layer>cs_posnumero_de_batiment20130514143756039</Layer>
+                    <Layer>bf_posimmeuble20130514143633121</Layer>
+                    <Layer>no_posnomlocallieudit20130514143906869</Layer>
+                    <Layer>bf_point_limite20130514143552315</Layer>
+                    <Layer>axe_rue20130514143437774</Layer>
+                    <Layer>pf_pfp20130514144226845</Layer>
+                    <Layer>bf_bien_fonds20130514143508556</Layer>
+                    <Layer>bf_ddp20130514143538213</Layer>
+                    <Layer>cs_surfacecs20130514143830750</Layer>
+                    <Layer>od_element_lineaire20130514144047075</Layer>
+                    <Layer>od_element_surfacique20130514144124647</Layer>
+                    <Layer>cs_batiment20130514143721709</Layer>
+                    <Layer>od_batiment_souterrain20130514143946785</Layer>
+                    <Layer>bf_posimmeuble20140214143633121</Layer>
+                    <Layer>cs_posnumero_de_batiment20140214143756039</Layer>
+                    <Layer>no_posnomlocallieudit20140214143906869</Layer>
+                    <Layer>bf_point_limite20140214143552315</Layer>
+                    <Layer>pf_pfp20140214144226845</Layer>
+                    <Layer>bf_bien_fonds20140214143508556</Layer>
+                    <Layer>bf_ddp20140214143538213</Layer>
+                    <Layer>cs_surfacecs20140214143830750</Layer>
+                    <Layer>od_element_lineaire20140214144047075</Layer>
+                    <Layer>od_element_surfacique20140214144124647</Layer>
+                    <Layer>cs_batiment20140214143721709</Layer>
+                    <Layer>od_batiment_souterrain20140214143946785</Layer>
                 </LayerSet>
                 <Grid/>
                 <ComposerMapGrid leftAnnotationDirection="0" annotationFont="Ubuntu,11,-1,5,50,0,0,0,0,0" gridFramePenThickness="0.5" showAnnotation="0" bottomAnnotationDirection="0" bottomAnnotationPosition="1" name="Grid 1" gridStyle="0" intervalX="0" intervalY="0" gridFrameStyle="0" rightAnnotationPosition="1" topAnnotationDirection="0" leftAnnotationPosition="1" blendMode="0" show="0" frameFillColor1="255,255,255,255" gridFrameWidth="2" frameFillColor2="0,0,0,255" annotationFontColor="0,0,0,255" gridFramePenColor="0,0,0,255" offsetX="0" annotationPrecision="3" offsetY="0" uuid="{a5ffcd5f-75c9-4a4f-9c9e-bcd04a79ad90}" frameAnnotationDistance="1" unit="0" topAnnotationPosition="1" rightAnnotationDirection="0" annotationFormat="0" crossLength="3">
@@ -3075,7 +3125,7 @@
                 </edittype>
             </edittypes>
         </maplayer>
-        <maplayer minimumScale="-4.65661e-10" maximumScale="4000" simplifyDrawingHints="0" minLabelScale="0" maxLabelScale="1e+08" simplifyDrawingTol="1" geometry="Point" simplifyMaxScale="1" type="vector" hasScaleBasedVisibilityFlag="1" simplifyLocal="1" scaleBasedLabelVisibilityFlag="0">
+        <maplayer minimumScale="0" maximumScale="4000" simplifyDrawingHints="0" minLabelScale="0" maxLabelScale="1e+08" simplifyDrawingTol="1" geometry="Point" simplifyMaxScale="1" type="vector" hasScaleBasedVisibilityFlag="1" simplifyLocal="1" scaleBasedLabelVisibilityFlag="0">
             <id>camac20140113144941208</id>
             <datasource>dbname='sige' host=172.24.171.203 port=5432 user='sige' sslmode=disable key='id' estimatedmetadata=true srid=21781 type=POINT table="enquete"."camac" (geometry) sql=</datasource>
             <title></title>
@@ -3165,12 +3215,17 @@
                 <property key="labeling/bufferNoFill" value="false"/>
                 <property key="labeling/bufferSize" value="1"/>
                 <property key="labeling/bufferSizeInMapUnits" value="false"/>
+                <property key="labeling/bufferSizeMapUnitMaxScale" value="0"/>
+                <property key="labeling/bufferSizeMapUnitMinScale" value="0"/>
                 <property key="labeling/bufferTransp" value="0"/>
+                <property key="labeling/centroidInside" value="false"/>
                 <property key="labeling/centroidWhole" value="false"/>
                 <property key="labeling/decimals" value="3"/>
                 <property key="labeling/displayAll" value="false"/>
                 <property key="labeling/dist" value="0"/>
                 <property key="labeling/distInMapUnits" value="false"/>
+                <property key="labeling/distMapUnitMaxScale" value="0"/>
+                <property key="labeling/distMapUnitMinScale" value="0"/>
                 <property key="labeling/enabled" value="true"/>
                 <property key="labeling/fieldName" value="camac"/>
                 <property key="labeling/fontBold" value="false"/>
@@ -3183,6 +3238,8 @@
                 <property key="labeling/fontMinPixelSize" value="3"/>
                 <property key="labeling/fontSize" value="8"/>
                 <property key="labeling/fontSizeInMapUnits" value="false"/>
+                <property key="labeling/fontSizeMapUnitMaxScale" value="0"/>
+                <property key="labeling/fontSizeMapUnitMinScale" value="0"/>
                 <property key="labeling/fontStrikeout" value="false"/>
                 <property key="labeling/fontUnderline" value="false"/>
                 <property key="labeling/fontWeight" value="50"/>
@@ -3190,6 +3247,8 @@
                 <property key="labeling/formatNumbers" value="false"/>
                 <property key="labeling/isExpression" value="false"/>
                 <property key="labeling/labelOffsetInMapUnits" value="false"/>
+                <property key="labeling/labelOffsetMapUnitMaxScale" value="0"/>
+                <property key="labeling/labelOffsetMapUnitMinScale" value="0"/>
                 <property key="labeling/labelPerPart" value="false"/>
                 <property key="labeling/leftDirectionSymbol" value="&lt;"/>
                 <property key="labeling/limitNumLabels" value="false"/>
@@ -3210,6 +3269,10 @@
                 <property key="labeling/previewBkgrdColor" value="#ffffff"/>
                 <property key="labeling/priority" value="5"/>
                 <property key="labeling/quadOffset" value="4"/>
+                <property key="labeling/repeatDistance" value="0"/>
+                <property key="labeling/repeatDistanceMapUnitMaxScale" value="0"/>
+                <property key="labeling/repeatDistanceMapUnitMinScale" value="0"/>
+                <property key="labeling/repeatDistanceUnit" value="1"/>
                 <property key="labeling/reverseDirectionSymbol" value="false"/>
                 <property key="labeling/rightDirectionSymbol" value=">"/>
                 <property key="labeling/scaleMax" value="10000"/>
@@ -3223,9 +3286,13 @@
                 <property key="labeling/shadowOffsetAngle" value="135"/>
                 <property key="labeling/shadowOffsetDist" value="1"/>
                 <property key="labeling/shadowOffsetGlobal" value="true"/>
+                <property key="labeling/shadowOffsetMapUnitMaxScale" value="0"/>
+                <property key="labeling/shadowOffsetMapUnitMinScale" value="0"/>
                 <property key="labeling/shadowOffsetUnits" value="1"/>
                 <property key="labeling/shadowRadius" value="1.5"/>
                 <property key="labeling/shadowRadiusAlphaOnly" value="false"/>
+                <property key="labeling/shadowRadiusMapUnitMaxScale" value="0"/>
+                <property key="labeling/shadowRadiusMapUnitMinScale" value="0"/>
                 <property key="labeling/shadowRadiusUnits" value="1"/>
                 <property key="labeling/shadowScale" value="100"/>
                 <property key="labeling/shadowTransparency" value="30"/>
@@ -3236,6 +3303,8 @@
                 <property key="labeling/shapeBorderColorG" value="128"/>
                 <property key="labeling/shapeBorderColorR" value="128"/>
                 <property key="labeling/shapeBorderWidth" value="0"/>
+                <property key="labeling/shapeBorderWidthMapUnitMaxScale" value="0"/>
+                <property key="labeling/shapeBorderWidthMapUnitMinScale" value="0"/>
                 <property key="labeling/shapeBorderWidthUnits" value="1"/>
                 <property key="labeling/shapeDraw" value="false"/>
                 <property key="labeling/shapeFillColorA" value="255"/>
@@ -3243,15 +3312,21 @@
                 <property key="labeling/shapeFillColorG" value="255"/>
                 <property key="labeling/shapeFillColorR" value="255"/>
                 <property key="labeling/shapeJoinStyle" value="64"/>
+                <property key="labeling/shapeOffsetMapUnitMaxScale" value="0"/>
+                <property key="labeling/shapeOffsetMapUnitMinScale" value="0"/>
                 <property key="labeling/shapeOffsetUnits" value="1"/>
                 <property key="labeling/shapeOffsetX" value="0"/>
                 <property key="labeling/shapeOffsetY" value="0"/>
+                <property key="labeling/shapeRadiiMapUnitMaxScale" value="0"/>
+                <property key="labeling/shapeRadiiMapUnitMinScale" value="0"/>
                 <property key="labeling/shapeRadiiUnits" value="1"/>
                 <property key="labeling/shapeRadiiX" value="0"/>
                 <property key="labeling/shapeRadiiY" value="0"/>
                 <property key="labeling/shapeRotation" value="0"/>
                 <property key="labeling/shapeRotationType" value="0"/>
                 <property key="labeling/shapeSVGFile" value=""/>
+                <property key="labeling/shapeSizeMapUnitMaxScale" value="0"/>
+                <property key="labeling/shapeSizeMapUnitMinScale" value="0"/>
                 <property key="labeling/shapeSizeType" value="0"/>
                 <property key="labeling/shapeSizeUnits" value="1"/>
                 <property key="labeling/shapeSizeX" value="0"/>
@@ -3297,7 +3372,7 @@
             <editforminit></editforminit>
             <featformsuppress>0</featformsuppress>
             <annotationform>.</annotationform>
-            <editorlayout>generatedlayout</editorlayout>
+            <editorlayout>uifilelayout</editorlayout>
             <excludeAttributesWMS/>
             <excludeAttributesWFS/>
             <attributeactions>
@@ -3311,13 +3386,13 @@
                     <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
                 </edittype>
                 <edittype widgetv2type="DateTime" name="date_recu">
-                    <widgetv2config fieldEditable="1" calendar_popup="0" display_format="yyyy-MM-dd" field_format="yyyy-mm-dd" labelOnTop="0"/>
+                    <widgetv2config fieldEditable="1" calendar_popup="1" display_format="yyyy-MM-dd" field_format="yyyy-MM-dd" labelOnTop="0"/>
                 </edittype>
                 <edittype widgetv2type="DateTime" name="date_traite">
-                    <widgetv2config fieldEditable="1" calendar_popup="0" display_format="yyyy-MM-dd" field_format="yyyy-mm-dd" labelOnTop="0"/>
+                    <widgetv2config fieldEditable="1" calendar_popup="1" display_format="yyyy-MM-dd" field_format="yyyy-MM-dd" labelOnTop="0"/>
                 </edittype>
                 <edittype widgetv2type="DateTime" name="date_fin">
-                    <widgetv2config fieldEditable="1" calendar_popup="0" display_format="yyyy-MM-dd" field_format="yyyy-mm-dd" labelOnTop="0"/>
+                    <widgetv2config fieldEditable="1" calendar_popup="1" display_format="yyyy-MM-dd" field_format="yyyy-MM-dd" labelOnTop="0"/>
                 </edittype>
                 <edittype widgetv2type="CheckBox" name="construction">
                     <widgetv2config fieldEditable="1" UncheckedState="f" CheckedState="t" labelOnTop="0"/>
@@ -8962,7 +9037,7 @@
                 </edittype>
             </edittypes>
         </maplayer>
-        <maplayer minimumScale="-4.65661e-10" maximumScale="5001" simplifyDrawingHints="0" minLabelScale="0" maxLabelScale="1e+08" simplifyDrawingTol="1" geometry="Point" simplifyMaxScale="1" type="vector" hasScaleBasedVisibilityFlag="1" simplifyLocal="1" scaleBasedLabelVisibilityFlag="0">
+        <maplayer minimumScale="0" maximumScale="5001" simplifyDrawingHints="0" minLabelScale="0" maxLabelScale="1e+08" simplifyDrawingTol="1" geometry="Point" simplifyMaxScale="1" type="vector" hasScaleBasedVisibilityFlag="1" simplifyLocal="1" scaleBasedLabelVisibilityFlag="0">
             <id>leak20130821111917060</id>
             <datasource>dbname='sige' host=172.24.171.203 port=5432 user='sige' sslmode=disable key='id' srid=21781 type=POINT table="distribution"."od_leak" (geometry) sql=</datasource>
             <title></title>
@@ -9032,12 +9107,17 @@
                 <property key="labeling/bufferNoFill" value="false"/>
                 <property key="labeling/bufferSize" value="1"/>
                 <property key="labeling/bufferSizeInMapUnits" value="false"/>
+                <property key="labeling/bufferSizeMapUnitMaxScale" value="0"/>
+                <property key="labeling/bufferSizeMapUnitMinScale" value="0"/>
                 <property key="labeling/bufferTransp" value="0"/>
+                <property key="labeling/centroidInside" value="false"/>
                 <property key="labeling/centroidWhole" value="false"/>
                 <property key="labeling/decimals" value="3"/>
                 <property key="labeling/displayAll" value="false"/>
                 <property key="labeling/dist" value="0"/>
                 <property key="labeling/distInMapUnits" value="false"/>
+                <property key="labeling/distMapUnitMaxScale" value="0"/>
+                <property key="labeling/distMapUnitMinScale" value="0"/>
                 <property key="labeling/enabled" value="true"/>
                 <property key="labeling/fieldName" value="detection_date"/>
                 <property key="labeling/fontBold" value="false"/>
@@ -9050,6 +9130,8 @@
                 <property key="labeling/fontMinPixelSize" value="3"/>
                 <property key="labeling/fontSize" value="8"/>
                 <property key="labeling/fontSizeInMapUnits" value="false"/>
+                <property key="labeling/fontSizeMapUnitMaxScale" value="0"/>
+                <property key="labeling/fontSizeMapUnitMinScale" value="0"/>
                 <property key="labeling/fontStrikeout" value="false"/>
                 <property key="labeling/fontUnderline" value="false"/>
                 <property key="labeling/fontWeight" value="50"/>
@@ -9057,6 +9139,8 @@
                 <property key="labeling/formatNumbers" value="false"/>
                 <property key="labeling/isExpression" value="false"/>
                 <property key="labeling/labelOffsetInMapUnits" value="true"/>
+                <property key="labeling/labelOffsetMapUnitMaxScale" value="0"/>
+                <property key="labeling/labelOffsetMapUnitMinScale" value="0"/>
                 <property key="labeling/labelPerPart" value="false"/>
                 <property key="labeling/leftDirectionSymbol" value="&lt;"/>
                 <property key="labeling/limitNumLabels" value="false"/>
@@ -9077,6 +9161,10 @@
                 <property key="labeling/previewBkgrdColor" value="#ffffff"/>
                 <property key="labeling/priority" value="5"/>
                 <property key="labeling/quadOffset" value="4"/>
+                <property key="labeling/repeatDistance" value="0"/>
+                <property key="labeling/repeatDistanceMapUnitMaxScale" value="0"/>
+                <property key="labeling/repeatDistanceMapUnitMinScale" value="0"/>
+                <property key="labeling/repeatDistanceUnit" value="1"/>
                 <property key="labeling/reverseDirectionSymbol" value="false"/>
                 <property key="labeling/rightDirectionSymbol" value=">"/>
                 <property key="labeling/scaleMax" value="10000000"/>
@@ -9090,9 +9178,13 @@
                 <property key="labeling/shadowOffsetAngle" value="135"/>
                 <property key="labeling/shadowOffsetDist" value="1"/>
                 <property key="labeling/shadowOffsetGlobal" value="true"/>
+                <property key="labeling/shadowOffsetMapUnitMaxScale" value="0"/>
+                <property key="labeling/shadowOffsetMapUnitMinScale" value="0"/>
                 <property key="labeling/shadowOffsetUnits" value="1"/>
                 <property key="labeling/shadowRadius" value="1.5"/>
                 <property key="labeling/shadowRadiusAlphaOnly" value="false"/>
+                <property key="labeling/shadowRadiusMapUnitMaxScale" value="0"/>
+                <property key="labeling/shadowRadiusMapUnitMinScale" value="0"/>
                 <property key="labeling/shadowRadiusUnits" value="1"/>
                 <property key="labeling/shadowScale" value="100"/>
                 <property key="labeling/shadowTransparency" value="30"/>
@@ -9103,6 +9195,8 @@
                 <property key="labeling/shapeBorderColorG" value="128"/>
                 <property key="labeling/shapeBorderColorR" value="128"/>
                 <property key="labeling/shapeBorderWidth" value="0"/>
+                <property key="labeling/shapeBorderWidthMapUnitMaxScale" value="0"/>
+                <property key="labeling/shapeBorderWidthMapUnitMinScale" value="0"/>
                 <property key="labeling/shapeBorderWidthUnits" value="1"/>
                 <property key="labeling/shapeDraw" value="false"/>
                 <property key="labeling/shapeFillColorA" value="255"/>
@@ -9110,15 +9204,21 @@
                 <property key="labeling/shapeFillColorG" value="255"/>
                 <property key="labeling/shapeFillColorR" value="255"/>
                 <property key="labeling/shapeJoinStyle" value="64"/>
+                <property key="labeling/shapeOffsetMapUnitMaxScale" value="0"/>
+                <property key="labeling/shapeOffsetMapUnitMinScale" value="0"/>
                 <property key="labeling/shapeOffsetUnits" value="1"/>
                 <property key="labeling/shapeOffsetX" value="0"/>
                 <property key="labeling/shapeOffsetY" value="0"/>
+                <property key="labeling/shapeRadiiMapUnitMaxScale" value="0"/>
+                <property key="labeling/shapeRadiiMapUnitMinScale" value="0"/>
                 <property key="labeling/shapeRadiiUnits" value="1"/>
                 <property key="labeling/shapeRadiiX" value="0"/>
                 <property key="labeling/shapeRadiiY" value="0"/>
                 <property key="labeling/shapeRotation" value="0"/>
                 <property key="labeling/shapeRotationType" value="0"/>
                 <property key="labeling/shapeSVGFile" value=""/>
+                <property key="labeling/shapeSizeMapUnitMaxScale" value="0"/>
+                <property key="labeling/shapeSizeMapUnitMinScale" value="0"/>
                 <property key="labeling/shapeSizeType" value="0"/>
                 <property key="labeling/shapeSizeUnits" value="1"/>
                 <property key="labeling/shapeSizeX" value="0"/>
@@ -9164,7 +9264,7 @@
             <editforminit></editforminit>
             <featformsuppress>0</featformsuppress>
             <annotationform>.</annotationform>
-            <editorlayout>generatedlayout</editorlayout>
+            <editorlayout>uifilelayout</editorlayout>
             <aliases>
                 <alias field="_district" index="5" name="Commune"/>
                 <alias field="_pressurezone" index="6" name="Zone de pression"/>
@@ -9230,10 +9330,10 @@
                     <widgetv2config OrderByValue="0" AllowNull="0" FilterExpression="" fieldEditable="1" Key="id" Layer="vl_leak_damage20130822081237691" Value="value_fr" labelOnTop="0" AllowMulti="0"/>
                 </edittype>
                 <edittype widgetv2type="DateTime" name="detection_date">
-                    <widgetv2config fieldEditable="1" calendar_popup="0" display_format="yyyy-MM-dd" field_format="yyyy-mm-dd" labelOnTop="0"/>
+                    <widgetv2config fieldEditable="1" calendar_popup="1" display_format="yyyy-MM-dd" field_format="yyyy-MM-dd" labelOnTop="0"/>
                 </edittype>
                 <edittype widgetv2type="DateTime" name="repair_date">
-                    <widgetv2config fieldEditable="1" calendar_popup="0" display_format="yyyy-MM-dd" field_format="yyyy-mm-dd" labelOnTop="0"/>
+                    <widgetv2config fieldEditable="1" calendar_popup="1" display_format="yyyy-MM-dd" field_format="yyyy-MM-dd" labelOnTop="0"/>
                 </edittype>
                 <edittype widgetv2type="CheckBox" name="_repaired">
                     <widgetv2config fieldEditable="1" UncheckedState="f" CheckedState="t" labelOnTop="0"/>
