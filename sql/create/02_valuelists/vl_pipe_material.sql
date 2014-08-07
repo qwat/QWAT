@@ -48,7 +48,7 @@ COMMENT ON TRIGGER fancy_value_trigger ON distribution.vl_pipe_material IS 'Trig
 
 
 /* Predefined functions list */
-/* This has to be filled by user to fullfile language preferences */
+/* This has to be filled by user to fulfill language preferences */
 INSERT INTO distribution.vl_pipe_material (id, short_fr, value_fr, short_en, value_en, short_ro, value_ro, diameter, diameter_nominal, diameter_internal, diameter_external, code_sire) VALUES (5001, 'Inconnu', 'Inconnu', '', '', 'Nec',   'Necunoscut', '', NULL, NULL, NULL, 1);
 INSERT INTO distribution.vl_pipe_material (id, short_fr, value_fr, short_en, value_en, short_ro, value_ro, diameter, diameter_nominal, diameter_internal, diameter_external, code_sire) VALUES (5102, 'AC', 'Acier', '', '', 'OL', 'Oţel',    '100', 100, 100.000, NULL, 11);
 INSERT INTO distribution.vl_pipe_material (id, short_fr, value_fr, short_en, value_en, short_ro, value_ro, diameter, diameter_nominal, diameter_internal, diameter_external, code_sire) VALUES (5103, 'AC', 'Acier', '', '', 'OL', 'Oţel',    '120', 120, 120.000, NULL, 11);
