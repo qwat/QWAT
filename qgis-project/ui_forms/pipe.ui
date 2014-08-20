@@ -6,7 +6,7 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>564</width>
+    <width>597</width>
     <height>377</height>
    </rect>
   </property>
@@ -617,9 +617,6 @@
             </property>
            </widget>
           </item>
-          <item row="4" column="1">
-           <widget class="QLineEdit" name="id_parent"/>
-          </item>
           <item row="0" column="0">
            <widget class="QLabel" name="label_4">
             <property name="text">
@@ -660,6 +657,19 @@
             </property>
            </widget>
           </item>
+          <item row="4" column="1">
+           <widget class="QgsRelationReferenceWidget" name="id_parent">
+            <property name="embedForm">
+             <bool>false</bool>
+            </property>
+            <property name="readOnlySelector">
+             <bool>true</bool>
+            </property>
+            <property name="allowMapIdentification">
+             <bool>false</bool>
+            </property>
+           </widget>
+          </item>
          </layout>
         </widget>
        </item>
@@ -697,6 +707,13 @@
    </item>
   </layout>
  </widget>
+ <customwidgets>
+  <customwidget>
+   <class>QgsRelationReferenceWidget</class>
+   <extends>QWidget</extends>
+   <header>qgsrelationreferencewidget.h</header>
+  </customwidget>
+ </customwidgets>
  <resources/>
  <connections>
   <connection>

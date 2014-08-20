@@ -272,6 +272,9 @@
         </layer-tree-group>
     </layer-tree-group>
     <relations>
+        <relation referencingLayer="conduites_copy20130709141244955" referencedLayer="conduites_copy20130709141244955" id="relation_conduite_parent" name="Conduite - parent">
+            <fieldRef referencedField="id" referencingField="id_parent"/>
+        </relation>
         <relation referencingLayer="installation_pressurecontrol20131107105006792" referencedLayer="installation20130304110004938" id="relation_ouvrage_pressurecontrol" name="Ouvrage - régulation pression">
             <fieldRef referencedField="id" referencingField="id_installation"/>
         </relation>
@@ -300,10 +303,10 @@
     <mapcanvas>
         <units>meters</units>
         <extent>
-            <xmin>559032.07157721405383199</xmin>
-            <ymin>143402.66842531485599466</ymin>
-            <xmax>559100.55497940734494478</xmax>
-            <ymax>143441.07710591002251022</ymax>
+            <xmin>559021.24779750232119113</xmin>
+            <ymin>143395.85312985850032419</ymin>
+            <xmax>559128.62832475092727691</xmax>
+            <ymax>143453.4661507512209937</ymax>
         </extent>
         <projections>1</projections>
         <destinationsrs>
@@ -872,8 +875,28 @@
                     <dataDefinedSource expr="" field="" active="false" useExpr="true"/>
                 </ComposerItem>
             </ComposerPicture>
-            <ComposerArrow startMarkerFile="" boundsBehaviourVersion="22" arrowHeadWidth="0" endMarkerFile="" outlineWidth="0.3" markerMode="1">
-                <ArrowColor alpha="255" red="0" blue="0" green="0"/>
+            <ComposerArrow arrowHeadFillColor="0,0,0,255" arrowHeadOutlineColor="0,0,0,255" startMarkerFile="" boundsBehaviourVersion="22" arrowHeadWidth="0" endMarkerFile="" outlineWidth="0.3" markerMode="1">
+                <lineStyle>
+                    <symbol alpha="1" type="line" name="">
+                        <layer pass="0" class="SimpleLine" locked="0">
+                            <prop k="capstyle" v="flat"/>
+                            <prop k="color" v="0,0,0,255"/>
+                            <prop k="customdash" v="5;2"/>
+                            <prop k="customdash_map_unit_scale" v="0,0"/>
+                            <prop k="customdash_unit" v="MM"/>
+                            <prop k="draw_inside_polygon" v="0"/>
+                            <prop k="joinstyle" v="bevel"/>
+                            <prop k="offset" v="0"/>
+                            <prop k="offset_map_unit_scale" v="0,0"/>
+                            <prop k="offset_unit" v="MM"/>
+                            <prop k="penstyle" v="solid"/>
+                            <prop k="use_custom_dash" v="0"/>
+                            <prop k="width" v="0.3"/>
+                            <prop k="width_map_unit_scale" v="0,0"/>
+                            <prop k="width_unit" v="MM"/>
+                        </layer>
+                    </symbol>
+                </lineStyle>
                 <StartPoint x="15.15" y="407"/>
                 <StopPoint x="34.85" y="407"/>
                 <ComposerItem pagey="406.85" page="1" id="" lastValidViewScaleFactor="9.29985" positionMode="3" positionLock="true" x="15" y="406.85" visibility="1" zValue="12" background="true" transparency="0" frameJoinStyle="miter" blendMode="0" width="20" outlineWidth="0" uuid="{dbbbb19e-bbae-45e9-a631-b11648d004a9}" height="0.3" itemRotation="0" frame="false" pagex="15">
@@ -913,57 +936,7 @@
             <ComposerMap mapRotation="0" keepLayerSet="true" id="1" previewMode="Render" drawCanvasItems="true">
                 <Extent ymin="145174.34327699668938294" xmin="555252.08216445404104888" ymax="145622.07867851707851514" xmax="556077.08216529549099505"/>
                 <LayerSet>
-                    <Layer>installation20130304110004938</Layer>
-                    <Layer>installation_tank20130304110005008</Layer>
-                    <Layer>installation_source20130820110331647</Layer>
-                    <Layer>installation_pump20130816140237750</Layer>
-                    <Layer>installation_treatment20130816113039913</Layer>
-                    <Layer>installation_pressurecontrol20131107105006792</Layer>
-                    <Layer>installation_valvechamber20131107105006707</Layer>
-                    <Layer>hydrant20130304110004848</Layer>
-                    <Layer>valve20130304110011497</Layer>
-                    <Layer>vannes_copy20130924083714343</Layer>
-                    <Layer>od_wateringoutput20131127080906318</Layer>
-                    <Layer>leak20130821111917060</Layer>
-                    <Layer>subscriber20130304110011459</Layer>
-                    <Layer>od_subscriber_reference20131206105928067</Layer>
-                    <Layer>od_meter20131120073630165</Layer>
-                    <Layer>od_meter_reference20140304165835390</Layer>
-                    <Layer>node20130304110005126</Layer>
-                    <Layer>conduites_copy20130709141244955</Layer>
-                    <Layer>conduites_actives_copy_copy20130822080032346</Layer>
-                    <Layer>od_annotationline20131203095020365</Layer>
-                    <Layer>od_annotationpoint20131203095020392</Layer>
-                    <Layer>dimension20130807094904783</Layer>
-                    <Layer>od_dimension_orientation20131202111155806</Layer>
                     <Layer>printmap20130304110011400</Layer>
-                    <Layer>cadastre20140312152032371</Layer>
-                    <Layer>ad_posnumero_maison20130514143346530</Layer>
-                    <Layer>cs_posnumero_de_batiment20130514143756039</Layer>
-                    <Layer>bf_posimmeuble20130514143633121</Layer>
-                    <Layer>no_posnomlocallieudit20130514143906869</Layer>
-                    <Layer>bf_point_limite20130514143552315</Layer>
-                    <Layer>axe_rue20130514143437774</Layer>
-                    <Layer>pf_pfp20130514144226845</Layer>
-                    <Layer>bf_bien_fonds20130514143508556</Layer>
-                    <Layer>bf_ddp20130514143538213</Layer>
-                    <Layer>cs_surfacecs20130514143830750</Layer>
-                    <Layer>od_element_lineaire20130514144047075</Layer>
-                    <Layer>od_element_surfacique20130514144124647</Layer>
-                    <Layer>cs_batiment20130514143721709</Layer>
-                    <Layer>od_batiment_souterrain20130514143946785</Layer>
-                    <Layer>bf_posimmeuble20140214143633121</Layer>
-                    <Layer>cs_posnumero_de_batiment20140214143756039</Layer>
-                    <Layer>no_posnomlocallieudit20140214143906869</Layer>
-                    <Layer>bf_point_limite20140214143552315</Layer>
-                    <Layer>pf_pfp20140214144226845</Layer>
-                    <Layer>bf_bien_fonds20140214143508556</Layer>
-                    <Layer>bf_ddp20140214143538213</Layer>
-                    <Layer>cs_surfacecs20140214143830750</Layer>
-                    <Layer>od_element_lineaire20140214144047075</Layer>
-                    <Layer>od_element_surfacique20140214144124647</Layer>
-                    <Layer>cs_batiment20140214143721709</Layer>
-                    <Layer>od_batiment_souterrain20140214143946785</Layer>
                 </LayerSet>
                 <Grid/>
                 <ComposerMapGrid leftAnnotationDirection="0" annotationFont="Ubuntu,11,-1,5,50,0,0,0,0,0" gridFramePenThickness="0.5" showAnnotation="0" bottomAnnotationDirection="0" bottomAnnotationPosition="1" name="Grid 1" gridStyle="0" intervalX="0" intervalY="0" gridFrameStyle="0" rightAnnotationPosition="1" topAnnotationDirection="0" leftAnnotationPosition="1" blendMode="0" show="0" frameFillColor1="255,255,255,255" gridFrameWidth="2" frameFillColor2="0,0,0,255" annotationFontColor="0,0,0,255" gridFramePenColor="0,0,0,255" offsetX="0" annotationPrecision="3" offsetY="0" uuid="{a5ffcd5f-75c9-4a4f-9c9e-bcd04a79ad90}" frameAnnotationDistance="1" unit="0" topAnnotationPosition="1" rightAnnotationDirection="0" annotationFormat="0" crossLength="3">
@@ -1013,7 +986,7 @@
                     </markerStyle>
                 </ComposerMapGrid>
                 <AtlasMap scalingMode="0" atlasDriven="1" margin="0.10000000000000001"/>
-                <ComposerItem pagey="110" page="1" id="" lastValidViewScaleFactor="1.96682" positionMode="0" positionLock="false" x="959.722" y="110" visibility="1" zValue="9" background="true" transparency="0" frameJoinStyle="miter" blendMode="0" width="55.278" outlineWidth="0" uuid="{b970a2fd-9bd7-4a2a-a787-1664811befc7}" height="29.9999" itemRotation="0" frame="true" pagex="959.722">
+                <ComposerItem pagey="110" page="1" id="" lastValidViewScaleFactor="2.01971" positionMode="0" positionLock="false" x="959.722" y="110" visibility="1" zValue="9" background="true" transparency="0" frameJoinStyle="miter" blendMode="0" width="55.278" outlineWidth="0" uuid="{b970a2fd-9bd7-4a2a-a787-1664811befc7}" height="29.9999" itemRotation="0" frame="true" pagex="959.722">
                     <FrameColor alpha="255" red="0" blue="0" green="0"/>
                     <BackgroundColor alpha="255" red="255" blue="255" green="255"/>
                 </ComposerItem>
@@ -1146,7 +1119,7 @@
                     </markerStyle>
                 </ComposerMapGrid>
                 <AtlasMap scalingMode="0" atlasDriven="1" margin="0.10000000000000001"/>
-                <ComposerItem pagey="140" page="1" id="" lastValidViewScaleFactor="1.96682" positionMode="0" positionLock="false" x="15" y="140" visibility="1" zValue="1" background="true" transparency="0" frameJoinStyle="miter" blendMode="0" width="1000" outlineWidth="0" uuid="{27df2cec-4272-4242-93e2-7d5ffc2bbe05}" height="666.667" itemRotation="0" frame="true" pagex="15">
+                <ComposerItem pagey="140" page="1" id="" lastValidViewScaleFactor="2.01971" positionMode="0" positionLock="false" x="15" y="140" visibility="1" zValue="1" background="true" transparency="0" frameJoinStyle="miter" blendMode="0" width="1000" outlineWidth="0" uuid="{27df2cec-4272-4242-93e2-7d5ffc2bbe05}" height="666.667" itemRotation="0" frame="true" pagex="15">
                     <FrameColor alpha="255" red="0" blue="0" green="0"/>
                     <BackgroundColor alpha="255" red="255" blue="255" green="255"/>
                 </ComposerItem>
@@ -1172,8 +1145,28 @@
                 </layer>
             </symbol>
             <SnapLine y1="0" x1="0" y2="914" x2="0"/>
-            <ComposerArrow startMarkerFile="" boundsBehaviourVersion="22" arrowHeadWidth="0" endMarkerFile="" outlineWidth="0.3" markerMode="1">
-                <ArrowColor alpha="255" red="0" blue="0" green="0"/>
+            <ComposerArrow arrowHeadFillColor="0,0,0,255" arrowHeadOutlineColor="0,0,0,255" startMarkerFile="" boundsBehaviourVersion="22" arrowHeadWidth="0" endMarkerFile="" outlineWidth="0.3" markerMode="1">
+                <lineStyle>
+                    <symbol alpha="1" type="line" name="">
+                        <layer pass="0" class="SimpleLine" locked="0">
+                            <prop k="capstyle" v="flat"/>
+                            <prop k="color" v="0,0,0,255"/>
+                            <prop k="customdash" v="5;2"/>
+                            <prop k="customdash_map_unit_scale" v="0,0"/>
+                            <prop k="customdash_unit" v="MM"/>
+                            <prop k="draw_inside_polygon" v="0"/>
+                            <prop k="joinstyle" v="bevel"/>
+                            <prop k="offset" v="0"/>
+                            <prop k="offset_map_unit_scale" v="0,0"/>
+                            <prop k="offset_unit" v="MM"/>
+                            <prop k="penstyle" v="solid"/>
+                            <prop k="use_custom_dash" v="0"/>
+                            <prop k="width" v="0.3"/>
+                            <prop k="width_map_unit_scale" v="0,0"/>
+                            <prop k="width_unit" v="MM"/>
+                        </layer>
+                    </symbol>
+                </lineStyle>
                 <StartPoint x="15.15" y="407"/>
                 <StopPoint x="34.85" y="407"/>
                 <ComposerItem pagey="406.85" page="1" id="" lastValidViewScaleFactor="9.29985" positionMode="3" positionLock="true" x="15" y="406.85" visibility="1" zValue="13" background="true" transparency="0" frameJoinStyle="miter" blendMode="0" width="20" outlineWidth="0" uuid="{06c51928-3ce8-46f4-b18f-899c94bf863b}" height="0.3" itemRotation="0" frame="false" pagex="15">
@@ -4877,7 +4870,7 @@
                 </edittype>
             </edittypes>
         </maplayer>
-        <maplayer minimumScale="0" maximumScale="1e+08" simplifyDrawingHints="0" minLabelScale="0" maxLabelScale="1e+08" simplifyDrawingTol="1" geometry="Line" simplifyMaxScale="1" type="vector" hasScaleBasedVisibilityFlag="0" simplifyLocal="1" scaleBasedLabelVisibilityFlag="0">
+        <maplayer minimumScale="-4.65661e-10" maximumScale="1e+08" simplifyDrawingHints="0" minLabelScale="0" maxLabelScale="1e+08" simplifyDrawingTol="1" geometry="Line" simplifyMaxScale="1" type="vector" hasScaleBasedVisibilityFlag="0" simplifyLocal="1" scaleBasedLabelVisibilityFlag="0">
             <id>conduites_copy20130709141244955</id>
             <datasource>dbname='sige' host=172.24.171.203 port=5432 user='sige' sslmode=disable key='id' srid=21781 type=LINESTRING table="distribution"."od_pipe" (geometry) sql=</datasource>
             <title></title>
@@ -5230,8 +5223,8 @@
                 <edittype widgetv2type="TextEdit" name="id">
                     <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
                 </edittype>
-                <edittype widgetv2type="TextEdit" name="id_parent">
-                    <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
+                <edittype widgetv2type="RelationReference" name="id_parent">
+                    <widgetv2config fieldEditable="1" ShowForm="0" Relation="relation_conduite_parent" ReadOnly="1" MapIdentification="1" labelOnTop="0" AllowNULL="1"/>
                 </edittype>
                 <edittype widgetv2type="ValueRelation" name="id_function">
                     <widgetv2config OrderByValue="0" AllowNull="0" FilterExpression="" fieldEditable="1" Key="id" Layer="vl_pipe_function20130304110005186" Value="value_fr" labelOnTop="0" AllowMulti="0"/>
@@ -16252,8 +16245,38 @@
         </maplayer>
     </projectlayers>
     <properties>
-        <WMSContactPerson type="QString"></WMSContactPerson>
-        <WMSOnlineResource type="QString"></WMSOnlineResource>
+        <WMSUrl type="QString"></WMSUrl>
+        <SpatialRefSys>
+            <ProjectCRSProj4String type="QString">+proj=somerc +lat_0=46.95240555555556 +lon_0=7.439583333333333 +k_0=1 +x_0=600000 +y_0=200000 +ellps=bessel +towgs84=674.4,15.1,405.3,0,0,0,0 +units=m +no_defs</ProjectCRSProj4String>
+            <ProjectCrs type="QString">EPSG:21781</ProjectCrs>
+            <ProjectCRSID type="int">1919</ProjectCRSID>
+            <ProjectionsEnabled type="int">1</ProjectionsEnabled>
+        </SpatialRefSys>
+        <landit>
+            <additionValue type="double">-1</additionValue>
+            <destinationField type="QString">altitude_dtm</destinationField>
+            <vectorLayer type="QString">node20130304110005126</vectorLayer>
+            <dtmLayer type="QString">riviera20130405112707706</dtmLayer>
+        </landit>
+        <postgres91plusauditor>
+            <redefineSubset type="bool">true</redefineSubset>
+            <logLayer type="QString">logged_actions20130304110005081</logLayer>
+        </postgres91plusauditor>
+        <rasterInterpolation>
+            <rasterLayer type="QString">riviera20130902113350360</rasterLayer>
+            <destinationField type="QString">altitude_dtm</destinationField>
+            <rasterBand type="int">0</rasterBand>
+            <vectorLayer type="QString">node20130304110005126</vectorLayer>
+        </rasterInterpolation>
+        <DefaultStyles>
+            <Fill type="QString"></Fill>
+            <Line type="QString"></Line>
+            <Marker type="QString"></Marker>
+            <RandomColors type="bool">true</RandomColors>
+            <AlphaInt type="int">255</AlphaInt>
+            <ColorRamp type="QString"></ColorRamp>
+        </DefaultStyles>
+        <WMSAccessConstraints type="QString"></WMSAccessConstraints>
         <quickfinder_plugin>
             <geomapfishUrl type="QString">http://map.cartoriviera.ch/main/wsgi/fulltextsearch</geomapfishUrl>
             <categoryLimit type="int">10</categoryLimit>
@@ -16265,106 +16288,32 @@
             <refreshDelay type="int">15</refreshDelay>
             <refreshAuto type="bool">true</refreshAuto>
         </quickfinder_plugin>
-        <WMSContactOrganization type="QString"></WMSContactOrganization>
-        <postgres91plusauditor>
-            <redefineSubset type="bool">true</redefineSubset>
-            <logLayer type="QString">logged_actions20130304110005081</logLayer>
-        </postgres91plusauditor>
-        <WMSKeywordList type="QStringList">
-            <value></value>
-        </WMSKeywordList>
-        <WFSUrl type="QString"></WFSUrl>
-        <Paths>
-            <Absolute type="bool">false</Absolute>
-        </Paths>
-        <WMSServiceTitle type="QString"></WMSServiceTitle>
-        <WFSLayers type="QStringList"/>
-        <qWat>
-            <pipeLayer type="QString">conduites_copy20130709141244955</pipeLayer>
-            <valveLayer type="QString">valve20130304110011497</valveLayer>
-            <nodeLayer type="QString">node20130304110005126</nodeLayer>
-        </qWat>
         <WMSContactMail type="QString"></WMSContactMail>
-        <intersectit>
-            <advancedIntersectionWritePoint type="bool">false</advancedIntersectionWritePoint>
-            <dimensionDistanceObservationField type="QString">observation</dimensionDistanceObservationField>
-            <simpleIntersectionLayer type="QString">constructionpoint20130807094904851</simpleIntersectionLayer>
-            <observationField type="QString">observation</observationField>
-            <dimensionDistancePrecisionField type="QString">id</dimensionDistancePrecisionField>
-            <dimensionLayer type="QString">dimension20130807094904783</dimensionLayer>
-            <dimensionWriteMeasure type="bool">true</dimensionWriteMeasure>
-            <dimensionWriteObservation type="bool">true</dimensionWriteObservation>
-            <precisionField type="QString">id</precisionField>
-            <dimensionDistancePrecisionWrite type="bool">false</dimensionDistancePrecisionWrite>
-            <typeField type="QString">type</typeField>
-            <dimensionDistanceWrite type="bool">true</dimensionDistanceWrite>
-            <dimenPlaceMeasure type="bool">true</dimenPlaceMeasure>
-            <dimensionDistanceObservationWrite type="bool">true</dimensionDistanceObservationWrite>
-            <dimensionWriteType type="bool">true</dimensionWriteType>
-            <dimensionOrientationPrecisionField type="QString">id</dimensionOrientationPrecisionField>
-            <dimensionCheckType type="bool">true</dimensionCheckType>
-            <advancedIntersectionWriteReport type="bool">false</advancedIntersectionWriteReport>
-            <dimensionWritePrecision type="bool">false</dimensionWritePrecision>
-            <memoryLineLayer type="QString">IntersectIt_Lines20130618102142813</memoryLineLayer>
-            <dimensionOrientationObservationWrite type="bool">true</dimensionOrientationObservationWrite>
-            <intersecResultPlaceReport type="bool">false</intersecResultPlaceReport>
-            <reportField type="QString"></reportField>
-            <simpleIntersectionWritePoint type="bool">true</simpleIntersectionWritePoint>
-            <dimenPlacePrecision type="bool">false</dimenPlacePrecision>
-            <dimensionOrientationPrecisionWrite type="bool">false</dimensionOrientationPrecisionWrite>
-            <dimensionDistanceLayer type="QString">dimension20130807094904783</dimensionDistanceLayer>
-            <intersectionLayer type="QString"></intersectionLayer>
-            <memoryPointLayer type="QString">IntersectIt_Points20130618102143276</memoryPointLayer>
-            <dimensionOrientationLayer type="QString">od_dimension_orientation20131202111155806</dimensionOrientationLayer>
-            <intersecResultPlacePoint type="bool">false</intersecResultPlacePoint>
-            <dimenPlaceDimension type="bool">true</dimenPlaceDimension>
-            <dimensionOrientationObservationField type="QString">observation</dimensionOrientationObservationField>
-            <dimensionOrientationWrite type="bool">true</dimensionOrientationWrite>
-            <advancedIntersectionLayer type="QString"></advancedIntersectionLayer>
-        </intersectit>
-        <PositionPrecision>
-            <DecimalPlaces type="int">2</DecimalPlaces>
-            <Automatic type="bool">true</Automatic>
-            <DegreeFormat type="QString">D</DegreeFormat>
-        </PositionPrecision>
-        <WCSUrl type="QString"></WCSUrl>
+        <WMSImageQuality type="int">90</WMSImageQuality>
+        <WMSServiceTitle type="QString"></WMSServiceTitle>
         <WMSContactPhone type="QString"></WMSContactPhone>
-        <WMSServiceCapabilities type="bool">false</WMSServiceCapabilities>
-        <NorthArrow>
-            <Rotation type="int">0</Rotation>
-            <Enabled type="bool">false</Enabled>
-            <Placement type="int">2</Placement>
-            <Automatic type="bool">true</Automatic>
-        </NorthArrow>
-        <WMSServiceAbstract type="QString"></WMSServiceAbstract>
-        <WMSAddWktGeometry type="bool">false</WMSAddWktGeometry>
-        <Measure>
-            <Ellipsoid type="QString">NONE</Ellipsoid>
-        </Measure>
-        <LinkIt>
-            <field type="QString">id_consummerzone</field>
-            <layer type="QString">pressurezone20130304110011384</layer>
-        </LinkIt>
+        <Palette>
+            <Colors type="QStringList"/>
+            <Labels type="QStringList"/>
+        </Palette>
         <WFSTLayers>
             <Insert type="QStringList"/>
             <Update type="QStringList"/>
             <Delete type="QStringList"/>
         </WFSTLayers>
-        <landit>
-            <additionValue type="double">-1</additionValue>
-            <destinationField type="QString">altitude_dtm</destinationField>
-            <vectorLayer type="QString">node20130304110005126</vectorLayer>
-            <dtmLayer type="QString">riviera20130405112707706</dtmLayer>
-        </landit>
-        <Gui>
-            <SelectionColorBluePart type="int">0</SelectionColorBluePart>
-            <CanvasColorGreenPart type="int">255</CanvasColorGreenPart>
-            <CanvasColorRedPart type="int">255</CanvasColorRedPart>
-            <SelectionColorRedPart type="int">255</SelectionColorRedPart>
-            <SelectionColorAlphaPart type="int">255</SelectionColorAlphaPart>
-            <SelectionColorGreenPart type="int">0</SelectionColorGreenPart>
-            <CanvasColorBluePart type="int">255</CanvasColorBluePart>
-        </Gui>
+        <WCSLayers type="QStringList"/>
+        <WMSFees type="QString"></WMSFees>
+        <Macros>
+            <pythonCode type="QString"></pythonCode>
+        </Macros>
+        <WMSAddWktGeometry type="bool">false</WMSAddWktGeometry>
+        <qWat>
+            <pipeLayer type="QString">conduites_copy20130709141244955</pipeLayer>
+            <valveLayer type="QString">valve20130304110011497</valveLayer>
+            <nodeLayer type="QString">node20130304110005126</nodeLayer>
+        </qWat>
+        <WCSUrl type="QString"></WCSUrl>
+        <WMSOnlineResource type="QString"></WMSOnlineResource>
         <Digitizing>
             <LayerSnappingList type="QStringList">
                 <value>IntersectIt_Lines20130618102142813</value>
@@ -16709,18 +16658,86 @@
                 <value>7.000000</value>
             </LayerSnappingToleranceList>
         </Digitizing>
-        <rasterInterpolation>
-            <rasterLayer type="QString">riviera20130902113350360</rasterLayer>
-            <destinationField type="QString">altitude_dtm</destinationField>
-            <rasterBand type="int">0</rasterBand>
-            <vectorLayer type="QString">node20130304110005126</vectorLayer>
-        </rasterInterpolation>
         <Identify>
             <disabledLayers type="QStringList"/>
         </Identify>
-        <Macros>
-            <pythonCode type="QString"></pythonCode>
-        </Macros>
+        <WMSContactPerson type="QString"></WMSContactPerson>
+        <WMSContactOrganization type="QString"></WMSContactOrganization>
+        <WMSKeywordList type="QStringList">
+            <value></value>
+        </WMSKeywordList>
+        <Paths>
+            <Absolute type="bool">false</Absolute>
+        </Paths>
+        <PositionPrecision>
+            <DecimalPlaces type="int">2</DecimalPlaces>
+            <Automatic type="bool">true</Automatic>
+            <DegreeFormat type="QString">D</DegreeFormat>
+        </PositionPrecision>
+        <NorthArrow>
+            <Rotation type="int">0</Rotation>
+            <Enabled type="bool">false</Enabled>
+            <Placement type="int">2</Placement>
+            <Automatic type="bool">true</Automatic>
+        </NorthArrow>
+        <Gui>
+            <SelectionColorBluePart type="int">0</SelectionColorBluePart>
+            <CanvasColorGreenPart type="int">255</CanvasColorGreenPart>
+            <CanvasColorRedPart type="int">255</CanvasColorRedPart>
+            <SelectionColorRedPart type="int">255</SelectionColorRedPart>
+            <SelectionColorAlphaPart type="int">255</SelectionColorAlphaPart>
+            <SelectionColorGreenPart type="int">0</SelectionColorGreenPart>
+            <CanvasColorBluePart type="int">255</CanvasColorBluePart>
+        </Gui>
+        <WFSLayers type="QStringList"/>
+        <intersectit>
+            <advancedIntersectionWritePoint type="bool">false</advancedIntersectionWritePoint>
+            <dimensionDistanceObservationField type="QString">observation</dimensionDistanceObservationField>
+            <simpleIntersectionLayer type="QString">constructionpoint20130807094904851</simpleIntersectionLayer>
+            <observationField type="QString">observation</observationField>
+            <dimensionDistancePrecisionField type="QString">id</dimensionDistancePrecisionField>
+            <dimensionLayer type="QString">dimension20130807094904783</dimensionLayer>
+            <dimensionWriteMeasure type="bool">true</dimensionWriteMeasure>
+            <dimensionWriteObservation type="bool">true</dimensionWriteObservation>
+            <precisionField type="QString">id</precisionField>
+            <dimensionDistancePrecisionWrite type="bool">false</dimensionDistancePrecisionWrite>
+            <typeField type="QString">type</typeField>
+            <dimensionDistanceWrite type="bool">true</dimensionDistanceWrite>
+            <dimenPlaceMeasure type="bool">true</dimenPlaceMeasure>
+            <dimensionDistanceObservationWrite type="bool">true</dimensionDistanceObservationWrite>
+            <dimensionWriteType type="bool">true</dimensionWriteType>
+            <dimensionOrientationPrecisionField type="QString">id</dimensionOrientationPrecisionField>
+            <dimensionCheckType type="bool">true</dimensionCheckType>
+            <advancedIntersectionWriteReport type="bool">false</advancedIntersectionWriteReport>
+            <dimensionWritePrecision type="bool">false</dimensionWritePrecision>
+            <memoryLineLayer type="QString">IntersectIt_Lines20130618102142813</memoryLineLayer>
+            <dimensionOrientationObservationWrite type="bool">true</dimensionOrientationObservationWrite>
+            <intersecResultPlaceReport type="bool">false</intersecResultPlaceReport>
+            <reportField type="QString"></reportField>
+            <simpleIntersectionWritePoint type="bool">true</simpleIntersectionWritePoint>
+            <dimenPlacePrecision type="bool">false</dimenPlacePrecision>
+            <dimensionOrientationPrecisionWrite type="bool">false</dimensionOrientationPrecisionWrite>
+            <dimensionDistanceLayer type="QString">dimension20130807094904783</dimensionDistanceLayer>
+            <intersectionLayer type="QString"></intersectionLayer>
+            <memoryPointLayer type="QString">IntersectIt_Points20130618102143276</memoryPointLayer>
+            <dimensionOrientationLayer type="QString">od_dimension_orientation20131202111155806</dimensionOrientationLayer>
+            <intersecResultPlacePoint type="bool">false</intersecResultPlacePoint>
+            <dimenPlaceDimension type="bool">true</dimenPlaceDimension>
+            <dimensionOrientationObservationField type="QString">observation</dimensionOrientationObservationField>
+            <dimensionOrientationWrite type="bool">true</dimensionOrientationWrite>
+            <advancedIntersectionLayer type="QString"></advancedIntersectionLayer>
+        </intersectit>
+        <WMSServiceAbstract type="QString"></WMSServiceAbstract>
+        <Measure>
+            <Ellipsoid type="QString">NONE</Ellipsoid>
+        </Measure>
+        <LinkIt>
+            <field type="QString">id_consummerzone</field>
+            <layer type="QString">pressurezone20130304110011384</layer>
+        </LinkIt>
+        <WFSUrl type="QString"></WFSUrl>
+        <WMSUseLayerIDs type="bool">false</WMSUseLayerIDs>
+        <WMSServiceCapabilities type="bool">false</WMSServiceCapabilities>
         <LayerCombinations>
             <Combinations>
                 <Combination-a9bb4df936aaddd643f7730de678596f>
@@ -17622,23 +17639,5 @@
                 <Assignation-b970a2fd-9bd7-4a2a-a787-1664811befc7 type="QString">folio</Assignation-b970a2fd-9bd7-4a2a-a787-1664811befc7>
             </Assignations>
         </LayerCombinations>
-        <WMSAccessConstraints type="QString"></WMSAccessConstraints>
-        <WCSLayers type="QStringList"/>
-        <SpatialRefSys>
-            <ProjectCRSProj4String type="QString">+proj=somerc +lat_0=46.95240555555556 +lon_0=7.439583333333333 +k_0=1 +x_0=600000 +y_0=200000 +ellps=bessel +towgs84=674.4,15.1,405.3,0,0,0,0 +units=m +no_defs</ProjectCRSProj4String>
-            <ProjectCrs type="QString">EPSG:21781</ProjectCrs>
-            <ProjectCRSID type="int">1919</ProjectCRSID>
-            <ProjectionsEnabled type="int">1</ProjectionsEnabled>
-        </SpatialRefSys>
-        <DefaultStyles>
-            <Fill type="QString"></Fill>
-            <Line type="QString"></Line>
-            <Marker type="QString"></Marker>
-            <RandomColors type="bool">true</RandomColors>
-            <AlphaInt type="int">255</AlphaInt>
-            <ColorRamp type="QString"></ColorRamp>
-        </DefaultStyles>
-        <WMSFees type="QString"></WMSFees>
-        <WMSUrl type="QString"></WMSUrl>
     </properties>
 </qgis>
