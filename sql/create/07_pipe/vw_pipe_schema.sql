@@ -164,7 +164,7 @@ COMMENT ON MATERIALIZED VIEW distribution.vw_pipe_schema_node IS 'Final view for
 Report schema errors
 */
 CREATE OR REPLACE VIEW distribution.vw_pipe_schema_error AS
-	SELECT id FROM 
+	SELECT id, geometry FROM 
 	 ( 	SELECT 	groupid AS id, 
 				ST_Multi(ST_LineMerge(ST_Union(geometry)))::geometry(MultiLineString,21781) AS geometry
 		  FROM distribution.vw_pipe_schema_items
