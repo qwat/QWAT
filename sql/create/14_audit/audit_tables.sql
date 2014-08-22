@@ -18,7 +18,6 @@ SELECT distribution.audit_table('distribution.od_installation_tank');
 SELECT distribution.audit_table('distribution.od_installation_valvechamber');
 SELECT distribution.audit_table('distribution.od_leak');
 SELECT distribution.audit_table('distribution.od_meter');
-SELECT distribution.audit_table('distribution.od_meter_subscriber');
 SELECT distribution.audit_table('distribution.od_node_table');
 SELECT distribution.audit_table('distribution.od_pipe');
 SELECT distribution.audit_table('distribution.od_pressurezone');
