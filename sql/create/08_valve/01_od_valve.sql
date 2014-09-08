@@ -27,6 +27,13 @@ ALTER TABLE distribution.od_valve ADD COLUMN networkseparation      boolean     
 ALTER TABLE distribution.od_valve ADD COLUMN altitude_real          decimal(10,3)  ;
 ALTER TABLE distribution.od_valve ADD COLUMN remark                 text          default '';
 ALTER TABLE distribution.od_valve ADD COLUMN labelremark            varchar(150) default '';
+ALTER TABLE distribution.od_valve ADD COLUMN label_x_1              double precision default null;
+ALTER TABLE distribution.od_valve ADD COLUMN label_y_1              double precision default null;
+ALTER TABLE distribution.od_valve ADD COLUMN label_r_1              double precision default null;
+ALTER TABLE distribution.od_valve ADD COLUMN label_x_2              double precision default null;
+ALTER TABLE distribution.od_valve ADD COLUMN label_y_2              double precision default null;
+ALTER TABLE distribution.od_valve ADD COLUMN label_r_2              double precision default null;
+
 
 /* schema view */
 SELECT distribution.fn_enable_schemaview('od_valve','vl_valve_function','id_function');

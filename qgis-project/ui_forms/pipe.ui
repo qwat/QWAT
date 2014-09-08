@@ -681,9 +681,9 @@
       </attribute>
       <layout class="QGridLayout" name="gridLayout_10">
        <item row="0" column="0">
-        <widget class="QWidget" name="subscriberRelationWidget" native="true">
-         <property name="qgisRelation" stdset="0">
-          <string>relation_pipe_subscriber</string>
+        <widget class="QgsRelationEditorWidget" name="mRelationEditor">
+         <property name="qgisRelation">
+          <string notr="true">relation_pipe_subscriber</string>
          </property>
         </widget>
        </item>
@@ -695,9 +695,9 @@
       </attribute>
       <layout class="QGridLayout" name="gridLayout_9">
        <item row="0" column="0">
-        <widget class="QWidget" name="leakRelationWidget" native="true">
-         <property name="qgisRelation" stdset="0">
-          <string>relation_pipe_leak</string>
+        <widget class="QgsRelationEditorWidget" name="mRelationEditor_2">
+         <property name="qgisRelation">
+          <string notr="true">relation_pipe_leak</string>
          </property>
         </widget>
        </item>
@@ -708,6 +708,17 @@
   </layout>
  </widget>
  <customwidgets>
+  <customwidget>
+   <class>QgsCollapsibleGroupBox</class>
+   <extends>QGroupBox</extends>
+   <header>qgscollapsiblegroupbox.h</header>
+   <container>1</container>
+  </customwidget>
+  <customwidget>
+   <class>QgsRelationEditorWidget</class>
+   <extends>QgsCollapsibleGroupBox</extends>
+   <header>qgsrelationeditorwidget.h</header>
+  </customwidget>
   <customwidget>
    <class>QgsRelationReferenceWidget</class>
    <extends>QWidget</extends>

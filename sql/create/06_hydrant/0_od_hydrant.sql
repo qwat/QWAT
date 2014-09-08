@@ -30,6 +30,12 @@ ALTER TABLE distribution.od_hydrant ADD COLUMN pressure_dynamic   decimal(5,2)  
 ALTER TABLE distribution.od_hydrant ADD COLUMN flow               decimal(8,2)          ; COMMENT ON COLUMN distribution.od_hydrant.flow IS 'debit [l/min]';
 ALTER TABLE distribution.od_hydrant ADD COLUMN observation_date   date                  ;
 ALTER TABLE distribution.od_hydrant ADD COLUMN observation_source varchar(45)           default '';
+ALTER TABLE distribution.od_hydrant ADD COLUMN label_x_1          double precision default null;
+ALTER TABLE distribution.od_hydrant ADD COLUMN label_y_1          double precision default null;
+ALTER TABLE distribution.od_hydrant ADD COLUMN label_r_1          double precision default null;
+ALTER TABLE distribution.od_hydrant ADD COLUMN label_x_2          double precision default null;
+ALTER TABLE distribution.od_hydrant ADD COLUMN label_y_2          double precision default null;
+ALTER TABLE distribution.od_hydrant ADD COLUMN label_r_2          double precision default null;
 
 /* geometry                        (table_name,  is_node, create_node, create_schematic, get_pipe, auto_district, auto_pressurezone)*/
 SELECT distribution.fn_geom_tool_point('od_hydrant',true,    true,        true,             false,    true,          true);
