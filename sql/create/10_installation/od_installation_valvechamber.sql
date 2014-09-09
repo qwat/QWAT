@@ -25,9 +25,9 @@ ALTER TABLE distribution.od_installation_valvechamber ADD COLUMN year           
 ALTER TABLE distribution.od_installation_valvechamber ADD COLUMN open_water_surface boolean     default false  ;
 ALTER TABLE distribution.od_installation_valvechamber ADD COLUMN parcel             varchar(30) default '' ;
 ALTER TABLE distribution.od_installation_valvechamber ADD COLUMN eca                varchar(30) default '' ;
-ALTER TABLE distribution.od_installation_valvechamber ADD COLUMN id_labelvisible        boolean default null;
-ALTER TABLE distribution.od_installation_valvechamber ADD COLUMN id_labelvisible_schema boolean default null;
-ALTER TABLE distribution.od_installation_valvechamber ADD COLUMN labelremark            varchar(150) default '';
+ALTER TABLE distribution.od_installation_valvechamber ADD COLUMN label_remark            varchar(150) default '';
+ALTER TABLE distribution.od_installation_valvechamber ADD COLUMN label_visible_1     smallint default 1;
+ALTER TABLE distribution.od_installation_valvechamber ADD COLUMN label_visible_2     smallint default 1;
 /* specific to pressurecontrol */
 ALTER TABLE distribution.od_installation_valvechamber ADD COLUMN networkseparation  boolean               ;
 ALTER TABLE distribution.od_installation_valvechamber ADD COLUMN meter              boolean               ;
@@ -43,8 +43,8 @@ ALTER TABLE distribution.od_installation_valvechamber ADD CONSTRAINT installatio
 ALTER TABLE distribution.od_installation_valvechamber ADD CONSTRAINT installation_valvechamber_id_distributor  FOREIGN KEY (id_distributor)  REFERENCES distribution.od_distributor(id)           MATCH FULL;   CREATE INDEX fki_installation_valvechamber_id_distributor  ON distribution.od_installation_valvechamber(id_distributor) ;
 ALTER TABLE distribution.od_installation_valvechamber ADD CONSTRAINT installation_valvechamber_id_remote       FOREIGN KEY (id_remote)       REFERENCES distribution.vl_remote(id)                MATCH SIMPLE; CREATE INDEX fki_installation_valvechamber_id_remote       ON distribution.od_installation_valvechamber(id_remote)      ;
 ALTER TABLE distribution.od_installation_valvechamber ADD CONSTRAINT installation_valvechamber_id_watertype    FOREIGN KEY (id_watertype)    REFERENCES distribution.vl_watertype(id)             MATCH FULL;   CREATE INDEX fki_installation_valvechamber_vl_watertype    ON distribution.od_installation_valvechamber(id_watertype)   ;
-ALTER TABLE distribution.od_installation_valvechamber ADD CONSTRAINT installation_valvechamber_id_labelvisible        FOREIGN KEY (id_labelvisible)        REFERENCES distribution.vl_visible(vl_code)   MATCH FULL; CREATE INDEX fki_installation_valvechamber_id_labelvisible        ON distribution.od_installation_valvechamber(id_labelvisible)       ;
-ALTER TABLE distribution.od_installation_valvechamber ADD CONSTRAINT installation_valvechamber_id_labelvisible_schema FOREIGN KEY (id_labelvisible_schema) REFERENCES distribution.vl_visible(vl_code)   MATCH FULL; CREATE INDEX fki_installation_valvechamber_id_labelvisible_schema ON distribution.od_installation_valvechamber(id_labelvisible_schema);
+ALTER TABLE distribution.od_installation_valvechamber ADD CONSTRAINT installation_valvechamber_label_visible_1 FOREIGN KEY (label_visible_1) REFERENCES distribution.vl_visible(vl_code_int)      MATCH FULL;   CREATE INDEX fki_installation_valvechamber_labelvisible_1  ON distribution.od_installation_valvechamber(label_visible_1) ;
+ALTER TABLE distribution.od_installation_valvechamber ADD CONSTRAINT installation_valvechamber_label_visible_2 FOREIGN KEY (label_visible_2) REFERENCES distribution.vl_visible(vl_code_int)      MATCH FULL;   CREATE INDEX fki_installation_valvechamber_labelvisible_2  ON distribution.od_installation_valvechamber(label_visible_2) ;
 
 
 /* VIEW */

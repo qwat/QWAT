@@ -5,7 +5,7 @@
         <customproperties/>
         <layer-tree-group expanded="1" checked="Qt::PartiallyChecked" name="Réseau">
             <customproperties/>
-            <layer-tree-group expanded="0" checked="Qt::PartiallyChecked" name="ouvrages">
+            <layer-tree-group expanded="1" checked="Qt::PartiallyChecked" name="ouvrages">
                 <customproperties/>
                 <layer-tree-layer expanded="0" checked="Qt::Unchecked" id="installation20130304110004938" name="ouvrage général">
                     <customproperties/>
@@ -297,10 +297,10 @@
     <mapcanvas>
         <units>meters</units>
         <extent>
-            <xmin>554200.02008804690558463</xmin>
-            <ymin>147731.00520627939840779</ymin>
-            <xmax>554537.56227596628013998</xmax>
-            <ymax>147920.31458151456899941</ymax>
+            <xmin>557660.78278175310697407</xmin>
+            <ymin>143950.91608437267132103</ymin>
+            <xmax>558155.37584868224803358</xmax>
+            <ymax>144281.09128003427758813</ymax>
         </extent>
         <projections>1</projections>
         <destinationsrs>
@@ -370,57 +370,6 @@
         </layer_coordinate_transform_info>
     </mapcanvas>
     <visibility-groups>
-        <visibility-group name="250">
-            <layer id="valve20130304110011497"/>
-            <layer id="od_meter20131120073630165"/>
-            <layer id="od_annotationpoint20131203095020392"/>
-            <layer id="bf_posimmeuble20130514143633121"/>
-            <layer id="installation_pressurecontrol20131107105006792"/>
-            <layer id="ad_posnumero_maison20130514143346530"/>
-            <layer id="installation_treatment20130816113039913"/>
-            <layer id="hydrant20130304110004848"/>
-            <layer id="vannes_copy20130924083714343"/>
-            <layer id="od_element_lineaire20130514144047075"/>
-            <layer id="conduites_copy20130709141244955"/>
-            <layer id="od_batiment_souterrain20130514143946785"/>
-            <layer id="bf_point_limite20130514143552315"/>
-            <layer id="od_annotationline20131203095020365"/>
-            <layer id="od_batiment_souterrain20140214143946785"/>
-            <layer id="od_dimension_orientation20131202111155806"/>
-            <layer id="cs_posnumero_de_batiment20130514143756039"/>
-            <layer id="cs_posnumero_de_batiment20140214143756039"/>
-            <layer id="axe_rue20130514143437774"/>
-            <layer id="subscriber20130304110011459"/>
-            <layer id="cadastre20140312152032371"/>
-            <layer id="installation_pump20130816140237750"/>
-            <layer id="cs_surfacecs20130514143830750"/>
-            <layer id="od_element_surfacique20130514144124647"/>
-            <layer id="no_posnomlocallieudit20140214143906869"/>
-            <layer id="cs_batiment20130514143721709"/>
-            <layer id="bf_bien_fonds20130514143508556"/>
-            <layer id="installation_valvechamber20131107105006707"/>
-            <layer id="no_posnomlocallieudit20130514143906869"/>
-            <layer id="bf_point_limite20140214143552315"/>
-            <layer id="od_wateringoutput20131127080906318"/>
-            <layer id="pf_pfp20130514144226845"/>
-            <layer id="od_element_surfacique20140214144124647"/>
-            <layer id="cs_batiment20140214143721709"/>
-            <layer id="dimension20130807094904783"/>
-            <layer id="installation_tank20130304110005008"/>
-            <layer id="bf_ddp20130514143538213"/>
-            <layer id="conduites_actives_copy_copy20130822080032346"/>
-            <layer id="od_meter_reference20140304165835390"/>
-            <layer id="od_subscriber_reference20131206105928067"/>
-            <layer id="pf_pfp20140214144226845"/>
-            <layer id="printmap20130304110011400"/>
-            <layer id="bf_bien_fonds20140214143508556"/>
-            <layer id="cs_surfacecs20140214143830750"/>
-            <layer id="bf_ddp20140214143538213"/>
-            <layer id="bf_posimmeuble20140214143633121"/>
-            <layer id="od_element_lineaire20140214144047075"/>
-            <layer id="installation_source20130820110331647"/>
-            <layer id="node20130304110005126"/>
-        </visibility-group>
         <visibility-group name="250_">
             <layer id="valve20130304110011497"/>
             <layer id="od_meter20131120073630165"/>
@@ -644,7 +593,7 @@
     </layer-tree-canvas>
     <legend updateDrawingOrder="false">
         <legendgroup open="true" checked="Qt::PartiallyChecked" name="Réseau">
-            <legendgroup open="false" checked="Qt::PartiallyChecked" name="ouvrages">
+            <legendgroup open="true" checked="Qt::PartiallyChecked" name="ouvrages">
                 <legendlayer drawingOrder="0" open="false" checked="Qt::Unchecked" name="ouvrage général" showFeatureCount="0">
                     <filegroup open="false" hidden="false">
                         <legendlayerfile isInOverview="0" layerid="installation20130304110004938" visible="0"/>
@@ -4592,8 +4541,8 @@
                 <property key="labeling/bufferTransp" value="0"/>
                 <property key="labeling/centroidInside" value="false"/>
                 <property key="labeling/centroidWhole" value="false"/>
-                <property key="labeling/dataDefined/AlwaysShow" value="1~~1~~CASE WHEN &quot;id_labelvisible&quot; = 't' THEN 1 ELSE 0 END~~"/>
-                <property key="labeling/dataDefined/Show" value="1~~1~~CASE WHEN &quot;id_labelvisible&quot; = 'f' THEN 0 ELSE 1 END~~"/>
+                <property key="labeling/dataDefined/AlwaysShow" value="1~~1~~CASE WHEN  &quot;label_visible_1&quot; = 2 THEN 1 ELSE 0 END~~"/>
+                <property key="labeling/dataDefined/Show" value="1~~0~~CASE WHEN &quot;id_labelvisible&quot; = 'f' THEN 0 ELSE 1 END~~label_visible_1"/>
                 <property key="labeling/dataDefined/Size" value="1~~1~~CASE&#xa;WHEN  &quot;Conduites - fonction_schema_visible&quot;  = 't' THEN 8&#xa;ELSE 6&#xa;END~~"/>
                 <property key="labeling/decimals" value="0"/>
                 <property key="labeling/displayAll" value="false"/>
@@ -4787,12 +4736,6 @@
                 <edittype widgetv2type="ValueRelation" name="id_watertype">
                     <widgetv2config OrderByValue="0" AllowNull="0" FilterExpression="" fieldEditable="1" Key="id" Layer="vl_watertype20131217141603877" Value="value_fr" labelOnTop="0" AllowMulti="0"/>
                 </edittype>
-                <edittype widgetv2type="ValueRelation" name="id_labelvisible">
-                    <widgetv2config OrderByValue="0" AllowNull="0" FilterExpression="" fieldEditable="1" Key="vl_code" Layer="vl_visible20130304110011703" Value="value_fr" labelOnTop="0" AllowMulti="0"/>
-                </edittype>
-                <edittype widgetv2type="ValueRelation" name="id_labelvisible_schema">
-                    <widgetv2config OrderByValue="0" AllowNull="0" FilterExpression="" fieldEditable="1" Key="vl_code" Layer="vl_visible20130304110011703" Value="value_fr" labelOnTop="0" AllowMulti="0"/>
-                </edittype>
                 <edittype widgetv2type="TextEdit" name="labelremark">
                     <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
                 </edittype>
@@ -4867,6 +4810,12 @@
                 </edittype>
                 <edittype widgetv2type="TextEdit" name="coating_external_material_id">
                     <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
+                </edittype>
+                <edittype widgetv2type="ValueRelation" name="label_visible_1">
+                    <widgetv2config OrderByValue="0" AllowNull="0" FilterExpression="" fieldEditable="1" Key="vl_code_int" Layer="vl_visible20130304110011703" Value="value_fr" labelOnTop="0" AllowMulti="0"/>
+                </edittype>
+                <edittype widgetv2type="ValueRelation" name="label_visible_2">
+                    <widgetv2config OrderByValue="0" AllowNull="0" FilterExpression="" fieldEditable="1" Key="vl_code_int" Layer="vl_visible20130304110011703" Value="value_fr" labelOnTop="0" AllowMulti="0"/>
                 </edittype>
                 <edittype widgetv2type="TextEdit" name="Conduites - matériaux_vl_active">
                     <widgetv2config IsMultiline="0" fieldEditable="0" UseHtml="0" labelOnTop="0"/>
@@ -5550,7 +5499,7 @@
                 </edittype>
             </edittypes>
         </maplayer>
-        <maplayer minimumScale="-4.65661e-10" maximumScale="10001" simplifyDrawingHints="0" minLabelScale="1" maxLabelScale="1e+08" simplifyDrawingTol="1" geometry="Point" simplifyMaxScale="1" type="vector" hasScaleBasedVisibilityFlag="1" simplifyLocal="1" scaleBasedLabelVisibilityFlag="0">
+        <maplayer minimumScale="0" maximumScale="10001" simplifyDrawingHints="0" minLabelScale="1" maxLabelScale="1e+08" simplifyDrawingTol="1" geometry="Point" simplifyMaxScale="1" type="vector" hasScaleBasedVisibilityFlag="1" simplifyLocal="1" scaleBasedLabelVisibilityFlag="0">
             <id>hydrant20130304110004848</id>
             <datasource>dbname='sige' host=172.24.171.203 port=5432 user='sige' password='db4wat$' sslmode=allow key='id' srid=21781 type=POINT table="distribution"."od_hydrant" (geometry) sql=</datasource>
             <title></title>
@@ -5624,8 +5573,8 @@
                 <property key="labeling/bufferTransp" value="0"/>
                 <property key="labeling/centroidInside" value="false"/>
                 <property key="labeling/centroidWhole" value="false"/>
-                <property key="labeling/dataDefined/PositionX" value="1~~0~~~~label_x"/>
-                <property key="labeling/dataDefined/PositionY" value="1~~0~~~~label_y"/>
+                <property key="labeling/dataDefined/PositionX" value="1~~0~~~~label_x_1"/>
+                <property key="labeling/dataDefined/PositionY" value="1~~0~~~~label_y_1"/>
                 <property key="labeling/decimals" value="0"/>
                 <property key="labeling/displayAll" value="true"/>
                 <property key="labeling/dist" value="1.8"/>
@@ -5865,10 +5814,10 @@
                 <edittype widgetv2type="TextEdit" name="_geometry_schematic_used">
                     <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
                 </edittype>
-                <edittype widgetv2type="TextEdit" name="label_x">
+                <edittype widgetv2type="TextEdit" name="label_x_1">
                     <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
                 </edittype>
-                <edittype widgetv2type="TextEdit" name="label_y">
+                <edittype widgetv2type="TextEdit" name="label_y_1">
                     <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
                 </edittype>
                 <edittype widgetv2type="TextEdit" name="label_r_1">
@@ -6823,13 +6772,13 @@
                 <edittype widgetv2type="TextEdit" name="_printmaps">
                     <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
                 </edittype>
-                <edittype widgetv2type="ValueRelation" name="id_labelvisible">
-                    <widgetv2config OrderByValue="0" AllowNull="0" FilterExpression="" fieldEditable="1" Key="vl_code" Layer="vl_visible20130304110011703" Value="value_fr" labelOnTop="0" AllowMulti="0"/>
+                <edittype widgetv2type="TextEdit" name="label_remark">
+                    <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
                 </edittype>
-                <edittype widgetv2type="ValueRelation" name="id_labelvisible_schema">
-                    <widgetv2config OrderByValue="0" AllowNull="0" FilterExpression="" fieldEditable="1" Key="vl_code" Layer="vl_visible20130304110011703" Value="value_fr" labelOnTop="0" AllowMulti="0"/>
+                <edittype widgetv2type="TextEdit" name="label_visible_1">
+                    <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
                 </edittype>
-                <edittype widgetv2type="TextEdit" name="labelremark">
+                <edittype widgetv2type="TextEdit" name="label_visible_2">
                     <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
                 </edittype>
             </edittypes>
@@ -7144,19 +7093,19 @@
                 <edittype widgetv2type="TextEdit" name="_printmaps">
                     <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
                 </edittype>
-                <edittype widgetv2type="ValueRelation" name="id_labelvisible">
-                    <widgetv2config OrderByValue="0" AllowNull="0" FilterExpression="" fieldEditable="1" Key="vl_code" Layer="vl_visible20130304110011703" Value="value_fr" labelOnTop="0" AllowMulti="0"/>
-                </edittype>
-                <edittype widgetv2type="ValueRelation" name="id_labelvisible_schema">
-                    <widgetv2config OrderByValue="0" AllowNull="0" FilterExpression="" fieldEditable="1" Key="vl_code" Layer="vl_visible20130304110011703" Value="value_fr" labelOnTop="0" AllowMulti="0"/>
-                </edittype>
-                <edittype widgetv2type="TextEdit" name="labelremark">
+                <edittype widgetv2type="TextEdit" name="label_remark">
                     <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
                 </edittype>
                 <edittype widgetv2type="TextEdit" name="id_pipe_in">
                     <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
                 </edittype>
                 <edittype widgetv2type="TextEdit" name="id_pipe_out">
+                    <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
+                </edittype>
+                <edittype widgetv2type="TextEdit" name="label_visible_1">
+                    <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
+                </edittype>
+                <edittype widgetv2type="TextEdit" name="label_visible_2">
                     <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
                 </edittype>
             </edittypes>
@@ -7474,13 +7423,13 @@
                 <edittype widgetv2type="TextEdit" name="_printmaps">
                     <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
                 </edittype>
-                <edittype widgetv2type="ValueRelation" name="id_labelvisible">
-                    <widgetv2config OrderByValue="0" AllowNull="0" FilterExpression="" fieldEditable="1" Key="vl_code" Layer="vl_visible20130304110011703" Value="value_fr" labelOnTop="0" AllowMulti="0"/>
+                <edittype widgetv2type="TextEdit" name="label_remark">
+                    <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
                 </edittype>
-                <edittype widgetv2type="ValueRelation" name="id_labelvisible_schema">
-                    <widgetv2config OrderByValue="0" AllowNull="0" FilterExpression="" fieldEditable="1" Key="vl_code" Layer="vl_visible20130304110011703" Value="value_fr" labelOnTop="0" AllowMulti="0"/>
+                <edittype widgetv2type="TextEdit" name="label_visible_1">
+                    <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
                 </edittype>
-                <edittype widgetv2type="TextEdit" name="labelremark">
+                <edittype widgetv2type="TextEdit" name="label_visible_2">
                     <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
                 </edittype>
             </edittypes>
@@ -7866,13 +7815,13 @@
                 <edittype widgetv2type="TextEdit" name="_printmaps">
                     <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
                 </edittype>
-                <edittype widgetv2type="ValueRelation" name="id_labelvisible">
-                    <widgetv2config OrderByValue="0" AllowNull="0" FilterExpression="" fieldEditable="1" Key="vl_code" Layer="vl_visible20130304110011703" Value="value_fr" labelOnTop="0" AllowMulti="0"/>
+                <edittype widgetv2type="TextEdit" name="label_remark">
+                    <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
                 </edittype>
-                <edittype widgetv2type="ValueRelation" name="id_labelvisible_schema">
-                    <widgetv2config OrderByValue="0" AllowNull="0" FilterExpression="" fieldEditable="1" Key="vl_code" Layer="vl_visible20130304110011703" Value="value_fr" labelOnTop="0" AllowMulti="0"/>
+                <edittype widgetv2type="TextEdit" name="label_visible_1">
+                    <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
                 </edittype>
-                <edittype widgetv2type="TextEdit" name="labelremark">
+                <edittype widgetv2type="TextEdit" name="label_visible_2">
                     <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
                 </edittype>
                 <edittype widgetv2type="TextEdit" name="ouvrage général_name">
@@ -8248,13 +8197,13 @@
                 <edittype widgetv2type="TextEdit" name="_printmaps">
                     <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
                 </edittype>
-                <edittype widgetv2type="ValueRelation" name="id_labelvisible">
-                    <widgetv2config OrderByValue="0" AllowNull="0" FilterExpression="" fieldEditable="1" Key="vl_code" Layer="vl_visible20130304110011703" Value="value_fr" labelOnTop="0" AllowMulti="0"/>
+                <edittype widgetv2type="TextEdit" name="label_remark">
+                    <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
                 </edittype>
-                <edittype widgetv2type="ValueRelation" name="id_labelvisible_schema">
-                    <widgetv2config OrderByValue="0" AllowNull="0" FilterExpression="" fieldEditable="1" Key="vl_code" Layer="vl_visible20130304110011703" Value="value_fr" labelOnTop="0" AllowMulti="0"/>
+                <edittype widgetv2type="TextEdit" name="label_visible_1">
+                    <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
                 </edittype>
-                <edittype widgetv2type="TextEdit" name="labelremark">
+                <edittype widgetv2type="TextEdit" name="label_visible_2">
                     <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
                 </edittype>
             </edittypes>
@@ -8603,13 +8552,13 @@
                 <edittype widgetv2type="TextEdit" name="_printmaps">
                     <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
                 </edittype>
-                <edittype widgetv2type="ValueRelation" name="id_labelvisible">
-                    <widgetv2config OrderByValue="0" AllowNull="0" FilterExpression="" fieldEditable="1" Key="vl_code" Layer="vl_visible20130304110011703" Value="value_fr" labelOnTop="0" AllowMulti="0"/>
+                <edittype widgetv2type="TextEdit" name="label_remark">
+                    <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
                 </edittype>
-                <edittype widgetv2type="ValueRelation" name="id_labelvisible_schema">
-                    <widgetv2config OrderByValue="0" AllowNull="0" FilterExpression="" fieldEditable="1" Key="vl_code" Layer="vl_visible20130304110011703" Value="value_fr" labelOnTop="0" AllowMulti="0"/>
+                <edittype widgetv2type="TextEdit" name="label_visible_1">
+                    <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
                 </edittype>
-                <edittype widgetv2type="TextEdit" name="labelremark">
+                <edittype widgetv2type="TextEdit" name="label_visible_2">
                     <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
                 </edittype>
             </edittypes>
@@ -13487,11 +13436,11 @@
                 <property key="labeling/bufferTransp" value="0"/>
                 <property key="labeling/centroidInside" value="false"/>
                 <property key="labeling/centroidWhole" value="false"/>
-                <property key="labeling/dataDefined/AlwaysShow" value="1~~1~~CASE WHEN &quot;id_labelvisible&quot; = 't' THEN 1 ELSE 0 END~~"/>
-                <property key="labeling/dataDefined/PositionX" value="1~~0~~CASE &#xa; WHEN $scale=0 THEN &quot;label_x&quot;&#xa; WHEN $scale &lt; 300 THEN &quot;label_x&quot;&#xa; ELSE null END~~label_x"/>
-                <property key="labeling/dataDefined/PositionY" value="1~~0~~CASE&#xa; WHEN $scale=0 THEN &quot;label_y&quot;&#xa; WHEN $scale &lt; 300 THEN &quot;label_y&quot;&#xa; ELSE null END~~label_y"/>
+                <property key="labeling/dataDefined/AlwaysShow" value="1~~1~~CASE WHEN  &quot;label_visible_1&quot; = 2 THEN 1 ELSE 0 END~~"/>
+                <property key="labeling/dataDefined/PositionX" value="1~~0~~CASE &#xa; WHEN $scale=0 THEN &quot;label_x&quot;&#xa; WHEN $scale &lt; 300 THEN &quot;label_x&quot;&#xa; ELSE null END~~label_x_1"/>
+                <property key="labeling/dataDefined/PositionY" value="1~~0~~CASE&#xa; WHEN $scale=0 THEN &quot;label_y&quot;&#xa; WHEN $scale &lt; 300 THEN &quot;label_y&quot;&#xa; ELSE null END~~label_y_1"/>
                 <property key="labeling/dataDefined/Rotation" value="1~~0~~~~label_r_1"/>
-                <property key="labeling/dataDefined/Show" value="1~~1~~CASE WHEN &quot;id_labelvisible&quot; = 'f' THEN 0 ELSE 1 END~~"/>
+                <property key="labeling/dataDefined/Show" value="1~~0~~CASE WHEN &quot;id_labelvisible&quot; = 'f' THEN 0 ELSE 1 END~~label_visible_1"/>
                 <property key="labeling/decimals" value="0"/>
                 <property key="labeling/displayAll" value="false"/>
                 <property key="labeling/dist" value="1"/>
@@ -13648,24 +13597,22 @@
             <annotationform>.</annotationform>
             <editorlayout>uifilelayout</editorlayout>
             <aliases>
-                <alias field="_printmaps" index="25" name="folios"/>
-                <alias field="_schema_visible" index="17" name="visible schéma"/>
-                <alias field="altitude_real" index="13" name="altitude"/>
-                <alias field="closed" index="11" name="fermée"/>
-                <alias field="diameter_nominal" index="9" name="diamètre nominal"/>
-                <alias field="id_district" index="19" name="commune"/>
+                <alias field="_printmaps" index="23" name="folios"/>
+                <alias field="_schema_visible" index="15" name="visible schéma"/>
+                <alias field="altitude_real" index="11" name="altitude"/>
+                <alias field="closed" index="9" name="fermée"/>
+                <alias field="diameter_nominal" index="7" name="diamètre nominal"/>
+                <alias field="id_district" index="17" name="commune"/>
                 <alias field="id_function" index="3" name="fonction"/>
-                <alias field="id_labelvisible" index="6" name="visibilité label"/>
-                <alias field="id_labelvisible_schema" index="7" name="visibilité label shéma"/>
-                <alias field="id_maintenance" index="8" name="entretien"/>
-                <alias field="id_node" index="18" name="ID noeud"/>
-                <alias field="id_pipe" index="22" name="ID conduite"/>
-                <alias field="id_pressurezone" index="20" name="zone de pression"/>
-                <alias field="id_printmap" index="21" name="folio"/>
+                <alias field="id_maintenance" index="6" name="entretien"/>
+                <alias field="id_node" index="16" name="ID noeud"/>
+                <alias field="id_pipe" index="20" name="ID conduite"/>
+                <alias field="id_pressurezone" index="18" name="zone de pression"/>
+                <alias field="id_printmap" index="19" name="folio"/>
                 <alias field="id_type" index="2" name="type"/>
-                <alias field="remark" index="14" name="remarques"/>
-                <alias field="schema_force_view" index="16" name="visibilité schéma"/>
-                <alias field="year" index="10" name="année"/>
+                <alias field="remark" index="12" name="remarques"/>
+                <alias field="schema_force_view" index="14" name="visibilité schéma"/>
+                <alias field="year" index="8" name="année"/>
             </aliases>
             <excludeAttributesWMS/>
             <excludeAttributesWFS/>
@@ -13690,12 +13637,6 @@
                 </edittype>
                 <edittype widgetv2type="ValueRelation" name="id_precisionalti">
                     <widgetv2config OrderByValue="0" AllowNull="0" FilterExpression="" fieldEditable="1" Key="id" Layer="vl_precisionalti20131211161429510" Value="value_fr" labelOnTop="0" AllowMulti="0"/>
-                </edittype>
-                <edittype widgetv2type="ValueRelation" name="id_labelvisible">
-                    <widgetv2config OrderByValue="0" AllowNull="0" FilterExpression="" fieldEditable="1" Key="vl_code" Layer="vl_visible20130304110011703" Value="value_fr" labelOnTop="0" AllowMulti="0"/>
-                </edittype>
-                <edittype widgetv2type="ValueRelation" name="id_labelvisible_schema">
-                    <widgetv2config OrderByValue="0" AllowNull="0" FilterExpression="" fieldEditable="1" Key="vl_code" Layer="vl_visible20130304110011703" Value="value_fr" labelOnTop="0" AllowMulti="0"/>
                 </edittype>
                 <edittype widgetv2type="ValueRelation" name="id_maintenance">
                     <widgetv2config OrderByValue="0" AllowNull="0" FilterExpression="" fieldEditable="1" Key="id" Layer="vl_valve_maintenance20130304110011567" Value="value_fr" labelOnTop="0" AllowMulti="1"/>
@@ -13760,10 +13701,10 @@
                 <edittype widgetv2type="ValueRelation" name="id_status">
                     <widgetv2config OrderByValue="0" AllowNull="0" FilterExpression="" fieldEditable="1" Key="id" Layer="vl_status20130304110011436" Value="value_fr" labelOnTop="0" AllowMulti="0"/>
                 </edittype>
-                <edittype widgetv2type="TextEdit" name="label_x">
+                <edittype widgetv2type="TextEdit" name="label_x_1">
                     <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
                 </edittype>
-                <edittype widgetv2type="TextEdit" name="label_y">
+                <edittype widgetv2type="TextEdit" name="label_y_1">
                     <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
                 </edittype>
                 <edittype widgetv2type="TextEdit" name="label_r_1">
@@ -13776,6 +13717,12 @@
                     <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
                 </edittype>
                 <edittype widgetv2type="TextEdit" name="label_r_2">
+                    <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
+                </edittype>
+                <edittype widgetv2type="ValueRelation" name="label_visible_1">
+                    <widgetv2config OrderByValue="0" AllowNull="0" FilterExpression="" fieldEditable="1" Key="vl_code_int" Layer="vl_visible20130304110011703" Value="value_fr" labelOnTop="0" AllowMulti="0"/>
+                </edittype>
+                <edittype widgetv2type="TextEdit" name="label_visible_2">
                     <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
                 </edittype>
                 <edittype widgetv2type="TextEdit" name="Vannes - fonction_vl_active">
@@ -15504,6 +15451,9 @@
                     <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
                 </edittype>
                 <edittype widgetv2type="TextEdit" name="value_fr">
+                    <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
+                </edittype>
+                <edittype widgetv2type="TextEdit" name="vl_code_int">
                     <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
                 </edittype>
             </edittypes>

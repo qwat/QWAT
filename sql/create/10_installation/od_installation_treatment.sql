@@ -25,9 +25,10 @@ ALTER TABLE distribution.od_installation_treatment ADD COLUMN year              
 ALTER TABLE distribution.od_installation_treatment ADD COLUMN open_water_surface boolean default False  ;
 ALTER TABLE distribution.od_installation_treatment ADD COLUMN parcel             varchar(30) default '' ;
 ALTER TABLE distribution.od_installation_treatment ADD COLUMN eca                varchar(30) default '' ;
-ALTER TABLE distribution.od_installation_treatment ADD COLUMN id_labelvisible        boolean default null;
-ALTER TABLE distribution.od_installation_treatment ADD COLUMN id_labelvisible_schema boolean default null;
-ALTER TABLE distribution.od_installation_treatment ADD COLUMN labelremark            varchar(150) default '';
+ALTER TABLE distribution.od_installation_treatment ADD COLUMN label_remark       varchar(150) default '';
+ALTER TABLE distribution.od_installation_treatment ADD COLUMN label_visible_1    smallint default 1;
+ALTER TABLE distribution.od_installation_treatment ADD COLUMN label_visible_2    smallint default 1;
+
 /* specific to treatment */
 ALTER TABLE distribution.od_installation_treatment ADD COLUMN sanitization_uv               boolean      ;
 ALTER TABLE distribution.od_installation_treatment ADD COLUMN sanitization_chlorine_liquid  boolean      ;
@@ -50,8 +51,8 @@ ALTER TABLE distribution.od_installation_treatment ADD CONSTRAINT installation_t
 ALTER TABLE distribution.od_installation_treatment ADD CONSTRAINT installation_treatment_id_distributor  FOREIGN KEY (id_distributor)  REFERENCES distribution.od_distributor(id)           MATCH FULL;   CREATE INDEX fki_installation_treatment_id_distributor  ON distribution.od_installation_treatment(id_distributor) ;
 ALTER TABLE distribution.od_installation_treatment ADD CONSTRAINT installation_treatment_id_remote       FOREIGN KEY (id_remote)       REFERENCES distribution.vl_remote(id)                MATCH SIMPLE; CREATE INDEX fki_installation_treatment_id_remote       ON distribution.od_installation_treatment(id_remote)      ;
 ALTER TABLE distribution.od_installation_treatment ADD CONSTRAINT installation_treatment_id_watertype    FOREIGN KEY (id_watertype)    REFERENCES distribution.vl_watertype(id)             MATCH FULL;   CREATE INDEX fki_installation_treatment_vl_watertype    ON distribution.od_installation_treatment(id_watertype)   ;
-ALTER TABLE distribution.od_installation_treatment ADD CONSTRAINT installation_treatment_id_labelvisible        FOREIGN KEY (id_labelvisible)        REFERENCES distribution.vl_visible(vl_code)   MATCH FULL; CREATE INDEX fki_installation_treatment_id_labelvisible        ON distribution.od_installation_treatment(id_labelvisible)       ;
-ALTER TABLE distribution.od_installation_treatment ADD CONSTRAINT installation_treatment_id_labelvisible_schema FOREIGN KEY (id_labelvisible_schema) REFERENCES distribution.vl_visible(vl_code)   MATCH FULL; CREATE INDEX fki_installation_treatment_id_labelvisible_schema ON distribution.od_installation_treatment(id_labelvisible_schema);
+ALTER TABLE distribution.od_installation_treatment ADD CONSTRAINT installation_treatment_label_visible_1 FOREIGN KEY (label_visible_1) REFERENCES distribution.vl_visible(vl_code_int)      MATCH FULL;   CREATE INDEX fki_installation_treatment_labelvisible_1  ON distribution.od_installation_treatment(label_visible_1) ;
+ALTER TABLE distribution.od_installation_treatment ADD CONSTRAINT installation_treatment_label_visible_2 FOREIGN KEY (label_visible_2) REFERENCES distribution.vl_visible(vl_code_int)      MATCH FULL;   CREATE INDEX fki_installation_treatment_labelvisible_2  ON distribution.od_installation_treatment(label_visible_2) ;
 
 /* VIEW */
 CREATE OR REPLACE VIEW distribution.vw_installation_treatment_fr AS
