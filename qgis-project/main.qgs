@@ -266,6 +266,9 @@
         <relation referencingLayer="od_meter_reference20140304165835390" referencedLayer="od_meter20131120073630165" id="relation_compteurreseau_renvoi" name="Compteur réseau - renvoi">
             <fieldRef referencedField="id" referencingField="id_meter"/>
         </relation>
+        <relation referencingLayer="od_meter20131120073630165" referencedLayer="conduites_copy20130709141244955" id="relation_conduite_compteur" name="Conduite - compteur">
+            <fieldRef referencedField="id" referencingField="id_pipe"/>
+        </relation>
         <relation referencingLayer="conduites_copy20130709141244955" referencedLayer="conduites_copy20130709141244955" id="relation_conduite_parent" name="Conduite - parent">
             <fieldRef referencedField="id" referencingField="id_parent"/>
         </relation>
@@ -297,10 +300,10 @@
     <mapcanvas>
         <units>meters</units>
         <extent>
-            <xmin>560728.03979823633562773</xmin>
-            <ymin>140825.48025306448107585</ymin>
-            <xmax>561001.95900938857812434</xmax>
-            <ymax>141022.15737207431811839</ymax>
+            <xmin>554737.25905329443048686</xmin>
+            <ymin>137258.6418806426518131</ymin>
+            <xmax>554785.93367611488793045</xmax>
+            <ymax>137292.99633883955539204</ymax>
         </extent>
         <projections>1</projections>
         <destinationsrs>
@@ -371,7 +374,7 @@
         </layer_coordinate_transform_info>
     </mapcanvas>
     <visibility-groups>
-        <visibility-group name="250_">
+        <visibility-group name="250">
             <layer id="valve20130304110011497"/>
             <layer id="od_meter20131120073630165"/>
             <layer id="od_annotationpoint20131203095020392"/>
@@ -418,82 +421,6 @@
             <layer id="od_element_lineaire20140214144047075"/>
             <layer id="installation_source20130820110331647"/>
             <layer id="node20130304110005126"/>
-            <checked-legend-nodes id="conduites_copy20130709141244955">
-                <checked-legend-node id="{5bc5e0e7-0d82-4367-b546-e2a75e9e444f}"/>
-                <checked-legend-node id="{877f83e0-c7eb-4e37-8d35-f5265e9f22b8}"/>
-                <checked-legend-node id="{60adcf7f-ad3b-42b0-b259-4b736b96d241}"/>
-                <checked-legend-node id="{c40c733b-140a-489a-84e9-5da4ee41a9dc}"/>
-                <checked-legend-node id="{6817bd8a-208d-4142-9c19-5425391658bf}"/>
-                <checked-legend-node id="{fadceda7-9b47-4295-960c-01e8cce23e22}"/>
-                <checked-legend-node id="{ba663ba3-bd65-4f70-bfce-64ad33b9bdf6}"/>
-                <checked-legend-node id="{6c9ac16e-d164-4376-a0f1-b6534758c152}"/>
-                <checked-legend-node id="{bb363b79-0718-4e4a-a998-7f6b4911096b}"/>
-                <checked-legend-node id="{45d39efc-36ac-47b1-922d-265f8629e678}"/>
-                <checked-legend-node id="{d5fd101d-0abc-420b-a7d9-70ae2be14e49}"/>
-                <checked-legend-node id="{7b28d126-3e74-4b8c-a75d-788d35608273}"/>
-            </checked-legend-nodes>
-        </visibility-group>
-        <visibility-group name="250v2">
-            <layer id="valve20130304110011497"/>
-            <layer id="od_meter20131120073630165"/>
-            <layer id="od_annotationpoint20131203095020392"/>
-            <layer id="bf_posimmeuble20130514143633121"/>
-            <layer id="installation_pressurecontrol20131107105006792"/>
-            <layer id="ad_posnumero_maison20130514143346530"/>
-            <layer id="installation_treatment20130816113039913"/>
-            <layer id="hydrant20130304110004848"/>
-            <layer id="od_element_lineaire20130514144047075"/>
-            <layer id="conduites_copy20130709141244955"/>
-            <layer id="od_batiment_souterrain20130514143946785"/>
-            <layer id="bf_point_limite20130514143552315"/>
-            <layer id="od_annotationline20131203095020365"/>
-            <layer id="od_batiment_souterrain20140214143946785"/>
-            <layer id="od_dimension_orientation20131202111155806"/>
-            <layer id="cs_posnumero_de_batiment20130514143756039"/>
-            <layer id="cs_posnumero_de_batiment20140214143756039"/>
-            <layer id="axe_rue20130514143437774"/>
-            <layer id="subscriber20130304110011459"/>
-            <layer id="cadastre20140312152032371"/>
-            <layer id="installation_pump20130816140237750"/>
-            <layer id="cs_surfacecs20130514143830750"/>
-            <layer id="od_element_surfacique20130514144124647"/>
-            <layer id="no_posnomlocallieudit20140214143906869"/>
-            <layer id="cs_batiment20130514143721709"/>
-            <layer id="bf_bien_fonds20130514143508556"/>
-            <layer id="installation_valvechamber20131107105006707"/>
-            <layer id="no_posnomlocallieudit20130514143906869"/>
-            <layer id="bf_point_limite20140214143552315"/>
-            <layer id="pf_pfp20130514144226845"/>
-            <layer id="od_element_surfacique20140214144124647"/>
-            <layer id="cs_batiment20140214143721709"/>
-            <layer id="dimension20130807094904783"/>
-            <layer id="installation_tank20130304110005008"/>
-            <layer id="bf_ddp20130514143538213"/>
-            <layer id="od_meter_reference20140304165835390"/>
-            <layer id="od_subscriber_reference20131206105928067"/>
-            <layer id="pf_pfp20140214144226845"/>
-            <layer id="printmap20130304110011400"/>
-            <layer id="bf_bien_fonds20140214143508556"/>
-            <layer id="cs_surfacecs20140214143830750"/>
-            <layer id="bf_ddp20140214143538213"/>
-            <layer id="bf_posimmeuble20140214143633121"/>
-            <layer id="od_element_lineaire20140214144047075"/>
-            <layer id="installation_source20130820110331647"/>
-            <layer id="node20130304110005126"/>
-            <checked-legend-nodes id="conduites_copy20130709141244955">
-                <checked-legend-node id="{a5091172-1b7e-4afe-9f26-4cb7e3dc12d7}"/>
-                <checked-legend-node id="{2903eb12-d512-46ac-9189-419750cae87e}"/>
-                <checked-legend-node id="{055f55b0-289d-4eef-bf73-f0a0190c3c95}"/>
-                <checked-legend-node id="{8d8865d6-f6e5-4ae3-8a57-db81fb5c7ea0}"/>
-                <checked-legend-node id="{e9240497-e540-4947-86cf-d12e5461c954}"/>
-                <checked-legend-node id="{da85facd-1d6e-44f3-8acd-b73f26308e8f}"/>
-                <checked-legend-node id="{4585a7b5-6f1c-4a70-acf3-88a83f262c2f}"/>
-                <checked-legend-node id="{b526868d-1320-47fe-b8fb-6422f7b57a0e}"/>
-                <checked-legend-node id="{f4d68eaf-e80f-4f03-94b3-2ef1c5e5eee6}"/>
-                <checked-legend-node id="{77f61b76-f00f-4067-9ce5-00934c5d338e}"/>
-                <checked-legend-node id="{051f62b3-fa82-4484-b54f-1c6e9a8901e3}"/>
-                <checked-legend-node id="{d05afd1f-3aaa-41d0-9666-676ddfe7a2d7}"/>
-            </checked-legend-nodes>
         </visibility-group>
     </visibility-groups>
     <layer-tree-canvas>
@@ -1087,7 +1014,7 @@
                     </markerStyle>
                 </ComposerMapGrid>
                 <AtlasMap scalingMode="0" atlasDriven="1" margin="0.10000000000000001"/>
-                <ComposerItem pagey="110" page="1" id="" lastValidViewScaleFactor="0.816846" positionMode="0" positionLock="false" x="955" y="110" visibility="1" zValue="8" background="true" transparency="0" frameJoinStyle="miter" blendMode="0" width="60" outlineWidth="0" uuid="{b970a2fd-9bd7-4a2a-a787-1664811befc7}" height="30" itemRotation="0" frame="true" pagex="955">
+                <ComposerItem pagey="110" page="1" id="" lastValidViewScaleFactor="0.91381" positionMode="0" positionLock="false" x="955" y="110" visibility="1" zValue="8" background="true" transparency="0" frameJoinStyle="miter" blendMode="0" width="60" outlineWidth="0" uuid="{b970a2fd-9bd7-4a2a-a787-1664811befc7}" height="30" itemRotation="0" frame="true" pagex="955">
                     <FrameColor alpha="255" red="0" blue="0" green="0"/>
                     <BackgroundColor alpha="255" red="255" blue="255" green="255"/>
                 </ComposerItem>
@@ -1238,7 +1165,7 @@
                     </markerStyle>
                 </ComposerMapGrid>
                 <AtlasMap scalingMode="0" atlasDriven="1" margin="0.10000000000000001"/>
-                <ComposerItem pagey="140" page="1" id="" lastValidViewScaleFactor="0.816846" positionMode="0" positionLock="false" x="15" y="140" visibility="1" zValue="1" background="true" transparency="0" frameJoinStyle="miter" blendMode="0" width="1000" outlineWidth="0" uuid="{27df2cec-4272-4242-93e2-7d5ffc2bbe05}" height="666.667" itemRotation="0" frame="true" pagex="15">
+                <ComposerItem pagey="140" page="1" id="" lastValidViewScaleFactor="0.91381" positionMode="0" positionLock="false" x="15" y="140" visibility="1" zValue="1" background="true" transparency="0" frameJoinStyle="miter" blendMode="0" width="1000" outlineWidth="0" uuid="{27df2cec-4272-4242-93e2-7d5ffc2bbe05}" height="666.667" itemRotation="0" frame="true" pagex="15">
                     <FrameColor alpha="255" red="0" blue="0" green="0"/>
                     <BackgroundColor alpha="255" red="255" blue="255" green="255"/>
                 </ComposerItem>
@@ -3258,9 +3185,9 @@
             <vectorjoins/>
             <expressionfields/>
             <renderer-v2 symbollevels="0" type="RuleRenderer">
-                <rules key="{65b22e24-8616-474e-b68b-e9237be152c7}">
-                    <rule scalemaxdenom="10000" key="{f4623f1f-0620-4b18-b8eb-61eb29f00a71}" symbol="0"/>
-                    <rule scalemaxdenom="100000" key="{b0607e72-07ba-4ea5-9afe-169e4828e9c3}" symbol="1" scalemindenom="10000"/>
+                <rules key="{138f6436-9bd1-41b9-99e5-f35fb4b10b1a}">
+                    <rule scalemaxdenom="10000" key="{ecc9c06e-65a8-4652-9db7-5ab6a0efbb6d}" symbol="0"/>
+                    <rule scalemaxdenom="100000" key="{3022e8de-13cd-4cc9-8f0f-a1a28c275fee}" symbol="1" scalemindenom="10000"/>
                 </rules>
                 <symbols>
                     <symbol alpha="1" type="marker" name="0">
@@ -4134,41 +4061,41 @@
             </vectorjoins>
             <expressionfields/>
             <renderer-v2 symbollevels="0" type="RuleRenderer">
-                <rules key="{b3457690-c048-4da0-9db4-7c113e49bc16}">
-                    <rule filter="id_distributor = 1and &quot;Statut_active&quot; = 't'" key="{9690ab6d-0ae2-4f61-a3df-f448b771b6d0}" label="active">
-                        <rule filter="&quot;_schema_visible&quot; = 't'" key="{5793bd66-a225-4a52-a48d-88b6ae3f898f}" label="Schématique">
-                            <rule filter=" &quot;Conduites - fonction_schema_visible&quot; = 't'" key="{494d6af0-56a4-4d79-8c1e-0641814694fa}" symbol="0" label="Transport"/>
-                            <rule filter=" &quot;Conduites - fonction_schema_visible&quot; = 'f'" key="{3d26d44c-e7eb-487b-bc30-61d43827de98}" symbol="1" label="Distribution"/>
-                            <rule filter=" &quot;id_protection&quot; IS NOT NULL" key="{3a062db8-5302-428a-baa8-d521e656bb20}" symbol="2" label="protégée"/>
+                <rules key="{dbde1c2b-a27d-484e-8dd5-d13dcd527b89}">
+                    <rule filter="id_distributor = 1and &quot;Statut_active&quot; = 't'" key="{f550eef3-fdaa-427b-b415-bd7e8fc25f9e}" label="active">
+                        <rule filter="&quot;_schema_visible&quot; = 't'" key="{1169fb39-5fd3-43b6-9c6c-0f8ef27a0149}" label="Schématique">
+                            <rule filter=" &quot;Conduites - fonction_schema_visible&quot; = 't'" key="{fd732469-5736-4fbe-86db-4c75fe25a3eb}" symbol="0" label="Transport"/>
+                            <rule filter=" &quot;Conduites - fonction_schema_visible&quot; = 'f'" key="{db6fc3d3-6497-4ead-96f7-c99ea378d677}" symbol="1" label="Distribution"/>
+                            <rule filter=" &quot;id_protection&quot; IS NOT NULL" key="{b9a245e3-35b6-469a-8ddc-59eb099bcc6c}" symbol="2" label="protégée"/>
                         </rule>
-                        <rule scalemaxdenom="3000" filter="_schema_visible = 'f'" key="{9e69aa79-95a0-4377-b2f7-62d2563fed99}" label="Détail">
-                            <rule filter=" &quot;Conduites - fonction_schema_visible&quot; = 't'" key="{fe2256a4-fba8-4fd3-a496-27dba2051e2f}" symbol="3" label="Transport"/>
-                            <rule filter=" &quot;Conduites - fonction_schema_visible&quot; = 'f'" key="{fcfbdb67-a157-4259-abdf-c7e4e2f3d6cd}" symbol="4" label="Distribution"/>
-                            <rule filter=" &quot;id_protection&quot; IS NOT NULL" key="{8fc871cf-c3da-4f4a-aaa7-921f929eff98}" symbol="5" label="protégée"/>
-                        </rule>
-                    </rule>
-                    <rule filter="id_distributor = 1and &quot;Statut_active&quot; = 'f'" key="{aa05a9b3-659e-4a46-9070-414b57cad3f9}" label="inactive">
-                        <rule filter="&quot;_schema_visible&quot; = 't'" key="{89a158b8-01d6-40de-af26-dd01ec1cf87b}" label="Schématique">
-                            <rule checkstate="0" filter=" &quot;Conduites - fonction_schema_visible&quot; = 't'" key="{81e86075-4115-4a0e-aa0e-33f8bb45b124}" symbol="6" label="Transport"/>
-                            <rule checkstate="0" filter=" &quot;Conduites - fonction_schema_visible&quot; = 'f'" key="{9edfe399-1cc4-4fbc-be63-6eb4067c7027}" symbol="7" label="Distribution"/>
-                            <rule checkstate="0" filter=" &quot;id_protection&quot; IS NOT NULL" key="{9e56e5e7-96d2-41cb-91e8-0af5606bc03e}" symbol="8" label="protégée"/>
-                        </rule>
-                        <rule scalemaxdenom="3000" filter="_schema_visible = 'f'" key="{f2d7d40f-36fb-493e-9372-e1eec86fab03}" label="Détail">
-                            <rule checkstate="0" filter=" &quot;Conduites - fonction_schema_visible&quot; = 't'" key="{c9b728a0-0fc2-44e1-a4c3-64975fb5d3fd}" symbol="9" label="Transport"/>
-                            <rule checkstate="0" filter=" &quot;Conduites - fonction_schema_visible&quot; = 'f'" key="{b602625c-8b5d-45e9-a7dd-408437732922}" symbol="10" label="Distribution"/>
-                            <rule checkstate="0" filter=" &quot;id_protection&quot; IS NOT NULL" key="{5af6fa9f-ec0d-4589-a406-d7b35b3043a7}" symbol="11" label="protégée"/>
+                        <rule scalemaxdenom="3000" filter="_schema_visible = 'f'" key="{9646576f-b22a-45bf-a4a3-3678392bd8c0}" label="Détail">
+                            <rule filter=" &quot;Conduites - fonction_schema_visible&quot; = 't'" key="{9d885242-2943-4733-a1c2-374139a421d5}" symbol="3" label="Transport"/>
+                            <rule filter=" &quot;Conduites - fonction_schema_visible&quot; = 'f'" key="{fe5dcf6b-562c-4671-82e0-476413ba5451}" symbol="4" label="Distribution"/>
+                            <rule filter=" &quot;id_protection&quot; IS NOT NULL" key="{e9eb550a-e17c-4ce7-aa1f-813a0734ec27}" symbol="5" label="protégée"/>
                         </rule>
                     </rule>
-                    <rule filter="id_distributor != 1" key="{ec2f066c-ba4d-4e51-b32a-3d93fff47684}" label="étranger">
-                        <rule filter="&quot;_schema_visible&quot; = 't'" key="{b06f5f62-d0b3-4d1a-9c24-9a2eff3e76af}" label="Schématique">
-                            <rule filter=" &quot;Conduites - fonction_schema_visible&quot; = 't'" key="{417dc26d-1efe-4324-9d6d-a6848a62034e}" symbol="12" label="Transport"/>
-                            <rule filter=" &quot;Conduites - fonction_schema_visible&quot; = 'f'" key="{d41de605-12bd-46ae-ab09-56afa1ea573d}" symbol="13" label="Distribution"/>
-                            <rule filter=" &quot;id_protection&quot; IS NOT NULL" key="{250e9bd5-00c7-45cc-a471-fe69c2d20a48}" symbol="14" label="protégée"/>
+                    <rule filter="id_distributor = 1and &quot;Statut_active&quot; = 'f'" key="{75060a73-107d-4ace-bc35-d573de40488f}" label="inactive">
+                        <rule filter="&quot;_schema_visible&quot; = 't'" key="{5b970fd5-5c37-4865-81a5-cab18c5fb58c}" label="Schématique">
+                            <rule filter=" &quot;Conduites - fonction_schema_visible&quot; = 't'" key="{9ef0a30e-e29b-415d-94d3-561c2abccb4f}" symbol="6" label="Transport"/>
+                            <rule filter=" &quot;Conduites - fonction_schema_visible&quot; = 'f'" key="{59d05b45-b27e-42e8-b273-9c2ce9702819}" symbol="7" label="Distribution"/>
+                            <rule filter=" &quot;id_protection&quot; IS NOT NULL" key="{e9400442-ba2f-444a-a713-e83ec6b0410f}" symbol="8" label="protégée"/>
                         </rule>
-                        <rule scalemaxdenom="3000" filter="_schema_visible = 'f'" key="{e20150b8-ac72-45d2-b006-e07a01d49a06}" label="Détail">
-                            <rule filter=" &quot;Conduites - fonction_schema_visible&quot; = 't'" key="{49abbae4-f0ae-45c1-a4e2-080bbd33b5f4}" symbol="15" label="Transport"/>
-                            <rule filter=" &quot;Conduites - fonction_schema_visible&quot; = 'f'" key="{6a1b6ba8-faf1-4703-b057-1933309ab4b7}" symbol="16" label="Distribution"/>
-                            <rule filter=" &quot;id_protection&quot; IS NOT NULL" key="{0295f082-32b9-431b-9c2d-8d0477c772d6}" symbol="17" label="protégée"/>
+                        <rule scalemaxdenom="3000" filter="_schema_visible = 'f'" key="{7d0cfa7a-eaf4-499a-b977-1238b90ca15f}" label="Détail">
+                            <rule filter=" &quot;Conduites - fonction_schema_visible&quot; = 't'" key="{ba1c0bfe-d93e-4d26-847a-31824ef45546}" symbol="9" label="Transport"/>
+                            <rule filter=" &quot;Conduites - fonction_schema_visible&quot; = 'f'" key="{177a0917-7989-4b5e-b332-859629a94255}" symbol="10" label="Distribution"/>
+                            <rule filter=" &quot;id_protection&quot; IS NOT NULL" key="{2378c492-691f-43dc-be03-c82e5190c39c}" symbol="11" label="protégée"/>
+                        </rule>
+                    </rule>
+                    <rule filter="id_distributor != 1" key="{013429dc-a1cd-4a17-904a-6550a0175046}" label="étranger">
+                        <rule filter="&quot;_schema_visible&quot; = 't'" key="{2513a8b8-a110-4727-854c-6084f64e3bdf}" label="Schématique">
+                            <rule filter=" &quot;Conduites - fonction_schema_visible&quot; = 't'" key="{743f590b-d72c-4c45-8b4e-1f8d612fa5ab}" symbol="12" label="Transport"/>
+                            <rule filter=" &quot;Conduites - fonction_schema_visible&quot; = 'f'" key="{f545c94c-c07b-44dd-82fc-7bee73f5e160}" symbol="13" label="Distribution"/>
+                            <rule filter=" &quot;id_protection&quot; IS NOT NULL" key="{40849a6e-f482-46f9-b85f-52846f0be89f}" symbol="14" label="protégée"/>
+                        </rule>
+                        <rule scalemaxdenom="3000" filter="_schema_visible = 'f'" key="{2e14d53a-6d2f-40b3-bf3b-4f32112e3d59}" label="Détail">
+                            <rule filter=" &quot;Conduites - fonction_schema_visible&quot; = 't'" key="{42824cda-6fd2-444b-a422-e9888448d5e3}" symbol="15" label="Transport"/>
+                            <rule filter=" &quot;Conduites - fonction_schema_visible&quot; = 'f'" key="{5de7a204-987d-4bd8-a7c8-693692512b1d}" symbol="16" label="Distribution"/>
+                            <rule filter=" &quot;id_protection&quot; IS NOT NULL" key="{66ddd06a-0bb1-442f-b532-7c5c872b25a3}" symbol="17" label="protégée"/>
                         </rule>
                     </rule>
                 </rules>
@@ -6416,16 +6343,16 @@
             <vectorjoins/>
             <expressionfields/>
             <renderer-v2 symbollevels="0" type="RuleRenderer">
-                <rules key="{aeab4a44-197b-430f-a81e-64a4d38a95b2}">
-                    <rule filter="schema_visible = 't'" key="{806844e2-610e-4f4a-86d0-2c2e4ab17e09}" label="Schématique">
-                        <rule filter="id_type = 2801" key="{5b5c42d1-7eb6-4f2b-a436-e38a6dc02505}" symbol="0" label="Réduction de pression"/>
-                        <rule filter="id_type = 2802" key="{1276e416-8fa0-4a1b-9ab9-5b3ee1556154}" symbol="1" label="Coupe pression"/>
-                        <rule filter="id_type = 2803" key="{bbe0f660-c937-4908-9514-ac79c25e3c4c}" symbol="2" label="Rassemblement"/>
+                <rules key="{adb0679b-5a3a-4c41-8895-123aee040300}">
+                    <rule filter="schema_visible = 't'" key="{3d653e4b-6c17-4203-98fe-dba804d4642e}" label="Schématique">
+                        <rule filter="id_type = 2801" key="{65c2a222-1644-496b-b5bf-457323abc063}" symbol="0" label="Réduction de pression"/>
+                        <rule filter="id_type = 2802" key="{844b0739-749f-45b9-97fe-d50fa6324f4c}" symbol="1" label="Coupe pression"/>
+                        <rule filter="id_type = 2803" key="{f8fc8be6-9284-4a12-afe7-c03b35e8822f}" symbol="2" label="Rassemblement"/>
                     </rule>
-                    <rule scalemaxdenom="300" filter="schema_visible = 'f'" key="{8baf4da1-411d-46ed-9161-5e2dcde04813}" label="Détail">
-                        <rule filter="id_type = 2801" key="{5fa35fba-0090-4614-8975-f56155e7922d}" symbol="3" label="Réduction de pression"/>
-                        <rule filter="id_type = 2802" key="{9910384b-4228-4aa2-8a80-401f4844b87b}" symbol="4" label="Coupe pression"/>
-                        <rule filter="id_type = 2803" key="{05289961-94db-4563-9d62-0fbd0912e04c}" symbol="5" label="Rassemblement"/>
+                    <rule scalemaxdenom="300" filter="schema_visible = 'f'" key="{ec1ac142-b760-4397-870f-06f187059ee2}" label="Détail">
+                        <rule filter="id_type = 2801" key="{c5a4a370-e863-469f-8f79-2212fd1c82f9}" symbol="3" label="Réduction de pression"/>
+                        <rule filter="id_type = 2802" key="{a9a988cf-bb4e-46bb-8834-e9fbcf4a1c4a}" symbol="4" label="Coupe pression"/>
+                        <rule filter="id_type = 2803" key="{62319d36-a306-460c-bf86-2c6d6b9bfc7d}" symbol="5" label="Rassemblement"/>
                     </rule>
                 </rules>
                 <symbols>
@@ -6810,9 +6737,9 @@
             <vectorjoins/>
             <expressionfields/>
             <renderer-v2 symbollevels="0" type="RuleRenderer">
-                <rules key="{46009e60-df51-4ec5-a422-894ad19b35a2}">
-                    <rule filter="schema_visible = 't'" key="{c5e7fb8e-a098-4756-ba07-723be5106c89}" symbol="0" label="Scématique"/>
-                    <rule scalemaxdenom="300" filter="schema_visible = 'f'" key="{70f30000-0e56-4e58-bb1d-db473a6a50fb}" symbol="1" label="Détail"/>
+                <rules key="{0cc9cbcb-cdb4-4e52-9a6a-5c5ee982c66f}">
+                    <rule filter="schema_visible = 't'" key="{7516edf0-0dce-494b-9ebf-58fdb181c073}" symbol="0" label="Scématique"/>
+                    <rule scalemaxdenom="300" filter="schema_visible = 'f'" key="{6206fcfb-f899-485d-81c8-f167e9186c63}" symbol="1" label="Détail"/>
                 </rules>
                 <symbols>
                     <symbol alpha="1" type="marker" name="0">
@@ -7137,9 +7064,9 @@
             <vectorjoins/>
             <expressionfields/>
             <renderer-v2 symbollevels="0" type="RuleRenderer">
-                <rules key="{ed17bcf3-dadf-4b74-93be-34bdcce91751}">
-                    <rule filter="schema_visible = 't'" key="{31934e25-a74b-4a19-ab93-1f9315b99577}" symbol="0" label="Scématique"/>
-                    <rule scalemaxdenom="300" filter="schema_visible = 'f'" key="{65105c34-da20-4570-89c9-ac68e2dafdaf}" symbol="1" label="Détail"/>
+                <rules key="{467cb759-13f3-4651-ace1-ac3e78749a6c}">
+                    <rule filter="schema_visible = 't'" key="{7cfd11ff-75ba-451d-aab1-605bb75c903a}" symbol="0" label="Scématique"/>
+                    <rule scalemaxdenom="300" filter="schema_visible = 'f'" key="{d91f05dc-208e-4260-bcaf-bc2359eff8c2}" symbol="1" label="Détail"/>
                 </rules>
                 <symbols>
                     <symbol alpha="1" type="marker" name="0">
@@ -7463,9 +7390,9 @@
             </vectorjoins>
             <expressionfields/>
             <renderer-v2 symbollevels="0" type="RuleRenderer">
-                <rules key="{5e2bf1b2-8b4c-41b6-bb6b-b1b35bccee73}">
-                    <rule filter="schema_visible = 't'" key="{4ae09498-58fe-4e12-ba94-174f70e33105}" symbol="0" label="Scématique"/>
-                    <rule scalemaxdenom="300" filter="schema_visible = 'f'" key="{509a216b-bc8a-44f3-b7ed-0768871c61c2}" symbol="1" label="Détail"/>
+                <rules key="{c44b8949-2ba4-43e7-be05-6d9d8d78353a}">
+                    <rule filter="schema_visible = 't'" key="{72b72259-8e23-4171-8ab4-53d7c15768a7}" symbol="0" label="Scématique"/>
+                    <rule scalemaxdenom="300" filter="schema_visible = 'f'" key="{3fd6bcd5-1287-445c-bd66-4869289fe297}" symbol="1" label="Détail"/>
                 </rules>
                 <symbols>
                     <symbol alpha="1" type="marker" name="0">
@@ -7901,9 +7828,9 @@
             <vectorjoins/>
             <expressionfields/>
             <renderer-v2 symbollevels="0" type="RuleRenderer">
-                <rules key="{7093c9c8-0c36-4715-b3f0-372e1e70e7a5}">
-                    <rule filter="schema_visible = 't'" key="{794ede80-125f-44c8-aacd-5ca6918bccb7}" symbol="0" label="Scématique"/>
-                    <rule scalemaxdenom="300" filter="schema_visible = 'f'" key="{cbab38da-48f7-4954-adef-77781fb34642}" symbol="1" label="Détail"/>
+                <rules key="{f96e8c0e-2f60-4295-b73c-414eaafaf3d9}">
+                    <rule filter="schema_visible = 't'" key="{9b8c5a72-7ed3-4ccd-8dcc-91afd0a701ff}" symbol="0" label="Scématique"/>
+                    <rule scalemaxdenom="300" filter="schema_visible = 'f'" key="{78e2a2eb-fccc-4aa0-b64a-fe5a6b725b6f}" symbol="1" label="Détail"/>
                 </rules>
                 <symbols>
                     <symbol alpha="1" type="marker" name="0">
@@ -8235,14 +8162,14 @@
             <vectorjoins/>
             <expressionfields/>
             <renderer-v2 symbollevels="0" type="RuleRenderer">
-                <rules key="{c17ff122-9ec8-4c4e-a822-6d9e92be738c}">
-                    <rule filter="schema_visible = 't'" key="{fec7cc83-76a9-4b9e-872e-d6ccc1314721}" label="Schématique">
-                        <rule filter="meter = 't'" key="{d79efab2-cffd-4b22-9c09-62b863ed7392}" symbol="0" label="Compteur"/>
-                        <rule filter="meter != 't'" key="{3f263d0c-caef-4d01-90ae-f816345a4eaa}" symbol="1" label="Chambre"/>
+                <rules key="{68d82360-a0a0-4f05-a567-24601a40ac7f}">
+                    <rule filter="schema_visible = 't'" key="{091e96f1-219b-49a3-aaec-4d3f92b8252a}" label="Schématique">
+                        <rule filter="meter = 't'" key="{4f734369-22f0-49b7-a427-7dab8a81e80f}" symbol="0" label="Compteur"/>
+                        <rule filter="meter != 't'" key="{6c6c7e3d-a252-438a-a8e2-7ca76c29e7df}" symbol="1" label="Chambre"/>
                     </rule>
-                    <rule scalemaxdenom="300" filter="schema_visible = 'f'" key="{3befc356-53c7-49d5-b7f7-2de93ae18603}" label="Détail">
-                        <rule filter="meter = 't'" key="{dc1df473-2f59-4b82-8757-1a1e730ba402}" symbol="2" label="Compteur"/>
-                        <rule filter="meter != 't'" key="{696f03ce-f631-4b54-aef1-8778a5532b15}" symbol="3" label="Chambre"/>
+                    <rule scalemaxdenom="300" filter="schema_visible = 'f'" key="{8294484a-c8b1-4723-8d2c-9950f989c20a}" label="Détail">
+                        <rule filter="meter = 't'" key="{66c3435d-3707-490d-b606-ed9ca3857591}" symbol="2" label="Compteur"/>
+                        <rule filter="meter != 't'" key="{a4525114-3904-497e-b878-9084350ce1f2}" symbol="3" label="Chambre"/>
                     </rule>
                 </rules>
                 <symbols>
@@ -9634,8 +9561,8 @@
             <vectorjoins/>
             <expressionfields/>
             <renderer-v2 symbollevels="0" type="RuleRenderer">
-                <rules key="{8cf2c35e-a8db-43dd-9ba4-b4096bf58560}">
-                    <rule key="{5709c152-189c-4a9f-a1fe-94220383edb7}" symbol="0"/>
+                <rules key="{570b8b53-7458-41a1-8838-f131d304af13}">
+                    <rule key="{7afedeb5-1eaa-4f5a-9208-73abdbb89210}" symbol="0"/>
                 </rules>
                 <symbols>
                     <symbol alpha="1" type="marker" name="0">
@@ -10313,9 +10240,9 @@
             <vectorjoins/>
             <expressionfields/>
             <renderer-v2 symbollevels="0" type="RuleRenderer">
-                <rules key="{cdbfd98c-6cb7-4fb0-8fc6-1f76c48a24a6}">
-                    <rule scalemaxdenom="3000" key="{87cc9363-f223-40b3-ba45-19f2d836dce4}" label="Echelle">
-                        <rule key="{5eae9d58-786f-4139-9f10-a0d4b70aff4d}" symbol="0" label="Compteur réseau"/>
+                <rules key="{0a076086-bf02-49ba-bdbf-94a6c1de42f4}">
+                    <rule scalemaxdenom="3000" key="{b2973097-d399-4a68-9a23-ed3d14a767fb}" label="Echelle">
+                        <rule key="{5724a8b6-e1a9-4bb2-aa38-b3b245ce51e6}" symbol="0" label="Compteur réseau"/>
                     </rule>
                 </rules>
                 <symbols>
@@ -10547,8 +10474,8 @@
                 <edittype widgetv2type="ValueRelation" name="id_status">
                     <widgetv2config OrderByValue="0" AllowNull="0" FilterExpression="" fieldEditable="1" Key="id" Layer="vl_status20130304110011436" Value="value_fr" labelOnTop="0" AllowMulti="0"/>
                 </edittype>
-                <edittype widgetv2type="TextEdit" name="id_pipe">
-                    <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
+                <edittype widgetv2type="RelationReference" name="id_pipe">
+                    <widgetv2config fieldEditable="1" ShowForm="0" Relation="relation_conduite_compteur" ReadOnly="1" MapIdentification="1" labelOnTop="0" AllowNULL="1"/>
                 </edittype>
                 <edittype widgetv2type="TextEdit" name="identification">
                     <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
@@ -10607,9 +10534,14 @@
                 </spatialrefsys>
             </srs>
             <provider encoding="System">postgres</provider>
-            <previewExpression></previewExpression>
+            <previewExpression>COALESCE( "id", '&lt;NULL>' )</previewExpression>
             <vectorjoins>
-                <join joinFieldName="id" targetFieldName="id_meter" memoryCache="0" joinLayerId="od_meter20131120073630165"/>
+                <join joinFieldName="id" targetFieldName="id_meter" memoryCache="1" joinLayerId="od_meter20131120073630165">
+                    <joinFieldsSubset>
+                        <field name="identification"/>
+                        <field name="_identification_full"/>
+                    </joinFieldsSubset>
+                </join>
             </vectorjoins>
             <expressionfields/>
             <renderer-v2 symbollevels="0" type="singleSymbol">
@@ -10662,9 +10594,9 @@
                 <property key="labeling/bufferTransp" value="0"/>
                 <property key="labeling/centroidInside" value="false"/>
                 <property key="labeling/centroidWhole" value="false"/>
-                <property key="labeling/dataDefined/AlwaysShow" value="1~~1~~1~~"/>
+                <property key="labeling/dataDefined/AlwaysShow" value="0~~1~~1~~"/>
                 <property key="labeling/decimals" value="3"/>
-                <property key="labeling/displayAll" value="false"/>
+                <property key="labeling/displayAll" value="true"/>
                 <property key="labeling/dist" value="0"/>
                 <property key="labeling/distInMapUnits" value="false"/>
                 <property key="labeling/distMapUnitMaxScale" value="0"/>
@@ -10829,43 +10761,10 @@
                 <edittype widgetv2type="RelationReference" name="id_meter">
                     <widgetv2config fieldEditable="1" ShowForm="0" Relation="relation_compteurreseau_renvoi" ReadOnly="1" MapIdentification="1" labelOnTop="0" AllowNULL="1"/>
                 </edittype>
-                <edittype widgetv2type="TextEdit" name="compteur réseau_id_status">
-                    <widgetv2config IsMultiline="0" fieldEditable="0" UseHtml="0" labelOnTop="0"/>
-                </edittype>
-                <edittype widgetv2type="TextEdit" name="compteur réseau_id_pipe">
-                    <widgetv2config IsMultiline="0" fieldEditable="0" UseHtml="0" labelOnTop="0"/>
-                </edittype>
                 <edittype widgetv2type="TextEdit" name="compteur réseau_identification">
                     <widgetv2config IsMultiline="0" fieldEditable="0" UseHtml="0" labelOnTop="0"/>
                 </edittype>
                 <edittype widgetv2type="TextEdit" name="compteur réseau__identification_full">
-                    <widgetv2config IsMultiline="0" fieldEditable="0" UseHtml="0" labelOnTop="0"/>
-                </edittype>
-                <edittype widgetv2type="TextEdit" name="compteur réseau_parcel">
-                    <widgetv2config IsMultiline="0" fieldEditable="0" UseHtml="0" labelOnTop="0"/>
-                </edittype>
-                <edittype widgetv2type="TextEdit" name="compteur réseau_remark">
-                    <widgetv2config IsMultiline="0" fieldEditable="0" UseHtml="0" labelOnTop="0"/>
-                </edittype>
-                <edittype widgetv2type="TextEdit" name="compteur réseau_id_district">
-                    <widgetv2config IsMultiline="0" fieldEditable="0" UseHtml="0" labelOnTop="0"/>
-                </edittype>
-                <edittype widgetv2type="TextEdit" name="compteur réseau_id_pressurezone">
-                    <widgetv2config IsMultiline="0" fieldEditable="0" UseHtml="0" labelOnTop="0"/>
-                </edittype>
-                <edittype widgetv2type="TextEdit" name="compteur réseau_id_printmap">
-                    <widgetv2config IsMultiline="0" fieldEditable="0" UseHtml="0" labelOnTop="0"/>
-                </edittype>
-                <edittype widgetv2type="TextEdit" name="compteur réseau__district">
-                    <widgetv2config IsMultiline="0" fieldEditable="0" UseHtml="0" labelOnTop="0"/>
-                </edittype>
-                <edittype widgetv2type="TextEdit" name="compteur réseau__pressurezone">
-                    <widgetv2config IsMultiline="0" fieldEditable="0" UseHtml="0" labelOnTop="0"/>
-                </edittype>
-                <edittype widgetv2type="TextEdit" name="compteur réseau__printmaps">
-                    <widgetv2config IsMultiline="0" fieldEditable="0" UseHtml="0" labelOnTop="0"/>
-                </edittype>
-                <edittype widgetv2type="TextEdit" name="compteur réseau_year">
                     <widgetv2config IsMultiline="0" fieldEditable="0" UseHtml="0" labelOnTop="0"/>
                 </edittype>
             </edittypes>
@@ -11123,7 +11022,12 @@
             <provider encoding="System">postgres</provider>
             <previewExpression>COALESCE( "id", '&lt;NULL>' )</previewExpression>
             <vectorjoins>
-                <join joinFieldName="id" targetFieldName="id_subscriber" memoryCache="0" joinLayerId="subscriber20130304110011459"/>
+                <join joinFieldName="id" targetFieldName="id_subscriber" memoryCache="1" joinLayerId="subscriber20130304110011459">
+                    <joinFieldsSubset>
+                        <field name="identification"/>
+                        <field name="_identification_full"/>
+                    </joinFieldsSubset>
+                </join>
             </vectorjoins>
             <expressionfields/>
             <renderer-v2 symbollevels="0" type="singleSymbol">
@@ -11176,9 +11080,9 @@
                 <property key="labeling/bufferTransp" value="0"/>
                 <property key="labeling/centroidInside" value="false"/>
                 <property key="labeling/centroidWhole" value="false"/>
-                <property key="labeling/dataDefined/AlwaysShow" value="1~~1~~1~~"/>
+                <property key="labeling/dataDefined/AlwaysShow" value="0~~1~~1~~"/>
                 <property key="labeling/decimals" value="3"/>
-                <property key="labeling/displayAll" value="false"/>
+                <property key="labeling/displayAll" value="true"/>
                 <property key="labeling/dist" value="0"/>
                 <property key="labeling/distInMapUnits" value="false"/>
                 <property key="labeling/distMapUnitMaxScale" value="0"/>
@@ -11343,40 +11247,10 @@
                 <edittype widgetv2type="RelationReference" name="id_subscriber">
                     <widgetv2config fieldEditable="1" ShowForm="0" Relation="relation_abonne_renvoi" ReadOnly="1" MapIdentification="1" labelOnTop="0" AllowNULL="1"/>
                 </edittype>
-                <edittype widgetv2type="TextEdit" name="abonnés_id_type">
-                    <widgetv2config IsMultiline="0" fieldEditable="0" UseHtml="0" labelOnTop="0"/>
-                </edittype>
-                <edittype widgetv2type="TextEdit" name="abonnés_id_status">
-                    <widgetv2config IsMultiline="0" fieldEditable="0" UseHtml="0" labelOnTop="0"/>
-                </edittype>
-                <edittype widgetv2type="TextEdit" name="abonnés_id_pipe">
-                    <widgetv2config IsMultiline="0" fieldEditable="0" UseHtml="0" labelOnTop="0"/>
-                </edittype>
                 <edittype widgetv2type="TextEdit" name="abonnés_identification">
                     <widgetv2config IsMultiline="0" fieldEditable="0" UseHtml="0" labelOnTop="0"/>
                 </edittype>
                 <edittype widgetv2type="TextEdit" name="abonnés__identification_full">
-                    <widgetv2config IsMultiline="0" fieldEditable="0" UseHtml="0" labelOnTop="0"/>
-                </edittype>
-                <edittype widgetv2type="TextEdit" name="abonnés_parcel">
-                    <widgetv2config IsMultiline="0" fieldEditable="0" UseHtml="0" labelOnTop="0"/>
-                </edittype>
-                <edittype widgetv2type="TextEdit" name="abonnés_remark">
-                    <widgetv2config IsMultiline="0" fieldEditable="0" UseHtml="0" labelOnTop="0"/>
-                </edittype>
-                <edittype widgetv2type="TextEdit" name="abonnés_id_district">
-                    <widgetv2config IsMultiline="0" fieldEditable="0" UseHtml="0" labelOnTop="0"/>
-                </edittype>
-                <edittype widgetv2type="TextEdit" name="abonnés_id_pressurezone">
-                    <widgetv2config IsMultiline="0" fieldEditable="0" UseHtml="0" labelOnTop="0"/>
-                </edittype>
-                <edittype widgetv2type="TextEdit" name="abonnés_id_printmap">
-                    <widgetv2config IsMultiline="0" fieldEditable="0" UseHtml="0" labelOnTop="0"/>
-                </edittype>
-                <edittype widgetv2type="TextEdit" name="abonnés__pressurezone">
-                    <widgetv2config IsMultiline="0" fieldEditable="0" UseHtml="0" labelOnTop="0"/>
-                </edittype>
-                <edittype widgetv2type="TextEdit" name="abonnés__printmaps">
                     <widgetv2config IsMultiline="0" fieldEditable="0" UseHtml="0" labelOnTop="0"/>
                 </edittype>
             </edittypes>
@@ -12630,14 +12504,14 @@
             <vectorjoins/>
             <expressionfields/>
             <renderer-v2 symbollevels="0" type="RuleRenderer">
-                <rules key="{bf693a7b-ea1c-4eb1-a090-879b66a65a64}">
-                    <rule scalemaxdenom="3000" key="{2d395734-acd1-46f6-bb5d-bd4eb2084790}" label="Echelle">
-                        <rule filter="id_type=9401" key="{64f71236-8de3-4020-a658-e3a2a798ab20}" symbol="0" label="Abonnés"/>
-                        <rule filter="id_status!=1301" key="{5c328da1-5c1d-460d-9520-774c048692e0}" symbol="1" label="Inactif"/>
-                        <rule filter="id_type=9402" key="{422e32ab-1767-44d2-9f26-2c5fdd45a4d3}" symbol="2" label="Arrosage"/>
-                        <rule filter="id_type = 9403" key="{70a8dbf3-6baa-439b-97b9-841ca4f5996d}" symbol="3" label="Fontaine"/>
-                        <rule filter="id_type=9405" key="{f9fb99be-0817-408a-a8ea-67d81df5cc7f}" symbol="4" label="Sprinkler"/>
-                        <rule filter="id_type=9404" key="{90343e53-875b-4ebe-8c61-6a816ff27ea1}" symbol="5" label="WC"/>
+                <rules key="{9da47fbf-2d24-4c58-a431-b86b56a823b4}">
+                    <rule scalemaxdenom="3000" key="{26e873de-fb8b-4cf1-9540-12b4fd50d4da}" label="Echelle">
+                        <rule filter="id_type=9401" key="{ec8badcc-9af2-4942-bd0e-f6519b9f1b97}" symbol="0" label="Abonnés"/>
+                        <rule filter="id_status!=1301" key="{74d11c30-58d7-4d2a-b1e3-86945e6466d5}" symbol="1" label="Inactif"/>
+                        <rule filter="id_type=9402" key="{ede67b97-6776-4785-b302-301be3e60cd7}" symbol="2" label="Arrosage"/>
+                        <rule filter="id_type = 9403" key="{e621e468-ba49-4e32-89a6-1cf8da2fa202}" symbol="3" label="Fontaine"/>
+                        <rule filter="id_type=9405" key="{d65de48d-b504-438c-b40d-009b640bac2d}" symbol="4" label="Sprinkler"/>
+                        <rule filter="id_type=9404" key="{8893b40b-a12a-4f74-a391-5e4df2572f9c}" symbol="5" label="WC"/>
                     </rule>
                 </rules>
                 <symbols>
@@ -12983,8 +12857,8 @@
                 <edittype widgetv2type="ValueRelation" name="id_status">
                     <widgetv2config OrderByValue="0" AllowNull="0" FilterExpression="" fieldEditable="1" Key="id" Layer="vl_status20130304110011436" Value="value_fr" labelOnTop="0" AllowMulti="0"/>
                 </edittype>
-                <edittype widgetv2type="TextEdit" name="id_pipe">
-                    <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
+                <edittype widgetv2type="RelationReference" name="id_pipe">
+                    <widgetv2config fieldEditable="1" ShowForm="0" Relation="relation_pipe_subscriber" ReadOnly="1" MapIdentification="1" labelOnTop="0" AllowNULL="1"/>
                 </edittype>
                 <edittype widgetv2type="TextEdit" name="identification">
                     <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
@@ -13256,16 +13130,16 @@
             </vectorjoins>
             <expressionfields/>
             <renderer-v2 symbollevels="0" type="RuleRenderer">
-                <rules key="{a0cef74e-7777-4894-8421-d0eb9f397165}">
-                    <rule scalemaxdenom="10000" description="toutes les vannes sauf organe réseau et vanne d'hydrant" filter="id_function != 6105 AND id_function != 6108" key="{87e73c51-05f2-4381-b1cc-a03b18682608}" symbol="0" label="réseau">
-                        <rule filter="closed = 't'" key="{e2563896-93e9-499a-b200-b20dceb09034}" symbol="1" label="Fermée"/>
-                        <rule filter="&quot;id_type&quot; = 6312" key="{d4953bc2-581a-474b-96a0-bab085ad1aaf}" symbol="2" label="elgelf"/>
-                        <rule filter="&quot;id_type&quot; =6313" key="{217dadfe-4432-4c2b-bbb4-b4ff3f02721c}" symbol="3" label="arrêt"/>
+                <rules key="{8ac6d04b-1bb5-46e9-b2fb-236cb107ffc9}">
+                    <rule scalemaxdenom="10000" description="toutes les vannes sauf organe réseau et vanne d'hydrant" filter="id_function != 6105 AND id_function != 6108" key="{7a025dab-c7fe-4c7c-9f0b-25a39f73abd8}" symbol="0" label="réseau">
+                        <rule filter="closed = 't'" key="{edf1c363-d849-4700-82d0-34d494178d4d}" symbol="1" label="Fermée"/>
+                        <rule filter="&quot;id_type&quot; = 6312" key="{d1ec978f-6d96-4ed2-ac03-a37e6629f13c}" symbol="2" label="elgelf"/>
+                        <rule filter="&quot;id_type&quot; =6313" key="{6c48a279-b0d9-428b-819c-2fc5371720fe}" symbol="3" label="arrêt"/>
                     </rule>
-                    <rule scalemaxdenom="10000" filter="id_function = 6105 OR id_function = 6108" key="{daeb6775-f28c-4a54-a564-71f6b4c09ffa}" symbol="4" label="abonné">
-                        <rule filter="closed = 't'" key="{22c396ee-08fb-452f-af50-6e7f8b1945aa}" symbol="5" label="Fermée"/>
-                        <rule filter="&quot;id_type&quot; =6313" key="{614f5169-72c2-41af-a276-25013f26254e}" symbol="6" label="arrêt"/>
-                        <rule filter="id_type = 6312" key="{5653577e-6977-4f02-9dba-5db784023522}" symbol="7" label="elgelf"/>
+                    <rule scalemaxdenom="10000" filter="id_function = 6105 OR id_function = 6108" key="{143022c7-b3e1-4c03-80d5-58520da677c2}" symbol="4" label="abonné">
+                        <rule filter="closed = 't'" key="{ee4ed8dd-20ae-42fb-b43b-a4c02c5399e9}" symbol="5" label="Fermée"/>
+                        <rule filter="&quot;id_type&quot; =6313" key="{b149b2b9-3783-416c-b413-7a6f7de74e1d}" symbol="6" label="arrêt"/>
+                        <rule filter="id_type = 6312" key="{221f27a3-6778-4b14-8bb9-1b4c7d708bc3}" symbol="7" label="elgelf"/>
                     </rule>
                 </rules>
                 <symbols>
@@ -13809,8 +13683,8 @@
             <vectorjoins/>
             <expressionfields/>
             <renderer-v2 symbollevels="0" type="RuleRenderer">
-                <rules key="{5aa08c7a-ee20-4b8c-8a51-dfc8a8e556df}">
-                    <rule key="{49ce79ad-7c8c-408c-9bdc-8de57665e366}" symbol="0"/>
+                <rules key="{e11707d7-ac81-40e9-b99c-142af33925d3}">
+                    <rule key="{11d531fe-b25b-476e-8068-fd058c83ce5e}" symbol="0"/>
                 </rules>
                 <symbols>
                     <symbol alpha="1" type="marker" name="0">
@@ -15612,6 +15486,7 @@
         </qWat>
         <WCSUrl type="QString"></WCSUrl>
         <WMSOnlineResource type="QString"></WMSOnlineResource>
+        <WMSPrecision type="QString">8</WMSPrecision>
         <Digitizing>
             <LayerSnappingList type="QStringList">
                 <value>IntersectIt_Lines20130618102142813</value>

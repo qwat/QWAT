@@ -32,15 +32,18 @@
                     </layer-tree-layer>
                 </layer-tree-group>
             </layer-tree-group>
-            <layer-tree-group expanded="0" checked="Qt::Unchecked" name="Réseau">
+            <layer-tree-group expanded="1" checked="Qt::PartiallyChecked" name="Réseau">
                 <customproperties/>
+                <layer-tree-layer expanded="1" checked="Qt::Checked" id="vw_pipe_schema20140910100745376" name="vw_pipe_schema">
+                    <customproperties/>
+                </layer-tree-layer>
                 <layer-tree-layer expanded="0" checked="Qt::Unchecked" id="conduites_copy20130709141244955" name="conduites">
                     <customproperties/>
                 </layer-tree-layer>
-                <layer-tree-layer expanded="0" checked="Qt::Unchecked" id="valve20130304110011497" name="vannes">
+                <layer-tree-layer expanded="0" checked="Qt::Checked" id="valve20130304110011497" name="vannes">
                     <customproperties/>
                 </layer-tree-layer>
-                <layer-tree-layer expanded="0" checked="Qt::Unchecked" id="hydrant20130304110004848" name="hydrantes">
+                <layer-tree-layer expanded="0" checked="Qt::Checked" id="hydrant20130304110004848" name="hydrantes">
                     <customproperties/>
                 </layer-tree-layer>
             </layer-tree-group>
@@ -75,7 +78,7 @@
                 <customproperties/>
             </layer-tree-layer>
         </layer-tree-group>
-        <layer-tree-group expanded="0" checked="Qt::PartiallyChecked" name="Zones">
+        <layer-tree-group expanded="1" checked="Qt::PartiallyChecked" name="Zones">
             <customproperties/>
             <layer-tree-layer expanded="0" checked="Qt::Unchecked" id="district20130304110004764" name="communes">
                 <customproperties/>
@@ -216,10 +219,10 @@
     <mapcanvas>
         <units>meters</units>
         <extent>
-            <xmin>560021.1938566918252036</xmin>
-            <ymin>141241.80685248741065152</ymin>
-            <xmax>561644.41260834748391062</xmax>
-            <ymax>142407.2964370095578488</ymax>
+            <xmin>540616.21406891418155283</xmin>
+            <ymin>134339.69641701929504052</ymin>
+            <xmax>582217.53527835861314088</xmax>
+            <ymax>164209.91971410205587745</ymax>
         </extent>
         <projections>1</projections>
         <destinationsrs>
@@ -261,8 +264,8 @@
             <layer_coordinate_transform destAuthId="EPSG:21781" srcAuthId="EPSG:21781" srcDatumTransform="-1" destDatumTransform="-1" layerid="od_element_surfacique20130514144124647"/>
             <layer_coordinate_transform destAuthId="EPSG:21781" srcAuthId="EPSG:21781" srcDatumTransform="-1" destDatumTransform="-1" layerid="no_posnomlocallieudit20140214143906869"/>
             <layer_coordinate_transform destAuthId="EPSG:21781" srcAuthId="EPSG:21781" srcDatumTransform="-1" destDatumTransform="-1" layerid="cs_batiment20130514143721709"/>
-            <layer_coordinate_transform destAuthId="EPSG:21781" srcAuthId="EPSG:21781" srcDatumTransform="-1" destDatumTransform="-1" layerid="bf_bien_fonds20130514143508556"/>
             <layer_coordinate_transform destAuthId="EPSG:21781" srcAuthId="EPSG:21781" srcDatumTransform="-1" destDatumTransform="-1" layerid="pipe_child_parent20130417092030507"/>
+            <layer_coordinate_transform destAuthId="EPSG:21781" srcAuthId="EPSG:21781" srcDatumTransform="-1" destDatumTransform="-1" layerid="bf_bien_fonds20130514143508556"/>
             <layer_coordinate_transform destAuthId="EPSG:21781" srcAuthId="EPSG:21781" srcDatumTransform="-1" destDatumTransform="-1" layerid="installation_valvechamber20131107105006707"/>
             <layer_coordinate_transform destAuthId="EPSG:21781" srcAuthId="EPSG:21781" srcDatumTransform="-1" destDatumTransform="-1" layerid="no_posnomlocallieudit20130514143906869"/>
             <layer_coordinate_transform destAuthId="EPSG:21781" srcAuthId="EPSG:21781" srcDatumTransform="-1" destDatumTransform="-1" layerid="bf_point_limite20140214143552315"/>
@@ -283,6 +286,7 @@
             <layer_coordinate_transform destAuthId="EPSG:21781" srcAuthId="EPSG:21781" srcDatumTransform="-1" destDatumTransform="-1" layerid="bf_bien_fonds20140214143508556"/>
             <layer_coordinate_transform destAuthId="EPSG:21781" srcAuthId="EPSG:21781" srcDatumTransform="-1" destDatumTransform="-1" layerid="leak20130821111917060"/>
             <layer_coordinate_transform destAuthId="EPSG:21781" srcAuthId="EPSG:21781" srcDatumTransform="-1" destDatumTransform="-1" layerid="cs_surfacecs20140214143830750"/>
+            <layer_coordinate_transform destAuthId="EPSG:21781" srcAuthId="EPSG:21781" srcDatumTransform="-1" destDatumTransform="-1" layerid="vw_pipe_schema20140910100745376"/>
             <layer_coordinate_transform destAuthId="EPSG:21781" srcAuthId="EPSG:21781" srcDatumTransform="-1" destDatumTransform="-1" layerid="bf_ddp20140214143538213"/>
             <layer_coordinate_transform destAuthId="EPSG:21781" srcAuthId="EPSG:21781" srcDatumTransform="-1" destDatumTransform="-1" layerid="bf_posimmeuble20140214143633121"/>
             <layer_coordinate_transform destAuthId="EPSG:21781" srcAuthId="EPSG:21781" srcDatumTransform="-1" destDatumTransform="-1" layerid="od_element_lineaire20140214144047075"/>
@@ -293,19 +297,19 @@
     </mapcanvas>
     <visibility-groups>
         <visibility-group name="250_">
+            <layer id="installation_pump20130816140237750"/>
+            <layer id="printmap20130304110011400"/>
             <layer id="valve20130304110011497"/>
-            <layer id="od_annotationpoint20131203095020392"/>
             <layer id="installation_pressurecontrol20131107105006792"/>
-            <layer id="installation_treatment20130816113039913"/>
+            <layer id="installation_valvechamber20131107105006707"/>
+            <layer id="node20130304110005126"/>
+            <layer id="installation_tank20130304110005008"/>
             <layer id="hydrant20130304110004848"/>
             <layer id="conduites_copy20130709141244955"/>
             <layer id="od_annotationline20131203095020365"/>
-            <layer id="installation_pump20130816140237750"/>
-            <layer id="installation_valvechamber20131107105006707"/>
-            <layer id="installation_tank20130304110005008"/>
-            <layer id="printmap20130304110011400"/>
+            <layer id="od_annotationpoint20131203095020392"/>
             <layer id="installation_source20130820110331647"/>
-            <layer id="node20130304110005126"/>
+            <layer id="installation_treatment20130816113039913"/>
             <checked-legend-nodes id="conduites_copy20130709141244955">
                 <checked-legend-node id="{5bc5e0e7-0d82-4367-b546-e2a75e9e444f}"/>
                 <checked-legend-node id="{877f83e0-c7eb-4e37-8d35-f5265e9f22b8}"/>
@@ -322,19 +326,19 @@
             </checked-legend-nodes>
         </visibility-group>
         <visibility-group name="250v2">
+            <layer id="installation_pump20130816140237750"/>
+            <layer id="printmap20130304110011400"/>
             <layer id="valve20130304110011497"/>
-            <layer id="od_annotationpoint20131203095020392"/>
             <layer id="installation_pressurecontrol20131107105006792"/>
-            <layer id="installation_treatment20130816113039913"/>
+            <layer id="installation_valvechamber20131107105006707"/>
+            <layer id="node20130304110005126"/>
+            <layer id="installation_tank20130304110005008"/>
             <layer id="hydrant20130304110004848"/>
             <layer id="conduites_copy20130709141244955"/>
             <layer id="od_annotationline20131203095020365"/>
-            <layer id="installation_pump20130816140237750"/>
-            <layer id="installation_valvechamber20131107105006707"/>
-            <layer id="installation_tank20130304110005008"/>
-            <layer id="printmap20130304110011400"/>
+            <layer id="od_annotationpoint20131203095020392"/>
             <layer id="installation_source20130820110331647"/>
-            <layer id="node20130304110005126"/>
+            <layer id="installation_treatment20130816113039913"/>
             <checked-legend-nodes id="conduites_copy20130709141244955">
                 <checked-legend-node id="{a5091172-1b7e-4afe-9f26-4cb7e3dc12d7}"/>
                 <checked-legend-node id="{2903eb12-d512-46ac-9189-419750cae87e}"/>
@@ -404,6 +408,7 @@
             <item>vl_valve_type20130304110011685</item>
             <item>vl_valve_function20130304110011544</item>
             <item>vl_visible20130304110011703</item>
+            <item>vw_pipe_schema20140910100745376</item>
         </custom-order>
     </layer-tree-canvas>
     <legend updateDrawingOrder="false">
@@ -447,20 +452,25 @@
                     </legendlayer>
                 </legendgroup>
             </legendgroup>
-            <legendgroup open="false" checked="Qt::Unchecked" name="Réseau">
+            <legendgroup open="true" checked="Qt::PartiallyChecked" name="Réseau">
+                <legendlayer drawingOrder="51" open="true" checked="Qt::Checked" name="vw_pipe_schema" showFeatureCount="0">
+                    <filegroup open="true" hidden="false">
+                        <legendlayerfile isInOverview="0" layerid="vw_pipe_schema20140910100745376" visible="1"/>
+                    </filegroup>
+                </legendlayer>
                 <legendlayer drawingOrder="12" open="false" checked="Qt::Unchecked" name="conduites" showFeatureCount="0">
                     <filegroup open="false" hidden="false">
                         <legendlayerfile isInOverview="0" layerid="conduites_copy20130709141244955" visible="0"/>
                     </filegroup>
                 </legendlayer>
-                <legendlayer drawingOrder="8" open="false" checked="Qt::Unchecked" name="vannes" showFeatureCount="0">
+                <legendlayer drawingOrder="8" open="false" checked="Qt::Checked" name="vannes" showFeatureCount="0">
                     <filegroup open="false" hidden="false">
-                        <legendlayerfile isInOverview="0" layerid="valve20130304110011497" visible="0"/>
+                        <legendlayerfile isInOverview="0" layerid="valve20130304110011497" visible="1"/>
                     </filegroup>
                 </legendlayer>
-                <legendlayer drawingOrder="7" open="false" checked="Qt::Unchecked" name="hydrantes" showFeatureCount="0">
+                <legendlayer drawingOrder="7" open="false" checked="Qt::Checked" name="hydrantes" showFeatureCount="0">
                     <filegroup open="false" hidden="false">
-                        <legendlayerfile isInOverview="0" layerid="hydrant20130304110004848" visible="0"/>
+                        <legendlayerfile isInOverview="0" layerid="hydrant20130304110004848" visible="1"/>
                     </filegroup>
                 </legendlayer>
             </legendgroup>
@@ -506,7 +516,7 @@
                 </filegroup>
             </legendlayer>
         </legendgroup>
-        <legendgroup open="false" checked="Qt::PartiallyChecked" name="Zones">
+        <legendgroup open="true" checked="Qt::PartiallyChecked" name="Zones">
             <legendlayer drawingOrder="17" open="false" checked="Qt::Unchecked" name="communes" showFeatureCount="0">
                 <filegroup open="false" hidden="false">
                     <legendlayerfile isInOverview="0" layerid="district20130304110004764" visible="0"/>
@@ -891,7 +901,6 @@
                     <Layer>od_annotationline20131203095020365</Layer>
                     <Layer>od_annotationpoint20131203095020392</Layer>
                     <Layer>printmap20130304110011400</Layer>
-                    <Layer>cadastre20140312152032371</Layer>
                 </LayerSet>
                 <Grid/>
                 <ComposerMapGrid leftAnnotationDirection="0" annotationFont="Arial,10,-1,5,50,0,0,0,0,0" gridFramePenThickness="0.5" showAnnotation="1" bottomAnnotationDirection="1" bottomAnnotationPosition="0" name="Grid 1" gridStyle="0" intervalX="0" intervalY="0" gridFrameStyle="0" rightAnnotationPosition="0" topAnnotationDirection="1" leftAnnotationPosition="0" blendMode="0" show="0" frameFillColor1="255,255,255,255" gridFrameWidth="4" frameFillColor2="0,0,0,255" annotationFontColor="0,0,0,255" gridFrameSideFlags="15" gridFramePenColor="0,0,0,255" offsetX="0" annotationPrecision="0" offsetY="0" uuid="{2727c6b9-83a7-4b22-ae5d-4fc30f2f823c}" frameAnnotationDistance="1" unit="0" topAnnotationPosition="0" rightAnnotationDirection="0" annotationFormat="0" crossLength="3">
@@ -1042,7 +1051,6 @@
                     <Layer>od_annotationline20131203095020365</Layer>
                     <Layer>od_annotationpoint20131203095020392</Layer>
                     <Layer>printmap20130304110011400</Layer>
-                    <Layer>cadastre20140312152032371</Layer>
                 </LayerSet>
                 <Grid/>
                 <ComposerMapGrid leftAnnotationDirection="0" annotationFont="Ubuntu,11,-1,5,50,0,0,0,0,0" gridFramePenThickness="0.5" showAnnotation="0" bottomAnnotationDirection="0" bottomAnnotationPosition="1" name="Grid 1" gridStyle="0" intervalX="0" intervalY="0" gridFrameStyle="0" rightAnnotationPosition="1" topAnnotationDirection="0" leftAnnotationPosition="1" blendMode="0" show="0" frameFillColor1="255,255,255,255" gridFrameWidth="2" frameFillColor2="0,0,0,255" annotationFontColor="0,0,0,255" gridFrameSideFlags="15" gridFramePenColor="0,0,0,255" offsetX="0" annotationPrecision="3" offsetY="0" uuid="{0137697c-42da-4677-8bd5-6dd4cd9a05bd}" frameAnnotationDistance="1" unit="0" topAnnotationPosition="1" rightAnnotationDirection="0" annotationFormat="0" crossLength="3">
@@ -1395,7 +1403,6 @@
                     <Layer>od_annotationline20131203095020365</Layer>
                     <Layer>od_annotationpoint20131203095020392</Layer>
                     <Layer>printmap20130304110011400</Layer>
-                    <Layer>cadastre20140312152032371</Layer>
                 </LayerSet>
                 <Grid/>
                 <ComposerMapGrid leftAnnotationDirection="0" annotationFont="Ubuntu,11,-1,5,50,0,0,0,0,0" gridFramePenThickness="0.5" showAnnotation="0" bottomAnnotationDirection="0" bottomAnnotationPosition="1" name="Grid 1" gridStyle="0" intervalX="0" intervalY="0" gridFrameStyle="0" rightAnnotationPosition="1" topAnnotationDirection="0" leftAnnotationPosition="1" blendMode="0" show="0" frameFillColor1="255,255,255,255" gridFrameWidth="2" frameFillColor2="0,0,0,255" annotationFontColor="0,0,0,255" gridFrameSideFlags="15" gridFramePenColor="0,0,0,255" offsetX="0" annotationPrecision="3" offsetY="0" uuid="{b9747bee-32a7-4d0f-a272-35d20f3ae9c4}" frameAnnotationDistance="1" unit="0" topAnnotationPosition="1" rightAnnotationDirection="0" annotationFormat="0" crossLength="3">
@@ -1626,7 +1633,6 @@
                     <Layer>od_annotationline20131203095020365</Layer>
                     <Layer>od_annotationpoint20131203095020392</Layer>
                     <Layer>printmap20130304110011400</Layer>
-                    <Layer>cadastre20140312152032371</Layer>
                 </LayerSet>
                 <Grid/>
                 <ComposerMapGrid leftAnnotationDirection="0" annotationFont="Ubuntu,11,-1,5,50,0,0,0,0,0" gridFramePenThickness="0.5" showAnnotation="0" bottomAnnotationDirection="0" bottomAnnotationPosition="1" name="Grid 1" gridStyle="0" intervalX="0" intervalY="0" gridFrameStyle="0" rightAnnotationPosition="1" topAnnotationDirection="0" leftAnnotationPosition="1" blendMode="0" show="0" frameFillColor1="255,255,255,255" gridFrameWidth="2" frameFillColor2="0,0,0,255" annotationFontColor="0,0,0,255" gridFrameSideFlags="15" gridFramePenColor="0,0,0,255" offsetX="0" annotationPrecision="3" offsetY="0" uuid="{597c5a48-bf1f-4975-a0fb-36b11024113b}" frameAnnotationDistance="1" unit="0" topAnnotationPosition="1" rightAnnotationDirection="0" annotationFormat="0" crossLength="3">
@@ -1857,7 +1863,6 @@
                     <Layer>od_annotationline20131203095020365</Layer>
                     <Layer>od_annotationpoint20131203095020392</Layer>
                     <Layer>printmap20130304110011400</Layer>
-                    <Layer>cadastre20140312152032371</Layer>
                 </LayerSet>
                 <Grid/>
                 <ComposerMapGrid leftAnnotationDirection="0" annotationFont="Ubuntu,11,-1,5,50,0,0,0,0,0" gridFramePenThickness="0.5" showAnnotation="0" bottomAnnotationDirection="0" bottomAnnotationPosition="1" name="Grid 1" gridStyle="0" intervalX="0" intervalY="0" gridFrameStyle="0" rightAnnotationPosition="1" topAnnotationDirection="0" leftAnnotationPosition="1" blendMode="0" show="0" frameFillColor1="255,255,255,255" gridFrameWidth="2" frameFillColor2="0,0,0,255" annotationFontColor="0,0,0,255" gridFrameSideFlags="15" gridFramePenColor="0,0,0,255" offsetX="0" annotationPrecision="3" offsetY="0" uuid="{68cc20f1-df8b-4f36-99da-1488818885ca}" frameAnnotationDistance="1" unit="0" topAnnotationPosition="1" rightAnnotationDirection="0" annotationFormat="0" crossLength="3">
@@ -2088,7 +2093,6 @@
                     <Layer>od_annotationline20131203095020365</Layer>
                     <Layer>od_annotationpoint20131203095020392</Layer>
                     <Layer>printmap20130304110011400</Layer>
-                    <Layer>cadastre20140312152032371</Layer>
                 </LayerSet>
                 <Grid/>
                 <ComposerMapGrid leftAnnotationDirection="0" annotationFont="Ubuntu,11,-1,5,50,0,0,0,0,0" gridFramePenThickness="0.5" showAnnotation="0" bottomAnnotationDirection="0" bottomAnnotationPosition="1" name="Grid 1" gridStyle="0" intervalX="0" intervalY="0" gridFrameStyle="0" rightAnnotationPosition="1" topAnnotationDirection="0" leftAnnotationPosition="1" blendMode="0" show="0" frameFillColor1="255,255,255,255" gridFrameWidth="2" frameFillColor2="0,0,0,255" annotationFontColor="0,0,0,255" gridFrameSideFlags="15" gridFramePenColor="0,0,0,255" offsetX="0" annotationPrecision="3" offsetY="0" uuid="{f33b132a-e26f-4783-a43f-20adc4c40ec7}" frameAnnotationDistance="1" unit="0" topAnnotationPosition="1" rightAnnotationDirection="0" annotationFormat="0" crossLength="3">
@@ -2145,9 +2149,9 @@
             </ComposerMap>
         </Composition>
     </Composer>
-    <projectlayers layercount="53">
-        <maplayer minimumScale="0" maximumScale="1e+08" simplifyDrawingHints="0" minLabelScale="0" maxLabelScale="1e+08" simplifyDrawingTol="3.6" geometry="Point" simplifyMaxScale="1" type="vector" hasScaleBasedVisibilityFlag="0" simplifyLocal="0" scaleBasedLabelVisibilityFlag="0">
-            <id>_cadinput_techical_snap_layer_20140203092715598</id>
+    <projectlayers layercount="54">
+        <maplayer minimumScale="0" maximumScale="1e+08" simplifyDrawingHints="0" minLabelScale="0" maxLabelScale="1e+08" simplifyDrawingTol="1" geometry="Point" simplifyMaxScale="1" type="vector" hasScaleBasedVisibilityFlag="0" simplifyLocal="1" scaleBasedLabelVisibilityFlag="0">
+            <id>_cadinput_techical_snap_layer_20140910101238232</id>
             <datasource>point</datasource>
             <title></title>
             <abstract></abstract>
@@ -2167,7 +2171,7 @@
                     <geographicflag>false</geographicflag>
                 </spatialrefsys>
             </srs>
-            <provider encoding="System">memory</provider>
+            <provider encoding="UTF-8">memory</provider>
             <previewExpression></previewExpression>
             <vectorjoins/>
             <expressionfields/>
@@ -2176,7 +2180,7 @@
                     <symbol alpha="1" type="marker" name="0">
                         <layer pass="0" class="SimpleMarker" locked="0">
                             <prop k="angle" v="0"/>
-                            <prop k="color" v="67,49,133,255"/>
+                            <prop k="color" v="111,46,189,255"/>
                             <prop k="horizontal_anchor_point" v="1"/>
                             <prop k="name" v="circle"/>
                             <prop k="offset" v="0,0"/>
@@ -2224,10 +2228,10 @@
                 <multilineenabled fieldname="" on=""/>
                 <selectedonly on=""/>
             </labelattributes>
-            <editform>.</editform>
+            <editform></editform>
             <editforminit></editforminit>
             <featformsuppress>0</featformsuppress>
-            <annotationform>.</annotationform>
+            <annotationform></annotationform>
             <editorlayout>generatedlayout</editorlayout>
             <excludeAttributesWMS/>
             <excludeAttributesWFS/>
@@ -2859,41 +2863,41 @@
             </vectorjoins>
             <expressionfields/>
             <renderer-v2 symbollevels="0" type="RuleRenderer">
-                <rules>
-                    <rule filter="id_distributor = 1and &quot;Statut_active&quot; = 't'" label="active">
-                        <rule filter="&quot;_schema_visible&quot; = 't'" label="Schématique">
-                            <rule filter=" &quot;Conduites - fonction_schema_visible&quot; = 't'" symbol="0" label="Transport"/>
-                            <rule filter=" &quot;Conduites - fonction_schema_visible&quot; = 'f'" symbol="1" label="Distribution"/>
-                            <rule filter=" &quot;id_protection&quot; IS NOT NULL" symbol="2" label="protégée"/>
+                <rules key="{fb95b6e1-fd60-44f0-9ee8-50790d5f3616}">
+                    <rule filter="id_distributor = 1and &quot;Statut_active&quot; = 't'" key="{5ba75d14-4d30-4894-b69f-886db78bf689}" label="active">
+                        <rule filter="&quot;_schema_visible&quot; = 't'" key="{51cd401d-638e-47ca-ae18-34ab7e15d119}" label="Schématique">
+                            <rule filter=" &quot;Conduites - fonction_schema_visible&quot; = 't'" key="{02a697a4-0fa1-416a-aeb8-9ef81efa66a7}" symbol="0" label="Transport"/>
+                            <rule filter=" &quot;Conduites - fonction_schema_visible&quot; = 'f'" key="{e81025c1-a314-4b59-9f60-e54980f273e2}" symbol="1" label="Distribution"/>
+                            <rule filter=" &quot;id_protection&quot; IS NOT NULL" key="{5c97bf5c-a547-40c8-b83e-ef7548c02423}" symbol="2" label="protégée"/>
                         </rule>
-                        <rule scalemaxdenom="3000" filter="_schema_visible = 'f'" label="Détail">
-                            <rule filter=" &quot;Conduites - fonction_schema_visible&quot; = 't'" symbol="3" label="Transport"/>
-                            <rule filter=" &quot;Conduites - fonction_schema_visible&quot; = 'f'" symbol="4" label="Distribution"/>
-                            <rule filter=" &quot;id_protection&quot; IS NOT NULL" symbol="5" label="protégée"/>
-                        </rule>
-                    </rule>
-                    <rule filter="id_distributor = 1and &quot;Statut_active&quot; = 'f'" label="inactive">
-                        <rule filter="&quot;_schema_visible&quot; = 't'" label="Schématique">
-                            <rule checkstate="0" filter=" &quot;Conduites - fonction_schema_visible&quot; = 't'" symbol="6" label="Transport"/>
-                            <rule checkstate="0" filter=" &quot;Conduites - fonction_schema_visible&quot; = 'f'" symbol="7" label="Distribution"/>
-                            <rule checkstate="0" filter=" &quot;id_protection&quot; IS NOT NULL" symbol="8" label="protégée"/>
-                        </rule>
-                        <rule scalemaxdenom="3000" filter="_schema_visible = 'f'" label="Détail">
-                            <rule checkstate="0" filter=" &quot;Conduites - fonction_schema_visible&quot; = 't'" symbol="9" label="Transport"/>
-                            <rule checkstate="0" filter=" &quot;Conduites - fonction_schema_visible&quot; = 'f'" symbol="10" label="Distribution"/>
-                            <rule checkstate="0" filter=" &quot;id_protection&quot; IS NOT NULL" symbol="11" label="protégée"/>
+                        <rule scalemaxdenom="3000" filter="_schema_visible = 'f'" key="{e4a5496a-7179-4b73-9233-9b9949fab26e}" label="Détail">
+                            <rule filter=" &quot;Conduites - fonction_schema_visible&quot; = 't'" key="{d0805558-560e-45b6-9950-35a5be651612}" symbol="3" label="Transport"/>
+                            <rule filter=" &quot;Conduites - fonction_schema_visible&quot; = 'f'" key="{417eb0b7-4aff-4224-b87a-ed3b4fe0372f}" symbol="4" label="Distribution"/>
+                            <rule filter=" &quot;id_protection&quot; IS NOT NULL" key="{58996424-fde6-4d32-907d-841d0660affe}" symbol="5" label="protégée"/>
                         </rule>
                     </rule>
-                    <rule filter="id_distributor != 1" label="étranger">
-                        <rule filter="&quot;_schema_visible&quot; = 't'" label="Schématique">
-                            <rule filter=" &quot;Conduites - fonction_schema_visible&quot; = 't'" symbol="12" label="Transport"/>
-                            <rule filter=" &quot;Conduites - fonction_schema_visible&quot; = 'f'" symbol="13" label="Distribution"/>
-                            <rule filter=" &quot;id_protection&quot; IS NOT NULL" symbol="14" label="protégée"/>
+                    <rule filter="id_distributor = 1and &quot;Statut_active&quot; = 'f'" key="{06441faf-55ec-4c9c-bd2a-70da8dcfccf7}" label="inactive">
+                        <rule filter="&quot;_schema_visible&quot; = 't'" key="{17beead7-ab35-48b8-beb5-00c5335f7a5e}" label="Schématique">
+                            <rule checkstate="0" filter=" &quot;Conduites - fonction_schema_visible&quot; = 't'" key="{738acf90-ec36-4a95-bce3-7d3bcf450940}" symbol="6" label="Transport"/>
+                            <rule checkstate="0" filter=" &quot;Conduites - fonction_schema_visible&quot; = 'f'" key="{5cd8ab3e-e344-4242-a75f-abb9d0270f1d}" symbol="7" label="Distribution"/>
+                            <rule checkstate="0" filter=" &quot;id_protection&quot; IS NOT NULL" key="{e6574327-0d40-4c4a-a5a0-fdc459ad3afa}" symbol="8" label="protégée"/>
                         </rule>
-                        <rule scalemaxdenom="3000" filter="_schema_visible = 'f'" label="Détail">
-                            <rule filter=" &quot;Conduites - fonction_schema_visible&quot; = 't'" symbol="15" label="Transport"/>
-                            <rule filter=" &quot;Conduites - fonction_schema_visible&quot; = 'f'" symbol="16" label="Distribution"/>
-                            <rule filter=" &quot;id_protection&quot; IS NOT NULL" symbol="17" label="protégée"/>
+                        <rule scalemaxdenom="3000" filter="_schema_visible = 'f'" key="{f13af1c6-0e50-4d7c-930f-50c69ec1be53}" label="Détail">
+                            <rule checkstate="0" filter=" &quot;Conduites - fonction_schema_visible&quot; = 't'" key="{ac36756b-77c6-433f-8290-40750052b992}" symbol="9" label="Transport"/>
+                            <rule checkstate="0" filter=" &quot;Conduites - fonction_schema_visible&quot; = 'f'" key="{910c4c98-24e1-46e5-8d64-6ea3b7a56822}" symbol="10" label="Distribution"/>
+                            <rule checkstate="0" filter=" &quot;id_protection&quot; IS NOT NULL" key="{f8116a38-a2d4-4967-ac74-d745bdc3a3f3}" symbol="11" label="protégée"/>
+                        </rule>
+                    </rule>
+                    <rule filter="id_distributor != 1" key="{0b283df1-9d4b-40ab-82a4-d51454ca5571}" label="étranger">
+                        <rule filter="&quot;_schema_visible&quot; = 't'" key="{9eee6ee3-a4bf-4e54-8578-11dcad11c950}" label="Schématique">
+                            <rule filter=" &quot;Conduites - fonction_schema_visible&quot; = 't'" key="{1501370a-ff79-40ac-a3ea-1e7cf2b9903f}" symbol="12" label="Transport"/>
+                            <rule filter=" &quot;Conduites - fonction_schema_visible&quot; = 'f'" key="{c3b70b7a-8691-4562-bb4e-afa2f1fdabe2}" symbol="13" label="Distribution"/>
+                            <rule filter=" &quot;id_protection&quot; IS NOT NULL" key="{6b9a97c6-b12b-439d-a0bd-b1aa633fcf11}" symbol="14" label="protégée"/>
+                        </rule>
+                        <rule scalemaxdenom="3000" filter="_schema_visible = 'f'" key="{4f0f5bf8-349b-4926-bb8e-f01a44948e34}" label="Détail">
+                            <rule filter=" &quot;Conduites - fonction_schema_visible&quot; = 't'" key="{dda9cd61-f2df-45d6-ad7f-5837e8f32fb4}" symbol="15" label="Transport"/>
+                            <rule filter=" &quot;Conduites - fonction_schema_visible&quot; = 'f'" key="{c6b084ad-522e-43fa-b063-2c8a163d98f5}" symbol="16" label="Distribution"/>
+                            <rule filter=" &quot;id_protection&quot; IS NOT NULL" key="{1b077972-5cdc-4bdf-8c02-73fcf7344883}" symbol="17" label="protégée"/>
                         </rule>
                     </rule>
                 </rules>
@@ -4824,16 +4828,16 @@
             <vectorjoins/>
             <expressionfields/>
             <renderer-v2 symbollevels="0" type="RuleRenderer">
-                <rules>
-                    <rule filter="schema_visible = 't'" label="Schématique">
-                        <rule filter="id_type = 2801" symbol="0" label="Réduction de pression"/>
-                        <rule filter="id_type = 2802" symbol="1" label="Coupe pression"/>
-                        <rule filter="id_type = 2803" symbol="2" label="Rassemblement"/>
+                <rules key="{01aa91d0-8da7-4059-bb36-445c2a22b833}">
+                    <rule filter="schema_visible = 't'" key="{c7d88dde-c64b-4ae1-9cf8-d7b9d30c786c}" label="Schématique">
+                        <rule filter="id_type = 2801" key="{2f1fa1f3-03a7-414e-903c-9fc77de1d0e2}" symbol="0" label="Réduction de pression"/>
+                        <rule filter="id_type = 2802" key="{02883a74-100a-47be-9e65-cb740b1301c7}" symbol="1" label="Coupe pression"/>
+                        <rule filter="id_type = 2803" key="{dea40e42-3f1d-4f4e-b53b-1cf43be6080b}" symbol="2" label="Rassemblement"/>
                     </rule>
-                    <rule scalemaxdenom="300" filter="schema_visible = 'f'" label="Détail">
-                        <rule filter="id_type = 2801" symbol="3" label="Réduction de pression"/>
-                        <rule filter="id_type = 2802" symbol="4" label="Coupe pression"/>
-                        <rule filter="id_type = 2803" symbol="5" label="Rassemblement"/>
+                    <rule scalemaxdenom="300" filter="schema_visible = 'f'" key="{330e482e-ef3e-4359-b8db-d355fa29e422}" label="Détail">
+                        <rule filter="id_type = 2801" key="{c6afaabd-aa4c-4249-9391-babb201d0e32}" symbol="3" label="Réduction de pression"/>
+                        <rule filter="id_type = 2802" key="{f7765693-7a82-4f6a-baba-d3df23972fad}" symbol="4" label="Coupe pression"/>
+                        <rule filter="id_type = 2803" key="{1efb00a6-76bc-40c3-a11d-3c9d46d3c08b}" symbol="5" label="Rassemblement"/>
                     </rule>
                 </rules>
                 <symbols>
@@ -5218,9 +5222,9 @@
             <vectorjoins/>
             <expressionfields/>
             <renderer-v2 symbollevels="0" type="RuleRenderer">
-                <rules>
-                    <rule filter="schema_visible = 't'" symbol="0" label="Scématique"/>
-                    <rule scalemaxdenom="300" filter="schema_visible = 'f'" symbol="1" label="Détail"/>
+                <rules key="{199ef757-0b5c-48cb-b538-92083035421f}">
+                    <rule filter="schema_visible = 't'" key="{c2d47e05-09c4-48fd-af84-d05365127a34}" symbol="0" label="Scématique"/>
+                    <rule scalemaxdenom="300" filter="schema_visible = 'f'" key="{b7818b6c-8fec-4cc8-b412-79629b4a467f}" symbol="1" label="Détail"/>
                 </rules>
                 <symbols>
                     <symbol alpha="1" type="marker" name="0">
@@ -5545,9 +5549,9 @@
             <vectorjoins/>
             <expressionfields/>
             <renderer-v2 symbollevels="0" type="RuleRenderer">
-                <rules>
-                    <rule filter="schema_visible = 't'" symbol="0" label="Scématique"/>
-                    <rule scalemaxdenom="300" filter="schema_visible = 'f'" symbol="1" label="Détail"/>
+                <rules key="{2089120e-82c9-47d7-8831-c6b7a14b2bef}">
+                    <rule filter="schema_visible = 't'" key="{ba854d0e-0c6a-4dcc-aa9e-5f8e8b15d6ef}" symbol="0" label="Scématique"/>
+                    <rule scalemaxdenom="300" filter="schema_visible = 'f'" key="{982c498c-0593-473f-a0a7-f664fda76f5f}" symbol="1" label="Détail"/>
                 </rules>
                 <symbols>
                     <symbol alpha="1" type="marker" name="0">
@@ -5871,9 +5875,9 @@
             </vectorjoins>
             <expressionfields/>
             <renderer-v2 symbollevels="0" type="RuleRenderer">
-                <rules>
-                    <rule filter="schema_visible = 't'" symbol="0" label="Scématique"/>
-                    <rule scalemaxdenom="300" filter="schema_visible = 'f'" symbol="1" label="Détail"/>
+                <rules key="{35c73afe-6516-42bb-8953-5c65e28828c1}">
+                    <rule filter="schema_visible = 't'" key="{f784a473-70a3-42d8-8eb6-c2c18d3ca325}" symbol="0" label="Scématique"/>
+                    <rule scalemaxdenom="300" filter="schema_visible = 'f'" key="{22bd7bdd-45dd-433a-ba5e-a7344e656d03}" symbol="1" label="Détail"/>
                 </rules>
                 <symbols>
                     <symbol alpha="1" type="marker" name="0">
@@ -6309,9 +6313,9 @@
             <vectorjoins/>
             <expressionfields/>
             <renderer-v2 symbollevels="0" type="RuleRenderer">
-                <rules>
-                    <rule filter="schema_visible = 't'" symbol="0" label="Scématique"/>
-                    <rule scalemaxdenom="300" filter="schema_visible = 'f'" symbol="1" label="Détail"/>
+                <rules key="{9df24abd-7632-490b-8cf4-0c0400d16f3c}">
+                    <rule filter="schema_visible = 't'" key="{cb36a328-e488-4592-9497-2eca63919dba}" symbol="0" label="Scématique"/>
+                    <rule scalemaxdenom="300" filter="schema_visible = 'f'" key="{8c7bd154-8c4c-43a5-9ef4-6c696a7c9035}" symbol="1" label="Détail"/>
                 </rules>
                 <symbols>
                     <symbol alpha="1" type="marker" name="0">
@@ -6643,14 +6647,14 @@
             <vectorjoins/>
             <expressionfields/>
             <renderer-v2 symbollevels="0" type="RuleRenderer">
-                <rules>
-                    <rule filter="schema_visible = 't'" label="Schématique">
-                        <rule filter="meter = 't'" symbol="0" label="Compteur"/>
-                        <rule filter="meter != 't'" symbol="1" label="Chambre"/>
+                <rules key="{b6957be4-1641-4ee0-80fb-1395ea852fe7}">
+                    <rule filter="schema_visible = 't'" key="{5ee62e96-5c57-4679-81e2-67a06e7feab2}" label="Schématique">
+                        <rule filter="meter = 't'" key="{402bdcdb-732b-493b-9047-d667744fe846}" symbol="0" label="Compteur"/>
+                        <rule filter="meter != 't'" key="{1218fbca-ca75-4fd8-95e4-b985bf86fb04}" symbol="1" label="Chambre"/>
                     </rule>
-                    <rule scalemaxdenom="300" filter="schema_visible = 'f'" label="Détail">
-                        <rule filter="meter = 't'" symbol="2" label="Compteur"/>
-                        <rule filter="meter != 't'" symbol="3" label="Chambre"/>
+                    <rule scalemaxdenom="300" filter="schema_visible = 'f'" key="{5e8a6c56-eb1a-4696-a6c0-86439995aa22}" label="Détail">
+                        <rule filter="meter = 't'" key="{08669d55-dc5e-45e6-bc6e-632743181afb}" symbol="2" label="Compteur"/>
+                        <rule filter="meter != 't'" key="{5061fc9a-feff-4900-9308-f31c223c5688}" symbol="3" label="Chambre"/>
                     </rule>
                 </rules>
                 <symbols>
@@ -7727,8 +7731,8 @@
             <vectorjoins/>
             <expressionfields/>
             <renderer-v2 symbollevels="0" type="RuleRenderer">
-                <rules>
-                    <rule symbol="0"/>
+                <rules key="{3f5df1b1-8e8c-44e4-a872-437f6a86a68f}">
+                    <rule key="{171c3e8b-a8a0-4f83-9dd3-bc4e2a8c7245}" symbol="0"/>
                 </rules>
                 <symbols>
                     <symbol alpha="1" type="marker" name="0">
@@ -8932,7 +8936,7 @@
                 </edittype>
             </edittypes>
         </maplayer>
-        <maplayer minimumScale="250" maximumScale="30000" simplifyDrawingHints="1" minLabelScale="1" maxLabelScale="1e+08" simplifyDrawingTol="1" geometry="Polygon" simplifyMaxScale="1" type="vector" hasScaleBasedVisibilityFlag="1" simplifyLocal="1" scaleBasedLabelVisibilityFlag="0">
+        <maplayer minimumScale="250" maximumScale="60000" simplifyDrawingHints="1" minLabelScale="1" maxLabelScale="1e+08" simplifyDrawingTol="1" geometry="Polygon" simplifyMaxScale="1" type="vector" hasScaleBasedVisibilityFlag="0" simplifyLocal="1" scaleBasedLabelVisibilityFlag="0">
             <id>printmap20130304110011400</id>
             <datasource>dbname='sige' host=172.24.171.203 port=5432 user='sige' password='db4wat$' sslmode=allow key='id' srid=21781 type=POLYGON table="distribution"."od_printmap" (geometry) sql=</datasource>
             <title></title>
@@ -9185,7 +9189,7 @@
                     <widgetv2config IsMultiline="1" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
                 </edittype>
                 <edittype widgetv2type="DateTime" name="version_date">
-                    <widgetv2config fieldEditable="1" calendar_popup="0" allow_null="0" display_format="yyyy-MM-dd" field_format="yyyy-mm-dd" labelOnTop="0"/>
+                    <widgetv2config fieldEditable="1" calendar_popup="1" allow_null="1" display_format="yyyy-MM-dd" field_format="yyyy-MM-dd" labelOnTop="0"/>
                 </edittype>
                 <edittype widgetv2type="TextEdit" name="x_min">
                     <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
@@ -9396,16 +9400,16 @@
             </vectorjoins>
             <expressionfields/>
             <renderer-v2 symbollevels="0" type="RuleRenderer">
-                <rules>
-                    <rule scalemaxdenom="10000" description="toutes les vannes sauf organe réseau et vanne d'hydrant" filter="id_function != 6105 AND id_function != 6108" symbol="0" label="réseau">
-                        <rule filter="closed = 't'" symbol="1" label="Fermée"/>
-                        <rule filter="&quot;id_type&quot; = 6312" symbol="2" label="elgelf"/>
-                        <rule filter="&quot;id_type&quot; =6313" symbol="3" label="arrêt"/>
+                <rules key="{6cd5ae58-3df0-4d98-8ff6-3da4b32a8c56}">
+                    <rule scalemaxdenom="10000" description="toutes les vannes sauf organe réseau et vanne d'hydrant" filter="id_function != 6105 AND id_function != 6108" key="{e68a6ca8-eef1-4df3-8361-9eea7b15adea}" symbol="0" label="réseau">
+                        <rule filter="closed = 't'" key="{8f73b193-f252-4050-8823-931dbaea6cb7}" symbol="1" label="Fermée"/>
+                        <rule filter="&quot;id_type&quot; = 6312" key="{463e9a29-8925-4a3b-8e2c-6b90f8f5fe2f}" symbol="2" label="elgelf"/>
+                        <rule filter="&quot;id_type&quot; =6313" key="{b155b021-f4a4-41f1-99e7-738525044321}" symbol="3" label="arrêt"/>
                     </rule>
-                    <rule scalemaxdenom="10000" filter="id_function = 6105 OR id_function = 6108" symbol="4" label="abonné">
-                        <rule filter="closed = 't'" symbol="5" label="Fermée"/>
-                        <rule filter="&quot;id_type&quot; =6313" symbol="6" label="arrêt"/>
-                        <rule filter="id_type = 6312" symbol="7" label="elgelf"/>
+                    <rule scalemaxdenom="10000" filter="id_function = 6105 OR id_function = 6108" key="{5beba0dd-91e1-455b-8bc4-a451962ddbba}" symbol="4" label="abonné">
+                        <rule filter="closed = 't'" key="{ec098763-10ec-430f-99e1-5b0201512823}" symbol="5" label="Fermée"/>
+                        <rule filter="&quot;id_type&quot; =6313" key="{9457ec90-3805-462e-81c9-2063d2585b8e}" symbol="6" label="arrêt"/>
+                        <rule filter="id_type = 6312" key="{d41dc47f-f48a-464d-9b44-cc15c9a41b13}" symbol="7" label="elgelf"/>
                     </rule>
                 </rules>
                 <symbols>
@@ -9949,8 +9953,8 @@
             <vectorjoins/>
             <expressionfields/>
             <renderer-v2 symbollevels="0" type="RuleRenderer">
-                <rules>
-                    <rule symbol="0"/>
+                <rules key="{03a4e840-a6a6-47ac-aa51-44b2d07cf667}">
+                    <rule key="{91abb220-6a00-4025-8fd3-b36a19a4eaa4}" symbol="0"/>
                 </rules>
                 <symbols>
                     <symbol alpha="1" type="marker" name="0">
@@ -11678,6 +11682,316 @@
                 </edittype>
             </edittypes>
         </maplayer>
+        <maplayer minimumScale="-4.65661e-10" maximumScale="1e+08" simplifyDrawingHints="0" minLabelScale="0" maxLabelScale="1e+08" simplifyDrawingTol="1" geometry="Line" simplifyMaxScale="1" type="vector" hasScaleBasedVisibilityFlag="0" simplifyLocal="1" scaleBasedLabelVisibilityFlag="0">
+            <id>vw_pipe_schema20140910100745376</id>
+            <datasource>dbname='sige' host=172.24.171.203 port=5432 user='sige' password='db4wat$' sslmode=disable key='id' srid=21781 type=LINESTRING table="distribution"."vw_pipe_schema" (geometry) sql=</datasource>
+            <title></title>
+            <abstract></abstract>
+            <keywordList>
+                <value></value>
+            </keywordList>
+            <layername>vw_pipe_schema</layername>
+            <srs>
+                <spatialrefsys>
+                    <proj4>+proj=somerc +lat_0=46.95240555555556 +lon_0=7.439583333333333 +k_0=1 +x_0=600000 +y_0=200000 +ellps=bessel +towgs84=674.4,15.1,405.3,0,0,0,0 +units=m +no_defs</proj4>
+                    <srsid>1919</srsid>
+                    <srid>21781</srid>
+                    <authid>EPSG:21781</authid>
+                    <description>CH1903 / LV03</description>
+                    <projectionacronym>somerc</projectionacronym>
+                    <ellipsoidacronym>bessel</ellipsoidacronym>
+                    <geographicflag>false</geographicflag>
+                </spatialrefsys>
+            </srs>
+            <provider encoding="UTF-8">postgres</provider>
+            <previewExpression></previewExpression>
+            <vectorjoins/>
+            <expressionfields/>
+            <renderer-v2 symbollevels="0" type="singleSymbol">
+                <symbols>
+                    <symbol alpha="1" type="line" name="0">
+                        <layer pass="0" class="SimpleLine" locked="0">
+                            <prop k="capstyle" v="square"/>
+                            <prop k="customdash" v="5;2"/>
+                            <prop k="customdash_map_unit_scale" v="0,0"/>
+                            <prop k="customdash_unit" v="MM"/>
+                            <prop k="draw_inside_polygon" v="0"/>
+                            <prop k="joinstyle" v="bevel"/>
+                            <prop k="line_color" v="0,140,255,255"/>
+                            <prop k="line_style" v="solid"/>
+                            <prop k="line_width" v="0.8"/>
+                            <prop k="line_width_unit" v="MM"/>
+                            <prop k="offset" v="0"/>
+                            <prop k="offset_map_unit_scale" v="0,0"/>
+                            <prop k="offset_unit" v="MM"/>
+                            <prop k="use_custom_dash" v="0"/>
+                            <prop k="width_map_unit_scale" v="0,0"/>
+                        </layer>
+                    </symbol>
+                </symbols>
+                <rotation/>
+                <sizescale scalemethod="area"/>
+            </renderer-v2>
+            <customproperties>
+                <property key="labeling" value="pal"/>
+                <property key="labeling/addDirectionSymbol" value="false"/>
+                <property key="labeling/angleOffset" value="0"/>
+                <property key="labeling/blendMode" value="0"/>
+                <property key="labeling/bufferBlendMode" value="0"/>
+                <property key="labeling/bufferColorA" value="255"/>
+                <property key="labeling/bufferColorB" value="255"/>
+                <property key="labeling/bufferColorG" value="255"/>
+                <property key="labeling/bufferColorR" value="255"/>
+                <property key="labeling/bufferDraw" value="false"/>
+                <property key="labeling/bufferJoinStyle" value="64"/>
+                <property key="labeling/bufferNoFill" value="false"/>
+                <property key="labeling/bufferSize" value="1"/>
+                <property key="labeling/bufferSizeInMapUnits" value="false"/>
+                <property key="labeling/bufferSizeMapUnitMaxScale" value="0"/>
+                <property key="labeling/bufferSizeMapUnitMinScale" value="0"/>
+                <property key="labeling/bufferTransp" value="0"/>
+                <property key="labeling/centroidInside" value="false"/>
+                <property key="labeling/centroidWhole" value="false"/>
+                <property key="labeling/decimals" value="3"/>
+                <property key="labeling/displayAll" value="false"/>
+                <property key="labeling/dist" value="0"/>
+                <property key="labeling/distInMapUnits" value="false"/>
+                <property key="labeling/distMapUnitMaxScale" value="0"/>
+                <property key="labeling/distMapUnitMinScale" value="0"/>
+                <property key="labeling/enabled" value="false"/>
+                <property key="labeling/fieldName" value=""/>
+                <property key="labeling/fontBold" value="false"/>
+                <property key="labeling/fontCapitals" value="0"/>
+                <property key="labeling/fontFamily" value="Ubuntu"/>
+                <property key="labeling/fontItalic" value="false"/>
+                <property key="labeling/fontLetterSpacing" value="0"/>
+                <property key="labeling/fontLimitPixelSize" value="false"/>
+                <property key="labeling/fontMaxPixelSize" value="10000"/>
+                <property key="labeling/fontMinPixelSize" value="3"/>
+                <property key="labeling/fontSize" value="11"/>
+                <property key="labeling/fontSizeInMapUnits" value="false"/>
+                <property key="labeling/fontSizeMapUnitMaxScale" value="0"/>
+                <property key="labeling/fontSizeMapUnitMinScale" value="0"/>
+                <property key="labeling/fontStrikeout" value="false"/>
+                <property key="labeling/fontUnderline" value="false"/>
+                <property key="labeling/fontWeight" value="50"/>
+                <property key="labeling/fontWordSpacing" value="0"/>
+                <property key="labeling/formatNumbers" value="false"/>
+                <property key="labeling/isExpression" value="true"/>
+                <property key="labeling/labelOffsetInMapUnits" value="true"/>
+                <property key="labeling/labelOffsetMapUnitMaxScale" value="0"/>
+                <property key="labeling/labelOffsetMapUnitMinScale" value="0"/>
+                <property key="labeling/labelPerPart" value="false"/>
+                <property key="labeling/leftDirectionSymbol" value="&lt;"/>
+                <property key="labeling/limitNumLabels" value="false"/>
+                <property key="labeling/maxCurvedCharAngleIn" value="20"/>
+                <property key="labeling/maxCurvedCharAngleOut" value="-20"/>
+                <property key="labeling/maxNumLabels" value="2000"/>
+                <property key="labeling/mergeLines" value="false"/>
+                <property key="labeling/minFeatureSize" value="0"/>
+                <property key="labeling/multilineAlign" value="0"/>
+                <property key="labeling/multilineHeight" value="1"/>
+                <property key="labeling/namedStyle" value="Medium"/>
+                <property key="labeling/obstacle" value="true"/>
+                <property key="labeling/placeDirectionSymbol" value="0"/>
+                <property key="labeling/placement" value="2"/>
+                <property key="labeling/placementFlags" value="10"/>
+                <property key="labeling/plussign" value="false"/>
+                <property key="labeling/preserveRotation" value="true"/>
+                <property key="labeling/previewBkgrdColor" value="#ffffff"/>
+                <property key="labeling/priority" value="5"/>
+                <property key="labeling/quadOffset" value="4"/>
+                <property key="labeling/repeatDistance" value="0"/>
+                <property key="labeling/repeatDistanceMapUnitMaxScale" value="0"/>
+                <property key="labeling/repeatDistanceMapUnitMinScale" value="0"/>
+                <property key="labeling/repeatDistanceUnit" value="1"/>
+                <property key="labeling/reverseDirectionSymbol" value="false"/>
+                <property key="labeling/rightDirectionSymbol" value=">"/>
+                <property key="labeling/scaleMax" value="10000000"/>
+                <property key="labeling/scaleMin" value="1"/>
+                <property key="labeling/scaleVisibility" value="false"/>
+                <property key="labeling/shadowBlendMode" value="6"/>
+                <property key="labeling/shadowColorB" value="0"/>
+                <property key="labeling/shadowColorG" value="0"/>
+                <property key="labeling/shadowColorR" value="0"/>
+                <property key="labeling/shadowDraw" value="false"/>
+                <property key="labeling/shadowOffsetAngle" value="135"/>
+                <property key="labeling/shadowOffsetDist" value="1"/>
+                <property key="labeling/shadowOffsetGlobal" value="true"/>
+                <property key="labeling/shadowOffsetMapUnitMaxScale" value="0"/>
+                <property key="labeling/shadowOffsetMapUnitMinScale" value="0"/>
+                <property key="labeling/shadowOffsetUnits" value="1"/>
+                <property key="labeling/shadowRadius" value="1.5"/>
+                <property key="labeling/shadowRadiusAlphaOnly" value="false"/>
+                <property key="labeling/shadowRadiusMapUnitMaxScale" value="0"/>
+                <property key="labeling/shadowRadiusMapUnitMinScale" value="0"/>
+                <property key="labeling/shadowRadiusUnits" value="1"/>
+                <property key="labeling/shadowScale" value="100"/>
+                <property key="labeling/shadowTransparency" value="30"/>
+                <property key="labeling/shadowUnder" value="0"/>
+                <property key="labeling/shapeBlendMode" value="0"/>
+                <property key="labeling/shapeBorderColorA" value="255"/>
+                <property key="labeling/shapeBorderColorB" value="128"/>
+                <property key="labeling/shapeBorderColorG" value="128"/>
+                <property key="labeling/shapeBorderColorR" value="128"/>
+                <property key="labeling/shapeBorderWidth" value="0"/>
+                <property key="labeling/shapeBorderWidthMapUnitMaxScale" value="0"/>
+                <property key="labeling/shapeBorderWidthMapUnitMinScale" value="0"/>
+                <property key="labeling/shapeBorderWidthUnits" value="1"/>
+                <property key="labeling/shapeDraw" value="false"/>
+                <property key="labeling/shapeFillColorA" value="255"/>
+                <property key="labeling/shapeFillColorB" value="255"/>
+                <property key="labeling/shapeFillColorG" value="255"/>
+                <property key="labeling/shapeFillColorR" value="255"/>
+                <property key="labeling/shapeJoinStyle" value="64"/>
+                <property key="labeling/shapeOffsetMapUnitMaxScale" value="0"/>
+                <property key="labeling/shapeOffsetMapUnitMinScale" value="0"/>
+                <property key="labeling/shapeOffsetUnits" value="1"/>
+                <property key="labeling/shapeOffsetX" value="0"/>
+                <property key="labeling/shapeOffsetY" value="0"/>
+                <property key="labeling/shapeRadiiMapUnitMaxScale" value="0"/>
+                <property key="labeling/shapeRadiiMapUnitMinScale" value="0"/>
+                <property key="labeling/shapeRadiiUnits" value="1"/>
+                <property key="labeling/shapeRadiiX" value="0"/>
+                <property key="labeling/shapeRadiiY" value="0"/>
+                <property key="labeling/shapeRotation" value="0"/>
+                <property key="labeling/shapeRotationType" value="0"/>
+                <property key="labeling/shapeSVGFile" value=""/>
+                <property key="labeling/shapeSizeMapUnitMaxScale" value="0"/>
+                <property key="labeling/shapeSizeMapUnitMinScale" value="0"/>
+                <property key="labeling/shapeSizeType" value="0"/>
+                <property key="labeling/shapeSizeUnits" value="1"/>
+                <property key="labeling/shapeSizeX" value="0"/>
+                <property key="labeling/shapeSizeY" value="0"/>
+                <property key="labeling/shapeTransparency" value="0"/>
+                <property key="labeling/shapeType" value="0"/>
+                <property key="labeling/textColorA" value="255"/>
+                <property key="labeling/textColorB" value="0"/>
+                <property key="labeling/textColorG" value="0"/>
+                <property key="labeling/textColorR" value="0"/>
+                <property key="labeling/textTransp" value="0"/>
+                <property key="labeling/upsidedownLabels" value="0"/>
+                <property key="labeling/wrapChar" value=""/>
+                <property key="labeling/xOffset" value="0"/>
+                <property key="labeling/yOffset" value="0"/>
+            </customproperties>
+            <blendMode>0</blendMode>
+            <featureBlendMode>0</featureBlendMode>
+            <layerTransparency>0</layerTransparency>
+            <displayfield>id</displayfield>
+            <label>0</label>
+            <labelattributes>
+                <label fieldname="" text="Label"/>
+                <family fieldname="" name="Ubuntu"/>
+                <size fieldname="" units="pt" value="12"/>
+                <bold fieldname="" on="0"/>
+                <italic fieldname="" on="0"/>
+                <underline fieldname="" on="0"/>
+                <strikeout fieldname="" on="0"/>
+                <color fieldname="" red="0" blue="0" green="0"/>
+                <x fieldname=""/>
+                <y fieldname=""/>
+                <offset x="0" y="0" units="pt" yfieldname="" xfieldname=""/>
+                <angle fieldname="" value="0" auto="0"/>
+                <alignment fieldname="" value="center"/>
+                <buffercolor fieldname="" red="255" blue="255" green="255"/>
+                <buffersize fieldname="" units="pt" value="1"/>
+                <bufferenabled fieldname="" on=""/>
+                <multilineenabled fieldname="" on=""/>
+                <selectedonly on=""/>
+            </labelattributes>
+            <editform></editform>
+            <editforminit></editforminit>
+            <featformsuppress>0</featformsuppress>
+            <annotationform></annotationform>
+            <editorlayout>generatedlayout</editorlayout>
+            <excludeAttributesWMS/>
+            <excludeAttributesWFS/>
+            <attributeactions/>
+            <edittypes>
+                <edittype widgetv2type="TextEdit" name="id">
+                    <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
+                </edittype>
+                <edittype widgetv2type="TextEdit" name="id_function">
+                    <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
+                </edittype>
+                <edittype widgetv2type="TextEdit" name="id_installmethod">
+                    <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
+                </edittype>
+                <edittype widgetv2type="TextEdit" name="id_material">
+                    <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
+                </edittype>
+                <edittype widgetv2type="TextEdit" name="id_distributor">
+                    <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
+                </edittype>
+                <edittype widgetv2type="TextEdit" name="id_precision">
+                    <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
+                </edittype>
+                <edittype widgetv2type="TextEdit" name="id_protection">
+                    <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
+                </edittype>
+                <edittype widgetv2type="TextEdit" name="id_status">
+                    <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
+                </edittype>
+                <edittype widgetv2type="TextEdit" name="year">
+                    <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
+                </edittype>
+                <edittype widgetv2type="TextEdit" name="pressure_nominal">
+                    <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
+                </edittype>
+                <edittype widgetv2type="TextEdit" name="folder">
+                    <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
+                </edittype>
+                <edittype widgetv2type="TextEdit" name="remark">
+                    <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
+                </edittype>
+                <edittype widgetv2type="TextEdit" name="id_district">
+                    <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
+                </edittype>
+                <edittype widgetv2type="TextEdit" name="id_pressurezone">
+                    <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
+                </edittype>
+                <edittype widgetv2type="TextEdit" name="id_printmap">
+                    <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
+                </edittype>
+                <edittype widgetv2type="TextEdit" name="_district">
+                    <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
+                </edittype>
+                <edittype widgetv2type="TextEdit" name="_printmaps">
+                    <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
+                </edittype>
+                <edittype widgetv2type="TextEdit" name="label_visible_1">
+                    <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
+                </edittype>
+                <edittype widgetv2type="TextEdit" name="label_visible_2">
+                    <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
+                </edittype>
+                <edittype widgetv2type="TextEdit" name="_length2d">
+                    <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
+                </edittype>
+                <edittype widgetv2type="TextEdit" name="_length3d">
+                    <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
+                </edittype>
+                <edittype widgetv2type="TextEdit" name="number_of_pipe">
+                    <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
+                </edittype>
+                <edittype widgetv2type="TextEdit" name="tunnel_or_bridge">
+                    <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
+                </edittype>
+                <edittype widgetv2type="TextEdit" name="_valve_count">
+                    <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
+                </edittype>
+                <edittype widgetv2type="TextEdit" name="_valve_closed">
+                    <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
+                </edittype>
+                <edittype widgetv2type="TextEdit" name="_pressurezone">
+                    <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
+                </edittype>
+                <edittype widgetv2type="TextEdit" name="_pressurezone_colorcode">
+                    <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
+                </edittype>
+            </edittypes>
+        </maplayer>
     </projectlayers>
     <properties>
         <WMSUrl type="QString"></WMSUrl>
@@ -11754,55 +12068,58 @@
         <WMSOnlineResource type="QString"></WMSOnlineResource>
         <Digitizing>
             <LayerSnappingList type="QStringList">
-                <value>_cadinput_techical_snap_layer_20140203092715598</value>
                 <value>conduites_copy20130709141244955</value>
                 <value>district20130304110004764</value>
-                <value>hydrant20130304110004848</value>
                 <value>installation20130304110004938</value>
-                <value>installation_pressurecontrol20131107105006792</value>
-                <value>installation_pump20130816140237750</value>
-                <value>installation_source20130820110331647</value>
-                <value>installation_tank20130304110005008</value>
-                <value>installation_treatment20130816113039913</value>
-                <value>installation_valvechamber20131107105006707</value>
-                <value>node20130304110005126</value>
-                <value>od_annotationline20131203095020365</value>
-                <value>od_annotationpoint20131203095020392</value>
                 <value>od_installationpart20140429113327995</value>
                 <value>od_node20140116161508743</value>
                 <value>pipe_child_parent20130417092030507</value>
                 <value>pressurezone20130417133612105</value>
-                <value>printmap20130304110011400</value>
                 <value>protectionzone20130304110011418</value>
-                <value>valve20130304110011497</value>
                 <value>valve_schema20130304110011584</value>
+                <value>_cadinput_techical_snap_layer_20140910101238232</value>
+                <value>valve20130304110011497</value>
+                <value>node20130304110005126</value>
+                <value>printmap20130304110011400</value>
+                <value>od_annotationline20131203095020365</value>
+                <value>installation_pump20130816140237750</value>
+                <value>installation_source20130820110331647</value>
+                <value>vw_pipe_schema20140910100745376</value>
+                <value>installation_pressurecontrol20131107105006792</value>
+                <value>installation_valvechamber20131107105006707</value>
+                <value>installation_treatment20130816113039913</value>
+                <value>od_annotationpoint20131203095020392</value>
+                <value>installation_tank20130304110005008</value>
+                <value>hydrant20130304110004848</value>
             </LayerSnappingList>
             <LayerSnappingEnabledList type="QStringList">
                 <value>enabled</value>
-                <value>enabled</value>
                 <value>disabled</value>
-                <value>disabled</value>
-                <value>enabled</value>
-                <value>enabled</value>
-                <value>enabled</value>
-                <value>enabled</value>
-                <value>enabled</value>
-                <value>enabled</value>
-                <value>enabled</value>
                 <value>enabled</value>
                 <value>disabled</value>
                 <value>disabled</value>
                 <value>disabled</value>
+                <value>enabled</value>
                 <value>disabled</value>
+                <value>enabled</value>
+                <value>enabled</value>
+                <value>enabled</value>
+                <value>enabled</value>
+                <value>enabled</value>
                 <value>disabled</value>
                 <value>enabled</value>
                 <value>enabled</value>
                 <value>disabled</value>
                 <value>enabled</value>
                 <value>enabled</value>
+                <value>enabled</value>
+                <value>disabled</value>
+                <value>enabled</value>
+                <value>disabled</value>
             </LayerSnappingEnabledList>
             <AvoidIntersectionsList type="QStringList"/>
             <LayerSnappingToleranceUnitList type="QStringList">
+                <value>1</value>
                 <value>1</value>
                 <value>1</value>
                 <value>1</value>
@@ -11830,50 +12147,52 @@
                 <value>to_vertex</value>
                 <value>to_vertex</value>
                 <value>to_vertex</value>
-                <value>to_vertex</value>
-                <value>to_vertex</value>
-                <value>to_vertex_and_segment</value>
-                <value>to_vertex_and_segment</value>
-                <value>to_vertex_and_segment</value>
-                <value>to_vertex</value>
-                <value>to_vertex_and_segment</value>
-                <value>to_vertex_and_segment</value>
-                <value>to_vertex</value>
-                <value>to_vertex_and_segment</value>
-                <value>to_vertex_and_segment</value>
                 <value>to_vertex_and_segment</value>
                 <value>to_vertex_and_segment</value>
                 <value>to_vertex</value>
                 <value>to_vertex</value>
                 <value>to_vertex</value>
                 <value>to_vertex</value>
+                <value>to_vertex</value>
+                <value>to_vertex</value>
+                <value>to_vertex</value>
+                <value>to_vertex</value>
+                <value>to_vertex_and_segment</value>
+                <value>to_vertex_and_segment</value>
+                <value>to_vertex_and_segment</value>
+                <value>to_vertex_and_segment</value>
+                <value>to_vertex_and_segment</value>
+                <value>to_vertex_and_segment</value>
+                <value>to_vertex_and_segment</value>
+                <value>to_vertex_and_segment</value>
                 <value>to_vertex</value>
                 <value>to_vertex</value>
             </LayerSnapToList>
             <TopologicalEditing type="bool">false</TopologicalEditing>
             <LayerSnappingToleranceList type="QStringList">
-                <value>20.000000</value>
                 <value>7.000000</value>
                 <value>0.000000</value>
-                <value>0.000000</value>
-                <value>6.000000</value>
-                <value>6.000000</value>
-                <value>6.000000</value>
-                <value>6.000000</value>
-                <value>6.000000</value>
-                <value>6.000000</value>
-                <value>6.000000</value>
-                <value>7.000000</value>
-                <value>6.000000</value>
                 <value>6.000000</value>
                 <value>6.000000</value>
                 <value>6.000000</value>
                 <value>6.000000</value>
                 <value>12.000000</value>
-                <value>12.000000</value>
                 <value>0.000000</value>
                 <value>5.000000</value>
-                <value>5.000000</value>
+                <value>20</value>
+                <value>5</value>
+                <value>7</value>
+                <value>12</value>
+                <value>6</value>
+                <value>6</value>
+                <value>6</value>
+                <value>7</value>
+                <value>6</value>
+                <value>6</value>
+                <value>6</value>
+                <value>6</value>
+                <value>6</value>
+                <value>0</value>
             </LayerSnappingToleranceList>
         </Digitizing>
         <Identify>

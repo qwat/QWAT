@@ -14,6 +14,9 @@
    <string>Conduites</string>
   </property>
   <layout class="QGridLayout" name="gridLayout_3">
+   <item row="11" column="0">
+    <widget class="QPlainTextEdit" name="remark"/>
+   </item>
    <item row="12" column="0">
     <widget class="QDialogButtonBox" name="buttonBox">
      <property name="orientation">
@@ -23,9 +26,6 @@
       <set>QDialogButtonBox::Cancel|QDialogButtonBox::Ok</set>
      </property>
     </widget>
-   </item>
-   <item row="11" column="0">
-    <widget class="QPlainTextEdit" name="remark"/>
    </item>
    <item row="0" column="0">
     <widget class="QTabWidget" name="tabWidget">
@@ -659,13 +659,13 @@
           </item>
           <item row="4" column="1">
            <widget class="QgsRelationReferenceWidget" name="id_parent">
-            <property name="embedForm">
+            <property name="embedForm" stdset="0">
              <bool>false</bool>
             </property>
-            <property name="readOnlySelector">
+            <property name="readOnlySelector" stdset="0">
              <bool>true</bool>
             </property>
-            <property name="allowMapIdentification">
+            <property name="allowMapIdentification" stdset="0">
              <bool>false</bool>
             </property>
            </widget>
@@ -683,7 +683,7 @@
        <item row="0" column="0">
         <widget class="QgsRelationEditorWidget" name="mRelationEditor">
          <property name="collapsed">
-          <bool>true</bool>
+          <bool>false</bool>
          </property>
          <property name="qgisRelation">
           <string notr="true">relation_pipe_subscriber</string>
