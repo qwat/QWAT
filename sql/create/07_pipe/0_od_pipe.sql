@@ -28,8 +28,8 @@ ALTER TABLE distribution.od_pipe ADD COLUMN folder                 varchar(20) d
 ALTER TABLE distribution.od_pipe ADD COLUMN remark                 text        default '' ;                      /* remark                  */
 ALTER TABLE distribution.od_pipe ADD COLUMN _valve_count           smallint default NULL;                        /* _valve_count            */
 ALTER TABLE distribution.od_pipe ADD COLUMN _valve_closed          boolean default NULL;                         /* _valve_closed           */
-ALTER TABLE distribution.od_pipe ADD COLUMN labelvisible_1         smallint default 1;                           /* label_view 0: hide, 1: show, 2: always show */
-ALTER TABLE distribution.od_pipe ADD COLUMN labelvisible_2         smallint default 1;                           /* label_view 0: hide, 1: show, 2: always show */
+ALTER TABLE distribution.od_pipe ADD COLUMN label_visible_1         smallint default 1;                           /* label_view 0: hide, 1: show, 2: always show */
+ALTER TABLE distribution.od_pipe ADD COLUMN label_visible_2         smallint default 1;                           /* label_view 0: hide, 1: show, 2: always show */
 
 
 /* schema view */
