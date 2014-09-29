@@ -44,6 +44,7 @@ $BODY$
 				is_under_object := true;
 				IF node_table.overwrite IS true THEN
 					keep_type := true;
+					is_under_object := false;
 					EXIT;
 				END IF;
 			END IF;
@@ -59,7 +60,7 @@ $BODY$
 			WHERE (id_node_a = node_id OR id_node_b = node_id)
 			AND vl_status.active IS TRUE;
 		/* if not connected, deleted if not under_object */
-		IF grouped.count = 0 AND is_under_object IS false THEN
+		IF grouped.count = 0 AND is_under_object IS false AND keep_type IS FALSE THEN
 			/* check it is not associated to inactive pipes */
 			IF node_id NOT IN (SELECT id_node_a FROM distribution.od_pipe UNION SELECT id_node_b FROM distribution.od_pipe) THEN
 				RAISE NOTICE 'Delete node %' , node_id ;
