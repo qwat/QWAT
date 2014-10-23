@@ -1,10 +1,14 @@
-﻿CREATE OR REPLACE FUNCTION distribution.update_pipe_crossing(update_existing boolean) RETURNS void AS
+﻿CREATE OR REPLACE FUNCTION distribution.fn_update_pipe_crossing(update_existing boolean, delete_unused boolean) RETURNS void AS
 $BODY$
 	DECLARE
 		crossing record;
 		pipe1 record;
 		pipe2 record;
 		crossing_id integer;
+		updated_crossing integer[] := ARRAY[]::integer[];
+		inserted_crossing_count integer := 0;
+		updated_crossing_count integer := 0;
+		deleted_crossing_count integer := 0;
 	BEGIN
 /* * * * * * * * * * * * * * * * * * * * * * * * */
 		/* compute all crossing points */ 
@@ -34,6 +38,11 @@ $BODY$
 			 ) AS foo2
 		LOOP
 /* * * * * * * * * * * * * * * * * * * * * * * * */
+			/* SKIP INTERSECTION AT ENDS OF PIPE (occurs if the two pipes cross at another point) */
+			IF crossing.cross_geometry IN (ST_StartPoint(crossing.pipe1_geometry), ST_EndPoint(crossing.pipe1_geometry),
+						ST_StartPoint(crossing.pipe2_geometry), ST_EndPoint(crossing.pipe2_geometry)) THEN
+				CONTINUE;
+			END IF;
 			/* !!!! PIPE 1 !!!! */
 			/* perform azimuth for all segments of the pipes with the corresponding linear referencing */
 			WITH azimuth AS
@@ -41,7 +50,7 @@ $BODY$
 				SELECT 	id AS pipe_id,
 					n AS pt_index,
 					ST_LineLocatePoint( geometry, ST_PointN( geometry, n) ) AS pt_locat,
-					ST_Azimuth( ST_PointN( geometry, n), ST_PointN( geometry, n+1 ) ) AS azimuth 
+					degrees( ST_Azimuth( ST_PointN( geometry, n), ST_PointN( geometry, n+1 ) ) ) AS azimuth 
 				FROM distribution.od_pipe, generate_series(1, ST_NumPoints(geometry)-1) n
 				WHERE od_pipe.id = crossing.pipe1_id
 			),
@@ -66,7 +75,7 @@ $BODY$
 				SELECT 	id AS pipe_id,
 					n AS pt_index,
 					ST_LineLocatePoint( geometry, ST_PointN( geometry, n) ) AS pt_locat,
-					ST_Azimuth( ST_PointN( geometry, n), ST_PointN( geometry, n+1 ) ) AS azimuth 
+					degrees( ST_Azimuth( ST_PointN( geometry, n), ST_PointN( geometry, n+1 ) ) ) AS azimuth 
 				FROM distribution.od_pipe, generate_series(1, ST_NumPoints(geometry)-1) n
 				WHERE od_pipe.id = crossing.pipe2_id
 			),
@@ -91,14 +100,22 @@ $BODY$
 				RAISE NOTICE 'PIPE: %', crossing.pipe1_id;
 				RAISE NOTICE 'LINE: %', ST_AsText(crossing.pipe1_geometry);
 			END IF;
+			IF pipe2.azimuth IS NULL THEN
+				RAISE NOTICE '*******';
+				RAISE NOTICE 'POINT: %', ST_AsText(crossing.cross_geometry);
+				RAISE NOTICE 'PIPE: %', crossing.pipe2_id;
+				RAISE NOTICE 'LINE: %', ST_AsText(crossing.pipe2_geometry);
+			END IF;
 /* * * * * * * * * * * * * * * * * * * * * * * * */
 			/* UPDATE OR INSERT NEW CROSSING */
 			SELECT id FROM distribution.od_crossing WHERE ST_DWithin(crossing.cross_geometry,geometry,0.0) IS TRUE LIMIT 1 INTO crossing_id;
 			IF crossing_id IS NULL THEN
 				INSERT INTO distribution.od_crossing 
-					(pipe1_id,pipe2_id,pipe1_angle,pipe2_angle,geometry) 
-				VALUES
-					(crossing.pipe1_id,crossing.pipe2_id,pipe1.azimuth,pipe2.azimuth,crossing.cross_geometry);
+						(pipe1_id,pipe2_id,pipe1_angle,pipe2_angle,geometry) 
+					VALUES
+						(crossing.pipe1_id,crossing.pipe2_id,pipe1.azimuth,pipe2.azimuth,crossing.cross_geometry)
+					RETURNING id INTO crossing_id;
+				inserted_crossing_count := inserted_crossing_count + 1;
 			ELSIF update_existing IS TRUE THEN
 				UPDATE distribution.od_crossing 
 				SET 
@@ -108,8 +125,25 @@ $BODY$
 					pipe2_angle = pipe2.azimuth,
 					geometry = crossing.cross_geometry
 				WHERE od_crossing.id = crossing_id;
+				updated_crossing_count := updated_crossing_count + 1;
 			END IF;
+			updated_crossing := array_append(updated_crossing, crossing_id);
 		END LOOP;
+/* * * * * * * * * * * * * * * * * * * * * * * * */
+		/* DELETE OLD CROSSINGS */
+		IF delete_unused IS TRUE THEN
+			DELETE FROM distribution.od_crossing WHERE NOT ( id = ANY(updated_crossing) );
+			GET DIAGNOSTICS deleted_crossing_count = ROW_COUNT;
+		END IF;
+		RAISE NOTICE '';
+		RAISE NOTICE '* * * * * * * * * * * * * * * * *';
+		RAISE NOTICE '';
+		RAISE NOTICE 'Added % new crossing.', inserted_crossing_count;
+		RAISE NOTICE 'Updated % existing crossing.', updated_crossing_count;
+		RAISE NOTICE 'Deleted % unused crossing.', deleted_crossing_count;
+		RAISE NOTICE '';
+		RAISE NOTICE '* * * * * * * * * * * * * * * * *';
+		RAISE NOTICE '';
 	END;
 $BODY$
 LANGUAGE plpgsql;
