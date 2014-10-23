@@ -4,7 +4,7 @@ CREATE TABLE distribution.od_crossing
   id serial NOT NULL,
   disabled boolean NOT NULL DEFAULT false,
   controled boolean NOT NULL DEFAULT false,
-  use_pipe smallint NOT NULL DEFAULT 1,
+  hide_pipe smallint NOT NULL DEFAULT 1,
   _pipe1_id integer,
   _pipe2_id integer,
   _pipe1_angle double precision,
@@ -35,6 +35,6 @@ $BODY$ LANGUAGE 'plpgsql';
 CREATE TRIGGER controled_crossing_trigger 
 BEFORE UPDATE ON distribution.od_crossing
 FOR EACH ROW
-WHEN (NEW.use_pipe != OLD.use_pipe)
+WHEN (NEW.hide_pipe != OLD.hide_pipe)
 EXECUTE PROCEDURE distribution.controled_crossing();
 

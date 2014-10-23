@@ -50,7 +50,7 @@ $BODY$
 				SELECT 	id AS pipe_id,
 					n AS pt_index,
 					ST_LineLocatePoint( geometry, ST_PointN( geometry, n) ) AS pt_locat,
-					degrees( ST_Azimuth( ST_PointN( geometry, n), ST_PointN( geometry, n+1 ) ) ) AS azimuth 
+					( 90 + degrees( ST_Azimuth( ST_PointN( geometry, n), ST_PointN( geometry, n+1 ) ) ) )::integer % 360 AS azimuth 
 				FROM distribution.od_pipe, generate_series(1, ST_NumPoints(geometry)-1) n
 				WHERE od_pipe.id = crossing.pipe1_id
 			),
@@ -75,7 +75,7 @@ $BODY$
 				SELECT 	id AS pipe_id,
 					n AS pt_index,
 					ST_LineLocatePoint( geometry, ST_PointN( geometry, n) ) AS pt_locat,
-					degrees( ST_Azimuth( ST_PointN( geometry, n), ST_PointN( geometry, n+1 ) ) ) AS azimuth 
+					( 90 + degrees( ST_Azimuth( ST_PointN( geometry, n), ST_PointN( geometry, n+1 ) ) ) )::integer % 360 AS azimuth 
 				FROM distribution.od_pipe, generate_series(1, ST_NumPoints(geometry)-1) n
 				WHERE od_pipe.id = crossing.pipe2_id
 			),
