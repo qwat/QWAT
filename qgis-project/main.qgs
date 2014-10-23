@@ -303,10 +303,10 @@
     <mapcanvas>
         <units>meters</units>
         <extent>
-            <xmin>560776.12807816115673631</xmin>
-            <ymin>141222.84514699692954309</ymin>
-            <xmax>560845.15071010764222592</xmax>
-            <ymax>141279.10784794183564372</ymax>
+            <xmin>560746.77959169470705092</xmin>
+            <ymin>142131.46992317674448714</ymin>
+            <xmax>560767.23074190109036863</xmax>
+            <ymax>142148.14035308640450239</ymax>
         </extent>
         <projections>1</projections>
         <destinationsrs>
@@ -11087,7 +11087,7 @@
                 </edittype>
             </edittypes>
         </maplayer>
-        <maplayer minimumScale="0" maximumScale="1e+08" simplifyDrawingHints="0" minLabelScale="0" maxLabelScale="1e+08" simplifyDrawingTol="1" geometry="Point" simplifyMaxScale="1" type="vector" hasScaleBasedVisibilityFlag="0" simplifyLocal="1" scaleBasedLabelVisibilityFlag="0">
+        <maplayer minimumScale="-4.65661e-10" maximumScale="1e+08" simplifyDrawingHints="0" minLabelScale="0" maxLabelScale="1e+08" simplifyDrawingTol="1" geometry="Point" simplifyMaxScale="1" type="vector" hasScaleBasedVisibilityFlag="0" simplifyLocal="1" scaleBasedLabelVisibilityFlag="0">
             <id>od_crossing20141023083754327</id>
             <datasource>dbname='sige' host=172.24.171.203 port=5432 user='sige' password='db4wat$' sslmode=disable key='id' srid=21781 type=POINT table="distribution"."od_crossing" (geometry) sql=</datasource>
             <title></title>
@@ -11154,7 +11154,7 @@
                             <prop k="color" v="255,255,255,255"/>
                             <prop k="horizontal_anchor_point" v="1"/>
                             <prop k="offset" v="1,1"/>
-                            <prop k="offset_expression" v="tostring(- 0.4 * abs(tan($pi / 2 - $pi / 180 * abs(_pipe1_angle - _pipe2_angle)))) || ',-1.0'"/>
+                            <prop k="offset_expression" v="tostring(- 0.4 * tan($pi / 2 - $pi / 180 * (_pipe1_angle - _pipe2_angle))) || ',-1.0'"/>
                             <prop k="offset_map_unit_scale" v="0,0"/>
                             <prop k="offset_unit" v="MM"/>
                             <prop k="outline_color" v="255,255,255,255"/>
@@ -11181,7 +11181,7 @@
                             <prop k="color" v="255,255,255,255"/>
                             <prop k="horizontal_anchor_point" v="1"/>
                             <prop k="offset" v="-1,-1"/>
-                            <prop k="offset_expression" v="tostring(0.4 * abs(tan($pi / 2 - $pi / 180 * abs(_pipe1_angle - _pipe2_angle)))) || ',1.0'"/>
+                            <prop k="offset_expression" v="tostring(0.4 * tan($pi / 2 - $pi / 180 * (_pipe1_angle - _pipe2_angle))) || ',1.0'"/>
                             <prop k="offset_map_unit_scale" v="0,0"/>
                             <prop k="offset_unit" v="MM"/>
                             <prop k="outline_color" v="255,255,255,255"/>
