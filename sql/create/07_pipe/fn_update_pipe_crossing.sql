@@ -111,7 +111,7 @@ $BODY$
 			SELECT id FROM distribution.od_crossing WHERE ST_DWithin(crossing.cross_geometry,geometry,0.0) IS TRUE LIMIT 1 INTO crossing_id;
 			IF crossing_id IS NULL THEN
 				INSERT INTO distribution.od_crossing 
-						(pipe1_id,pipe2_id,pipe1_angle,pipe2_angle,geometry) 
+						(_pipe1_id,_pipe2_id,_pipe1_angle,_pipe2_angle,geometry) 
 					VALUES
 						(crossing.pipe1_id,crossing.pipe2_id,pipe1.azimuth,pipe2.azimuth,crossing.cross_geometry)
 					RETURNING id INTO crossing_id;
@@ -119,10 +119,10 @@ $BODY$
 			ELSIF update_existing IS TRUE THEN
 				UPDATE distribution.od_crossing 
 				SET 
-					pipe1_id = crossing.pipe1_id,
-					pipe1_angle = pipe1.azimuth,
-					pipe2_id = crossing.pipe2_id,
-					pipe2_angle = pipe2.azimuth,
+					_pipe1_id = crossing.pipe1_id,
+					_pipe1_angle = pipe1.azimuth,
+					_pipe2_id = crossing.pipe2_id,
+					_pipe2_angle = pipe2.azimuth,
 					geometry = crossing.cross_geometry
 				WHERE od_crossing.id = crossing_id;
 				updated_crossing_count := updated_crossing_count + 1;
