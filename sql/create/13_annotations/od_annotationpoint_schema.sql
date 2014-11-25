@@ -16,5 +16,5 @@ ALTER TABLE distribution.od_annotationpoint_schema ADD COLUMN annotation       t
 
 /* GEOMETRY */
 SELECT AddGeometryColumn('distribution', 'od_annotationpoint_schema', 'geometry', 21781, 'POINT', 2)  ;
-CREATE INDEX annotationpoint_schema_geoidx ON distribution.od_node USING GIST ( geometry );
+CREATE INDEX annotationpoint_schema_geoidx ON distribution.od_annotationpoint_schema USING GIST ( geometry );
 

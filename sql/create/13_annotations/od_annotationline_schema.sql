@@ -17,4 +17,4 @@ ALTER TABLE distribution.od_annotationline_schema ADD COLUMN annotation         
 
 /* GEOMETRY */
 SELECT AddGeometryColumn('distribution', 'od_annotationline_schema', 'geometry', 21781, 'LINESTRING', 2)  ;
-CREATE INDEX annotationline_schema_geoidx ON distribution.od_node USING GIST ( geometry );
+CREATE INDEX annotationline_schema_geoidx ON distribution.od_annotationline_schema USING GIST ( geometry );
