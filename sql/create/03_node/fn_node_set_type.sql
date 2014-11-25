@@ -147,6 +147,8 @@ LANGUAGE 'plpgsql';
 COMMENT ON FUNCTION distribution.fn_node_set_type(integer) IS 'Set the orientation and type for a node. If three pipe arrives at the node: intersection. If one pipe: end. If two: depends on characteristics of pipe: year (is different), material (and year), diameter(and material/year)';
 
 /* reset all node type */
+DROP FUNCTION IF EXISTS distribution.fn_node_set_type_all();
+/*
 CREATE OR REPLACE FUNCTION distribution.fn_node_set_type_all() RETURNS void AS
 $BODY$
 	DECLARE
@@ -159,6 +161,39 @@ $BODY$
 $BODY$
 LANGUAGE 'plpgsql';
 COMMENT ON FUNCTION distribution.fn_node_set_type_all() IS 'Set the type and orientation for node. If three pipe arrives at the node: intersection. If one pipe: end. If two: depends on characteristics of pipe: year (is different), material (and year), diameter(and material/year)';
+*/
 
-
-
+/* reset all node type in extent with offset and limit */
+CREATE OR REPLACE FUNCTION distribution.fn_node_set_type_all(extent box2d DEFAULT NULL, offset_prog integer DEFAULT NULL, limit_prog integer DEFAULT NULL) RETURNS void AS
+$BODY$
+  DECLARE
+    node record;
+  BEGIN
+    IF extent IS NULL THEN
+      FOR node IN (
+        SELECT id
+        FROM distribution.od_node
+        ORDER BY id
+        LIMIT limit_prog
+        OFFSET offset_prog
+      )
+      LOOP
+        PERFORM distribution.fn_node_set_type(node.id);
+      END LOOP;
+    ELSE
+      FOR node IN (
+        SELECT id
+        FROM distribution.od_node
+        WHERE distribution.od_node.geometry && extent
+        ORDER BY id
+        LIMIT limit_prog
+        OFFSET offset_prog
+      )
+      LOOP
+        PERFORM distribution.fn_node_set_type(node.id);
+      END LOOP;
+    END IF;
+  END;
+$BODY$
+LANGUAGE 'plpgsql';
+COMMENT ON FUNCTION distribution.fn_node_set_type_all(extent box2d, offset_prog integer, limit_prog integer) IS 'Set the type and orientation for node. If three pipe arrives at the node: intersection. If one pipe: end. If two: depends on characteristics of pipe: year (is different), material (and year), diameter(and material/year)';
