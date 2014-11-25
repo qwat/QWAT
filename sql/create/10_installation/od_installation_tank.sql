@@ -94,7 +94,7 @@ $BODY$
 	BEGIN
 		NEW._cistern1_litrepercm := distribution.fn_litres_per_cm(NEW.cistern1_id_type,NEW.cistern1_dimension_1,NEW.cistern1_dimension_2);
 		NEW._cistern2_litrepercm := distribution.fn_litres_per_cm(NEW.cistern2_id_type,NEW.cistern2_dimension_1,NEW.cistern2_dimension_2);
-		NEW._litrepercm := COALESCE(lpc1,0)+COALESCE(lpc2,0);
+		NEW._litrepercm := COALESCE(_cistern1_litrepercm,0)+COALESCE(_cistern2_litrepercm,0);
 		RETURN NEW;
 	END;
 $BODY$
