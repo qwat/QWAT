@@ -26,6 +26,3 @@ CREATE INDEX district_geoidx ON qwat.od_district USING GIST ( geometry );
 /* contraints */
 ALTER TABLE qwat.od_district ADD CONSTRAINT district_name UNIQUE (name);
 
-ALTER TABLE qwat.od_district ADD CONSTRAINT district_nooverlap CHECK ( ST_Overlaps(geometry,od_district.geometry) IS False );
-
-
