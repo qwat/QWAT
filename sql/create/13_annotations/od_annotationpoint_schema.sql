@@ -15,6 +15,6 @@ ALTER TABLE qwat.od_annotationpoint_schema ADD COLUMN text_orientation decimal(7
 ALTER TABLE qwat.od_annotationpoint_schema ADD COLUMN annotation       text default '';
 
 /* GEOMETRY */
-SELECT AddGeometryColumn('distribution', 'od_annotationpoint_schema', 'geometry', 21781, 'POINT', 2)  ;
+SELECT AddGeometryColumn('qwat', 'od_annotationpoint_schema', 'geometry', 21781, 'POINT', 2)  ;
 CREATE INDEX annotationpoint_schema_geoidx ON qwat.od_annotationpoint_schema USING GIST ( geometry );
 

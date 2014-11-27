@@ -193,6 +193,6 @@ user carto_sige ca61sie
 prompt
 binary
 cd Distribution
-put $sqliteoutput sige_distribution_v3.sqlite
+put $sqliteoutput sige_qwat_v3.sqlite
 bye
 EOF

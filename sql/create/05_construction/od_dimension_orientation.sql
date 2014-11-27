@@ -15,7 +15,7 @@ ALTER TABLE qwat.od_dimension_orientation ADD COLUMN observation varchar(120) de
 ALTER TABLE qwat.od_dimension_orientation ADD COLUMN remark      text default '';
 
 /* geometry */
-SELECT AddGeometryColumn('distribution', 'od_dimension_orientation','geometry',21781,'LINESTRING',2);
+SELECT AddGeometryColumn('qwat', 'od_dimension_orientation','geometry',21781,'LINESTRING',2);
 CREATE INDEX dimension_orientation_geoidx ON qwat.od_dimension_orientation USING GIST ( geometry );
 
 

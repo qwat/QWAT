@@ -218,7 +218,7 @@ then
 	prompt
 	binary
 	cd Distribution
-	put $sqliteoutput sige_distribution_v4.sqlite
+	put $sqliteoutput sige_qwat_v4.sqlite
 	bye
 	EOF
 fi

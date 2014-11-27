@@ -16,7 +16,7 @@ ALTER TABLE qwat.od_pressurezone ADD COLUMN consumptionzone varchar(50) default 
 ALTER TABLE qwat.od_pressurezone ADD COLUMN colorcode       smallint;
 
 /* GEOMETRY */
-SELECT AddGeometryColumn('distribution', 'od_pressurezone', 'geometry', 21781, 'MULTIPOLYGON', 2);
+SELECT AddGeometryColumn('qwat', 'od_pressurezone', 'geometry', 21781, 'MULTIPOLYGON', 2);
 CREATE INDEX pressurezone_geoidx ON qwat.od_pressurezone USING GIST ( geometry ); 
 
 /* CONSTRAINT */

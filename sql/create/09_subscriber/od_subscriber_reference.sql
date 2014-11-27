@@ -12,7 +12,7 @@ COMMENT ON TABLE qwat.od_subscriber_reference IS 'Table for subscriber reference
 ALTER TABLE qwat.od_subscriber_reference ADD COLUMN id_subscriber integer ;
 
 /* GEOMETRY */
-SELECT addGeometryColumn('distribution', 'od_subscriber_reference', 'geometry', 21781, 'POINT', 2);
+SELECT addGeometryColumn('qwat', 'od_subscriber_reference', 'geometry', 21781, 'POINT', 2);
 CREATE INDEX od_subscriber_reference_geoidx_sch ON qwat.od_subscriber_reference USING GIST ( geometry );
 			
 /* CONSTRAINTS */

@@ -16,5 +16,5 @@ ALTER TABLE qwat.od_annotationline ADD COLUMN text_orientation    decimal(7,2);
 ALTER TABLE qwat.od_annotationline ADD COLUMN annotation          text default '';
 
 /* GEOMETRY */
-SELECT AddGeometryColumn('distribution', 'od_annotationline', 'geometry', 21781, 'LINESTRING', 2)  ;
+SELECT AddGeometryColumn('qwat', 'od_annotationline', 'geometry', 21781, 'LINESTRING', 2)  ;
 CREATE INDEX annotationline_geoidx ON qwat.od_annotationline USING GIST ( geometry );

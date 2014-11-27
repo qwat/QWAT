@@ -20,7 +20,7 @@ ALTER TABLE qwat.od_district ADD COLUMN prefix        varchar(12) default '';
 ALTER TABLE qwat.od_district ADD COLUMN colorcode     smallint default 1;
 
 /* geometry */
-SELECT AddGeometryColumn('distribution', 'od_district', 'geometry', 21781, 'MULTIPOLYGON', 2);
+SELECT AddGeometryColumn('qwat', 'od_district', 'geometry', 21781, 'MULTIPOLYGON', 2);
 CREATE INDEX district_geoidx ON qwat.od_district USING GIST ( geometry );
 
 /* contraints */

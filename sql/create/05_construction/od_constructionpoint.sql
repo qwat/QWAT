@@ -14,7 +14,7 @@ COMMENT ON TABLE qwat.od_constructionpoint IS 'construction points are artificia
 ALTER TABLE qwat.od_constructionpoint ADD COLUMN remark  text default '';
 
 /* geometry */
-SELECT AddGeometryColumn('distribution','od_constructionpoint','geometry',21781,'POINT',2);
+SELECT AddGeometryColumn('qwat','od_constructionpoint','geometry',21781,'POINT',2);
 CREATE INDEX constructionpoint_geoidx ON qwat.od_constructionpoint USING GIST ( geometry );
 
 

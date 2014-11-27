@@ -22,7 +22,7 @@ ALTER TABLE qwat.od_printmap ADD COLUMN x_max double precision;
 ALTER TABLE qwat.od_printmap ADD COLUMN y_max double precision;
 
 /* geometry */
-SELECT AddGeometryColumn('distribution', 'od_printmap', 'geometry', 21781, 'POLYGON', 2);
+SELECT AddGeometryColumn('qwat', 'od_printmap', 'geometry', 21781, 'POLYGON', 2);
 CREATE INDEX printmap_geoidx ON qwat.od_printmap USING GIST ( geometry ); 
 
 /* Constraints */

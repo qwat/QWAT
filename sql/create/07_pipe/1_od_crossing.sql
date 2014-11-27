@@ -21,7 +21,7 @@ WITH (
   OIDS=FALSE
 );
 
-SELECT AddGeometryColumn('distribution','od_crossing', 'geometry', 21781, 'Point', 2);
+SELECT AddGeometryColumn('qwat','od_crossing', 'geometry', 21781, 'Point', 2);
 
 CREATE OR REPLACE FUNCTION qwat.fn_controled_crossing()
 RETURNS trigger AS

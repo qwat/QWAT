@@ -16,7 +16,7 @@ ALTER TABLE qwat.od_dimension_distance ADD COLUMN _calculation double precision;
 ALTER TABLE qwat.od_dimension_distance ADD COLUMN remark       text default '';
 
 /* geometry */
-SELECT AddGeometryColumn('distribution', 'od_dimension_distance','geometry',21781,'LINESTRING',2);
+SELECT AddGeometryColumn('qwat', 'od_dimension_distance','geometry',21781,'LINESTRING',2);
 CREATE INDEX dimension_distance_geoidx ON qwat.od_dimension_distance USING GIST ( geometry );
 
 

@@ -6,12 +6,11 @@ read -p "Last xxx of IP : " ip
 
 PSQLCOMMAND="psql -h 172.24.171.$ip -U sige -v ON_ERROR_STOP=1"
 
-$PSQLCOMMAND -c "DROP SCHEMA distribution CASCADE;"
-$PSQLCOMMAND -c "CREATE SCHEMA distribution;"
 
 rm create.sql
 touch create.sql
-echo -e "BEGIN;\n\nDROP SCHEMA distribution CASCADE;\nCREATE SCHEMA distribution;\n\n" >> create.sql
+
+echo -e "BEGIN;\n\nDROP SCHEMA qwat CASCADE;\nCREATE SCHEMA qwat;\n\n" >> create.sql
 for f in *
 do
 	if test -d "$f"; then

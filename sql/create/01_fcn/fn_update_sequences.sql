@@ -15,7 +15,7 @@ begin
                        column_name, 
                        pg_get_serial_sequence(table_schema||'.'||table_name, column_name) as col_sequence
                 from information_schema.columns
-                where table_schema = 'distribution'
+                where table_schema = 'qwat'
               ) t
               where col_sequence is not null
         ) 

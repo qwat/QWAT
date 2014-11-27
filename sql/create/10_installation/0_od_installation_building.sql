@@ -25,7 +25,7 @@ ALTER TABLE qwat.od_installation_building ADD COLUMN eca             varchar(30)
 /* point                              ( table_name,               is_node, create_node, create_schematic, get_pipe, auto_district, auto_pressurezone)*/
 SELECT qwat.fn_geom_tool_point('od_installation_building',true,    true,        false,             false,    true         , false);
 /* polygon */
-SELECT AddGeometryColumn('distribution', 'od_installation_building', 'geometry_polygon', 21781, 'MULTIPOLYGON', 2);
+SELECT AddGeometryColumn('qwat', 'od_installation_building', 'geometry_polygon', 21781, 'MULTIPOLYGON', 2);
 CREATE INDEX installation_building_geoidx ON qwat.od_installation_building USING GIST ( geometry_polygon ); 
 
 /* Constraints */

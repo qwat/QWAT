@@ -26,11 +26,11 @@ $BODY$
 		EXECUTE 'ALTER TABLE qwat.'||table_name||' ADD COLUMN _printmaps      varchar(100) default '''' ;';
 		
 		/* Enables geometry */
-		PERFORM addGeometryColumn('distribution', table_name, 'geometry', 21781, 'POINT', 2);
+		PERFORM addGeometryColumn('qwat', table_name, 'geometry', 21781, 'POINT', 2);
 		EXECUTE 'CREATE INDEX '||table_name||'_geoidx ON qwat.'||table_name||' USING GIST ( geometry );';
 		IF create_alt_geom IS TRUE THEN
-			PERFORM addGeometryColumn('distribution', table_name, 'geometry_alt1', 21781, 'POINT', 2);
-			PERFORM addGeometryColumn('distribution', table_name, 'geometry_alt2', 21781, 'POINT', 2);
+			PERFORM addGeometryColumn('qwat', table_name, 'geometry_alt1', 21781, 'POINT', 2);
+			PERFORM addGeometryColumn('qwat', table_name, 'geometry_alt2', 21781, 'POINT', 2);
 			EXECUTE 'CREATE INDEX '||table_name||'_geoidx_sch ON qwat.'||table_name||' USING GIST ( geometry_alt1 );';
 			EXECUTE 'CREATE INDEX '||table_name||'_geoidx_sch ON qwat.'||table_name||' USING GIST ( geometry_alt2 );';
 			EXECUTE 'ALTER TABLE qwat.'||table_name||' ADD COLUMN _geometry_alt1_used boolean;';
@@ -164,9 +164,9 @@ $BODY$
 		EXECUTE 'ALTER TABLE qwat.'||table_name||' ADD COLUMN _geometry_alt2_used boolean;';
 		
 		/* Enables geometry */
-		PERFORM addGeometryColumn('distribution', table_name, 'geometry', 21781, 'LINESTRING', 2);
-		PERFORM addGeometryColumn('distribution', table_name, 'geometry_alt1', 21781, 'LINESTRING', 2);
-		PERFORM addGeometryColumn('distribution', table_name, 'geometry_alt2', 21781, 'LINESTRING', 2);
+		PERFORM addGeometryColumn('qwat', table_name, 'geometry', 21781, 'LINESTRING', 2);
+		PERFORM addGeometryColumn('qwat', table_name, 'geometry_alt1', 21781, 'LINESTRING', 2);
+		PERFORM addGeometryColumn('qwat', table_name, 'geometry_alt2', 21781, 'LINESTRING', 2);
 		EXECUTE 'CREATE INDEX '||table_name||'_geoidx     ON qwat.'||table_name||' USING GIST ( geometry );';
 		EXECUTE 'CREATE INDEX '||table_name||'_geoidx_alt1 ON qwat.'||table_name||' USING GIST ( geometry_alt1 );';		
 		EXECUTE 'CREATE INDEX '||table_name||'_geoidx_alt2 ON qwat.'||table_name||' USING GIST ( geometry_alt2 );';		

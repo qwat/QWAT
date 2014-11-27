@@ -12,7 +12,7 @@ COMMENT ON TABLE qwat.od_meter_reference IS 'Table for meter references. These a
 ALTER TABLE qwat.od_meter_reference ADD COLUMN id_meter integer ;
 
 /* GEOMETRY */
-SELECT addGeometryColumn('distribution', 'od_meter_reference', 'geometry', 21781, 'POINT', 2);
+SELECT addGeometryColumn('qwat', 'od_meter_reference', 'geometry', 21781, 'POINT', 2);
 CREATE INDEX od_meter_reference_geoidx_sch ON qwat.od_meter_reference USING GIST ( geometry );
 			
 /* CONSTRAINTS */
