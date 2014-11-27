@@ -15,7 +15,7 @@ SELECT \
  id   AS ID,               \
  identification                   AS id_sige,             \
  geometry::geometry(Point,21781) AS geom \
-FROM distribution.od_valve WHERE ST_Intersects(geometry,$box)" 
+FROM qwat.od_valve WHERE ST_Intersects(geometry,$box)" 
 read -p "Press any key to continue..."
 
  # hydrantes 
@@ -24,7 +24,7 @@ SELECT \
  id   AS ID,               \
  identification                   AS id_sige,             \
  geometry::geometry(Point,21781) AS geom \
-FROM distribution.vw_hydrant WHERE _status_active IS TRUE AND ST_Intersects(geometry,$box)" 
+FROM qwat.vw_hydrant WHERE _status_active IS TRUE AND ST_Intersects(geometry,$box)" 
 read -p "Press any key to continue..."
 
 
@@ -35,5 +35,5 @@ SELECT                                         \
  geometry::geometry(LineString,21781) AS geom, \
  _material_name          AS MATERIAU,      \
  _function               AS FONCTION       \
-FROM distribution.vw_pipe WHERE _status_active IS TRUE AND ST_Intersects(geometry,$box)"
+FROM qwat.vw_pipe WHERE _status_active IS TRUE AND ST_Intersects(geometry,$box)"
 read -p "Press any key to continue..."

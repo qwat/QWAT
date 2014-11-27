@@ -7,8 +7,8 @@
 
 /* TODO: maintenance */
 
-DROP VIEW IF EXISTS distribution.vw_valve CASCADE;
-CREATE VIEW distribution.vw_valve AS 
+DROP VIEW IF EXISTS qwat.vw_valve CASCADE;
+CREATE VIEW qwat.vw_valve AS 
 SELECT  
 	od_valve.id                ,
 	od_valve.identification    ,
@@ -44,11 +44,11 @@ SELECT
 	vl_status.active            AS _status_active,
 	od_node.altitude_dtm       AS _altitude_dtm,
 	od_pressurezone.colorcode  AS _pressurezone_colorcode
-	FROM distribution.od_valve
-	INNER JOIN      distribution.vl_valve_type     ON od_valve.id_type         = vl_valve_type.id
-	INNER JOIN      distribution.vl_valve_function ON od_valve.id_function     = vl_valve_function.id
-	INNER      JOIN distribution.vl_status         ON od_valve.id_status       = vl_status.id
-	LEFT OUTER JOIN distribution.od_node           ON od_valve.id_node         = od_node.id       
-	LEFT OUTER JOIN distribution.od_district       ON od_valve.id_district     = od_district.id       
-	LEFT OUTER JOIN distribution.od_pressurezone   ON od_valve.id_pressurezone = od_pressurezone.id;
+	FROM qwat.od_valve
+	INNER JOIN      qwat.vl_valve_type     ON od_valve.id_type         = vl_valve_type.id
+	INNER JOIN      qwat.vl_valve_function ON od_valve.id_function     = vl_valve_function.id
+	INNER      JOIN qwat.vl_status         ON od_valve.id_status       = vl_status.id
+	LEFT OUTER JOIN qwat.od_node           ON od_valve.id_node         = od_node.id       
+	LEFT OUTER JOIN qwat.od_district       ON od_valve.id_district     = od_district.id       
+	LEFT OUTER JOIN qwat.od_pressurezone   ON od_valve.id_pressurezone = od_pressurezone.id;
 	

@@ -7,7 +7,7 @@
 
 /* define node type */
 /* node type: end, intersection, year, material, diameter */
-CREATE OR REPLACE FUNCTION distribution.fn_node_set_type(node_id integer) RETURNS void AS
+CREATE OR REPLACE FUNCTION qwat.fn_node_set_type(node_id integer) RETURNS void AS
 $BODY$
 	DECLARE
 		pipeitem        record                   ;
@@ -30,14 +30,14 @@ $BODY$
 		complement_col  varchar(50)      := ''   ;
 	BEGIN
 		/* determine if the node is under an object (hydrant, valve, etc.) */
-		FOR node_table IN SELECT * FROM distribution.od_node_table
+		FOR node_table IN SELECT * FROM qwat.od_node_table
 		LOOP
-			stmt := 'SELECT COUNT(id) FROM distribution.' || node_table.table_name || ' WHERE id_node='|| node_id || ';';
+			stmt := 'SELECT COUNT(id) FROM qwat.' || node_table.table_name || ' WHERE id_node='|| node_id || ';';
 			EXECUTE stmt INTO is_under_count;
 			IF is_under_count > 0 THEN
 				type := node_table.node_type;
 				IF node_table.complement_column IS NOT NULL THEN
-					stmt := 'SELECT ' || node_table.complement_column || ' FROM distribution.' || node_table.table_name || ' WHERE id_node=' || node_id || ' LIMIT 1';
+					stmt := 'SELECT ' || node_table.complement_column || ' FROM qwat.' || node_table.table_name || ' WHERE id_node=' || node_id || ' LIMIT 1';
 					EXECUTE stmt into complement_col;
 					type := type || '_' || complement_col;
 				END IF;
@@ -55,16 +55,16 @@ $BODY$
 			bool_or(_schema_visible)  AS schema_visible,
 			bool_or(vl_status.active) AS status_active
 			INTO grouped
-			FROM distribution.od_pipe
-			INNER JOIN distribution.vl_status ON od_pipe.id_status = vl_status.id
+			FROM qwat.od_pipe
+			INNER JOIN qwat.vl_status ON od_pipe.id_status = vl_status.id
 			WHERE (id_node_a = node_id OR id_node_b = node_id)
 			AND vl_status.active IS TRUE;
 		/* if not connected, deleted if not under_object */
 		IF grouped.count = 0 AND is_under_object IS false AND keep_type IS FALSE THEN
 			/* check it is not associated to inactive pipes */
-			IF node_id NOT IN (SELECT id_node_a FROM distribution.od_pipe UNION SELECT id_node_b FROM distribution.od_pipe) THEN
+			IF node_id NOT IN (SELECT id_node_a FROM qwat.od_pipe UNION SELECT id_node_b FROM qwat.od_pipe) THEN
 				RAISE NOTICE 'Delete node %' , node_id ;
-				DELETE FROM distribution.od_node WHERE id = node_id ;
+				DELETE FROM qwat.od_node WHERE id = node_id ;
 			END IF;
 		/* if 1 or 2 pipes associated */
 		ELSEIF grouped.count <= 2 THEN
@@ -73,17 +73,17 @@ $BODY$
 				SELECT 	od_pipe.id, od_pipe.year, vl_pipe_material.value_fr AS material, vl_pipe_material.diameter_nominal AS diameter,
 						ST_StartPoint(geometry) AS point_1,
 						ST_PointN(geometry,2)   AS point_2
-						FROM distribution.od_pipe
-						INNER JOIN distribution.vl_pipe_material ON od_pipe.id_material = vl_pipe_material.id
-						INNER JOIN distribution.vl_status        ON od_pipe.id_status = vl_status.id
+						FROM qwat.od_pipe
+						INNER JOIN qwat.vl_pipe_material ON od_pipe.id_material = vl_pipe_material.id
+						INNER JOIN qwat.vl_status        ON od_pipe.id_status = vl_status.id
 						WHERE id_node_a = node_id AND vl_status.active IS TRUE
 				UNION ALL
 				SELECT	od_pipe.id, od_pipe.year, vl_pipe_material.value_fr AS material, vl_pipe_material.diameter_nominal AS diameter,
 						ST_EndPoint(geometry)                      AS point_1,
 						ST_PointN(geometry,ST_NPoints(geometry)-1) AS point_2
-						FROM distribution.od_pipe
-						INNER JOIN distribution.vl_pipe_material ON od_pipe.id_material = vl_pipe_material.id
-						INNER JOIN distribution.vl_status        ON od_pipe.id_status = vl_status.id
+						FROM qwat.od_pipe
+						INNER JOIN qwat.vl_pipe_material ON od_pipe.id_material = vl_pipe_material.id
+						INNER JOIN qwat.vl_status        ON od_pipe.id_status = vl_status.id
 						WHERE id_node_b = node_id AND vl_status.active IS TRUE
 			) LOOP
 				IF looppos=0 THEN
@@ -121,9 +121,9 @@ $BODY$
 			END LOOP;
 			IF keep_type IS FALSE AND grouped.count = 1 THEN
 				/* if the node is only on 1 pipe, check if it intersects another pipe. If yes, hide it */
-				node_geom := geometry FROM distribution.od_node WHERE id = node_id;
+				node_geom := geometry FROM qwat.od_node WHERE id = node_id;
 				/* st_intersects does not work as expected. */
-				intersects := bool_or(ST_DWithin(node_geom, od_pipe.geometry, 0.0001)) FROM distribution.od_pipe WHERE id != pipe_id;
+				intersects := bool_or(ST_DWithin(node_geom, od_pipe.geometry, 0.0001)) FROM qwat.od_pipe WHERE id != pipe_id;
 				IF intersects IS TRUE THEN
 					type := 'one_hidden';
 				END IF;
@@ -133,7 +133,7 @@ $BODY$
 			type := 'three';
 		END IF;
 		/* update the node table */
-		UPDATE distribution.od_node SET
+		UPDATE qwat.od_node SET
 			_type           = type,
 			_orientation    = degrees(orientation),
 			_schema_visible = grouped.schema_visible,
@@ -144,27 +144,27 @@ $BODY$
 	END;
 $BODY$
 LANGUAGE 'plpgsql';
-COMMENT ON FUNCTION distribution.fn_node_set_type(integer) IS 'Set the orientation and type for a node. If three pipe arrives at the node: intersection. If one pipe: end. If two: depends on characteristics of pipe: year (is different), material (and year), diameter(and material/year)';
+COMMENT ON FUNCTION qwat.fn_node_set_type(integer) IS 'Set the orientation and type for a node. If three pipe arrives at the node: intersection. If one pipe: end. If two: depends on characteristics of pipe: year (is different), material (and year), diameter(and material/year)';
 
 /* reset all node type */
-DROP FUNCTION IF EXISTS distribution.fn_node_set_type_all();
+DROP FUNCTION IF EXISTS qwat.fn_node_set_type_all();
 /*
-CREATE OR REPLACE FUNCTION distribution.fn_node_set_type_all() RETURNS void AS
+CREATE OR REPLACE FUNCTION qwat.fn_node_set_type_all() RETURNS void AS
 $BODY$
 	DECLARE
 		node record;
 	BEGIN
-		FOR node IN SELECT id FROM distribution.od_node ORDER BY id LOOP
-			PERFORM distribution.fn_node_set_type(node.id);
+		FOR node IN SELECT id FROM qwat.od_node ORDER BY id LOOP
+			PERFORM qwat.fn_node_set_type(node.id);
 		END LOOP;
 	END;
 $BODY$
 LANGUAGE 'plpgsql';
-COMMENT ON FUNCTION distribution.fn_node_set_type_all() IS 'Set the type and orientation for node. If three pipe arrives at the node: intersection. If one pipe: end. If two: depends on characteristics of pipe: year (is different), material (and year), diameter(and material/year)';
+COMMENT ON FUNCTION qwat.fn_node_set_type_all() IS 'Set the type and orientation for node. If three pipe arrives at the node: intersection. If one pipe: end. If two: depends on characteristics of pipe: year (is different), material (and year), diameter(and material/year)';
 */
 
 /* reset all node type in extent with offset and limit */
-CREATE OR REPLACE FUNCTION distribution.fn_node_set_type_all(extent box2d DEFAULT NULL, offset_prog integer DEFAULT NULL, limit_prog integer DEFAULT NULL) RETURNS void AS
+CREATE OR REPLACE FUNCTION qwat.fn_node_set_type_all(extent box2d DEFAULT NULL, offset_prog integer DEFAULT NULL, limit_prog integer DEFAULT NULL) RETURNS void AS
 $BODY$
   DECLARE
     node record;
@@ -172,28 +172,28 @@ $BODY$
     IF extent IS NULL THEN
       FOR node IN (
         SELECT id
-        FROM distribution.od_node
+        FROM qwat.od_node
         ORDER BY id
         LIMIT limit_prog
         OFFSET offset_prog
       )
       LOOP
-        PERFORM distribution.fn_node_set_type(node.id);
+        PERFORM qwat.fn_node_set_type(node.id);
       END LOOP;
     ELSE
       FOR node IN (
         SELECT id
-        FROM distribution.od_node
-        WHERE distribution.od_node.geometry && extent
+        FROM qwat.od_node
+        WHERE qwat.od_node.geometry && extent
         ORDER BY id
         LIMIT limit_prog
         OFFSET offset_prog
       )
       LOOP
-        PERFORM distribution.fn_node_set_type(node.id);
+        PERFORM qwat.fn_node_set_type(node.id);
       END LOOP;
     END IF;
   END;
 $BODY$
 LANGUAGE 'plpgsql';
-COMMENT ON FUNCTION distribution.fn_node_set_type_all(extent box2d, offset_prog integer, limit_prog integer) IS 'Set the type and orientation for node. If three pipe arrives at the node: intersection. If one pipe: end. If two: depends on characteristics of pipe: year (is different), material (and year), diameter(and material/year)';
+COMMENT ON FUNCTION qwat.fn_node_set_type_all(extent box2d, offset_prog integer, limit_prog integer) IS 'Set the type and orientation for node. If three pipe arrives at the node: intersection. If one pipe: end. If two: depends on characteristics of pipe: year (is different), material (and year), diameter(and material/year)';

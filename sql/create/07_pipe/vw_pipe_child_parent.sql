@@ -15,7 +15,7 @@ then this should be added to select of foo2
 		ST_MakeLine( start_point , end_point )::geometry(LineString,21781) AS vector,
 */
 
-CREATE OR REPLACE VIEW distribution.vw_pipe_child_parent AS
+CREATE OR REPLACE VIEW qwat.vw_pipe_child_parent AS
 	SELECT child, parent,
 		 ST_CurveToLine(ST_GeomFromEWKT('SRID=21781;CIRCULARSTRING('
 			||ST_X(start_point)||' '||ST_Y(start_point)
@@ -39,8 +39,8 @@ CREATE OR REPLACE VIEW distribution.vw_pipe_child_parent AS
 						ST_Line_Interpolate_Point(b.geometry,   LEAST(1,  4/b._length2d/2))::geometry(Point,21781) ,
 						ST_Line_Interpolate_Point(b.geometry,GREATEST(0,1-4/b._length2d/2))::geometry(Point,21781) 
 					),a.geometry) AS end_point
-			FROM distribution.od_pipe a 
-			INNER JOIN distribution.od_pipe b ON a.id_parent = b.id
+			FROM qwat.od_pipe a 
+			INNER JOIN qwat.od_pipe b ON a.id_parent = b.id
 			WHERE a.id_parent IS NOT NULL
 		) AS foo
 	) AS foo2;

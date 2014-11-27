@@ -4,8 +4,8 @@
 	SQL file :: subscriber view
 */
 
-DROP VIEW IF EXISTS distribution.vw_subscriber CASCADE;
-CREATE VIEW distribution.vw_subscriber AS 
+DROP VIEW IF EXISTS qwat.vw_subscriber CASCADE;
+CREATE VIEW qwat.vw_subscriber AS 
 	SELECT 
 		od_subscriber.id			  ,
 		od_subscriber.id_type         ,
@@ -22,11 +22,11 @@ CREATE VIEW distribution.vw_subscriber AS
 		vl_subscriber_type.value_fr AS _type     ,
 		od_district.name            AS _district ,
 		od_pressurezone.colorcode   AS _pressurezone_colorcode
-		FROM distribution.od_subscriber
-		INNER      JOIN distribution.vl_subscriber_type ON od_subscriber.id_type         = vl_subscriber_type.id 
-		LEFT OUTER JOIN distribution.od_district        ON od_subscriber.id_district     = od_district.id
-		LEFT OUTER JOIN distribution.od_pressurezone    ON od_subscriber.id_pressurezone = od_pressurezone.id;
+		FROM qwat.od_subscriber
+		INNER      JOIN qwat.vl_subscriber_type ON od_subscriber.id_type         = vl_subscriber_type.id 
+		LEFT OUTER JOIN qwat.od_district        ON od_subscriber.id_district     = od_district.id
+		LEFT OUTER JOIN qwat.od_pressurezone    ON od_subscriber.id_pressurezone = od_pressurezone.id;
 /* Comment */	
-COMMENT ON VIEW distribution.vw_subscriber IS 'View for subscriber. This view is not editable ';
+COMMENT ON VIEW qwat.vw_subscriber IS 'View for subscriber. This view is not editable ';
 
 

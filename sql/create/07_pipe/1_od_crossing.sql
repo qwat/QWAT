@@ -1,5 +1,5 @@
-﻿DROP TABLE IF EXISTS distribution.od_crossing;
-CREATE TABLE distribution.od_crossing
+﻿DROP TABLE IF EXISTS qwat.od_crossing;
+CREATE TABLE qwat.od_crossing
 (
   id serial NOT NULL,
   disabled boolean NOT NULL DEFAULT false,
@@ -11,10 +11,10 @@ CREATE TABLE distribution.od_crossing
   _pipe2_angle double precision,
   CONSTRAINT od_crossing_pkey PRIMARY KEY (id),
   CONSTRAINT od_crossing_pipe1 FOREIGN KEY (_pipe1_id)
-      REFERENCES distribution.od_pipe (id) MATCH SIMPLE
+      REFERENCES qwat.od_pipe (id) MATCH SIMPLE
       ON UPDATE NO ACTION ON DELETE NO ACTION,
   CONSTRAINT od_crossing_pipe2 FOREIGN KEY (_pipe2_id)
-      REFERENCES distribution.od_pipe (id) MATCH SIMPLE
+      REFERENCES qwat.od_pipe (id) MATCH SIMPLE
       ON UPDATE NO ACTION ON DELETE NO ACTION
 )
 WITH (
@@ -23,7 +23,7 @@ WITH (
 
 SELECT AddGeometryColumn('distribution','od_crossing', 'geometry', 21781, 'Point', 2);
 
-CREATE OR REPLACE FUNCTION distribution.controled_crossing()
+CREATE OR REPLACE FUNCTION qwat.fn_controled_crossing()
 RETURNS trigger AS
 $BODY$
 	BEGIN
@@ -33,8 +33,8 @@ $BODY$
 $BODY$ LANGUAGE 'plpgsql';
 
 CREATE TRIGGER controled_crossing_trigger 
-BEFORE UPDATE ON distribution.od_crossing
+BEFORE UPDATE ON qwat.od_crossing
 FOR EACH ROW
 WHEN (NEW.hide_pipe != OLD.hide_pipe)
-EXECUTE PROCEDURE distribution.controled_crossing();
+EXECUTE PROCEDURE qwat.fn_controled_crossing();
 

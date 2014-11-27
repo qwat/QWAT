@@ -6,7 +6,7 @@
 
 export db_address=172.24.171.203
 export shapeoutput=/home/sige/out
-export sqliteoutput=/home/denis/Documents/cartoriviera/sige_distribution.sqlite
+export sqliteoutput=/home/denis/Documents/cartoriviera/sige_qwat.sqlite
 export PGCLIENTENCODING=LATIN1;
 
 
@@ -31,7 +31,7 @@ read -p "Generate nodes ID for schema? (y/n) " answ
 if [ $answ = "y" ] 
 then
   # save schema in a table
-  psql -h $db_address -U sige -c "DROP TABLE IF EXISTS distribution.vw_pipe_schema_temp; CREATE TABLE distribution.vw_pipe_schema_temp AS SELECT * FROM distribution.vw_pipe_schema_node;"
+  psql -h $db_address -U sige -c "DROP TABLE IF EXISTS qwat.vw_pipe_schema_temp; CREATE TABLE qwat.vw_pipe_schema_temp AS SELECT * FROM qwat.vw_pipe_schema_node;"
   read -p "Press any key to continue..."
 fi
 
@@ -64,7 +64,7 @@ export sql="$sql _status_name                        "; if [ $outputformat = "2"
 export sql="$sql _status_active                      "; if [ $outputformat = "2" ]; then export sql="$sql AS etat_actif,";else export sql="$sql ,";fi
 export sql="$sql _pressurezone                       "; if [ $outputformat = "2" ]; then export sql="$sql AS zone_press,";else export sql="$sql ,";fi
 export sql="$sql _schema_visible                        "; if [ $outputformat = "2" ]; then export sql="$sql AS schema_vis";fi
-export sql="$sql FROM distribution.vw_pipe WHERE id_distributor = 1";
+export sql="$sql FROM qwat.vw_pipe WHERE id_distributor = 1";
 if [ $outputformat = "1" ] 
 then
   ogr2ogr -sql "$sql"  \
@@ -105,7 +105,7 @@ export sql="$sql _protection                         "; if [ $outputformat = "2"
 export sql="$sql _status_name                        "; if [ $outputformat = "2" ]; then export sql="$sql AS etat      ,";else export sql="$sql ,";fi
 export sql="$sql _status_active                      "; if [ $outputformat = "2" ]; then export sql="$sql AS etat_actif,";else export sql="$sql ,";fi
 export sql="$sql _pressurezone                       "; if [ $outputformat = "2" ]; then export sql="$sql AS zone_press";fi
-export sql="$sql FROM distribution.vw_pipe_schema_temp WHERE id_distributor = 1"
+export sql="$sql FROM qwat.vw_pipe_schema_temp WHERE id_distributor = 1"
 if [ $outputformat = "1" ] 
 then
   ogr2ogr -sql "$sql"  \
@@ -129,7 +129,7 @@ export sql="$sql _orientation  "; if [ $outputformat = "2" ]; then export sql="$
 export sql="$sql _schema_visible  "; if [ $outputformat = "2" ]; then export sql="$sql AS schema    ,";else export sql="$sql ,";fi
 export sql="$sql _status_active"; if [ $outputformat = "2" ]; then export sql="$sql AS actif     ,";else export sql="$sql ,";fi
 export sql="$sql geometry      "; if [ $outputformat = "2" ]; then export sql="$sql AS geometry  ";fi
-export sql="$sql FROM distribution.node WHERE _status_active IS TRUE AND _type != 'one' " 
+export sql="$sql FROM qwat.node WHERE _status_active IS TRUE AND _type != 'one' " 
 if [ $outputformat = "1" ] 
 then
   ogr2ogr -sql "$sql"  \
@@ -179,7 +179,7 @@ export sql="$sql             "; if [ $outputformat = "2" ]; then export sql="$sq
 export sql="$sql             "; if [ $outputformat = "2" ]; then export sql="$sql AS           ,";else export sql="$sql ,";fi
 export sql="$sql             "; if [ $outputformat = "2" ]; then export sql="$sql AS           ,";else export sql="$sql ,";fi
 export sql="$sql             "; if [ $outputformat = "2" ]; then export sql="$sql AS           ,";else export sql="$sql ,";fi
-export sql="$sql FROM distribution.vw_pipe_schema WHERE id_distributor = 1" 
+export sql="$sql FROM qwat.vw_pipe_schema WHERE id_distributor = 1" 
 
 export sql="SELECT                              \
     id ,                                        \
@@ -198,7 +198,7 @@ export sql="SELECT                              \
     _function,                                  \
     _type,                                      \
     _label                                      \
- FROM distribution.vw_valve" 
+ FROM qwat.vw_valve" 
 if [ $outputformat = "1" ] 
 then
   ogr2ogr -sql "$sql"  \
@@ -248,7 +248,7 @@ export sql="$sql             "; if [ $outputformat = "2" ]; then export sql="$sq
 export sql="$sql             "; if [ $outputformat = "2" ]; then export sql="$sql AS           ,";else export sql="$sql ,";fi
 export sql="$sql             "; if [ $outputformat = "2" ]; then export sql="$sql AS           ,";else export sql="$sql ,";fi
 export sql="$sql             "; if [ $outputformat = "2" ]; then export sql="$sql AS           ,";else export sql="$sql ,";fi
-export sql="$sql FROM distribution.vw_pipe_schema WHERE id_distributor = 1" 
+export sql="$sql FROM qwat.vw_pipe_schema WHERE id_distributor = 1" 
 
 export sql="SELECT                              \
     id ,                                        \
@@ -267,7 +267,7 @@ export sql="SELECT                              \
     _function,                                  \
     _type,                                      \
     _label                                      \
-FROM distribution.od_valve_schema" 
+FROM qwat.od_valve_schema" 
 if [ $outputformat = "1" ] 
 then
   ogr2ogr -sql "$sql"  \
@@ -318,9 +318,9 @@ export sql="$sql             "; if [ $outputformat = "2" ]; then export sql="$sq
 export sql="$sql             "; if [ $outputformat = "2" ]; then export sql="$sql AS           ,";else export sql="$sql ,";fi
 export sql="$sql             "; if [ $outputformat = "2" ]; then export sql="$sql AS           ,";else export sql="$sql ,";fi
 export sql="$sql             "; if [ $outputformat = "2" ]; then export sql="$sql AS           ,";else export sql="$sql ,";fi
-export sql="$sql FROM distribution.vw_pipe_schema WHERE id_distributor = 1" 
+export sql="$sql FROM qwat.vw_pipe_schema WHERE id_distributor = 1" 
 
-export sql="SELECT * FROM distribution.installation_view WHERE _status_active IS TRUE" 
+export sql="SELECT * FROM qwat.installation_view WHERE _status_active IS TRUE" 
 if [ $outputformat = "1" ] 
 then
   ogr2ogr -sql "$sql"  \
@@ -370,9 +370,9 @@ export sql="$sql             "; if [ $outputformat = "2" ]; then export sql="$sq
 export sql="$sql             "; if [ $outputformat = "2" ]; then export sql="$sql AS           ,";else export sql="$sql ,";fi
 export sql="$sql             "; if [ $outputformat = "2" ]; then export sql="$sql AS           ,";else export sql="$sql ,";fi
 export sql="$sql             "; if [ $outputformat = "2" ]; then export sql="$sql AS           ,";else export sql="$sql ,";fi
-export sql="$sql FROM distribution.vw_pipe_schema WHERE id_distributor = 1" 
+export sql="$sql FROM qwat.vw_pipe_schema WHERE id_distributor = 1" 
 
-export sql="SELECT * FROM distribution.od_pressurezone" 
+export sql="SELECT * FROM qwat.od_pressurezone" 
 if [ $outputformat = "1" ] 
 then
   ogr2ogr -sql "$sql"  \
@@ -422,9 +422,9 @@ export sql="$sql             "; if [ $outputformat = "2" ]; then export sql="$sq
 export sql="$sql             "; if [ $outputformat = "2" ]; then export sql="$sql AS           ,";else export sql="$sql ,";fi
 export sql="$sql             "; if [ $outputformat = "2" ]; then export sql="$sql AS           ,";else export sql="$sql ,";fi
 export sql="$sql             "; if [ $outputformat = "2" ]; then export sql="$sql AS           ,";else export sql="$sql ,";fi
-export sql="$sql FROM distribution.vw_pipe_schema WHERE id_distributor = 1" 
+export sql="$sql FROM qwat.vw_pipe_schema WHERE id_distributor = 1" 
 
-export sql="SELECT * FROM distribution.vw_subscriber" 
+export sql="SELECT * FROM qwat.vw_subscriber" 
 if [ $outputformat = "1" ] 
 then
   ogr2ogr -sql "$sql"  \
@@ -474,9 +474,9 @@ export sql="$sql             "; if [ $outputformat = "2" ]; then export sql="$sq
 export sql="$sql             "; if [ $outputformat = "2" ]; then export sql="$sql AS           ,";else export sql="$sql ,";fi
 export sql="$sql             "; if [ $outputformat = "2" ]; then export sql="$sql AS           ,";else export sql="$sql ,";fi
 export sql="$sql             "; if [ $outputformat = "2" ]; then export sql="$sql AS           ,";else export sql="$sql ,";fi
-export sql="$sql FROM distribution.vw_pipe_schema WHERE id_distributor = 1" 
+export sql="$sql FROM qwat.vw_pipe_schema WHERE id_distributor = 1" 
 
-export sql="SELECT * FROM distribution.od_samplingpoint"
+export sql="SELECT * FROM qwat.od_samplingpoint"
 if [ $outputformat = "1" ] 
 then
   ogr2ogr -sql "$sql"  \

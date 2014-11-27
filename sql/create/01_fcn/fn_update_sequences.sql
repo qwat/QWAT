@@ -1,6 +1,6 @@
 
 
-CREATE OR REPLACE FUNCTION distribution.fn_update_sequences() RETURNS void AS
+CREATE OR REPLACE FUNCTION qwat.fn_update_sequences() RETURNS void AS
 $BODY$
 declare 
   r        record;

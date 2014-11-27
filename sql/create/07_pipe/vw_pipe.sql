@@ -6,8 +6,8 @@
 
 
 
-DROP VIEW IF EXISTS distribution.vw_pipe CASCADE;
-CREATE VIEW distribution.vw_pipe AS 
+DROP VIEW IF EXISTS qwat.vw_pipe CASCADE;
+CREATE VIEW qwat.vw_pipe AS 
 	SELECT  
 		od_pipe.id                ,
 		od_pipe.id_parent         ,
@@ -55,19 +55,19 @@ CREATE VIEW distribution.vw_pipe AS
 		vl_status.active            AS _status_active,
 		od_pressurezone.name        AS _pressurezone,
 		od_pressurezone.colorcode   AS _pressurezone_colorcode
-		FROM distribution.od_pipe
-		INNER      JOIN distribution.vl_pipe_function      ON od_pipe.id_function      = vl_pipe_function.id
-		INNER      JOIN distribution.vl_pipe_installmethod ON od_pipe.id_installmethod = vl_pipe_installmethod.id
-		INNER      JOIN distribution.vl_pipe_material      ON od_pipe.id_material      = vl_pipe_material.id
-		INNER      JOIN distribution.od_distributor        ON od_pipe.id_distributor   = od_distributor.id
-		INNER      JOIN distribution.vl_precision          ON od_pipe.id_precision     = vl_precision.id
-		LEFT OUTER JOIN distribution.vl_pipe_protection    ON od_pipe.id_protection    = vl_pipe_protection.id
-		INNER      JOIN distribution.vl_status             ON od_pipe.id_status        = vl_status.id
-		LEFT OUTER JOIN distribution.od_pressurezone       ON od_pipe.id_pressurezone  = od_pressurezone.id 
-		LEFT OUTER JOIN distribution.od_node AS node_a     ON od_pipe.id_node_a        = node_a.id
-		LEFT OUTER JOIN distribution.od_node AS node_b     ON od_pipe.id_node_b        = node_b.id;
+		FROM qwat.od_pipe
+		INNER      JOIN qwat.vl_pipe_function      ON od_pipe.id_function      = vl_pipe_function.id
+		INNER      JOIN qwat.vl_pipe_installmethod ON od_pipe.id_installmethod = vl_pipe_installmethod.id
+		INNER      JOIN qwat.vl_pipe_material      ON od_pipe.id_material      = vl_pipe_material.id
+		INNER      JOIN qwat.od_distributor        ON od_pipe.id_distributor   = od_distributor.id
+		INNER      JOIN qwat.vl_precision          ON od_pipe.id_precision     = vl_precision.id
+		LEFT OUTER JOIN qwat.vl_pipe_protection    ON od_pipe.id_protection    = vl_pipe_protection.id
+		INNER      JOIN qwat.vl_status             ON od_pipe.id_status        = vl_status.id
+		LEFT OUTER JOIN qwat.od_pressurezone       ON od_pipe.id_pressurezone  = od_pressurezone.id 
+		LEFT OUTER JOIN qwat.od_node AS node_a     ON od_pipe.id_node_a        = node_a.id
+		LEFT OUTER JOIN qwat.od_node AS node_b     ON od_pipe.id_node_b        = node_b.id;
 /*----------------!!!---!!!----------------*/
 /* Comment */
-COMMENT ON VIEW distribution.vw_pipe IS 'View for pipe. This view is not editable';
+COMMENT ON VIEW qwat.vw_pipe IS 'View for pipe. This view is not editable';
 
 

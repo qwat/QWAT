@@ -9,7 +9,7 @@ rm $shapeoutput/*
 
 
 # save schema in a table
-#psql -h $db_address -U sige -c "DROP TABLE IF EXISTS distribution.vw_pipe_schema_temp; CREATE TABLE distribution.vw_pipe_schema_temp AS SELECT * FROM distribution.vw_pipe_schema_node;"
+#psql -h $db_address -U sige -c "DROP TABLE IF EXISTS qwat.vw_pipe_schema_temp; CREATE TABLE qwat.vw_pipe_schema_temp AS SELECT * FROM qwat.vw_pipe_schema_node;"
 read -p "Press any key to continue..."
 
  # vannes
@@ -34,8 +34,8 @@ SELECT \
  _district AS COMMUNNE,                      \
  _pressurezone AS ZONE_PRES,                 \
  vl_precision.value_fr          AS PRECISIO  \
- FROM distribution.vw_valve  \
- INNER JOIN distribution.vl_precision ON vw_valve.id_precision = vl_precision.id\
+ FROM qwat.vw_valve  \
+ INNER JOIN qwat.vl_precision ON vw_valve.id_precision = vl_precision.id\
  WHERE id_function != 6105 AND _schema_visible IS TRUE "
 read -p "Press any key to continue..."
 
@@ -45,7 +45,7 @@ SELECT                                     \
  id AS ID,                                  \
  name AS NOM,                               \
  geometry::geometry(MultiPolygon,21781) AS geom  \
-FROM distribution.od_pressurezone "
+FROM qwat.od_pressurezone "
 read -p "Press any key to continue..."
 
 # conduites
@@ -77,11 +77,11 @@ SELECT                                         \
  NULL::varchar(10)           AS RUGOSITE,      \
  NULL::boolean               AS CALC_HYD,      \
  NULL::boolean               AS A_DESAFE       \
-FROM distribution.vw_pipe_schema_temp \
-INNER      JOIN distribution.vl_pipe_function     ON pipe_schema_temp.id_function       = vl_pipe_function.id \
-INNER      JOIN distribution.vl_pipe_material     ON pipe_schema_temp.id_material       = vl_pipe_material.id \
-INNER      JOIN distribution.vl_precision         ON pipe_schema_temp.id_precision      = vl_precision.id \
-INNER      JOIN distribution.vl_status            ON pipe_schema_temp.id_status         = vl_status.id "
+FROM qwat.vw_pipe_schema_temp \
+INNER      JOIN qwat.vl_pipe_function     ON pipe_schema_temp.id_function       = vl_pipe_function.id \
+INNER      JOIN qwat.vl_pipe_material     ON pipe_schema_temp.id_material       = vl_pipe_material.id \
+INNER      JOIN qwat.vl_precision         ON pipe_schema_temp.id_precision      = vl_precision.id \
+INNER      JOIN qwat.vl_status            ON pipe_schema_temp.id_status         = vl_status.id "
 # \
 # WHERE id_distributor = 1 "
 read -p "Press any key to continue..."
@@ -95,31 +95,31 @@ SELECT                                                           \
  'NO_' || id::varchar   AS IDTXT,               \
  altitude_dtm AS ALTITUDE,                                       \
  geometry::geometry(Point,21781) AS geom                         \
-FROM distribution.node                                           \
+FROM qwat.node                                           \
 WHERE _schema_visible IS TRUE                                       \
   AND _status_active IS TRUE                                     \
   AND id IN (                                                    \
     SELECT DISTINCT(id_node_a)                                   \
-    FROM distribution.vw_pipe_schema_temp WHERE id_distributor = 1  \
+    FROM qwat.vw_pipe_schema_temp WHERE id_distributor = 1  \
     UNION SELECT DISTINCT(id_node_b)                             \
-    FROM distribution.vw_pipe_schema_temp WHERE id_distributor = 1  \
+    FROM qwat.vw_pipe_schema_temp WHERE id_distributor = 1  \
   )                                                              \
   AND id NOT IN (                                                \
-    SELECT id_node FROM distribution.od_installation_pump WHERE id_node IS NOT NULL \
+    SELECT id_node FROM qwat.od_installation_pump WHERE id_node IS NOT NULL \
     UNION                                                        \
-    SELECT id_node FROM distribution.od_installation_tank WHERE id_node IS NOT NULL \
+    SELECT id_node FROM qwat.od_installation_tank WHERE id_node IS NOT NULL \
     UNION                                                        \
-    SELECT id_node FROM distribution.od_installation_source WHERE id_node IS NOT NULL \
+    SELECT id_node FROM qwat.od_installation_source WHERE id_node IS NOT NULL \
     UNION                                                        \
-    SELECT id_node FROM distribution.od_installation_treatment WHERE id_node IS NOT NULL \
+    SELECT id_node FROM qwat.od_installation_treatment WHERE id_node IS NOT NULL \
     UNION                                                        \
-    SELECT id_node FROM distribution.od_installation_pressurecontrol WHERE id_node IS NOT NULL \
+    SELECT id_node FROM qwat.od_installation_pressurecontrol WHERE id_node IS NOT NULL \
     UNION                                                        \
-    SELECT id_node FROM distribution.od_installation_valvechamber WHERE id_node IS NOT NULL \
+    SELECT id_node FROM qwat.od_installation_valvechamber WHERE id_node IS NOT NULL \
     UNION                                                        \
-    SELECT id_node FROM distribution.od_hydrant WHERE id_node IS NOT NULL \
+    SELECT id_node FROM qwat.od_hydrant WHERE id_node IS NOT NULL \
     UNION                                                        \
-    SELECT id_node FROM distribution.od_valve_schema WHERE id_node IS NOT NULL AND ( closed IS TRUE OR _function = 'vanne de régulation' ) \
+    SELECT id_node FROM qwat.od_valve_schema WHERE id_node IS NOT NULL AND ( closed IS TRUE OR _function = 'vanne de régulation' ) \
   )
  "
 read -p "Press any key to continue..."
@@ -152,7 +152,7 @@ SELECT                                    \
  flow  AS SOUTIRAGE,                      \
  observation_date  AS CALC_DATE,          \
  observation_source  AS CALC_SOURCE       \
-FROM distribution.vw_hydrant"
+FROM qwat.vw_hydrant"
 read -p "Press any key to continue..."
 
 
@@ -167,7 +167,7 @@ SELECT                                    \
  remark         AS REMARQUE,              \
  geometry::geometry(Point,21781) AS geom, \
  _districts      AS COMMUNNE             \
-FROM distribution.od_samplingpoint"
+FROM qwat.od_samplingpoint"
 read -p "Press any key to continue..."
 
 
@@ -243,7 +243,7 @@ installation_tank.cistern2_dimension_1 AS CUV2_DIM1                             
 installation_tank.cistern2_dimension_2 AS CUV2_DIM2                                 ,\
 installation_tank.cistern2_storage     AS CUV2_VOLU                                 ,\
 installation_tank._cistern2_litrepercm AS CUV2_LPCM                                  \
-FROM distribution.od_installation_tank INNER JOIN distribution.node ON installation_tank.id_node = node.id\
+FROM qwat.od_installation_tank INNER JOIN qwat.node ON installation_tank.id_node = node.id\
  WHERE id_distributor=1 AND id_status = 1"
 read -p "Press any key to continue..."
 
@@ -272,7 +272,7 @@ SELECT                                     \
  flow_concession  AS Q_CONCESS,                       \
  contract_end     AS FIN_CONCES,                      \
  gathering_chamber AS CHB_RASSEMB                     \
- FROM distribution.od_installation_source INNER JOIN distribution.node ON installation_source.id_node = node.id\
+ FROM qwat.od_installation_source INNER JOIN qwat.node ON installation_source.id_node = node.id\
  WHERE id_distributor=1 AND id_status = 1"
 read -p "Press any key to continue..."
 
@@ -304,7 +304,7 @@ SELECT                                     \
  activatedcharcoal            CHARB_ACT                         ,\
  settling                     DECANTAT                          ,\
  treatment_capacity           TRAIT_CAPA                        \
-  FROM distribution.od_installation_treatment INNER JOIN distribution.node ON installation_treatment.id_node = node.id\
+  FROM qwat.od_installation_treatment INNER JOIN qwat.node ON installation_treatment.id_node = node.id\
   WHERE id_distributor=1 AND id_status = 1"
 read -p "Press any key to continue..."
 
@@ -331,7 +331,7 @@ SELECT                                     \
  no_pumps                                                 ,\
  rejected_flow    AS Q_REFOUL                             ,\
  manometric_height AS H_MANOMETR                          \
- FROM distribution.od_installation_pump  INNER JOIN distribution.node ON installation_pump.id_node = node.id\
+ FROM qwat.od_installation_pump  INNER JOIN qwat.node ON installation_pump.id_node = node.id\
  WHERE id_distributor=1 AND id_status = 1"
 read -p "Press any key to continue..."
 
@@ -359,7 +359,7 @@ SELECT                                     \
         WHEN id_type = 3 THEN 'rassemblement'         \
         ELSE ''                                       \
  END AS type                                          \
- FROM distribution.od_installation_pressurecontrol  INNER JOIN distribution.node ON installation_pressurecontrol.id_node = node.id\
+ FROM qwat.od_installation_pressurecontrol  INNER JOIN qwat.node ON installation_pressurecontrol.id_node = node.id\
  WHERE id_distributor=1 AND id_status = 1"
 read -p "Press any key to continue..."
 
@@ -383,6 +383,6 @@ SELECT                                     \
  id_pressurezone AS ZONE_PRES             ,\
  networkseparation  AS SEPAR_RESO         ,\
  meter              AS COMPTEUR            \
- FROM distribution.od_installation_valvechamber  INNER JOIN distribution.node ON installation_valvechamber.id_node = node.id\
+ FROM qwat.od_installation_valvechamber  INNER JOIN qwat.node ON installation_valvechamber.id_node = node.id\
  WHERE id_distributor=1 AND id_status = 1"
 read -p "Press any key to continue..."

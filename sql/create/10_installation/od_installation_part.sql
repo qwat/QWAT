@@ -5,23 +5,23 @@
 */
 
 
-DROP TABLE IF EXISTS distribution.od_installationpart CASCADE;
-CREATE TABLE distribution.od_installationpart (id serial PRIMARY KEY);
-COMMENT ON TABLE distribution.od_installationpart IS 'Table for subscriber meters.';
+DROP TABLE IF EXISTS qwat.od_installationpart CASCADE;
+CREATE TABLE qwat.od_installationpart (id serial PRIMARY KEY);
+COMMENT ON TABLE qwat.od_installationpart IS 'Table for subscriber meters.';
 
 /* COLUMNS */
 
-ALTER TABLE distribution.od_installationpart ADD COLUMN id_type int;
-ALTER TABLE distribution.od_installationpart ADD COLUMN remark text default '';
+ALTER TABLE qwat.od_installationpart ADD COLUMN id_type int;
+ALTER TABLE qwat.od_installationpart ADD COLUMN remark text default '';
 
 
 /* GEOMETRY                           (table_name,            is_node, create_node, create_schematic, get_pipe, auto_district, auto_pressurezone)*/
-SELECT distribution.fn_geom_tool_point('od_installationpart', true,    false,        false,            true,       true,         true);
+SELECT qwat.fn_geom_tool_point('od_installationpart', true,    false,        false,            true,       true,         true);
 
 /* JOINS */
-ALTER TABLE distribution.od_installationpart ADD CONSTRAINT installationpart_id_type FOREIGN KEY (id_type)  REFERENCES distribution.vl_installationpart_type(id) MATCH FULL; CREATE INDEX fki_installationpart_id_type ON distribution.od_installationpart(id_type) ;
+ALTER TABLE qwat.od_installationpart ADD CONSTRAINT installationpart_id_type FOREIGN KEY (id_type)  REFERENCES qwat.vl_installationpart_type(id) MATCH FULL; CREATE INDEX fki_installationpart_id_type ON qwat.od_installationpart(id_type) ;
 
 
 /* add this to the node table */
-INSERT INTO distribution.od_node_table (table_name,complement_column,node_type,overwrite) VALUES ('od_installationpart','id_type','installationpart',true);
+INSERT INTO qwat.od_node_table (table_name,complement_column,node_type,overwrite) VALUES ('od_installationpart','id_type','installationpart',true);
 

@@ -1,4 +1,4 @@
-﻿CREATE OR REPLACE FUNCTION distribution.fn_update_pipe_crossing(update_existing boolean, delete_unused boolean) RETURNS void AS
+﻿CREATE OR REPLACE FUNCTION qwat.fn_update_pipe_crossing(update_existing boolean, delete_unused boolean) RETURNS void AS
 $BODY$
 	DECLARE
 		crossing record;
@@ -29,7 +29,7 @@ $BODY$
 						p1.geometry AS pipe1_geometry,
 						p2.geometry AS pipe2_geometry,
 						ST_Intersection(p1.geometry,p2.geometry) AS cross_geometry 
-					FROM distribution.od_pipe p1, distribution.od_pipe p2 
+					FROM qwat.od_pipe p1, qwat.od_pipe p2 
 					WHERE p1.id < p2.id 
 					AND p1.id_status = 1301 
 					AND p2.id_status = 1301
@@ -51,7 +51,7 @@ $BODY$
 					n AS pt_index,
 					ST_LineLocatePoint( geometry, ST_PointN( geometry, n) ) AS pt_locat,
 					( 90 + degrees( ST_Azimuth( ST_PointN( geometry, n), ST_PointN( geometry, n+1 ) ) ) )::integer % 360 AS azimuth 
-				FROM distribution.od_pipe, generate_series(1, ST_NumPoints(geometry)-1) n
+				FROM qwat.od_pipe, generate_series(1, ST_NumPoints(geometry)-1) n
 				WHERE od_pipe.id = crossing.pipe1_id
 			),
 			/* find the correct segment according to linear referencing of the crossing point */
@@ -76,7 +76,7 @@ $BODY$
 					n AS pt_index,
 					ST_LineLocatePoint( geometry, ST_PointN( geometry, n) ) AS pt_locat,
 					( 90 + degrees( ST_Azimuth( ST_PointN( geometry, n), ST_PointN( geometry, n+1 ) ) ) )::integer % 360 AS azimuth 
-				FROM distribution.od_pipe, generate_series(1, ST_NumPoints(geometry)-1) n
+				FROM qwat.od_pipe, generate_series(1, ST_NumPoints(geometry)-1) n
 				WHERE od_pipe.id = crossing.pipe2_id
 			),
 			/* find the correct segment according to linear referencing of the crossing point */
@@ -108,16 +108,16 @@ $BODY$
 			END IF;
 /* * * * * * * * * * * * * * * * * * * * * * * * */
 			/* UPDATE OR INSERT NEW CROSSING */
-			SELECT id FROM distribution.od_crossing WHERE ST_DWithin(crossing.cross_geometry,geometry,0.0) IS TRUE LIMIT 1 INTO crossing_id;
+			SELECT id FROM qwat.od_crossing WHERE ST_DWithin(crossing.cross_geometry,geometry,0.0) IS TRUE LIMIT 1 INTO crossing_id;
 			IF crossing_id IS NULL THEN
-				INSERT INTO distribution.od_crossing 
+				INSERT INTO qwat.od_crossing 
 						(_pipe1_id,_pipe2_id,_pipe1_angle,_pipe2_angle,geometry) 
 					VALUES
 						(crossing.pipe1_id,crossing.pipe2_id,pipe1.azimuth,pipe2.azimuth,crossing.cross_geometry)
 					RETURNING id INTO crossing_id;
 				inserted_crossing_count := inserted_crossing_count + 1;
 			ELSIF update_existing IS TRUE THEN
-				UPDATE distribution.od_crossing 
+				UPDATE qwat.od_crossing 
 				SET 
 					_pipe1_id = crossing.pipe1_id,
 					_pipe1_angle = pipe1.azimuth,
@@ -132,7 +132,7 @@ $BODY$
 /* * * * * * * * * * * * * * * * * * * * * * * * */
 		/* DELETE OLD CROSSINGS */
 		IF delete_unused IS TRUE THEN
-			DELETE FROM distribution.od_crossing WHERE NOT ( id = ANY(updated_crossing) );
+			DELETE FROM qwat.od_crossing WHERE NOT ( id = ANY(updated_crossing) );
 			GET DIAGNOSTICS deleted_crossing_count = ROW_COUNT;
 		END IF;
 		RAISE NOTICE '';
