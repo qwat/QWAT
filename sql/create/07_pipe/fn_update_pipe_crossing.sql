@@ -1,4 +1,5 @@
-﻿CREATE OR REPLACE FUNCTION qwat.fn_update_pipe_crossing(update_existing boolean, delete_unused boolean) RETURNS void AS
+CREATE OR REPLACE FUNCTION qwat.fn_update_pipe_crossing(update_existing boolean, delete_unused boolean)
+  RETURNS void AS
 $BODY$
 	DECLARE
 		crossing record;
@@ -146,5 +147,4 @@ $BODY$
 		RAISE NOTICE '';
 	END;
 $BODY$
-LANGUAGE plpgsql;
-
+  LANGUAGE plpgsql;
