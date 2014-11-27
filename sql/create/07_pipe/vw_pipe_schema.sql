@@ -21,7 +21,7 @@ CREATE VIEW qwat.vw_pipe_schema_visibleitems AS
 		od_pipe._length2d,
 		od_pipe._length3d,
 		od_pipe.tunnel_or_bridge,
-		od_pipe.geometry_schematic::geometry(LineString,21781) AS geometry,
+		od_pipe.geometry_alt1::geometry(LineString,21781) AS geometry,
 		od_pipe._valve_count,
 		od_pipe._valve_closed
 	FROM qwat.od_pipe
@@ -33,7 +33,7 @@ COMMENT ON VIEW qwat.vw_pipe_schema_visibleitems IS 'visible pipe in the schemat
 CREATE OR REPLACE RULE pipe_update_alternative AS
 	ON UPDATE TO qwat.vw_pipe_schema_visibleitems DO INSTEAD
 		UPDATE qwat.od_pipe SET 
-			geometry_schematic = NEW.geometry
+			geometry_alt1 = NEW.geometry
 		WHERE id = NEW.id;
 		
 

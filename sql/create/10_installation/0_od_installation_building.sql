@@ -42,7 +42,7 @@ END;
 $BODY$
 LANGUAGE 'plpgsql';
 
-CREATE TRIGGER qwat.fn_installation_building_trigger 
+CREATE TRIGGER fn_installation_building_trigger 
         BEFORE INSERT OR UPDATE OF id_type, name ON qwat.od_installation_building 
         FOR EACH ROW
         EXECUTE PROCEDURE qwat.fn_installation_building_trigger_fcn();
