@@ -1,7 +1,7 @@
 
 
-/*                        (table_name, is_node, create_node, create_schematic, get_pipe, auto_district, auto_pressurezone)*/
-CREATE OR REPLACE FUNCTION qwat.fn_geom_tool_point(table_name varchar, is_node boolean, create_node boolean, create_schematic boolean, get_pipe boolean, auto_district boolean, auto_pressurezone boolean) RETURNS void AS
+/*                        (table_name, is_node, create_node, create_alt_geom, get_pipe, auto_district, auto_pressurezone)*/
+CREATE OR REPLACE FUNCTION qwat.fn_geom_tool_point(table_name varchar, is_node boolean, create_node boolean, create_alt_geom boolean, get_pipe boolean, auto_district boolean, auto_pressurezone boolean) RETURNS void AS
 $BODY$
 	DECLARE
 		sql_trigger varchar;
@@ -28,10 +28,13 @@ $BODY$
 		/* Enables geometry */
 		PERFORM addGeometryColumn('distribution', table_name, 'geometry', 21781, 'POINT', 2);
 		EXECUTE 'CREATE INDEX '||table_name||'_geoidx ON qwat.'||table_name||' USING GIST ( geometry );';
-		IF create_schematic IS TRUE THEN
-			PERFORM addGeometryColumn('distribution', table_name, 'geometry_schematic', 21781, 'POINT', 2);
-			EXECUTE 'CREATE INDEX '||table_name||'_geoidx_sch ON qwat.'||table_name||' USING GIST ( geometry_schematic );';
-			EXECUTE 'ALTER TABLE qwat.'||table_name||' ADD COLUMN _geometry_schematic_used boolean;';
+		IF create_alt_geom IS TRUE THEN
+			PERFORM addGeometryColumn('distribution', table_name, 'geometry_alt1', 21781, 'POINT', 2);
+			PERFORM addGeometryColumn('distribution', table_name, 'geometry_alt2', 21781, 'POINT', 2);
+			EXECUTE 'CREATE INDEX '||table_name||'_geoidx_sch ON qwat.'||table_name||' USING GIST ( geometry_alt1 );';
+			EXECUTE 'CREATE INDEX '||table_name||'_geoidx_sch ON qwat.'||table_name||' USING GIST ( geometry_alt2 );';
+			EXECUTE 'ALTER TABLE qwat.'||table_name||' ADD COLUMN _geometry_alt1_used boolean;';
+			EXECUTE 'ALTER TABLE qwat.'||table_name||' ADD COLUMN _geometry_alt2_used boolean;';
 		END IF;
 				
 		/* Add constraints and indexes */
@@ -82,10 +85,12 @@ $BODY$
 		IF get_pipe IS TRUE THEN
 			sql_trigger := sql_trigger || '
 						NEW.id_pipe            := qwat.fn_pipe_get_id(NEW.geometry);';
-		END IF;		IF create_schematic IS TRUE THEN
+		END IF;		IF create_alt_geom IS TRUE THEN
 			sql_trigger := sql_trigger || '
-						NEW.geometry_schematic       := NEW.geometry;
-						NEW._geometry_schematic_used := false;';
+						NEW.geometry_alt1       := NEW.geometry;
+						NEW.geometry_alt2       := NEW.geometry;
+						NEW._geometry_alt1_used := false;
+						NEW._geometry_alt2_used := false;';
 		END IF;
 		sql_trigger := sql_trigger || '
 						NEW._printmaps         := qwat.fn_get_printmaps(NEW.geometry);
@@ -110,30 +115,31 @@ $BODY$
 			EXECUTE PROCEDURE qwat.'||table_name||'_geom();';
 		EXECUTE 'COMMENT ON TRIGGER '||table_name||'_geom_trigger_update ON qwat.'||table_name||' IS ''Trigger: updates auto fields of the '||table_name||' after geom update.'';';
 
-		/* detect if schematic is used */
-		IF create_schematic IS TRUE THEN
+		/* detect if alternatve geom is used */
+		IF create_alt_geom IS TRUE THEN
 			EXECUTE '	
-				CREATE OR REPLACE FUNCTION qwat.'||table_name||'_geom_schematic() RETURNS TRIGGER AS
+				CREATE OR REPLACE FUNCTION qwat.'||table_name||'_alternative_geom() RETURNS TRIGGER AS
 					''
 					BEGIN
 						UPDATE qwat.'||table_name||' SET 
-							_geometry_schematic_used = ST_AsBinary(NEW.geometry_schematic) <> ST_AsBinary(NEW.geometry) 
+							_geometry_alt1_used = ST_AsBinary(NEW.geometry_alt1) <> ST_AsBinary(NEW.geometry) 
+							_geometry_alt2_used = ST_AsBinary(NEW.geometry_alt2) <> ST_AsBinary(NEW.geometry) 
 							WHERE id = NEW.id;
 						RETURN NEW;
 					END;
 					''
 					LANGUAGE ''plpgsql'';		
 			';
-			EXECUTE 'CREATE TRIGGER '||table_name||'_geom_schematic_trigger
-				BEFORE UPDATE OF geometry_schematic ON qwat.'||table_name||' 
+			EXECUTE 'CREATE TRIGGER qwat.'||table_name||'_alternative_geom_trigger
+				BEFORE UPDATE OF geometry_alt1, geometry_alt2  ON qwat.'||table_name||' 
 				FOR EACH ROW
-				EXECUTE PROCEDURE qwat.'||table_name||'_geom_schematic();';
-			EXECUTE 'COMMENT ON TRIGGER '||table_name||'_geom_schematic_trigger ON qwat.'||table_name||' IS ''Trigger: when updating, check if geometry_schematic is different to fill the boolean field.'';';
+				EXECUTE PROCEDURE qwat.'||table_name||'_alternative_geom();';
+			EXECUTE 'COMMENT ON TRIGGER qwat.'||table_name||'_alternative_geom_trigger ON qwat.'||table_name||' IS ''Trigger: when updating, check if alternative geometries are different to fill the boolean fields.'';';
 		END IF;
 	END;
 $BODY$
 LANGUAGE 'plpgsql';
-COMMENT ON FUNCTION qwat.fn_geom_tool_point(varchar,boolean,boolean,boolean,boolean,boolean,boolean) IS 'Create geometric columns, constraint and triggers for tables with point on node items. Second argument determines if node has to be created or not if not found.  (table_name, is_node, create_node, create_schematic, get_pipe, auto_district, auto_pressurezone)';
+COMMENT ON FUNCTION qwat.fn_geom_tool_point(varchar,boolean,boolean,boolean,boolean,boolean,boolean) IS 'Create geometric columns, constraint and triggers for tables with point on node items. Second argument determines if node has to be created or not if not found.  (table_name, is_node, create_node, create_alt_geom, get_pipe, auto_district, auto_pressurezone)';
 
 
 /* LINES */
@@ -154,13 +160,16 @@ $BODY$
 		EXECUTE 'ALTER TABLE qwat.'||table_name||' ADD COLUMN _district       varchar(255) default '''' ;';
 		EXECUTE 'ALTER TABLE qwat.'||table_name||' ADD COLUMN _pressurezone   varchar(100) default '''' ;';
 		EXECUTE 'ALTER TABLE qwat.'||table_name||' ADD COLUMN _printmaps      varchar(100) default '''' ;';
-		EXECUTE 'ALTER TABLE qwat.'||table_name||' ADD COLUMN _geometry_schematic_used boolean;';
+		EXECUTE 'ALTER TABLE qwat.'||table_name||' ADD COLUMN _geometry_alt1_used boolean;';
+		EXECUTE 'ALTER TABLE qwat.'||table_name||' ADD COLUMN _geometry_alt2_used boolean;';
 		
 		/* Enables geometry */
 		PERFORM addGeometryColumn('distribution', table_name, 'geometry', 21781, 'LINESTRING', 2);
-		PERFORM addGeometryColumn('distribution', table_name, 'geometry_schematic', 21781, 'LINESTRING', 2);
+		PERFORM addGeometryColumn('distribution', table_name, 'geometry_alt1', 21781, 'LINESTRING', 2);
+		PERFORM addGeometryColumn('distribution', table_name, 'geometry_alt2', 21781, 'LINESTRING', 2);
 		EXECUTE 'CREATE INDEX '||table_name||'_geoidx     ON qwat.'||table_name||' USING GIST ( geometry );';
-		EXECUTE 'CREATE INDEX '||table_name||'_geoidx_sch ON qwat.'||table_name||' USING GIST ( geometry_schematic );';		
+		EXECUTE 'CREATE INDEX '||table_name||'_geoidx_alt1 ON qwat.'||table_name||' USING GIST ( geometry_alt1 );';		
+		EXECUTE 'CREATE INDEX '||table_name||'_geoidx_alt2 ON qwat.'||table_name||' USING GIST ( geometry_alt2 );';		
 
 		/* Add constraints and indexes */
 		EXECUTE 'ALTER TABLE qwat.'||table_name||' ADD CONSTRAINT '||table_name||'_id_node_a       FOREIGN KEY (id_node_a)       REFERENCES qwat.od_node(id)         MATCH FULL;';
@@ -182,8 +191,10 @@ $BODY$
 					NEW.id_district              := qwat.fn_get_district_id(NEW.geometry)                ;
 					NEW.id_pressurezone          := qwat.fn_get_pressurezone_id(NEW.geometry)            ;
 					NEW.id_printmap              := qwat.fn_get_printmap_id(NEW.geometry)                ;
-					NEW.geometry_schematic       := NEW.geometry                                                 ;
-					NEW._geometry_schematic_used := false                                                        ;
+					NEW.geometry_alt1            := NEW.geometry                                                 ;
+					NEW.geometry_alt2            := NEW.geometry                                                 ;
+					NEW._geometry_alt1_used      := false                                                        ;
+					NEW._geometry_alt2_used      := false                                                        ;
 					NEW._district                := qwat.fn_get_districts(NEW.geometry)                  ;
 					NEW._pressurezone            := qwat.fn_get_pressurezone(NEW.geometry)               ;
 					NEW._printmaps               := qwat.fn_get_printmaps(NEW.geometry)                  ;
@@ -212,22 +223,23 @@ $BODY$
 		EXECUTE 'COMMENT ON TRIGGER '||table_name||'_geom_trigger_update ON qwat.'||table_name||' IS ''Trigger: updates auto fields of the '||table_name||' after geom update.'';';
 		
 		
-		/* detect if schematic is used */
+		/* detect if alternativegeom are used */
 		EXECUTE '	
-			CREATE OR REPLACE FUNCTION qwat.'||table_name||'_geom_schematic() RETURNS TRIGGER AS
+			CREATE OR REPLACE FUNCTION qwat.'||table_name||'_alternative_geom() RETURNS TRIGGER AS
 				''
 				BEGIN
-					NEW._geometry_schematic_used := ST_AsBinary(NEW.geometry_schematic) <> ST_AsBinary(NEW.geometry);
+					NEW._geometry_alt1_used := ST_AsBinary(NEW.geometry_alt1) <> ST_AsBinary(NEW.geometry);
+					NEW._geometry_alt2_used := ST_AsBinary(NEW.geometry_alt2) <> ST_AsBinary(NEW.geometry);
 					RETURN NEW;
 				END;
 				''
 				LANGUAGE ''plpgsql'';		
 		';
-		EXECUTE 'CREATE TRIGGER '||table_name||'_geom_schematic_trigger
-			BEFORE UPDATE OF geometry_schematic ON qwat.'||table_name||' 
+		EXECUTE 'CREATE TRIGGER qwat.'||table_name||'_alternative_geom_trigger
+			BEFORE UPDATE OF geometry_alt1, geometry_alt2 ON qwat.'||table_name||' 
 			FOR EACH ROW
-			EXECUTE PROCEDURE qwat.'||table_name||'_geom_schematic();';
-		EXECUTE 'COMMENT ON TRIGGER '||table_name||'_geom_schematic_trigger ON qwat.'||table_name||' IS ''Trigger: when updating, check if geometry_schematic is different to fill the boolean field.'';';
+			EXECUTE PROCEDURE qwat.'||table_name||'_alternative_geom();';
+		EXECUTE 'COMMENT ON TRIGGER qwat.'||table_name||'_alternative_geom_trigger ON qwat.'||table_name||' IS ''Trigger: when updating, check if alternative geometries are different to fill the boolean fields.'';';
 		
 	END;
 $BODY$
