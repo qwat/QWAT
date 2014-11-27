@@ -1,4 +1,3 @@
-﻿DROP TABLE IF EXISTS qwat.od_crossing;
 CREATE TABLE qwat.od_crossing
 (
   id serial NOT NULL,
@@ -32,7 +31,7 @@ $BODY$
 	END;
 $BODY$ LANGUAGE 'plpgsql';
 
-CREATE TRIGGER controled_crossing_trigger 
+CREATE TRIGGER controled_crossing_trigger
 BEFORE UPDATE ON qwat.od_crossing
 FOR EACH ROW
 WHEN (NEW.hide_pipe != OLD.hide_pipe)

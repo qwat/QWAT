@@ -31,8 +31,8 @@ $BODY$
 		IF create_alt_geom IS TRUE THEN
 			PERFORM addGeometryColumn('qwat', table_name, 'geometry_alt1', 21781, 'POINT', 2);
 			PERFORM addGeometryColumn('qwat', table_name, 'geometry_alt2', 21781, 'POINT', 2);
-			EXECUTE 'CREATE INDEX '||table_name||'_geoidx_sch ON qwat.'||table_name||' USING GIST ( geometry_alt1 );';
-			EXECUTE 'CREATE INDEX '||table_name||'_geoidx_sch ON qwat.'||table_name||' USING GIST ( geometry_alt2 );';
+			EXECUTE 'CREATE INDEX '||table_name||'_geoidx_alt1 ON qwat.'||table_name||' USING GIST ( geometry_alt1 );';
+			EXECUTE 'CREATE INDEX '||table_name||'_geoidx_alt2 ON qwat.'||table_name||' USING GIST ( geometry_alt2 );';
 			EXECUTE 'ALTER TABLE qwat.'||table_name||' ADD COLUMN _geometry_alt1_used boolean;';
 			EXECUTE 'ALTER TABLE qwat.'||table_name||' ADD COLUMN _geometry_alt2_used boolean;';
 		END IF;
@@ -121,20 +121,18 @@ $BODY$
 				CREATE OR REPLACE FUNCTION qwat.'||table_name||'_alternative_geom() RETURNS TRIGGER AS
 					''
 					BEGIN
-						UPDATE qwat.'||table_name||' SET 
-							_geometry_alt1_used = ST_AsBinary(NEW.geometry_alt1) <> ST_AsBinary(NEW.geometry) 
-							_geometry_alt2_used = ST_AsBinary(NEW.geometry_alt2) <> ST_AsBinary(NEW.geometry) 
-							WHERE id = NEW.id;
+						NEW._geometry_alt1_used := ST_AsBinary(NEW.geometry_alt1) <> ST_AsBinary(NEW.geometry);
+						NEW._geometry_alt2_used := ST_AsBinary(NEW.geometry_alt2) <> ST_AsBinary(NEW.geometry);
 						RETURN NEW;
 					END;
 					''
 					LANGUAGE ''plpgsql'';		
 			';
-			EXECUTE 'CREATE TRIGGER qwat.'||table_name||'_alternative_geom_trigger
+			EXECUTE 'CREATE TRIGGER '||table_name||'_alternative_geom_trigger
 				BEFORE UPDATE OF geometry_alt1, geometry_alt2  ON qwat.'||table_name||' 
 				FOR EACH ROW
 				EXECUTE PROCEDURE qwat.'||table_name||'_alternative_geom();';
-			EXECUTE 'COMMENT ON TRIGGER qwat.'||table_name||'_alternative_geom_trigger ON qwat.'||table_name||' IS ''Trigger: when updating, check if alternative geometries are different to fill the boolean fields.'';';
+			EXECUTE 'COMMENT ON TRIGGER '||table_name||'_alternative_geom_trigger ON qwat.'||table_name||' IS ''Trigger: when updating, check if alternative geometries are different to fill the boolean fields.'';';
 		END IF;
 	END;
 $BODY$
@@ -235,11 +233,11 @@ $BODY$
 				''
 				LANGUAGE ''plpgsql'';		
 		';
-		EXECUTE 'CREATE TRIGGER qwat.'||table_name||'_alternative_geom_trigger
+		EXECUTE 'CREATE TRIGGER '||table_name||'_alternative_geom_trigger
 			BEFORE UPDATE OF geometry_alt1, geometry_alt2 ON qwat.'||table_name||' 
 			FOR EACH ROW
 			EXECUTE PROCEDURE qwat.'||table_name||'_alternative_geom();';
-		EXECUTE 'COMMENT ON TRIGGER qwat.'||table_name||'_alternative_geom_trigger ON qwat.'||table_name||' IS ''Trigger: when updating, check if alternative geometries are different to fill the boolean fields.'';';
+		EXECUTE 'COMMENT ON TRIGGER '||table_name||'_alternative_geom_trigger ON qwat.'||table_name||' IS ''Trigger: when updating, check if alternative geometries are different to fill the boolean fields.'';';
 		
 	END;
 $BODY$
