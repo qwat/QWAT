@@ -121,8 +121,8 @@ $BODY$
 				CREATE OR REPLACE FUNCTION qwat.'||table_name||'_alternative_geom() RETURNS TRIGGER AS
 					''
 					BEGIN
-						NEW._geometry_alt1_used := ST_AsBinary(NEW.geometry_alt1) <> ST_AsBinary(NEW.geometry);
-						NEW._geometry_alt2_used := ST_AsBinary(NEW.geometry_alt2) <> ST_AsBinary(NEW.geometry);
+						NEW._geometry_alt1_used := NEW.geometry_alt1 IS NULL OR ST_AsBinary(NEW.geometry_alt1) <> ST_AsBinary(NEW.geometry);
+						NEW._geometry_alt2_used := NEW.geometry_alt2 IS NULL OR ST_AsBinary(NEW.geometry_alt2) <> ST_AsBinary(NEW.geometry);
 						RETURN NEW;
 					END;
 					''
@@ -226,8 +226,8 @@ $BODY$
 			CREATE OR REPLACE FUNCTION qwat.'||table_name||'_alternative_geom() RETURNS TRIGGER AS
 				''
 				BEGIN
-					NEW._geometry_alt1_used := ST_AsBinary(NEW.geometry_alt1) <> ST_AsBinary(NEW.geometry);
-					NEW._geometry_alt2_used := ST_AsBinary(NEW.geometry_alt2) <> ST_AsBinary(NEW.geometry);
+					NEW._geometry_alt1_used := NEW.geometry_alt1 IS NULL OR ST_AsBinary(NEW.geometry_alt1) <> ST_AsBinary(NEW.geometry);
+					NEW._geometry_alt2_used := NEW.geometry_alt2 IS NULL OR ST_AsBinary(NEW.geometry_alt2) <> ST_AsBinary(NEW.geometry);
 					RETURN NEW;
 				END;
 				''
