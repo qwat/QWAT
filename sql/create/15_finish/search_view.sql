@@ -5,42 +5,42 @@ CREATE OR REPLACE VIEW qwat.vw_search_view AS
 	/* ouvrages */
 	SELECT
 		'Ouvrages' as layer_name,
-		'Réservoir ' || name as search_text,
+		'Réservoir ' || identification || ' ' || name as search_text,
 		geometry
 		FROM qwat.od_installation_tank 
 		INNER JOIN qwat.vl_status ON od_installation_tank.id_status = vl_status.id
 		WHERE vl_status.active IS TRUE
 	UNION SELECT
 		'Ouvrages' as layer_name,
-		'Pompage ' || name as search_text,
+		'Pompage ' || identification || ' ' || name as search_text,
 		geometry
 		FROM qwat.od_installation_pump 
 		INNER JOIN qwat.vl_status ON od_installation_pump.id_status = vl_status.id
 		WHERE vl_status.active IS TRUE
 	UNION SELECT
 		'Ouvrages' as layer_name,
-		'Source ' || name as search_text,
+		'Source ' || identification || ' ' || name as search_text,
 		geometry
 		FROM qwat.od_installation_source
 		INNER JOIN qwat.vl_status ON od_installation_source.id_status = vl_status.id
 		WHERE vl_status.active IS TRUE
 	UNION SELECT
 		'Ouvrages' as layer_name,
-		'Traitement ' || name as search_text,
+		'Traitement ' || identification || ' ' || name as search_text,
 		geometry
 		FROM qwat.od_installation_treatment 
 		INNER JOIN qwat.vl_status ON od_installation_treatment.id_status = vl_status.id
 		WHERE vl_status.active IS TRUE
 	UNION SELECT
 		'Ouvrages' as layer_name,
-		'Régulation de pression ' || name as search_text,
+		'Régulation de pression ' || identification || ' ' || name as search_text,
 		geometry
 		FROM qwat.od_installation_pressurecontrol 
 		INNER JOIN qwat.vl_status ON od_installation_pressurecontrol.id_status = vl_status.id
 		WHERE vl_status.active IS TRUE
 	UNION SELECT
 		'Ouvrages' as layer_name,
-		'Chambre de vannes ' || name as search_text,
+		'Chambre de vannes ' || identification || ' ' || name as search_text,
 		geometry
 		FROM qwat.od_installation_valvechamber
 		INNER JOIN qwat.vl_status ON od_installation_valvechamber.id_status = vl_status.id
