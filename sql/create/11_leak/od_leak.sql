@@ -31,7 +31,7 @@ ALTER TABLE qwat.od_leak ADD CONSTRAINT vl_leak_id_cause  FOREIGN KEY (id_cause)
 ALTER TABLE qwat.od_leak ADD CONSTRAINT vl_leak_id_damage FOREIGN KEY (id_damage) REFERENCES qwat.vl_leak_damage(id) MATCH FULL;   CREATE INDEX fki_vl_leak_id_damage ON qwat.od_leak(id_damage);
 
 /* Trigger */
-CREATE OR REPLACE FUNCTION qwat.od_leak_repaired() RETURNS trigger AS 
+CREATE OR REPLACE FUNCTION qwat.ft_leak_repaired() RETURNS trigger AS 
 $BODY$
 	BEGIN
 		IF NEW.repair_date IS NULL THEN
@@ -44,10 +44,10 @@ $BODY$
 $BODY$LANGUAGE 'plpgsql';
 COMMENT ON FUNCTION qwat.od_leak_repaired() IS 'Fcn/Trigger: updates the repaired status of the leak.';
 
-CREATE TRIGGER leak_repaired_trigger
+CREATE TRIGGER tr_leak_repaired
 	BEFORE INSERT OR UPDATE OF repair_date ON qwat.od_leak
 	FOR EACH ROW
-	EXECUTE PROCEDURE qwat.od_leak_repaired();
-COMMENT ON TRIGGER leak_repaired_trigger ON qwat.od_leak IS 'Trigger: updates the repaired status of the leak.';
+	EXECUTE PROCEDURE qwat.ft_leak_repaired();
+COMMENT ON TRIGGER tr_leak_repaired ON qwat.od_leak IS 'Trigger: updates the repaired status of the leak.';
 
 

@@ -31,10 +31,10 @@ $BODY$
 			END;
 		'' LANGUAGE ''plpgsql'';
 		
-		CREATE TRIGGER '||main_table||'_schemaview_trigger
+		CREATE TRIGGER tr_'||main_table||'_schemaview
 			BEFORE INSERT OR UPDATE OF schema_force_view,'||keyfield||' ON qwat.'||main_table||'
 			FOR EACH ROW EXECUTE PROCEDURE qwat.'||main_table||'_schemaview();
-		COMMENT ON TRIGGER '||main_table||'_schemaview_trigger ON qwat.'||main_table||' IS ''Schema view depends on pipe function and on manual changes.'';
+		COMMENT ON TRIGGER tr_'||main_table||'_schemaview ON qwat.'||main_table||' IS ''Schema view depends on pipe function and on manual changes.'';
 		';
 	END;
 $BODY$

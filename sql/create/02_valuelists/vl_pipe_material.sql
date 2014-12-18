@@ -40,11 +40,11 @@ $BODY$
 $BODY$ LANGUAGE 'plpgsql';
 COMMENT ON FUNCTION qwat.vl_pipe_material_displayname() IS 'Fcn/Trigger: updates the fancy value_fr, value_ro and value_en in the material table.';
 
-CREATE TRIGGER fancy_value_trigger
+CREATE TRIGGER tr_fancy_value
 	BEFORE INSERT OR UPDATE OF short_fr, short_ro, short_en, diameter ON qwat.vl_pipe_material
 	FOR EACH ROW
 	EXECUTE PROCEDURE qwat.vl_pipe_material_displayname();
-COMMENT ON TRIGGER fancy_value_trigger ON qwat.vl_pipe_material IS 'Trigger: updates the fancy value_fr, value_ro and value_en in the material table.';
+COMMENT ON TRIGGER tr_fancy_value ON qwat.vl_pipe_material IS 'Trigger: updates the fancy value_fr, value_ro and value_en in the material table.';
 
 
 /* Predefined functions list */

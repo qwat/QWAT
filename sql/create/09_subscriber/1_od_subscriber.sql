@@ -29,7 +29,7 @@ ALTER TABLE qwat.od_subscriber ADD CONSTRAINT subscriber_id_pipe  FOREIGN KEY (i
 
 
 /* Trigger */
-CREATE OR REPLACE FUNCTION qwat.od_subscriber_fullid() RETURNS trigger AS
+CREATE OR REPLACE FUNCTION qwat.ft_subscriber_fullid() RETURNS trigger AS
 $BODY$
 	BEGIN
 		 NEW._identification_full := od_district.prefix||'_'||NEW.identification FROM qwat.od_district WHERE od_district.id = NEW.id_district ;
@@ -39,11 +39,11 @@ $BODY$
 LANGUAGE 'plpgsql';
 COMMENT ON FUNCTION qwat.od_subscriber_fullid() IS 'Fcn/Trigger: updates the full identification (district prefix) of the client.';
 
-CREATE TRIGGER subscriber_fullid_trigger
+CREATE TRIGGER tr_subscriber_fullid
 	BEFORE INSERT OR UPDATE OF id_district,identification ON qwat.od_subscriber
 	FOR EACH ROW
-	EXECUTE PROCEDURE qwat.od_subscriber_fullid();
-COMMENT ON TRIGGER subscriber_fullid_trigger ON qwat.od_subscriber IS 'Trigger: updates the full identification (district prefix) of the client.';
+	EXECUTE PROCEDURE qwat.ft_subscriber_fullid();
+COMMENT ON TRIGGER tr_subscriber_fullid ON qwat.od_subscriber IS 'Trigger: updates the full identification (district prefix) of the client.';
 
 
 

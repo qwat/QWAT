@@ -25,7 +25,7 @@ CREATE INDEX node_geoidx ON qwat.od_node USING GIST ( geometry );
 
 /*----------------!!!---!!!----------------*/
 /* Trigger for geometry (=> altitude) */
-CREATE OR REPLACE FUNCTION qwat.od_node_geom() RETURNS trigger AS 
+CREATE OR REPLACE FUNCTION qwat.ft_node_geom() RETURNS trigger AS 
 $BODY$ 
 	BEGIN
 		NEW.altitude_dtm := NULL;
@@ -35,11 +35,11 @@ $BODY$
 LANGUAGE 'plpgsql';
 COMMENT ON FUNCTION qwat.od_node_geom() IS 'Fcn/Trigger: set uptodate to false for altitude when geometry changes.';
 
-CREATE TRIGGER node_geom_trigger 
+CREATE TRIGGER tr_node_geom
 	BEFORE UPDATE OF geometry ON qwat.od_node
 		FOR EACH ROW
-		EXECUTE PROCEDURE qwat.od_node_geom();
-COMMENT ON TRIGGER node_geom_trigger ON qwat.od_node IS 'Trigger: uset uptodate to false for altitude when geometry changes.';
+		EXECUTE PROCEDURE qwat.ft_node_geom();
+COMMENT ON TRIGGER tr_node_geom ON qwat.od_node IS 'Trigger: uset uptodate to false for altitude when geometry changes.';
 
 
 

@@ -25,7 +25,7 @@ ALTER TABLE qwat.od_pressurezone ADD CONSTRAINT pressurezone_id_distributor FORE
             
       
 /* TRIGGER FOR CONSUMPTION ZONE */
-CREATE OR REPLACE FUNCTION qwat.fn_pressurezone_consumptionzone() RETURNS TRIGGER AS
+CREATE OR REPLACE FUNCTION qwat.ft_pressurezone_consumptionzone() RETURNS TRIGGER AS
 $BODY$
 	BEGIN
 		IF NEW.consumptionzone = '' OR NEW.consumptionzone IS NULL THEN
@@ -36,7 +36,7 @@ $BODY$
 $BODY$
 LANGUAGE plpgsql;
 
-CREATE TRIGGER pressurezone_trigger 
+CREATE TRIGGER tr_pressurezone
 	BEFORE INSERT OR UPDATE ON qwat.od_pressurezone 
 	FOR EACH ROW
-	EXECUTE PROCEDURE qwat.fn_pressurezone_consumptionzone();
+	EXECUTE PROCEDURE qwat.ft_pressurezone_consumptionzone();

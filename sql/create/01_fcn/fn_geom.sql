@@ -61,7 +61,7 @@ $BODY$
 		END IF;
 		
 		/* Geometric trigger function */
-		sql_trigger := 'CREATE OR REPLACE FUNCTION qwat.'||table_name||'_geom() RETURNS TRIGGER AS
+		sql_trigger := 'CREATE OR REPLACE FUNCTION qwat.ft_'||table_name||'_geom() RETURNS TRIGGER AS
 				''
 				BEGIN';
 		IF is_node IS TRUE THEN
@@ -102,23 +102,23 @@ $BODY$
 		EXECUTE sql_trigger;
 		
 		/* create triggers */
-		EXECUTE 'CREATE TRIGGER '||table_name||'_geom_trigger_insert
+		EXECUTE 'CREATE TRIGGER tr_'||table_name||'_geom_insert
 			BEFORE INSERT ON qwat.'||table_name||'
 			FOR EACH ROW
-			EXECUTE PROCEDURE qwat.'||table_name||'_geom();';
-		EXECUTE 'COMMENT ON TRIGGER '||table_name||'_geom_trigger_insert ON qwat.'||table_name||' IS ''Trigger: updates auto fields of the '||table_name||' after insert.'';';
+			EXECUTE PROCEDURE qwat.ft_'||table_name||'_geom();';
+		EXECUTE 'COMMENT ON TRIGGER tr_'||table_name||'_geom_insert ON qwat.'||table_name||' IS ''Trigger: updates auto fields of the '||table_name||' after insert.'';';
 
-		EXECUTE 'CREATE TRIGGER '||table_name||'_geom_trigger_update
+		EXECUTE 'CREATE TRIGGER tr_'||table_name||'_geom_update
 			BEFORE UPDATE OF geometry ON qwat.'||table_name||' 
 			FOR EACH ROW
 			WHEN (ST_AsBinary(NEW.geometry) <> ST_AsBinary(OLD.geometry))
-			EXECUTE PROCEDURE qwat.'||table_name||'_geom();';
-		EXECUTE 'COMMENT ON TRIGGER '||table_name||'_geom_trigger_update ON qwat.'||table_name||' IS ''Trigger: updates auto fields of the '||table_name||' after geom update.'';';
+			EXECUTE PROCEDURE qwat.ft_'||table_name||'_geom();';
+		EXECUTE 'COMMENT ON TRIGGER tr_'||table_name||'_geom_update ON qwat.'||table_name||' IS ''Trigger: updates auto fields of the '||table_name||' after geom update.'';';
 
 		/* detect if alternatve geom is used */
 		IF create_alt_geom IS TRUE THEN
 			EXECUTE '	
-				CREATE OR REPLACE FUNCTION qwat.'||table_name||'_alternative_geom() RETURNS TRIGGER AS
+				CREATE OR REPLACE FUNCTION qwat.ft_'||table_name||'_alternative_geom() RETURNS TRIGGER AS
 					''
 					BEGIN
 						NEW._geometry_alt1_used := NEW.geometry_alt1 IS NULL OR ST_AsBinary(NEW.geometry_alt1) <> ST_AsBinary(NEW.geometry);
@@ -128,11 +128,11 @@ $BODY$
 					''
 					LANGUAGE ''plpgsql'';		
 			';
-			EXECUTE 'CREATE TRIGGER '||table_name||'_alternative_geom_trigger
+			EXECUTE 'CREATE TRIGGER tr_'||table_name||'_alternative_geom
 				BEFORE UPDATE OF geometry_alt1, geometry_alt2  ON qwat.'||table_name||' 
 				FOR EACH ROW
-				EXECUTE PROCEDURE qwat.'||table_name||'_alternative_geom();';
-			EXECUTE 'COMMENT ON TRIGGER '||table_name||'_alternative_geom_trigger ON qwat.'||table_name||' IS ''Trigger: when updating, check if alternative geometries are different to fill the boolean fields.'';';
+				EXECUTE PROCEDURE qwat.ft_'||table_name||'_alternative_geom();';
+			EXECUTE 'COMMENT ON TRIGGER tr_'||table_name||'_alternative_geom ON qwat.'||table_name||' IS ''Trigger: when updating, check if alternative geometries are different to fill the boolean fields.'';';
 		END IF;
 	END;
 $BODY$

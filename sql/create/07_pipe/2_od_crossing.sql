@@ -22,7 +22,7 @@ WITH (
 
 SELECT AddGeometryColumn('qwat','od_crossing', 'geometry', 21781, 'Point', 2);
 
-CREATE OR REPLACE FUNCTION qwat.fn_controled_crossing()
+CREATE OR REPLACE FUNCTION qwat.ft_controled_crossing()
 RETURNS trigger AS
 $BODY$
 	BEGIN
@@ -31,9 +31,9 @@ $BODY$
 	END;
 $BODY$ LANGUAGE 'plpgsql';
 
-CREATE TRIGGER controled_crossing_trigger
+CREATE TRIGGER tr_controled_crossing
 BEFORE UPDATE ON qwat.od_crossing
 FOR EACH ROW
 WHEN (NEW.hide_pipe != OLD.hide_pipe)
-EXECUTE PROCEDURE qwat.fn_controled_crossing();
+EXECUTE PROCEDURE qwat.ft_controled_crossing();
 

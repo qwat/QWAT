@@ -58,7 +58,7 @@ ALTER TABLE qwat.od_pipe ADD CONSTRAINT pipe_label_visible_2    FOREIGN KEY (lab
 
 /*----------------!!!---!!!----------------*/
 /* Trigger for tunnel_or_bridge */
-CREATE OR REPLACE FUNCTION qwat.od_pipe_tunnelbridge() RETURNS trigger AS
+CREATE OR REPLACE FUNCTION qwat.ft_pipe_tunnelbridge() RETURNS trigger AS
 $BODY$ 
  BEGIN
   NEW._length3d := NULL;
@@ -67,10 +67,10 @@ $BODY$
  END;
 $BODY$ LANGUAGE 'plpgsql';
 
-CREATE TRIGGER pipe_tunnelbridge_trigger
+CREATE TRIGGER tr_pipe_tunnelbridge
  BEFORE INSERT OR UPDATE OF tunnel_or_bridge ON qwat.od_pipe
- FOR EACH ROW EXECUTE PROCEDURE qwat.od_pipe_tunnelbridge();
-COMMENT ON TRIGGER pipe_tunnelbridge_trigger ON qwat.od_pipe IS 'For tunnel and bridges, 3d length is the 2d length (i.e. pipes are considered as horinzontal).';
+ FOR EACH ROW EXECUTE PROCEDURE qwat.ft_pipe_tunnelbridge();
+COMMENT ON TRIGGER tr_pipe_tunnelbridge ON qwat.od_pipe IS 'For tunnel and bridges, 3d length is the 2d length (i.e. pipes are considered as horinzontal).';
 
 
 

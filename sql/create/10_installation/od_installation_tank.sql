@@ -89,7 +89,7 @@ COMMENT ON FUNCTION qwat.fn_litres_per_cm(integer, double precision, double prec
 
 /* Triggers */
 
-CREATE OR REPLACE FUNCTION qwat.od_installation_tank_trigger_fcn() RETURNS trigger AS
+CREATE OR REPLACE FUNCTION qwat.ft_installation_tank() RETURNS trigger AS
 $BODY$
 	BEGIN
 		NEW._cistern1_litrepercm := qwat.fn_litres_per_cm(NEW.cistern1_id_type,NEW.cistern1_dimension_1,NEW.cistern1_dimension_2);
@@ -100,12 +100,12 @@ $BODY$
 $BODY$
 LANGUAGE 'plpgsql';
 
-CREATE TRIGGER installation_trigger
+CREATE TRIGGER tr_installation
 	BEFORE INSERT OR UPDATE OF cistern1_id_type,cistern1_dimension_1,cistern1_dimension_2,
 							   cistern2_id_type,cistern2_dimension_1,cistern2_dimension_2
 	ON qwat.od_installation_tank
 	FOR EACH ROW
-	EXECUTE PROCEDURE qwat.od_installation_tank_trigger_fcn();
+	EXECUTE PROCEDURE qwat.ft_installation_tank();
 
 
 
