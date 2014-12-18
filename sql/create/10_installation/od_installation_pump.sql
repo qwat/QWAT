@@ -40,8 +40,8 @@ ALTER TABLE qwat.od_installation_pump ADD COLUMN rejected_flow     decimal(10,2)
 ALTER TABLE qwat.od_installation_pump ADD COLUMN manometric_height decimal(10,2);
 
 /* geometry */
-/*                                 ( table_name,           is_node, create_node, create_schematic, get_pipe, auto_district, auto_pressurezone)*/
-SELECT qwat.fn_geom_tool_point('od_installation_pump',true,    true,       false,             false,    true,          false);
+/*                                 ( table_name,    is_node, create_node, create_schematic, get_pipe, auto_district, auto_pressurezone)*/
+SELECT qwat.fn_geom_tool_point('od_installation_pump',true,    true,       true,             false,    true,          false);
 
 /* Constraints */
 ALTER TABLE qwat.od_installation_pump ADD CONSTRAINT installation_pump_id_installation FOREIGN KEY (id_installation) REFERENCES qwat.od_installation_building(id) MATCH SIMPLE; CREATE INDEX fki_installation_pump_id_installation ON qwat.od_installation_pump(id_installation);

@@ -38,8 +38,8 @@ ALTER TABLE qwat.od_installation_source ADD COLUMN contract_end      date       
 ALTER TABLE qwat.od_installation_source ADD COLUMN gathering_chamber boolean      ;
 
 /* geometry */
-/*                                 (table_name,              is_node, create_node, create_schematic, get_pipe, auto_district, auto_pressurezone)*/
-SELECT qwat.fn_geom_tool_point('od_installation_source',true,    true,       false,             false,    true,          false);
+/*                                 (table_name,      is_node, create_node, create_schematic, get_pipe, auto_district, auto_pressurezone)*/
+SELECT qwat.fn_geom_tool_point('od_installation_source',true,    true,       true,             false,    true,          false);
 
 /* Constraints */
 ALTER TABLE qwat.od_installation_source ADD CONSTRAINT installation_source_id_installation FOREIGN KEY (id_installation) REFERENCES qwat.od_installation_building(id) MATCH SIMPLE; CREATE INDEX fki_installation_source_id_installation   ON qwat.od_installation_source(id_installation);
