@@ -27,7 +27,13 @@ ALTER TABLE qwat.od_installation_source ADD COLUMN parcel             varchar(30
 ALTER TABLE qwat.od_installation_source ADD COLUMN eca                varchar(30) default '' ;
 ALTER TABLE qwat.od_installation_source ADD COLUMN label_remark            varchar(150) default '';
 ALTER TABLE qwat.od_installation_source ADD COLUMN label_visible_1     smallint default 1;
-ALTER TABLE qwat.od_installation_source ADD COLUMN label_visible_2     smallint default 1;
+ALTER TABLE qwat.od_installation_source ADD COLUMN label_x_1       double precision default null;
+ALTER TABLE qwat.od_installation_source ADD COLUMN label_y_1       double precision default null;
+ALTER TABLE qwat.od_installation_source ADD COLUMN label_r_1       double precision default null;
+ALTER TABLE qwat.od_installation_source ADD COLUMN label_visible_2 smallint default 1;
+ALTER TABLE qwat.od_installation_source ADD COLUMN label_x_2       double precision default null;
+ALTER TABLE qwat.od_installation_source ADD COLUMN label_y_2       double precision default null;
+ALTER TABLE qwat.od_installation_source ADD COLUMN label_r_2       double precision default null;
 /* specific to sources */
 ALTER TABLE qwat.od_installation_source ADD COLUMN id_type           smallint     ;
 ALTER TABLE qwat.od_installation_source ADD COLUMN id_quality        smallint     ;

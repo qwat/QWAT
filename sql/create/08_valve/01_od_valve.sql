@@ -38,8 +38,8 @@ ALTER TABLE qwat.od_valve ADD COLUMN label_r_2              double precision def
 /* schema view */
 SELECT qwat.fn_enable_schemaview('od_valve','vl_valve_function','id_function');
 
-/* geometry (table_name, is_node, create_node, create_schematic, get_pipe, auto_district, auto_pressurezone)*/
-SELECT qwat.fn_geom_tool_point('od_valve',true,false,true,true,true,true);
+/* geometry                  (table_name, is_node, create_node, create_schematic, get_pipe, auto_district, auto_pressurezone)*/
+SELECT qwat.fn_geom_tool_point('od_valve',true    ,false,        true,             true,       true,          true);
 
 /* constraints */
 ALTER TABLE qwat.od_valve ADD CONSTRAINT valve_id_type          FOREIGN KEY (id_type)          REFERENCES qwat.vl_valve_type(id)       MATCH FULL; CREATE INDEX fki_valve_id_type          ON qwat.od_valve(id_type)         ;

@@ -28,7 +28,13 @@ ALTER TABLE qwat.od_installation_pump ADD COLUMN parcel             varchar(30) 
 ALTER TABLE qwat.od_installation_pump ADD COLUMN eca                varchar(30) default '' ; COMMENT ON COLUMN qwat.od_installation_pump.eca IS 'fire brigade id';
 ALTER TABLE qwat.od_installation_pump ADD COLUMN label_remark       varchar(150) default '';
 ALTER TABLE qwat.od_installation_pump ADD COLUMN label_visible_1    smallint default 1;
-ALTER TABLE qwat.od_installation_pump ADD COLUMN label_visible_2    smallint default 1;
+ALTER TABLE qwat.od_installation_pump ADD COLUMN label_x_1       double precision default null;
+ALTER TABLE qwat.od_installation_pump ADD COLUMN label_y_1       double precision default null;
+ALTER TABLE qwat.od_installation_pump ADD COLUMN label_r_1       double precision default null;
+ALTER TABLE qwat.od_installation_pump ADD COLUMN label_visible_2 smallint default 1;
+ALTER TABLE qwat.od_installation_pump ADD COLUMN label_x_2       double precision default null;
+ALTER TABLE qwat.od_installation_pump ADD COLUMN label_y_2       double precision default null;
+ALTER TABLE qwat.od_installation_pump ADD COLUMN label_r_2       double precision default null;
 /* specific to pumps */
 ALTER TABLE qwat.od_installation_pump ADD COLUMN id_type           smallint     ;
 ALTER TABLE qwat.od_installation_pump ADD COLUMN id_pipe_in        integer      ;

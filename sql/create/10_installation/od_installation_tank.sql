@@ -26,7 +26,13 @@ ALTER TABLE qwat.od_installation_tank ADD COLUMN parcel               varchar(30
 ALTER TABLE qwat.od_installation_tank ADD COLUMN eca                  varchar(30) default '' ;
 ALTER TABLE qwat.od_installation_tank ADD COLUMN label_remark         varchar(150) default '';
 ALTER TABLE qwat.od_installation_tank ADD COLUMN label_visible_1      smallint default 1;
-ALTER TABLE qwat.od_installation_tank ADD COLUMN label_visible_2      smallint default 1;
+ALTER TABLE qwat.od_installation_tank ADD COLUMN label_x_1       double precision default null;
+ALTER TABLE qwat.od_installation_tank ADD COLUMN label_y_1       double precision default null;
+ALTER TABLE qwat.od_installation_tank ADD COLUMN label_r_1       double precision default null;
+ALTER TABLE qwat.od_installation_tank ADD COLUMN label_visible_2 smallint default 1;
+ALTER TABLE qwat.od_installation_tank ADD COLUMN label_x_2       double precision default null;
+ALTER TABLE qwat.od_installation_tank ADD COLUMN label_y_2       double precision default null;
+ALTER TABLE qwat.od_installation_tank ADD COLUMN label_r_2       double precision default null;
 /* specific to tanks */
 ALTER TABLE qwat.od_installation_tank ADD COLUMN id_overflow          integer             ;
 ALTER TABLE qwat.od_installation_tank ADD COLUMN id_firestorage       integer             ;

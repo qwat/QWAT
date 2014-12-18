@@ -27,7 +27,13 @@ ALTER TABLE qwat.od_installation_pressurecontrol ADD COLUMN parcel             v
 ALTER TABLE qwat.od_installation_pressurecontrol ADD COLUMN eca                varchar(30)  default '';
 ALTER TABLE qwat.od_installation_pressurecontrol ADD COLUMN label_remark        varchar(150) default '';
 ALTER TABLE qwat.od_installation_pressurecontrol ADD COLUMN label_visible_1    smallint default 1;
-ALTER TABLE qwat.od_installation_pressurecontrol ADD COLUMN label_visible_2    smallint default 1;
+ALTER TABLE qwat.od_installation_pressurecontrol ADD COLUMN label_x_1       double precision default null;
+ALTER TABLE qwat.od_installation_pressurecontrol ADD COLUMN label_y_1       double precision default null;
+ALTER TABLE qwat.od_installation_pressurecontrol ADD COLUMN label_r_1       double precision default null;
+ALTER TABLE qwat.od_installation_pressurecontrol ADD COLUMN label_visible_2 smallint default 1;
+ALTER TABLE qwat.od_installation_pressurecontrol ADD COLUMN label_x_2       double precision default null;
+ALTER TABLE qwat.od_installation_pressurecontrol ADD COLUMN label_y_2       double precision default null;
+ALTER TABLE qwat.od_installation_pressurecontrol ADD COLUMN label_r_2       double precision default null;
 /* specific to pressurecontrol */
 ALTER TABLE qwat.od_installation_pressurecontrol ADD COLUMN id_type            integer not null       ;
 
