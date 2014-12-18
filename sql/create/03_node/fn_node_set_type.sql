@@ -29,19 +29,21 @@ $BODY$
 		keep_type       boolean          := false;
 		complement_col  varchar(50)      := ''   ;
 	BEGIN
-		/* determine if the node is under an object (hydrant, valve, etc.) */
+		/* determine if the node is under an object (hydrant, valve, etc.)
+		   the table od_node_table contains the names of the tables (i.e. layers) that are typically considered as nodes.
+		   node_type will be used as for the type in the node table if overwrite is true.
+		   overwrite determines if the object type will be used instead of the computed node type.
+		*/
+
 		FOR node_table IN SELECT * FROM qwat.od_node_table
 		LOOP
 			stmt := 'SELECT COUNT(id) FROM qwat.' || node_table.table_name || ' WHERE id_node='|| node_id || ';';
 			EXECUTE stmt INTO is_under_count;
 			IF is_under_count > 0 THEN
 				type := node_table.node_type;
-				IF node_table.complement_column IS NOT NULL THEN
-					stmt := 'SELECT ' || node_table.complement_column || ' FROM qwat.' || node_table.table_name || ' WHERE id_node=' || node_id || ' LIMIT 1';
-					EXECUTE stmt into complement_col;
-					type := type || '_' || complement_col;
-				END IF;
 				is_under_object := true;
+				/* if overwrite is true, we keep the object type for the node type
+				 and we consider it is not under an object anymore */
 				IF node_table.overwrite IS true THEN
 					keep_type := true;
 					is_under_object := false;
@@ -59,7 +61,7 @@ $BODY$
 			INNER JOIN qwat.vl_status ON od_pipe.id_status = vl_status.id
 			WHERE (id_node_a = node_id OR id_node_b = node_id)
 			AND vl_status.active IS TRUE;
-		/* if not connected, deleted if not under_object */
+		/* if not connected not under any object, delete the node */
 		IF grouped.count = 0 AND is_under_object IS false AND keep_type IS FALSE THEN
 			/* check it is not associated to inactive pipes */
 			IF node_id NOT IN (SELECT id_node_a FROM qwat.od_pipe UNION SELECT id_node_b FROM qwat.od_pipe) THEN
@@ -68,7 +70,8 @@ $BODY$
 			END IF;
 		/* if 1 or 2 pipes associated */
 		ELSEIF grouped.count <= 2 THEN
-			/* loop over them, and take the 2 first/last points of the pipe to determine orientation */
+			/* loop over them, and take the 2 first/last vertices
+			 of the pipe to determine orientation (used for symbology) */
 			FOR pipeitem IN (
 				SELECT 	od_pipe.id, od_pipe.year, vl_pipe_material.value_fr AS material, vl_pipe_material.diameter_nominal AS diameter,
 						ST_StartPoint(geometry) AS point_1,
@@ -125,7 +128,7 @@ $BODY$
 				/* st_intersects does not work as expected. */
 				intersects := bool_or(ST_DWithin(node_geom, od_pipe.geometry, 0.0001)) FROM qwat.od_pipe WHERE id != pipe_id;
 				IF intersects IS TRUE THEN
-					type := 'one_hidden';
+					type := 'one_intersection';
 				END IF;
 			END IF;
 		/* more than 2 pipes connected, nothing to calculate */
