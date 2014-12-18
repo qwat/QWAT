@@ -28,12 +28,9 @@ $BODY$
 		node_ids integer[];
 	BEGIN
 		IF extent IS NULL THEN
-		  SELECT array_agg(id) INTO node_ids
-			FROM qwat.od_node;
+			SELECT ARRAY( SELECT id FROM qwat.od_node ) INTO node_ids;
 		ELSE
-		 SELECT array_agg(id) INTO node_ids
-			FROM qwat.od_node
-			WHERE od_node.geometry && extent;
+			SELECT ARRAY( SELECT id FROM qwat.od_node WHERE od_node.geometry && extent ) INTO node_ids;
 		END IF;
 		RETURN node_ids;
 	END;
