@@ -155,15 +155,15 @@ CREATE OR REPLACE FUNCTION qwat.fn_node_set_type( node_ids integer[] DEFAULT NUL
 $BODY$
 	DECLARE
 		node record;
-		id integer;
+		node_id integer;
 	BEGIN
 		IF node_ids IS NULL THEN
-			FOR node IN SELECT id FROM qwat.od_node ORDER BY id LOOP
+			FOR node IN (SELECT id FROM qwat.od_node ORDER BY id) LOOP
 				PERFORM qwat.fn_node_set_type(node.id);
 			END LOOP;
 		ELSE
-			FOREACH id IN ARRAY node_ids LOOP
-				PERFORM qwat.fn_node_set_type(id);
+			FOREACH node_id IN ARRAY node_ids LOOP
+				PERFORM qwat.fn_node_set_type(node_id);
 			END LOOP;			
 		END IF;
 	END;
