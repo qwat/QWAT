@@ -150,16 +150,23 @@ LANGUAGE 'plpgsql';
 COMMENT ON FUNCTION qwat.fn_node_set_type(integer) IS 'Set the orientation and type for a node. If three pipe arrives at the node: intersection. If one pipe: end. If two: depends on characteristics of pipe: year (is different), material (and year), diameter(and material/year)';
 
 /* reset all node type */
-DROP FUNCTION IF EXISTS qwat.fn_node_set_type_all();
-CREATE OR REPLACE FUNCTION qwat.fn_node_set_type_all() RETURNS void AS
+DROP FUNCTION IF EXISTS qwat.fn_node_set_type( node_ids integer[] DEFAULT NULL );
+CREATE OR REPLACE FUNCTION qwat.fn_node_set_type( node_ids integer[] DEFAULT NULL ) RETURNS void AS
 $BODY$
 	DECLARE
 		node record;
+		id integer;
 	BEGIN
-		FOR node IN SELECT id FROM qwat.od_node ORDER BY id LOOP
-			PERFORM qwat.fn_node_set_type(node.id);
-		END LOOP;
+		IF node_ids IS NULL THEN
+			FOR node IN SELECT id FROM qwat.od_node ORDER BY id LOOP
+				PERFORM qwat.fn_node_set_type(node.id);
+			END LOOP;
+		ELSE
+			FOREACH id IN ARRAY node_ids LOOP
+				PERFORM qwat.fn_node_set_type(id);
+			END LOOP;			
+		END IF;
 	END;
 $BODY$
 LANGUAGE 'plpgsql';
-COMMENT ON FUNCTION qwat.fn_node_set_type_all() IS 'Set the type and orientation for node. If three pipe arrives at the node: intersection. If one pipe: end. If two: depends on characteristics of pipe: year (is different), material (and year), diameter(and material/year)';
+COMMENT ON FUNCTION qwat.fn_node_set_type( node_ids integer[] ) IS 'Set the type and orientation for node. If three pipe arrives at the node: intersection. If one pipe: end. If two: depends on characteristics of pipe: year (is different), material (and year), diameter(and material/year)';
