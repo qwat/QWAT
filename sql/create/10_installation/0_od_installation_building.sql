@@ -32,7 +32,7 @@ CREATE INDEX installation_building_geoidx ON qwat.od_installation_building USING
 ALTER TABLE qwat.od_installation_building ADD CONSTRAINT installation_id_type FOREIGN KEY (id_type) REFERENCES qwat.vl_installation_type(id) MATCH FULL; CREATE INDEX fki_installation_id_type ON qwat.od_installation_building(id_type)        ;
 
 /* TRIGGERS */
-CREATE OR REPLACE FUNCTION qwat.fn_installation_building() RETURNS trigger AS
+CREATE OR REPLACE FUNCTION qwat.ft_installation_building() RETURNS trigger AS
 $BODY$
 BEGIN
 	 NEW._displayname_en = vl_installation_type.short_en||' '||NEW.name FROM qwat.vl_installation_type WHERE NEW.id_type = vl_installation_type.id;

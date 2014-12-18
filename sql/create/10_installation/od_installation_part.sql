@@ -23,5 +23,5 @@ ALTER TABLE qwat.od_installationpart ADD CONSTRAINT installationpart_id_type FOR
 
 
 /* add this to the node table */
-INSERT INTO qwat.od_node_table (table_name,complement_column,node_type,overwrite) VALUES ('od_installationpart','id_type','installationpart',true);
+INSERT INTO qwat.od_node_table (table_name,node_type,overwrite) VALUES ('od_installationpart','installationpart',true);
 

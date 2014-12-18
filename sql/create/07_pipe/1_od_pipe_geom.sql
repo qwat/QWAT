@@ -17,9 +17,9 @@ ALTER TABLE qwat.od_pipe ADD COLUMN _geometry_alt2_used boolean;
 
 /* ---------------------------- */
 /* -------- ADD GEOM ---------- */
-PERFORM addGeometryColumn('qwat', 'od_pipe', 'geometry', 21781, 'LINESTRING', 2);
-PERFORM addGeometryColumn('qwat', 'od_pipe', 'geometry_alt1', 21781, 'LINESTRING', 2);
-PERFORM addGeometryColumn('qwat', 'od_pipe', 'geometry_alt2', 21781, 'LINESTRING', 2);
+SELECT addGeometryColumn('qwat', 'od_pipe', 'geometry', 21781, 'LINESTRING', 2);
+SELECT addGeometryColumn('qwat', 'od_pipe', 'geometry_alt1', 21781, 'LINESTRING', 2);
+SELECT addGeometryColumn('qwat', 'od_pipe', 'geometry_alt2', 21781, 'LINESTRING', 2);
 
 CREATE INDEX od_pipe_geoidx     ON qwat.od_pipe USING GIST ( geometry );
 CREATE INDEX od_pipe_geoidx_alt1 ON qwat.od_pipe USING GIST ( geometry_alt1 );		
@@ -82,14 +82,14 @@ COMMENT ON TRIGGER tr_pipe_geom_update ON qwat.od_pipe IS 'Trigger: updates auto
 CREATE OR REPLACE FUNCTION qwat.ft_pipe_node_type() RETURNS TRIGGER AS
 	$BODY$
 	BEGIN	
-		PERFORM qwat.fn_node_set_type( DISTINCT( [ NEW.id_node_a, NEW.id_node_b, OLD.id_node_a, OLD.id_node_b ] ) );
+		PERFORM qwat.fn_node_set_type( DISTINCT( ARRAY[ NEW.id_node_a, NEW.id_node_b, OLD.id_node_a, OLD.id_node_b ] ) );
 		RETURN NEW;
 	END;
 	$BODY$
 	LANGUAGE 'plpgsql';		
 
 CREATE TRIGGER tr_pipe_node_type_insdel
-	AFTER INSERT, DELETE ON qwat.od_pipe 
+	AFTER INSERT OR DELETE ON qwat.od_pipe 
 	FOR EACH ROW
 	EXECUTE PROCEDURE qwat.ft_pipe_node_type();
 COMMENT ON TRIGGER tr_pipe_node_type_insdel ON qwat.od_pipe IS 'Trigger: after insert or delete of a pipe, set the type of nodes / clean the nodes.';

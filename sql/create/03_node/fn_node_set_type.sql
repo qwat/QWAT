@@ -150,7 +150,7 @@ LANGUAGE 'plpgsql';
 COMMENT ON FUNCTION qwat.fn_node_set_type(integer) IS 'Set the orientation and type for a node. If three pipe arrives at the node: intersection. If one pipe: end. If two: depends on characteristics of pipe: year (is different), material (and year), diameter(and material/year)';
 
 /* reset all node type */
-DROP FUNCTION IF EXISTS qwat.fn_node_set_type( node_ids integer[] DEFAULT NULL );
+DROP FUNCTION IF EXISTS qwat.fn_node_set_type( node_ids integer[] );
 CREATE OR REPLACE FUNCTION qwat.fn_node_set_type( node_ids integer[] DEFAULT NULL ) RETURNS void AS
 $BODY$
 	DECLARE

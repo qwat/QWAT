@@ -29,7 +29,7 @@ $BODY$
 		RETURN NEW;
 	END;
 $BODY$ LANGUAGE 'plpgsql';
-COMMENT ON FUNCTION qwat.od_dimension_distance_distance() IS 'Fcn/Trigger: updates the distance between the two extremities of the arc.';
+COMMENT ON FUNCTION qwat.ft_dimension_distance_distance() IS 'Fcn/Trigger: updates the distance between the two extremities of the arc.';
 
 CREATE TRIGGER tr_dimension_distance
 	BEFORE INSERT OR UPDATE OF geometry ON qwat.od_dimension_distance

@@ -42,7 +42,7 @@ $BODY$
 		 RETURN NEW;
 	END;
 $BODY$LANGUAGE 'plpgsql';
-COMMENT ON FUNCTION qwat.od_leak_repaired() IS 'Fcn/Trigger: updates the repaired status of the leak.';
+COMMENT ON FUNCTION qwat.ft_leak_repaired() IS 'Fcn/Trigger: updates the repaired status of the leak.';
 
 CREATE TRIGGER tr_leak_repaired
 	BEFORE INSERT OR UPDATE OF repair_date ON qwat.od_leak

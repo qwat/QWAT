@@ -37,7 +37,7 @@ $BODY$
 	END;
 $BODY$
 LANGUAGE 'plpgsql';
-COMMENT ON FUNCTION qwat.od_meter_fullid() IS 'Fcn/Trigger: updates the full identification (district prefix) of the client.';
+COMMENT ON FUNCTION qwat.ft_meter_fullid() IS 'Fcn/Trigger: updates the full identification (district prefix) of the client.';
 
 CREATE TRIGGER tr_meter_fullid
 	BEFORE INSERT OR UPDATE OF id_district,identification ON qwat.od_meter

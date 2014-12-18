@@ -35,8 +35,6 @@ ALTER TABLE qwat.od_pipe ADD COLUMN label_visible_2         smallint default 1; 
 /* schema view */
 SELECT qwat.fn_enable_schemaview( 'od_pipe', 'vl_pipe_function', 'id_function' );
 
-/* geometry */
-SELECT qwat.fn_geom_tool_line('od_pipe');
 
 /* old columns */
 ALTER TABLE qwat.od_pipe ADD COLUMN coating_internal_material_id character(20);
