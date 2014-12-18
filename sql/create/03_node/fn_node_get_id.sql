@@ -20,3 +20,23 @@ $BODY$
 LANGUAGE 'plpgsql';
 COMMENT ON FUNCTION qwat.fn_node_get_id(geometry,boolean) IS 'Returns the node for a given geometry (point). If node does not exist and if specified in argument, it is created.';
 
+
+
+CREATE OR REPLACE FUNCTION qwat.fn_node_get_ids( extent box2d DEFAULT NULL ) RETURNS integer[] AS
+$BODY$
+	DECLARE
+		node_ids integer[];
+	BEGIN
+		IF extent IS NULL THEN
+		  SELECT array_agg(id) INTO node_ids
+			FROM qwat.od_node;
+		ELSE
+		 SELECT array_agg(id) INTO node_ids
+			FROM qwat.od_node
+			WHERE od_node.geometry && extent;
+		END IF;
+		RETURN node_ids;
+	END;
+$BODY$
+LANGUAGE 'plpgsql';
+COMMENT ON FUNCTION qwat.fn_node_get_ids(extent box2d) IS 'Returns a list of node IDs contained a given extent.';
