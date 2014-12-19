@@ -61,9 +61,6 @@
                 <layer-tree-layer expanded="0" checked="Qt::Checked" id="hydrant20130304110004848" name="hydrantes">
                     <customproperties/>
                 </layer-tree-layer>
-                <layer-tree-layer expanded="0" checked="Qt::Unchecked" id="od_wateringoutput20131127080906318" name="bouches d'arrosage">
-                    <customproperties/>
-                </layer-tree-layer>
                 <layer-tree-layer expanded="0" checked="Qt::Unchecked" id="leak20130821111917060" name="fuite">
                     <customproperties/>
                 </layer-tree-layer>
@@ -73,7 +70,7 @@
                 <layer-tree-layer expanded="0" checked="Qt::Checked" id="node20130304110005126" name="noeuds">
                     <customproperties/>
                 </layer-tree-layer>
-                <layer-tree-layer expanded="0" checked="Qt::Checked" id="od_installationpart20140429113327995" name="Pièces d'installations">
+                <layer-tree-layer expanded="0" checked="Qt::Checked" id="od_part20140429113327995" name="Pièces d'installations">
                     <customproperties/>
                 </layer-tree-layer>
                 <layer-tree-layer expanded="0" checked="Qt::Unchecked" id="od_node20140116161508743" name="noeuds - tous - controle">
@@ -102,7 +99,7 @@
                 <customproperties/>
             </layer-tree-layer>
         </layer-tree-group>
-        <layer-tree-group expanded="0" checked="Qt::Checked" name="Annotations">
+        <layer-tree-group expanded="1" checked="Qt::Checked" name="Annotations">
             <customproperties/>
             <layer-tree-layer expanded="0" checked="Qt::Checked" id="od_annotationline20131203095020365" name="annotation - ligne">
                 <customproperties/>
@@ -215,7 +212,7 @@
             <layer-tree-layer expanded="1" checked="Qt::Unchecked" id="vl_sourcetype20130820110518791" name="ouvrage - source - type">
                 <customproperties/>
             </layer-tree-layer>
-            <layer-tree-layer expanded="0" checked="Qt::Unchecked" id="vl_installationpart_type20140429114640509" name="Pièces d'installation - type">
+            <layer-tree-layer expanded="0" checked="Qt::Unchecked" id="vl_part_type20140429114640509" name="Pièces d'installation - type">
                 <customproperties/>
             </layer-tree-layer>
             <layer-tree-layer expanded="1" checked="Qt::Unchecked" id="vl_precision20130304110011372" name="Précision">
@@ -312,10 +309,10 @@
     <mapcanvas>
         <units>meters</units>
         <extent>
-            <xmin>554126.08529989700764418</xmin>
-            <ymin>144068.50136307012871839</ymin>
-            <xmax>556889.50710999174043536</xmax>
-            <ymax>147238.03256956112454645</ymax>
+            <xmin>554949.03837094304617494</xmin>
+            <ymin>145158.00861861393786967</ymin>
+            <xmax>555005.78626377938780934</xmax>
+            <ymax>145223.09611868031788617</ymax>
         </extent>
         <rotation>0</rotation>
         <projections>1</projections>
@@ -351,6 +348,7 @@
             <layer_coordinate_transform destAuthId="EPSG:21781" srcAuthId="EPSG:21781" srcDatumTransform="-1" destDatumTransform="-1" layerid="bf_posimmeuble20130514143633121"/>
             <layer_coordinate_transform destAuthId="EPSG:21781" srcAuthId="EPSG:21781" srcDatumTransform="-1" destDatumTransform="-1" layerid="cs_posnumero_de_batiment20130514143756039"/>
             <layer_coordinate_transform destAuthId="EPSG:21781" srcAuthId="EPSG:21781" srcDatumTransform="-1" destDatumTransform="-1" layerid="od_element_surfacique20130514144124647"/>
+            <layer_coordinate_transform destAuthId="EPSG:21781" srcAuthId="EPSG:21781" srcDatumTransform="-1" destDatumTransform="-1" layerid="od_part20140429113327995"/>
             <layer_coordinate_transform destAuthId="EPSG:21781" srcAuthId="EPSG:21781" srcDatumTransform="-1" destDatumTransform="-1" layerid="installation_treatment20130816113039913"/>
             <layer_coordinate_transform destAuthId="EPSG:21781" srcAuthId="EPSG:21781" srcDatumTransform="-1" destDatumTransform="-1" layerid="axe_rue20130514143437774"/>
             <layer_coordinate_transform destAuthId="EPSG:21781" srcAuthId="EPSG:21781" srcDatumTransform="-1" destDatumTransform="-1" layerid="od_valve20141218090331728"/>
@@ -370,7 +368,6 @@
             <layer_coordinate_transform destAuthId="EPSG:21781" srcAuthId="EPSG:21781" srcDatumTransform="-1" destDatumTransform="-1" layerid="od_subscriber_reference20131206105928067"/>
             <layer_coordinate_transform destAuthId="EPSG:21781" srcAuthId="EPSG:21781" srcDatumTransform="-1" destDatumTransform="-1" layerid="od_annotationline20131203095020365"/>
             <layer_coordinate_transform destAuthId="EPSG:21781" srcAuthId="EPSG:21781" srcDatumTransform="-1" destDatumTransform="-1" layerid="bf_point_limite20130514143552315"/>
-            <layer_coordinate_transform destAuthId="EPSG:21781" srcAuthId="EPSG:21781" srcDatumTransform="-1" destDatumTransform="-1" layerid="od_installationpart20140429113327995"/>
             <layer_coordinate_transform destAuthId="EPSG:21781" srcAuthId="EPSG:21781" srcDatumTransform="-1" destDatumTransform="-1" layerid="od_node20140116161508743"/>
             <layer_coordinate_transform destAuthId="EPSG:21781" srcAuthId="EPSG:21781" srcDatumTransform="-1" destDatumTransform="-1" layerid="no_posnomlocallieudit20130514143906869"/>
             <layer_coordinate_transform destAuthId="EPSG:21781" srcAuthId="EPSG:21781" srcDatumTransform="-1" destDatumTransform="-1" layerid="IntersectIt_Lines20130618102142813"/>
@@ -426,10 +423,11 @@
             <layer id="subscriber20130304110011459"/>
             <layer id="cadastre20140312152032371"/>
             <layer id="installation_pump20130816140237750"/>
+            <layer id="od_part20140429113327995"/>
             <layer id="cs_surfacecs20130514143830750"/>
             <layer id="od_element_surfacique20130514144124647"/>
-            <layer id="cs_batiment20130514143721709"/>
             <layer id="no_posnomlocallieudit20140214143906869"/>
+            <layer id="cs_batiment20130514143721709"/>
             <layer id="bf_bien_fonds20130514143508556"/>
             <layer id="installation_valvechamber20131107105006707"/>
             <layer id="no_posnomlocallieudit20130514143906869"/>
@@ -449,7 +447,6 @@
             <layer id="bf_ddp20140214143538213"/>
             <layer id="bf_posimmeuble20140214143633121"/>
             <layer id="od_element_lineaire20140214144047075"/>
-            <layer id="od_installationpart20140429113327995"/>
             <layer id="od_crossing20141023083754327"/>
             <layer id="installation_source20130820110331647"/>
             <layer id="node20130304110005126"/>
@@ -460,12 +457,12 @@
                 <checked-legend-node id="{1169fb39-5fd3-43b6-9c6c-0f8ef27a0149}"/>
                 <checked-legend-node id="{2e14d53a-6d2f-40b3-bf3b-4f32112e3d59}"/>
                 <checked-legend-node id="{00f46dc0-f266-4a98-ada4-29b82fa9501c}"/>
+                <checked-legend-node id="{a8ece092-917e-45d5-858a-15a58e094304}"/>
                 <checked-legend-node id="{5b970fd5-5c37-4865-81a5-cab18c5fb58c}"/>
                 <checked-legend-node id="{193cf7d3-b98f-4b3b-9a50-04e63f0fea03}"/>
-                <checked-legend-node id="{a8ece092-917e-45d5-858a-15a58e094304}"/>
                 <checked-legend-node id="{013429dc-a1cd-4a17-904a-6550a0175046}"/>
-                <checked-legend-node id="{7a1744ba-31b4-4e6c-9605-9111e812e16b}"/>
                 <checked-legend-node id="{2513a8b8-a110-4727-854c-6084f64e3bdf}"/>
+                <checked-legend-node id="{7a1744ba-31b4-4e6c-9605-9111e812e16b}"/>
                 <checked-legend-node id="{cc67a6e5-68a0-4281-a04d-277943f03860}"/>
                 <checked-legend-node id="{8cceb2f1-408b-4af0-8ffe-2f48040dbe14}"/>
                 <checked-legend-node id="{867b74c8-5618-4638-acce-0910a45c8447}"/>
@@ -611,12 +608,11 @@
             <item>valve20130304110011497</item>
             <item>hydrant20130304110004848</item>
             <item>node20130304110005126</item>
-            <item>od_installationpart20140429113327995</item>
+            <item>od_part20140429113327995</item>
             <item>conduites_copy20130709141244955</item>
             <item>ouvrage_général_copy20141218102656671</item>
             <item>vannes_copy20141127160745910</item>
             <item>vw_pipe_schema_visibleitems20141127154708843</item>
-            <item>od_wateringoutput20131127080906318</item>
             <item>leak20130821111917060</item>
             <item>od_node20140116161508743</item>
             <item>od_crossing20141023083754327</item>
@@ -653,7 +649,7 @@
             <item>vl_cistern20130304110005061</item>
             <item>vl_sourcequality20130820110518810</item>
             <item>vl_sourcetype20130820110518791</item>
-            <item>vl_installationpart_type20140429114640509</item>
+            <item>vl_part_type20140429114640509</item>
             <item>vl_precision20130304110011372</item>
             <item>vl_precisionalti20131211161429510</item>
             <item>vl_remote20130304110004987</item>
@@ -778,12 +774,7 @@
                         <legendlayerfile isInOverview="0" layerid="hydrant20130304110004848" visible="1"/>
                     </filegroup>
                 </legendlayer>
-                <legendlayer drawingOrder="20" open="false" checked="Qt::Unchecked" name="bouches d'arrosage" showFeatureCount="0">
-                    <filegroup open="false" hidden="false">
-                        <legendlayerfile isInOverview="0" layerid="od_wateringoutput20131127080906318" visible="0"/>
-                    </filegroup>
-                </legendlayer>
-                <legendlayer drawingOrder="21" open="false" checked="Qt::Unchecked" name="fuite" showFeatureCount="0">
+                <legendlayer drawingOrder="20" open="false" checked="Qt::Unchecked" name="fuite" showFeatureCount="0">
                     <filegroup open="false" hidden="false">
                         <legendlayerfile isInOverview="0" layerid="leak20130821111917060" visible="0"/>
                     </filegroup>
@@ -797,15 +788,15 @@
                 </legendlayer>
                 <legendlayer drawingOrder="15" open="false" checked="Qt::Checked" name="Pièces d'installations" showFeatureCount="0">
                     <filegroup open="false" hidden="false">
-                        <legendlayerfile isInOverview="0" layerid="od_installationpart20140429113327995" visible="1"/>
+                        <legendlayerfile isInOverview="0" layerid="od_part20140429113327995" visible="1"/>
                     </filegroup>
                 </legendlayer>
-                <legendlayer drawingOrder="22" open="false" checked="Qt::Unchecked" name="noeuds - tous - controle" showFeatureCount="0">
+                <legendlayer drawingOrder="21" open="false" checked="Qt::Unchecked" name="noeuds - tous - controle" showFeatureCount="0">
                     <filegroup open="false" hidden="false">
                         <legendlayerfile isInOverview="0" layerid="od_node20140116161508743" visible="0"/>
                     </filegroup>
                 </legendlayer>
-                <legendlayer drawingOrder="23" open="false" checked="Qt::Checked" name="croisements" showFeatureCount="0">
+                <legendlayer drawingOrder="22" open="false" checked="Qt::Checked" name="croisements" showFeatureCount="0">
                     <filegroup open="false" hidden="false">
                         <legendlayerfile isInOverview="0" layerid="od_crossing20141023083754327" visible="1"/>
                     </filegroup>
@@ -818,7 +809,7 @@
                     <legendlayerfile isInOverview="0" layerid="ouvrage_général_copy20141218102656671" visible="0"/>
                 </filegroup>
             </legendlayer>
-            <legendlayer drawingOrder="95" open="false" checked="Qt::Unchecked" name="conduite impression 5000" showFeatureCount="0">
+            <legendlayer drawingOrder="94" open="false" checked="Qt::Unchecked" name="conduite impression 5000" showFeatureCount="0">
                 <filegroup open="false" hidden="false">
                     <legendlayerfile isInOverview="0" layerid="vw_pipe_schema20141208162900166" visible="0"/>
                 </filegroup>
@@ -833,86 +824,86 @@
                     <legendlayerfile isInOverview="0" layerid="vannes_copy20141127160745910" visible="0"/>
                 </filegroup>
             </legendlayer>
-            <legendlayer drawingOrder="24" open="false" checked="Qt::Unchecked" name="Flèche conduite enfant -> parent" showFeatureCount="0">
+            <legendlayer drawingOrder="23" open="false" checked="Qt::Unchecked" name="Flèche conduite enfant -> parent" showFeatureCount="0">
                 <filegroup open="false" hidden="false">
                     <legendlayerfile isInOverview="0" layerid="pipe_child_parent20130417092030507" visible="0"/>
                 </filegroup>
             </legendlayer>
         </legendgroup>
-        <legendgroup open="false" checked="Qt::Checked" name="Annotations">
-            <legendlayer drawingOrder="25" open="false" checked="Qt::Checked" name="annotation - ligne" showFeatureCount="0">
+        <legendgroup open="true" checked="Qt::Checked" name="Annotations">
+            <legendlayer drawingOrder="24" open="false" checked="Qt::Checked" name="annotation - ligne" showFeatureCount="0">
                 <filegroup open="false" hidden="false">
                     <legendlayerfile isInOverview="0" layerid="od_annotationline20131203095020365" visible="1"/>
                 </filegroup>
             </legendlayer>
-            <legendlayer drawingOrder="26" open="false" checked="Qt::Checked" name="annotation - point" showFeatureCount="0">
+            <legendlayer drawingOrder="25" open="false" checked="Qt::Checked" name="annotation - point" showFeatureCount="0">
                 <filegroup open="false" hidden="false">
                     <legendlayerfile isInOverview="0" layerid="od_annotationpoint20131203095020392" visible="1"/>
                 </filegroup>
             </legendlayer>
         </legendgroup>
         <legendgroup open="false" checked="Qt::PartiallyChecked" name="Côtes">
-            <legendlayer drawingOrder="27" open="false" checked="Qt::Checked" name="côtes distance" showFeatureCount="0">
+            <legendlayer drawingOrder="26" open="false" checked="Qt::Checked" name="côtes distance" showFeatureCount="0">
                 <filegroup open="false" hidden="false">
                     <legendlayerfile isInOverview="0" layerid="dimension20130807094904783" visible="1"/>
                 </filegroup>
             </legendlayer>
-            <legendlayer drawingOrder="28" open="false" checked="Qt::Checked" name="côtes orientation" showFeatureCount="0">
+            <legendlayer drawingOrder="27" open="false" checked="Qt::Checked" name="côtes orientation" showFeatureCount="0">
                 <filegroup open="false" hidden="false">
                     <legendlayerfile isInOverview="0" layerid="od_dimension_orientation20131202111155806" visible="1"/>
                 </filegroup>
             </legendlayer>
-            <legendlayer drawingOrder="29" open="false" checked="Qt::Unchecked" name="points de construction" showFeatureCount="0">
+            <legendlayer drawingOrder="28" open="false" checked="Qt::Unchecked" name="points de construction" showFeatureCount="0">
                 <filegroup open="false" hidden="false">
                     <legendlayerfile isInOverview="0" layerid="constructionpoint20130807094904851" visible="0"/>
                 </filegroup>
             </legendlayer>
-            <legendlayer drawingOrder="30" open="false" checked="Qt::Unchecked" name="IntersectIt Points" showFeatureCount="0">
+            <legendlayer drawingOrder="29" open="false" checked="Qt::Unchecked" name="IntersectIt Points" showFeatureCount="0">
                 <filegroup open="false" hidden="false">
                     <legendlayerfile isInOverview="0" layerid="IntersectIt_Points20130618102143276" visible="0"/>
                 </filegroup>
             </legendlayer>
-            <legendlayer drawingOrder="31" open="false" checked="Qt::Unchecked" name="IntersectIt Lines" showFeatureCount="0">
+            <legendlayer drawingOrder="30" open="false" checked="Qt::Unchecked" name="IntersectIt Lines" showFeatureCount="0">
                 <filegroup open="false" hidden="false">
                     <legendlayerfile isInOverview="0" layerid="IntersectIt_Lines20130618102142813" visible="0"/>
                 </filegroup>
             </legendlayer>
         </legendgroup>
         <legendgroup open="true" checked="Qt::PartiallyChecked" name="Zones">
-            <legendlayer drawingOrder="32" open="false" checked="Qt::Unchecked" name="communes" showFeatureCount="0">
+            <legendlayer drawingOrder="31" open="false" checked="Qt::Unchecked" name="communes" showFeatureCount="0">
                 <filegroup open="false" hidden="false">
                     <legendlayerfile isInOverview="0" layerid="district20130304110004764" visible="0"/>
                 </filegroup>
             </legendlayer>
-            <legendlayer drawingOrder="33" open="false" checked="Qt::Unchecked" name="zones de pressions" showFeatureCount="0">
+            <legendlayer drawingOrder="32" open="false" checked="Qt::Unchecked" name="zones de pressions" showFeatureCount="0">
                 <filegroup open="false" hidden="false">
                     <legendlayerfile isInOverview="0" layerid="pressurezone20130417133612105" visible="0"/>
                 </filegroup>
             </legendlayer>
-            <legendlayer drawingOrder="34" open="false" checked="Qt::Checked" name="folios" showFeatureCount="0">
+            <legendlayer drawingOrder="33" open="false" checked="Qt::Checked" name="folios" showFeatureCount="0">
                 <filegroup open="false" hidden="false">
                     <legendlayerfile isInOverview="0" layerid="printmap20130304110011400" visible="1"/>
                 </filegroup>
             </legendlayer>
-            <legendlayer drawingOrder="35" open="false" checked="Qt::Unchecked" name="zones de protections" showFeatureCount="0">
+            <legendlayer drawingOrder="34" open="false" checked="Qt::Unchecked" name="zones de protections" showFeatureCount="0">
                 <filegroup open="false" hidden="false">
                     <legendlayerfile isInOverview="0" layerid="protectionzone20130304110011418" visible="0"/>
                 </filegroup>
             </legendlayer>
         </legendgroup>
         <legendgroup open="false" checked="Qt::Unchecked" name="Plans">
-            <legendlayer drawingOrder="36" open="false" checked="Qt::Unchecked" name="riviera" showFeatureCount="0">
+            <legendlayer drawingOrder="35" open="false" checked="Qt::Unchecked" name="riviera" showFeatureCount="0">
                 <filegroup open="false" hidden="false">
                     <legendlayerfile isInOverview="0" layerid="riviera20130902113350360" visible="0"/>
                 </filegroup>
             </legendlayer>
             <legendgroup open="true" checked="Qt::Unchecked" name="CN">
-                <legendlayer drawingOrder="37" open="false" checked="Qt::Unchecked" name="cn1244" showFeatureCount="0">
+                <legendlayer drawingOrder="36" open="false" checked="Qt::Unchecked" name="cn1244" showFeatureCount="0">
                     <filegroup open="false" hidden="false">
                         <legendlayerfile isInOverview="0" layerid="cn124420130327085332476" visible="0"/>
                     </filegroup>
                 </legendlayer>
-                <legendlayer drawingOrder="38" open="false" checked="Qt::Unchecked" name="cn1264" showFeatureCount="0">
+                <legendlayer drawingOrder="37" open="false" checked="Qt::Unchecked" name="cn1264" showFeatureCount="0">
                     <filegroup open="false" hidden="false">
                         <legendlayerfile isInOverview="0" layerid="cn126420130327085334221" visible="0"/>
                     </filegroup>
@@ -920,149 +911,149 @@
             </legendgroup>
         </legendgroup>
         <legendgroup open="false" checked="Qt::Unchecked" name="Tables auxiliaires">
-            <legendlayer drawingOrder="39" open="true" checked="Qt::Unchecked" name="Abonnés - type" showFeatureCount="0">
+            <legendlayer drawingOrder="38" open="true" checked="Qt::Unchecked" name="Abonnés - type" showFeatureCount="0">
                 <filegroup open="true" hidden="false">
                     <legendlayerfile isInOverview="0" layerid="vl_subscriber_type20130304110011480" visible="0"/>
                 </filegroup>
             </legendlayer>
-            <legendlayer drawingOrder="40" open="true" checked="Qt::Unchecked" name="Conduites - protection" showFeatureCount="0">
+            <legendlayer drawingOrder="39" open="true" checked="Qt::Unchecked" name="Conduites - protection" showFeatureCount="0">
                 <filegroup open="true" hidden="false">
                     <legendlayerfile isInOverview="0" layerid="vl_pipe_protection20130304110005258" visible="0"/>
                 </filegroup>
             </legendlayer>
-            <legendlayer drawingOrder="41" open="true" checked="Qt::Unchecked" name="Conduites - matériaux" showFeatureCount="0">
+            <legendlayer drawingOrder="40" open="true" checked="Qt::Unchecked" name="Conduites - matériaux" showFeatureCount="0">
                 <filegroup open="true" hidden="false">
                     <legendlayerfile isInOverview="0" layerid="vl_pipe_material20130304110005230" visible="0"/>
                 </filegroup>
             </legendlayer>
-            <legendlayer drawingOrder="42" open="true" checked="Qt::Unchecked" name="Conduites - mode de pose" showFeatureCount="0">
+            <legendlayer drawingOrder="41" open="true" checked="Qt::Unchecked" name="Conduites - mode de pose" showFeatureCount="0">
                 <filegroup open="true" hidden="false">
                     <legendlayerfile isInOverview="0" layerid="vl_pipe_installmethod20130304110005209" visible="0"/>
                 </filegroup>
             </legendlayer>
-            <legendlayer drawingOrder="43" open="true" checked="Qt::Unchecked" name="Conduites - fonction" showFeatureCount="0">
+            <legendlayer drawingOrder="42" open="true" checked="Qt::Unchecked" name="Conduites - fonction" showFeatureCount="0">
                 <filegroup open="true" hidden="false">
                     <legendlayerfile isInOverview="0" layerid="vl_pipe_function20130304110005186" visible="0"/>
                 </filegroup>
             </legendlayer>
-            <legendlayer drawingOrder="44" open="true" checked="Qt::Unchecked" name="Distributeur" showFeatureCount="0">
+            <legendlayer drawingOrder="43" open="true" checked="Qt::Unchecked" name="Distributeur" showFeatureCount="0">
                 <filegroup open="true" hidden="false">
                     <legendlayerfile isInOverview="0" layerid="distributor20130304114719702" visible="0"/>
                 </filegroup>
             </legendlayer>
-            <legendlayer drawingOrder="45" open="true" checked="Qt::Unchecked" name="fuite - cause" showFeatureCount="0">
+            <legendlayer drawingOrder="44" open="true" checked="Qt::Unchecked" name="fuite - cause" showFeatureCount="0">
                 <filegroup open="true" hidden="false">
                     <legendlayerfile isInOverview="0" layerid="vl_leak_cause20130822081237639" visible="0"/>
                 </filegroup>
             </legendlayer>
-            <legendlayer drawingOrder="46" open="true" checked="Qt::Unchecked" name="fuite - type" showFeatureCount="0">
+            <legendlayer drawingOrder="45" open="true" checked="Qt::Unchecked" name="fuite - type" showFeatureCount="0">
                 <filegroup open="true" hidden="false">
                     <legendlayerfile isInOverview="0" layerid="vl_leak_type20130822081237675" visible="0"/>
                 </filegroup>
             </legendlayer>
-            <legendlayer drawingOrder="47" open="true" checked="Qt::Unchecked" name="fuite - dommage" showFeatureCount="0">
+            <legendlayer drawingOrder="46" open="true" checked="Qt::Unchecked" name="fuite - dommage" showFeatureCount="0">
                 <filegroup open="true" hidden="false">
                     <legendlayerfile isInOverview="0" layerid="vl_leak_damage20130822081237691" visible="0"/>
                 </filegroup>
             </legendlayer>
-            <legendlayer drawingOrder="48" open="true" checked="Qt::Unchecked" name="Historique" showFeatureCount="0">
+            <legendlayer drawingOrder="47" open="true" checked="Qt::Unchecked" name="Historique" showFeatureCount="0">
                 <filegroup open="true" hidden="false">
                     <legendlayerfile isInOverview="0" layerid="logged_actions20130304110005081" visible="0"/>
                 </filegroup>
             </legendlayer>
-            <legendlayer drawingOrder="49" open="true" checked="Qt::Unchecked" name="Hydrantes - fournisseur" showFeatureCount="0">
+            <legendlayer drawingOrder="48" open="true" checked="Qt::Unchecked" name="Hydrantes - fournisseur" showFeatureCount="0">
                 <filegroup open="true" hidden="false">
                     <legendlayerfile isInOverview="0" layerid="hydrant_provider20130304110004893" visible="0"/>
                 </filegroup>
             </legendlayer>
-            <legendlayer drawingOrder="50" open="true" checked="Qt::Unchecked" name="Ouvrages - type" showFeatureCount="0">
+            <legendlayer drawingOrder="49" open="true" checked="Qt::Unchecked" name="Ouvrages - type" showFeatureCount="0">
                 <filegroup open="true" hidden="false">
                     <legendlayerfile isInOverview="0" layerid="vl_installation_type20130514104730101" visible="0"/>
                 </filegroup>
             </legendlayer>
-            <legendlayer drawingOrder="51" open="true" checked="Qt::Unchecked" name="Ouvrage - pompe - type" showFeatureCount="0">
+            <legendlayer drawingOrder="50" open="true" checked="Qt::Unchecked" name="Ouvrage - pompe - type" showFeatureCount="0">
                 <filegroup open="true" hidden="false">
                     <legendlayerfile isInOverview="0" layerid="vl_pumptype20130816140237776" visible="0"/>
                 </filegroup>
             </legendlayer>
-            <legendlayer drawingOrder="52" open="true" checked="Qt::Unchecked" name="Ouvrage - réservoir - type trop plein" showFeatureCount="0">
+            <legendlayer drawingOrder="51" open="true" checked="Qt::Unchecked" name="Ouvrage - réservoir - type trop plein" showFeatureCount="0">
                 <filegroup open="true" hidden="false">
                     <legendlayerfile isInOverview="0" layerid="vl_overflow20130304170704046" visible="0"/>
                 </filegroup>
             </legendlayer>
-            <legendlayer drawingOrder="53" open="true" checked="Qt::Unchecked" name="Ouvrage - réservoir - type incendie" showFeatureCount="0">
+            <legendlayer drawingOrder="52" open="true" checked="Qt::Unchecked" name="Ouvrage - réservoir - type incendie" showFeatureCount="0">
                 <filegroup open="true" hidden="false">
                     <legendlayerfile isInOverview="0" layerid="vl_tank_firestorage20130304170704030" visible="0"/>
                 </filegroup>
             </legendlayer>
-            <legendlayer drawingOrder="54" open="true" checked="Qt::Unchecked" name="Ouvrage - réservoir - type de cuve" showFeatureCount="0">
+            <legendlayer drawingOrder="53" open="true" checked="Qt::Unchecked" name="Ouvrage - réservoir - type de cuve" showFeatureCount="0">
                 <filegroup open="true" hidden="false">
                     <legendlayerfile isInOverview="0" layerid="vl_cistern20130304110005061" visible="0"/>
                 </filegroup>
             </legendlayer>
-            <legendlayer drawingOrder="55" open="true" checked="Qt::Unchecked" name="ouvrage - source - qualité" showFeatureCount="0">
+            <legendlayer drawingOrder="54" open="true" checked="Qt::Unchecked" name="ouvrage - source - qualité" showFeatureCount="0">
                 <filegroup open="true" hidden="false">
                     <legendlayerfile isInOverview="0" layerid="vl_sourcequality20130820110518810" visible="0"/>
                 </filegroup>
             </legendlayer>
-            <legendlayer drawingOrder="56" open="true" checked="Qt::Unchecked" name="ouvrage - source - type" showFeatureCount="0">
+            <legendlayer drawingOrder="55" open="true" checked="Qt::Unchecked" name="ouvrage - source - type" showFeatureCount="0">
                 <filegroup open="true" hidden="false">
                     <legendlayerfile isInOverview="0" layerid="vl_sourcetype20130820110518791" visible="0"/>
                 </filegroup>
             </legendlayer>
-            <legendlayer drawingOrder="57" open="false" checked="Qt::Unchecked" name="Pièces d'installation - type" showFeatureCount="0">
+            <legendlayer drawingOrder="56" open="false" checked="Qt::Unchecked" name="Pièces d'installation - type" showFeatureCount="0">
                 <filegroup open="false" hidden="false">
-                    <legendlayerfile isInOverview="0" layerid="vl_installationpart_type20140429114640509" visible="0"/>
+                    <legendlayerfile isInOverview="0" layerid="vl_part_type20140429114640509" visible="0"/>
                 </filegroup>
             </legendlayer>
-            <legendlayer drawingOrder="58" open="true" checked="Qt::Unchecked" name="Précision" showFeatureCount="0">
+            <legendlayer drawingOrder="57" open="true" checked="Qt::Unchecked" name="Précision" showFeatureCount="0">
                 <filegroup open="true" hidden="false">
                     <legendlayerfile isInOverview="0" layerid="vl_precision20130304110011372" visible="0"/>
                 </filegroup>
             </legendlayer>
-            <legendlayer drawingOrder="59" open="false" checked="Qt::Unchecked" name="Précision altimétrique" showFeatureCount="0">
+            <legendlayer drawingOrder="58" open="false" checked="Qt::Unchecked" name="Précision altimétrique" showFeatureCount="0">
                 <filegroup open="false" hidden="false">
                     <legendlayerfile isInOverview="0" layerid="vl_precisionalti20131211161429510" visible="0"/>
                 </filegroup>
             </legendlayer>
-            <legendlayer drawingOrder="60" open="true" checked="Qt::Unchecked" name="Télécommande - type" showFeatureCount="0">
+            <legendlayer drawingOrder="59" open="true" checked="Qt::Unchecked" name="Télécommande - type" showFeatureCount="0">
                 <filegroup open="true" hidden="false">
                     <legendlayerfile isInOverview="0" layerid="vl_remote20130304110004987" visible="0"/>
                 </filegroup>
             </legendlayer>
-            <legendlayer drawingOrder="61" open="false" checked="Qt::Unchecked" name="Type d'eau" showFeatureCount="0">
+            <legendlayer drawingOrder="60" open="false" checked="Qt::Unchecked" name="Type d'eau" showFeatureCount="0">
                 <filegroup open="false" hidden="false">
                     <legendlayerfile isInOverview="0" layerid="vl_watertype20131217141603877" visible="0"/>
                 </filegroup>
             </legendlayer>
-            <legendlayer drawingOrder="62" open="true" checked="Qt::Unchecked" name="Vannes - maintenance" showFeatureCount="0">
+            <legendlayer drawingOrder="61" open="true" checked="Qt::Unchecked" name="Vannes - maintenance" showFeatureCount="0">
                 <filegroup open="true" hidden="false">
                     <legendlayerfile isInOverview="0" layerid="vl_valve_maintenance20130304110011567" visible="0"/>
                 </filegroup>
             </legendlayer>
-            <legendlayer drawingOrder="63" open="true" checked="Qt::Unchecked" name="Vannes - type" showFeatureCount="0">
+            <legendlayer drawingOrder="62" open="true" checked="Qt::Unchecked" name="Vannes - type" showFeatureCount="0">
                 <filegroup open="true" hidden="false">
                     <legendlayerfile isInOverview="0" layerid="vl_valve_type20130304110011685" visible="0"/>
                 </filegroup>
             </legendlayer>
-            <legendlayer drawingOrder="64" open="true" checked="Qt::Unchecked" name="Vannes - fonction" showFeatureCount="0">
+            <legendlayer drawingOrder="63" open="true" checked="Qt::Unchecked" name="Vannes - fonction" showFeatureCount="0">
                 <filegroup open="true" hidden="false">
                     <legendlayerfile isInOverview="0" layerid="vl_valve_function20130304110011544" visible="0"/>
                 </filegroup>
             </legendlayer>
-            <legendlayer drawingOrder="65" open="true" checked="Qt::Unchecked" name="Visibilité" showFeatureCount="0">
+            <legendlayer drawingOrder="64" open="true" checked="Qt::Unchecked" name="Visibilité" showFeatureCount="0">
                 <filegroup open="true" hidden="false">
                     <legendlayerfile isInOverview="0" layerid="vl_visible20130304110011703" visible="0"/>
                 </filegroup>
             </legendlayer>
         </legendgroup>
         <legendgroup open="false" checked="Qt::PartiallyChecked" name="enquetes">
-            <legendlayer drawingOrder="66" open="false" checked="Qt::Unchecked" name="camac" showFeatureCount="0">
+            <legendlayer drawingOrder="65" open="false" checked="Qt::Unchecked" name="camac" showFeatureCount="0">
                 <filegroup open="false" hidden="false">
                     <legendlayerfile isInOverview="0" layerid="camac20140113144941208" visible="0"/>
                 </filegroup>
             </legendlayer>
-            <legendlayer drawingOrder="67" open="false" checked="Qt::Checked" name="cadastre" showFeatureCount="0">
+            <legendlayer drawingOrder="66" open="false" checked="Qt::Checked" name="cadastre" showFeatureCount="0">
                 <filegroup open="false" hidden="false">
                     <legendlayerfile isInOverview="0" layerid="cadastre20140312152032371" visible="1"/>
                 </filegroup>
@@ -1278,7 +1269,7 @@
                     <Layer>valve20130304110011497</Layer>
                     <Layer>hydrant20130304110004848</Layer>
                     <Layer>node20130304110005126</Layer>
-                    <Layer>od_installationpart20140429113327995</Layer>
+                    <Layer>od_part20140429113327995</Layer>
                     <Layer>conduites_copy20130709141244955</Layer>
                     <Layer>od_crossing20141023083754327</Layer>
                     <Layer>od_annotationline20131203095020365</Layer>
@@ -1630,7 +1621,7 @@
                     <Layer>valve20130304110011497</Layer>
                     <Layer>hydrant20130304110004848</Layer>
                     <Layer>node20130304110005126</Layer>
-                    <Layer>od_installationpart20140429113327995</Layer>
+                    <Layer>od_part20140429113327995</Layer>
                     <Layer>conduites_copy20130709141244955</Layer>
                     <Layer>od_crossing20141023083754327</Layer>
                     <Layer>od_annotationline20131203095020365</Layer>
@@ -3164,7 +3155,7 @@
             </ComposerMap>
         </Composition>
     </Composer>
-    <projectlayers layercount="98">
+    <projectlayers layercount="97">
         <maplayer minimumScale="-4.65661e-10" maximumScale="1e+08" simplifyDrawingHints="0" minLabelScale="0" maxLabelScale="1e+08" simplifyDrawingTol="1" geometry="Line" simplifyMaxScale="1" type="vector" hasScaleBasedVisibilityFlag="0" simplifyLocal="1" scaleBasedLabelVisibilityFlag="0">
             <id>IntersectIt_Lines20130618102142813</id>
             <datasource>LineString?crs=EPSG:21781&amp;field=id:string&amp;field=type:string&amp;field=x:double&amp;field=y:double&amp;field=observation:double&amp;field=precision:double&amp;index=yes</datasource>
@@ -6556,6 +6547,12 @@
                 <edittype widgetv2type="TextEdit" name="_geometry_alt2_used">
                     <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
                 </edittype>
+                <edittype widgetv2type="TextEdit" name="label_visible_1">
+                    <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
+                </edittype>
+                <edittype widgetv2type="TextEdit" name="label_visible_2">
+                    <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
+                </edittype>
                 <edittype widgetv2type="TextEdit" name="Statut_vl_active">
                     <widgetv2config IsMultiline="0" fieldEditable="0" UseHtml="0" labelOnTop="0"/>
                 </edittype>
@@ -6899,6 +6896,12 @@
                 <edittype widgetv2type="TextEdit" name="_geometry_alt2_used">
                     <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
                 </edittype>
+                <edittype widgetv2type="TextEdit" name="label_visible_1">
+                    <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
+                </edittype>
+                <edittype widgetv2type="TextEdit" name="label_visible_2">
+                    <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
+                </edittype>
                 <edittype widgetv2type="TextEdit" name="Statut_vl_active">
                     <widgetv2config IsMultiline="0" fieldEditable="0" UseHtml="0" labelOnTop="0"/>
                 </edittype>
@@ -7076,6 +7079,30 @@
                     <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
                 </edittype>
                 <edittype widgetv2type="TextEdit" name="geometry_polygon">
+                    <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
+                </edittype>
+                <edittype widgetv2type="TextEdit" name="label_visible_1">
+                    <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
+                </edittype>
+                <edittype widgetv2type="TextEdit" name="label_x_1">
+                    <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
+                </edittype>
+                <edittype widgetv2type="TextEdit" name="label_y_1">
+                    <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
+                </edittype>
+                <edittype widgetv2type="TextEdit" name="label_r_1">
+                    <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
+                </edittype>
+                <edittype widgetv2type="TextEdit" name="label_visible_2">
+                    <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
+                </edittype>
+                <edittype widgetv2type="TextEdit" name="label_x_2">
+                    <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
+                </edittype>
+                <edittype widgetv2type="TextEdit" name="label_y_2">
+                    <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
+                </edittype>
+                <edittype widgetv2type="TextEdit" name="label_r_2">
                     <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
                 </edittype>
             </edittypes>
@@ -7574,6 +7601,30 @@
                 <edittype widgetv2type="TextEdit" name="geometry_polygon">
                     <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
                 </edittype>
+                <edittype widgetv2type="TextEdit" name="label_visible_1">
+                    <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
+                </edittype>
+                <edittype widgetv2type="TextEdit" name="label_x_1">
+                    <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
+                </edittype>
+                <edittype widgetv2type="TextEdit" name="label_y_1">
+                    <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
+                </edittype>
+                <edittype widgetv2type="TextEdit" name="label_r_1">
+                    <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
+                </edittype>
+                <edittype widgetv2type="TextEdit" name="label_visible_2">
+                    <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
+                </edittype>
+                <edittype widgetv2type="TextEdit" name="label_x_2">
+                    <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
+                </edittype>
+                <edittype widgetv2type="TextEdit" name="label_y_2">
+                    <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
+                </edittype>
+                <edittype widgetv2type="TextEdit" name="label_r_2">
+                    <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
+                </edittype>
             </edittypes>
         </maplayer>
         <maplayer minimumScale="0" maximumScale="1e+08" simplifyDrawingHints="0" minLabelScale="0" maxLabelScale="1e+08" simplifyDrawingTol="1" geometry="Point" simplifyMaxScale="1" type="vector" hasScaleBasedVisibilityFlag="0" simplifyLocal="1" scaleBasedLabelVisibilityFlag="0">
@@ -7687,6 +7738,24 @@
                     <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
                 </edittype>
                 <edittype widgetv2type="TextEdit" name="_geometry_alt2_used">
+                    <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
+                </edittype>
+                <edittype widgetv2type="TextEdit" name="label_x_1">
+                    <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
+                </edittype>
+                <edittype widgetv2type="TextEdit" name="label_y_1">
+                    <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
+                </edittype>
+                <edittype widgetv2type="TextEdit" name="label_r_1">
+                    <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
+                </edittype>
+                <edittype widgetv2type="TextEdit" name="label_x_2">
+                    <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
+                </edittype>
+                <edittype widgetv2type="TextEdit" name="label_y_2">
+                    <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
+                </edittype>
+                <edittype widgetv2type="TextEdit" name="label_r_2">
                     <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
                 </edittype>
             </edittypes>
@@ -8094,6 +8163,24 @@
                 <edittype widgetv2type="TextEdit" name="_geometry_alt2_used">
                     <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
                 </edittype>
+                <edittype widgetv2type="TextEdit" name="label_x_1">
+                    <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
+                </edittype>
+                <edittype widgetv2type="TextEdit" name="label_y_1">
+                    <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
+                </edittype>
+                <edittype widgetv2type="TextEdit" name="label_r_1">
+                    <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
+                </edittype>
+                <edittype widgetv2type="TextEdit" name="label_x_2">
+                    <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
+                </edittype>
+                <edittype widgetv2type="TextEdit" name="label_y_2">
+                    <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
+                </edittype>
+                <edittype widgetv2type="TextEdit" name="label_r_2">
+                    <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
+                </edittype>
             </edittypes>
         </maplayer>
         <maplayer minimumScale="0" maximumScale="1e+08" simplifyDrawingHints="0" minLabelScale="0" maxLabelScale="1e+08" simplifyDrawingTol="1" geometry="Point" simplifyMaxScale="1" type="vector" hasScaleBasedVisibilityFlag="0" simplifyLocal="1" scaleBasedLabelVisibilityFlag="0">
@@ -8228,6 +8315,24 @@
                     <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
                 </edittype>
                 <edittype widgetv2type="TextEdit" name="_geometry_alt2_used">
+                    <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
+                </edittype>
+                <edittype widgetv2type="TextEdit" name="label_x_1">
+                    <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
+                </edittype>
+                <edittype widgetv2type="TextEdit" name="label_y_1">
+                    <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
+                </edittype>
+                <edittype widgetv2type="TextEdit" name="label_r_1">
+                    <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
+                </edittype>
+                <edittype widgetv2type="TextEdit" name="label_x_2">
+                    <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
+                </edittype>
+                <edittype widgetv2type="TextEdit" name="label_y_2">
+                    <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
+                </edittype>
+                <edittype widgetv2type="TextEdit" name="label_r_2">
                     <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
                 </edittype>
             </edittypes>
@@ -8543,6 +8648,24 @@
                 <edittype widgetv2type="TextEdit" name="_geometry_alt2_used">
                     <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
                 </edittype>
+                <edittype widgetv2type="TextEdit" name="label_x_1">
+                    <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
+                </edittype>
+                <edittype widgetv2type="TextEdit" name="label_y_1">
+                    <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
+                </edittype>
+                <edittype widgetv2type="TextEdit" name="label_r_1">
+                    <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
+                </edittype>
+                <edittype widgetv2type="TextEdit" name="label_x_2">
+                    <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
+                </edittype>
+                <edittype widgetv2type="TextEdit" name="label_y_2">
+                    <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
+                </edittype>
+                <edittype widgetv2type="TextEdit" name="label_r_2">
+                    <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
+                </edittype>
             </edittypes>
         </maplayer>
         <maplayer minimumScale="0" maximumScale="1e+08" simplifyDrawingHints="0" minLabelScale="0" maxLabelScale="1e+08" simplifyDrawingTol="1" geometry="Point" simplifyMaxScale="1" type="vector" hasScaleBasedVisibilityFlag="0" simplifyLocal="1" scaleBasedLabelVisibilityFlag="0">
@@ -8674,6 +8797,24 @@
                     <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
                 </edittype>
                 <edittype widgetv2type="TextEdit" name="_geometry_alt2_used">
+                    <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
+                </edittype>
+                <edittype widgetv2type="TextEdit" name="label_x_1">
+                    <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
+                </edittype>
+                <edittype widgetv2type="TextEdit" name="label_y_1">
+                    <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
+                </edittype>
+                <edittype widgetv2type="TextEdit" name="label_r_1">
+                    <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
+                </edittype>
+                <edittype widgetv2type="TextEdit" name="label_x_2">
+                    <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
+                </edittype>
+                <edittype widgetv2type="TextEdit" name="label_y_2">
+                    <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
+                </edittype>
+                <edittype widgetv2type="TextEdit" name="label_r_2">
                     <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
                 </edittype>
             </edittypes>
@@ -9011,6 +9152,24 @@
                 <edittype widgetv2type="TextEdit" name="_geometry_alt2_used">
                     <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
                 </edittype>
+                <edittype widgetv2type="TextEdit" name="label_x_1">
+                    <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
+                </edittype>
+                <edittype widgetv2type="TextEdit" name="label_y_1">
+                    <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
+                </edittype>
+                <edittype widgetv2type="TextEdit" name="label_r_1">
+                    <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
+                </edittype>
+                <edittype widgetv2type="TextEdit" name="label_x_2">
+                    <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
+                </edittype>
+                <edittype widgetv2type="TextEdit" name="label_y_2">
+                    <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
+                </edittype>
+                <edittype widgetv2type="TextEdit" name="label_r_2">
+                    <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
+                </edittype>
             </edittypes>
         </maplayer>
         <maplayer minimumScale="0" maximumScale="1e+08" simplifyDrawingHints="0" minLabelScale="1" maxLabelScale="1e+08" simplifyDrawingTol="1" geometry="Point" simplifyMaxScale="1" type="vector" hasScaleBasedVisibilityFlag="0" simplifyLocal="1" scaleBasedLabelVisibilityFlag="0">
@@ -9185,6 +9344,24 @@
                 <edittype widgetv2type="TextEdit" name="_geometry_alt2_used">
                     <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
                 </edittype>
+                <edittype widgetv2type="TextEdit" name="label_x_1">
+                    <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
+                </edittype>
+                <edittype widgetv2type="TextEdit" name="label_y_1">
+                    <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
+                </edittype>
+                <edittype widgetv2type="TextEdit" name="label_r_1">
+                    <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
+                </edittype>
+                <edittype widgetv2type="TextEdit" name="label_x_2">
+                    <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
+                </edittype>
+                <edittype widgetv2type="TextEdit" name="label_y_2">
+                    <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
+                </edittype>
+                <edittype widgetv2type="TextEdit" name="label_r_2">
+                    <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
+                </edittype>
                 <edittype widgetv2type="TextEdit" name="ouvrage général_name">
                     <widgetv2config IsMultiline="0" fieldEditable="0" UseHtml="0" labelOnTop="0"/>
                 </edittype>
@@ -9243,6 +9420,30 @@
                     <widgetv2config IsMultiline="0" fieldEditable="0" UseHtml="0" labelOnTop="0"/>
                 </edittype>
                 <edittype widgetv2type="TextEdit" name="ouvrage général_geometry_polygon">
+                    <widgetv2config IsMultiline="0" fieldEditable="0" UseHtml="0" labelOnTop="0"/>
+                </edittype>
+                <edittype widgetv2type="TextEdit" name="ouvrage général_label_visible_1">
+                    <widgetv2config IsMultiline="0" fieldEditable="0" UseHtml="0" labelOnTop="0"/>
+                </edittype>
+                <edittype widgetv2type="TextEdit" name="ouvrage général_label_x_1">
+                    <widgetv2config IsMultiline="0" fieldEditable="0" UseHtml="0" labelOnTop="0"/>
+                </edittype>
+                <edittype widgetv2type="TextEdit" name="ouvrage général_label_y_1">
+                    <widgetv2config IsMultiline="0" fieldEditable="0" UseHtml="0" labelOnTop="0"/>
+                </edittype>
+                <edittype widgetv2type="TextEdit" name="ouvrage général_label_r_1">
+                    <widgetv2config IsMultiline="0" fieldEditable="0" UseHtml="0" labelOnTop="0"/>
+                </edittype>
+                <edittype widgetv2type="TextEdit" name="ouvrage général_label_visible_2">
+                    <widgetv2config IsMultiline="0" fieldEditable="0" UseHtml="0" labelOnTop="0"/>
+                </edittype>
+                <edittype widgetv2type="TextEdit" name="ouvrage général_label_x_2">
+                    <widgetv2config IsMultiline="0" fieldEditable="0" UseHtml="0" labelOnTop="0"/>
+                </edittype>
+                <edittype widgetv2type="TextEdit" name="ouvrage général_label_y_2">
+                    <widgetv2config IsMultiline="0" fieldEditable="0" UseHtml="0" labelOnTop="0"/>
+                </edittype>
+                <edittype widgetv2type="TextEdit" name="ouvrage général_label_r_2">
                     <widgetv2config IsMultiline="0" fieldEditable="0" UseHtml="0" labelOnTop="0"/>
                 </edittype>
             </edittypes>
@@ -9646,6 +9847,24 @@
                 <edittype widgetv2type="TextEdit" name="_geometry_alt2_used">
                     <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
                 </edittype>
+                <edittype widgetv2type="TextEdit" name="label_x_1">
+                    <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
+                </edittype>
+                <edittype widgetv2type="TextEdit" name="label_y_1">
+                    <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
+                </edittype>
+                <edittype widgetv2type="TextEdit" name="label_r_1">
+                    <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
+                </edittype>
+                <edittype widgetv2type="TextEdit" name="label_x_2">
+                    <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
+                </edittype>
+                <edittype widgetv2type="TextEdit" name="label_y_2">
+                    <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
+                </edittype>
+                <edittype widgetv2type="TextEdit" name="label_r_2">
+                    <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
+                </edittype>
                 <edittype widgetv2type="TextEdit" name="ouvrage général_name">
                     <widgetv2config IsMultiline="0" fieldEditable="0" UseHtml="0" labelOnTop="0"/>
                 </edittype>
@@ -9704,6 +9923,30 @@
                     <widgetv2config IsMultiline="0" fieldEditable="0" UseHtml="0" labelOnTop="0"/>
                 </edittype>
                 <edittype widgetv2type="TextEdit" name="ouvrage général_geometry_polygon">
+                    <widgetv2config IsMultiline="0" fieldEditable="0" UseHtml="0" labelOnTop="0"/>
+                </edittype>
+                <edittype widgetv2type="TextEdit" name="ouvrage général_label_visible_1">
+                    <widgetv2config IsMultiline="0" fieldEditable="0" UseHtml="0" labelOnTop="0"/>
+                </edittype>
+                <edittype widgetv2type="TextEdit" name="ouvrage général_label_x_1">
+                    <widgetv2config IsMultiline="0" fieldEditable="0" UseHtml="0" labelOnTop="0"/>
+                </edittype>
+                <edittype widgetv2type="TextEdit" name="ouvrage général_label_y_1">
+                    <widgetv2config IsMultiline="0" fieldEditable="0" UseHtml="0" labelOnTop="0"/>
+                </edittype>
+                <edittype widgetv2type="TextEdit" name="ouvrage général_label_r_1">
+                    <widgetv2config IsMultiline="0" fieldEditable="0" UseHtml="0" labelOnTop="0"/>
+                </edittype>
+                <edittype widgetv2type="TextEdit" name="ouvrage général_label_visible_2">
+                    <widgetv2config IsMultiline="0" fieldEditable="0" UseHtml="0" labelOnTop="0"/>
+                </edittype>
+                <edittype widgetv2type="TextEdit" name="ouvrage général_label_x_2">
+                    <widgetv2config IsMultiline="0" fieldEditable="0" UseHtml="0" labelOnTop="0"/>
+                </edittype>
+                <edittype widgetv2type="TextEdit" name="ouvrage général_label_y_2">
+                    <widgetv2config IsMultiline="0" fieldEditable="0" UseHtml="0" labelOnTop="0"/>
+                </edittype>
+                <edittype widgetv2type="TextEdit" name="ouvrage général_label_r_2">
                     <widgetv2config IsMultiline="0" fieldEditable="0" UseHtml="0" labelOnTop="0"/>
                 </edittype>
             </edittypes>
@@ -9846,6 +10089,24 @@
                     <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
                 </edittype>
                 <edittype widgetv2type="TextEdit" name="_geometry_alt2_used">
+                    <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
+                </edittype>
+                <edittype widgetv2type="TextEdit" name="label_x_1">
+                    <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
+                </edittype>
+                <edittype widgetv2type="TextEdit" name="label_y_1">
+                    <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
+                </edittype>
+                <edittype widgetv2type="TextEdit" name="label_r_1">
+                    <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
+                </edittype>
+                <edittype widgetv2type="TextEdit" name="label_x_2">
+                    <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
+                </edittype>
+                <edittype widgetv2type="TextEdit" name="label_y_2">
+                    <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
+                </edittype>
+                <edittype widgetv2type="TextEdit" name="label_r_2">
                     <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
                 </edittype>
             </edittypes>
@@ -10193,6 +10454,24 @@
                 <edittype widgetv2type="TextEdit" name="_geometry_alt2_used">
                     <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
                 </edittype>
+                <edittype widgetv2type="TextEdit" name="label_x_1">
+                    <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
+                </edittype>
+                <edittype widgetv2type="TextEdit" name="label_y_1">
+                    <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
+                </edittype>
+                <edittype widgetv2type="TextEdit" name="label_r_1">
+                    <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
+                </edittype>
+                <edittype widgetv2type="TextEdit" name="label_x_2">
+                    <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
+                </edittype>
+                <edittype widgetv2type="TextEdit" name="label_y_2">
+                    <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
+                </edittype>
+                <edittype widgetv2type="TextEdit" name="label_r_2">
+                    <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
+                </edittype>
             </edittypes>
         </maplayer>
         <maplayer minimumScale="0" maximumScale="1e+08" simplifyDrawingHints="0" minLabelScale="0" maxLabelScale="1e+08" simplifyDrawingTol="1" geometry="Point" simplifyMaxScale="1" type="vector" hasScaleBasedVisibilityFlag="0" simplifyLocal="1" scaleBasedLabelVisibilityFlag="0">
@@ -10309,6 +10588,24 @@
                     <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
                 </edittype>
                 <edittype widgetv2type="TextEdit" name="_geometry_alt2_used">
+                    <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
+                </edittype>
+                <edittype widgetv2type="TextEdit" name="label_x_1">
+                    <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
+                </edittype>
+                <edittype widgetv2type="TextEdit" name="label_y_1">
+                    <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
+                </edittype>
+                <edittype widgetv2type="TextEdit" name="label_r_1">
+                    <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
+                </edittype>
+                <edittype widgetv2type="TextEdit" name="label_x_2">
+                    <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
+                </edittype>
+                <edittype widgetv2type="TextEdit" name="label_y_2">
+                    <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
+                </edittype>
+                <edittype widgetv2type="TextEdit" name="label_r_2">
                     <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
                 </edittype>
             </edittypes>
@@ -10675,6 +10972,24 @@
                     <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
                 </edittype>
                 <edittype widgetv2type="TextEdit" name="_geometry_alt2_used">
+                    <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
+                </edittype>
+                <edittype widgetv2type="TextEdit" name="label_x_1">
+                    <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
+                </edittype>
+                <edittype widgetv2type="TextEdit" name="label_y_1">
+                    <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
+                </edittype>
+                <edittype widgetv2type="TextEdit" name="label_r_1">
+                    <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
+                </edittype>
+                <edittype widgetv2type="TextEdit" name="label_x_2">
+                    <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
+                </edittype>
+                <edittype widgetv2type="TextEdit" name="label_y_2">
+                    <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
+                </edittype>
+                <edittype widgetv2type="TextEdit" name="label_r_2">
                     <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
                 </edittype>
             </edittypes>
@@ -12640,419 +12955,6 @@
                 </edittype>
             </edittypes>
         </maplayer>
-        <maplayer minimumScale="0" maximumScale="2000" simplifyDrawingHints="0" minLabelScale="0" maxLabelScale="1e+08" simplifyDrawingTol="3.6" geometry="Point" simplifyMaxScale="1" type="vector" hasScaleBasedVisibilityFlag="1" simplifyLocal="0" scaleBasedLabelVisibilityFlag="0">
-            <id>od_installationpart20140429113327995</id>
-            <datasource>dbname='sige' host=172.24.171.203 port=5432 user='sige' sslmode=disable key='id' estimatedmetadata=true srid=21781 type=POINT table="qwat"."od_installationpart" (geometry) sql=</datasource>
-            <title></title>
-            <abstract></abstract>
-            <keywordList>
-                <value></value>
-            </keywordList>
-            <layername>Pièces d'installations</layername>
-            <srs>
-                <spatialrefsys>
-                    <proj4>+proj=somerc +lat_0=46.95240555555556 +lon_0=7.439583333333333 +k_0=1 +x_0=600000 +y_0=200000 +ellps=bessel +towgs84=674.4,15.1,405.3,0,0,0,0 +units=m +no_defs</proj4>
-                    <srsid>1919</srsid>
-                    <srid>21781</srid>
-                    <authid>EPSG:21781</authid>
-                    <description>CH1903 / LV03</description>
-                    <projectionacronym>somerc</projectionacronym>
-                    <ellipsoidacronym>bessel</ellipsoidacronym>
-                    <geographicflag>false</geographicflag>
-                </spatialrefsys>
-            </srs>
-            <provider encoding="UTF-8">postgres</provider>
-            <previewExpression>COALESCE( "id", '&lt;NULL>' )</previewExpression>
-            <vectorjoins>
-                <join joinFieldName="id" targetFieldName="id_node" memoryCache="1" joinLayerId="node20130304110005126">
-                    <joinFieldsSubset>
-                        <field name="_type"/>
-                        <field name="_orientation"/>
-                        <field name="_schema_visible"/>
-                        <field name="_status_active"/>
-                        <field name="_under_object"/>
-                    </joinFieldsSubset>
-                </join>
-            </vectorjoins>
-            <expressionfields/>
-            <edittypes>
-                <edittype widgetv2type="TextEdit" name="id">
-                    <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
-                </edittype>
-                <edittype widgetv2type="ValueRelation" name="id_type">
-                    <widgetv2config OrderByValue="0" AllowNull="0" FilterExpression="" fieldEditable="1" Key="id" Layer="vl_installationpart_type20140429114640509" Value="value_fr" labelOnTop="0" AllowMulti="0"/>
-                </edittype>
-                <edittype widgetv2type="TextEdit" name="remark">
-                    <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
-                </edittype>
-                <edittype widgetv2type="TextEdit" name="id_node">
-                    <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
-                </edittype>
-                <edittype widgetv2type="TextEdit" name="id_district">
-                    <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
-                </edittype>
-                <edittype widgetv2type="TextEdit" name="id_pressurezone">
-                    <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
-                </edittype>
-                <edittype widgetv2type="TextEdit" name="id_printmap">
-                    <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
-                </edittype>
-                <edittype widgetv2type="TextEdit" name="id_pipe">
-                    <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
-                </edittype>
-                <edittype widgetv2type="TextEdit" name="_district">
-                    <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
-                </edittype>
-                <edittype widgetv2type="TextEdit" name="_pressurezone">
-                    <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
-                </edittype>
-                <edittype widgetv2type="TextEdit" name="_printmaps">
-                    <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
-                </edittype>
-                <edittype widgetv2type="TextEdit" name="noeuds__type">
-                    <widgetv2config IsMultiline="0" fieldEditable="0" UseHtml="0" labelOnTop="0"/>
-                </edittype>
-                <edittype widgetv2type="TextEdit" name="noeuds__orientation">
-                    <widgetv2config IsMultiline="0" fieldEditable="0" UseHtml="0" labelOnTop="0"/>
-                </edittype>
-                <edittype widgetv2type="TextEdit" name="noeuds__schema_visible">
-                    <widgetv2config IsMultiline="0" fieldEditable="0" UseHtml="0" labelOnTop="0"/>
-                </edittype>
-                <edittype widgetv2type="TextEdit" name="noeuds__status_active">
-                    <widgetv2config IsMultiline="0" fieldEditable="0" UseHtml="0" labelOnTop="0"/>
-                </edittype>
-                <edittype widgetv2type="TextEdit" name="noeuds__under_object">
-                    <widgetv2config IsMultiline="0" fieldEditable="0" UseHtml="0" labelOnTop="0"/>
-                </edittype>
-            </edittypes>
-            <renderer-v2 attr="id_type" symbollevels="0" type="categorizedSymbol">
-                <categories>
-                    <category render="true" symbol="0" value="9200" label="compteur"/>
-                    <category render="true" symbol="1" value="9201" label="bouchon"/>
-                    <category render="true" symbol="2" value="" label=""/>
-                </categories>
-                <symbols>
-                    <symbol alpha="1" type="marker" name="0">
-                        <layer pass="0" class="SvgMarker" locked="0">
-                            <prop k="angle" v="0"/>
-                            <prop k="angle_expression" v="noeuds__orientation"/>
-                            <prop k="color" v="#000000"/>
-                            <prop k="horizontal_anchor_point" v="1"/>
-                            <prop k="name" v="./symbols/nodes/installationpart_9200.svg"/>
-                            <prop k="offset" v="0,0"/>
-                            <prop k="offset_map_unit_scale" v="0,0"/>
-                            <prop k="offset_unit" v="MM"/>
-                            <prop k="outline_color" v="#000000"/>
-                            <prop k="outline_width" v="1"/>
-                            <prop k="outline_width_map_unit_scale" v="0,0"/>
-                            <prop k="outline_width_unit" v="MM"/>
-                            <prop k="scale_method" v="area"/>
-                            <prop k="size" v="4"/>
-                            <prop k="size_map_unit_scale" v="0,0"/>
-                            <prop k="size_unit" v="MM"/>
-                            <prop k="vertical_anchor_point" v="1"/>
-                        </layer>
-                    </symbol>
-                    <symbol alpha="1" type="marker" name="1">
-                        <layer pass="0" class="SvgMarker" locked="0">
-                            <prop k="angle" v="0"/>
-                            <prop k="angle_expression" v="noeuds__orientation"/>
-                            <prop k="color" v="#000000"/>
-                            <prop k="horizontal_anchor_point" v="1"/>
-                            <prop k="name" v="./symbols/nodes/installationpart_9201.svg"/>
-                            <prop k="offset" v="0,0"/>
-                            <prop k="offset_map_unit_scale" v="0,0"/>
-                            <prop k="offset_unit" v="MM"/>
-                            <prop k="outline_color" v="#000000"/>
-                            <prop k="outline_width" v="1"/>
-                            <prop k="outline_width_map_unit_scale" v="0,0"/>
-                            <prop k="outline_width_unit" v="MM"/>
-                            <prop k="scale_method" v="area"/>
-                            <prop k="size" v="4"/>
-                            <prop k="size_map_unit_scale" v="0,0"/>
-                            <prop k="size_unit" v="MM"/>
-                            <prop k="vertical_anchor_point" v="1"/>
-                        </layer>
-                    </symbol>
-                    <symbol alpha="1" type="marker" name="2">
-                        <layer pass="0" class="SimpleMarker" locked="0">
-                            <prop k="angle" v="0"/>
-                            <prop k="color" v="155,223,123,255"/>
-                            <prop k="horizontal_anchor_point" v="1"/>
-                            <prop k="name" v="circle"/>
-                            <prop k="offset" v="0,0"/>
-                            <prop k="offset_map_unit_scale" v="0,0"/>
-                            <prop k="offset_unit" v="MM"/>
-                            <prop k="outline_color" v="0,0,0,255"/>
-                            <prop k="outline_style" v="solid"/>
-                            <prop k="outline_width" v="0"/>
-                            <prop k="outline_width_map_unit_scale" v="0,0"/>
-                            <prop k="outline_width_unit" v="MM"/>
-                            <prop k="scale_method" v="area"/>
-                            <prop k="size" v="2"/>
-                            <prop k="size_map_unit_scale" v="0,0"/>
-                            <prop k="size_unit" v="MM"/>
-                            <prop k="vertical_anchor_point" v="1"/>
-                        </layer>
-                    </symbol>
-                </symbols>
-                <source-symbol>
-                    <symbol alpha="1" type="marker" name="0">
-                        <layer pass="0" class="SimpleMarker" locked="0">
-                            <prop k="angle" v="0"/>
-                            <prop k="color" v="235,237,72,255"/>
-                            <prop k="horizontal_anchor_point" v="1"/>
-                            <prop k="name" v="circle"/>
-                            <prop k="offset" v="0,0"/>
-                            <prop k="offset_map_unit_scale" v="0,0"/>
-                            <prop k="offset_unit" v="MM"/>
-                            <prop k="outline_color" v="0,0,0,255"/>
-                            <prop k="outline_style" v="solid"/>
-                            <prop k="outline_width" v="0"/>
-                            <prop k="outline_width_map_unit_scale" v="0,0"/>
-                            <prop k="outline_width_unit" v="MM"/>
-                            <prop k="scale_method" v="area"/>
-                            <prop k="size" v="2"/>
-                            <prop k="size_map_unit_scale" v="0,0"/>
-                            <prop k="size_unit" v="MM"/>
-                            <prop k="vertical_anchor_point" v="1"/>
-                        </layer>
-                    </symbol>
-                </source-symbol>
-                <colorramp type="randomcolors" name="[source]"/>
-                <invertedcolorramp value="0"/>
-                <rotation/>
-                <sizescale scalemethod="area"/>
-            </renderer-v2>
-            <customproperties>
-                <property key="labeling" value="pal"/>
-                <property key="labeling/addDirectionSymbol" value="false"/>
-                <property key="labeling/angleOffset" value="0"/>
-                <property key="labeling/blendMode" value="0"/>
-                <property key="labeling/bufferBlendMode" value="0"/>
-                <property key="labeling/bufferColorA" value="255"/>
-                <property key="labeling/bufferColorB" value="255"/>
-                <property key="labeling/bufferColorG" value="255"/>
-                <property key="labeling/bufferColorR" value="255"/>
-                <property key="labeling/bufferDraw" value="false"/>
-                <property key="labeling/bufferJoinStyle" value="64"/>
-                <property key="labeling/bufferNoFill" value="false"/>
-                <property key="labeling/bufferSize" value="1"/>
-                <property key="labeling/bufferSizeInMapUnits" value="false"/>
-                <property key="labeling/bufferSizeMapUnitMaxScale" value="0"/>
-                <property key="labeling/bufferSizeMapUnitMinScale" value="0"/>
-                <property key="labeling/bufferTransp" value="0"/>
-                <property key="labeling/centroidInside" value="false"/>
-                <property key="labeling/centroidWhole" value="false"/>
-                <property key="labeling/decimals" value="3"/>
-                <property key="labeling/displayAll" value="false"/>
-                <property key="labeling/dist" value="0"/>
-                <property key="labeling/distInMapUnits" value="false"/>
-                <property key="labeling/distMapUnitMaxScale" value="0"/>
-                <property key="labeling/distMapUnitMinScale" value="0"/>
-                <property key="labeling/enabled" value="false"/>
-                <property key="labeling/fieldName" value=""/>
-                <property key="labeling/fontBold" value="true"/>
-                <property key="labeling/fontCapitals" value="0"/>
-                <property key="labeling/fontFamily" value="Ubuntu"/>
-                <property key="labeling/fontItalic" value="true"/>
-                <property key="labeling/fontLetterSpacing" value="0"/>
-                <property key="labeling/fontLimitPixelSize" value="false"/>
-                <property key="labeling/fontMaxPixelSize" value="10000"/>
-                <property key="labeling/fontMinPixelSize" value="3"/>
-                <property key="labeling/fontSize" value="11"/>
-                <property key="labeling/fontSizeInMapUnits" value="false"/>
-                <property key="labeling/fontSizeMapUnitMaxScale" value="0"/>
-                <property key="labeling/fontSizeMapUnitMinScale" value="0"/>
-                <property key="labeling/fontStrikeout" value="false"/>
-                <property key="labeling/fontUnderline" value="false"/>
-                <property key="labeling/fontWeight" value="75"/>
-                <property key="labeling/fontWordSpacing" value="0"/>
-                <property key="labeling/formatNumbers" value="false"/>
-                <property key="labeling/isExpression" value="true"/>
-                <property key="labeling/labelOffsetInMapUnits" value="true"/>
-                <property key="labeling/labelOffsetMapUnitMaxScale" value="0"/>
-                <property key="labeling/labelOffsetMapUnitMinScale" value="0"/>
-                <property key="labeling/labelPerPart" value="false"/>
-                <property key="labeling/leftDirectionSymbol" value="&lt;"/>
-                <property key="labeling/limitNumLabels" value="false"/>
-                <property key="labeling/maxCurvedCharAngleIn" value="20"/>
-                <property key="labeling/maxCurvedCharAngleOut" value="-20"/>
-                <property key="labeling/maxNumLabels" value="2000"/>
-                <property key="labeling/mergeLines" value="false"/>
-                <property key="labeling/minFeatureSize" value="0"/>
-                <property key="labeling/multilineAlign" value="0"/>
-                <property key="labeling/multilineHeight" value="1"/>
-                <property key="labeling/namedStyle" value="Bold Italic"/>
-                <property key="labeling/obstacle" value="true"/>
-                <property key="labeling/placeDirectionSymbol" value="0"/>
-                <property key="labeling/placement" value="0"/>
-                <property key="labeling/placementFlags" value="0"/>
-                <property key="labeling/plussign" value="false"/>
-                <property key="labeling/preserveRotation" value="true"/>
-                <property key="labeling/previewBkgrdColor" value="#ffffff"/>
-                <property key="labeling/priority" value="5"/>
-                <property key="labeling/quadOffset" value="4"/>
-                <property key="labeling/repeatDistance" value="0"/>
-                <property key="labeling/repeatDistanceMapUnitMaxScale" value="0"/>
-                <property key="labeling/repeatDistanceMapUnitMinScale" value="0"/>
-                <property key="labeling/repeatDistanceUnit" value="1"/>
-                <property key="labeling/reverseDirectionSymbol" value="false"/>
-                <property key="labeling/rightDirectionSymbol" value=">"/>
-                <property key="labeling/scaleMax" value="10000000"/>
-                <property key="labeling/scaleMin" value="1"/>
-                <property key="labeling/scaleVisibility" value="false"/>
-                <property key="labeling/shadowBlendMode" value="6"/>
-                <property key="labeling/shadowColorB" value="0"/>
-                <property key="labeling/shadowColorG" value="0"/>
-                <property key="labeling/shadowColorR" value="0"/>
-                <property key="labeling/shadowDraw" value="false"/>
-                <property key="labeling/shadowOffsetAngle" value="135"/>
-                <property key="labeling/shadowOffsetDist" value="1"/>
-                <property key="labeling/shadowOffsetGlobal" value="true"/>
-                <property key="labeling/shadowOffsetMapUnitMaxScale" value="0"/>
-                <property key="labeling/shadowOffsetMapUnitMinScale" value="0"/>
-                <property key="labeling/shadowOffsetUnits" value="1"/>
-                <property key="labeling/shadowRadius" value="1.5"/>
-                <property key="labeling/shadowRadiusAlphaOnly" value="false"/>
-                <property key="labeling/shadowRadiusMapUnitMaxScale" value="0"/>
-                <property key="labeling/shadowRadiusMapUnitMinScale" value="0"/>
-                <property key="labeling/shadowRadiusUnits" value="1"/>
-                <property key="labeling/shadowScale" value="100"/>
-                <property key="labeling/shadowTransparency" value="30"/>
-                <property key="labeling/shadowUnder" value="0"/>
-                <property key="labeling/shapeBlendMode" value="0"/>
-                <property key="labeling/shapeBorderColorA" value="255"/>
-                <property key="labeling/shapeBorderColorB" value="128"/>
-                <property key="labeling/shapeBorderColorG" value="128"/>
-                <property key="labeling/shapeBorderColorR" value="128"/>
-                <property key="labeling/shapeBorderWidth" value="0"/>
-                <property key="labeling/shapeBorderWidthMapUnitMaxScale" value="0"/>
-                <property key="labeling/shapeBorderWidthMapUnitMinScale" value="0"/>
-                <property key="labeling/shapeBorderWidthUnits" value="1"/>
-                <property key="labeling/shapeDraw" value="false"/>
-                <property key="labeling/shapeFillColorA" value="255"/>
-                <property key="labeling/shapeFillColorB" value="255"/>
-                <property key="labeling/shapeFillColorG" value="255"/>
-                <property key="labeling/shapeFillColorR" value="255"/>
-                <property key="labeling/shapeJoinStyle" value="64"/>
-                <property key="labeling/shapeOffsetMapUnitMaxScale" value="0"/>
-                <property key="labeling/shapeOffsetMapUnitMinScale" value="0"/>
-                <property key="labeling/shapeOffsetUnits" value="1"/>
-                <property key="labeling/shapeOffsetX" value="0"/>
-                <property key="labeling/shapeOffsetY" value="0"/>
-                <property key="labeling/shapeRadiiMapUnitMaxScale" value="0"/>
-                <property key="labeling/shapeRadiiMapUnitMinScale" value="0"/>
-                <property key="labeling/shapeRadiiUnits" value="1"/>
-                <property key="labeling/shapeRadiiX" value="0"/>
-                <property key="labeling/shapeRadiiY" value="0"/>
-                <property key="labeling/shapeRotation" value="0"/>
-                <property key="labeling/shapeRotationType" value="0"/>
-                <property key="labeling/shapeSVGFile" value=""/>
-                <property key="labeling/shapeSizeMapUnitMaxScale" value="0"/>
-                <property key="labeling/shapeSizeMapUnitMinScale" value="0"/>
-                <property key="labeling/shapeSizeType" value="0"/>
-                <property key="labeling/shapeSizeUnits" value="1"/>
-                <property key="labeling/shapeSizeX" value="0"/>
-                <property key="labeling/shapeSizeY" value="0"/>
-                <property key="labeling/shapeTransparency" value="0"/>
-                <property key="labeling/shapeType" value="0"/>
-                <property key="labeling/textColorA" value="255"/>
-                <property key="labeling/textColorB" value="0"/>
-                <property key="labeling/textColorG" value="0"/>
-                <property key="labeling/textColorR" value="0"/>
-                <property key="labeling/textTransp" value="0"/>
-                <property key="labeling/upsidedownLabels" value="0"/>
-                <property key="labeling/wrapChar" value=""/>
-                <property key="labeling/xOffset" value="0"/>
-                <property key="labeling/yOffset" value="0"/>
-            </customproperties>
-            <blendMode>0</blendMode>
-            <featureBlendMode>0</featureBlendMode>
-            <layerTransparency>0</layerTransparency>
-            <displayfield>id</displayfield>
-            <label>0</label>
-            <labelattributes>
-                <label fieldname="" text="Label"/>
-                <family fieldname="" name="Ubuntu"/>
-                <size fieldname="" units="pt" value="12"/>
-                <bold fieldname="" on="0"/>
-                <italic fieldname="" on="0"/>
-                <underline fieldname="" on="0"/>
-                <strikeout fieldname="" on="0"/>
-                <color fieldname="" red="0" blue="0" green="0"/>
-                <x fieldname=""/>
-                <y fieldname=""/>
-                <offset x="0" y="0" units="pt" yfieldname="" xfieldname=""/>
-                <angle fieldname="" value="0" auto="0"/>
-                <alignment fieldname="" value="center"/>
-                <buffercolor fieldname="" red="255" blue="255" green="255"/>
-                <buffersize fieldname="" units="pt" value="1"/>
-                <bufferenabled fieldname="" on=""/>
-                <multilineenabled fieldname="" on=""/>
-                <selectedonly on=""/>
-            </labelattributes>
-            <editform>.</editform>
-            <editforminit></editforminit>
-            <featformsuppress>0</featformsuppress>
-            <annotationform>.</annotationform>
-            <editorlayout>generatedlayout</editorlayout>
-            <excludeAttributesWMS/>
-            <excludeAttributesWFS/>
-            <attributeactions>
-                <actionsetting action="qgis.utils.plugins['postgres91plusauditor'].audit('od_installationpart20140429113327995',[% $id %])" icon="" capture="0" type="1" name="History audit"/>
-            </attributeactions>
-            <edittypes>
-                <edittype widgetv2type="TextEdit" name="id">
-                    <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
-                </edittype>
-                <edittype widgetv2type="ValueRelation" name="id_type">
-                    <widgetv2config OrderByValue="0" AllowNull="0" FilterExpression="" fieldEditable="1" Key="id" Layer="vl_installationpart_type20140429114640509" Value="value_fr" labelOnTop="0" AllowMulti="0"/>
-                </edittype>
-                <edittype widgetv2type="TextEdit" name="remark">
-                    <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
-                </edittype>
-                <edittype widgetv2type="TextEdit" name="id_node">
-                    <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
-                </edittype>
-                <edittype widgetv2type="TextEdit" name="id_district">
-                    <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
-                </edittype>
-                <edittype widgetv2type="TextEdit" name="id_pressurezone">
-                    <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
-                </edittype>
-                <edittype widgetv2type="TextEdit" name="id_printmap">
-                    <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
-                </edittype>
-                <edittype widgetv2type="TextEdit" name="id_pipe">
-                    <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
-                </edittype>
-                <edittype widgetv2type="TextEdit" name="_district">
-                    <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
-                </edittype>
-                <edittype widgetv2type="TextEdit" name="_pressurezone">
-                    <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
-                </edittype>
-                <edittype widgetv2type="TextEdit" name="_printmaps">
-                    <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
-                </edittype>
-                <edittype widgetv2type="TextEdit" name="noeuds__type">
-                    <widgetv2config IsMultiline="0" fieldEditable="0" UseHtml="0" labelOnTop="0"/>
-                </edittype>
-                <edittype widgetv2type="TextEdit" name="noeuds__orientation">
-                    <widgetv2config IsMultiline="0" fieldEditable="0" UseHtml="0" labelOnTop="0"/>
-                </edittype>
-                <edittype widgetv2type="TextEdit" name="noeuds__schema_visible">
-                    <widgetv2config IsMultiline="0" fieldEditable="0" UseHtml="0" labelOnTop="0"/>
-                </edittype>
-                <edittype widgetv2type="TextEdit" name="noeuds__status_active">
-                    <widgetv2config IsMultiline="0" fieldEditable="0" UseHtml="0" labelOnTop="0"/>
-                </edittype>
-                <edittype widgetv2type="TextEdit" name="noeuds__under_object">
-                    <widgetv2config IsMultiline="0" fieldEditable="0" UseHtml="0" labelOnTop="0"/>
-                </edittype>
-            </edittypes>
-        </maplayer>
         <maplayer minimumScale="4" maximumScale="1e+08" simplifyDrawingHints="0" minLabelScale="1" maxLabelScale="1e+08" simplifyDrawingTol="1" geometry="Point" simplifyMaxScale="1" type="vector" hasScaleBasedVisibilityFlag="1" simplifyLocal="1" scaleBasedLabelVisibilityFlag="0">
             <id>od_meter20131120073630165</id>
             <datasource>dbname='sige' host=172.24.171.203 port=5432 user='sige' sslmode=disable key='id' estimatedmetadata=true srid=21781 type=POINT table="qwat"."od_meter" (geometry) sql=</datasource>
@@ -13943,6 +13845,540 @@
                 </edittype>
             </edittypes>
         </maplayer>
+        <maplayer minimumScale="-4.65661e-10" maximumScale="2000" simplifyDrawingHints="0" minLabelScale="0" maxLabelScale="1e+08" simplifyDrawingTol="3.6" geometry="Point" simplifyMaxScale="1" type="vector" hasScaleBasedVisibilityFlag="1" simplifyLocal="0" scaleBasedLabelVisibilityFlag="0">
+            <id>od_part20140429113327995</id>
+            <datasource>dbname='sige' host=172.24.171.203 port=5432 user='sige' sslmode=disable key='id' estimatedmetadata=true srid=21781 type=POINT table="qwat"."od_part" (geometry) sql=</datasource>
+            <title></title>
+            <abstract></abstract>
+            <keywordList>
+                <value></value>
+            </keywordList>
+            <layername>Pièces d'installations</layername>
+            <srs>
+                <spatialrefsys>
+                    <proj4>+proj=somerc +lat_0=46.95240555555556 +lon_0=7.439583333333333 +k_0=1 +x_0=600000 +y_0=200000 +ellps=bessel +towgs84=674.4,15.1,405.3,0,0,0,0 +units=m +no_defs</proj4>
+                    <srsid>1919</srsid>
+                    <srid>21781</srid>
+                    <authid>EPSG:21781</authid>
+                    <description>CH1903 / LV03</description>
+                    <projectionacronym>somerc</projectionacronym>
+                    <ellipsoidacronym>bessel</ellipsoidacronym>
+                    <geographicflag>false</geographicflag>
+                </spatialrefsys>
+            </srs>
+            <provider encoding="UTF-8">postgres</provider>
+            <previewExpression>COALESCE( "id", '&lt;NULL>' )</previewExpression>
+            <vectorjoins>
+                <join joinFieldName="id" targetFieldName="id_node" memoryCache="1" joinLayerId="node20130304110005126">
+                    <joinFieldsSubset>
+                        <field name="_type"/>
+                        <field name="_orientation"/>
+                        <field name="_schema_visible"/>
+                        <field name="_status_active"/>
+                        <field name="_under_object"/>
+                    </joinFieldsSubset>
+                </join>
+            </vectorjoins>
+            <expressionfields/>
+            <edittypes>
+                <edittype widgetv2type="TextEdit" name="id">
+                    <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
+                </edittype>
+                <edittype widgetv2type="ValueRelation" name="id_type">
+                    <widgetv2config OrderByValue="0" AllowNull="0" FilterExpression="" fieldEditable="1" Key="id" Layer="vl_part_type20140429114640509" Value="value_fr" labelOnTop="0" AllowMulti="0"/>
+                </edittype>
+                <edittype widgetv2type="TextEdit" name="identification">
+                    <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
+                </edittype>
+                <edittype widgetv2type="TextEdit" name="id_distributor">
+                    <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
+                </edittype>
+                <edittype widgetv2type="TextEdit" name="id_status">
+                    <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
+                </edittype>
+                <edittype widgetv2type="TextEdit" name="year">
+                    <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
+                </edittype>
+                <edittype widgetv2type="TextEdit" name="altitude_real">
+                    <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
+                </edittype>
+                <edittype widgetv2type="TextEdit" name="remark">
+                    <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
+                </edittype>
+                <edittype widgetv2type="TextEdit" name="label_visible_1">
+                    <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
+                </edittype>
+                <edittype widgetv2type="TextEdit" name="label_x_1">
+                    <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
+                </edittype>
+                <edittype widgetv2type="TextEdit" name="label_y_1">
+                    <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
+                </edittype>
+                <edittype widgetv2type="TextEdit" name="label_r_1">
+                    <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
+                </edittype>
+                <edittype widgetv2type="TextEdit" name="label_visible_2">
+                    <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
+                </edittype>
+                <edittype widgetv2type="TextEdit" name="label_x_2">
+                    <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
+                </edittype>
+                <edittype widgetv2type="TextEdit" name="label_y_2">
+                    <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
+                </edittype>
+                <edittype widgetv2type="TextEdit" name="label_r_2">
+                    <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
+                </edittype>
+                <edittype widgetv2type="TextEdit" name="id_node">
+                    <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
+                </edittype>
+                <edittype widgetv2type="TextEdit" name="id_district">
+                    <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
+                </edittype>
+                <edittype widgetv2type="TextEdit" name="id_pressurezone">
+                    <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
+                </edittype>
+                <edittype widgetv2type="TextEdit" name="id_printmap">
+                    <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
+                </edittype>
+                <edittype widgetv2type="TextEdit" name="id_pipe">
+                    <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
+                </edittype>
+                <edittype widgetv2type="TextEdit" name="_district">
+                    <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
+                </edittype>
+                <edittype widgetv2type="TextEdit" name="_pressurezone">
+                    <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
+                </edittype>
+                <edittype widgetv2type="TextEdit" name="_printmaps">
+                    <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
+                </edittype>
+                <edittype widgetv2type="TextEdit" name="geometry_alt1">
+                    <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
+                </edittype>
+                <edittype widgetv2type="TextEdit" name="geometry_alt2">
+                    <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
+                </edittype>
+                <edittype widgetv2type="TextEdit" name="_geometry_alt1_used">
+                    <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
+                </edittype>
+                <edittype widgetv2type="TextEdit" name="_geometry_alt2_used">
+                    <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
+                </edittype>
+                <edittype widgetv2type="TextEdit" name="noeuds__type">
+                    <widgetv2config IsMultiline="0" fieldEditable="0" UseHtml="0" labelOnTop="0"/>
+                </edittype>
+                <edittype widgetv2type="TextEdit" name="noeuds__orientation">
+                    <widgetv2config IsMultiline="0" fieldEditable="0" UseHtml="0" labelOnTop="0"/>
+                </edittype>
+                <edittype widgetv2type="TextEdit" name="noeuds__schema_visible">
+                    <widgetv2config IsMultiline="0" fieldEditable="0" UseHtml="0" labelOnTop="0"/>
+                </edittype>
+                <edittype widgetv2type="TextEdit" name="noeuds__status_active">
+                    <widgetv2config IsMultiline="0" fieldEditable="0" UseHtml="0" labelOnTop="0"/>
+                </edittype>
+                <edittype widgetv2type="TextEdit" name="noeuds__under_object">
+                    <widgetv2config IsMultiline="0" fieldEditable="0" UseHtml="0" labelOnTop="0"/>
+                </edittype>
+            </edittypes>
+            <renderer-v2 attr="id_type" symbollevels="0" type="categorizedSymbol">
+                <categories>
+                    <category render="true" symbol="0" value="9200" label="compteur"/>
+                    <category render="true" symbol="1" value="9201" label="bouchon"/>
+                    <category render="true" symbol="2" value="9202" label="bouche d'arrosage"/>
+                    <category render="true" symbol="3" value="" label=""/>
+                </categories>
+                <symbols>
+                    <symbol alpha="1" type="marker" name="0">
+                        <layer pass="0" class="SvgMarker" locked="0">
+                            <prop k="angle" v="0"/>
+                            <prop k="angle_expression" v="noeuds__orientation"/>
+                            <prop k="color" v="#000000"/>
+                            <prop k="horizontal_anchor_point" v="1"/>
+                            <prop k="name" v="./symbols/nodes/subscriber_meter.svg"/>
+                            <prop k="offset" v="0,0"/>
+                            <prop k="offset_map_unit_scale" v="0,0"/>
+                            <prop k="offset_unit" v="MM"/>
+                            <prop k="outline_color" v="#000000"/>
+                            <prop k="outline_width" v="1"/>
+                            <prop k="outline_width_map_unit_scale" v="0,0"/>
+                            <prop k="outline_width_unit" v="MM"/>
+                            <prop k="scale_method" v="area"/>
+                            <prop k="size" v="4"/>
+                            <prop k="size_map_unit_scale" v="0,0"/>
+                            <prop k="size_unit" v="MM"/>
+                            <prop k="vertical_anchor_point" v="1"/>
+                        </layer>
+                    </symbol>
+                    <symbol alpha="1" type="marker" name="1">
+                        <layer pass="0" class="SvgMarker" locked="0">
+                            <prop k="angle" v="0"/>
+                            <prop k="angle_expression" v="noeuds__orientation"/>
+                            <prop k="color" v="#000000"/>
+                            <prop k="horizontal_anchor_point" v="1"/>
+                            <prop k="name" v="./symbols/nodes/cap.svg"/>
+                            <prop k="offset" v="0,0"/>
+                            <prop k="offset_map_unit_scale" v="0,0"/>
+                            <prop k="offset_unit" v="MM"/>
+                            <prop k="outline_color" v="#000000"/>
+                            <prop k="outline_width" v="1"/>
+                            <prop k="outline_width_map_unit_scale" v="0,0"/>
+                            <prop k="outline_width_unit" v="MM"/>
+                            <prop k="scale_method" v="area"/>
+                            <prop k="size" v="4"/>
+                            <prop k="size_map_unit_scale" v="0,0"/>
+                            <prop k="size_unit" v="MM"/>
+                            <prop k="vertical_anchor_point" v="1"/>
+                        </layer>
+                    </symbol>
+                    <symbol alpha="1" type="marker" name="2">
+                        <layer pass="0" class="SvgMarker" locked="0">
+                            <prop k="angle" v="0"/>
+                            <prop k="color" v="#000000"/>
+                            <prop k="horizontal_anchor_point" v="1"/>
+                            <prop k="name" v="./symbols/nodes/watering_output.svg"/>
+                            <prop k="offset" v="0,0"/>
+                            <prop k="offset_map_unit_scale" v="0,0"/>
+                            <prop k="offset_unit" v="MM"/>
+                            <prop k="outline_color" v="#000000"/>
+                            <prop k="outline_width" v="1"/>
+                            <prop k="outline_width_map_unit_scale" v="0,0"/>
+                            <prop k="outline_width_unit" v="MM"/>
+                            <prop k="scale_method" v="area"/>
+                            <prop k="size" v="4"/>
+                            <prop k="size_map_unit_scale" v="0,0"/>
+                            <prop k="size_unit" v="MM"/>
+                            <prop k="vertical_anchor_point" v="1"/>
+                        </layer>
+                    </symbol>
+                    <symbol alpha="1" type="marker" name="3">
+                        <layer pass="0" class="SimpleMarker" locked="0">
+                            <prop k="angle" v="0"/>
+                            <prop k="color" v="128,168,121,255"/>
+                            <prop k="horizontal_anchor_point" v="1"/>
+                            <prop k="name" v="circle"/>
+                            <prop k="offset" v="0,0"/>
+                            <prop k="offset_map_unit_scale" v="0,0"/>
+                            <prop k="offset_unit" v="MM"/>
+                            <prop k="outline_color" v="0,0,0,255"/>
+                            <prop k="outline_style" v="solid"/>
+                            <prop k="outline_width" v="0"/>
+                            <prop k="outline_width_map_unit_scale" v="0,0"/>
+                            <prop k="outline_width_unit" v="MM"/>
+                            <prop k="scale_method" v="area"/>
+                            <prop k="size" v="2"/>
+                            <prop k="size_map_unit_scale" v="0,0"/>
+                            <prop k="size_unit" v="MM"/>
+                            <prop k="vertical_anchor_point" v="1"/>
+                        </layer>
+                    </symbol>
+                </symbols>
+                <source-symbol>
+                    <symbol alpha="1" type="marker" name="0">
+                        <layer pass="0" class="SimpleMarker" locked="0">
+                            <prop k="angle" v="0"/>
+                            <prop k="color" v="235,237,72,255"/>
+                            <prop k="horizontal_anchor_point" v="1"/>
+                            <prop k="name" v="circle"/>
+                            <prop k="offset" v="0,0"/>
+                            <prop k="offset_map_unit_scale" v="0,0"/>
+                            <prop k="offset_unit" v="MM"/>
+                            <prop k="outline_color" v="0,0,0,255"/>
+                            <prop k="outline_style" v="solid"/>
+                            <prop k="outline_width" v="0"/>
+                            <prop k="outline_width_map_unit_scale" v="0,0"/>
+                            <prop k="outline_width_unit" v="MM"/>
+                            <prop k="scale_method" v="area"/>
+                            <prop k="size" v="2"/>
+                            <prop k="size_map_unit_scale" v="0,0"/>
+                            <prop k="size_unit" v="MM"/>
+                            <prop k="vertical_anchor_point" v="1"/>
+                        </layer>
+                    </symbol>
+                </source-symbol>
+                <rotation/>
+                <sizescale scalemethod="area"/>
+            </renderer-v2>
+            <customproperties>
+                <property key="labeling" value="pal"/>
+                <property key="labeling/addDirectionSymbol" value="false"/>
+                <property key="labeling/angleOffset" value="0"/>
+                <property key="labeling/blendMode" value="0"/>
+                <property key="labeling/bufferBlendMode" value="0"/>
+                <property key="labeling/bufferColorA" value="255"/>
+                <property key="labeling/bufferColorB" value="255"/>
+                <property key="labeling/bufferColorG" value="255"/>
+                <property key="labeling/bufferColorR" value="255"/>
+                <property key="labeling/bufferDraw" value="false"/>
+                <property key="labeling/bufferJoinStyle" value="64"/>
+                <property key="labeling/bufferNoFill" value="false"/>
+                <property key="labeling/bufferSize" value="1"/>
+                <property key="labeling/bufferSizeInMapUnits" value="false"/>
+                <property key="labeling/bufferSizeMapUnitMaxScale" value="0"/>
+                <property key="labeling/bufferSizeMapUnitMinScale" value="0"/>
+                <property key="labeling/bufferTransp" value="0"/>
+                <property key="labeling/centroidInside" value="false"/>
+                <property key="labeling/centroidWhole" value="false"/>
+                <property key="labeling/decimals" value="3"/>
+                <property key="labeling/displayAll" value="false"/>
+                <property key="labeling/dist" value="0"/>
+                <property key="labeling/distInMapUnits" value="false"/>
+                <property key="labeling/distMapUnitMaxScale" value="0"/>
+                <property key="labeling/distMapUnitMinScale" value="0"/>
+                <property key="labeling/enabled" value="false"/>
+                <property key="labeling/fieldName" value=""/>
+                <property key="labeling/fontBold" value="true"/>
+                <property key="labeling/fontCapitals" value="0"/>
+                <property key="labeling/fontFamily" value="Ubuntu"/>
+                <property key="labeling/fontItalic" value="true"/>
+                <property key="labeling/fontLetterSpacing" value="0"/>
+                <property key="labeling/fontLimitPixelSize" value="false"/>
+                <property key="labeling/fontMaxPixelSize" value="10000"/>
+                <property key="labeling/fontMinPixelSize" value="3"/>
+                <property key="labeling/fontSize" value="11"/>
+                <property key="labeling/fontSizeInMapUnits" value="false"/>
+                <property key="labeling/fontSizeMapUnitMaxScale" value="0"/>
+                <property key="labeling/fontSizeMapUnitMinScale" value="0"/>
+                <property key="labeling/fontStrikeout" value="false"/>
+                <property key="labeling/fontUnderline" value="false"/>
+                <property key="labeling/fontWeight" value="75"/>
+                <property key="labeling/fontWordSpacing" value="0"/>
+                <property key="labeling/formatNumbers" value="false"/>
+                <property key="labeling/isExpression" value="true"/>
+                <property key="labeling/labelOffsetInMapUnits" value="true"/>
+                <property key="labeling/labelOffsetMapUnitMaxScale" value="0"/>
+                <property key="labeling/labelOffsetMapUnitMinScale" value="0"/>
+                <property key="labeling/labelPerPart" value="false"/>
+                <property key="labeling/leftDirectionSymbol" value="&lt;"/>
+                <property key="labeling/limitNumLabels" value="false"/>
+                <property key="labeling/maxCurvedCharAngleIn" value="20"/>
+                <property key="labeling/maxCurvedCharAngleOut" value="-20"/>
+                <property key="labeling/maxNumLabels" value="2000"/>
+                <property key="labeling/mergeLines" value="false"/>
+                <property key="labeling/minFeatureSize" value="0"/>
+                <property key="labeling/multilineAlign" value="0"/>
+                <property key="labeling/multilineHeight" value="1"/>
+                <property key="labeling/namedStyle" value="Bold Italic"/>
+                <property key="labeling/obstacle" value="true"/>
+                <property key="labeling/placeDirectionSymbol" value="0"/>
+                <property key="labeling/placement" value="0"/>
+                <property key="labeling/placementFlags" value="0"/>
+                <property key="labeling/plussign" value="false"/>
+                <property key="labeling/preserveRotation" value="true"/>
+                <property key="labeling/previewBkgrdColor" value="#ffffff"/>
+                <property key="labeling/priority" value="5"/>
+                <property key="labeling/quadOffset" value="4"/>
+                <property key="labeling/repeatDistance" value="0"/>
+                <property key="labeling/repeatDistanceMapUnitMaxScale" value="0"/>
+                <property key="labeling/repeatDistanceMapUnitMinScale" value="0"/>
+                <property key="labeling/repeatDistanceUnit" value="1"/>
+                <property key="labeling/reverseDirectionSymbol" value="false"/>
+                <property key="labeling/rightDirectionSymbol" value=">"/>
+                <property key="labeling/scaleMax" value="10000000"/>
+                <property key="labeling/scaleMin" value="1"/>
+                <property key="labeling/scaleVisibility" value="false"/>
+                <property key="labeling/shadowBlendMode" value="6"/>
+                <property key="labeling/shadowColorB" value="0"/>
+                <property key="labeling/shadowColorG" value="0"/>
+                <property key="labeling/shadowColorR" value="0"/>
+                <property key="labeling/shadowDraw" value="false"/>
+                <property key="labeling/shadowOffsetAngle" value="135"/>
+                <property key="labeling/shadowOffsetDist" value="1"/>
+                <property key="labeling/shadowOffsetGlobal" value="true"/>
+                <property key="labeling/shadowOffsetMapUnitMaxScale" value="0"/>
+                <property key="labeling/shadowOffsetMapUnitMinScale" value="0"/>
+                <property key="labeling/shadowOffsetUnits" value="1"/>
+                <property key="labeling/shadowRadius" value="1.5"/>
+                <property key="labeling/shadowRadiusAlphaOnly" value="false"/>
+                <property key="labeling/shadowRadiusMapUnitMaxScale" value="0"/>
+                <property key="labeling/shadowRadiusMapUnitMinScale" value="0"/>
+                <property key="labeling/shadowRadiusUnits" value="1"/>
+                <property key="labeling/shadowScale" value="100"/>
+                <property key="labeling/shadowTransparency" value="30"/>
+                <property key="labeling/shadowUnder" value="0"/>
+                <property key="labeling/shapeBlendMode" value="0"/>
+                <property key="labeling/shapeBorderColorA" value="255"/>
+                <property key="labeling/shapeBorderColorB" value="128"/>
+                <property key="labeling/shapeBorderColorG" value="128"/>
+                <property key="labeling/shapeBorderColorR" value="128"/>
+                <property key="labeling/shapeBorderWidth" value="0"/>
+                <property key="labeling/shapeBorderWidthMapUnitMaxScale" value="0"/>
+                <property key="labeling/shapeBorderWidthMapUnitMinScale" value="0"/>
+                <property key="labeling/shapeBorderWidthUnits" value="1"/>
+                <property key="labeling/shapeDraw" value="false"/>
+                <property key="labeling/shapeFillColorA" value="255"/>
+                <property key="labeling/shapeFillColorB" value="255"/>
+                <property key="labeling/shapeFillColorG" value="255"/>
+                <property key="labeling/shapeFillColorR" value="255"/>
+                <property key="labeling/shapeJoinStyle" value="64"/>
+                <property key="labeling/shapeOffsetMapUnitMaxScale" value="0"/>
+                <property key="labeling/shapeOffsetMapUnitMinScale" value="0"/>
+                <property key="labeling/shapeOffsetUnits" value="1"/>
+                <property key="labeling/shapeOffsetX" value="0"/>
+                <property key="labeling/shapeOffsetY" value="0"/>
+                <property key="labeling/shapeRadiiMapUnitMaxScale" value="0"/>
+                <property key="labeling/shapeRadiiMapUnitMinScale" value="0"/>
+                <property key="labeling/shapeRadiiUnits" value="1"/>
+                <property key="labeling/shapeRadiiX" value="0"/>
+                <property key="labeling/shapeRadiiY" value="0"/>
+                <property key="labeling/shapeRotation" value="0"/>
+                <property key="labeling/shapeRotationType" value="0"/>
+                <property key="labeling/shapeSVGFile" value=""/>
+                <property key="labeling/shapeSizeMapUnitMaxScale" value="0"/>
+                <property key="labeling/shapeSizeMapUnitMinScale" value="0"/>
+                <property key="labeling/shapeSizeType" value="0"/>
+                <property key="labeling/shapeSizeUnits" value="1"/>
+                <property key="labeling/shapeSizeX" value="0"/>
+                <property key="labeling/shapeSizeY" value="0"/>
+                <property key="labeling/shapeTransparency" value="0"/>
+                <property key="labeling/shapeType" value="0"/>
+                <property key="labeling/textColorA" value="255"/>
+                <property key="labeling/textColorB" value="0"/>
+                <property key="labeling/textColorG" value="0"/>
+                <property key="labeling/textColorR" value="0"/>
+                <property key="labeling/textTransp" value="0"/>
+                <property key="labeling/upsidedownLabels" value="0"/>
+                <property key="labeling/wrapChar" value=""/>
+                <property key="labeling/xOffset" value="0"/>
+                <property key="labeling/yOffset" value="0"/>
+            </customproperties>
+            <blendMode>0</blendMode>
+            <featureBlendMode>0</featureBlendMode>
+            <layerTransparency>0</layerTransparency>
+            <displayfield>id</displayfield>
+            <label>0</label>
+            <labelattributes>
+                <label fieldname="" text="Label"/>
+                <family fieldname="" name="Ubuntu"/>
+                <size fieldname="" units="pt" value="12"/>
+                <bold fieldname="" on="0"/>
+                <italic fieldname="" on="0"/>
+                <underline fieldname="" on="0"/>
+                <strikeout fieldname="" on="0"/>
+                <color fieldname="" red="0" blue="0" green="0"/>
+                <x fieldname=""/>
+                <y fieldname=""/>
+                <offset x="0" y="0" units="pt" yfieldname="" xfieldname=""/>
+                <angle fieldname="" value="0" auto="0"/>
+                <alignment fieldname="" value="center"/>
+                <buffercolor fieldname="" red="255" blue="255" green="255"/>
+                <buffersize fieldname="" units="pt" value="1"/>
+                <bufferenabled fieldname="" on=""/>
+                <multilineenabled fieldname="" on=""/>
+                <selectedonly on=""/>
+            </labelattributes>
+            <editform>.</editform>
+            <editforminit></editforminit>
+            <featformsuppress>0</featformsuppress>
+            <annotationform>.</annotationform>
+            <editorlayout>generatedlayout</editorlayout>
+            <excludeAttributesWMS/>
+            <excludeAttributesWFS/>
+            <attributeactions>
+                <actionsetting action="qgis.utils.plugins['postgres91plusauditor'].audit('od_part20140429113327995',[% $id %])" icon="" capture="0" type="1" name="History audit"/>
+            </attributeactions>
+            <edittypes>
+                <edittype widgetv2type="TextEdit" name="id">
+                    <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
+                </edittype>
+                <edittype widgetv2type="ValueRelation" name="id_type">
+                    <widgetv2config OrderByValue="0" AllowNull="0" FilterExpression="" fieldEditable="1" Key="id" Layer="vl_part_type20140429114640509" Value="value_fr" labelOnTop="0" AllowMulti="0"/>
+                </edittype>
+                <edittype widgetv2type="TextEdit" name="identification">
+                    <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
+                </edittype>
+                <edittype widgetv2type="TextEdit" name="id_distributor">
+                    <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
+                </edittype>
+                <edittype widgetv2type="TextEdit" name="id_status">
+                    <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
+                </edittype>
+                <edittype widgetv2type="TextEdit" name="year">
+                    <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
+                </edittype>
+                <edittype widgetv2type="TextEdit" name="altitude_real">
+                    <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
+                </edittype>
+                <edittype widgetv2type="TextEdit" name="remark">
+                    <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
+                </edittype>
+                <edittype widgetv2type="TextEdit" name="label_visible_1">
+                    <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
+                </edittype>
+                <edittype widgetv2type="TextEdit" name="label_x_1">
+                    <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
+                </edittype>
+                <edittype widgetv2type="TextEdit" name="label_y_1">
+                    <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
+                </edittype>
+                <edittype widgetv2type="TextEdit" name="label_r_1">
+                    <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
+                </edittype>
+                <edittype widgetv2type="TextEdit" name="label_visible_2">
+                    <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
+                </edittype>
+                <edittype widgetv2type="TextEdit" name="label_x_2">
+                    <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
+                </edittype>
+                <edittype widgetv2type="TextEdit" name="label_y_2">
+                    <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
+                </edittype>
+                <edittype widgetv2type="TextEdit" name="label_r_2">
+                    <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
+                </edittype>
+                <edittype widgetv2type="TextEdit" name="id_node">
+                    <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
+                </edittype>
+                <edittype widgetv2type="TextEdit" name="id_district">
+                    <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
+                </edittype>
+                <edittype widgetv2type="TextEdit" name="id_pressurezone">
+                    <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
+                </edittype>
+                <edittype widgetv2type="TextEdit" name="id_printmap">
+                    <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
+                </edittype>
+                <edittype widgetv2type="TextEdit" name="id_pipe">
+                    <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
+                </edittype>
+                <edittype widgetv2type="TextEdit" name="_district">
+                    <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
+                </edittype>
+                <edittype widgetv2type="TextEdit" name="_pressurezone">
+                    <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
+                </edittype>
+                <edittype widgetv2type="TextEdit" name="_printmaps">
+                    <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
+                </edittype>
+                <edittype widgetv2type="TextEdit" name="geometry_alt1">
+                    <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
+                </edittype>
+                <edittype widgetv2type="TextEdit" name="geometry_alt2">
+                    <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
+                </edittype>
+                <edittype widgetv2type="TextEdit" name="_geometry_alt1_used">
+                    <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
+                </edittype>
+                <edittype widgetv2type="TextEdit" name="_geometry_alt2_used">
+                    <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
+                </edittype>
+                <edittype widgetv2type="TextEdit" name="noeuds__type">
+                    <widgetv2config IsMultiline="0" fieldEditable="0" UseHtml="0" labelOnTop="0"/>
+                </edittype>
+                <edittype widgetv2type="TextEdit" name="noeuds__orientation">
+                    <widgetv2config IsMultiline="0" fieldEditable="0" UseHtml="0" labelOnTop="0"/>
+                </edittype>
+                <edittype widgetv2type="TextEdit" name="noeuds__schema_visible">
+                    <widgetv2config IsMultiline="0" fieldEditable="0" UseHtml="0" labelOnTop="0"/>
+                </edittype>
+                <edittype widgetv2type="TextEdit" name="noeuds__status_active">
+                    <widgetv2config IsMultiline="0" fieldEditable="0" UseHtml="0" labelOnTop="0"/>
+                </edittype>
+                <edittype widgetv2type="TextEdit" name="noeuds__under_object">
+                    <widgetv2config IsMultiline="0" fieldEditable="0" UseHtml="0" labelOnTop="0"/>
+                </edittype>
+            </edittypes>
+        </maplayer>
         <maplayer minimumScale="0" maximumScale="3000" simplifyDrawingHints="0" minLabelScale="0" maxLabelScale="1e+08" simplifyDrawingTol="1" geometry="Point" simplifyMaxScale="1" type="vector" hasScaleBasedVisibilityFlag="1" simplifyLocal="1" scaleBasedLabelVisibilityFlag="0">
             <id>od_subscriber_reference20131206105928067</id>
             <datasource>dbname='sige' host=172.24.171.203 port=5432 user='sige' sslmode=disable key='id' estimatedmetadata=true srid=21781 type=POINT table="qwat"."od_subscriber_reference" (geometry) sql=</datasource>
@@ -14214,300 +14650,6 @@
                 </edittype>
             </edittypes>
         </maplayer>
-        <maplayer minimumScale="0" maximumScale="3001" simplifyDrawingHints="1" minLabelScale="0" maxLabelScale="1e+08" simplifyDrawingTol="1" geometry="Point" simplifyMaxScale="1" type="vector" hasScaleBasedVisibilityFlag="1" simplifyLocal="1" scaleBasedLabelVisibilityFlag="0">
-            <id>od_wateringoutput20131127080906318</id>
-            <datasource>dbname='sige' host=172.24.171.203 port=5432 user='sige' sslmode=disable key='id' estimatedmetadata=true srid=21781 type=POINT table="qwat"."od_wateringoutput" (geometry) sql=</datasource>
-            <title></title>
-            <abstract></abstract>
-            <keywordList>
-                <value></value>
-            </keywordList>
-            <layername>bouches d'arrosage</layername>
-            <srs>
-                <spatialrefsys>
-                    <proj4>+proj=somerc +lat_0=46.95240555555556 +lon_0=7.439583333333333 +k_0=1 +x_0=600000 +y_0=200000 +ellps=bessel +towgs84=674.4,15.1,405.3,0,0,0,0 +units=m +no_defs</proj4>
-                    <srsid>1919</srsid>
-                    <srid>21781</srid>
-                    <authid>EPSG:21781</authid>
-                    <description>CH1903 / LV03</description>
-                    <projectionacronym>somerc</projectionacronym>
-                    <ellipsoidacronym>bessel</ellipsoidacronym>
-                    <geographicflag>false</geographicflag>
-                </spatialrefsys>
-            </srs>
-            <provider encoding="System">postgres</provider>
-            <previewExpression>COALESCE( "id", '&lt;NULL>' )</previewExpression>
-            <vectorjoins/>
-            <expressionfields/>
-            <edittypes>
-                <edittype widgetv2type="TextEdit" name="id">
-                    <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
-                </edittype>
-                <edittype widgetv2type="TextEdit" name="identification">
-                    <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
-                </edittype>
-                <edittype widgetv2type="ValueRelation" name="id_distributor">
-                    <widgetv2config OrderByValue="0" AllowNull="0" FilterExpression="" fieldEditable="1" Key="id" Layer="distributor20130304114719702" Value="name" labelOnTop="0" AllowMulti="0"/>
-                </edittype>
-                <edittype widgetv2type="ValueRelation" name="id_status">
-                    <widgetv2config OrderByValue="0" AllowNull="0" FilterExpression="" fieldEditable="1" Key="id" Layer="vl_status20130304110011436" Value="value_fr" labelOnTop="0" AllowMulti="0"/>
-                </edittype>
-                <edittype widgetv2type="TextEdit" name="year">
-                    <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
-                </edittype>
-                <edittype widgetv2type="TextEdit" name="altitude_real">
-                    <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
-                </edittype>
-                <edittype widgetv2type="TextEdit" name="remark">
-                    <widgetv2config IsMultiline="1" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
-                </edittype>
-                <edittype widgetv2type="TextEdit" name="id_node">
-                    <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
-                </edittype>
-                <edittype widgetv2type="ValueRelation" name="id_district">
-                    <widgetv2config OrderByValue="0" AllowNull="0" FilterExpression="" fieldEditable="1" Key="id" Layer="district20130304110004764" Value="name" labelOnTop="0" AllowMulti="0"/>
-                </edittype>
-                <edittype widgetv2type="ValueRelation" name="id_pressurezone">
-                    <widgetv2config OrderByValue="0" AllowNull="0" FilterExpression="" fieldEditable="1" Key="id" Layer="pressurezone20130417133612105" Value="name" labelOnTop="0" AllowMulti="0"/>
-                </edittype>
-                <edittype widgetv2type="ValueRelation" name="id_printmap">
-                    <widgetv2config OrderByValue="0" AllowNull="0" FilterExpression="" fieldEditable="1" Key="id" Layer="printmap20130304110011400" Value="name" labelOnTop="0" AllowMulti="1"/>
-                </edittype>
-                <edittype widgetv2type="TextEdit" name="_district">
-                    <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
-                </edittype>
-                <edittype widgetv2type="TextEdit" name="_pressurezone">
-                    <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
-                </edittype>
-                <edittype widgetv2type="TextEdit" name="_printmaps">
-                    <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
-                </edittype>
-            </edittypes>
-            <renderer-v2 symbollevels="0" type="singleSymbol">
-                <symbols>
-                    <symbol alpha="1" type="marker" name="0">
-                        <layer pass="0" class="SimpleMarker" locked="0">
-                            <prop k="angle" v="0"/>
-                            <prop k="color" v="138,159,207,255"/>
-                            <prop k="horizontal_anchor_point" v="1"/>
-                            <prop k="name" v="circle"/>
-                            <prop k="offset" v="0,0"/>
-                            <prop k="offset_map_unit_scale" v="0,0"/>
-                            <prop k="offset_unit" v="MM"/>
-                            <prop k="outline_color" v="0,0,0,255"/>
-                            <prop k="outline_style" v="solid"/>
-                            <prop k="outline_width" v="0"/>
-                            <prop k="outline_width_map_unit_scale" v="0,0"/>
-                            <prop k="outline_width_unit" v="MM"/>
-                            <prop k="scale_method" v="area"/>
-                            <prop k="size" v="2"/>
-                            <prop k="size_map_unit_scale" v="0,0"/>
-                            <prop k="size_unit" v="MM"/>
-                            <prop k="vertical_anchor_point" v="1"/>
-                        </layer>
-                    </symbol>
-                </symbols>
-                <rotation/>
-                <sizescale scalemethod="area"/>
-            </renderer-v2>
-            <customproperties>
-                <property key="labeling" value="pal"/>
-                <property key="labeling/addDirectionSymbol" value="false"/>
-                <property key="labeling/angleOffset" value="0"/>
-                <property key="labeling/blendMode" value="0"/>
-                <property key="labeling/bufferBlendMode" value="0"/>
-                <property key="labeling/bufferColorA" value="255"/>
-                <property key="labeling/bufferColorB" value="255"/>
-                <property key="labeling/bufferColorG" value="255"/>
-                <property key="labeling/bufferColorR" value="255"/>
-                <property key="labeling/bufferDraw" value="false"/>
-                <property key="labeling/bufferJoinStyle" value="64"/>
-                <property key="labeling/bufferNoFill" value="false"/>
-                <property key="labeling/bufferSize" value="1"/>
-                <property key="labeling/bufferSizeInMapUnits" value="false"/>
-                <property key="labeling/bufferTransp" value="0"/>
-                <property key="labeling/centroidWhole" value="false"/>
-                <property key="labeling/decimals" value="3"/>
-                <property key="labeling/displayAll" value="false"/>
-                <property key="labeling/dist" value="0"/>
-                <property key="labeling/distInMapUnits" value="false"/>
-                <property key="labeling/enabled" value="false"/>
-                <property key="labeling/fieldName" value=""/>
-                <property key="labeling/fontBold" value="true"/>
-                <property key="labeling/fontCapitals" value="0"/>
-                <property key="labeling/fontFamily" value="Ubuntu"/>
-                <property key="labeling/fontItalic" value="true"/>
-                <property key="labeling/fontLetterSpacing" value="0"/>
-                <property key="labeling/fontLimitPixelSize" value="false"/>
-                <property key="labeling/fontMaxPixelSize" value="10000"/>
-                <property key="labeling/fontMinPixelSize" value="3"/>
-                <property key="labeling/fontSize" value="11"/>
-                <property key="labeling/fontSizeInMapUnits" value="false"/>
-                <property key="labeling/fontStrikeout" value="false"/>
-                <property key="labeling/fontUnderline" value="false"/>
-                <property key="labeling/fontWeight" value="75"/>
-                <property key="labeling/fontWordSpacing" value="0"/>
-                <property key="labeling/formatNumbers" value="false"/>
-                <property key="labeling/isExpression" value="false"/>
-                <property key="labeling/labelOffsetInMapUnits" value="true"/>
-                <property key="labeling/labelPerPart" value="false"/>
-                <property key="labeling/leftDirectionSymbol" value="&lt;"/>
-                <property key="labeling/limitNumLabels" value="false"/>
-                <property key="labeling/maxCurvedCharAngleIn" value="20"/>
-                <property key="labeling/maxCurvedCharAngleOut" value="-20"/>
-                <property key="labeling/maxNumLabels" value="2000"/>
-                <property key="labeling/mergeLines" value="false"/>
-                <property key="labeling/minFeatureSize" value="0"/>
-                <property key="labeling/multilineAlign" value="0"/>
-                <property key="labeling/multilineHeight" value="1"/>
-                <property key="labeling/namedStyle" value="Bold Italic"/>
-                <property key="labeling/obstacle" value="true"/>
-                <property key="labeling/placeDirectionSymbol" value="0"/>
-                <property key="labeling/placement" value="0"/>
-                <property key="labeling/placementFlags" value="0"/>
-                <property key="labeling/plussign" value="false"/>
-                <property key="labeling/preserveRotation" value="true"/>
-                <property key="labeling/previewBkgrdColor" value="#ffffff"/>
-                <property key="labeling/priority" value="5"/>
-                <property key="labeling/quadOffset" value="4"/>
-                <property key="labeling/reverseDirectionSymbol" value="false"/>
-                <property key="labeling/rightDirectionSymbol" value=">"/>
-                <property key="labeling/scaleMax" value="10000000"/>
-                <property key="labeling/scaleMin" value="1"/>
-                <property key="labeling/scaleVisibility" value="false"/>
-                <property key="labeling/shadowBlendMode" value="6"/>
-                <property key="labeling/shadowColorB" value="0"/>
-                <property key="labeling/shadowColorG" value="0"/>
-                <property key="labeling/shadowColorR" value="0"/>
-                <property key="labeling/shadowDraw" value="false"/>
-                <property key="labeling/shadowOffsetAngle" value="135"/>
-                <property key="labeling/shadowOffsetDist" value="1"/>
-                <property key="labeling/shadowOffsetGlobal" value="true"/>
-                <property key="labeling/shadowOffsetUnits" value="1"/>
-                <property key="labeling/shadowRadius" value="1.5"/>
-                <property key="labeling/shadowRadiusAlphaOnly" value="false"/>
-                <property key="labeling/shadowRadiusUnits" value="1"/>
-                <property key="labeling/shadowScale" value="100"/>
-                <property key="labeling/shadowTransparency" value="30"/>
-                <property key="labeling/shadowUnder" value="0"/>
-                <property key="labeling/shapeBlendMode" value="0"/>
-                <property key="labeling/shapeBorderColorA" value="255"/>
-                <property key="labeling/shapeBorderColorB" value="128"/>
-                <property key="labeling/shapeBorderColorG" value="128"/>
-                <property key="labeling/shapeBorderColorR" value="128"/>
-                <property key="labeling/shapeBorderWidth" value="0"/>
-                <property key="labeling/shapeBorderWidthUnits" value="1"/>
-                <property key="labeling/shapeDraw" value="false"/>
-                <property key="labeling/shapeFillColorA" value="255"/>
-                <property key="labeling/shapeFillColorB" value="255"/>
-                <property key="labeling/shapeFillColorG" value="255"/>
-                <property key="labeling/shapeFillColorR" value="255"/>
-                <property key="labeling/shapeJoinStyle" value="64"/>
-                <property key="labeling/shapeOffsetUnits" value="1"/>
-                <property key="labeling/shapeOffsetX" value="0"/>
-                <property key="labeling/shapeOffsetY" value="0"/>
-                <property key="labeling/shapeRadiiUnits" value="1"/>
-                <property key="labeling/shapeRadiiX" value="0"/>
-                <property key="labeling/shapeRadiiY" value="0"/>
-                <property key="labeling/shapeRotation" value="0"/>
-                <property key="labeling/shapeRotationType" value="0"/>
-                <property key="labeling/shapeSVGFile" value=""/>
-                <property key="labeling/shapeSizeType" value="0"/>
-                <property key="labeling/shapeSizeUnits" value="1"/>
-                <property key="labeling/shapeSizeX" value="0"/>
-                <property key="labeling/shapeSizeY" value="0"/>
-                <property key="labeling/shapeTransparency" value="0"/>
-                <property key="labeling/shapeType" value="0"/>
-                <property key="labeling/textColorA" value="255"/>
-                <property key="labeling/textColorB" value="0"/>
-                <property key="labeling/textColorG" value="0"/>
-                <property key="labeling/textColorR" value="0"/>
-                <property key="labeling/textTransp" value="0"/>
-                <property key="labeling/upsidedownLabels" value="0"/>
-                <property key="labeling/wrapChar" value=""/>
-                <property key="labeling/xOffset" value="0"/>
-                <property key="labeling/yOffset" value="0"/>
-            </customproperties>
-            <blendMode>0</blendMode>
-            <featureBlendMode>0</featureBlendMode>
-            <layerTransparency>0</layerTransparency>
-            <displayfield>id</displayfield>
-            <label>0</label>
-            <labelattributes>
-                <label fieldname="" text="Label"/>
-                <family fieldname="" name="Ubuntu"/>
-                <size fieldname="" units="pt" value="12"/>
-                <bold fieldname="" on="0"/>
-                <italic fieldname="" on="0"/>
-                <underline fieldname="" on="0"/>
-                <strikeout fieldname="" on="0"/>
-                <color fieldname="" red="0" blue="0" green="0"/>
-                <x fieldname=""/>
-                <y fieldname=""/>
-                <offset x="0" y="0" units="pt" yfieldname="" xfieldname=""/>
-                <angle fieldname="" value="0" auto="0"/>
-                <alignment fieldname="" value="center"/>
-                <buffercolor fieldname="" red="255" blue="255" green="255"/>
-                <buffersize fieldname="" units="pt" value="1"/>
-                <bufferenabled fieldname="" on=""/>
-                <multilineenabled fieldname="" on=""/>
-                <selectedonly on=""/>
-            </labelattributes>
-            <editform>.</editform>
-            <editforminit></editforminit>
-            <featformsuppress>0</featformsuppress>
-            <annotationform>.</annotationform>
-            <editorlayout>generatedlayout</editorlayout>
-            <excludeAttributesWMS/>
-            <excludeAttributesWFS/>
-            <attributeactions>
-                <actionsetting action="qgis.utils.plugins['postgres91plusauditor'].audit('od_wateringoutput20131127080906318',[% $id %])" icon="" capture="0" type="1" name="History audit"/>
-            </attributeactions>
-            <edittypes>
-                <edittype widgetv2type="TextEdit" name="id">
-                    <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
-                </edittype>
-                <edittype widgetv2type="TextEdit" name="identification">
-                    <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
-                </edittype>
-                <edittype widgetv2type="ValueRelation" name="id_distributor">
-                    <widgetv2config OrderByValue="0" AllowNull="0" FilterExpression="" fieldEditable="1" Key="id" Layer="distributor20130304114719702" Value="name" labelOnTop="0" AllowMulti="0"/>
-                </edittype>
-                <edittype widgetv2type="ValueRelation" name="id_status">
-                    <widgetv2config OrderByValue="0" AllowNull="0" FilterExpression="" fieldEditable="1" Key="id" Layer="vl_status20130304110011436" Value="value_fr" labelOnTop="0" AllowMulti="0"/>
-                </edittype>
-                <edittype widgetv2type="TextEdit" name="year">
-                    <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
-                </edittype>
-                <edittype widgetv2type="TextEdit" name="altitude_real">
-                    <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
-                </edittype>
-                <edittype widgetv2type="TextEdit" name="remark">
-                    <widgetv2config IsMultiline="1" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
-                </edittype>
-                <edittype widgetv2type="TextEdit" name="id_node">
-                    <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
-                </edittype>
-                <edittype widgetv2type="ValueRelation" name="id_district">
-                    <widgetv2config OrderByValue="0" AllowNull="0" FilterExpression="" fieldEditable="1" Key="id" Layer="district20130304110004764" Value="name" labelOnTop="0" AllowMulti="0"/>
-                </edittype>
-                <edittype widgetv2type="ValueRelation" name="id_pressurezone">
-                    <widgetv2config OrderByValue="0" AllowNull="0" FilterExpression="" fieldEditable="1" Key="id" Layer="pressurezone20130417133612105" Value="name" labelOnTop="0" AllowMulti="0"/>
-                </edittype>
-                <edittype widgetv2type="ValueRelation" name="id_printmap">
-                    <widgetv2config OrderByValue="0" AllowNull="0" FilterExpression="" fieldEditable="1" Key="id" Layer="printmap20130304110011400" Value="name" labelOnTop="0" AllowMulti="1"/>
-                </edittype>
-                <edittype widgetv2type="TextEdit" name="_district">
-                    <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
-                </edittype>
-                <edittype widgetv2type="TextEdit" name="_pressurezone">
-                    <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
-                </edittype>
-                <edittype widgetv2type="TextEdit" name="_printmaps">
-                    <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
-                </edittype>
-            </edittypes>
-        </maplayer>
         <maplayer minimumScale="0" maximumScale="1e+08" simplifyDrawingHints="0" minLabelScale="1" maxLabelScale="1e+08" simplifyDrawingTol="1" geometry="Point" simplifyMaxScale="1" type="vector" hasScaleBasedVisibilityFlag="0" simplifyLocal="1" scaleBasedLabelVisibilityFlag="0">
             <id>ouvrage_général_copy20141218102656671</id>
             <datasource>dbname='sige' host=172.24.171.203 port=5432 user='sige' password='db4wat$' sslmode=allow key='id' srid=21781 type=POINT table="qwat"."od_installation_building" (geometry_alt2) sql=</datasource>
@@ -14595,6 +14737,30 @@
                     <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
                 </edittype>
                 <edittype widgetv2type="TextEdit" name="geometry_polygon">
+                    <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
+                </edittype>
+                <edittype widgetv2type="TextEdit" name="label_visible_1">
+                    <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
+                </edittype>
+                <edittype widgetv2type="TextEdit" name="label_x_1">
+                    <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
+                </edittype>
+                <edittype widgetv2type="TextEdit" name="label_y_1">
+                    <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
+                </edittype>
+                <edittype widgetv2type="TextEdit" name="label_r_1">
+                    <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
+                </edittype>
+                <edittype widgetv2type="TextEdit" name="label_visible_2">
+                    <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
+                </edittype>
+                <edittype widgetv2type="TextEdit" name="label_x_2">
+                    <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
+                </edittype>
+                <edittype widgetv2type="TextEdit" name="label_y_2">
+                    <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
+                </edittype>
+                <edittype widgetv2type="TextEdit" name="label_r_2">
                     <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
                 </edittype>
             </edittypes>
@@ -15088,6 +15254,30 @@
                     <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
                 </edittype>
                 <edittype widgetv2type="TextEdit" name="geometry_polygon">
+                    <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
+                </edittype>
+                <edittype widgetv2type="TextEdit" name="label_visible_1">
+                    <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
+                </edittype>
+                <edittype widgetv2type="TextEdit" name="label_x_1">
+                    <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
+                </edittype>
+                <edittype widgetv2type="TextEdit" name="label_y_1">
+                    <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
+                </edittype>
+                <edittype widgetv2type="TextEdit" name="label_r_1">
+                    <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
+                </edittype>
+                <edittype widgetv2type="TextEdit" name="label_visible_2">
+                    <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
+                </edittype>
+                <edittype widgetv2type="TextEdit" name="label_x_2">
+                    <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
+                </edittype>
+                <edittype widgetv2type="TextEdit" name="label_y_2">
+                    <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
+                </edittype>
+                <edittype widgetv2type="TextEdit" name="label_r_2">
                     <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
                 </edittype>
             </edittypes>
@@ -18342,101 +18532,6 @@
             </edittypes>
         </maplayer>
         <maplayer minimumScale="-4.65661e-10" maximumScale="1e+08" geometry="No geometry" type="vector" hasScaleBasedVisibilityFlag="0">
-            <id>vl_installationpart_type20140429114640509</id>
-            <datasource>dbname='sige' host=172.24.171.203 port=5432 user='sige' sslmode=disable key='id' estimatedmetadata=true table="qwat"."vl_installationpart_type" sql=</datasource>
-            <title></title>
-            <abstract></abstract>
-            <keywordList>
-                <value></value>
-            </keywordList>
-            <layername>Pièces d'installation - type</layername>
-            <srs>
-                <spatialrefsys>
-                    <proj4>+proj=longlat +datum=WGS84 +no_defs</proj4>
-                    <srsid>3452</srsid>
-                    <srid>4326</srid>
-                    <authid>EPSG:4326</authid>
-                    <description>WGS 84</description>
-                    <projectionacronym>longlat</projectionacronym>
-                    <ellipsoidacronym>WGS84</ellipsoidacronym>
-                    <geographicflag>true</geographicflag>
-                </spatialrefsys>
-            </srs>
-            <customproperties/>
-            <provider encoding="UTF-8">postgres</provider>
-            <previewExpression></previewExpression>
-            <vectorjoins/>
-            <expressionfields/>
-            <edittypes>
-                <edittype widgetv2type="TextEdit" name="id">
-                    <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
-                </edittype>
-                <edittype widgetv2type="TextEdit" name="vl_active">
-                    <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
-                </edittype>
-                <edittype widgetv2type="TextEdit" name="value_en">
-                    <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
-                </edittype>
-                <edittype widgetv2type="TextEdit" name="value_fr">
-                    <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
-                </edittype>
-                <edittype widgetv2type="TextEdit" name="value_ro">
-                    <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
-                </edittype>
-                <edittype widgetv2type="TextEdit" name="active">
-                    <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
-                </edittype>
-                <edittype widgetv2type="TextEdit" name="helper_en">
-                    <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
-                </edittype>
-                <edittype widgetv2type="TextEdit" name="helper_fr">
-                    <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
-                </edittype>
-                <edittype widgetv2type="TextEdit" name="helper_ro">
-                    <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
-                </edittype>
-            </edittypes>
-            <editform>.</editform>
-            <editforminit></editforminit>
-            <featformsuppress>0</featformsuppress>
-            <annotationform>.</annotationform>
-            <editorlayout>generatedlayout</editorlayout>
-            <excludeAttributesWMS/>
-            <excludeAttributesWFS/>
-            <attributeactions>
-                <actionsetting action="qgis.utils.plugins['postgres91plusauditor'].audit('vl_installationpart_type20140429114640509',[% $id %])" icon="" capture="0" type="1" name="History audit"/>
-            </attributeactions>
-            <edittypes>
-                <edittype widgetv2type="TextEdit" name="id">
-                    <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
-                </edittype>
-                <edittype widgetv2type="TextEdit" name="vl_active">
-                    <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
-                </edittype>
-                <edittype widgetv2type="TextEdit" name="value_en">
-                    <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
-                </edittype>
-                <edittype widgetv2type="TextEdit" name="value_fr">
-                    <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
-                </edittype>
-                <edittype widgetv2type="TextEdit" name="value_ro">
-                    <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
-                </edittype>
-                <edittype widgetv2type="TextEdit" name="active">
-                    <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
-                </edittype>
-                <edittype widgetv2type="TextEdit" name="helper_en">
-                    <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
-                </edittype>
-                <edittype widgetv2type="TextEdit" name="helper_fr">
-                    <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
-                </edittype>
-                <edittype widgetv2type="TextEdit" name="helper_ro">
-                    <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
-                </edittype>
-            </edittypes>
-        </maplayer>
-        <maplayer minimumScale="-4.65661e-10" maximumScale="1e+08" geometry="No geometry" type="vector" hasScaleBasedVisibilityFlag="0">
             <id>vl_leak_cause20130822081237639</id>
             <datasource>dbname='sige' host=172.24.171.203 port=5432 user='sige' sslmode=disable key='id' table="qwat"."vl_leak_cause" sql=</datasource>
             <title></title>
@@ -18694,6 +18789,101 @@
                     <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
                 </edittype>
                 <edittype widgetv2type="TextEdit" name="value_fr">
+                    <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
+                </edittype>
+            </edittypes>
+        </maplayer>
+        <maplayer minimumScale="-4.65661e-10" maximumScale="1e+08" geometry="No geometry" type="vector" hasScaleBasedVisibilityFlag="0">
+            <id>vl_part_type20140429114640509</id>
+            <datasource>dbname='sige' host=172.24.171.203 port=5432 user='sige' sslmode=disable key='id' estimatedmetadata=true table="qwat"."vl_part_type" sql=</datasource>
+            <title></title>
+            <abstract></abstract>
+            <keywordList>
+                <value></value>
+            </keywordList>
+            <layername>Pièces d'installation - type</layername>
+            <srs>
+                <spatialrefsys>
+                    <proj4>+proj=longlat +datum=WGS84 +no_defs</proj4>
+                    <srsid>3452</srsid>
+                    <srid>4326</srid>
+                    <authid>EPSG:4326</authid>
+                    <description>WGS 84</description>
+                    <projectionacronym>longlat</projectionacronym>
+                    <ellipsoidacronym>WGS84</ellipsoidacronym>
+                    <geographicflag>true</geographicflag>
+                </spatialrefsys>
+            </srs>
+            <customproperties/>
+            <provider encoding="UTF-8">postgres</provider>
+            <previewExpression></previewExpression>
+            <vectorjoins/>
+            <expressionfields/>
+            <edittypes>
+                <edittype widgetv2type="TextEdit" name="id">
+                    <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
+                </edittype>
+                <edittype widgetv2type="TextEdit" name="vl_active">
+                    <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
+                </edittype>
+                <edittype widgetv2type="TextEdit" name="value_en">
+                    <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
+                </edittype>
+                <edittype widgetv2type="TextEdit" name="value_fr">
+                    <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
+                </edittype>
+                <edittype widgetv2type="TextEdit" name="value_ro">
+                    <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
+                </edittype>
+                <edittype widgetv2type="TextEdit" name="active">
+                    <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
+                </edittype>
+                <edittype widgetv2type="TextEdit" name="helper_en">
+                    <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
+                </edittype>
+                <edittype widgetv2type="TextEdit" name="helper_fr">
+                    <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
+                </edittype>
+                <edittype widgetv2type="TextEdit" name="helper_ro">
+                    <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
+                </edittype>
+            </edittypes>
+            <editform>.</editform>
+            <editforminit></editforminit>
+            <featformsuppress>0</featformsuppress>
+            <annotationform>.</annotationform>
+            <editorlayout>generatedlayout</editorlayout>
+            <excludeAttributesWMS/>
+            <excludeAttributesWFS/>
+            <attributeactions>
+                <actionsetting action="qgis.utils.plugins['postgres91plusauditor'].audit('vl_part_type20140429114640509',[% $id %])" icon="" capture="0" type="1" name="History audit"/>
+            </attributeactions>
+            <edittypes>
+                <edittype widgetv2type="TextEdit" name="id">
+                    <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
+                </edittype>
+                <edittype widgetv2type="TextEdit" name="vl_active">
+                    <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
+                </edittype>
+                <edittype widgetv2type="TextEdit" name="value_en">
+                    <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
+                </edittype>
+                <edittype widgetv2type="TextEdit" name="value_fr">
+                    <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
+                </edittype>
+                <edittype widgetv2type="TextEdit" name="value_ro">
+                    <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
+                </edittype>
+                <edittype widgetv2type="TextEdit" name="active">
+                    <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
+                </edittype>
+                <edittype widgetv2type="TextEdit" name="helper_en">
+                    <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
+                </edittype>
+                <edittype widgetv2type="TextEdit" name="helper_fr">
+                    <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
+                </edittype>
+                <edittype widgetv2type="TextEdit" name="helper_ro">
                     <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
                 </edittype>
             </edittypes>
@@ -21000,12 +21190,11 @@
                 <value>od_annotationpoint20131203095020392</value>
                 <value>od_crossing20141023083754327</value>
                 <value>od_dimension_orientation20131202111155806</value>
-                <value>od_installationpart20140429113327995</value>
                 <value>od_meter20131120073630165</value>
                 <value>od_meter_reference20140304165835390</value>
                 <value>od_node20140116161508743</value>
+                <value>od_part20140429113327995</value>
                 <value>od_subscriber_reference20131206105928067</value>
-                <value>od_wateringoutput20131127080906318</value>
                 <value>ouvrage_général_copy20141218102656671</value>
                 <value>pipe_child_parent20130417092030507</value>
                 <value>pressurezone20130417133612105</value>
@@ -21065,7 +21254,6 @@
                 <value>enabled</value>
                 <value>disabled</value>
                 <value>enabled</value>
-                <value>disabled</value>
                 <value>disabled</value>
                 <value>disabled</value>
                 <value>disabled</value>
@@ -21176,7 +21364,6 @@
                 <value>1</value>
                 <value>1</value>
                 <value>1</value>
-                <value>1</value>
                 <value>0</value>
                 <value>0</value>
                 <value>0</value>
@@ -21211,7 +21398,6 @@
                 <value>to_vertex_and_segment</value>
                 <value>to_vertex_and_segment</value>
                 <value>to_vertex</value>
-                <value>to_vertex_and_segment</value>
                 <value>to_vertex_and_segment</value>
                 <value>to_vertex_and_segment</value>
                 <value>to_vertex_and_segment</value>
@@ -21284,7 +21470,6 @@
                 <value>6.000000</value>
                 <value>6.000000</value>
                 <value>7.000000</value>
-                <value>6.000000</value>
                 <value>6.000000</value>
                 <value>6.000000</value>
                 <value>6.000000</value>
@@ -21795,7 +21980,7 @@
                             <tolerance type="int">6</tolerance>
                             <snapType type="int">2</snapType>
                             <unitType type="int">1</unitType>
-                            <layerid type="QString">od_installationpart20140429113327995</layerid>
+                            <layerid type="QString">od_part20140429113327995</layerid>
                         </SnapOpts-00017>
                         <SnapOpts-00094>
                             <avoidInt type="int">1</avoidInt>
@@ -22203,7 +22388,7 @@
                             <tolerance type="int">0</tolerance>
                             <snapType type="int">-1274994608</snapType>
                             <unitType type="int">32635</unitType>
-                            <layerid type="QString">vl_installationpart_type20140429114640509</layerid>
+                            <layerid type="QString">vl_part_type20140429114640509</layerid>
                         </SnapOpts-00057>
                         <SnapOpts-00058>
                             <avoidInt type="int">1</avoidInt>
