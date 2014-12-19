@@ -7,7 +7,7 @@
     <x>0</x>
     <y>0</y>
     <width>597</width>
-    <height>377</height>
+    <height>397</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -122,6 +122,12 @@
        </item>
        <item row="0" column="2">
         <widget class="QWidget" name="widget_2" native="true">
+         <property name="minimumSize">
+          <size>
+           <width>250</width>
+           <height>0</height>
+          </size>
+         </property>
          <layout class="QFormLayout" name="formLayout_5">
           <property name="fieldGrowthPolicy">
            <enum>QFormLayout::AllNonFixedFieldsGrow</enum>
@@ -205,6 +211,16 @@
             </property>
            </widget>
           </item>
+          <item row="5" column="0">
+           <widget class="QLabel" name="label_26">
+            <property name="text">
+             <string>Lit de pose</string>
+            </property>
+           </widget>
+          </item>
+          <item row="5" column="1">
+           <widget class="QComboBox" name="id_bedding"/>
+          </item>
          </layout>
         </widget>
        </item>
@@ -263,7 +279,7 @@
         </widget>
        </item>
        <item row="1" column="1">
-        <widget class="QLineEdit" name="pressure_nominale"/>
+        <widget class="QLineEdit" name="pressure_nominal"/>
        </item>
        <item row="0" column="1">
         <widget class="QComboBox" name="id_watertype"/>
@@ -700,7 +716,7 @@
        <item row="0" column="0">
         <widget class="QgsRelationEditorWidget" name="mRelationEditor_2">
          <property name="collapsed">
-          <bool>true</bool>
+          <bool>false</bool>
          </property>
          <property name="qgisRelation">
           <string notr="true">relation_pipe_leak</string>
