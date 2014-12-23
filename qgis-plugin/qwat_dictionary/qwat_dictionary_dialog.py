@@ -30,14 +30,18 @@ from PyQt4.QtGui import QPixmap
 from PyQt4.QtGui import QIcon
 
 from qgis.core import QgsApplication
+try:
+    from PyQt4.QtCore import QString
+except ImportError:
+    # we are using Python3 so QString is not defined
+    QString = str
 
 
-import os,glob
+import os,glob,sys
 
 
 FORM_CLASS, _ = uic.loadUiType(os.path.join(
     os.path.dirname(__file__), 'qwat_dictionary_dialog_base.ui'))
-
 
 
 def get_locale_from_dictionary_filename(sufix,ext,filename):
@@ -47,28 +51,34 @@ def get_locale_from_dictionary_filename(sufix,ext,filename):
     return filename
 
 
+
 def get_denumire_tara(nume_file_qm):
     print nume_file_qm
+
     if nume_file_qm == "ro" :
-        return "Romana"
+        return 'Română'
     if nume_file_qm == "en" :
         return "English"
-    if nume_file_qm == "en_US" :
-        return "U.S. English"
     if nume_file_qm == "fra" :
-        return "Francais"
+        return "Français"
     return nume_file_qm
 
 def get_denumire_flag_from_locale(nume_file_qm):
     if nume_file_qm == "ro" :
         return "ro"
     if nume_file_qm == "en" :
-        return "en_US"
+        return "en"
     if nume_file_qm == "en_US" :
-        return "en_US"
+        return "en"
     if nume_file_qm == "fra" :
         return "fr"
     return nume_file_qm
+
+
+def get_denumire_dictionar(denumire_tara,_file):
+    localePath = os.path.dirname(_file)+'\i18n\\'+denumire_tara
+    return localePath
+
 
 
 class qwat_dictionaryDialog(QtGui.QDialog, FORM_CLASS):
@@ -81,6 +91,9 @@ class qwat_dictionaryDialog(QtGui.QDialog, FORM_CLASS):
         # http://qt-project.org/doc/qt-4.8/designer-using-a-ui-file.html
         # #widgets-and-dialogs-with-auto-connect
         self.setupUi(self)
+
+        reload(sys)
+        sys.setdefaultencoding('utf8')
 
         #config_file - last language selected
         self.config_file =os.path.join(os.path.dirname(__file__), '')
@@ -117,7 +130,6 @@ class qwat_dictionaryDialog(QtGui.QDialog, FORM_CLASS):
         self.m_checkBox_keep_changes.setText (QtGui.QApplication.translate("qwat_dictionaryDialogBase", "save settings at restart", None, QtGui.QApplication.UnicodeUTF8))
 
 
-
     def init_combo(self):
        self.m_comboBox_limbaj.clear()
        self.lista_dictionare = []
@@ -129,51 +141,53 @@ class qwat_dictionaryDialog(QtGui.QDialog, FORM_CLASS):
                 self.lista_dictionare.append(file_name)
                 _icon = QIcon()
                 _icon.addFile(self.f_get_icon_path(_index))
-                self.m_comboBox_limbaj.addItem(_icon,get_denumire_tara(get_locale_from_dictionary_filename("extradictionary_",".qm",file_name)))
+                _str = get_denumire_tara(get_locale_from_dictionary_filename("extradictionary_",".qm",file_name))
+                self.m_comboBox_limbaj.addItem(_icon, unicode(_str))
                 _index = _index + 1
 
 
     def f_get_start_option(self):
         self.m_checkBox_keep_changes.setChecked(True)
-        print self.config_file
         _f = open(self.config_file,"r")
         _str = _f.read()
         _f.close()
-
-        print _str
-
+        #QMessageBox.critical(self, "f_get_start_option", _str, QMessageBox.Ok)
         if(_str=="-"):
-            print "111"
+            #default is en
+            print "load default"
         else:
-            if _str in self.lista_dictionare:
-                 self.m_comboBox_limbaj.setCurrentIndex (self.lista_dictionare.index(_str))
+            _dict_name = get_denumire_dictionar(_str,__file__)
+            #QMessageBox.critical(self, "f_get_start_option", _dict_name, QMessageBox.Ok)
+            if _dict_name in self.lista_dictionare:
+                 self.m_comboBox_limbaj.setCurrentIndex (self.lista_dictionare.index(_dict_name))
             else:
                 self.m_comboBox_limbaj.setCurrentIndex (0)
-                self.f_save_curent_state(self.lista_dictionare[0])
+                _str_initial = os.path.splitext(os.path.basename(self.lista_dictionare[0]))[0]
+                _str_initial = _str_initial + '.qm'
+                self.f_save_curent_state(_str_initial)
 
 
 
     def signal_m_comboBox_limbaj_changed(self,current):
         new_translator_path = self.lista_dictionare[self.m_comboBox_limbaj.currentIndex()]
 
-        print new_translator_path
-
+        #print new_translator_path
+        new_translator_path_setings = os.path.splitext(os.path.basename(new_translator_path))[0]
+        new_translator_path_setings = new_translator_path_setings +'.qm'
+        #print new_translator_path_setings
         if os.path.exists(new_translator_path):
             self.translator.load(new_translator_path)
             QtCore.QCoreApplication.installTranslator(self.translator)
         else:
             print "signal_m_comboBox_limbaj_changed Translator not found"
 
-        self.f_save_curent_state(new_translator_path)
+        self.f_save_curent_state(new_translator_path_setings)
         self.retranslate_Ui()
 
 
     def f_get_icon_path(self,index_dictionar):
         icon_path =os.path.join(os.path.dirname(__file__), '')
         icon_path =  icon_path + "flags/"
-
-
-
         locale  = get_locale_from_dictionary_filename("extradictionary_",".qm",self.lista_dictionare[index_dictionar])
         icon_path = icon_path +get_denumire_flag_from_locale(locale)+".png"
         return icon_path
@@ -181,14 +195,14 @@ class qwat_dictionaryDialog(QtGui.QDialog, FORM_CLASS):
 
     def f_save_curent_state(self,text):
         _f = open(self.config_file,"w")
+        #QMessageBox.critical(self, "f_save_curent_state", text, QMessageBox.Ok)
         _f.write(text)
         _f.close()
 
 
     def signal_m_checkBox_keep_changes(self):
         if (self.m_checkBox_keep_changes.isChecked() == True):
-            self.f_save_curent_state(self.lista_dictionare[self.m_comboBox_limbaj.currentIndex()])
+            _str_initial = os.path.splitext(self.lista_dictionare[self.m_comboBox_limbaj.currentIndex()])[0] + '.qm'
+            self.f_save_curent_state(_str_initial)
         else:
             self.f_save_curent_state("-")
-
-
