@@ -318,10 +318,10 @@
     <mapcanvas>
         <units>meters</units>
         <extent>
-            <xmin>554613.61357538541778922</xmin>
-            <ymin>146895.92961608953191899</ymin>
-            <xmax>554670.36146821919828653</xmax>
-            <ymax>146961.01711615614476614</ymax>
+            <xmin>554633.87249724543653429</xmin>
+            <ymin>146454.33688699488993734</ymin>
+            <xmax>555280.2664640499278903</xmax>
+            <ymax>147195.72419244109187275</ymax>
         </extent>
         <rotation>0</rotation>
         <projections>1</projections>
@@ -1384,6 +1384,10 @@
                 <ComposerItem pagey="140" page="1" id="" lastValidViewScaleFactor="0.91381" positionMode="0" positionLock="false" x="15" y="140" visibility="1" zValue="1" background="true" transparency="0" frameJoinStyle="miter" blendMode="0" width="1000" outlineWidth="0" excludeFromExports="0" uuid="{27df2cec-4272-4242-93e2-7d5ffc2bbe05}" height="666.667" itemRotation="0" frame="true" pagex="15">
                     <FrameColor alpha="255" red="0" blue="0" green="0"/>
                     <BackgroundColor alpha="255" red="255" blue="255" green="255"/>
+                    <dataDefinedMapXMin expr="" field="x_min" active="true" useExpr="false"/>
+                    <dataDefinedMapYMin expr="" field="y_min" active="true" useExpr="false"/>
+                    <dataDefinedMapXMax expr="" field="x_max" active="true" useExpr="false"/>
+                    <dataDefinedMapYMax expr="" field="y_max" active="true" useExpr="false"/>
                 </ComposerItem>
             </ComposerMap>
         </Composition>
@@ -16334,7 +16338,7 @@
                     <widgetv2config IsMultiline="1" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
                 </edittype>
                 <edittype widgetv2type="DateTime" name="version_date">
-                    <widgetv2config fieldEditable="1" calendar_popup="0" allow_null="0" display_format="yyyy-MM-dd" field_format="yyyy-mm-dd" labelOnTop="0"/>
+                    <widgetv2config fieldEditable="1" calendar_popup="0" allow_null="0" display_format="yyyy-MM-dd" field_format="yyyy-MM-dd" labelOnTop="0"/>
                 </edittype>
                 <edittype widgetv2type="TextEdit" name="x_min">
                     <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
@@ -16411,6 +16415,7 @@
                 <property key="labeling/centroidInside" value="true"/>
                 <property key="labeling/centroidWhole" value="false"/>
                 <property key="labeling/dataDefined/AlwaysShow" value="1~~1~~1~~"/>
+                <property key="labeling/dataDefined/LabelDistance" value="1~~1~~CASE WHEN $scale &lt; 6000 THEN 5.0 ELSE 0.0 END~~"/>
                 <property key="labeling/dataDefined/Show" value="1~~1~~1~~"/>
                 <property key="labeling/dataDefined/Size" value="1~~1~~CASE WHEN $scale &lt; 5000 THEN 10&#xa;ELSE 8&#xa;END~~"/>
                 <property key="labeling/decimals" value="0"/>
@@ -16576,9 +16581,7 @@
             </aliases>
             <excludeAttributesWMS/>
             <excludeAttributesWFS/>
-            <attributeactions>
-                <actionsetting action="qgis.utils.plugins['postgres91plusauditor'].showHistory('printmap20130304110011400',[% $id %])" icon="" capture="0" type="1" name="History audit"/>
-            </attributeactions>
+            <attributeactions/>
             <edittypes>
                 <edittype widgetv2type="TextEdit" name="id">
                     <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
@@ -16593,7 +16596,7 @@
                     <widgetv2config IsMultiline="1" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
                 </edittype>
                 <edittype widgetv2type="DateTime" name="version_date">
-                    <widgetv2config fieldEditable="1" calendar_popup="0" allow_null="0" display_format="yyyy-MM-dd" field_format="yyyy-mm-dd" labelOnTop="0"/>
+                    <widgetv2config fieldEditable="1" calendar_popup="0" allow_null="0" display_format="yyyy-MM-dd" field_format="yyyy-MM-dd" labelOnTop="0"/>
                 </edittype>
                 <edittype widgetv2type="TextEdit" name="x_min">
                     <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
@@ -21709,7 +21712,7 @@
             <project type="bool">true</project>
             <refreshDelay type="int">15</refreshDelay>
             <refreshAuto type="bool">true</refreshAuto>
-            <refreshLastAsked type="QString">2014-11-25</refreshLastAsked>
+            <refreshLastAsked type="QString">2015-01-05</refreshLastAsked>
         </quickfinder_plugin>
         <WMSContactMail type="QString"></WMSContactMail>
         <WMSImageQuality type="int">90</WMSImageQuality>
