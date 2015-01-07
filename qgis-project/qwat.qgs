@@ -55,10 +55,10 @@
             </layer-tree-group>
             <layer-tree-group expanded="1" checked="Qt::PartiallyChecked" name="Réseau">
                 <customproperties/>
-                <layer-tree-layer expanded="1" checked="Qt::Checked" id="conduites_copy20130709141244955" name="conduites">
+                <layer-tree-layer expanded="0" checked="Qt::Checked" id="conduites_copy20130709141244955" name="conduites">
                     <customproperties/>
                 </layer-tree-layer>
-                <layer-tree-layer expanded="0" checked="Qt::Checked" id="valve20130304110011497" name="vannes">
+                <layer-tree-layer expanded="1" checked="Qt::Checked" id="valve20130304110011497" name="vannes">
                     <customproperties/>
                 </layer-tree-layer>
                 <layer-tree-layer expanded="0" checked="Qt::Checked" id="hydrant20130304110004848" name="hydrantes">
@@ -318,10 +318,10 @@
     <mapcanvas>
         <units>meters</units>
         <extent>
-            <xmin>554561.53366329905111343</xmin>
-            <ymin>146725.78822286718059331</ymin>
-            <xmax>554992.46297450212296098</xmax>
-            <ymax>147220.04642649798188359</ymax>
+            <xmin>554441.52596094831824303</xmin>
+            <ymin>146617.55512831709347665</ymin>
+            <xmax>554728.81216841842979193</xmax>
+            <ymax>146947.06059740425553173</ymax>
         </extent>
         <rotation>0</rotation>
         <projections>1</projections>
@@ -512,13 +512,13 @@
             <layer id="dimension20130807094904783"/>
             <layer id="cn126420130327085334221"/>
             <checked-legend-nodes id="conduites_copy20130709141244955">
-                <checked-legend-node id="{9646576f-b22a-45bf-a4a3-3678392bd8c0}"/>
-                <checked-legend-node id="{f550eef3-fdaa-427b-b415-bd7e8fc25f9e}"/>
                 <checked-legend-node id="{1169fb39-5fd3-43b6-9c6c-0f8ef27a0149}"/>
-                <checked-legend-node id="{2e14d53a-6d2f-40b3-bf3b-4f32112e3d59}"/>
+                <checked-legend-node id="{9646576f-b22a-45bf-a4a3-3678392bd8c0}"/>
                 <checked-legend-node id="{5b970fd5-5c37-4865-81a5-cab18c5fb58c}"/>
                 <checked-legend-node id="{013429dc-a1cd-4a17-904a-6550a0175046}"/>
+                <checked-legend-node id="{f550eef3-fdaa-427b-b415-bd7e8fc25f9e}"/>
                 <checked-legend-node id="{2513a8b8-a110-4727-854c-6084f64e3bdf}"/>
+                <checked-legend-node id="{2e14d53a-6d2f-40b3-bf3b-4f32112e3d59}"/>
                 <checked-legend-node id="{7d0cfa7a-eaf4-499a-b977-1238b90ca15f}"/>
             </checked-legend-nodes>
             <checked-legend-nodes id="od_crossing20141023083754327">
@@ -759,13 +759,13 @@
                 </legendlayer>
             </legendgroup>
             <legendgroup open="true" checked="Qt::PartiallyChecked" name="Réseau">
-                <legendlayer drawingOrder="17" open="true" checked="Qt::Checked" name="conduites" showFeatureCount="0">
-                    <filegroup open="true" hidden="false">
+                <legendlayer drawingOrder="17" open="false" checked="Qt::Checked" name="conduites" showFeatureCount="0">
+                    <filegroup open="false" hidden="false">
                         <legendlayerfile isInOverview="0" layerid="conduites_copy20130709141244955" visible="1"/>
                     </filegroup>
                 </legendlayer>
-                <legendlayer drawingOrder="12" open="false" checked="Qt::Checked" name="vannes" showFeatureCount="0">
-                    <filegroup open="false" hidden="false">
+                <legendlayer drawingOrder="12" open="true" checked="Qt::Checked" name="vannes" showFeatureCount="0">
+                    <filegroup open="true" hidden="false">
                         <legendlayerfile isInOverview="0" layerid="valve20130304110011497" visible="1"/>
                     </filegroup>
                 </legendlayer>
@@ -12497,6 +12497,9 @@
                 <edittype widgetv2type="CheckBox" name="circular">
                     <widgetv2config fieldEditable="1" UncheckedState="'f'" CheckedState="'t'" labelOnTop="0"/>
                 </edittype>
+                <edittype widgetv2type="TextEdit" name="diameter">
+                    <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
+                </edittype>
             </edittypes>
             <renderer-v2 symbollevels="0" type="RuleRenderer">
                 <rules key="{99308dc6-545d-410d-bf91-facc3f952028}">
@@ -12811,6 +12814,9 @@
                 </edittype>
                 <edittype widgetv2type="CheckBox" name="circular">
                     <widgetv2config fieldEditable="1" UncheckedState="'f'" CheckedState="'t'" labelOnTop="0"/>
+                </edittype>
+                <edittype widgetv2type="TextEdit" name="diameter">
+                    <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
                 </edittype>
             </edittypes>
         </maplayer>
@@ -17631,7 +17637,7 @@
                         <rule filter="&quot;id_type&quot; =6313" key="{6c48a279-b0d9-428b-819c-2fc5371720fe}" symbol="3" label="arrêt"/>
                         <rule filter=" &quot;Vannes - fonction_value_fr&quot; IN ( 'vidange' ,  'vidange-ventouse' )" key="{3bf2a10c-e2fe-43c6-9287-c4055baec2a1}" symbol="4" label="vidange"/>
                     </rule>
-                    <rule scalemaxdenom="10000" filter="id_function = 6105 OR id_function = 6108" key="{143022c7-b3e1-4c03-80d5-58520da677c2}" symbol="5" label="abonné">
+                    <rule scalemaxdenom="1000" filter="id_function = 6105 OR id_function = 6108" key="{143022c7-b3e1-4c03-80d5-58520da677c2}" symbol="5" label="abonné">
                         <rule filter="closed = 't'" key="{ee4ed8dd-20ae-42fb-b43b-a4c02c5399e9}" symbol="6" label="Fermée"/>
                         <rule filter="&quot;id_type&quot; =6313" key="{b149b2b9-3783-416c-b413-7a6f7de74e1d}" symbol="7" label="arrêt"/>
                         <rule filter="id_type = 6312" key="{221f27a3-6778-4b14-8bb9-1b4c7d708bc3}" symbol="8" label="elgelf"/>
