@@ -58,10 +58,13 @@
                 <layer-tree-layer expanded="0" checked="Qt::Checked" id="conduites_copy20130709141244955" name="conduites">
                     <customproperties/>
                 </layer-tree-layer>
-                <layer-tree-layer expanded="1" checked="Qt::Checked" id="valve20130304110011497" name="vannes">
+                <layer-tree-layer expanded="0" checked="Qt::Checked" id="valve20130304110011497" name="vannes">
                     <customproperties/>
                 </layer-tree-layer>
                 <layer-tree-layer expanded="0" checked="Qt::Checked" id="hydrant20130304110004848" name="hydrantes">
+                    <customproperties/>
+                </layer-tree-layer>
+                <layer-tree-layer expanded="1" checked="Qt::Checked" id="od_remote20150116100522170" name="télécommande">
                     <customproperties/>
                 </layer-tree-layer>
                 <layer-tree-layer expanded="0" checked="Qt::Unchecked" id="leak20130821111917060" name="fuite">
@@ -174,7 +177,7 @@
                 </layer-tree-layer>
             </layer-tree-group>
         </layer-tree-group>
-        <layer-tree-group expanded="0" checked="Qt::Unchecked" name="Tables auxiliaires">
+        <layer-tree-group expanded="0" checked="Qt::PartiallyChecked" name="Tables auxiliaires">
             <customproperties/>
             <layer-tree-layer expanded="1" checked="Qt::Unchecked" id="vl_subscriber_type20130304110011480" name="Abonnés - type">
                 <customproperties/>
@@ -248,6 +251,15 @@
             <layer-tree-layer expanded="1" checked="Qt::Unchecked" id="vl_remote20130304110004987" name="Télécommande - type">
                 <customproperties/>
             </layer-tree-layer>
+            <layer-tree-layer expanded="1" checked="Qt::Checked" id="servitude_etat20150116095811244" name="Servitude - état">
+                <customproperties/>
+            </layer-tree-layer>
+            <layer-tree-layer expanded="1" checked="Qt::Checked" id="servitude_statut20150116095811261" name="Servitude - statut">
+                <customproperties/>
+            </layer-tree-layer>
+            <layer-tree-layer expanded="1" checked="Qt::Checked" id="servitude_type20150116095811274" name="Servitude - type">
+                <customproperties/>
+            </layer-tree-layer>
             <layer-tree-layer expanded="0" checked="Qt::Unchecked" id="vl_watertype20131217141603877" name="Type d'eau">
                 <customproperties/>
             </layer-tree-layer>
@@ -267,18 +279,21 @@
         <layer-tree-group expanded="0" checked="Qt::Checked" name="riviera_base">
             <customproperties>
                 <property key="embedded" value="1"/>
+                <property key="embedded-invisible-layers"/>
                 <property key="embedded_project" value="../../../data/cadastre/riviera/riviera.qgs"/>
             </customproperties>
         </layer-tree-group>
         <layer-tree-group expanded="0" checked="Qt::Unchecked" name="riviera_complément">
             <customproperties>
                 <property key="embedded" value="1"/>
+                <property key="embedded-invisible-layers" value="pf_pfa20130514144154766"/>
                 <property key="embedded_project" value="../../../data/cadastre/riviera/riviera.qgs"/>
             </customproperties>
         </layer-tree-group>
         <layer-tree-group expanded="0" checked="Qt::Checked" name="valais_base">
             <customproperties>
                 <property key="embedded" value="1"/>
+                <property key="embedded-invisible-layers"/>
                 <property key="embedded_project" value="../../../data/cadastre/valais/valais.qgs"/>
             </customproperties>
         </layer-tree-group>
@@ -324,10 +339,10 @@
     <mapcanvas>
         <units>meters</units>
         <extent>
-            <xmin>562390.98512626974843442</xmin>
-            <ymin>145039.714297237835126</ymin>
-            <xmax>563845.3715515888761729</xmax>
-            <ymax>146707.83573449149844237</ymax>
+            <xmin>558196.1556198310572654</xmin>
+            <ymin>141590.79543404109426774</ymin>
+            <xmax>562356.80006427760235965</xmax>
+            <ymax>147407.40168404238647781</ymax>
         </extent>
         <rotation>0</rotation>
         <projections>1</projections>
@@ -367,6 +382,7 @@
             <layer_coordinate_transform destAuthId="EPSG:21781" srcAuthId="EPSG:21781" srcDatumTransform="-1" destDatumTransform="-1" layerid="od_part20140429113327995"/>
             <layer_coordinate_transform destAuthId="EPSG:21781" srcAuthId="EPSG:21781" srcDatumTransform="-1" destDatumTransform="-1" layerid="installation_treatment20130816113039913"/>
             <layer_coordinate_transform destAuthId="EPSG:21781" srcAuthId="EPSG:21781" srcDatumTransform="-1" destDatumTransform="-1" layerid="axe_rue20130514143437774"/>
+            <layer_coordinate_transform destAuthId="EPSG:21781" srcAuthId="EPSG:21781" srcDatumTransform="-1" destDatumTransform="-1" layerid="od_remote20150116100522170"/>
             <layer_coordinate_transform destAuthId="EPSG:21781" srcAuthId="EPSG:21781" srcDatumTransform="-1" destDatumTransform="-1" layerid="od_valve20141218090331728"/>
             <layer_coordinate_transform destAuthId="EPSG:21781" srcAuthId="EPSG:21781" srcDatumTransform="-1" destDatumTransform="-1" layerid="od_meter20131120073630165"/>
             <layer_coordinate_transform destAuthId="EPSG:21781" srcAuthId="EPSG:21781" srcDatumTransform="-1" destDatumTransform="-1" layerid="servitude20150109080436604"/>
@@ -400,6 +416,7 @@
             <layer_coordinate_transform destAuthId="EPSG:21781" srcAuthId="EPSG:21781" srcDatumTransform="-1" destDatumTransform="-1" layerid="od_batiment_souterrain20140214143946785"/>
             <layer_coordinate_transform destAuthId="EPSG:21781" srcAuthId="EPSG:21781" srcDatumTransform="-1" destDatumTransform="-1" layerid="cs_posnumero_de_batiment20140214143756039"/>
             <layer_coordinate_transform destAuthId="EPSG:21781" srcAuthId="EPSG:21781" srcDatumTransform="-1" destDatumTransform="-1" layerid="bf_ddp20140214143538213"/>
+            <layer_coordinate_transform destAuthId="EPSG:21781" srcAuthId="EPSG:21781" srcDatumTransform="-1" destDatumTransform="-1" layerid="pf_pfa20130514144154766"/>
             <layer_coordinate_transform destAuthId="EPSG:21781" srcAuthId="EPSG:21781" srcDatumTransform="-1" destDatumTransform="-1" layerid="od_annotationpoint20131203095020392"/>
             <layer_coordinate_transform destAuthId="EPSG:21781" srcAuthId="EPSG:21781" srcDatumTransform="-1" destDatumTransform="-1" layerid="vw_pipe_schema20141208162900166"/>
             <layer_coordinate_transform destAuthId="EPSG:21781" srcAuthId="EPSG:21781" srcDatumTransform="-1" destDatumTransform="-1" layerid="bf_bien_fonds20130514143508556"/>
@@ -693,6 +710,10 @@
             <item>vl_bedding20141219112927344</item>
             <item>od_cover20141219115626229</item>
             <item>vl_cover_type20141219115626290</item>
+            <item>servitude_etat20150116095811244</item>
+            <item>servitude_statut20150116095811261</item>
+            <item>servitude_type20150116095811274</item>
+            <item>od_remote20150116100522170</item>
         </custom-order>
     </layer-tree-canvas>
     <legend updateDrawingOrder="false">
@@ -774,14 +795,19 @@
                         <legendlayerfile isInOverview="0" layerid="conduites_copy20130709141244955" visible="1"/>
                     </filegroup>
                 </legendlayer>
-                <legendlayer drawingOrder="12" open="true" checked="Qt::Checked" name="vannes" showFeatureCount="0">
-                    <filegroup open="true" hidden="false">
+                <legendlayer drawingOrder="12" open="false" checked="Qt::Checked" name="vannes" showFeatureCount="0">
+                    <filegroup open="false" hidden="false">
                         <legendlayerfile isInOverview="0" layerid="valve20130304110011497" visible="1"/>
                     </filegroup>
                 </legendlayer>
                 <legendlayer drawingOrder="13" open="false" checked="Qt::Checked" name="hydrantes" showFeatureCount="0">
                     <filegroup open="false" hidden="false">
                         <legendlayerfile isInOverview="0" layerid="hydrant20130304110004848" visible="1"/>
+                    </filegroup>
+                </legendlayer>
+                <legendlayer drawingOrder="103" open="true" checked="Qt::Checked" name="télécommande" showFeatureCount="0">
+                    <filegroup open="true" hidden="false">
+                        <legendlayerfile isInOverview="0" layerid="od_remote20150116100522170" visible="1"/>
                     </filegroup>
                 </legendlayer>
                 <legendlayer drawingOrder="21" open="false" checked="Qt::Unchecked" name="fuite" showFeatureCount="0">
@@ -942,7 +968,7 @@
                 </legendlayer>
             </legendgroup>
         </legendgroup>
-        <legendgroup open="false" checked="Qt::Unchecked" name="Tables auxiliaires">
+        <legendgroup open="false" checked="Qt::PartiallyChecked" name="Tables auxiliaires">
             <legendlayer drawingOrder="38" open="true" checked="Qt::Unchecked" name="Abonnés - type" showFeatureCount="0">
                 <filegroup open="true" hidden="false">
                     <legendlayerfile isInOverview="0" layerid="vl_subscriber_type20130304110011480" visible="0"/>
@@ -1061,6 +1087,21 @@
             <legendlayer drawingOrder="59" open="true" checked="Qt::Unchecked" name="Télécommande - type" showFeatureCount="0">
                 <filegroup open="true" hidden="false">
                     <legendlayerfile isInOverview="0" layerid="vl_remote20130304110004987" visible="0"/>
+                </filegroup>
+            </legendlayer>
+            <legendlayer drawingOrder="100" open="true" checked="Qt::Checked" name="Servitude - état" showFeatureCount="0">
+                <filegroup open="true" hidden="false">
+                    <legendlayerfile isInOverview="0" layerid="servitude_etat20150116095811244" visible="1"/>
+                </filegroup>
+            </legendlayer>
+            <legendlayer drawingOrder="101" open="true" checked="Qt::Checked" name="Servitude - statut" showFeatureCount="0">
+                <filegroup open="true" hidden="false">
+                    <legendlayerfile isInOverview="0" layerid="servitude_statut20150116095811261" visible="1"/>
+                </filegroup>
+            </legendlayer>
+            <legendlayer drawingOrder="102" open="true" checked="Qt::Checked" name="Servitude - type" showFeatureCount="0">
+                <filegroup open="true" hidden="false">
+                    <legendlayerfile isInOverview="0" layerid="servitude_type20150116095811274" visible="1"/>
                 </filegroup>
             </legendlayer>
             <legendlayer drawingOrder="60" open="false" checked="Qt::Unchecked" name="Type d'eau" showFeatureCount="0">
@@ -3185,7 +3226,7 @@
             </ComposerMap>
         </Composition>
     </Composer>
-    <projectlayers layercount="102">
+    <projectlayers layercount="106">
         <maplayer minimumScale="-4.65661e-10" maximumScale="1e+08" simplifyDrawingHints="0" minLabelScale="0" maxLabelScale="1e+08" simplifyDrawingTol="1" geometry="Line" simplifyMaxScale="1" type="vector" hasScaleBasedVisibilityFlag="0" simplifyLocal="1" scaleBasedLabelVisibilityFlag="0">
             <id>IntersectIt_Lines20130618102142813</id>
             <datasource>LineString?crs=EPSG:21781&amp;field=id:string&amp;field=type:string&amp;field=x:double&amp;field=y:double&amp;field=observation:double&amp;field=precision:double&amp;index=yes</datasource>
@@ -3211,6 +3252,9 @@
             <previewExpression></previewExpression>
             <vectorjoins/>
             <expressionfields/>
+            <map-layer-style-manager current="">
+                <map-layer-style name=""/>
+            </map-layer-style-manager>
             <edittypes>
                 <edittype widgetv2type="TextEdit" name="id">
                     <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
@@ -3453,6 +3497,9 @@
             <previewExpression></previewExpression>
             <vectorjoins/>
             <expressionfields/>
+            <map-layer-style-manager current="">
+                <map-layer-style name=""/>
+            </map-layer-style-manager>
             <edittypes>
                 <edittype widgetv2type="TextEdit" name="id">
                     <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
@@ -3550,6 +3597,9 @@
             <previewExpression></previewExpression>
             <vectorjoins/>
             <expressionfields/>
+            <map-layer-style-manager current="">
+                <map-layer-style name=""/>
+            </map-layer-style-manager>
             <edittypes/>
             <renderer-v2 symbollevels="0" type="singleSymbol">
                 <symbols>
@@ -3639,6 +3689,9 @@
             <previewExpression>COALESCE( "id", '&lt;NULL>' )</previewExpression>
             <vectorjoins/>
             <expressionfields/>
+            <map-layer-style-manager current="">
+                <map-layer-style name=""/>
+            </map-layer-style-manager>
             <edittypes>
                 <edittype widgetv2type="TextEdit" name="id">
                     <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
@@ -3859,6 +3912,9 @@
             <previewExpression></previewExpression>
             <vectorjoins/>
             <expressionfields/>
+            <map-layer-style-manager current="">
+                <map-layer-style name=""/>
+            </map-layer-style-manager>
             <edittypes>
                 <edittype widgetv2type="TextEdit" name="id">
                     <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
@@ -4163,6 +4219,9 @@
             <noData>
                 <noDataList bandNo="1" useSrcNoData="0"/>
             </noData>
+            <map-layer-style-manager current="">
+                <map-layer-style name=""/>
+            </map-layer-style-manager>
             <pipe>
                 <rasterrenderer opacity="0.117647" alphaBand="-1" band="1" type="paletted">
                     <rasterTransparency/>
@@ -4460,6 +4519,9 @@
             <noData>
                 <noDataList bandNo="1" useSrcNoData="0"/>
             </noData>
+            <map-layer-style-manager current="">
+                <map-layer-style name=""/>
+            </map-layer-style-manager>
             <pipe>
                 <rasterrenderer opacity="0.0666667" alphaBand="0" band="1" type="paletted">
                     <rasterTransparency/>
@@ -4764,6 +4826,9 @@
                 </join>
             </vectorjoins>
             <expressionfields/>
+            <map-layer-style-manager current="">
+                <map-layer-style name=""/>
+            </map-layer-style-manager>
             <edittypes>
                 <edittype widgetv2type="TextEdit" name="id">
                     <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
@@ -5820,6 +5885,9 @@
             <previewExpression></previewExpression>
             <vectorjoins/>
             <expressionfields/>
+            <map-layer-style-manager current="">
+                <map-layer-style name=""/>
+            </map-layer-style-manager>
             <edittypes>
                 <edittype widgetv2type="TextEdit" name="id">
                     <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
@@ -5925,6 +5993,9 @@
             <previewExpression>COALESCE( "id", '&lt;NULL>' )</previewExpression>
             <vectorjoins/>
             <expressionfields/>
+            <map-layer-style-manager current="">
+                <map-layer-style name=""/>
+            </map-layer-style-manager>
             <edittypes>
                 <edittype widgetv2type="TextEdit" name="id">
                     <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
@@ -6162,6 +6233,9 @@
             <previewExpression></previewExpression>
             <vectorjoins/>
             <expressionfields/>
+            <map-layer-style-manager current="">
+                <map-layer-style name=""/>
+            </map-layer-style-manager>
             <edittypes>
                 <edittype widgetv2type="TextEdit" name="id">
                     <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
@@ -6214,6 +6288,9 @@
             <previewExpression>COALESCE( "name", '&lt;NULL>' )</previewExpression>
             <vectorjoins/>
             <expressionfields/>
+            <map-layer-style-manager current="">
+                <map-layer-style name=""/>
+            </map-layer-style-manager>
             <edittypes>
                 <edittype widgetv2type="TextEdit" name="id">
                     <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
@@ -6465,6 +6542,9 @@
                 <join joinFieldName="id" targetFieldName="id_status" memoryCache="1" joinLayerId="vl_status20130304110011436"/>
             </vectorjoins>
             <expressionfields/>
+            <map-layer-style-manager current="">
+                <map-layer-style name=""/>
+            </map-layer-style-manager>
             <edittypes>
                 <edittype widgetv2type="TextEdit" name="id">
                     <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
@@ -6983,6 +7063,9 @@
             <previewExpression></previewExpression>
             <vectorjoins/>
             <expressionfields/>
+            <map-layer-style-manager current="">
+                <map-layer-style name=""/>
+            </map-layer-style-manager>
             <edittypes>
                 <edittype widgetv2type="TextEdit" name="id">
                     <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
@@ -7041,6 +7124,9 @@
             <previewExpression>name</previewExpression>
             <vectorjoins/>
             <expressionfields/>
+            <map-layer-style-manager current="">
+                <map-layer-style name=""/>
+            </map-layer-style-manager>
             <edittypes>
                 <edittype widgetv2type="TextEdit" name="id">
                     <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
@@ -7676,6 +7762,9 @@
             <previewExpression>COALESCE( "name", '&lt;NULL>' )</previewExpression>
             <vectorjoins/>
             <expressionfields/>
+            <map-layer-style-manager current="">
+                <map-layer-style name=""/>
+            </map-layer-style-manager>
             <edittypes>
                 <edittype widgetv2type="TextEdit" name="id">
                     <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
@@ -8232,6 +8321,9 @@
             <previewExpression>id</previewExpression>
             <vectorjoins/>
             <expressionfields/>
+            <map-layer-style-manager current="">
+                <map-layer-style name=""/>
+            </map-layer-style-manager>
             <edittypes>
                 <edittype widgetv2type="TextEdit" name="id">
                     <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
@@ -8717,6 +8809,9 @@
             <previewExpression>COALESCE( "id", '&lt;NULL>' )</previewExpression>
             <vectorjoins/>
             <expressionfields/>
+            <map-layer-style-manager current="">
+                <map-layer-style name=""/>
+            </map-layer-style-manager>
             <edittypes>
                 <edittype widgetv2type="TextEdit" name="id">
                     <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
@@ -9223,6 +9318,9 @@
                 <join joinFieldName="id" targetFieldName="id_installation" memoryCache="0" joinLayerId="installation20130304110004938"/>
             </vectorjoins>
             <expressionfields/>
+            <map-layer-style-manager current="">
+                <map-layer-style name=""/>
+            </map-layer-style-manager>
             <edittypes>
                 <edittype widgetv2type="TextEdit" name="id">
                     <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
@@ -10000,6 +10098,9 @@
             <previewExpression>id</previewExpression>
             <vectorjoins/>
             <expressionfields/>
+            <map-layer-style-manager current="">
+                <map-layer-style name=""/>
+            </map-layer-style-manager>
             <edittypes>
                 <edittype widgetv2type="TextEdit" name="id">
                     <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
@@ -10523,6 +10624,9 @@
             <previewExpression>COALESCE( "name", '&lt;NULL>' )</previewExpression>
             <vectorjoins/>
             <expressionfields/>
+            <map-layer-style-manager current="">
+                <map-layer-style name=""/>
+            </map-layer-style-manager>
             <edittypes>
                 <edittype widgetv2type="TextEdit" name="id">
                     <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
@@ -11043,6 +11147,9 @@
             <previewExpression>"id"</previewExpression>
             <vectorjoins/>
             <expressionfields/>
+            <map-layer-style-manager current="">
+                <map-layer-style name=""/>
+            </map-layer-style-manager>
             <edittypes>
                 <edittype widgetv2type="TextEdit" name="id">
                     <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
@@ -11417,6 +11524,9 @@
             <previewExpression></previewExpression>
             <vectorjoins/>
             <expressionfields/>
+            <map-layer-style-manager current="">
+                <map-layer-style name=""/>
+            </map-layer-style-manager>
             <edittypes>
                 <edittype widgetv2type="TextEdit" name="event_id">
                     <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
@@ -11559,6 +11669,9 @@
             <previewExpression>COALESCE( "id", '&lt;NULL>' )</previewExpression>
             <vectorjoins/>
             <expressionfields/>
+            <map-layer-style-manager current="">
+                <map-layer-style name=""/>
+            </map-layer-style-manager>
             <edittypes>
                 <edittype widgetv2type="TextEdit" name="id">
                     <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
@@ -11954,6 +12067,9 @@
             <previewExpression>COALESCE( "id", '&lt;NULL>' )</previewExpression>
             <vectorjoins/>
             <expressionfields/>
+            <map-layer-style-manager current="">
+                <map-layer-style name=""/>
+            </map-layer-style-manager>
             <edittypes>
                 <edittype widgetv2type="TextEdit" name="id">
                     <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
@@ -12192,6 +12308,9 @@
             <previewExpression>COALESCE( "id", '&lt;NULL>' )</previewExpression>
             <vectorjoins/>
             <expressionfields/>
+            <map-layer-style-manager current="">
+                <map-layer-style name=""/>
+            </map-layer-style-manager>
             <edittypes>
                 <edittype widgetv2type="TextEdit" name="id">
                     <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
@@ -12429,6 +12548,9 @@
             <previewExpression></previewExpression>
             <vectorjoins/>
             <expressionfields/>
+            <map-layer-style-manager current="">
+                <map-layer-style name=""/>
+            </map-layer-style-manager>
             <edittypes>
                 <edittype widgetv2type="TextEdit" name="id">
                     <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
@@ -12867,6 +12989,9 @@
             <expressionfields>
                 <field typeName="double precision" precision="-1" expression="CASE WHEN hide_pipe = 1 THEN _pipe2_angle ELSE _pipe1_angle END" length="-1" type="6" comment="" name="_used_angle"/>
             </expressionfields>
+            <map-layer-style-manager current="">
+                <map-layer-style name=""/>
+            </map-layer-style-manager>
             <edittypes>
                 <edittype widgetv2type="TextEdit" name="id">
                     <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
@@ -13214,6 +13339,9 @@
             <previewExpression></previewExpression>
             <vectorjoins/>
             <expressionfields/>
+            <map-layer-style-manager current="">
+                <map-layer-style name=""/>
+            </map-layer-style-manager>
             <edittypes>
                 <edittype widgetv2type="TextEdit" name="id">
                     <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
@@ -13440,6 +13568,9 @@
             <previewExpression>COALESCE( "id", '&lt;NULL>' )</previewExpression>
             <vectorjoins/>
             <expressionfields/>
+            <map-layer-style-manager current="">
+                <map-layer-style name=""/>
+            </map-layer-style-manager>
             <edittypes>
                 <edittype widgetv2type="TextEdit" name="id">
                     <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
@@ -13789,6 +13920,9 @@
                 </join>
             </vectorjoins>
             <expressionfields/>
+            <map-layer-style-manager current="">
+                <map-layer-style name=""/>
+            </map-layer-style-manager>
             <edittypes>
                 <edittype widgetv2type="TextEdit" name="id">
                     <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
@@ -14053,6 +14187,9 @@
             <previewExpression>COALESCE( "id", '&lt;NULL>' )</previewExpression>
             <vectorjoins/>
             <expressionfields/>
+            <map-layer-style-manager current="">
+                <map-layer-style name=""/>
+            </map-layer-style-manager>
             <edittypes>
                 <edittype widgetv2type="TextEdit" name="id">
                     <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
@@ -14340,6 +14477,9 @@
                 </join>
             </vectorjoins>
             <expressionfields/>
+            <map-layer-style-manager current="">
+                <map-layer-style name=""/>
+            </map-layer-style-manager>
             <edittypes>
                 <edittype widgetv2type="TextEdit" name="id">
                     <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
@@ -14839,6 +14979,372 @@
                 </edittype>
             </edittypes>
         </maplayer>
+        <maplayer minimumScale="-4.65661e-10" maximumScale="1e+08" simplifyDrawingHints="0" minLabelScale="0" maxLabelScale="1e+08" simplifyDrawingTol="1" geometry="Line" simplifyMaxScale="1" type="vector" hasScaleBasedVisibilityFlag="0" simplifyLocal="1" scaleBasedLabelVisibilityFlag="0">
+            <id>od_remote20150116100522170</id>
+            <datasource>dbname='sige' host=172.24.171.203 port=5432 user='sige' password='db4wat$' sslmode=disable key='id' srid=21781 type=MULTILINESTRING table="qwat"."od_remote" (geometry) sql=</datasource>
+            <title></title>
+            <abstract></abstract>
+            <keywordList>
+                <value></value>
+            </keywordList>
+            <layername>télécommande</layername>
+            <srs>
+                <spatialrefsys>
+                    <proj4>+proj=somerc +lat_0=46.95240555555556 +lon_0=7.439583333333333 +k_0=1 +x_0=600000 +y_0=200000 +ellps=bessel +towgs84=674.4,15.1,405.3,0,0,0,0 +units=m +no_defs</proj4>
+                    <srsid>1919</srsid>
+                    <srid>21781</srid>
+                    <authid>EPSG:21781</authid>
+                    <description>CH1903 / LV03</description>
+                    <projectionacronym>somerc</projectionacronym>
+                    <ellipsoidacronym>bessel</ellipsoidacronym>
+                    <geographicflag>false</geographicflag>
+                </spatialrefsys>
+            </srs>
+            <provider encoding="UTF-8">postgres</provider>
+            <previewExpression>COALESCE( "id", '&lt;NULL>' )</previewExpression>
+            <vectorjoins/>
+            <expressionfields/>
+            <map-layer-style-manager current="">
+                <map-layer-style name=""/>
+            </map-layer-style-manager>
+            <edittypes>
+                <edittype widgetv2type="TextEdit" name="id">
+                    <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
+                </edittype>
+                <edittype widgetv2type="ValueRelation" name="id_distributor">
+                    <widgetv2config OrderByValue="0" AllowNull="0" FilterExpression="" fieldEditable="1" Key="id" Layer="distributor20130304114719702" Value="name" labelOnTop="0" AllowMulti="0"/>
+                </edittype>
+                <edittype widgetv2type="ValueRelation" name="id_status">
+                    <widgetv2config OrderByValue="0" AllowNull="0" FilterExpression="" fieldEditable="1" Key="id" Layer="vl_status20130304110011436" Value="value_fr" labelOnTop="0" AllowMulti="0"/>
+                </edittype>
+                <edittype widgetv2type="ValueRelation" name="id_precision">
+                    <widgetv2config OrderByValue="0" AllowNull="0" FilterExpression="" fieldEditable="1" Key="id" Layer="vl_precision20130304110011372" Value="value_fr" labelOnTop="0" AllowMulti="0"/>
+                </edittype>
+                <edittype widgetv2type="ValueRelation" name="id_material">
+                    <widgetv2config OrderByValue="1" AllowNull="0" FilterExpression="" fieldEditable="1" Key="id" Layer="vl_pipe_material20130304110005230" Value="_displayname_fr" labelOnTop="0" AllowMulti="0"/>
+                </edittype>
+                <edittype widgetv2type="TextEdit" name="identification">
+                    <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
+                </edittype>
+                <edittype widgetv2type="TextEdit" name="year">
+                    <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
+                </edittype>
+                <edittype widgetv2type="TextEdit" name="origin">
+                    <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
+                </edittype>
+                <edittype widgetv2type="TextEdit" name="destination">
+                    <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
+                </edittype>
+                <edittype widgetv2type="TextEdit" name="folder">
+                    <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
+                </edittype>
+                <edittype widgetv2type="TextEdit" name="plan">
+                    <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
+                </edittype>
+                <edittype widgetv2type="TextEdit" name="remark">
+                    <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
+                </edittype>
+                <edittype widgetv2type="TextEdit" name="label_visible_1">
+                    <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
+                </edittype>
+                <edittype widgetv2type="TextEdit" name="label_x_1">
+                    <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
+                </edittype>
+                <edittype widgetv2type="TextEdit" name="label_y_1">
+                    <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
+                </edittype>
+                <edittype widgetv2type="TextEdit" name="label_r_1">
+                    <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
+                </edittype>
+                <edittype widgetv2type="TextEdit" name="label_remark_1">
+                    <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
+                </edittype>
+                <edittype widgetv2type="TextEdit" name="label_visible_2">
+                    <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
+                </edittype>
+                <edittype widgetv2type="TextEdit" name="label_x_2">
+                    <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
+                </edittype>
+                <edittype widgetv2type="TextEdit" name="label_y_2">
+                    <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
+                </edittype>
+                <edittype widgetv2type="TextEdit" name="label_r_2">
+                    <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
+                </edittype>
+                <edittype widgetv2type="TextEdit" name="label_remark_2">
+                    <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
+                </edittype>
+            </edittypes>
+            <renderer-v2 symbollevels="0" type="singleSymbol">
+                <symbols>
+                    <symbol alpha="1" type="line" name="0">
+                        <layer pass="0" class="SimpleLine" locked="0">
+                            <prop k="capstyle" v="square"/>
+                            <prop k="customdash" v="5;2"/>
+                            <prop k="customdash_map_unit_scale" v="0,0"/>
+                            <prop k="customdash_unit" v="MM"/>
+                            <prop k="draw_inside_polygon" v="0"/>
+                            <prop k="joinstyle" v="bevel"/>
+                            <prop k="line_color" v="213,178,49,255"/>
+                            <prop k="line_style" v="solid"/>
+                            <prop k="line_width" v="0.7"/>
+                            <prop k="line_width_unit" v="MM"/>
+                            <prop k="offset" v="0"/>
+                            <prop k="offset_map_unit_scale" v="0,0"/>
+                            <prop k="offset_unit" v="MM"/>
+                            <prop k="use_custom_dash" v="0"/>
+                            <prop k="width_map_unit_scale" v="0,0"/>
+                        </layer>
+                    </symbol>
+                </symbols>
+                <rotation/>
+                <sizescale scalemethod="area"/>
+            </renderer-v2>
+            <customproperties>
+                <property key="labeling" value="pal"/>
+                <property key="labeling/addDirectionSymbol" value="false"/>
+                <property key="labeling/angleOffset" value="0"/>
+                <property key="labeling/blendMode" value="0"/>
+                <property key="labeling/bufferBlendMode" value="0"/>
+                <property key="labeling/bufferColorA" value="255"/>
+                <property key="labeling/bufferColorB" value="255"/>
+                <property key="labeling/bufferColorG" value="255"/>
+                <property key="labeling/bufferColorR" value="255"/>
+                <property key="labeling/bufferDraw" value="false"/>
+                <property key="labeling/bufferJoinStyle" value="64"/>
+                <property key="labeling/bufferNoFill" value="false"/>
+                <property key="labeling/bufferSize" value="1"/>
+                <property key="labeling/bufferSizeInMapUnits" value="false"/>
+                <property key="labeling/bufferSizeMapUnitMaxScale" value="0"/>
+                <property key="labeling/bufferSizeMapUnitMinScale" value="0"/>
+                <property key="labeling/bufferTransp" value="0"/>
+                <property key="labeling/centroidInside" value="false"/>
+                <property key="labeling/centroidWhole" value="false"/>
+                <property key="labeling/decimals" value="3"/>
+                <property key="labeling/displayAll" value="false"/>
+                <property key="labeling/dist" value="1"/>
+                <property key="labeling/distInMapUnits" value="false"/>
+                <property key="labeling/distMapUnitMaxScale" value="0"/>
+                <property key="labeling/distMapUnitMinScale" value="0"/>
+                <property key="labeling/enabled" value="true"/>
+                <property key="labeling/fieldName" value="'Télécommande'&#xa;||&#xa;CASE WHEN &quot;label_remark_1&quot; IS NOT NULL THEN  ' ' || &quot;label_remark_1&quot; ELSE '' END&#xa;"/>
+                <property key="labeling/fontBold" value="false"/>
+                <property key="labeling/fontCapitals" value="0"/>
+                <property key="labeling/fontFamily" value="Arial"/>
+                <property key="labeling/fontItalic" value="false"/>
+                <property key="labeling/fontLetterSpacing" value="0"/>
+                <property key="labeling/fontLimitPixelSize" value="false"/>
+                <property key="labeling/fontMaxPixelSize" value="10000"/>
+                <property key="labeling/fontMinPixelSize" value="3"/>
+                <property key="labeling/fontSize" value="7"/>
+                <property key="labeling/fontSizeInMapUnits" value="false"/>
+                <property key="labeling/fontSizeMapUnitMaxScale" value="0"/>
+                <property key="labeling/fontSizeMapUnitMinScale" value="0"/>
+                <property key="labeling/fontStrikeout" value="false"/>
+                <property key="labeling/fontUnderline" value="false"/>
+                <property key="labeling/fontWeight" value="50"/>
+                <property key="labeling/fontWordSpacing" value="0"/>
+                <property key="labeling/formatNumbers" value="false"/>
+                <property key="labeling/isExpression" value="true"/>
+                <property key="labeling/labelOffsetInMapUnits" value="true"/>
+                <property key="labeling/labelOffsetMapUnitMaxScale" value="0"/>
+                <property key="labeling/labelOffsetMapUnitMinScale" value="0"/>
+                <property key="labeling/labelPerPart" value="false"/>
+                <property key="labeling/leftDirectionSymbol" value="&lt;"/>
+                <property key="labeling/limitNumLabels" value="false"/>
+                <property key="labeling/maxCurvedCharAngleIn" value="20"/>
+                <property key="labeling/maxCurvedCharAngleOut" value="-20"/>
+                <property key="labeling/maxNumLabels" value="2000"/>
+                <property key="labeling/mergeLines" value="false"/>
+                <property key="labeling/minFeatureSize" value="0"/>
+                <property key="labeling/multilineAlign" value="0"/>
+                <property key="labeling/multilineHeight" value="1"/>
+                <property key="labeling/namedStyle" value="Regular"/>
+                <property key="labeling/obstacle" value="true"/>
+                <property key="labeling/placeDirectionSymbol" value="0"/>
+                <property key="labeling/placement" value="3"/>
+                <property key="labeling/placementFlags" value="14"/>
+                <property key="labeling/plussign" value="false"/>
+                <property key="labeling/preserveRotation" value="true"/>
+                <property key="labeling/previewBkgrdColor" value="#ffffff"/>
+                <property key="labeling/priority" value="5"/>
+                <property key="labeling/quadOffset" value="4"/>
+                <property key="labeling/repeatDistance" value="0"/>
+                <property key="labeling/repeatDistanceMapUnitMaxScale" value="0"/>
+                <property key="labeling/repeatDistanceMapUnitMinScale" value="0"/>
+                <property key="labeling/repeatDistanceUnit" value="2"/>
+                <property key="labeling/reverseDirectionSymbol" value="false"/>
+                <property key="labeling/rightDirectionSymbol" value=">"/>
+                <property key="labeling/scaleMax" value="6000"/>
+                <property key="labeling/scaleMin" value="1"/>
+                <property key="labeling/scaleVisibility" value="true"/>
+                <property key="labeling/shadowBlendMode" value="6"/>
+                <property key="labeling/shadowColorB" value="0"/>
+                <property key="labeling/shadowColorG" value="0"/>
+                <property key="labeling/shadowColorR" value="0"/>
+                <property key="labeling/shadowDraw" value="false"/>
+                <property key="labeling/shadowOffsetAngle" value="135"/>
+                <property key="labeling/shadowOffsetDist" value="1"/>
+                <property key="labeling/shadowOffsetGlobal" value="true"/>
+                <property key="labeling/shadowOffsetMapUnitMaxScale" value="0"/>
+                <property key="labeling/shadowOffsetMapUnitMinScale" value="0"/>
+                <property key="labeling/shadowOffsetUnits" value="1"/>
+                <property key="labeling/shadowRadius" value="1.5"/>
+                <property key="labeling/shadowRadiusAlphaOnly" value="false"/>
+                <property key="labeling/shadowRadiusMapUnitMaxScale" value="0"/>
+                <property key="labeling/shadowRadiusMapUnitMinScale" value="0"/>
+                <property key="labeling/shadowRadiusUnits" value="1"/>
+                <property key="labeling/shadowScale" value="100"/>
+                <property key="labeling/shadowTransparency" value="30"/>
+                <property key="labeling/shadowUnder" value="0"/>
+                <property key="labeling/shapeBlendMode" value="0"/>
+                <property key="labeling/shapeBorderColorA" value="255"/>
+                <property key="labeling/shapeBorderColorB" value="128"/>
+                <property key="labeling/shapeBorderColorG" value="128"/>
+                <property key="labeling/shapeBorderColorR" value="128"/>
+                <property key="labeling/shapeBorderWidth" value="0"/>
+                <property key="labeling/shapeBorderWidthMapUnitMaxScale" value="0"/>
+                <property key="labeling/shapeBorderWidthMapUnitMinScale" value="0"/>
+                <property key="labeling/shapeBorderWidthUnits" value="1"/>
+                <property key="labeling/shapeDraw" value="false"/>
+                <property key="labeling/shapeFillColorA" value="255"/>
+                <property key="labeling/shapeFillColorB" value="255"/>
+                <property key="labeling/shapeFillColorG" value="255"/>
+                <property key="labeling/shapeFillColorR" value="255"/>
+                <property key="labeling/shapeJoinStyle" value="64"/>
+                <property key="labeling/shapeOffsetMapUnitMaxScale" value="0"/>
+                <property key="labeling/shapeOffsetMapUnitMinScale" value="0"/>
+                <property key="labeling/shapeOffsetUnits" value="1"/>
+                <property key="labeling/shapeOffsetX" value="0"/>
+                <property key="labeling/shapeOffsetY" value="0"/>
+                <property key="labeling/shapeRadiiMapUnitMaxScale" value="0"/>
+                <property key="labeling/shapeRadiiMapUnitMinScale" value="0"/>
+                <property key="labeling/shapeRadiiUnits" value="1"/>
+                <property key="labeling/shapeRadiiX" value="0"/>
+                <property key="labeling/shapeRadiiY" value="0"/>
+                <property key="labeling/shapeRotation" value="0"/>
+                <property key="labeling/shapeRotationType" value="0"/>
+                <property key="labeling/shapeSVGFile" value=""/>
+                <property key="labeling/shapeSizeMapUnitMaxScale" value="0"/>
+                <property key="labeling/shapeSizeMapUnitMinScale" value="0"/>
+                <property key="labeling/shapeSizeType" value="0"/>
+                <property key="labeling/shapeSizeUnits" value="1"/>
+                <property key="labeling/shapeSizeX" value="0"/>
+                <property key="labeling/shapeSizeY" value="0"/>
+                <property key="labeling/shapeTransparency" value="0"/>
+                <property key="labeling/shapeType" value="0"/>
+                <property key="labeling/textColorA" value="255"/>
+                <property key="labeling/textColorB" value="0"/>
+                <property key="labeling/textColorG" value="0"/>
+                <property key="labeling/textColorR" value="0"/>
+                <property key="labeling/textTransp" value="0"/>
+                <property key="labeling/upsidedownLabels" value="0"/>
+                <property key="labeling/wrapChar" value=""/>
+                <property key="labeling/xOffset" value="0"/>
+                <property key="labeling/yOffset" value="0"/>
+            </customproperties>
+            <blendMode>0</blendMode>
+            <featureBlendMode>0</featureBlendMode>
+            <layerTransparency>0</layerTransparency>
+            <displayfield>id</displayfield>
+            <label>0</label>
+            <labelattributes>
+                <label fieldname="" text="Label"/>
+                <family fieldname="" name="Ubuntu"/>
+                <size fieldname="" units="pt" value="12"/>
+                <bold fieldname="" on="0"/>
+                <italic fieldname="" on="0"/>
+                <underline fieldname="" on="0"/>
+                <strikeout fieldname="" on="0"/>
+                <color fieldname="" red="0" blue="0" green="0"/>
+                <x fieldname=""/>
+                <y fieldname=""/>
+                <offset x="0" y="0" units="pt" yfieldname="" xfieldname=""/>
+                <angle fieldname="" value="0" auto="0"/>
+                <alignment fieldname="" value="center"/>
+                <buffercolor fieldname="" red="255" blue="255" green="255"/>
+                <buffersize fieldname="" units="pt" value="1"/>
+                <bufferenabled fieldname="" on=""/>
+                <multilineenabled fieldname="" on=""/>
+                <selectedonly on=""/>
+            </labelattributes>
+            <editform></editform>
+            <editforminit></editforminit>
+            <featformsuppress>0</featformsuppress>
+            <annotationform></annotationform>
+            <editorlayout>generatedlayout</editorlayout>
+            <excludeAttributesWMS/>
+            <excludeAttributesWFS/>
+            <attributeactions/>
+            <edittypes>
+                <edittype widgetv2type="TextEdit" name="id">
+                    <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
+                </edittype>
+                <edittype widgetv2type="ValueRelation" name="id_distributor">
+                    <widgetv2config OrderByValue="0" AllowNull="0" FilterExpression="" fieldEditable="1" Key="id" Layer="distributor20130304114719702" Value="name" labelOnTop="0" AllowMulti="0"/>
+                </edittype>
+                <edittype widgetv2type="ValueRelation" name="id_status">
+                    <widgetv2config OrderByValue="0" AllowNull="0" FilterExpression="" fieldEditable="1" Key="id" Layer="vl_status20130304110011436" Value="value_fr" labelOnTop="0" AllowMulti="0"/>
+                </edittype>
+                <edittype widgetv2type="ValueRelation" name="id_precision">
+                    <widgetv2config OrderByValue="0" AllowNull="0" FilterExpression="" fieldEditable="1" Key="id" Layer="vl_precision20130304110011372" Value="value_fr" labelOnTop="0" AllowMulti="0"/>
+                </edittype>
+                <edittype widgetv2type="ValueRelation" name="id_material">
+                    <widgetv2config OrderByValue="1" AllowNull="0" FilterExpression="" fieldEditable="1" Key="id" Layer="vl_pipe_material20130304110005230" Value="_displayname_fr" labelOnTop="0" AllowMulti="0"/>
+                </edittype>
+                <edittype widgetv2type="TextEdit" name="identification">
+                    <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
+                </edittype>
+                <edittype widgetv2type="TextEdit" name="year">
+                    <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
+                </edittype>
+                <edittype widgetv2type="TextEdit" name="origin">
+                    <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
+                </edittype>
+                <edittype widgetv2type="TextEdit" name="destination">
+                    <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
+                </edittype>
+                <edittype widgetv2type="TextEdit" name="folder">
+                    <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
+                </edittype>
+                <edittype widgetv2type="TextEdit" name="plan">
+                    <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
+                </edittype>
+                <edittype widgetv2type="TextEdit" name="remark">
+                    <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
+                </edittype>
+                <edittype widgetv2type="TextEdit" name="label_visible_1">
+                    <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
+                </edittype>
+                <edittype widgetv2type="TextEdit" name="label_x_1">
+                    <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
+                </edittype>
+                <edittype widgetv2type="TextEdit" name="label_y_1">
+                    <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
+                </edittype>
+                <edittype widgetv2type="TextEdit" name="label_r_1">
+                    <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
+                </edittype>
+                <edittype widgetv2type="TextEdit" name="label_remark_1">
+                    <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
+                </edittype>
+                <edittype widgetv2type="TextEdit" name="label_visible_2">
+                    <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
+                </edittype>
+                <edittype widgetv2type="TextEdit" name="label_x_2">
+                    <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
+                </edittype>
+                <edittype widgetv2type="TextEdit" name="label_y_2">
+                    <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
+                </edittype>
+                <edittype widgetv2type="TextEdit" name="label_r_2">
+                    <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
+                </edittype>
+                <edittype widgetv2type="TextEdit" name="label_remark_2">
+                    <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
+                </edittype>
+            </edittypes>
+        </maplayer>
         <maplayer minimumScale="0" maximumScale="3000" simplifyDrawingHints="0" minLabelScale="0" maxLabelScale="1e+08" simplifyDrawingTol="1" geometry="Point" simplifyMaxScale="1" type="vector" hasScaleBasedVisibilityFlag="1" simplifyLocal="1" scaleBasedLabelVisibilityFlag="0">
             <id>od_subscriber_reference20131206105928067</id>
             <datasource>dbname='sige' host=172.24.171.203 port=5432 user='sige' sslmode=disable key='id' estimatedmetadata=true srid=21781 type=POINT table="qwat"."od_subscriber_reference" (geometry) sql=</datasource>
@@ -14871,6 +15377,9 @@
                 </join>
             </vectorjoins>
             <expressionfields/>
+            <map-layer-style-manager current="">
+                <map-layer-style name=""/>
+            </map-layer-style-manager>
             <edittypes>
                 <edittype widgetv2type="TextEdit" name="id">
                     <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
@@ -15135,6 +15644,9 @@
             <previewExpression>COALESCE( "name", '&lt;NULL>' )</previewExpression>
             <vectorjoins/>
             <expressionfields/>
+            <map-layer-style-manager current="">
+                <map-layer-style name=""/>
+            </map-layer-style-manager>
             <edittypes>
                 <edittype widgetv2type="TextEdit" name="id">
                     <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
@@ -15767,6 +16279,9 @@
             <previewExpression></previewExpression>
             <vectorjoins/>
             <expressionfields/>
+            <map-layer-style-manager current="">
+                <map-layer-style name=""/>
+            </map-layer-style-manager>
             <edittypes>
                 <edittype widgetv2type="TextEdit" name="child">
                     <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
@@ -16021,6 +16536,9 @@
             <previewExpression>shortname</previewExpression>
             <vectorjoins/>
             <expressionfields/>
+            <map-layer-style-manager current="">
+                <map-layer-style name=""/>
+            </map-layer-style-manager>
             <edittypes>
                 <edittype widgetv2type="TextEdit" name="id">
                     <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
@@ -16332,6 +16850,9 @@
                 <join joinFieldName="id" targetFieldName="id_district" memoryCache="1" joinLayerId="district20130304110004764"/>
             </vectorjoins>
             <expressionfields/>
+            <map-layer-style-manager current="">
+                <map-layer-style name=""/>
+            </map-layer-style-manager>
             <edittypes>
                 <edittype widgetv2type="TextEdit" name="id">
                     <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
@@ -16663,6 +17184,9 @@
             <previewExpression></previewExpression>
             <vectorjoins/>
             <expressionfields/>
+            <map-layer-style-manager current="">
+                <map-layer-style name=""/>
+            </map-layer-style-manager>
             <edittypes>
                 <edittype widgetv2type="TextEdit" name="id">
                     <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
@@ -16791,6 +17315,9 @@
             <noData>
                 <noDataList bandNo="1" useSrcNoData="1"/>
             </noData>
+            <map-layer-style-manager current="">
+                <map-layer-style name=""/>
+            </map-layer-style-manager>
             <pipe>
                 <rasterrenderer gradient="BlackToWhite" opacity="1" alphaBand="0" type="singlebandgray" grayBand="1">
                     <rasterTransparency/>
@@ -16828,27 +17355,30 @@
                 </spatialrefsys>
             </srs>
             <provider encoding="UTF-8">postgres</provider>
-            <previewExpression></previewExpression>
+            <previewExpression>COALESCE( "id", '&lt;NULL>' )</previewExpression>
             <vectorjoins/>
             <expressionfields/>
+            <map-layer-style-manager current="">
+                <map-layer-style name=""/>
+            </map-layer-style-manager>
             <edittypes>
                 <edittype widgetv2type="TextEdit" name="id">
                     <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
                 </edittype>
-                <edittype widgetv2type="TextEdit" name="id_commune">
-                    <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
+                <edittype widgetv2type="ValueRelation" name="id_commune">
+                    <widgetv2config OrderByValue="1" AllowNull="1" FilterExpression="" fieldEditable="1" Key="id" Layer="district20130304110004764" Value="name" labelOnTop="0" AllowMulti="0"/>
                 </edittype>
-                <edittype widgetv2type="TextEdit" name="id_type">
-                    <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
+                <edittype widgetv2type="ValueRelation" name="id_type">
+                    <widgetv2config OrderByValue="1" AllowNull="0" FilterExpression="" fieldEditable="1" Key="id" Layer="servitude_type20150116095811274" Value="type" labelOnTop="0" AllowMulti="0"/>
                 </edittype>
-                <edittype widgetv2type="TextEdit" name="id_etat">
-                    <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
+                <edittype widgetv2type="ValueRelation" name="id_etat">
+                    <widgetv2config OrderByValue="1" AllowNull="0" FilterExpression="" fieldEditable="1" Key="id" Layer="servitude_etat20150116095811244" Value="etat" labelOnTop="0" AllowMulti="0"/>
                 </edittype>
-                <edittype widgetv2type="TextEdit" name="id_statut">
-                    <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
+                <edittype widgetv2type="ValueRelation" name="id_statut">
+                    <widgetv2config OrderByValue="1" AllowNull="0" FilterExpression="" fieldEditable="1" Key="id" Layer="servitude_statut20150116095811261" Value="statut" labelOnTop="0" AllowMulti="0"/>
                 </edittype>
-                <edittype widgetv2type="TextEdit" name="id_ouvrage">
-                    <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
+                <edittype widgetv2type="ValueRelation" name="id_ouvrage">
+                    <widgetv2config OrderByValue="1" AllowNull="1" FilterExpression="" fieldEditable="1" Key="id" Layer="installation20130304110004938" Value="_displayname_fr" labelOnTop="0" AllowMulti="0"/>
                 </edittype>
                 <edittype widgetv2type="TextEdit" name="id_collecteur">
                     <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
@@ -16887,12 +17417,6 @@
                     <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
                 </edittype>
                 <edittype widgetv2type="TextEdit" name="geometry_polygon">
-                    <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
-                </edittype>
-                <edittype widgetv2type="TextEdit" name="geometry_line2">
-                    <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
-                </edittype>
-                <edittype widgetv2type="TextEdit" name="geometry_polygon2">
                     <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
                 </edittype>
             </edittypes>
@@ -16947,17 +17471,17 @@
                 <property key="labeling/distInMapUnits" value="false"/>
                 <property key="labeling/distMapUnitMaxScale" value="0"/>
                 <property key="labeling/distMapUnitMinScale" value="0"/>
-                <property key="labeling/enabled" value="false"/>
-                <property key="labeling/fieldName" value=""/>
+                <property key="labeling/enabled" value="true"/>
+                <property key="labeling/fieldName" value="numero"/>
                 <property key="labeling/fontBold" value="false"/>
                 <property key="labeling/fontCapitals" value="0"/>
-                <property key="labeling/fontFamily" value="Ubuntu"/>
+                <property key="labeling/fontFamily" value="Arial"/>
                 <property key="labeling/fontItalic" value="false"/>
                 <property key="labeling/fontLetterSpacing" value="0"/>
                 <property key="labeling/fontLimitPixelSize" value="false"/>
                 <property key="labeling/fontMaxPixelSize" value="10000"/>
                 <property key="labeling/fontMinPixelSize" value="3"/>
-                <property key="labeling/fontSize" value="11"/>
+                <property key="labeling/fontSize" value="8"/>
                 <property key="labeling/fontSizeInMapUnits" value="false"/>
                 <property key="labeling/fontSizeMapUnitMaxScale" value="0"/>
                 <property key="labeling/fontSizeMapUnitMinScale" value="0"/>
@@ -16966,7 +17490,7 @@
                 <property key="labeling/fontWeight" value="50"/>
                 <property key="labeling/fontWordSpacing" value="0"/>
                 <property key="labeling/formatNumbers" value="false"/>
-                <property key="labeling/isExpression" value="true"/>
+                <property key="labeling/isExpression" value="false"/>
                 <property key="labeling/labelOffsetInMapUnits" value="true"/>
                 <property key="labeling/labelOffsetMapUnitMaxScale" value="0"/>
                 <property key="labeling/labelOffsetMapUnitMinScale" value="0"/>
@@ -16980,7 +17504,7 @@
                 <property key="labeling/minFeatureSize" value="0"/>
                 <property key="labeling/multilineAlign" value="0"/>
                 <property key="labeling/multilineHeight" value="1"/>
-                <property key="labeling/namedStyle" value="Medium"/>
+                <property key="labeling/namedStyle" value="Regular"/>
                 <property key="labeling/obstacle" value="true"/>
                 <property key="labeling/placeDirectionSymbol" value="0"/>
                 <property key="labeling/placement" value="2"/>
@@ -17055,9 +17579,9 @@
                 <property key="labeling/shapeTransparency" value="0"/>
                 <property key="labeling/shapeType" value="0"/>
                 <property key="labeling/textColorA" value="255"/>
-                <property key="labeling/textColorB" value="0"/>
-                <property key="labeling/textColorG" value="0"/>
-                <property key="labeling/textColorR" value="0"/>
+                <property key="labeling/textColorB" value="110"/>
+                <property key="labeling/textColorG" value="110"/>
+                <property key="labeling/textColorR" value="111"/>
                 <property key="labeling/textTransp" value="0"/>
                 <property key="labeling/upsidedownLabels" value="0"/>
                 <property key="labeling/wrapChar" value=""/>
@@ -17089,10 +17613,10 @@
                 <multilineenabled fieldname="" on=""/>
                 <selectedonly on=""/>
             </labelattributes>
-            <editform></editform>
+            <editform>.</editform>
             <editforminit></editforminit>
             <featformsuppress>0</featformsuppress>
-            <annotationform></annotationform>
+            <annotationform>.</annotationform>
             <editorlayout>generatedlayout</editorlayout>
             <excludeAttributesWMS/>
             <excludeAttributesWFS/>
@@ -17101,20 +17625,20 @@
                 <edittype widgetv2type="TextEdit" name="id">
                     <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
                 </edittype>
-                <edittype widgetv2type="TextEdit" name="id_commune">
-                    <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
+                <edittype widgetv2type="ValueRelation" name="id_commune">
+                    <widgetv2config OrderByValue="1" AllowNull="1" FilterExpression="" fieldEditable="1" Key="id" Layer="district20130304110004764" Value="name" labelOnTop="0" AllowMulti="0"/>
                 </edittype>
-                <edittype widgetv2type="TextEdit" name="id_type">
-                    <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
+                <edittype widgetv2type="ValueRelation" name="id_type">
+                    <widgetv2config OrderByValue="1" AllowNull="0" FilterExpression="" fieldEditable="1" Key="id" Layer="servitude_type20150116095811274" Value="type" labelOnTop="0" AllowMulti="0"/>
                 </edittype>
-                <edittype widgetv2type="TextEdit" name="id_etat">
-                    <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
+                <edittype widgetv2type="ValueRelation" name="id_etat">
+                    <widgetv2config OrderByValue="1" AllowNull="0" FilterExpression="" fieldEditable="1" Key="id" Layer="servitude_etat20150116095811244" Value="etat" labelOnTop="0" AllowMulti="0"/>
                 </edittype>
-                <edittype widgetv2type="TextEdit" name="id_statut">
-                    <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
+                <edittype widgetv2type="ValueRelation" name="id_statut">
+                    <widgetv2config OrderByValue="1" AllowNull="0" FilterExpression="" fieldEditable="1" Key="id" Layer="servitude_statut20150116095811261" Value="statut" labelOnTop="0" AllowMulti="0"/>
                 </edittype>
-                <edittype widgetv2type="TextEdit" name="id_ouvrage">
-                    <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
+                <edittype widgetv2type="ValueRelation" name="id_ouvrage">
+                    <widgetv2config OrderByValue="1" AllowNull="1" FilterExpression="" fieldEditable="1" Key="id" Layer="installation20130304110004938" Value="_displayname_fr" labelOnTop="0" AllowMulti="0"/>
                 </edittype>
                 <edittype widgetv2type="TextEdit" name="id_collecteur">
                     <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
@@ -17155,12 +17679,6 @@
                 <edittype widgetv2type="TextEdit" name="geometry_polygon">
                     <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
                 </edittype>
-                <edittype widgetv2type="TextEdit" name="geometry_line2">
-                    <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
-                </edittype>
-                <edittype widgetv2type="TextEdit" name="geometry_polygon2">
-                    <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
-                </edittype>
             </edittypes>
         </maplayer>
         <maplayer minimumScale="-4.65661e-10" maximumScale="1e+08" simplifyDrawingHints="0" minLabelScale="0" maxLabelScale="1e+08" simplifyDrawingTol="1" geometry="Polygon" simplifyMaxScale="1" type="vector" hasScaleBasedVisibilityFlag="0" simplifyLocal="1" scaleBasedLabelVisibilityFlag="0">
@@ -17185,27 +17703,30 @@
                 </spatialrefsys>
             </srs>
             <provider encoding="UTF-8">postgres</provider>
-            <previewExpression></previewExpression>
+            <previewExpression>COALESCE( "id", '&lt;NULL>' )</previewExpression>
             <vectorjoins/>
             <expressionfields/>
+            <map-layer-style-manager current="">
+                <map-layer-style name=""/>
+            </map-layer-style-manager>
             <edittypes>
                 <edittype widgetv2type="TextEdit" name="id">
                     <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
                 </edittype>
-                <edittype widgetv2type="TextEdit" name="id_commune">
-                    <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
+                <edittype widgetv2type="ValueRelation" name="id_commune">
+                    <widgetv2config OrderByValue="1" AllowNull="1" FilterExpression="" fieldEditable="1" Key="id" Layer="district20130304110004764" Value="name" labelOnTop="0" AllowMulti="0"/>
                 </edittype>
-                <edittype widgetv2type="TextEdit" name="id_type">
-                    <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
+                <edittype widgetv2type="ValueRelation" name="id_type">
+                    <widgetv2config OrderByValue="1" AllowNull="0" FilterExpression="" fieldEditable="1" Key="id" Layer="servitude_type20150116095811274" Value="type" labelOnTop="0" AllowMulti="0"/>
                 </edittype>
-                <edittype widgetv2type="TextEdit" name="id_etat">
-                    <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
+                <edittype widgetv2type="ValueRelation" name="id_etat">
+                    <widgetv2config OrderByValue="1" AllowNull="0" FilterExpression="" fieldEditable="1" Key="id" Layer="servitude_etat20150116095811244" Value="etat" labelOnTop="0" AllowMulti="0"/>
                 </edittype>
-                <edittype widgetv2type="TextEdit" name="id_statut">
-                    <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
+                <edittype widgetv2type="ValueRelation" name="id_statut">
+                    <widgetv2config OrderByValue="1" AllowNull="0" FilterExpression="" fieldEditable="1" Key="id" Layer="servitude_statut20150116095811261" Value="statut" labelOnTop="0" AllowMulti="0"/>
                 </edittype>
-                <edittype widgetv2type="TextEdit" name="id_ouvrage">
-                    <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
+                <edittype widgetv2type="ValueRelation" name="id_ouvrage">
+                    <widgetv2config OrderByValue="1" AllowNull="1" FilterExpression="" fieldEditable="1" Key="id" Layer="installation20130304110004938" Value="_displayname_fr" labelOnTop="0" AllowMulti="0"/>
                 </edittype>
                 <edittype widgetv2type="TextEdit" name="id_collecteur">
                     <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
@@ -17246,19 +17767,13 @@
                 <edittype widgetv2type="TextEdit" name="geometry_line">
                     <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
                 </edittype>
-                <edittype widgetv2type="TextEdit" name="geometry_line2">
-                    <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
-                </edittype>
-                <edittype widgetv2type="TextEdit" name="geometry_polygon2">
-                    <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
-                </edittype>
             </edittypes>
             <renderer-v2 symbollevels="0" type="singleSymbol">
                 <symbols>
                     <symbol alpha="1" type="fill" name="0">
                         <layer pass="0" class="SimpleFill" locked="0">
                             <prop k="border_width_map_unit_scale" v="0,0"/>
-                            <prop k="color" v="131,130,130,119"/>
+                            <prop k="color" v="111,110,110,119"/>
                             <prop k="joinstyle" v="bevel"/>
                             <prop k="offset" v="0,0"/>
                             <prop k="offset_map_unit_scale" v="0,0"/>
@@ -17295,22 +17810,22 @@
                 <property key="labeling/centroidInside" value="false"/>
                 <property key="labeling/centroidWhole" value="false"/>
                 <property key="labeling/decimals" value="3"/>
-                <property key="labeling/displayAll" value="false"/>
-                <property key="labeling/dist" value="0"/>
+                <property key="labeling/displayAll" value="true"/>
+                <property key="labeling/dist" value="4"/>
                 <property key="labeling/distInMapUnits" value="false"/>
                 <property key="labeling/distMapUnitMaxScale" value="0"/>
                 <property key="labeling/distMapUnitMinScale" value="0"/>
-                <property key="labeling/enabled" value="false"/>
-                <property key="labeling/fieldName" value=""/>
+                <property key="labeling/enabled" value="true"/>
+                <property key="labeling/fieldName" value="numero"/>
                 <property key="labeling/fontBold" value="false"/>
                 <property key="labeling/fontCapitals" value="0"/>
-                <property key="labeling/fontFamily" value="Ubuntu"/>
+                <property key="labeling/fontFamily" value="Arial"/>
                 <property key="labeling/fontItalic" value="false"/>
                 <property key="labeling/fontLetterSpacing" value="0"/>
                 <property key="labeling/fontLimitPixelSize" value="false"/>
                 <property key="labeling/fontMaxPixelSize" value="10000"/>
                 <property key="labeling/fontMinPixelSize" value="3"/>
-                <property key="labeling/fontSize" value="11"/>
+                <property key="labeling/fontSize" value="8"/>
                 <property key="labeling/fontSizeInMapUnits" value="false"/>
                 <property key="labeling/fontSizeMapUnitMaxScale" value="0"/>
                 <property key="labeling/fontSizeMapUnitMinScale" value="0"/>
@@ -17319,11 +17834,11 @@
                 <property key="labeling/fontWeight" value="50"/>
                 <property key="labeling/fontWordSpacing" value="0"/>
                 <property key="labeling/formatNumbers" value="false"/>
-                <property key="labeling/isExpression" value="true"/>
+                <property key="labeling/isExpression" value="false"/>
                 <property key="labeling/labelOffsetInMapUnits" value="true"/>
                 <property key="labeling/labelOffsetMapUnitMaxScale" value="0"/>
                 <property key="labeling/labelOffsetMapUnitMinScale" value="0"/>
-                <property key="labeling/labelPerPart" value="false"/>
+                <property key="labeling/labelPerPart" value="true"/>
                 <property key="labeling/leftDirectionSymbol" value="&lt;"/>
                 <property key="labeling/limitNumLabels" value="false"/>
                 <property key="labeling/maxCurvedCharAngleIn" value="20"/>
@@ -17333,10 +17848,10 @@
                 <property key="labeling/minFeatureSize" value="0"/>
                 <property key="labeling/multilineAlign" value="0"/>
                 <property key="labeling/multilineHeight" value="1"/>
-                <property key="labeling/namedStyle" value="Medium"/>
+                <property key="labeling/namedStyle" value="Regular"/>
                 <property key="labeling/obstacle" value="true"/>
                 <property key="labeling/placeDirectionSymbol" value="0"/>
-                <property key="labeling/placement" value="1"/>
+                <property key="labeling/placement" value="0"/>
                 <property key="labeling/placementFlags" value="0"/>
                 <property key="labeling/plussign" value="false"/>
                 <property key="labeling/preserveRotation" value="true"/>
@@ -17442,10 +17957,10 @@
                 <multilineenabled fieldname="" on=""/>
                 <selectedonly on=""/>
             </labelattributes>
-            <editform></editform>
+            <editform>.</editform>
             <editforminit></editforminit>
             <featformsuppress>0</featformsuppress>
-            <annotationform></annotationform>
+            <annotationform>.</annotationform>
             <editorlayout>generatedlayout</editorlayout>
             <excludeAttributesWMS/>
             <excludeAttributesWFS/>
@@ -17454,20 +17969,20 @@
                 <edittype widgetv2type="TextEdit" name="id">
                     <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
                 </edittype>
-                <edittype widgetv2type="TextEdit" name="id_commune">
-                    <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
+                <edittype widgetv2type="ValueRelation" name="id_commune">
+                    <widgetv2config OrderByValue="1" AllowNull="1" FilterExpression="" fieldEditable="1" Key="id" Layer="district20130304110004764" Value="name" labelOnTop="0" AllowMulti="0"/>
                 </edittype>
-                <edittype widgetv2type="TextEdit" name="id_type">
-                    <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
+                <edittype widgetv2type="ValueRelation" name="id_type">
+                    <widgetv2config OrderByValue="1" AllowNull="0" FilterExpression="" fieldEditable="1" Key="id" Layer="servitude_type20150116095811274" Value="type" labelOnTop="0" AllowMulti="0"/>
                 </edittype>
-                <edittype widgetv2type="TextEdit" name="id_etat">
-                    <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
+                <edittype widgetv2type="ValueRelation" name="id_etat">
+                    <widgetv2config OrderByValue="1" AllowNull="0" FilterExpression="" fieldEditable="1" Key="id" Layer="servitude_etat20150116095811244" Value="etat" labelOnTop="0" AllowMulti="0"/>
                 </edittype>
-                <edittype widgetv2type="TextEdit" name="id_statut">
-                    <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
+                <edittype widgetv2type="ValueRelation" name="id_statut">
+                    <widgetv2config OrderByValue="1" AllowNull="0" FilterExpression="" fieldEditable="1" Key="id" Layer="servitude_statut20150116095811261" Value="statut" labelOnTop="0" AllowMulti="0"/>
                 </edittype>
-                <edittype widgetv2type="TextEdit" name="id_ouvrage">
-                    <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
+                <edittype widgetv2type="ValueRelation" name="id_ouvrage">
+                    <widgetv2config OrderByValue="1" AllowNull="1" FilterExpression="" fieldEditable="1" Key="id" Layer="installation20130304110004938" Value="_displayname_fr" labelOnTop="0" AllowMulti="0"/>
                 </edittype>
                 <edittype widgetv2type="TextEdit" name="id_collecteur">
                     <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
@@ -17508,10 +18023,166 @@
                 <edittype widgetv2type="TextEdit" name="geometry_line">
                     <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
                 </edittype>
-                <edittype widgetv2type="TextEdit" name="geometry_line2">
+            </edittypes>
+        </maplayer>
+        <maplayer minimumScale="0" maximumScale="1e+08" geometry="No geometry" type="vector" hasScaleBasedVisibilityFlag="0">
+            <id>servitude_etat20150116095811244</id>
+            <datasource>dbname='sige' host=172.24.171.203 port=5432 user='sige' password='db4wat$' sslmode=disable key='id' table="cadastre"."servitude_etat" sql=</datasource>
+            <title></title>
+            <abstract></abstract>
+            <keywordList>
+                <value></value>
+            </keywordList>
+            <layername>Servitude - état</layername>
+            <srs>
+                <spatialrefsys>
+                    <proj4>+proj=longlat +datum=WGS84 +no_defs</proj4>
+                    <srsid>3452</srsid>
+                    <srid>4326</srid>
+                    <authid>EPSG:4326</authid>
+                    <description>WGS 84</description>
+                    <projectionacronym>longlat</projectionacronym>
+                    <ellipsoidacronym>WGS84</ellipsoidacronym>
+                    <geographicflag>true</geographicflag>
+                </spatialrefsys>
+            </srs>
+            <customproperties/>
+            <provider encoding="UTF-8">postgres</provider>
+            <previewExpression></previewExpression>
+            <vectorjoins/>
+            <expressionfields/>
+            <map-layer-style-manager current="">
+                <map-layer-style name=""/>
+            </map-layer-style-manager>
+            <edittypes>
+                <edittype widgetv2type="TextEdit" name="id">
                     <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
                 </edittype>
-                <edittype widgetv2type="TextEdit" name="geometry_polygon2">
+                <edittype widgetv2type="TextEdit" name="etat">
+                    <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
+                </edittype>
+            </edittypes>
+            <editform></editform>
+            <editforminit></editforminit>
+            <featformsuppress>0</featformsuppress>
+            <annotationform></annotationform>
+            <editorlayout>generatedlayout</editorlayout>
+            <excludeAttributesWMS/>
+            <excludeAttributesWFS/>
+            <attributeactions/>
+            <edittypes>
+                <edittype widgetv2type="TextEdit" name="id">
+                    <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
+                </edittype>
+                <edittype widgetv2type="TextEdit" name="etat">
+                    <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
+                </edittype>
+            </edittypes>
+        </maplayer>
+        <maplayer minimumScale="0" maximumScale="1e+08" geometry="No geometry" type="vector" hasScaleBasedVisibilityFlag="0">
+            <id>servitude_statut20150116095811261</id>
+            <datasource>dbname='sige' host=172.24.171.203 port=5432 user='sige' password='db4wat$' sslmode=disable key='id' table="cadastre"."servitude_statut" sql=</datasource>
+            <title></title>
+            <abstract></abstract>
+            <keywordList>
+                <value></value>
+            </keywordList>
+            <layername>Servitude - statut</layername>
+            <srs>
+                <spatialrefsys>
+                    <proj4>+proj=longlat +datum=WGS84 +no_defs</proj4>
+                    <srsid>3452</srsid>
+                    <srid>4326</srid>
+                    <authid>EPSG:4326</authid>
+                    <description>WGS 84</description>
+                    <projectionacronym>longlat</projectionacronym>
+                    <ellipsoidacronym>WGS84</ellipsoidacronym>
+                    <geographicflag>true</geographicflag>
+                </spatialrefsys>
+            </srs>
+            <customproperties/>
+            <provider encoding="UTF-8">postgres</provider>
+            <previewExpression></previewExpression>
+            <vectorjoins/>
+            <expressionfields/>
+            <map-layer-style-manager current="">
+                <map-layer-style name=""/>
+            </map-layer-style-manager>
+            <edittypes>
+                <edittype widgetv2type="TextEdit" name="id">
+                    <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
+                </edittype>
+                <edittype widgetv2type="TextEdit" name="statut">
+                    <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
+                </edittype>
+            </edittypes>
+            <editform></editform>
+            <editforminit></editforminit>
+            <featformsuppress>0</featformsuppress>
+            <annotationform></annotationform>
+            <editorlayout>generatedlayout</editorlayout>
+            <excludeAttributesWMS/>
+            <excludeAttributesWFS/>
+            <attributeactions/>
+            <edittypes>
+                <edittype widgetv2type="TextEdit" name="id">
+                    <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
+                </edittype>
+                <edittype widgetv2type="TextEdit" name="statut">
+                    <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
+                </edittype>
+            </edittypes>
+        </maplayer>
+        <maplayer minimumScale="0" maximumScale="1e+08" geometry="No geometry" type="vector" hasScaleBasedVisibilityFlag="0">
+            <id>servitude_type20150116095811274</id>
+            <datasource>dbname='sige' host=172.24.171.203 port=5432 user='sige' password='db4wat$' sslmode=disable key='id' table="cadastre"."servitude_type" sql=</datasource>
+            <title></title>
+            <abstract></abstract>
+            <keywordList>
+                <value></value>
+            </keywordList>
+            <layername>Servitude - type</layername>
+            <srs>
+                <spatialrefsys>
+                    <proj4>+proj=longlat +datum=WGS84 +no_defs</proj4>
+                    <srsid>3452</srsid>
+                    <srid>4326</srid>
+                    <authid>EPSG:4326</authid>
+                    <description>WGS 84</description>
+                    <projectionacronym>longlat</projectionacronym>
+                    <ellipsoidacronym>WGS84</ellipsoidacronym>
+                    <geographicflag>true</geographicflag>
+                </spatialrefsys>
+            </srs>
+            <customproperties/>
+            <provider encoding="UTF-8">postgres</provider>
+            <previewExpression></previewExpression>
+            <vectorjoins/>
+            <expressionfields/>
+            <map-layer-style-manager current="">
+                <map-layer-style name=""/>
+            </map-layer-style-manager>
+            <edittypes>
+                <edittype widgetv2type="TextEdit" name="id">
+                    <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
+                </edittype>
+                <edittype widgetv2type="TextEdit" name="type">
+                    <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
+                </edittype>
+            </edittypes>
+            <editform></editform>
+            <editforminit></editforminit>
+            <featformsuppress>0</featformsuppress>
+            <annotationform></annotationform>
+            <editorlayout>generatedlayout</editorlayout>
+            <excludeAttributesWMS/>
+            <excludeAttributesWFS/>
+            <attributeactions/>
+            <edittypes>
+                <edittype widgetv2type="TextEdit" name="id">
+                    <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
+                </edittype>
+                <edittype widgetv2type="TextEdit" name="type">
                     <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
                 </edittype>
             </edittypes>
@@ -17541,6 +18212,9 @@
             <previewExpression>id</previewExpression>
             <vectorjoins/>
             <expressionfields/>
+            <map-layer-style-manager current="">
+                <map-layer-style name=""/>
+            </map-layer-style-manager>
             <edittypes>
                 <edittype widgetv2type="TextEdit" name="id">
                     <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
@@ -17993,6 +18667,9 @@
             <previewExpression>"id"</previewExpression>
             <vectorjoins/>
             <expressionfields/>
+            <map-layer-style-manager current="">
+                <map-layer-style name=""/>
+            </map-layer-style-manager>
             <edittypes>
                 <edittype widgetv2type="TextEdit" name="id">
                     <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
@@ -18216,6 +18893,9 @@
                 <join joinFieldName="id" targetFieldName="id_type" memoryCache="1" joinLayerId="vl_valve_type20130304110011685"/>
             </vectorjoins>
             <expressionfields/>
+            <map-layer-style-manager current="">
+                <map-layer-style name=""/>
+            </map-layer-style-manager>
             <edittypes>
                 <edittype widgetv2type="TextEdit" name="id">
                     <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
@@ -18943,6 +19623,9 @@
                 <join joinFieldName="id" targetFieldName="id_type" memoryCache="1" joinLayerId="vl_valve_type20130304110011685"/>
             </vectorjoins>
             <expressionfields/>
+            <map-layer-style-manager current="">
+                <map-layer-style name=""/>
+            </map-layer-style-manager>
             <edittypes>
                 <edittype widgetv2type="TextEdit" name="id">
                     <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
@@ -19576,6 +20259,9 @@
             <previewExpression></previewExpression>
             <vectorjoins/>
             <expressionfields/>
+            <map-layer-style-manager current="">
+                <map-layer-style name=""/>
+            </map-layer-style-manager>
             <edittypes>
                 <edittype widgetv2type="TextEdit" name="id">
                     <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
@@ -19641,6 +20327,9 @@
             <previewExpression></previewExpression>
             <vectorjoins/>
             <expressionfields/>
+            <map-layer-style-manager current="">
+                <map-layer-style name=""/>
+            </map-layer-style-manager>
             <edittypes>
                 <edittype widgetv2type="TextEdit" name="id">
                     <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
@@ -19706,6 +20395,9 @@
             <previewExpression></previewExpression>
             <vectorjoins/>
             <expressionfields/>
+            <map-layer-style-manager current="">
+                <map-layer-style name=""/>
+            </map-layer-style-manager>
             <edittypes>
                 <edittype widgetv2type="TextEdit" name="id">
                     <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
@@ -19769,6 +20461,9 @@
             <previewExpression>"id"</previewExpression>
             <vectorjoins/>
             <expressionfields/>
+            <map-layer-style-manager current="">
+                <map-layer-style name=""/>
+            </map-layer-style-manager>
             <edittypes>
                 <edittype widgetv2type="TextEdit" name="id">
                     <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
@@ -19852,6 +20547,9 @@
             <previewExpression></previewExpression>
             <vectorjoins/>
             <expressionfields/>
+            <map-layer-style-manager current="">
+                <map-layer-style name=""/>
+            </map-layer-style-manager>
             <edittypes>
                 <edittype widgetv2type="TextEdit" name="id">
                     <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
@@ -19917,6 +20615,9 @@
             <previewExpression></previewExpression>
             <vectorjoins/>
             <expressionfields/>
+            <map-layer-style-manager current="">
+                <map-layer-style name=""/>
+            </map-layer-style-manager>
             <edittypes>
                 <edittype widgetv2type="TextEdit" name="id">
                     <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
@@ -19982,6 +20683,9 @@
             <previewExpression>COALESCE("id", '&lt;NULL>')</previewExpression>
             <vectorjoins/>
             <expressionfields/>
+            <map-layer-style-manager current="">
+                <map-layer-style name=""/>
+            </map-layer-style-manager>
             <edittypes>
                 <edittype widgetv2type="TextEdit" name="id">
                     <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
@@ -20049,6 +20753,9 @@
             <previewExpression></previewExpression>
             <vectorjoins/>
             <expressionfields/>
+            <map-layer-style-manager current="">
+                <map-layer-style name=""/>
+            </map-layer-style-manager>
             <edittypes>
                 <edittype widgetv2type="TextEdit" name="id">
                     <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
@@ -20114,6 +20821,9 @@
             <previewExpression></previewExpression>
             <vectorjoins/>
             <expressionfields/>
+            <map-layer-style-manager current="">
+                <map-layer-style name=""/>
+            </map-layer-style-manager>
             <edittypes>
                 <edittype widgetv2type="TextEdit" name="id">
                     <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
@@ -20211,6 +20921,9 @@
             <previewExpression>COALESCE("id", '&lt;NULL>')</previewExpression>
             <vectorjoins/>
             <expressionfields/>
+            <map-layer-style-manager current="">
+                <map-layer-style name=""/>
+            </map-layer-style-manager>
             <edittypes>
                 <edittype widgetv2type="TextEdit" name="id">
                     <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
@@ -20290,6 +21003,9 @@
             <previewExpression></previewExpression>
             <vectorjoins/>
             <expressionfields/>
+            <map-layer-style-manager current="">
+                <map-layer-style name=""/>
+            </map-layer-style-manager>
             <edittypes>
                 <edittype widgetv2type="TextEdit" name="id">
                     <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
@@ -20357,6 +21073,9 @@
             <previewExpression>COALESCE("id", '&lt;NULL>')</previewExpression>
             <vectorjoins/>
             <expressionfields/>
+            <map-layer-style-manager current="">
+                <map-layer-style name=""/>
+            </map-layer-style-manager>
             <edittypes>
                 <edittype widgetv2type="TextEdit" name="id">
                     <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
@@ -20496,6 +21215,9 @@
             <previewExpression></previewExpression>
             <vectorjoins/>
             <expressionfields/>
+            <map-layer-style-manager current="">
+                <map-layer-style name=""/>
+            </map-layer-style-manager>
             <edittypes>
                 <edittype widgetv2type="TextEdit" name="id">
                     <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
@@ -20563,6 +21285,9 @@
             <previewExpression></previewExpression>
             <vectorjoins/>
             <expressionfields/>
+            <map-layer-style-manager current="">
+                <map-layer-style name=""/>
+            </map-layer-style-manager>
             <edittypes>
                 <edittype widgetv2type="TextEdit" name="id">
                     <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
@@ -20646,6 +21371,9 @@
             <previewExpression></previewExpression>
             <vectorjoins/>
             <expressionfields/>
+            <map-layer-style-manager current="">
+                <map-layer-style name=""/>
+            </map-layer-style-manager>
             <edittypes>
                 <edittype widgetv2type="TextEdit" name="id">
                     <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
@@ -20729,6 +21457,9 @@
             <previewExpression></previewExpression>
             <vectorjoins/>
             <expressionfields/>
+            <map-layer-style-manager current="">
+                <map-layer-style name=""/>
+            </map-layer-style-manager>
             <edittypes>
                 <edittype widgetv2type="TextEdit" name="id">
                     <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
@@ -20802,6 +21533,9 @@
             <previewExpression></previewExpression>
             <vectorjoins/>
             <expressionfields/>
+            <map-layer-style-manager current="">
+                <map-layer-style name=""/>
+            </map-layer-style-manager>
             <edittypes>
                 <edittype widgetv2type="TextEdit" name="id">
                     <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
@@ -20867,6 +21601,9 @@
             <previewExpression></previewExpression>
             <vectorjoins/>
             <expressionfields/>
+            <map-layer-style-manager current="">
+                <map-layer-style name=""/>
+            </map-layer-style-manager>
             <edittypes>
                 <edittype widgetv2type="TextEdit" name="id">
                     <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
@@ -20938,6 +21675,9 @@
             <previewExpression></previewExpression>
             <vectorjoins/>
             <expressionfields/>
+            <map-layer-style-manager current="">
+                <map-layer-style name=""/>
+            </map-layer-style-manager>
             <edittypes>
                 <edittype widgetv2type="TextEdit" name="id">
                     <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
@@ -21011,6 +21751,9 @@
             <previewExpression></previewExpression>
             <vectorjoins/>
             <expressionfields/>
+            <map-layer-style-manager current="">
+                <map-layer-style name=""/>
+            </map-layer-style-manager>
             <edittypes>
                 <edittype widgetv2type="TextEdit" name="id">
                     <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
@@ -21115,6 +21858,9 @@
             <previewExpression>"id"</previewExpression>
             <vectorjoins/>
             <expressionfields/>
+            <map-layer-style-manager current="">
+                <map-layer-style name=""/>
+            </map-layer-style-manager>
             <edittypes>
                 <edittype widgetv2type="TextEdit" name="id">
                     <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
@@ -21194,6 +21940,9 @@
             <previewExpression></previewExpression>
             <vectorjoins/>
             <expressionfields/>
+            <map-layer-style-manager current="">
+                <map-layer-style name=""/>
+            </map-layer-style-manager>
             <edittypes>
                 <edittype widgetv2type="TextEdit" name="id">
                     <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
@@ -21261,6 +22010,9 @@
             <previewExpression>"id"</previewExpression>
             <vectorjoins/>
             <expressionfields/>
+            <map-layer-style-manager current="">
+                <map-layer-style name=""/>
+            </map-layer-style-manager>
             <edittypes>
                 <edittype widgetv2type="TextEdit" name="id">
                     <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
@@ -21346,6 +22098,9 @@
             <previewExpression></previewExpression>
             <vectorjoins/>
             <expressionfields/>
+            <map-layer-style-manager current="">
+                <map-layer-style name=""/>
+            </map-layer-style-manager>
             <edittypes>
                 <edittype widgetv2type="TextEdit" name="id">
                     <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
@@ -21423,6 +22178,9 @@
             <previewExpression>"id"</previewExpression>
             <vectorjoins/>
             <expressionfields/>
+            <map-layer-style-manager current="">
+                <map-layer-style name=""/>
+            </map-layer-style-manager>
             <edittypes>
                 <edittype widgetv2type="TextEdit" name="id">
                     <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
@@ -21496,6 +22254,9 @@
             <previewExpression></previewExpression>
             <vectorjoins/>
             <expressionfields/>
+            <map-layer-style-manager current="">
+                <map-layer-style name=""/>
+            </map-layer-style-manager>
             <edittypes>
                 <edittype widgetv2type="TextEdit" name="id">
                     <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
@@ -21573,6 +22334,9 @@
             <previewExpression></previewExpression>
             <vectorjoins/>
             <expressionfields/>
+            <map-layer-style-manager current="">
+                <map-layer-style name=""/>
+            </map-layer-style-manager>
             <edittypes>
                 <edittype widgetv2type="TextEdit" name="id">
                     <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
@@ -21645,6 +22409,9 @@
                 <join joinFieldName="id" targetFieldName="id_material" memoryCache="1" joinLayerId="vl_pipe_material20130304110005230"/>
             </vectorjoins>
             <expressionfields/>
+            <map-layer-style-manager current="">
+                <map-layer-style name=""/>
+            </map-layer-style-manager>
             <edittypes>
                 <edittype widgetv2type="TextEdit" name="id">
                     <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
@@ -22130,6 +22897,9 @@
             <previewExpression></previewExpression>
             <vectorjoins/>
             <expressionfields/>
+            <map-layer-style-manager current="">
+                <map-layer-style name=""/>
+            </map-layer-style-manager>
             <edittypes>
                 <edittype widgetv2type="TextEdit" name="id">
                     <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
@@ -22496,6 +23266,8 @@
                 <value>pressurezone20130417133612105</value>
                 <value>printmap20130304110011400</value>
                 <value>protectionzone20130304110011418</value>
+                <value>servitude20150109080436604</value>
+                <value>servitude20150109080436650</value>
                 <value>subscriber20130304110011459</value>
                 <value>subscriber_pipe_relation20130417092124312</value>
                 <value>valve20130304110011497</value>
@@ -22529,8 +23301,7 @@
                 <value>od_element_surfacique20140214144124647</value>
                 <value>cs_batiment20140214143721709</value>
                 <value>od_batiment_souterrain20140214143946785</value>
-                <value>servitude20150109080436604</value>
-                <value>servitude20150109080436650</value>
+                <value>od_remote20150116100522170</value>
             </LayerSnappingList>
             <LayerSnappingEnabledList type="QStringList">
                 <value>disabled</value>
@@ -22569,6 +23340,8 @@
                 <value>disabled</value>
                 <value>disabled</value>
                 <value>disabled</value>
+                <value>disabled</value>
+                <value>disabled</value>
                 <value>enabled</value>
                 <value>enabled</value>
                 <value>disabled</value>
@@ -22600,7 +23373,6 @@
                 <value>enabled</value>
                 <value>enabled</value>
                 <value>enabled</value>
-                <value>disabled</value>
                 <value>disabled</value>
             </LayerSnappingEnabledList>
             <AvoidIntersectionsList type="QStringList">
@@ -22666,20 +23438,21 @@
                 <value>1</value>
                 <value>1</value>
                 <value>1</value>
-                <value>0</value>
-                <value>0</value>
-                <value>0</value>
-                <value>0</value>
-                <value>0</value>
-                <value>0</value>
-                <value>0</value>
-                <value>0</value>
-                <value>0</value>
-                <value>0</value>
-                <value>0</value>
-                <value>0</value>
-                <value>0</value>
                 <value>1</value>
+                <value>1</value>
+                <value>0</value>
+                <value>0</value>
+                <value>0</value>
+                <value>0</value>
+                <value>0</value>
+                <value>0</value>
+                <value>0</value>
+                <value>0</value>
+                <value>0</value>
+                <value>0</value>
+                <value>0</value>
+                <value>0</value>
+                <value>0</value>
                 <value>1</value>
             </LayerSnappingToleranceUnitList>
             <LayerSnapToList type="QStringList">
@@ -22717,6 +23490,8 @@
                 <value>to_vertex</value>
                 <value>to_vertex</value>
                 <value>to_vertex</value>
+                <value>to_vertex_and_segment</value>
+                <value>to_vertex_and_segment</value>
                 <value>to_vertex</value>
                 <value>to_vertex</value>
                 <value>to_vertex</value>
@@ -22750,7 +23525,6 @@
                 <value>to_vertex</value>
                 <value>to_vertex</value>
                 <value>to_vertex</value>
-                <value>to_vertex_and_segment</value>
                 <value>to_vertex_and_segment</value>
             </LayerSnapToList>
             <TopologicalEditing type="bool">true</TopologicalEditing>
@@ -22789,6 +23563,8 @@
                 <value>12.000000</value>
                 <value>12.000000</value>
                 <value>0.000000</value>
+                <value>7.000000</value>
+                <value>7.000000</value>
                 <value>0.000000</value>
                 <value>6.000000</value>
                 <value>5.000000</value>
@@ -22822,7 +23598,6 @@
                 <value>0.000000</value>
                 <value>0.000000</value>
                 <value>0.000000</value>
-                <value>7.000000</value>
                 <value>7.000000</value>
             </LayerSnappingToleranceList>
         </Digitizing>
