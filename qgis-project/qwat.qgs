@@ -132,7 +132,7 @@
         <customproperties/>
       </layer-tree-layer>
     </layer-tree-group>
-    <layer-tree-group expanded="1" checked="Qt::PartiallyChecked" name="cadastre sige">
+    <layer-tree-group expanded="0" checked="Qt::PartiallyChecked" name="cadastre sige">
       <customproperties/>
       <layer-tree-layer expanded="1" checked="Qt::Checked" id="servitude20150109080436604" name="servitude ligne">
         <customproperties/>
@@ -177,7 +177,7 @@
         </layer-tree-layer>
       </layer-tree-group>
     </layer-tree-group>
-    <layer-tree-group expanded="0" checked="Qt::Unchecked" name="Tables auxiliaires">
+    <layer-tree-group expanded="1" checked="Qt::Unchecked" name="Tables auxiliaires">
       <customproperties/>
       <layer-tree-layer expanded="1" checked="Qt::Unchecked" id="vl_subscriber_type20130304110011480" name="Abonnés - type">
         <customproperties/>
@@ -332,6 +332,9 @@
     <relation referencingLayer="leak20130821111917060" referencedLayer="conduites_copy20130709141244955" id="relation_pipe_leak" name="Conduite - fuites">
       <fieldRef referencedField="id" referencingField="id_pipe"/>
     </relation>
+    <relation referencingLayer="conduites_copy20130709141244955" referencedLayer="vl_pipe_material20130304110005230" id="relation_pipe_material" name="Conduite - matériau">
+      <fieldRef referencedField="id" referencingField="id_material"/>
+    </relation>
     <relation referencingLayer="subscriber20130304110011459" referencedLayer="conduites_copy20130709141244955" id="relation_pipe_subscriber" name="Conduite - abonnés">
       <fieldRef referencedField="id" referencingField="id_pipe"/>
     </relation>
@@ -339,10 +342,10 @@
   <mapcanvas>
     <units>meters</units>
     <extent>
-      <xmin>559118.02999076712876558</xmin>
-      <ymin>140498.37518696463666856</ymin>
-      <xmax>563153.31482846126891673</xmax>
-      <ymax>146139.72794404916930944</ymax>
+      <xmin>558262.07476868410594761</xmin>
+      <ymin>143654.93784303829306737</ymin>
+      <xmax>558308.72677728370763361</xmax>
+      <ymax>143720.15763475932180882</ymax>
     </extent>
     <rotation>0</rotation>
     <projections>1</projections>
@@ -905,7 +908,7 @@
         </filegroup>
       </legendlayer>
     </legendgroup>
-    <legendgroup open="true" checked="Qt::PartiallyChecked" name="cadastre sige">
+    <legendgroup open="false" checked="Qt::PartiallyChecked" name="cadastre sige">
       <legendlayer drawingOrder="67" open="true" checked="Qt::Checked" name="servitude ligne" showFeatureCount="0">
         <filegroup open="true" hidden="false">
           <legendlayerfile isInOverview="0" layerid="servitude20150109080436604" visible="1"/>
@@ -968,7 +971,7 @@
         </legendlayer>
       </legendgroup>
     </legendgroup>
-    <legendgroup open="false" checked="Qt::Unchecked" name="Tables auxiliaires">
+    <legendgroup open="true" checked="Qt::Unchecked" name="Tables auxiliaires">
       <legendlayer drawingOrder="38" open="true" checked="Qt::Unchecked" name="Abonnés - type" showFeatureCount="0">
         <filegroup open="true" hidden="false">
           <legendlayerfile isInOverview="0" layerid="vl_subscriber_type20130304110011480" visible="0"/>
@@ -4790,7 +4793,7 @@
       </pipe>
       <blendMode>0</blendMode>
     </maplayer>
-    <maplayer minimumScale="-4.65661e-10" maximumScale="1e+08" simplifyDrawingHints="0" minLabelScale="0" maxLabelScale="1e+08" simplifyDrawingTol="1" geometry="Line" simplifyMaxScale="1" type="vector" hasScaleBasedVisibilityFlag="0" simplifyLocal="1" scaleBasedLabelVisibilityFlag="0">
+    <maplayer minimumScale="0" maximumScale="1e+08" simplifyDrawingHints="0" minLabelScale="0" maxLabelScale="1e+08" simplifyDrawingTol="1" geometry="Line" simplifyMaxScale="1" type="vector" hasScaleBasedVisibilityFlag="0" simplifyLocal="1" scaleBasedLabelVisibilityFlag="0">
       <id>conduites_copy20130709141244955</id>
       <datasource>dbname='sige' host=172.24.171.203 port=5432 user='sige' sslmode=disable key='id' srid=21781 type=LINESTRING table="qwat"."od_pipe" (geometry) sql=</datasource>
       <title></title>
@@ -4842,8 +4845,8 @@
         <edittype widgetv2type="ValueRelation" name="id_installmethod">
           <widgetv2config OrderByValue="0" AllowNull="0" FilterExpression="" fieldEditable="1" Key="id" Layer="vl_pipe_installmethod20130304110005209" Value="value_fr" labelOnTop="0" AllowMulti="0"/>
         </edittype>
-        <edittype widgetv2type="ValueRelation" name="id_material">
-          <widgetv2config OrderByValue="1" AllowNull="0" FilterExpression="" fieldEditable="1" Key="id" Layer="vl_pipe_material20130304110005230" Value="_displayname_fr" labelOnTop="0" AllowMulti="0"/>
+        <edittype widgetv2type="RelationReference" name="id_material">
+          <widgetv2config fieldEditable="1" ShowForm="0" Relation="relation_pipe_material" ReadOnly="0" MapIdentification="0" labelOnTop="0" AllowNULL="0"/>
         </edittype>
         <edittype widgetv2type="ValueRelation" name="id_distributor">
           <widgetv2config OrderByValue="0" AllowNull="0" FilterExpression="" fieldEditable="1" Key="id" Layer="distributor20130304114719702" Value="name" labelOnTop="0" AllowMulti="0"/>
@@ -5051,38 +5054,38 @@
         <rules key="{dbde1c2b-a27d-484e-8dd5-d13dcd527b89}">
           <rule filter="id_distributor = 1and &quot;Statut_active&quot; = 't'" key="{f550eef3-fdaa-427b-b415-bd7e8fc25f9e}" label="active">
             <rule filter="&quot;_schema_visible&quot; = 't'" key="{1169fb39-5fd3-43b6-9c6c-0f8ef27a0149}" label="Schématique">
-              <rule filter=" &quot;Conduites - fonction_schema_visible&quot; = 't'" key="{6f4ad4f8-4d2b-44d5-a097-ec1830c78aa3}" symbol="0" label="Transport"/>
-              <rule filter=" &quot;Conduites - fonction_schema_visible&quot; = 'f'" key="{a2872713-5a4f-42d7-aae6-f1c3109d5dfe}" symbol="1" label="distribution"/>
-              <rule filter=" &quot;id_protection&quot; IS NOT NULL" key="{928e526c-98b5-46fc-a1f3-58bac8293a3d}" symbol="2" label="protégée"/>
+              <rule filter=" &quot;Conduites - fonction_schema_visible&quot; = 't'" key="{859c7bc0-bea7-4643-ad59-9e33dc9ea62a}" symbol="0" label="Transport"/>
+              <rule filter=" &quot;Conduites - fonction_schema_visible&quot; = 'f'" key="{c61aa34d-c75d-4fa2-b63b-04ba928d304f}" symbol="1" label="distribution"/>
+              <rule filter=" &quot;id_protection&quot; IS NOT NULL" key="{7aef02ba-85cd-4da4-8041-824945ebbd94}" symbol="2" label="protégée"/>
             </rule>
             <rule scalemaxdenom="3000" filter="_schema_visible = 'f'" key="{9646576f-b22a-45bf-a4a3-3678392bd8c0}" label="Détail">
-              <rule filter=" &quot;Conduites - fonction_schema_visible&quot; = 't'" key="{baa340e7-b380-453f-b06e-2b6cc7e50831}" symbol="3" label="Transport"/>
-              <rule filter=" &quot;Conduites - fonction_schema_visible&quot; = 'f'" key="{79271b40-dd5c-45f4-89fc-534639977060}" symbol="4" label="qwat"/>
-              <rule filter=" &quot;id_protection&quot; IS NOT NULL" key="{18af118d-0f87-4409-b8fc-55626891a180}" symbol="5" label="protégée"/>
+              <rule filter=" &quot;Conduites - fonction_schema_visible&quot; = 't'" key="{f4961577-7e22-47f8-91f5-26c4403ce70f}" symbol="3" label="Transport"/>
+              <rule filter=" &quot;Conduites - fonction_schema_visible&quot; = 'f'" key="{e8247b13-6b39-498f-9a87-466841839fe4}" symbol="4" label="qwat"/>
+              <rule filter=" &quot;id_protection&quot; IS NOT NULL" key="{9d62c587-92ca-4fd5-8711-e224e65a3182}" symbol="5" label="protégée"/>
             </rule>
           </rule>
           <rule checkstate="0" filter="id_distributor = 1and &quot;Statut_active&quot; = 'f'" key="{75060a73-107d-4ace-bc35-d573de40488f}" label="inactive">
             <rule filter="&quot;_schema_visible&quot; = 't'" key="{5b970fd5-5c37-4865-81a5-cab18c5fb58c}" label="Schématique">
-              <rule filter=" &quot;Conduites - fonction_schema_visible&quot; = 't'" key="{d088428f-4224-4ed3-9ea5-67a0212afeca}" symbol="6" label="Transport"/>
-              <rule filter=" &quot;Conduites - fonction_schema_visible&quot; = 'f'" key="{01b8eb55-87dd-44da-8525-303f72528edb}" symbol="7" label="distribution"/>
-              <rule filter=" &quot;id_protection&quot; IS NOT NULL" key="{2331a528-994a-47de-b778-1deab1cb9781}" symbol="8" label="protégée"/>
+              <rule filter=" &quot;Conduites - fonction_schema_visible&quot; = 't'" key="{771d8a34-cd48-4a8d-a754-670387562b44}" symbol="6" label="Transport"/>
+              <rule filter=" &quot;Conduites - fonction_schema_visible&quot; = 'f'" key="{9bca0a96-0bfe-466d-b402-4a1d9995d62e}" symbol="7" label="distribution"/>
+              <rule filter=" &quot;id_protection&quot; IS NOT NULL" key="{4436af69-0f92-4fd2-b544-a8668a619d36}" symbol="8" label="protégée"/>
             </rule>
             <rule scalemaxdenom="3000" filter="_schema_visible = 'f'" key="{7d0cfa7a-eaf4-499a-b977-1238b90ca15f}" label="Détail">
-              <rule filter=" &quot;Conduites - fonction_schema_visible&quot; = 't'" key="{518d87af-0f17-4d9f-bebe-52c4fd34e3be}" symbol="9" label="Transport"/>
-              <rule filter=" &quot;Conduites - fonction_schema_visible&quot; = 'f'" key="{a427d990-39a0-48a4-b171-3aa33ab16c3b}" symbol="10" label="distribution"/>
-              <rule filter=" &quot;id_protection&quot; IS NOT NULL" key="{f44ac59a-3761-4d96-858c-27380a74ed3c}" symbol="11" label="protégée"/>
+              <rule filter=" &quot;Conduites - fonction_schema_visible&quot; = 't'" key="{afe0b6aa-1f9f-463a-b2c8-f86216415124}" symbol="9" label="Transport"/>
+              <rule filter=" &quot;Conduites - fonction_schema_visible&quot; = 'f'" key="{883bc613-7548-49ff-88a9-e9bcc104383d}" symbol="10" label="distribution"/>
+              <rule filter=" &quot;id_protection&quot; IS NOT NULL" key="{3fdff003-d1b1-472e-9384-619e24f1bdf2}" symbol="11" label="protégée"/>
             </rule>
           </rule>
           <rule filter="id_distributor != 1" key="{013429dc-a1cd-4a17-904a-6550a0175046}" label="étranger">
             <rule filter="&quot;_schema_visible&quot; = 't'" key="{2513a8b8-a110-4727-854c-6084f64e3bdf}" label="Schématique">
-              <rule filter=" &quot;Conduites - fonction_schema_visible&quot; = 't'" key="{3783b608-c017-4c8a-81e8-060ca42293c8}" symbol="12" label="Transport"/>
-              <rule filter=" &quot;Conduites - fonction_schema_visible&quot; = 'f'" key="{efd0c4a0-4e4e-4ab6-b8ae-b0c9f8c23625}" symbol="13" label="Distribution"/>
-              <rule filter=" &quot;id_protection&quot; IS NOT NULL" key="{5a38d3e0-d91b-409c-a951-815daa223c34}" symbol="14" label="protégée"/>
+              <rule filter=" &quot;Conduites - fonction_schema_visible&quot; = 't'" key="{a70ef885-a2ea-4e09-ba2b-0f9edce39e60}" symbol="12" label="Transport"/>
+              <rule filter=" &quot;Conduites - fonction_schema_visible&quot; = 'f'" key="{2fb136ed-561c-4bb0-ba21-2ad8a22b72fa}" symbol="13" label="Distribution"/>
+              <rule filter=" &quot;id_protection&quot; IS NOT NULL" key="{709b2a12-7d96-44f6-a947-61963f07815a}" symbol="14" label="protégée"/>
             </rule>
             <rule scalemaxdenom="3000" filter="_schema_visible = 'f'" key="{2e14d53a-6d2f-40b3-bf3b-4f32112e3d59}" label="Détail">
-              <rule filter=" &quot;Conduites - fonction_schema_visible&quot; = 't'" key="{a91fbc2d-64c3-472b-a628-8f4b144f683f}" symbol="15" label="Transport"/>
-              <rule filter=" &quot;Conduites - fonction_schema_visible&quot; = 'f'" key="{757ebe3f-d54e-4212-9de0-90a7451920d1}" symbol="16" label="Distribution"/>
-              <rule filter=" &quot;id_protection&quot; IS NOT NULL" key="{2a31047c-ec01-42e7-aeb0-33dba0b444d4}" symbol="17" label="protégée"/>
+              <rule filter=" &quot;Conduites - fonction_schema_visible&quot; = 't'" key="{ef015008-61ee-4986-9c06-36d63cac722e}" symbol="15" label="Transport"/>
+              <rule filter=" &quot;Conduites - fonction_schema_visible&quot; = 'f'" key="{ec35a1d6-2230-4f8e-b9f9-27532f41b818}" symbol="16" label="Distribution"/>
+              <rule filter=" &quot;id_protection&quot; IS NOT NULL" key="{dd4c48a5-8d4c-4682-b4df-98649f5e37f5}" symbol="17" label="protégée"/>
             </rule>
           </rule>
           <rule checkstate="0" filter="id_distributor = 1 and &quot;Statut_active&quot; = 't' and &quot;_schema_visible&quot; = 't'" key="{9c210704-187e-4e2a-9b89-2f7917f4376c}" symbol="18" label="Couleur par zone"/>
@@ -5654,8 +5657,8 @@
         <edittype widgetv2type="ValueRelation" name="id_installmethod">
           <widgetv2config OrderByValue="0" AllowNull="0" FilterExpression="" fieldEditable="1" Key="id" Layer="vl_pipe_installmethod20130304110005209" Value="value_fr" labelOnTop="0" AllowMulti="0"/>
         </edittype>
-        <edittype widgetv2type="ValueRelation" name="id_material">
-          <widgetv2config OrderByValue="1" AllowNull="0" FilterExpression="" fieldEditable="1" Key="id" Layer="vl_pipe_material20130304110005230" Value="_displayname_fr" labelOnTop="0" AllowMulti="0"/>
+        <edittype widgetv2type="RelationReference" name="id_material">
+          <widgetv2config fieldEditable="1" ShowForm="0" Relation="relation_pipe_material" ReadOnly="0" MapIdentification="0" labelOnTop="0" AllowNULL="0"/>
         </edittype>
         <edittype widgetv2type="ValueRelation" name="id_distributor">
           <widgetv2config OrderByValue="0" AllowNull="0" FilterExpression="" fieldEditable="1" Key="id" Layer="distributor20130304114719702" Value="name" labelOnTop="0" AllowMulti="0"/>
@@ -14979,7 +14982,7 @@
         </edittype>
       </edittypes>
     </maplayer>
-    <maplayer minimumScale="-4.65661e-10" maximumScale="1e+08" simplifyDrawingHints="0" minLabelScale="0" maxLabelScale="1e+08" simplifyDrawingTol="1" geometry="Line" simplifyMaxScale="1" type="vector" hasScaleBasedVisibilityFlag="0" simplifyLocal="1" scaleBasedLabelVisibilityFlag="0">
+    <maplayer minimumScale="0" maximumScale="1e+08" simplifyDrawingHints="0" minLabelScale="0" maxLabelScale="1e+08" simplifyDrawingTol="1" geometry="Line" simplifyMaxScale="1" type="vector" hasScaleBasedVisibilityFlag="0" simplifyLocal="1" scaleBasedLabelVisibilityFlag="0">
       <id>od_remote20150116100522170</id>
       <datasource>dbname='sige' host=172.24.171.203 port=5432 user='sige' password='db4wat$' sslmode=disable key='id' srid=21781 type=MULTILINESTRING table="qwat"."od_remote" (geometry) sql=</datasource>
       <title></title>
@@ -15087,7 +15090,7 @@
               <prop k="joinstyle" v="bevel"/>
               <prop k="line_color" v="255,0,255,255"/>
               <prop k="line_style" v="solid"/>
-              <prop k="line_width" v="0.7"/>
+              <prop k="line_width" v="0.4"/>
               <prop k="line_width_unit" v="MM"/>
               <prop k="offset" v="0"/>
               <prop k="offset_map_unit_scale" v="0,0"/>
@@ -21070,7 +21073,7 @@
         <property key="itemBrowserConnected" value="no"/>
       </customproperties>
       <provider encoding="ISO-8859-1">postgres</provider>
-      <previewExpression>COALESCE("id", '&lt;NULL>')</previewExpression>
+      <previewExpression>_displayname_fr</previewExpression>
       <vectorjoins/>
       <expressionfields/>
       <map-layer-style-manager current="">
@@ -23231,14 +23234,31 @@
     <WMSOnlineResource type="QString"></WMSOnlineResource>
     <WMSPrecision type="QString">8</WMSPrecision>
     <Digitizing>
+      <DefaultSnapToleranceUnit type="int">1</DefaultSnapToleranceUnit>
       <LayerSnappingList type="QStringList">
         <value>IntersectIt_Lines20130618102142813</value>
         <value>IntersectIt_Points20130618102143276</value>
         <value>_cadinput_techical_snap_layer_20140203092715598</value>
+        <value>ad_posnumero_maison20130514143346530</value>
+        <value>axe_rue20130514143437774</value>
+        <value>bf_bien_fonds20130514143508556</value>
+        <value>bf_bien_fonds20140214143508556</value>
+        <value>bf_ddp20130514143538213</value>
+        <value>bf_ddp20140214143538213</value>
+        <value>bf_point_limite20130514143552315</value>
+        <value>bf_point_limite20140214143552315</value>
+        <value>bf_posimmeuble20130514143633121</value>
+        <value>bf_posimmeuble20140214143633121</value>
         <value>cadastre20140312152032371</value>
         <value>camac20140113144941208</value>
         <value>conduites_copy20130709141244955</value>
         <value>constructionpoint20130807094904851</value>
+        <value>cs_batiment20130514143721709</value>
+        <value>cs_batiment20140214143721709</value>
+        <value>cs_posnumero_de_batiment20130514143756039</value>
+        <value>cs_posnumero_de_batiment20140214143756039</value>
+        <value>cs_surfacecs20130514143830750</value>
+        <value>cs_surfacecs20140214143830750</value>
         <value>dimension20130807094904783</value>
         <value>district20130304110004764</value>
         <value>hydrant20130304110004848</value>
@@ -23250,18 +23270,30 @@
         <value>installation_treatment20130816113039913</value>
         <value>installation_valvechamber20131107105006707</value>
         <value>leak20130821111917060</value>
+        <value>no_posnomlocallieudit20130514143906869</value>
+        <value>no_posnomlocallieudit20140214143906869</value>
         <value>node20130304110005126</value>
         <value>od_annotationline20131203095020365</value>
         <value>od_annotationpoint20131203095020392</value>
+        <value>od_batiment_souterrain20130514143946785</value>
+        <value>od_batiment_souterrain20140214143946785</value>
         <value>od_cover20141219115626229</value>
         <value>od_crossing20141023083754327</value>
         <value>od_dimension_orientation20131202111155806</value>
+        <value>od_element_lineaire20130514144047075</value>
+        <value>od_element_lineaire20140214144047075</value>
+        <value>od_element_surfacique20130514144124647</value>
+        <value>od_element_surfacique20140214144124647</value>
         <value>od_meter20131120073630165</value>
         <value>od_meter_reference20140304165835390</value>
         <value>od_node20140116161508743</value>
         <value>od_part20140429113327995</value>
+        <value>od_remote20150116100522170</value>
         <value>od_subscriber_reference20131206105928067</value>
         <value>ouvrage_général_copy20141218102656671</value>
+        <value>pf_pfa20130514144154766</value>
+        <value>pf_pfp20130514144226845</value>
+        <value>pf_pfp20140214144226845</value>
         <value>pipe_child_parent20130417092030507</value>
         <value>pressurezone20130417133612105</value>
         <value>printmap20130304110011400</value>
@@ -23274,34 +23306,6 @@
         <value>vannes_copy20141127160745910</value>
         <value>vw_pipe_schema20141208162900166</value>
         <value>vw_pipe_schema_visibleitems20141127154708843</value>
-        <value>ad_posnumero_maison20130514143346530</value>
-        <value>cs_posnumero_de_batiment20130514143756039</value>
-        <value>bf_posimmeuble20130514143633121</value>
-        <value>no_posnomlocallieudit20130514143906869</value>
-        <value>bf_point_limite20130514143552315</value>
-        <value>axe_rue20130514143437774</value>
-        <value>pf_pfp20130514144226845</value>
-        <value>bf_bien_fonds20130514143508556</value>
-        <value>bf_ddp20130514143538213</value>
-        <value>cs_surfacecs20130514143830750</value>
-        <value>od_element_lineaire20130514144047075</value>
-        <value>od_element_surfacique20130514144124647</value>
-        <value>cs_batiment20130514143721709</value>
-        <value>od_batiment_souterrain20130514143946785</value>
-        <value>pf_pfa20130514144154766</value>
-        <value>bf_posimmeuble20140214143633121</value>
-        <value>cs_posnumero_de_batiment20140214143756039</value>
-        <value>no_posnomlocallieudit20140214143906869</value>
-        <value>bf_point_limite20140214143552315</value>
-        <value>pf_pfp20140214144226845</value>
-        <value>bf_bien_fonds20140214143508556</value>
-        <value>bf_ddp20140214143538213</value>
-        <value>cs_surfacecs20140214143830750</value>
-        <value>od_element_lineaire20140214144047075</value>
-        <value>od_element_surfacique20140214144124647</value>
-        <value>cs_batiment20140214143721709</value>
-        <value>od_batiment_souterrain20140214143946785</value>
-        <value>od_remote20150116100522170</value>
       </LayerSnappingList>
       <LayerSnappingEnabledList type="QStringList">
         <value>disabled</value>
@@ -23309,15 +23313,9 @@
         <value>enabled</value>
         <value>disabled</value>
         <value>disabled</value>
-        <value>enabled</value>
-        <value>enabled</value>
-        <value>disabled</value>
-        <value>disabled</value>
         <value>disabled</value>
         <value>enabled</value>
-        <value>enabled</value>
-        <value>enabled</value>
-        <value>enabled</value>
+        <value>disabled</value>
         <value>enabled</value>
         <value>enabled</value>
         <value>enabled</value>
@@ -23325,30 +23323,10 @@
         <value>enabled</value>
         <value>disabled</value>
         <value>disabled</value>
-        <value>disabled</value>
-        <value>disabled</value>
-        <value>disabled</value>
-        <value>disabled</value>
-        <value>disabled</value>
-        <value>disabled</value>
-        <value>disabled</value>
-        <value>disabled</value>
-        <value>disabled</value>
-        <value>disabled</value>
         <value>enabled</value>
         <value>enabled</value>
-        <value>disabled</value>
-        <value>disabled</value>
-        <value>disabled</value>
-        <value>disabled</value>
-        <value>disabled</value>
         <value>enabled</value>
         <value>enabled</value>
-        <value>disabled</value>
-        <value>enabled</value>
-        <value>disabled</value>
-        <value>disabled</value>
-        <value>disabled</value>
         <value>disabled</value>
         <value>enabled</value>
         <value>disabled</value>
@@ -23363,25 +23341,52 @@
         <value>enabled</value>
         <value>enabled</value>
         <value>enabled</value>
+        <value>disabled</value>
+        <value>disabled</value>
         <value>enabled</value>
         <value>enabled</value>
+        <value>disabled</value>
+        <value>disabled</value>
         <value>enabled</value>
         <value>enabled</value>
-        <value>enabled</value>
-        <value>enabled</value>
+        <value>disabled</value>
+        <value>disabled</value>
+        <value>disabled</value>
         <value>enabled</value>
         <value>enabled</value>
         <value>enabled</value>
         <value>enabled</value>
         <value>disabled</value>
+        <value>disabled</value>
+        <value>disabled</value>
+        <value>disabled</value>
+        <value>disabled</value>
+        <value>disabled</value>
+        <value>disabled</value>
+        <value>enabled</value>
+        <value>enabled</value>
+        <value>enabled</value>
+        <value>disabled</value>
+        <value>enabled</value>
+        <value>enabled</value>
+        <value>disabled</value>
+        <value>disabled</value>
+        <value>disabled</value>
+        <value>disabled</value>
+        <value>disabled</value>
+        <value>enabled</value>
+        <value>enabled</value>
+        <value>disabled</value>
+        <value>enabled</value>
       </LayerSnappingEnabledList>
+      <SnappingMode type="QString">advanced</SnappingMode>
       <AvoidIntersectionsList type="QStringList">
         <value>bf_bien_fonds20140214143508556</value>
         <value>bf_ddp20140214143538213</value>
-        <value>cs_surfacecs20140214143830750</value>
-        <value>od_element_surfacique20140214144124647</value>
         <value>cs_batiment20140214143721709</value>
+        <value>cs_surfacecs20140214143830750</value>
         <value>od_batiment_souterrain20140214143946785</value>
+        <value>od_element_surfacique20140214144124647</value>
       </AvoidIntersectionsList>
       <LayerSnappingToleranceUnitList type="QStringList">
         <value>1</value>
@@ -23390,44 +23395,23 @@
         <value>1</value>
         <value>1</value>
         <value>1</value>
+        <value>0</value>
+        <value>1</value>
+        <value>0</value>
+        <value>1</value>
+        <value>0</value>
+        <value>1</value>
+        <value>0</value>
         <value>1</value>
         <value>1</value>
         <value>1</value>
         <value>1</value>
         <value>1</value>
+        <value>0</value>
         <value>1</value>
+        <value>0</value>
         <value>1</value>
-        <value>1</value>
-        <value>1</value>
-        <value>1</value>
-        <value>1</value>
-        <value>1</value>
-        <value>1</value>
-        <value>1</value>
-        <value>1</value>
-        <value>1</value>
-        <value>1</value>
-        <value>1</value>
-        <value>1</value>
-        <value>1</value>
-        <value>1</value>
-        <value>1</value>
-        <value>1</value>
-        <value>1</value>
-        <value>1</value>
-        <value>1</value>
-        <value>1</value>
-        <value>1</value>
-        <value>1</value>
-        <value>1</value>
-        <value>1</value>
-        <value>1</value>
-        <value>1</value>
-        <value>1</value>
-        <value>1</value>
-        <value>1</value>
-        <value>1</value>
-        <value>1</value>
+        <value>0</value>
         <value>1</value>
         <value>1</value>
         <value>1</value>
@@ -23441,18 +23425,39 @@
         <value>1</value>
         <value>1</value>
         <value>0</value>
+        <value>1</value>
+        <value>1</value>
+        <value>1</value>
+        <value>1</value>
         <value>0</value>
+        <value>1</value>
+        <value>1</value>
+        <value>1</value>
+        <value>1</value>
         <value>0</value>
+        <value>1</value>
         <value>0</value>
+        <value>1</value>
+        <value>1</value>
+        <value>1</value>
+        <value>1</value>
+        <value>1</value>
+        <value>1</value>
+        <value>1</value>
         <value>0</value>
+        <value>1</value>
         <value>0</value>
-        <value>0</value>
-        <value>0</value>
-        <value>0</value>
-        <value>0</value>
-        <value>0</value>
-        <value>0</value>
-        <value>0</value>
+        <value>1</value>
+        <value>1</value>
+        <value>1</value>
+        <value>1</value>
+        <value>1</value>
+        <value>1</value>
+        <value>1</value>
+        <value>1</value>
+        <value>1</value>
+        <value>1</value>
+        <value>1</value>
         <value>1</value>
       </LayerSnappingToleranceUnitList>
       <LayerSnapToList type="QStringList">
@@ -23461,36 +23466,24 @@
         <value>to_vertex</value>
         <value>to_vertex_and_segment</value>
         <value>to_vertex_and_segment</value>
+        <value>to_vertex_and_segment</value>
+        <value>to_vertex</value>
+        <value>to_vertex_and_segment</value>
+        <value>to_vertex</value>
+        <value>to_vertex_and_segment</value>
+        <value>to_vertex</value>
+        <value>to_vertex_and_segment</value>
         <value>to_vertex</value>
         <value>to_vertex_and_segment</value>
         <value>to_vertex_and_segment</value>
         <value>to_vertex</value>
-        <value>to_vertex</value>
-        <value>to_vertex</value>
-        <value>to_vertex_and_segment</value>
-        <value>to_vertex_and_segment</value>
-        <value>to_vertex_and_segment</value>
-        <value>to_vertex</value>
-        <value>to_vertex_and_segment</value>
-        <value>to_vertex_and_segment</value>
-        <value>to_vertex_and_segment</value>
-        <value>to_vertex</value>
-        <value>to_vertex_and_segment</value>
-        <value>to_vertex_and_segment</value>
-        <value>to_vertex_and_segment</value>
-        <value>to_vertex_and_segment</value>
-        <value>to_vertex_and_segment</value>
-        <value>to_vertex_and_segment</value>
-        <value>to_vertex_and_segment</value>
-        <value>to_vertex_and_segment</value>
-        <value>to_vertex_and_segment</value>
-        <value>to_vertex_and_segment</value>
         <value>to_vertex_and_segment</value>
         <value>to_vertex</value>
         <value>to_vertex</value>
-        <value>to_vertex</value>
+        <value>to_vertex_and_segment</value>
         <value>to_vertex</value>
         <value>to_vertex_and_segment</value>
+        <value>to_vertex</value>
         <value>to_vertex_and_segment</value>
         <value>to_vertex</value>
         <value>to_vertex</value>
@@ -23498,6 +23491,24 @@
         <value>to_vertex_and_segment</value>
         <value>to_vertex_and_segment</value>
         <value>to_vertex_and_segment</value>
+        <value>to_vertex</value>
+        <value>to_vertex_and_segment</value>
+        <value>to_vertex_and_segment</value>
+        <value>to_vertex_and_segment</value>
+        <value>to_vertex_and_segment</value>
+        <value>to_vertex</value>
+        <value>to_vertex</value>
+        <value>to_vertex_and_segment</value>
+        <value>to_vertex_and_segment</value>
+        <value>to_vertex</value>
+        <value>to_vertex</value>
+        <value>to_vertex_and_segment</value>
+        <value>to_vertex_and_segment</value>
+        <value>to_vertex_and_segment</value>
+        <value>to_vertex</value>
+        <value>to_vertex</value>
+        <value>to_vertex</value>
+        <value>to_vertex</value>
         <value>to_vertex_and_segment</value>
         <value>to_vertex_and_segment</value>
         <value>to_vertex_and_segment</value>
@@ -23505,37 +23516,49 @@
         <value>to_vertex_and_segment</value>
         <value>to_vertex_and_segment</value>
         <value>to_vertex_and_segment</value>
+        <value>to_vertex</value>
+        <value>to_vertex_and_segment</value>
+        <value>to_vertex</value>
+        <value>to_vertex</value>
+        <value>to_vertex</value>
+        <value>to_vertex</value>
+        <value>to_vertex</value>
         <value>to_vertex_and_segment</value>
         <value>to_vertex_and_segment</value>
+        <value>to_vertex</value>
+        <value>to_vertex</value>
+        <value>to_vertex</value>
         <value>to_vertex_and_segment</value>
-        <value>to_vertex</value>
-        <value>to_vertex</value>
-        <value>to_vertex</value>
-        <value>to_vertex</value>
-        <value>to_vertex</value>
-        <value>to_vertex</value>
-        <value>to_vertex</value>
-        <value>to_vertex</value>
-        <value>to_vertex</value>
-        <value>to_vertex</value>
-        <value>to_vertex</value>
-        <value>to_vertex</value>
-        <value>to_vertex</value>
-        <value>to_vertex</value>
-        <value>to_vertex</value>
-        <value>to_vertex</value>
-        <value>to_vertex</value>
+        <value>to_vertex_and_segment</value>
         <value>to_vertex_and_segment</value>
       </LayerSnapToList>
-      <TopologicalEditing type="bool">true</TopologicalEditing>
+      <DefaultSnapType type="QString">off</DefaultSnapType>
+      <DefaultSnapTolerance type="double">7</DefaultSnapTolerance>
+      <TopologicalEditing type="bool">false</TopologicalEditing>
       <LayerSnappingToleranceList type="QStringList">
         <value>1.000000</value>
         <value>1.000000</value>
         <value>20.000000</value>
+        <value>1.000000</value>
+        <value>1.000000</value>
+        <value>1.000000</value>
+        <value>0.000000</value>
+        <value>1.000000</value>
+        <value>0.000000</value>
+        <value>1.000000</value>
+        <value>0.000000</value>
+        <value>1.000000</value>
+        <value>0.000000</value>
         <value>6.000000</value>
         <value>6.000000</value>
         <value>7.000000</value>
         <value>8.000000</value>
+        <value>7.000000</value>
+        <value>0.000000</value>
+        <value>1.000000</value>
+        <value>0.000000</value>
+        <value>1.000000</value>
+        <value>0.000000</value>
         <value>6.000000</value>
         <value>0.000000</value>
         <value>0.000000</value>
@@ -23547,18 +23570,30 @@
         <value>6.000000</value>
         <value>6.000000</value>
         <value>6.000000</value>
+        <value>1.000000</value>
+        <value>0.000000</value>
         <value>7.000000</value>
         <value>6.000000</value>
         <value>6.000000</value>
         <value>7.000000</value>
+        <value>0.000000</value>
+        <value>7.000000</value>
         <value>7.000000</value>
         <value>6.000000</value>
-        <value>6.000000</value>
+        <value>7.000000</value>
+        <value>0.000000</value>
+        <value>7.000000</value>
+        <value>0.000000</value>
         <value>6.000000</value>
         <value>6.000000</value>
         <value>6.000000</value>
         <value>6.000000</value>
         <value>7.000000</value>
+        <value>6.000000</value>
+        <value>7.000000</value>
+        <value>0.000000</value>
+        <value>1.000000</value>
+        <value>0.000000</value>
         <value>6.000000</value>
         <value>12.000000</value>
         <value>12.000000</value>
@@ -23570,34 +23605,6 @@
         <value>5.000000</value>
         <value>7.000000</value>
         <value>7.000000</value>
-        <value>7.000000</value>
-        <value>1.000000</value>
-        <value>1.000000</value>
-        <value>1.000000</value>
-        <value>1.000000</value>
-        <value>1.000000</value>
-        <value>1.000000</value>
-        <value>1.000000</value>
-        <value>1.000000</value>
-        <value>1.000000</value>
-        <value>1.000000</value>
-        <value>7.000000</value>
-        <value>7.000000</value>
-        <value>7.000000</value>
-        <value>7.000000</value>
-        <value>0.000000</value>
-        <value>0.000000</value>
-        <value>0.000000</value>
-        <value>0.000000</value>
-        <value>0.000000</value>
-        <value>0.000000</value>
-        <value>0.000000</value>
-        <value>0.000000</value>
-        <value>0.000000</value>
-        <value>0.000000</value>
-        <value>0.000000</value>
-        <value>0.000000</value>
-        <value>0.000000</value>
         <value>7.000000</value>
       </LayerSnappingToleranceList>
     </Digitizing>
@@ -23632,7 +23639,6 @@
       <SelectionColorGreenPart type="int">0</SelectionColorGreenPart>
       <CanvasColorBluePart type="int">255</CanvasColorBluePart>
     </Gui>
-    <WFSLayers type="QStringList"/>
     <intersectit>
       <advancedIntersectionWritePoint type="bool">false</advancedIntersectionWritePoint>
       <dimensionDistanceObservationField type="QString">observation</dimensionDistanceObservationField>
@@ -23670,10 +23676,11 @@
       <dimensionOrientationWrite type="bool">true</dimensionOrientationWrite>
       <advancedIntersectionLayer type="QString"></advancedIntersectionLayer>
     </intersectit>
-    <WMSServiceAbstract type="QString"></WMSServiceAbstract>
     <Measure>
       <Ellipsoid type="QString">NONE</Ellipsoid>
     </Measure>
+    <WMSServiceAbstract type="QString"></WMSServiceAbstract>
+    <WFSLayers type="QStringList"/>
     <LinkIt>
       <field type="QString">id_consummerzone</field>
       <layer type="QString">pressurezone20130304110011384</layer>
