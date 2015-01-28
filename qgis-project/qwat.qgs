@@ -276,25 +276,11 @@
         <customproperties/>
       </layer-tree-layer>
     </layer-tree-group>
-    <layer-tree-group expanded="0" checked="Qt::Checked" name="riviera_base">
+    <layer-tree-group expanded="0" checked="Qt::Checked" name="cadastre">
       <customproperties>
         <property key="embedded" value="1"/>
         <property key="embedded-invisible-layers"/>
-        <property key="embedded_project" value="../../../data/cadastre/riviera/riviera.qgs"/>
-      </customproperties>
-    </layer-tree-group>
-    <layer-tree-group expanded="0" checked="Qt::Unchecked" name="riviera_complément">
-      <customproperties>
-        <property key="embedded" value="1"/>
-        <property key="embedded-invisible-layers" value="pf_pfa20130514144154766"/>
-        <property key="embedded_project" value="../../../data/cadastre/riviera/riviera.qgs"/>
-      </customproperties>
-    </layer-tree-group>
-    <layer-tree-group expanded="0" checked="Qt::Checked" name="valais_base">
-      <customproperties>
-        <property key="embedded" value="1"/>
-        <property key="embedded-invisible-layers"/>
-        <property key="embedded_project" value="../../../data/cadastre/valais/valais.qgs"/>
+        <property key="embedded_project" value="../../../data/cadastre/cadastre.qgs"/>
       </customproperties>
     </layer-tree-group>
   </layer-tree-group>
@@ -342,10 +328,10 @@
   <mapcanvas>
     <units>meters</units>
     <extent>
-      <xmin>558777.74644311284646392</xmin>
-      <ymin>144526.84635597612941638</ymin>
-      <xmax>558868.02233806066215038</xmax>
-      <ymax>144653.05260610551340505</ymax>
+      <xmin>554694.43686064658686519</xmin>
+      <ymin>141989.18072940839920193</ymin>
+      <xmax>558164.94553302275016904</xmax>
+      <ymax>146840.97295850410591811</ymax>
     </extent>
     <rotation>0</rotation>
     <projections>1</projections>
@@ -440,54 +426,28 @@
   </mapcanvas>
   <visibility-presets>
     <visibility-preset name="250">
-      <layer id="valve20130304110011497"/>
-      <layer id="od_meter20131120073630165"/>
-      <layer id="od_annotationpoint20131203095020392"/>
-      <layer id="bf_posimmeuble20130514143633121"/>
-      <layer id="installation_pressurecontrol20131107105006792"/>
-      <layer id="ad_posnumero_maison20130514143346530"/>
+      <layer id="od_subscriber_reference20131206105928067"/>
       <layer id="installation_treatment20130816113039913"/>
       <layer id="hydrant20130304110004848"/>
-      <layer id="od_element_lineaire20130514144047075"/>
-      <layer id="conduites_copy20130709141244955"/>
-      <layer id="od_batiment_souterrain20130514143946785"/>
-      <layer id="bf_point_limite20130514143552315"/>
-      <layer id="od_annotationline20131203095020365"/>
-      <layer id="od_batiment_souterrain20140214143946785"/>
-      <layer id="od_dimension_orientation20131202111155806"/>
-      <layer id="cs_posnumero_de_batiment20130514143756039"/>
-      <layer id="cs_posnumero_de_batiment20140214143756039"/>
-      <layer id="axe_rue20130514143437774"/>
-      <layer id="subscriber20130304110011459"/>
-      <layer id="cadastre20140312152032371"/>
-      <layer id="installation_pump20130816140237750"/>
-      <layer id="od_part20140429113327995"/>
-      <layer id="cs_surfacecs20130514143830750"/>
-      <layer id="od_element_surfacique20130514144124647"/>
-      <layer id="no_posnomlocallieudit20140214143906869"/>
-      <layer id="cs_batiment20130514143721709"/>
-      <layer id="bf_bien_fonds20130514143508556"/>
+      <layer id="od_annotationpoint20131203095020392"/>
       <layer id="installation_valvechamber20131107105006707"/>
-      <layer id="no_posnomlocallieudit20130514143906869"/>
-      <layer id="bf_point_limite20140214143552315"/>
-      <layer id="pf_pfp20130514144226845"/>
-      <layer id="od_element_surfacique20140214144124647"/>
-      <layer id="cs_batiment20140214143721709"/>
-      <layer id="dimension20130807094904783"/>
-      <layer id="installation_tank20130304110005008"/>
-      <layer id="bf_ddp20130514143538213"/>
+      <layer id="od_part20140429113327995"/>
       <layer id="od_meter_reference20140304165835390"/>
-      <layer id="od_subscriber_reference20131206105928067"/>
-      <layer id="pf_pfp20140214144226845"/>
-      <layer id="printmap20130304110011400"/>
-      <layer id="bf_bien_fonds20140214143508556"/>
-      <layer id="cs_surfacecs20140214143830750"/>
-      <layer id="bf_ddp20140214143538213"/>
-      <layer id="bf_posimmeuble20140214143633121"/>
-      <layer id="od_element_lineaire20140214144047075"/>
-      <layer id="od_crossing20141023083754327"/>
-      <layer id="installation_source20130820110331647"/>
       <layer id="node20130304110005126"/>
+      <layer id="printmap20130304110011400"/>
+      <layer id="od_meter20131120073630165"/>
+      <layer id="valve20130304110011497"/>
+      <layer id="installation_source20130820110331647"/>
+      <layer id="od_dimension_orientation20131202111155806"/>
+      <layer id="cadastre20140312152032371"/>
+      <layer id="od_crossing20141023083754327"/>
+      <layer id="installation_pump20130816140237750"/>
+      <layer id="conduites_copy20130709141244955"/>
+      <layer id="od_annotationline20131203095020365"/>
+      <layer id="installation_tank20130304110005008"/>
+      <layer id="subscriber20130304110011459"/>
+      <layer id="installation_pressurecontrol20131107105006792"/>
+      <layer id="dimension20130807094904783"/>
       <checked-legend-nodes id="conduites_copy20130709141244955">
         <checked-legend-node id="{6f4ad4f8-4d2b-44d5-a097-ec1830c78aa3}"/>
         <checked-legend-node id="{2a31047c-ec01-42e7-aeb0-33dba0b444d4}"/>
@@ -614,6 +574,7 @@
   <layer-tree-canvas>
     <custom-order enabled="1">
       <item>installation20130304110004938</item>
+      <item>od_cover20141219115626229</item>
       <item>installation_tank20130304110005008</item>
       <item>installation_source20130820110331647</item>
       <item>installation_pump20130816140237750</item>
@@ -625,17 +586,19 @@
       <item>od_meter20131120073630165</item>
       <item>od_meter_reference20140304165835390</item>
       <item>subscriber_pipe_relation20130417092124312</item>
+      <item>conduites_copy20130709141244955</item>
       <item>valve20130304110011497</item>
       <item>hydrant20130304110004848</item>
-      <item>od_crossing20141023083754327</item>
+      <item>od_remote20150116100522170</item>
+      <item>leak20130821111917060</item>
       <item>node20130304110005126</item>
       <item>od_part20140429113327995</item>
-      <item>conduites_copy20130709141244955</item>
-      <item>ouvrage_général_copy20141218102656671</item>
-      <item>vannes_copy20141127160745910</item>
-      <item>vw_pipe_schema_visibleitems20141127154708843</item>
-      <item>leak20130821111917060</item>
       <item>od_node20140116161508743</item>
+      <item>od_crossing20141023083754327</item>
+      <item>ouvrage_général_copy20141218102656671</item>
+      <item>vw_pipe_schema20141208162900166</item>
+      <item>vw_pipe_schema_visibleitems20141127154708843</item>
+      <item>vannes_copy20141127160745910</item>
       <item>pipe_child_parent20130417092030507</item>
       <item>od_annotationline20131203095020365</item>
       <item>od_annotationpoint20131203095020392</item>
@@ -644,6 +607,10 @@
       <item>constructionpoint20130807094904851</item>
       <item>IntersectIt_Points20130618102143276</item>
       <item>IntersectIt_Lines20130618102142813</item>
+      <item>servitude20150109080436604</item>
+      <item>servitude20150109080436650</item>
+      <item>camac20140113144941208</item>
+      <item>cadastre20140312152032371</item>
       <item>district20130304110004764</item>
       <item>pressurezone20130417133612105</item>
       <item>printmap20130304110011400</item>
@@ -656,12 +623,14 @@
       <item>vl_pipe_material20130304110005230</item>
       <item>vl_pipe_installmethod20130304110005209</item>
       <item>vl_pipe_function20130304110005186</item>
+      <item>vl_cover_type20141219115626290</item>
       <item>distributor20130304114719702</item>
       <item>vl_leak_cause20130822081237639</item>
       <item>vl_leak_type20130822081237675</item>
       <item>vl_leak_damage20130822081237691</item>
       <item>logged_actions20130304110005081</item>
       <item>hydrant_provider20130304110004893</item>
+      <item>vl_bedding20141219112927344</item>
       <item>vl_installation_type20130514104730101</item>
       <item>vl_pumptype20130816140237776</item>
       <item>vl_overflow20130304170704046</item>
@@ -673,15 +642,15 @@
       <item>vl_precision20130304110011372</item>
       <item>vl_precisionalti20131211161429510</item>
       <item>remote_type20130304110004987</item>
+      <item>servitude_etat20150116095811244</item>
+      <item>servitude_statut20150116095811261</item>
+      <item>servitude_type20150116095811274</item>
       <item>vl_watertype20131217141603877</item>
       <item>vl_valve_maintenance20130304110011567</item>
       <item>vl_valve_type20130304110011685</item>
       <item>vl_valve_function20130304110011544</item>
       <item>vl_visible20130304110011703</item>
-      <item>cadastre20140312152032371</item>
-      <item>camac20140113144941208</item>
-      <item>servitude20150109080436604</item>
-      <item>servitude20150109080436650</item>
+      <item>pf_pfa20130514144154766</item>
       <item>ad_posnumero_maison20130514143346530</item>
       <item>cs_posnumero_de_batiment20130514143756039</item>
       <item>bf_posimmeuble20130514143633121</item>
@@ -696,27 +665,6 @@
       <item>od_element_surfacique20130514144124647</item>
       <item>cs_batiment20130514143721709</item>
       <item>od_batiment_souterrain20130514143946785</item>
-      <item>pf_pfa20130514144154766</item>
-      <item>bf_posimmeuble20140214143633121</item>
-      <item>cs_posnumero_de_batiment20140214143756039</item>
-      <item>no_posnomlocallieudit20140214143906869</item>
-      <item>bf_point_limite20140214143552315</item>
-      <item>pf_pfp20140214144226845</item>
-      <item>bf_bien_fonds20140214143508556</item>
-      <item>bf_ddp20140214143538213</item>
-      <item>cs_surfacecs20140214143830750</item>
-      <item>od_element_lineaire20140214144047075</item>
-      <item>od_element_surfacique20140214144124647</item>
-      <item>cs_batiment20140214143721709</item>
-      <item>od_batiment_souterrain20140214143946785</item>
-      <item>vw_pipe_schema20141208162900166</item>
-      <item>vl_bedding20141219112927344</item>
-      <item>od_cover20141219115626229</item>
-      <item>vl_cover_type20141219115626290</item>
-      <item>servitude_etat20150116095811244</item>
-      <item>servitude_statut20150116095811261</item>
-      <item>servitude_type20150116095811274</item>
-      <item>od_remote20150116100522170</item>
     </custom-order>
   </layer-tree-canvas>
   <legend updateDrawingOrder="false">
@@ -727,38 +675,38 @@
             <legendlayerfile isInOverview="0" layerid="installation20130304110004938" visible="0"/>
           </filegroup>
         </legendlayer>
-        <legendlayer drawingOrder="98" open="false" checked="Qt::Checked" name="couvercles" showFeatureCount="0">
+        <legendlayer drawingOrder="1" open="false" checked="Qt::Checked" name="couvercles" showFeatureCount="0">
           <filegroup open="false" hidden="false">
             <legendlayerfile isInOverview="0" layerid="od_cover20141219115626229" visible="1"/>
           </filegroup>
         </legendlayer>
         <legendgroup open="false" checked="Qt::Checked" name="détail">
-          <legendlayer drawingOrder="1" open="false" checked="Qt::Checked" name="ouvrage - réservoirs" showFeatureCount="0">
+          <legendlayer drawingOrder="2" open="false" checked="Qt::Checked" name="ouvrage - réservoirs" showFeatureCount="0">
             <filegroup open="false" hidden="false">
               <legendlayerfile isInOverview="0" layerid="installation_tank20130304110005008" visible="1"/>
             </filegroup>
           </legendlayer>
-          <legendlayer drawingOrder="2" open="false" checked="Qt::Checked" name="ouvrage - source" showFeatureCount="0">
+          <legendlayer drawingOrder="3" open="false" checked="Qt::Checked" name="ouvrage - source" showFeatureCount="0">
             <filegroup open="false" hidden="false">
               <legendlayerfile isInOverview="0" layerid="installation_source20130820110331647" visible="1"/>
             </filegroup>
           </legendlayer>
-          <legendlayer drawingOrder="3" open="false" checked="Qt::Checked" name="ouvrage - pompe" showFeatureCount="0">
+          <legendlayer drawingOrder="4" open="false" checked="Qt::Checked" name="ouvrage - pompe" showFeatureCount="0">
             <filegroup open="false" hidden="false">
               <legendlayerfile isInOverview="0" layerid="installation_pump20130816140237750" visible="1"/>
             </filegroup>
           </legendlayer>
-          <legendlayer drawingOrder="4" open="false" checked="Qt::Checked" name="ouvrage - traitement" showFeatureCount="0">
+          <legendlayer drawingOrder="5" open="false" checked="Qt::Checked" name="ouvrage - traitement" showFeatureCount="0">
             <filegroup open="false" hidden="false">
               <legendlayerfile isInOverview="0" layerid="installation_treatment20130816113039913" visible="1"/>
             </filegroup>
           </legendlayer>
-          <legendlayer drawingOrder="5" open="false" checked="Qt::Checked" name="ouvrage - régulation de pression" showFeatureCount="0">
+          <legendlayer drawingOrder="6" open="false" checked="Qt::Checked" name="ouvrage - régulation de pression" showFeatureCount="0">
             <filegroup open="false" hidden="false">
               <legendlayerfile isInOverview="0" layerid="installation_pressurecontrol20131107105006792" visible="1"/>
             </filegroup>
           </legendlayer>
-          <legendlayer drawingOrder="6" open="false" checked="Qt::Checked" name="ouvrage - chambre de vannes" showFeatureCount="0">
+          <legendlayer drawingOrder="7" open="false" checked="Qt::Checked" name="ouvrage - chambre de vannes" showFeatureCount="0">
             <filegroup open="false" hidden="false">
               <legendlayerfile isInOverview="0" layerid="installation_valvechamber20131107105006707" visible="1"/>
             </filegroup>
@@ -766,76 +714,76 @@
         </legendgroup>
       </legendgroup>
       <legendgroup open="false" checked="Qt::PartiallyChecked" name="Abonnés">
-        <legendlayer drawingOrder="7" open="false" checked="Qt::Checked" name="abonnés" showFeatureCount="0">
+        <legendlayer drawingOrder="8" open="false" checked="Qt::Checked" name="abonnés" showFeatureCount="0">
           <filegroup open="false" hidden="false">
             <legendlayerfile isInOverview="0" layerid="subscriber20130304110011459" visible="1"/>
           </filegroup>
         </legendlayer>
-        <legendlayer drawingOrder="8" open="false" checked="Qt::Checked" name="abonnés - renvoi" showFeatureCount="0">
+        <legendlayer drawingOrder="9" open="false" checked="Qt::Checked" name="abonnés - renvoi" showFeatureCount="0">
           <filegroup open="false" hidden="false">
             <legendlayerfile isInOverview="0" layerid="od_subscriber_reference20131206105928067" visible="1"/>
           </filegroup>
         </legendlayer>
-        <legendlayer drawingOrder="9" open="false" checked="Qt::Checked" name="compteur réseau" showFeatureCount="0">
+        <legendlayer drawingOrder="10" open="false" checked="Qt::Checked" name="compteur réseau" showFeatureCount="0">
           <filegroup open="false" hidden="false">
             <legendlayerfile isInOverview="0" layerid="od_meter20131120073630165" visible="1"/>
           </filegroup>
         </legendlayer>
-        <legendlayer drawingOrder="10" open="false" checked="Qt::Checked" name="Compteur réseau - renvoi" showFeatureCount="0">
+        <legendlayer drawingOrder="11" open="false" checked="Qt::Checked" name="Compteur réseau - renvoi" showFeatureCount="0">
           <filegroup open="false" hidden="false">
             <legendlayerfile isInOverview="0" layerid="od_meter_reference20140304165835390" visible="1"/>
           </filegroup>
         </legendlayer>
-        <legendlayer drawingOrder="11" open="false" checked="Qt::Unchecked" name="Fleches abonné -> conduite" showFeatureCount="0">
+        <legendlayer drawingOrder="12" open="false" checked="Qt::Unchecked" name="Fleches abonné -> conduite" showFeatureCount="0">
           <filegroup open="false" hidden="false">
             <legendlayerfile isInOverview="0" layerid="subscriber_pipe_relation20130417092124312" visible="0"/>
           </filegroup>
         </legendlayer>
       </legendgroup>
       <legendgroup open="true" checked="Qt::PartiallyChecked" name="Réseau">
-        <legendlayer drawingOrder="17" open="false" checked="Qt::Checked" name="conduites" showFeatureCount="0">
+        <legendlayer drawingOrder="13" open="false" checked="Qt::Checked" name="conduites" showFeatureCount="0">
           <filegroup open="false" hidden="false">
             <legendlayerfile isInOverview="0" layerid="conduites_copy20130709141244955" visible="1"/>
           </filegroup>
         </legendlayer>
-        <legendlayer drawingOrder="12" open="false" checked="Qt::Checked" name="vannes" showFeatureCount="0">
+        <legendlayer drawingOrder="14" open="false" checked="Qt::Checked" name="vannes" showFeatureCount="0">
           <filegroup open="false" hidden="false">
             <legendlayerfile isInOverview="0" layerid="valve20130304110011497" visible="1"/>
           </filegroup>
         </legendlayer>
-        <legendlayer drawingOrder="13" open="false" checked="Qt::Checked" name="hydrantes" showFeatureCount="0">
+        <legendlayer drawingOrder="15" open="false" checked="Qt::Checked" name="hydrantes" showFeatureCount="0">
           <filegroup open="false" hidden="false">
             <legendlayerfile isInOverview="0" layerid="hydrant20130304110004848" visible="1"/>
           </filegroup>
         </legendlayer>
-        <legendlayer drawingOrder="103" open="true" checked="Qt::Checked" name="télécommande" showFeatureCount="0">
+        <legendlayer drawingOrder="16" open="true" checked="Qt::Checked" name="télécommande" showFeatureCount="0">
           <filegroup open="true" hidden="false">
             <legendlayerfile isInOverview="0" layerid="od_remote20150116100522170" visible="1"/>
           </filegroup>
         </legendlayer>
-        <legendlayer drawingOrder="21" open="false" checked="Qt::Unchecked" name="fuite" showFeatureCount="0">
+        <legendlayer drawingOrder="17" open="false" checked="Qt::Unchecked" name="fuite" showFeatureCount="0">
           <filegroup open="false" hidden="false">
             <legendlayerfile isInOverview="0" layerid="leak20130821111917060" visible="0"/>
           </filegroup>
         </legendlayer>
       </legendgroup>
       <legendgroup open="true" checked="Qt::PartiallyChecked" name="Noeuds">
-        <legendlayer drawingOrder="15" open="false" checked="Qt::Checked" name="noeuds" showFeatureCount="0">
+        <legendlayer drawingOrder="18" open="false" checked="Qt::Checked" name="noeuds" showFeatureCount="0">
           <filegroup open="false" hidden="false">
             <legendlayerfile isInOverview="0" layerid="node20130304110005126" visible="1"/>
           </filegroup>
         </legendlayer>
-        <legendlayer drawingOrder="16" open="false" checked="Qt::Checked" name="Pièces d'installations" showFeatureCount="0">
+        <legendlayer drawingOrder="19" open="false" checked="Qt::Checked" name="Pièces d'installations" showFeatureCount="0">
           <filegroup open="false" hidden="false">
             <legendlayerfile isInOverview="0" layerid="od_part20140429113327995" visible="1"/>
           </filegroup>
         </legendlayer>
-        <legendlayer drawingOrder="22" open="false" checked="Qt::Unchecked" name="noeuds - tous - controle" showFeatureCount="0">
+        <legendlayer drawingOrder="20" open="false" checked="Qt::Unchecked" name="noeuds - tous - controle" showFeatureCount="0">
           <filegroup open="false" hidden="false">
             <legendlayerfile isInOverview="0" layerid="od_node20140116161508743" visible="0"/>
           </filegroup>
         </legendlayer>
-        <legendlayer drawingOrder="14" open="false" checked="Qt::Checked" name="croisements" showFeatureCount="0">
+        <legendlayer drawingOrder="21" open="false" checked="Qt::Checked" name="croisements" showFeatureCount="0">
           <filegroup open="false" hidden="false">
             <legendlayerfile isInOverview="0" layerid="od_crossing20141023083754327" visible="1"/>
           </filegroup>
@@ -843,128 +791,128 @@
       </legendgroup>
     </legendgroup>
     <legendgroup open="false" checked="Qt::Unchecked" name="Schématique">
-      <legendlayer drawingOrder="18" open="false" checked="Qt::Unchecked" name="ouvrage 5000" showFeatureCount="0">
+      <legendlayer drawingOrder="22" open="false" checked="Qt::Unchecked" name="ouvrage 5000" showFeatureCount="0">
         <filegroup open="false" hidden="false">
           <legendlayerfile isInOverview="0" layerid="ouvrage_général_copy20141218102656671" visible="0"/>
         </filegroup>
       </legendlayer>
-      <legendlayer drawingOrder="96" open="false" checked="Qt::Unchecked" name="conduite impression 5000" showFeatureCount="0">
+      <legendlayer drawingOrder="23" open="false" checked="Qt::Unchecked" name="conduite impression 5000" showFeatureCount="0">
         <filegroup open="false" hidden="false">
           <legendlayerfile isInOverview="0" layerid="vw_pipe_schema20141208162900166" visible="0"/>
         </filegroup>
       </legendlayer>
-      <legendlayer drawingOrder="20" open="true" checked="Qt::Unchecked" name="conduites edition 5000" showFeatureCount="0">
+      <legendlayer drawingOrder="24" open="true" checked="Qt::Unchecked" name="conduites edition 5000" showFeatureCount="0">
         <filegroup open="true" hidden="false">
           <legendlayerfile isInOverview="0" layerid="vw_pipe_schema_visibleitems20141127154708843" visible="0"/>
         </filegroup>
       </legendlayer>
-      <legendlayer drawingOrder="19" open="false" checked="Qt::Unchecked" name="vannes 5000" showFeatureCount="0">
+      <legendlayer drawingOrder="25" open="false" checked="Qt::Unchecked" name="vannes 5000" showFeatureCount="0">
         <filegroup open="false" hidden="false">
           <legendlayerfile isInOverview="0" layerid="vannes_copy20141127160745910" visible="0"/>
         </filegroup>
       </legendlayer>
-      <legendlayer drawingOrder="23" open="false" checked="Qt::Unchecked" name="Flèche conduite enfant -> parent" showFeatureCount="0">
+      <legendlayer drawingOrder="26" open="false" checked="Qt::Unchecked" name="Flèche conduite enfant -> parent" showFeatureCount="0">
         <filegroup open="false" hidden="false">
           <legendlayerfile isInOverview="0" layerid="pipe_child_parent20130417092030507" visible="0"/>
         </filegroup>
       </legendlayer>
     </legendgroup>
     <legendgroup open="false" checked="Qt::Checked" name="Annotations">
-      <legendlayer drawingOrder="24" open="false" checked="Qt::Checked" name="annotation - ligne" showFeatureCount="0">
+      <legendlayer drawingOrder="27" open="false" checked="Qt::Checked" name="annotation - ligne" showFeatureCount="0">
         <filegroup open="false" hidden="false">
           <legendlayerfile isInOverview="0" layerid="od_annotationline20131203095020365" visible="1"/>
         </filegroup>
       </legendlayer>
-      <legendlayer drawingOrder="25" open="false" checked="Qt::Checked" name="annotation - point" showFeatureCount="0">
+      <legendlayer drawingOrder="28" open="false" checked="Qt::Checked" name="annotation - point" showFeatureCount="0">
         <filegroup open="false" hidden="false">
           <legendlayerfile isInOverview="0" layerid="od_annotationpoint20131203095020392" visible="1"/>
         </filegroup>
       </legendlayer>
     </legendgroup>
     <legendgroup open="false" checked="Qt::PartiallyChecked" name="Côtes">
-      <legendlayer drawingOrder="26" open="false" checked="Qt::Checked" name="côtes distance" showFeatureCount="0">
+      <legendlayer drawingOrder="29" open="false" checked="Qt::Checked" name="côtes distance" showFeatureCount="0">
         <filegroup open="false" hidden="false">
           <legendlayerfile isInOverview="0" layerid="dimension20130807094904783" visible="1"/>
         </filegroup>
       </legendlayer>
-      <legendlayer drawingOrder="27" open="false" checked="Qt::Checked" name="côtes orientation" showFeatureCount="0">
+      <legendlayer drawingOrder="30" open="false" checked="Qt::Checked" name="côtes orientation" showFeatureCount="0">
         <filegroup open="false" hidden="false">
           <legendlayerfile isInOverview="0" layerid="od_dimension_orientation20131202111155806" visible="1"/>
         </filegroup>
       </legendlayer>
-      <legendlayer drawingOrder="28" open="false" checked="Qt::Unchecked" name="points de construction" showFeatureCount="0">
+      <legendlayer drawingOrder="31" open="false" checked="Qt::Unchecked" name="points de construction" showFeatureCount="0">
         <filegroup open="false" hidden="false">
           <legendlayerfile isInOverview="0" layerid="constructionpoint20130807094904851" visible="0"/>
         </filegroup>
       </legendlayer>
-      <legendlayer drawingOrder="29" open="false" checked="Qt::Unchecked" name="IntersectIt Points" showFeatureCount="0">
+      <legendlayer drawingOrder="32" open="false" checked="Qt::Unchecked" name="IntersectIt Points" showFeatureCount="0">
         <filegroup open="false" hidden="false">
           <legendlayerfile isInOverview="0" layerid="IntersectIt_Points20130618102143276" visible="0"/>
         </filegroup>
       </legendlayer>
-      <legendlayer drawingOrder="30" open="false" checked="Qt::Unchecked" name="IntersectIt Lines" showFeatureCount="0">
+      <legendlayer drawingOrder="33" open="false" checked="Qt::Unchecked" name="IntersectIt Lines" showFeatureCount="0">
         <filegroup open="false" hidden="false">
           <legendlayerfile isInOverview="0" layerid="IntersectIt_Lines20130618102142813" visible="0"/>
         </filegroup>
       </legendlayer>
     </legendgroup>
     <legendgroup open="false" checked="Qt::PartiallyChecked" name="cadastre sige">
-      <legendlayer drawingOrder="67" open="true" checked="Qt::Checked" name="servitude ligne" showFeatureCount="0">
+      <legendlayer drawingOrder="34" open="true" checked="Qt::Checked" name="servitude ligne" showFeatureCount="0">
         <filegroup open="true" hidden="false">
           <legendlayerfile isInOverview="0" layerid="servitude20150109080436604" visible="1"/>
         </filegroup>
       </legendlayer>
-      <legendlayer drawingOrder="68" open="true" checked="Qt::Checked" name="servitude polygone" showFeatureCount="0">
+      <legendlayer drawingOrder="35" open="true" checked="Qt::Checked" name="servitude polygone" showFeatureCount="0">
         <filegroup open="true" hidden="false">
           <legendlayerfile isInOverview="0" layerid="servitude20150109080436650" visible="1"/>
         </filegroup>
       </legendlayer>
-      <legendlayer drawingOrder="66" open="false" checked="Qt::Unchecked" name="enquete camac" showFeatureCount="0">
+      <legendlayer drawingOrder="36" open="false" checked="Qt::Unchecked" name="enquete camac" showFeatureCount="0">
         <filegroup open="false" hidden="false">
           <legendlayerfile isInOverview="0" layerid="camac20140113144941208" visible="0"/>
         </filegroup>
       </legendlayer>
-      <legendlayer drawingOrder="65" open="false" checked="Qt::Checked" name="enquete cadastre" showFeatureCount="0">
+      <legendlayer drawingOrder="37" open="false" checked="Qt::Checked" name="enquete cadastre" showFeatureCount="0">
         <filegroup open="false" hidden="false">
           <legendlayerfile isInOverview="0" layerid="cadastre20140312152032371" visible="1"/>
         </filegroup>
       </legendlayer>
     </legendgroup>
     <legendgroup open="false" checked="Qt::PartiallyChecked" name="Zones">
-      <legendlayer drawingOrder="31" open="false" checked="Qt::Unchecked" name="communes" showFeatureCount="0">
+      <legendlayer drawingOrder="38" open="false" checked="Qt::Unchecked" name="communes" showFeatureCount="0">
         <filegroup open="false" hidden="false">
           <legendlayerfile isInOverview="0" layerid="district20130304110004764" visible="0"/>
         </filegroup>
       </legendlayer>
-      <legendlayer drawingOrder="32" open="false" checked="Qt::Unchecked" name="zones de pressions" showFeatureCount="0">
+      <legendlayer drawingOrder="39" open="false" checked="Qt::Unchecked" name="zones de pressions" showFeatureCount="0">
         <filegroup open="false" hidden="false">
           <legendlayerfile isInOverview="0" layerid="pressurezone20130417133612105" visible="0"/>
         </filegroup>
       </legendlayer>
-      <legendlayer drawingOrder="33" open="false" checked="Qt::Checked" name="folios" showFeatureCount="0">
+      <legendlayer drawingOrder="40" open="false" checked="Qt::Checked" name="folios" showFeatureCount="0">
         <filegroup open="false" hidden="false">
           <legendlayerfile isInOverview="0" layerid="printmap20130304110011400" visible="1"/>
         </filegroup>
       </legendlayer>
-      <legendlayer drawingOrder="34" open="false" checked="Qt::Unchecked" name="zones de protections" showFeatureCount="0">
+      <legendlayer drawingOrder="41" open="false" checked="Qt::Unchecked" name="zones de protections" showFeatureCount="0">
         <filegroup open="false" hidden="false">
           <legendlayerfile isInOverview="0" layerid="protectionzone20130304110011418" visible="0"/>
         </filegroup>
       </legendlayer>
     </legendgroup>
     <legendgroup open="false" checked="Qt::Unchecked" name="Plans">
-      <legendlayer drawingOrder="35" open="false" checked="Qt::Unchecked" name="riviera" showFeatureCount="0">
+      <legendlayer drawingOrder="42" open="false" checked="Qt::Unchecked" name="riviera" showFeatureCount="0">
         <filegroup open="false" hidden="false">
           <legendlayerfile isInOverview="0" layerid="riviera20130902113350360" visible="0"/>
         </filegroup>
       </legendlayer>
       <legendgroup open="true" checked="Qt::Unchecked" name="CN">
-        <legendlayer drawingOrder="36" open="false" checked="Qt::Unchecked" name="cn1244" showFeatureCount="0">
+        <legendlayer drawingOrder="43" open="false" checked="Qt::Unchecked" name="cn1244" showFeatureCount="0">
           <filegroup open="false" hidden="false">
             <legendlayerfile isInOverview="0" layerid="cn124420130327085332476" visible="0"/>
           </filegroup>
         </legendlayer>
-        <legendlayer drawingOrder="37" open="false" checked="Qt::Unchecked" name="cn1264" showFeatureCount="0">
+        <legendlayer drawingOrder="44" open="false" checked="Qt::Unchecked" name="cn1264" showFeatureCount="0">
           <filegroup open="false" hidden="false">
             <legendlayerfile isInOverview="0" layerid="cn126420130327085334221" visible="0"/>
           </filegroup>
@@ -972,170 +920,168 @@
       </legendgroup>
     </legendgroup>
     <legendgroup open="false" checked="Qt::Unchecked" name="Tables auxiliaires">
-      <legendlayer drawingOrder="38" open="true" checked="Qt::Unchecked" name="Abonnés - type" showFeatureCount="0">
+      <legendlayer drawingOrder="45" open="true" checked="Qt::Unchecked" name="Abonnés - type" showFeatureCount="0">
         <filegroup open="true" hidden="false">
           <legendlayerfile isInOverview="0" layerid="vl_subscriber_type20130304110011480" visible="0"/>
         </filegroup>
       </legendlayer>
-      <legendlayer drawingOrder="39" open="true" checked="Qt::Unchecked" name="Conduites - protection" showFeatureCount="0">
+      <legendlayer drawingOrder="46" open="true" checked="Qt::Unchecked" name="Conduites - protection" showFeatureCount="0">
         <filegroup open="true" hidden="false">
           <legendlayerfile isInOverview="0" layerid="vl_pipe_protection20130304110005258" visible="0"/>
         </filegroup>
       </legendlayer>
-      <legendlayer drawingOrder="40" open="true" checked="Qt::Unchecked" name="Conduites - matériaux" showFeatureCount="0">
+      <legendlayer drawingOrder="47" open="true" checked="Qt::Unchecked" name="Conduites - matériaux" showFeatureCount="0">
         <filegroup open="true" hidden="false">
           <legendlayerfile isInOverview="0" layerid="vl_pipe_material20130304110005230" visible="0"/>
         </filegroup>
       </legendlayer>
-      <legendlayer drawingOrder="41" open="true" checked="Qt::Unchecked" name="Conduites - mode de pose" showFeatureCount="0">
+      <legendlayer drawingOrder="48" open="true" checked="Qt::Unchecked" name="Conduites - mode de pose" showFeatureCount="0">
         <filegroup open="true" hidden="false">
           <legendlayerfile isInOverview="0" layerid="vl_pipe_installmethod20130304110005209" visible="0"/>
         </filegroup>
       </legendlayer>
-      <legendlayer drawingOrder="42" open="true" checked="Qt::Unchecked" name="Conduites - fonction" showFeatureCount="0">
+      <legendlayer drawingOrder="49" open="true" checked="Qt::Unchecked" name="Conduites - fonction" showFeatureCount="0">
         <filegroup open="true" hidden="false">
           <legendlayerfile isInOverview="0" layerid="vl_pipe_function20130304110005186" visible="0"/>
         </filegroup>
       </legendlayer>
-      <legendlayer drawingOrder="99" open="true" checked="Qt::Unchecked" name="Couvercles - Type" showFeatureCount="0">
+      <legendlayer drawingOrder="50" open="true" checked="Qt::Unchecked" name="Couvercles - Type" showFeatureCount="0">
         <filegroup open="true" hidden="false">
           <legendlayerfile isInOverview="0" layerid="vl_cover_type20141219115626290" visible="0"/>
         </filegroup>
       </legendlayer>
-      <legendlayer drawingOrder="43" open="true" checked="Qt::Unchecked" name="Distributeur" showFeatureCount="0">
+      <legendlayer drawingOrder="51" open="true" checked="Qt::Unchecked" name="Distributeur" showFeatureCount="0">
         <filegroup open="true" hidden="false">
           <legendlayerfile isInOverview="0" layerid="distributor20130304114719702" visible="0"/>
         </filegroup>
       </legendlayer>
-      <legendlayer drawingOrder="44" open="true" checked="Qt::Unchecked" name="fuite - cause" showFeatureCount="0">
+      <legendlayer drawingOrder="52" open="true" checked="Qt::Unchecked" name="fuite - cause" showFeatureCount="0">
         <filegroup open="true" hidden="false">
           <legendlayerfile isInOverview="0" layerid="vl_leak_cause20130822081237639" visible="0"/>
         </filegroup>
       </legendlayer>
-      <legendlayer drawingOrder="45" open="true" checked="Qt::Unchecked" name="fuite - type" showFeatureCount="0">
+      <legendlayer drawingOrder="53" open="true" checked="Qt::Unchecked" name="fuite - type" showFeatureCount="0">
         <filegroup open="true" hidden="false">
           <legendlayerfile isInOverview="0" layerid="vl_leak_type20130822081237675" visible="0"/>
         </filegroup>
       </legendlayer>
-      <legendlayer drawingOrder="46" open="true" checked="Qt::Unchecked" name="fuite - dommage" showFeatureCount="0">
+      <legendlayer drawingOrder="54" open="true" checked="Qt::Unchecked" name="fuite - dommage" showFeatureCount="0">
         <filegroup open="true" hidden="false">
           <legendlayerfile isInOverview="0" layerid="vl_leak_damage20130822081237691" visible="0"/>
         </filegroup>
       </legendlayer>
-      <legendlayer drawingOrder="47" open="true" checked="Qt::Unchecked" name="Historique" showFeatureCount="0">
+      <legendlayer drawingOrder="55" open="true" checked="Qt::Unchecked" name="Historique" showFeatureCount="0">
         <filegroup open="true" hidden="false">
           <legendlayerfile isInOverview="0" layerid="logged_actions20130304110005081" visible="0"/>
         </filegroup>
       </legendlayer>
-      <legendlayer drawingOrder="48" open="true" checked="Qt::Unchecked" name="Hydrantes - fournisseur" showFeatureCount="0">
+      <legendlayer drawingOrder="56" open="true" checked="Qt::Unchecked" name="Hydrantes - fournisseur" showFeatureCount="0">
         <filegroup open="true" hidden="false">
           <legendlayerfile isInOverview="0" layerid="hydrant_provider20130304110004893" visible="0"/>
         </filegroup>
       </legendlayer>
-      <legendlayer drawingOrder="97" open="true" checked="Qt::Unchecked" name="lit de pose" showFeatureCount="0">
+      <legendlayer drawingOrder="57" open="true" checked="Qt::Unchecked" name="lit de pose" showFeatureCount="0">
         <filegroup open="true" hidden="false">
           <legendlayerfile isInOverview="0" layerid="vl_bedding20141219112927344" visible="0"/>
         </filegroup>
       </legendlayer>
-      <legendlayer drawingOrder="49" open="true" checked="Qt::Unchecked" name="Ouvrages - type" showFeatureCount="0">
+      <legendlayer drawingOrder="58" open="true" checked="Qt::Unchecked" name="Ouvrages - type" showFeatureCount="0">
         <filegroup open="true" hidden="false">
           <legendlayerfile isInOverview="0" layerid="vl_installation_type20130514104730101" visible="0"/>
         </filegroup>
       </legendlayer>
-      <legendlayer drawingOrder="50" open="true" checked="Qt::Unchecked" name="Ouvrage - pompe - type" showFeatureCount="0">
+      <legendlayer drawingOrder="59" open="true" checked="Qt::Unchecked" name="Ouvrage - pompe - type" showFeatureCount="0">
         <filegroup open="true" hidden="false">
           <legendlayerfile isInOverview="0" layerid="vl_pumptype20130816140237776" visible="0"/>
         </filegroup>
       </legendlayer>
-      <legendlayer drawingOrder="51" open="true" checked="Qt::Unchecked" name="Ouvrage - réservoir - type trop plein" showFeatureCount="0">
+      <legendlayer drawingOrder="60" open="true" checked="Qt::Unchecked" name="Ouvrage - réservoir - type trop plein" showFeatureCount="0">
         <filegroup open="true" hidden="false">
           <legendlayerfile isInOverview="0" layerid="vl_overflow20130304170704046" visible="0"/>
         </filegroup>
       </legendlayer>
-      <legendlayer drawingOrder="52" open="true" checked="Qt::Unchecked" name="Ouvrage - réservoir - type incendie" showFeatureCount="0">
+      <legendlayer drawingOrder="61" open="true" checked="Qt::Unchecked" name="Ouvrage - réservoir - type incendie" showFeatureCount="0">
         <filegroup open="true" hidden="false">
           <legendlayerfile isInOverview="0" layerid="vl_tank_firestorage20130304170704030" visible="0"/>
         </filegroup>
       </legendlayer>
-      <legendlayer drawingOrder="53" open="true" checked="Qt::Unchecked" name="Ouvrage - réservoir - type de cuve" showFeatureCount="0">
+      <legendlayer drawingOrder="62" open="true" checked="Qt::Unchecked" name="Ouvrage - réservoir - type de cuve" showFeatureCount="0">
         <filegroup open="true" hidden="false">
           <legendlayerfile isInOverview="0" layerid="vl_cistern20130304110005061" visible="0"/>
         </filegroup>
       </legendlayer>
-      <legendlayer drawingOrder="54" open="true" checked="Qt::Unchecked" name="ouvrage - source - qualité" showFeatureCount="0">
+      <legendlayer drawingOrder="63" open="true" checked="Qt::Unchecked" name="ouvrage - source - qualité" showFeatureCount="0">
         <filegroup open="true" hidden="false">
           <legendlayerfile isInOverview="0" layerid="vl_sourcequality20130820110518810" visible="0"/>
         </filegroup>
       </legendlayer>
-      <legendlayer drawingOrder="55" open="true" checked="Qt::Unchecked" name="ouvrage - source - type" showFeatureCount="0">
+      <legendlayer drawingOrder="64" open="true" checked="Qt::Unchecked" name="ouvrage - source - type" showFeatureCount="0">
         <filegroup open="true" hidden="false">
           <legendlayerfile isInOverview="0" layerid="vl_sourcetype20130820110518791" visible="0"/>
         </filegroup>
       </legendlayer>
-      <legendlayer drawingOrder="56" open="false" checked="Qt::Unchecked" name="Pièces d'installation - type" showFeatureCount="0">
+      <legendlayer drawingOrder="65" open="false" checked="Qt::Unchecked" name="Pièces d'installation - type" showFeatureCount="0">
         <filegroup open="false" hidden="false">
           <legendlayerfile isInOverview="0" layerid="vl_part_type20140429114640509" visible="0"/>
         </filegroup>
       </legendlayer>
-      <legendlayer drawingOrder="57" open="true" checked="Qt::Unchecked" name="Précision" showFeatureCount="0">
+      <legendlayer drawingOrder="66" open="true" checked="Qt::Unchecked" name="Précision" showFeatureCount="0">
         <filegroup open="true" hidden="false">
           <legendlayerfile isInOverview="0" layerid="vl_precision20130304110011372" visible="0"/>
         </filegroup>
       </legendlayer>
-      <legendlayer drawingOrder="58" open="false" checked="Qt::Unchecked" name="Précision altimétrique" showFeatureCount="0">
+      <legendlayer drawingOrder="67" open="false" checked="Qt::Unchecked" name="Précision altimétrique" showFeatureCount="0">
         <filegroup open="false" hidden="false">
           <legendlayerfile isInOverview="0" layerid="vl_precisionalti20131211161429510" visible="0"/>
         </filegroup>
       </legendlayer>
-      <legendlayer drawingOrder="59" open="true" checked="Qt::Unchecked" name="Télécommande - type" showFeatureCount="0">
+      <legendlayer drawingOrder="68" open="true" checked="Qt::Unchecked" name="Télécommande - type" showFeatureCount="0">
         <filegroup open="true" hidden="false">
           <legendlayerfile isInOverview="0" layerid="remote_type20130304110004987" visible="0"/>
         </filegroup>
       </legendlayer>
-      <legendlayer drawingOrder="100" open="true" checked="Qt::Unchecked" name="Servitude - état" showFeatureCount="0">
+      <legendlayer drawingOrder="69" open="true" checked="Qt::Unchecked" name="Servitude - état" showFeatureCount="0">
         <filegroup open="true" hidden="false">
           <legendlayerfile isInOverview="0" layerid="servitude_etat20150116095811244" visible="0"/>
         </filegroup>
       </legendlayer>
-      <legendlayer drawingOrder="101" open="true" checked="Qt::Unchecked" name="Servitude - statut" showFeatureCount="0">
+      <legendlayer drawingOrder="70" open="true" checked="Qt::Unchecked" name="Servitude - statut" showFeatureCount="0">
         <filegroup open="true" hidden="false">
           <legendlayerfile isInOverview="0" layerid="servitude_statut20150116095811261" visible="0"/>
         </filegroup>
       </legendlayer>
-      <legendlayer drawingOrder="102" open="true" checked="Qt::Unchecked" name="Servitude - type" showFeatureCount="0">
+      <legendlayer drawingOrder="71" open="true" checked="Qt::Unchecked" name="Servitude - type" showFeatureCount="0">
         <filegroup open="true" hidden="false">
           <legendlayerfile isInOverview="0" layerid="servitude_type20150116095811274" visible="0"/>
         </filegroup>
       </legendlayer>
-      <legendlayer drawingOrder="60" open="false" checked="Qt::Unchecked" name="Type d'eau" showFeatureCount="0">
+      <legendlayer drawingOrder="72" open="false" checked="Qt::Unchecked" name="Type d'eau" showFeatureCount="0">
         <filegroup open="false" hidden="false">
           <legendlayerfile isInOverview="0" layerid="vl_watertype20131217141603877" visible="0"/>
         </filegroup>
       </legendlayer>
-      <legendlayer drawingOrder="61" open="true" checked="Qt::Unchecked" name="Vannes - maintenance" showFeatureCount="0">
+      <legendlayer drawingOrder="73" open="true" checked="Qt::Unchecked" name="Vannes - maintenance" showFeatureCount="0">
         <filegroup open="true" hidden="false">
           <legendlayerfile isInOverview="0" layerid="vl_valve_maintenance20130304110011567" visible="0"/>
         </filegroup>
       </legendlayer>
-      <legendlayer drawingOrder="62" open="true" checked="Qt::Unchecked" name="Vannes - type" showFeatureCount="0">
+      <legendlayer drawingOrder="74" open="true" checked="Qt::Unchecked" name="Vannes - type" showFeatureCount="0">
         <filegroup open="true" hidden="false">
           <legendlayerfile isInOverview="0" layerid="vl_valve_type20130304110011685" visible="0"/>
         </filegroup>
       </legendlayer>
-      <legendlayer drawingOrder="63" open="true" checked="Qt::Unchecked" name="Vannes - fonction" showFeatureCount="0">
+      <legendlayer drawingOrder="75" open="true" checked="Qt::Unchecked" name="Vannes - fonction" showFeatureCount="0">
         <filegroup open="true" hidden="false">
           <legendlayerfile isInOverview="0" layerid="vl_valve_function20130304110011544" visible="0"/>
         </filegroup>
       </legendlayer>
-      <legendlayer drawingOrder="64" open="true" checked="Qt::Unchecked" name="Visibilité" showFeatureCount="0">
+      <legendlayer drawingOrder="76" open="true" checked="Qt::Unchecked" name="Visibilité" showFeatureCount="0">
         <filegroup open="true" hidden="false">
           <legendlayerfile isInOverview="0" layerid="vl_visible20130304110011703" visible="0"/>
         </filegroup>
       </legendlayer>
     </legendgroup>
-    <legendgroup embedded="1" open="false" checked="Qt::Checked" name="riviera_base" project="../../../data/cadastre/riviera/riviera.qgs"/>
-    <legendgroup embedded="1" open="false" checked="Qt::Unchecked" name="riviera_complément" project="../../../data/cadastre/riviera/riviera.qgs"/>
-    <legendgroup embedded="1" open="false" checked="Qt::Checked" name="valais_base" project="../../../data/cadastre/valais/valais.qgs"/>
+    <legendgroup embedded="1" open="false" checked="Qt::Checked" name="cadastre" project="../../../data/cadastre/cadastre.qgs"/>
   </legend>
   <Composer title="folio" visible="0">
     <Composition gridVisible="1" printResolution="300" paperWidth="1030" snapGridOffsetX="0" guidesVisible="1" snapGridResolution="10" snapGridOffsetY="0" alignmentSnap="1" snapping="0" snapTolerancePixels="10" numPages="1" paperHeight="914" smartGuides="1" printAsRaster="1" generateWorldFile="0">
@@ -1352,32 +1298,6 @@
           <Layer>od_dimension_orientation20131202111155806</Layer>
           <Layer>printmap20130304110011400</Layer>
           <Layer>cadastre20140312152032371</Layer>
-          <Layer>ad_posnumero_maison20130514143346530</Layer>
-          <Layer>cs_posnumero_de_batiment20130514143756039</Layer>
-          <Layer>bf_posimmeuble20130514143633121</Layer>
-          <Layer>no_posnomlocallieudit20130514143906869</Layer>
-          <Layer>bf_point_limite20130514143552315</Layer>
-          <Layer>axe_rue20130514143437774</Layer>
-          <Layer>pf_pfp20130514144226845</Layer>
-          <Layer>bf_bien_fonds20130514143508556</Layer>
-          <Layer>bf_ddp20130514143538213</Layer>
-          <Layer>cs_surfacecs20130514143830750</Layer>
-          <Layer>od_element_lineaire20130514144047075</Layer>
-          <Layer>od_element_surfacique20130514144124647</Layer>
-          <Layer>cs_batiment20130514143721709</Layer>
-          <Layer>od_batiment_souterrain20130514143946785</Layer>
-          <Layer>bf_posimmeuble20140214143633121</Layer>
-          <Layer>cs_posnumero_de_batiment20140214143756039</Layer>
-          <Layer>no_posnomlocallieudit20140214143906869</Layer>
-          <Layer>bf_point_limite20140214143552315</Layer>
-          <Layer>pf_pfp20140214144226845</Layer>
-          <Layer>bf_bien_fonds20140214143508556</Layer>
-          <Layer>bf_ddp20140214143538213</Layer>
-          <Layer>cs_surfacecs20140214143830750</Layer>
-          <Layer>od_element_lineaire20140214144047075</Layer>
-          <Layer>od_element_surfacique20140214144124647</Layer>
-          <Layer>cs_batiment20140214143721709</Layer>
-          <Layer>od_batiment_souterrain20140214143946785</Layer>
         </LayerSet>
         <Grid/>
         <ComposerMapGrid rightAnnotationDirection="0" gridFramePenColor="0,0,0,255" show="0" bottomAnnotationPosition="0" annotationFont="Arial,10,-1,5,50,0,0,0,0,0" annotationPrecision="0" showAnnotation="1" topFrameDivisions="0" uuid="{2727c6b9-83a7-4b22-ae5d-4fc30f2f823c}" leftAnnotationDirection="0" topAnnotationPosition="0" rightAnnotationDisplay="0" offsetX="0" offsetY="0" rightFrameDivisions="0" gridStyle="0" annotationFontColor="0,0,0,255" intervalX="0" gridFrameSideFlags="15" intervalY="0" bottomAnnotationDirection="1" leftAnnotationDisplay="0" leftFrameDivisions="0" frameFillColor1="255,255,255,255" frameFillColor2="0,0,0,255" crossLength="3" gridFramePenThickness="0.5" bottomAnnotationDisplay="0" unit="0" topAnnotationDisplay="0" leftAnnotationPosition="0" blendMode="0" gridFrameStyle="0" rightAnnotationPosition="0" gridFrameWidth="4" name="Grid 1" annotationFormat="0" bottomFrameDivisions="0" topAnnotationDirection="1" frameAnnotationDistance="1">
@@ -1708,32 +1628,6 @@
           <Layer>od_dimension_orientation20131202111155806</Layer>
           <Layer>printmap20130304110011400</Layer>
           <Layer>cadastre20140312152032371</Layer>
-          <Layer>ad_posnumero_maison20130514143346530</Layer>
-          <Layer>cs_posnumero_de_batiment20130514143756039</Layer>
-          <Layer>bf_posimmeuble20130514143633121</Layer>
-          <Layer>no_posnomlocallieudit20130514143906869</Layer>
-          <Layer>bf_point_limite20130514143552315</Layer>
-          <Layer>axe_rue20130514143437774</Layer>
-          <Layer>pf_pfp20130514144226845</Layer>
-          <Layer>bf_bien_fonds20130514143508556</Layer>
-          <Layer>bf_ddp20130514143538213</Layer>
-          <Layer>cs_surfacecs20130514143830750</Layer>
-          <Layer>od_element_lineaire20130514144047075</Layer>
-          <Layer>od_element_surfacique20130514144124647</Layer>
-          <Layer>cs_batiment20130514143721709</Layer>
-          <Layer>od_batiment_souterrain20130514143946785</Layer>
-          <Layer>bf_posimmeuble20140214143633121</Layer>
-          <Layer>cs_posnumero_de_batiment20140214143756039</Layer>
-          <Layer>no_posnomlocallieudit20140214143906869</Layer>
-          <Layer>bf_point_limite20140214143552315</Layer>
-          <Layer>pf_pfp20140214144226845</Layer>
-          <Layer>bf_bien_fonds20140214143508556</Layer>
-          <Layer>bf_ddp20140214143538213</Layer>
-          <Layer>cs_surfacecs20140214143830750</Layer>
-          <Layer>od_element_lineaire20140214144047075</Layer>
-          <Layer>od_element_surfacique20140214144124647</Layer>
-          <Layer>cs_batiment20140214143721709</Layer>
-          <Layer>od_batiment_souterrain20140214143946785</Layer>
         </LayerSet>
         <Grid/>
         <ComposerMapGrid rightAnnotationDirection="0" gridFramePenColor="0,0,0,255" show="0" bottomAnnotationPosition="0" annotationFont="Arial,10,-1,5,50,0,0,0,0,0" annotationPrecision="0" showAnnotation="1" topFrameDivisions="0" uuid="{7f671b61-cebd-44ad-8f03-04891c6f2d26}" leftAnnotationDirection="0" topAnnotationPosition="0" rightAnnotationDisplay="0" offsetX="0" offsetY="0" rightFrameDivisions="0" gridStyle="0" annotationFontColor="0,0,0,255" intervalX="0" gridFrameSideFlags="15" intervalY="0" bottomAnnotationDirection="1" leftAnnotationDisplay="0" leftFrameDivisions="0" frameFillColor1="255,255,255,255" frameFillColor2="0,0,0,255" crossLength="3" gridFramePenThickness="0.5" bottomAnnotationDisplay="0" unit="0" topAnnotationDisplay="0" leftAnnotationPosition="0" blendMode="0" gridFrameStyle="0" rightAnnotationPosition="0" gridFrameWidth="4" name="Grid 1" annotationFormat="0" bottomFrameDivisions="0" topAnnotationDirection="1" frameAnnotationDistance="1">
@@ -1972,32 +1866,6 @@
           <Layer>od_dimension_orientation20131202111155806</Layer>
           <Layer>printmap20130304110011400</Layer>
           <Layer>cadastre20140312152032371</Layer>
-          <Layer>ad_posnumero_maison20130514143346530</Layer>
-          <Layer>cs_posnumero_de_batiment20130514143756039</Layer>
-          <Layer>bf_posimmeuble20130514143633121</Layer>
-          <Layer>no_posnomlocallieudit20130514143906869</Layer>
-          <Layer>bf_point_limite20130514143552315</Layer>
-          <Layer>axe_rue20130514143437774</Layer>
-          <Layer>pf_pfp20130514144226845</Layer>
-          <Layer>bf_bien_fonds20130514143508556</Layer>
-          <Layer>bf_ddp20130514143538213</Layer>
-          <Layer>cs_surfacecs20130514143830750</Layer>
-          <Layer>od_element_lineaire20130514144047075</Layer>
-          <Layer>od_element_surfacique20130514144124647</Layer>
-          <Layer>cs_batiment20130514143721709</Layer>
-          <Layer>od_batiment_souterrain20130514143946785</Layer>
-          <Layer>bf_posimmeuble20140214143633121</Layer>
-          <Layer>cs_posnumero_de_batiment20140214143756039</Layer>
-          <Layer>no_posnomlocallieudit20140214143906869</Layer>
-          <Layer>bf_point_limite20140214143552315</Layer>
-          <Layer>pf_pfp20140214144226845</Layer>
-          <Layer>bf_bien_fonds20140214143508556</Layer>
-          <Layer>bf_ddp20140214143538213</Layer>
-          <Layer>cs_surfacecs20140214143830750</Layer>
-          <Layer>od_element_lineaire20140214144047075</Layer>
-          <Layer>od_element_surfacique20140214144124647</Layer>
-          <Layer>cs_batiment20140214143721709</Layer>
-          <Layer>od_batiment_souterrain20140214143946785</Layer>
         </LayerSet>
         <Grid/>
         <ComposerMapGrid rightAnnotationDirection="0" gridFramePenColor="0,0,0,255" show="0" bottomAnnotationPosition="1" annotationFont="Ubuntu,11,-1,5,50,0,0,0,0,0" annotationPrecision="3" showAnnotation="0" topFrameDivisions="0" uuid="{b9747bee-32a7-4d0f-a272-35d20f3ae9c4}" leftAnnotationDirection="0" topAnnotationPosition="1" rightAnnotationDisplay="0" offsetX="0" offsetY="0" rightFrameDivisions="0" gridStyle="0" annotationFontColor="0,0,0,255" intervalX="0" gridFrameSideFlags="15" intervalY="0" bottomAnnotationDirection="0" leftAnnotationDisplay="0" leftFrameDivisions="0" frameFillColor1="255,255,255,255" frameFillColor2="0,0,0,255" crossLength="3" gridFramePenThickness="0.5" bottomAnnotationDisplay="0" unit="0" topAnnotationDisplay="0" leftAnnotationPosition="1" blendMode="0" gridFrameStyle="0" rightAnnotationPosition="1" gridFrameWidth="2" name="Grid 1" annotationFormat="0" bottomFrameDivisions="0" topAnnotationDirection="0" frameAnnotationDistance="1">
@@ -2236,32 +2104,6 @@
           <Layer>od_dimension_orientation20131202111155806</Layer>
           <Layer>printmap20130304110011400</Layer>
           <Layer>cadastre20140312152032371</Layer>
-          <Layer>ad_posnumero_maison20130514143346530</Layer>
-          <Layer>cs_posnumero_de_batiment20130514143756039</Layer>
-          <Layer>bf_posimmeuble20130514143633121</Layer>
-          <Layer>no_posnomlocallieudit20130514143906869</Layer>
-          <Layer>bf_point_limite20130514143552315</Layer>
-          <Layer>axe_rue20130514143437774</Layer>
-          <Layer>pf_pfp20130514144226845</Layer>
-          <Layer>bf_bien_fonds20130514143508556</Layer>
-          <Layer>bf_ddp20130514143538213</Layer>
-          <Layer>cs_surfacecs20130514143830750</Layer>
-          <Layer>od_element_lineaire20130514144047075</Layer>
-          <Layer>od_element_surfacique20130514144124647</Layer>
-          <Layer>cs_batiment20130514143721709</Layer>
-          <Layer>od_batiment_souterrain20130514143946785</Layer>
-          <Layer>bf_posimmeuble20140214143633121</Layer>
-          <Layer>cs_posnumero_de_batiment20140214143756039</Layer>
-          <Layer>no_posnomlocallieudit20140214143906869</Layer>
-          <Layer>bf_point_limite20140214143552315</Layer>
-          <Layer>pf_pfp20140214144226845</Layer>
-          <Layer>bf_bien_fonds20140214143508556</Layer>
-          <Layer>bf_ddp20140214143538213</Layer>
-          <Layer>cs_surfacecs20140214143830750</Layer>
-          <Layer>od_element_lineaire20140214144047075</Layer>
-          <Layer>od_element_surfacique20140214144124647</Layer>
-          <Layer>cs_batiment20140214143721709</Layer>
-          <Layer>od_batiment_souterrain20140214143946785</Layer>
         </LayerSet>
         <Grid/>
         <ComposerMapGrid rightAnnotationDirection="0" gridFramePenColor="0,0,0,255" show="0" bottomAnnotationPosition="1" annotationFont="Ubuntu,11,-1,5,50,0,0,0,0,0" annotationPrecision="3" showAnnotation="0" topFrameDivisions="0" uuid="{597c5a48-bf1f-4975-a0fb-36b11024113b}" leftAnnotationDirection="0" topAnnotationPosition="1" rightAnnotationDisplay="0" offsetX="0" offsetY="0" rightFrameDivisions="0" gridStyle="0" annotationFontColor="0,0,0,255" intervalX="0" gridFrameSideFlags="15" intervalY="0" bottomAnnotationDirection="0" leftAnnotationDisplay="0" leftFrameDivisions="0" frameFillColor1="255,255,255,255" frameFillColor2="0,0,0,255" crossLength="3" gridFramePenThickness="0.5" bottomAnnotationDisplay="0" unit="0" topAnnotationDisplay="0" leftAnnotationPosition="1" blendMode="0" gridFrameStyle="0" rightAnnotationPosition="1" gridFrameWidth="2" name="Grid 1" annotationFormat="0" bottomFrameDivisions="0" topAnnotationDirection="0" frameAnnotationDistance="1">
@@ -2500,32 +2342,6 @@
           <Layer>od_dimension_orientation20131202111155806</Layer>
           <Layer>printmap20130304110011400</Layer>
           <Layer>cadastre20140312152032371</Layer>
-          <Layer>ad_posnumero_maison20130514143346530</Layer>
-          <Layer>cs_posnumero_de_batiment20130514143756039</Layer>
-          <Layer>bf_posimmeuble20130514143633121</Layer>
-          <Layer>no_posnomlocallieudit20130514143906869</Layer>
-          <Layer>bf_point_limite20130514143552315</Layer>
-          <Layer>axe_rue20130514143437774</Layer>
-          <Layer>pf_pfp20130514144226845</Layer>
-          <Layer>bf_bien_fonds20130514143508556</Layer>
-          <Layer>bf_ddp20130514143538213</Layer>
-          <Layer>cs_surfacecs20130514143830750</Layer>
-          <Layer>od_element_lineaire20130514144047075</Layer>
-          <Layer>od_element_surfacique20130514144124647</Layer>
-          <Layer>cs_batiment20130514143721709</Layer>
-          <Layer>od_batiment_souterrain20130514143946785</Layer>
-          <Layer>bf_posimmeuble20140214143633121</Layer>
-          <Layer>cs_posnumero_de_batiment20140214143756039</Layer>
-          <Layer>no_posnomlocallieudit20140214143906869</Layer>
-          <Layer>bf_point_limite20140214143552315</Layer>
-          <Layer>pf_pfp20140214144226845</Layer>
-          <Layer>bf_bien_fonds20140214143508556</Layer>
-          <Layer>bf_ddp20140214143538213</Layer>
-          <Layer>cs_surfacecs20140214143830750</Layer>
-          <Layer>od_element_lineaire20140214144047075</Layer>
-          <Layer>od_element_surfacique20140214144124647</Layer>
-          <Layer>cs_batiment20140214143721709</Layer>
-          <Layer>od_batiment_souterrain20140214143946785</Layer>
         </LayerSet>
         <Grid/>
         <ComposerMapGrid rightAnnotationDirection="0" gridFramePenColor="0,0,0,255" show="0" bottomAnnotationPosition="1" annotationFont="Ubuntu,11,-1,5,50,0,0,0,0,0" annotationPrecision="3" showAnnotation="0" topFrameDivisions="0" uuid="{68cc20f1-df8b-4f36-99da-1488818885ca}" leftAnnotationDirection="0" topAnnotationPosition="1" rightAnnotationDisplay="0" offsetX="0" offsetY="0" rightFrameDivisions="0" gridStyle="0" annotationFontColor="0,0,0,255" intervalX="0" gridFrameSideFlags="15" intervalY="0" bottomAnnotationDirection="0" leftAnnotationDisplay="0" leftFrameDivisions="0" frameFillColor1="255,255,255,255" frameFillColor2="0,0,0,255" crossLength="3" gridFramePenThickness="0.5" bottomAnnotationDisplay="0" unit="0" topAnnotationDisplay="0" leftAnnotationPosition="1" blendMode="0" gridFrameStyle="0" rightAnnotationPosition="1" gridFrameWidth="2" name="Grid 1" annotationFormat="0" bottomFrameDivisions="0" topAnnotationDirection="0" frameAnnotationDistance="1">
@@ -2764,32 +2580,6 @@
           <Layer>od_dimension_orientation20131202111155806</Layer>
           <Layer>printmap20130304110011400</Layer>
           <Layer>cadastre20140312152032371</Layer>
-          <Layer>ad_posnumero_maison20130514143346530</Layer>
-          <Layer>cs_posnumero_de_batiment20130514143756039</Layer>
-          <Layer>bf_posimmeuble20130514143633121</Layer>
-          <Layer>no_posnomlocallieudit20130514143906869</Layer>
-          <Layer>bf_point_limite20130514143552315</Layer>
-          <Layer>axe_rue20130514143437774</Layer>
-          <Layer>pf_pfp20130514144226845</Layer>
-          <Layer>bf_bien_fonds20130514143508556</Layer>
-          <Layer>bf_ddp20130514143538213</Layer>
-          <Layer>cs_surfacecs20130514143830750</Layer>
-          <Layer>od_element_lineaire20130514144047075</Layer>
-          <Layer>od_element_surfacique20130514144124647</Layer>
-          <Layer>cs_batiment20130514143721709</Layer>
-          <Layer>od_batiment_souterrain20130514143946785</Layer>
-          <Layer>bf_posimmeuble20140214143633121</Layer>
-          <Layer>cs_posnumero_de_batiment20140214143756039</Layer>
-          <Layer>no_posnomlocallieudit20140214143906869</Layer>
-          <Layer>bf_point_limite20140214143552315</Layer>
-          <Layer>pf_pfp20140214144226845</Layer>
-          <Layer>bf_bien_fonds20140214143508556</Layer>
-          <Layer>bf_ddp20140214143538213</Layer>
-          <Layer>cs_surfacecs20140214143830750</Layer>
-          <Layer>od_element_lineaire20140214144047075</Layer>
-          <Layer>od_element_surfacique20140214144124647</Layer>
-          <Layer>cs_batiment20140214143721709</Layer>
-          <Layer>od_batiment_souterrain20140214143946785</Layer>
         </LayerSet>
         <Grid/>
         <ComposerMapGrid rightAnnotationDirection="0" gridFramePenColor="0,0,0,255" show="0" bottomAnnotationPosition="1" annotationFont="Ubuntu,11,-1,5,50,0,0,0,0,0" annotationPrecision="3" showAnnotation="0" topFrameDivisions="0" uuid="{f33b132a-e26f-4783-a43f-20adc4c40ec7}" leftAnnotationDirection="0" topAnnotationPosition="1" rightAnnotationDisplay="0" offsetX="0" offsetY="0" rightFrameDivisions="0" gridStyle="0" annotationFontColor="0,0,0,255" intervalX="0" gridFrameSideFlags="15" intervalY="0" bottomAnnotationDirection="0" leftAnnotationDisplay="0" leftFrameDivisions="0" frameFillColor1="255,255,255,255" frameFillColor2="0,0,0,255" crossLength="3" gridFramePenThickness="0.5" bottomAnnotationDisplay="0" unit="0" topAnnotationDisplay="0" leftAnnotationPosition="1" blendMode="0" gridFrameStyle="0" rightAnnotationPosition="1" gridFrameWidth="2" name="Grid 1" annotationFormat="0" bottomFrameDivisions="0" topAnnotationDirection="0" frameAnnotationDistance="1">
@@ -3229,7 +3019,7 @@
       </ComposerMap>
     </Composition>
   </Composer>
-  <projectlayers layercount="106">
+  <projectlayers layercount="94">
     <maplayer minimumScale="-4.65661e-10" maximumScale="1e+08" simplifyDrawingHints="0" minLabelScale="0" maxLabelScale="1e+08" simplifyDrawingTol="1" geometry="Line" simplifyMaxScale="1" type="vector" hasScaleBasedVisibilityFlag="0" simplifyLocal="1" scaleBasedLabelVisibilityFlag="0">
       <id>IntersectIt_Lines20130618102142813</id>
       <datasource>LineString?crs=EPSG:21781&amp;field=id:string&amp;field=type:string&amp;field=x:double&amp;field=y:double&amp;field=observation:double&amp;field=precision:double&amp;index=yes</datasource>
@@ -24133,26 +23923,10 @@
         <value>IntersectIt_Lines20130618102142813</value>
         <value>IntersectIt_Points20130618102143276</value>
         <value>_cadinput_techical_snap_layer_20140203092715598</value>
-        <value>ad_posnumero_maison20130514143346530</value>
-        <value>axe_rue20130514143437774</value>
-        <value>bf_bien_fonds20130514143508556</value>
-        <value>bf_bien_fonds20140214143508556</value>
-        <value>bf_ddp20130514143538213</value>
-        <value>bf_ddp20140214143538213</value>
-        <value>bf_point_limite20130514143552315</value>
-        <value>bf_point_limite20140214143552315</value>
-        <value>bf_posimmeuble20130514143633121</value>
-        <value>bf_posimmeuble20140214143633121</value>
         <value>cadastre20140312152032371</value>
         <value>camac20140113144941208</value>
         <value>conduites_copy20130709141244955</value>
         <value>constructionpoint20130807094904851</value>
-        <value>cs_batiment20130514143721709</value>
-        <value>cs_batiment20140214143721709</value>
-        <value>cs_posnumero_de_batiment20130514143756039</value>
-        <value>cs_posnumero_de_batiment20140214143756039</value>
-        <value>cs_surfacecs20130514143830750</value>
-        <value>cs_surfacecs20140214143830750</value>
         <value>dimension20130807094904783</value>
         <value>district20130304110004764</value>
         <value>hydrant20130304110004848</value>
@@ -24164,20 +23938,12 @@
         <value>installation_treatment20130816113039913</value>
         <value>installation_valvechamber20131107105006707</value>
         <value>leak20130821111917060</value>
-        <value>no_posnomlocallieudit20130514143906869</value>
-        <value>no_posnomlocallieudit20140214143906869</value>
         <value>node20130304110005126</value>
         <value>od_annotationline20131203095020365</value>
         <value>od_annotationpoint20131203095020392</value>
-        <value>od_batiment_souterrain20130514143946785</value>
-        <value>od_batiment_souterrain20140214143946785</value>
         <value>od_cover20141219115626229</value>
         <value>od_crossing20141023083754327</value>
         <value>od_dimension_orientation20131202111155806</value>
-        <value>od_element_lineaire20130514144047075</value>
-        <value>od_element_lineaire20140214144047075</value>
-        <value>od_element_surfacique20130514144124647</value>
-        <value>od_element_surfacique20140214144124647</value>
         <value>od_meter20131120073630165</value>
         <value>od_meter_reference20140304165835390</value>
         <value>od_node20140116161508743</value>
@@ -24185,9 +23951,6 @@
         <value>od_remote20150116100522170</value>
         <value>od_subscriber_reference20131206105928067</value>
         <value>ouvrage_général_copy20141218102656671</value>
-        <value>pf_pfa20130514144154766</value>
-        <value>pf_pfp20130514144226845</value>
-        <value>pf_pfp20140214144226845</value>
         <value>pipe_child_parent20130417092030507</value>
         <value>pressurezone20130417133612105</value>
         <value>printmap20130304110011400</value>
@@ -24207,23 +23970,7 @@
         <value>enabled</value>
         <value>disabled</value>
         <value>disabled</value>
-        <value>disabled</value>
         <value>enabled</value>
-        <value>disabled</value>
-        <value>enabled</value>
-        <value>enabled</value>
-        <value>enabled</value>
-        <value>disabled</value>
-        <value>enabled</value>
-        <value>disabled</value>
-        <value>disabled</value>
-        <value>enabled</value>
-        <value>enabled</value>
-        <value>enabled</value>
-        <value>enabled</value>
-        <value>disabled</value>
-        <value>enabled</value>
-        <value>disabled</value>
         <value>enabled</value>
         <value>disabled</value>
         <value>disabled</value>
@@ -24236,19 +23983,6 @@
         <value>enabled</value>
         <value>enabled</value>
         <value>disabled</value>
-        <value>disabled</value>
-        <value>enabled</value>
-        <value>enabled</value>
-        <value>disabled</value>
-        <value>disabled</value>
-        <value>enabled</value>
-        <value>enabled</value>
-        <value>disabled</value>
-        <value>disabled</value>
-        <value>disabled</value>
-        <value>enabled</value>
-        <value>enabled</value>
-        <value>enabled</value>
         <value>enabled</value>
         <value>disabled</value>
         <value>disabled</value>
@@ -24257,9 +23991,11 @@
         <value>disabled</value>
         <value>disabled</value>
         <value>disabled</value>
-        <value>enabled</value>
-        <value>enabled</value>
-        <value>enabled</value>
+        <value>disabled</value>
+        <value>disabled</value>
+        <value>disabled</value>
+        <value>disabled</value>
+        <value>disabled</value>
         <value>disabled</value>
         <value>enabled</value>
         <value>enabled</value>
@@ -24274,14 +24010,7 @@
         <value>enabled</value>
       </LayerSnappingEnabledList>
       <SnappingMode type="QString">advanced</SnappingMode>
-      <AvoidIntersectionsList type="QStringList">
-        <value>bf_bien_fonds20140214143508556</value>
-        <value>bf_ddp20140214143538213</value>
-        <value>cs_batiment20140214143721709</value>
-        <value>cs_surfacecs20140214143830750</value>
-        <value>od_batiment_souterrain20140214143946785</value>
-        <value>od_element_surfacique20140214144124647</value>
-      </AvoidIntersectionsList>
+      <AvoidIntersectionsList type="QStringList"/>
       <LayerSnappingToleranceUnitList type="QStringList">
         <value>1</value>
         <value>1</value>
@@ -24289,23 +24018,6 @@
         <value>1</value>
         <value>1</value>
         <value>1</value>
-        <value>0</value>
-        <value>1</value>
-        <value>0</value>
-        <value>1</value>
-        <value>0</value>
-        <value>1</value>
-        <value>0</value>
-        <value>1</value>
-        <value>1</value>
-        <value>1</value>
-        <value>1</value>
-        <value>1</value>
-        <value>0</value>
-        <value>1</value>
-        <value>0</value>
-        <value>1</value>
-        <value>0</value>
         <value>1</value>
         <value>1</value>
         <value>1</value>
@@ -24318,19 +24030,6 @@
         <value>1</value>
         <value>1</value>
         <value>1</value>
-        <value>0</value>
-        <value>1</value>
-        <value>1</value>
-        <value>1</value>
-        <value>1</value>
-        <value>0</value>
-        <value>1</value>
-        <value>1</value>
-        <value>1</value>
-        <value>1</value>
-        <value>0</value>
-        <value>1</value>
-        <value>0</value>
         <value>1</value>
         <value>1</value>
         <value>1</value>
@@ -24338,9 +24037,12 @@
         <value>1</value>
         <value>1</value>
         <value>1</value>
-        <value>0</value>
         <value>1</value>
-        <value>0</value>
+        <value>1</value>
+        <value>1</value>
+        <value>1</value>
+        <value>1</value>
+        <value>1</value>
         <value>1</value>
         <value>1</value>
         <value>1</value>
@@ -24360,24 +24062,8 @@
         <value>to_vertex</value>
         <value>to_vertex_and_segment</value>
         <value>to_vertex_and_segment</value>
-        <value>to_vertex_and_segment</value>
         <value>to_vertex</value>
         <value>to_vertex_and_segment</value>
-        <value>to_vertex</value>
-        <value>to_vertex_and_segment</value>
-        <value>to_vertex</value>
-        <value>to_vertex_and_segment</value>
-        <value>to_vertex</value>
-        <value>to_vertex_and_segment</value>
-        <value>to_vertex_and_segment</value>
-        <value>to_vertex</value>
-        <value>to_vertex_and_segment</value>
-        <value>to_vertex</value>
-        <value>to_vertex</value>
-        <value>to_vertex_and_segment</value>
-        <value>to_vertex</value>
-        <value>to_vertex_and_segment</value>
-        <value>to_vertex</value>
         <value>to_vertex_and_segment</value>
         <value>to_vertex</value>
         <value>to_vertex</value>
@@ -24389,19 +24075,6 @@
         <value>to_vertex_and_segment</value>
         <value>to_vertex_and_segment</value>
         <value>to_vertex_and_segment</value>
-        <value>to_vertex_and_segment</value>
-        <value>to_vertex</value>
-        <value>to_vertex</value>
-        <value>to_vertex_and_segment</value>
-        <value>to_vertex_and_segment</value>
-        <value>to_vertex</value>
-        <value>to_vertex</value>
-        <value>to_vertex_and_segment</value>
-        <value>to_vertex_and_segment</value>
-        <value>to_vertex_and_segment</value>
-        <value>to_vertex</value>
-        <value>to_vertex</value>
-        <value>to_vertex</value>
         <value>to_vertex</value>
         <value>to_vertex_and_segment</value>
         <value>to_vertex_and_segment</value>
@@ -24410,9 +24083,11 @@
         <value>to_vertex_and_segment</value>
         <value>to_vertex_and_segment</value>
         <value>to_vertex_and_segment</value>
-        <value>to_vertex</value>
         <value>to_vertex_and_segment</value>
-        <value>to_vertex</value>
+        <value>to_vertex_and_segment</value>
+        <value>to_vertex_and_segment</value>
+        <value>to_vertex_and_segment</value>
+        <value>to_vertex_and_segment</value>
         <value>to_vertex</value>
         <value>to_vertex</value>
         <value>to_vertex</value>
@@ -24433,26 +24108,10 @@
         <value>1.000000</value>
         <value>1.000000</value>
         <value>20.000000</value>
-        <value>1.000000</value>
-        <value>1.000000</value>
-        <value>1.000000</value>
-        <value>0.000000</value>
-        <value>1.000000</value>
-        <value>0.000000</value>
-        <value>1.000000</value>
-        <value>0.000000</value>
-        <value>1.000000</value>
-        <value>0.000000</value>
         <value>6.000000</value>
         <value>6.000000</value>
         <value>7.000000</value>
         <value>8.000000</value>
-        <value>7.000000</value>
-        <value>0.000000</value>
-        <value>1.000000</value>
-        <value>0.000000</value>
-        <value>1.000000</value>
-        <value>0.000000</value>
         <value>6.000000</value>
         <value>0.000000</value>
         <value>0.000000</value>
@@ -24464,20 +24123,12 @@
         <value>6.000000</value>
         <value>6.000000</value>
         <value>6.000000</value>
-        <value>1.000000</value>
-        <value>0.000000</value>
         <value>7.000000</value>
         <value>6.000000</value>
         <value>6.000000</value>
         <value>7.000000</value>
-        <value>0.000000</value>
-        <value>7.000000</value>
         <value>7.000000</value>
         <value>6.000000</value>
-        <value>7.000000</value>
-        <value>0.000000</value>
-        <value>7.000000</value>
-        <value>0.000000</value>
         <value>6.000000</value>
         <value>6.000000</value>
         <value>6.000000</value>
@@ -24485,9 +24136,6 @@
         <value>7.000000</value>
         <value>6.000000</value>
         <value>7.000000</value>
-        <value>0.000000</value>
-        <value>1.000000</value>
-        <value>0.000000</value>
         <value>6.000000</value>
         <value>12.000000</value>
         <value>12.000000</value>
