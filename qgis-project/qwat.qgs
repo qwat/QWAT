@@ -285,34 +285,34 @@
     </layer-tree-group>
   </layer-tree-group>
   <relations>
-    <relation referencingLayer="od_subscriber_reference20131206105928067" referencedLayer="subscriber20130304110011459" id="relation_abonne_renvoi" name="Abonné - renvoi">
+    <relation referencingLayer="od_subscriber_reference20131206105928067" referencedLayer="subscriber20130304110011459" id="relation_subscriber_reference" name="Abonné - renvoi">
       <fieldRef referencedField="id" referencingField="id_subscriber"/>
     </relation>
-    <relation referencingLayer="od_meter_reference20140304165835390" referencedLayer="od_meter20131120073630165" id="relation_compteurreseau_renvoi" name="Compteur réseau - renvoi">
+    <relation referencingLayer="od_meter_reference20140304165835390" referencedLayer="od_meter20131120073630165" id="relation_meter_reference" name="Compteur réseau - renvoi">
       <fieldRef referencedField="id" referencingField="id_meter"/>
     </relation>
-    <relation referencingLayer="od_meter20131120073630165" referencedLayer="conduites_copy20130709141244955" id="relation_conduite_compteur" name="Conduite - compteur">
+    <relation referencingLayer="od_meter20131120073630165" referencedLayer="conduites_copy20130709141244955" id="relation_pipe_meter" name="Conduite - compteur">
       <fieldRef referencedField="id" referencingField="id_pipe"/>
     </relation>
-    <relation referencingLayer="conduites_copy20130709141244955" referencedLayer="conduites_copy20130709141244955" id="relation_conduite_parent" name="Conduite - parent">
+    <relation referencingLayer="conduites_copy20130709141244955" referencedLayer="conduites_copy20130709141244955" id="relation_pipe_parent" name="Conduite - parent">
       <fieldRef referencedField="id" referencingField="id_parent"/>
     </relation>
-    <relation referencingLayer="installation_pressurecontrol20131107105006792" referencedLayer="installation20130304110004938" id="relation_ouvrage_pressurecontrol" name="Ouvrage - régulation pression">
+    <relation referencingLayer="installation_pressurecontrol20131107105006792" referencedLayer="installation20130304110004938" id="relation_installationbuilding_pressurecontrol" name="Ouvrage - régulation pression">
       <fieldRef referencedField="id" referencingField="id_installation"/>
     </relation>
-    <relation referencingLayer="installation_pump20130816140237750" referencedLayer="installation20130304110004938" id="relation_ouvrage_pump" name="Ouvrage - pompage">
+    <relation referencingLayer="installation_pump20130816140237750" referencedLayer="installation20130304110004938" id="relation_installationbuilding_pump" name="Ouvrage - pompage">
       <fieldRef referencedField="id" referencingField="id_installation"/>
     </relation>
-    <relation referencingLayer="installation_source20130820110331647" referencedLayer="installation20130304110004938" id="relation_ouvrage_source" name="Ouvrage - source">
+    <relation referencingLayer="installation_source20130820110331647" referencedLayer="installation20130304110004938" id="relation_installationbuilding_source" name="Ouvrage - source">
       <fieldRef referencedField="id" referencingField="id_installation"/>
     </relation>
-    <relation referencingLayer="installation_tank20130304110005008" referencedLayer="installation20130304110004938" id="relation_ouvrage_tank" name="Ouvrage - réservoir">
+    <relation referencingLayer="installation_tank20130304110005008" referencedLayer="installation20130304110004938" id="relation_installationbuilding_tank" name="Ouvrage - réservoir">
       <fieldRef referencedField="id" referencingField="id_installation"/>
     </relation>
-    <relation referencingLayer="installation_treatment20130816113039913" referencedLayer="installation20130304110004938" id="relation_ouvrage_treatment" name="Ouvrage - traitement">
+    <relation referencingLayer="installation_treatment20130816113039913" referencedLayer="installation20130304110004938" id="relation_installationbuilding_treatment" name="Ouvrage - traitement">
       <fieldRef referencedField="id" referencingField="id_installation"/>
     </relation>
-    <relation referencingLayer="installation_valvechamber20131107105006707" referencedLayer="installation20130304110004938" id="relation_ouvrage_valvechamber" name="Ouvrage - chambres de vannes">
+    <relation referencingLayer="installation_valvechamber20131107105006707" referencedLayer="installation20130304110004938" id="relation_installationbuilding_valvechamber" name="Ouvrage - chambres de vannes">
       <fieldRef referencedField="id" referencingField="id_installation"/>
     </relation>
     <relation referencingLayer="leak20130821111917060" referencedLayer="conduites_copy20130709141244955" id="relation_pipe_leak" name="Conduite - fuites">
@@ -4627,7 +4627,7 @@
           <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
         </edittype>
         <edittype widgetv2type="RelationReference" name="id_parent">
-          <widgetv2config OrderByValue="0" fieldEditable="1" ShowForm="0" Relation="relation_conduite_parent" ReadOnly="1" MapIdentification="1" labelOnTop="0" AllowNULL="1"/>
+          <widgetv2config OrderByValue="0" fieldEditable="1" ShowForm="0" Relation="relation_pipe_parent" ReadOnly="1" MapIdentification="1" labelOnTop="0" AllowNULL="1"/>
         </edittype>
         <edittype widgetv2type="ValueRelation" name="id_function">
           <widgetv2config OrderByValue="0" AllowNull="0" FilterExpression="" fieldEditable="1" Key="id" Layer="vl_pipe_function20130304110005186" Value="value_fr" labelOnTop="0" AllowMulti="0"/>
@@ -5457,7 +5457,7 @@
           <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
         </edittype>
         <edittype widgetv2type="RelationReference" name="id_parent">
-          <widgetv2config OrderByValue="0" fieldEditable="1" ShowForm="0" Relation="relation_conduite_parent" ReadOnly="1" MapIdentification="1" labelOnTop="0" AllowNULL="1"/>
+          <widgetv2config OrderByValue="0" fieldEditable="1" ShowForm="0" Relation="relation_pipe_parent" ReadOnly="1" MapIdentification="1" labelOnTop="0" AllowNULL="1"/>
         </edittype>
         <edittype widgetv2type="ValueRelation" name="id_function">
           <widgetv2config OrderByValue="0" AllowNull="0" FilterExpression="" fieldEditable="1" Key="id" Layer="vl_pipe_function20130304110005186" Value="value_fr" labelOnTop="0" AllowMulti="0"/>
@@ -13624,7 +13624,7 @@
           <widgetv2config OrderByValue="0" AllowNull="0" FilterExpression="" fieldEditable="1" Key="id" Layer="vl_status20130304110011436" Value="value_fr" labelOnTop="0" AllowMulti="0"/>
         </edittype>
         <edittype widgetv2type="RelationReference" name="id_pipe">
-          <widgetv2config OrderByValue="0" fieldEditable="1" ShowForm="0" Relation="relation_conduite_compteur" ReadOnly="1" MapIdentification="1" labelOnTop="0" AllowNULL="1"/>
+          <widgetv2config OrderByValue="0" fieldEditable="1" ShowForm="0" Relation="relation_pipe_meter" ReadOnly="1" MapIdentification="1" labelOnTop="0" AllowNULL="1"/>
         </edittype>
         <edittype widgetv2type="TextEdit" name="identification">
           <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
@@ -13926,7 +13926,7 @@
           <widgetv2config OrderByValue="0" AllowNull="0" FilterExpression="" fieldEditable="1" Key="id" Layer="vl_status20130304110011436" Value="value_fr" labelOnTop="0" AllowMulti="0"/>
         </edittype>
         <edittype widgetv2type="RelationReference" name="id_pipe">
-          <widgetv2config OrderByValue="0" fieldEditable="1" ShowForm="0" Relation="relation_conduite_compteur" ReadOnly="1" MapIdentification="1" labelOnTop="0" AllowNULL="1"/>
+          <widgetv2config OrderByValue="0" fieldEditable="1" ShowForm="0" Relation="relation_pipe_meter" ReadOnly="1" MapIdentification="1" labelOnTop="0" AllowNULL="1"/>
         </edittype>
         <edittype widgetv2type="TextEdit" name="identification">
           <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
@@ -14033,7 +14033,7 @@
           <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
         </edittype>
         <edittype widgetv2type="RelationReference" name="id_meter">
-          <widgetv2config OrderByValue="0" fieldEditable="1" ShowForm="0" Relation="relation_compteurreseau_renvoi" ReadOnly="1" MapIdentification="1" labelOnTop="0" AllowNULL="1"/>
+          <widgetv2config OrderByValue="0" fieldEditable="1" ShowForm="0" Relation="relation_meter_reference" ReadOnly="1" MapIdentification="1" labelOnTop="0" AllowNULL="1"/>
         </edittype>
         <edittype widgetv2type="TextEdit" name="compteur réseau_identification">
           <widgetv2config IsMultiline="0" fieldEditable="0" UseHtml="0" labelOnTop="0"/>
@@ -14257,7 +14257,7 @@
           <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
         </edittype>
         <edittype widgetv2type="RelationReference" name="id_meter">
-          <widgetv2config OrderByValue="0" fieldEditable="1" ShowForm="0" Relation="relation_compteurreseau_renvoi" ReadOnly="1" MapIdentification="1" labelOnTop="0" AllowNULL="1"/>
+          <widgetv2config OrderByValue="0" fieldEditable="1" ShowForm="0" Relation="relation_meter_reference" ReadOnly="1" MapIdentification="1" labelOnTop="0" AllowNULL="1"/>
         </edittype>
         <edittype widgetv2type="TextEdit" name="compteur réseau_identification">
           <widgetv2config IsMultiline="0" fieldEditable="0" UseHtml="0" labelOnTop="0"/>
@@ -15502,7 +15502,7 @@
           <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
         </edittype>
         <edittype widgetv2type="RelationReference" name="id_subscriber">
-          <widgetv2config OrderByValue="0" fieldEditable="1" ShowForm="0" Relation="relation_abonne_renvoi" ReadOnly="1" MapIdentification="1" labelOnTop="0" AllowNULL="1"/>
+          <widgetv2config OrderByValue="0" fieldEditable="1" ShowForm="0" Relation="relation_subscriber_reference" ReadOnly="1" MapIdentification="1" labelOnTop="0" AllowNULL="1"/>
         </edittype>
         <edittype widgetv2type="TextEdit" name="abonnés_identification">
           <widgetv2config IsMultiline="0" fieldEditable="0" UseHtml="0" labelOnTop="0"/>
@@ -15726,7 +15726,7 @@
           <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
         </edittype>
         <edittype widgetv2type="RelationReference" name="id_subscriber">
-          <widgetv2config OrderByValue="0" fieldEditable="1" ShowForm="0" Relation="relation_abonne_renvoi" ReadOnly="1" MapIdentification="1" labelOnTop="0" AllowNULL="1"/>
+          <widgetv2config OrderByValue="0" fieldEditable="1" ShowForm="0" Relation="relation_subscriber_reference" ReadOnly="1" MapIdentification="1" labelOnTop="0" AllowNULL="1"/>
         </edittype>
         <edittype widgetv2type="TextEdit" name="abonnés_identification">
           <widgetv2config IsMultiline="0" fieldEditable="0" UseHtml="0" labelOnTop="0"/>
