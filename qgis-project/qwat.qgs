@@ -55,7 +55,7 @@
       </layer-tree-group>
       <layer-tree-group expanded="1" checked="Qt::PartiallyChecked" name="Réseau">
         <customproperties/>
-        <layer-tree-layer expanded="1" checked="Qt::Checked" id="conduites_copy20130709141244955" name="conduites">
+        <layer-tree-layer expanded="0" checked="Qt::Checked" id="conduites_copy20130709141244955" name="conduites">
           <customproperties>
             <property key="expandedLegendNodes"/>
           </customproperties>
@@ -134,7 +134,7 @@
         <customproperties/>
       </layer-tree-layer>
     </layer-tree-group>
-    <layer-tree-group expanded="0" checked="Qt::PartiallyChecked" name="cadastre sige">
+    <layer-tree-group expanded="1" checked="Qt::Unchecked" name="cadastre sige">
       <customproperties/>
       <layer-tree-layer expanded="1" checked="Qt::Unchecked" id="servitude20150109080436604" name="servitude ligne">
         <customproperties/>
@@ -145,7 +145,7 @@
       <layer-tree-layer expanded="0" checked="Qt::Unchecked" id="camac20140113144941208" name="enquete camac">
         <customproperties/>
       </layer-tree-layer>
-      <layer-tree-layer expanded="0" checked="Qt::Checked" id="cadastre20140312152032371" name="enquete cadastre">
+      <layer-tree-layer expanded="0" checked="Qt::Unchecked" id="cadastre20140312152032371" name="enquete cadastre">
         <customproperties/>
       </layer-tree-layer>
     </layer-tree-group>
@@ -181,6 +181,12 @@
     </layer-tree-group>
     <layer-tree-group expanded="0" checked="Qt::PartiallyChecked" name="Tables auxiliaires">
       <customproperties/>
+      <layer-tree-layer expanded="1" checked="Qt::Checked" id="collecteur20150203112806387" name="collecteur">
+        <customproperties/>
+      </layer-tree-layer>
+      <layer-tree-layer expanded="1" checked="Qt::Checked" id="partenaire20150203112806405" name="partenaire">
+        <customproperties/>
+      </layer-tree-layer>
       <layer-tree-layer expanded="1" checked="Qt::Unchecked" id="vl_subscriber_type20130304110011480" name="Abonnés - type">
         <customproperties/>
       </layer-tree-layer>
@@ -349,10 +355,10 @@
   <mapcanvas>
     <units>meters</units>
     <extent>
-      <xmin>553443.13574521604459733</xmin>
-      <ymin>147131.40239240869414061</ymin>
-      <xmax>555499.7334769923472777</xmax>
-      <ymax>150006.53852815716527402</ymax>
+      <xmin>554159.95484753965865821</xmin>
+      <ymin>147294.69612831325503066</ymin>
+      <xmax>555531.02000205719377846</xmax>
+      <ymax>149211.4535521455691196</ymax>
     </extent>
     <rotation>0</rotation>
     <projections>1</projections>
@@ -476,11 +482,11 @@
         <checked-legend-node id="{f550eef3-fdaa-427b-b415-bd7e8fc25f9e}"/>
         <checked-legend-node id="{1169fb39-5fd3-43b6-9c6c-0f8ef27a0149}"/>
         <checked-legend-node id="{616d6b92-a218-4a54-b7e7-e5751d481224}"/>
-        <checked-legend-node id="{c0d5fc5a-ec61-4541-8755-35304072400e}"/>
         <checked-legend-node id="{2e14d53a-6d2f-40b3-bf3b-4f32112e3d59}"/>
+        <checked-legend-node id="{c0d5fc5a-ec61-4541-8755-35304072400e}"/>
+        <checked-legend-node id="{9abb4761-0b77-4941-9292-b0b0f2bc1ac6}"/>
         <checked-legend-node id="{5131ca92-2387-4bee-b3bf-2a410b4ff9b3}"/>
         <checked-legend-node id="{778014fd-333e-4b0b-b1ea-629c595a9763}"/>
-        <checked-legend-node id="{9abb4761-0b77-4941-9292-b0b0f2bc1ac6}"/>
         <checked-legend-node id="{5b970fd5-5c37-4865-81a5-cab18c5fb58c}"/>
         <checked-legend-node id="{013429dc-a1cd-4a17-904a-6550a0175046}"/>
         <checked-legend-node id="{2513a8b8-a110-4727-854c-6084f64e3bdf}"/>
@@ -688,6 +694,8 @@
       <item>cs_batiment20130514143721709</item>
       <item>od_batiment_souterrain20130514143946785</item>
       <item>pressurecontrol_type20150203100321270</item>
+      <item>collecteur20150203112806387</item>
+      <item>partenaire20150203112806405</item>
     </custom-order>
   </layer-tree-canvas>
   <legend updateDrawingOrder="false">
@@ -764,8 +772,8 @@
         </legendlayer>
       </legendgroup>
       <legendgroup open="true" checked="Qt::PartiallyChecked" name="Réseau">
-        <legendlayer drawingOrder="21" open="true" checked="Qt::Checked" name="conduites" showFeatureCount="0">
-          <filegroup open="true" hidden="false">
+        <legendlayer drawingOrder="21" open="false" checked="Qt::Checked" name="conduites" showFeatureCount="0">
+          <filegroup open="false" hidden="false">
             <legendlayerfile isInOverview="0" layerid="conduites_copy20130709141244955" visible="1"/>
           </filegroup>
         </legendlayer>
@@ -879,7 +887,7 @@
         </filegroup>
       </legendlayer>
     </legendgroup>
-    <legendgroup open="false" checked="Qt::PartiallyChecked" name="cadastre sige">
+    <legendgroup open="true" checked="Qt::Unchecked" name="cadastre sige">
       <legendlayer drawingOrder="34" open="true" checked="Qt::Unchecked" name="servitude ligne" showFeatureCount="0">
         <filegroup open="true" hidden="false">
           <legendlayerfile isInOverview="0" layerid="servitude20150109080436604" visible="0"/>
@@ -895,9 +903,9 @@
           <legendlayerfile isInOverview="0" layerid="camac20140113144941208" visible="0"/>
         </filegroup>
       </legendlayer>
-      <legendlayer drawingOrder="37" open="false" checked="Qt::Checked" name="enquete cadastre" showFeatureCount="0">
+      <legendlayer drawingOrder="37" open="false" checked="Qt::Unchecked" name="enquete cadastre" showFeatureCount="0">
         <filegroup open="false" hidden="false">
-          <legendlayerfile isInOverview="0" layerid="cadastre20140312152032371" visible="1"/>
+          <legendlayerfile isInOverview="0" layerid="cadastre20140312152032371" visible="0"/>
         </filegroup>
       </legendlayer>
     </legendgroup>
@@ -943,6 +951,16 @@
       </legendgroup>
     </legendgroup>
     <legendgroup open="false" checked="Qt::PartiallyChecked" name="Tables auxiliaires">
+      <legendlayer drawingOrder="93" open="true" checked="Qt::Checked" name="collecteur" showFeatureCount="0">
+        <filegroup open="true" hidden="false">
+          <legendlayerfile isInOverview="0" layerid="collecteur20150203112806387" visible="1"/>
+        </filegroup>
+      </legendlayer>
+      <legendlayer drawingOrder="94" open="true" checked="Qt::Checked" name="partenaire" showFeatureCount="0">
+        <filegroup open="true" hidden="false">
+          <legendlayerfile isInOverview="0" layerid="partenaire20150203112806405" visible="1"/>
+        </filegroup>
+      </legendlayer>
       <legendlayer drawingOrder="45" open="true" checked="Qt::Unchecked" name="Abonnés - type" showFeatureCount="0">
         <filegroup open="true" hidden="false">
           <legendlayerfile isInOverview="0" layerid="vl_subscriber_type20130304110011480" visible="0"/>
@@ -3047,7 +3065,7 @@
       </ComposerMap>
     </Composition>
   </Composer>
-  <projectlayers layercount="95">
+  <projectlayers layercount="97">
     <maplayer minimumScale="-4.65661e-10" maximumScale="1e+08" simplifyDrawingHints="0" minLabelScale="0" maxLabelScale="1e+08" simplifyDrawingTol="1" geometry="Line" simplifyMaxScale="1" type="vector" hasScaleBasedVisibilityFlag="0" simplifyLocal="1" scaleBasedLabelVisibilityFlag="0">
       <id>IntersectIt_Lines20130618102142813</id>
       <datasource>LineString?crs=EPSG:21781&amp;field=id:string&amp;field=type:string&amp;field=x:double&amp;field=y:double&amp;field=observation:double&amp;field=precision:double&amp;index=yes</datasource>
@@ -4610,6 +4628,66 @@
         <rasterresampler maxOversampling="2"/>
       </pipe>
       <blendMode>0</blendMode>
+    </maplayer>
+    <maplayer minimumScale="0" maximumScale="1e+08" geometry="No geometry" type="vector" hasScaleBasedVisibilityFlag="0">
+      <id>collecteur20150203112806387</id>
+      <datasource>service='qWat' sslmode=disable key='id' table="sige_commun"."collecteur" sql=</datasource>
+      <title></title>
+      <abstract></abstract>
+      <keywordList>
+        <value></value>
+      </keywordList>
+      <layername>collecteur</layername>
+      <srs>
+        <spatialrefsys>
+          <proj4>+proj=longlat +datum=WGS84 +no_defs</proj4>
+          <srsid>3452</srsid>
+          <srid>4326</srid>
+          <authid>EPSG:4326</authid>
+          <description>WGS 84</description>
+          <projectionacronym>longlat</projectionacronym>
+          <ellipsoidacronym>WGS84</ellipsoidacronym>
+          <geographicflag>true</geographicflag>
+        </spatialrefsys>
+      </srs>
+      <customproperties/>
+      <provider encoding="UTF-8">postgres</provider>
+      <previewExpression></previewExpression>
+      <vectorjoins/>
+      <expressionfields/>
+      <map-layer-style-manager current="">
+        <map-layer-style name=""/>
+      </map-layer-style-manager>
+      <edittypes>
+        <edittype widgetv2type="TextEdit" name="id">
+          <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
+        </edittype>
+        <edittype widgetv2type="TextEdit" name="identifiant">
+          <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
+        </edittype>
+        <edittype widgetv2type="TextEdit" name="nom">
+          <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
+        </edittype>
+      </edittypes>
+      <editform>.</editform>
+      <editforminit/>
+      <featformsuppress>0</featformsuppress>
+      <annotationform>.</annotationform>
+      <editorlayout>generatedlayout</editorlayout>
+      <excludeAttributesWMS/>
+      <excludeAttributesWFS/>
+      <attributeactions/>
+      <edittypes>
+        <edittype widgetv2type="TextEdit" name="id">
+          <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
+        </edittype>
+        <edittype widgetv2type="TextEdit" name="identifiant">
+          <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
+        </edittype>
+        <edittype widgetv2type="TextEdit" name="nom">
+          <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
+        </edittype>
+      </edittypes>
     </maplayer>
     <maplayer minimumScale="0" maximumScale="1e+08" simplifyDrawingHints="0" minLabelScale="0" maxLabelScale="1e+08" simplifyDrawingTol="1" geometry="Line" simplifyMaxScale="1" type="vector" hasScaleBasedVisibilityFlag="0" simplifyLocal="1" scaleBasedLabelVisibilityFlag="0">
       <id>conduites_copy20130709141244955</id>
@@ -16417,6 +16495,60 @@
         </edittype>
       </edittypes>
     </maplayer>
+    <maplayer minimumScale="0" maximumScale="1e+08" geometry="No geometry" type="vector" hasScaleBasedVisibilityFlag="0">
+      <id>partenaire20150203112806405</id>
+      <datasource>service='qWat' sslmode=disable key='id' table="sige_commun"."partenaire" sql=</datasource>
+      <title></title>
+      <abstract></abstract>
+      <keywordList>
+        <value></value>
+      </keywordList>
+      <layername>partenaire</layername>
+      <srs>
+        <spatialrefsys>
+          <proj4>+proj=longlat +datum=WGS84 +no_defs</proj4>
+          <srsid>3452</srsid>
+          <srid>4326</srid>
+          <authid>EPSG:4326</authid>
+          <description>WGS 84</description>
+          <projectionacronym>longlat</projectionacronym>
+          <ellipsoidacronym>WGS84</ellipsoidacronym>
+          <geographicflag>true</geographicflag>
+        </spatialrefsys>
+      </srs>
+      <customproperties/>
+      <provider encoding="UTF-8">postgres</provider>
+      <previewExpression></previewExpression>
+      <vectorjoins/>
+      <expressionfields/>
+      <map-layer-style-manager current="">
+        <map-layer-style name=""/>
+      </map-layer-style-manager>
+      <edittypes>
+        <edittype widgetv2type="TextEdit" name="id">
+          <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
+        </edittype>
+        <edittype widgetv2type="TextEdit" name="nom">
+          <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
+        </edittype>
+      </edittypes>
+      <editform>.</editform>
+      <editforminit/>
+      <featformsuppress>0</featformsuppress>
+      <annotationform>.</annotationform>
+      <editorlayout>generatedlayout</editorlayout>
+      <excludeAttributesWMS/>
+      <excludeAttributesWFS/>
+      <attributeactions/>
+      <edittypes>
+        <edittype widgetv2type="TextEdit" name="id">
+          <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
+        </edittype>
+        <edittype widgetv2type="TextEdit" name="nom">
+          <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
+        </edittype>
+      </edittypes>
+    </maplayer>
     <maplayer minimumScale="0" maximumScale="1500" simplifyDrawingHints="1" minLabelScale="0" maxLabelScale="1e+08" simplifyDrawingTol="1" geometry="Line" simplifyMaxScale="1" type="vector" hasScaleBasedVisibilityFlag="1" simplifyLocal="1" scaleBasedLabelVisibilityFlag="0">
       <id>pipe_child_parent20130417092030507</id>
       <datasource>service='qWat' sslmode=disable key='child' srid=21781 type=LINESTRING table="qwat"."vw_pipe_child_parent" (geometry) sql=</datasource>
@@ -16720,10 +16852,10 @@
           <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
         </edittype>
       </edittypes>
-      <editform></editform>
+      <editform>.</editform>
       <editforminit/>
       <featformsuppress>0</featformsuppress>
-      <annotationform></annotationform>
+      <annotationform>.</annotationform>
       <editorlayout>generatedlayout</editorlayout>
       <excludeAttributesWMS/>
       <excludeAttributesWFS/>
@@ -17824,7 +17956,7 @@
       </pipe>
       <blendMode>0</blendMode>
     </maplayer>
-    <maplayer minimumScale="-4.65661e-10" maximumScale="1e+08" simplifyDrawingHints="0" minLabelScale="0" maxLabelScale="1e+08" simplifyDrawingTol="1" geometry="Line" simplifyMaxScale="1" type="vector" hasScaleBasedVisibilityFlag="0" simplifyLocal="1" scaleBasedLabelVisibilityFlag="0">
+    <maplayer minimumScale="0" maximumScale="1e+08" simplifyDrawingHints="0" minLabelScale="0" maxLabelScale="1e+08" simplifyDrawingTol="1" geometry="Line" simplifyMaxScale="1" type="vector" hasScaleBasedVisibilityFlag="0" simplifyLocal="1" scaleBasedLabelVisibilityFlag="0">
       <id>servitude20150109080436604</id>
       <datasource>service='qWat' sslmode=disable key='id' srid=21781 type=MULTILINESTRING table="cadastre"."servitude" (geometry_line) sql=</datasource>
       <title></title>
@@ -17863,7 +17995,7 @@
           <widgetv2config OrderByValue="1" AllowNull="0" FilterExpression="" fieldEditable="1" Key="id" Layer="servitude_type20150116095811274" Value="type" labelOnTop="0" AllowMulti="0"/>
         </edittype>
         <edittype widgetv2type="ValueRelation" name="id_etat">
-          <widgetv2config OrderByValue="1" AllowNull="0" FilterExpression="" fieldEditable="1" Key="id" Layer="servitude_etat20150116095811244" Value="etat" labelOnTop="0" AllowMulti="0"/>
+          <widgetv2config OrderByValue="1" AllowNull="1" FilterExpression="" fieldEditable="1" Key="id" Layer="servitude_etat20150116095811244" Value="etat" labelOnTop="0" AllowMulti="0"/>
         </edittype>
         <edittype widgetv2type="ValueRelation" name="id_statut">
           <widgetv2config OrderByValue="1" AllowNull="1" FilterExpression="" fieldEditable="1" Key="id" Layer="servitude_statut20150116095811261" Value="statut" labelOnTop="0" AllowMulti="0"/>
@@ -17871,11 +18003,11 @@
         <edittype widgetv2type="ValueRelation" name="id_ouvrage">
           <widgetv2config OrderByValue="1" AllowNull="1" FilterExpression="" fieldEditable="1" Key="id" Layer="installation20130304110004938" Value="_displayname_fr" labelOnTop="0" AllowMulti="0"/>
         </edittype>
-        <edittype widgetv2type="TextEdit" name="id_collecteur">
-          <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
+        <edittype widgetv2type="ValueRelation" name="id_collecteur">
+          <widgetv2config OrderByValue="1" AllowNull="1" FilterExpression="" fieldEditable="1" Key="id" Layer="collecteur20150203112806387" Value="nom" labelOnTop="0" AllowMulti="0"/>
         </edittype>
-        <edittype widgetv2type="TextEdit" name="id_partenaire">
-          <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
+        <edittype widgetv2type="ValueRelation" name="id_partenaire">
+          <widgetv2config OrderByValue="0" AllowNull="1" FilterExpression="" fieldEditable="1" Key="id" Layer="partenaire20150203112806405" Value="nom" labelOnTop="0" AllowMulti="0"/>
         </edittype>
         <edittype widgetv2type="TextEdit" name="type_numero">
           <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
@@ -17908,12 +18040,6 @@
           <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
         </edittype>
         <edittype widgetv2type="TextEdit" name="geometry_polygon">
-          <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
-        </edittype>
-        <edittype widgetv2type="TextEdit" name="geometry_polygon2">
-          <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
-        </edittype>
-        <edittype widgetv2type="TextEdit" name="geometry_line2">
           <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
         </edittype>
       </edittypes>
@@ -18129,7 +18255,7 @@
           <widgetv2config OrderByValue="1" AllowNull="0" FilterExpression="" fieldEditable="1" Key="id" Layer="servitude_type20150116095811274" Value="type" labelOnTop="0" AllowMulti="0"/>
         </edittype>
         <edittype widgetv2type="ValueRelation" name="id_etat">
-          <widgetv2config OrderByValue="1" AllowNull="0" FilterExpression="" fieldEditable="1" Key="id" Layer="servitude_etat20150116095811244" Value="etat" labelOnTop="0" AllowMulti="0"/>
+          <widgetv2config OrderByValue="1" AllowNull="1" FilterExpression="" fieldEditable="1" Key="id" Layer="servitude_etat20150116095811244" Value="etat" labelOnTop="0" AllowMulti="0"/>
         </edittype>
         <edittype widgetv2type="ValueRelation" name="id_statut">
           <widgetv2config OrderByValue="1" AllowNull="1" FilterExpression="" fieldEditable="1" Key="id" Layer="servitude_statut20150116095811261" Value="statut" labelOnTop="0" AllowMulti="0"/>
@@ -18137,11 +18263,11 @@
         <edittype widgetv2type="ValueRelation" name="id_ouvrage">
           <widgetv2config OrderByValue="1" AllowNull="1" FilterExpression="" fieldEditable="1" Key="id" Layer="installation20130304110004938" Value="_displayname_fr" labelOnTop="0" AllowMulti="0"/>
         </edittype>
-        <edittype widgetv2type="TextEdit" name="id_collecteur">
-          <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
+        <edittype widgetv2type="ValueRelation" name="id_collecteur">
+          <widgetv2config OrderByValue="1" AllowNull="1" FilterExpression="" fieldEditable="1" Key="id" Layer="collecteur20150203112806387" Value="nom" labelOnTop="0" AllowMulti="0"/>
         </edittype>
-        <edittype widgetv2type="TextEdit" name="id_partenaire">
-          <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
+        <edittype widgetv2type="ValueRelation" name="id_partenaire">
+          <widgetv2config OrderByValue="0" AllowNull="1" FilterExpression="" fieldEditable="1" Key="id" Layer="partenaire20150203112806405" Value="nom" labelOnTop="0" AllowMulti="0"/>
         </edittype>
         <edittype widgetv2type="TextEdit" name="type_numero">
           <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
@@ -18174,12 +18300,6 @@
           <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
         </edittype>
         <edittype widgetv2type="TextEdit" name="geometry_polygon">
-          <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
-        </edittype>
-        <edittype widgetv2type="TextEdit" name="geometry_polygon2">
-          <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
-        </edittype>
-        <edittype widgetv2type="TextEdit" name="geometry_line2">
           <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
         </edittype>
       </edittypes>
@@ -18223,7 +18343,7 @@
           <widgetv2config OrderByValue="1" AllowNull="0" FilterExpression="" fieldEditable="1" Key="id" Layer="servitude_type20150116095811274" Value="type" labelOnTop="0" AllowMulti="0"/>
         </edittype>
         <edittype widgetv2type="ValueRelation" name="id_etat">
-          <widgetv2config OrderByValue="1" AllowNull="0" FilterExpression="" fieldEditable="1" Key="id" Layer="servitude_etat20150116095811244" Value="etat" labelOnTop="0" AllowMulti="0"/>
+          <widgetv2config OrderByValue="1" AllowNull="1" FilterExpression="" fieldEditable="1" Key="id" Layer="servitude_etat20150116095811244" Value="etat" labelOnTop="0" AllowMulti="0"/>
         </edittype>
         <edittype widgetv2type="ValueRelation" name="id_statut">
           <widgetv2config OrderByValue="1" AllowNull="1" FilterExpression="" fieldEditable="1" Key="id" Layer="servitude_statut20150116095811261" Value="statut" labelOnTop="0" AllowMulti="0"/>
@@ -18231,11 +18351,11 @@
         <edittype widgetv2type="ValueRelation" name="id_ouvrage">
           <widgetv2config OrderByValue="1" AllowNull="1" FilterExpression="" fieldEditable="1" Key="id" Layer="installation20130304110004938" Value="_displayname_fr" labelOnTop="0" AllowMulti="0"/>
         </edittype>
-        <edittype widgetv2type="TextEdit" name="id_collecteur">
-          <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
+        <edittype widgetv2type="ValueRelation" name="id_collecteur">
+          <widgetv2config OrderByValue="1" AllowNull="1" FilterExpression="" fieldEditable="1" Key="id" Layer="collecteur20150203112806387" Value="nom" labelOnTop="0" AllowMulti="0"/>
         </edittype>
-        <edittype widgetv2type="TextEdit" name="id_partenaire">
-          <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
+        <edittype widgetv2type="ValueRelation" name="id_partenaire">
+          <widgetv2config OrderByValue="0" AllowNull="1" FilterExpression="" fieldEditable="1" Key="id" Layer="partenaire20150203112806405" Value="nom" labelOnTop="0" AllowMulti="0"/>
         </edittype>
         <edittype widgetv2type="TextEdit" name="type_numero">
           <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
@@ -18268,12 +18388,6 @@
           <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
         </edittype>
         <edittype widgetv2type="TextEdit" name="geometry_line">
-          <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
-        </edittype>
-        <edittype widgetv2type="TextEdit" name="geometry_polygon2">
-          <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
-        </edittype>
-        <edittype widgetv2type="TextEdit" name="geometry_line2">
           <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
         </edittype>
       </edittypes>
@@ -18485,7 +18599,7 @@
           <widgetv2config OrderByValue="1" AllowNull="0" FilterExpression="" fieldEditable="1" Key="id" Layer="servitude_type20150116095811274" Value="type" labelOnTop="0" AllowMulti="0"/>
         </edittype>
         <edittype widgetv2type="ValueRelation" name="id_etat">
-          <widgetv2config OrderByValue="1" AllowNull="0" FilterExpression="" fieldEditable="1" Key="id" Layer="servitude_etat20150116095811244" Value="etat" labelOnTop="0" AllowMulti="0"/>
+          <widgetv2config OrderByValue="1" AllowNull="1" FilterExpression="" fieldEditable="1" Key="id" Layer="servitude_etat20150116095811244" Value="etat" labelOnTop="0" AllowMulti="0"/>
         </edittype>
         <edittype widgetv2type="ValueRelation" name="id_statut">
           <widgetv2config OrderByValue="1" AllowNull="1" FilterExpression="" fieldEditable="1" Key="id" Layer="servitude_statut20150116095811261" Value="statut" labelOnTop="0" AllowMulti="0"/>
@@ -18493,11 +18607,11 @@
         <edittype widgetv2type="ValueRelation" name="id_ouvrage">
           <widgetv2config OrderByValue="1" AllowNull="1" FilterExpression="" fieldEditable="1" Key="id" Layer="installation20130304110004938" Value="_displayname_fr" labelOnTop="0" AllowMulti="0"/>
         </edittype>
-        <edittype widgetv2type="TextEdit" name="id_collecteur">
-          <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
+        <edittype widgetv2type="ValueRelation" name="id_collecteur">
+          <widgetv2config OrderByValue="1" AllowNull="1" FilterExpression="" fieldEditable="1" Key="id" Layer="collecteur20150203112806387" Value="nom" labelOnTop="0" AllowMulti="0"/>
         </edittype>
-        <edittype widgetv2type="TextEdit" name="id_partenaire">
-          <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
+        <edittype widgetv2type="ValueRelation" name="id_partenaire">
+          <widgetv2config OrderByValue="0" AllowNull="1" FilterExpression="" fieldEditable="1" Key="id" Layer="partenaire20150203112806405" Value="nom" labelOnTop="0" AllowMulti="0"/>
         </edittype>
         <edittype widgetv2type="TextEdit" name="type_numero">
           <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
@@ -18530,12 +18644,6 @@
           <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
         </edittype>
         <edittype widgetv2type="TextEdit" name="geometry_line">
-          <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
-        </edittype>
-        <edittype widgetv2type="TextEdit" name="geometry_polygon2">
-          <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
-        </edittype>
-        <edittype widgetv2type="TextEdit" name="geometry_line2">
           <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
         </edittype>
       </edittypes>
