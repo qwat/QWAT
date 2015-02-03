@@ -10,7 +10,7 @@
         <layer-tree-layer expanded="0" checked="Qt::Unchecked" id="installation20130304110004938" name="ouvrage général">
           <customproperties/>
         </layer-tree-layer>
-        <layer-tree-layer expanded="0" checked="Qt::Checked" id="od_cover20141219115626229" name="couvercles">
+        <layer-tree-layer expanded="0" checked="Qt::Unchecked" id="od_cover20141219115626229" name="couvercles">
           <customproperties/>
         </layer-tree-layer>
         <layer-tree-group expanded="0" checked="Qt::Checked" name="détail">
@@ -55,8 +55,10 @@
       </layer-tree-group>
       <layer-tree-group expanded="1" checked="Qt::PartiallyChecked" name="Réseau">
         <customproperties/>
-        <layer-tree-layer expanded="0" checked="Qt::Checked" id="conduites_copy20130709141244955" name="conduites">
-          <customproperties/>
+        <layer-tree-layer expanded="1" checked="Qt::Checked" id="conduites_copy20130709141244955" name="conduites">
+          <customproperties>
+            <property key="expandedLegendNodes"/>
+          </customproperties>
         </layer-tree-layer>
         <layer-tree-layer expanded="0" checked="Qt::Checked" id="valve20130304110011497" name="vannes">
           <customproperties/>
@@ -132,12 +134,12 @@
         <customproperties/>
       </layer-tree-layer>
     </layer-tree-group>
-    <layer-tree-group expanded="0" checked="Qt::PartiallyChecked" name="cadastre sige">
+    <layer-tree-group expanded="1" checked="Qt::PartiallyChecked" name="cadastre sige">
       <customproperties/>
-      <layer-tree-layer expanded="1" checked="Qt::Checked" id="servitude20150109080436604" name="servitude ligne">
+      <layer-tree-layer expanded="1" checked="Qt::Unchecked" id="servitude20150109080436604" name="servitude ligne">
         <customproperties/>
       </layer-tree-layer>
-      <layer-tree-layer expanded="1" checked="Qt::Checked" id="servitude20150109080436650" name="servitude polygone">
+      <layer-tree-layer expanded="1" checked="Qt::Unchecked" id="servitude20150109080436650" name="servitude polygone">
         <customproperties/>
       </layer-tree-layer>
       <layer-tree-layer expanded="0" checked="Qt::Unchecked" id="camac20140113144941208" name="enquete camac">
@@ -276,27 +278,31 @@
         <customproperties/>
       </layer-tree-layer>
     </layer-tree-group>
-    <layer-tree-group expanded="0" checked="Qt::Checked" name="cadastre">
+    <layer-tree-group expanded="0" checked="Qt::Unchecked" name="cadastre">
       <customproperties>
         <property key="embedded" value="1"/>
-        <property key="embedded-invisible-layers"/>
+        <property key="embedded-invisible-layers">
+          <value>pf_pfa20130514144154766</value>
+          <value>ad_posnumero_maison20130514143346530</value>
+          <value>cs_posnumero_de_batiment20130514143756039</value>
+          <value>bf_posimmeuble20130514143633121</value>
+          <value>no_posnomlocallieudit20130514143906869</value>
+          <value>bf_point_limite20130514143552315</value>
+          <value>axe_rue20130514143437774</value>
+          <value>pf_pfp20130514144226845</value>
+          <value>bf_bien_fonds20130514143508556</value>
+          <value>bf_ddp20130514143538213</value>
+          <value>cs_surfacecs20130514143830750</value>
+          <value>od_element_lineaire20130514144047075</value>
+          <value>od_element_surfacique20130514144124647</value>
+          <value>cs_batiment20130514143721709</value>
+          <value>od_batiment_souterrain20130514143946785</value>
+        </property>
         <property key="embedded_project" value="../../../data/cadastre/cadastre.qgs"/>
       </customproperties>
     </layer-tree-group>
   </layer-tree-group>
   <relations>
-    <relation referencingLayer="od_subscriber_reference20131206105928067" referencedLayer="subscriber20130304110011459" id="relation_subscriber_reference" name="Abonné - renvoi">
-      <fieldRef referencedField="id" referencingField="id_subscriber"/>
-    </relation>
-    <relation referencingLayer="od_meter_reference20140304165835390" referencedLayer="od_meter20131120073630165" id="relation_meter_reference" name="Compteur réseau - renvoi">
-      <fieldRef referencedField="id" referencingField="id_meter"/>
-    </relation>
-    <relation referencingLayer="od_meter20131120073630165" referencedLayer="conduites_copy20130709141244955" id="relation_pipe_meter" name="Conduite - compteur">
-      <fieldRef referencedField="id" referencingField="id_pipe"/>
-    </relation>
-    <relation referencingLayer="conduites_copy20130709141244955" referencedLayer="conduites_copy20130709141244955" id="relation_pipe_parent" name="Conduite - parent">
-      <fieldRef referencedField="id" referencingField="id_parent"/>
-    </relation>
     <relation referencingLayer="installation_pressurecontrol20131107105006792" referencedLayer="installation20130304110004938" id="relation_installationbuilding_pressurecontrol" name="Ouvrage - régulation pression">
       <fieldRef referencedField="id" referencingField="id_installation"/>
     </relation>
@@ -315,23 +321,35 @@
     <relation referencingLayer="installation_valvechamber20131107105006707" referencedLayer="installation20130304110004938" id="relation_installationbuilding_valvechamber" name="Ouvrage - chambres de vannes">
       <fieldRef referencedField="id" referencingField="id_installation"/>
     </relation>
+    <relation referencingLayer="od_meter_reference20140304165835390" referencedLayer="od_meter20131120073630165" id="relation_meter_reference" name="Compteur réseau - renvoi">
+      <fieldRef referencedField="id" referencingField="id_meter"/>
+    </relation>
     <relation referencingLayer="leak20130821111917060" referencedLayer="conduites_copy20130709141244955" id="relation_pipe_leak" name="Conduite - fuites">
       <fieldRef referencedField="id" referencingField="id_pipe"/>
     </relation>
     <relation referencingLayer="conduites_copy20130709141244955" referencedLayer="vl_pipe_material20130304110005230" id="relation_pipe_material" name="Conduite - matériau">
       <fieldRef referencedField="id" referencingField="id_material"/>
     </relation>
+    <relation referencingLayer="od_meter20131120073630165" referencedLayer="conduites_copy20130709141244955" id="relation_pipe_meter" name="Conduite - compteur">
+      <fieldRef referencedField="id" referencingField="id_pipe"/>
+    </relation>
+    <relation referencingLayer="conduites_copy20130709141244955" referencedLayer="conduites_copy20130709141244955" id="relation_pipe_parent" name="Conduite - parent">
+      <fieldRef referencedField="id" referencingField="id_parent"/>
+    </relation>
     <relation referencingLayer="subscriber20130304110011459" referencedLayer="conduites_copy20130709141244955" id="relation_pipe_subscriber" name="Conduite - abonnés">
       <fieldRef referencedField="id" referencingField="id_pipe"/>
+    </relation>
+    <relation referencingLayer="od_subscriber_reference20131206105928067" referencedLayer="subscriber20130304110011459" id="relation_subscriber_reference" name="Abonné - renvoi">
+      <fieldRef referencedField="id" referencingField="id_subscriber"/>
     </relation>
   </relations>
   <mapcanvas>
     <units>meters</units>
     <extent>
-      <xmin>554694.43686064658686519</xmin>
-      <ymin>141989.18072940839920193</ymin>
-      <xmax>558164.94553302275016904</xmax>
-      <ymax>146840.97295850410591811</ymax>
+      <xmin>556073.89292038581334054</xmin>
+      <ymin>148285.0261238727835007</ymin>
+      <xmax>557444.95807490311563015</xmax>
+      <ymax>150201.78354770212899894</ymax>
     </extent>
     <rotation>0</rotation>
     <projections>1</projections>
@@ -426,55 +444,56 @@
   </mapcanvas>
   <visibility-presets>
     <visibility-preset name="250">
-      <layer id="od_subscriber_reference20131206105928067"/>
-      <layer id="installation_treatment20130816113039913"/>
-      <layer id="hydrant20130304110004848"/>
-      <layer id="od_annotationpoint20131203095020392"/>
-      <layer id="installation_valvechamber20131107105006707"/>
-      <layer id="od_part20140429113327995"/>
-      <layer id="od_meter_reference20140304165835390"/>
-      <layer id="node20130304110005126"/>
-      <layer id="printmap20130304110011400"/>
-      <layer id="od_meter20131120073630165"/>
-      <layer id="valve20130304110011497"/>
-      <layer id="installation_source20130820110331647"/>
-      <layer id="od_dimension_orientation20131202111155806"/>
-      <layer id="cadastre20140312152032371"/>
-      <layer id="od_crossing20141023083754327"/>
-      <layer id="installation_pump20130816140237750"/>
-      <layer id="conduites_copy20130709141244955"/>
-      <layer id="od_annotationline20131203095020365"/>
-      <layer id="installation_tank20130304110005008"/>
-      <layer id="subscriber20130304110011459"/>
-      <layer id="installation_pressurecontrol20131107105006792"/>
-      <layer id="dimension20130807094904783"/>
+      <layer style="" id="od_subscriber_reference20131206105928067"/>
+      <layer style="" id="installation_treatment20130816113039913"/>
+      <layer style="" id="hydrant20130304110004848"/>
+      <layer style="" id="od_annotationpoint20131203095020392"/>
+      <layer style="" id="installation_valvechamber20131107105006707"/>
+      <layer style="" id="od_part20140429113327995"/>
+      <layer style="" id="od_meter_reference20140304165835390"/>
+      <layer style="" id="node20130304110005126"/>
+      <layer style="" id="printmap20130304110011400"/>
+      <layer style="" id="od_meter20131120073630165"/>
+      <layer style="" id="valve20130304110011497"/>
+      <layer style="" id="installation_source20130820110331647"/>
+      <layer style="" id="od_remote20150116100522170"/>
+      <layer style="" id="od_dimension_orientation20131202111155806"/>
+      <layer style="" id="cadastre20140312152032371"/>
+      <layer style="" id="od_crossing20141023083754327"/>
+      <layer style="" id="installation_pump20130816140237750"/>
+      <layer style="" id="conduites_copy20130709141244955"/>
+      <layer style="" id="od_annotationline20131203095020365"/>
+      <layer style="" id="installation_tank20130304110005008"/>
+      <layer style="" id="subscriber20130304110011459"/>
+      <layer style="" id="installation_pressurecontrol20131107105006792"/>
+      <layer style="" id="dimension20130807094904783"/>
       <checked-legend-nodes id="conduites_copy20130709141244955">
-        <checked-legend-node id="{6f4ad4f8-4d2b-44d5-a097-ec1830c78aa3}"/>
-        <checked-legend-node id="{2a31047c-ec01-42e7-aeb0-33dba0b444d4}"/>
-        <checked-legend-node id="{a427d990-39a0-48a4-b171-3aa33ab16c3b}"/>
+        <checked-legend-node id="{87bc71ec-97c3-423f-8f6d-8fe23420e2ca}"/>
         <checked-legend-node id="{9646576f-b22a-45bf-a4a3-3678392bd8c0}"/>
-        <checked-legend-node id="{518d87af-0f17-4d9f-bebe-52c4fd34e3be}"/>
-        <checked-legend-node id="{baa340e7-b380-453f-b06e-2b6cc7e50831}"/>
-        <checked-legend-node id="{18af118d-0f87-4409-b8fc-55626891a180}"/>
         <checked-legend-node id="{f550eef3-fdaa-427b-b415-bd7e8fc25f9e}"/>
         <checked-legend-node id="{1169fb39-5fd3-43b6-9c6c-0f8ef27a0149}"/>
-        <checked-legend-node id="{01b8eb55-87dd-44da-8525-303f72528edb}"/>
+        <checked-legend-node id="{616d6b92-a218-4a54-b7e7-e5751d481224}"/>
+        <checked-legend-node id="{c0d5fc5a-ec61-4541-8755-35304072400e}"/>
         <checked-legend-node id="{2e14d53a-6d2f-40b3-bf3b-4f32112e3d59}"/>
-        <checked-legend-node id="{757ebe3f-d54e-4212-9de0-90a7451920d1}"/>
-        <checked-legend-node id="{a2872713-5a4f-42d7-aae6-f1c3109d5dfe}"/>
+        <checked-legend-node id="{5131ca92-2387-4bee-b3bf-2a410b4ff9b3}"/>
+        <checked-legend-node id="{778014fd-333e-4b0b-b1ea-629c595a9763}"/>
+        <checked-legend-node id="{9abb4761-0b77-4941-9292-b0b0f2bc1ac6}"/>
         <checked-legend-node id="{5b970fd5-5c37-4865-81a5-cab18c5fb58c}"/>
         <checked-legend-node id="{013429dc-a1cd-4a17-904a-6550a0175046}"/>
-        <checked-legend-node id="{5a38d3e0-d91b-409c-a951-815daa223c34}"/>
         <checked-legend-node id="{2513a8b8-a110-4727-854c-6084f64e3bdf}"/>
-        <checked-legend-node id="{3783b608-c017-4c8a-81e8-060ca42293c8}"/>
-        <checked-legend-node id="{79271b40-dd5c-45f4-89fc-534639977060}"/>
-        <checked-legend-node id="{2331a528-994a-47de-b778-1deab1cb9781}"/>
-        <checked-legend-node id="{928e526c-98b5-46fc-a1f3-58bac8293a3d}"/>
-        <checked-legend-node id="{a91fbc2d-64c3-472b-a628-8f4b144f683f}"/>
-        <checked-legend-node id="{efd0c4a0-4e4e-4ab6-b8ae-b0c9f8c23625}"/>
-        <checked-legend-node id="{f44ac59a-3761-4d96-858c-27380a74ed3c}"/>
-        <checked-legend-node id="{d088428f-4224-4ed3-9ea5-67a0212afeca}"/>
+        <checked-legend-node id="{0250458e-2687-4771-b477-6fb555c882e3}"/>
+        <checked-legend-node id="{24fa4875-6f61-4876-acca-dab0794fbc01}"/>
+        <checked-legend-node id="{9a125d4a-f795-4355-969e-7d378126b36f}"/>
+        <checked-legend-node id="{09a2a60b-0eab-4071-a82b-7bab58ade440}"/>
+        <checked-legend-node id="{8ad44e4b-5df4-4f8f-b058-084b936548ef}"/>
+        <checked-legend-node id="{ab5eaebb-54fb-45c9-868a-c1c943594e93}"/>
+        <checked-legend-node id="{ffcbd8ed-13f6-41ed-8026-43842e2eaaeb}"/>
+        <checked-legend-node id="{4c88cf03-ba40-4a46-9291-6c4d1faed4e4}"/>
+        <checked-legend-node id="{21358699-bad3-4fea-bcc8-78f00038a060}"/>
+        <checked-legend-node id="{b9f55211-950d-47ca-85f8-136bf75ea890}"/>
+        <checked-legend-node id="{d1f57afd-565e-4f55-9133-4320e82b0d52}"/>
         <checked-legend-node id="{7d0cfa7a-eaf4-499a-b977-1238b90ca15f}"/>
+        <checked-legend-node id="{58ac8de7-6c95-4a28-bc19-59a93b398a57}"/>
       </checked-legend-nodes>
       <checked-legend-nodes id="od_crossing20141023083754327">
         <checked-legend-node id="{bdb56b7a-1c26-428b-8597-ce6b6eb58f01}"/>
@@ -586,7 +605,6 @@
       <item>od_meter20131120073630165</item>
       <item>od_meter_reference20140304165835390</item>
       <item>subscriber_pipe_relation20130417092124312</item>
-      <item>conduites_copy20130709141244955</item>
       <item>valve20130304110011497</item>
       <item>hydrant20130304110004848</item>
       <item>od_remote20150116100522170</item>
@@ -595,6 +613,7 @@
       <item>od_part20140429113327995</item>
       <item>od_node20140116161508743</item>
       <item>od_crossing20141023083754327</item>
+      <item>conduites_copy20130709141244955</item>
       <item>ouvrage_général_copy20141218102656671</item>
       <item>vw_pipe_schema20141208162900166</item>
       <item>vw_pipe_schema_visibleitems20141127154708843</item>
@@ -675,9 +694,9 @@
             <legendlayerfile isInOverview="0" layerid="installation20130304110004938" visible="0"/>
           </filegroup>
         </legendlayer>
-        <legendlayer drawingOrder="1" open="false" checked="Qt::Checked" name="couvercles" showFeatureCount="0">
+        <legendlayer drawingOrder="1" open="false" checked="Qt::Unchecked" name="couvercles" showFeatureCount="0">
           <filegroup open="false" hidden="false">
-            <legendlayerfile isInOverview="0" layerid="od_cover20141219115626229" visible="1"/>
+            <legendlayerfile isInOverview="0" layerid="od_cover20141219115626229" visible="0"/>
           </filegroup>
         </legendlayer>
         <legendgroup open="false" checked="Qt::Checked" name="détail">
@@ -741,49 +760,49 @@
         </legendlayer>
       </legendgroup>
       <legendgroup open="true" checked="Qt::PartiallyChecked" name="Réseau">
-        <legendlayer drawingOrder="13" open="false" checked="Qt::Checked" name="conduites" showFeatureCount="0">
-          <filegroup open="false" hidden="false">
+        <legendlayer drawingOrder="21" open="true" checked="Qt::Checked" name="conduites" showFeatureCount="0">
+          <filegroup open="true" hidden="false">
             <legendlayerfile isInOverview="0" layerid="conduites_copy20130709141244955" visible="1"/>
           </filegroup>
         </legendlayer>
-        <legendlayer drawingOrder="14" open="false" checked="Qt::Checked" name="vannes" showFeatureCount="0">
+        <legendlayer drawingOrder="13" open="false" checked="Qt::Checked" name="vannes" showFeatureCount="0">
           <filegroup open="false" hidden="false">
             <legendlayerfile isInOverview="0" layerid="valve20130304110011497" visible="1"/>
           </filegroup>
         </legendlayer>
-        <legendlayer drawingOrder="15" open="false" checked="Qt::Checked" name="hydrantes" showFeatureCount="0">
+        <legendlayer drawingOrder="14" open="false" checked="Qt::Checked" name="hydrantes" showFeatureCount="0">
           <filegroup open="false" hidden="false">
             <legendlayerfile isInOverview="0" layerid="hydrant20130304110004848" visible="1"/>
           </filegroup>
         </legendlayer>
-        <legendlayer drawingOrder="16" open="true" checked="Qt::Checked" name="télécommande" showFeatureCount="0">
+        <legendlayer drawingOrder="15" open="true" checked="Qt::Checked" name="télécommande" showFeatureCount="0">
           <filegroup open="true" hidden="false">
             <legendlayerfile isInOverview="0" layerid="od_remote20150116100522170" visible="1"/>
           </filegroup>
         </legendlayer>
-        <legendlayer drawingOrder="17" open="false" checked="Qt::Unchecked" name="fuite" showFeatureCount="0">
+        <legendlayer drawingOrder="16" open="false" checked="Qt::Unchecked" name="fuite" showFeatureCount="0">
           <filegroup open="false" hidden="false">
             <legendlayerfile isInOverview="0" layerid="leak20130821111917060" visible="0"/>
           </filegroup>
         </legendlayer>
       </legendgroup>
       <legendgroup open="true" checked="Qt::PartiallyChecked" name="Noeuds">
-        <legendlayer drawingOrder="18" open="false" checked="Qt::Checked" name="noeuds" showFeatureCount="0">
+        <legendlayer drawingOrder="17" open="false" checked="Qt::Checked" name="noeuds" showFeatureCount="0">
           <filegroup open="false" hidden="false">
             <legendlayerfile isInOverview="0" layerid="node20130304110005126" visible="1"/>
           </filegroup>
         </legendlayer>
-        <legendlayer drawingOrder="19" open="false" checked="Qt::Checked" name="Pièces d'installations" showFeatureCount="0">
+        <legendlayer drawingOrder="18" open="false" checked="Qt::Checked" name="Pièces d'installations" showFeatureCount="0">
           <filegroup open="false" hidden="false">
             <legendlayerfile isInOverview="0" layerid="od_part20140429113327995" visible="1"/>
           </filegroup>
         </legendlayer>
-        <legendlayer drawingOrder="20" open="false" checked="Qt::Unchecked" name="noeuds - tous - controle" showFeatureCount="0">
+        <legendlayer drawingOrder="19" open="false" checked="Qt::Unchecked" name="noeuds - tous - controle" showFeatureCount="0">
           <filegroup open="false" hidden="false">
             <legendlayerfile isInOverview="0" layerid="od_node20140116161508743" visible="0"/>
           </filegroup>
         </legendlayer>
-        <legendlayer drawingOrder="21" open="false" checked="Qt::Checked" name="croisements" showFeatureCount="0">
+        <legendlayer drawingOrder="20" open="false" checked="Qt::Checked" name="croisements" showFeatureCount="0">
           <filegroup open="false" hidden="false">
             <legendlayerfile isInOverview="0" layerid="od_crossing20141023083754327" visible="1"/>
           </filegroup>
@@ -856,15 +875,15 @@
         </filegroup>
       </legendlayer>
     </legendgroup>
-    <legendgroup open="false" checked="Qt::PartiallyChecked" name="cadastre sige">
-      <legendlayer drawingOrder="34" open="true" checked="Qt::Checked" name="servitude ligne" showFeatureCount="0">
+    <legendgroup open="true" checked="Qt::PartiallyChecked" name="cadastre sige">
+      <legendlayer drawingOrder="34" open="true" checked="Qt::Unchecked" name="servitude ligne" showFeatureCount="0">
         <filegroup open="true" hidden="false">
-          <legendlayerfile isInOverview="0" layerid="servitude20150109080436604" visible="1"/>
+          <legendlayerfile isInOverview="0" layerid="servitude20150109080436604" visible="0"/>
         </filegroup>
       </legendlayer>
-      <legendlayer drawingOrder="35" open="true" checked="Qt::Checked" name="servitude polygone" showFeatureCount="0">
+      <legendlayer drawingOrder="35" open="true" checked="Qt::Unchecked" name="servitude polygone" showFeatureCount="0">
         <filegroup open="true" hidden="false">
-          <legendlayerfile isInOverview="0" layerid="servitude20150109080436650" visible="1"/>
+          <legendlayerfile isInOverview="0" layerid="servitude20150109080436650" visible="0"/>
         </filegroup>
       </legendlayer>
       <legendlayer drawingOrder="36" open="false" checked="Qt::Unchecked" name="enquete camac" showFeatureCount="0">
@@ -1081,7 +1100,7 @@
         </filegroup>
       </legendlayer>
     </legendgroup>
-    <legendgroup embedded="1" open="false" checked="Qt::Checked" name="cadastre" project="../../../data/cadastre/cadastre.qgs"/>
+    <legendgroup embedded="1" open="false" checked="Qt::Unchecked" name="cadastre" project="../../../data/cadastre/cadastre.qgs"/>
   </legend>
   <Composer title="folio" visible="0">
     <Composition gridVisible="1" printResolution="300" paperWidth="1030" snapGridOffsetX="0" guidesVisible="1" snapGridResolution="10" snapGridOffsetY="0" alignmentSnap="1" snapping="0" snapTolerancePixels="10" numPages="1" paperHeight="914" smartGuides="1" printAsRaster="1" generateWorldFile="0">
@@ -4627,7 +4646,7 @@
           <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
         </edittype>
         <edittype widgetv2type="RelationReference" name="id_parent">
-          <widgetv2config OrderByValue="0" fieldEditable="1" ShowForm="0" Relation="relation_pipe_parent" ReadOnly="1" MapIdentification="1" labelOnTop="0" AllowNULL="1"/>
+          <widgetv2config fieldEditable="1" ShowForm="0" Relation="relation_pipe_parent" ReadOnly="1" MapIdentification="1" labelOnTop="0" AllowNULL="1"/>
         </edittype>
         <edittype widgetv2type="ValueRelation" name="id_function">
           <widgetv2config OrderByValue="0" AllowNull="0" FilterExpression="" fieldEditable="1" Key="id" Layer="vl_pipe_function20130304110005186" Value="value_fr" labelOnTop="0" AllowMulti="0"/>
@@ -4636,7 +4655,7 @@
           <widgetv2config OrderByValue="0" AllowNull="0" FilterExpression="" fieldEditable="1" Key="id" Layer="vl_pipe_installmethod20130304110005209" Value="value_fr" labelOnTop="0" AllowMulti="0"/>
         </edittype>
         <edittype widgetv2type="RelationReference" name="id_material">
-          <widgetv2config OrderByValue="1" fieldEditable="1" ShowForm="0" Relation="relation_pipe_material" ReadOnly="0" MapIdentification="0" labelOnTop="0" AllowNULL="0"/>
+          <widgetv2config fieldEditable="1" ShowForm="0" Relation="relation_pipe_material" ReadOnly="0" MapIdentification="0" labelOnTop="0" AllowNULL="0"/>
         </edittype>
         <edittype widgetv2type="ValueRelation" name="id_distributor">
           <widgetv2config OrderByValue="0" AllowNull="0" FilterExpression="" fieldEditable="1" Key="id" Layer="distributor20130304114719702" Value="name" labelOnTop="0" AllowMulti="0"/>
@@ -5457,7 +5476,7 @@
           <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
         </edittype>
         <edittype widgetv2type="RelationReference" name="id_parent">
-          <widgetv2config OrderByValue="0" fieldEditable="1" ShowForm="0" Relation="relation_pipe_parent" ReadOnly="1" MapIdentification="1" labelOnTop="0" AllowNULL="1"/>
+          <widgetv2config fieldEditable="1" ShowForm="0" Relation="relation_pipe_parent" ReadOnly="1" MapIdentification="1" labelOnTop="0" AllowNULL="1"/>
         </edittype>
         <edittype widgetv2type="ValueRelation" name="id_function">
           <widgetv2config OrderByValue="0" AllowNull="0" FilterExpression="" fieldEditable="1" Key="id" Layer="vl_pipe_function20130304110005186" Value="value_fr" labelOnTop="0" AllowMulti="0"/>
@@ -5466,7 +5485,7 @@
           <widgetv2config OrderByValue="0" AllowNull="0" FilterExpression="" fieldEditable="1" Key="id" Layer="vl_pipe_installmethod20130304110005209" Value="value_fr" labelOnTop="0" AllowMulti="0"/>
         </edittype>
         <edittype widgetv2type="RelationReference" name="id_material">
-          <widgetv2config OrderByValue="1" fieldEditable="1" ShowForm="0" Relation="relation_pipe_material" ReadOnly="0" MapIdentification="0" labelOnTop="0" AllowNULL="0"/>
+          <widgetv2config fieldEditable="1" ShowForm="0" Relation="relation_pipe_material" ReadOnly="0" MapIdentification="0" labelOnTop="0" AllowNULL="0"/>
         </edittype>
         <edittype widgetv2type="ValueRelation" name="id_distributor">
           <widgetv2config OrderByValue="0" AllowNull="0" FilterExpression="" fieldEditable="1" Key="id" Layer="distributor20130304114719702" Value="name" labelOnTop="0" AllowMulti="0"/>
@@ -13624,7 +13643,7 @@
           <widgetv2config OrderByValue="0" AllowNull="0" FilterExpression="" fieldEditable="1" Key="id" Layer="vl_status20130304110011436" Value="value_fr" labelOnTop="0" AllowMulti="0"/>
         </edittype>
         <edittype widgetv2type="RelationReference" name="id_pipe">
-          <widgetv2config OrderByValue="0" fieldEditable="1" ShowForm="0" Relation="relation_pipe_meter" ReadOnly="1" MapIdentification="1" labelOnTop="0" AllowNULL="1"/>
+          <widgetv2config fieldEditable="1" ShowForm="0" Relation="relation_pipe_meter" ReadOnly="1" MapIdentification="1" labelOnTop="0" AllowNULL="1"/>
         </edittype>
         <edittype widgetv2type="TextEdit" name="identification">
           <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
@@ -13926,7 +13945,7 @@
           <widgetv2config OrderByValue="0" AllowNull="0" FilterExpression="" fieldEditable="1" Key="id" Layer="vl_status20130304110011436" Value="value_fr" labelOnTop="0" AllowMulti="0"/>
         </edittype>
         <edittype widgetv2type="RelationReference" name="id_pipe">
-          <widgetv2config OrderByValue="0" fieldEditable="1" ShowForm="0" Relation="relation_pipe_meter" ReadOnly="1" MapIdentification="1" labelOnTop="0" AllowNULL="1"/>
+          <widgetv2config fieldEditable="1" ShowForm="0" Relation="relation_pipe_meter" ReadOnly="1" MapIdentification="1" labelOnTop="0" AllowNULL="1"/>
         </edittype>
         <edittype widgetv2type="TextEdit" name="identification">
           <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
@@ -14033,7 +14052,7 @@
           <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
         </edittype>
         <edittype widgetv2type="RelationReference" name="id_meter">
-          <widgetv2config OrderByValue="0" fieldEditable="1" ShowForm="0" Relation="relation_meter_reference" ReadOnly="1" MapIdentification="1" labelOnTop="0" AllowNULL="1"/>
+          <widgetv2config fieldEditable="1" ShowForm="0" Relation="relation_meter_reference" ReadOnly="1" MapIdentification="1" labelOnTop="0" AllowNULL="1"/>
         </edittype>
         <edittype widgetv2type="TextEdit" name="compteur réseau_identification">
           <widgetv2config IsMultiline="0" fieldEditable="0" UseHtml="0" labelOnTop="0"/>
@@ -14257,7 +14276,7 @@
           <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
         </edittype>
         <edittype widgetv2type="RelationReference" name="id_meter">
-          <widgetv2config OrderByValue="0" fieldEditable="1" ShowForm="0" Relation="relation_meter_reference" ReadOnly="1" MapIdentification="1" labelOnTop="0" AllowNULL="1"/>
+          <widgetv2config fieldEditable="1" ShowForm="0" Relation="relation_meter_reference" ReadOnly="1" MapIdentification="1" labelOnTop="0" AllowNULL="1"/>
         </edittype>
         <edittype widgetv2type="TextEdit" name="compteur réseau_identification">
           <widgetv2config IsMultiline="0" fieldEditable="0" UseHtml="0" labelOnTop="0"/>
@@ -15502,7 +15521,7 @@
           <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
         </edittype>
         <edittype widgetv2type="RelationReference" name="id_subscriber">
-          <widgetv2config OrderByValue="0" fieldEditable="1" ShowForm="0" Relation="relation_subscriber_reference" ReadOnly="1" MapIdentification="1" labelOnTop="0" AllowNULL="1"/>
+          <widgetv2config fieldEditable="1" ShowForm="0" Relation="relation_subscriber_reference" ReadOnly="1" MapIdentification="1" labelOnTop="0" AllowNULL="1"/>
         </edittype>
         <edittype widgetv2type="TextEdit" name="abonnés_identification">
           <widgetv2config IsMultiline="0" fieldEditable="0" UseHtml="0" labelOnTop="0"/>
@@ -15726,7 +15745,7 @@
           <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
         </edittype>
         <edittype widgetv2type="RelationReference" name="id_subscriber">
-          <widgetv2config OrderByValue="0" fieldEditable="1" ShowForm="0" Relation="relation_subscriber_reference" ReadOnly="1" MapIdentification="1" labelOnTop="0" AllowNULL="1"/>
+          <widgetv2config fieldEditable="1" ShowForm="0" Relation="relation_subscriber_reference" ReadOnly="1" MapIdentification="1" labelOnTop="0" AllowNULL="1"/>
         </edittype>
         <edittype widgetv2type="TextEdit" name="abonnés_identification">
           <widgetv2config IsMultiline="0" fieldEditable="0" UseHtml="0" labelOnTop="0"/>
@@ -17810,10 +17829,10 @@
         <edittype widgetv2type="TextEdit" name="geometry_polygon">
           <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
         </edittype>
-        <edittype widgetv2type="TextEdit" name="geometry_line2">
+        <edittype widgetv2type="TextEdit" name="geometry_polygon2">
           <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
         </edittype>
-        <edittype widgetv2type="TextEdit" name="geometry_polygon2">
+        <edittype widgetv2type="TextEdit" name="geometry_line2">
           <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
         </edittype>
       </edittypes>
@@ -18076,10 +18095,10 @@
         <edittype widgetv2type="TextEdit" name="geometry_polygon">
           <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
         </edittype>
-        <edittype widgetv2type="TextEdit" name="geometry_line2">
+        <edittype widgetv2type="TextEdit" name="geometry_polygon2">
           <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
         </edittype>
-        <edittype widgetv2type="TextEdit" name="geometry_polygon2">
+        <edittype widgetv2type="TextEdit" name="geometry_line2">
           <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
         </edittype>
       </edittypes>
@@ -18170,10 +18189,10 @@
         <edittype widgetv2type="TextEdit" name="geometry_line">
           <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
         </edittype>
-        <edittype widgetv2type="TextEdit" name="geometry_line2">
+        <edittype widgetv2type="TextEdit" name="geometry_polygon2">
           <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
         </edittype>
-        <edittype widgetv2type="TextEdit" name="geometry_polygon2">
+        <edittype widgetv2type="TextEdit" name="geometry_line2">
           <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
         </edittype>
       </edittypes>
@@ -18432,10 +18451,10 @@
         <edittype widgetv2type="TextEdit" name="geometry_line">
           <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
         </edittype>
-        <edittype widgetv2type="TextEdit" name="geometry_line2">
+        <edittype widgetv2type="TextEdit" name="geometry_polygon2">
           <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
         </edittype>
-        <edittype widgetv2type="TextEdit" name="geometry_polygon2">
+        <edittype widgetv2type="TextEdit" name="geometry_line2">
           <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
         </edittype>
       </edittypes>
@@ -18641,7 +18660,7 @@
           <widgetv2config OrderByValue="0" AllowNull="0" FilterExpression="" fieldEditable="1" Key="id" Layer="vl_status20130304110011436" Value="value_fr" labelOnTop="0" AllowMulti="0"/>
         </edittype>
         <edittype widgetv2type="RelationReference" name="id_pipe">
-          <widgetv2config OrderByValue="0" fieldEditable="1" ShowForm="0" Relation="relation_pipe_subscriber" ReadOnly="1" MapIdentification="1" labelOnTop="0" AllowNULL="1"/>
+          <widgetv2config fieldEditable="1" ShowForm="0" Relation="relation_pipe_subscriber" ReadOnly="1" MapIdentification="1" labelOnTop="0" AllowNULL="1"/>
         </edittype>
         <edittype widgetv2type="TextEdit" name="identification">
           <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
@@ -19056,7 +19075,7 @@
           <widgetv2config OrderByValue="0" AllowNull="0" FilterExpression="" fieldEditable="1" Key="id" Layer="vl_status20130304110011436" Value="value_fr" labelOnTop="0" AllowMulti="0"/>
         </edittype>
         <edittype widgetv2type="RelationReference" name="id_pipe">
-          <widgetv2config OrderByValue="0" fieldEditable="1" ShowForm="0" Relation="relation_pipe_subscriber" ReadOnly="1" MapIdentification="1" labelOnTop="0" AllowNULL="1"/>
+          <widgetv2config fieldEditable="1" ShowForm="0" Relation="relation_pipe_subscriber" ReadOnly="1" MapIdentification="1" labelOnTop="0" AllowNULL="1"/>
         </edittype>
         <edittype widgetv2type="TextEdit" name="identification">
           <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
@@ -23923,10 +23942,19 @@
         <value>IntersectIt_Lines20130618102142813</value>
         <value>IntersectIt_Points20130618102143276</value>
         <value>_cadinput_techical_snap_layer_20140203092715598</value>
+        <value>ad_posnumero_maison20130514143346530</value>
+        <value>axe_rue20130514143437774</value>
+        <value>bf_bien_fonds20130514143508556</value>
+        <value>bf_ddp20130514143538213</value>
+        <value>bf_point_limite20130514143552315</value>
+        <value>bf_posimmeuble20130514143633121</value>
         <value>cadastre20140312152032371</value>
         <value>camac20140113144941208</value>
         <value>conduites_copy20130709141244955</value>
         <value>constructionpoint20130807094904851</value>
+        <value>cs_batiment20130514143721709</value>
+        <value>cs_posnumero_de_batiment20130514143756039</value>
+        <value>cs_surfacecs20130514143830750</value>
         <value>dimension20130807094904783</value>
         <value>district20130304110004764</value>
         <value>hydrant20130304110004848</value>
@@ -23938,12 +23966,16 @@
         <value>installation_treatment20130816113039913</value>
         <value>installation_valvechamber20131107105006707</value>
         <value>leak20130821111917060</value>
+        <value>no_posnomlocallieudit20130514143906869</value>
         <value>node20130304110005126</value>
         <value>od_annotationline20131203095020365</value>
         <value>od_annotationpoint20131203095020392</value>
+        <value>od_batiment_souterrain20130514143946785</value>
         <value>od_cover20141219115626229</value>
         <value>od_crossing20141023083754327</value>
         <value>od_dimension_orientation20131202111155806</value>
+        <value>od_element_lineaire20130514144047075</value>
+        <value>od_element_surfacique20130514144124647</value>
         <value>od_meter20131120073630165</value>
         <value>od_meter_reference20140304165835390</value>
         <value>od_node20140116161508743</value>
@@ -23951,6 +23983,8 @@
         <value>od_remote20150116100522170</value>
         <value>od_subscriber_reference20131206105928067</value>
         <value>ouvrage_général_copy20141218102656671</value>
+        <value>pf_pfa20130514144154766</value>
+        <value>pf_pfp20130514144226845</value>
         <value>pipe_child_parent20130417092030507</value>
         <value>pressurezone20130417133612105</value>
         <value>printmap20130304110011400</value>
@@ -23970,8 +24004,17 @@
         <value>enabled</value>
         <value>disabled</value>
         <value>disabled</value>
+        <value>disabled</value>
+        <value>disabled</value>
+        <value>disabled</value>
+        <value>disabled</value>
+        <value>disabled</value>
+        <value>disabled</value>
         <value>enabled</value>
         <value>enabled</value>
+        <value>disabled</value>
+        <value>disabled</value>
+        <value>disabled</value>
         <value>disabled</value>
         <value>disabled</value>
         <value>disabled</value>
@@ -23983,7 +24026,13 @@
         <value>enabled</value>
         <value>enabled</value>
         <value>disabled</value>
+        <value>disabled</value>
         <value>enabled</value>
+        <value>disabled</value>
+        <value>disabled</value>
+        <value>disabled</value>
+        <value>disabled</value>
+        <value>disabled</value>
         <value>disabled</value>
         <value>disabled</value>
         <value>disabled</value>
@@ -24055,6 +24104,21 @@
         <value>1</value>
         <value>1</value>
         <value>1</value>
+        <value>1</value>
+        <value>1</value>
+        <value>1</value>
+        <value>1</value>
+        <value>1</value>
+        <value>1</value>
+        <value>1</value>
+        <value>1</value>
+        <value>1</value>
+        <value>1</value>
+        <value>1</value>
+        <value>1</value>
+        <value>1</value>
+        <value>1</value>
+        <value>1</value>
       </LayerSnappingToleranceUnitList>
       <LayerSnapToList type="QStringList">
         <value>to_vertex_and_segment</value>
@@ -24062,12 +24126,9 @@
         <value>to_vertex</value>
         <value>to_vertex_and_segment</value>
         <value>to_vertex_and_segment</value>
-        <value>to_vertex</value>
         <value>to_vertex_and_segment</value>
         <value>to_vertex_and_segment</value>
-        <value>to_vertex</value>
-        <value>to_vertex</value>
-        <value>to_vertex</value>
+        <value>to_vertex_and_segment</value>
         <value>to_vertex_and_segment</value>
         <value>to_vertex_and_segment</value>
         <value>to_vertex_and_segment</value>
@@ -24075,7 +24136,25 @@
         <value>to_vertex_and_segment</value>
         <value>to_vertex_and_segment</value>
         <value>to_vertex_and_segment</value>
+        <value>to_vertex_and_segment</value>
+        <value>to_vertex_and_segment</value>
         <value>to_vertex</value>
+        <value>to_vertex</value>
+        <value>to_vertex</value>
+        <value>to_vertex_and_segment</value>
+        <value>to_vertex_and_segment</value>
+        <value>to_vertex_and_segment</value>
+        <value>to_vertex</value>
+        <value>to_vertex_and_segment</value>
+        <value>to_vertex_and_segment</value>
+        <value>to_vertex_and_segment</value>
+        <value>to_vertex_and_segment</value>
+        <value>to_vertex</value>
+        <value>to_vertex_and_segment</value>
+        <value>to_vertex_and_segment</value>
+        <value>to_vertex_and_segment</value>
+        <value>to_vertex_and_segment</value>
+        <value>to_vertex_and_segment</value>
         <value>to_vertex_and_segment</value>
         <value>to_vertex_and_segment</value>
         <value>to_vertex_and_segment</value>
@@ -24108,10 +24187,19 @@
         <value>1.000000</value>
         <value>1.000000</value>
         <value>20.000000</value>
+        <value>7.000000</value>
+        <value>7.000000</value>
+        <value>7.000000</value>
+        <value>7.000000</value>
+        <value>7.000000</value>
+        <value>7.000000</value>
         <value>6.000000</value>
         <value>6.000000</value>
         <value>7.000000</value>
         <value>8.000000</value>
+        <value>7.000000</value>
+        <value>7.000000</value>
+        <value>7.000000</value>
         <value>6.000000</value>
         <value>0.000000</value>
         <value>0.000000</value>
@@ -24124,7 +24212,12 @@
         <value>6.000000</value>
         <value>6.000000</value>
         <value>7.000000</value>
+        <value>7.000000</value>
         <value>6.000000</value>
+        <value>6.000000</value>
+        <value>7.000000</value>
+        <value>7.000000</value>
+        <value>7.000000</value>
         <value>6.000000</value>
         <value>7.000000</value>
         <value>7.000000</value>
@@ -24132,9 +24225,10 @@
         <value>6.000000</value>
         <value>6.000000</value>
         <value>6.000000</value>
-        <value>6.000000</value>
         <value>7.000000</value>
         <value>6.000000</value>
+        <value>7.000000</value>
+        <value>7.000000</value>
         <value>7.000000</value>
         <value>6.000000</value>
         <value>12.000000</value>
