@@ -13,7 +13,7 @@
         <layer-tree-layer expanded="0" checked="Qt::Unchecked" id="od_cover20141219115626229" name="couvercles">
           <customproperties/>
         </layer-tree-layer>
-        <layer-tree-group expanded="1" checked="Qt::Checked" name="détail">
+        <layer-tree-group expanded="0" checked="Qt::Checked" name="détail">
           <customproperties/>
           <layer-tree-layer expanded="0" checked="Qt::Checked" id="installation_tank20130304110005008" name="ouvrage - réservoirs">
             <customproperties/>
@@ -134,7 +134,7 @@
         <customproperties/>
       </layer-tree-layer>
     </layer-tree-group>
-    <layer-tree-group expanded="1" checked="Qt::Unchecked" name="cadastre sige">
+    <layer-tree-group expanded="0" checked="Qt::Unchecked" name="cadastre sige">
       <customproperties/>
       <layer-tree-layer expanded="1" checked="Qt::Unchecked" id="servitude20150109080436604" name="servitude ligne">
         <customproperties/>
@@ -358,10 +358,10 @@
   <mapcanvas>
     <units>meters</units>
     <extent>
-      <xmin>554159.95484753965865821</xmin>
-      <ymin>147294.69612831325503066</ymin>
-      <xmax>555531.02000205719377846</xmax>
-      <ymax>149211.4535521455691196</ymax>
+      <xmin>552640.46086596488021314</xmin>
+      <ymin>146429.24881970265414566</ymin>
+      <xmax>557267.80576233938336372</xmax>
+      <ymax>152898.30512513674329966</ymax>
     </extent>
     <rotation>0</rotation>
     <projections>1</projections>
@@ -715,7 +715,7 @@
             <legendlayerfile isInOverview="0" layerid="od_cover20141219115626229" visible="0"/>
           </filegroup>
         </legendlayer>
-        <legendgroup open="true" checked="Qt::Checked" name="détail">
+        <legendgroup open="false" checked="Qt::Checked" name="détail">
           <legendlayer drawingOrder="2" open="false" checked="Qt::Checked" name="ouvrage - réservoirs" showFeatureCount="0">
             <filegroup open="false" hidden="false">
               <legendlayerfile isInOverview="0" layerid="installation_tank20130304110005008" visible="1"/>
@@ -891,7 +891,7 @@
         </filegroup>
       </legendlayer>
     </legendgroup>
-    <legendgroup open="true" checked="Qt::Unchecked" name="cadastre sige">
+    <legendgroup open="false" checked="Qt::Unchecked" name="cadastre sige">
       <legendlayer drawingOrder="34" open="true" checked="Qt::Unchecked" name="servitude ligne" showFeatureCount="0">
         <filegroup open="true" hidden="false">
           <legendlayerfile isInOverview="0" layerid="servitude20150109080436604" visible="0"/>
@@ -4698,7 +4698,7 @@
         </edittype>
       </edittypes>
     </maplayer>
-    <maplayer minimumScale="0" maximumScale="1e+08" simplifyDrawingHints="0" minLabelScale="0" maxLabelScale="1e+08" simplifyDrawingTol="1" geometry="Line" simplifyMaxScale="1" type="vector" hasScaleBasedVisibilityFlag="0" simplifyLocal="1" scaleBasedLabelVisibilityFlag="0">
+    <maplayer minimumScale="-4.65661e-10" maximumScale="1e+08" simplifyDrawingHints="0" minLabelScale="0" maxLabelScale="1e+08" simplifyDrawingTol="1" geometry="Line" simplifyMaxScale="1" type="vector" hasScaleBasedVisibilityFlag="0" simplifyLocal="1" scaleBasedLabelVisibilityFlag="0">
       <id>conduites_copy20130709141244955</id>
       <datasource>service='qWat' sslmode=disable key='id' srid=21781 type=LINESTRING table="qwat_od"."pipe" (geometry) sql=</datasource>
       <title></title>
@@ -4789,8 +4789,8 @@
         <edittype widgetv2type="TextEdit" name="_valve_count">
           <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
         </edittype>
-        <edittype widgetv2type="TextEdit" name="_valve_closed">
-          <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
+        <edittype widgetv2type="CheckBox" name="_valve_closed">
+          <widgetv2config fieldEditable="1" UncheckedState="f" CheckedState="t" labelOnTop="0"/>
         </edittype>
         <edittype widgetv2type="ValueRelation" name="schema_force_view">
           <widgetv2config OrderByValue="0" AllowNull="0" FilterExpression="" fieldEditable="1" Key="vl_code" Layer="vl_visible20130304110011703" Value="value_fr" labelOnTop="0" AllowMulti="0"/>
@@ -4977,38 +4977,38 @@
         <rules key="{dbde1c2b-a27d-484e-8dd5-d13dcd527b89}">
           <rule filter="id_distributor = 1and &quot;Statut_active&quot; = 't'" key="{f550eef3-fdaa-427b-b415-bd7e8fc25f9e}" label="active">
             <rule filter="&quot;_schema_visible&quot; = 't'" key="{1169fb39-5fd3-43b6-9c6c-0f8ef27a0149}" label="Schématique">
-              <rule filter=" &quot;Conduites - fonction_schema_visible&quot; = 't'" key="{21358699-bad3-4fea-bcc8-78f00038a060}" symbol="0" label="Transport"/>
-              <rule filter=" &quot;Conduites - fonction_schema_visible&quot; = 'f'" key="{4c88cf03-ba40-4a46-9291-6c4d1faed4e4}" symbol="1" label="distribution"/>
-              <rule filter=" &quot;id_protection&quot; IS NOT NULL" key="{5131ca92-2387-4bee-b3bf-2a410b4ff9b3}" symbol="2" label="protégée"/>
+              <rule filter=" &quot;Conduites - fonction_schema_visible&quot; = 't'" key="{9af8a7a8-5026-4224-a57c-5091dd5fe7b4}" symbol="0" label="Transport"/>
+              <rule filter=" &quot;Conduites - fonction_schema_visible&quot; = 'f'" key="{19fe8f68-7709-46b3-a948-3d7b3a0a90f8}" symbol="1" label="distribution"/>
+              <rule filter=" &quot;id_protection&quot; IS NOT NULL" key="{70a6dde7-6568-4436-914b-c6bd0f0e115d}" symbol="2" label="protégée"/>
             </rule>
             <rule scalemaxdenom="3000" filter="_schema_visible = 'f'" key="{9646576f-b22a-45bf-a4a3-3678392bd8c0}" label="Détail">
-              <rule filter=" &quot;Conduites - fonction_schema_visible&quot; = 't'" key="{616d6b92-a218-4a54-b7e7-e5751d481224}" symbol="3" label="Transport"/>
-              <rule filter=" &quot;Conduites - fonction_schema_visible&quot; = 'f'" key="{c0d5fc5a-ec61-4541-8755-35304072400e}" symbol="4" label="qwat"/>
-              <rule filter=" &quot;id_protection&quot; IS NOT NULL" key="{24fa4875-6f61-4876-acca-dab0794fbc01}" symbol="5" label="protégée"/>
+              <rule filter=" &quot;Conduites - fonction_schema_visible&quot; = 't'" key="{06ee8310-490d-4f11-8098-c4177f9a87ac}" symbol="3" label="Transport"/>
+              <rule filter=" &quot;Conduites - fonction_schema_visible&quot; = 'f'" key="{e7c8095c-3392-4526-affe-75747e8ccddf}" symbol="4" label="qwat"/>
+              <rule filter=" &quot;id_protection&quot; IS NOT NULL" key="{7beed5de-01b8-4db9-9dc9-1234c98c91d4}" symbol="5" label="protégée"/>
             </rule>
           </rule>
           <rule checkstate="0" filter="id_distributor = 1and &quot;Statut_active&quot; = 'f'" key="{75060a73-107d-4ace-bc35-d573de40488f}" label="inactive">
             <rule filter="&quot;_schema_visible&quot; = 't'" key="{5b970fd5-5c37-4865-81a5-cab18c5fb58c}" label="Schématique">
-              <rule filter=" &quot;Conduites - fonction_schema_visible&quot; = 't'" key="{9a125d4a-f795-4355-969e-7d378126b36f}" symbol="6" label="Transport"/>
-              <rule filter=" &quot;Conduites - fonction_schema_visible&quot; = 'f'" key="{ffcbd8ed-13f6-41ed-8026-43842e2eaaeb}" symbol="7" label="distribution"/>
-              <rule filter=" &quot;id_protection&quot; IS NOT NULL" key="{b9f55211-950d-47ca-85f8-136bf75ea890}" symbol="8" label="protégée"/>
+              <rule filter=" &quot;Conduites - fonction_schema_visible&quot; = 't'" key="{7f4bbf6c-028a-41d3-96b1-b589eb4e78ea}" symbol="6" label="Transport"/>
+              <rule filter=" &quot;Conduites - fonction_schema_visible&quot; = 'f'" key="{05c6599d-4abc-42cb-a365-8de4f29e642e}" symbol="7" label="distribution"/>
+              <rule filter=" &quot;id_protection&quot; IS NOT NULL" key="{2a652846-0d49-4085-b641-b0debf3875fe}" symbol="8" label="protégée"/>
             </rule>
             <rule scalemaxdenom="3000" filter="_schema_visible = 'f'" key="{7d0cfa7a-eaf4-499a-b977-1238b90ca15f}" label="Détail">
-              <rule filter=" &quot;Conduites - fonction_schema_visible&quot; = 't'" key="{778014fd-333e-4b0b-b1ea-629c595a9763}" symbol="9" label="Transport"/>
-              <rule filter=" &quot;Conduites - fonction_schema_visible&quot; = 'f'" key="{09a2a60b-0eab-4071-a82b-7bab58ade440}" symbol="10" label="distribution"/>
-              <rule filter=" &quot;id_protection&quot; IS NOT NULL" key="{d1f57afd-565e-4f55-9133-4320e82b0d52}" symbol="11" label="protégée"/>
+              <rule filter=" &quot;Conduites - fonction_schema_visible&quot; = 't'" key="{b0411bd5-5f12-422d-a6c2-0d3e328e6156}" symbol="9" label="Transport"/>
+              <rule filter=" &quot;Conduites - fonction_schema_visible&quot; = 'f'" key="{9481faf2-b6e6-4b0f-8840-822d3ebab1fb}" symbol="10" label="distribution"/>
+              <rule filter=" &quot;id_protection&quot; IS NOT NULL" key="{81dea8c3-2a39-4c2a-8077-8f092f254345}" symbol="11" label="protégée"/>
             </rule>
           </rule>
           <rule filter="id_distributor != 1" key="{013429dc-a1cd-4a17-904a-6550a0175046}" label="étranger">
             <rule filter="&quot;_schema_visible&quot; = 't'" key="{2513a8b8-a110-4727-854c-6084f64e3bdf}" label="Schématique">
-              <rule filter=" &quot;Conduites - fonction_schema_visible&quot; = 't'" key="{0250458e-2687-4771-b477-6fb555c882e3}" symbol="12" label="Transport"/>
-              <rule filter=" &quot;Conduites - fonction_schema_visible&quot; = 'f'" key="{8ad44e4b-5df4-4f8f-b058-084b936548ef}" symbol="13" label="Distribution"/>
-              <rule filter=" &quot;id_protection&quot; IS NOT NULL" key="{87bc71ec-97c3-423f-8f6d-8fe23420e2ca}" symbol="14" label="protégée"/>
+              <rule filter=" &quot;Conduites - fonction_schema_visible&quot; = 't'" key="{d44c87cd-3fc0-447e-a3e4-0dc3017355ab}" symbol="12" label="Transport"/>
+              <rule filter=" &quot;Conduites - fonction_schema_visible&quot; = 'f'" key="{4f83cbbb-dfa0-4361-93b1-6360639e199f}" symbol="13" label="Distribution"/>
+              <rule filter=" &quot;id_protection&quot; IS NOT NULL" key="{a69021a3-7f08-443b-b05b-8e7ad76f87d7}" symbol="14" label="protégée"/>
             </rule>
             <rule scalemaxdenom="3000" filter="_schema_visible = 'f'" key="{2e14d53a-6d2f-40b3-bf3b-4f32112e3d59}" label="Détail">
-              <rule filter=" &quot;Conduites - fonction_schema_visible&quot; = 't'" key="{ab5eaebb-54fb-45c9-868a-c1c943594e93}" symbol="15" label="Transport"/>
-              <rule filter=" &quot;Conduites - fonction_schema_visible&quot; = 'f'" key="{58ac8de7-6c95-4a28-bc19-59a93b398a57}" symbol="16" label="Distribution"/>
-              <rule filter=" &quot;id_protection&quot; IS NOT NULL" key="{9abb4761-0b77-4941-9292-b0b0f2bc1ac6}" symbol="17" label="protégée"/>
+              <rule filter=" &quot;Conduites - fonction_schema_visible&quot; = 't'" key="{38e87c3b-0d4d-4754-b3b6-bcbd594343a6}" symbol="15" label="Transport"/>
+              <rule filter=" &quot;Conduites - fonction_schema_visible&quot; = 'f'" key="{67ed2dd2-eb50-4a8a-b552-1f8bc4c87eb9}" symbol="16" label="Distribution"/>
+              <rule filter=" &quot;id_protection&quot; IS NOT NULL" key="{b82d385c-9af8-4542-ab38-5b704ac27a4b}" symbol="17" label="protégée"/>
             </rule>
           </rule>
           <rule checkstate="0" filter="id_distributor = 1 and &quot;Statut_active&quot; = 't' and &quot;_schema_visible&quot; = 't'" key="{9c210704-187e-4e2a-9b89-2f7917f4376c}" symbol="18" label="Couleur par zone"/>
@@ -5619,8 +5619,8 @@
         <edittype widgetv2type="TextEdit" name="_valve_count">
           <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
         </edittype>
-        <edittype widgetv2type="TextEdit" name="_valve_closed">
-          <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
+        <edittype widgetv2type="CheckBox" name="_valve_closed">
+          <widgetv2config fieldEditable="1" UncheckedState="f" CheckedState="t" labelOnTop="0"/>
         </edittype>
         <edittype widgetv2type="ValueRelation" name="schema_force_view">
           <widgetv2config OrderByValue="0" AllowNull="0" FilterExpression="" fieldEditable="1" Key="vl_code" Layer="vl_visible20130304110011703" Value="value_fr" labelOnTop="0" AllowMulti="0"/>
