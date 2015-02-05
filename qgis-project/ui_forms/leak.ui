@@ -7,51 +7,21 @@
     <x>0</x>
     <y>0</y>
     <width>536</width>
-    <height>505</height>
+    <height>521</height>
    </rect>
   </property>
   <property name="windowTitle">
    <string>Fuite</string>
   </property>
   <layout class="QGridLayout" name="gridLayout">
-   <item row="3" column="0">
-    <widget class="QLabel" name="label_8">
+   <item row="9" column="0" colspan="2">
+    <widget class="QCheckBox" name="pipe_replaced">
      <property name="text">
-      <string>Adresse</string>
+      <string>Conduite remplacée</string>
      </property>
     </widget>
    </item>
-   <item row="2" column="1">
-    <widget class="QDateEdit" name="detection_date">
-     <property name="displayFormat">
-      <string>yyyy.MM.dd</string>
-     </property>
-     <property name="calendarPopup">
-      <bool>true</bool>
-     </property>
-    </widget>
-   </item>
-   <item row="4" column="0">
-    <widget class="QLabel" name="label_9">
-     <property name="text">
-      <string>Description</string>
-     </property>
-    </widget>
-   </item>
-   <item row="0" column="3">
-    <widget class="QLineEdit" name="_district"/>
-   </item>
-   <item row="6" column="0">
-    <widget class="QLabel" name="label_5">
-     <property name="text">
-      <string>Cause</string>
-     </property>
-    </widget>
-   </item>
-   <item row="1" column="3">
-    <widget class="QLineEdit" name="_printmaps"/>
-   </item>
-   <item row="12" column="1" colspan="3">
+   <item row="13" column="1" colspan="3">
     <widget class="QDialogButtonBox" name="buttonBox">
      <property name="orientation">
       <enum>Qt::Horizontal</enum>
@@ -61,13 +31,24 @@
      </property>
     </widget>
    </item>
-   <item row="0" column="1">
-    <widget class="QLineEdit" name="id"/>
-   </item>
-   <item row="8" column="0" colspan="2">
-    <widget class="QCheckBox" name="pipe_replaced">
+   <item row="6" column="0">
+    <widget class="QLabel" name="label_4">
      <property name="text">
-      <string>Conduite remplacée</string>
+      <string>Type</string>
+     </property>
+    </widget>
+   </item>
+   <item row="11" column="0">
+    <widget class="QLabel" name="label_11">
+     <property name="text">
+      <string>Date réparation</string>
+     </property>
+    </widget>
+   </item>
+   <item row="8" column="0">
+    <widget class="QLabel" name="label_6">
+     <property name="text">
+      <string>Dommage</string>
      </property>
     </widget>
    </item>
@@ -78,6 +59,29 @@
      </property>
     </widget>
    </item>
+   <item row="7" column="1">
+    <widget class="QComboBox" name="id_cause"/>
+   </item>
+   <item row="1" column="3">
+    <widget class="QLineEdit" name="_printmaps"/>
+   </item>
+   <item row="8" column="1">
+    <widget class="QComboBox" name="id_damage"/>
+   </item>
+   <item row="4" column="0">
+    <widget class="QLabel" name="label_8">
+     <property name="text">
+      <string>Adresse</string>
+     </property>
+    </widget>
+   </item>
+   <item row="7" column="0">
+    <widget class="QLabel" name="label_5">
+     <property name="text">
+      <string>Cause</string>
+     </property>
+    </widget>
+   </item>
    <item row="1" column="2">
     <widget class="QLabel" name="label_3">
      <property name="text">
@@ -85,70 +89,32 @@
      </property>
     </widget>
    </item>
-   <item row="7" column="1">
-    <widget class="QComboBox" name="id_damage"/>
-   </item>
-   <item row="2" column="0">
-    <widget class="QLabel" name="label_7">
-     <property name="text">
-      <string>Détection</string>
-     </property>
-    </widget>
-   </item>
-   <item row="3" column="1">
-    <widget class="QLineEdit" name="address"/>
-   </item>
-   <item row="5" column="0">
-    <widget class="QLabel" name="label_4">
-     <property name="text">
-      <string>Type</string>
-     </property>
-    </widget>
-   </item>
-   <item row="7" column="0">
-    <widget class="QLabel" name="label_6">
-     <property name="text">
-      <string>Dommage</string>
-     </property>
-    </widget>
-   </item>
-   <item row="4" column="1">
+   <item row="5" column="1">
     <widget class="QPlainTextEdit" name="description"/>
    </item>
-   <item row="5" column="1">
-    <widget class="QComboBox" name="id_type"/>
+   <item row="11" column="1">
+    <widget class="QgsDateTimeEdit" name="repair_date"/>
    </item>
-   <item row="6" column="1">
-    <widget class="QComboBox" name="id_cause"/>
+   <item row="4" column="1">
+    <widget class="QLineEdit" name="address"/>
+   </item>
+   <item row="0" column="3">
+    <widget class="QLineEdit" name="_district"/>
+   </item>
+   <item row="0" column="1">
+    <widget class="QLineEdit" name="id"/>
+   </item>
+   <item row="5" column="0">
+    <widget class="QLabel" name="label_9">
+     <property name="text">
+      <string>Description</string>
+     </property>
+    </widget>
    </item>
    <item row="0" column="2">
     <widget class="QLabel" name="label_2">
      <property name="text">
       <string>Commune</string>
-     </property>
-    </widget>
-   </item>
-   <item row="9" column="1">
-    <widget class="QPlainTextEdit" name="repair"/>
-   </item>
-   <item row="10" column="1">
-    <widget class="QDateEdit" name="repair_date">
-     <property name="calendarPopup">
-      <bool>true</bool>
-     </property>
-    </widget>
-   </item>
-   <item row="10" column="0">
-    <widget class="QLabel" name="label_11">
-     <property name="text">
-      <string>Date réparation</string>
-     </property>
-    </widget>
-   </item>
-   <item row="9" column="0">
-    <widget class="QLabel" name="label_10">
-     <property name="text">
-      <string>Réparation</string>
      </property>
     </widget>
    </item>
@@ -159,8 +125,42 @@
      </property>
     </widget>
    </item>
+   <item row="10" column="0">
+    <widget class="QLabel" name="label_10">
+     <property name="text">
+      <string>Réparation</string>
+     </property>
+    </widget>
+   </item>
+   <item row="10" column="1">
+    <widget class="QPlainTextEdit" name="repair"/>
+   </item>
+   <item row="3" column="1">
+    <widget class="QgsDateTimeEdit" name="detection_date">
+     <property name="allowNull">
+      <bool>false</bool>
+     </property>
+    </widget>
+   </item>
+   <item row="6" column="1">
+    <widget class="QComboBox" name="id_type"/>
+   </item>
+   <item row="3" column="0">
+    <widget class="QLabel" name="label_7">
+     <property name="text">
+      <string>Détection</string>
+     </property>
+    </widget>
+   </item>
   </layout>
  </widget>
+ <customwidgets>
+  <customwidget>
+   <class>QgsDateTimeEdit</class>
+   <extends>QDateTimeEdit</extends>
+   <header>qgsdatetimeedit.h</header>
+  </customwidget>
+ </customwidgets>
  <resources/>
  <connections>
   <connection>
