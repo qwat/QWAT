@@ -7,7 +7,7 @@
       <customproperties/>
       <layer-tree-group expanded="1" checked="Qt::PartiallyChecked" name="ouvrages">
         <customproperties/>
-        <layer-tree-layer expanded="0" checked="Qt::Checked" id="installation20130304110004938" name="ouvrage général">
+        <layer-tree-layer expanded="0" checked="Qt::Unchecked" id="installation20130304110004938" name="ouvrage général">
           <customproperties/>
         </layer-tree-layer>
         <layer-tree-layer expanded="0" checked="Qt::Unchecked" id="od_cover20141219115626229" name="couvercles">
@@ -55,7 +55,7 @@
       </layer-tree-group>
       <layer-tree-group expanded="1" checked="Qt::PartiallyChecked" name="Réseau">
         <customproperties/>
-        <layer-tree-layer expanded="0" checked="Qt::Checked" id="conduites_copy20130709141244955" name="conduites">
+        <layer-tree-layer expanded="1" checked="Qt::Checked" id="conduites_copy20130709141244955" name="conduites">
           <customproperties>
             <property key="expandedLegendNodes"/>
           </customproperties>
@@ -134,7 +134,7 @@
         <customproperties/>
       </layer-tree-layer>
     </layer-tree-group>
-    <layer-tree-group expanded="0" checked="Qt::Unchecked" name="cadastre sige">
+    <layer-tree-group expanded="0" checked="Qt::PartiallyChecked" name="cadastre sige">
       <customproperties/>
       <layer-tree-layer expanded="1" checked="Qt::Unchecked" id="servitude20150109080436604" name="servitude ligne">
         <customproperties/>
@@ -148,7 +148,7 @@
       <layer-tree-layer expanded="0" checked="Qt::Unchecked" id="camac20140113144941208" name="enquete camac">
         <customproperties/>
       </layer-tree-layer>
-      <layer-tree-layer expanded="0" checked="Qt::Unchecked" id="cadastre20140312152032371" name="enquete cadastre">
+      <layer-tree-layer expanded="0" checked="Qt::Checked" id="cadastre20140312152032371" name="enquete cadastre">
         <customproperties/>
       </layer-tree-layer>
     </layer-tree-group>
@@ -182,12 +182,12 @@
         </layer-tree-layer>
       </layer-tree-group>
     </layer-tree-group>
-    <layer-tree-group expanded="0" checked="Qt::PartiallyChecked" name="Tables auxiliaires">
+    <layer-tree-group expanded="0" checked="Qt::Unchecked" name="Tables auxiliaires">
       <customproperties/>
-      <layer-tree-layer expanded="1" checked="Qt::Checked" id="collecteur20150203112806387" name="collecteur">
+      <layer-tree-layer expanded="1" checked="Qt::Unchecked" id="collecteur20150203112806387" name="collecteur">
         <customproperties/>
       </layer-tree-layer>
-      <layer-tree-layer expanded="1" checked="Qt::Checked" id="partenaire20150203112806405" name="partenaire">
+      <layer-tree-layer expanded="1" checked="Qt::Unchecked" id="partenaire20150203112806405" name="partenaire">
         <customproperties/>
       </layer-tree-layer>
       <layer-tree-layer expanded="1" checked="Qt::Unchecked" id="vl_subscriber_type20130304110011480" name="Abonnés - type">
@@ -235,7 +235,7 @@
       <layer-tree-layer expanded="1" checked="Qt::Unchecked" id="vl_pumptype20130816140237776" name="Ouvrage - pompe - type">
         <customproperties/>
       </layer-tree-layer>
-      <layer-tree-layer expanded="1" checked="Qt::Checked" id="pressurecontrol_type20150203100321270" name="Ouvrage - rég. de pression - type">
+      <layer-tree-layer expanded="1" checked="Qt::Unchecked" id="pressurecontrol_type20150203100321270" name="Ouvrage - rég. de pression - type">
         <customproperties/>
       </layer-tree-layer>
       <layer-tree-layer expanded="1" checked="Qt::Unchecked" id="vl_overflow20130304170704046" name="Ouvrage - réservoir - type trop plein">
@@ -440,56 +440,71 @@
   </mapcanvas>
   <visibility-presets>
     <visibility-preset name="250">
-      <layer style="" id="od_subscriber_reference20131206105928067"/>
+      <layer style="" id="valve20130304110011497"/>
+      <layer style="" id="od_meter20131120073630165"/>
+      <layer style="" id="od_annotationpoint20131203095020392"/>
+      <layer style="" id="bf_posimmeuble20130514143633121"/>
+      <layer style="" id="installation_pressurecontrol20131107105006792"/>
+      <layer style="" id="ad_posnumero_maison20130514143346530"/>
       <layer style="" id="installation_treatment20130816113039913"/>
       <layer style="" id="hydrant20130304110004848"/>
-      <layer style="" id="od_annotationpoint20131203095020392"/>
-      <layer style="" id="installation_valvechamber20131107105006707"/>
-      <layer style="" id="od_part20140429113327995"/>
-      <layer style="" id="od_meter_reference20140304165835390"/>
-      <layer style="" id="node20130304110005126"/>
-      <layer style="" id="printmap20130304110011400"/>
-      <layer style="" id="od_meter20131120073630165"/>
-      <layer style="" id="valve20130304110011497"/>
-      <layer style="" id="installation_source20130820110331647"/>
-      <layer style="" id="od_remote20150116100522170"/>
-      <layer style="" id="od_dimension_orientation20131202111155806"/>
-      <layer style="" id="cadastre20140312152032371"/>
-      <layer style="" id="od_crossing20141023083754327"/>
-      <layer style="" id="installation_pump20130816140237750"/>
+      <layer style="" id="od_element_lineaire20130514144047075"/>
       <layer style="" id="conduites_copy20130709141244955"/>
+      <layer style="" id="od_batiment_souterrain20130514143946785"/>
+      <layer style="" id="bf_point_limite20130514143552315"/>
       <layer style="" id="od_annotationline20131203095020365"/>
-      <layer style="" id="installation_tank20130304110005008"/>
+      <layer style="" id="od_dimension_orientation20131202111155806"/>
+      <layer style="" id="cs_posnumero_de_batiment20130514143756039"/>
+      <layer style="" id="od_remote20150116100522170"/>
+      <layer style="" id="pf_pfa20130514144154766"/>
+      <layer style="" id="axe_rue20130514143437774"/>
       <layer style="" id="subscriber20130304110011459"/>
-      <layer style="" id="installation_pressurecontrol20131107105006792"/>
+      <layer style="" id="cadastre20140312152032371"/>
+      <layer style="" id="installation_pump20130816140237750"/>
+      <layer style="" id="od_part20140429113327995"/>
+      <layer style="" id="cs_surfacecs20130514143830750"/>
+      <layer style="" id="od_element_surfacique20130514144124647"/>
+      <layer style="" id="cs_batiment20130514143721709"/>
+      <layer style="" id="bf_bien_fonds20130514143508556"/>
+      <layer style="" id="installation_valvechamber20131107105006707"/>
+      <layer style="" id="no_posnomlocallieudit20130514143906869"/>
+      <layer style="" id="pf_pfp20130514144226845"/>
       <layer style="" id="dimension20130807094904783"/>
+      <layer style="" id="installation_tank20130304110005008"/>
+      <layer style="" id="bf_ddp20130514143538213"/>
+      <layer style="" id="od_meter_reference20140304165835390"/>
+      <layer style="" id="od_subscriber_reference20131206105928067"/>
+      <layer style="" id="printmap20130304110011400"/>
+      <layer style="" id="od_crossing20141023083754327"/>
+      <layer style="" id="installation_source20130820110331647"/>
+      <layer style="" id="node20130304110005126"/>
       <checked-legend-nodes id="conduites_copy20130709141244955">
-        <checked-legend-node id="{87bc71ec-97c3-423f-8f6d-8fe23420e2ca}"/>
+        <checked-legend-node id="{7beed5de-01b8-4db9-9dc9-1234c98c91d4}"/>
+        <checked-legend-node id="{06ee8310-490d-4f11-8098-c4177f9a87ac}"/>
+        <checked-legend-node id="{e7c8095c-3392-4526-affe-75747e8ccddf}"/>
         <checked-legend-node id="{9646576f-b22a-45bf-a4a3-3678392bd8c0}"/>
+        <checked-legend-node id="{9af8a7a8-5026-4224-a57c-5091dd5fe7b4}"/>
         <checked-legend-node id="{f550eef3-fdaa-427b-b415-bd7e8fc25f9e}"/>
         <checked-legend-node id="{1169fb39-5fd3-43b6-9c6c-0f8ef27a0149}"/>
-        <checked-legend-node id="{616d6b92-a218-4a54-b7e7-e5751d481224}"/>
+        <checked-legend-node id="{81dea8c3-2a39-4c2a-8077-8f092f254345}"/>
         <checked-legend-node id="{2e14d53a-6d2f-40b3-bf3b-4f32112e3d59}"/>
-        <checked-legend-node id="{c0d5fc5a-ec61-4541-8755-35304072400e}"/>
-        <checked-legend-node id="{9abb4761-0b77-4941-9292-b0b0f2bc1ac6}"/>
-        <checked-legend-node id="{5131ca92-2387-4bee-b3bf-2a410b4ff9b3}"/>
-        <checked-legend-node id="{778014fd-333e-4b0b-b1ea-629c595a9763}"/>
+        <checked-legend-node id="{67ed2dd2-eb50-4a8a-b552-1f8bc4c87eb9}"/>
         <checked-legend-node id="{5b970fd5-5c37-4865-81a5-cab18c5fb58c}"/>
+        <checked-legend-node id="{70a6dde7-6568-4436-914b-c6bd0f0e115d}"/>
+        <checked-legend-node id="{4f83cbbb-dfa0-4361-93b1-6360639e199f}"/>
+        <checked-legend-node id="{19fe8f68-7709-46b3-a948-3d7b3a0a90f8}"/>
         <checked-legend-node id="{013429dc-a1cd-4a17-904a-6550a0175046}"/>
         <checked-legend-node id="{2513a8b8-a110-4727-854c-6084f64e3bdf}"/>
-        <checked-legend-node id="{0250458e-2687-4771-b477-6fb555c882e3}"/>
-        <checked-legend-node id="{24fa4875-6f61-4876-acca-dab0794fbc01}"/>
-        <checked-legend-node id="{9a125d4a-f795-4355-969e-7d378126b36f}"/>
-        <checked-legend-node id="{09a2a60b-0eab-4071-a82b-7bab58ade440}"/>
-        <checked-legend-node id="{8ad44e4b-5df4-4f8f-b058-084b936548ef}"/>
-        <checked-legend-node id="{ab5eaebb-54fb-45c9-868a-c1c943594e93}"/>
-        <checked-legend-node id="{ffcbd8ed-13f6-41ed-8026-43842e2eaaeb}"/>
-        <checked-legend-node id="{4c88cf03-ba40-4a46-9291-6c4d1faed4e4}"/>
-        <checked-legend-node id="{21358699-bad3-4fea-bcc8-78f00038a060}"/>
-        <checked-legend-node id="{b9f55211-950d-47ca-85f8-136bf75ea890}"/>
-        <checked-legend-node id="{d1f57afd-565e-4f55-9133-4320e82b0d52}"/>
+        <checked-legend-node id="{7f4bbf6c-028a-41d3-96b1-b589eb4e78ea}"/>
+        <checked-legend-node id="{9481faf2-b6e6-4b0f-8840-822d3ebab1fb}"/>
+        <checked-legend-node id="{05c6599d-4abc-42cb-a365-8de4f29e642e}"/>
+        <checked-legend-node id="{38e87c3b-0d4d-4754-b3b6-bcbd594343a6}"/>
+        <checked-legend-node id="{a69021a3-7f08-443b-b05b-8e7ad76f87d7}"/>
+        <checked-legend-node id="{b82d385c-9af8-4542-ab38-5b704ac27a4b}"/>
+        <checked-legend-node id="{2a652846-0d49-4085-b641-b0debf3875fe}"/>
         <checked-legend-node id="{7d0cfa7a-eaf4-499a-b977-1238b90ca15f}"/>
-        <checked-legend-node id="{58ac8de7-6c95-4a28-bc19-59a93b398a57}"/>
+        <checked-legend-node id="{b0411bd5-5f12-422d-a6c2-0d3e328e6156}"/>
+        <checked-legend-node id="{d44c87cd-3fc0-447e-a3e4-0dc3017355ab}"/>
       </checked-legend-nodes>
       <checked-legend-nodes id="od_crossing20141023083754327">
         <checked-legend-node id="{bdb56b7a-1c26-428b-8597-ce6b6eb58f01}"/>
@@ -689,9 +704,9 @@
   <legend updateDrawingOrder="false">
     <legendgroup open="true" checked="Qt::PartiallyChecked" name="Réseau">
       <legendgroup open="true" checked="Qt::PartiallyChecked" name="ouvrages">
-        <legendlayer drawingOrder="0" open="false" checked="Qt::Checked" name="ouvrage général" showFeatureCount="0">
+        <legendlayer drawingOrder="0" open="false" checked="Qt::Unchecked" name="ouvrage général" showFeatureCount="0">
           <filegroup open="false" hidden="false">
-            <legendlayerfile isInOverview="0" layerid="installation20130304110004938" visible="1"/>
+            <legendlayerfile isInOverview="0" layerid="installation20130304110004938" visible="0"/>
           </filegroup>
         </legendlayer>
         <legendlayer drawingOrder="1" open="false" checked="Qt::Unchecked" name="couvercles" showFeatureCount="0">
@@ -760,8 +775,8 @@
         </legendlayer>
       </legendgroup>
       <legendgroup open="true" checked="Qt::PartiallyChecked" name="Réseau">
-        <legendlayer drawingOrder="21" open="false" checked="Qt::Checked" name="conduites" showFeatureCount="0">
-          <filegroup open="false" hidden="false">
+        <legendlayer drawingOrder="21" open="true" checked="Qt::Checked" name="conduites" showFeatureCount="0">
+          <filegroup open="true" hidden="false">
             <legendlayerfile isInOverview="0" layerid="conduites_copy20130709141244955" visible="1"/>
           </filegroup>
         </legendlayer>
@@ -875,7 +890,7 @@
         </filegroup>
       </legendlayer>
     </legendgroup>
-    <legendgroup open="false" checked="Qt::Unchecked" name="cadastre sige">
+    <legendgroup open="false" checked="Qt::PartiallyChecked" name="cadastre sige">
       <legendlayer drawingOrder="34" open="true" checked="Qt::Unchecked" name="servitude ligne" showFeatureCount="0">
         <filegroup open="true" hidden="false">
           <legendlayerfile isInOverview="0" layerid="servitude20150109080436604" visible="0"/>
@@ -896,9 +911,9 @@
           <legendlayerfile isInOverview="0" layerid="camac20140113144941208" visible="0"/>
         </filegroup>
       </legendlayer>
-      <legendlayer drawingOrder="37" open="false" checked="Qt::Unchecked" name="enquete cadastre" showFeatureCount="0">
+      <legendlayer drawingOrder="37" open="false" checked="Qt::Checked" name="enquete cadastre" showFeatureCount="0">
         <filegroup open="false" hidden="false">
-          <legendlayerfile isInOverview="0" layerid="cadastre20140312152032371" visible="0"/>
+          <legendlayerfile isInOverview="0" layerid="cadastre20140312152032371" visible="1"/>
         </filegroup>
       </legendlayer>
     </legendgroup>
@@ -943,15 +958,15 @@
         </legendlayer>
       </legendgroup>
     </legendgroup>
-    <legendgroup open="false" checked="Qt::PartiallyChecked" name="Tables auxiliaires">
-      <legendlayer drawingOrder="93" open="true" checked="Qt::Checked" name="collecteur" showFeatureCount="0">
+    <legendgroup open="false" checked="Qt::Unchecked" name="Tables auxiliaires">
+      <legendlayer drawingOrder="93" open="true" checked="Qt::Unchecked" name="collecteur" showFeatureCount="0">
         <filegroup open="true" hidden="false">
-          <legendlayerfile isInOverview="0" layerid="collecteur20150203112806387" visible="1"/>
+          <legendlayerfile isInOverview="0" layerid="collecteur20150203112806387" visible="0"/>
         </filegroup>
       </legendlayer>
-      <legendlayer drawingOrder="94" open="true" checked="Qt::Checked" name="partenaire" showFeatureCount="0">
+      <legendlayer drawingOrder="94" open="true" checked="Qt::Unchecked" name="partenaire" showFeatureCount="0">
         <filegroup open="true" hidden="false">
-          <legendlayerfile isInOverview="0" layerid="partenaire20150203112806405" visible="1"/>
+          <legendlayerfile isInOverview="0" layerid="partenaire20150203112806405" visible="0"/>
         </filegroup>
       </legendlayer>
       <legendlayer drawingOrder="45" open="true" checked="Qt::Unchecked" name="Abonnés - type" showFeatureCount="0">
@@ -1029,9 +1044,9 @@
           <legendlayerfile isInOverview="0" layerid="vl_pumptype20130816140237776" visible="0"/>
         </filegroup>
       </legendlayer>
-      <legendlayer drawingOrder="92" open="true" checked="Qt::Checked" name="Ouvrage - rég. de pression - type" showFeatureCount="0">
+      <legendlayer drawingOrder="92" open="true" checked="Qt::Unchecked" name="Ouvrage - rég. de pression - type" showFeatureCount="0">
         <filegroup open="true" hidden="false">
-          <legendlayerfile isInOverview="0" layerid="pressurecontrol_type20150203100321270" visible="1"/>
+          <legendlayerfile isInOverview="0" layerid="pressurecontrol_type20150203100321270" visible="0"/>
         </filegroup>
       </legendlayer>
       <legendlayer drawingOrder="60" open="true" checked="Qt::Unchecked" name="Ouvrage - réservoir - type trop plein" showFeatureCount="0">
