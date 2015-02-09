@@ -134,7 +134,7 @@
         <customproperties/>
       </layer-tree-layer>
     </layer-tree-group>
-    <layer-tree-group expanded="0" checked="Qt::PartiallyChecked" name="cadastre sige">
+    <layer-tree-group expanded="1" checked="Qt::PartiallyChecked" name="cadastre sige">
       <customproperties/>
       <layer-tree-layer expanded="1" checked="Qt::Unchecked" id="servitude20150109080436604" name="servitude ligne">
         <customproperties/>
@@ -342,10 +342,10 @@
   <mapcanvas>
     <units>meters</units>
     <extent>
-      <xmin>559437.61183692095801234</xmin>
-      <ymin>142065.6037544037681073</ymin>
-      <xmax>559809.06268669245764613</xmax>
-      <ymax>142318.01625466131372377</ymax>
+      <xmin>555126.8895224774023518</xmin>
+      <ymin>141998.35943676356691867</ymin>
+      <xmax>561473.47552599513437599</xmax>
+      <ymax>146311.06364038190804422</ymax>
     </extent>
     <rotation>0</rotation>
     <projections>1</projections>
@@ -890,7 +890,7 @@
         </filegroup>
       </legendlayer>
     </legendgroup>
-    <legendgroup open="false" checked="Qt::PartiallyChecked" name="cadastre sige">
+    <legendgroup open="true" checked="Qt::PartiallyChecked" name="cadastre sige">
       <legendlayer drawingOrder="34" open="true" checked="Qt::Unchecked" name="servitude ligne" showFeatureCount="0">
         <filegroup open="true" hidden="false">
           <legendlayerfile isInOverview="0" layerid="servitude20150109080436604" visible="0"/>
@@ -17965,7 +17965,7 @@
       </pipe>
       <blendMode>0</blendMode>
     </maplayer>
-    <maplayer minimumScale="0" maximumScale="1e+08" simplifyDrawingHints="0" minLabelScale="0" maxLabelScale="1e+08" simplifyDrawingTol="1" geometry="Line" simplifyMaxScale="1" type="vector" hasScaleBasedVisibilityFlag="0" simplifyLocal="1" scaleBasedLabelVisibilityFlag="0">
+    <maplayer minimumScale="-4.65661e-10" maximumScale="1e+08" simplifyDrawingHints="0" minLabelScale="0" maxLabelScale="1e+08" simplifyDrawingTol="1" geometry="Line" simplifyMaxScale="1" type="vector" hasScaleBasedVisibilityFlag="0" simplifyLocal="1" scaleBasedLabelVisibilityFlag="0">
       <id>servitude20150109080436604</id>
       <datasource>service='qWat' sslmode=disable key='id' srid=21781 type=MULTILINESTRING table="cadastre"."servitude" (geometry_line) sql=</datasource>
       <title></title>
@@ -18024,8 +18024,8 @@
         <edittype widgetv2type="TextEdit" name="numero">
           <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
         </edittype>
-        <edittype widgetv2type="TextEdit" name="date_inscription">
-          <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
+        <edittype widgetv2type="DateTime" name="date_inscription">
+          <widgetv2config fieldEditable="1" calendar_popup="1" allow_null="1" display_format="yyyy-MM-dd" field_format="yyyy-MM-dd" labelOnTop="0"/>
         </edittype>
         <edittype widgetv2type="TextEdit" name="parcelle">
           <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
@@ -18284,8 +18284,8 @@
         <edittype widgetv2type="TextEdit" name="numero">
           <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
         </edittype>
-        <edittype widgetv2type="TextEdit" name="date_inscription">
-          <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
+        <edittype widgetv2type="DateTime" name="date_inscription">
+          <widgetv2config fieldEditable="1" calendar_popup="1" allow_null="1" display_format="yyyy-MM-dd" field_format="yyyy-MM-dd" labelOnTop="0"/>
         </edittype>
         <edittype widgetv2type="TextEdit" name="parcelle">
           <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
@@ -18313,7 +18313,7 @@
         </edittype>
       </edittypes>
     </maplayer>
-    <maplayer minimumScale="-4.65661e-10" maximumScale="1e+08" simplifyDrawingHints="0" minLabelScale="0" maxLabelScale="1e+08" simplifyDrawingTol="1" geometry="Polygon" simplifyMaxScale="1" type="vector" hasScaleBasedVisibilityFlag="0" simplifyLocal="1" scaleBasedLabelVisibilityFlag="0">
+    <maplayer minimumScale="0" maximumScale="1e+08" simplifyDrawingHints="0" minLabelScale="0" maxLabelScale="1e+08" simplifyDrawingTol="1" geometry="Polygon" simplifyMaxScale="1" type="vector" hasScaleBasedVisibilityFlag="0" simplifyLocal="1" scaleBasedLabelVisibilityFlag="0">
       <id>servitude20150109080436650</id>
       <datasource>service='qWat' sslmode=disable key='id' srid=21781 type=MULTIPOLYGON table="cadastre"."servitude" (geometry_polygon) sql=</datasource>
       <title></title>
@@ -18372,8 +18372,8 @@
         <edittype widgetv2type="TextEdit" name="numero">
           <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
         </edittype>
-        <edittype widgetv2type="TextEdit" name="date_inscription">
-          <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
+        <edittype widgetv2type="DateTime" name="date_inscription">
+          <widgetv2config fieldEditable="1" calendar_popup="1" allow_null="1" display_format="yyyy-MM-dd" field_format="yyyy-MM-dd" labelOnTop="0"/>
         </edittype>
         <edittype widgetv2type="TextEdit" name="parcelle">
           <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
@@ -18628,8 +18628,8 @@
         <edittype widgetv2type="TextEdit" name="numero">
           <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
         </edittype>
-        <edittype widgetv2type="TextEdit" name="date_inscription">
-          <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
+        <edittype widgetv2type="DateTime" name="date_inscription">
+          <widgetv2config fieldEditable="1" calendar_popup="1" allow_null="1" display_format="yyyy-MM-dd" field_format="yyyy-MM-dd" labelOnTop="0"/>
         </edittype>
         <edittype widgetv2type="TextEdit" name="parcelle">
           <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
