@@ -16065,7 +16065,7 @@
         </edittype>
       </edittypes>
     </maplayer>
-    <maplayer minimumScale="0" maximumScale="1e+08" simplifyDrawingHints="0" minLabelScale="0" maxLabelScale="1e+08" simplifyDrawingTol="1" geometry="Line" simplifyMaxScale="1" type="vector" hasScaleBasedVisibilityFlag="0" simplifyLocal="1" scaleBasedLabelVisibilityFlag="0">
+    <maplayer minimumScale="-4.65661e-10" maximumScale="1e+08" simplifyDrawingHints="0" minLabelScale="0" maxLabelScale="1e+08" simplifyDrawingTol="1" geometry="Line" simplifyMaxScale="1" type="vector" hasScaleBasedVisibilityFlag="0" simplifyLocal="1" scaleBasedLabelVisibilityFlag="0">
       <id>conduites_copy20130709141244955</id>
       <datasource>service='qWat' sslmode=disable key='id' srid=21781 type=LINESTRING table="qwat_od"."pipe" (geometry) sql=</datasource>
       <title></title>
@@ -16118,7 +16118,7 @@
           <widgetv2config OrderByValue="0" AllowNull="0" FilterExpression="" fieldEditable="1" Key="id" Layer="vl_pipe_installmethod20130304110005209" Value="value_fr" labelOnTop="0" AllowMulti="0"/>
         </edittype>
         <edittype widgetv2type="RelationReference" name="id_material">
-          <widgetv2config OrderByValue="0" fieldEditable="1" ShowForm="0" Relation="relation_pipe_material" ReadOnly="0" MapIdentification="0" labelOnTop="0" AllowNULL="0"/>
+          <widgetv2config OrderByValue="1" fieldEditable="1" ShowForm="0" Relation="relation_pipe_material" ReadOnly="0" MapIdentification="0" labelOnTop="0" AllowNULL="0"/>
         </edittype>
         <edittype widgetv2type="ValueRelation" name="id_distributor">
           <widgetv2config OrderByValue="0" AllowNull="0" FilterExpression="" fieldEditable="1" Key="id" Layer="distributor20130304114719702" Value="name" labelOnTop="0" AllowMulti="0"/>
@@ -16344,39 +16344,39 @@
         <rules key="{dbde1c2b-a27d-484e-8dd5-d13dcd527b89}">
           <rule filter="id_distributor = 1and &quot;Statut_active&quot; = 't'" key="{f550eef3-fdaa-427b-b415-bd7e8fc25f9e}" label="active">
             <rule filter="&quot;_schema_visible&quot; = 't' AND id_status != 1307" key="{1169fb39-5fd3-43b6-9c6c-0f8ef27a0149}" label="Schématique">
-              <rule filter=" &quot;Conduites - fonction_schema_visible&quot; = 't'" key="{d8c551ff-4f8e-4c34-8ffc-3b9418110bf5}" symbol="0" label="Transport"/>
-              <rule filter=" &quot;Conduites - fonction_schema_visible&quot; = 'f'" key="{19f66eac-533e-4dde-9ccb-ab9fe4f74b04}" symbol="1" label="distribution"/>
-              <rule filter=" &quot;id_protection&quot; IS NOT NULL" key="{85d039ba-50fb-40bf-b2f4-1f6329c49313}" symbol="2" label="protégée"/>
+              <rule filter=" &quot;Conduites - fonction_schema_visible&quot; = 't'" key="{091e66aa-1594-4ac1-a779-f671dde391e2}" symbol="0" label="Transport"/>
+              <rule filter=" &quot;Conduites - fonction_schema_visible&quot; = 'f'" key="{25c2e398-8d5a-4103-ac14-4ff461596d3a}" symbol="1" label="distribution"/>
+              <rule filter=" &quot;id_protection&quot; IS NOT NULL" key="{8068754f-f710-413f-b07d-9cf8a386733b}" symbol="2" label="protégée"/>
             </rule>
             <rule scalemaxdenom="3000" filter="_schema_visible = 'f' AND id_status != 1307" key="{9646576f-b22a-45bf-a4a3-3678392bd8c0}" label="Détail">
-              <rule filter=" &quot;Conduites - fonction_schema_visible&quot; = 't'" key="{49cf0478-a93c-4a64-80b5-fe838171091a}" symbol="3" label="Transport"/>
-              <rule filter=" &quot;Conduites - fonction_schema_visible&quot; = 'f'" key="{f9030a56-f796-46e0-8cb1-b18194f2ce2d}" symbol="4" label="distribution"/>
-              <rule filter=" &quot;id_protection&quot; IS NOT NULL" key="{2198986f-7b01-45d5-8d76-42a548fff0aa}" symbol="5" label="protégée"/>
+              <rule filter=" &quot;Conduites - fonction_schema_visible&quot; = 't'" key="{93d733e3-3119-42cc-89f8-b67d3197925a}" symbol="3" label="Transport"/>
+              <rule filter=" &quot;Conduites - fonction_schema_visible&quot; = 'f'" key="{67caa7b7-52d8-494c-9386-6622b1e656a3}" symbol="4" label="distribution"/>
+              <rule filter=" &quot;id_protection&quot; IS NOT NULL" key="{6082ca45-b8db-490b-a549-f86a8b5e961b}" symbol="5" label="protégée"/>
             </rule>
             <rule checkstate="0" filter="id_status=1307" key="{3792c184-3d81-4254-8c66-acdf171e2b71}" symbol="6" label="Fictives"/>
           </rule>
           <rule checkstate="0" filter="id_distributor = 1and &quot;Statut_active&quot; = 'f'" key="{75060a73-107d-4ace-bc35-d573de40488f}" label="inactive">
             <rule filter="&quot;_schema_visible&quot; = 't'" key="{5b970fd5-5c37-4865-81a5-cab18c5fb58c}" label="Schématique">
-              <rule filter=" &quot;Conduites - fonction_schema_visible&quot; = 't'" key="{453d8e3e-65d7-4bbb-8e7b-58f1d09524ce}" symbol="7" label="Transport"/>
-              <rule filter=" &quot;Conduites - fonction_schema_visible&quot; = 'f'" key="{7b5ed023-f289-4ed5-8c88-e5d07205f7db}" symbol="8" label="distribution"/>
-              <rule filter=" &quot;id_protection&quot; IS NOT NULL" key="{19ead7bd-16c7-4b6f-93af-915152bf3e45}" symbol="9" label="protégée"/>
+              <rule filter=" &quot;Conduites - fonction_schema_visible&quot; = 't'" key="{783f2167-c790-4baf-a58d-d6fd65a299a4}" symbol="7" label="Transport"/>
+              <rule filter=" &quot;Conduites - fonction_schema_visible&quot; = 'f'" key="{46c7536a-ac7b-4e7b-afe6-33f9fee2f171}" symbol="8" label="distribution"/>
+              <rule filter=" &quot;id_protection&quot; IS NOT NULL" key="{bd93e9ea-b64b-4fbd-bf89-6d4395730e60}" symbol="9" label="protégée"/>
             </rule>
             <rule scalemaxdenom="3000" filter="_schema_visible = 'f'" key="{7d0cfa7a-eaf4-499a-b977-1238b90ca15f}" label="Détail">
-              <rule filter=" &quot;Conduites - fonction_schema_visible&quot; = 't'" key="{667b4a2a-78bf-4c24-b7eb-e43c9413628d}" symbol="10" label="Transport"/>
-              <rule filter=" &quot;Conduites - fonction_schema_visible&quot; = 'f'" key="{e985b842-5aaa-44fd-b842-c68d5e6f4eb6}" symbol="11" label="distribution"/>
-              <rule filter=" &quot;id_protection&quot; IS NOT NULL" key="{46fdd6ca-9e0f-4ea8-8d05-05fa62832827}" symbol="12" label="protégée"/>
+              <rule filter=" &quot;Conduites - fonction_schema_visible&quot; = 't'" key="{c0af50d9-d68b-4c2f-b9fa-9e2be9ec0e34}" symbol="10" label="Transport"/>
+              <rule filter=" &quot;Conduites - fonction_schema_visible&quot; = 'f'" key="{f2f26723-dc46-40c5-abe2-ef61a8c502e3}" symbol="11" label="distribution"/>
+              <rule filter=" &quot;id_protection&quot; IS NOT NULL" key="{9486a529-9a4e-4a3c-83fe-86f6f93102c0}" symbol="12" label="protégée"/>
             </rule>
           </rule>
           <rule filter="id_distributor != 1" key="{013429dc-a1cd-4a17-904a-6550a0175046}" label="étranger">
             <rule filter="&quot;_schema_visible&quot; = 't'" key="{2513a8b8-a110-4727-854c-6084f64e3bdf}" label="Schématique">
-              <rule filter=" &quot;Conduites - fonction_schema_visible&quot; = 't'" key="{27648945-1f99-4e85-8294-a3b9ada21d12}" symbol="13" label="Transport"/>
-              <rule filter=" &quot;Conduites - fonction_schema_visible&quot; = 'f'" key="{22390946-5234-435c-8bf2-7be55b84a15a}" symbol="14" label="Distribution"/>
-              <rule filter=" &quot;id_protection&quot; IS NOT NULL" key="{95ed8fa8-a419-4f37-82a1-fb975dcd930e}" symbol="15" label="protégée"/>
+              <rule filter=" &quot;Conduites - fonction_schema_visible&quot; = 't'" key="{f798c83b-a461-46c3-8031-8b5bc3caffd8}" symbol="13" label="Transport"/>
+              <rule filter=" &quot;Conduites - fonction_schema_visible&quot; = 'f'" key="{ca06b6f2-f1ee-4958-b79a-6cb6cbc2059b}" symbol="14" label="Distribution"/>
+              <rule filter=" &quot;id_protection&quot; IS NOT NULL" key="{6c5ec343-05d3-4fcd-8dc1-283232838086}" symbol="15" label="protégée"/>
             </rule>
             <rule scalemaxdenom="3000" filter="_schema_visible = 'f'" key="{2e14d53a-6d2f-40b3-bf3b-4f32112e3d59}" label="Détail">
-              <rule filter=" &quot;Conduites - fonction_schema_visible&quot; = 't'" key="{c501c26c-8506-4361-9b42-c607c56a3c60}" symbol="16" label="Transport"/>
-              <rule filter=" &quot;Conduites - fonction_schema_visible&quot; = 'f'" key="{28ec433f-60b2-4fef-96ac-b6bd7dcb3c8e}" symbol="17" label="Distribution"/>
-              <rule filter=" &quot;id_protection&quot; IS NOT NULL" key="{8de0fa7f-1963-45b3-a2dd-06c6a485be5b}" symbol="18" label="protégée"/>
+              <rule filter=" &quot;Conduites - fonction_schema_visible&quot; = 't'" key="{fb522923-eeee-47bb-8352-65a3d5637c4c}" symbol="16" label="Transport"/>
+              <rule filter=" &quot;Conduites - fonction_schema_visible&quot; = 'f'" key="{b8c5c345-6f26-4237-a405-a503b361b9da}" symbol="17" label="Distribution"/>
+              <rule filter=" &quot;id_protection&quot; IS NOT NULL" key="{65e92041-f079-42f0-80be-f3bedfbdcdac}" symbol="18" label="protégée"/>
             </rule>
           </rule>
           <rule checkstate="0" filter="id_distributor = 1 and &quot;Statut_active&quot; = 't' and &quot;_schema_visible&quot; = 't'" key="{9c210704-187e-4e2a-9b89-2f7917f4376c}" symbol="19" label="Couleur par zone"/>
@@ -16968,7 +16968,7 @@
           <widgetv2config OrderByValue="0" AllowNull="0" FilterExpression="" fieldEditable="1" Key="id" Layer="vl_pipe_installmethod20130304110005209" Value="value_fr" labelOnTop="0" AllowMulti="0"/>
         </edittype>
         <edittype widgetv2type="RelationReference" name="id_material">
-          <widgetv2config OrderByValue="0" fieldEditable="1" ShowForm="0" Relation="relation_pipe_material" ReadOnly="0" MapIdentification="0" labelOnTop="0" AllowNULL="0"/>
+          <widgetv2config OrderByValue="1" fieldEditable="1" ShowForm="0" Relation="relation_pipe_material" ReadOnly="0" MapIdentification="0" labelOnTop="0" AllowNULL="0"/>
         </edittype>
         <edittype widgetv2type="ValueRelation" name="id_distributor">
           <widgetv2config OrderByValue="0" AllowNull="0" FilterExpression="" fieldEditable="1" Key="id" Layer="distributor20130304114719702" Value="name" labelOnTop="0" AllowMulti="0"/>
