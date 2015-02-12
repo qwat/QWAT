@@ -134,12 +134,12 @@
         <customproperties/>
       </layer-tree-layer>
     </layer-tree-group>
-    <layer-tree-group expanded="0" checked="Qt::PartiallyChecked" name="cadastre sige">
+    <layer-tree-group expanded="1" checked="Qt::PartiallyChecked" name="cadastre sige">
       <customproperties/>
-      <layer-tree-layer expanded="1" checked="Qt::Unchecked" id="servitude20150109080436604" name="servitude ligne">
+      <layer-tree-layer expanded="0" checked="Qt::Checked" id="servitude20150109080436604" name="servitude ligne">
         <customproperties/>
       </layer-tree-layer>
-      <layer-tree-layer expanded="1" checked="Qt::Unchecked" id="servitude20150109080436650" name="servitude polygone">
+      <layer-tree-layer expanded="0" checked="Qt::Checked" id="servitude20150109080436650" name="servitude polygone">
         <customproperties/>
       </layer-tree-layer>
       <layer-tree-layer expanded="1" checked="Qt::Unchecked" id="servitude_no_geom20150203154142407" name="servitude sans géom.">
@@ -890,15 +890,15 @@
         </filegroup>
       </legendlayer>
     </legendgroup>
-    <legendgroup open="false" checked="Qt::PartiallyChecked" name="cadastre sige">
-      <legendlayer drawingOrder="34" open="true" checked="Qt::Unchecked" name="servitude ligne" showFeatureCount="0">
-        <filegroup open="true" hidden="false">
-          <legendlayerfile isInOverview="0" layerid="servitude20150109080436604" visible="0"/>
+    <legendgroup open="true" checked="Qt::PartiallyChecked" name="cadastre sige">
+      <legendlayer drawingOrder="34" open="false" checked="Qt::Checked" name="servitude ligne" showFeatureCount="0">
+        <filegroup open="false" hidden="false">
+          <legendlayerfile isInOverview="0" layerid="servitude20150109080436604" visible="1"/>
         </filegroup>
       </legendlayer>
-      <legendlayer drawingOrder="35" open="true" checked="Qt::Unchecked" name="servitude polygone" showFeatureCount="0">
-        <filegroup open="true" hidden="false">
-          <legendlayerfile isInOverview="0" layerid="servitude20150109080436650" visible="0"/>
+      <legendlayer drawingOrder="35" open="false" checked="Qt::Checked" name="servitude polygone" showFeatureCount="0">
+        <filegroup open="false" hidden="false">
+          <legendlayerfile isInOverview="0" layerid="servitude20150109080436650" visible="1"/>
         </filegroup>
       </legendlayer>
       <legendlayer drawingOrder="95" open="true" checked="Qt::Unchecked" name="servitude sans géom." showFeatureCount="0">
@@ -29592,7 +29592,12 @@
           <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
         </edittype>
       </edittypes>
-      <renderer-v2 symbollevels="0" type="singleSymbol">
+      <renderer-v2 symbollevels="0" type="RuleRenderer">
+        <rules key="{f3ccdd35-7fd8-4b9f-b9f8-3350d86f1ea8}">
+          <rule filter="id_statut in (1,2,3,4)" key="{be8744b1-363c-49ad-8643-53626d1389cd}" symbol="0" label="à modifier"/>
+          <rule filter="id_statut = 5" key="{caeb8342-3456-4739-9f86-d9dc6a3f56bf}" symbol="1" label="à inscrire"/>
+          <rule filter="id_statut not in (1,2,3,4,5)" key="{9ee2fb69-7a7f-423d-969f-d613851f1801}" symbol="2" label="inscrites"/>
+        </rules>
         <symbols>
           <symbol alpha="1" type="line" name="0">
             <layer pass="0" class="SimpleLine" locked="0">
@@ -29602,9 +29607,47 @@
               <prop k="customdash_unit" v="MM"/>
               <prop k="draw_inside_polygon" v="0"/>
               <prop k="joinstyle" v="bevel"/>
+              <prop k="line_color" v="188,173,201,255"/>
+              <prop k="line_style" v="solid"/>
+              <prop k="line_width" v="1.4"/>
+              <prop k="line_width_unit" v="MM"/>
+              <prop k="offset" v="0"/>
+              <prop k="offset_map_unit_scale" v="0,0"/>
+              <prop k="offset_unit" v="MM"/>
+              <prop k="use_custom_dash" v="0"/>
+              <prop k="width_map_unit_scale" v="0,0"/>
+            </layer>
+          </symbol>
+          <symbol alpha="1" type="line" name="1">
+            <layer pass="0" class="SimpleLine" locked="0">
+              <prop k="capstyle" v="square"/>
+              <prop k="customdash" v="5;2"/>
+              <prop k="customdash_map_unit_scale" v="0,0"/>
+              <prop k="customdash_unit" v="MM"/>
+              <prop k="draw_inside_polygon" v="0"/>
+              <prop k="joinstyle" v="bevel"/>
+              <prop k="line_color" v="216,123,86,255"/>
+              <prop k="line_style" v="solid"/>
+              <prop k="line_width" v="1.4"/>
+              <prop k="line_width_unit" v="MM"/>
+              <prop k="offset" v="0"/>
+              <prop k="offset_map_unit_scale" v="0,0"/>
+              <prop k="offset_unit" v="MM"/>
+              <prop k="use_custom_dash" v="0"/>
+              <prop k="width_map_unit_scale" v="0,0"/>
+            </layer>
+          </symbol>
+          <symbol alpha="1" type="line" name="2">
+            <layer pass="0" class="SimpleLine" locked="0">
+              <prop k="capstyle" v="square"/>
+              <prop k="customdash" v="5;2"/>
+              <prop k="customdash_map_unit_scale" v="0,0"/>
+              <prop k="customdash_unit" v="MM"/>
+              <prop k="draw_inside_polygon" v="0"/>
+              <prop k="joinstyle" v="bevel"/>
               <prop k="line_color" v="230,209,50,255"/>
               <prop k="line_style" v="solid"/>
-              <prop k="line_width" v="1"/>
+              <prop k="line_width" v="1.4"/>
               <prop k="line_width_unit" v="MM"/>
               <prop k="offset" v="0"/>
               <prop k="offset_map_unit_scale" v="0,0"/>
@@ -29614,8 +29657,6 @@
             </layer>
           </symbol>
         </symbols>
-        <rotation/>
-        <sizescale scalemethod="area"/>
       </renderer-v2>
       <customproperties>
         <property key="labeling" value="pal"/>
@@ -29855,7 +29896,7 @@
         </edittype>
       </edittypes>
     </maplayer>
-    <maplayer minimumScale="0" maximumScale="1e+08" simplifyDrawingHints="0" minLabelScale="0" maxLabelScale="1e+08" simplifyDrawingTol="1" geometry="Polygon" simplifyMaxScale="1" type="vector" hasScaleBasedVisibilityFlag="0" simplifyLocal="1" scaleBasedLabelVisibilityFlag="0">
+    <maplayer minimumScale="-4.65661e-10" maximumScale="1e+08" simplifyDrawingHints="0" minLabelScale="0" maxLabelScale="1e+08" simplifyDrawingTol="1" geometry="Polygon" simplifyMaxScale="1" type="vector" hasScaleBasedVisibilityFlag="0" simplifyLocal="1" scaleBasedLabelVisibilityFlag="0">
       <id>servitude20150109080436650</id>
       <datasource>service='qWat' sslmode=disable key='id' srid=21781 type=MULTIPOLYGON table="cadastre"."servitude" (geometry_polygon) sql=</datasource>
       <title></title>
@@ -29942,17 +29983,52 @@
           <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
         </edittype>
       </edittypes>
-      <renderer-v2 symbollevels="0" type="singleSymbol">
+      <renderer-v2 symbollevels="0" type="RuleRenderer">
+        <rules key="{d9f59999-3adb-4dfe-b344-88abd048752c}">
+          <rule filter="id_statut in (1,2,3,4)" key="{de3a9131-1deb-46d7-857e-d8eda979e698}" symbol="0" label="à modifier"/>
+          <rule filter="id_statut = 5" key="{65f6c6eb-9819-40c9-b5e6-1bf740881f15}" symbol="1" label="à inscrire"/>
+          <rule filter="id_statut not in (1,2,3,4,5)" key="{44f33559-83ce-45d8-a765-d695c22c111e}" symbol="2" label="inscrites"/>
+        </rules>
         <symbols>
           <symbol alpha="1" type="fill" name="0">
             <layer pass="0" class="SimpleFill" locked="0">
               <prop k="border_width_map_unit_scale" v="0,0"/>
-              <prop k="color" v="230,209,50,172"/>
+              <prop k="color" v="188,173,201,255"/>
               <prop k="joinstyle" v="bevel"/>
               <prop k="offset" v="0,0"/>
               <prop k="offset_map_unit_scale" v="0,0"/>
               <prop k="offset_unit" v="MM"/>
-              <prop k="outline_color" v="176,160,38,255"/>
+              <prop k="outline_color" v="0,0,0,255"/>
+              <prop k="outline_style" v="solid"/>
+              <prop k="outline_width" v="0.26"/>
+              <prop k="outline_width_unit" v="MM"/>
+              <prop k="style" v="solid"/>
+            </layer>
+          </symbol>
+          <symbol alpha="1" type="fill" name="1">
+            <layer pass="0" class="SimpleFill" locked="0">
+              <prop k="border_width_map_unit_scale" v="0,0"/>
+              <prop k="color" v="216,123,86,255"/>
+              <prop k="joinstyle" v="bevel"/>
+              <prop k="offset" v="0,0"/>
+              <prop k="offset_map_unit_scale" v="0,0"/>
+              <prop k="offset_unit" v="MM"/>
+              <prop k="outline_color" v="0,0,0,255"/>
+              <prop k="outline_style" v="solid"/>
+              <prop k="outline_width" v="0.26"/>
+              <prop k="outline_width_unit" v="MM"/>
+              <prop k="style" v="solid"/>
+            </layer>
+          </symbol>
+          <symbol alpha="1" type="fill" name="2">
+            <layer pass="0" class="SimpleFill" locked="0">
+              <prop k="border_width_map_unit_scale" v="0,0"/>
+              <prop k="color" v="230,209,50,255"/>
+              <prop k="joinstyle" v="bevel"/>
+              <prop k="offset" v="0,0"/>
+              <prop k="offset_map_unit_scale" v="0,0"/>
+              <prop k="offset_unit" v="MM"/>
+              <prop k="outline_color" v="0,0,0,255"/>
               <prop k="outline_style" v="solid"/>
               <prop k="outline_width" v="0.26"/>
               <prop k="outline_width_unit" v="MM"/>
@@ -29960,8 +30036,6 @@
             </layer>
           </symbol>
         </symbols>
-        <rotation/>
-        <sizescale scalemethod="area"/>
       </renderer-v2>
       <customproperties>
         <property key="labeling" value="pal"/>
