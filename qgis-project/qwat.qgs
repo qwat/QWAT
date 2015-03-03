@@ -7,13 +7,13 @@
       <customproperties/>
       <layer-tree-group expanded="1" checked="Qt::PartiallyChecked" name="ouvrages">
         <customproperties/>
-        <layer-tree-layer expanded="0" checked="Qt::Checked" id="installation20130304110004938" name="ouvrage général">
+        <layer-tree-layer expanded="0" checked="Qt::Unchecked" id="installation20130304110004938" name="ouvrage général">
           <customproperties/>
         </layer-tree-layer>
         <layer-tree-layer expanded="0" checked="Qt::Unchecked" id="od_cover20141219115626229" name="couvercles">
           <customproperties/>
         </layer-tree-layer>
-        <layer-tree-group expanded="1" checked="Qt::Checked" name="détail">
+        <layer-tree-group expanded="0" checked="Qt::Checked" name="détail">
           <customproperties/>
           <layer-tree-layer expanded="0" checked="Qt::Checked" id="installation_tank20130304110005008" name="ouvrage - réservoirs">
             <customproperties/>
@@ -155,7 +155,7 @@
         <customproperties/>
       </layer-tree-layer>
     </layer-tree-group>
-    <layer-tree-group expanded="1" checked="Qt::PartiallyChecked" name="Zones">
+    <layer-tree-group expanded="0" checked="Qt::PartiallyChecked" name="Zones">
       <customproperties/>
       <layer-tree-layer expanded="0" checked="Qt::Unchecked" id="district20130304110004764" name="communes">
         <customproperties/>
@@ -348,10 +348,10 @@
   <mapcanvas>
     <units>meters</units>
     <extent>
-      <xmin>561993.17393805622123182</xmin>
-      <ymin>143964.54168333901907317</ymin>
-      <xmax>564813.87882839841768146</xmax>
-      <ymax>145881.29910717133316211</ymax>
+      <xmin>556009.2393431244418025</xmin>
+      <ymin>140208.41141599585535005</ymin>
+      <xmax>570289.05785048147663474</xmax>
+      <ymax>149911.99587414698908105</ymax>
     </extent>
     <rotation>0</rotation>
     <projections>1</projections>
@@ -629,9 +629,9 @@
   <legend updateDrawingOrder="false">
     <legendgroup open="true" checked="Qt::PartiallyChecked" name="Réseau">
       <legendgroup open="true" checked="Qt::PartiallyChecked" name="ouvrages">
-        <legendlayer drawingOrder="0" open="false" checked="Qt::Checked" name="ouvrage général" showFeatureCount="0">
+        <legendlayer drawingOrder="0" open="false" checked="Qt::Unchecked" name="ouvrage général" showFeatureCount="0">
           <filegroup open="false" hidden="false">
-            <legendlayerfile isInOverview="0" layerid="installation20130304110004938" visible="1"/>
+            <legendlayerfile isInOverview="0" layerid="installation20130304110004938" visible="0"/>
           </filegroup>
         </legendlayer>
         <legendlayer drawingOrder="1" open="false" checked="Qt::Unchecked" name="couvercles" showFeatureCount="0">
@@ -639,7 +639,7 @@
             <legendlayerfile isInOverview="0" layerid="od_cover20141219115626229" visible="0"/>
           </filegroup>
         </legendlayer>
-        <legendgroup open="true" checked="Qt::Checked" name="détail">
+        <legendgroup open="false" checked="Qt::Checked" name="détail">
           <legendlayer drawingOrder="2" open="false" checked="Qt::Checked" name="ouvrage - réservoirs" showFeatureCount="0">
             <filegroup open="false" hidden="false">
               <legendlayerfile isInOverview="0" layerid="installation_tank20130304110005008" visible="1"/>
@@ -842,7 +842,7 @@
         </filegroup>
       </legendlayer>
     </legendgroup>
-    <legendgroup open="true" checked="Qt::PartiallyChecked" name="Zones">
+    <legendgroup open="false" checked="Qt::PartiallyChecked" name="Zones">
       <legendlayer drawingOrder="39" open="false" checked="Qt::Unchecked" name="communes" showFeatureCount="0">
         <filegroup open="false" hidden="false">
           <legendlayerfile isInOverview="0" layerid="district20130304110004764" visible="0"/>
@@ -34354,7 +34354,7 @@
       </srs>
       <customproperties/>
       <provider encoding="System">postgres</provider>
-      <previewExpression></previewExpression>
+      <previewExpression>COALESCE("id", '&lt;NULL>')</previewExpression>
       <vectorjoins/>
       <expressionfields/>
       <map-layer-style-manager current="">
