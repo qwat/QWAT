@@ -348,10 +348,10 @@
   <mapcanvas>
     <units>meters</units>
     <extent>
-      <xmin>556009.2393431244418025</xmin>
-      <ymin>140208.41141599585535005</ymin>
-      <xmax>570289.05785048147663474</xmax>
-      <ymax>149911.99587414698908105</ymax>
+      <xmin>542275.66168725746683776</xmin>
+      <ymin>129340.78197567610186525</ymin>
+      <xmax>574405.25332901603542268</xmax>
+      <ymax>151173.84700654950574972</ymax>
     </extent>
     <rotation>0</rotation>
     <projections>1</projections>
@@ -551,8 +551,8 @@
       <item>od_node20140116161508743</item>
       <item>ouvrage_général_copy20141218102656671</item>
       <item>vw_pipe_schema20141208162900166</item>
-      <item>vw_pipe_schema_visibleitems20141127154708843</item>
       <item>vannes_copy20141127160745910</item>
+      <item>vw_pipe_schema_visibleitems20141127154708843</item>
       <item>pipe_child_parent20130417092030507</item>
       <item>od_annotationline20131203095020365</item>
       <item>od_annotationpoint20131203095020392</item>
@@ -760,12 +760,12 @@
           <legendlayerfile isInOverview="0" layerid="vw_pipe_schema20141208162900166" visible="0"/>
         </filegroup>
       </legendlayer>
-      <legendlayer drawingOrder="24" open="true" checked="Qt::Unchecked" name="conduites edition 5000" showFeatureCount="0">
+      <legendlayer drawingOrder="25" open="true" checked="Qt::Unchecked" name="conduites edition 5000" showFeatureCount="0">
         <filegroup open="true" hidden="false">
           <legendlayerfile isInOverview="0" layerid="vw_pipe_schema_visibleitems20141127154708843" visible="0"/>
         </filegroup>
       </legendlayer>
-      <legendlayer drawingOrder="25" open="false" checked="Qt::Unchecked" name="vannes 5000" showFeatureCount="0">
+      <legendlayer drawingOrder="24" open="false" checked="Qt::Unchecked" name="vannes 5000" showFeatureCount="0">
         <filegroup open="false" hidden="false">
           <legendlayerfile isInOverview="0" layerid="vannes_copy20141127160745910" visible="0"/>
         </filegroup>
@@ -32187,7 +32187,7 @@
         </edittype>
       </edittypes>
     </maplayer>
-    <maplayer minimumScale="-4.65661e-10" maximumScale="1e+08" simplifyDrawingHints="0" minLabelScale="1" maxLabelScale="1e+08" simplifyDrawingTol="1" geometry="Point" simplifyMaxScale="1" type="vector" hasScaleBasedVisibilityFlag="0" simplifyLocal="1" scaleBasedLabelVisibilityFlag="0">
+    <maplayer minimumScale="0" maximumScale="1e+08" simplifyDrawingHints="0" minLabelScale="1" maxLabelScale="1e+08" simplifyDrawingTol="1" geometry="Point" simplifyMaxScale="1" type="vector" hasScaleBasedVisibilityFlag="0" simplifyLocal="1" scaleBasedLabelVisibilityFlag="0">
       <id>vannes_copy20141127160745910</id>
       <datasource>service='qWat' sslmode=allow key='id' srid=21781 type=POINT table="qwat_od"."valve" (geometry_alt2) sql=</datasource>
       <title></title>
@@ -32318,8 +32318,8 @@
         <edittype widgetv2type="TextEdit" name="label_1_text">
           <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
         </edittype>
-        <edittype widgetv2type="TextEdit" name="label_2_visible">
-          <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
+        <edittype widgetv2type="ValueRelation" name="label_2_visible">
+          <widgetv2config OrderByValue="0" AllowNull="0" FilterExpression="" fieldEditable="1" Key="vl_code_int" Layer="vl_visible20130304110011703" Value="value_fr" labelOnTop="0" AllowMulti="0"/>
         </edittype>
         <edittype widgetv2type="TextEdit" name="label_2_x">
           <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
@@ -32799,8 +32799,8 @@
         <edittype widgetv2type="TextEdit" name="label_1_text">
           <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
         </edittype>
-        <edittype widgetv2type="TextEdit" name="label_2_visible">
-          <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
+        <edittype widgetv2type="ValueRelation" name="label_2_visible">
+          <widgetv2config OrderByValue="0" AllowNull="0" FilterExpression="" fieldEditable="1" Key="vl_code_int" Layer="vl_visible20130304110011703" Value="value_fr" labelOnTop="0" AllowMulti="0"/>
         </edittype>
         <edittype widgetv2type="TextEdit" name="label_2_x">
           <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
