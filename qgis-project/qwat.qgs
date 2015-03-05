@@ -89,18 +89,18 @@
         </layer-tree-layer>
       </layer-tree-group>
     </layer-tree-group>
-    <layer-tree-group expanded="1" checked="Qt::Unchecked" name="Schématique">
+    <layer-tree-group expanded="0" checked="Qt::Unchecked" name="Schématique">
       <customproperties/>
       <layer-tree-layer expanded="0" checked="Qt::Unchecked" id="ouvrage_général_copy20141218102656671" name="ouvrage 5000">
         <customproperties/>
       </layer-tree-layer>
-      <layer-tree-group expanded="1" checked="Qt::Unchecked" name="impression">
+      <layer-tree-group expanded="0" checked="Qt::Unchecked" name="impression">
         <customproperties/>
         <layer-tree-layer expanded="0" checked="Qt::Unchecked" id="vw_pipe_schema20141208162900166" name="conduite impression 5000">
           <customproperties/>
         </layer-tree-layer>
       </layer-tree-group>
-      <layer-tree-group expanded="1" checked="Qt::Unchecked" name="edition">
+      <layer-tree-group expanded="0" checked="Qt::Unchecked" name="edition">
         <customproperties/>
         <layer-tree-layer expanded="0" checked="Qt::Unchecked" id="vannes_copy20141127160745910" name="vannes edition 5000">
           <customproperties/>
@@ -354,10 +354,10 @@
   <mapcanvas>
     <units>meters</units>
     <extent>
-      <xmin>555531.58859415864571929</xmin>
-      <ymin>136995.5886488426476717</ymin>
-      <xmax>555580.41936187585815787</xmax>
-      <ymax>137029.51897792593808845</ymax>
+      <xmin>555516.17137009953148663</xmin>
+      <ymin>136989.10886173183098435</ymin>
+      <xmax>555589.41752167535014451</xmax>
+      <ymax>137040.00435535679571331</ymax>
     </extent>
     <rotation>0</rotation>
     <projections>1</projections>
@@ -755,20 +755,20 @@
         </legendlayer>
       </legendgroup>
     </legendgroup>
-    <legendgroup open="true" checked="Qt::Unchecked" name="Schématique">
+    <legendgroup open="false" checked="Qt::Unchecked" name="Schématique">
       <legendlayer drawingOrder="22" open="false" checked="Qt::Unchecked" name="ouvrage 5000" showFeatureCount="0">
         <filegroup open="false" hidden="false">
           <legendlayerfile isInOverview="0" layerid="ouvrage_général_copy20141218102656671" visible="0"/>
         </filegroup>
       </legendlayer>
-      <legendgroup open="true" checked="Qt::Unchecked" name="impression">
+      <legendgroup open="false" checked="Qt::Unchecked" name="impression">
         <legendlayer drawingOrder="24" open="false" checked="Qt::Unchecked" name="conduite impression 5000" showFeatureCount="0">
           <filegroup open="false" hidden="false">
             <legendlayerfile isInOverview="0" layerid="vw_pipe_schema20141208162900166" visible="0"/>
           </filegroup>
         </legendlayer>
       </legendgroup>
-      <legendgroup open="true" checked="Qt::Unchecked" name="edition">
+      <legendgroup open="false" checked="Qt::Unchecked" name="edition">
         <legendlayer drawingOrder="23" open="false" checked="Qt::Unchecked" name="vannes edition 5000" showFeatureCount="0">
           <filegroup open="false" hidden="false">
             <legendlayerfile isInOverview="0" layerid="vannes_copy20141127160745910" visible="0"/>
@@ -35648,7 +35648,7 @@
         </edittype>
       </edittypes>
     </maplayer>
-    <maplayer minimumScale="-4.65661e-10" maximumScale="1e+08" simplifyDrawingHints="0" minLabelScale="0" maxLabelScale="1e+08" simplifyDrawingTol="1" geometry="Line" simplifyMaxScale="1" type="vector" hasScaleBasedVisibilityFlag="0" simplifyLocal="1" scaleBasedLabelVisibilityFlag="0">
+    <maplayer minimumScale="0" maximumScale="1e+08" simplifyDrawingHints="0" minLabelScale="0" maxLabelScale="1e+08" simplifyDrawingTol="1" geometry="Line" simplifyMaxScale="1" type="vector" hasScaleBasedVisibilityFlag="0" simplifyLocal="1" scaleBasedLabelVisibilityFlag="0">
       <id>vw_pipe_schema_visibleitems20141127154708843</id>
       <datasource>service='qWat' sslmode=disable key='id' srid=21781 type=LINESTRING table="qwat_od"."vw_pipe_schema_visibleitems" (geometry) sql=</datasource>
       <title></title>
@@ -35670,7 +35670,7 @@
         </spatialrefsys>
       </srs>
       <provider encoding="UTF-8">postgres</provider>
-      <previewExpression>id_parent</previewExpression>
+      <previewExpression>id</previewExpression>
       <vectorjoins>
         <join hasCustomPrefix="1" joinFieldName="id" customPrefix="material_" targetFieldName="id_material" memoryCache="1" joinLayerId="vl_pipe_material20130304110005230"/>
       </vectorjoins>
