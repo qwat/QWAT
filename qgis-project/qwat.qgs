@@ -17905,7 +17905,7 @@
         </edittype>
       </edittypes>
     </maplayer>
-    <maplayer minimumScale="-4.65661e-10" maximumScale="1e+08" simplifyDrawingHints="0" minLabelScale="0" maxLabelScale="1e+08" simplifyDrawingTol="1" geometry="Line" simplifyMaxScale="1" type="vector" hasScaleBasedVisibilityFlag="0" simplifyLocal="1" scaleBasedLabelVisibilityFlag="0">
+    <maplayer minimumScale="0" maximumScale="1e+08" simplifyDrawingHints="0" minLabelScale="0" maxLabelScale="1e+08" simplifyDrawingTol="1" geometry="Line" simplifyMaxScale="1" type="vector" hasScaleBasedVisibilityFlag="0" simplifyLocal="1" scaleBasedLabelVisibilityFlag="0">
       <id>conduites_copy20130709141244955</id>
       <datasource>service='qWat' sslmode=disable key='id' srid=21781 type=LINESTRING table="qwat_od"."pipe" (geometry) sql=</datasource>
       <title></title>
@@ -17929,14 +17929,49 @@
       <provider encoding="System">postgres</provider>
       <previewExpression>id</previewExpression>
       <vectorjoins>
-        <join hasCustomPrefix="1" joinFieldName="id" customPrefix="pipe_material_" targetFieldName="id_material" memoryCache="1" joinLayerId="vl_pipe_material20130304110005230"/>
-        <join hasCustomPrefix="1" joinFieldName="id" customPrefix="status_" targetFieldName="id_status" memoryCache="1" joinLayerId="vl_status20130304110011436"/>
-        <join hasCustomPrefix="1" joinFieldName="id" customPrefix="pipe_function_" targetFieldName="id_function" memoryCache="1" joinLayerId="vl_pipe_function20130304110005186"/>
-        <join hasCustomPrefix="1" joinFieldName="id" customPrefix="pipe_protection_" targetFieldName="id_protection" memoryCache="1" joinLayerId="vl_pipe_protection20130304110005258"/>
+        <join hasCustomPrefix="1" joinFieldName="id" customPrefix="pipe_function_" targetFieldName="id_function" memoryCache="1" joinLayerId="vl_pipe_function20130304110005186">
+          <joinFieldsSubset>
+            <field name="value_fr"/>
+            <field name="value_en"/>
+            <field name="value_ro"/>
+            <field name="schema_visible"/>
+            <field name="major"/>
+          </joinFieldsSubset>
+        </join>
+        <join hasCustomPrefix="1" joinFieldName="id" customPrefix="pipe_protection_" targetFieldName="id_protection" memoryCache="1" joinLayerId="vl_pipe_protection20130304110005258">
+          <joinFieldsSubset>
+            <field name="value_en"/>
+            <field name="value_fr"/>
+            <field name="value_ro"/>
+          </joinFieldsSubset>
+        </join>
         <join hasCustomPrefix="1" joinFieldName="id" customPrefix="pressurezone_" targetFieldName="id_pressurezone" memoryCache="1" joinLayerId="pressurezone20130417133612105">
           <joinFieldsSubset>
             <field name="name"/>
             <field name="colorcode"/>
+          </joinFieldsSubset>
+        </join>
+        <join hasCustomPrefix="1" joinFieldName="id" customPrefix="status_" targetFieldName="id_status" memoryCache="1" joinLayerId="vl_status20130304110011436">
+          <joinFieldsSubset>
+            <field name="value_en"/>
+            <field name="value_fr"/>
+            <field name="value_ro"/>
+            <field name="active"/>
+          </joinFieldsSubset>
+        </join>
+        <join hasCustomPrefix="1" joinFieldName="id" customPrefix="pipe_material_" targetFieldName="id_material" memoryCache="1" joinLayerId="vl_pipe_material20130304110005230">
+          <joinFieldsSubset>
+            <field name="short_fr"/>
+            <field name="value_fr"/>
+            <field name="_displayname_fr"/>
+            <field name="short_en"/>
+            <field name="value_en"/>
+            <field name="_displayname_en"/>
+            <field name="short_ro"/>
+            <field name="value_ro"/>
+            <field name="_displayname_ro"/>
+            <field name="diameter"/>
+            <field name="diameter_nominal"/>
           </joinFieldsSubset>
         </join>
       </vectorjoins>
@@ -18059,7 +18094,46 @@
         <edittype widgetv2type="TextEdit" name="geometry_alt2">
           <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
         </edittype>
-        <edittype widgetv2type="TextEdit" name="pipe_material_vl_active">
+        <edittype widgetv2type="TextEdit" name="pipe_function_value_fr">
+          <widgetv2config IsMultiline="0" fieldEditable="0" UseHtml="0" labelOnTop="0"/>
+        </edittype>
+        <edittype widgetv2type="TextEdit" name="pipe_function_value_en">
+          <widgetv2config IsMultiline="0" fieldEditable="0" UseHtml="0" labelOnTop="0"/>
+        </edittype>
+        <edittype widgetv2type="TextEdit" name="pipe_function_value_ro">
+          <widgetv2config IsMultiline="0" fieldEditable="0" UseHtml="0" labelOnTop="0"/>
+        </edittype>
+        <edittype widgetv2type="TextEdit" name="pipe_function_schema_visible">
+          <widgetv2config IsMultiline="0" fieldEditable="0" UseHtml="0" labelOnTop="0"/>
+        </edittype>
+        <edittype widgetv2type="TextEdit" name="pipe_function_major">
+          <widgetv2config IsMultiline="0" fieldEditable="0" UseHtml="0" labelOnTop="0"/>
+        </edittype>
+        <edittype widgetv2type="TextEdit" name="pipe_protection_value_en">
+          <widgetv2config IsMultiline="0" fieldEditable="0" UseHtml="0" labelOnTop="0"/>
+        </edittype>
+        <edittype widgetv2type="TextEdit" name="pipe_protection_value_fr">
+          <widgetv2config IsMultiline="0" fieldEditable="0" UseHtml="0" labelOnTop="0"/>
+        </edittype>
+        <edittype widgetv2type="TextEdit" name="pipe_protection_value_ro">
+          <widgetv2config IsMultiline="0" fieldEditable="0" UseHtml="0" labelOnTop="0"/>
+        </edittype>
+        <edittype widgetv2type="TextEdit" name="pressurezone_name">
+          <widgetv2config IsMultiline="0" fieldEditable="0" UseHtml="0" labelOnTop="0"/>
+        </edittype>
+        <edittype widgetv2type="TextEdit" name="pressurezone_colorcode">
+          <widgetv2config IsMultiline="0" fieldEditable="0" UseHtml="0" labelOnTop="0"/>
+        </edittype>
+        <edittype widgetv2type="TextEdit" name="status_value_en">
+          <widgetv2config IsMultiline="0" fieldEditable="0" UseHtml="0" labelOnTop="0"/>
+        </edittype>
+        <edittype widgetv2type="TextEdit" name="status_value_fr">
+          <widgetv2config IsMultiline="0" fieldEditable="0" UseHtml="0" labelOnTop="0"/>
+        </edittype>
+        <edittype widgetv2type="TextEdit" name="status_value_ro">
+          <widgetv2config IsMultiline="0" fieldEditable="0" UseHtml="0" labelOnTop="0"/>
+        </edittype>
+        <edittype widgetv2type="TextEdit" name="status_active">
           <widgetv2config IsMultiline="0" fieldEditable="0" UseHtml="0" labelOnTop="0"/>
         </edittype>
         <edittype widgetv2type="TextEdit" name="pipe_material_short_fr">
@@ -18093,90 +18167,6 @@
           <widgetv2config IsMultiline="0" fieldEditable="0" UseHtml="0" labelOnTop="0"/>
         </edittype>
         <edittype widgetv2type="TextEdit" name="pipe_material_diameter_nominal">
-          <widgetv2config IsMultiline="0" fieldEditable="0" UseHtml="0" labelOnTop="0"/>
-        </edittype>
-        <edittype widgetv2type="TextEdit" name="pipe_material_diameter_internal">
-          <widgetv2config IsMultiline="0" fieldEditable="0" UseHtml="0" labelOnTop="0"/>
-        </edittype>
-        <edittype widgetv2type="TextEdit" name="pipe_material_diameter_external">
-          <widgetv2config IsMultiline="0" fieldEditable="0" UseHtml="0" labelOnTop="0"/>
-        </edittype>
-        <edittype widgetv2type="TextEdit" name="pipe_material_code_sire">
-          <widgetv2config IsMultiline="0" fieldEditable="0" UseHtml="0" labelOnTop="0"/>
-        </edittype>
-        <edittype widgetv2type="TextEdit" name="pipe_material_pressure_nominal">
-          <widgetv2config IsMultiline="0" fieldEditable="0" UseHtml="0" labelOnTop="0"/>
-        </edittype>
-        <edittype widgetv2type="TextEdit" name="pipe_material_sdr">
-          <widgetv2config IsMultiline="0" fieldEditable="0" UseHtml="0" labelOnTop="0"/>
-        </edittype>
-        <edittype widgetv2type="TextEdit" name="pipe_material_wall_thickness">
-          <widgetv2config IsMultiline="0" fieldEditable="0" UseHtml="0" labelOnTop="0"/>
-        </edittype>
-        <edittype widgetv2type="TextEdit" name="status_vl_active">
-          <widgetv2config IsMultiline="0" fieldEditable="0" UseHtml="0" labelOnTop="0"/>
-        </edittype>
-        <edittype widgetv2type="TextEdit" name="status_value_en">
-          <widgetv2config IsMultiline="0" fieldEditable="0" UseHtml="0" labelOnTop="0"/>
-        </edittype>
-        <edittype widgetv2type="TextEdit" name="status_value_fr">
-          <widgetv2config IsMultiline="0" fieldEditable="0" UseHtml="0" labelOnTop="0"/>
-        </edittype>
-        <edittype widgetv2type="TextEdit" name="status_value_ro">
-          <widgetv2config IsMultiline="0" fieldEditable="0" UseHtml="0" labelOnTop="0"/>
-        </edittype>
-        <edittype widgetv2type="TextEdit" name="status_active">
-          <widgetv2config IsMultiline="0" fieldEditable="0" UseHtml="0" labelOnTop="0"/>
-        </edittype>
-        <edittype widgetv2type="TextEdit" name="status_sire">
-          <widgetv2config IsMultiline="0" fieldEditable="0" UseHtml="0" labelOnTop="0"/>
-        </edittype>
-        <edittype widgetv2type="TextEdit" name="status_helper_en">
-          <widgetv2config IsMultiline="0" fieldEditable="0" UseHtml="0" labelOnTop="0"/>
-        </edittype>
-        <edittype widgetv2type="TextEdit" name="status_helper_fr">
-          <widgetv2config IsMultiline="0" fieldEditable="0" UseHtml="0" labelOnTop="0"/>
-        </edittype>
-        <edittype widgetv2type="TextEdit" name="status_helper_ro">
-          <widgetv2config IsMultiline="0" fieldEditable="0" UseHtml="0" labelOnTop="0"/>
-        </edittype>
-        <edittype widgetv2type="TextEdit" name="pipe_function_vl_active">
-          <widgetv2config IsMultiline="0" fieldEditable="0" UseHtml="0" labelOnTop="0"/>
-        </edittype>
-        <edittype widgetv2type="TextEdit" name="pipe_function_value_fr">
-          <widgetv2config IsMultiline="0" fieldEditable="0" UseHtml="0" labelOnTop="0"/>
-        </edittype>
-        <edittype widgetv2type="TextEdit" name="pipe_function_value_en">
-          <widgetv2config IsMultiline="0" fieldEditable="0" UseHtml="0" labelOnTop="0"/>
-        </edittype>
-        <edittype widgetv2type="TextEdit" name="pipe_function_value_ro">
-          <widgetv2config IsMultiline="0" fieldEditable="0" UseHtml="0" labelOnTop="0"/>
-        </edittype>
-        <edittype widgetv2type="TextEdit" name="pipe_function_schema_visible">
-          <widgetv2config IsMultiline="0" fieldEditable="0" UseHtml="0" labelOnTop="0"/>
-        </edittype>
-        <edittype widgetv2type="TextEdit" name="pipe_function_code_sire">
-          <widgetv2config IsMultiline="0" fieldEditable="0" UseHtml="0" labelOnTop="0"/>
-        </edittype>
-        <edittype widgetv2type="TextEdit" name="pipe_function_major">
-          <widgetv2config IsMultiline="0" fieldEditable="0" UseHtml="0" labelOnTop="0"/>
-        </edittype>
-        <edittype widgetv2type="TextEdit" name="pipe_protection_vl_active">
-          <widgetv2config IsMultiline="0" fieldEditable="0" UseHtml="0" labelOnTop="0"/>
-        </edittype>
-        <edittype widgetv2type="TextEdit" name="pipe_protection_value_en">
-          <widgetv2config IsMultiline="0" fieldEditable="0" UseHtml="0" labelOnTop="0"/>
-        </edittype>
-        <edittype widgetv2type="TextEdit" name="pipe_protection_value_fr">
-          <widgetv2config IsMultiline="0" fieldEditable="0" UseHtml="0" labelOnTop="0"/>
-        </edittype>
-        <edittype widgetv2type="TextEdit" name="pipe_protection_value_ro">
-          <widgetv2config IsMultiline="0" fieldEditable="0" UseHtml="0" labelOnTop="0"/>
-        </edittype>
-        <edittype widgetv2type="TextEdit" name="pressurezone_name">
-          <widgetv2config IsMultiline="0" fieldEditable="0" UseHtml="0" labelOnTop="0"/>
-        </edittype>
-        <edittype widgetv2type="TextEdit" name="pressurezone_colorcode">
           <widgetv2config IsMultiline="0" fieldEditable="0" UseHtml="0" labelOnTop="0"/>
         </edittype>
       </edittypes>
@@ -18640,7 +18630,7 @@
         <property key="labeling/distMapUnitMaxScale" value="0"/>
         <property key="labeling/distMapUnitMinScale" value="0"/>
         <property key="labeling/enabled" value="true"/>
-        <property key="labeling/fieldName" value=" replace( &quot;pipe_material_short_fr&quot;||' ','Inconnu ','')||&#xa; &quot;pipe_material_diameter&quot;||&#xa; CASE &#xa;WHEN  $scale  &lt; 1000 AND &quot;year&quot; IS NOT NULL  AND  $length > 8 THEN '\n' ||&quot;year&quot;&#xa;WHEN  $scale  >= 1000 AND &quot;year&quot; IS NOT NULL  THEN ' ' ||&quot;year&quot;&#xa; ELSE ''&#xa; END&#xa;||&#xa;CASE&#xa;WHEN  $scale  &lt;= 3000 AND  &quot;pipe_protection_value_fr&quot;  IS NOT NULL  THEN '\n' || &quot;pipe_protection_value_fr&quot; &#xa; ELSE '' &#xa;END&#xa;||&#xa;CASE&#xa;WHEN  $scale  &lt;= 6000 AND &quot;label_1_text&quot; IS NOT NULL  THEN ' ' ||&quot;label_1_text&quot;&#xa; ELSE '' &#xa;END"/>
+        <property key="labeling/fieldName" value=""/>
         <property key="labeling/fontBold" value="false"/>
         <property key="labeling/fontCapitals" value="0"/>
         <property key="labeling/fontFamily" value="Arial"/>
@@ -18909,7 +18899,46 @@
         <edittype widgetv2type="TextEdit" name="geometry_alt2">
           <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
         </edittype>
-        <edittype widgetv2type="TextEdit" name="pipe_material_vl_active">
+        <edittype widgetv2type="TextEdit" name="pipe_function_value_fr">
+          <widgetv2config IsMultiline="0" fieldEditable="0" UseHtml="0" labelOnTop="0"/>
+        </edittype>
+        <edittype widgetv2type="TextEdit" name="pipe_function_value_en">
+          <widgetv2config IsMultiline="0" fieldEditable="0" UseHtml="0" labelOnTop="0"/>
+        </edittype>
+        <edittype widgetv2type="TextEdit" name="pipe_function_value_ro">
+          <widgetv2config IsMultiline="0" fieldEditable="0" UseHtml="0" labelOnTop="0"/>
+        </edittype>
+        <edittype widgetv2type="TextEdit" name="pipe_function_schema_visible">
+          <widgetv2config IsMultiline="0" fieldEditable="0" UseHtml="0" labelOnTop="0"/>
+        </edittype>
+        <edittype widgetv2type="TextEdit" name="pipe_function_major">
+          <widgetv2config IsMultiline="0" fieldEditable="0" UseHtml="0" labelOnTop="0"/>
+        </edittype>
+        <edittype widgetv2type="TextEdit" name="pipe_protection_value_en">
+          <widgetv2config IsMultiline="0" fieldEditable="0" UseHtml="0" labelOnTop="0"/>
+        </edittype>
+        <edittype widgetv2type="TextEdit" name="pipe_protection_value_fr">
+          <widgetv2config IsMultiline="0" fieldEditable="0" UseHtml="0" labelOnTop="0"/>
+        </edittype>
+        <edittype widgetv2type="TextEdit" name="pipe_protection_value_ro">
+          <widgetv2config IsMultiline="0" fieldEditable="0" UseHtml="0" labelOnTop="0"/>
+        </edittype>
+        <edittype widgetv2type="TextEdit" name="pressurezone_name">
+          <widgetv2config IsMultiline="0" fieldEditable="0" UseHtml="0" labelOnTop="0"/>
+        </edittype>
+        <edittype widgetv2type="TextEdit" name="pressurezone_colorcode">
+          <widgetv2config IsMultiline="0" fieldEditable="0" UseHtml="0" labelOnTop="0"/>
+        </edittype>
+        <edittype widgetv2type="TextEdit" name="status_value_en">
+          <widgetv2config IsMultiline="0" fieldEditable="0" UseHtml="0" labelOnTop="0"/>
+        </edittype>
+        <edittype widgetv2type="TextEdit" name="status_value_fr">
+          <widgetv2config IsMultiline="0" fieldEditable="0" UseHtml="0" labelOnTop="0"/>
+        </edittype>
+        <edittype widgetv2type="TextEdit" name="status_value_ro">
+          <widgetv2config IsMultiline="0" fieldEditable="0" UseHtml="0" labelOnTop="0"/>
+        </edittype>
+        <edittype widgetv2type="TextEdit" name="status_active">
           <widgetv2config IsMultiline="0" fieldEditable="0" UseHtml="0" labelOnTop="0"/>
         </edittype>
         <edittype widgetv2type="TextEdit" name="pipe_material_short_fr">
@@ -18943,90 +18972,6 @@
           <widgetv2config IsMultiline="0" fieldEditable="0" UseHtml="0" labelOnTop="0"/>
         </edittype>
         <edittype widgetv2type="TextEdit" name="pipe_material_diameter_nominal">
-          <widgetv2config IsMultiline="0" fieldEditable="0" UseHtml="0" labelOnTop="0"/>
-        </edittype>
-        <edittype widgetv2type="TextEdit" name="pipe_material_diameter_internal">
-          <widgetv2config IsMultiline="0" fieldEditable="0" UseHtml="0" labelOnTop="0"/>
-        </edittype>
-        <edittype widgetv2type="TextEdit" name="pipe_material_diameter_external">
-          <widgetv2config IsMultiline="0" fieldEditable="0" UseHtml="0" labelOnTop="0"/>
-        </edittype>
-        <edittype widgetv2type="TextEdit" name="pipe_material_code_sire">
-          <widgetv2config IsMultiline="0" fieldEditable="0" UseHtml="0" labelOnTop="0"/>
-        </edittype>
-        <edittype widgetv2type="TextEdit" name="pipe_material_pressure_nominal">
-          <widgetv2config IsMultiline="0" fieldEditable="0" UseHtml="0" labelOnTop="0"/>
-        </edittype>
-        <edittype widgetv2type="TextEdit" name="pipe_material_sdr">
-          <widgetv2config IsMultiline="0" fieldEditable="0" UseHtml="0" labelOnTop="0"/>
-        </edittype>
-        <edittype widgetv2type="TextEdit" name="pipe_material_wall_thickness">
-          <widgetv2config IsMultiline="0" fieldEditable="0" UseHtml="0" labelOnTop="0"/>
-        </edittype>
-        <edittype widgetv2type="TextEdit" name="status_vl_active">
-          <widgetv2config IsMultiline="0" fieldEditable="0" UseHtml="0" labelOnTop="0"/>
-        </edittype>
-        <edittype widgetv2type="TextEdit" name="status_value_en">
-          <widgetv2config IsMultiline="0" fieldEditable="0" UseHtml="0" labelOnTop="0"/>
-        </edittype>
-        <edittype widgetv2type="TextEdit" name="status_value_fr">
-          <widgetv2config IsMultiline="0" fieldEditable="0" UseHtml="0" labelOnTop="0"/>
-        </edittype>
-        <edittype widgetv2type="TextEdit" name="status_value_ro">
-          <widgetv2config IsMultiline="0" fieldEditable="0" UseHtml="0" labelOnTop="0"/>
-        </edittype>
-        <edittype widgetv2type="TextEdit" name="status_active">
-          <widgetv2config IsMultiline="0" fieldEditable="0" UseHtml="0" labelOnTop="0"/>
-        </edittype>
-        <edittype widgetv2type="TextEdit" name="status_sire">
-          <widgetv2config IsMultiline="0" fieldEditable="0" UseHtml="0" labelOnTop="0"/>
-        </edittype>
-        <edittype widgetv2type="TextEdit" name="status_helper_en">
-          <widgetv2config IsMultiline="0" fieldEditable="0" UseHtml="0" labelOnTop="0"/>
-        </edittype>
-        <edittype widgetv2type="TextEdit" name="status_helper_fr">
-          <widgetv2config IsMultiline="0" fieldEditable="0" UseHtml="0" labelOnTop="0"/>
-        </edittype>
-        <edittype widgetv2type="TextEdit" name="status_helper_ro">
-          <widgetv2config IsMultiline="0" fieldEditable="0" UseHtml="0" labelOnTop="0"/>
-        </edittype>
-        <edittype widgetv2type="TextEdit" name="pipe_function_vl_active">
-          <widgetv2config IsMultiline="0" fieldEditable="0" UseHtml="0" labelOnTop="0"/>
-        </edittype>
-        <edittype widgetv2type="TextEdit" name="pipe_function_value_fr">
-          <widgetv2config IsMultiline="0" fieldEditable="0" UseHtml="0" labelOnTop="0"/>
-        </edittype>
-        <edittype widgetv2type="TextEdit" name="pipe_function_value_en">
-          <widgetv2config IsMultiline="0" fieldEditable="0" UseHtml="0" labelOnTop="0"/>
-        </edittype>
-        <edittype widgetv2type="TextEdit" name="pipe_function_value_ro">
-          <widgetv2config IsMultiline="0" fieldEditable="0" UseHtml="0" labelOnTop="0"/>
-        </edittype>
-        <edittype widgetv2type="TextEdit" name="pipe_function_schema_visible">
-          <widgetv2config IsMultiline="0" fieldEditable="0" UseHtml="0" labelOnTop="0"/>
-        </edittype>
-        <edittype widgetv2type="TextEdit" name="pipe_function_code_sire">
-          <widgetv2config IsMultiline="0" fieldEditable="0" UseHtml="0" labelOnTop="0"/>
-        </edittype>
-        <edittype widgetv2type="TextEdit" name="pipe_function_major">
-          <widgetv2config IsMultiline="0" fieldEditable="0" UseHtml="0" labelOnTop="0"/>
-        </edittype>
-        <edittype widgetv2type="TextEdit" name="pipe_protection_vl_active">
-          <widgetv2config IsMultiline="0" fieldEditable="0" UseHtml="0" labelOnTop="0"/>
-        </edittype>
-        <edittype widgetv2type="TextEdit" name="pipe_protection_value_en">
-          <widgetv2config IsMultiline="0" fieldEditable="0" UseHtml="0" labelOnTop="0"/>
-        </edittype>
-        <edittype widgetv2type="TextEdit" name="pipe_protection_value_fr">
-          <widgetv2config IsMultiline="0" fieldEditable="0" UseHtml="0" labelOnTop="0"/>
-        </edittype>
-        <edittype widgetv2type="TextEdit" name="pipe_protection_value_ro">
-          <widgetv2config IsMultiline="0" fieldEditable="0" UseHtml="0" labelOnTop="0"/>
-        </edittype>
-        <edittype widgetv2type="TextEdit" name="pressurezone_name">
-          <widgetv2config IsMultiline="0" fieldEditable="0" UseHtml="0" labelOnTop="0"/>
-        </edittype>
-        <edittype widgetv2type="TextEdit" name="pressurezone_colorcode">
           <widgetv2config IsMultiline="0" fieldEditable="0" UseHtml="0" labelOnTop="0"/>
         </edittype>
       </edittypes>
