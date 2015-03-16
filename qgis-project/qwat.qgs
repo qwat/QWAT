@@ -33272,7 +33272,7 @@
         </edittype>
       </edittypes>
     </maplayer>
-    <maplayer minimumScale="-4.65661e-10" maximumScale="10001" simplifyDrawingHints="0" minLabelScale="1" maxLabelScale="1e+08" simplifyDrawingTol="1" geometry="Point" simplifyMaxScale="1" type="vector" hasScaleBasedVisibilityFlag="1" simplifyLocal="1" scaleBasedLabelVisibilityFlag="0">
+    <maplayer minimumScale="0" maximumScale="10001" simplifyDrawingHints="0" minLabelScale="1" maxLabelScale="1e+08" simplifyDrawingTol="1" geometry="Point" simplifyMaxScale="1" type="vector" hasScaleBasedVisibilityFlag="1" simplifyLocal="1" scaleBasedLabelVisibilityFlag="0">
       <id>valve20130304110011497</id>
       <datasource>service='qWat' sslmode=allow key='id' srid=21781 type=POINT table="qwat_od"."valve" (geometry) sql=</datasource>
       <title></title>
@@ -33702,7 +33702,7 @@
         <property key="labeling/distMapUnitMaxScale" value="0"/>
         <property key="labeling/distMapUnitMinScale" value="0"/>
         <property key="labeling/enabled" value="true"/>
-        <property key="labeling/fieldName" value="CASE WHEN &quot;valve_function_short_fr&quot; IS NOT NULL THEN &quot;valve_function_short_fr&quot; END &#xa;||CASE WHEN &quot;valve_type_short_fr&quot; IS NOT NULL THEN &quot;valve_type_short_fr&quot; END&#xa;|| identification&#xa;||&#xa;CASE&#xa;WHEN  $scale  &lt;= 6000 AND &quot;label_1_text&quot; IS NOT NULL  THEN ' ' ||&quot;label_1_text&quot;&#xa; ELSE '' &#xa;END"/>
+        <property key="labeling/fieldName" value="COALESCE(&quot;valve_function_short_fr&quot;,'')&#xa;||&#xa;COALESCE(&quot;valve_type_short_fr&quot;,'')&#xa;|| &#xa;identification&#xa;||&#xa;CASE&#xa;WHEN  $scale  &lt;= 6000  THEN COALESCE(' ' ||&quot;label_1_text&quot;,'')&#xa;END"/>
         <property key="labeling/fontBold" value="false"/>
         <property key="labeling/fontCapitals" value="0"/>
         <property key="labeling/fontFamily" value="Arial"/>
@@ -34031,7 +34031,7 @@
         </edittype>
       </edittypes>
     </maplayer>
-    <maplayer minimumScale="0" maximumScale="1e+08" simplifyDrawingHints="0" minLabelScale="1" maxLabelScale="1e+08" simplifyDrawingTol="1" geometry="Point" simplifyMaxScale="1" type="vector" hasScaleBasedVisibilityFlag="0" simplifyLocal="1" scaleBasedLabelVisibilityFlag="0">
+    <maplayer minimumScale="-4.65661e-10" maximumScale="1e+08" simplifyDrawingHints="0" minLabelScale="1" maxLabelScale="1e+08" simplifyDrawingTol="1" geometry="Point" simplifyMaxScale="1" type="vector" hasScaleBasedVisibilityFlag="0" simplifyLocal="1" scaleBasedLabelVisibilityFlag="0">
       <id>vannes_copy20141127160745910</id>
       <datasource>service='qWat' sslmode=allow key='id' srid=21781 type=POINT table="qwat_od"."valve" (geometry_alt2) sql=</datasource>
       <title></title>
@@ -34468,7 +34468,7 @@
         <property key="labeling/distMapUnitMaxScale" value="0"/>
         <property key="labeling/distMapUnitMinScale" value="0"/>
         <property key="labeling/enabled" value="true"/>
-        <property key="labeling/fieldName" value="CASE WHEN &quot;valve_function_short_fr&quot; IS NOT NULL THEN &quot;valve_function_short_fr&quot; END &#xa;||CASE WHEN &quot;valve_type_short_fr&quot; IS NOT NULL THEN &quot;valve_type_short_fr&quot; END&#xa;|| identification&#xa;||&#xa;CASE&#xa;WHEN  $scale  &lt;= 6000 AND &quot;label_1_text&quot; IS NOT NULL  THEN ' ' ||&quot;label_1_text&quot;&#xa; ELSE '' &#xa;END"/>
+        <property key="labeling/fieldName" value="COALESCE(&quot;valve_function_short_fr&quot;,'')&#xa;||&#xa;COALESCE(&quot;valve_type_short_fr&quot;,'')&#xa;|| &#xa;identification&#xa;||&#xa;CASE&#xa;WHEN  $scale  &lt;= 6000  THEN COALESCE(' ' ||&quot;label_1_text&quot;,'')&#xa;END"/>
         <property key="labeling/fontBold" value="false"/>
         <property key="labeling/fontCapitals" value="0"/>
         <property key="labeling/fontFamily" value="Arial"/>
