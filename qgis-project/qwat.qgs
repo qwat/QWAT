@@ -5,15 +5,15 @@
     <customproperties/>
     <layer-tree-group expanded="1" checked="Qt::PartiallyChecked" name="Réseau">
       <customproperties/>
-      <layer-tree-group expanded="0" checked="Qt::PartiallyChecked" name="ouvrages">
+      <layer-tree-group expanded="1" checked="Qt::PartiallyChecked" name="ouvrages">
         <customproperties/>
-        <layer-tree-layer expanded="0" checked="Qt::Unchecked" id="installation20130304110004938" name="ouvrage général">
+        <layer-tree-layer expanded="0" checked="Qt::Checked" id="installation20130304110004938" name="ouvrage général">
           <customproperties/>
         </layer-tree-layer>
         <layer-tree-layer expanded="0" checked="Qt::Unchecked" id="od_cover20141219115626229" name="couvercles">
           <customproperties/>
         </layer-tree-layer>
-        <layer-tree-group expanded="0" checked="Qt::Checked" name="détail">
+        <layer-tree-group expanded="1" checked="Qt::Checked" name="détail">
           <customproperties/>
           <layer-tree-layer expanded="0" checked="Qt::Checked" id="installation_tank20130304110005008" name="ouvrage - réservoirs">
             <customproperties/>
@@ -35,7 +35,7 @@
           </layer-tree-layer>
         </layer-tree-group>
       </layer-tree-group>
-      <layer-tree-group expanded="0" checked="Qt::PartiallyChecked" name="Abonnés">
+      <layer-tree-group expanded="1" checked="Qt::PartiallyChecked" name="Abonnés">
         <customproperties/>
         <layer-tree-layer expanded="0" checked="Qt::Checked" id="subscriber20130304110011459" name="abonnés">
           <customproperties/>
@@ -53,14 +53,11 @@
           <customproperties/>
         </layer-tree-layer>
       </layer-tree-group>
-      <layer-tree-group expanded="0" checked="Qt::PartiallyChecked" name="Réseau">
+      <layer-tree-group expanded="1" checked="Qt::PartiallyChecked" name="Réseau">
         <customproperties/>
         <layer-tree-layer expanded="0" checked="Qt::Checked" id="conduites_copy20130709141244955" name="conduites">
           <customproperties>
-            <property key="expandedLegendNodes">
-              <value>{2513a8b8-a110-4727-854c-6084f64e3bdf}</value>
-              <value>{f550eef3-fdaa-427b-b415-bd7e8fc25f9e}</value>
-            </property>
+            <property key="expandedLegendNodes" value="{2513a8b8-a110-4727-854c-6084f64e3bdf}"/>
           </customproperties>
         </layer-tree-layer>
         <layer-tree-layer expanded="0" checked="Qt::Checked" id="valve20130304110011497" name="vannes">
@@ -363,10 +360,10 @@
   <mapcanvas>
     <units>meters</units>
     <extent>
-      <xmin>554882.79087788518518209</xmin>
-      <ymin>136512.46577367087593302</ymin>
-      <xmax>556366.02544730063527822</xmax>
-      <ymax>137732.08477721590315923</ymax>
+      <xmin>562509.95045855129137635</xmin>
+      <ymin>140907.26008075842401013</ymin>
+      <xmax>562603.61295864591374993</xmax>
+      <ymax>140984.27592666255077347</ymax>
     </extent>
     <rotation>0</rotation>
     <projections>1</projections>
@@ -653,10 +650,10 @@
   </layer-tree-canvas>
   <legend updateDrawingOrder="false">
     <legendgroup open="true" checked="Qt::PartiallyChecked" name="Réseau">
-      <legendgroup open="false" checked="Qt::PartiallyChecked" name="ouvrages">
-        <legendlayer drawingOrder="0" open="false" checked="Qt::Unchecked" name="ouvrage général" showFeatureCount="0">
+      <legendgroup open="true" checked="Qt::PartiallyChecked" name="ouvrages">
+        <legendlayer drawingOrder="0" open="false" checked="Qt::Checked" name="ouvrage général" showFeatureCount="0">
           <filegroup open="false" hidden="false">
-            <legendlayerfile isInOverview="0" layerid="installation20130304110004938" visible="0"/>
+            <legendlayerfile isInOverview="0" layerid="installation20130304110004938" visible="1"/>
           </filegroup>
         </legendlayer>
         <legendlayer drawingOrder="1" open="false" checked="Qt::Unchecked" name="couvercles" showFeatureCount="0">
@@ -664,7 +661,7 @@
             <legendlayerfile isInOverview="0" layerid="od_cover20141219115626229" visible="0"/>
           </filegroup>
         </legendlayer>
-        <legendgroup open="false" checked="Qt::Checked" name="détail">
+        <legendgroup open="true" checked="Qt::Checked" name="détail">
           <legendlayer drawingOrder="2" open="false" checked="Qt::Checked" name="ouvrage - réservoirs" showFeatureCount="0">
             <filegroup open="false" hidden="false">
               <legendlayerfile isInOverview="0" layerid="installation_tank20130304110005008" visible="1"/>
@@ -697,7 +694,7 @@
           </legendlayer>
         </legendgroup>
       </legendgroup>
-      <legendgroup open="false" checked="Qt::PartiallyChecked" name="Abonnés">
+      <legendgroup open="true" checked="Qt::PartiallyChecked" name="Abonnés">
         <legendlayer drawingOrder="8" open="false" checked="Qt::Checked" name="abonnés" showFeatureCount="0">
           <filegroup open="false" hidden="false">
             <legendlayerfile isInOverview="0" layerid="subscriber20130304110011459" visible="1"/>
@@ -724,7 +721,7 @@
           </filegroup>
         </legendlayer>
       </legendgroup>
-      <legendgroup open="false" checked="Qt::PartiallyChecked" name="Réseau">
+      <legendgroup open="true" checked="Qt::PartiallyChecked" name="Réseau">
         <legendlayer drawingOrder="18" open="false" checked="Qt::Checked" name="conduites" showFeatureCount="0">
           <filegroup open="false" hidden="false">
             <legendlayerfile isInOverview="0" layerid="conduites_copy20130709141244955" visible="1"/>
@@ -16628,7 +16625,7 @@
         </spatialrefsys>
       </srs>
       <provider encoding="System">memory</provider>
-      <previewExpression></previewExpression>
+      <featuretitle>id</featuretitle>
       <vectorjoins/>
       <expressionfields/>
       <map-layer-style-manager current="">
@@ -16816,7 +16813,7 @@
       <blendMode>0</blendMode>
       <featureBlendMode>0</featureBlendMode>
       <layerTransparency>0</layerTransparency>
-      <displayfield>id</displayfield>
+      <featuretitle>id</featuretitle>
       <label>0</label>
       <labelattributes>
         <label fieldname="" text="Label"/>
@@ -16889,7 +16886,7 @@
         </spatialrefsys>
       </srs>
       <provider encoding="System">memory</provider>
-      <previewExpression></previewExpression>
+      <featuretitle>id</featuretitle>
       <vectorjoins/>
       <expressionfields/>
       <map-layer-style-manager current="">
@@ -16947,7 +16944,7 @@
       <blendMode>0</blendMode>
       <featureBlendMode>0</featureBlendMode>
       <layerTransparency>0</layerTransparency>
-      <displayfield>id</displayfield>
+      <featuretitle>id</featuretitle>
       <label>0</label>
       <labelattributes>
         <label fieldname="" text="Label"/>
@@ -17087,7 +17084,7 @@
         </spatialrefsys>
       </srs>
       <provider encoding="System">memory</provider>
-      <previewExpression></previewExpression>
+      <featuretitle></featuretitle>
       <vectorjoins/>
       <expressionfields/>
       <map-layer-style-manager current="">
@@ -17141,7 +17138,7 @@
       <blendMode>0</blendMode>
       <featureBlendMode>0</featureBlendMode>
       <layerTransparency>0</layerTransparency>
-      <displayfield></displayfield>
+      <featuretitle></featuretitle>
       <label>0</label>
       <labelattributes>
         <label fieldname="" text="Label"/>
@@ -17195,7 +17192,7 @@
         </spatialrefsys>
       </srs>
       <provider encoding="System">postgres</provider>
-      <previewExpression>COALESCE( "id", '&lt;NULL>' )</previewExpression>
+      <featuretitle>id</featuretitle>
       <vectorjoins/>
       <expressionfields/>
       <map-layer-style-manager current="">
@@ -17371,7 +17368,7 @@
       <blendMode>0</blendMode>
       <featureBlendMode>0</featureBlendMode>
       <layerTransparency>0</layerTransparency>
-      <displayfield>id</displayfield>
+      <featuretitle>id</featuretitle>
       <label>0</label>
       <labelattributes>
         <label fieldname="" text="Label"/>
@@ -17434,7 +17431,7 @@
         </spatialrefsys>
       </srs>
       <provider encoding="System">postgres</provider>
-      <previewExpression></previewExpression>
+      <featuretitle>id</featuretitle>
       <vectorjoins/>
       <expressionfields/>
       <map-layer-style-manager current="">
@@ -17683,7 +17680,7 @@
       <blendMode>0</blendMode>
       <featureBlendMode>0</featureBlendMode>
       <layerTransparency>0</layerTransparency>
-      <displayfield>id</displayfield>
+      <featuretitle>id</featuretitle>
       <label>0</label>
       <labelattributes>
         <label fieldname="" text="Label"/>
@@ -18362,7 +18359,7 @@
       </srs>
       <customproperties/>
       <provider encoding="UTF-8">postgres</provider>
-      <previewExpression></previewExpression>
+      <featuretitle>id</featuretitle>
       <vectorjoins/>
       <expressionfields/>
       <map-layer-style-manager current="">
@@ -18401,7 +18398,7 @@
         </edittype>
       </edittypes>
     </maplayer>
-    <maplayer minimumScale="0" maximumScale="1e+08" simplifyDrawingHints="0" minLabelScale="0" maxLabelScale="1e+08" simplifyDrawingTol="1" geometry="Line" simplifyMaxScale="1" type="vector" hasScaleBasedVisibilityFlag="0" simplifyLocal="1" scaleBasedLabelVisibilityFlag="0">
+    <maplayer minimumScale="-4.65661e-10" maximumScale="1e+08" simplifyDrawingHints="0" minLabelScale="0" maxLabelScale="1e+08" simplifyDrawingTol="1" geometry="Line" simplifyMaxScale="1" type="vector" hasScaleBasedVisibilityFlag="0" simplifyLocal="1" scaleBasedLabelVisibilityFlag="0">
       <id>conduites_copy20130709141244955</id>
       <datasource>service='qWat' sslmode=disable key='id' srid=21781 type=LINESTRING table="qwat_od"."pipe" (geometry) sql=</datasource>
       <title></title>
@@ -18423,7 +18420,7 @@
         </spatialrefsys>
       </srs>
       <provider encoding="System">postgres</provider>
-      <previewExpression>id</previewExpression>
+      <featuretitle>id</featuretitle>
       <vectorjoins>
         <join hasCustomPrefix="1" joinFieldName="id" customPrefix="pipe_function_" targetFieldName="id_function" memoryCache="1" joinLayerId="vl_pipe_function20130304110005186">
           <joinFieldsSubset>
@@ -18489,12 +18486,7 @@
           <widgetv2config OrderByValue="0" AllowNull="0" FilterExpression="" UseCompleter="0" fieldEditable="1" Key="id" Layer="vl_pipe_installmethod20130304110005209" Value="value_fr" labelOnTop="0" AllowMulti="0"/>
         </edittype>
         <edittype widgetv2type="RelationReference" name="id_material">
-          <widgetv2config OrderByValue="1" fieldEditable="1" ShowForm="0" Relation="relation_pipe_material" ReadOnly="0" MapIdentification="0" labelOnTop="0" AllowNULL="0">
-            <FilterFields ChainFilters="1">
-              <field name="short_fr"/>
-              <field name="diameter"/>
-            </FilterFields>
-          </widgetv2config>
+          <widgetv2config OrderByValue="1" fieldEditable="1" ShowForm="0" Relation="relation_pipe_material" ReadOnly="0" MapIdentification="0" labelOnTop="0" AllowNULL="0"/>
         </edittype>
         <edittype widgetv2type="ValueRelation" name="id_distributor">
           <widgetv2config OrderByValue="0" AllowNull="0" FilterExpression="" UseCompleter="0" fieldEditable="1" Key="id" Layer="distributor20130304114719702" Value="name" labelOnTop="0" AllowMulti="0"/>
@@ -19299,7 +19291,7 @@
         <property key="labeling/distMapUnitMaxScale" value="0"/>
         <property key="labeling/distMapUnitMinScale" value="0"/>
         <property key="labeling/enabled" value="true"/>
-        <property key="labeling/fieldName" value=" replace( &quot;pipe_material_short_fr&quot;||' ','Inconnu ','')&#xa; ||&#xa; &quot;pipe_material_diameter&quot;&#xa; ||&#xa; CASE&#xa;WHEN  $scale  &lt; 1000  AND  $length > 8 THEN COALESCE('\n' ||&quot;year&quot;,'')&#xa;WHEN  $scale  >= 1000 THEN COALESCE(' ' ||&quot;year&quot;,'')&#xa; ELSE ''&#xa; END&#xa;||&#xa;CASE&#xa;WHEN  $scale  &lt;= 3000 THEN  COALESCE('\n'||  &quot;pipe_protection_value_fr&quot;, '')&#xa; ELSE ''&#xa;END&#xa;||&#xa;CASE&#xa;WHEN  $scale  &lt;= 6000  THEN  COALESCE(' ' ||&quot;label_1_text&quot;,'')&#xa; ELSE ''&#xa;END"/>
+        <property key="labeling/fieldName" value=" replace( &quot;pipe_material_short_fr&quot;||' ','Inconnu ','')&#xa; ||&#xa; &quot;pipe_material_diameter&quot;&#xa; ||&#xa; CASE&#xa;WHEN  $scale  &lt; 501  AND  $length > 4 AND  &quot;id_precision&quot; IN (1101,1103,1105) THEN ' imprécis'&#xa; ELSE ''&#xa; END&#xa;||&#xa; CASE&#xa;WHEN  $scale  &lt; 501  AND  $length > 4 THEN COALESCE('\n' ||&quot;year&quot;,'')&#xa;WHEN  $scale  >= 1000 THEN COALESCE(' ' ||&quot;year&quot;,'')&#xa; ELSE ''&#xa; END&#xa;||&#xa;CASE&#xa;WHEN  $scale  &lt;= 3000 THEN  COALESCE('\n'||  &quot;pipe_protection_value_fr&quot;, '')&#xa; ELSE ''&#xa;END&#xa;||&#xa;CASE&#xa;WHEN  $scale  &lt;= 6000  THEN  COALESCE(' ' ||&quot;label_1_text&quot;,'')&#xa; ELSE ''&#xa;END"/>
         <property key="labeling/fontBold" value="false"/>
         <property key="labeling/fontCapitals" value="0"/>
         <property key="labeling/fontFamily" value="Cantarell"/>
@@ -19420,7 +19412,7 @@
       <blendMode>0</blendMode>
       <featureBlendMode>0</featureBlendMode>
       <layerTransparency>0</layerTransparency>
-      <displayfield>id</displayfield>
+      <featuretitle>id</featuretitle>
       <label>0</label>
       <labelattributes>
         <label fieldname="" text="Label"/>
@@ -19467,12 +19459,7 @@
           <widgetv2config OrderByValue="0" AllowNull="0" FilterExpression="" UseCompleter="0" fieldEditable="1" Key="id" Layer="vl_pipe_installmethod20130304110005209" Value="value_fr" labelOnTop="0" AllowMulti="0"/>
         </edittype>
         <edittype widgetv2type="RelationReference" name="id_material">
-          <widgetv2config OrderByValue="1" fieldEditable="1" ShowForm="0" Relation="relation_pipe_material" ReadOnly="0" MapIdentification="0" labelOnTop="0" AllowNULL="0">
-            <FilterFields ChainFilters="1">
-              <field name="short_fr"/>
-              <field name="diameter"/>
-            </FilterFields>
-          </widgetv2config>
+          <widgetv2config OrderByValue="1" fieldEditable="1" ShowForm="0" Relation="relation_pipe_material" ReadOnly="0" MapIdentification="0" labelOnTop="0" AllowNULL="0"/>
         </edittype>
         <edittype widgetv2type="ValueRelation" name="id_distributor">
           <widgetv2config OrderByValue="0" AllowNull="0" FilterExpression="" UseCompleter="0" fieldEditable="1" Key="id" Layer="distributor20130304114719702" Value="name" labelOnTop="0" AllowMulti="0"/>
@@ -19672,7 +19659,7 @@
         </spatialrefsys>
       </srs>
       <provider encoding="System">postgres</provider>
-      <previewExpression></previewExpression>
+      <featuretitle>id</featuretitle>
       <vectorjoins/>
       <expressionfields/>
       <map-layer-style-manager current="">
@@ -19875,7 +19862,7 @@
       <blendMode>0</blendMode>
       <featureBlendMode>0</featureBlendMode>
       <layerTransparency>0</layerTransparency>
-      <displayfield>id</displayfield>
+      <featuretitle>id</featuretitle>
       <label>0</label>
       <labelattributes>
         <label fieldname="" text="Label"/>
@@ -19938,7 +19925,7 @@
         </spatialrefsys>
       </srs>
       <provider encoding="System">postgres</provider>
-      <previewExpression>COALESCE( "id", '&lt;NULL>' )</previewExpression>
+      <featuretitle>id</featuretitle>
       <vectorjoins/>
       <expressionfields/>
       <map-layer-style-manager current="">
@@ -20122,7 +20109,7 @@
       <blendMode>0</blendMode>
       <featureBlendMode>0</featureBlendMode>
       <layerTransparency>0</layerTransparency>
-      <displayfield>id</displayfield>
+      <featuretitle>id</featuretitle>
       <label>0</label>
       <labelattributes>
         <label fieldname="" text="Label"/>
@@ -20194,7 +20181,7 @@
         <property key="itemBrowserConnected" value="no"/>
       </customproperties>
       <provider encoding="ISO-8859-1">postgres</provider>
-      <previewExpression></previewExpression>
+      <featuretitle>name</featuretitle>
       <vectorjoins/>
       <expressionfields/>
       <map-layer-style-manager current="">
@@ -20249,7 +20236,7 @@
         </spatialrefsys>
       </srs>
       <provider encoding="ISO-8859-1">postgres</provider>
-      <previewExpression>COALESCE( "name", '&lt;NULL>' )</previewExpression>
+      <featuretitle>name</featuretitle>
       <vectorjoins/>
       <expressionfields/>
       <map-layer-style-manager current="">
@@ -20469,7 +20456,7 @@
       <blendMode>0</blendMode>
       <featureBlendMode>0</featureBlendMode>
       <layerTransparency>0</layerTransparency>
-      <displayfield>name</displayfield>
+      <featuretitle>name</featuretitle>
       <label>0</label>
       <labelattributes>
         <label fieldname="" text="Label"/>
@@ -20577,7 +20564,7 @@
         </spatialrefsys>
       </srs>
       <provider encoding="ISO-8859-1">postgres</provider>
-      <previewExpression>id</previewExpression>
+      <featuretitle>id</featuretitle>
       <vectorjoins>
         <join hasCustomPrefix="1" joinFieldName="id" customPrefix="status_" targetFieldName="id_status" memoryCache="1" joinLayerId="vl_status20130304110011436"/>
       </vectorjoins>
@@ -20925,7 +20912,7 @@
       <blendMode>0</blendMode>
       <featureBlendMode>0</featureBlendMode>
       <layerTransparency>0</layerTransparency>
-      <displayfield>id</displayfield>
+      <featuretitle>id</featuretitle>
       <label>0</label>
       <labelattributes>
         <label fieldname="" text="Label"/>
@@ -21129,7 +21116,7 @@
         <property key="itemBrowserConnected" value="no"/>
       </customproperties>
       <provider encoding="ISO-8859-1">postgres</provider>
-      <previewExpression></previewExpression>
+      <featuretitle>name</featuretitle>
       <vectorjoins/>
       <expressionfields/>
       <map-layer-style-manager current="">
@@ -21168,7 +21155,7 @@
         </edittype>
       </edittypes>
     </maplayer>
-    <maplayer minimumScale="-4.65661e-10" maximumScale="1e+08" simplifyDrawingHints="0" minLabelScale="1" maxLabelScale="1e+08" simplifyDrawingTol="1" geometry="Point" simplifyMaxScale="1" type="vector" hasScaleBasedVisibilityFlag="0" simplifyLocal="1" scaleBasedLabelVisibilityFlag="0">
+    <maplayer minimumScale="0" maximumScale="1e+08" simplifyDrawingHints="0" minLabelScale="1" maxLabelScale="1e+08" simplifyDrawingTol="1" geometry="Point" simplifyMaxScale="1" type="vector" hasScaleBasedVisibilityFlag="0" simplifyLocal="1" scaleBasedLabelVisibilityFlag="0">
       <id>installation20130304110004938</id>
       <datasource>service='qWat' sslmode=allow key='id' srid=21781 type=POINT table="qwat_od"."installation_building" (geometry) sql=</datasource>
       <title></title>
@@ -21190,8 +21177,10 @@
         </spatialrefsys>
       </srs>
       <provider encoding="ISO-8859-1">postgres</provider>
-      <previewExpression>name</previewExpression>
-      <vectorjoins/>
+      <featuretitle>name</featuretitle>
+      <vectorjoins>
+        <join hasCustomPrefix="1" joinFieldName="id" customPrefix="status_" targetFieldName="id_status" memoryCache="1" joinLayerId="vl_status20130304110011436"/>
+      </vectorjoins>
       <expressionfields/>
       <map-layer-style-manager current="">
         <map-layer-style name=""/>
@@ -21293,51 +21282,61 @@
         <edittype widgetv2type="ValueRelation" name="id_status">
           <widgetv2config OrderByValue="0" AllowNull="0" FilterExpression="" UseCompleter="0" fieldEditable="1" Key="id" Layer="vl_status20130304110011436" Value="value_fr" labelOnTop="0" AllowMulti="0"/>
         </edittype>
+        <edittype widgetv2type="TextEdit" name="status_vl_active">
+          <widgetv2config IsMultiline="0" fieldEditable="0" UseHtml="0" labelOnTop="0"/>
+        </edittype>
+        <edittype widgetv2type="TextEdit" name="status_value_en">
+          <widgetv2config IsMultiline="0" fieldEditable="0" UseHtml="0" labelOnTop="0"/>
+        </edittype>
+        <edittype widgetv2type="TextEdit" name="status_value_fr">
+          <widgetv2config IsMultiline="0" fieldEditable="0" UseHtml="0" labelOnTop="0"/>
+        </edittype>
+        <edittype widgetv2type="TextEdit" name="status_value_ro">
+          <widgetv2config IsMultiline="0" fieldEditable="0" UseHtml="0" labelOnTop="0"/>
+        </edittype>
+        <edittype widgetv2type="TextEdit" name="status_active">
+          <widgetv2config IsMultiline="0" fieldEditable="0" UseHtml="0" labelOnTop="0"/>
+        </edittype>
+        <edittype widgetv2type="TextEdit" name="status_sire">
+          <widgetv2config IsMultiline="0" fieldEditable="0" UseHtml="0" labelOnTop="0"/>
+        </edittype>
+        <edittype widgetv2type="TextEdit" name="status_helper_en">
+          <widgetv2config IsMultiline="0" fieldEditable="0" UseHtml="0" labelOnTop="0"/>
+        </edittype>
+        <edittype widgetv2type="TextEdit" name="status_helper_fr">
+          <widgetv2config IsMultiline="0" fieldEditable="0" UseHtml="0" labelOnTop="0"/>
+        </edittype>
+        <edittype widgetv2type="TextEdit" name="status_helper_ro">
+          <widgetv2config IsMultiline="0" fieldEditable="0" UseHtml="0" labelOnTop="0"/>
+        </edittype>
       </edittypes>
-      <renderer-v2 attr="id_type" symbollevels="0" type="categorizedSymbol">
-        <categories>
-          <category render="true" symbol="0" value="" label=""/>
-          <category render="true" symbol="1" value="2001" label="R"/>
-          <category render="true" symbol="2" value="2002" label="S"/>
-          <category render="true" symbol="3" value="2003" label="P"/>
-          <category render="true" symbol="4" value="2004" label="CV"/>
-          <category render="true" symbol="5" value="2005" label="CC"/>
-          <category render="true" symbol="6" value="2006" label="CT"/>
-          <category render="true" symbol="7" value="2007" label="CR"/>
-          <category render="true" symbol="8" value="2008" label="CCP"/>
-          <category render="true" symbol="9" value="2009" label="CRA"/>
-        </categories>
+      <renderer-v2 symbollevels="0" type="RuleRenderer">
+        <rules key="{ad8daed5-4ccb-489e-8fa6-41b9c19df7a3}">
+          <rule filter="status_active = 't'" key="{49ec51ba-43a8-4e73-a219-0fbf59700e60}" label="Actif">
+            <rule filter="id_type = 2001" key="{90e1c779-672a-4cb6-8e34-51cfd1426a37}" symbol="0" label="R"/>
+            <rule filter="id_type = 2002" key="{cc25b0ac-5abc-4143-9180-0932332662ca}" symbol="1" label="S"/>
+            <rule filter="id_type = 2003" key="{cabc5ca6-4526-400f-ab40-96cc490c2f42}" symbol="2" label="P"/>
+            <rule filter="id_type = 2004" key="{ce6fa6c7-1120-4caf-bff9-c4240b9811b7}" symbol="3" label="CV"/>
+            <rule filter="id_type = 2005" key="{d06c624e-50e3-457b-b013-0fa78d4eba4d}" symbol="4" label="CC"/>
+            <rule filter="id_type = 2006" key="{54998740-0fc0-4d75-8d32-c8fbebdee119}" symbol="5" label="CT"/>
+            <rule filter="id_type = 2007" key="{4e9a2c23-1227-46ce-9cc6-259128c74081}" symbol="6" label="CR"/>
+            <rule filter="id_type = 2008" key="{fa7cf927-b1f1-488f-bcf3-1b07fa4532dc}" symbol="7" label="CCP"/>
+            <rule filter="id_type = 2009" key="{9cac505f-6c9a-46d1-8550-66e46e6c75db}" symbol="8" label="CRA"/>
+          </rule>
+          <rule checkstate="0" filter="status_active = 'f'" key="{7ccd0716-2fee-4d97-bbad-ac612a491181}" label="Inactif">
+            <rule filter="id_type = 2001" key="{926fa92d-cd15-44b7-99d2-e07e78d1108f}" symbol="9" label="R"/>
+            <rule filter="id_type = 2002" key="{99d737c0-40cf-4b08-918c-0384012d2482}" symbol="10" label="S"/>
+            <rule filter="id_type = 2003" key="{9541477a-2aff-4885-8291-02ac3ca8f76f}" symbol="11" label="P"/>
+            <rule filter="id_type = 2004" key="{f99be9b7-aa07-4a86-9139-be20862d4b32}" symbol="12" label="CV"/>
+            <rule filter="id_type = 2005" key="{2e0520cf-b2d8-42fd-bdfb-67e1aa6f075b}" symbol="13" label="CC"/>
+            <rule filter="id_type = 2006" key="{1569d3d3-311a-4eaa-812c-f6132493a66b}" symbol="14" label="CT"/>
+            <rule filter="id_type = 2007" key="{1e9ec3a7-5917-40cf-aeac-5ba390b08458}" symbol="15" label="CR"/>
+            <rule filter="id_type = 2008" key="{c9f629df-5f6e-4b36-ac8f-c5bfce629fad}" symbol="16" label="CCP"/>
+            <rule filter="id_type = 2009" key="{e9bbf94d-8eae-44d2-a1c7-1089bc9cd78a}" symbol="17" label="CRA"/>
+          </rule>
+        </rules>
         <symbols>
           <symbol alpha="1" clip_to_extent="1" type="marker" name="0">
-            <layer pass="0" class="SimpleMarker" locked="0">
-              <prop k="angle" v="0"/>
-              <prop k="color" v="43,131,186,255"/>
-              <prop k="horizontal_anchor_point" v="1"/>
-              <prop k="name" v="rectangle"/>
-              <prop k="offset" v="0,0"/>
-              <prop k="offset_map_unit_scale" v="0,0"/>
-              <prop k="offset_unit" v="MM"/>
-              <prop k="outline_color" v="0,0,0,255"/>
-              <prop k="outline_style" v="solid"/>
-              <prop k="outline_width" v="0"/>
-              <prop k="outline_width_map_unit_scale" v="0,0"/>
-              <prop k="outline_width_unit" v="MM"/>
-              <prop k="scale_method" v="area"/>
-              <prop k="size" v="2"/>
-              <prop k="size_map_unit_scale" v="0,0"/>
-              <prop k="size_unit" v="MM"/>
-              <prop k="vertical_anchor_point" v="1"/>
-              <effect enabled="0" type="effectStack">
-                <effect type="drawSource">
-                  <prop k="blend_mode" v="0"/>
-                  <prop k="draw_mode" v="2"/>
-                  <prop k="enabled" v="1"/>
-                  <prop k="transparency" v="0"/>
-                </effect>
-              </effect>
-            </layer>
-          </symbol>
-          <symbol alpha="1" clip_to_extent="1" type="marker" name="1">
             <layer pass="0" class="SvgMarker" locked="0">
               <prop k="angle" v="0"/>
               <prop k="color" v="#000000"/>
@@ -21365,7 +21364,7 @@
               </effect>
             </layer>
           </symbol>
-          <symbol alpha="1" clip_to_extent="1" type="marker" name="2">
+          <symbol alpha="1" clip_to_extent="1" type="marker" name="1">
             <layer pass="0" class="SvgMarker" locked="0">
               <prop k="angle" v="0"/>
               <prop k="color" v="#000000"/>
@@ -21393,7 +21392,35 @@
               </effect>
             </layer>
           </symbol>
-          <symbol alpha="1" clip_to_extent="1" type="marker" name="3">
+          <symbol alpha="1" clip_to_extent="1" type="marker" name="10">
+            <layer pass="0" class="SvgMarker" locked="0">
+              <prop k="angle" v="0"/>
+              <prop k="color" v="#000000"/>
+              <prop k="horizontal_anchor_point" v="1"/>
+              <prop k="name" v="./symbols/installations/source.svg"/>
+              <prop k="offset" v="0,0"/>
+              <prop k="offset_map_unit_scale" v="0,0"/>
+              <prop k="offset_unit" v="MM"/>
+              <prop k="outline_color" v="#000000"/>
+              <prop k="outline_width" v="1"/>
+              <prop k="outline_width_map_unit_scale" v="0,0"/>
+              <prop k="outline_width_unit" v="MM"/>
+              <prop k="scale_method" v="area"/>
+              <prop k="size" v="3.4"/>
+              <prop k="size_map_unit_scale" v="0,0"/>
+              <prop k="size_unit" v="MM"/>
+              <prop k="vertical_anchor_point" v="1"/>
+              <effect enabled="0" type="effectStack">
+                <effect type="drawSource">
+                  <prop k="blend_mode" v="0"/>
+                  <prop k="draw_mode" v="2"/>
+                  <prop k="enabled" v="1"/>
+                  <prop k="transparency" v="0"/>
+                </effect>
+              </effect>
+            </layer>
+          </symbol>
+          <symbol alpha="1" clip_to_extent="1" type="marker" name="11">
             <layer pass="0" class="SvgMarker" locked="0">
               <prop k="angle" v="0"/>
               <prop k="color" v="#000000"/>
@@ -21421,7 +21448,7 @@
               </effect>
             </layer>
           </symbol>
-          <symbol alpha="1" clip_to_extent="1" type="marker" name="4">
+          <symbol alpha="1" clip_to_extent="1" type="marker" name="12">
             <layer pass="0" class="SvgMarker" locked="0">
               <prop k="angle" v="0"/>
               <prop k="color" v="#000000"/>
@@ -21449,7 +21476,7 @@
               </effect>
             </layer>
           </symbol>
-          <symbol alpha="1" clip_to_extent="1" type="marker" name="5">
+          <symbol alpha="1" clip_to_extent="1" type="marker" name="13">
             <layer pass="0" class="SvgMarker" locked="0">
               <prop k="angle" v="0"/>
               <prop k="color" v="#000000"/>
@@ -21477,7 +21504,7 @@
               </effect>
             </layer>
           </symbol>
-          <symbol alpha="1" clip_to_extent="1" type="marker" name="6">
+          <symbol alpha="1" clip_to_extent="1" type="marker" name="14">
             <layer pass="0" class="SvgMarker" locked="0">
               <prop k="angle" v="0"/>
               <prop k="color" v="#000000"/>
@@ -21505,7 +21532,7 @@
               </effect>
             </layer>
           </symbol>
-          <symbol alpha="1" clip_to_extent="1" type="marker" name="7">
+          <symbol alpha="1" clip_to_extent="1" type="marker" name="15">
             <layer pass="0" class="SvgMarker" locked="0">
               <prop k="angle" v="0"/>
               <prop k="color" v="#000000"/>
@@ -21533,7 +21560,7 @@
               </effect>
             </layer>
           </symbol>
-          <symbol alpha="1" clip_to_extent="1" type="marker" name="8">
+          <symbol alpha="1" clip_to_extent="1" type="marker" name="16">
             <layer pass="0" class="SvgMarker" locked="0">
               <prop k="angle" v="0"/>
               <prop k="color" v="#000000"/>
@@ -21561,7 +21588,7 @@
               </effect>
             </layer>
           </symbol>
-          <symbol alpha="1" clip_to_extent="1" type="marker" name="9">
+          <symbol alpha="1" clip_to_extent="1" type="marker" name="17">
             <layer pass="0" class="SvgMarker" locked="0">
               <prop k="angle" v="0"/>
               <prop k="color" v="#000000"/>
@@ -21589,24 +21616,21 @@
               </effect>
             </layer>
           </symbol>
-        </symbols>
-        <source-symbol>
-          <symbol alpha="1" clip_to_extent="1" type="marker" name="0">
-            <layer pass="0" class="SimpleMarker" locked="0">
+          <symbol alpha="1" clip_to_extent="1" type="marker" name="2">
+            <layer pass="0" class="SvgMarker" locked="0">
               <prop k="angle" v="0"/>
-              <prop k="color" v="190,138,230,255"/>
+              <prop k="color" v="#000000"/>
               <prop k="horizontal_anchor_point" v="1"/>
-              <prop k="name" v="rectangle"/>
+              <prop k="name" v="./symbols/installations/pump.svg"/>
               <prop k="offset" v="0,0"/>
               <prop k="offset_map_unit_scale" v="0,0"/>
               <prop k="offset_unit" v="MM"/>
-              <prop k="outline_color" v="0,0,0,255"/>
-              <prop k="outline_style" v="solid"/>
-              <prop k="outline_width" v="0"/>
+              <prop k="outline_color" v="#000000"/>
+              <prop k="outline_width" v="1"/>
               <prop k="outline_width_map_unit_scale" v="0,0"/>
               <prop k="outline_width_unit" v="MM"/>
               <prop k="scale_method" v="area"/>
-              <prop k="size" v="2"/>
+              <prop k="size" v="3.4"/>
               <prop k="size_map_unit_scale" v="0,0"/>
               <prop k="size_unit" v="MM"/>
               <prop k="vertical_anchor_point" v="1"/>
@@ -21620,14 +21644,203 @@
               </effect>
             </layer>
           </symbol>
-        </source-symbol>
-        <colorramp type="colorbrewer" name="[source]">
-          <prop k="colors" v="5"/>
-          <prop k="schemeName" v="Spectral"/>
-        </colorramp>
-        <invertedcolorramp value="0"/>
-        <rotation/>
-        <sizescale scalemethod="area"/>
+          <symbol alpha="1" clip_to_extent="1" type="marker" name="3">
+            <layer pass="0" class="SvgMarker" locked="0">
+              <prop k="angle" v="0"/>
+              <prop k="color" v="#000000"/>
+              <prop k="horizontal_anchor_point" v="1"/>
+              <prop k="name" v="./symbols/installations/valve.svg"/>
+              <prop k="offset" v="0,0"/>
+              <prop k="offset_map_unit_scale" v="0,0"/>
+              <prop k="offset_unit" v="MM"/>
+              <prop k="outline_color" v="#000000"/>
+              <prop k="outline_width" v="1"/>
+              <prop k="outline_width_map_unit_scale" v="0,0"/>
+              <prop k="outline_width_unit" v="MM"/>
+              <prop k="scale_method" v="area"/>
+              <prop k="size" v="3.4"/>
+              <prop k="size_map_unit_scale" v="0,0"/>
+              <prop k="size_unit" v="MM"/>
+              <prop k="vertical_anchor_point" v="1"/>
+              <effect enabled="0" type="effectStack">
+                <effect type="drawSource">
+                  <prop k="blend_mode" v="0"/>
+                  <prop k="draw_mode" v="2"/>
+                  <prop k="enabled" v="1"/>
+                  <prop k="transparency" v="0"/>
+                </effect>
+              </effect>
+            </layer>
+          </symbol>
+          <symbol alpha="1" clip_to_extent="1" type="marker" name="4">
+            <layer pass="0" class="SvgMarker" locked="0">
+              <prop k="angle" v="0"/>
+              <prop k="color" v="#000000"/>
+              <prop k="horizontal_anchor_point" v="1"/>
+              <prop k="name" v="./symbols/installations/meter.svg"/>
+              <prop k="offset" v="0,0"/>
+              <prop k="offset_map_unit_scale" v="0,0"/>
+              <prop k="offset_unit" v="MM"/>
+              <prop k="outline_color" v="#000000"/>
+              <prop k="outline_width" v="1"/>
+              <prop k="outline_width_map_unit_scale" v="0,0"/>
+              <prop k="outline_width_unit" v="MM"/>
+              <prop k="scale_method" v="area"/>
+              <prop k="size" v="3.4"/>
+              <prop k="size_map_unit_scale" v="0,0"/>
+              <prop k="size_unit" v="MM"/>
+              <prop k="vertical_anchor_point" v="1"/>
+              <effect enabled="0" type="effectStack">
+                <effect type="drawSource">
+                  <prop k="blend_mode" v="0"/>
+                  <prop k="draw_mode" v="2"/>
+                  <prop k="enabled" v="1"/>
+                  <prop k="transparency" v="0"/>
+                </effect>
+              </effect>
+            </layer>
+          </symbol>
+          <symbol alpha="1" clip_to_extent="1" type="marker" name="5">
+            <layer pass="0" class="SvgMarker" locked="0">
+              <prop k="angle" v="0"/>
+              <prop k="color" v="#000000"/>
+              <prop k="horizontal_anchor_point" v="1"/>
+              <prop k="name" v="./symbols/installations/treatment.svg"/>
+              <prop k="offset" v="0,0"/>
+              <prop k="offset_map_unit_scale" v="0,0"/>
+              <prop k="offset_unit" v="MM"/>
+              <prop k="outline_color" v="#000000"/>
+              <prop k="outline_width" v="1"/>
+              <prop k="outline_width_map_unit_scale" v="0,0"/>
+              <prop k="outline_width_unit" v="MM"/>
+              <prop k="scale_method" v="area"/>
+              <prop k="size" v="3.4"/>
+              <prop k="size_map_unit_scale" v="0,0"/>
+              <prop k="size_unit" v="MM"/>
+              <prop k="vertical_anchor_point" v="1"/>
+              <effect enabled="0" type="effectStack">
+                <effect type="drawSource">
+                  <prop k="blend_mode" v="0"/>
+                  <prop k="draw_mode" v="2"/>
+                  <prop k="enabled" v="1"/>
+                  <prop k="transparency" v="0"/>
+                </effect>
+              </effect>
+            </layer>
+          </symbol>
+          <symbol alpha="1" clip_to_extent="1" type="marker" name="6">
+            <layer pass="0" class="SvgMarker" locked="0">
+              <prop k="angle" v="0"/>
+              <prop k="color" v="#000000"/>
+              <prop k="horizontal_anchor_point" v="1"/>
+              <prop k="name" v="./symbols/installations/reduction.svg"/>
+              <prop k="offset" v="0,0"/>
+              <prop k="offset_map_unit_scale" v="0,0"/>
+              <prop k="offset_unit" v="MM"/>
+              <prop k="outline_color" v="#000000"/>
+              <prop k="outline_width" v="1"/>
+              <prop k="outline_width_map_unit_scale" v="0,0"/>
+              <prop k="outline_width_unit" v="MM"/>
+              <prop k="scale_method" v="area"/>
+              <prop k="size" v="3.4"/>
+              <prop k="size_map_unit_scale" v="0,0"/>
+              <prop k="size_unit" v="MM"/>
+              <prop k="vertical_anchor_point" v="1"/>
+              <effect enabled="0" type="effectStack">
+                <effect type="drawSource">
+                  <prop k="blend_mode" v="0"/>
+                  <prop k="draw_mode" v="2"/>
+                  <prop k="enabled" v="1"/>
+                  <prop k="transparency" v="0"/>
+                </effect>
+              </effect>
+            </layer>
+          </symbol>
+          <symbol alpha="1" clip_to_extent="1" type="marker" name="7">
+            <layer pass="0" class="SvgMarker" locked="0">
+              <prop k="angle" v="0"/>
+              <prop k="color" v="#000000"/>
+              <prop k="horizontal_anchor_point" v="1"/>
+              <prop k="name" v="./symbols/installations/pressurebreak.svg"/>
+              <prop k="offset" v="0,0"/>
+              <prop k="offset_map_unit_scale" v="0,0"/>
+              <prop k="offset_unit" v="MM"/>
+              <prop k="outline_color" v="#000000"/>
+              <prop k="outline_width" v="1"/>
+              <prop k="outline_width_map_unit_scale" v="0,0"/>
+              <prop k="outline_width_unit" v="MM"/>
+              <prop k="scale_method" v="area"/>
+              <prop k="size" v="3.4"/>
+              <prop k="size_map_unit_scale" v="0,0"/>
+              <prop k="size_unit" v="MM"/>
+              <prop k="vertical_anchor_point" v="1"/>
+              <effect enabled="0" type="effectStack">
+                <effect type="drawSource">
+                  <prop k="blend_mode" v="0"/>
+                  <prop k="draw_mode" v="2"/>
+                  <prop k="enabled" v="1"/>
+                  <prop k="transparency" v="0"/>
+                </effect>
+              </effect>
+            </layer>
+          </symbol>
+          <symbol alpha="1" clip_to_extent="1" type="marker" name="8">
+            <layer pass="0" class="SvgMarker" locked="0">
+              <prop k="angle" v="0"/>
+              <prop k="color" v="#000000"/>
+              <prop k="horizontal_anchor_point" v="1"/>
+              <prop k="name" v="./symbols/installations/gathering.svg"/>
+              <prop k="offset" v="0,0"/>
+              <prop k="offset_map_unit_scale" v="0,0"/>
+              <prop k="offset_unit" v="MM"/>
+              <prop k="outline_color" v="#000000"/>
+              <prop k="outline_width" v="1"/>
+              <prop k="outline_width_map_unit_scale" v="0,0"/>
+              <prop k="outline_width_unit" v="MM"/>
+              <prop k="scale_method" v="area"/>
+              <prop k="size" v="3.4"/>
+              <prop k="size_map_unit_scale" v="0,0"/>
+              <prop k="size_unit" v="MM"/>
+              <prop k="vertical_anchor_point" v="1"/>
+              <effect enabled="0" type="effectStack">
+                <effect type="drawSource">
+                  <prop k="blend_mode" v="0"/>
+                  <prop k="draw_mode" v="2"/>
+                  <prop k="enabled" v="1"/>
+                  <prop k="transparency" v="0"/>
+                </effect>
+              </effect>
+            </layer>
+          </symbol>
+          <symbol alpha="1" clip_to_extent="1" type="marker" name="9">
+            <layer pass="0" class="SvgMarker" locked="0">
+              <prop k="angle" v="0"/>
+              <prop k="color" v="#000000"/>
+              <prop k="horizontal_anchor_point" v="1"/>
+              <prop k="name" v="./symbols/installations/tank.svg"/>
+              <prop k="offset" v="0,0"/>
+              <prop k="offset_map_unit_scale" v="0,0"/>
+              <prop k="offset_unit" v="MM"/>
+              <prop k="outline_color" v="#000000"/>
+              <prop k="outline_width" v="1"/>
+              <prop k="outline_width_map_unit_scale" v="0,0"/>
+              <prop k="outline_width_unit" v="MM"/>
+              <prop k="scale_method" v="area"/>
+              <prop k="size" v="3.4"/>
+              <prop k="size_map_unit_scale" v="0,0"/>
+              <prop k="size_unit" v="MM"/>
+              <prop k="vertical_anchor_point" v="1"/>
+              <effect enabled="0" type="effectStack">
+                <effect type="drawSource">
+                  <prop k="blend_mode" v="0"/>
+                  <prop k="draw_mode" v="2"/>
+                  <prop k="enabled" v="1"/>
+                  <prop k="transparency" v="0"/>
+                </effect>
+              </effect>
+            </layer>
+          </symbol>
+        </symbols>
         <effect enabled="0" type="effectStack">
           <effect type="drawSource">
             <prop k="blend_mode" v="0"/>
@@ -21668,7 +21881,7 @@
         <property key="labeling/distMapUnitMaxScale" value="0"/>
         <property key="labeling/distMapUnitMinScale" value="0"/>
         <property key="labeling/enabled" value="true"/>
-        <property key="labeling/fieldName" value="_displayname_fr"/>
+        <property key="labeling/fieldName" value=""/>
         <property key="labeling/fontBold" value="true"/>
         <property key="labeling/fontCapitals" value="0"/>
         <property key="labeling/fontFamily" value="Arial"/>
@@ -21686,7 +21899,7 @@
         <property key="labeling/fontWeight" value="75"/>
         <property key="labeling/fontWordSpacing" value="0"/>
         <property key="labeling/formatNumbers" value="false"/>
-        <property key="labeling/isExpression" value="false"/>
+        <property key="labeling/isExpression" value="true"/>
         <property key="labeling/labelOffsetInMapUnits" value="true"/>
         <property key="labeling/labelOffsetMapUnitMaxScale" value="0"/>
         <property key="labeling/labelOffsetMapUnitMinScale" value="0"/>
@@ -21789,7 +22002,7 @@
       <blendMode>0</blendMode>
       <featureBlendMode>0</featureBlendMode>
       <layerTransparency>0</layerTransparency>
-      <displayfield>name</displayfield>
+      <featuretitle>name</featuretitle>
       <label>0</label>
       <labelattributes>
         <label fieldname="" text="Label"/>
@@ -21918,9 +22131,36 @@
         <edittype widgetv2type="ValueRelation" name="id_status">
           <widgetv2config OrderByValue="0" AllowNull="0" FilterExpression="" UseCompleter="0" fieldEditable="1" Key="id" Layer="vl_status20130304110011436" Value="value_fr" labelOnTop="0" AllowMulti="0"/>
         </edittype>
+        <edittype widgetv2type="TextEdit" name="status_vl_active">
+          <widgetv2config IsMultiline="0" fieldEditable="0" UseHtml="0" labelOnTop="0"/>
+        </edittype>
+        <edittype widgetv2type="TextEdit" name="status_value_en">
+          <widgetv2config IsMultiline="0" fieldEditable="0" UseHtml="0" labelOnTop="0"/>
+        </edittype>
+        <edittype widgetv2type="TextEdit" name="status_value_fr">
+          <widgetv2config IsMultiline="0" fieldEditable="0" UseHtml="0" labelOnTop="0"/>
+        </edittype>
+        <edittype widgetv2type="TextEdit" name="status_value_ro">
+          <widgetv2config IsMultiline="0" fieldEditable="0" UseHtml="0" labelOnTop="0"/>
+        </edittype>
+        <edittype widgetv2type="TextEdit" name="status_active">
+          <widgetv2config IsMultiline="0" fieldEditable="0" UseHtml="0" labelOnTop="0"/>
+        </edittype>
+        <edittype widgetv2type="TextEdit" name="status_sire">
+          <widgetv2config IsMultiline="0" fieldEditable="0" UseHtml="0" labelOnTop="0"/>
+        </edittype>
+        <edittype widgetv2type="TextEdit" name="status_helper_en">
+          <widgetv2config IsMultiline="0" fieldEditable="0" UseHtml="0" labelOnTop="0"/>
+        </edittype>
+        <edittype widgetv2type="TextEdit" name="status_helper_fr">
+          <widgetv2config IsMultiline="0" fieldEditable="0" UseHtml="0" labelOnTop="0"/>
+        </edittype>
+        <edittype widgetv2type="TextEdit" name="status_helper_ro">
+          <widgetv2config IsMultiline="0" fieldEditable="0" UseHtml="0" labelOnTop="0"/>
+        </edittype>
       </edittypes>
     </maplayer>
-    <maplayer minimumScale="-4.65661e-10" maximumScale="1e+08" simplifyDrawingHints="0" minLabelScale="0" maxLabelScale="1e+08" simplifyDrawingTol="1" geometry="Point" simplifyMaxScale="1" type="vector" hasScaleBasedVisibilityFlag="0" simplifyLocal="1" scaleBasedLabelVisibilityFlag="0">
+    <maplayer minimumScale="0" maximumScale="1e+08" simplifyDrawingHints="0" minLabelScale="0" maxLabelScale="1e+08" simplifyDrawingTol="1" geometry="Point" simplifyMaxScale="1" type="vector" hasScaleBasedVisibilityFlag="0" simplifyLocal="1" scaleBasedLabelVisibilityFlag="0">
       <id>installation_pressurecontrol20131107105006792</id>
       <datasource>service='qWat' sslmode=disable key='id' estimatedmetadata=true srid=21781 type=POINT table="qwat_od"."installation_pressurecontrol" (geometry) sql=</datasource>
       <title></title>
@@ -21942,7 +22182,7 @@
         </spatialrefsys>
       </srs>
       <provider encoding="System">postgres</provider>
-      <previewExpression>COALESCE( "name", '&lt;NULL>' )</previewExpression>
+      <featuretitle>name</featuretitle>
       <vectorjoins/>
       <expressionfields/>
       <map-layer-style-manager current="">
@@ -22270,8 +22510,8 @@
         <property key="labeling/bufferTransp" value="0"/>
         <property key="labeling/centroidInside" value="false"/>
         <property key="labeling/centroidWhole" value="false"/>
-        <property key="labeling/dataDefined/AlwaysShow" value="1~~1~~CASE WHEN &quot;id_labelvisible&quot; = 't' THEN 1 ELSE 0 END~~"/>
-        <property key="labeling/dataDefined/Show" value="1~~1~~CASE WHEN &quot;id_labelvisible&quot; = 'f' THEN 0 ELSE 1 END~~"/>
+        <property key="labeling/dataDefined/AlwaysShow" value="1~~1~~CASE WHEN  &quot;label_1_visible&quot; = 2 THEN 1 ELSE 0 END~~"/>
+        <property key="labeling/dataDefined/Show" value="1~~0~~CASE WHEN &quot;id_labelvisible&quot; = 'f' THEN 0 ELSE 1 END~~label_1_visible"/>
         <property key="labeling/decimals" value="3"/>
         <property key="labeling/displayAll" value="true"/>
         <property key="labeling/dist" value="5"/>
@@ -22279,7 +22519,7 @@
         <property key="labeling/distMapUnitMaxScale" value="0"/>
         <property key="labeling/distMapUnitMinScale" value="0"/>
         <property key="labeling/enabled" value="true"/>
-        <property key="labeling/fieldName" value="CASE &#xa;WHEN id_type = 2801 THEN 'CR. ' || name&#xa;WHEN id_type = 2802 THEN 'CCP. ' || name&#xa;WHEN id_type = 2803 THEN 'CRA. ' || name&#xa;ELSE name&#x9;&#xa;END&#xa;|| CASE &#xa;WHEN $scale  > 4000 AND  &quot;label_1_text_schema&quot; != '' THEN  '\n' || &quot;label_1_text_schema&quot; &#xa;WHEN $scale &lt;= 4000  AND &quot;label_1_text&quot; != '' THEN  '\n' || &quot;label_1_text&quot; &#xa;ELSE ''&#xa;END"/>
+        <property key="labeling/fieldName" value="CASE &#xa;WHEN id_type = 2801 THEN 'CR. ' || name&#xa;WHEN id_type = 2802 THEN 'CCP. ' || name&#xa;WHEN id_type = 2803 THEN 'CRA. ' || name&#xa;ELSE name&#x9;&#xa;END&#xa;|| CASE &#xa;WHEN $scale  > 4000 AND  &quot;label_2_text&quot; != '' THEN  '\n' || &quot;label_2_text&quot; &#xa;WHEN $scale &lt;= 4000  AND &quot;label_1_text&quot; != '' THEN  '\n' || &quot;label_1_text&quot; &#xa;ELSE ''&#xa;END"/>
         <property key="labeling/fontBold" value="true"/>
         <property key="labeling/fontCapitals" value="0"/>
         <property key="labeling/fontFamily" value="Arial"/>
@@ -22398,7 +22638,7 @@
       <blendMode>0</blendMode>
       <featureBlendMode>0</featureBlendMode>
       <layerTransparency>0</layerTransparency>
-      <displayfield>name</displayfield>
+      <featuretitle>name</featuretitle>
       <label>0</label>
       <labelattributes>
         <label fieldname="" text="Label"/>
@@ -22563,7 +22803,7 @@
         </spatialrefsys>
       </srs>
       <provider encoding="System">postgres</provider>
-      <previewExpression>id</previewExpression>
+      <featuretitle>name</featuretitle>
       <vectorjoins/>
       <expressionfields/>
       <map-layer-style-manager current="">
@@ -22787,16 +23027,21 @@
         <property key="labeling/bufferNoFill" value="false"/>
         <property key="labeling/bufferSize" value="0.5"/>
         <property key="labeling/bufferSizeInMapUnits" value="false"/>
+        <property key="labeling/bufferSizeMapUnitMaxScale" value="0"/>
+        <property key="labeling/bufferSizeMapUnitMinScale" value="0"/>
         <property key="labeling/bufferTransp" value="0"/>
+        <property key="labeling/centroidInside" value="false"/>
         <property key="labeling/centroidWhole" value="false"/>
-        <property key="labeling/dataDefined/AlwaysShow" value="1~~1~~CASE WHEN &quot;id_labelvisible&quot; = 't' THEN 1 ELSE 0 END~~"/>
-        <property key="labeling/dataDefined/Show" value="1~~1~~CASE WHEN &quot;id_labelvisible&quot; = 'f' THEN 0 ELSE 1 END~~"/>
+        <property key="labeling/dataDefined/AlwaysShow" value="1~~1~~CASE WHEN  &quot;label_1_visible&quot; = 2 THEN 1 ELSE 0 END~~"/>
+        <property key="labeling/dataDefined/Show" value="1~~0~~CASE WHEN &quot;id_labelvisible&quot; = 'f' THEN 0 ELSE 1 END~~label_1_visible"/>
         <property key="labeling/decimals" value="3"/>
         <property key="labeling/displayAll" value="false"/>
         <property key="labeling/dist" value="5"/>
         <property key="labeling/distInMapUnits" value="false"/>
+        <property key="labeling/distMapUnitMaxScale" value="0"/>
+        <property key="labeling/distMapUnitMinScale" value="0"/>
         <property key="labeling/enabled" value="true"/>
-        <property key="labeling/fieldName" value="'P. ' || name&#xa;|| CASE &#xa;WHEN $scale  > 4000 AND  &quot;label_1_text_schema&quot; != '' THEN  '\n' || &quot;label_1_text_schema&quot; &#xa;WHEN $scale &lt;= 4000  AND &quot;label_1_text&quot; != '' THEN  '\n' || &quot;label_1_text&quot; &#xa;ELSE ''&#xa;END"/>
+        <property key="labeling/fieldName" value="'P. ' || name&#xa;|| CASE &#xa;WHEN $scale  > 4000 AND  &quot;label_2_text&quot; != '' THEN  '\n' || &quot;label_2_text&quot; &#xa;WHEN $scale &lt;= 4000  AND &quot;label_1_text&quot; != '' THEN  '\n' || &quot;label_1_text&quot; &#xa;ELSE ''&#xa;END"/>
         <property key="labeling/fontBold" value="true"/>
         <property key="labeling/fontCapitals" value="0"/>
         <property key="labeling/fontFamily" value="Arial"/>
@@ -22807,6 +23052,8 @@
         <property key="labeling/fontMinPixelSize" value="3"/>
         <property key="labeling/fontSize" value="11"/>
         <property key="labeling/fontSizeInMapUnits" value="false"/>
+        <property key="labeling/fontSizeMapUnitMaxScale" value="0"/>
+        <property key="labeling/fontSizeMapUnitMinScale" value="0"/>
         <property key="labeling/fontStrikeout" value="false"/>
         <property key="labeling/fontUnderline" value="false"/>
         <property key="labeling/fontWeight" value="75"/>
@@ -22814,6 +23061,8 @@
         <property key="labeling/formatNumbers" value="false"/>
         <property key="labeling/isExpression" value="true"/>
         <property key="labeling/labelOffsetInMapUnits" value="true"/>
+        <property key="labeling/labelOffsetMapUnitMaxScale" value="0"/>
+        <property key="labeling/labelOffsetMapUnitMinScale" value="0"/>
         <property key="labeling/labelPerPart" value="false"/>
         <property key="labeling/leftDirectionSymbol" value="&lt;"/>
         <property key="labeling/limitNumLabels" value="false"/>
@@ -22834,6 +23083,10 @@
         <property key="labeling/previewBkgrdColor" value="#ffffff"/>
         <property key="labeling/priority" value="5"/>
         <property key="labeling/quadOffset" value="4"/>
+        <property key="labeling/repeatDistance" value="0"/>
+        <property key="labeling/repeatDistanceMapUnitMaxScale" value="0"/>
+        <property key="labeling/repeatDistanceMapUnitMinScale" value="0"/>
+        <property key="labeling/repeatDistanceUnit" value="1"/>
         <property key="labeling/reverseDirectionSymbol" value="false"/>
         <property key="labeling/rightDirectionSymbol" value=">"/>
         <property key="labeling/scaleMax" value="50000"/>
@@ -22847,9 +23100,13 @@
         <property key="labeling/shadowOffsetAngle" value="135"/>
         <property key="labeling/shadowOffsetDist" value="1"/>
         <property key="labeling/shadowOffsetGlobal" value="true"/>
+        <property key="labeling/shadowOffsetMapUnitMaxScale" value="0"/>
+        <property key="labeling/shadowOffsetMapUnitMinScale" value="0"/>
         <property key="labeling/shadowOffsetUnits" value="1"/>
         <property key="labeling/shadowRadius" value="1.5"/>
         <property key="labeling/shadowRadiusAlphaOnly" value="false"/>
+        <property key="labeling/shadowRadiusMapUnitMaxScale" value="0"/>
+        <property key="labeling/shadowRadiusMapUnitMinScale" value="0"/>
         <property key="labeling/shadowRadiusUnits" value="1"/>
         <property key="labeling/shadowScale" value="100"/>
         <property key="labeling/shadowTransparency" value="30"/>
@@ -22860,6 +23117,8 @@
         <property key="labeling/shapeBorderColorG" value="128"/>
         <property key="labeling/shapeBorderColorR" value="128"/>
         <property key="labeling/shapeBorderWidth" value="0"/>
+        <property key="labeling/shapeBorderWidthMapUnitMaxScale" value="0"/>
+        <property key="labeling/shapeBorderWidthMapUnitMinScale" value="0"/>
         <property key="labeling/shapeBorderWidthUnits" value="1"/>
         <property key="labeling/shapeDraw" value="false"/>
         <property key="labeling/shapeFillColorA" value="255"/>
@@ -22867,15 +23126,21 @@
         <property key="labeling/shapeFillColorG" value="255"/>
         <property key="labeling/shapeFillColorR" value="255"/>
         <property key="labeling/shapeJoinStyle" value="64"/>
+        <property key="labeling/shapeOffsetMapUnitMaxScale" value="0"/>
+        <property key="labeling/shapeOffsetMapUnitMinScale" value="0"/>
         <property key="labeling/shapeOffsetUnits" value="1"/>
         <property key="labeling/shapeOffsetX" value="0"/>
         <property key="labeling/shapeOffsetY" value="0"/>
+        <property key="labeling/shapeRadiiMapUnitMaxScale" value="0"/>
+        <property key="labeling/shapeRadiiMapUnitMinScale" value="0"/>
         <property key="labeling/shapeRadiiUnits" value="1"/>
         <property key="labeling/shapeRadiiX" value="0"/>
         <property key="labeling/shapeRadiiY" value="0"/>
         <property key="labeling/shapeRotation" value="0"/>
         <property key="labeling/shapeRotationType" value="0"/>
         <property key="labeling/shapeSVGFile" value=""/>
+        <property key="labeling/shapeSizeMapUnitMaxScale" value="0"/>
+        <property key="labeling/shapeSizeMapUnitMinScale" value="0"/>
         <property key="labeling/shapeSizeType" value="0"/>
         <property key="labeling/shapeSizeUnits" value="1"/>
         <property key="labeling/shapeSizeX" value="0"/>
@@ -22895,7 +23160,7 @@
       <blendMode>0</blendMode>
       <featureBlendMode>0</featureBlendMode>
       <layerTransparency>0</layerTransparency>
-      <displayfield>id</displayfield>
+      <featuretitle>name</featuretitle>
       <label>0</label>
       <labelattributes>
         <label fieldname="" text="Label"/>
@@ -23081,7 +23346,7 @@
         </spatialrefsys>
       </srs>
       <provider encoding="System">postgres</provider>
-      <previewExpression>COALESCE( "id", '&lt;NULL>' )</previewExpression>
+      <featuretitle>name</featuretitle>
       <vectorjoins/>
       <expressionfields/>
       <map-layer-style-manager current="">
@@ -23307,8 +23572,8 @@
         <property key="labeling/bufferTransp" value="0"/>
         <property key="labeling/centroidInside" value="false"/>
         <property key="labeling/centroidWhole" value="false"/>
-        <property key="labeling/dataDefined/AlwaysShow" value="1~~1~~CASE WHEN &quot;id_labelvisible&quot; = 't' THEN 1 ELSE 0 END~~"/>
-        <property key="labeling/dataDefined/Show" value="1~~1~~CASE WHEN &quot;id_labelvisible&quot; = 'f' THEN 0 ELSE 1 END~~"/>
+        <property key="labeling/dataDefined/AlwaysShow" value="1~~1~~CASE WHEN  &quot;label_1_visible&quot; = 2 THEN 1 ELSE 0 END~~"/>
+        <property key="labeling/dataDefined/Show" value="1~~0~~CASE WHEN &quot;id_labelvisible&quot; = 'f' THEN 0 ELSE 1 END~~label_1_visible"/>
         <property key="labeling/decimals" value="3"/>
         <property key="labeling/displayAll" value="true"/>
         <property key="labeling/dist" value="5"/>
@@ -23316,7 +23581,7 @@
         <property key="labeling/distMapUnitMaxScale" value="0"/>
         <property key="labeling/distMapUnitMinScale" value="0"/>
         <property key="labeling/enabled" value="true"/>
-        <property key="labeling/fieldName" value="'S. ' || name&#xa;|| CASE &#xa;WHEN $scale  > 4000 AND  &quot;label_1_text_schema&quot; != '' THEN  '\n' || &quot;label_1_text_schema&quot; &#xa;WHEN $scale &lt;= 4000  AND &quot;label_1_text&quot; != '' THEN  '\n' || &quot;label_1_text&quot; &#xa;ELSE ''&#xa;END"/>
+        <property key="labeling/fieldName" value="'S. ' || name&#xa;|| CASE &#xa;WHEN $scale  > 4000 AND  &quot;label_2_text&quot; != '' THEN  '\n' || &quot;label_2_text&quot; &#xa;WHEN $scale &lt;= 4000  AND &quot;label_1_text&quot; != '' THEN  '\n' || &quot;label_1_text&quot; &#xa;ELSE ''&#xa;END"/>
         <property key="labeling/fontBold" value="true"/>
         <property key="labeling/fontCapitals" value="0"/>
         <property key="labeling/fontFamily" value="Arial"/>
@@ -23435,7 +23700,7 @@
       <blendMode>0</blendMode>
       <featureBlendMode>0</featureBlendMode>
       <layerTransparency>0</layerTransparency>
-      <displayfield>id</displayfield>
+      <featuretitle>name</featuretitle>
       <label>0</label>
       <labelattributes>
         <label fieldname="" text="Label"/>
@@ -23618,7 +23883,7 @@
         </spatialrefsys>
       </srs>
       <provider encoding="ISO-8859-1">postgres</provider>
-      <previewExpression>name</previewExpression>
+      <featuretitle>name</featuretitle>
       <vectorjoins>
         <join hasCustomPrefix="1" joinFieldName="id" customPrefix="installation_" targetFieldName="id_installation" memoryCache="0" joinLayerId="installation20130304110004938"/>
       </vectorjoins>
@@ -23640,7 +23905,7 @@
           <widgetv2config OrderByValue="1" AllowNull="0" FilterExpression="" UseCompleter="0" fieldEditable="1" Key="id" Layer="installation20130304110004938" Value="_displayname_fr" labelOnTop="0" AllowMulti="0"/>
         </edittype>
         <edittype widgetv2type="ValueRelation" name="id_status">
-          <widgetv2config OrderByValue="0" AllowNull="0" FilterExpression="" UseCompleter="0" fieldEditable="1" Key="id" Layer="vl_status20130304110011436" Value="value_en" labelOnTop="0" AllowMulti="0"/>
+          <widgetv2config OrderByValue="0" AllowNull="0" FilterExpression="" UseCompleter="0" fieldEditable="1" Key="id" Layer="vl_status20130304110011436" Value="value_fr" labelOnTop="0" AllowMulti="0"/>
         </edittype>
         <edittype widgetv2type="ValueRelation" name="id_distributor">
           <widgetv2config OrderByValue="0" AllowNull="0" FilterExpression="" UseCompleter="0" fieldEditable="1" Key="id" Layer="distributor20130304114719702" Value="name" labelOnTop="0" AllowMulti="0"/>
@@ -23724,10 +23989,10 @@
           <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
         </edittype>
         <edittype widgetv2type="CheckBox" name="fire_valve">
-          <widgetv2config fieldEditable="1" UncheckedState="0" CheckedState="1" labelOnTop="0"/>
+          <widgetv2config fieldEditable="1" UncheckedState="f" CheckedState="t" labelOnTop="0"/>
         </edittype>
         <edittype widgetv2type="CheckBox" name="fire_remote">
-          <widgetv2config fieldEditable="1" UncheckedState="0" CheckedState="1" labelOnTop="0"/>
+          <widgetv2config fieldEditable="1" UncheckedState="f" CheckedState="t" labelOnTop="0"/>
         </edittype>
         <edittype widgetv2type="TextEdit" name="_litrepercm">
           <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
@@ -23885,6 +24150,33 @@
         <edittype widgetv2type="TextEdit" name="installation_id_status">
           <widgetv2config IsMultiline="0" fieldEditable="0" UseHtml="0" labelOnTop="0"/>
         </edittype>
+        <edittype widgetv2type="TextEdit" name="installation_status_vl_active">
+          <widgetv2config IsMultiline="0" fieldEditable="0" UseHtml="0" labelOnTop="0"/>
+        </edittype>
+        <edittype widgetv2type="TextEdit" name="installation_status_value_en">
+          <widgetv2config IsMultiline="0" fieldEditable="0" UseHtml="0" labelOnTop="0"/>
+        </edittype>
+        <edittype widgetv2type="TextEdit" name="installation_status_value_fr">
+          <widgetv2config IsMultiline="0" fieldEditable="0" UseHtml="0" labelOnTop="0"/>
+        </edittype>
+        <edittype widgetv2type="TextEdit" name="installation_status_value_ro">
+          <widgetv2config IsMultiline="0" fieldEditable="0" UseHtml="0" labelOnTop="0"/>
+        </edittype>
+        <edittype widgetv2type="TextEdit" name="installation_status_active">
+          <widgetv2config IsMultiline="0" fieldEditable="0" UseHtml="0" labelOnTop="0"/>
+        </edittype>
+        <edittype widgetv2type="TextEdit" name="installation_status_sire">
+          <widgetv2config IsMultiline="0" fieldEditable="0" UseHtml="0" labelOnTop="0"/>
+        </edittype>
+        <edittype widgetv2type="TextEdit" name="installation_status_helper_en">
+          <widgetv2config IsMultiline="0" fieldEditable="0" UseHtml="0" labelOnTop="0"/>
+        </edittype>
+        <edittype widgetv2type="TextEdit" name="installation_status_helper_fr">
+          <widgetv2config IsMultiline="0" fieldEditable="0" UseHtml="0" labelOnTop="0"/>
+        </edittype>
+        <edittype widgetv2type="TextEdit" name="installation_status_helper_ro">
+          <widgetv2config IsMultiline="0" fieldEditable="0" UseHtml="0" labelOnTop="0"/>
+        </edittype>
       </edittypes>
       <renderer-v2 symbollevels="0" type="RuleRenderer">
         <rules key="{c44b8949-2ba4-43e7-be05-6d9d8d78353a}">
@@ -23979,8 +24271,8 @@
         <property key="labeling/bufferTransp" value="0"/>
         <property key="labeling/centroidInside" value="false"/>
         <property key="labeling/centroidWhole" value="false"/>
-        <property key="labeling/dataDefined/AlwaysShow" value="1~~1~~CASE WHEN &quot;id_labelvisible&quot; = 't' THEN 1 ELSE 0 END~~"/>
-        <property key="labeling/dataDefined/Show" value="1~~1~~CASE WHEN &quot;id_labelvisible&quot; = 'f' THEN 0 ELSE 1 END~~"/>
+        <property key="labeling/dataDefined/AlwaysShow" value="1~~1~~CASE WHEN  &quot;label_1_visible&quot; = 2 THEN 1 ELSE 0 END~~"/>
+        <property key="labeling/dataDefined/Show" value="1~~0~~CASE WHEN &quot;id_labelvisible&quot; = 'f' THEN 0 ELSE 1 END~~label_1_visible"/>
         <property key="labeling/decimals" value="0"/>
         <property key="labeling/displayAll" value="true"/>
         <property key="labeling/dist" value="5"/>
@@ -23988,7 +24280,7 @@
         <property key="labeling/distMapUnitMaxScale" value="0"/>
         <property key="labeling/distMapUnitMinScale" value="0"/>
         <property key="labeling/enabled" value="true"/>
-        <property key="labeling/fieldName" value="'R. ' || name&#xa;|| CASE &#xa;WHEN $scale  > 4000 AND  &quot;label_1_text_schema&quot; != '' THEN  '\n' || &quot;label_1_text_schema&quot; &#xa;WHEN $scale &lt;= 4000  AND &quot;label_1_text&quot; != '' THEN  '\n' || &quot;label_1_text&quot; &#xa;ELSE ''&#xa;END"/>
+        <property key="labeling/fieldName" value="'R. ' || name&#xa;|| CASE &#xa;WHEN $scale  > 4000 AND  &quot;label_2_text&quot; != '' THEN  '\n' || &quot;label_2_text&quot; &#xa;WHEN $scale &lt;= 4000  AND &quot;label_1_text&quot; != '' THEN  '\n' || &quot;label_1_text&quot; &#xa;ELSE ''&#xa;END"/>
         <property key="labeling/fontBold" value="true"/>
         <property key="labeling/fontCapitals" value="0"/>
         <property key="labeling/fontFamily" value="Arial"/>
@@ -24109,7 +24401,7 @@
       <blendMode>0</blendMode>
       <featureBlendMode>0</featureBlendMode>
       <layerTransparency>0</layerTransparency>
-      <displayfield>name</displayfield>
+      <featuretitle>name</featuretitle>
       <label>0</label>
       <labelattributes>
         <label fieldname="" text="Label"/>
@@ -24135,7 +24427,7 @@
       <editforminit/>
       <featformsuppress>0</featformsuppress>
       <annotationform>.</annotationform>
-      <editorlayout>uifilelayout</editorlayout>
+      <editorlayout>generatedlayout</editorlayout>
       <aliases>
         <alias field="_cistern1_litrepercm" index="39" name="Cuve 1 litres/cm"/>
         <alias field="_cistern2_litrepercm" index="44" name="Cuve 2 litres/cm"/>
@@ -24179,7 +24471,7 @@
           <widgetv2config OrderByValue="1" AllowNull="0" FilterExpression="" UseCompleter="0" fieldEditable="1" Key="id" Layer="installation20130304110004938" Value="_displayname_fr" labelOnTop="0" AllowMulti="0"/>
         </edittype>
         <edittype widgetv2type="ValueRelation" name="id_status">
-          <widgetv2config OrderByValue="0" AllowNull="0" FilterExpression="" UseCompleter="0" fieldEditable="1" Key="id" Layer="vl_status20130304110011436" Value="value_en" labelOnTop="0" AllowMulti="0"/>
+          <widgetv2config OrderByValue="0" AllowNull="0" FilterExpression="" UseCompleter="0" fieldEditable="1" Key="id" Layer="vl_status20130304110011436" Value="value_fr" labelOnTop="0" AllowMulti="0"/>
         </edittype>
         <edittype widgetv2type="ValueRelation" name="id_distributor">
           <widgetv2config OrderByValue="0" AllowNull="0" FilterExpression="" UseCompleter="0" fieldEditable="1" Key="id" Layer="distributor20130304114719702" Value="name" labelOnTop="0" AllowMulti="0"/>
@@ -24263,10 +24555,10 @@
           <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
         </edittype>
         <edittype widgetv2type="CheckBox" name="fire_valve">
-          <widgetv2config fieldEditable="1" UncheckedState="0" CheckedState="1" labelOnTop="0"/>
+          <widgetv2config fieldEditable="1" UncheckedState="f" CheckedState="t" labelOnTop="0"/>
         </edittype>
         <edittype widgetv2type="CheckBox" name="fire_remote">
-          <widgetv2config fieldEditable="1" UncheckedState="0" CheckedState="1" labelOnTop="0"/>
+          <widgetv2config fieldEditable="1" UncheckedState="f" CheckedState="t" labelOnTop="0"/>
         </edittype>
         <edittype widgetv2type="TextEdit" name="_litrepercm">
           <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
@@ -24424,9 +24716,36 @@
         <edittype widgetv2type="TextEdit" name="installation_id_status">
           <widgetv2config IsMultiline="0" fieldEditable="0" UseHtml="0" labelOnTop="0"/>
         </edittype>
+        <edittype widgetv2type="TextEdit" name="installation_status_vl_active">
+          <widgetv2config IsMultiline="0" fieldEditable="0" UseHtml="0" labelOnTop="0"/>
+        </edittype>
+        <edittype widgetv2type="TextEdit" name="installation_status_value_en">
+          <widgetv2config IsMultiline="0" fieldEditable="0" UseHtml="0" labelOnTop="0"/>
+        </edittype>
+        <edittype widgetv2type="TextEdit" name="installation_status_value_fr">
+          <widgetv2config IsMultiline="0" fieldEditable="0" UseHtml="0" labelOnTop="0"/>
+        </edittype>
+        <edittype widgetv2type="TextEdit" name="installation_status_value_ro">
+          <widgetv2config IsMultiline="0" fieldEditable="0" UseHtml="0" labelOnTop="0"/>
+        </edittype>
+        <edittype widgetv2type="TextEdit" name="installation_status_active">
+          <widgetv2config IsMultiline="0" fieldEditable="0" UseHtml="0" labelOnTop="0"/>
+        </edittype>
+        <edittype widgetv2type="TextEdit" name="installation_status_sire">
+          <widgetv2config IsMultiline="0" fieldEditable="0" UseHtml="0" labelOnTop="0"/>
+        </edittype>
+        <edittype widgetv2type="TextEdit" name="installation_status_helper_en">
+          <widgetv2config IsMultiline="0" fieldEditable="0" UseHtml="0" labelOnTop="0"/>
+        </edittype>
+        <edittype widgetv2type="TextEdit" name="installation_status_helper_fr">
+          <widgetv2config IsMultiline="0" fieldEditable="0" UseHtml="0" labelOnTop="0"/>
+        </edittype>
+        <edittype widgetv2type="TextEdit" name="installation_status_helper_ro">
+          <widgetv2config IsMultiline="0" fieldEditable="0" UseHtml="0" labelOnTop="0"/>
+        </edittype>
       </edittypes>
     </maplayer>
-    <maplayer minimumScale="-4.65661e-10" maximumScale="1e+08" simplifyDrawingHints="0" minLabelScale="0" maxLabelScale="1e+08" simplifyDrawingTol="1" geometry="Point" simplifyMaxScale="1" type="vector" hasScaleBasedVisibilityFlag="0" simplifyLocal="1" scaleBasedLabelVisibilityFlag="0">
+    <maplayer minimumScale="0" maximumScale="1e+08" simplifyDrawingHints="0" minLabelScale="0" maxLabelScale="1e+08" simplifyDrawingTol="1" geometry="Point" simplifyMaxScale="1" type="vector" hasScaleBasedVisibilityFlag="0" simplifyLocal="1" scaleBasedLabelVisibilityFlag="0">
       <id>installation_treatment20130816113039913</id>
       <datasource>service='qWat' sslmode=disable key='id' srid=21781 type=POINT table="qwat_od"."installation_treatment" (geometry) sql=</datasource>
       <title></title>
@@ -24448,7 +24767,7 @@
         </spatialrefsys>
       </srs>
       <provider encoding="System">postgres</provider>
-      <previewExpression>id</previewExpression>
+      <featuretitle>name</featuretitle>
       <vectorjoins/>
       <expressionfields/>
       <map-layer-style-manager current="">
@@ -24684,8 +25003,8 @@
         <property key="labeling/bufferTransp" value="0"/>
         <property key="labeling/centroidInside" value="false"/>
         <property key="labeling/centroidWhole" value="false"/>
-        <property key="labeling/dataDefined/AlwaysShow" value="1~~1~~CASE WHEN &quot;id_labelvisible&quot; = 't' THEN 1 ELSE 0 END~~"/>
-        <property key="labeling/dataDefined/Show" value="1~~1~~CASE WHEN &quot;id_labelvisible&quot; = 'f' THEN 0 ELSE 1 END~~"/>
+        <property key="labeling/dataDefined/AlwaysShow" value="1~~1~~CASE WHEN  &quot;label_1_visible&quot; = 2 THEN 1 ELSE 0 END~~"/>
+        <property key="labeling/dataDefined/Show" value="1~~0~~CASE WHEN &quot;id_labelvisible&quot; = 'f' THEN 0 ELSE 1 END~~label_1_visible"/>
         <property key="labeling/decimals" value="3"/>
         <property key="labeling/displayAll" value="true"/>
         <property key="labeling/dist" value="5"/>
@@ -24693,7 +25012,7 @@
         <property key="labeling/distMapUnitMaxScale" value="0"/>
         <property key="labeling/distMapUnitMinScale" value="0"/>
         <property key="labeling/enabled" value="true"/>
-        <property key="labeling/fieldName" value="'CT. ' || name&#xa;|| CASE &#xa;WHEN $scale  > 4000 AND  &quot;label_1_text_schema&quot; != '' THEN  '\n' || &quot;label_1_text_schema&quot; &#xa;WHEN $scale &lt;= 4000  AND &quot;label_1_text&quot; != '' THEN  '\n' || &quot;label_1_text&quot; &#xa;ELSE ''&#xa;END"/>
+        <property key="labeling/fieldName" value="'CT. ' || name&#xa;|| CASE &#xa;WHEN $scale  > 4000 AND  &quot;label_2_text&quot; != '' THEN  '\n' || &quot;label_2_text&quot; &#xa;WHEN $scale &lt;= 4000  AND &quot;label_1_text&quot; != '' THEN  '\n' || &quot;label_1_text&quot; &#xa;ELSE ''&#xa;END"/>
         <property key="labeling/fontBold" value="true"/>
         <property key="labeling/fontCapitals" value="0"/>
         <property key="labeling/fontFamily" value="Arial"/>
@@ -24812,7 +25131,7 @@
       <blendMode>0</blendMode>
       <featureBlendMode>0</featureBlendMode>
       <layerTransparency>0</layerTransparency>
-      <displayfield>id</displayfield>
+      <featuretitle>name</featuretitle>
       <label>0</label>
       <labelattributes>
         <label fieldname="" text="Label"/>
@@ -24982,7 +25301,7 @@
         </edittype>
       </edittypes>
     </maplayer>
-    <maplayer minimumScale="0" maximumScale="1e+08" simplifyDrawingHints="0" minLabelScale="0" maxLabelScale="1e+08" simplifyDrawingTol="1" geometry="Point" simplifyMaxScale="1" type="vector" hasScaleBasedVisibilityFlag="0" simplifyLocal="1" scaleBasedLabelVisibilityFlag="0">
+    <maplayer minimumScale="-4.65661e-10" maximumScale="1e+08" simplifyDrawingHints="0" minLabelScale="0" maxLabelScale="1e+08" simplifyDrawingTol="1" geometry="Point" simplifyMaxScale="1" type="vector" hasScaleBasedVisibilityFlag="0" simplifyLocal="1" scaleBasedLabelVisibilityFlag="0">
       <id>installation_valvechamber20131107105006707</id>
       <datasource>service='qWat' sslmode=disable key='id' estimatedmetadata=true srid=21781 type=POINT table="qwat_od"."installation_valvechamber" (geometry) sql=</datasource>
       <title></title>
@@ -25004,7 +25323,7 @@
         </spatialrefsys>
       </srs>
       <provider encoding="System">postgres</provider>
-      <previewExpression>COALESCE( "name", '&lt;NULL>' )</previewExpression>
+      <featuretitle>name</featuretitle>
       <vectorjoins/>
       <expressionfields/>
       <map-layer-style-manager current="">
@@ -25277,8 +25596,8 @@
         <property key="labeling/bufferTransp" value="0"/>
         <property key="labeling/centroidInside" value="false"/>
         <property key="labeling/centroidWhole" value="false"/>
-        <property key="labeling/dataDefined/AlwaysShow" value="1~~1~~CASE WHEN &quot;id_labelvisible&quot; = 't' THEN 1 ELSE 0 END~~"/>
-        <property key="labeling/dataDefined/Show" value="1~~1~~CASE WHEN &quot;id_labelvisible&quot; = 'f' THEN 0 ELSE 1 END~~"/>
+        <property key="labeling/dataDefined/AlwaysShow" value="1~~1~~CASE WHEN  &quot;label_1_visible&quot; = 2 THEN 1 ELSE 0 END~~"/>
+        <property key="labeling/dataDefined/Show" value="1~~0~~CASE WHEN &quot;id_labelvisible&quot; = 'f' THEN 0 ELSE 1 END~~label_1_visible"/>
         <property key="labeling/decimals" value="3"/>
         <property key="labeling/displayAll" value="true"/>
         <property key="labeling/dist" value="5"/>
@@ -25286,7 +25605,7 @@
         <property key="labeling/distMapUnitMaxScale" value="0"/>
         <property key="labeling/distMapUnitMinScale" value="0"/>
         <property key="labeling/enabled" value="true"/>
-        <property key="labeling/fieldName" value="CASE &#xa;WHEN meter = 't' THEN 'CC. '&#xa;ELSE 'CV. '&#xa;END&#xa;|| name&#xa;|| CASE &#xa;WHEN $scale  > 4000 AND  &quot;label_1_text_schema&quot; != '' THEN  '\n' || &quot;label_1_text_schema&quot; &#xa;WHEN $scale &lt;= 4000  AND &quot;label_1_text&quot; != '' THEN  '\n' || &quot;label_1_text&quot; &#xa;ELSE ''&#xa;END"/>
+        <property key="labeling/fieldName" value="CASE &#xa;WHEN meter = 't' THEN 'CC. '&#xa;ELSE 'CV. '&#xa;END&#xa;|| name&#xa;|| CASE &#xa;WHEN $scale  > 4000 AND  &quot;label_2_text&quot; != '' THEN  '\n' || &quot;label_2_text&quot; &#xa;WHEN $scale &lt;= 4000  AND &quot;label_1_text&quot; != '' THEN  '\n' || &quot;label_1_text&quot; &#xa;ELSE ''&#xa;END"/>
         <property key="labeling/fontBold" value="true"/>
         <property key="labeling/fontCapitals" value="0"/>
         <property key="labeling/fontFamily" value="Arial"/>
@@ -25405,7 +25724,7 @@
       <blendMode>0</blendMode>
       <featureBlendMode>0</featureBlendMode>
       <layerTransparency>0</layerTransparency>
-      <displayfield>name</displayfield>
+      <featuretitle>name</featuretitle>
       <label>0</label>
       <labelattributes>
         <label fieldname="" text="Label"/>
@@ -25573,7 +25892,7 @@
         </spatialrefsys>
       </srs>
       <provider encoding="System">postgres</provider>
-      <previewExpression>"id"</previewExpression>
+      <featuretitle>description</featuretitle>
       <vectorjoins/>
       <expressionfields/>
       <map-layer-style-manager current="">
@@ -25857,7 +26176,7 @@
       <blendMode>0</blendMode>
       <featureBlendMode>0</featureBlendMode>
       <layerTransparency>0</layerTransparency>
-      <displayfield>description</displayfield>
+      <featuretitle>description</featuretitle>
       <label>0</label>
       <labelattributes>
         <label fieldname="" text="Label"/>
@@ -26026,7 +26345,7 @@
         <property key="itemBrowserConnected" value="no"/>
       </customproperties>
       <provider encoding="ISO-8859-1">postgres</provider>
-      <previewExpression></previewExpression>
+      <featuretitle>schema_name</featuretitle>
       <vectorjoins/>
       <expressionfields/>
       <map-layer-style-manager current="">
@@ -26171,7 +26490,7 @@
         </spatialrefsys>
       </srs>
       <provider encoding="ISO-8859-1">postgres</provider>
-      <previewExpression>COALESCE( "id", '&lt;NULL>' )</previewExpression>
+      <featuretitle>id</featuretitle>
       <vectorjoins/>
       <expressionfields/>
       <map-layer-style-manager current="">
@@ -26547,7 +26866,7 @@
       <blendMode>0</blendMode>
       <featureBlendMode>0</featureBlendMode>
       <layerTransparency>0</layerTransparency>
-      <displayfield>id</displayfield>
+      <featuretitle>id</featuretitle>
       <label>0</label>
       <labelattributes>
         <label fieldname="" text="Label"/>
@@ -26625,7 +26944,7 @@
         </spatialrefsys>
       </srs>
       <provider encoding="System">postgres</provider>
-      <previewExpression>COALESCE( "id", '&lt;NULL>' )</previewExpression>
+      <featuretitle>id</featuretitle>
       <vectorjoins/>
       <expressionfields/>
       <map-layer-style-manager current="">
@@ -26810,7 +27129,7 @@
       <blendMode>0</blendMode>
       <featureBlendMode>0</featureBlendMode>
       <layerTransparency>0</layerTransparency>
-      <displayfield>id</displayfield>
+      <featuretitle>id</featuretitle>
       <label>0</label>
       <labelattributes>
         <label fieldname="" text="Label"/>
@@ -26882,7 +27201,7 @@
         </spatialrefsys>
       </srs>
       <provider encoding="System">postgres</provider>
-      <previewExpression>COALESCE( "id", '&lt;NULL>' )</previewExpression>
+      <featuretitle>id</featuretitle>
       <vectorjoins/>
       <expressionfields/>
       <map-layer-style-manager current="">
@@ -27069,7 +27388,7 @@
       <blendMode>0</blendMode>
       <featureBlendMode>0</featureBlendMode>
       <layerTransparency>100</layerTransparency>
-      <displayfield>id</displayfield>
+      <featuretitle>id</featuretitle>
       <label>0</label>
       <labelattributes>
         <label fieldname="" text="Label"/>
@@ -27138,7 +27457,7 @@
         </spatialrefsys>
       </srs>
       <provider encoding="UTF-8">postgres</provider>
-      <previewExpression></previewExpression>
+      <featuretitle>id</featuretitle>
       <vectorjoins/>
       <expressionfields/>
       <map-layer-style-manager current="">
@@ -27462,7 +27781,7 @@
       <blendMode>0</blendMode>
       <featureBlendMode>0</featureBlendMode>
       <layerTransparency>0</layerTransparency>
-      <displayfield>id</displayfield>
+      <featuretitle>id</featuretitle>
       <label>0</label>
       <labelattributes>
         <label fieldname="" text="Label"/>
@@ -27615,7 +27934,7 @@
         </spatialrefsys>
       </srs>
       <provider encoding="UTF-8">postgres</provider>
-      <previewExpression>COALESCE( "id", '&lt;NULL>' )</previewExpression>
+      <featuretitle>id</featuretitle>
       <vectorjoins/>
       <expressionfields>
         <field typeName="double precision" precision="-1" expression="CASE WHEN hide_pipe = 1 THEN _pipe2_angle ELSE _pipe1_angle END" length="-1" type="6" comment="" name="_used_angle"/>
@@ -27915,7 +28234,7 @@
       <blendMode>0</blendMode>
       <featureBlendMode>0</featureBlendMode>
       <layerTransparency>0</layerTransparency>
-      <displayfield>id</displayfield>
+      <featuretitle>id</featuretitle>
       <label>0</label>
       <labelattributes>
         <label fieldname="" text="Label"/>
@@ -27999,7 +28318,7 @@
         </spatialrefsys>
       </srs>
       <provider encoding="System">postgres</provider>
-      <previewExpression></previewExpression>
+      <featuretitle>id</featuretitle>
       <vectorjoins/>
       <expressionfields/>
       <map-layer-style-manager current="">
@@ -28178,7 +28497,7 @@
       <blendMode>0</blendMode>
       <featureBlendMode>0</featureBlendMode>
       <layerTransparency>0</layerTransparency>
-      <displayfield>id</displayfield>
+      <featuretitle>id</featuretitle>
       <label>0</label>
       <labelattributes>
         <label fieldname="" text="Label"/>
@@ -28244,7 +28563,7 @@
         </spatialrefsys>
       </srs>
       <provider encoding="System">postgres</provider>
-      <previewExpression>COALESCE( "id", '&lt;NULL>' )</previewExpression>
+      <featuretitle>id</featuretitle>
       <vectorjoins/>
       <expressionfields/>
       <map-layer-style-manager current="">
@@ -28523,7 +28842,7 @@
       <blendMode>0</blendMode>
       <featureBlendMode>0</featureBlendMode>
       <layerTransparency>0</layerTransparency>
-      <displayfield>id</displayfield>
+      <featuretitle>id</featuretitle>
       <label>0</label>
       <labelattributes>
         <label fieldname="" text="Label"/>
@@ -28665,7 +28984,7 @@
         </spatialrefsys>
       </srs>
       <provider encoding="System">postgres</provider>
-      <previewExpression>COALESCE( "id", '&lt;NULL>' )</previewExpression>
+      <featuretitle>id</featuretitle>
       <vectorjoins>
         <join hasCustomPrefix="1" joinFieldName="id" customPrefix="meter_" targetFieldName="id_meter" memoryCache="1" joinLayerId="od_meter20131120073630165">
           <joinFieldsSubset>
@@ -28885,7 +29204,7 @@
       <blendMode>0</blendMode>
       <featureBlendMode>0</featureBlendMode>
       <layerTransparency>0</layerTransparency>
-      <displayfield>id</displayfield>
+      <featuretitle>id</featuretitle>
       <label>0</label>
       <labelattributes>
         <label fieldname="" text="Label"/>
@@ -28955,7 +29274,7 @@
         </spatialrefsys>
       </srs>
       <provider encoding="System">postgres</provider>
-      <previewExpression>COALESCE( "id", '&lt;NULL>' )</previewExpression>
+      <featuretitle>id</featuretitle>
       <vectorjoins/>
       <expressionfields/>
       <map-layer-style-manager current="">
@@ -29173,7 +29492,7 @@
       <blendMode>0</blendMode>
       <featureBlendMode>0</featureBlendMode>
       <layerTransparency>0</layerTransparency>
-      <displayfield>id</displayfield>
+      <featuretitle>id</featuretitle>
       <label>0</label>
       <labelattributes>
         <label fieldname="" text="Label"/>
@@ -29251,7 +29570,7 @@
         </spatialrefsys>
       </srs>
       <provider encoding="UTF-8">postgres</provider>
-      <previewExpression>COALESCE( "id", '&lt;NULL>' )</previewExpression>
+      <featuretitle>id</featuretitle>
       <vectorjoins>
         <join hasCustomPrefix="1" joinFieldName="id" customPrefix="node_" targetFieldName="id_node" memoryCache="1" joinLayerId="node20130304110005126">
           <joinFieldsSubset>
@@ -29686,7 +30005,7 @@
       <blendMode>0</blendMode>
       <featureBlendMode>0</featureBlendMode>
       <layerTransparency>0</layerTransparency>
-      <displayfield>id</displayfield>
+      <featuretitle>id</featuretitle>
       <label>0</label>
       <labelattributes>
         <label fieldname="" text="Label"/>
@@ -29848,7 +30167,7 @@
         </spatialrefsys>
       </srs>
       <provider encoding="UTF-8">postgres</provider>
-      <previewExpression>COALESCE( "id", '&lt;NULL>' )</previewExpression>
+      <featuretitle>id</featuretitle>
       <vectorjoins/>
       <expressionfields/>
       <map-layer-style-manager current="">
@@ -30109,7 +30428,7 @@
       <blendMode>0</blendMode>
       <featureBlendMode>0</featureBlendMode>
       <layerTransparency>0</layerTransparency>
-      <displayfield>id</displayfield>
+      <featuretitle>id</featuretitle>
       <label>0</label>
       <labelattributes>
         <label fieldname="" text="Label"/>
@@ -30232,7 +30551,7 @@
         </spatialrefsys>
       </srs>
       <provider encoding="System">postgres</provider>
-      <previewExpression>COALESCE( "id", '&lt;NULL>' )</previewExpression>
+      <featuretitle>id</featuretitle>
       <vectorjoins>
         <join hasCustomPrefix="1" joinFieldName="id" customPrefix="subscriber_" targetFieldName="id_subscriber" memoryCache="1" joinLayerId="subscriber20130304110011459">
           <joinFieldsSubset>
@@ -30452,7 +30771,7 @@
       <blendMode>0</blendMode>
       <featureBlendMode>0</featureBlendMode>
       <layerTransparency>0</layerTransparency>
-      <displayfield>id</displayfield>
+      <featuretitle>id</featuretitle>
       <label>0</label>
       <labelattributes>
         <label fieldname="" text="Label"/>
@@ -30522,7 +30841,7 @@
         </spatialrefsys>
       </srs>
       <provider encoding="UTF-8">postgres</provider>
-      <previewExpression>COALESCE( "name", '&lt;NULL>' )</previewExpression>
+      <featuretitle>name</featuretitle>
       <vectorjoins/>
       <expressionfields/>
       <map-layer-style-manager current="">
@@ -31118,7 +31437,7 @@
       <blendMode>0</blendMode>
       <featureBlendMode>0</featureBlendMode>
       <layerTransparency>0</layerTransparency>
-      <displayfield>name</displayfield>
+      <featuretitle>name</featuretitle>
       <label>0</label>
       <labelattributes>
         <label fieldname="" text="Label"/>
@@ -31272,7 +31591,7 @@
       </srs>
       <customproperties/>
       <provider encoding="UTF-8">postgres</provider>
-      <previewExpression></previewExpression>
+      <featuretitle>id</featuretitle>
       <vectorjoins/>
       <expressionfields/>
       <map-layer-style-manager current="">
@@ -31327,7 +31646,7 @@
         </spatialrefsys>
       </srs>
       <provider encoding="System">postgres</provider>
-      <previewExpression></previewExpression>
+      <featuretitle>child</featuretitle>
       <vectorjoins/>
       <expressionfields/>
       <map-layer-style-manager current="">
@@ -31553,7 +31872,7 @@
       <blendMode>0</blendMode>
       <featureBlendMode>0</featureBlendMode>
       <layerTransparency>0</layerTransparency>
-      <displayfield>child</displayfield>
+      <featuretitle>child</featuretitle>
       <label>0</label>
       <labelattributes>
         <label fieldname="" text="Label"/>
@@ -31617,7 +31936,7 @@
       </srs>
       <customproperties/>
       <provider encoding="UTF-8">postgres</provider>
-      <previewExpression></previewExpression>
+      <featuretitle>id</featuretitle>
       <vectorjoins/>
       <expressionfields/>
       <map-layer-style-manager current="">
@@ -31690,7 +32009,7 @@
         </spatialrefsys>
       </srs>
       <provider encoding="System">postgres</provider>
-      <previewExpression>shortname</previewExpression>
+      <featuretitle>name</featuretitle>
       <vectorjoins/>
       <expressionfields/>
       <map-layer-style-manager current="">
@@ -32008,7 +32327,7 @@
       <blendMode>0</blendMode>
       <featureBlendMode>0</featureBlendMode>
       <layerTransparency>0</layerTransparency>
-      <displayfield>shortname</displayfield>
+      <featuretitle>name</featuretitle>
       <label>0</label>
       <labelattributes>
         <label fieldname="" text="Label"/>
@@ -32110,7 +32429,7 @@
         </spatialrefsys>
       </srs>
       <provider encoding="ISO-8859-1">postgres</provider>
-      <previewExpression>COALESCE("shortname", '&lt;NULL>')</previewExpression>
+      <featuretitle>name</featuretitle>
       <vectorjoins>
         <join hasCustomPrefix="1" joinFieldName="id" customPrefix="district_" targetFieldName="id_district" memoryCache="1" joinLayerId="district20130304110004764"/>
       </vectorjoins>
@@ -32416,7 +32735,7 @@
       <blendMode>0</blendMode>
       <featureBlendMode>0</featureBlendMode>
       <layerTransparency>0</layerTransparency>
-      <displayfield>name</displayfield>
+      <featuretitle>name</featuretitle>
       <label>0</label>
       <labelattributes>
         <label fieldname="" text="Label"/>
@@ -32584,7 +32903,7 @@
         </spatialrefsys>
       </srs>
       <provider encoding="ISO-8859-1">postgres</provider>
-      <previewExpression></previewExpression>
+      <featuretitle>name</featuretitle>
       <vectorjoins/>
       <expressionfields/>
       <map-layer-style-manager current="">
@@ -32653,7 +32972,7 @@
       <blendMode>0</blendMode>
       <featureBlendMode>0</featureBlendMode>
       <layerTransparency>0</layerTransparency>
-      <displayfield>name</displayfield>
+      <featuretitle>name</featuretitle>
       <label>0</label>
       <labelattributes>
         <label fieldname="" text="Label"/>
@@ -32731,7 +33050,7 @@
         <property key="itemBrowserConnected" value="no"/>
       </customproperties>
       <provider encoding="ISO-8859-1">postgres</provider>
-      <previewExpression></previewExpression>
+      <featuretitle>id</featuretitle>
       <vectorjoins/>
       <expressionfields/>
       <map-layer-style-manager current="">
@@ -32850,7 +33169,7 @@
         </spatialrefsys>
       </srs>
       <provider encoding="UTF-8">postgres</provider>
-      <previewExpression>COALESCE( "id", '&lt;NULL>' )</previewExpression>
+      <featuretitle>id</featuretitle>
       <vectorjoins/>
       <expressionfields/>
       <map-layer-style-manager current="">
@@ -33159,7 +33478,7 @@
       <blendMode>0</blendMode>
       <featureBlendMode>0</featureBlendMode>
       <layerTransparency>0</layerTransparency>
-      <displayfield>id</displayfield>
+      <featuretitle>id</featuretitle>
       <label>0</label>
       <labelattributes>
         <label fieldname="" text="Label"/>
@@ -33273,7 +33592,7 @@
         </spatialrefsys>
       </srs>
       <provider encoding="UTF-8">postgres</provider>
-      <previewExpression>COALESCE( "id", '&lt;NULL>' )</previewExpression>
+      <featuretitle>id</featuretitle>
       <vectorjoins/>
       <expressionfields/>
       <map-layer-style-manager current="">
@@ -33570,7 +33889,7 @@
       <blendMode>0</blendMode>
       <featureBlendMode>0</featureBlendMode>
       <layerTransparency>0</layerTransparency>
-      <displayfield>id</displayfield>
+      <featuretitle>id</featuretitle>
       <label>0</label>
       <labelattributes>
         <label fieldname="" text="Label"/>
@@ -33685,7 +34004,7 @@
       </srs>
       <customproperties/>
       <provider encoding="UTF-8">postgres</provider>
-      <previewExpression></previewExpression>
+      <featuretitle>id</featuretitle>
       <vectorjoins/>
       <expressionfields/>
       <map-layer-style-manager current="">
@@ -33883,7 +34202,7 @@
         <property key="labeling/yOffset" value="0"/>
       </customproperties>
       <provider encoding="UTF-8">postgres</provider>
-      <previewExpression></previewExpression>
+      <featuretitle>id</featuretitle>
       <vectorjoins/>
       <expressionfields/>
       <map-layer-style-manager current="">
@@ -34047,7 +34366,7 @@
       </srs>
       <customproperties/>
       <provider encoding="UTF-8">postgres</provider>
-      <previewExpression></previewExpression>
+      <featuretitle>id</featuretitle>
       <vectorjoins/>
       <expressionfields/>
       <map-layer-style-manager current="">
@@ -34103,7 +34422,7 @@
       </srs>
       <customproperties/>
       <provider encoding="UTF-8">postgres</provider>
-      <previewExpression></previewExpression>
+      <featuretitle>id</featuretitle>
       <vectorjoins/>
       <expressionfields/>
       <map-layer-style-manager current="">
@@ -34158,7 +34477,7 @@
         </spatialrefsys>
       </srs>
       <provider encoding="ISO-8859-1">postgres</provider>
-      <previewExpression>id</previewExpression>
+      <featuretitle>id</featuretitle>
       <vectorjoins/>
       <expressionfields/>
       <map-layer-style-manager current="">
@@ -34588,7 +34907,7 @@
       <blendMode>0</blendMode>
       <featureBlendMode>0</featureBlendMode>
       <layerTransparency>0</layerTransparency>
-      <displayfield>id</displayfield>
+      <featuretitle>id</featuretitle>
       <label>0</label>
       <labelattributes>
         <label fieldname="" text="Label"/>
@@ -34729,7 +35048,7 @@
         </spatialrefsys>
       </srs>
       <provider encoding="System">postgres</provider>
-      <previewExpression>"id"</previewExpression>
+      <featuretitle>id</featuretitle>
       <vectorjoins/>
       <expressionfields/>
       <map-layer-style-manager current="">
@@ -34905,7 +35224,7 @@
       <blendMode>0</blendMode>
       <featureBlendMode>0</featureBlendMode>
       <layerTransparency>0</layerTransparency>
-      <displayfield>id</displayfield>
+      <featuretitle>id</featuretitle>
       <label>0</label>
       <labelattributes>
         <label fieldname="" text="Label"/>
@@ -34968,7 +35287,7 @@
         </spatialrefsys>
       </srs>
       <provider encoding="ISO-8859-1">postgres</provider>
-      <previewExpression>id</previewExpression>
+      <featuretitle>id</featuretitle>
       <vectorjoins>
         <join hasCustomPrefix="1" joinFieldName="id" customPrefix="valve_function_" targetFieldName="id_function" memoryCache="1" joinLayerId="vl_valve_function20130304110011544"/>
         <join hasCustomPrefix="1" joinFieldName="id" customPrefix="valve_type_" targetFieldName="id_type" memoryCache="1" joinLayerId="vl_valve_type20130304110011685"/>
@@ -35577,7 +35896,7 @@
       <blendMode>0</blendMode>
       <featureBlendMode>0</featureBlendMode>
       <layerTransparency>0</layerTransparency>
-      <displayfield>id</displayfield>
+      <featuretitle>id</featuretitle>
       <label>0</label>
       <labelattributes>
         <label fieldname="" text="Label"/>
@@ -35785,7 +36104,7 @@
         </edittype>
       </edittypes>
     </maplayer>
-    <maplayer minimumScale="-4.65661e-10" maximumScale="1e+08" simplifyDrawingHints="0" minLabelScale="1" maxLabelScale="1e+08" simplifyDrawingTol="1" geometry="Point" simplifyMaxScale="1" type="vector" hasScaleBasedVisibilityFlag="0" simplifyLocal="1" scaleBasedLabelVisibilityFlag="0">
+    <maplayer minimumScale="0" maximumScale="1e+08" simplifyDrawingHints="0" minLabelScale="1" maxLabelScale="1e+08" simplifyDrawingTol="1" geometry="Point" simplifyMaxScale="1" type="vector" hasScaleBasedVisibilityFlag="0" simplifyLocal="1" scaleBasedLabelVisibilityFlag="0">
       <id>vannes_copy20141127160745910</id>
       <datasource>service='qWat' sslmode=allow key='id' srid=21781 type=POINT table="qwat_od"."valve" (geometry_alt2) sql=</datasource>
       <title></title>
@@ -35807,7 +36126,7 @@
         </spatialrefsys>
       </srs>
       <provider encoding="UTF-8">postgres</provider>
-      <previewExpression>COALESCE( "id", '&lt;NULL>' )</previewExpression>
+      <featuretitle>id</featuretitle>
       <vectorjoins>
         <join hasCustomPrefix="1" joinFieldName="id" customPrefix="valve_function_" targetFieldName="id_function" memoryCache="1" joinLayerId="vl_valve_function20130304110011544"/>
         <join hasCustomPrefix="1" joinFieldName="id" customPrefix="valve_type_" targetFieldName="id_type" memoryCache="1" joinLayerId="vl_valve_type20130304110011685"/>
@@ -36188,7 +36507,7 @@
               <prop k="color" v="#000000"/>
               <prop k="horizontal_anchor_point" v="1"/>
               <prop k="name" v="./symbols/vidange_schema.svg"/>
-              <prop k="offset" v="0,-2"/>
+              <prop k="offset" v="0,-1.7"/>
               <prop k="offset_map_unit_scale" v="0,0"/>
               <prop k="offset_unit" v="MM"/>
               <prop k="outline_color" v="#000000"/>
@@ -36313,7 +36632,7 @@
         <property key="labeling/fieldName" value="COALESCE(&quot;valve_function_short_fr&quot;,'')&#xa;||&#xa;COALESCE(&quot;valve_type_short_fr&quot;,'')&#xa;|| &#xa;identification&#xa;||&#xa;CASE&#xa;WHEN  $scale  &lt;= 6000  THEN COALESCE(' ' ||&quot;label_1_text&quot;,'')&#xa;END"/>
         <property key="labeling/fontBold" value="false"/>
         <property key="labeling/fontCapitals" value="0"/>
-        <property key="labeling/fontFamily" value="Arial"/>
+        <property key="labeling/fontFamily" value="Cantarell"/>
         <property key="labeling/fontItalic" value="false"/>
         <property key="labeling/fontLetterSpacing" value="0"/>
         <property key="labeling/fontLimitPixelSize" value="false"/>
@@ -36431,7 +36750,7 @@
       <blendMode>0</blendMode>
       <featureBlendMode>0</featureBlendMode>
       <layerTransparency>0</layerTransparency>
-      <displayfield>id</displayfield>
+      <featuretitle>id</featuretitle>
       <label>0</label>
       <labelattributes>
         <label fieldname="" text="Label"/>
@@ -36662,7 +36981,7 @@
       </srs>
       <customproperties/>
       <provider encoding="UTF-8">postgres</provider>
-      <previewExpression></previewExpression>
+      <featuretitle>id</featuretitle>
       <vectorjoins/>
       <expressionfields/>
       <map-layer-style-manager current="">
@@ -36738,7 +37057,7 @@
         <property key="itemBrowserConnected" value="no"/>
       </customproperties>
       <provider encoding="ISO-8859-1">postgres</provider>
-      <previewExpression></previewExpression>
+      <featuretitle>id</featuretitle>
       <vectorjoins/>
       <expressionfields/>
       <map-layer-style-manager current="">
@@ -36812,7 +37131,7 @@
       </srs>
       <customproperties/>
       <provider encoding="UTF-8">postgres</provider>
-      <previewExpression></previewExpression>
+      <featuretitle>id</featuretitle>
       <vectorjoins/>
       <expressionfields/>
       <map-layer-style-manager current="">
@@ -36886,7 +37205,7 @@
       </srs>
       <customproperties/>
       <provider encoding="System">postgres</provider>
-      <previewExpression>"id"</previewExpression>
+      <featuretitle>id</featuretitle>
       <vectorjoins/>
       <expressionfields/>
       <map-layer-style-manager current="">
@@ -36984,7 +37303,7 @@
       </srs>
       <customproperties/>
       <provider encoding="System">postgres</provider>
-      <previewExpression></previewExpression>
+      <featuretitle>id</featuretitle>
       <vectorjoins/>
       <expressionfields/>
       <map-layer-style-manager current="">
@@ -37058,7 +37377,7 @@
       </srs>
       <customproperties/>
       <provider encoding="System">postgres</provider>
-      <previewExpression></previewExpression>
+      <featuretitle>id</featuretitle>
       <vectorjoins/>
       <expressionfields/>
       <map-layer-style-manager current="">
@@ -37132,7 +37451,7 @@
       </srs>
       <customproperties/>
       <provider encoding="System">postgres</provider>
-      <previewExpression>COALESCE("id", '&lt;NULL>')</previewExpression>
+      <featuretitle>id</featuretitle>
       <vectorjoins/>
       <expressionfields/>
       <map-layer-style-manager current="">
@@ -37208,7 +37527,7 @@
         <property key="itemBrowserConnected" value="no"/>
       </customproperties>
       <provider encoding="ISO-8859-1">postgres</provider>
-      <previewExpression></previewExpression>
+      <featuretitle>id</featuretitle>
       <vectorjoins/>
       <expressionfields/>
       <map-layer-style-manager current="">
@@ -37282,7 +37601,7 @@
       </srs>
       <customproperties/>
       <provider encoding="UTF-8">postgres</provider>
-      <previewExpression></previewExpression>
+      <featuretitle>id</featuretitle>
       <vectorjoins/>
       <expressionfields/>
       <map-layer-style-manager current="">
@@ -37376,7 +37695,7 @@
         <property key="itemBrowserConnected" value="no"/>
       </customproperties>
       <provider encoding="ISO-8859-1">postgres</provider>
-      <previewExpression>COALESCE("id", '&lt;NULL>')</previewExpression>
+      <featuretitle>id</featuretitle>
       <vectorjoins/>
       <expressionfields/>
       <map-layer-style-manager current="">
@@ -37470,7 +37789,7 @@
         <property key="itemBrowserConnected" value="no"/>
       </customproperties>
       <provider encoding="ISO-8859-1">postgres</provider>
-      <previewExpression>COALESCE("id", '&lt;NULL>')</previewExpression>
+      <featuretitle>id</featuretitle>
       <vectorjoins/>
       <expressionfields/>
       <map-layer-style-manager current="">
@@ -37546,7 +37865,7 @@
         <property key="itemBrowserConnected" value="no"/>
       </customproperties>
       <provider encoding="ISO-8859-1">postgres</provider>
-      <previewExpression>pressure_nominal</previewExpression>
+      <featuretitle>_displayname_fr</featuretitle>
       <vectorjoins/>
       <expressionfields/>
       <map-layer-style-manager current="">
@@ -37706,7 +38025,7 @@
         <property key="itemBrowserConnected" value="no"/>
       </customproperties>
       <provider encoding="ISO-8859-1">postgres</provider>
-      <previewExpression></previewExpression>
+      <featuretitle>id</featuretitle>
       <vectorjoins/>
       <expressionfields/>
       <map-layer-style-manager current="">
@@ -37782,7 +38101,7 @@
         <property key="itemBrowserConnected" value="no"/>
       </customproperties>
       <provider encoding="ISO-8859-1">postgres</provider>
-      <previewExpression></previewExpression>
+      <featuretitle>description_en</featuretitle>
       <vectorjoins/>
       <expressionfields/>
       <map-layer-style-manager current="">
@@ -37880,7 +38199,7 @@
       </srs>
       <customproperties/>
       <provider encoding="System">postgres</provider>
-      <previewExpression></previewExpression>
+      <featuretitle>description_en</featuretitle>
       <vectorjoins/>
       <expressionfields/>
       <map-layer-style-manager current="">
@@ -37978,7 +38297,7 @@
       </srs>
       <customproperties/>
       <provider encoding="System">postgres</provider>
-      <previewExpression></previewExpression>
+      <featuretitle>id</featuretitle>
       <vectorjoins/>
       <expressionfields/>
       <map-layer-style-manager current="">
@@ -38058,7 +38377,7 @@
       </srs>
       <customproperties/>
       <provider encoding="System">postgres</provider>
-      <previewExpression></previewExpression>
+      <featuretitle>id</featuretitle>
       <vectorjoins/>
       <expressionfields/>
       <map-layer-style-manager current="">
@@ -38138,7 +38457,7 @@
       </srs>
       <customproperties/>
       <provider encoding="System">postgres</provider>
-      <previewExpression>COALESCE("id", '&lt;NULL>')</previewExpression>
+      <featuretitle>id</featuretitle>
       <vectorjoins/>
       <expressionfields/>
       <map-layer-style-manager current="">
@@ -38220,7 +38539,7 @@
         <property key="itemBrowserConnected" value="no"/>
       </customproperties>
       <provider encoding="ISO-8859-1">postgres</provider>
-      <previewExpression>COALESCE("id", '&lt;NULL>')</previewExpression>
+      <featuretitle>id</featuretitle>
       <vectorjoins/>
       <expressionfields/>
       <map-layer-style-manager current="">
@@ -38327,7 +38646,7 @@
         <property key="itemBrowserSelection" value="[]"/>
       </customproperties>
       <provider encoding="ISO-8859-1">postgres</provider>
-      <previewExpression>"id"</previewExpression>
+      <featuretitle>id</featuretitle>
       <vectorjoins/>
       <expressionfields/>
       <map-layer-style-manager current="">
@@ -38421,7 +38740,7 @@
         <property key="itemBrowserConnected" value="no"/>
       </customproperties>
       <provider encoding="ISO-8859-1">postgres</provider>
-      <previewExpression></previewExpression>
+      <featuretitle>id</featuretitle>
       <vectorjoins/>
       <expressionfields/>
       <map-layer-style-manager current="">
@@ -38497,7 +38816,7 @@
         <property key="itemBrowserConnected" value="no"/>
       </customproperties>
       <provider encoding="ISO-8859-1">postgres</provider>
-      <previewExpression>"id"</previewExpression>
+      <featuretitle>id</featuretitle>
       <vectorjoins/>
       <expressionfields/>
       <map-layer-style-manager current="">
@@ -38597,7 +38916,7 @@
         <property key="itemBrowserConnected" value="no"/>
       </customproperties>
       <provider encoding="ISO-8859-1">postgres</provider>
-      <previewExpression></previewExpression>
+      <featuretitle>id</featuretitle>
       <vectorjoins/>
       <expressionfields/>
       <map-layer-style-manager current="">
@@ -38689,7 +39008,7 @@
         <property key="itemBrowserConnected" value="no"/>
       </customproperties>
       <provider encoding="ISO-8859-1">postgres</provider>
-      <previewExpression>"id"</previewExpression>
+      <featuretitle>id</featuretitle>
       <vectorjoins/>
       <expressionfields/>
       <map-layer-style-manager current="">
@@ -38783,7 +39102,7 @@
         <property key="itemBrowserConnected" value="no"/>
       </customproperties>
       <provider encoding="ISO-8859-1">postgres</provider>
-      <previewExpression></previewExpression>
+      <featuretitle>id</featuretitle>
       <vectorjoins/>
       <expressionfields/>
       <map-layer-style-manager current="">
@@ -38863,7 +39182,7 @@
       </srs>
       <customproperties/>
       <provider encoding="System">postgres</provider>
-      <previewExpression></previewExpression>
+      <featuretitle>id</featuretitle>
       <vectorjoins/>
       <expressionfields/>
       <map-layer-style-manager current="">
@@ -38942,7 +39261,7 @@
         </spatialrefsys>
       </srs>
       <provider encoding="UTF-8">postgres</provider>
-      <previewExpression>COALESCE( "id", '&lt;NULL>' )</previewExpression>
+      <featuretitle>pipe_material__displayname_fr</featuretitle>
       <vectorjoins>
         <join hasCustomPrefix="1" joinFieldName="id" customPrefix="pipe_material_" targetFieldName="id_material" memoryCache="1" joinLayerId="vl_pipe_material20130304110005230"/>
       </vectorjoins>
@@ -39276,7 +39595,7 @@
       <blendMode>0</blendMode>
       <featureBlendMode>0</featureBlendMode>
       <layerTransparency>0</layerTransparency>
-      <displayfield>id</displayfield>
+      <featuretitle>pipe_material__displayname_fr</featuretitle>
       <label>0</label>
       <labelattributes>
         <label fieldname="" text="Label"/>
@@ -39468,7 +39787,7 @@
         </spatialrefsys>
       </srs>
       <provider encoding="UTF-8">postgres</provider>
-      <previewExpression>id</previewExpression>
+      <featuretitle>material__displayname_fr</featuretitle>
       <vectorjoins>
         <join hasCustomPrefix="1" joinFieldName="id" customPrefix="material_" targetFieldName="id_material" memoryCache="1" joinLayerId="vl_pipe_material20130304110005230"/>
       </vectorjoins>
@@ -39843,7 +40162,7 @@
       <blendMode>0</blendMode>
       <featureBlendMode>0</featureBlendMode>
       <layerTransparency>0</layerTransparency>
-      <displayfield>id</displayfield>
+      <featuretitle>material__displayname_fr</featuretitle>
       <label>0</label>
       <labelattributes>
         <label fieldname="" text="Label"/>
@@ -40045,27 +40364,307 @@
       <LayerSnappingList type="QStringList">
         <value>IntersectIt_Lines20130618102142813</value>
         <value>IntersectIt_Points20130618102143276</value>
+        <value>_cadinput_techical_snap_layer_20140203092715598</value>
+        <value>ad_posnumero_maison20130514143346530</value>
+        <value>axe_rue20130514143437774</value>
+        <value>bf_bien_fonds20130514143508556</value>
+        <value>bf_ddp20130514143538213</value>
+        <value>bf_point_limite20130514143552315</value>
+        <value>bf_posimmeuble20130514143633121</value>
+        <value>cadastre20140312152032371</value>
+        <value>camac20140113144941208</value>
+        <value>conduites_copy20130709141244955</value>
+        <value>constructionpoint20130807094904851</value>
+        <value>cs_batiment20130514143721709</value>
+        <value>cs_posnumero_de_batiment20130514143756039</value>
+        <value>cs_surfacecs20130514143830750</value>
+        <value>dimension20130807094904783</value>
+        <value>district20130304110004764</value>
+        <value>hydrant20130304110004848</value>
+        <value>installation20130304110004938</value>
+        <value>installation_pressurecontrol20131107105006792</value>
+        <value>installation_pump20130816140237750</value>
+        <value>installation_source20130820110331647</value>
+        <value>installation_tank20130304110005008</value>
+        <value>installation_treatment20130816113039913</value>
+        <value>installation_valvechamber20131107105006707</value>
+        <value>leak20130821111917060</value>
+        <value>no_posnomlocallieudit20130514143906869</value>
+        <value>node20130304110005126</value>
+        <value>od_annotationline20131203095020365</value>
+        <value>od_annotationpoint20131203095020392</value>
+        <value>od_batiment_souterrain20130514143946785</value>
+        <value>od_cover20141219115626229</value>
+        <value>od_crossing20141023083754327</value>
+        <value>od_dimension_orientation20131202111155806</value>
+        <value>od_element_lineaire20130514144047075</value>
+        <value>od_element_surfacique20130514144124647</value>
+        <value>od_meter20131120073630165</value>
+        <value>od_meter_reference20140304165835390</value>
+        <value>od_node20140116161508743</value>
+        <value>od_part20140429113327995</value>
+        <value>od_remote20150116100522170</value>
+        <value>od_subscriber_reference20131206105928067</value>
+        <value>ouvrage_général_copy20141218102656671</value>
+        <value>pf_pfa20130514144154766</value>
+        <value>pf_pfp20130514144226845</value>
+        <value>pipe_child_parent20130417092030507</value>
+        <value>pressurezone20130417133612105</value>
+        <value>printmap20130304110011400</value>
+        <value>protectionzone20130304110011418</value>
+        <value>servitude20150109080436604</value>
+        <value>servitude20150109080436650</value>
+        <value>subscriber20130304110011459</value>
+        <value>subscriber_pipe_relation20130417092124312</value>
+        <value>valve20130304110011497</value>
+        <value>vannes_copy20141127160745910</value>
+        <value>vw_pipe_schema20141208162900166</value>
+        <value>vw_pipe_schema_visibleitems20141127154708843</value>
       </LayerSnappingList>
       <LayerSnappingEnabledList type="QStringList">
         <value>disabled</value>
         <value>disabled</value>
+        <value>disabled</value>
+        <value>disabled</value>
+        <value>disabled</value>
+        <value>disabled</value>
+        <value>disabled</value>
+        <value>disabled</value>
+        <value>disabled</value>
+        <value>disabled</value>
+        <value>disabled</value>
+        <value>disabled</value>
+        <value>disabled</value>
+        <value>disabled</value>
+        <value>disabled</value>
+        <value>disabled</value>
+        <value>disabled</value>
+        <value>disabled</value>
+        <value>disabled</value>
+        <value>disabled</value>
+        <value>disabled</value>
+        <value>disabled</value>
+        <value>disabled</value>
+        <value>disabled</value>
+        <value>disabled</value>
+        <value>disabled</value>
+        <value>disabled</value>
+        <value>disabled</value>
+        <value>disabled</value>
+        <value>disabled</value>
+        <value>disabled</value>
+        <value>disabled</value>
+        <value>disabled</value>
+        <value>disabled</value>
+        <value>disabled</value>
+        <value>disabled</value>
+        <value>disabled</value>
+        <value>disabled</value>
+        <value>disabled</value>
+        <value>disabled</value>
+        <value>disabled</value>
+        <value>disabled</value>
+        <value>disabled</value>
+        <value>disabled</value>
+        <value>disabled</value>
+        <value>disabled</value>
+        <value>disabled</value>
+        <value>disabled</value>
+        <value>disabled</value>
+        <value>disabled</value>
+        <value>disabled</value>
+        <value>disabled</value>
+        <value>disabled</value>
+        <value>disabled</value>
+        <value>disabled</value>
+        <value>disabled</value>
+        <value>disabled</value>
+        <value>disabled</value>
       </LayerSnappingEnabledList>
-      <SnappingMode type="QString">advanced</SnappingMode>
+      <SnappingMode type="QString">all_layers</SnappingMode>
       <AvoidIntersectionsList type="QStringList"/>
       <LayerSnappingToleranceUnitList type="QStringList">
+        <value>1</value>
+        <value>1</value>
+        <value>1</value>
+        <value>1</value>
+        <value>1</value>
+        <value>1</value>
+        <value>1</value>
+        <value>1</value>
+        <value>1</value>
+        <value>1</value>
+        <value>1</value>
+        <value>1</value>
+        <value>1</value>
+        <value>1</value>
+        <value>1</value>
+        <value>1</value>
+        <value>1</value>
+        <value>1</value>
+        <value>1</value>
+        <value>1</value>
+        <value>1</value>
+        <value>1</value>
+        <value>1</value>
+        <value>1</value>
+        <value>1</value>
+        <value>1</value>
+        <value>1</value>
+        <value>1</value>
+        <value>1</value>
+        <value>1</value>
+        <value>1</value>
+        <value>1</value>
+        <value>1</value>
+        <value>1</value>
+        <value>1</value>
+        <value>1</value>
+        <value>1</value>
+        <value>1</value>
+        <value>1</value>
+        <value>1</value>
+        <value>1</value>
+        <value>1</value>
+        <value>1</value>
+        <value>1</value>
+        <value>1</value>
+        <value>1</value>
+        <value>1</value>
+        <value>1</value>
+        <value>1</value>
+        <value>1</value>
+        <value>1</value>
+        <value>1</value>
+        <value>1</value>
+        <value>1</value>
+        <value>1</value>
+        <value>1</value>
         <value>1</value>
         <value>1</value>
       </LayerSnappingToleranceUnitList>
       <LayerSnapToList type="QStringList">
         <value>to_vertex_and_segment</value>
         <value>to_vertex_and_segment</value>
+        <value>to_vertex_and_segment</value>
+        <value>to_vertex_and_segment</value>
+        <value>to_vertex_and_segment</value>
+        <value>to_vertex_and_segment</value>
+        <value>to_vertex_and_segment</value>
+        <value>to_vertex_and_segment</value>
+        <value>to_vertex_and_segment</value>
+        <value>to_vertex_and_segment</value>
+        <value>to_vertex_and_segment</value>
+        <value>to_vertex_and_segment</value>
+        <value>to_vertex_and_segment</value>
+        <value>to_vertex_and_segment</value>
+        <value>to_vertex_and_segment</value>
+        <value>to_vertex_and_segment</value>
+        <value>to_vertex_and_segment</value>
+        <value>to_vertex_and_segment</value>
+        <value>to_vertex_and_segment</value>
+        <value>to_vertex_and_segment</value>
+        <value>to_vertex_and_segment</value>
+        <value>to_vertex_and_segment</value>
+        <value>to_vertex_and_segment</value>
+        <value>to_vertex_and_segment</value>
+        <value>to_vertex_and_segment</value>
+        <value>to_vertex_and_segment</value>
+        <value>to_vertex_and_segment</value>
+        <value>to_vertex_and_segment</value>
+        <value>to_vertex_and_segment</value>
+        <value>to_vertex_and_segment</value>
+        <value>to_vertex_and_segment</value>
+        <value>to_vertex_and_segment</value>
+        <value>to_vertex_and_segment</value>
+        <value>to_vertex_and_segment</value>
+        <value>to_vertex_and_segment</value>
+        <value>to_vertex_and_segment</value>
+        <value>to_vertex_and_segment</value>
+        <value>to_vertex_and_segment</value>
+        <value>to_vertex_and_segment</value>
+        <value>to_vertex_and_segment</value>
+        <value>to_vertex_and_segment</value>
+        <value>to_vertex_and_segment</value>
+        <value>to_vertex_and_segment</value>
+        <value>to_vertex_and_segment</value>
+        <value>to_vertex_and_segment</value>
+        <value>to_vertex_and_segment</value>
+        <value>to_vertex_and_segment</value>
+        <value>to_vertex_and_segment</value>
+        <value>to_vertex_and_segment</value>
+        <value>to_vertex_and_segment</value>
+        <value>to_vertex_and_segment</value>
+        <value>to_vertex_and_segment</value>
+        <value>to_vertex_and_segment</value>
+        <value>to_vertex_and_segment</value>
+        <value>to_vertex_and_segment</value>
+        <value>to_vertex_and_segment</value>
+        <value>to_vertex_and_segment</value>
+        <value>to_vertex_and_segment</value>
       </LayerSnapToList>
-      <DefaultSnapType type="QString">off</DefaultSnapType>
+      <DefaultSnapType type="QString">to vertex</DefaultSnapType>
       <DefaultSnapTolerance type="double">7</DefaultSnapTolerance>
       <TopologicalEditing type="bool">false</TopologicalEditing>
       <LayerSnappingToleranceList type="QStringList">
         <value>1.000000</value>
         <value>1.000000</value>
+        <value>8.000000</value>
+        <value>8.000000</value>
+        <value>8.000000</value>
+        <value>8.000000</value>
+        <value>8.000000</value>
+        <value>8.000000</value>
+        <value>8.000000</value>
+        <value>8.000000</value>
+        <value>8.000000</value>
+        <value>8.000000</value>
+        <value>8.000000</value>
+        <value>8.000000</value>
+        <value>8.000000</value>
+        <value>8.000000</value>
+        <value>8.000000</value>
+        <value>8.000000</value>
+        <value>8.000000</value>
+        <value>8.000000</value>
+        <value>8.000000</value>
+        <value>8.000000</value>
+        <value>8.000000</value>
+        <value>8.000000</value>
+        <value>8.000000</value>
+        <value>8.000000</value>
+        <value>8.000000</value>
+        <value>8.000000</value>
+        <value>8.000000</value>
+        <value>8.000000</value>
+        <value>8.000000</value>
+        <value>8.000000</value>
+        <value>8.000000</value>
+        <value>8.000000</value>
+        <value>8.000000</value>
+        <value>8.000000</value>
+        <value>8.000000</value>
+        <value>8.000000</value>
+        <value>8.000000</value>
+        <value>8.000000</value>
+        <value>8.000000</value>
+        <value>8.000000</value>
+        <value>8.000000</value>
+        <value>8.000000</value>
+        <value>8.000000</value>
+        <value>8.000000</value>
+        <value>8.000000</value>
+        <value>8.000000</value>
+        <value>8.000000</value>
+        <value>8.000000</value>
+        <value>8.000000</value>
+        <value>8.000000</value>
+        <value>8.000000</value>
+        <value>8.000000</value>
+        <value>8.000000</value>
+        <value>8.000000</value>
+        <value>8.000000</value>
+        <value>8.000000</value>
       </LayerSnappingToleranceList>
     </Digitizing>
     <Identify>
