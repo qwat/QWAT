@@ -194,7 +194,7 @@
         </layer-tree-layer>
       </layer-tree-group>
     </layer-tree-group>
-    <layer-tree-group expanded="0" checked="Qt::Unchecked" name="Tables auxiliaires">
+    <layer-tree-group expanded="1" checked="Qt::Unchecked" name="Tables auxiliaires">
       <customproperties/>
       <layer-tree-layer expanded="1" checked="Qt::Unchecked" id="collecteur20150203112806387" name="collecteur">
         <customproperties/>
@@ -915,7 +915,7 @@
         </legendlayer>
       </legendgroup>
     </legendgroup>
-    <legendgroup open="false" checked="Qt::Unchecked" name="Tables auxiliaires">
+    <legendgroup open="true" checked="Qt::Unchecked" name="Tables auxiliaires">
       <legendlayer drawingOrder="48" open="true" checked="Qt::Unchecked" name="collecteur" showFeatureCount="0">
         <filegroup open="true" hidden="false">
           <legendlayerfile isInOverview="0" layerid="collecteur20150203112806387" visible="0"/>
@@ -16616,7 +16616,7 @@
         </spatialrefsys>
       </srs>
       <provider encoding="System">memory</provider>
-      <previewExpression></previewExpression>
+      <featuretitle>id</featuretitle>
       <vectorjoins/>
       <expressionfields/>
       <map-layer-style-manager current="">
@@ -16804,7 +16804,7 @@
       <blendMode>0</blendMode>
       <featureBlendMode>0</featureBlendMode>
       <layerTransparency>0</layerTransparency>
-      <displayfield>id</displayfield>
+      <featuretitle>id</featuretitle>
       <label>0</label>
       <labelattributes>
         <label fieldname="" text="Label"/>
@@ -16877,7 +16877,7 @@
         </spatialrefsys>
       </srs>
       <provider encoding="System">memory</provider>
-      <previewExpression></previewExpression>
+      <featuretitle>id</featuretitle>
       <vectorjoins/>
       <expressionfields/>
       <map-layer-style-manager current="">
@@ -16935,7 +16935,7 @@
       <blendMode>0</blendMode>
       <featureBlendMode>0</featureBlendMode>
       <layerTransparency>0</layerTransparency>
-      <displayfield>id</displayfield>
+      <featuretitle>id</featuretitle>
       <label>0</label>
       <labelattributes>
         <label fieldname="" text="Label"/>
@@ -17075,7 +17075,7 @@
         </spatialrefsys>
       </srs>
       <provider encoding="System">memory</provider>
-      <previewExpression></previewExpression>
+      <featuretitle></featuretitle>
       <vectorjoins/>
       <expressionfields/>
       <map-layer-style-manager current="">
@@ -17129,7 +17129,7 @@
       <blendMode>0</blendMode>
       <featureBlendMode>0</featureBlendMode>
       <layerTransparency>0</layerTransparency>
-      <displayfield></displayfield>
+      <featuretitle></featuretitle>
       <label>0</label>
       <labelattributes>
         <label fieldname="" text="Label"/>
@@ -17183,7 +17183,7 @@
         </spatialrefsys>
       </srs>
       <provider encoding="System">postgres</provider>
-      <previewExpression></previewExpression>
+      <featuretitle>id</featuretitle>
       <vectorjoins/>
       <expressionfields/>
       <map-layer-style-manager current="">
@@ -17359,7 +17359,7 @@
       <blendMode>0</blendMode>
       <featureBlendMode>0</featureBlendMode>
       <layerTransparency>0</layerTransparency>
-      <displayfield>id</displayfield>
+      <featuretitle>id</featuretitle>
       <label>0</label>
       <labelattributes>
         <label fieldname="" text="Label"/>
@@ -17422,7 +17422,7 @@
         </spatialrefsys>
       </srs>
       <provider encoding="System">postgres</provider>
-      <previewExpression></previewExpression>
+      <featuretitle>id</featuretitle>
       <vectorjoins/>
       <expressionfields/>
       <map-layer-style-manager current="">
@@ -17671,7 +17671,7 @@
       <blendMode>0</blendMode>
       <featureBlendMode>0</featureBlendMode>
       <layerTransparency>0</layerTransparency>
-      <displayfield>id</displayfield>
+      <featuretitle>id</featuretitle>
       <label>0</label>
       <labelattributes>
         <label fieldname="" text="Label"/>
@@ -18350,7 +18350,7 @@
       </srs>
       <customproperties/>
       <provider encoding="UTF-8">postgres</provider>
-      <previewExpression></previewExpression>
+      <featuretitle>id</featuretitle>
       <vectorjoins/>
       <expressionfields/>
       <map-layer-style-manager current="">
@@ -18411,7 +18411,7 @@
         </spatialrefsys>
       </srs>
       <provider encoding="System">postgres</provider>
-      <previewExpression></previewExpression>
+      <featuretitle>id</featuretitle>
       <vectorjoins>
         <join hasCustomPrefix="1" joinFieldName="id" customPrefix="pipe_function_" targetFieldName="id_function" memoryCache="1" joinLayerId="vl_pipe_function20130304110005186">
           <joinFieldsSubset>
@@ -19408,7 +19408,7 @@
       <blendMode>0</blendMode>
       <featureBlendMode>0</featureBlendMode>
       <layerTransparency>0</layerTransparency>
-      <displayfield>id</displayfield>
+      <featuretitle>id</featuretitle>
       <label>0</label>
       <labelattributes>
         <label fieldname="" text="Label"/>
@@ -19431,9 +19431,11 @@
         <selectedonly on=""/>
       </labelattributes>
       <SingleCategoryDiagramRenderer diagramType="Pie">
-        <DiagramCategory penColor="#000000" labelPlacementMethod="XHeight" penWidth="0" diagramOrientation="Up" minimumSize="0" barWidth="5" penAlpha="255" maxScaleDenominator="-1" font="Cantarell,11,-1,5,50,0,0,0,0,0" backgroundColor="#ffffff" transparency="0" width="30" scaleDependency="Area" backgroundAlpha="255" angleOffset="1440" enabled="0" height="30" sizeType="MM" minScaleDenominator="-1"/>
+        <DiagramCategory penColor="#000000" labelPlacementMethod="XHeight" penWidth="0" diagramOrientation="Up" minimumSize="0" barWidth="5" penAlpha="255" maxScaleDenominator="-1" font="Cantarell,11,-1,5,50,0,0,0,0,0" backgroundColor="#ffffff" transparency="0" width="30" scaleDependency="Area" backgroundAlpha="255" angleOffset="1440" height="30" sizeType="MM" minScaleDenominator="-1">
+          <attribute field="" color="#000000"/>
+        </DiagramCategory>
       </SingleCategoryDiagramRenderer>
-      <DiagramLayerSettings yPosColumn="-1" linePlacementFlags="1" placement="0" dist="0" xPosColumn="-1" priority="0" obstacle="0" showAll="1"/>
+      <DiagramLayerSettings yPosColumn="-1" linePlacementFlags="1" placement="0" dist="0" xPosColumn="-1" priority="0" obstacle="0"/>
       <editform>./ui_forms/pipe.ui</editform>
       <editforminit/>
       <featformsuppress>0</featformsuppress>
@@ -19664,7 +19666,7 @@
         </spatialrefsys>
       </srs>
       <provider encoding="System">postgres</provider>
-      <previewExpression></previewExpression>
+      <featuretitle>id</featuretitle>
       <vectorjoins/>
       <expressionfields/>
       <map-layer-style-manager current="">
@@ -19867,7 +19869,7 @@
       <blendMode>0</blendMode>
       <featureBlendMode>0</featureBlendMode>
       <layerTransparency>0</layerTransparency>
-      <displayfield>id</displayfield>
+      <featuretitle>id</featuretitle>
       <label>0</label>
       <labelattributes>
         <label fieldname="" text="Label"/>
@@ -19930,7 +19932,7 @@
         </spatialrefsys>
       </srs>
       <provider encoding="System">postgres</provider>
-      <previewExpression></previewExpression>
+      <featuretitle>id</featuretitle>
       <vectorjoins/>
       <expressionfields/>
       <map-layer-style-manager current="">
@@ -20114,7 +20116,7 @@
       <blendMode>0</blendMode>
       <featureBlendMode>0</featureBlendMode>
       <layerTransparency>0</layerTransparency>
-      <displayfield>id</displayfield>
+      <featuretitle>id</featuretitle>
       <label>0</label>
       <labelattributes>
         <label fieldname="" text="Label"/>
@@ -20186,7 +20188,7 @@
         <property key="itemBrowserConnected" value="no"/>
       </customproperties>
       <provider encoding="ISO-8859-1">postgres</provider>
-      <previewExpression></previewExpression>
+      <featuretitle>name</featuretitle>
       <vectorjoins/>
       <expressionfields/>
       <map-layer-style-manager current="">
@@ -20241,7 +20243,7 @@
         </spatialrefsys>
       </srs>
       <provider encoding="ISO-8859-1">postgres</provider>
-      <previewExpression></previewExpression>
+      <featuretitle>name</featuretitle>
       <vectorjoins/>
       <expressionfields/>
       <map-layer-style-manager current="">
@@ -20461,7 +20463,7 @@
       <blendMode>0</blendMode>
       <featureBlendMode>0</featureBlendMode>
       <layerTransparency>0</layerTransparency>
-      <displayfield>name</displayfield>
+      <featuretitle>name</featuretitle>
       <label>0</label>
       <labelattributes>
         <label fieldname="" text="Label"/>
@@ -20569,7 +20571,7 @@
         </spatialrefsys>
       </srs>
       <provider encoding="ISO-8859-1">postgres</provider>
-      <previewExpression></previewExpression>
+      <featuretitle>id</featuretitle>
       <vectorjoins>
         <join hasCustomPrefix="1" joinFieldName="id" customPrefix="status_" targetFieldName="id_status" memoryCache="1" joinLayerId="vl_status20130304110011436"/>
       </vectorjoins>
@@ -20926,7 +20928,7 @@
       <blendMode>0</blendMode>
       <featureBlendMode>0</featureBlendMode>
       <layerTransparency>0</layerTransparency>
-      <displayfield>id</displayfield>
+      <featuretitle>id</featuretitle>
       <label>0</label>
       <labelattributes>
         <label fieldname="" text="Label"/>
@@ -21139,7 +21141,7 @@
         <property key="itemBrowserConnected" value="no"/>
       </customproperties>
       <provider encoding="ISO-8859-1">postgres</provider>
-      <previewExpression></previewExpression>
+      <featuretitle>description_fr</featuretitle>
       <vectorjoins/>
       <expressionfields/>
       <map-layer-style-manager current="">
@@ -21254,7 +21256,7 @@
         </spatialrefsys>
       </srs>
       <provider encoding="ISO-8859-1">postgres</provider>
-      <previewExpression></previewExpression>
+      <featuretitle>name</featuretitle>
       <vectorjoins>
         <join hasCustomPrefix="1" joinFieldName="id" customPrefix="status_" targetFieldName="id_status" memoryCache="1" joinLayerId="vl_status20130304110011436"/>
       </vectorjoins>
@@ -22088,7 +22090,7 @@
       <blendMode>0</blendMode>
       <featureBlendMode>0</featureBlendMode>
       <layerTransparency>0</layerTransparency>
-      <displayfield>name</displayfield>
+      <featuretitle>name</featuretitle>
       <label>0</label>
       <labelattributes>
         <label fieldname="" text="Label"/>
@@ -22277,7 +22279,7 @@
         </spatialrefsys>
       </srs>
       <provider encoding="System">postgres</provider>
-      <previewExpression></previewExpression>
+      <featuretitle>name</featuretitle>
       <vectorjoins/>
       <expressionfields/>
       <map-layer-style-manager current="">
@@ -22733,7 +22735,7 @@
       <blendMode>0</blendMode>
       <featureBlendMode>0</featureBlendMode>
       <layerTransparency>0</layerTransparency>
-      <displayfield>name</displayfield>
+      <featuretitle>name</featuretitle>
       <label>0</label>
       <labelattributes>
         <label fieldname="" text="Label"/>
@@ -22898,7 +22900,7 @@
         </spatialrefsys>
       </srs>
       <provider encoding="System">postgres</provider>
-      <previewExpression></previewExpression>
+      <featuretitle>name</featuretitle>
       <vectorjoins/>
       <expressionfields/>
       <map-layer-style-manager current="">
@@ -23255,7 +23257,7 @@
       <blendMode>0</blendMode>
       <featureBlendMode>0</featureBlendMode>
       <layerTransparency>0</layerTransparency>
-      <displayfield>name</displayfield>
+      <featuretitle>name</featuretitle>
       <label>0</label>
       <labelattributes>
         <label fieldname="" text="Label"/>
@@ -23441,7 +23443,7 @@
         </spatialrefsys>
       </srs>
       <provider encoding="System">postgres</provider>
-      <previewExpression></previewExpression>
+      <featuretitle>name</featuretitle>
       <vectorjoins/>
       <expressionfields/>
       <map-layer-style-manager current="">
@@ -23795,7 +23797,7 @@
       <blendMode>0</blendMode>
       <featureBlendMode>0</featureBlendMode>
       <layerTransparency>0</layerTransparency>
-      <displayfield>name</displayfield>
+      <featuretitle>name</featuretitle>
       <label>0</label>
       <labelattributes>
         <label fieldname="" text="Label"/>
@@ -23978,7 +23980,7 @@
         </spatialrefsys>
       </srs>
       <provider encoding="ISO-8859-1">postgres</provider>
-      <previewExpression></previewExpression>
+      <featuretitle>name</featuretitle>
       <vectorjoins>
         <join hasCustomPrefix="1" joinFieldName="id" customPrefix="installation_" targetFieldName="id_installation" memoryCache="0" joinLayerId="installation20130304110004938"/>
       </vectorjoins>
@@ -24505,7 +24507,7 @@
       <blendMode>0</blendMode>
       <featureBlendMode>0</featureBlendMode>
       <layerTransparency>0</layerTransparency>
-      <displayfield>name</displayfield>
+      <featuretitle>name</featuretitle>
       <label>0</label>
       <labelattributes>
         <label fieldname="" text="Label"/>
@@ -24880,7 +24882,7 @@
         </spatialrefsys>
       </srs>
       <provider encoding="System">postgres</provider>
-      <previewExpression></previewExpression>
+      <featuretitle>name</featuretitle>
       <vectorjoins/>
       <expressionfields/>
       <map-layer-style-manager current="">
@@ -25244,7 +25246,7 @@
       <blendMode>0</blendMode>
       <featureBlendMode>0</featureBlendMode>
       <layerTransparency>0</layerTransparency>
-      <displayfield>name</displayfield>
+      <featuretitle>name</featuretitle>
       <label>0</label>
       <labelattributes>
         <label fieldname="" text="Label"/>
@@ -25436,7 +25438,7 @@
         </spatialrefsys>
       </srs>
       <provider encoding="System">postgres</provider>
-      <previewExpression></previewExpression>
+      <featuretitle>name</featuretitle>
       <vectorjoins/>
       <expressionfields/>
       <map-layer-style-manager current="">
@@ -25837,7 +25839,7 @@
       <blendMode>0</blendMode>
       <featureBlendMode>0</featureBlendMode>
       <layerTransparency>0</layerTransparency>
-      <displayfield>name</displayfield>
+      <featuretitle>name</featuretitle>
       <label>0</label>
       <labelattributes>
         <label fieldname="" text="Label"/>
@@ -26005,7 +26007,7 @@
         </spatialrefsys>
       </srs>
       <provider encoding="System">postgres</provider>
-      <previewExpression></previewExpression>
+      <featuretitle>description</featuretitle>
       <vectorjoins/>
       <expressionfields/>
       <map-layer-style-manager current="">
@@ -26289,7 +26291,7 @@
       <blendMode>0</blendMode>
       <featureBlendMode>0</featureBlendMode>
       <layerTransparency>0</layerTransparency>
-      <displayfield>description</displayfield>
+      <featuretitle>description</featuretitle>
       <label>0</label>
       <labelattributes>
         <label fieldname="" text="Label"/>
@@ -26455,7 +26457,7 @@
         </spatialrefsys>
       </srs>
       <provider encoding="ISO-8859-1">postgres</provider>
-      <previewExpression></previewExpression>
+      <featuretitle>id</featuretitle>
       <vectorjoins/>
       <expressionfields/>
       <map-layer-style-manager current="">
@@ -26831,7 +26833,7 @@
       <blendMode>0</blendMode>
       <featureBlendMode>0</featureBlendMode>
       <layerTransparency>0</layerTransparency>
-      <displayfield>id</displayfield>
+      <featuretitle>id</featuretitle>
       <label>0</label>
       <labelattributes>
         <label fieldname="" text="Label"/>
@@ -26909,7 +26911,7 @@
         </spatialrefsys>
       </srs>
       <provider encoding="System">postgres</provider>
-      <previewExpression></previewExpression>
+      <featuretitle>id</featuretitle>
       <vectorjoins/>
       <expressionfields/>
       <map-layer-style-manager current="">
@@ -27094,7 +27096,7 @@
       <blendMode>0</blendMode>
       <featureBlendMode>0</featureBlendMode>
       <layerTransparency>0</layerTransparency>
-      <displayfield>id</displayfield>
+      <featuretitle>id</featuretitle>
       <label>0</label>
       <labelattributes>
         <label fieldname="" text="Label"/>
@@ -27166,7 +27168,7 @@
         </spatialrefsys>
       </srs>
       <provider encoding="System">postgres</provider>
-      <previewExpression></previewExpression>
+      <featuretitle>id</featuretitle>
       <vectorjoins/>
       <expressionfields/>
       <map-layer-style-manager current="">
@@ -27353,7 +27355,7 @@
       <blendMode>0</blendMode>
       <featureBlendMode>0</featureBlendMode>
       <layerTransparency>100</layerTransparency>
-      <displayfield>id</displayfield>
+      <featuretitle>id</featuretitle>
       <label>0</label>
       <labelattributes>
         <label fieldname="" text="Label"/>
@@ -27422,7 +27424,7 @@
         </spatialrefsys>
       </srs>
       <provider encoding="UTF-8">postgres</provider>
-      <previewExpression></previewExpression>
+      <featuretitle>id</featuretitle>
       <vectorjoins/>
       <expressionfields/>
       <map-layer-style-manager current="">
@@ -27746,7 +27748,7 @@
       <blendMode>0</blendMode>
       <featureBlendMode>0</featureBlendMode>
       <layerTransparency>0</layerTransparency>
-      <displayfield>id</displayfield>
+      <featuretitle>id</featuretitle>
       <label>0</label>
       <labelattributes>
         <label fieldname="" text="Label"/>
@@ -27899,7 +27901,7 @@
         </spatialrefsys>
       </srs>
       <provider encoding="UTF-8">postgres</provider>
-      <previewExpression></previewExpression>
+      <featuretitle>id</featuretitle>
       <vectorjoins/>
       <expressionfields>
         <field typeName="double precision" precision="-1" expression="CASE WHEN hide_pipe = 1 THEN _pipe2_angle ELSE _pipe1_angle END" length="-1" type="6" comment="" name="_used_angle"/>
@@ -28199,7 +28201,7 @@
       <blendMode>0</blendMode>
       <featureBlendMode>0</featureBlendMode>
       <layerTransparency>0</layerTransparency>
-      <displayfield>id</displayfield>
+      <featuretitle>id</featuretitle>
       <label>0</label>
       <labelattributes>
         <label fieldname="" text="Label"/>
@@ -28283,7 +28285,7 @@
         </spatialrefsys>
       </srs>
       <provider encoding="System">postgres</provider>
-      <previewExpression></previewExpression>
+      <featuretitle>id</featuretitle>
       <vectorjoins/>
       <expressionfields/>
       <map-layer-style-manager current="">
@@ -28462,7 +28464,7 @@
       <blendMode>0</blendMode>
       <featureBlendMode>0</featureBlendMode>
       <layerTransparency>0</layerTransparency>
-      <displayfield>id</displayfield>
+      <featuretitle>id</featuretitle>
       <label>0</label>
       <labelattributes>
         <label fieldname="" text="Label"/>
@@ -28528,7 +28530,7 @@
         </spatialrefsys>
       </srs>
       <provider encoding="System">postgres</provider>
-      <previewExpression></previewExpression>
+      <featuretitle>id</featuretitle>
       <vectorjoins/>
       <expressionfields/>
       <map-layer-style-manager current="">
@@ -28807,7 +28809,7 @@
       <blendMode>0</blendMode>
       <featureBlendMode>0</featureBlendMode>
       <layerTransparency>0</layerTransparency>
-      <displayfield>id</displayfield>
+      <featuretitle>id</featuretitle>
       <label>0</label>
       <labelattributes>
         <label fieldname="" text="Label"/>
@@ -28949,7 +28951,7 @@
         </spatialrefsys>
       </srs>
       <provider encoding="System">postgres</provider>
-      <previewExpression></previewExpression>
+      <featuretitle>id</featuretitle>
       <vectorjoins>
         <join hasCustomPrefix="1" joinFieldName="id" customPrefix="meter_" targetFieldName="id_meter" memoryCache="1" joinLayerId="od_meter20131120073630165">
           <joinFieldsSubset>
@@ -29169,7 +29171,7 @@
       <blendMode>0</blendMode>
       <featureBlendMode>0</featureBlendMode>
       <layerTransparency>0</layerTransparency>
-      <displayfield>id</displayfield>
+      <featuretitle>id</featuretitle>
       <label>0</label>
       <labelattributes>
         <label fieldname="" text="Label"/>
@@ -29239,7 +29241,7 @@
         </spatialrefsys>
       </srs>
       <provider encoding="System">postgres</provider>
-      <previewExpression></previewExpression>
+      <featuretitle>id</featuretitle>
       <vectorjoins/>
       <expressionfields/>
       <map-layer-style-manager current="">
@@ -29457,7 +29459,7 @@
       <blendMode>0</blendMode>
       <featureBlendMode>0</featureBlendMode>
       <layerTransparency>0</layerTransparency>
-      <displayfield>id</displayfield>
+      <featuretitle>id</featuretitle>
       <label>0</label>
       <labelattributes>
         <label fieldname="" text="Label"/>
@@ -29535,7 +29537,7 @@
         </spatialrefsys>
       </srs>
       <provider encoding="UTF-8">postgres</provider>
-      <previewExpression></previewExpression>
+      <featuretitle>id</featuretitle>
       <vectorjoins>
         <join hasCustomPrefix="1" joinFieldName="id" customPrefix="node_" targetFieldName="id_node" memoryCache="1" joinLayerId="node20130304110005126">
           <joinFieldsSubset>
@@ -29970,7 +29972,7 @@
       <blendMode>0</blendMode>
       <featureBlendMode>0</featureBlendMode>
       <layerTransparency>0</layerTransparency>
-      <displayfield>id</displayfield>
+      <featuretitle>id</featuretitle>
       <label>0</label>
       <labelattributes>
         <label fieldname="" text="Label"/>
@@ -30132,7 +30134,7 @@
         </spatialrefsys>
       </srs>
       <provider encoding="UTF-8">postgres</provider>
-      <previewExpression></previewExpression>
+      <featuretitle>id</featuretitle>
       <vectorjoins/>
       <expressionfields/>
       <map-layer-style-manager current="">
@@ -30393,7 +30395,7 @@
       <blendMode>0</blendMode>
       <featureBlendMode>0</featureBlendMode>
       <layerTransparency>0</layerTransparency>
-      <displayfield>id</displayfield>
+      <featuretitle>id</featuretitle>
       <label>0</label>
       <labelattributes>
         <label fieldname="" text="Label"/>
@@ -30516,7 +30518,7 @@
         </spatialrefsys>
       </srs>
       <provider encoding="System">postgres</provider>
-      <previewExpression></previewExpression>
+      <featuretitle>id</featuretitle>
       <vectorjoins>
         <join hasCustomPrefix="1" joinFieldName="id" customPrefix="subscriber_" targetFieldName="id_subscriber" memoryCache="1" joinLayerId="subscriber20130304110011459">
           <joinFieldsSubset>
@@ -30736,7 +30738,7 @@
       <blendMode>0</blendMode>
       <featureBlendMode>0</featureBlendMode>
       <layerTransparency>0</layerTransparency>
-      <displayfield>id</displayfield>
+      <featuretitle>id</featuretitle>
       <label>0</label>
       <labelattributes>
         <label fieldname="" text="Label"/>
@@ -30806,7 +30808,7 @@
         </spatialrefsys>
       </srs>
       <provider encoding="UTF-8">postgres</provider>
-      <previewExpression></previewExpression>
+      <featuretitle>name</featuretitle>
       <vectorjoins/>
       <expressionfields/>
       <map-layer-style-manager current="">
@@ -31402,7 +31404,7 @@
       <blendMode>0</blendMode>
       <featureBlendMode>0</featureBlendMode>
       <layerTransparency>0</layerTransparency>
-      <displayfield>name</displayfield>
+      <featuretitle>name</featuretitle>
       <label>0</label>
       <labelattributes>
         <label fieldname="" text="Label"/>
@@ -31556,7 +31558,7 @@
       </srs>
       <customproperties/>
       <provider encoding="UTF-8">postgres</provider>
-      <previewExpression></previewExpression>
+      <featuretitle>id</featuretitle>
       <vectorjoins/>
       <expressionfields/>
       <map-layer-style-manager current="">
@@ -31611,7 +31613,7 @@
         </spatialrefsys>
       </srs>
       <provider encoding="System">postgres</provider>
-      <previewExpression></previewExpression>
+      <featuretitle>child</featuretitle>
       <vectorjoins/>
       <expressionfields/>
       <map-layer-style-manager current="">
@@ -31837,7 +31839,7 @@
       <blendMode>0</blendMode>
       <featureBlendMode>0</featureBlendMode>
       <layerTransparency>0</layerTransparency>
-      <displayfield>child</displayfield>
+      <featuretitle>child</featuretitle>
       <label>0</label>
       <labelattributes>
         <label fieldname="" text="Label"/>
@@ -31901,7 +31903,7 @@
       </srs>
       <customproperties/>
       <provider encoding="UTF-8">postgres</provider>
-      <previewExpression></previewExpression>
+      <featuretitle>description_fr</featuretitle>
       <vectorjoins/>
       <expressionfields/>
       <map-layer-style-manager current="">
@@ -32010,7 +32012,7 @@
         </spatialrefsys>
       </srs>
       <provider encoding="System">postgres</provider>
-      <previewExpression></previewExpression>
+      <featuretitle>name</featuretitle>
       <vectorjoins/>
       <expressionfields/>
       <map-layer-style-manager current="">
@@ -32328,7 +32330,7 @@
       <blendMode>0</blendMode>
       <featureBlendMode>0</featureBlendMode>
       <layerTransparency>0</layerTransparency>
-      <displayfield>name</displayfield>
+      <featuretitle>name</featuretitle>
       <label>0</label>
       <labelattributes>
         <label fieldname="" text="Label"/>
@@ -32430,7 +32432,7 @@
         </spatialrefsys>
       </srs>
       <provider encoding="ISO-8859-1">postgres</provider>
-      <previewExpression></previewExpression>
+      <featuretitle>name</featuretitle>
       <vectorjoins>
         <join hasCustomPrefix="1" joinFieldName="id" customPrefix="district_" targetFieldName="id_district" memoryCache="1" joinLayerId="district20130304110004764"/>
       </vectorjoins>
@@ -32736,7 +32738,7 @@
       <blendMode>0</blendMode>
       <featureBlendMode>0</featureBlendMode>
       <layerTransparency>0</layerTransparency>
-      <displayfield>name</displayfield>
+      <featuretitle>name</featuretitle>
       <label>0</label>
       <labelattributes>
         <label fieldname="" text="Label"/>
@@ -32904,7 +32906,7 @@
         </spatialrefsys>
       </srs>
       <provider encoding="ISO-8859-1">postgres</provider>
-      <previewExpression></previewExpression>
+      <featuretitle>name</featuretitle>
       <vectorjoins/>
       <expressionfields/>
       <map-layer-style-manager current="">
@@ -32973,7 +32975,7 @@
       <blendMode>0</blendMode>
       <featureBlendMode>0</featureBlendMode>
       <layerTransparency>0</layerTransparency>
-      <displayfield>name</displayfield>
+      <featuretitle>name</featuretitle>
       <label>0</label>
       <labelattributes>
         <label fieldname="" text="Label"/>
@@ -33051,7 +33053,7 @@
         <property key="itemBrowserConnected" value="no"/>
       </customproperties>
       <provider encoding="ISO-8859-1">postgres</provider>
-      <previewExpression></previewExpression>
+      <featuretitle>description_fr</featuretitle>
       <vectorjoins/>
       <expressionfields/>
       <map-layer-style-manager current="">
@@ -33206,7 +33208,7 @@
         </spatialrefsys>
       </srs>
       <provider encoding="UTF-8">postgres</provider>
-      <previewExpression></previewExpression>
+      <featuretitle>id</featuretitle>
       <vectorjoins/>
       <expressionfields/>
       <map-layer-style-manager current="">
@@ -33515,7 +33517,7 @@
       <blendMode>0</blendMode>
       <featureBlendMode>0</featureBlendMode>
       <layerTransparency>0</layerTransparency>
-      <displayfield>id</displayfield>
+      <featuretitle>id</featuretitle>
       <label>0</label>
       <labelattributes>
         <label fieldname="" text="Label"/>
@@ -33629,7 +33631,7 @@
         </spatialrefsys>
       </srs>
       <provider encoding="UTF-8">postgres</provider>
-      <previewExpression></previewExpression>
+      <featuretitle>id</featuretitle>
       <vectorjoins/>
       <expressionfields/>
       <map-layer-style-manager current="">
@@ -33926,7 +33928,7 @@
       <blendMode>0</blendMode>
       <featureBlendMode>0</featureBlendMode>
       <layerTransparency>0</layerTransparency>
-      <displayfield>id</displayfield>
+      <featuretitle>id</featuretitle>
       <label>0</label>
       <labelattributes>
         <label fieldname="" text="Label"/>
@@ -34041,7 +34043,7 @@
       </srs>
       <customproperties/>
       <provider encoding="UTF-8">postgres</provider>
-      <previewExpression></previewExpression>
+      <featuretitle>id</featuretitle>
       <vectorjoins/>
       <expressionfields/>
       <map-layer-style-manager current="">
@@ -34239,7 +34241,7 @@
         <property key="labeling/yOffset" value="0"/>
       </customproperties>
       <provider encoding="UTF-8">postgres</provider>
-      <previewExpression></previewExpression>
+      <featuretitle>id</featuretitle>
       <vectorjoins/>
       <expressionfields/>
       <map-layer-style-manager current="">
@@ -34403,7 +34405,7 @@
       </srs>
       <customproperties/>
       <provider encoding="UTF-8">postgres</provider>
-      <previewExpression></previewExpression>
+      <featuretitle>id</featuretitle>
       <vectorjoins/>
       <expressionfields/>
       <map-layer-style-manager current="">
@@ -34459,7 +34461,7 @@
       </srs>
       <customproperties/>
       <provider encoding="UTF-8">postgres</provider>
-      <previewExpression></previewExpression>
+      <featuretitle>id</featuretitle>
       <vectorjoins/>
       <expressionfields/>
       <map-layer-style-manager current="">
@@ -34514,7 +34516,7 @@
         </spatialrefsys>
       </srs>
       <provider encoding="ISO-8859-1">postgres</provider>
-      <previewExpression></previewExpression>
+      <featuretitle>id</featuretitle>
       <vectorjoins/>
       <expressionfields/>
       <map-layer-style-manager current="">
@@ -34944,7 +34946,7 @@
       <blendMode>0</blendMode>
       <featureBlendMode>0</featureBlendMode>
       <layerTransparency>0</layerTransparency>
-      <displayfield>id</displayfield>
+      <featuretitle>id</featuretitle>
       <label>0</label>
       <labelattributes>
         <label fieldname="" text="Label"/>
@@ -35085,7 +35087,7 @@
         </spatialrefsys>
       </srs>
       <provider encoding="System">postgres</provider>
-      <previewExpression></previewExpression>
+      <featuretitle>id</featuretitle>
       <vectorjoins/>
       <expressionfields/>
       <map-layer-style-manager current="">
@@ -35261,7 +35263,7 @@
       <blendMode>0</blendMode>
       <featureBlendMode>0</featureBlendMode>
       <layerTransparency>0</layerTransparency>
-      <displayfield>id</displayfield>
+      <featuretitle>id</featuretitle>
       <label>0</label>
       <labelattributes>
         <label fieldname="" text="Label"/>
@@ -35302,7 +35304,7 @@
         </edittype>
       </edittypes>
     </maplayer>
-    <maplayer minimumScale="0" maximumScale="10001" simplifyDrawingHints="0" minLabelScale="1" maxLabelScale="1e+08" simplifyDrawingTol="1" geometry="Point" simplifyMaxScale="1" type="vector" hasScaleBasedVisibilityFlag="1" simplifyLocal="1" scaleBasedLabelVisibilityFlag="0">
+    <maplayer minimumScale="-4.65661e-10" maximumScale="10001" simplifyDrawingHints="0" minLabelScale="1" maxLabelScale="1e+08" simplifyDrawingTol="1" geometry="Point" simplifyMaxScale="1" type="vector" hasScaleBasedVisibilityFlag="1" simplifyLocal="1" scaleBasedLabelVisibilityFlag="0">
       <id>valve20130304110011497</id>
       <datasource>service='qWat' sslmode=allow key='id' srid=21781 type=POINT table="qwat_od"."valve" (geometry) sql=</datasource>
       <title></title>
@@ -35324,7 +35326,7 @@
         </spatialrefsys>
       </srs>
       <provider encoding="ISO-8859-1">postgres</provider>
-      <previewExpression></previewExpression>
+      <featuretitle>id</featuretitle>
       <vectorjoins>
         <join hasCustomPrefix="1" joinFieldName="id" customPrefix="valve_function_" targetFieldName="id_function" memoryCache="1" joinLayerId="vl_valve_function20130304110011544"/>
         <join hasCustomPrefix="1" joinFieldName="id" customPrefix="valve_type_" targetFieldName="id_type" memoryCache="1" joinLayerId="vl_valve_type20130304110011685"/>
@@ -35340,8 +35342,8 @@
         <edittype widgetv2type="TextEdit" name="identification">
           <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
         </edittype>
-        <edittype widgetv2type="TextEdit" name="id_distributor">
-          <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
+        <edittype widgetv2type="ValueRelation" name="id_distributor">
+          <widgetv2config OrderByValue="0" AllowNull="0" FilterExpression="" UseCompleter="0" fieldEditable="1" Key="id" Layer="distributor20130304114719702" Value="name" labelOnTop="0" AllowMulti="0"/>
         </edittype>
         <edittype widgetv2type="ValueRelation" name="id_type">
           <widgetv2config OrderByValue="0" AllowNull="0" FilterExpression="" UseCompleter="0" fieldEditable="1" Key="id" Layer="vl_valve_type20130304110011685" Value="value_fr" labelOnTop="0" AllowMulti="0"/>
@@ -35957,7 +35959,7 @@
       <blendMode>0</blendMode>
       <featureBlendMode>0</featureBlendMode>
       <layerTransparency>0</layerTransparency>
-      <displayfield>id</displayfield>
+      <featuretitle>id</featuretitle>
       <label>0</label>
       <labelattributes>
         <label fieldname="" text="Label"/>
@@ -36013,8 +36015,8 @@
         <edittype widgetv2type="TextEdit" name="identification">
           <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
         </edittype>
-        <edittype widgetv2type="TextEdit" name="id_distributor">
-          <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
+        <edittype widgetv2type="ValueRelation" name="id_distributor">
+          <widgetv2config OrderByValue="0" AllowNull="0" FilterExpression="" UseCompleter="0" fieldEditable="1" Key="id" Layer="distributor20130304114719702" Value="name" labelOnTop="0" AllowMulti="0"/>
         </edittype>
         <edittype widgetv2type="ValueRelation" name="id_type">
           <widgetv2config OrderByValue="0" AllowNull="0" FilterExpression="" UseCompleter="0" fieldEditable="1" Key="id" Layer="vl_valve_type20130304110011685" Value="value_fr" labelOnTop="0" AllowMulti="0"/>
@@ -36211,7 +36213,7 @@
         </spatialrefsys>
       </srs>
       <provider encoding="UTF-8">postgres</provider>
-      <previewExpression></previewExpression>
+      <featuretitle>id</featuretitle>
       <vectorjoins>
         <join hasCustomPrefix="1" joinFieldName="id" customPrefix="valve_function_" targetFieldName="id_function" memoryCache="1" joinLayerId="vl_valve_function20130304110011544"/>
         <join hasCustomPrefix="1" joinFieldName="id" customPrefix="valve_type_" targetFieldName="id_type" memoryCache="1" joinLayerId="vl_valve_type20130304110011685"/>
@@ -36859,7 +36861,7 @@
       <blendMode>0</blendMode>
       <featureBlendMode>0</featureBlendMode>
       <layerTransparency>0</layerTransparency>
-      <displayfield>id</displayfield>
+      <featuretitle>id</featuretitle>
       <label>0</label>
       <labelattributes>
         <label fieldname="" text="Label"/>
@@ -37114,7 +37116,7 @@
       </srs>
       <customproperties/>
       <provider encoding="UTF-8">postgres</provider>
-      <previewExpression></previewExpression>
+      <featuretitle>description_fr</featuretitle>
       <vectorjoins/>
       <expressionfields/>
       <map-layer-style-manager current="">
@@ -37226,7 +37228,7 @@
         <property key="itemBrowserConnected" value="no"/>
       </customproperties>
       <provider encoding="ISO-8859-1">postgres</provider>
-      <previewExpression></previewExpression>
+      <featuretitle>description_fr</featuretitle>
       <vectorjoins/>
       <expressionfields/>
       <map-layer-style-manager current="">
@@ -37336,7 +37338,7 @@
       </srs>
       <customproperties/>
       <provider encoding="UTF-8">postgres</provider>
-      <previewExpression></previewExpression>
+      <featuretitle>description_fr</featuretitle>
       <vectorjoins/>
       <expressionfields/>
       <map-layer-style-manager current="">
@@ -37446,7 +37448,7 @@
       </srs>
       <customproperties/>
       <provider encoding="System">postgres</provider>
-      <previewExpression></previewExpression>
+      <featuretitle>description_fr</featuretitle>
       <vectorjoins/>
       <expressionfields/>
       <map-layer-style-manager current="">
@@ -37562,7 +37564,7 @@
       </srs>
       <customproperties/>
       <provider encoding="System">postgres</provider>
-      <previewExpression></previewExpression>
+      <featuretitle>description_fr</featuretitle>
       <vectorjoins/>
       <expressionfields/>
       <map-layer-style-manager current="">
@@ -37672,7 +37674,7 @@
       </srs>
       <customproperties/>
       <provider encoding="System">postgres</provider>
-      <previewExpression></previewExpression>
+      <featuretitle>description_fr</featuretitle>
       <vectorjoins/>
       <expressionfields/>
       <map-layer-style-manager current="">
@@ -37782,7 +37784,7 @@
       </srs>
       <customproperties/>
       <provider encoding="System">postgres</provider>
-      <previewExpression></previewExpression>
+      <featuretitle>description_fr</featuretitle>
       <vectorjoins/>
       <expressionfields/>
       <map-layer-style-manager current="">
@@ -37894,7 +37896,7 @@
         <property key="itemBrowserConnected" value="no"/>
       </customproperties>
       <provider encoding="ISO-8859-1">postgres</provider>
-      <previewExpression></previewExpression>
+      <featuretitle>description_fr</featuretitle>
       <vectorjoins/>
       <expressionfields/>
       <map-layer-style-manager current="">
@@ -38004,7 +38006,7 @@
       </srs>
       <customproperties/>
       <provider encoding="UTF-8">postgres</provider>
-      <previewExpression></previewExpression>
+      <featuretitle>description_fr</featuretitle>
       <vectorjoins/>
       <expressionfields/>
       <map-layer-style-manager current="">
@@ -38116,7 +38118,7 @@
         <property key="itemBrowserConnected" value="no"/>
       </customproperties>
       <provider encoding="ISO-8859-1">postgres</provider>
-      <previewExpression></previewExpression>
+      <featuretitle>description_fr</featuretitle>
       <vectorjoins/>
       <expressionfields/>
       <map-layer-style-manager current="">
@@ -38246,7 +38248,7 @@
         <property key="itemBrowserConnected" value="no"/>
       </customproperties>
       <provider encoding="ISO-8859-1">postgres</provider>
-      <previewExpression></previewExpression>
+      <featuretitle>description_fr</featuretitle>
       <vectorjoins/>
       <expressionfields/>
       <map-layer-style-manager current="">
@@ -38358,7 +38360,7 @@
         <property key="itemBrowserConnected" value="no"/>
       </customproperties>
       <provider encoding="ISO-8859-1">postgres</provider>
-      <previewExpression>pressure_nominal</previewExpression>
+      <featuretitle>description_fr</featuretitle>
       <vectorjoins/>
       <expressionfields/>
       <map-layer-style-manager current="">
@@ -38536,7 +38538,7 @@
         <property key="itemBrowserConnected" value="no"/>
       </customproperties>
       <provider encoding="ISO-8859-1">postgres</provider>
-      <previewExpression></previewExpression>
+      <featuretitle>description_fr</featuretitle>
       <vectorjoins/>
       <expressionfields/>
       <map-layer-style-manager current="">
@@ -38648,7 +38650,7 @@
         <property key="itemBrowserConnected" value="no"/>
       </customproperties>
       <provider encoding="ISO-8859-1">postgres</provider>
-      <previewExpression></previewExpression>
+      <featuretitle>description_fr</featuretitle>
       <vectorjoins/>
       <expressionfields/>
       <map-layer-style-manager current="">
@@ -38764,7 +38766,7 @@
       </srs>
       <customproperties/>
       <provider encoding="System">postgres</provider>
-      <previewExpression></previewExpression>
+      <featuretitle>description_fr</featuretitle>
       <vectorjoins/>
       <expressionfields/>
       <map-layer-style-manager current="">
@@ -38880,7 +38882,7 @@
       </srs>
       <customproperties/>
       <provider encoding="System">postgres</provider>
-      <previewExpression></previewExpression>
+      <featuretitle>description_fr</featuretitle>
       <vectorjoins/>
       <expressionfields/>
       <map-layer-style-manager current="">
@@ -38996,7 +38998,7 @@
       </srs>
       <customproperties/>
       <provider encoding="System">postgres</provider>
-      <previewExpression></previewExpression>
+      <featuretitle>description_fr</featuretitle>
       <vectorjoins/>
       <expressionfields/>
       <map-layer-style-manager current="">
@@ -39112,7 +39114,7 @@
       </srs>
       <customproperties/>
       <provider encoding="System">postgres</provider>
-      <previewExpression></previewExpression>
+      <featuretitle>description_fr</featuretitle>
       <vectorjoins/>
       <expressionfields/>
       <map-layer-style-manager current="">
@@ -39230,7 +39232,7 @@
         <property key="itemBrowserConnected" value="no"/>
       </customproperties>
       <provider encoding="ISO-8859-1">postgres</provider>
-      <previewExpression></previewExpression>
+      <featuretitle>description_fr</featuretitle>
       <vectorjoins/>
       <expressionfields/>
       <map-layer-style-manager current="">
@@ -39355,7 +39357,7 @@
         <property key="itemBrowserSelection" value="[]"/>
       </customproperties>
       <provider encoding="ISO-8859-1">postgres</provider>
-      <previewExpression></previewExpression>
+      <featuretitle>description_fr</featuretitle>
       <vectorjoins/>
       <expressionfields/>
       <map-layer-style-manager current="">
@@ -39467,7 +39469,7 @@
         <property key="itemBrowserConnected" value="no"/>
       </customproperties>
       <provider encoding="ISO-8859-1">postgres</provider>
-      <previewExpression></previewExpression>
+      <featuretitle>description_fr</featuretitle>
       <vectorjoins/>
       <expressionfields/>
       <map-layer-style-manager current="">
@@ -39579,7 +39581,7 @@
         <property key="itemBrowserConnected" value="no"/>
       </customproperties>
       <provider encoding="ISO-8859-1">postgres</provider>
-      <previewExpression></previewExpression>
+      <featuretitle>description_fr</featuretitle>
       <vectorjoins/>
       <expressionfields/>
       <map-layer-style-manager current="">
@@ -39697,7 +39699,7 @@
         <property key="itemBrowserConnected" value="no"/>
       </customproperties>
       <provider encoding="ISO-8859-1">postgres</provider>
-      <previewExpression></previewExpression>
+      <featuretitle>description_fr</featuretitle>
       <vectorjoins/>
       <expressionfields/>
       <map-layer-style-manager current="">
@@ -39818,7 +39820,7 @@
         <property key="itemBrowserConnected" value="no"/>
       </customproperties>
       <provider encoding="ISO-8859-1">postgres</provider>
-      <previewExpression></previewExpression>
+      <featuretitle>description_fr</featuretitle>
       <vectorjoins/>
       <expressionfields/>
       <map-layer-style-manager current="">
@@ -39930,7 +39932,7 @@
         <property key="itemBrowserConnected" value="no"/>
       </customproperties>
       <provider encoding="ISO-8859-1">postgres</provider>
-      <previewExpression></previewExpression>
+      <featuretitle>description_fr</featuretitle>
       <vectorjoins/>
       <expressionfields/>
       <map-layer-style-manager current="">
@@ -40052,7 +40054,7 @@
       </srs>
       <customproperties/>
       <provider encoding="System">postgres</provider>
-      <previewExpression></previewExpression>
+      <featuretitle>description_fr</featuretitle>
       <vectorjoins/>
       <expressionfields/>
       <map-layer-style-manager current="">
@@ -40167,7 +40169,7 @@
         </spatialrefsys>
       </srs>
       <provider encoding="UTF-8">postgres</provider>
-      <previewExpression></previewExpression>
+      <featuretitle>pipe_material_description_fr</featuretitle>
       <vectorjoins>
         <join hasCustomPrefix="1" joinFieldName="id" customPrefix="pipe_material_" targetFieldName="id_material" memoryCache="1" joinLayerId="vl_pipe_material20130304110005230"/>
       </vectorjoins>
@@ -40510,7 +40512,7 @@
       <blendMode>0</blendMode>
       <featureBlendMode>0</featureBlendMode>
       <layerTransparency>0</layerTransparency>
-      <displayfield>id</displayfield>
+      <featuretitle>pipe_material_description_fr</featuretitle>
       <label>0</label>
       <labelattributes>
         <label fieldname="" text="Label"/>
@@ -40711,7 +40713,7 @@
         </spatialrefsys>
       </srs>
       <provider encoding="UTF-8">postgres</provider>
-      <previewExpression></previewExpression>
+      <featuretitle>material_description_fr</featuretitle>
       <vectorjoins>
         <join hasCustomPrefix="1" joinFieldName="id" customPrefix="material_" targetFieldName="id_material" memoryCache="1" joinLayerId="vl_pipe_material20130304110005230"/>
       </vectorjoins>
@@ -41095,7 +41097,7 @@
       <blendMode>0</blendMode>
       <featureBlendMode>0</featureBlendMode>
       <layerTransparency>0</layerTransparency>
-      <displayfield>id</displayfield>
+      <featuretitle>material_description_fr</featuretitle>
       <label>0</label>
       <labelattributes>
         <label fieldname="" text="Label"/>
