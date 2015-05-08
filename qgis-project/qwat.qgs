@@ -55,7 +55,7 @@
       </layer-tree-group>
       <layer-tree-group expanded="1" checked="Qt::PartiallyChecked" name="Réseau">
         <customproperties/>
-        <layer-tree-layer expanded="0" checked="Qt::Checked" id="conduites_copy20130709141244955" name="conduites">
+        <layer-tree-layer expanded="1" checked="Qt::Checked" id="conduites_copy20130709141244955" name="conduites">
           <customproperties>
             <property key="expandedLegendNodes" value="{2513a8b8-a110-4727-854c-6084f64e3bdf}"/>
           </customproperties>
@@ -164,6 +164,9 @@
         <customproperties/>
       </layer-tree-layer>
       <layer-tree-layer expanded="0" checked="Qt::Unchecked" id="pressurezone20130417133612105" name="zones de pressions">
+        <customproperties/>
+      </layer-tree-layer>
+      <layer-tree-layer expanded="0" checked="Qt::Unchecked" id="vw_consumptionzone20150508135647750" name="Zones de consommation">
         <customproperties/>
       </layer-tree-layer>
       <layer-tree-layer expanded="0" checked="Qt::Checked" id="printmap20130304110011400" name="folios">
@@ -357,10 +360,10 @@
   <mapcanvas>
     <units>meters</units>
     <extent>
-      <xmin>558136.03838253882713616</xmin>
-      <ymin>141724.62433460453758016</ymin>
-      <xmax>561882.53838838008232415</xmax>
-      <ymax>144984.29100635746726766</ymax>
+      <xmin>548289.71947876457124949</xmin>
+      <ymin>141055.08639005865552463</ymin>
+      <xmax>564101.21950356010347605</xmax>
+      <ymax>154093.75307707037427463</ymax>
     </extent>
     <rotation>0</rotation>
     <projections>1</projections>
@@ -401,14 +404,17 @@
       <layer_coordinate_transform destAuthId="EPSG:21781" srcAuthId="EPSG:21781" srcDatumTransform="-1" destDatumTransform="-1" layerid="installation_treatment20130816113039913"/>
       <layer_coordinate_transform destAuthId="EPSG:21781" srcAuthId="EPSG:21781" srcDatumTransform="-1" destDatumTransform="-1" layerid="axe_rue20130514143437774"/>
       <layer_coordinate_transform destAuthId="EPSG:21781" srcAuthId="EPSG:21781" srcDatumTransform="-1" destDatumTransform="-1" layerid="od_remote20150116100522170"/>
+      <layer_coordinate_transform destAuthId="EPSG:21781" srcAuthId="EPSG:21781" srcDatumTransform="-1" destDatumTransform="-1" layerid="pressurezone20130417133612105"/>
       <layer_coordinate_transform destAuthId="EPSG:21781" srcAuthId="EPSG:21781" srcDatumTransform="-1" destDatumTransform="-1" layerid="od_valve20141218090331728"/>
       <layer_coordinate_transform destAuthId="EPSG:21781" srcAuthId="EPSG:21781" srcDatumTransform="-1" destDatumTransform="-1" layerid="od_meter20131120073630165"/>
       <layer_coordinate_transform destAuthId="EPSG:21781" srcAuthId="EPSG:21781" srcDatumTransform="-1" destDatumTransform="-1" layerid="servitude20150109080436604"/>
       <layer_coordinate_transform destAuthId="EPSG:21781" srcAuthId="EPSG:21781" srcDatumTransform="-1" destDatumTransform="-1" layerid="node20130304110005126"/>
+      <layer_coordinate_transform destAuthId="EPSG:21781" srcAuthId="EPSG:21781" srcDatumTransform="-1" destDatumTransform="-1" layerid="vw_consumptionzone20150508135647750"/>
       <layer_coordinate_transform destAuthId="EPSG:21781" srcAuthId="EPSG:21781" srcDatumTransform="-1" destDatumTransform="-1" layerid="bf_posimmeuble20140214143633121"/>
       <layer_coordinate_transform destAuthId="EPSG:21781" srcAuthId="EPSG:21781" srcDatumTransform="-1" destDatumTransform="-1" layerid="cn124420130327085332476"/>
       <layer_coordinate_transform destAuthId="EPSG:21781" srcAuthId="EPSG:21781" srcDatumTransform="-1" destDatumTransform="-1" layerid="conduites_copy20141202101427367"/>
       <layer_coordinate_transform destAuthId="EPSG:21781" srcAuthId="EPSG:21781" srcDatumTransform="-1" destDatumTransform="-1" layerid="bf_point_limite20140214143552315"/>
+      <layer_coordinate_transform destAuthId="EPSG:21781" srcAuthId="EPSG:21781" srcDatumTransform="-1" destDatumTransform="-1" layerid="vw_consumptionzone20150508135618273"/>
       <layer_coordinate_transform destAuthId="EPSG:21781" srcAuthId="EPSG:21781" srcDatumTransform="-1" destDatumTransform="-1" layerid="servitude20150109080436650"/>
       <layer_coordinate_transform destAuthId="EPSG:21781" srcAuthId="EPSG:21781" srcDatumTransform="-1" destDatumTransform="-1" layerid="vw_pipe_schema_visibleitems20141127154708843"/>
       <layer_coordinate_transform destAuthId="EPSG:21781" srcAuthId="EPSG:21781" srcDatumTransform="-1" destDatumTransform="-1" layerid="installation_pump20130816140237750"/>
@@ -642,6 +648,7 @@
       <item>od_element_surfacique20130514144124647</item>
       <item>cs_batiment20130514143721709</item>
       <item>od_batiment_souterrain20130514143946785</item>
+      <item>vw_consumptionzone20150508135647750</item>
     </custom-order>
   </layer-tree-canvas>
   <legend updateDrawingOrder="false">
@@ -718,8 +725,8 @@
         </legendlayer>
       </legendgroup>
       <legendgroup open="true" checked="Qt::PartiallyChecked" name="Réseau">
-        <legendlayer drawingOrder="13" open="false" checked="Qt::Checked" name="conduites" showFeatureCount="0">
-          <filegroup open="false" hidden="false">
+        <legendlayer drawingOrder="13" open="true" checked="Qt::Checked" name="conduites" showFeatureCount="0">
+          <filegroup open="true" hidden="false">
             <legendlayerfile isInOverview="0" layerid="conduites_copy20130709141244955" visible="1"/>
           </filegroup>
         </legendlayer>
@@ -873,6 +880,11 @@
       <legendlayer drawingOrder="40" open="false" checked="Qt::Unchecked" name="zones de pressions" showFeatureCount="0">
         <filegroup open="false" hidden="false">
           <legendlayerfile isInOverview="0" layerid="pressurezone20130417133612105" visible="0"/>
+        </filegroup>
+      </legendlayer>
+      <legendlayer drawingOrder="98" open="false" checked="Qt::Unchecked" name="Zones de consommation" showFeatureCount="0">
+        <filegroup open="false" hidden="false">
+          <legendlayerfile isInOverview="0" layerid="vw_consumptionzone20150508135647750" visible="0"/>
         </filegroup>
       </legendlayer>
       <legendlayer drawingOrder="41" open="false" checked="Qt::Checked" name="folios" showFeatureCount="0">
@@ -16619,7 +16631,7 @@
         </layer>
       </symbol>
       <ComposerMap mapRotation="325" keepLayerSet="true" id="0" previewMode="Cache" drawCanvasItems="true">
-        <Extent ymin="136695.24451209054677747" xmin="556387.41481285262852907" ymax="141145.24451662952196784" xmax="563887.41482050251215696"/>
+        <Extent ymin="136695.24451209048856981" xmin="556387.41481285262852907" ymax="141145.24451662946376018" xmax="563887.41482050251215696"/>
         <LayerSet>
           <Layer>vw_pipe_schema20141208162900166</Layer>
           <Layer>ouvrage_général_copy20141218102656671</Layer>
@@ -18750,7 +18762,7 @@
     </Composition>
     <Atlas hideCoverage="false" coverageLayer="printmap20130304110011400" singleFile="false" filenamePattern="'output_'||$feature" enabled="true" filterFeatures="false" sortFeatures="false"/>
   </Composer>
-  <projectlayers layercount="99">
+  <projectlayers layercount="100">
     <maplayer minimumScale="-4.65661e-10" maximumScale="1e+08" simplifyDrawingHints="0" minLabelScale="0" maxLabelScale="1e+08" simplifyDrawingTol="1" geometry="Line" simplifyMaxScale="1" type="vector" hasScaleBasedVisibilityFlag="0" simplifyLocal="1" scaleBasedLabelVisibilityFlag="0">
       <id>IntersectIt_Lines20130618102142813</id>
       <datasource>LineString?crs=EPSG:21781&amp;field=id:string&amp;field=type:string&amp;field=x:double&amp;field=y:double&amp;field=observation:double&amp;field=precision:double&amp;index=yes</datasource>
@@ -21158,7 +21170,10 @@
           <symbol alpha="1" clip_to_extent="1" type="line" name="19">
             <layer pass="0" class="SimpleLine" locked="0">
               <prop k="capstyle" v="square"/>
-              <prop k="color_expression" v="CASE WHEN &quot;pressurezone_colorcode&quot; = 1 THEN '21,133,248,255' WHEN &quot;pressurezone_colorcode&quot; = 2 THEN '248,21,64,255' WHEN &quot;pressurezone_colorcode&quot; = 3 THEN '32,205,36,255' ELSE '0,0,0,255' END"/>
+              <prop k="color_dd_active" v="1"/>
+              <prop k="color_dd_expression" v="CASE WHEN &quot;pressurezone_colorcode&quot; = 1 THEN '21,133,248,255' WHEN &quot;pressurezone_colorcode&quot; = 2 THEN '248,21,64,255' WHEN &quot;pressurezone_colorcode&quot; = 3 THEN '32,205,36,255' ELSE '0,0,0,255' END"/>
+              <prop k="color_dd_field" v=""/>
+              <prop k="color_dd_useexpr" v="1"/>
               <prop k="customdash" v="5;2"/>
               <prop k="customdash_map_unit_scale" v="0,0"/>
               <prop k="customdash_unit" v="MM"/>
@@ -21589,7 +21604,7 @@
       </labelattributes>
       <SingleCategoryDiagramRenderer diagramType="Pie">
         <DiagramCategory penColor="#000000" labelPlacementMethod="XHeight" penWidth="0" diagramOrientation="Up" minimumSize="0" barWidth="5" penAlpha="255" maxScaleDenominator="-1" font="Cantarell,11,-1,5,50,0,0,0,0,0" backgroundColor="#ffffff" transparency="0" width="30" scaleDependency="Area" backgroundAlpha="255" angleOffset="1440" scaleBasedVisibility="0" enabled="1" height="30" sizeType="MM" minScaleDenominator="-1">
-          <attribute field="" color="#000000"/>
+          <attribute field="" color="#000000" label=""/>
         </DiagramCategory>
       </SingleCategoryDiagramRenderer>
       <DiagramLayerSettings yPosColumn="-1" linePlacementFlags="1" placement="0" dist="0" xPosColumn="-1" priority="0" obstacle="0" showAll="0"/>
@@ -26707,9 +26722,9 @@
         <alias field="cistern2_storage" index="43" name="Cuve 2 volume"/>
         <alias field="fire_remote" index="33" name="Télécommande incendie"/>
         <alias field="fire_valve" index="32" name="Vanne incendie"/>
-        <alias field="height_max" index="31" name="Hauteur max."/>
         <alias field="fk_firestorage" index="25" name="Réserve incendie"/>
         <alias field="fk_installation" index="3" name="Ouvrage"/>
+        <alias field="height_max" index="31" name="Hauteur max."/>
         <alias field="remark" index="9" name="Commentaires"/>
         <alias field="storage_fire" index="28" name="Réserve incendie"/>
         <alias field="storage_supply" index="27" name="Réserve alimentation"/>
@@ -28683,7 +28698,10 @@
           <symbol alpha="1" clip_to_extent="1" type="marker" name="1">
             <layer pass="0" class="SvgMarker" locked="0">
               <prop k="angle" v="0"/>
-              <prop k="angle_expression" v="_orientation"/>
+              <prop k="angle_dd_active" v="1"/>
+              <prop k="angle_dd_expression" v=""/>
+              <prop k="angle_dd_field" v="_orientation"/>
+              <prop k="angle_dd_useexpr" v="0"/>
               <prop k="color" v="#000000"/>
               <prop k="horizontal_anchor_point" v="1"/>
               <prop k="name" v="./symbols/nodes/diff_material.svg"/>
@@ -28712,7 +28730,10 @@
           <symbol alpha="1" clip_to_extent="1" type="marker" name="2">
             <layer pass="0" class="SvgMarker" locked="0">
               <prop k="angle" v="0"/>
-              <prop k="angle_expression" v="_orientation"/>
+              <prop k="angle_dd_active" v="1"/>
+              <prop k="angle_dd_expression" v=""/>
+              <prop k="angle_dd_field" v="_orientation"/>
+              <prop k="angle_dd_useexpr" v="0"/>
               <prop k="color" v="#000000"/>
               <prop k="horizontal_anchor_point" v="1"/>
               <prop k="name" v="./symbols/nodes/diff_year.svg"/>
@@ -28741,7 +28762,10 @@
           <symbol alpha="1" clip_to_extent="1" type="marker" name="3">
             <layer pass="0" class="SvgMarker" locked="0">
               <prop k="angle" v="0"/>
-              <prop k="angle_expression" v="_orientation"/>
+              <prop k="angle_dd_active" v="1"/>
+              <prop k="angle_dd_expression" v=""/>
+              <prop k="angle_dd_field" v="_orientation"/>
+              <prop k="angle_dd_useexpr" v="0"/>
               <prop k="color" v="#000000"/>
               <prop k="horizontal_anchor_point" v="1"/>
               <prop k="name" v="./symbols/nodes/diff_diameter_material.svg"/>
@@ -28770,7 +28794,10 @@
           <symbol alpha="1" clip_to_extent="1" type="marker" name="4">
             <layer pass="0" class="SvgMarker" locked="0">
               <prop k="angle" v="0"/>
-              <prop k="angle_expression" v="_orientation"/>
+              <prop k="angle_dd_active" v="1"/>
+              <prop k="angle_dd_expression" v=""/>
+              <prop k="angle_dd_field" v="_orientation"/>
+              <prop k="angle_dd_useexpr" v="0"/>
               <prop k="color" v="#000000"/>
               <prop k="horizontal_anchor_point" v="1"/>
               <prop k="name" v="./symbols/nodes/diff_diameter.svg"/>
@@ -28801,7 +28828,10 @@
           <symbol alpha="1" clip_to_extent="1" type="marker" name="0">
             <layer pass="0" class="SvgMarker" locked="0">
               <prop k="angle" v="0"/>
-              <prop k="angle_expression" v="_orientation"/>
+              <prop k="angle_dd_active" v="1"/>
+              <prop k="angle_dd_expression" v=""/>
+              <prop k="angle_dd_field" v="_orientation"/>
+              <prop k="angle_dd_useexpr" v="0"/>
               <prop k="color" v="#000000"/>
               <prop k="horizontal_anchor_point" v="1"/>
               <prop k="name" v="./symbols/nodes/diff_diameter_material.svg"/>
@@ -30107,7 +30137,10 @@
               <prop k="color" v="255,255,255,255"/>
               <prop k="horizontal_anchor_point" v="1"/>
               <prop k="offset" v="1,1"/>
-              <prop k="offset_expression" v="tostring(- 0.4 * tan($pi / 2 - $pi / 180 * (_pipe1_angle - _pipe2_angle))) || ',-1.0'"/>
+              <prop k="offset_dd_active" v="1"/>
+              <prop k="offset_dd_expression" v="tostring(- 0.4 * tan($pi / 2 - $pi / 180 * (_pipe1_angle - _pipe2_angle))) || ',-1.0'"/>
+              <prop k="offset_dd_field" v=""/>
+              <prop k="offset_dd_useexpr" v="1"/>
               <prop k="offset_map_unit_scale" v="0,0"/>
               <prop k="offset_unit" v="MM"/>
               <prop k="outline_color" v="255,255,255,255"/>
@@ -30115,7 +30148,10 @@
               <prop k="outline_width" v="0"/>
               <prop k="outline_width_map_unit_scale" v="0,0"/>
               <prop k="outline_width_unit" v="MM"/>
-              <prop k="rotation_expression" v="CASE WHEN hide_pipe = 1 THEN _pipe2_angle ELSE _pipe1_angle END"/>
+              <prop k="rotation_dd_active" v="1"/>
+              <prop k="rotation_dd_expression" v="CASE WHEN hide_pipe = 1 THEN _pipe2_angle ELSE _pipe1_angle END"/>
+              <prop k="rotation_dd_field" v=""/>
+              <prop k="rotation_dd_useexpr" v="1"/>
               <prop k="size" v="1"/>
               <prop k="size_map_unit_scale" v="0,0"/>
               <prop k="size_unit" v="MM"/>
@@ -30127,7 +30163,10 @@
               <prop k="symbol_width_map_unit_scale" v="0,0"/>
               <prop k="symbol_width_unit" v="MM"/>
               <prop k="vertical_anchor_point" v="1"/>
-              <prop k="width_expression" v="2 + 0.5 * abs(tan($pi / 2 - $pi / 180 * abs(_pipe1_angle - _pipe2_angle)))"/>
+              <prop k="width_dd_active" v="1"/>
+              <prop k="width_dd_expression" v="2 + 0.5 * abs(tan($pi / 2 - $pi / 180 * abs(_pipe1_angle - _pipe2_angle)))"/>
+              <prop k="width_dd_field" v=""/>
+              <prop k="width_dd_useexpr" v="1"/>
               <effect enabled="0" type="effectStack">
                 <effect type="drawSource">
                   <prop k="blend_mode" v="0"/>
@@ -30142,7 +30181,10 @@
               <prop k="color" v="255,255,255,255"/>
               <prop k="horizontal_anchor_point" v="1"/>
               <prop k="offset" v="-1,-1"/>
-              <prop k="offset_expression" v="tostring(0.4 * tan($pi / 2 - $pi / 180 * (_pipe1_angle - _pipe2_angle))) || ',1.0'"/>
+              <prop k="offset_dd_active" v="1"/>
+              <prop k="offset_dd_expression" v="tostring(0.4 * tan($pi / 2 - $pi / 180 * (_pipe1_angle - _pipe2_angle))) || ',1.0'"/>
+              <prop k="offset_dd_field" v=""/>
+              <prop k="offset_dd_useexpr" v="1"/>
               <prop k="offset_map_unit_scale" v="0,0"/>
               <prop k="offset_unit" v="MM"/>
               <prop k="outline_color" v="255,255,255,255"/>
@@ -30150,7 +30192,10 @@
               <prop k="outline_width" v="0"/>
               <prop k="outline_width_map_unit_scale" v="0,0"/>
               <prop k="outline_width_unit" v="MM"/>
-              <prop k="rotation_expression" v="_used_angle"/>
+              <prop k="rotation_dd_active" v="1"/>
+              <prop k="rotation_dd_expression" v=""/>
+              <prop k="rotation_dd_field" v="_used_angle"/>
+              <prop k="rotation_dd_useexpr" v="0"/>
               <prop k="size" v="2"/>
               <prop k="size_map_unit_scale" v="0,0"/>
               <prop k="size_unit" v="MM"/>
@@ -30162,7 +30207,10 @@
               <prop k="symbol_width_map_unit_scale" v="0,0"/>
               <prop k="symbol_width_unit" v="MM"/>
               <prop k="vertical_anchor_point" v="1"/>
-              <prop k="width_expression" v="2 + 0.7 * abs(tan($pi / 2 - $pi / 180 * abs(_pipe1_angle - _pipe2_angle)))"/>
+              <prop k="width_dd_active" v="1"/>
+              <prop k="width_dd_expression" v="2 + 0.7 * abs(tan($pi / 2 - $pi / 180 * abs(_pipe1_angle - _pipe2_angle)))"/>
+              <prop k="width_dd_field" v=""/>
+              <prop k="width_dd_useexpr" v="1"/>
               <effect enabled="0" type="effectStack">
                 <effect type="drawSource">
                   <prop k="blend_mode" v="0"/>
@@ -31726,10 +31774,22 @@
         <edittype widgetv2type="ValueRelation" name="fk_status">
           <widgetv2config OrderByValue="0" AllowNull="0" FilterExpression="" UseCompleter="0" fieldEditable="1" Key="id" Layer="vl_status20130304110011436" Value="value_fr" labelOnTop="0" AllowMulti="0"/>
         </edittype>
+        <edittype widgetv2type="TextEdit" name="fk_precision">
+          <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
+        </edittype>
+        <edittype widgetv2type="TextEdit" name="fk_precisionalti">
+          <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
+        </edittype>
         <edittype widgetv2type="TextEdit" name="year">
           <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
         </edittype>
         <edittype widgetv2type="TextEdit" name="altitude_real">
+          <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
+        </edittype>
+        <edittype widgetv2type="TextEdit" name="fk_altitude_reference">
+          <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
+        </edittype>
+        <edittype widgetv2type="TextEdit" name="orientation">
           <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
         </edittype>
         <edittype widgetv2type="TextEdit" name="remark">
@@ -31828,7 +31888,10 @@
           <symbol alpha="1" clip_to_extent="1" type="marker" name="0">
             <layer pass="0" class="SvgMarker" locked="0">
               <prop k="angle" v="0"/>
-              <prop k="angle_expression" v="node__orientation"/>
+              <prop k="angle_dd_active" v="1"/>
+              <prop k="angle_dd_expression" v=""/>
+              <prop k="angle_dd_field" v="node__orientation"/>
+              <prop k="angle_dd_useexpr" v="0"/>
               <prop k="color" v="#000000"/>
               <prop k="horizontal_anchor_point" v="1"/>
               <prop k="name" v="./symbols/nodes/subscriber_meter.svg"/>
@@ -31857,7 +31920,10 @@
           <symbol alpha="1" clip_to_extent="1" type="marker" name="1">
             <layer pass="0" class="SvgMarker" locked="0">
               <prop k="angle" v="0"/>
-              <prop k="angle_expression" v="node__orientation"/>
+              <prop k="angle_dd_active" v="1"/>
+              <prop k="angle_dd_expression" v=""/>
+              <prop k="angle_dd_field" v="node__orientation"/>
+              <prop k="angle_dd_useexpr" v="0"/>
               <prop k="color" v="#000000"/>
               <prop k="horizontal_anchor_point" v="1"/>
               <prop k="name" v="./symbols/nodes/cap.svg"/>
@@ -32177,10 +32243,22 @@
         <edittype widgetv2type="ValueRelation" name="fk_status">
           <widgetv2config OrderByValue="0" AllowNull="0" FilterExpression="" UseCompleter="0" fieldEditable="1" Key="id" Layer="vl_status20130304110011436" Value="value_fr" labelOnTop="0" AllowMulti="0"/>
         </edittype>
+        <edittype widgetv2type="TextEdit" name="fk_precision">
+          <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
+        </edittype>
+        <edittype widgetv2type="TextEdit" name="fk_precisionalti">
+          <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
+        </edittype>
         <edittype widgetv2type="TextEdit" name="year">
           <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
         </edittype>
         <edittype widgetv2type="TextEdit" name="altitude_real">
+          <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
+        </edittype>
+        <edittype widgetv2type="TextEdit" name="fk_altitude_reference">
+          <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
+        </edittype>
+        <edittype widgetv2type="TextEdit" name="orientation">
           <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
         </edittype>
         <edittype widgetv2type="TextEdit" name="remark">
@@ -34170,7 +34248,14 @@
       </srs>
       <provider encoding="System">postgres</provider>
       <previewExpression></previewExpression>
-      <vectorjoins/>
+      <vectorjoins>
+        <join hasCustomPrefix="1" joinFieldName="id" customPrefix="consumptionzone_" targetFieldName="fk_consumptionzone" memoryCache="1" joinLayerId="vw_consumptionzone20150508135647750">
+          <joinFieldsSubset>
+            <field name="name"/>
+            <field name="colorcode"/>
+          </joinFieldsSubset>
+        </join>
+      </vectorjoins>
       <expressionfields/>
       <map-layer-style-manager current="">
         <map-layer-style name=""/>
@@ -34184,9 +34269,6 @@
         </edittype>
         <edittype widgetv2type="TextEdit" name="name">
           <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
-        </edittype>
-        <edittype widgetv2type="UniqueValues" name="consumptionzone">
-          <widgetv2config fieldEditable="1" labelOnTop="0" Editable="1"/>
         </edittype>
         <edittype widgetv2type="TextEdit" name="colorcode">
           <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
@@ -34220,6 +34302,18 @@
         </edittype>
         <edittype widgetv2type="TextEdit" name="label_2_text">
           <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
+        </edittype>
+        <edittype widgetv2type="TextEdit" name="fk_consumptionzone">
+          <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
+        </edittype>
+        <edittype widgetv2type="TextEdit" name="population">
+          <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
+        </edittype>
+        <edittype widgetv2type="TextEdit" name="consumptionzone_name">
+          <widgetv2config IsMultiline="0" fieldEditable="0" UseHtml="0" labelOnTop="0"/>
+        </edittype>
+        <edittype widgetv2type="TextEdit" name="consumptionzone_colorcode">
+          <widgetv2config IsMultiline="0" fieldEditable="0" UseHtml="0" labelOnTop="0"/>
         </edittype>
       </edittypes>
       <renderer-v2 attr="colorcode" symbollevels="0" type="categorizedSymbol">
@@ -34379,14 +34473,19 @@
         <property key="labeling/bufferNoFill" value="false"/>
         <property key="labeling/bufferSize" value="0.4"/>
         <property key="labeling/bufferSizeInMapUnits" value="false"/>
+        <property key="labeling/bufferSizeMapUnitMaxScale" value="0"/>
+        <property key="labeling/bufferSizeMapUnitMinScale" value="0"/>
         <property key="labeling/bufferTransp" value="0"/>
+        <property key="labeling/centroidInside" value="false"/>
         <property key="labeling/centroidWhole" value="false"/>
         <property key="labeling/decimals" value="0"/>
         <property key="labeling/displayAll" value="false"/>
         <property key="labeling/dist" value="0"/>
         <property key="labeling/distInMapUnits" value="false"/>
+        <property key="labeling/distMapUnitMaxScale" value="0"/>
+        <property key="labeling/distMapUnitMinScale" value="0"/>
         <property key="labeling/enabled" value="true"/>
-        <property key="labeling/fieldName" value="name"/>
+        <property key="labeling/fieldName" value=""/>
         <property key="labeling/fontBold" value="false"/>
         <property key="labeling/fontCapitals" value="0"/>
         <property key="labeling/fontFamily" value="Arial"/>
@@ -34397,13 +34496,17 @@
         <property key="labeling/fontMinPixelSize" value="3"/>
         <property key="labeling/fontSize" value="10"/>
         <property key="labeling/fontSizeInMapUnits" value="false"/>
+        <property key="labeling/fontSizeMapUnitMaxScale" value="0"/>
+        <property key="labeling/fontSizeMapUnitMinScale" value="0"/>
         <property key="labeling/fontStrikeout" value="false"/>
         <property key="labeling/fontUnderline" value="false"/>
         <property key="labeling/fontWeight" value="50"/>
         <property key="labeling/fontWordSpacing" value="0"/>
         <property key="labeling/formatNumbers" value="false"/>
-        <property key="labeling/isExpression" value="false"/>
+        <property key="labeling/isExpression" value="true"/>
         <property key="labeling/labelOffsetInMapUnits" value="true"/>
+        <property key="labeling/labelOffsetMapUnitMaxScale" value="0"/>
+        <property key="labeling/labelOffsetMapUnitMinScale" value="0"/>
         <property key="labeling/labelPerPart" value="true"/>
         <property key="labeling/leftDirectionSymbol" value="&lt;"/>
         <property key="labeling/limitNumLabels" value="false"/>
@@ -34424,6 +34527,10 @@
         <property key="labeling/previewBkgrdColor" value="#ffffff"/>
         <property key="labeling/priority" value="5"/>
         <property key="labeling/quadOffset" value="4"/>
+        <property key="labeling/repeatDistance" value="0"/>
+        <property key="labeling/repeatDistanceMapUnitMaxScale" value="0"/>
+        <property key="labeling/repeatDistanceMapUnitMinScale" value="0"/>
+        <property key="labeling/repeatDistanceUnit" value="1"/>
         <property key="labeling/reverseDirectionSymbol" value="false"/>
         <property key="labeling/rightDirectionSymbol" value=">"/>
         <property key="labeling/scaleMax" value="10000000"/>
@@ -34437,9 +34544,13 @@
         <property key="labeling/shadowOffsetAngle" value="135"/>
         <property key="labeling/shadowOffsetDist" value="0"/>
         <property key="labeling/shadowOffsetGlobal" value="true"/>
+        <property key="labeling/shadowOffsetMapUnitMaxScale" value="0"/>
+        <property key="labeling/shadowOffsetMapUnitMinScale" value="0"/>
         <property key="labeling/shadowOffsetUnits" value="1"/>
         <property key="labeling/shadowRadius" value="0"/>
         <property key="labeling/shadowRadiusAlphaOnly" value="false"/>
+        <property key="labeling/shadowRadiusMapUnitMaxScale" value="0"/>
+        <property key="labeling/shadowRadiusMapUnitMinScale" value="0"/>
         <property key="labeling/shadowRadiusUnits" value="1"/>
         <property key="labeling/shadowScale" value="100"/>
         <property key="labeling/shadowTransparency" value="0"/>
@@ -34450,6 +34561,8 @@
         <property key="labeling/shapeBorderColorG" value="128"/>
         <property key="labeling/shapeBorderColorR" value="128"/>
         <property key="labeling/shapeBorderWidth" value="0"/>
+        <property key="labeling/shapeBorderWidthMapUnitMaxScale" value="0"/>
+        <property key="labeling/shapeBorderWidthMapUnitMinScale" value="0"/>
         <property key="labeling/shapeBorderWidthUnits" value="1"/>
         <property key="labeling/shapeDraw" value="false"/>
         <property key="labeling/shapeFillColorA" value="255"/>
@@ -34457,15 +34570,21 @@
         <property key="labeling/shapeFillColorG" value="255"/>
         <property key="labeling/shapeFillColorR" value="255"/>
         <property key="labeling/shapeJoinStyle" value="64"/>
+        <property key="labeling/shapeOffsetMapUnitMaxScale" value="0"/>
+        <property key="labeling/shapeOffsetMapUnitMinScale" value="0"/>
         <property key="labeling/shapeOffsetUnits" value="1"/>
         <property key="labeling/shapeOffsetX" value="0"/>
         <property key="labeling/shapeOffsetY" value="0"/>
+        <property key="labeling/shapeRadiiMapUnitMaxScale" value="0"/>
+        <property key="labeling/shapeRadiiMapUnitMinScale" value="0"/>
         <property key="labeling/shapeRadiiUnits" value="1"/>
         <property key="labeling/shapeRadiiX" value="0"/>
         <property key="labeling/shapeRadiiY" value="0"/>
         <property key="labeling/shapeRotation" value="0"/>
         <property key="labeling/shapeRotationType" value="0"/>
         <property key="labeling/shapeSVGFile" value=""/>
+        <property key="labeling/shapeSizeMapUnitMaxScale" value="0"/>
+        <property key="labeling/shapeSizeMapUnitMinScale" value="0"/>
         <property key="labeling/shapeSizeType" value="0"/>
         <property key="labeling/shapeSizeUnits" value="1"/>
         <property key="labeling/shapeSizeX" value="0"/>
@@ -34509,6 +34628,12 @@
         <multilineenabled fieldname="" on=""/>
         <selectedonly on=""/>
       </labelattributes>
+      <SingleCategoryDiagramRenderer diagramType="Pie">
+        <DiagramCategory penColor="#000000" labelPlacementMethod="XHeight" penWidth="0" diagramOrientation="Up" minimumSize="0" barWidth="5" penAlpha="255" maxScaleDenominator="1e+08" font="Cantarell,11,-1,5,50,0,0,0,0,0" backgroundColor="#ffffff" transparency="0" width="15" scaleDependency="Area" backgroundAlpha="255" angleOffset="1440" scaleBasedVisibility="0" enabled="0" height="15" sizeType="MM" minScaleDenominator="-4.65661e-10">
+          <attribute field="" color="#000000" label=""/>
+        </DiagramCategory>
+      </SingleCategoryDiagramRenderer>
+      <DiagramLayerSettings yPosColumn="-1" linePlacementFlags="10" placement="0" dist="0" xPosColumn="-1" priority="0" obstacle="0" showAll="1"/>
       <editform>.</editform>
       <editforminit/>
       <featformsuppress>0</featformsuppress>
@@ -34528,9 +34653,6 @@
         </edittype>
         <edittype widgetv2type="TextEdit" name="name">
           <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
-        </edittype>
-        <edittype widgetv2type="UniqueValues" name="consumptionzone">
-          <widgetv2config fieldEditable="1" labelOnTop="0" Editable="1"/>
         </edittype>
         <edittype widgetv2type="TextEdit" name="colorcode">
           <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
@@ -34564,6 +34686,18 @@
         </edittype>
         <edittype widgetv2type="TextEdit" name="label_2_text">
           <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
+        </edittype>
+        <edittype widgetv2type="TextEdit" name="fk_consumptionzone">
+          <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
+        </edittype>
+        <edittype widgetv2type="TextEdit" name="population">
+          <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
+        </edittype>
+        <edittype widgetv2type="TextEdit" name="consumptionzone_name">
+          <widgetv2config IsMultiline="0" fieldEditable="0" UseHtml="0" labelOnTop="0"/>
+        </edittype>
+        <edittype widgetv2type="TextEdit" name="consumptionzone_colorcode">
+          <widgetv2config IsMultiline="0" fieldEditable="0" UseHtml="0" labelOnTop="0"/>
         </edittype>
       </edittypes>
     </maplayer>
@@ -34919,7 +35053,7 @@
       </labelattributes>
       <SingleCategoryDiagramRenderer diagramType="Pie">
         <DiagramCategory penColor="#000000" labelPlacementMethod="XHeight" penWidth="0" diagramOrientation="Up" minimumSize="0" barWidth="5" penAlpha="255" maxScaleDenominator="30000" font="Cantarell,11,-1,5,50,0,0,0,0,0" backgroundColor="#ffffff" transparency="0" width="15" scaleDependency="Area" backgroundAlpha="255" angleOffset="1440" scaleBasedVisibility="1" enabled="0" height="15" sizeType="MM" minScaleDenominator="200">
-          <attribute field="" color="#000000"/>
+          <attribute field="" color="#000000" label=""/>
         </DiagramCategory>
       </SingleCategoryDiagramRenderer>
       <DiagramLayerSettings yPosColumn="-1" linePlacementFlags="10" placement="0" dist="0" xPosColumn="-1" priority="0" obstacle="0" showAll="1"/>
@@ -35381,26 +35515,26 @@
         <edittype widgetv2type="TextEdit" name="id">
           <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
         </edittype>
-        <edittype widgetv2type="ValueRelation" name="fk_commune">
-          <widgetv2config OrderByValue="1" AllowNull="1" FilterExpression="" UseCompleter="0" fieldEditable="1" Key="id" Layer="district20130304110004764" Value="name" labelOnTop="0" AllowMulti="0"/>
+        <edittype widgetv2type="TextEdit" name="id_commune">
+          <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
         </edittype>
-        <edittype widgetv2type="ValueRelation" name="fk_type">
-          <widgetv2config OrderByValue="1" AllowNull="0" FilterExpression="" UseCompleter="0" fieldEditable="1" Key="id" Layer="servitude_type20150116095811274" Value="type" labelOnTop="0" AllowMulti="0"/>
+        <edittype widgetv2type="TextEdit" name="id_type">
+          <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
         </edittype>
-        <edittype widgetv2type="ValueRelation" name="fk_etat">
-          <widgetv2config OrderByValue="1" AllowNull="1" FilterExpression="" UseCompleter="0" fieldEditable="1" Key="id" Layer="servitude_etat20150116095811244" Value="etat" labelOnTop="0" AllowMulti="0"/>
+        <edittype widgetv2type="TextEdit" name="id_etat">
+          <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
         </edittype>
-        <edittype widgetv2type="ValueRelation" name="fk_statut">
-          <widgetv2config OrderByValue="1" AllowNull="1" FilterExpression="" UseCompleter="0" fieldEditable="1" Key="id" Layer="servitude_statut20150116095811261" Value="statut" labelOnTop="0" AllowMulti="0"/>
+        <edittype widgetv2type="TextEdit" name="id_statut">
+          <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
         </edittype>
-        <edittype widgetv2type="ValueRelation" name="fk_ouvrage">
-          <widgetv2config OrderByValue="1" AllowNull="1" FilterExpression="" UseCompleter="0" fieldEditable="1" Key="id" Layer="installation20130304110004938" Value="_displayname_fr" labelOnTop="0" AllowMulti="0"/>
+        <edittype widgetv2type="TextEdit" name="id_ouvrage">
+          <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
         </edittype>
-        <edittype widgetv2type="ValueRelation" name="fk_collecteur">
-          <widgetv2config OrderByValue="1" AllowNull="1" FilterExpression="" UseCompleter="0" fieldEditable="1" Key="id" Layer="collecteur20150203112806387" Value="nom" labelOnTop="0" AllowMulti="0"/>
+        <edittype widgetv2type="TextEdit" name="id_collecteur">
+          <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
         </edittype>
-        <edittype widgetv2type="ValueRelation" name="fk_partenaire">
-          <widgetv2config OrderByValue="0" AllowNull="1" FilterExpression="" UseCompleter="0" fieldEditable="1" Key="id" Layer="partenaire20150203112806405" Value="nom" labelOnTop="0" AllowMulti="0"/>
+        <edittype widgetv2type="TextEdit" name="id_partenaire">
+          <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
         </edittype>
         <edittype widgetv2type="TextEdit" name="type_numero">
           <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
@@ -35716,26 +35850,26 @@
         <edittype widgetv2type="TextEdit" name="id">
           <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
         </edittype>
-        <edittype widgetv2type="ValueRelation" name="fk_commune">
-          <widgetv2config OrderByValue="1" AllowNull="1" FilterExpression="" UseCompleter="0" fieldEditable="1" Key="id" Layer="district20130304110004764" Value="name" labelOnTop="0" AllowMulti="0"/>
+        <edittype widgetv2type="TextEdit" name="id_commune">
+          <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
         </edittype>
-        <edittype widgetv2type="ValueRelation" name="fk_type">
-          <widgetv2config OrderByValue="1" AllowNull="0" FilterExpression="" UseCompleter="0" fieldEditable="1" Key="id" Layer="servitude_type20150116095811274" Value="type" labelOnTop="0" AllowMulti="0"/>
+        <edittype widgetv2type="TextEdit" name="id_type">
+          <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
         </edittype>
-        <edittype widgetv2type="ValueRelation" name="fk_etat">
-          <widgetv2config OrderByValue="1" AllowNull="1" FilterExpression="" UseCompleter="0" fieldEditable="1" Key="id" Layer="servitude_etat20150116095811244" Value="etat" labelOnTop="0" AllowMulti="0"/>
+        <edittype widgetv2type="TextEdit" name="id_etat">
+          <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
         </edittype>
-        <edittype widgetv2type="ValueRelation" name="fk_statut">
-          <widgetv2config OrderByValue="1" AllowNull="1" FilterExpression="" UseCompleter="0" fieldEditable="1" Key="id" Layer="servitude_statut20150116095811261" Value="statut" labelOnTop="0" AllowMulti="0"/>
+        <edittype widgetv2type="TextEdit" name="id_statut">
+          <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
         </edittype>
-        <edittype widgetv2type="ValueRelation" name="fk_ouvrage">
-          <widgetv2config OrderByValue="1" AllowNull="1" FilterExpression="" UseCompleter="0" fieldEditable="1" Key="id" Layer="installation20130304110004938" Value="_displayname_fr" labelOnTop="0" AllowMulti="0"/>
+        <edittype widgetv2type="TextEdit" name="id_ouvrage">
+          <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
         </edittype>
-        <edittype widgetv2type="ValueRelation" name="fk_collecteur">
-          <widgetv2config OrderByValue="1" AllowNull="1" FilterExpression="" UseCompleter="0" fieldEditable="1" Key="id" Layer="collecteur20150203112806387" Value="nom" labelOnTop="0" AllowMulti="0"/>
+        <edittype widgetv2type="TextEdit" name="id_collecteur">
+          <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
         </edittype>
-        <edittype widgetv2type="ValueRelation" name="fk_partenaire">
-          <widgetv2config OrderByValue="0" AllowNull="1" FilterExpression="" UseCompleter="0" fieldEditable="1" Key="id" Layer="partenaire20150203112806405" Value="nom" labelOnTop="0" AllowMulti="0"/>
+        <edittype widgetv2type="TextEdit" name="id_partenaire">
+          <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
         </edittype>
         <edittype widgetv2type="TextEdit" name="type_numero">
           <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
@@ -35804,26 +35938,26 @@
         <edittype widgetv2type="TextEdit" name="id">
           <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
         </edittype>
-        <edittype widgetv2type="ValueRelation" name="fk_commune">
-          <widgetv2config OrderByValue="1" AllowNull="1" FilterExpression="" UseCompleter="0" fieldEditable="1" Key="id" Layer="district20130304110004764" Value="name" labelOnTop="0" AllowMulti="0"/>
+        <edittype widgetv2type="TextEdit" name="id_commune">
+          <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
         </edittype>
-        <edittype widgetv2type="ValueRelation" name="fk_type">
-          <widgetv2config OrderByValue="1" AllowNull="0" FilterExpression="" UseCompleter="0" fieldEditable="1" Key="id" Layer="servitude_type20150116095811274" Value="type" labelOnTop="0" AllowMulti="0"/>
+        <edittype widgetv2type="TextEdit" name="id_type">
+          <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
         </edittype>
-        <edittype widgetv2type="ValueRelation" name="fk_etat">
-          <widgetv2config OrderByValue="1" AllowNull="1" FilterExpression="" UseCompleter="0" fieldEditable="1" Key="id" Layer="servitude_etat20150116095811244" Value="etat" labelOnTop="0" AllowMulti="0"/>
+        <edittype widgetv2type="TextEdit" name="id_etat">
+          <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
         </edittype>
-        <edittype widgetv2type="ValueRelation" name="fk_statut">
-          <widgetv2config OrderByValue="1" AllowNull="1" FilterExpression="" UseCompleter="0" fieldEditable="1" Key="id" Layer="servitude_statut20150116095811261" Value="statut" labelOnTop="0" AllowMulti="0"/>
+        <edittype widgetv2type="TextEdit" name="id_statut">
+          <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
         </edittype>
-        <edittype widgetv2type="ValueRelation" name="fk_ouvrage">
-          <widgetv2config OrderByValue="1" AllowNull="1" FilterExpression="" UseCompleter="0" fieldEditable="1" Key="id" Layer="installation20130304110004938" Value="_displayname_fr" labelOnTop="0" AllowMulti="0"/>
+        <edittype widgetv2type="TextEdit" name="id_ouvrage">
+          <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
         </edittype>
-        <edittype widgetv2type="ValueRelation" name="fk_collecteur">
-          <widgetv2config OrderByValue="1" AllowNull="1" FilterExpression="" UseCompleter="0" fieldEditable="1" Key="id" Layer="collecteur20150203112806387" Value="nom" labelOnTop="0" AllowMulti="0"/>
+        <edittype widgetv2type="TextEdit" name="id_collecteur">
+          <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
         </edittype>
-        <edittype widgetv2type="ValueRelation" name="fk_partenaire">
-          <widgetv2config OrderByValue="0" AllowNull="1" FilterExpression="" UseCompleter="0" fieldEditable="1" Key="id" Layer="partenaire20150203112806405" Value="nom" labelOnTop="0" AllowMulti="0"/>
+        <edittype widgetv2type="TextEdit" name="id_partenaire">
+          <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
         </edittype>
         <edittype widgetv2type="TextEdit" name="type_numero">
           <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
@@ -36127,26 +36261,26 @@
         <edittype widgetv2type="TextEdit" name="id">
           <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
         </edittype>
-        <edittype widgetv2type="ValueRelation" name="fk_commune">
-          <widgetv2config OrderByValue="1" AllowNull="1" FilterExpression="" UseCompleter="0" fieldEditable="1" Key="id" Layer="district20130304110004764" Value="name" labelOnTop="0" AllowMulti="0"/>
+        <edittype widgetv2type="TextEdit" name="id_commune">
+          <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
         </edittype>
-        <edittype widgetv2type="ValueRelation" name="fk_type">
-          <widgetv2config OrderByValue="1" AllowNull="0" FilterExpression="" UseCompleter="0" fieldEditable="1" Key="id" Layer="servitude_type20150116095811274" Value="type" labelOnTop="0" AllowMulti="0"/>
+        <edittype widgetv2type="TextEdit" name="id_type">
+          <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
         </edittype>
-        <edittype widgetv2type="ValueRelation" name="fk_etat">
-          <widgetv2config OrderByValue="1" AllowNull="1" FilterExpression="" UseCompleter="0" fieldEditable="1" Key="id" Layer="servitude_etat20150116095811244" Value="etat" labelOnTop="0" AllowMulti="0"/>
+        <edittype widgetv2type="TextEdit" name="id_etat">
+          <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
         </edittype>
-        <edittype widgetv2type="ValueRelation" name="fk_statut">
-          <widgetv2config OrderByValue="1" AllowNull="1" FilterExpression="" UseCompleter="0" fieldEditable="1" Key="id" Layer="servitude_statut20150116095811261" Value="statut" labelOnTop="0" AllowMulti="0"/>
+        <edittype widgetv2type="TextEdit" name="id_statut">
+          <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
         </edittype>
-        <edittype widgetv2type="ValueRelation" name="fk_ouvrage">
-          <widgetv2config OrderByValue="1" AllowNull="1" FilterExpression="" UseCompleter="0" fieldEditable="1" Key="id" Layer="installation20130304110004938" Value="_displayname_fr" labelOnTop="0" AllowMulti="0"/>
+        <edittype widgetv2type="TextEdit" name="id_ouvrage">
+          <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
         </edittype>
-        <edittype widgetv2type="ValueRelation" name="fk_collecteur">
-          <widgetv2config OrderByValue="1" AllowNull="1" FilterExpression="" UseCompleter="0" fieldEditable="1" Key="id" Layer="collecteur20150203112806387" Value="nom" labelOnTop="0" AllowMulti="0"/>
+        <edittype widgetv2type="TextEdit" name="id_collecteur">
+          <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
         </edittype>
-        <edittype widgetv2type="ValueRelation" name="fk_partenaire">
-          <widgetv2config OrderByValue="0" AllowNull="1" FilterExpression="" UseCompleter="0" fieldEditable="1" Key="id" Layer="partenaire20150203112806405" Value="nom" labelOnTop="0" AllowMulti="0"/>
+        <edittype widgetv2type="TextEdit" name="id_partenaire">
+          <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
         </edittype>
         <edittype widgetv2type="TextEdit" name="type_numero">
           <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
@@ -36414,26 +36548,26 @@
         <edittype widgetv2type="TextEdit" name="id">
           <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
         </edittype>
-        <edittype widgetv2type="ValueRelation" name="fk_commune">
-          <widgetv2config OrderByValue="1" AllowNull="1" FilterExpression="" UseCompleter="0" fieldEditable="1" Key="id" Layer="district20130304110004764" Value="name" labelOnTop="0" AllowMulti="0"/>
+        <edittype widgetv2type="TextEdit" name="id_commune">
+          <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
         </edittype>
-        <edittype widgetv2type="ValueRelation" name="fk_type">
-          <widgetv2config OrderByValue="1" AllowNull="0" FilterExpression="" UseCompleter="0" fieldEditable="1" Key="id" Layer="servitude_type20150116095811274" Value="type" labelOnTop="0" AllowMulti="0"/>
+        <edittype widgetv2type="TextEdit" name="id_type">
+          <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
         </edittype>
-        <edittype widgetv2type="ValueRelation" name="fk_etat">
-          <widgetv2config OrderByValue="1" AllowNull="1" FilterExpression="" UseCompleter="0" fieldEditable="1" Key="id" Layer="servitude_etat20150116095811244" Value="etat" labelOnTop="0" AllowMulti="0"/>
+        <edittype widgetv2type="TextEdit" name="id_etat">
+          <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
         </edittype>
-        <edittype widgetv2type="ValueRelation" name="fk_statut">
-          <widgetv2config OrderByValue="1" AllowNull="1" FilterExpression="" UseCompleter="0" fieldEditable="1" Key="id" Layer="servitude_statut20150116095811261" Value="statut" labelOnTop="0" AllowMulti="0"/>
+        <edittype widgetv2type="TextEdit" name="id_statut">
+          <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
         </edittype>
-        <edittype widgetv2type="ValueRelation" name="fk_ouvrage">
-          <widgetv2config OrderByValue="1" AllowNull="1" FilterExpression="" UseCompleter="0" fieldEditable="1" Key="id" Layer="installation20130304110004938" Value="_displayname_fr" labelOnTop="0" AllowMulti="0"/>
+        <edittype widgetv2type="TextEdit" name="id_ouvrage">
+          <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
         </edittype>
-        <edittype widgetv2type="ValueRelation" name="fk_collecteur">
-          <widgetv2config OrderByValue="1" AllowNull="1" FilterExpression="" UseCompleter="0" fieldEditable="1" Key="id" Layer="collecteur20150203112806387" Value="nom" labelOnTop="0" AllowMulti="0"/>
+        <edittype widgetv2type="TextEdit" name="id_collecteur">
+          <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
         </edittype>
-        <edittype widgetv2type="ValueRelation" name="fk_partenaire">
-          <widgetv2config OrderByValue="0" AllowNull="1" FilterExpression="" UseCompleter="0" fieldEditable="1" Key="id" Layer="partenaire20150203112806405" Value="nom" labelOnTop="0" AllowMulti="0"/>
+        <edittype widgetv2type="TextEdit" name="id_partenaire">
+          <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
         </edittype>
         <edittype widgetv2type="TextEdit" name="type_numero">
           <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
@@ -36486,26 +36620,26 @@
         <edittype widgetv2type="TextEdit" name="id">
           <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
         </edittype>
-        <edittype widgetv2type="ValueRelation" name="fk_commune">
-          <widgetv2config OrderByValue="1" AllowNull="1" FilterExpression="" UseCompleter="0" fieldEditable="1" Key="id" Layer="district20130304110004764" Value="name" labelOnTop="0" AllowMulti="0"/>
+        <edittype widgetv2type="TextEdit" name="id_commune">
+          <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
         </edittype>
-        <edittype widgetv2type="ValueRelation" name="fk_type">
-          <widgetv2config OrderByValue="1" AllowNull="0" FilterExpression="" UseCompleter="0" fieldEditable="1" Key="id" Layer="servitude_type20150116095811274" Value="type" labelOnTop="0" AllowMulti="0"/>
+        <edittype widgetv2type="TextEdit" name="id_type">
+          <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
         </edittype>
-        <edittype widgetv2type="ValueRelation" name="fk_etat">
-          <widgetv2config OrderByValue="1" AllowNull="1" FilterExpression="" UseCompleter="0" fieldEditable="1" Key="id" Layer="servitude_etat20150116095811244" Value="etat" labelOnTop="0" AllowMulti="0"/>
+        <edittype widgetv2type="TextEdit" name="id_etat">
+          <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
         </edittype>
-        <edittype widgetv2type="ValueRelation" name="fk_statut">
-          <widgetv2config OrderByValue="1" AllowNull="1" FilterExpression="" UseCompleter="0" fieldEditable="1" Key="id" Layer="servitude_statut20150116095811261" Value="statut" labelOnTop="0" AllowMulti="0"/>
+        <edittype widgetv2type="TextEdit" name="id_statut">
+          <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
         </edittype>
-        <edittype widgetv2type="ValueRelation" name="fk_ouvrage">
-          <widgetv2config OrderByValue="1" AllowNull="1" FilterExpression="" UseCompleter="0" fieldEditable="1" Key="id" Layer="installation20130304110004938" Value="_displayname_fr" labelOnTop="0" AllowMulti="0"/>
+        <edittype widgetv2type="TextEdit" name="id_ouvrage">
+          <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
         </edittype>
-        <edittype widgetv2type="ValueRelation" name="fk_collecteur">
-          <widgetv2config OrderByValue="1" AllowNull="1" FilterExpression="" UseCompleter="0" fieldEditable="1" Key="id" Layer="collecteur20150203112806387" Value="nom" labelOnTop="0" AllowMulti="0"/>
+        <edittype widgetv2type="TextEdit" name="id_collecteur">
+          <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
         </edittype>
-        <edittype widgetv2type="ValueRelation" name="fk_partenaire">
-          <widgetv2config OrderByValue="0" AllowNull="1" FilterExpression="" UseCompleter="0" fieldEditable="1" Key="id" Layer="partenaire20150203112806405" Value="nom" labelOnTop="0" AllowMulti="0"/>
+        <edittype widgetv2type="TextEdit" name="id_partenaire">
+          <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
         </edittype>
         <edittype widgetv2type="TextEdit" name="type_numero">
           <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
@@ -37814,7 +37948,10 @@
           <symbol alpha="1" clip_to_extent="1" type="marker" name="4">
             <layer pass="0" class="SvgMarker" locked="0">
               <prop k="angle" v="0"/>
-              <prop k="angle_expression" v="coalesce(90 - label_1_r, 45)"/>
+              <prop k="angle_dd_active" v="1"/>
+              <prop k="angle_dd_expression" v="coalesce(90 - label_1_r, 45)"/>
+              <prop k="angle_dd_field" v=""/>
+              <prop k="angle_dd_useexpr" v="1"/>
               <prop k="color" v="#000000"/>
               <prop k="horizontal_anchor_point" v="1"/>
               <prop k="name" v="./symbols/vidange.svg"/>
@@ -38777,7 +38914,10 @@
             </layer>
             <layer pass="0" class="SvgMarker" locked="0">
               <prop k="angle" v="0"/>
-              <prop k="angle_expression" v="coalesce(90 - label_2_rotation, 45)"/>
+              <prop k="angle_dd_active" v="1"/>
+              <prop k="angle_dd_expression" v="coalesce(90 - label_2_rotation, 45)"/>
+              <prop k="angle_dd_field" v=""/>
+              <prop k="angle_dd_useexpr" v="1"/>
               <prop k="color" v="#000000"/>
               <prop k="horizontal_anchor_point" v="1"/>
               <prop k="name" v="./symbols/vidange_schema.svg"/>
@@ -39048,7 +39188,7 @@
       </labelattributes>
       <SingleCategoryDiagramRenderer diagramType="Pie">
         <DiagramCategory penColor="#000000" labelPlacementMethod="XHeight" penWidth="0" diagramOrientation="Up" minimumSize="0" barWidth="5" penAlpha="255" maxScaleDenominator="1e+08" font="Cantarell,11,-1,5,50,0,0,0,0,0" backgroundColor="#ffffff" transparency="0" width="15" scaleDependency="Area" backgroundAlpha="255" angleOffset="1440" scaleBasedVisibility="0" enabled="0" height="15" sizeType="MM" minScaleDenominator="-4.65661e-10">
-          <attribute field="" color="#000000"/>
+          <attribute field="" color="#000000" label=""/>
         </DiagramCategory>
       </SingleCategoryDiagramRenderer>
       <DiagramLayerSettings yPosColumn="-1" linePlacementFlags="10" placement="0" dist="0" xPosColumn="-1" priority="0" obstacle="0" showAll="1"/>
@@ -42316,6 +42456,412 @@
         </edittype>
       </edittypes>
     </maplayer>
+    <maplayer minimumScale="-4.65661e-10" maximumScale="1e+08" simplifyDrawingHints="0" minLabelScale="0" maxLabelScale="1e+08" simplifyDrawingTol="1" geometry="Polygon" simplifyMaxScale="1" type="vector" hasScaleBasedVisibilityFlag="0" simplifyLocal="1" scaleBasedLabelVisibilityFlag="0">
+      <id>vw_consumptionzone20150508135647750</id>
+      <datasource>service='qwat' sslmode=disable key='name' srid=21781 type=MULTIPOLYGON table="qwat_od"."vw_consumptionzone" (geometry) sql=</datasource>
+      <title></title>
+      <abstract></abstract>
+      <keywordList>
+        <value></value>
+      </keywordList>
+      <layername>Zones de consommation</layername>
+      <srs>
+        <spatialrefsys>
+          <proj4>+proj=somerc +lat_0=46.95240555555556 +lon_0=7.439583333333333 +k_0=1 +x_0=600000 +y_0=200000 +ellps=bessel +towgs84=674.4,15.1,405.3,0,0,0,0 +units=m +no_defs</proj4>
+          <srsid>1919</srsid>
+          <srid>21781</srid>
+          <authid>EPSG:21781</authid>
+          <description>CH1903 / LV03</description>
+          <projectionacronym>somerc</projectionacronym>
+          <ellipsoidacronym>bessel</ellipsoidacronym>
+          <geographicflag>false</geographicflag>
+        </spatialrefsys>
+      </srs>
+      <provider encoding="UTF-8">postgres</provider>
+      <previewExpression>COALESCE( "name", '&lt;NULL>' )</previewExpression>
+      <vectorjoins/>
+      <expressionfields/>
+      <map-layer-style-manager current="">
+        <map-layer-style name=""/>
+      </map-layer-style-manager>
+      <edittypes>
+        <edittype widgetv2type="TextEdit" name="id">
+          <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
+        </edittype>
+        <edittype widgetv2type="TextEdit" name="name">
+          <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
+        </edittype>
+        <edittype widgetv2type="TextEdit" name="population">
+          <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
+        </edittype>
+        <edittype widgetv2type="TextEdit" name="colorcode">
+          <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
+        </edittype>
+        <edittype widgetv2type="TextEdit" name="_sum_population">
+          <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
+        </edittype>
+      </edittypes>
+      <renderer-v2 attr="colorcode" symbollevels="0" type="categorizedSymbol">
+        <categories>
+          <category render="true" symbol="0" value="4" label="4"/>
+          <category render="true" symbol="1" value="1" label="1"/>
+          <category render="true" symbol="2" value="2" label="2"/>
+          <category render="true" symbol="3" value="3" label="3"/>
+          <category render="true" symbol="4" value="" label=""/>
+        </categories>
+        <symbols>
+          <symbol alpha="1" clip_to_extent="1" type="fill" name="0">
+            <layer pass="0" class="SimpleFill" locked="0">
+              <prop k="border_width_map_unit_scale" v="0,0"/>
+              <prop k="color" v="184,218,129,255"/>
+              <prop k="joinstyle" v="bevel"/>
+              <prop k="offset" v="0,0"/>
+              <prop k="offset_map_unit_scale" v="0,0"/>
+              <prop k="offset_unit" v="MM"/>
+              <prop k="outline_color" v="0,0,0,255"/>
+              <prop k="outline_style" v="solid"/>
+              <prop k="outline_width" v="0.26"/>
+              <prop k="outline_width_unit" v="MM"/>
+              <prop k="style" v="solid"/>
+              <effect enabled="0" type="effectStack">
+                <effect type="drawSource">
+                  <prop k="blend_mode" v="0"/>
+                  <prop k="draw_mode" v="2"/>
+                  <prop k="enabled" v="1"/>
+                  <prop k="transparency" v="0"/>
+                </effect>
+              </effect>
+            </layer>
+          </symbol>
+          <symbol alpha="1" clip_to_extent="1" type="fill" name="1">
+            <layer pass="0" class="SimpleFill" locked="0">
+              <prop k="border_width_map_unit_scale" v="0,0"/>
+              <prop k="color" v="110,29,231,255"/>
+              <prop k="joinstyle" v="bevel"/>
+              <prop k="offset" v="0,0"/>
+              <prop k="offset_map_unit_scale" v="0,0"/>
+              <prop k="offset_unit" v="MM"/>
+              <prop k="outline_color" v="0,0,0,255"/>
+              <prop k="outline_style" v="solid"/>
+              <prop k="outline_width" v="0.26"/>
+              <prop k="outline_width_unit" v="MM"/>
+              <prop k="style" v="solid"/>
+              <effect enabled="0" type="effectStack">
+                <effect type="drawSource">
+                  <prop k="blend_mode" v="0"/>
+                  <prop k="draw_mode" v="2"/>
+                  <prop k="enabled" v="1"/>
+                  <prop k="transparency" v="0"/>
+                </effect>
+              </effect>
+            </layer>
+          </symbol>
+          <symbol alpha="1" clip_to_extent="1" type="fill" name="2">
+            <layer pass="0" class="SimpleFill" locked="0">
+              <prop k="border_width_map_unit_scale" v="0,0"/>
+              <prop k="color" v="63,145,85,255"/>
+              <prop k="joinstyle" v="bevel"/>
+              <prop k="offset" v="0,0"/>
+              <prop k="offset_map_unit_scale" v="0,0"/>
+              <prop k="offset_unit" v="MM"/>
+              <prop k="outline_color" v="0,0,0,255"/>
+              <prop k="outline_style" v="solid"/>
+              <prop k="outline_width" v="0.26"/>
+              <prop k="outline_width_unit" v="MM"/>
+              <prop k="style" v="solid"/>
+              <effect enabled="0" type="effectStack">
+                <effect type="drawSource">
+                  <prop k="blend_mode" v="0"/>
+                  <prop k="draw_mode" v="2"/>
+                  <prop k="enabled" v="1"/>
+                  <prop k="transparency" v="0"/>
+                </effect>
+              </effect>
+            </layer>
+          </symbol>
+          <symbol alpha="1" clip_to_extent="1" type="fill" name="3">
+            <layer pass="0" class="SimpleFill" locked="0">
+              <prop k="border_width_map_unit_scale" v="0,0"/>
+              <prop k="color" v="71,189,52,255"/>
+              <prop k="joinstyle" v="bevel"/>
+              <prop k="offset" v="0,0"/>
+              <prop k="offset_map_unit_scale" v="0,0"/>
+              <prop k="offset_unit" v="MM"/>
+              <prop k="outline_color" v="0,0,0,255"/>
+              <prop k="outline_style" v="solid"/>
+              <prop k="outline_width" v="0.26"/>
+              <prop k="outline_width_unit" v="MM"/>
+              <prop k="style" v="solid"/>
+              <effect enabled="0" type="effectStack">
+                <effect type="drawSource">
+                  <prop k="blend_mode" v="0"/>
+                  <prop k="draw_mode" v="2"/>
+                  <prop k="enabled" v="1"/>
+                  <prop k="transparency" v="0"/>
+                </effect>
+              </effect>
+            </layer>
+          </symbol>
+          <symbol alpha="1" clip_to_extent="1" type="fill" name="4">
+            <layer pass="0" class="SimpleFill" locked="0">
+              <prop k="border_width_map_unit_scale" v="0,0"/>
+              <prop k="color" v="130,140,185,255"/>
+              <prop k="joinstyle" v="bevel"/>
+              <prop k="offset" v="0,0"/>
+              <prop k="offset_map_unit_scale" v="0,0"/>
+              <prop k="offset_unit" v="MM"/>
+              <prop k="outline_color" v="0,0,0,255"/>
+              <prop k="outline_style" v="solid"/>
+              <prop k="outline_width" v="0.26"/>
+              <prop k="outline_width_unit" v="MM"/>
+              <prop k="style" v="solid"/>
+              <effect enabled="0" type="effectStack">
+                <effect type="drawSource">
+                  <prop k="blend_mode" v="0"/>
+                  <prop k="draw_mode" v="2"/>
+                  <prop k="enabled" v="1"/>
+                  <prop k="transparency" v="0"/>
+                </effect>
+              </effect>
+            </layer>
+          </symbol>
+        </symbols>
+        <source-symbol>
+          <symbol alpha="1" clip_to_extent="1" type="fill" name="0">
+            <layer pass="0" class="SimpleFill" locked="0">
+              <prop k="border_width_map_unit_scale" v="0,0"/>
+              <prop k="color" v="90,137,85,255"/>
+              <prop k="joinstyle" v="bevel"/>
+              <prop k="offset" v="0,0"/>
+              <prop k="offset_map_unit_scale" v="0,0"/>
+              <prop k="offset_unit" v="MM"/>
+              <prop k="outline_color" v="0,0,0,255"/>
+              <prop k="outline_style" v="solid"/>
+              <prop k="outline_width" v="0.26"/>
+              <prop k="outline_width_unit" v="MM"/>
+              <prop k="style" v="solid"/>
+              <effect enabled="0" type="effectStack">
+                <effect type="drawSource">
+                  <prop k="blend_mode" v="0"/>
+                  <prop k="draw_mode" v="2"/>
+                  <prop k="enabled" v="1"/>
+                  <prop k="transparency" v="0"/>
+                </effect>
+              </effect>
+            </layer>
+          </symbol>
+        </source-symbol>
+        <rotation/>
+        <sizescale scalemethod="area"/>
+        <effect enabled="0" type="effectStack">
+          <effect type="drawSource">
+            <prop k="blend_mode" v="0"/>
+            <prop k="draw_mode" v="2"/>
+            <prop k="enabled" v="1"/>
+            <prop k="transparency" v="0"/>
+          </effect>
+        </effect>
+      </renderer-v2>
+      <customproperties>
+        <property key="labeling" value="pal"/>
+        <property key="labeling/addDirectionSymbol" value="false"/>
+        <property key="labeling/angleOffset" value="0"/>
+        <property key="labeling/blendMode" value="0"/>
+        <property key="labeling/bufferBlendMode" value="0"/>
+        <property key="labeling/bufferColorA" value="255"/>
+        <property key="labeling/bufferColorB" value="255"/>
+        <property key="labeling/bufferColorG" value="255"/>
+        <property key="labeling/bufferColorR" value="255"/>
+        <property key="labeling/bufferDraw" value="false"/>
+        <property key="labeling/bufferJoinStyle" value="64"/>
+        <property key="labeling/bufferNoFill" value="false"/>
+        <property key="labeling/bufferSize" value="1"/>
+        <property key="labeling/bufferSizeInMapUnits" value="false"/>
+        <property key="labeling/bufferSizeMapUnitMaxScale" value="0"/>
+        <property key="labeling/bufferSizeMapUnitMinScale" value="0"/>
+        <property key="labeling/bufferTransp" value="0"/>
+        <property key="labeling/centroidInside" value="false"/>
+        <property key="labeling/centroidWhole" value="false"/>
+        <property key="labeling/decimals" value="3"/>
+        <property key="labeling/displayAll" value="false"/>
+        <property key="labeling/dist" value="0"/>
+        <property key="labeling/distInMapUnits" value="false"/>
+        <property key="labeling/distMapUnitMaxScale" value="0"/>
+        <property key="labeling/distMapUnitMinScale" value="0"/>
+        <property key="labeling/enabled" value="false"/>
+        <property key="labeling/fieldName" value=""/>
+        <property key="labeling/fontBold" value="false"/>
+        <property key="labeling/fontCapitals" value="0"/>
+        <property key="labeling/fontFamily" value="Cantarell"/>
+        <property key="labeling/fontItalic" value="false"/>
+        <property key="labeling/fontLetterSpacing" value="0"/>
+        <property key="labeling/fontLimitPixelSize" value="false"/>
+        <property key="labeling/fontMaxPixelSize" value="10000"/>
+        <property key="labeling/fontMinPixelSize" value="3"/>
+        <property key="labeling/fontSize" value="11"/>
+        <property key="labeling/fontSizeInMapUnits" value="false"/>
+        <property key="labeling/fontSizeMapUnitMaxScale" value="0"/>
+        <property key="labeling/fontSizeMapUnitMinScale" value="0"/>
+        <property key="labeling/fontStrikeout" value="false"/>
+        <property key="labeling/fontUnderline" value="false"/>
+        <property key="labeling/fontWeight" value="50"/>
+        <property key="labeling/fontWordSpacing" value="0"/>
+        <property key="labeling/formatNumbers" value="false"/>
+        <property key="labeling/isExpression" value="true"/>
+        <property key="labeling/labelOffsetInMapUnits" value="true"/>
+        <property key="labeling/labelOffsetMapUnitMaxScale" value="0"/>
+        <property key="labeling/labelOffsetMapUnitMinScale" value="0"/>
+        <property key="labeling/labelPerPart" value="false"/>
+        <property key="labeling/leftDirectionSymbol" value="&lt;"/>
+        <property key="labeling/limitNumLabels" value="false"/>
+        <property key="labeling/maxCurvedCharAngleIn" value="20"/>
+        <property key="labeling/maxCurvedCharAngleOut" value="-20"/>
+        <property key="labeling/maxNumLabels" value="2000"/>
+        <property key="labeling/mergeLines" value="false"/>
+        <property key="labeling/minFeatureSize" value="0"/>
+        <property key="labeling/multilineAlign" value="0"/>
+        <property key="labeling/multilineHeight" value="1"/>
+        <property key="labeling/namedStyle" value="Regular"/>
+        <property key="labeling/obstacle" value="true"/>
+        <property key="labeling/placeDirectionSymbol" value="0"/>
+        <property key="labeling/placement" value="1"/>
+        <property key="labeling/placementFlags" value="0"/>
+        <property key="labeling/plussign" value="false"/>
+        <property key="labeling/preserveRotation" value="true"/>
+        <property key="labeling/previewBkgrdColor" value="#ffffff"/>
+        <property key="labeling/priority" value="5"/>
+        <property key="labeling/quadOffset" value="4"/>
+        <property key="labeling/repeatDistance" value="0"/>
+        <property key="labeling/repeatDistanceMapUnitMaxScale" value="0"/>
+        <property key="labeling/repeatDistanceMapUnitMinScale" value="0"/>
+        <property key="labeling/repeatDistanceUnit" value="1"/>
+        <property key="labeling/reverseDirectionSymbol" value="false"/>
+        <property key="labeling/rightDirectionSymbol" value=">"/>
+        <property key="labeling/scaleMax" value="10000000"/>
+        <property key="labeling/scaleMin" value="1"/>
+        <property key="labeling/scaleVisibility" value="false"/>
+        <property key="labeling/shadowBlendMode" value="6"/>
+        <property key="labeling/shadowColorB" value="0"/>
+        <property key="labeling/shadowColorG" value="0"/>
+        <property key="labeling/shadowColorR" value="0"/>
+        <property key="labeling/shadowDraw" value="false"/>
+        <property key="labeling/shadowOffsetAngle" value="135"/>
+        <property key="labeling/shadowOffsetDist" value="1"/>
+        <property key="labeling/shadowOffsetGlobal" value="true"/>
+        <property key="labeling/shadowOffsetMapUnitMaxScale" value="0"/>
+        <property key="labeling/shadowOffsetMapUnitMinScale" value="0"/>
+        <property key="labeling/shadowOffsetUnits" value="1"/>
+        <property key="labeling/shadowRadius" value="1.5"/>
+        <property key="labeling/shadowRadiusAlphaOnly" value="false"/>
+        <property key="labeling/shadowRadiusMapUnitMaxScale" value="0"/>
+        <property key="labeling/shadowRadiusMapUnitMinScale" value="0"/>
+        <property key="labeling/shadowRadiusUnits" value="1"/>
+        <property key="labeling/shadowScale" value="100"/>
+        <property key="labeling/shadowTransparency" value="30"/>
+        <property key="labeling/shadowUnder" value="0"/>
+        <property key="labeling/shapeBlendMode" value="0"/>
+        <property key="labeling/shapeBorderColorA" value="255"/>
+        <property key="labeling/shapeBorderColorB" value="128"/>
+        <property key="labeling/shapeBorderColorG" value="128"/>
+        <property key="labeling/shapeBorderColorR" value="128"/>
+        <property key="labeling/shapeBorderWidth" value="0"/>
+        <property key="labeling/shapeBorderWidthMapUnitMaxScale" value="0"/>
+        <property key="labeling/shapeBorderWidthMapUnitMinScale" value="0"/>
+        <property key="labeling/shapeBorderWidthUnits" value="1"/>
+        <property key="labeling/shapeDraw" value="false"/>
+        <property key="labeling/shapeFillColorA" value="255"/>
+        <property key="labeling/shapeFillColorB" value="255"/>
+        <property key="labeling/shapeFillColorG" value="255"/>
+        <property key="labeling/shapeFillColorR" value="255"/>
+        <property key="labeling/shapeJoinStyle" value="64"/>
+        <property key="labeling/shapeOffsetMapUnitMaxScale" value="0"/>
+        <property key="labeling/shapeOffsetMapUnitMinScale" value="0"/>
+        <property key="labeling/shapeOffsetUnits" value="1"/>
+        <property key="labeling/shapeOffsetX" value="0"/>
+        <property key="labeling/shapeOffsetY" value="0"/>
+        <property key="labeling/shapeRadiiMapUnitMaxScale" value="0"/>
+        <property key="labeling/shapeRadiiMapUnitMinScale" value="0"/>
+        <property key="labeling/shapeRadiiUnits" value="1"/>
+        <property key="labeling/shapeRadiiX" value="0"/>
+        <property key="labeling/shapeRadiiY" value="0"/>
+        <property key="labeling/shapeRotation" value="0"/>
+        <property key="labeling/shapeRotationType" value="0"/>
+        <property key="labeling/shapeSVGFile" value=""/>
+        <property key="labeling/shapeSizeMapUnitMaxScale" value="0"/>
+        <property key="labeling/shapeSizeMapUnitMinScale" value="0"/>
+        <property key="labeling/shapeSizeType" value="0"/>
+        <property key="labeling/shapeSizeUnits" value="1"/>
+        <property key="labeling/shapeSizeX" value="0"/>
+        <property key="labeling/shapeSizeY" value="0"/>
+        <property key="labeling/shapeTransparency" value="0"/>
+        <property key="labeling/shapeType" value="0"/>
+        <property key="labeling/textColorA" value="255"/>
+        <property key="labeling/textColorB" value="0"/>
+        <property key="labeling/textColorG" value="0"/>
+        <property key="labeling/textColorR" value="0"/>
+        <property key="labeling/textTransp" value="0"/>
+        <property key="labeling/upsidedownLabels" value="0"/>
+        <property key="labeling/wrapChar" value=""/>
+        <property key="labeling/xOffset" value="0"/>
+        <property key="labeling/yOffset" value="0"/>
+      </customproperties>
+      <blendMode>0</blendMode>
+      <featureBlendMode>0</featureBlendMode>
+      <layerTransparency>0</layerTransparency>
+      <displayfield>name</displayfield>
+      <label>0</label>
+      <labelattributes>
+        <label fieldname="" text="Label"/>
+        <family fieldname="" name="Cantarell"/>
+        <size fieldname="" units="pt" value="12"/>
+        <bold fieldname="" on="0"/>
+        <italic fieldname="" on="0"/>
+        <underline fieldname="" on="0"/>
+        <strikeout fieldname="" on="0"/>
+        <color fieldname="" red="0" blue="0" green="0"/>
+        <x fieldname=""/>
+        <y fieldname=""/>
+        <offset x="0" y="0" units="pt" yfieldname="" xfieldname=""/>
+        <angle fieldname="" value="0" auto="0"/>
+        <alignment fieldname="" value="center"/>
+        <buffercolor fieldname="" red="255" blue="255" green="255"/>
+        <buffersize fieldname="" units="pt" value="1"/>
+        <bufferenabled fieldname="" on=""/>
+        <multilineenabled fieldname="" on=""/>
+        <selectedonly on=""/>
+      </labelattributes>
+      <SingleCategoryDiagramRenderer diagramType="Pie">
+        <DiagramCategory penColor="#000000" labelPlacementMethod="XHeight" penWidth="0" diagramOrientation="Up" minimumSize="0" barWidth="5" penAlpha="255" maxScaleDenominator="1e+08" font="Cantarell,11,-1,5,50,0,0,0,0,0" backgroundColor="#ffffff" transparency="0" width="15" scaleDependency="Area" backgroundAlpha="255" angleOffset="1440" scaleBasedVisibility="0" enabled="0" height="15" sizeType="MM" minScaleDenominator="-4.65661e-10">
+          <attribute field="" color="#000000" label=""/>
+        </DiagramCategory>
+      </SingleCategoryDiagramRenderer>
+      <DiagramLayerSettings yPosColumn="-1" linePlacementFlags="10" placement="0" dist="0" xPosColumn="-1" priority="0" obstacle="0" showAll="1"/>
+      <editform>.</editform>
+      <editforminit/>
+      <featformsuppress>0</featformsuppress>
+      <annotationform>.</annotationform>
+      <editorlayout>generatedlayout</editorlayout>
+      <excludeAttributesWMS/>
+      <excludeAttributesWFS/>
+      <attributeactions/>
+      <edittypes>
+        <edittype widgetv2type="TextEdit" name="id">
+          <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
+        </edittype>
+        <edittype widgetv2type="TextEdit" name="name">
+          <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
+        </edittype>
+        <edittype widgetv2type="TextEdit" name="population">
+          <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
+        </edittype>
+        <edittype widgetv2type="TextEdit" name="colorcode">
+          <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
+        </edittype>
+        <edittype widgetv2type="TextEdit" name="_sum_population">
+          <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
+        </edittype>
+      </edittypes>
+    </maplayer>
     <maplayer minimumScale="0" maximumScale="1e+08" simplifyDrawingHints="0" minLabelScale="0" maxLabelScale="1e+08" simplifyDrawingTol="1" geometry="Line" simplifyMaxScale="1" type="vector" hasScaleBasedVisibilityFlag="0" simplifyLocal="1" scaleBasedLabelVisibilityFlag="0">
       <id>vw_pipe_schema20141208162900166</id>
       <datasource>service='qwat' sslmode=disable key='id' srid=21781 type=LINESTRING table="qwat_od"."vw_pipe_schema" (geometry) sql=</datasource>
@@ -43477,242 +44023,19 @@
       <LayerSnappingList type="QStringList">
         <value>IntersectIt_Lines20130618102142813</value>
         <value>IntersectIt_Points20130618102143276</value>
-        <value>_cadinput_techical_snap_layer_20140203092715598</value>
-        <value>ad_posnumero_maison20130514143346530</value>
-        <value>axe_rue20130514143437774</value>
-        <value>bf_bien_fonds20130514143508556</value>
-        <value>bf_ddp20130514143538213</value>
-        <value>bf_point_limite20130514143552315</value>
-        <value>bf_posimmeuble20130514143633121</value>
-        <value>cadastre20140312152032371</value>
-        <value>camac20140113144941208</value>
-        <value>conduites_copy20130709141244955</value>
-        <value>constructionpoint20130807094904851</value>
-        <value>cs_batiment20130514143721709</value>
-        <value>cs_posnumero_de_batiment20130514143756039</value>
-        <value>cs_surfacecs20130514143830750</value>
-        <value>dimension20130807094904783</value>
-        <value>district20130304110004764</value>
-        <value>hydrant20130304110004848</value>
-        <value>installation20130304110004938</value>
-        <value>installation_pressurecontrol20131107105006792</value>
-        <value>installation_pump20130816140237750</value>
-        <value>installation_source20130820110331647</value>
-        <value>installation_tank20130304110005008</value>
-        <value>installation_treatment20130816113039913</value>
-        <value>installation_valvechamber20131107105006707</value>
-        <value>leak20130821111917060</value>
-        <value>no_posnomlocallieudit20130514143906869</value>
-        <value>node20130304110005126</value>
-        <value>od_annotationline20131203095020365</value>
-        <value>od_annotationpoint20131203095020392</value>
-        <value>od_batiment_souterrain20130514143946785</value>
-        <value>od_cover20141219115626229</value>
-        <value>od_crossing20141023083754327</value>
-        <value>od_dimension_orientation20131202111155806</value>
-        <value>od_element_lineaire20130514144047075</value>
-        <value>od_element_surfacique20130514144124647</value>
-        <value>od_meter20131120073630165</value>
-        <value>od_meter_reference20140304165835390</value>
-        <value>od_node20140116161508743</value>
-        <value>od_part20140429113327995</value>
-        <value>od_remote20150116100522170</value>
-        <value>od_subscriber_reference20131206105928067</value>
-        <value>ouvrage_général_copy20141218102656671</value>
-        <value>pf_pfa20130514144154766</value>
-        <value>pf_pfp20130514144226845</value>
-        <value>pipe_child_parent20130417092030507</value>
-        <value>pressurezone20130417133612105</value>
-        <value>printmap20130304110011400</value>
-        <value>protectionzone20130304110011418</value>
-        <value>servitude20150109080436604</value>
-        <value>servitude20150109080436650</value>
-        <value>subscriber20130304110011459</value>
-        <value>subscriber_pipe_relation20130417092124312</value>
-        <value>valve20130304110011497</value>
-        <value>vannes_copy20141127160745910</value>
-        <value>vw_pipe_schema20141208162900166</value>
-        <value>vw_pipe_schema_visibleitems20141127154708843</value>
       </LayerSnappingList>
       <LayerSnappingEnabledList type="QStringList">
-        <value>disabled</value>
-        <value>disabled</value>
-        <value>disabled</value>
-        <value>disabled</value>
-        <value>disabled</value>
-        <value>disabled</value>
-        <value>disabled</value>
-        <value>disabled</value>
-        <value>disabled</value>
-        <value>disabled</value>
-        <value>disabled</value>
-        <value>disabled</value>
-        <value>disabled</value>
-        <value>disabled</value>
-        <value>disabled</value>
-        <value>disabled</value>
-        <value>disabled</value>
-        <value>disabled</value>
-        <value>disabled</value>
-        <value>disabled</value>
-        <value>disabled</value>
-        <value>disabled</value>
-        <value>disabled</value>
-        <value>disabled</value>
-        <value>disabled</value>
-        <value>disabled</value>
-        <value>disabled</value>
-        <value>disabled</value>
-        <value>disabled</value>
-        <value>disabled</value>
-        <value>disabled</value>
-        <value>disabled</value>
-        <value>disabled</value>
-        <value>disabled</value>
-        <value>disabled</value>
-        <value>disabled</value>
-        <value>disabled</value>
-        <value>disabled</value>
-        <value>disabled</value>
-        <value>disabled</value>
-        <value>disabled</value>
-        <value>disabled</value>
-        <value>disabled</value>
-        <value>disabled</value>
-        <value>disabled</value>
-        <value>disabled</value>
-        <value>disabled</value>
-        <value>disabled</value>
-        <value>disabled</value>
-        <value>disabled</value>
-        <value>disabled</value>
-        <value>disabled</value>
-        <value>disabled</value>
-        <value>disabled</value>
-        <value>disabled</value>
-        <value>disabled</value>
         <value>disabled</value>
         <value>disabled</value>
       </LayerSnappingEnabledList>
       <SnappingMode type="QString">all_layers</SnappingMode>
       <AvoidIntersectionsList type="QStringList"/>
+      <IntersectionSnapping type="bool">true</IntersectionSnapping>
       <LayerSnappingToleranceUnitList type="QStringList">
-        <value>1</value>
-        <value>1</value>
-        <value>1</value>
-        <value>1</value>
-        <value>1</value>
-        <value>1</value>
-        <value>1</value>
-        <value>1</value>
-        <value>1</value>
-        <value>1</value>
-        <value>1</value>
-        <value>1</value>
-        <value>1</value>
-        <value>1</value>
-        <value>1</value>
-        <value>1</value>
-        <value>1</value>
-        <value>1</value>
-        <value>1</value>
-        <value>1</value>
-        <value>1</value>
-        <value>1</value>
-        <value>1</value>
-        <value>1</value>
-        <value>1</value>
-        <value>1</value>
-        <value>1</value>
-        <value>1</value>
-        <value>1</value>
-        <value>1</value>
-        <value>1</value>
-        <value>1</value>
-        <value>1</value>
-        <value>1</value>
-        <value>1</value>
-        <value>1</value>
-        <value>1</value>
-        <value>1</value>
-        <value>1</value>
-        <value>1</value>
-        <value>1</value>
-        <value>1</value>
-        <value>1</value>
-        <value>1</value>
-        <value>1</value>
-        <value>1</value>
-        <value>1</value>
-        <value>1</value>
-        <value>1</value>
-        <value>1</value>
-        <value>1</value>
-        <value>1</value>
-        <value>1</value>
-        <value>1</value>
-        <value>1</value>
-        <value>1</value>
         <value>1</value>
         <value>1</value>
       </LayerSnappingToleranceUnitList>
       <LayerSnapToList type="QStringList">
-        <value>to_vertex_and_segment</value>
-        <value>to_vertex_and_segment</value>
-        <value>to_vertex_and_segment</value>
-        <value>to_vertex_and_segment</value>
-        <value>to_vertex_and_segment</value>
-        <value>to_vertex_and_segment</value>
-        <value>to_vertex_and_segment</value>
-        <value>to_vertex_and_segment</value>
-        <value>to_vertex_and_segment</value>
-        <value>to_vertex_and_segment</value>
-        <value>to_vertex_and_segment</value>
-        <value>to_vertex_and_segment</value>
-        <value>to_vertex_and_segment</value>
-        <value>to_vertex_and_segment</value>
-        <value>to_vertex_and_segment</value>
-        <value>to_vertex_and_segment</value>
-        <value>to_vertex_and_segment</value>
-        <value>to_vertex_and_segment</value>
-        <value>to_vertex_and_segment</value>
-        <value>to_vertex_and_segment</value>
-        <value>to_vertex_and_segment</value>
-        <value>to_vertex_and_segment</value>
-        <value>to_vertex_and_segment</value>
-        <value>to_vertex_and_segment</value>
-        <value>to_vertex_and_segment</value>
-        <value>to_vertex_and_segment</value>
-        <value>to_vertex_and_segment</value>
-        <value>to_vertex_and_segment</value>
-        <value>to_vertex_and_segment</value>
-        <value>to_vertex_and_segment</value>
-        <value>to_vertex_and_segment</value>
-        <value>to_vertex_and_segment</value>
-        <value>to_vertex_and_segment</value>
-        <value>to_vertex_and_segment</value>
-        <value>to_vertex_and_segment</value>
-        <value>to_vertex_and_segment</value>
-        <value>to_vertex_and_segment</value>
-        <value>to_vertex_and_segment</value>
-        <value>to_vertex_and_segment</value>
-        <value>to_vertex_and_segment</value>
-        <value>to_vertex_and_segment</value>
-        <value>to_vertex_and_segment</value>
-        <value>to_vertex_and_segment</value>
-        <value>to_vertex_and_segment</value>
-        <value>to_vertex_and_segment</value>
-        <value>to_vertex_and_segment</value>
-        <value>to_vertex_and_segment</value>
-        <value>to_vertex_and_segment</value>
-        <value>to_vertex_and_segment</value>
-        <value>to_vertex_and_segment</value>
-        <value>to_vertex_and_segment</value>
-        <value>to_vertex_and_segment</value>
-        <value>to_vertex_and_segment</value>
-        <value>to_vertex_and_segment</value>
-        <value>to_vertex_and_segment</value>
-        <value>to_vertex_and_segment</value>
         <value>to_vertex_and_segment</value>
         <value>to_vertex_and_segment</value>
       </LayerSnapToList>
@@ -43722,62 +44045,6 @@
       <LayerSnappingToleranceList type="QStringList">
         <value>1.000000</value>
         <value>1.000000</value>
-        <value>8.000000</value>
-        <value>8.000000</value>
-        <value>8.000000</value>
-        <value>8.000000</value>
-        <value>8.000000</value>
-        <value>8.000000</value>
-        <value>8.000000</value>
-        <value>8.000000</value>
-        <value>8.000000</value>
-        <value>8.000000</value>
-        <value>8.000000</value>
-        <value>8.000000</value>
-        <value>8.000000</value>
-        <value>8.000000</value>
-        <value>8.000000</value>
-        <value>8.000000</value>
-        <value>8.000000</value>
-        <value>8.000000</value>
-        <value>8.000000</value>
-        <value>8.000000</value>
-        <value>8.000000</value>
-        <value>8.000000</value>
-        <value>8.000000</value>
-        <value>8.000000</value>
-        <value>8.000000</value>
-        <value>8.000000</value>
-        <value>8.000000</value>
-        <value>8.000000</value>
-        <value>8.000000</value>
-        <value>8.000000</value>
-        <value>8.000000</value>
-        <value>8.000000</value>
-        <value>8.000000</value>
-        <value>8.000000</value>
-        <value>8.000000</value>
-        <value>8.000000</value>
-        <value>8.000000</value>
-        <value>8.000000</value>
-        <value>8.000000</value>
-        <value>8.000000</value>
-        <value>8.000000</value>
-        <value>8.000000</value>
-        <value>8.000000</value>
-        <value>8.000000</value>
-        <value>8.000000</value>
-        <value>8.000000</value>
-        <value>8.000000</value>
-        <value>8.000000</value>
-        <value>8.000000</value>
-        <value>8.000000</value>
-        <value>8.000000</value>
-        <value>8.000000</value>
-        <value>8.000000</value>
-        <value>8.000000</value>
-        <value>8.000000</value>
-        <value>8.000000</value>
       </LayerSnappingToleranceList>
     </Digitizing>
     <Identify>
