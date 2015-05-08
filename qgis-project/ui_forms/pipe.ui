@@ -68,7 +68,7 @@
            </widget>
           </item>
           <item row="1" column="1">
-           <widget class="QComboBox" name="id_distributor">
+           <widget class="QComboBox" name="fk_distributor">
             <property name="sizeAdjustPolicy">
              <enum>QComboBox::AdjustToContents</enum>
             </property>
@@ -140,7 +140,7 @@
            </widget>
           </item>
           <item row="0" column="1">
-           <widget class="QComboBox" name="id_function">
+           <widget class="QComboBox" name="fk_function">
             <property name="editable">
              <bool>false</bool>
             </property>
@@ -157,7 +157,7 @@
            </widget>
           </item>
           <item row="1" column="1">
-           <widget class="QComboBox" name="id_status">
+           <widget class="QComboBox" name="fk_status">
             <property name="editable">
              <bool>false</bool>
             </property>
@@ -181,7 +181,7 @@
            </widget>
           </item>
           <item row="3" column="1">
-           <widget class="QComboBox" name="id_installmethod">
+           <widget class="QComboBox" name="fk_installmethod">
             <property name="sizeAdjustPolicy">
              <enum>QComboBox::AdjustToContents</enum>
             </property>
@@ -195,7 +195,7 @@
            </widget>
           </item>
           <item row="4" column="1">
-           <widget class="QComboBox" name="id_protection">
+           <widget class="QComboBox" name="fk_protection">
             <property name="sizeAdjustPolicy">
              <enum>QComboBox::AdjustToContents</enum>
             </property>
@@ -209,10 +209,10 @@
            </widget>
           </item>
           <item row="5" column="1">
-           <widget class="QComboBox" name="id_bedding"/>
+           <widget class="QComboBox" name="fk_bedding"/>
           </item>
           <item row="2" column="1">
-           <widget class="QgsRelationReferenceWidget" name="id_material">
+           <widget class="QgsRelationReferenceWidget" name="fk_material">
             <property name="sizePolicy">
              <sizepolicy hsizetype="Expanding" vsizetype="Preferred">
               <horstretch>0</horstretch>
@@ -285,7 +285,7 @@
         <widget class="QLineEdit" name="pressure_nominal"/>
        </item>
        <item row="0" column="1">
-        <widget class="QComboBox" name="id_watertype"/>
+        <widget class="QComboBox" name="fk_watertype"/>
        </item>
        <item row="0" column="0">
         <widget class="QLabel" name="label_14">
@@ -382,7 +382,7 @@
            </widget>
           </item>
           <item row="2" column="1">
-           <widget class="QComboBox" name="id_pressurezone">
+           <widget class="QComboBox" name="fk_pressurezone">
             <property name="enabled">
              <bool>false</bool>
             </property>
@@ -403,7 +403,7 @@
            </widget>
           </item>
           <item row="4" column="1">
-           <widget class="QLineEdit" name="id_node_a">
+           <widget class="QLineEdit" name="fk_node_a">
             <property name="enabled">
              <bool>true</bool>
             </property>
@@ -420,7 +420,7 @@
            </widget>
           </item>
           <item row="5" column="1">
-           <widget class="QLineEdit" name="id_node_b">
+           <widget class="QLineEdit" name="fk_node_b">
             <property name="enabled">
              <bool>true</bool>
             </property>
@@ -504,7 +504,7 @@
            </widget>
           </item>
           <item row="5" column="1">
-           <widget class="QComboBox" name="id_precision">
+           <widget class="QComboBox" name="fk_precision">
             <property name="sizeAdjustPolicy">
              <enum>QComboBox::AdjustToContents</enum>
             </property>
@@ -667,7 +667,7 @@
            </widget>
           </item>
           <item row="3" column="1">
-           <widget class="QgsRelationReferenceWidget" name="id_parent">
+           <widget class="QgsRelationReferenceWidget" name="fk_parent">
             <property name="embedForm" stdset="0">
              <bool>false</bool>
             </property>
