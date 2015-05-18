@@ -5,7 +5,7 @@
     <customproperties/>
     <layer-tree-group expanded="1" checked="Qt::PartiallyChecked" name="Réseau">
       <customproperties/>
-      <layer-tree-group expanded="1" checked="Qt::PartiallyChecked" name="ouvrages">
+      <layer-tree-group expanded="0" checked="Qt::PartiallyChecked" name="ouvrages">
         <customproperties/>
         <layer-tree-layer expanded="0" checked="Qt::Unchecked" id="installation20130304110004938" name="ouvrage général">
           <customproperties/>
@@ -35,7 +35,7 @@
           </layer-tree-layer>
         </layer-tree-group>
       </layer-tree-group>
-      <layer-tree-group expanded="1" checked="Qt::PartiallyChecked" name="Abonnés">
+      <layer-tree-group expanded="0" checked="Qt::PartiallyChecked" name="Abonnés">
         <customproperties/>
         <layer-tree-layer expanded="0" checked="Qt::Checked" id="subscriber20130304110011459" name="abonnés">
           <customproperties/>
@@ -55,7 +55,7 @@
       </layer-tree-group>
       <layer-tree-group expanded="1" checked="Qt::PartiallyChecked" name="Réseau">
         <customproperties/>
-        <layer-tree-layer expanded="1" checked="Qt::Checked" id="conduites_copy20130709141244955" name="conduites">
+        <layer-tree-layer expanded="0" checked="Qt::Checked" id="conduites_copy20130709141244955" name="conduites">
           <customproperties>
             <property key="expandedLegendNodes" value="{2513a8b8-a110-4727-854c-6084f64e3bdf}"/>
           </customproperties>
@@ -73,7 +73,7 @@
           <customproperties/>
         </layer-tree-layer>
       </layer-tree-group>
-      <layer-tree-group expanded="0" checked="Qt::PartiallyChecked" name="Noeuds">
+      <layer-tree-group expanded="1" checked="Qt::PartiallyChecked" name="Noeuds">
         <customproperties/>
         <layer-tree-layer expanded="0" checked="Qt::Checked" id="node20130304110005126" name="noeuds">
           <customproperties/>
@@ -97,7 +97,7 @@
           <customproperties/>
         </layer-tree-layer>
       </layer-tree-group>
-      <layer-tree-group expanded="1" checked="Qt::Unchecked" name="edition">
+      <layer-tree-group expanded="0" checked="Qt::Unchecked" name="edition">
         <customproperties/>
         <layer-tree-layer expanded="0" checked="Qt::Unchecked" id="ouvrage_général_copy20141218102656671" name="ouvrage 5000">
           <customproperties/>
@@ -360,10 +360,10 @@
   <mapcanvas>
     <units>meters</units>
     <extent>
-      <xmin>548289.71947876457124949</xmin>
-      <ymin>141055.08639005865552463</ymin>
-      <xmax>564101.21950356010347605</xmax>
-      <ymax>154093.75307707037427463</ymax>
+      <xmin>561353.63540345744695514</xmin>
+      <ymin>143541.74414586002239957</ymin>
+      <xmax>561551.27915365935768932</xmax>
+      <ymax>143704.72747935826191679</ymax>
     </extent>
     <rotation>0</rotation>
     <projections>1</projections>
@@ -393,6 +393,7 @@
       <layer_coordinate_transform destAuthId="EPSG:21781" srcAuthId="EPSG:21781" srcDatumTransform="-1" destDatumTransform="-1" layerid="leak20130821111917060"/>
       <layer_coordinate_transform destAuthId="EPSG:21781" srcAuthId="EPSG:21781" srcDatumTransform="-1" destDatumTransform="-1" layerid="cs_surfacecs20140214143830750"/>
       <layer_coordinate_transform destAuthId="EPSG:21781" srcAuthId="EPSG:21781" srcDatumTransform="-1" destDatumTransform="-1" layerid="conduites_copy20130709141244955"/>
+      <layer_coordinate_transform destAuthId="EPSG:21781" srcAuthId="EPSG:21781" srcDatumTransform="-1" destDatumTransform="-1" layerid="district20130304110004764"/>
       <layer_coordinate_transform destAuthId="EPSG:21781" srcAuthId="EPSG:21781" srcDatumTransform="-1" destDatumTransform="-1" layerid="hydrant20130304110004848"/>
       <layer_coordinate_transform destAuthId="EPSG:21781" srcAuthId="EPSG:21781" srcDatumTransform="-1" destDatumTransform="-1" layerid="valve20130304110011497"/>
       <layer_coordinate_transform destAuthId="EPSG:21781" srcAuthId="EPSG:21781" srcDatumTransform="-1" destDatumTransform="-1" layerid="pipe_child_parent20130417092030507"/>
@@ -653,7 +654,7 @@
   </layer-tree-canvas>
   <legend updateDrawingOrder="false">
     <legendgroup open="true" checked="Qt::PartiallyChecked" name="Réseau">
-      <legendgroup open="true" checked="Qt::PartiallyChecked" name="ouvrages">
+      <legendgroup open="false" checked="Qt::PartiallyChecked" name="ouvrages">
         <legendlayer drawingOrder="0" open="false" checked="Qt::Unchecked" name="ouvrage général" showFeatureCount="0">
           <filegroup open="false" hidden="false">
             <legendlayerfile isInOverview="0" layerid="installation20130304110004938" visible="0"/>
@@ -697,7 +698,7 @@
           </legendlayer>
         </legendgroup>
       </legendgroup>
-      <legendgroup open="true" checked="Qt::PartiallyChecked" name="Abonnés">
+      <legendgroup open="false" checked="Qt::PartiallyChecked" name="Abonnés">
         <legendlayer drawingOrder="8" open="false" checked="Qt::Checked" name="abonnés" showFeatureCount="0">
           <filegroup open="false" hidden="false">
             <legendlayerfile isInOverview="0" layerid="subscriber20130304110011459" visible="1"/>
@@ -725,8 +726,8 @@
         </legendlayer>
       </legendgroup>
       <legendgroup open="true" checked="Qt::PartiallyChecked" name="Réseau">
-        <legendlayer drawingOrder="13" open="true" checked="Qt::Checked" name="conduites" showFeatureCount="0">
-          <filegroup open="true" hidden="false">
+        <legendlayer drawingOrder="13" open="false" checked="Qt::Checked" name="conduites" showFeatureCount="0">
+          <filegroup open="false" hidden="false">
             <legendlayerfile isInOverview="0" layerid="conduites_copy20130709141244955" visible="1"/>
           </filegroup>
         </legendlayer>
@@ -751,7 +752,7 @@
           </filegroup>
         </legendlayer>
       </legendgroup>
-      <legendgroup open="false" checked="Qt::PartiallyChecked" name="Noeuds">
+      <legendgroup open="true" checked="Qt::PartiallyChecked" name="Noeuds">
         <legendlayer drawingOrder="18" open="false" checked="Qt::Checked" name="noeuds" showFeatureCount="0">
           <filegroup open="false" hidden="false">
             <legendlayerfile isInOverview="0" layerid="node20130304110005126" visible="1"/>
@@ -782,7 +783,7 @@
           </filegroup>
         </legendlayer>
       </legendgroup>
-      <legendgroup open="true" checked="Qt::Unchecked" name="edition">
+      <legendgroup open="false" checked="Qt::Unchecked" name="edition">
         <legendlayer drawingOrder="23" open="false" checked="Qt::Unchecked" name="ouvrage 5000" showFeatureCount="0">
           <filegroup open="false" hidden="false">
             <legendlayerfile isInOverview="0" layerid="ouvrage_général_copy20141218102656671" visible="0"/>
@@ -12924,7 +12925,7 @@
           <BackgroundColor alpha="255" red="255" blue="255" green="255"/>
         </ComposerItem>
       </ComposerLabel>
-      <ComposerScaleBar segmentMillimeters="17.7778" numMapUnitsPerScaleBarUnit="1" numSegments="4" height="3" alignment="1" labelBarSpace="3" outlineWidth="1" units="1" numSegmentsLeft="2" lineJoinStyle="miter" style="Numeric" unitLabel="m" lineCapStyle="square" font="Arial,12,-1,5,50,0,0,0,0,0" mapId="0" boxContentSpace="1" numUnitsPerSegment="100">
+      <ComposerScaleBar lineCapStyle="square" style="Numeric" numMapUnitsPerScaleBarUnit="1" segmentSizeMode="0" alignment="1" numSegments="4" segmentMillimeters="17.7778" lineJoinStyle="miter" minBarWidth="50" font="Arial,12,-1,5,50,0,0,0,0,0" numUnitsPerSegment="100" units="1" labelBarSpace="3" outlineWidth="1" numSegmentsLeft="2" maxBarWidth="150" height="3" boxContentSpace="1" mapId="0" unitLabel="m">
         <fillColor alpha="255" red="0" blue="0" green="0"/>
         <fillColor2 alpha="255" red="255" blue="255" green="255"/>
         <strokeColor alpha="255" red="0" blue="0" green="0"/>
@@ -12934,12 +12935,12 @@
           <BackgroundColor alpha="255" red="255" blue="255" green="255"/>
         </ComposerItem>
       </ComposerScaleBar>
-      <ComposerScaleBar segmentMillimeters="3.55556" numMapUnitsPerScaleBarUnit="1" numSegments="5" height="3" alignment="0" labelBarSpace="2" outlineWidth="0.01" units="1" numSegmentsLeft="0" lineJoinStyle="miter" style="Double Box" unitLabel="m" lineCapStyle="square" font="Arial,6,-1,5,50,0,0,0,0,0" mapId="0" boxContentSpace="1" numUnitsPerSegment="20">
+      <ComposerScaleBar lineCapStyle="square" style="Double Box" numMapUnitsPerScaleBarUnit="1" segmentSizeMode="0" alignment="0" numSegments="5" segmentMillimeters="3.55556" lineJoinStyle="miter" minBarWidth="50" font="Arial,6,-1,5,50,0,0,0,0,0" numUnitsPerSegment="20" units="1" labelBarSpace="2" outlineWidth="0.01" numSegmentsLeft="0" maxBarWidth="150" height="3" boxContentSpace="1" mapId="0" unitLabel="m">
         <fillColor alpha="255" red="0" blue="0" green="0"/>
         <fillColor2 alpha="255" red="255" blue="255" green="255"/>
         <strokeColor alpha="255" red="0" blue="0" green="0"/>
         <textColor alpha="255" red="0" blue="0" green="0"/>
-        <ComposerItem pagey="130.6" page="1" id="" lastValidViewScaleFactor="6.65958" positionMode="4" positionLock="false" x="152.868" y="130.6" visibility="1" zValue="11" background="true" transparency="0" frameJoinStyle="miter" blendMode="0" width="24.4634" outlineWidth="0.2" excludeFromExports="0" uuid="{ba898829-7dc4-452c-9766-a487e8205cfa}" height="9" itemRotation="0" frame="false" pagex="152.868">
+        <ComposerItem pagey="130.6" page="1" id="" lastValidViewScaleFactor="6.65958" positionMode="4" positionLock="false" x="152.901" y="130.6" visibility="1" zValue="11" background="true" transparency="0" frameJoinStyle="miter" blendMode="0" width="24.3978" outlineWidth="0.2" excludeFromExports="0" uuid="{ba898829-7dc4-452c-9766-a487e8205cfa}" height="9" itemRotation="0" frame="false" pagex="152.901">
           <FrameColor alpha="255" red="0" blue="0" green="0"/>
           <BackgroundColor alpha="255" red="255" blue="255" green="255"/>
         </ComposerItem>
@@ -13261,7 +13262,7 @@
           <BackgroundColor alpha="255" red="255" blue="255" green="255"/>
         </ComposerItem>
       </ComposerLabel>
-      <ComposerScaleBar segmentMillimeters="510.204" numMapUnitsPerScaleBarUnit="1" numSegments="4" height="3" alignment="1" labelBarSpace="3" outlineWidth="1" units="1" numSegmentsLeft="2" lineJoinStyle="miter" style="Numeric" unitLabel="m" lineCapStyle="square" font="Arial,12,-1,5,50,0,0,0,0,0" mapId="0" boxContentSpace="1" numUnitsPerSegment="100">
+      <ComposerScaleBar lineCapStyle="square" style="Numeric" numMapUnitsPerScaleBarUnit="1" segmentSizeMode="0" alignment="1" numSegments="4" segmentMillimeters="0.769231" lineJoinStyle="miter" minBarWidth="50" font="Arial,12,-1,5,50,0,0,0,0,0" numUnitsPerSegment="100" units="1" labelBarSpace="3" outlineWidth="1" numSegmentsLeft="2" maxBarWidth="150" height="3" boxContentSpace="1" mapId="0" unitLabel="m">
         <fillColor alpha="255" red="0" blue="0" green="0"/>
         <fillColor2 alpha="255" red="255" blue="255" green="255"/>
         <strokeColor alpha="255" red="0" blue="0" green="0"/>
@@ -13271,12 +13272,12 @@
           <BackgroundColor alpha="255" red="255" blue="255" green="255"/>
         </ComposerItem>
       </ComposerScaleBar>
-      <ComposerScaleBar segmentMillimeters="10.2041" numMapUnitsPerScaleBarUnit="1" numSegments="5" height="3" alignment="0" labelBarSpace="2" outlineWidth="0.01" units="1" numSegmentsLeft="0" lineJoinStyle="miter" style="Double Box" unitLabel="m" lineCapStyle="square" font="Arial,6,-1,5,50,0,0,0,0,0" mapId="0" boxContentSpace="1" numUnitsPerSegment="2">
+      <ComposerScaleBar lineCapStyle="square" style="Double Box" numMapUnitsPerScaleBarUnit="1" segmentSizeMode="0" alignment="0" numSegments="5" segmentMillimeters="0.0153846" lineJoinStyle="miter" minBarWidth="50" font="Arial,6,-1,5,50,0,0,0,0,0" numUnitsPerSegment="2" units="1" labelBarSpace="2" outlineWidth="0.01" numSegmentsLeft="0" maxBarWidth="150" height="3" boxContentSpace="1" mapId="0" unitLabel="m">
         <fillColor alpha="255" red="0" blue="0" green="0"/>
         <fillColor2 alpha="255" red="255" blue="255" green="255"/>
         <strokeColor alpha="255" red="0" blue="0" green="0"/>
         <textColor alpha="255" red="0" blue="0" green="0"/>
-        <ComposerItem pagey="25.5" page="1" id="" lastValidViewScaleFactor="6.65958" positionMode="4" positionLock="false" x="131.949" y="25.5" visibility="1" zValue="10" background="true" transparency="0" frameJoinStyle="miter" blendMode="0" width="57.1224" outlineWidth="0.2" excludeFromExports="0" uuid="{938279f3-c152-4e8f-a710-08f30f802fd4}" height="9" itemRotation="0" frame="false" pagex="131.949">
+        <ComposerItem pagey="25.5" page="1" id="" lastValidViewScaleFactor="6.65958" positionMode="4" positionLock="false" x="157.462" y="25.5" visibility="1" zValue="10" background="true" transparency="0" frameJoinStyle="miter" blendMode="0" width="6.09692" outlineWidth="0.2" excludeFromExports="0" uuid="{938279f3-c152-4e8f-a710-08f30f802fd4}" height="9" itemRotation="0" frame="false" pagex="157.462">
           <FrameColor alpha="255" red="0" blue="0" green="0"/>
           <BackgroundColor alpha="255" red="255" blue="255" green="255"/>
         </ComposerItem>
@@ -13386,32 +13387,9 @@
           <BackgroundColor alpha="255" red="255" blue="255" green="255"/>
         </ComposerItem>
       </ComposerShape>
-      <ComposerMap mapRotation="0" keepLayerSet="true" id="0" previewMode="Cache" drawCanvasItems="true">
-        <Extent ymin="142621.28076756789232604" xmin="559701.78398867906071246" ymax="142669.65356761726434343" xmax="559740.98398871906101704"/>
-        <LayerSet>
-          <Layer>installation20130304110004938</Layer>
-          <Layer>installation_tank20130304110005008</Layer>
-          <Layer>installation_source20130820110331647</Layer>
-          <Layer>installation_pump20130816140237750</Layer>
-          <Layer>installation_treatment20130816113039913</Layer>
-          <Layer>installation_pressurecontrol20131107105006792</Layer>
-          <Layer>installation_valvechamber20131107105006707</Layer>
-          <Layer>hydrant20130304110004848</Layer>
-          <Layer>valve20130304110011497</Layer>
-          <Layer>leak20130821111917060</Layer>
-          <Layer>subscriber20130304110011459</Layer>
-          <Layer>od_subscriber_reference20131206105928067</Layer>
-          <Layer>od_meter20131120073630165</Layer>
-          <Layer>od_meter_reference20140304165835390</Layer>
-          <Layer>node20130304110005126</Layer>
-          <Layer>conduites_copy20130709141244955</Layer>
-          <Layer>od_annotationline20131203095020365</Layer>
-          <Layer>od_annotationpoint20131203095020392</Layer>
-          <Layer>dimension20130807094904783</Layer>
-          <Layer>od_dimension_orientation20131202111155806</Layer>
-          <Layer>printmap20130304110011400</Layer>
-          <Layer>cadastre20140312152032371</Layer>
-        </LayerSet>
+      <ComposerMap mapRotation="0" keepLayerSet="false" id="0" previewMode="Cache" drawCanvasItems="true">
+        <Extent ymin="127881.1697114719718229" xmin="546000.05281563370954245" ymax="159965.16974420545739122" xmax="572000.05284215381834656"/>
+        <LayerSet/>
         <Grid/>
         <ComposerMapGrid rightAnnotationDirection="0" gridFramePenColor="0,0,0,255" show="0" bottomAnnotationPosition="1" annotationFont="Ubuntu,11,-1,5,50,0,0,0,0,0" annotationPrecision="3" showAnnotation="0" topFrameDivisions="0" uuid="{b9747bee-32a7-4d0f-a272-35d20f3ae9c4}" leftAnnotationDirection="0" topAnnotationPosition="1" rightAnnotationDisplay="0" offsetX="0" offsetY="0" rightFrameDivisions="0" gridStyle="0" annotationFontColor="0,0,0,255" intervalX="0" gridFrameSideFlags="15" intervalY="0" bottomAnnotationDirection="0" leftAnnotationDisplay="0" leftFrameDivisions="0" frameFillColor1="255,255,255,255" frameFillColor2="0,0,0,255" crossLength="3" gridFramePenThickness="0.5" bottomAnnotationDisplay="0" unit="0" topAnnotationDisplay="0" leftAnnotationPosition="1" blendMode="0" gridFrameStyle="0" rightAnnotationPosition="1" gridFrameWidth="2" name="Grid 1" annotationFormat="0" bottomFrameDivisions="0" topAnnotationDirection="0" frameAnnotationDistance="1">
           <lineStyle>
@@ -13476,7 +13454,7 @@
           </markerStyle>
         </ComposerMapGrid>
         <AtlasMap scalingMode="0" atlasDriven="0" margin="0.10000000000000001"/>
-        <ComposerItem pagey="45.2" page="1" id="" lastValidViewScaleFactor="3.73602" positionMode="0" positionLock="false" x="5" y="45.2" visibility="1" zValue="1" background="true" transparency="0" frameJoinStyle="miter" blendMode="0" width="200" outlineWidth="0.2" excludeFromExports="0" uuid="{721d2a70-0f07-44a5-9f8c-1d2e85025f25}" height="246.8" itemRotation="0" frame="true" pagex="5">
+        <ComposerItem pagey="45.2" page="1" id="" lastValidViewScaleFactor="2.96584" positionMode="0" positionLock="false" x="5" y="45.2" visibility="1" zValue="1" background="true" transparency="0" frameJoinStyle="miter" blendMode="0" width="200" outlineWidth="0.2" excludeFromExports="0" uuid="{721d2a70-0f07-44a5-9f8c-1d2e85025f25}" height="246.8" itemRotation="0" frame="true" pagex="5">
           <FrameColor alpha="255" red="0" blue="0" green="0"/>
           <BackgroundColor alpha="255" red="255" blue="255" green="255"/>
         </ComposerItem>
@@ -13539,7 +13517,7 @@
           <BackgroundColor alpha="255" red="255" blue="255" green="255"/>
         </ComposerItem>
       </ComposerLabel>
-      <ComposerScaleBar segmentMillimeters="400" numMapUnitsPerScaleBarUnit="1" numSegments="4" height="3" alignment="1" labelBarSpace="3" outlineWidth="1" units="1" numSegmentsLeft="2" lineJoinStyle="miter" style="Numeric" unitLabel="m" lineCapStyle="square" font="Arial,12,-1,5,50,0,0,0,0,0" mapId="0" boxContentSpace="1" numUnitsPerSegment="100">
+      <ComposerScaleBar lineCapStyle="square" style="Numeric" numMapUnitsPerScaleBarUnit="1" segmentSizeMode="0" alignment="1" numSegments="4" segmentMillimeters="400" lineJoinStyle="miter" minBarWidth="50" font="Arial,12,-1,5,50,0,0,0,0,0" numUnitsPerSegment="100" units="1" labelBarSpace="3" outlineWidth="1" numSegmentsLeft="2" maxBarWidth="150" height="3" boxContentSpace="1" mapId="0" unitLabel="m">
         <fillColor alpha="255" red="0" blue="0" green="0"/>
         <fillColor2 alpha="255" red="255" blue="255" green="255"/>
         <strokeColor alpha="255" red="0" blue="0" green="0"/>
@@ -13549,12 +13527,12 @@
           <BackgroundColor alpha="255" red="255" blue="255" green="255"/>
         </ComposerItem>
       </ComposerScaleBar>
-      <ComposerScaleBar segmentMillimeters="8" numMapUnitsPerScaleBarUnit="1" numSegments="5" height="3" alignment="0" labelBarSpace="2" outlineWidth="0.01" units="1" numSegmentsLeft="0" lineJoinStyle="miter" style="Double Box" unitLabel="m" lineCapStyle="square" font="Arial,6,-1,5,50,0,0,0,0,0" mapId="0" boxContentSpace="1" numUnitsPerSegment="2">
+      <ComposerScaleBar lineCapStyle="square" style="Double Box" numMapUnitsPerScaleBarUnit="1" segmentSizeMode="0" alignment="0" numSegments="5" segmentMillimeters="8" lineJoinStyle="miter" minBarWidth="50" font="Arial,6,-1,5,50,0,0,0,0,0" numUnitsPerSegment="2" units="1" labelBarSpace="2" outlineWidth="0.01" numSegmentsLeft="0" maxBarWidth="150" height="3" boxContentSpace="1" mapId="0" unitLabel="m">
         <fillColor alpha="255" red="0" blue="0" green="0"/>
         <fillColor2 alpha="255" red="255" blue="255" green="255"/>
         <strokeColor alpha="255" red="0" blue="0" green="0"/>
         <textColor alpha="255" red="0" blue="0" green="0"/>
-        <ComposerItem pagey="25.5" page="1" id="" lastValidViewScaleFactor="6.65958" positionMode="4" positionLock="false" x="131.949" y="25.5" visibility="1" zValue="10" background="true" transparency="0" frameJoinStyle="miter" blendMode="0" width="46.102" outlineWidth="0.2" excludeFromExports="0" uuid="{425d5d48-6271-4409-a78f-eb823e58b49b}" height="9" itemRotation="0" frame="false" pagex="131.949">
+        <ComposerItem pagey="25.5" page="1" id="" lastValidViewScaleFactor="6.65958" positionMode="4" positionLock="false" x="131.99" y="25.5" visibility="1" zValue="10" background="true" transparency="0" frameJoinStyle="miter" blendMode="0" width="46.02" outlineWidth="0.2" excludeFromExports="0" uuid="{425d5d48-6271-4409-a78f-eb823e58b49b}" height="9" itemRotation="0" frame="false" pagex="131.99">
           <FrameColor alpha="255" red="0" blue="0" green="0"/>
           <BackgroundColor alpha="255" red="255" blue="255" green="255"/>
         </ComposerItem>
@@ -13817,7 +13795,7 @@
           <BackgroundColor alpha="255" red="255" blue="255" green="255"/>
         </ComposerItem>
       </ComposerLabel>
-      <ComposerScaleBar segmentMillimeters="729.927" numMapUnitsPerScaleBarUnit="1" numSegments="4" height="3" alignment="1" labelBarSpace="3" outlineWidth="1" units="1" numSegmentsLeft="2" lineJoinStyle="miter" style="Numeric" unitLabel="m" lineCapStyle="square" font="Arial,12,-1,5,50,0,0,0,0,0" mapId="0" boxContentSpace="1" numUnitsPerSegment="100">
+      <ComposerScaleBar lineCapStyle="square" style="Numeric" numMapUnitsPerScaleBarUnit="1" segmentSizeMode="0" alignment="1" numSegments="4" segmentMillimeters="729.927" lineJoinStyle="miter" minBarWidth="50" font="Arial,12,-1,5,50,0,0,0,0,0" numUnitsPerSegment="100" units="1" labelBarSpace="3" outlineWidth="1" numSegmentsLeft="2" maxBarWidth="150" height="3" boxContentSpace="1" mapId="0" unitLabel="m">
         <fillColor alpha="255" red="0" blue="0" green="0"/>
         <fillColor2 alpha="255" red="255" blue="255" green="255"/>
         <strokeColor alpha="255" red="0" blue="0" green="0"/>
@@ -13827,12 +13805,12 @@
           <BackgroundColor alpha="255" red="255" blue="255" green="255"/>
         </ComposerItem>
       </ComposerScaleBar>
-      <ComposerScaleBar segmentMillimeters="14.5985" numMapUnitsPerScaleBarUnit="1" numSegments="5" height="3" alignment="0" labelBarSpace="2" outlineWidth="0.01" units="1" numSegmentsLeft="0" lineJoinStyle="miter" style="Double Box" unitLabel="m" lineCapStyle="square" font="Arial,6,-1,5,50,0,0,0,0,0" mapId="0" boxContentSpace="1" numUnitsPerSegment="2">
+      <ComposerScaleBar lineCapStyle="square" style="Double Box" numMapUnitsPerScaleBarUnit="1" segmentSizeMode="0" alignment="0" numSegments="5" segmentMillimeters="14.5985" lineJoinStyle="miter" minBarWidth="50" font="Arial,6,-1,5,50,0,0,0,0,0" numUnitsPerSegment="2" units="1" labelBarSpace="2" outlineWidth="0.01" numSegmentsLeft="0" maxBarWidth="150" height="3" boxContentSpace="1" mapId="0" unitLabel="m">
         <fillColor alpha="255" red="0" blue="0" green="0"/>
         <fillColor2 alpha="255" red="255" blue="255" green="255"/>
         <strokeColor alpha="255" red="0" blue="0" green="0"/>
         <textColor alpha="255" red="0" blue="0" green="0"/>
-        <ComposerItem pagey="25.5" page="1" id="" lastValidViewScaleFactor="6.65958" positionMode="4" positionLock="false" x="131.949" y="25.5" visibility="1" zValue="10" background="true" transparency="0" frameJoinStyle="miter" blendMode="0" width="79.0947" outlineWidth="0.2" excludeFromExports="0" uuid="{ef994c02-5abc-4762-9c7a-e57c24fd8ea8}" height="9" itemRotation="0" frame="false" pagex="131.949">
+        <ComposerItem pagey="25.5" page="1" id="" lastValidViewScaleFactor="6.65958" positionMode="4" positionLock="false" x="131.99" y="25.5" visibility="1" zValue="10" background="true" transparency="0" frameJoinStyle="miter" blendMode="0" width="79.0127" outlineWidth="0.2" excludeFromExports="0" uuid="{ef994c02-5abc-4762-9c7a-e57c24fd8ea8}" height="9" itemRotation="0" frame="false" pagex="131.99">
           <FrameColor alpha="255" red="0" blue="0" green="0"/>
           <BackgroundColor alpha="255" red="255" blue="255" green="255"/>
         </ComposerItem>
@@ -14102,7 +14080,7 @@
           <BackgroundColor alpha="255" red="255" blue="255" green="255"/>
         </ComposerItem>
       </ComposerLabel>
-      <ComposerScaleBar segmentMillimeters="400" numMapUnitsPerScaleBarUnit="1" numSegments="4" height="3" alignment="1" labelBarSpace="3" outlineWidth="1" units="1" numSegmentsLeft="2" lineJoinStyle="miter" style="Numeric" unitLabel="m" lineCapStyle="square" font="Arial,12,-1,5,50,0,0,0,0,0" mapId="0" boxContentSpace="1" numUnitsPerSegment="100">
+      <ComposerScaleBar lineCapStyle="square" style="Numeric" numMapUnitsPerScaleBarUnit="1" segmentSizeMode="0" alignment="1" numSegments="4" segmentMillimeters="400" lineJoinStyle="miter" minBarWidth="50" font="Arial,12,-1,5,50,0,0,0,0,0" numUnitsPerSegment="100" units="1" labelBarSpace="3" outlineWidth="1" numSegmentsLeft="2" maxBarWidth="150" height="3" boxContentSpace="1" mapId="0" unitLabel="m">
         <fillColor alpha="255" red="0" blue="0" green="0"/>
         <fillColor2 alpha="255" red="255" blue="255" green="255"/>
         <strokeColor alpha="255" red="0" blue="0" green="0"/>
@@ -14112,12 +14090,12 @@
           <BackgroundColor alpha="255" red="255" blue="255" green="255"/>
         </ComposerItem>
       </ComposerScaleBar>
-      <ComposerScaleBar segmentMillimeters="8" numMapUnitsPerScaleBarUnit="1" numSegments="5" height="3" alignment="0" labelBarSpace="2" outlineWidth="0.01" units="1" numSegmentsLeft="0" lineJoinStyle="miter" style="Double Box" unitLabel="m" lineCapStyle="square" font="Arial,6,-1,5,50,0,0,0,0,0" mapId="0" boxContentSpace="1" numUnitsPerSegment="2">
+      <ComposerScaleBar lineCapStyle="square" style="Double Box" numMapUnitsPerScaleBarUnit="1" segmentSizeMode="0" alignment="0" numSegments="5" segmentMillimeters="8" lineJoinStyle="miter" minBarWidth="50" font="Arial,6,-1,5,50,0,0,0,0,0" numUnitsPerSegment="2" units="1" labelBarSpace="2" outlineWidth="0.01" numSegmentsLeft="0" maxBarWidth="150" height="3" boxContentSpace="1" mapId="0" unitLabel="m">
         <fillColor alpha="255" red="0" blue="0" green="0"/>
         <fillColor2 alpha="255" red="255" blue="255" green="255"/>
         <strokeColor alpha="255" red="0" blue="0" green="0"/>
         <textColor alpha="255" red="0" blue="0" green="0"/>
-        <ComposerItem pagey="25.5" page="1" id="" lastValidViewScaleFactor="6.65958" positionMode="4" positionLock="false" x="131.949" y="25.5" visibility="1" zValue="9" background="true" transparency="0" frameJoinStyle="miter" blendMode="0" width="46.102" outlineWidth="0.2" excludeFromExports="0" uuid="{6f598429-cabf-4706-b52a-eaa1c461d09f}" height="9" itemRotation="0" frame="false" pagex="131.949">
+        <ComposerItem pagey="25.5" page="1" id="" lastValidViewScaleFactor="6.65958" positionMode="4" positionLock="false" x="131.99" y="25.5" visibility="1" zValue="9" background="true" transparency="0" frameJoinStyle="miter" blendMode="0" width="46.02" outlineWidth="0.2" excludeFromExports="0" uuid="{6f598429-cabf-4706-b52a-eaa1c461d09f}" height="9" itemRotation="0" frame="false" pagex="131.99">
           <FrameColor alpha="255" red="0" blue="0" green="0"/>
           <BackgroundColor alpha="255" red="255" blue="255" green="255"/>
         </ComposerItem>
@@ -14538,7 +14516,7 @@
           <BackgroundColor alpha="255" red="255" blue="255" green="255"/>
         </ComposerItem>
       </ComposerLabel>
-      <ComposerScaleBar segmentMillimeters="20" numMapUnitsPerScaleBarUnit="1" numSegments="4" height="3" alignment="1" labelBarSpace="3" outlineWidth="1" units="1" numSegmentsLeft="2" lineJoinStyle="miter" style="Numeric" unitLabel="m" lineCapStyle="square" font="Arial,12,-1,5,50,0,0,0,0,0" mapId="0" boxContentSpace="1" numUnitsPerSegment="100">
+      <ComposerScaleBar lineCapStyle="square" style="Numeric" numMapUnitsPerScaleBarUnit="1" segmentSizeMode="0" alignment="1" numSegments="4" segmentMillimeters="20" lineJoinStyle="miter" minBarWidth="50" font="Arial,12,-1,5,50,0,0,0,0,0" numUnitsPerSegment="100" units="1" labelBarSpace="3" outlineWidth="1" numSegmentsLeft="2" maxBarWidth="150" height="3" boxContentSpace="1" mapId="0" unitLabel="m">
         <fillColor alpha="255" red="0" blue="0" green="0"/>
         <fillColor2 alpha="255" red="255" blue="255" green="255"/>
         <strokeColor alpha="255" red="0" blue="0" green="0"/>
@@ -14548,12 +14526,12 @@
           <BackgroundColor alpha="255" red="255" blue="255" green="255"/>
         </ComposerItem>
       </ComposerScaleBar>
-      <ComposerScaleBar segmentMillimeters="4" numMapUnitsPerScaleBarUnit="1" numSegments="5" height="3" alignment="0" labelBarSpace="2" outlineWidth="0.01" units="1" numSegmentsLeft="0" lineJoinStyle="miter" style="Double Box" unitLabel="m" lineCapStyle="square" font="Arial,6,-1,5,50,0,0,0,0,0" mapId="0" boxContentSpace="1" numUnitsPerSegment="20">
+      <ComposerScaleBar lineCapStyle="square" style="Double Box" numMapUnitsPerScaleBarUnit="1" segmentSizeMode="0" alignment="0" numSegments="5" segmentMillimeters="4" lineJoinStyle="miter" minBarWidth="50" font="Arial,6,-1,5,50,0,0,0,0,0" numUnitsPerSegment="20" units="1" labelBarSpace="2" outlineWidth="0.01" numSegmentsLeft="0" maxBarWidth="150" height="3" boxContentSpace="1" mapId="0" unitLabel="m">
         <fillColor alpha="255" red="0" blue="0" green="0"/>
         <fillColor2 alpha="255" red="255" blue="255" green="255"/>
         <strokeColor alpha="255" red="0" blue="0" green="0"/>
         <textColor alpha="255" red="0" blue="0" green="0"/>
-        <ComposerItem pagey="130.6" page="1" id="" lastValidViewScaleFactor="6.65958" positionMode="4" positionLock="false" x="151.757" y="130.6" visibility="1" zValue="11" background="true" transparency="0" frameJoinStyle="miter" blendMode="0" width="26.6856" outlineWidth="0.2" excludeFromExports="0" uuid="{06e5f231-b34c-43c6-8725-1e53a40ee62b}" height="9" itemRotation="0" frame="false" pagex="151.757">
+        <ComposerItem pagey="130.6" page="1" id="" lastValidViewScaleFactor="6.65958" positionMode="4" positionLock="false" x="151.79" y="130.6" visibility="1" zValue="11" background="true" transparency="0" frameJoinStyle="miter" blendMode="0" width="26.62" outlineWidth="0.2" excludeFromExports="0" uuid="{06e5f231-b34c-43c6-8725-1e53a40ee62b}" height="9" itemRotation="0" frame="false" pagex="151.79">
           <FrameColor alpha="255" red="0" blue="0" green="0"/>
           <BackgroundColor alpha="255" red="255" blue="255" green="255"/>
         </ComposerItem>
@@ -16631,7 +16609,7 @@
         </layer>
       </symbol>
       <ComposerMap mapRotation="325" keepLayerSet="true" id="0" previewMode="Cache" drawCanvasItems="true">
-        <Extent ymin="136695.24451209048856981" xmin="556387.41481285262852907" ymax="141145.24451662946376018" xmax="563887.41482050251215696"/>
+        <Extent ymin="136695.24451209045946598" xmin="556387.41481285262852907" ymax="141145.24451662943465635" xmax="563887.41482050251215696"/>
         <LayerSet>
           <Layer>vw_pipe_schema20141208162900166</Layer>
           <Layer>ouvrage_général_copy20141218102656671</Layer>
@@ -31720,7 +31698,7 @@
         </edittype>
       </edittypes>
     </maplayer>
-    <maplayer minimumScale="-4.65661e-10" maximumScale="1000" simplifyDrawingHints="0" minLabelScale="0" maxLabelScale="1e+08" simplifyDrawingTol="3.6" geometry="Point" simplifyMaxScale="1" type="vector" hasScaleBasedVisibilityFlag="1" simplifyLocal="0" scaleBasedLabelVisibilityFlag="0">
+    <maplayer minimumScale="0" maximumScale="1000" simplifyDrawingHints="0" minLabelScale="0" maxLabelScale="1e+08" simplifyDrawingTol="3.6" geometry="Point" simplifyMaxScale="1" type="vector" hasScaleBasedVisibilityFlag="1" simplifyLocal="0" scaleBasedLabelVisibilityFlag="0">
       <id>od_part20140429113327995</id>
       <datasource>service='qwat' sslmode=disable key='id' estimatedmetadata=true srid=21781 type=POINT table="qwat_od"."part" (geometry) sql=</datasource>
       <title></title>
@@ -31774,11 +31752,11 @@
         <edittype widgetv2type="ValueRelation" name="fk_status">
           <widgetv2config OrderByValue="0" AllowNull="0" FilterExpression="" UseCompleter="0" fieldEditable="1" Key="id" Layer="vl_status20130304110011436" Value="value_fr" labelOnTop="0" AllowMulti="0"/>
         </edittype>
-        <edittype widgetv2type="TextEdit" name="fk_precision">
-          <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
+        <edittype widgetv2type="ValueRelation" name="fk_precision">
+          <widgetv2config OrderByValue="0" AllowNull="0" FilterExpression="" UseCompleter="0" fieldEditable="1" Key="id" Layer="vl_precision20130304110011372" Value="value_fr" labelOnTop="0" AllowMulti="0"/>
         </edittype>
-        <edittype widgetv2type="TextEdit" name="fk_precisionalti">
-          <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
+        <edittype widgetv2type="ValueRelation" name="fk_precisionalti">
+          <widgetv2config OrderByValue="0" AllowNull="0" FilterExpression="" UseCompleter="0" fieldEditable="1" Key="id" Layer="vl_precisionalti20131211161429510" Value="value_fr" labelOnTop="0" AllowMulti="0"/>
         </edittype>
         <edittype widgetv2type="TextEdit" name="year">
           <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
@@ -32079,7 +32057,7 @@
         <property key="labeling/fieldName" value=""/>
         <property key="labeling/fontBold" value="true"/>
         <property key="labeling/fontCapitals" value="0"/>
-        <property key="labeling/fontFamily" value="Ubuntu"/>
+        <property key="labeling/fontFamily" value="Cantarell"/>
         <property key="labeling/fontItalic" value="true"/>
         <property key="labeling/fontLetterSpacing" value="0"/>
         <property key="labeling/fontLimitPixelSize" value="false"/>
@@ -32108,7 +32086,7 @@
         <property key="labeling/minFeatureSize" value="0"/>
         <property key="labeling/multilineAlign" value="0"/>
         <property key="labeling/multilineHeight" value="1"/>
-        <property key="labeling/namedStyle" value="Bold Italic"/>
+        <property key="labeling/namedStyle" value="Regular"/>
         <property key="labeling/obstacle" value="true"/>
         <property key="labeling/placeDirectionSymbol" value="0"/>
         <property key="labeling/placement" value="0"/>
@@ -32217,6 +32195,10 @@
         <multilineenabled fieldname="" on=""/>
         <selectedonly on=""/>
       </labelattributes>
+      <SingleCategoryDiagramRenderer diagramType="Pie">
+        <DiagramCategory penColor="#000000" labelPlacementMethod="XHeight" penWidth="0" diagramOrientation="Up" minimumSize="0" barWidth="5" penAlpha="255" maxScaleDenominator="1000" font="Cantarell,11,-1,5,50,0,0,0,0,0" backgroundColor="#ffffff" transparency="0" width="15" scaleDependency="Area" backgroundAlpha="255" angleOffset="1440" scaleBasedVisibility="1" enabled="0" height="15" sizeType="MM" minScaleDenominator="0"/>
+      </SingleCategoryDiagramRenderer>
+      <DiagramLayerSettings yPosColumn="-1" linePlacementFlags="10" placement="0" dist="0" xPosColumn="-1" priority="0" obstacle="0" showAll="1"/>
       <editform>.</editform>
       <editforminit/>
       <featformsuppress>0</featformsuppress>
@@ -32243,11 +32225,11 @@
         <edittype widgetv2type="ValueRelation" name="fk_status">
           <widgetv2config OrderByValue="0" AllowNull="0" FilterExpression="" UseCompleter="0" fieldEditable="1" Key="id" Layer="vl_status20130304110011436" Value="value_fr" labelOnTop="0" AllowMulti="0"/>
         </edittype>
-        <edittype widgetv2type="TextEdit" name="fk_precision">
-          <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
+        <edittype widgetv2type="ValueRelation" name="fk_precision">
+          <widgetv2config OrderByValue="0" AllowNull="0" FilterExpression="" UseCompleter="0" fieldEditable="1" Key="id" Layer="vl_precision20130304110011372" Value="value_fr" labelOnTop="0" AllowMulti="0"/>
         </edittype>
-        <edittype widgetv2type="TextEdit" name="fk_precisionalti">
-          <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
+        <edittype widgetv2type="ValueRelation" name="fk_precisionalti">
+          <widgetv2config OrderByValue="0" AllowNull="0" FilterExpression="" UseCompleter="0" fieldEditable="1" Key="id" Layer="vl_precisionalti20131211161429510" Value="value_fr" labelOnTop="0" AllowMulti="0"/>
         </edittype>
         <edittype widgetv2type="TextEdit" name="year">
           <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
@@ -36813,7 +36795,7 @@
         </spatialrefsys>
       </srs>
       <provider encoding="ISO-8859-1">postgres</provider>
-      <previewExpression></previewExpression>
+      <previewExpression>COALESCE( "id", '&lt;NULL>' )</previewExpression>
       <vectorjoins/>
       <expressionfields/>
       <map-layer-style-manager current="">
