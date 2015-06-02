@@ -20,8 +20,18 @@ in your shell:
 
 Now go to the extensions menu and activate the qwat module.
 
+Using the example project
+-------------------------
 
+You'll need to set up a postgres database first. Then in your shell:
 
+	$ id
+        uid=1000(THE_USER_THAT_WILL_RUN_QGIS) ...
+	$ sudo su - postgres # change to the postgres user
+	$ echo "CREATE DATABASE gwat" | psql 
+	$ echo "GRANT CREATE on DATABASE qwat to THE_USER_THAT_WILL_RUN_QGIS;" | psql
 
+now go to the 'data-model' directory and run the 'create_schemas.bash' script.
 
+Now you should be able to connect to the qwat database with QGIS.
 
