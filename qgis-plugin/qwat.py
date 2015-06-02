@@ -30,7 +30,6 @@ from PyQt4.QtGui import QAction, QIcon, QDesktopServices
 from qgis.core import QgsMapLayer, QgsProject, QgsApplication
 
 from core.mysettings import MySettings
-from gui.mysettingsdialog import MySettingsDialog
 from gui.maindialog import MainDialog
 
 import resources
