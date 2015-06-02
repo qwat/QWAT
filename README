@@ -1,5 +1,25 @@
 qWat: QGIS Water Module
 
+How to install
+--------------
+
+in your shell:
+
+	$ git clone URL-to-this-module
+	$ cd qWat
+	$ 
+	$ git submodule init
+	$ git submodule update
+	$ 
+	$ path_to_this_module=`pwd`
+	$ cd ~/.qgis2/python/plugins
+	$ ln -s "$path_to_this_module"
+	$ 
+	$ qgis &
+
+Now go to the extensions menu and activate the qwat module.
+
+
 
 
 
