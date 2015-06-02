@@ -10,10 +10,11 @@ in your shell:
 	$ 
 	$ git submodule init
 	$ git submodule update
+	$ make
 	$ 
 	$ path_to_this_module=`pwd`
 	$ cd ~/.qgis2/python/plugins
-	$ ln -s "$path_to_this_module"
+	$ ln -s "$path_to_this_module"/qgis-plugin
 	$ 
 	$ qgis &
 
