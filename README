@@ -1,6 +1,60 @@
 qWat: QGIS Water Module
 
+How to install
+--------------
 
+in your shell:
 
+	$ git clone URL-to-this-module
+	$ cd qWat
+	$ 
+	$ git submodule init
+	$ git submodule update
+        $
+	$ cd qgis-plugin
+	$ make
+	$ 
+	$ path_to_this_module=`pwd`
+	$ cd ~/.qgis2/python/plugins
+	$ ln -s "$path_to_this_module"
+	$ 
+	$ qgis &
 
+Now go to the extensions menu and activate the qwat module.
+
+Using the example project
+-------------------------
+
+You'll need to set up a postgres database first. Then in your shell:
+
+	$ vim .pg_service.conf
+
+The contents of the .pg_service.conf file should look like this:
+
+	dbname=qwat
+	user=THE_USER_THAT_WILL_RUN_QGIS
+	port=5432
+	host=localhost
+	password=xxxxxxxx
+
+Now create the qwat database in postgres:
+
+	$ su - postgres
+        $ psql
+        postgres=# CREATE DATABASE qwat WITH ENCODING='UTF8' OWNER=THE_USER_THAT_WILL_RUN_QGIS CONNECTION LIMIT=-1;
+        CREATE DATABASE
+        postgres=#
+        $ psql qwat
+	qwat=# CREATE EXTENSION postgis;
+	CREATE EXTENSION
+
+now go to the 'data-model' directory and run the 'create_schemas.bash' script:
+
+	$ cd data-model
+        $ ./create_schemas.bash
+
+in QGIS you should now be able to connect to the database by creating a new connection with
+Name=qwat, Service=qwat, SSL mode=prefer.
+
+If that works then open the qwat.qgs project in QGIS.
 
