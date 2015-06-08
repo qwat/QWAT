@@ -384,10 +384,10 @@
   <mapcanvas>
     <units>meters</units>
     <extent>
-      <xmin>557738.75418187736067921</xmin>
-      <ymin>141764.4577002061996609</ymin>
-      <xmax>562929.81668187736067921</xmax>
-      <ymax>145484.45777572528459132</ymax>
+      <xmin>557479.78916818823199719</xmin>
+      <ymin>142205.54118302094866522</ymin>
+      <xmax>560075.32041818823199719</xmax>
+      <ymax>144065.54122078049113043</ymax>
     </extent>
     <rotation>0</rotation>
     <projections>1</projections>
@@ -40944,7 +40944,7 @@
         </edittype>
       </edittypes>
     </maplayer>
-    <maplayer minimumScale="-4.65661e-10" maximumScale="1e+08" simplifyDrawingHints="0" minLabelScale="1" maxLabelScale="1e+08" simplifyDrawingTol="1" geometry="Point" simplifyMaxScale="1" type="vector" hasScaleBasedVisibilityFlag="0" simplifyLocal="1" scaleBasedLabelVisibilityFlag="0">
+    <maplayer minimumScale="0" maximumScale="1e+08" simplifyDrawingHints="0" minLabelScale="1" maxLabelScale="1e+08" simplifyDrawingTol="1" geometry="Point" simplifyMaxScale="1" type="vector" hasScaleBasedVisibilityFlag="0" simplifyLocal="1" scaleBasedLabelVisibilityFlag="0">
       <id>vannes_copy20141127160745910</id>
       <datasource>service='qwat' sslmode=allow key='id' srid=21781 type=Point table="qwat_od"."valve" (geometry_alt2) sql=</datasource>
       <title></title>
@@ -41511,7 +41511,7 @@
         <property key="labeling/distMapUnitMaxScale" value="0"/>
         <property key="labeling/distMapUnitMinScale" value="0"/>
         <property key="labeling/enabled" value="true"/>
-        <property key="labeling/fieldName" value=""/>
+        <property key="labeling/fieldName" value="COALESCE(&quot;valve_function_short_fr&quot;,'')&#xa;||&#xa;COALESCE(&quot;valve_type_short_fr&quot;,'')&#xa;|| &#xa;identification&#xa;||&#xa;CASE&#xa;WHEN  $scale  &lt;= 6000  THEN COALESCE(' ' ||&quot;label_1_text&quot;,'')&#xa;END"/>
         <property key="labeling/fontBold" value="false"/>
         <property key="labeling/fontCapitals" value="0"/>
         <property key="labeling/fontFamily" value="Cantarell"/>
@@ -41655,7 +41655,7 @@
         <selectedonly on=""/>
       </labelattributes>
       <SingleCategoryDiagramRenderer diagramType="Pie">
-        <DiagramCategory penColor="#000000" labelPlacementMethod="XHeight" penWidth="0" diagramOrientation="Up" minimumSize="0" barWidth="5" penAlpha="255" maxScaleDenominator="1e+08" font="Cantarell,11,-1,5,50,0,0,0,0,0" backgroundColor="#ffffff" transparency="0" width="15" scaleDependency="Area" backgroundAlpha="255" angleOffset="1440" scaleBasedVisibility="0" enabled="0" height="15" sizeType="MM" minScaleDenominator="-4.65661e-10">
+        <DiagramCategory penColor="#000000" labelPlacementMethod="XHeight" penWidth="0" diagramOrientation="Up" minimumSize="0" barWidth="5" penAlpha="255" maxScaleDenominator="1e+08" font="Cantarell,11,-1,5,50,0,0,0,0,0" backgroundColor="#ffffff" transparency="0" width="15" scaleDependency="Area" backgroundAlpha="255" angleOffset="1440" scaleBasedVisibility="0" enabled="0" height="15" sizeType="MM" minScaleDenominator="0">
           <attribute field="" color="#000000" label=""/>
         </DiagramCategory>
       </SingleCategoryDiagramRenderer>
