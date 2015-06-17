@@ -19,7 +19,7 @@ If the qwat forms change, first step is to copy the ui files (forms) to ``qwat_d
 Then simply run the ``00_make_ts.sh`` script which will complete the ts files
 that can be easily translated using QT linguist tool.
 
-Afterwards, run the ``00_make_ts.sh`` script that will transform the **ts** files
+Afterwards, run the ``00_make_qm.sh`` script that will transform the **ts** files
 into **qm** files.
 
 If you have a new form, be sure to copy it to the ``develop`` directory,

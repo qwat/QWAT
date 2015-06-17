@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<!DOCTYPE TS>
-<TS version="2.0" language="en" sourcelanguage="fr">
+<!DOCTYPE TS><TS version="2.0" language="en" sourcelanguage="fr">
 <context>
     <name>Dialog</name>
     <message>
@@ -9,21 +8,21 @@
         <translation>ID</translation>
     </message>
     <message>
-        <location filename="installation.ui" line="184"/>
+        <location filename="installation.ui" line="198"/>
         <source>Statut</source>
         <translation>Status</translation>
     </message>
-    <message utf8="true">
+    <message encoding="UTF-8">
         <location filename="meter.ui" line="20"/>
         <source>Compteur réseau</source>
         <translation>Water meter</translation>
     </message>
     <message>
-        <location filename="installation.ui" line="204"/>
+        <location filename="installation.ui" line="218"/>
         <source>Identification</source>
         <translation>Identification</translation>
     </message>
-    <message utf8="true">
+    <message encoding="UTF-8">
         <location filename="subscriber.ui" line="27"/>
         <source>Identification complète</source>
         <translation>Complete Identification</translation>
@@ -83,12 +82,12 @@
         <source>Cause</source>
         <translation>Cause</translation>
     </message>
-    <message utf8="true">
+    <message encoding="UTF-8">
         <location filename="leak.ui" line="20"/>
         <source>Conduite remplacée</source>
         <translation>Replaced pipe</translation>
     </message>
-    <message utf8="true">
+    <message encoding="UTF-8">
         <location filename="leak.ui" line="151"/>
         <source>Détection</source>
         <translation>Detected</translation>
@@ -98,17 +97,17 @@
         <source>Dommage</source>
         <translation>Defect</translation>
     </message>
-    <message utf8="true">
+    <message encoding="UTF-8">
         <location filename="leak.ui" line="44"/>
         <source>Date réparation</source>
         <translation>Fix date</translation>
     </message>
-    <message utf8="true">
+    <message encoding="UTF-8">
         <location filename="leak.ui" line="131"/>
         <source>Réparation</source>
         <translation>Fix</translation>
     </message>
-    <message utf8="true">
+    <message encoding="UTF-8">
         <location filename="leak.ui" line="124"/>
         <source>réparée</source>
         <translation>Fixed</translation>
@@ -118,103 +117,103 @@
         <source>Hydrantes</source>
         <translation>Hydrants</translation>
     </message>
-    <message utf8="true">
+    <message encoding="UTF-8">
         <location filename="installation_tank.ui" line="63"/>
         <source>Général</source>
         <translation>General</translation>
     </message>
     <message>
-        <location filename="hydrant.ui" line="77"/>
+        <location filename="valve.ui" line="50"/>
         <source>Distributeur</source>
         <translation>Distributor</translation>
     </message>
     <message>
-        <location filename="hydrant.ui" line="90"/>
+        <location filename="hydrant.ui" line="87"/>
         <source>Etat</source>
         <translation>Status</translation>
     </message>
     <message>
-        <location filename="hydrant.ui" line="100"/>
+        <location filename="hydrant.ui" line="97"/>
         <source>Fournisseur</source>
         <translation>Supplier</translation>
     </message>
-    <message utf8="true">
-        <location filename="hydrant.ui" line="110"/>
+    <message encoding="UTF-8">
+        <location filename="hydrant.ui" line="107"/>
         <source>Modèle</source>
         <translation>Model</translation>
     </message>
     <message>
-        <location filename="hydrant.ui" line="117"/>
+        <location filename="hydrant.ui" line="114"/>
         <source>souterraine</source>
         <translation>underground</translation>
     </message>
-    <message utf8="true">
+    <message encoding="UTF-8">
         <location filename="installation.ui" line="76"/>
         <source>Année</source>
         <translation>Year</translation>
     </message>
-    <message utf8="true">
-        <location filename="valve.ui" line="152"/>
+    <message encoding="UTF-8">
+        <location filename="valve.ui" line="172"/>
         <source>Géométrie</source>
         <translation>Geometry</translation>
     </message>
-    <message utf8="true">
-        <location filename="valve.ui" line="165"/>
+    <message encoding="UTF-8">
+        <location filename="valve.ui" line="185"/>
         <source>Précision</source>
         <translation>Precision</translation>
     </message>
     <message>
-        <location filename="valve.ui" line="253"/>
+        <location filename="valve.ui" line="273"/>
         <source>Communes</source>
         <translation>Towns</translation>
     </message>
     <message>
-        <location filename="valve.ui" line="260"/>
+        <location filename="valve.ui" line="280"/>
         <source>Folios</source>
         <translation>Print Layout</translation>
     </message>
-    <message utf8="true">
-        <location filename="valve.ui" line="182"/>
+    <message encoding="UTF-8">
+        <location filename="valve.ui" line="202"/>
         <source>Altitude réelle</source>
         <translation>Altitude </translation>
     </message>
     <message>
-        <location filename="valve.ui" line="267"/>
+        <location filename="valve.ui" line="287"/>
         <source>Noeud</source>
         <translation>Node</translation>
     </message>
-    <message utf8="true">
-        <location filename="valve.ui" line="287"/>
+    <message encoding="UTF-8">
+        <location filename="valve.ui" line="307"/>
         <source>Précision alti.</source>
         <translation>Altimetric precision</translation>
     </message>
     <message>
-        <location filename="hydrant.ui" line="337"/>
+        <location filename="hydrant.ui" line="344"/>
         <source>Hydraulique</source>
         <translation>Hydraulics</translation>
     </message>
     <message>
-        <location filename="hydrant.ui" line="356"/>
+        <location filename="hydrant.ui" line="363"/>
         <source>Pression dynamique</source>
         <translation>Dynamic pressure</translation>
     </message>
-    <message utf8="true">
-        <location filename="hydrant.ui" line="376"/>
+    <message encoding="UTF-8">
+        <location filename="hydrant.ui" line="383"/>
         <source>Mesuré le</source>
         <translation>Measured date</translation>
     </message>
-    <message utf8="true">
-        <location filename="hydrant.ui" line="392"/>
+    <message encoding="UTF-8">
+        <location filename="hydrant.ui" line="399"/>
         <source>Débit</source>
         <translation>Flow</translation>
     </message>
     <message>
-        <location filename="hydrant.ui" line="399"/>
+        <location filename="hydrant.ui" line="406"/>
         <source>Pression statique</source>
         <translation>Static pressure</translation>
     </message>
-    <message utf8="true">
-        <location filename="hydrant.ui" line="406"/>
+    <message encoding="UTF-8">
+        <location filename="hydrant.ui" line="413"/>
         <source>Mesuré par</source>
         <translation>Measured by</translation>
     </message>
@@ -224,71 +223,71 @@
         <translation>Valves</translation>
     </message>
     <message>
-        <location filename="valve.ui" line="87"/>
+        <location filename="valve.ui" line="138"/>
         <source>Fonction</source>
         <translation>Function</translation>
     </message>
-    <message utf8="true">
-        <location filename="valve.ui" line="97"/>
+    <message encoding="UTF-8">
+        <location filename="valve.ui" line="100"/>
         <source>Diamètre nominal</source>
         <translation>Nominal diameter</translation>
     </message>
-    <message utf8="true">
-        <location filename="valve.ui" line="130"/>
+    <message encoding="UTF-8">
+        <location filename="valve.ui" line="114"/>
         <source>Fermée</source>
         <translation>Closed</translation>
     </message>
-    <message utf8="true">
-        <location filename="valve.ui" line="137"/>
+    <message encoding="UTF-8">
+        <location filename="valve.ui" line="121"/>
         <source>Séparation réseau</source>
         <translation>Network split</translation>
     </message>
     <message>
-        <location filename="valve.ui" line="144"/>
+        <location filename="valve.ui" line="43"/>
         <source>Maintenance</source>
         <translation>Maintenance</translation>
     </message>
     <message>
-        <location filename="valve.ui" line="295"/>
+        <location filename="valve.ui" line="315"/>
         <source>Rendu</source>
         <translation>Render</translation>
     </message>
-    <message utf8="true">
-        <location filename="valve.ui" line="301"/>
+    <message encoding="UTF-8">
+        <location filename="valve.ui" line="321"/>
         <source>Schématique</source>
         <translation>Schema</translation>
     </message>
-    <message utf8="true">
-        <location filename="valve.ui" line="313"/>
+    <message encoding="UTF-8">
+        <location filename="valve.ui" line="333"/>
         <source>géométrie alternative</source>
         <translation>alternative geometry</translation>
     </message>
-    <message utf8="true">
-        <location filename="valve.ui" line="320"/>
+    <message encoding="UTF-8">
+        <location filename="valve.ui" line="340"/>
         <source>Visibilité</source>
         <translation>Visibility</translation>
     </message>
-    <message utf8="true">
+    <message encoding="UTF-8">
         <location filename="valve.ui" line="333"/>
         <source>schématique</source>
-        <translation>schema</translation>
+        <translation type="obsolete">schema</translation>
     </message>
     <message>
-        <location filename="valve.ui" line="373"/>
+        <location filename="valve.ui" line="380"/>
         <source>Label</source>
         <translation>Label</translation>
     </message>
     <message>
-        <location filename="valve.ui" line="392"/>
+        <location filename="valve.ui" line="399"/>
         <source>1/250</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="valve.ui" line="413"/>
+        <location filename="valve.ui" line="420"/>
         <source>1/5000</source>
         <translation></translation>
     </message>
-    <message utf8="true">
+    <message encoding="UTF-8">
         <location filename="subscriber.ui" line="14"/>
         <source>Abonné</source>
         <translation>Subscriber</translation>
@@ -303,7 +302,7 @@
         <source>Nom</source>
         <translation>Name</translation>
     </message>
-    <message utf8="true">
+    <message encoding="UTF-8">
         <location filename="installation.ui" line="87"/>
         <source>Réservoir</source>
         <translation>Rezervoir</translation>
@@ -323,7 +322,7 @@
         <source>Traitement</source>
         <translation>Treatment</translation>
     </message>
-    <message utf8="true">
+    <message encoding="UTF-8">
         <location filename="installation.ui" line="143"/>
         <source>Régulation de pression</source>
         <translation>Pressure regulator</translation>
@@ -334,16 +333,16 @@
         <translation>Valves chamber</translation>
     </message>
     <message>
-        <location filename="installation.ui" line="174"/>
+        <location filename="installation.ui" line="188"/>
         <source>ECA</source>
         <translation>Id fire brigade</translation>
     </message>
-    <message utf8="true">
-        <location filename="installation.ui" line="214"/>
+    <message encoding="UTF-8">
+        <location filename="installation.ui" line="228"/>
         <source>Visible schéma</source>
         <translation>Visible schema</translation>
     </message>
-    <message utf8="true">
+    <message encoding="UTF-8">
         <location filename="installation_tank.ui" line="14"/>
         <source>Ouvrage - Réservoir</source>
         <translation>Install building reservoir</translation>
@@ -353,7 +352,7 @@
         <source>Ouvrage</source>
         <translation>Installation building</translation>
     </message>
-    <message utf8="true">
+    <message encoding="UTF-8">
         <location filename="installation_tank.ui" line="72"/>
         <source>Réserve totale</source>
         <translation>Total reserve</translation>
@@ -363,7 +362,7 @@
         <source>Remarques</source>
         <translation>Remarks</translation>
     </message>
-    <message utf8="true">
+    <message encoding="UTF-8">
         <location filename="installation_tank.ui" line="86"/>
         <source>Rés. utile</source>
         <translation type="unfinished"></translation>
@@ -376,7 +375,7 @@
     <message>
         <location filename="installation_tank.ui" line="103"/>
         <source>Alt. trop-plein</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="installation_tank.ui" line="323"/>
@@ -388,7 +387,7 @@
         <source>Alt. radier</source>
         <translation type="unfinished"></translation>
     </message>
-    <message utf8="true">
+    <message encoding="UTF-8">
         <location filename="installation_tank.ui" line="156"/>
         <source>Télécommande incendie</source>
         <translation type="unfinished"></translation>
@@ -396,12 +395,12 @@
     <message>
         <location filename="installation_tank.ui" line="163"/>
         <source>Vanne incendie</source>
-        <translation type="unfinished"></translation>
+        <translation>Fire valve</translation>
     </message>
-    <message utf8="true">
+    <message encoding="UTF-8">
         <location filename="installation_tank.ui" line="177"/>
         <source>Rés. incendie</source>
-        <translation type="unfinished">Fire reserve</translation>
+        <translation>Fire reserve</translation>
     </message>
     <message>
         <location filename="installation_tank.ui" line="190"/>
@@ -421,14 +420,14 @@
     <message>
         <location filename="installation_tank.ui" line="302"/>
         <source>Longueur</source>
-        <translation type="unfinished">Length</translation>
+        <translation>Length</translation>
     </message>
     <message>
         <location filename="installation_tank.ui" line="309"/>
         <source>Volume</source>
         <translation>Volume</translation>
     </message>
-    <message utf8="true">
+    <message encoding="UTF-8">
         <location filename="installation_tank.ui" line="316"/>
         <source>Diamètre/largeur</source>
         <translation>Diameter/width</translation>
@@ -468,6 +467,21 @@
         <source>relation_installationbuilding_valvechamber</source>
         <translation></translation>
     </message>
+    <message>
+        <location filename="valve.ui" line="164"/>
+        <source>Actionnement</source>
+        <translation>actuation</translation>
+    </message>
+    <message encoding="UTF-8">
+        <location filename="hydrant.ui" line="147"/>
+        <source>Matériau</source>
+        <translation>Material</translation>
+    </message>
+    <message>
+        <location filename="installation.ui" line="171"/>
+        <source>Emplacement</source>
+        <translation>Location</translation>
+    </message>
 </context>
 <context>
     <name>editForm</name>
@@ -476,7 +490,7 @@
         <source>Conduites</source>
         <translation>Pipes</translation>
     </message>
-    <message utf8="true">
+    <message encoding="UTF-8">
         <location filename="pipe.ui" line="37"/>
         <source>Général</source>
         <translation>General</translation>
@@ -496,7 +510,7 @@
         <source>Dossier technique</source>
         <translation>Technical File</translation>
     </message>
-    <message utf8="true">
+    <message encoding="UTF-8">
         <location filename="pipe.ui" line="94"/>
         <source>Année</source>
         <translation>Years</translation>
@@ -516,7 +530,7 @@
         <source>Statut</source>
         <translation>Condition</translation>
     </message>
-    <message utf8="true">
+    <message encoding="UTF-8">
         <location filename="pipe.ui" line="172"/>
         <source>Matériau</source>
         <translation>Material</translation>
@@ -541,7 +555,7 @@
         <source>Vannes</source>
         <translation>Valves</translation>
     </message>
-    <message utf8="true">
+    <message encoding="UTF-8">
         <location filename="pipe.ui" line="256"/>
         <source>fermée</source>
         <translation>closed</translation>
@@ -556,12 +570,12 @@
         <source>Pression</source>
         <translation>Pressure</translation>
     </message>
-    <message utf8="true">
+    <message encoding="UTF-8">
         <location filename="pipe.ui" line="293"/>
         <source>Qualité eau</source>
         <translation>Water Type</translation>
     </message>
-    <message utf8="true">
+    <message encoding="UTF-8">
         <location filename="pipe.ui" line="334"/>
         <source>Géometrie</source>
         <translation>Water Type</translation>
@@ -601,12 +615,12 @@
         <source>Longueur 3D</source>
         <translation>Length 3D</translation>
     </message>
-    <message utf8="true">
+    <message encoding="UTF-8">
         <location filename="pipe.ui" line="488"/>
         <source>à jour</source>
         <translation>Updated</translation>
     </message>
-    <message utf8="true">
+    <message encoding="UTF-8">
         <location filename="pipe.ui" line="502"/>
         <source>Précision</source>
         <translation>Precision</translation>
@@ -626,38 +640,38 @@
         <source>Label</source>
         <translation>Label</translation>
     </message>
-    <message utf8="true">
+    <message encoding="UTF-8">
         <location filename="pipe.ui" line="628"/>
         <source>schématique</source>
-        <translation>Schema</translation>
+        <translation type="obsolete">Schema</translation>
     </message>
-    <message utf8="true">
+    <message encoding="UTF-8">
         <location filename="pipe.ui" line="616"/>
         <source>Schématique</source>
         <translation>Schemas</translation>
     </message>
-    <message utf8="true">
-        <location filename="pipe.ui" line="645"/>
+    <message encoding="UTF-8">
+        <location filename="pipe.ui" line="632"/>
         <source>Visibilité</source>
         <translation>Visibility</translation>
     </message>
     <message>
-        <location filename="pipe.ui" line="665"/>
+        <location filename="pipe.ui" line="652"/>
         <source>Parent</source>
         <translation>Parent</translation>
     </message>
-    <message utf8="true">
-        <location filename="pipe.ui" line="678"/>
+    <message encoding="UTF-8">
+        <location filename="pipe.ui" line="665"/>
         <source>géomtrie alternative</source>
         <translation>Geometry alternative</translation>
     </message>
-    <message utf8="true">
-        <location filename="pipe.ui" line="702"/>
+    <message encoding="UTF-8">
+        <location filename="pipe.ui" line="689"/>
         <source>Abonnés</source>
         <translation>Subscribers</translation>
     </message>
     <message>
-        <location filename="pipe.ui" line="719"/>
+        <location filename="pipe.ui" line="706"/>
         <source>Fuites</source>
         <translation>Damages</translation>
     </message>
@@ -676,23 +690,18 @@
         <source>Lit de pose</source>
         <translation>Support layer</translation>
     </message>
+    <message>
+        <location filename="pipe.ui" line="723"/>
+        <source>Emplacement</source>
+        <translation>Location</translation>
+    </message>
 </context>
 <context>
     <name>qwat_dictionaryDialogBase</name>
     <message>
         <location filename="qwat_dictionary_dialog_base.ui" line="14"/>
         <source>qwat_dictionary</source>
-        <translation>Qwat Dictionary</translation>
-    </message>
-    <message>
-        <location filename="qwat_dictionary_dialog_base.ui" line="60"/>
-        <source>Select language</source>
-        <translation></translation>
-    </message>
-    <message>
-        <location filename="qwat_dictionary_dialog_base.ui" line="100"/>
-        <source>save settings at restart</source>
-        <translation></translation>
+        <translation type="obsolete">Qwat Dictionary</translation>
     </message>
 </context>
 </TS>

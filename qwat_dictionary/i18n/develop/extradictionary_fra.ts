@@ -1,19 +1,18 @@
 <?xml version="1.0" encoding="utf-8"?>
-<!DOCTYPE TS>
-<TS version="2.0" language="fr" sourcelanguage="en">
+<!DOCTYPE TS><TS version="2.0" language="fr" sourcelanguage="en">
 <context>
     <name>Dialog</name>
-    <message utf8="true">
+    <message encoding="UTF-8">
         <location filename="meter.ui" line="20"/>
         <source>Compteur réseau</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="installation.ui" line="204"/>
+        <location filename="installation.ui" line="218"/>
         <source>Identification</source>
         <translation></translation>
     </message>
-    <message utf8="true">
+    <message encoding="UTF-8">
         <location filename="subscriber.ui" line="27"/>
         <source>Identification complète</source>
         <translation></translation>
@@ -44,7 +43,7 @@
         <translation></translation>
     </message>
     <message>
-        <location filename="installation.ui" line="184"/>
+        <location filename="installation.ui" line="198"/>
         <source>Statut</source>
         <translation></translation>
     </message>
@@ -78,12 +77,12 @@
         <source>Cause</source>
         <translation></translation>
     </message>
-    <message utf8="true">
+    <message encoding="UTF-8">
         <location filename="leak.ui" line="20"/>
         <source>Conduite remplacée</source>
         <translation></translation>
     </message>
-    <message utf8="true">
+    <message encoding="UTF-8">
         <location filename="leak.ui" line="151"/>
         <source>Détection</source>
         <translation></translation>
@@ -93,124 +92,69 @@
         <source>Dommage</source>
         <translation></translation>
     </message>
-    <message utf8="true">
+    <message encoding="UTF-8">
         <location filename="leak.ui" line="44"/>
         <source>Date réparation</source>
         <translation></translation>
     </message>
-    <message utf8="true">
+    <message encoding="UTF-8">
         <location filename="leak.ui" line="131"/>
         <source>Réparation</source>
         <translation></translation>
     </message>
-    <message utf8="true">
+    <message encoding="UTF-8">
         <location filename="leak.ui" line="124"/>
         <source>réparée</source>
         <translation></translation>
     </message>
-    <message>
-        <location filename="hydrant.ui" line="14"/>
-        <source>Hydrantes</source>
-        <translation></translation>
-    </message>
-    <message utf8="true">
+    <message encoding="UTF-8">
         <location filename="installation_tank.ui" line="63"/>
         <source>Général</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="hydrant.ui" line="77"/>
+        <location filename="valve.ui" line="50"/>
         <source>Distributeur</source>
         <translation></translation>
     </message>
-    <message>
-        <location filename="hydrant.ui" line="90"/>
-        <source>Etat</source>
-        <translation></translation>
-    </message>
-    <message>
-        <location filename="hydrant.ui" line="100"/>
-        <source>Fournisseur</source>
-        <translation></translation>
-    </message>
-    <message utf8="true">
-        <location filename="hydrant.ui" line="110"/>
-        <source>Modèle</source>
-        <translation></translation>
-    </message>
-    <message>
-        <location filename="hydrant.ui" line="117"/>
-        <source>souterraine</source>
-        <translation></translation>
-    </message>
-    <message utf8="true">
+    <message encoding="UTF-8">
         <location filename="installation.ui" line="76"/>
         <source>Année</source>
         <translation></translation>
     </message>
-    <message utf8="true">
-        <location filename="valve.ui" line="152"/>
+    <message encoding="UTF-8">
+        <location filename="valve.ui" line="172"/>
         <source>Géométrie</source>
         <translation></translation>
     </message>
-    <message utf8="true">
-        <location filename="valve.ui" line="165"/>
+    <message encoding="UTF-8">
+        <location filename="valve.ui" line="185"/>
         <source>Précision</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="valve.ui" line="253"/>
+        <location filename="valve.ui" line="273"/>
         <source>Communes</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="valve.ui" line="260"/>
+        <location filename="valve.ui" line="280"/>
         <source>Folios</source>
         <translation></translation>
     </message>
-    <message utf8="true">
-        <location filename="valve.ui" line="182"/>
+    <message encoding="UTF-8">
+        <location filename="valve.ui" line="202"/>
         <source>Altitude réelle</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="valve.ui" line="267"/>
+        <location filename="valve.ui" line="287"/>
         <source>Noeud</source>
         <translation></translation>
     </message>
-    <message utf8="true">
-        <location filename="valve.ui" line="287"/>
+    <message encoding="UTF-8">
+        <location filename="valve.ui" line="307"/>
         <source>Précision alti.</source>
-        <translation></translation>
-    </message>
-    <message>
-        <location filename="hydrant.ui" line="337"/>
-        <source>Hydraulique</source>
-        <translation></translation>
-    </message>
-    <message>
-        <location filename="hydrant.ui" line="356"/>
-        <source>Pression dynamique</source>
-        <translation></translation>
-    </message>
-    <message utf8="true">
-        <location filename="hydrant.ui" line="376"/>
-        <source>Mesuré le</source>
-        <translation></translation>
-    </message>
-    <message utf8="true">
-        <location filename="hydrant.ui" line="392"/>
-        <source>Débit</source>
-        <translation></translation>
-    </message>
-    <message>
-        <location filename="hydrant.ui" line="399"/>
-        <source>Pression statique</source>
-        <translation></translation>
-    </message>
-    <message utf8="true">
-        <location filename="hydrant.ui" line="406"/>
-        <source>Mesuré par</source>
         <translation></translation>
     </message>
     <message>
@@ -219,71 +163,66 @@
         <translation></translation>
     </message>
     <message>
-        <location filename="valve.ui" line="87"/>
+        <location filename="valve.ui" line="138"/>
         <source>Fonction</source>
         <translation></translation>
     </message>
-    <message utf8="true">
-        <location filename="valve.ui" line="97"/>
+    <message encoding="UTF-8">
+        <location filename="valve.ui" line="100"/>
         <source>Diamètre nominal</source>
         <translation></translation>
     </message>
-    <message utf8="true">
-        <location filename="valve.ui" line="130"/>
+    <message encoding="UTF-8">
+        <location filename="valve.ui" line="114"/>
         <source>Fermée</source>
         <translation></translation>
     </message>
-    <message utf8="true">
-        <location filename="valve.ui" line="137"/>
+    <message encoding="UTF-8">
+        <location filename="valve.ui" line="121"/>
         <source>Séparation réseau</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="valve.ui" line="144"/>
+        <location filename="valve.ui" line="43"/>
         <source>Maintenance</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="valve.ui" line="295"/>
+        <location filename="valve.ui" line="315"/>
         <source>Rendu</source>
         <translation></translation>
     </message>
-    <message utf8="true">
-        <location filename="valve.ui" line="301"/>
+    <message encoding="UTF-8">
+        <location filename="valve.ui" line="321"/>
         <source>Schématique</source>
         <translation></translation>
     </message>
-    <message utf8="true">
-        <location filename="valve.ui" line="313"/>
+    <message encoding="UTF-8">
+        <location filename="valve.ui" line="333"/>
         <source>géométrie alternative</source>
         <translation></translation>
     </message>
-    <message utf8="true">
-        <location filename="valve.ui" line="320"/>
+    <message encoding="UTF-8">
+        <location filename="valve.ui" line="340"/>
         <source>Visibilité</source>
         <translation></translation>
     </message>
-    <message utf8="true">
-        <location filename="valve.ui" line="333"/>
-        <source>schématique</source>
-        <translation></translation>
-    </message>
     <message>
-        <location filename="valve.ui" line="373"/>
+        <location filename="valve.ui" line="380"/>
         <source>Label</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="valve.ui" line="392"/>
+        <location filename="valve.ui" line="399"/>
         <source>1/250</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="valve.ui" line="413"/>
+        <location filename="valve.ui" line="420"/>
         <source>1/5000</source>
         <translation></translation>
     </message>
-    <message utf8="true">
+    <message encoding="UTF-8">
         <location filename="subscriber.ui" line="14"/>
         <source>Abonné</source>
         <translation></translation>
@@ -298,7 +237,7 @@
         <source>Nom</source>
         <translation></translation>
     </message>
-    <message utf8="true">
+    <message encoding="UTF-8">
         <location filename="installation.ui" line="87"/>
         <source>Réservoir</source>
         <translation></translation>
@@ -318,7 +257,7 @@
         <source>Traitement</source>
         <translation></translation>
     </message>
-    <message utf8="true">
+    <message encoding="UTF-8">
         <location filename="installation.ui" line="143"/>
         <source>Régulation de pression</source>
         <translation></translation>
@@ -329,16 +268,16 @@
         <translation></translation>
     </message>
     <message>
-        <location filename="installation.ui" line="174"/>
+        <location filename="installation.ui" line="188"/>
         <source>ECA</source>
         <translation></translation>
     </message>
-    <message utf8="true">
-        <location filename="installation.ui" line="214"/>
+    <message encoding="UTF-8">
+        <location filename="installation.ui" line="228"/>
         <source>Visible schéma</source>
         <translation></translation>
     </message>
-    <message utf8="true">
+    <message encoding="UTF-8">
         <location filename="installation_tank.ui" line="14"/>
         <source>Ouvrage - Réservoir</source>
         <translation></translation>
@@ -348,7 +287,7 @@
         <source>Ouvrage</source>
         <translation></translation>
     </message>
-    <message utf8="true">
+    <message encoding="UTF-8">
         <location filename="installation_tank.ui" line="72"/>
         <source>Réserve totale</source>
         <translation></translation>
@@ -358,7 +297,7 @@
         <source>Remarques</source>
         <translation></translation>
     </message>
-    <message utf8="true">
+    <message encoding="UTF-8">
         <location filename="installation_tank.ui" line="86"/>
         <source>Rés. utile</source>
         <translation></translation>
@@ -383,7 +322,7 @@
         <source>Alt. radier</source>
         <translation></translation>
     </message>
-    <message utf8="true">
+    <message encoding="UTF-8">
         <location filename="installation_tank.ui" line="156"/>
         <source>Télécommande incendie</source>
         <translation></translation>
@@ -393,7 +332,7 @@
         <source>Vanne incendie</source>
         <translation></translation>
     </message>
-    <message utf8="true">
+    <message encoding="UTF-8">
         <location filename="installation_tank.ui" line="177"/>
         <source>Rés. incendie</source>
         <translation></translation>
@@ -423,7 +362,7 @@
         <source>Volume</source>
         <translation></translation>
     </message>
-    <message utf8="true">
+    <message encoding="UTF-8">
         <location filename="installation_tank.ui" line="316"/>
         <source>Diamètre/largeur</source>
         <translation></translation>
@@ -463,6 +402,76 @@
         <source>relation_installationbuilding_valvechamber</source>
         <translation></translation>
     </message>
+    <message>
+        <location filename="valve.ui" line="164"/>
+        <source>Actionnement</source>
+        <translation></translation>
+    </message>
+    <message>
+        <location filename="hydrant.ui" line="14"/>
+        <source>Hydrantes</source>
+        <translation></translation>
+    </message>
+    <message>
+        <location filename="hydrant.ui" line="87"/>
+        <source>Etat</source>
+        <translation></translation>
+    </message>
+    <message>
+        <location filename="hydrant.ui" line="97"/>
+        <source>Fournisseur</source>
+        <translation></translation>
+    </message>
+    <message encoding="UTF-8">
+        <location filename="hydrant.ui" line="107"/>
+        <source>Modèle</source>
+        <translation></translation>
+    </message>
+    <message>
+        <location filename="hydrant.ui" line="114"/>
+        <source>souterraine</source>
+        <translation></translation>
+    </message>
+    <message encoding="UTF-8">
+        <location filename="hydrant.ui" line="147"/>
+        <source>Matériau</source>
+        <translation></translation>
+    </message>
+    <message>
+        <location filename="hydrant.ui" line="344"/>
+        <source>Hydraulique</source>
+        <translation></translation>
+    </message>
+    <message>
+        <location filename="hydrant.ui" line="363"/>
+        <source>Pression dynamique</source>
+        <translation></translation>
+    </message>
+    <message encoding="UTF-8">
+        <location filename="hydrant.ui" line="383"/>
+        <source>Mesuré le</source>
+        <translation></translation>
+    </message>
+    <message encoding="UTF-8">
+        <location filename="hydrant.ui" line="399"/>
+        <source>Débit</source>
+        <translation></translation>
+    </message>
+    <message>
+        <location filename="hydrant.ui" line="406"/>
+        <source>Pression statique</source>
+        <translation></translation>
+    </message>
+    <message encoding="UTF-8">
+        <location filename="hydrant.ui" line="413"/>
+        <source>Mesuré par</source>
+        <translation></translation>
+    </message>
+    <message>
+        <location filename="installation.ui" line="171"/>
+        <source>Emplacement</source>
+        <translation></translation>
+    </message>
 </context>
 <context>
     <name>editForm</name>
@@ -471,7 +480,7 @@
         <source>Conduites</source>
         <translation></translation>
     </message>
-    <message utf8="true">
+    <message encoding="UTF-8">
         <location filename="pipe.ui" line="37"/>
         <source>Général</source>
         <translation></translation>
@@ -491,7 +500,7 @@
         <source>Dossier technique</source>
         <translation></translation>
     </message>
-    <message utf8="true">
+    <message encoding="UTF-8">
         <location filename="pipe.ui" line="94"/>
         <source>Année</source>
         <translation></translation>
@@ -511,7 +520,7 @@
         <source>Statut</source>
         <translation></translation>
     </message>
-    <message utf8="true">
+    <message encoding="UTF-8">
         <location filename="pipe.ui" line="172"/>
         <source>Matériau</source>
         <translation></translation>
@@ -536,7 +545,7 @@
         <source>Vannes</source>
         <translation></translation>
     </message>
-    <message utf8="true">
+    <message encoding="UTF-8">
         <location filename="pipe.ui" line="256"/>
         <source>fermée</source>
         <translation></translation>
@@ -551,12 +560,12 @@
         <source>Pression</source>
         <translation></translation>
     </message>
-    <message utf8="true">
+    <message encoding="UTF-8">
         <location filename="pipe.ui" line="293"/>
         <source>Qualité eau</source>
         <translation></translation>
     </message>
-    <message utf8="true">
+    <message encoding="UTF-8">
         <location filename="pipe.ui" line="334"/>
         <source>Géometrie</source>
         <translation></translation>
@@ -596,12 +605,12 @@
         <source>Longueur 3D</source>
         <translation></translation>
     </message>
-    <message utf8="true">
+    <message encoding="UTF-8">
         <location filename="pipe.ui" line="488"/>
         <source>à jour</source>
         <translation></translation>
     </message>
-    <message utf8="true">
+    <message encoding="UTF-8">
         <location filename="pipe.ui" line="502"/>
         <source>Précision</source>
         <translation></translation>
@@ -621,38 +630,33 @@
         <source>Label</source>
         <translation></translation>
     </message>
-    <message utf8="true">
-        <location filename="pipe.ui" line="628"/>
-        <source>schématique</source>
-        <translation></translation>
-    </message>
-    <message utf8="true">
+    <message encoding="UTF-8">
         <location filename="pipe.ui" line="616"/>
         <source>Schématique</source>
         <translation></translation>
     </message>
-    <message utf8="true">
-        <location filename="pipe.ui" line="645"/>
+    <message encoding="UTF-8">
+        <location filename="pipe.ui" line="632"/>
         <source>Visibilité</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="pipe.ui" line="665"/>
+        <location filename="pipe.ui" line="652"/>
         <source>Parent</source>
         <translation></translation>
     </message>
-    <message utf8="true">
-        <location filename="pipe.ui" line="678"/>
+    <message encoding="UTF-8">
+        <location filename="pipe.ui" line="665"/>
         <source>géomtrie alternative</source>
         <translation></translation>
     </message>
-    <message utf8="true">
-        <location filename="pipe.ui" line="702"/>
+    <message encoding="UTF-8">
+        <location filename="pipe.ui" line="689"/>
         <source>Abonnés</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="pipe.ui" line="719"/>
+        <location filename="pipe.ui" line="706"/>
         <source>Fuites</source>
         <translation></translation>
     </message>
@@ -671,23 +675,28 @@
         <source>Lit de pose</source>
         <translation></translation>
     </message>
+    <message>
+        <location filename="pipe.ui" line="723"/>
+        <source>Emplacement</source>
+        <translation></translation>
+    </message>
 </context>
 <context>
     <name>qwat_dictionaryDialogBase</name>
     <message>
         <location filename="qwat_dictionary_dialog_base.ui" line="14"/>
         <source>qwat_dictionary</source>
-        <translation>QWAT dictionnaire</translation>
+        <translation type="obsolete">QWAT dictionnaire</translation>
     </message>
     <message>
         <location filename="qwat_dictionary_dialog_base.ui" line="60"/>
         <source>Select language</source>
-        <translation>sélectionnez le dictionnaire</translation>
+        <translation type="obsolete">sélectionnez le dictionnaire</translation>
     </message>
     <message>
         <location filename="qwat_dictionary_dialog_base.ui" line="100"/>
         <source>save settings at restart</source>
-        <translation>préserve paramètres</translation>
+        <translation type="obsolete">préserve paramètres</translation>
     </message>
 </context>
 </TS>
