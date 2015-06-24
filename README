@@ -7,6 +7,10 @@ In your shell:
 
  git clone https://github.com/qwat/qWat
  cd qWat
+
+If you haven't added your ssh key to github, then you need to tell git to access the data-model submodule through https.
+Edit the .gitmodules file in the qWat folder and replace the url value from git@github.com:qwat/qwat-data-model.git to https://github.com/qwat/qwat-data-model.git
+
  git submodule init
  git submodule update
 
@@ -35,7 +39,6 @@ Now go to the 'data-model' directory and run the 'create_schemas.bash' script:
  cd data-model
  ./create_schemas.bash
 
-After your model gets created, in QGIS you should now be able to connect to the database
-by creating a new connection with Name=qwat, Service=qwat, SSL mode=prefer.
+After your model gets created, in QGIS you should now be able to connect to the database by creating a new connection with Name=qwat, Service=qwat, SSL mode=prefer.
 
 If that works then open the qwat.qgs project in QGIS.
