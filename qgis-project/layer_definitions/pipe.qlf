@@ -1,0 +1,885 @@
+<maplayer minimumScale="0" maximumScale="1e+08" simplifyDrawingHints="0" minLabelScale="0" maxLabelScale="1e+08" simplifyDrawingTol="1" geometry="Line" simplifyMaxScale="1" type="vector" hasScaleBasedVisibilityFlag="0" simplifyLocal="1" scaleBasedLabelVisibilityFlag="0">
+ <id>pipe</id>
+ <datasource>service='qwat' sslmode=disable key='id' srid=21781 type=LineString table="qwat_od"."pipe" (geometry) sql=</datasource>
+ <title></title>
+ <abstract></abstract>
+ <keywordList>
+  <value></value>
+ </keywordList>
+ <layername>conduites</layername>
+ <srs>
+  <spatialrefsys>
+   <proj4>+proj=somerc +lat_0=46.95240555555556 +lon_0=7.439583333333333 +k_0=1 +x_0=600000 +y_0=200000 +ellps=bessel +towgs84=674.4,15.1,405.3,0,0,0,0 +units=m +no_defs</proj4>
+   <srsid>1919</srsid>
+   <srid>21781</srid>
+   <authid>EPSG:21781</authid>
+   <description>CH1903 / LV03</description>
+   <projectionacronym>somerc</projectionacronym>
+   <ellipsoidacronym>bessel</ellipsoidacronym>
+   <geographicflag>false</geographicflag>
+  </spatialrefsys>
+ </srs>
+ <provider encoding="System">postgres</provider>
+ <previewExpression>COALESCE( "id", '&lt;NULL>' )</previewExpression>
+ <vectorjoins>
+  <join hasCustomPrefix="1" joinFieldName="id" customPrefix="pipe_function_" targetFieldName="fk_function" memoryCache="1" joinLayerId="vl_pipe_function20130304110005186">
+   <joinFieldsSubset>
+    <field name="value_fr"/>
+    <field name="value_en"/>
+    <field name="value_ro"/>
+    <field name="schema_visible"/>
+    <field name="major"/>
+   </joinFieldsSubset>
+  </join>
+  <join hasCustomPrefix="1" joinFieldName="id" customPrefix="pipe_protection_" targetFieldName="fk_protection" memoryCache="1" joinLayerId="vl_pipe_protection20130304110005258">
+   <joinFieldsSubset>
+    <field name="value_en"/>
+    <field name="value_fr"/>
+    <field name="value_ro"/>
+   </joinFieldsSubset>
+  </join>
+  <join hasCustomPrefix="1" joinFieldName="id" customPrefix="pressurezone_" targetFieldName="fk_pressurezone" memoryCache="1" joinLayerId="pressurezone20130417133612105">
+   <joinFieldsSubset>
+    <field name="name"/>
+    <field name="colorcode"/>
+   </joinFieldsSubset>
+  </join>
+  <join hasCustomPrefix="1" joinFieldName="id" customPrefix="status_" targetFieldName="fk_status" memoryCache="1" joinLayerId="vl_status20130304110011436">
+   <joinFieldsSubset>
+    <field name="value_en"/>
+    <field name="value_fr"/>
+    <field name="value_ro"/>
+    <field name="active"/>
+   </joinFieldsSubset>
+  </join>
+  <join hasCustomPrefix="1" joinFieldName="id" customPrefix="pipe_material_" targetFieldName="fk_material" memoryCache="1" joinLayerId="vl_pipe_material20130304110005230">
+   <joinFieldsSubset>
+    <field name="short_fr"/>
+    <field name="value_fr"/>
+    <field name="_displayname_fr"/>
+    <field name="short_en"/>
+    <field name="value_en"/>
+    <field name="_displayname_en"/>
+    <field name="short_ro"/>
+    <field name="value_ro"/>
+    <field name="_displayname_ro"/>
+    <field name="diameter"/>
+    <field name="diameter_nominal"/>
+   </joinFieldsSubset>
+  </join>
+ </vectorjoins>
+ <expressionfields>
+  <field typeName="int2" precision="0" expression="COALESCE( &quot;schema_force_visible&quot;,  &quot;pipe_function_schema_visible&quot;)" length="-1" type="2" comment="" name="__schema_visible"/>
+ </expressionfields>
+ <map-layer-style-manager current="">
+  <map-layer-style name=""/>
+ </map-layer-style-manager>
+ <renderer-v2 symbollevels="0" type="RuleRenderer">
+  <rules key="{dbde1c2b-a27d-484e-8dd5-d13dcd527b89}">
+   <rule filter="fk_distributor = 1and &quot;status_active&quot; = 't'" key="{f550eef3-fdaa-427b-b415-bd7e8fc25f9e}" label="active">
+    <rule filter="COALESCE( &quot;schema_force_visible&quot;,  &quot;pipe_function_schema_visible&quot;) = 't' AND fk_status != 1307" key="{1169fb39-5fd3-43b6-9c6c-0f8ef27a0149}" label="Schématique">
+     <rule filter=" &quot;pipe_function_major&quot;  = 't'" key="{091e66aa-1594-4ac1-a779-f671dde391e2}" symbol="0" label="principale"/>
+     <rule filter=" &quot;pipe_function_major&quot; = 'f'" key="{25c2e398-8d5a-4103-ac14-4ff461596d3a}" symbol="1" label="secondaire"/>
+     <rule filter=" &quot;fk_protection&quot; IS NOT NULL" key="{8068754f-f710-413f-b07d-9cf8a386733b}" symbol="2" label="protégée"/>
+    </rule>
+    <rule scalemaxdenom="3000" filter="COALESCE( &quot;schema_force_visible&quot;,  &quot;pipe_function_schema_visible&quot;)  = 'f' AND fk_status != 1307" key="{9646576f-b22a-45bf-a4a3-3678392bd8c0}" label="Détail">
+     <rule filter=" &quot;pipe_function_major&quot; = 't'" key="{93d733e3-3119-42cc-89f8-b67d3197925a}" symbol="3" label="principale"/>
+     <rule filter=" &quot;pipe_function_major&quot; = 'f'" key="{67caa7b7-52d8-494c-9386-6622b1e656a3}" symbol="4" label="secondaire"/>
+     <rule filter=" &quot;fk_protection&quot; IS NOT NULL" key="{6082ca45-b8db-490b-a549-f86a8b5e961b}" symbol="5" label="protégée"/>
+    </rule>
+    <rule checkstate="0" filter="fk_status=1307" key="{3792c184-3d81-4254-8c66-acdf171e2b71}" symbol="6" label="Fictives"/>
+   </rule>
+   <rule checkstate="0" filter="fk_distributor = 1and &quot;status_active&quot; = 'f'" key="{75060a73-107d-4ace-bc35-d573de40488f}" label="inactive">
+    <rule filter="COALESCE( &quot;schema_force_visible&quot;,  &quot;pipe_function_schema_visible&quot;)  = 't'" key="{5b970fd5-5c37-4865-81a5-cab18c5fb58c}" label="Schématique">
+     <rule filter=" &quot;pipe_function_major&quot; = 't'" key="{783f2167-c790-4baf-a58d-d6fd65a299a4}" symbol="7" label="principale"/>
+     <rule filter=" &quot;pipe_function_major&quot; = 'f'" key="{46c7536a-ac7b-4e7b-afe6-33f9fee2f171}" symbol="8" label="secondaire"/>
+     <rule filter=" &quot;fk_protection&quot; IS NOT NULL" key="{bd93e9ea-b64b-4fbd-bf89-6d4395730e60}" symbol="9" label="protégée"/>
+    </rule>
+    <rule scalemaxdenom="3000" filter="COALESCE( &quot;schema_force_visible&quot;,  &quot;pipe_function_schema_visible&quot;)  = 'f'" key="{7d0cfa7a-eaf4-499a-b977-1238b90ca15f}" label="Détail">
+     <rule filter=" &quot;pipe_function_major&quot; = 't'" key="{c0af50d9-d68b-4c2f-b9fa-9e2be9ec0e34}" symbol="10" label="principale"/>
+     <rule filter=" &quot;pipe_function_major&quot; = 'f'" key="{f2f26723-dc46-40c5-abe2-ef61a8c502e3}" symbol="11" label="secondaire"/>
+     <rule filter=" &quot;fk_protection&quot; IS NOT NULL" key="{9486a529-9a4e-4a3c-83fe-86f6f93102c0}" symbol="12" label="protégée"/>
+    </rule>
+   </rule>
+   <rule filter="fk_distributor != 1" key="{013429dc-a1cd-4a17-904a-6550a0175046}" label="étranger">
+    <rule filter="COALESCE( &quot;schema_force_visible&quot;,  &quot;pipe_function_schema_visible&quot;)  = 't'" key="{2513a8b8-a110-4727-854c-6084f64e3bdf}" label="Schématique">
+     <rule filter=" &quot;pipe_function_major&quot; = 't'" key="{f798c83b-a461-46c3-8031-8b5bc3caffd8}" symbol="13" label="principale"/>
+     <rule filter=" &quot;pipe_function_major&quot; = 'f'" key="{ca06b6f2-f1ee-4958-b79a-6cb6cbc2059b}" symbol="14" label="secondaire"/>
+     <rule filter=" &quot;fk_protection&quot; IS NOT NULL" key="{6c5ec343-05d3-4fcd-8dc1-283232838086}" symbol="15" label="protégée"/>
+    </rule>
+    <rule scalemaxdenom="3000" filter="COALESCE( &quot;schema_force_visible&quot;,  &quot;pipe_function_schema_visible&quot;)  = 'f'" key="{2e14d53a-6d2f-40b3-bf3b-4f32112e3d59}" label="Détail">
+     <rule filter=" &quot;pipe_function_major&quot; = 't'" key="{fb522923-eeee-47bb-8352-65a3d5637c4c}" symbol="16" label="principale"/>
+     <rule filter=" &quot;pipe_function_major&quot; = 'f'" key="{b8c5c345-6f26-4237-a405-a503b361b9da}" symbol="17" label="secondaire"/>
+     <rule filter=" &quot;fk_protection&quot; IS NOT NULL" key="{65e92041-f079-42f0-80be-f3bedfbdcdac}" symbol="18" label="protégée"/>
+    </rule>
+   </rule>
+   <rule checkstate="0" filter="fk_distributor = 1 and &quot;status_active&quot; = 't' and COALESCE( &quot;schema_force_visible&quot;,  &quot;pipe_function_schema_visible&quot;)  = 't'" key="{9c210704-187e-4e2a-9b89-2f7917f4376c}" symbol="19" label="Couleur par zone"/>
+  </rules>
+  <symbols>
+   <symbol alpha="1" clip_to_extent="1" type="line" name="0">
+    <layer pass="0" class="SimpleLine" locked="0">
+     <prop k="capstyle" v="square"/>
+     <prop k="customdash" v="5;2"/>
+     <prop k="customdash_map_unit_scale" v="0,0"/>
+     <prop k="customdash_unit" v="MM"/>
+     <prop k="draw_inside_polygon" v="0"/>
+     <prop k="joinstyle" v="bevel"/>
+     <prop k="line_color" v="0,140,255,255"/>
+     <prop k="line_style" v="solid"/>
+     <prop k="line_width" v="0.9"/>
+     <prop k="line_width_unit" v="MM"/>
+     <prop k="offset" v="0"/>
+     <prop k="offset_map_unit_scale" v="0,0"/>
+     <prop k="offset_unit" v="MM"/>
+     <prop k="use_custom_dash" v="0"/>
+     <prop k="width_map_unit_scale" v="0,0"/>
+     <effect enabled="0" type="effectStack">
+      <effect type="drawSource">
+       <prop k="blend_mode" v="0"/>
+       <prop k="draw_mode" v="2"/>
+       <prop k="enabled" v="1"/>
+       <prop k="transparency" v="0"/>
+      </effect>
+     </effect>
+    </layer>
+   </symbol>
+   <symbol alpha="1" clip_to_extent="1" type="line" name="1">
+    <layer pass="0" class="SimpleLine" locked="0">
+     <prop k="capstyle" v="square"/>
+     <prop k="customdash" v="2;1.3"/>
+     <prop k="customdash_map_unit_scale" v="0,0"/>
+     <prop k="customdash_unit" v="MM"/>
+     <prop k="draw_inside_polygon" v="0"/>
+     <prop k="joinstyle" v="bevel"/>
+     <prop k="line_color" v="0,140,255,255"/>
+     <prop k="line_style" v="dash"/>
+     <prop k="line_width" v="0.7"/>
+     <prop k="line_width_unit" v="MM"/>
+     <prop k="offset" v="0"/>
+     <prop k="offset_map_unit_scale" v="0,0"/>
+     <prop k="offset_unit" v="MM"/>
+     <prop k="use_custom_dash" v="1"/>
+     <prop k="width_map_unit_scale" v="0,0"/>
+     <effect enabled="0" type="effectStack">
+      <effect type="drawSource">
+       <prop k="blend_mode" v="0"/>
+       <prop k="draw_mode" v="2"/>
+       <prop k="enabled" v="1"/>
+       <prop k="transparency" v="0"/>
+      </effect>
+     </effect>
+    </layer>
+   </symbol>
+   <symbol alpha="1" clip_to_extent="1" type="line" name="10">
+    <layer pass="0" class="SimpleLine" locked="0">
+     <prop k="capstyle" v="square"/>
+     <prop k="customdash" v="5;2"/>
+     <prop k="customdash_map_unit_scale" v="0,0"/>
+     <prop k="customdash_unit" v="MM"/>
+     <prop k="draw_inside_polygon" v="0"/>
+     <prop k="joinstyle" v="bevel"/>
+     <prop k="line_color" v="217,0,0,255"/>
+     <prop k="line_style" v="solid"/>
+     <prop k="line_width" v="0.9"/>
+     <prop k="line_width_unit" v="MM"/>
+     <prop k="offset" v="0"/>
+     <prop k="offset_map_unit_scale" v="0,0"/>
+     <prop k="offset_unit" v="MM"/>
+     <prop k="use_custom_dash" v="0"/>
+     <prop k="width_map_unit_scale" v="0,0"/>
+     <effect enabled="0" type="effectStack">
+      <effect type="drawSource">
+       <prop k="blend_mode" v="0"/>
+       <prop k="draw_mode" v="2"/>
+       <prop k="enabled" v="1"/>
+       <prop k="transparency" v="0"/>
+      </effect>
+     </effect>
+    </layer>
+   </symbol>
+   <symbol alpha="1" clip_to_extent="1" type="line" name="11">
+    <layer pass="0" class="SimpleLine" locked="0">
+     <prop k="capstyle" v="square"/>
+     <prop k="customdash" v="2;1.3"/>
+     <prop k="customdash_map_unit_scale" v="0,0"/>
+     <prop k="customdash_unit" v="MM"/>
+     <prop k="draw_inside_polygon" v="0"/>
+     <prop k="joinstyle" v="bevel"/>
+     <prop k="line_color" v="217,0,0,255"/>
+     <prop k="line_style" v="solid"/>
+     <prop k="line_width" v="0.7"/>
+     <prop k="line_width_unit" v="MM"/>
+     <prop k="offset" v="0"/>
+     <prop k="offset_map_unit_scale" v="0,0"/>
+     <prop k="offset_unit" v="MM"/>
+     <prop k="use_custom_dash" v="1"/>
+     <prop k="width_map_unit_scale" v="0,0"/>
+     <effect enabled="0" type="effectStack">
+      <effect type="drawSource">
+       <prop k="blend_mode" v="0"/>
+       <prop k="draw_mode" v="2"/>
+       <prop k="enabled" v="1"/>
+       <prop k="transparency" v="0"/>
+      </effect>
+     </effect>
+    </layer>
+   </symbol>
+   <symbol alpha="1" clip_to_extent="1" type="line" name="12">
+    <layer pass="0" class="SimpleLine" locked="0">
+     <prop k="capstyle" v="flat"/>
+     <prop k="customdash" v="5;2"/>
+     <prop k="customdash_map_unit_scale" v="0,0"/>
+     <prop k="customdash_unit" v="MM"/>
+     <prop k="draw_inside_polygon" v="0"/>
+     <prop k="joinstyle" v="bevel"/>
+     <prop k="line_color" v="217,0,0,70"/>
+     <prop k="line_style" v="solid"/>
+     <prop k="line_width" v="2"/>
+     <prop k="line_width_unit" v="MM"/>
+     <prop k="offset" v="0"/>
+     <prop k="offset_map_unit_scale" v="0,0"/>
+     <prop k="offset_unit" v="MM"/>
+     <prop k="use_custom_dash" v="0"/>
+     <prop k="width_map_unit_scale" v="0,0"/>
+     <effect enabled="0" type="effectStack">
+      <effect type="drawSource">
+       <prop k="blend_mode" v="0"/>
+       <prop k="draw_mode" v="2"/>
+       <prop k="enabled" v="1"/>
+       <prop k="transparency" v="0"/>
+      </effect>
+     </effect>
+    </layer>
+   </symbol>
+   <symbol alpha="1" clip_to_extent="1" type="line" name="13">
+    <layer pass="0" class="SimpleLine" locked="0">
+     <prop k="capstyle" v="square"/>
+     <prop k="customdash" v="5;2"/>
+     <prop k="customdash_map_unit_scale" v="0,0"/>
+     <prop k="customdash_unit" v="MM"/>
+     <prop k="draw_inside_polygon" v="0"/>
+     <prop k="joinstyle" v="bevel"/>
+     <prop k="line_color" v="0,0,0,255"/>
+     <prop k="line_style" v="solid"/>
+     <prop k="line_width" v="0.9"/>
+     <prop k="line_width_unit" v="MM"/>
+     <prop k="offset" v="0"/>
+     <prop k="offset_map_unit_scale" v="0,0"/>
+     <prop k="offset_unit" v="MM"/>
+     <prop k="use_custom_dash" v="0"/>
+     <prop k="width_map_unit_scale" v="0,0"/>
+     <effect enabled="0" type="effectStack">
+      <effect type="drawSource">
+       <prop k="blend_mode" v="0"/>
+       <prop k="draw_mode" v="2"/>
+       <prop k="enabled" v="1"/>
+       <prop k="transparency" v="0"/>
+      </effect>
+     </effect>
+    </layer>
+   </symbol>
+   <symbol alpha="1" clip_to_extent="1" type="line" name="14">
+    <layer pass="0" class="SimpleLine" locked="0">
+     <prop k="capstyle" v="square"/>
+     <prop k="customdash" v="2;1.3"/>
+     <prop k="customdash_map_unit_scale" v="0,0"/>
+     <prop k="customdash_unit" v="MM"/>
+     <prop k="draw_inside_polygon" v="0"/>
+     <prop k="joinstyle" v="bevel"/>
+     <prop k="line_color" v="0,0,0,255"/>
+     <prop k="line_style" v="dash"/>
+     <prop k="line_width" v="0.7"/>
+     <prop k="line_width_unit" v="MM"/>
+     <prop k="offset" v="0"/>
+     <prop k="offset_map_unit_scale" v="0,0"/>
+     <prop k="offset_unit" v="MM"/>
+     <prop k="use_custom_dash" v="1"/>
+     <prop k="width_map_unit_scale" v="0,0"/>
+     <effect enabled="0" type="effectStack">
+      <effect type="drawSource">
+       <prop k="blend_mode" v="0"/>
+       <prop k="draw_mode" v="2"/>
+       <prop k="enabled" v="1"/>
+       <prop k="transparency" v="0"/>
+      </effect>
+     </effect>
+    </layer>
+   </symbol>
+   <symbol alpha="1" clip_to_extent="1" type="line" name="15">
+    <layer pass="0" class="SimpleLine" locked="0">
+     <prop k="capstyle" v="flat"/>
+     <prop k="customdash" v="5;2"/>
+     <prop k="customdash_map_unit_scale" v="0,0"/>
+     <prop k="customdash_unit" v="MM"/>
+     <prop k="draw_inside_polygon" v="0"/>
+     <prop k="joinstyle" v="bevel"/>
+     <prop k="line_color" v="0,0,0,70"/>
+     <prop k="line_style" v="solid"/>
+     <prop k="line_width" v="2"/>
+     <prop k="line_width_unit" v="MM"/>
+     <prop k="offset" v="0"/>
+     <prop k="offset_map_unit_scale" v="0,0"/>
+     <prop k="offset_unit" v="MM"/>
+     <prop k="use_custom_dash" v="0"/>
+     <prop k="width_map_unit_scale" v="0,0"/>
+     <effect enabled="0" type="effectStack">
+      <effect type="drawSource">
+       <prop k="blend_mode" v="0"/>
+       <prop k="draw_mode" v="2"/>
+       <prop k="enabled" v="1"/>
+       <prop k="transparency" v="0"/>
+      </effect>
+     </effect>
+    </layer>
+   </symbol>
+   <symbol alpha="1" clip_to_extent="1" type="line" name="16">
+    <layer pass="0" class="SimpleLine" locked="0">
+     <prop k="capstyle" v="square"/>
+     <prop k="customdash" v="5;2"/>
+     <prop k="customdash_map_unit_scale" v="0,0"/>
+     <prop k="customdash_unit" v="MM"/>
+     <prop k="draw_inside_polygon" v="0"/>
+     <prop k="joinstyle" v="bevel"/>
+     <prop k="line_color" v="0,0,0,255"/>
+     <prop k="line_style" v="solid"/>
+     <prop k="line_width" v="0.9"/>
+     <prop k="line_width_unit" v="MM"/>
+     <prop k="offset" v="0"/>
+     <prop k="offset_map_unit_scale" v="0,0"/>
+     <prop k="offset_unit" v="MM"/>
+     <prop k="use_custom_dash" v="0"/>
+     <prop k="width_map_unit_scale" v="0,0"/>
+     <effect enabled="0" type="effectStack">
+      <effect type="drawSource">
+       <prop k="blend_mode" v="0"/>
+       <prop k="draw_mode" v="2"/>
+       <prop k="enabled" v="1"/>
+       <prop k="transparency" v="0"/>
+      </effect>
+     </effect>
+    </layer>
+   </symbol>
+   <symbol alpha="1" clip_to_extent="1" type="line" name="17">
+    <layer pass="0" class="SimpleLine" locked="0">
+     <prop k="capstyle" v="square"/>
+     <prop k="customdash" v="2;1.3"/>
+     <prop k="customdash_map_unit_scale" v="0,0"/>
+     <prop k="customdash_unit" v="MM"/>
+     <prop k="draw_inside_polygon" v="0"/>
+     <prop k="joinstyle" v="bevel"/>
+     <prop k="line_color" v="0,0,0,255"/>
+     <prop k="line_style" v="solid"/>
+     <prop k="line_width" v="0.7"/>
+     <prop k="line_width_unit" v="MM"/>
+     <prop k="offset" v="0"/>
+     <prop k="offset_map_unit_scale" v="0,0"/>
+     <prop k="offset_unit" v="MM"/>
+     <prop k="use_custom_dash" v="1"/>
+     <prop k="width_map_unit_scale" v="0,0"/>
+     <effect enabled="0" type="effectStack">
+      <effect type="drawSource">
+       <prop k="blend_mode" v="0"/>
+       <prop k="draw_mode" v="2"/>
+       <prop k="enabled" v="1"/>
+       <prop k="transparency" v="0"/>
+      </effect>
+     </effect>
+    </layer>
+   </symbol>
+   <symbol alpha="1" clip_to_extent="1" type="line" name="18">
+    <layer pass="0" class="SimpleLine" locked="0">
+     <prop k="capstyle" v="flat"/>
+     <prop k="customdash" v="5;2"/>
+     <prop k="customdash_map_unit_scale" v="0,0"/>
+     <prop k="customdash_unit" v="MM"/>
+     <prop k="draw_inside_polygon" v="0"/>
+     <prop k="joinstyle" v="bevel"/>
+     <prop k="line_color" v="0,0,0,70"/>
+     <prop k="line_style" v="solid"/>
+     <prop k="line_width" v="2"/>
+     <prop k="line_width_unit" v="MM"/>
+     <prop k="offset" v="0"/>
+     <prop k="offset_map_unit_scale" v="0,0"/>
+     <prop k="offset_unit" v="MM"/>
+     <prop k="use_custom_dash" v="0"/>
+     <prop k="width_map_unit_scale" v="0,0"/>
+     <effect enabled="0" type="effectStack">
+      <effect type="drawSource">
+       <prop k="blend_mode" v="0"/>
+       <prop k="draw_mode" v="2"/>
+       <prop k="enabled" v="1"/>
+       <prop k="transparency" v="0"/>
+      </effect>
+     </effect>
+    </layer>
+   </symbol>
+   <symbol alpha="1" clip_to_extent="1" type="line" name="19">
+    <layer pass="0" class="SimpleLine" locked="0">
+     <prop k="capstyle" v="square"/>
+     <prop k="color_dd_active" v="1"/>
+     <prop k="color_dd_expression" v="CASE WHEN &quot;pressurezone_colorcode&quot; = 1 THEN '21,133,248,255' WHEN &quot;pressurezone_colorcode&quot; = 2 THEN '248,21,64,255' WHEN &quot;pressurezone_colorcode&quot; = 3 THEN '32,205,36,255' ELSE '0,0,0,255' END"/>
+     <prop k="color_dd_field" v=""/>
+     <prop k="color_dd_useexpr" v="1"/>
+     <prop k="customdash" v="5;2"/>
+     <prop k="customdash_map_unit_scale" v="0,0"/>
+     <prop k="customdash_unit" v="MM"/>
+     <prop k="draw_inside_polygon" v="0"/>
+     <prop k="joinstyle" v="bevel"/>
+     <prop k="line_color" v="24,233,178,255"/>
+     <prop k="line_style" v="solid"/>
+     <prop k="line_width" v="0.4"/>
+     <prop k="line_width_unit" v="MM"/>
+     <prop k="offset" v="0"/>
+     <prop k="offset_map_unit_scale" v="0,0"/>
+     <prop k="offset_unit" v="MM"/>
+     <prop k="use_custom_dash" v="0"/>
+     <prop k="width_map_unit_scale" v="0,0"/>
+     <effect enabled="0" type="effectStack">
+      <effect type="drawSource">
+       <prop k="blend_mode" v="0"/>
+       <prop k="draw_mode" v="2"/>
+       <prop k="enabled" v="1"/>
+       <prop k="transparency" v="0"/>
+      </effect>
+     </effect>
+    </layer>
+   </symbol>
+   <symbol alpha="1" clip_to_extent="1" type="line" name="2">
+    <layer pass="0" class="SimpleLine" locked="0">
+     <prop k="capstyle" v="flat"/>
+     <prop k="customdash" v="5;2"/>
+     <prop k="customdash_map_unit_scale" v="0,0"/>
+     <prop k="customdash_unit" v="MM"/>
+     <prop k="draw_inside_polygon" v="0"/>
+     <prop k="joinstyle" v="bevel"/>
+     <prop k="line_color" v="0,140,255,70"/>
+     <prop k="line_style" v="solid"/>
+     <prop k="line_width" v="2"/>
+     <prop k="line_width_unit" v="MM"/>
+     <prop k="offset" v="0"/>
+     <prop k="offset_map_unit_scale" v="0,0"/>
+     <prop k="offset_unit" v="MM"/>
+     <prop k="use_custom_dash" v="0"/>
+     <prop k="width_map_unit_scale" v="0,0"/>
+     <effect enabled="0" type="effectStack">
+      <effect type="drawSource">
+       <prop k="blend_mode" v="0"/>
+       <prop k="draw_mode" v="2"/>
+       <prop k="enabled" v="1"/>
+       <prop k="transparency" v="0"/>
+      </effect>
+     </effect>
+    </layer>
+   </symbol>
+   <symbol alpha="1" clip_to_extent="1" type="line" name="3">
+    <layer pass="0" class="SimpleLine" locked="0">
+     <prop k="capstyle" v="square"/>
+     <prop k="customdash" v="5;2"/>
+     <prop k="customdash_map_unit_scale" v="0,0"/>
+     <prop k="customdash_unit" v="MM"/>
+     <prop k="draw_inside_polygon" v="0"/>
+     <prop k="joinstyle" v="bevel"/>
+     <prop k="line_color" v="0,140,255,255"/>
+     <prop k="line_style" v="solid"/>
+     <prop k="line_width" v="0.9"/>
+     <prop k="line_width_unit" v="MM"/>
+     <prop k="offset" v="0"/>
+     <prop k="offset_map_unit_scale" v="0,0"/>
+     <prop k="offset_unit" v="MM"/>
+     <prop k="use_custom_dash" v="0"/>
+     <prop k="width_map_unit_scale" v="0,0"/>
+     <effect enabled="0" type="effectStack">
+      <effect type="drawSource">
+       <prop k="blend_mode" v="0"/>
+       <prop k="draw_mode" v="2"/>
+       <prop k="enabled" v="1"/>
+       <prop k="transparency" v="0"/>
+      </effect>
+     </effect>
+    </layer>
+   </symbol>
+   <symbol alpha="1" clip_to_extent="1" type="line" name="4">
+    <layer pass="0" class="SimpleLine" locked="0">
+     <prop k="capstyle" v="square"/>
+     <prop k="customdash" v="2;1.3"/>
+     <prop k="customdash_map_unit_scale" v="0,0"/>
+     <prop k="customdash_unit" v="MM"/>
+     <prop k="draw_inside_polygon" v="0"/>
+     <prop k="joinstyle" v="bevel"/>
+     <prop k="line_color" v="0,140,255,255"/>
+     <prop k="line_style" v="solid"/>
+     <prop k="line_width" v="0.7"/>
+     <prop k="line_width_unit" v="MM"/>
+     <prop k="offset" v="0"/>
+     <prop k="offset_map_unit_scale" v="0,0"/>
+     <prop k="offset_unit" v="MM"/>
+     <prop k="use_custom_dash" v="1"/>
+     <prop k="width_map_unit_scale" v="0,0"/>
+     <effect enabled="0" type="effectStack">
+      <effect type="drawSource">
+       <prop k="blend_mode" v="0"/>
+       <prop k="draw_mode" v="2"/>
+       <prop k="enabled" v="1"/>
+       <prop k="transparency" v="0"/>
+      </effect>
+     </effect>
+    </layer>
+   </symbol>
+   <symbol alpha="1" clip_to_extent="1" type="line" name="5">
+    <layer pass="0" class="SimpleLine" locked="0">
+     <prop k="capstyle" v="flat"/>
+     <prop k="customdash" v="5;2"/>
+     <prop k="customdash_map_unit_scale" v="0,0"/>
+     <prop k="customdash_unit" v="MM"/>
+     <prop k="draw_inside_polygon" v="0"/>
+     <prop k="joinstyle" v="bevel"/>
+     <prop k="line_color" v="0,140,255,70"/>
+     <prop k="line_style" v="solid"/>
+     <prop k="line_width" v="2"/>
+     <prop k="line_width_unit" v="MM"/>
+     <prop k="offset" v="0"/>
+     <prop k="offset_map_unit_scale" v="0,0"/>
+     <prop k="offset_unit" v="MM"/>
+     <prop k="use_custom_dash" v="0"/>
+     <prop k="width_map_unit_scale" v="0,0"/>
+     <effect enabled="0" type="effectStack">
+      <effect type="drawSource">
+       <prop k="blend_mode" v="0"/>
+       <prop k="draw_mode" v="2"/>
+       <prop k="enabled" v="1"/>
+       <prop k="transparency" v="0"/>
+      </effect>
+     </effect>
+    </layer>
+   </symbol>
+   <symbol alpha="1" clip_to_extent="1" type="line" name="6">
+    <layer pass="0" class="SimpleLine" locked="0">
+     <prop k="capstyle" v="square"/>
+     <prop k="customdash" v="5;2"/>
+     <prop k="customdash_map_unit_scale" v="0,0"/>
+     <prop k="customdash_unit" v="MM"/>
+     <prop k="draw_inside_polygon" v="0"/>
+     <prop k="joinstyle" v="bevel"/>
+     <prop k="line_color" v="0,0,0,255"/>
+     <prop k="line_style" v="solid"/>
+     <prop k="line_width" v="0.9"/>
+     <prop k="line_width_unit" v="MM"/>
+     <prop k="offset" v="0"/>
+     <prop k="offset_map_unit_scale" v="0,0"/>
+     <prop k="offset_unit" v="MM"/>
+     <prop k="use_custom_dash" v="0"/>
+     <prop k="width_map_unit_scale" v="0,0"/>
+     <effect enabled="0" type="effectStack">
+      <effect type="drawSource">
+       <prop k="blend_mode" v="0"/>
+       <prop k="draw_mode" v="2"/>
+       <prop k="enabled" v="1"/>
+       <prop k="transparency" v="0"/>
+      </effect>
+     </effect>
+    </layer>
+   </symbol>
+   <symbol alpha="1" clip_to_extent="1" type="line" name="7">
+    <layer pass="0" class="SimpleLine" locked="0">
+     <prop k="capstyle" v="square"/>
+     <prop k="customdash" v="5;2"/>
+     <prop k="customdash_map_unit_scale" v="0,0"/>
+     <prop k="customdash_unit" v="MM"/>
+     <prop k="draw_inside_polygon" v="0"/>
+     <prop k="joinstyle" v="bevel"/>
+     <prop k="line_color" v="217,0,0,255"/>
+     <prop k="line_style" v="solid"/>
+     <prop k="line_width" v="0.9"/>
+     <prop k="line_width_unit" v="MM"/>
+     <prop k="offset" v="0"/>
+     <prop k="offset_map_unit_scale" v="0,0"/>
+     <prop k="offset_unit" v="MM"/>
+     <prop k="use_custom_dash" v="0"/>
+     <prop k="width_map_unit_scale" v="0,0"/>
+     <effect enabled="0" type="effectStack">
+      <effect type="drawSource">
+       <prop k="blend_mode" v="0"/>
+       <prop k="draw_mode" v="2"/>
+       <prop k="enabled" v="1"/>
+       <prop k="transparency" v="0"/>
+      </effect>
+     </effect>
+    </layer>
+   </symbol>
+   <symbol alpha="1" clip_to_extent="1" type="line" name="8">
+    <layer pass="0" class="SimpleLine" locked="0">
+     <prop k="capstyle" v="square"/>
+     <prop k="customdash" v="2;1.3"/>
+     <prop k="customdash_map_unit_scale" v="0,0"/>
+     <prop k="customdash_unit" v="MM"/>
+     <prop k="draw_inside_polygon" v="0"/>
+     <prop k="joinstyle" v="bevel"/>
+     <prop k="line_color" v="217,0,0,255"/>
+     <prop k="line_style" v="dash"/>
+     <prop k="line_width" v="0.7"/>
+     <prop k="line_width_unit" v="MM"/>
+     <prop k="offset" v="0"/>
+     <prop k="offset_map_unit_scale" v="0,0"/>
+     <prop k="offset_unit" v="MM"/>
+     <prop k="use_custom_dash" v="1"/>
+     <prop k="width_map_unit_scale" v="0,0"/>
+     <effect enabled="0" type="effectStack">
+      <effect type="drawSource">
+       <prop k="blend_mode" v="0"/>
+       <prop k="draw_mode" v="2"/>
+       <prop k="enabled" v="1"/>
+       <prop k="transparency" v="0"/>
+      </effect>
+     </effect>
+    </layer>
+   </symbol>
+   <symbol alpha="1" clip_to_extent="1" type="line" name="9">
+    <layer pass="0" class="SimpleLine" locked="0">
+     <prop k="capstyle" v="flat"/>
+     <prop k="customdash" v="5;2"/>
+     <prop k="customdash_map_unit_scale" v="0,0"/>
+     <prop k="customdash_unit" v="MM"/>
+     <prop k="draw_inside_polygon" v="0"/>
+     <prop k="joinstyle" v="bevel"/>
+     <prop k="line_color" v="217,0,0,70"/>
+     <prop k="line_style" v="solid"/>
+     <prop k="line_width" v="2"/>
+     <prop k="line_width_unit" v="MM"/>
+     <prop k="offset" v="0"/>
+     <prop k="offset_map_unit_scale" v="0,0"/>
+     <prop k="offset_unit" v="MM"/>
+     <prop k="use_custom_dash" v="0"/>
+     <prop k="width_map_unit_scale" v="0,0"/>
+     <effect enabled="0" type="effectStack">
+      <effect type="drawSource">
+       <prop k="blend_mode" v="0"/>
+       <prop k="draw_mode" v="2"/>
+       <prop k="enabled" v="1"/>
+       <prop k="transparency" v="0"/>
+      </effect>
+     </effect>
+    </layer>
+   </symbol>
+  </symbols>
+  <effect enabled="0" type="effectStack">
+   <effect type="drawSource">
+    <prop k="blend_mode" v="0"/>
+    <prop k="draw_mode" v="2"/>
+    <prop k="enabled" v="1"/>
+    <prop k="transparency" v="0"/>
+   </effect>
+  </effect>
+ </renderer-v2>
+ <customproperties>
+  <property key="LinkIt_destinationField" value="fk_parent"/>
+  <property key="LinkIt_name" value="Conduites parent"/>
+  <property key="LinkIt_sourceLayer" value="conduites_copy20130709141244955"/>
+  <property key="itemBrowserCurrentItem" value="-1"/>
+  <property key="itemBrowserSelection" value="[]"/>
+  <property key="labeling" value="pal"/>
+  <property key="labeling/addDirectionSymbol" value="false"/>
+  <property key="labeling/angleOffset" value="0"/>
+  <property key="labeling/blendMode" value="0"/>
+  <property key="labeling/bufferBlendMode" value="0"/>
+  <property key="labeling/bufferColorA" value="255"/>
+  <property key="labeling/bufferColorB" value="255"/>
+  <property key="labeling/bufferColorG" value="255"/>
+  <property key="labeling/bufferColorR" value="255"/>
+  <property key="labeling/bufferDraw" value="true"/>
+  <property key="labeling/bufferJoinStyle" value="64"/>
+  <property key="labeling/bufferNoFill" value="false"/>
+  <property key="labeling/bufferSize" value="0.4"/>
+  <property key="labeling/bufferSizeInMapUnits" value="false"/>
+  <property key="labeling/bufferSizeMapUnitMaxScale" value="0"/>
+  <property key="labeling/bufferSizeMapUnitMinScale" value="0"/>
+  <property key="labeling/bufferTransp" value="0"/>
+  <property key="labeling/centroidInside" value="false"/>
+  <property key="labeling/centroidWhole" value="false"/>
+  <property key="labeling/dataDefined/AlwaysShow" value="1~~1~~CASE WHEN  &quot;label_1_visible&quot; = 2 THEN 1 ELSE 0 END~~"/>
+  <property key="labeling/dataDefined/Show" value="1~~0~~CASE WHEN &quot;fk_labelvisible&quot; = 'f' THEN 0 ELSE 1 END~~label_1_visible"/>
+  <property key="labeling/dataDefined/Size" value="1~~1~~CASE&#xa;WHEN $scale > 1500 THEN 6&#xa;WHEN  &quot;pipe_function_schema_visible&quot;  = 't' THEN 8&#xa;ELSE 6&#xa;END~~"/>
+  <property key="labeling/decimals" value="0"/>
+  <property key="labeling/displayAll" value="false"/>
+  <property key="labeling/dist" value="1"/>
+  <property key="labeling/distInMapUnits" value="false"/>
+  <property key="labeling/distMapUnitMaxScale" value="0"/>
+  <property key="labeling/distMapUnitMinScale" value="0"/>
+  <property key="labeling/enabled" value="true"/>
+  <property key="labeling/fieldName" value=" replace( &quot;pipe_material_short_fr&quot;||' ','Inconnu ','')&#xa; ||&#xa; &quot;pipe_material_diameter&quot;&#xa; ||&#xa; CASE&#xa;WHEN  $scale  &lt; 501  AND  $length > 4 AND  &quot;fk_precision&quot; IN (1101,1103,1105) THEN ' imprécis'&#xa; ELSE ''&#xa; END&#xa;||&#xa; CASE&#xa;WHEN  $scale  &lt; 501  AND  $length > 4 THEN COALESCE('\n' ||&quot;year&quot;,'')&#xa;WHEN  $scale  >= 1000 THEN COALESCE(' ' ||&quot;year&quot;,'')&#xa; ELSE ''&#xa; END&#xa;||&#xa;CASE&#xa;WHEN  $scale  &lt;= 3000 THEN  COALESCE('\n'||  &quot;pipe_protection_value_fr&quot;, '')&#xa; ELSE ''&#xa;END&#xa;||&#xa;CASE&#xa;WHEN  $scale  &lt;= 6000  THEN  COALESCE(' ' ||&quot;label_1_text&quot;,'')&#xa; ELSE ''&#xa;END"/>
+  <property key="labeling/fontBold" value="false"/>
+  <property key="labeling/fontCapitals" value="0"/>
+  <property key="labeling/fontFamily" value="Cantarell"/>
+  <property key="labeling/fontItalic" value="false"/>
+  <property key="labeling/fontLetterSpacing" value="0"/>
+  <property key="labeling/fontLimitPixelSize" value="false"/>
+  <property key="labeling/fontMaxPixelSize" value="10000"/>
+  <property key="labeling/fontMinPixelSize" value="3"/>
+  <property key="labeling/fontSize" value="7"/>
+  <property key="labeling/fontSizeInMapUnits" value="false"/>
+  <property key="labeling/fontSizeMapUnitMaxScale" value="0"/>
+  <property key="labeling/fontSizeMapUnitMinScale" value="0"/>
+  <property key="labeling/fontStrikeout" value="false"/>
+  <property key="labeling/fontUnderline" value="false"/>
+  <property key="labeling/fontWeight" value="50"/>
+  <property key="labeling/fontWordSpacing" value="0"/>
+  <property key="labeling/formatNumbers" value="false"/>
+  <property key="labeling/isExpression" value="true"/>
+  <property key="labeling/labelOffsetInMapUnits" value="true"/>
+  <property key="labeling/labelOffsetMapUnitMaxScale" value="0"/>
+  <property key="labeling/labelOffsetMapUnitMinScale" value="0"/>
+  <property key="labeling/labelPerPart" value="false"/>
+  <property key="labeling/leftDirectionSymbol" value="&lt;"/>
+  <property key="labeling/limitNumLabels" value="false"/>
+  <property key="labeling/maxCurvedCharAngleIn" value="20"/>
+  <property key="labeling/maxCurvedCharAngleOut" value="-20"/>
+  <property key="labeling/maxNumLabels" value="2000"/>
+  <property key="labeling/mergeLines" value="false"/>
+  <property key="labeling/minFeatureSize" value="0"/>
+  <property key="labeling/multilineAlign" value="1"/>
+  <property key="labeling/multilineHeight" value="0.9"/>
+  <property key="labeling/namedStyle" value="Regular"/>
+  <property key="labeling/obstacle" value="true"/>
+  <property key="labeling/placeDirectionSymbol" value="0"/>
+  <property key="labeling/placement" value="2"/>
+  <property key="labeling/placementFlags" value="14"/>
+  <property key="labeling/plussign" value="false"/>
+  <property key="labeling/preserveRotation" value="true"/>
+  <property key="labeling/previewBkgrdColor" value="#ffffff"/>
+  <property key="labeling/priority" value="6"/>
+  <property key="labeling/quadOffset" value="4"/>
+  <property key="labeling/repeatDistance" value="0"/>
+  <property key="labeling/repeatDistanceMapUnitMaxScale" value="0"/>
+  <property key="labeling/repeatDistanceMapUnitMinScale" value="0"/>
+  <property key="labeling/repeatDistanceUnit" value="1"/>
+  <property key="labeling/reverseDirectionSymbol" value="false"/>
+  <property key="labeling/rightDirectionSymbol" value=">"/>
+  <property key="labeling/scaleMax" value="6000"/>
+  <property key="labeling/scaleMin" value="0"/>
+  <property key="labeling/scaleVisibility" value="true"/>
+  <property key="labeling/shadowBlendMode" value="6"/>
+  <property key="labeling/shadowColorB" value="0"/>
+  <property key="labeling/shadowColorG" value="0"/>
+  <property key="labeling/shadowColorR" value="0"/>
+  <property key="labeling/shadowDraw" value="false"/>
+  <property key="labeling/shadowOffsetAngle" value="135"/>
+  <property key="labeling/shadowOffsetDist" value="1"/>
+  <property key="labeling/shadowOffsetGlobal" value="true"/>
+  <property key="labeling/shadowOffsetMapUnitMaxScale" value="0"/>
+  <property key="labeling/shadowOffsetMapUnitMinScale" value="0"/>
+  <property key="labeling/shadowOffsetUnits" value="1"/>
+  <property key="labeling/shadowRadius" value="1.5"/>
+  <property key="labeling/shadowRadiusAlphaOnly" value="false"/>
+  <property key="labeling/shadowRadiusMapUnitMaxScale" value="0"/>
+  <property key="labeling/shadowRadiusMapUnitMinScale" value="0"/>
+  <property key="labeling/shadowRadiusUnits" value="1"/>
+  <property key="labeling/shadowScale" value="100"/>
+  <property key="labeling/shadowTransparency" value="30"/>
+  <property key="labeling/shadowUnder" value="0"/>
+  <property key="labeling/shapeBlendMode" value="0"/>
+  <property key="labeling/shapeBorderColorA" value="255"/>
+  <property key="labeling/shapeBorderColorB" value="128"/>
+  <property key="labeling/shapeBorderColorG" value="128"/>
+  <property key="labeling/shapeBorderColorR" value="128"/>
+  <property key="labeling/shapeBorderWidth" value="0"/>
+  <property key="labeling/shapeBorderWidthMapUnitMaxScale" value="0"/>
+  <property key="labeling/shapeBorderWidthMapUnitMinScale" value="0"/>
+  <property key="labeling/shapeBorderWidthUnits" value="1"/>
+  <property key="labeling/shapeDraw" value="false"/>
+  <property key="labeling/shapeFillColorA" value="255"/>
+  <property key="labeling/shapeFillColorB" value="255"/>
+  <property key="labeling/shapeFillColorG" value="255"/>
+  <property key="labeling/shapeFillColorR" value="255"/>
+  <property key="labeling/shapeJoinStyle" value="64"/>
+  <property key="labeling/shapeOffsetMapUnitMaxScale" value="0"/>
+  <property key="labeling/shapeOffsetMapUnitMinScale" value="0"/>
+  <property key="labeling/shapeOffsetUnits" value="1"/>
+  <property key="labeling/shapeOffsetX" value="0"/>
+  <property key="labeling/shapeOffsetY" value="0"/>
+  <property key="labeling/shapeRadiiMapUnitMaxScale" value="0"/>
+  <property key="labeling/shapeRadiiMapUnitMinScale" value="0"/>
+  <property key="labeling/shapeRadiiUnits" value="1"/>
+  <property key="labeling/shapeRadiiX" value="0"/>
+  <property key="labeling/shapeRadiiY" value="0"/>
+  <property key="labeling/shapeRotation" value="0"/>
+  <property key="labeling/shapeRotationType" value="0"/>
+  <property key="labeling/shapeSVGFile" value=""/>
+  <property key="labeling/shapeSizeMapUnitMaxScale" value="0"/>
+  <property key="labeling/shapeSizeMapUnitMinScale" value="0"/>
+  <property key="labeling/shapeSizeType" value="0"/>
+  <property key="labeling/shapeSizeUnits" value="1"/>
+  <property key="labeling/shapeSizeX" value="0"/>
+  <property key="labeling/shapeSizeY" value="0"/>
+  <property key="labeling/shapeTransparency" value="0"/>
+  <property key="labeling/shapeType" value="0"/>
+  <property key="labeling/textColorA" value="255"/>
+  <property key="labeling/textColorB" value="255"/>
+  <property key="labeling/textColorG" value="0"/>
+  <property key="labeling/textColorR" value="0"/>
+  <property key="labeling/textTransp" value="0"/>
+  <property key="labeling/upsidedownLabels" value="0"/>
+  <property key="labeling/wrapChar" value=""/>
+  <property key="labeling/xOffset" value="0"/>
+  <property key="labeling/xQuadOffset" value="0"/>
+  <property key="labeling/yOffset" value="0"/>
+  <property key="labeling/yQuadOffset" value="0"/>
+ </customproperties>
+ <blendMode>0</blendMode>
+ <featureBlendMode>0</featureBlendMode>
+ <layerTransparency>0</layerTransparency>
+ <displayfield>id</displayfield>
+ <label>0</label>
+ <labelattributes>
+  <label fieldname="" text="Label"/>
+  <family fieldname="" name="Ubuntu"/>
+  <size fieldname="" units="pt" value="12"/>
+  <bold fieldname="" on="0"/>
+  <italic fieldname="" on="0"/>
+  <underline fieldname="" on="0"/>
+  <strikeout fieldname="" on="0"/>
+  <color fieldname="" red="0" blue="0" green="0"/>
+  <x fieldname=""/>
+  <y fieldname=""/>
+  <offset x="0" y="0" units="pt" yfieldname="" xfieldname=""/>
+  <angle fieldname="" value="0" auto="0"/>
+  <alignment fieldname="" value="center"/>
+  <buffercolor fieldname="" red="255" blue="255" green="255"/>
+  <buffersize fieldname="" units="pt" value="1"/>
+  <bufferenabled fieldname="" on=""/>
+  <multilineenabled fieldname="" on=""/>
+  <selectedonly on=""/>
+ </labelattributes>
+ <SingleCategoryDiagramRenderer diagramType="Pie">
+  <DiagramCategory penColor="#000000" labelPlacementMethod="XHeight" penWidth="0" diagramOrientation="Up" minimumSize="0" barWidth="5" penAlpha="255" maxScaleDenominator="1e+08" font="Cantarell,11,-1,5,50,0,0,0,0,0" backgroundColor="#ffffff" transparency="0" width="30" scaleDependency="Area" backgroundAlpha="255" angleOffset="1440" scaleBasedVisibility="0" enabled="1" height="30" sizeType="MM" minScaleDenominator="0">
+   <attribute field="" color="#000000" label=""/>
+  </DiagramCategory>
+ </SingleCategoryDiagramRenderer>
+ <DiagramLayerSettings yPosColumn="-1" linePlacementFlags="1" placement="0" dist="0" xPosColumn="-1" priority="0" obstacle="0" showAll="0"/>
+ <relations>
+  <relation referencingLayer="pipe" referencedLayer="pipe_material" id="relation_pipe_material" name="Conduite - matériau">
+   <fieldRef referencedField="id" referencingField="fk_material"/>
+  </relation>
+  <relation referencingLayer="pipe" referencedLayer="pipe" id="relation_pipe_parent" name="Conduite - parent">
+   <fieldRef referencedField="id" referencingField="fk_parent"/>
+  </relation>
+ </relations>
+ <layer-tree-group name="Réseau">
+  <layer-tree-group name="Réseau"/>
+ </layer-tree-group>
+ <dependencies>
+  <dependency>pipe_material</dependency>
+  <dependency>pipe</dependency>
+  <dependency>pipe_function</dependency>
+  <dependency>pipe_installmethod</dependency>
+  <dependency>distributor</dependency>
+  <dependency>precision</dependency>
+  <dependency>bedding</dependency>
+  <dependency>pipe_protection</dependency>
+  <dependency>status</dependency>
+  <dependency>watertype</dependency>
+  <dependency>visible</dependency>
+  <dependency>visible</dependency>
+  <dependency>visible</dependency>
+  <dependency>district</dependency>
+  <dependency>pressurezone</dependency>
+ </dependencies>
+</maplayer>
