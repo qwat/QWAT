@@ -381,7 +381,7 @@
       <layer_coordinate_transform destAuthId="EPSG:21781" srcAuthId="EPSG:21781" srcDatumTransform="-1" destDatumTransform="-1" layerid="constructionpoint20130807094904851"/>
       <layer_coordinate_transform destAuthId="EPSG:21781" srcAuthId="EPSG:21781" srcDatumTransform="-1" destDatumTransform="-1" layerid="vannes_copy20130924083714343"/>
       <layer_coordinate_transform destAuthId="EPSG:21781" srcAuthId="EPSG:21781" srcDatumTransform="-1" destDatumTransform="-1" layerid="cs_batiment20130514143721709"/>
-      <layer_coordinate_transform destAuthId="EPSG:21781" srcAuthId="EPSG:21781" srcDatumTransform="-1" destDatumTransform="-1" layerid="installation_valvechamber20131107105006707"/>
+      <layer_coordinate_transform destAuthId="EPSG:21781" srcAuthId="EPSG:21781" srcDatumTransform="-1" destDatumTransform="-1" layerid="installation_chamber20131107105006707"/>
       <layer_coordinate_transform destAuthId="EPSG:21781" srcAuthId="EPSG:21781" srcDatumTransform="-1" destDatumTransform="-1" layerid="cn126420130327085334221"/>
       <layer_coordinate_transform destAuthId="EPSG:21781" srcAuthId="EPSG:21781" srcDatumTransform="-1" destDatumTransform="-1" layerid="subscriber_pipe_relation20130417092124312"/>
       <layer_coordinate_transform destAuthId="EPSG:21781" srcAuthId="EPSG:21781" srcDatumTransform="-1" destDatumTransform="-1" layerid="vannes_copy20141127160745910"/>
@@ -21632,7 +21632,7 @@
     </maplayer>
     <maplayer minimumScale="-4.65661e-10" maximumScale="1e+08" simplifyDrawingHints="0" minLabelScale="0" maxLabelScale="1e+08" simplifyDrawingTol="1" geometry="Point" simplifyMaxScale="1" type="vector" hasScaleBasedVisibilityFlag="0" simplifyLocal="1" scaleBasedLabelVisibilityFlag="0">
       <id>ouvrage___chambre_de_vannes__offline_20150526074119066</id>
-      <datasource>dbname='./offline.sqlite' table="installation_valvechamber20131107105006707" (Geometry) sql=</datasource>
+      <datasource>dbname='./offline.sqlite' table="installation_chamber20131107105006707" (Geometry) sql=</datasource>
       <title></title>
       <abstract></abstract>
       <keywordList>
@@ -22051,7 +22051,7 @@
         <property key="labeling/xOffset" value="0"/>
         <property key="labeling/yOffset" value="0"/>
         <property key="remoteProvider" value="postgres"/>
-        <property key="remoteSource" value="service='qwat' sslmode=disable key='id' estimatedmetadata=true srid=21781 type=POINT table=&quot;qwat_od&quot;.&quot;installation_valvechamber&quot; (geometry) sql="/>
+        <property key="remoteSource" value="service='qwat' sslmode=disable key='id' estimatedmetadata=true srid=21781 type=POINT table=&quot;qwat_od&quot;.&quot;installation_chamber&quot; (geometry) sql="/>
       </customproperties>
       <blendMode>0</blendMode>
       <featureBlendMode>0</featureBlendMode>
@@ -22086,7 +22086,7 @@
       <excludeAttributesWMS/>
       <excludeAttributesWFS/>
       <attributeactions>
-        <actionsetting action="qgis.utils.plugins['postgres91plusauditor'].audit('installation_valvechamber20131107105006707',[% $id %])" icon="" capture="0" type="1" name="History audit"/>
+        <actionsetting action="qgis.utils.plugins['postgres91plusauditor'].audit('installation_chamber20131107105006707',[% $id %])" icon="" capture="0" type="1" name="History audit"/>
       </attributeactions>
       <edittypes>
         <edittype widgetv2type="TextEdit" name="id">
@@ -28474,7 +28474,7 @@
             <value>installation_pump20130816140237750</value>
             <value>installation_treatment20130816113039913</value>
             <value>installation_pressurecontrol20131107105006792</value>
-            <value>installation_valvechamber20131107105006707</value>
+            <value>installation_chamber20131107105006707</value>
             <value>hydrant20130304110004848</value>
             <value>valve20130304110011497</value>
             <value>vannes_copy20130924083714343</value>
@@ -29074,7 +29074,7 @@
               <tolerance type="int">6</tolerance>
               <snapType type="int">2</snapType>
               <unitType type="int">1</unitType>
-              <layerid type="QString">installation_valvechamber20131107105006707</layerid>
+              <layerid type="QString">installation_chamber20131107105006707</layerid>
             </SnapOpts-00006>
             <SnapOpts-00083>
               <avoidInt type="int">1</avoidInt>

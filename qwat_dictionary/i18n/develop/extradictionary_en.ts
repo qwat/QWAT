@@ -464,7 +464,7 @@
     </message>
     <message>
         <location filename="installation.ui" line="163"/>
-        <source>relation_installationbuilding_valvechamber</source>
+        <source>relation_installationbuilding_chamber</source>
         <translation></translation>
     </message>
     <message>

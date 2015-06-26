@@ -33,7 +33,7 @@
           <layer-tree-layer expanded="0" checked="Qt::Checked" id="installation_pressurecontrol20131107105006792" name="ouvrage - régulation de pression">
             <customproperties/>
           </layer-tree-layer>
-          <layer-tree-layer expanded="0" checked="Qt::Checked" id="installation_valvechamber20131107105006707" name="ouvrage - chambre de vannes">
+          <layer-tree-layer expanded="0" checked="Qt::Checked" id="installation_chamber20131107105006707" name="ouvrage - chambre de vannes">
             <customproperties/>
           </layer-tree-layer>
         </layer-tree-group>
@@ -337,7 +337,7 @@
     <relation referencingLayer="installation_treatment20130816113039913" referencedLayer="installation20130304110004938" id="relation_installationbuilding_treatment" name="Ouvrage - traitement">
       <fieldRef referencedField="id" referencingField="fk_installation"/>
     </relation>
-    <relation referencingLayer="installation_valvechamber20131107105006707" referencedLayer="installation20130304110004938" id="relation_installationbuilding_valvechamber" name="Ouvrage - chambres de vannes">
+    <relation referencingLayer="installation_chamber20131107105006707" referencedLayer="installation20130304110004938" id="relation_installationbuilding_chamber" name="Ouvrage - chambres de vannes">
       <fieldRef referencedField="id" referencingField="fk_installation"/>
     </relation>
     <relation referencingLayer="od_meter_reference20140304165835390" referencedLayer="od_meter20131120073630165" id="relation_meter_reference" name="Compteur réseau - renvoi">
@@ -465,7 +465,7 @@
       <layer_coordinate_transform destAuthId="EPSG:21781" srcAuthId="EPSG:21781" srcDatumTransform="-1" destDatumTransform="-1" layerid="constructionpoint20130807094904851"/>
       <layer_coordinate_transform destAuthId="EPSG:21781" srcAuthId="EPSG:21781" srcDatumTransform="-1" destDatumTransform="-1" layerid="vannes_copy20130924083714343"/>
       <layer_coordinate_transform destAuthId="EPSG:21781" srcAuthId="EPSG:21781" srcDatumTransform="-1" destDatumTransform="-1" layerid="cs_batiment20130514143721709"/>
-      <layer_coordinate_transform destAuthId="EPSG:21781" srcAuthId="EPSG:21781" srcDatumTransform="-1" destDatumTransform="-1" layerid="installation_valvechamber20131107105006707"/>
+      <layer_coordinate_transform destAuthId="EPSG:21781" srcAuthId="EPSG:21781" srcDatumTransform="-1" destDatumTransform="-1" layerid="installation_chamber20131107105006707"/>
       <layer_coordinate_transform destAuthId="EPSG:21781" srcAuthId="EPSG:21781" srcDatumTransform="-1" destDatumTransform="-1" layerid="cn126420130327085334221"/>
       <layer_coordinate_transform destAuthId="EPSG:21781" srcAuthId="EPSG:21781" srcDatumTransform="-1" destDatumTransform="-1" layerid="subscriber_pipe_relation20130417092124312"/>
       <layer_coordinate_transform destAuthId="EPSG:21781" srcAuthId="EPSG:21781" srcDatumTransform="-1" destDatumTransform="-1" layerid="vannes_copy20141127160745910"/>
@@ -501,7 +501,7 @@
       <layer style="" id="od_element_surfacique20130514144124647"/>
       <layer style="" id="cs_batiment20130514143721709"/>
       <layer style="" id="bf_bien_fonds20130514143508556"/>
-      <layer style="" id="installation_valvechamber20131107105006707"/>
+      <layer style="" id="installation_chamber20131107105006707"/>
       <layer style="" id="no_posnomlocallieudit20130514143906869"/>
       <layer style="" id="pf_pfp20130514144226845"/>
       <layer style="" id="dimension20130807094904783"/>
@@ -569,7 +569,7 @@
       <item>installation_pump20130816140237750</item>
       <item>installation_treatment20130816113039913</item>
       <item>installation_pressurecontrol20131107105006792</item>
-      <item>installation_valvechamber20131107105006707</item>
+      <item>installation_chamber20131107105006707</item>
       <item>subscriber20130304110011459</item>
       <item>od_subscriber_reference20131206105928067</item>
       <item>od_meter20131120073630165</item>
@@ -711,7 +711,7 @@
           </legendlayer>
           <legendlayer drawingOrder="7" open="false" checked="Qt::Checked" name="ouvrage - chambre de vannes" showFeatureCount="0">
             <filegroup open="false" hidden="false">
-              <legendlayerfile isInOverview="0" layerid="installation_valvechamber20131107105006707" visible="1"/>
+              <legendlayerfile isInOverview="0" layerid="installation_chamber20131107105006707" visible="1"/>
             </filegroup>
           </legendlayer>
         </legendgroup>
@@ -1369,7 +1369,7 @@
           <Layer>installation_pump20130816140237750</Layer>
           <Layer>installation_treatment20130816113039913</Layer>
           <Layer>installation_pressurecontrol20131107105006792</Layer>
-          <Layer>installation_valvechamber20131107105006707</Layer>
+          <Layer>installation_chamber20131107105006707</Layer>
           <Layer>subscriber20130304110011459</Layer>
           <Layer>od_subscriber_reference20131206105928067</Layer>
           <Layer>od_meter20131120073630165</Layer>
@@ -7102,7 +7102,7 @@
               </attributeactions>
             </qgis>
           </LayerStyle>
-          <LayerStyle layerid="installation_valvechamber20131107105006707">
+          <LayerStyle layerid="installation_chamber20131107105006707">
             <qgis version="2.7.0-Master" minimumScale="0" maximumScale="1e+08" simplifyDrawingHints="0" minLabelScale="0" maxLabelScale="1e+08" simplifyDrawingTol="1" simplifyMaxScale="1" hasScaleBasedVisibilityFlag="0" simplifyLocal="1" scaleBasedLabelVisibilityFlag="0">
               <edittypes>
                 <edittype widgetv2type="TextEdit" name="id">
@@ -13144,7 +13144,7 @@
           <Layer>installation_pump20130816140237750</Layer>
           <Layer>installation_treatment20130816113039913</Layer>
           <Layer>installation_pressurecontrol20131107105006792</Layer>
-          <Layer>installation_valvechamber20131107105006707</Layer>
+          <Layer>installation_chamber20131107105006707</Layer>
           <Layer>subscriber20130304110011459</Layer>
           <Layer>od_subscriber_reference20131206105928067</Layer>
           <Layer>od_meter20131120073630165</Layer>
@@ -13684,7 +13684,7 @@
           <Layer>installation_pump20130816140237750</Layer>
           <Layer>installation_treatment20130816113039913</Layer>
           <Layer>installation_pressurecontrol20131107105006792</Layer>
-          <Layer>installation_valvechamber20131107105006707</Layer>
+          <Layer>installation_chamber20131107105006707</Layer>
           <Layer>hydrant20130304110004848</Layer>
           <Layer>valve20130304110011497</Layer>
           <Layer>leak20130821111917060</Layer>
@@ -13965,7 +13965,7 @@
           <Layer>installation_pump20130816140237750</Layer>
           <Layer>installation_treatment20130816113039913</Layer>
           <Layer>installation_pressurecontrol20131107105006792</Layer>
-          <Layer>installation_valvechamber20131107105006707</Layer>
+          <Layer>installation_chamber20131107105006707</Layer>
           <Layer>hydrant20130304110004848</Layer>
           <Layer>valve20130304110011497</Layer>
           <Layer>leak20130821111917060</Layer>
@@ -14246,7 +14246,7 @@
           <Layer>installation_pump20130816140237750</Layer>
           <Layer>installation_treatment20130816113039913</Layer>
           <Layer>installation_pressurecontrol20131107105006792</Layer>
-          <Layer>installation_valvechamber20131107105006707</Layer>
+          <Layer>installation_chamber20131107105006707</Layer>
           <Layer>hydrant20130304110004848</Layer>
           <Layer>valve20130304110011497</Layer>
           <Layer>leak20130821111917060</Layer>
@@ -29960,8 +29960,8 @@
       </edittypes>
     </maplayer>
     <maplayer minimumScale="-4.65661e-10" maximumScale="1e+08" simplifyDrawingHints="0" minLabelScale="0" maxLabelScale="1e+08" simplifyDrawingTol="1" geometry="Point" simplifyMaxScale="1" type="vector" hasScaleBasedVisibilityFlag="0" simplifyLocal="1" scaleBasedLabelVisibilityFlag="0">
-      <id>installation_valvechamber20131107105006707</id>
-      <datasource>service='qwat' sslmode=disable key='id' estimatedmetadata=true srid=21781 type=Point table="qwat_od"."installation_valvechamber" (geometry) sql=</datasource>
+      <id>installation_chamber20131107105006707</id>
+      <datasource>service='qwat' sslmode=disable key='id' estimatedmetadata=true srid=21781 type=Point table="qwat_od"."installation_chamber" (geometry) sql=</datasource>
       <title></title>
       <abstract></abstract>
       <keywordList>
@@ -30412,7 +30412,7 @@
       <excludeAttributesWMS/>
       <excludeAttributesWFS/>
       <attributeactions>
-        <actionsetting action="qgis.utils.plugins['postgres91plusauditor'].audit('installation_valvechamber20131107105006707',[% $id %])" icon="" capture="0" type="1" name="History audit"/>
+        <actionsetting action="qgis.utils.plugins['postgres91plusauditor'].audit('installation_chamber20131107105006707',[% $id %])" icon="" capture="0" type="1" name="History audit"/>
       </attributeactions>
       <edittypes>
         <edittype widgetv2type="TextEdit" name="id">
@@ -46739,7 +46739,7 @@
             <value>installation_pump20130816140237750</value>
             <value>installation_treatment20130816113039913</value>
             <value>installation_pressurecontrol20131107105006792</value>
-            <value>installation_valvechamber20131107105006707</value>
+            <value>installation_chamber20131107105006707</value>
             <value>hydrant20130304110004848</value>
             <value>valve20130304110011497</value>
             <value>vannes_copy20130924083714343</value>
@@ -47339,7 +47339,7 @@
               <tolerance type="int">6</tolerance>
               <snapType type="int">2</snapType>
               <unitType type="int">1</unitType>
-              <layerid type="QString">installation_valvechamber20131107105006707</layerid>
+              <layerid type="QString">installation_chamber20131107105006707</layerid>
             </SnapOpts-00006>
             <SnapOpts-00083>
               <avoidInt type="int">1</avoidInt>
