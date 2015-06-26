@@ -118,7 +118,7 @@
         </layer-tree-layer>
       </layer-tree-group>
     </layer-tree-group>
-    <layer-tree-group expanded="0" checked="Qt::Checked" name="Annotations">
+    <layer-tree-group expanded="1" checked="Qt::Checked" name="Annotations">
       <customproperties/>
       <layer-tree-layer expanded="0" checked="Qt::Checked" id="od_annotationline20131203095020365" name="annotation - ligne">
         <customproperties/>
@@ -368,10 +368,10 @@
   <mapcanvas>
     <units>meters</units>
     <extent>
-      <xmin>554802.42365286906715482</xmin>
-      <ymin>136597.3245851494721137</ymin>
-      <xmax>555451.30646536906715482</xmax>
-      <ymax>137062.32459458935773</ymax>
+      <xmin>555004.43211214628536254</xmin>
+      <ymin>136698.91278848817455582</ymin>
+      <xmax>555166.65281527128536254</xmax>
+      <ymax>136815.1627908481459599</ymax>
     </extent>
     <rotation>0</rotation>
     <projections>1</projections>
@@ -824,7 +824,7 @@
         </legendlayer>
       </legendgroup>
     </legendgroup>
-    <legendgroup open="false" checked="Qt::Checked" name="Annotations">
+    <legendgroup open="true" checked="Qt::Checked" name="Annotations">
       <legendlayer drawingOrder="27" open="false" checked="Qt::Checked" name="annotation - ligne" showFeatureCount="0">
         <filegroup open="false" hidden="false">
           <legendlayerfile isInOverview="0" layerid="od_annotationline20131203095020365" visible="1"/>
@@ -23738,7 +23738,7 @@
     </maplayer>
     <maplayer minimumScale="-4.65661e-10" maximumScale="1e+08" simplifyDrawingHints="0" minLabelScale="0" maxLabelScale="1e+08" simplifyDrawingTol="1" geometry="Point" simplifyMaxScale="1" type="vector" hasScaleBasedVisibilityFlag="0" simplifyLocal="1" scaleBasedLabelVisibilityFlag="0">
       <id>constructionpoint20130807094904851</id>
-      <datasource>service='qwat' sslmode=disable key='id' srid=21781 type=Point table="qwat_od"."constructionpoint" (geometry) sql=</datasource>
+      <datasource>service='qwat' sslmode=disable key='id' srid=21781 type=Point table="qwat_dr"."constructionpoint" (geometry) sql=</datasource>
       <title></title>
       <abstract></abstract>
       <keywordList>
@@ -24004,7 +24004,7 @@
     </maplayer>
     <maplayer minimumScale="-4.65661e-10" maximumScale="501" simplifyDrawingHints="0" minLabelScale="0" maxLabelScale="1e+08" simplifyDrawingTol="1" geometry="Line" simplifyMaxScale="1" type="vector" hasScaleBasedVisibilityFlag="1" simplifyLocal="1" scaleBasedLabelVisibilityFlag="0">
       <id>dimension20130807094904783</id>
-      <datasource>service='qwat' sslmode=disable key='id' srid=21781 type=LineString table="qwat_od"."dimension_distance" (geometry) sql=</datasource>
+      <datasource>service='qwat' sslmode=disable key='id' srid=21781 type=LineString table="qwat_dr"."dimension_distance" (geometry) sql=</datasource>
       <title></title>
       <abstract></abstract>
       <keywordList>
@@ -31447,7 +31447,7 @@
     </maplayer>
     <maplayer minimumScale="0" maximumScale="1001" simplifyDrawingHints="0" minLabelScale="0" maxLabelScale="1e+08" simplifyDrawingTol="1" geometry="Line" simplifyMaxScale="1" type="vector" hasScaleBasedVisibilityFlag="1" simplifyLocal="1" scaleBasedLabelVisibilityFlag="0">
       <id>od_annotationline20131203095020365</id>
-      <datasource>service='qwat' sslmode=disable key='id' estimatedmetadata=true srid=21781 type=LineString table="qwat_od"."annotationline" (geometry) sql=</datasource>
+      <datasource>service='qwat' sslmode=disable key='id' estimatedmetadata=true srid=21781 type=LineString table="qwat_dr"."annotationline" (geometry) sql=</datasource>
       <title></title>
       <abstract></abstract>
       <keywordList>
@@ -31704,7 +31704,7 @@
     </maplayer>
     <maplayer minimumScale="-4.65661e-10" maximumScale="1001" simplifyDrawingHints="1" minLabelScale="0" maxLabelScale="1e+08" simplifyDrawingTol="1" geometry="Point" simplifyMaxScale="1" type="vector" hasScaleBasedVisibilityFlag="1" simplifyLocal="1" scaleBasedLabelVisibilityFlag="0">
       <id>od_annotationpoint20131203095020392</id>
-      <datasource>service='qwat' sslmode=disable key='id' estimatedmetadata=true srid=21781 type=Point table="qwat_od"."annotationpoint" (geometry) sql=</datasource>
+      <datasource>service='qwat' sslmode=disable key='id' estimatedmetadata=true srid=21781 type=Point table="qwat_dr"."annotationpoint" (geometry) sql=</datasource>
       <title></title>
       <abstract></abstract>
       <keywordList>
@@ -31724,7 +31724,7 @@
         </spatialrefsys>
       </srs>
       <provider encoding="System">postgres</provider>
-      <previewExpression></previewExpression>
+      <previewExpression>COALESCE( "id", '&lt;NULL>' )</previewExpression>
       <vectorjoins/>
       <expressionfields/>
       <map-layer-style-manager current="">
@@ -32839,7 +32839,7 @@
     </maplayer>
     <maplayer minimumScale="0" maximumScale="501" simplifyDrawingHints="0" minLabelScale="0" maxLabelScale="1e+08" simplifyDrawingTol="1" geometry="Line" simplifyMaxScale="1" type="vector" hasScaleBasedVisibilityFlag="1" simplifyLocal="1" scaleBasedLabelVisibilityFlag="0">
       <id>od_dimension_orientation20131202111155806</id>
-      <datasource>service='qwat' sslmode=disable key='id' estimatedmetadata=true srid=21781 type=LineString table="qwat_od"."dimension_orientation" (geometry) sql=</datasource>
+      <datasource>service='qwat' sslmode=disable key='id' estimatedmetadata=true srid=21781 type=LineString table="qwat_dr"."dimension_orientation" (geometry) sql=</datasource>
       <title></title>
       <abstract></abstract>
       <keywordList>
