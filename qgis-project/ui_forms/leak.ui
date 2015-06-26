@@ -6,104 +6,14 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>536</width>
-    <height>521</height>
+    <width>515</width>
+    <height>402</height>
    </rect>
   </property>
   <property name="windowTitle">
    <string>Fuite</string>
   </property>
   <layout class="QGridLayout" name="gridLayout">
-   <item row="9" column="0" colspan="2">
-    <widget class="QCheckBox" name="pipe_replaced">
-     <property name="text">
-      <string>Conduite remplacée</string>
-     </property>
-    </widget>
-   </item>
-   <item row="13" column="1" colspan="3">
-    <widget class="QDialogButtonBox" name="buttonBox">
-     <property name="orientation">
-      <enum>Qt::Horizontal</enum>
-     </property>
-     <property name="standardButtons">
-      <set>QDialogButtonBox::Cancel|QDialogButtonBox::Ok</set>
-     </property>
-    </widget>
-   </item>
-   <item row="6" column="0">
-    <widget class="QLabel" name="label_4">
-     <property name="text">
-      <string>Type</string>
-     </property>
-    </widget>
-   </item>
-   <item row="11" column="0">
-    <widget class="QLabel" name="label_11">
-     <property name="text">
-      <string>Date réparation</string>
-     </property>
-    </widget>
-   </item>
-   <item row="8" column="0">
-    <widget class="QLabel" name="label_6">
-     <property name="text">
-      <string>Dommage</string>
-     </property>
-    </widget>
-   </item>
-   <item row="0" column="0">
-    <widget class="QLabel" name="label">
-     <property name="text">
-      <string>ID</string>
-     </property>
-    </widget>
-   </item>
-   <item row="7" column="1">
-    <widget class="QComboBox" name="fk_cause"/>
-   </item>
-   <item row="1" column="3">
-    <widget class="QLineEdit" name="_printmaps"/>
-   </item>
-   <item row="8" column="1">
-    <widget class="QComboBox" name="fk_damage"/>
-   </item>
-   <item row="4" column="0">
-    <widget class="QLabel" name="label_8">
-     <property name="text">
-      <string>Adresse</string>
-     </property>
-    </widget>
-   </item>
-   <item row="7" column="0">
-    <widget class="QLabel" name="label_5">
-     <property name="text">
-      <string>Cause</string>
-     </property>
-    </widget>
-   </item>
-   <item row="1" column="2">
-    <widget class="QLabel" name="label_3">
-     <property name="text">
-      <string>Folio</string>
-     </property>
-    </widget>
-   </item>
-   <item row="5" column="1">
-    <widget class="QPlainTextEdit" name="description"/>
-   </item>
-   <item row="11" column="1">
-    <widget class="QgsDateTimeEdit" name="repair_date"/>
-   </item>
-   <item row="4" column="1">
-    <widget class="QLineEdit" name="address"/>
-   </item>
-   <item row="0" column="3">
-    <widget class="QLineEdit" name="_district"/>
-   </item>
-   <item row="0" column="1">
-    <widget class="QLineEdit" name="id"/>
-   </item>
    <item row="5" column="0">
     <widget class="QLabel" name="label_9">
      <property name="text">
@@ -118,22 +28,88 @@
      </property>
     </widget>
    </item>
+   <item row="0" column="1">
+    <widget class="QLineEdit" name="id"/>
+   </item>
+   <item row="8" column="0" colspan="2">
+    <widget class="QCheckBox" name="pipe_replaced">
+     <property name="text">
+      <string>Conduite remplacée</string>
+     </property>
+    </widget>
+   </item>
+   <item row="0" column="0">
+    <widget class="QLabel" name="label">
+     <property name="text">
+      <string>ID</string>
+     </property>
+    </widget>
+   </item>
+   <item row="1" column="2">
+    <widget class="QLabel" name="label_3">
+     <property name="text">
+      <string>Folio</string>
+     </property>
+    </widget>
+   </item>
+   <item row="1" column="3">
+    <widget class="QLineEdit" name="_printmaps"/>
+   </item>
+   <item row="5" column="1">
+    <widget class="QPlainTextEdit" name="description"/>
+   </item>
+   <item row="6" column="0">
+    <widget class="QLabel" name="label_5">
+     <property name="text">
+      <string>Cause</string>
+     </property>
+    </widget>
+   </item>
+   <item row="10" column="1">
+    <widget class="QgsDateTimeEdit" name="repair_date"/>
+   </item>
+   <item row="12" column="1" colspan="3">
+    <widget class="QDialogButtonBox" name="buttonBox">
+     <property name="orientation">
+      <enum>Qt::Horizontal</enum>
+     </property>
+     <property name="standardButtons">
+      <set>QDialogButtonBox::Cancel|QDialogButtonBox::Ok</set>
+     </property>
+    </widget>
+   </item>
+   <item row="6" column="1">
+    <widget class="QComboBox" name="fk_cause"/>
+   </item>
+   <item row="4" column="1">
+    <widget class="QLineEdit" name="address"/>
+   </item>
+   <item row="10" column="0">
+    <widget class="QLabel" name="label_11">
+     <property name="text">
+      <string>Date réparation</string>
+     </property>
+    </widget>
+   </item>
+   <item row="4" column="0">
+    <widget class="QLabel" name="label_8">
+     <property name="text">
+      <string>Adresse</string>
+     </property>
+    </widget>
+   </item>
+   <item row="0" column="3">
+    <widget class="QLineEdit" name="_district"/>
+   </item>
+   <item row="9" column="1">
+    <widget class="QPlainTextEdit" name="repair"/>
+   </item>
    <item row="1" column="0" colspan="2">
     <widget class="QCheckBox" name="_repaired">
      <property name="text">
       <string>réparée</string>
      </property>
     </widget>
-   </item>
-   <item row="10" column="0">
-    <widget class="QLabel" name="label_10">
-     <property name="text">
-      <string>Réparation</string>
-     </property>
-    </widget>
-   </item>
-   <item row="10" column="1">
-    <widget class="QPlainTextEdit" name="repair"/>
    </item>
    <item row="3" column="1">
     <widget class="QgsDateTimeEdit" name="detection_date">
@@ -142,13 +118,24 @@
      </property>
     </widget>
    </item>
-   <item row="6" column="1">
-    <widget class="QComboBox" name="fk_type"/>
+   <item row="9" column="0">
+    <widget class="QLabel" name="label_10">
+     <property name="text">
+      <string>Réparation</string>
+     </property>
+    </widget>
    </item>
    <item row="3" column="0">
     <widget class="QLabel" name="label_7">
      <property name="text">
       <string>Détection</string>
+     </property>
+    </widget>
+   </item>
+   <item row="7" column="0" colspan="2">
+    <widget class="QCheckBox" name="widespread_damage">
+     <property name="text">
+      <string>Dégâts étendus</string>
      </property>
     </widget>
    </item>
