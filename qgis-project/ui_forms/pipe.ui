@@ -81,13 +81,6 @@
             </property>
            </widget>
           </item>
-          <item row="2" column="1">
-           <widget class="QLineEdit" name="folder">
-            <property name="enabled">
-             <bool>true</bool>
-            </property>
-           </widget>
-          </item>
           <item row="3" column="0">
            <widget class="QLabel" name="label_7">
             <property name="text">
@@ -116,6 +109,9 @@
              <bool>false</bool>
             </property>
            </widget>
+          </item>
+          <item row="2" column="1">
+           <widget class="QgsRelationReferenceWidget" name="fk_folder"/>
           </item>
          </layout>
         </widget>
@@ -690,7 +686,7 @@
       </attribute>
       <layout class="QGridLayout" name="gridLayout_10">
        <item row="0" column="0">
-        <widget class="QgsRelationEditorWidget" name="mRelationEditor">
+        <widget class="QgsRelationEditorWidget" name="relation_pipe_subscriber">
          <property name="collapsed">
           <bool>false</bool>
          </property>
@@ -707,7 +703,7 @@
       </attribute>
       <layout class="QGridLayout" name="gridLayout_9">
        <item row="0" column="0">
-        <widget class="QgsRelationEditorWidget" name="mRelationEditor_2">
+        <widget class="QgsRelationEditorWidget" name="relation_pipe_leak">
          <property name="collapsed">
           <bool>false</bool>
          </property>
