@@ -26461,6 +26461,7 @@
             <field name="value_ro"/>
             <field name="_displayname_ro"/>
             <field name="diameter"/>
+            <field name="diameter_external"/>
             <field name="diameter_nominal"/>
           </joinFieldsSubset>
         </join>
@@ -26735,6 +26736,10 @@
               <prop k="offset_map_unit_scale" v="0,0"/>
               <prop k="offset_unit" v="MM"/>
               <prop k="use_custom_dash" v="0"/>
+              <prop k="width_dd_active" v="1"/>
+              <prop k="width_dd_expression" v="CASE WHEN &quot;pipe_material_diameter&quot; is not NULL&#xa;THEN toreal(COALESCE(&quot;pipe_material_diameter_external&quot;,&quot;pipe_material_diameter_nominal&quot;)) / 900 + 0.2&#xa;ELSE 0.2&#xa;END"/>
+              <prop k="width_dd_field" v=""/>
+              <prop k="width_dd_useexpr" v="1"/>
               <prop k="width_map_unit_scale" v="0,0"/>
               <effect enabled="0" type="effectStack">
                 <effect type="drawSource">
@@ -26762,6 +26767,10 @@
               <prop k="offset_map_unit_scale" v="0,0"/>
               <prop k="offset_unit" v="MM"/>
               <prop k="use_custom_dash" v="1"/>
+              <prop k="width_dd_active" v="1"/>
+              <prop k="width_dd_expression" v="CASE WHEN &quot;pipe_material_diameter&quot; is not NULL&#xa;THEN toreal(COALESCE(&quot;pipe_material_diameter_external&quot;,&quot;pipe_material_diameter_nominal&quot;)) / 900 + 0.2&#xa;ELSE 0.2&#xa;END"/>
+              <prop k="width_dd_field" v=""/>
+              <prop k="width_dd_useexpr" v="1"/>
               <prop k="width_map_unit_scale" v="0,0"/>
               <effect enabled="0" type="effectStack">
                 <effect type="drawSource">
@@ -26789,6 +26798,10 @@
               <prop k="offset_map_unit_scale" v="0,0"/>
               <prop k="offset_unit" v="MM"/>
               <prop k="use_custom_dash" v="0"/>
+              <prop k="width_dd_active" v="1"/>
+              <prop k="width_dd_expression" v="CASE WHEN &quot;pipe_material_diameter&quot; is not NULL&#xa;THEN toreal(COALESCE(&quot;pipe_material_diameter_external&quot;,&quot;pipe_material_diameter_nominal&quot;)) / 900 + 1.2&#xa;ELSE 1.2&#xa;END"/>
+              <prop k="width_dd_field" v=""/>
+              <prop k="width_dd_useexpr" v="1"/>
               <prop k="width_map_unit_scale" v="0,0"/>
               <effect enabled="0" type="effectStack">
                 <effect type="drawSource">
@@ -26816,6 +26829,10 @@
               <prop k="offset_map_unit_scale" v="0,0"/>
               <prop k="offset_unit" v="MM"/>
               <prop k="use_custom_dash" v="0"/>
+              <prop k="width_dd_active" v="1"/>
+              <prop k="width_dd_expression" v="CASE WHEN &quot;pipe_material_diameter&quot; is not NULL&#xa;THEN toreal(COALESCE(&quot;pipe_material_diameter_external&quot;,&quot;pipe_material_diameter_nominal&quot;)) / 900 + 0.2&#xa;ELSE 0.2&#xa;END"/>
+              <prop k="width_dd_field" v=""/>
+              <prop k="width_dd_useexpr" v="1"/>
               <prop k="width_map_unit_scale" v="0,0"/>
               <effect enabled="0" type="effectStack">
                 <effect type="drawSource">
@@ -26843,6 +26860,10 @@
               <prop k="offset_map_unit_scale" v="0,0"/>
               <prop k="offset_unit" v="MM"/>
               <prop k="use_custom_dash" v="1"/>
+              <prop k="width_dd_active" v="1"/>
+              <prop k="width_dd_expression" v="CASE WHEN &quot;pipe_material_diameter&quot; is not NULL&#xa;THEN toreal(COALESCE(&quot;pipe_material_diameter_external&quot;,&quot;pipe_material_diameter_nominal&quot;)) / 900 + 0.2&#xa;ELSE 0.2&#xa;END"/>
+              <prop k="width_dd_field" v=""/>
+              <prop k="width_dd_useexpr" v="1"/>
               <prop k="width_map_unit_scale" v="0,0"/>
               <effect enabled="0" type="effectStack">
                 <effect type="drawSource">
@@ -26870,6 +26891,10 @@
               <prop k="offset_map_unit_scale" v="0,0"/>
               <prop k="offset_unit" v="MM"/>
               <prop k="use_custom_dash" v="0"/>
+              <prop k="width_dd_active" v="1"/>
+              <prop k="width_dd_expression" v="CASE WHEN &quot;pipe_material_diameter&quot; is not NULL&#xa;THEN toreal(COALESCE(&quot;pipe_material_diameter_external&quot;,&quot;pipe_material_diameter_nominal&quot;)) / 900 + 1.2&#xa;ELSE 1.2&#xa;END"/>
+              <prop k="width_dd_field" v=""/>
+              <prop k="width_dd_useexpr" v="1"/>
               <prop k="width_map_unit_scale" v="0,0"/>
               <effect enabled="0" type="effectStack">
                 <effect type="drawSource">
@@ -26897,6 +26922,10 @@
               <prop k="offset_map_unit_scale" v="0,0"/>
               <prop k="offset_unit" v="MM"/>
               <prop k="use_custom_dash" v="0"/>
+              <prop k="width_dd_active" v="1"/>
+              <prop k="width_dd_expression" v="CASE WHEN &quot;pipe_material_diameter&quot; is not NULL&#xa;THEN toreal(COALESCE(&quot;pipe_material_diameter_external&quot;,&quot;pipe_material_diameter_nominal&quot;)) / 900 + 0.2&#xa;ELSE 0.2&#xa;END"/>
+              <prop k="width_dd_field" v=""/>
+              <prop k="width_dd_useexpr" v="1"/>
               <prop k="width_map_unit_scale" v="0,0"/>
               <effect enabled="0" type="effectStack">
                 <effect type="drawSource">
@@ -26924,6 +26953,10 @@
               <prop k="offset_map_unit_scale" v="0,0"/>
               <prop k="offset_unit" v="MM"/>
               <prop k="use_custom_dash" v="1"/>
+              <prop k="width_dd_active" v="1"/>
+              <prop k="width_dd_expression" v="CASE WHEN &quot;pipe_material_diameter&quot; is not NULL&#xa;THEN toreal(COALESCE(&quot;pipe_material_diameter_external&quot;,&quot;pipe_material_diameter_nominal&quot;)) / 900 + 0.2&#xa;ELSE 0.2&#xa;END"/>
+              <prop k="width_dd_field" v=""/>
+              <prop k="width_dd_useexpr" v="1"/>
               <prop k="width_map_unit_scale" v="0,0"/>
               <effect enabled="0" type="effectStack">
                 <effect type="drawSource">
@@ -26951,6 +26984,10 @@
               <prop k="offset_map_unit_scale" v="0,0"/>
               <prop k="offset_unit" v="MM"/>
               <prop k="use_custom_dash" v="0"/>
+              <prop k="width_dd_active" v="1"/>
+              <prop k="width_dd_expression" v="CASE WHEN &quot;pipe_material_diameter&quot; is not NULL&#xa;THEN toreal(COALESCE(&quot;pipe_material_diameter_external&quot;,&quot;pipe_material_diameter_nominal&quot;)) / 900 + 1.2&#xa;ELSE 1.2&#xa;END"/>
+              <prop k="width_dd_field" v=""/>
+              <prop k="width_dd_useexpr" v="1"/>
               <prop k="width_map_unit_scale" v="0,0"/>
               <effect enabled="0" type="effectStack">
                 <effect type="drawSource">
@@ -26978,6 +27015,10 @@
               <prop k="offset_map_unit_scale" v="0,0"/>
               <prop k="offset_unit" v="MM"/>
               <prop k="use_custom_dash" v="0"/>
+              <prop k="width_dd_active" v="1"/>
+              <prop k="width_dd_expression" v="CASE WHEN &quot;pipe_material_diameter&quot; is not NULL&#xa;THEN toreal(COALESCE(&quot;pipe_material_diameter_external&quot;,&quot;pipe_material_diameter_nominal&quot;)) / 900 + 0.2&#xa;ELSE 0.2&#xa;END"/>
+              <prop k="width_dd_field" v=""/>
+              <prop k="width_dd_useexpr" v="1"/>
               <prop k="width_map_unit_scale" v="0,0"/>
               <effect enabled="0" type="effectStack">
                 <effect type="drawSource">
@@ -27005,6 +27046,10 @@
               <prop k="offset_map_unit_scale" v="0,0"/>
               <prop k="offset_unit" v="MM"/>
               <prop k="use_custom_dash" v="1"/>
+              <prop k="width_dd_active" v="1"/>
+              <prop k="width_dd_expression" v="CASE WHEN &quot;pipe_material_diameter&quot; is not NULL&#xa;THEN toreal(COALESCE(&quot;pipe_material_diameter_external&quot;,&quot;pipe_material_diameter_nominal&quot;)) / 900 + 0.2&#xa;ELSE 0.2&#xa;END"/>
+              <prop k="width_dd_field" v=""/>
+              <prop k="width_dd_useexpr" v="1"/>
               <prop k="width_map_unit_scale" v="0,0"/>
               <effect enabled="0" type="effectStack">
                 <effect type="drawSource">
@@ -27032,6 +27077,10 @@
               <prop k="offset_map_unit_scale" v="0,0"/>
               <prop k="offset_unit" v="MM"/>
               <prop k="use_custom_dash" v="0"/>
+              <prop k="width_dd_active" v="1"/>
+              <prop k="width_dd_expression" v="CASE WHEN &quot;pipe_material_diameter&quot; is not NULL&#xa;THEN toreal(COALESCE(&quot;pipe_material_diameter_external&quot;,&quot;pipe_material_diameter_nominal&quot;)) / 900 + 1.2&#xa;ELSE 1.2&#xa;END"/>
+              <prop k="width_dd_field" v=""/>
+              <prop k="width_dd_useexpr" v="1"/>
               <prop k="width_map_unit_scale" v="0,0"/>
               <effect enabled="0" type="effectStack">
                 <effect type="drawSource">
@@ -27059,6 +27108,10 @@
               <prop k="offset_map_unit_scale" v="0,0"/>
               <prop k="offset_unit" v="MM"/>
               <prop k="use_custom_dash" v="0"/>
+              <prop k="width_dd_active" v="1"/>
+              <prop k="width_dd_expression" v="CASE WHEN &quot;pipe_material_diameter&quot; is not NULL&#xa;THEN toreal(COALESCE(&quot;pipe_material_diameter_external&quot;,&quot;pipe_material_diameter_nominal&quot;)) / 900 + 1.2&#xa;ELSE 1.2&#xa;END"/>
+              <prop k="width_dd_field" v=""/>
+              <prop k="width_dd_useexpr" v="1"/>
               <prop k="width_map_unit_scale" v="0,0"/>
               <effect enabled="0" type="effectStack">
                 <effect type="drawSource">
@@ -27187,6 +27240,10 @@
               <prop k="offset_map_unit_scale" v="0,0"/>
               <prop k="offset_unit" v="MM"/>
               <prop k="use_custom_dash" v="0"/>
+              <prop k="width_dd_active" v="1"/>
+              <prop k="width_dd_expression" v="CASE WHEN &quot;pipe_material_diameter&quot; is not NULL&#xa;THEN toreal(COALESCE(&quot;pipe_material_diameter_external&quot;,&quot;pipe_material_diameter_nominal&quot;)) / 900 + 0.2&#xa;ELSE 0.2&#xa;END"/>
+              <prop k="width_dd_field" v=""/>
+              <prop k="width_dd_useexpr" v="1"/>
               <prop k="width_map_unit_scale" v="0,0"/>
               <effect enabled="0" type="effectStack">
                 <effect type="drawSource">
@@ -27214,6 +27271,10 @@
               <prop k="offset_map_unit_scale" v="0,0"/>
               <prop k="offset_unit" v="MM"/>
               <prop k="use_custom_dash" v="1"/>
+              <prop k="width_dd_active" v="1"/>
+              <prop k="width_dd_expression" v="CASE WHEN &quot;pipe_material_diameter&quot; is not NULL&#xa;THEN toreal(COALESCE(&quot;pipe_material_diameter_external&quot;,&quot;pipe_material_diameter_nominal&quot;)) / 900 + 0.2&#xa;ELSE 0.2&#xa;END"/>
+              <prop k="width_dd_field" v=""/>
+              <prop k="width_dd_useexpr" v="1"/>
               <prop k="width_map_unit_scale" v="0,0"/>
               <effect enabled="0" type="effectStack">
                 <effect type="drawSource">
@@ -27241,6 +27302,10 @@
               <prop k="offset_map_unit_scale" v="0,0"/>
               <prop k="offset_unit" v="MM"/>
               <prop k="use_custom_dash" v="0"/>
+              <prop k="width_dd_active" v="1"/>
+              <prop k="width_dd_expression" v="CASE WHEN &quot;pipe_material_diameter&quot; is not NULL&#xa;THEN toreal(COALESCE(&quot;pipe_material_diameter_external&quot;,&quot;pipe_material_diameter_nominal&quot;)) / 900 + 1.2&#xa;ELSE 1.2&#xa;END"/>
+              <prop k="width_dd_field" v=""/>
+              <prop k="width_dd_useexpr" v="1"/>
               <prop k="width_map_unit_scale" v="0,0"/>
               <effect enabled="0" type="effectStack">
                 <effect type="drawSource">
@@ -27268,6 +27333,10 @@
               <prop k="offset_map_unit_scale" v="0,0"/>
               <prop k="offset_unit" v="MM"/>
               <prop k="use_custom_dash" v="0"/>
+              <prop k="width_dd_active" v="1"/>
+              <prop k="width_dd_expression" v="CASE WHEN &quot;pipe_material_diameter&quot; is not NULL&#xa;THEN toreal(COALESCE(&quot;pipe_material_diameter_external&quot;,&quot;pipe_material_diameter_nominal&quot;)) / 900 + 0.2&#xa;ELSE 0.2&#xa;END"/>
+              <prop k="width_dd_field" v=""/>
+              <prop k="width_dd_useexpr" v="1"/>
               <prop k="width_map_unit_scale" v="0,0"/>
               <effect enabled="0" type="effectStack">
                 <effect type="drawSource">
@@ -27295,6 +27364,10 @@
               <prop k="offset_map_unit_scale" v="0,0"/>
               <prop k="offset_unit" v="MM"/>
               <prop k="use_custom_dash" v="0"/>
+              <prop k="width_dd_active" v="1"/>
+              <prop k="width_dd_expression" v="CASE WHEN &quot;pipe_material_diameter&quot; is not NULL&#xa;THEN toreal(COALESCE(&quot;pipe_material_diameter_external&quot;,&quot;pipe_material_diameter_nominal&quot;)) / 900 + 0.2&#xa;ELSE 0.2&#xa;END"/>
+              <prop k="width_dd_field" v=""/>
+              <prop k="width_dd_useexpr" v="1"/>
               <prop k="width_map_unit_scale" v="0,0"/>
               <effect enabled="0" type="effectStack">
                 <effect type="drawSource">
@@ -27322,6 +27395,10 @@
               <prop k="offset_map_unit_scale" v="0,0"/>
               <prop k="offset_unit" v="MM"/>
               <prop k="use_custom_dash" v="1"/>
+              <prop k="width_dd_active" v="1"/>
+              <prop k="width_dd_expression" v="CASE WHEN &quot;pipe_material_diameter&quot; is not NULL&#xa;THEN toreal(COALESCE(&quot;pipe_material_diameter_external&quot;,&quot;pipe_material_diameter_nominal&quot;)) / 900 + 0.2&#xa;ELSE 0.2&#xa;END"/>
+              <prop k="width_dd_field" v=""/>
+              <prop k="width_dd_useexpr" v="1"/>
               <prop k="width_map_unit_scale" v="0,0"/>
               <effect enabled="0" type="effectStack">
                 <effect type="drawSource">
