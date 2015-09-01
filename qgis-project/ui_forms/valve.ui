@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>551</width>
-    <height>458</height>
+    <width>609</width>
+    <height>476</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -30,34 +30,17 @@
    <item row="11" column="0">
     <widget class="QTabWidget" name="tabWidget">
      <property name="currentIndex">
-      <number>1</number>
+      <number>0</number>
      </property>
      <widget class="QWidget" name="tab">
       <attribute name="title">
        <string>Général</string>
       </attribute>
       <layout class="QGridLayout" name="gridLayout_3">
-       <item row="5" column="3" rowspan="3">
-        <widget class="QLabel" name="label_10">
+       <item row="0" column="0">
+        <widget class="QLabel" name="label">
          <property name="text">
-          <string>Maintenance</string>
-         </property>
-        </widget>
-       </item>
-       <item row="0" column="3">
-        <widget class="QLabel" name="label_20">
-         <property name="text">
-          <string>Distributeur</string>
-         </property>
-        </widget>
-       </item>
-       <item row="0" column="4">
-        <widget class="QComboBox" name="fk_distributor"/>
-       </item>
-       <item row="0" column="2" rowspan="9">
-        <widget class="Line" name="line_2">
-         <property name="orientation">
-          <enum>Qt::Vertical</enum>
+          <string>ID</string>
          </property>
         </widget>
        </item>
@@ -71,21 +54,22 @@
          </property>
         </widget>
        </item>
-       <item row="1" column="1">
-        <widget class="QLineEdit" name="identification"/>
-       </item>
-       <item row="2" column="1">
-        <widget class="QLineEdit" name="diameter_nominal"/>
-       </item>
-       <item row="4" column="1">
-        <widget class="QLineEdit" name="year"/>
-       </item>
-       <item row="0" column="0">
-        <widget class="QLabel" name="label">
-         <property name="text">
-          <string>ID</string>
+       <item row="0" column="2" rowspan="10" colspan="2">
+        <widget class="Line" name="line_2">
+         <property name="orientation">
+          <enum>Qt::Vertical</enum>
          </property>
         </widget>
+       </item>
+       <item row="0" column="4">
+        <widget class="QLabel" name="label_20">
+         <property name="text">
+          <string>Distributeur</string>
+         </property>
+        </widget>
+       </item>
+       <item row="0" column="5">
+        <widget class="QComboBox" name="fk_distributor"/>
        </item>
        <item row="1" column="0">
         <widget class="QLabel" name="label_2">
@@ -94,6 +78,19 @@
          </property>
         </widget>
        </item>
+       <item row="1" column="1">
+        <widget class="QLineEdit" name="identification"/>
+       </item>
+       <item row="1" column="4">
+        <widget class="QLabel" name="label_3">
+         <property name="text">
+          <string>Type</string>
+         </property>
+        </widget>
+       </item>
+       <item row="1" column="5">
+        <widget class="QComboBox" name="fk_type"/>
+       </item>
        <item row="2" column="0">
         <widget class="QLabel" name="label_8">
          <property name="text">
@@ -101,67 +98,80 @@
          </property>
         </widget>
        </item>
-       <item row="4" column="0">
-        <widget class="QLabel" name="label_7">
-         <property name="text">
-          <string>Année</string>
-         </property>
-        </widget>
+       <item row="2" column="1">
+        <widget class="QLineEdit" name="diameter_nominal"/>
        </item>
-       <item row="5" column="0">
-        <widget class="QCheckBox" name="closed">
-         <property name="text">
-          <string>Fermée</string>
-         </property>
-        </widget>
-       </item>
-       <item row="6" column="0">
-        <widget class="QCheckBox" name="networkseparation">
-         <property name="text">
-          <string>Séparation réseau</string>
-         </property>
-        </widget>
-       </item>
-       <item row="1" column="3">
-        <widget class="QLabel" name="label_3">
-         <property name="text">
-          <string>Type</string>
-         </property>
-        </widget>
-       </item>
-       <item row="1" column="4">
-        <widget class="QComboBox" name="fk_type"/>
-       </item>
-       <item row="2" column="3">
+       <item row="2" column="4">
         <widget class="QLabel" name="label_4">
          <property name="text">
           <string>Fonction</string>
          </property>
         </widget>
        </item>
-       <item row="2" column="4">
+       <item row="2" column="5">
         <widget class="QComboBox" name="fk_function"/>
        </item>
-       <item row="4" column="3">
+       <item row="3" column="0" rowspan="2">
+        <widget class="QLabel" name="label_25">
+         <property name="text">
+          <string>Dossier technique</string>
+         </property>
+        </widget>
+       </item>
+       <item row="3" column="1" rowspan="3">
+        <widget class="QgsRelationReferenceWidget" name="fk_folder"/>
+       </item>
+       <item row="3" column="4">
+        <widget class="QLabel" name="label_21">
+         <property name="text">
+          <string>Actionnement</string>
+         </property>
+        </widget>
+       </item>
+       <item row="3" column="5">
+        <widget class="QComboBox" name="fk_actuation"/>
+       </item>
+       <item row="4" column="5" rowspan="2">
+        <widget class="QComboBox" name="fk_status"/>
+       </item>
+       <item row="5" column="4">
         <widget class="QLabel" name="label_16">
          <property name="text">
           <string>Statut</string>
          </property>
         </widget>
        </item>
-       <item row="4" column="4">
-        <widget class="QComboBox" name="fk_status"/>
+       <item row="6" column="0" rowspan="2">
+        <widget class="QLabel" name="label_7">
+         <property name="text">
+          <string>Année</string>
+         </property>
+        </widget>
        </item>
-       <item row="5" column="4" rowspan="4">
+       <item row="6" column="1" rowspan="2">
+        <widget class="QLineEdit" name="year"/>
+       </item>
+       <item row="6" column="5" rowspan="4">
         <widget class="QListWidget" name="fk_maintenance"/>
        </item>
-       <item row="3" column="4">
-        <widget class="QComboBox" name="fk_actuation"/>
-       </item>
-       <item row="3" column="3">
-        <widget class="QLabel" name="label_21">
+       <item row="7" column="3" colspan="2">
+        <widget class="QLabel" name="label_10">
          <property name="text">
-          <string>Actionnement</string>
+          <string>Maintenance</string>
+         </property>
+        </widget>
+       </item>
+       <item row="8" column="0">
+        <widget class="QCheckBox" name="closed">
+         <property name="text">
+          <string>Fermée</string>
+         </property>
+        </widget>
+       </item>
+       <item row="9" column="0" colspan="2">
+        <widget class="QCheckBox" name="networkseparation">
+         <property name="text">
+          <string>Séparation réseau</string>
          </property>
         </widget>
        </item>
@@ -172,81 +182,6 @@
        <string>Géométrie</string>
       </attribute>
       <layout class="QGridLayout" name="gridLayout_2">
-       <item row="6" column="1">
-        <widget class="QComboBox" name="fk_node_precision">
-         <property name="sizeAdjustPolicy">
-          <enum>QComboBox::AdjustToContents</enum>
-         </property>
-        </widget>
-       </item>
-       <item row="6" column="0">
-        <widget class="QLabel" name="label_19">
-         <property name="text">
-          <string>Précision</string>
-         </property>
-        </widget>
-       </item>
-       <item row="2" column="2" rowspan="5">
-        <widget class="Line" name="line">
-         <property name="orientation">
-          <enum>Qt::Vertical</enum>
-         </property>
-        </widget>
-       </item>
-       <item row="2" column="1">
-        <widget class="QLineEdit" name="node_altitude"/>
-       </item>
-       <item row="2" column="0">
-        <widget class="QLabel" name="label_5">
-         <property name="text">
-          <string>Altitude réelle</string>
-         </property>
-        </widget>
-       </item>
-       <item row="4" column="1">
-        <widget class="QLineEdit" name="fk_pipe">
-         <property name="enabled">
-          <bool>true</bool>
-         </property>
-         <property name="readOnly">
-          <bool>true</bool>
-         </property>
-        </widget>
-       </item>
-       <item row="4" column="0">
-        <widget class="QLabel" name="label_13">
-         <property name="text">
-          <string>Conduite</string>
-         </property>
-        </widget>
-       </item>
-       <item row="7" column="1">
-        <spacer name="verticalSpacer_3">
-         <property name="orientation">
-          <enum>Qt::Vertical</enum>
-         </property>
-         <property name="sizeHint" stdset="0">
-          <size>
-           <width>20</width>
-           <height>40</height>
-          </size>
-         </property>
-        </spacer>
-       </item>
-       <item row="6" column="3">
-        <widget class="QLabel" name="label_14">
-         <property name="text">
-          <string>Zone de pression</string>
-         </property>
-        </widget>
-       </item>
-       <item row="6" column="4">
-        <widget class="QComboBox" name="fk_pressurezone">
-         <property name="enabled">
-          <bool>false</bool>
-         </property>
-        </widget>
-       </item>
        <item row="4" column="4">
         <widget class="QLineEdit" name="_districts">
          <property name="enabled">
@@ -257,20 +192,48 @@
          </property>
         </widget>
        </item>
-       <item row="3" column="4">
-        <widget class="QLineEdit" name="_printmaps">
-         <property name="enabled">
-          <bool>true</bool>
-         </property>
-         <property name="readOnly">
-          <bool>true</bool>
+       <item row="6" column="0">
+        <widget class="QLabel" name="label_19">
+         <property name="text">
+          <string>Précision</string>
          </property>
         </widget>
        </item>
-       <item row="4" column="3">
-        <widget class="QLabel" name="label_12">
+       <item row="4" column="0">
+        <widget class="QLabel" name="label_13">
          <property name="text">
-          <string>Communes</string>
+          <string>Conduite</string>
+         </property>
+        </widget>
+       </item>
+       <item row="3" column="1">
+        <widget class="QComboBox" name="fk_node_precisionalti"/>
+       </item>
+       <item row="6" column="4">
+        <widget class="QComboBox" name="fk_pressurezone">
+         <property name="enabled">
+          <bool>false</bool>
+         </property>
+        </widget>
+       </item>
+       <item row="8" column="2" colspan="2">
+        <widget class="QLabel" name="label_23">
+         <property name="text">
+          <string>Précision poignée</string>
+         </property>
+        </widget>
+       </item>
+       <item row="3" column="0">
+        <widget class="QLabel" name="label_6">
+         <property name="text">
+          <string>Précision alti.</string>
+         </property>
+        </widget>
+       </item>
+       <item row="2" column="0">
+        <widget class="QLabel" name="label_5">
+         <property name="text">
+          <string>Altitude réelle</string>
          </property>
         </widget>
        </item>
@@ -281,10 +244,31 @@
          </property>
         </widget>
        </item>
-       <item row="2" column="3">
-        <widget class="QLabel" name="label_11">
+       <item row="2" column="2" rowspan="5">
+        <widget class="Line" name="line">
+         <property name="orientation">
+          <enum>Qt::Vertical</enum>
+         </property>
+        </widget>
+       </item>
+       <item row="6" column="1">
+        <widget class="QComboBox" name="fk_node_precision">
+         <property name="sizeAdjustPolicy">
+          <enum>QComboBox::AdjustToContents</enum>
+         </property>
+        </widget>
+       </item>
+       <item row="6" column="3">
+        <widget class="QLabel" name="label_14">
          <property name="text">
-          <string>Noeud</string>
+          <string>Zone de pression</string>
+         </property>
+        </widget>
+       </item>
+       <item row="4" column="3">
+        <widget class="QLabel" name="label_12">
+         <property name="text">
+          <string>Communes</string>
          </property>
         </widget>
        </item>
@@ -298,17 +282,97 @@
          </property>
         </widget>
        </item>
-       <item row="3" column="1">
-        <widget class="QComboBox" name="fk_node_precisionalti"/>
+       <item row="2" column="1">
+        <widget class="QLineEdit" name="node_altitude"/>
        </item>
-       <item row="3" column="0">
-        <widget class="QLabel" name="label_6">
+       <item row="7" column="2" colspan="2">
+        <widget class="QLabel" name="label_22">
          <property name="text">
-          <string>Précision alti.</string>
+          <string>Altitude poignée</string>
+         </property>
+        </widget>
+       </item>
+       <item row="9" column="4">
+        <widget class="QComboBox" name="fk_handle_precisionalti"/>
+       </item>
+       <item row="7" column="4">
+        <widget class="QLineEdit" name="handle_altitude"/>
+       </item>
+       <item row="3" column="4">
+        <widget class="QLineEdit" name="_printmaps">
+         <property name="enabled">
+          <bool>true</bool>
+         </property>
+         <property name="readOnly">
+          <bool>true</bool>
+         </property>
+        </widget>
+       </item>
+       <item row="8" column="4">
+        <widget class="QComboBox" name="fk_handle_precision"/>
+       </item>
+       <item row="4" column="1">
+        <widget class="QLineEdit" name="fk_pipe">
+         <property name="enabled">
+          <bool>true</bool>
+         </property>
+         <property name="readOnly">
+          <bool>true</bool>
+         </property>
+        </widget>
+       </item>
+       <item row="2" column="3">
+        <widget class="QLabel" name="label_11">
+         <property name="text">
+          <string>Noeud</string>
+         </property>
+        </widget>
+       </item>
+       <item row="9" column="1">
+        <spacer name="verticalSpacer_3">
+         <property name="orientation">
+          <enum>Qt::Vertical</enum>
+         </property>
+         <property name="sizeHint" stdset="0">
+          <size>
+           <width>20</width>
+           <height>40</height>
+          </size>
+         </property>
+        </spacer>
+       </item>
+       <item row="9" column="2" colspan="2">
+        <widget class="QLabel" name="label_24">
+         <property name="text">
+          <string>Précision alti. poignée</string>
          </property>
         </widget>
        </item>
       </layout>
+      <zorder>fk_node_precision</zorder>
+      <zorder>label_19</zorder>
+      <zorder>line</zorder>
+      <zorder>node_altitude</zorder>
+      <zorder>label_5</zorder>
+      <zorder>fk_pipe</zorder>
+      <zorder>label_13</zorder>
+      <zorder>label_14</zorder>
+      <zorder>fk_pressurezone</zorder>
+      <zorder>_districts</zorder>
+      <zorder>_printmaps</zorder>
+      <zorder>label_12</zorder>
+      <zorder>label_15</zorder>
+      <zorder>label_11</zorder>
+      <zorder>fk_node</zorder>
+      <zorder>fk_node_precisionalti</zorder>
+      <zorder>label_6</zorder>
+      <zorder>verticalSpacer_3</zorder>
+      <zorder>handle_altitude</zorder>
+      <zorder>fk_handle_precision</zorder>
+      <zorder>fk_handle_precisionalti</zorder>
+      <zorder>label_22</zorder>
+      <zorder>label_23</zorder>
+      <zorder>label_24</zorder>
      </widget>
      <widget class="QWidget" name="tab_3">
       <attribute name="title">
@@ -450,6 +514,13 @@
    </item>
   </layout>
  </widget>
+ <customwidgets>
+  <customwidget>
+   <class>QgsRelationReferenceWidget</class>
+   <extends>QWidget</extends>
+   <header>qgsrelationreferencewidget.h</header>
+  </customwidget>
+ </customwidgets>
  <resources/>
  <connections>
   <connection>
