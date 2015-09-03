@@ -380,6 +380,12 @@
     <relation referencingLayer="od_subscriber_reference20131206105928067" referencedLayer="subscriber20130304110011459" id="relation_subscriber_reference" name="Abonné - renvoi">
       <fieldRef referencedField="id" referencingField="fk_subscriber"/>
     </relation>
+    <relation referencingLayer="valve20130304110011497" referencedLayer="folder20150629160924367" id="relation_vanne_folder" name="Vanne - Dossier Technique">
+      <fieldRef referencedField="id" referencingField="fk_folder"/>
+    </relation>
+    <relation referencingLayer="hydrant20130304110004848" referencedLayer="folder20150629160924367" id="relation_hydrant_folder" name="Hydrant - Dossier Technique">
+      <fieldRef referencedField="id" referencingField="fk_folder"/>
+    </relation>
   </relations>
   <mapcanvas>
     <units>meters</units>
@@ -29304,8 +29310,8 @@
         <edittype widgetv2type="TextEdit" name="fk_locationtype">
           <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
         </edittype>
-        <edittype widgetv2type="TextEdit" name="fk_folder">
-          <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
+        <edittype widgetv2type="RelationReference" name="fk_folder">
+          <widgetv2config OrderByValue="1" fieldEditable="1" ShowForm="0" Relation="relation_hydrant_folder" ReadOnly="0" MapIdentification="1" labelOnTop="0" AllowNULL="1"/>
         </edittype>
         <edittype widgetv2type="TextEdit" name="year">
           <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
@@ -45005,8 +45011,8 @@
         <edittype widgetv2type="TextEdit" name="fk_locationtype">
           <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
         </edittype>
-        <edittype widgetv2type="TextEdit" name="fk_folder">
-          <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
+        <edittype widgetv2type="RelationReference" name="fk_folder">
+          <widgetv2config OrderByValue="1" fieldEditable="1" ShowForm="0" Relation="relation_vanne_folder" ReadOnly="0" MapIdentification="1" labelOnTop="0" AllowNULL="1"/>
         </edittype>
         <edittype widgetv2type="TextEdit" name="diameter_nominal">
           <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>

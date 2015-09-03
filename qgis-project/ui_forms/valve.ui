@@ -182,6 +182,16 @@
        <string>Géométrie</string>
       </attribute>
       <layout class="QGridLayout" name="gridLayout_2">
+       <item row="9" column="4">
+        <widget class="QComboBox" name="fk_handle_precisionalti"/>
+       </item>
+       <item row="2" column="0">
+        <widget class="QLabel" name="label_5">
+         <property name="text">
+          <string>Altitude réelle</string>
+         </property>
+        </widget>
+       </item>
        <item row="4" column="4">
         <widget class="QLineEdit" name="_districts">
          <property name="enabled">
@@ -230,13 +240,6 @@
          </property>
         </widget>
        </item>
-       <item row="2" column="0">
-        <widget class="QLabel" name="label_5">
-         <property name="text">
-          <string>Altitude réelle</string>
-         </property>
-        </widget>
-       </item>
        <item row="3" column="3">
         <widget class="QLabel" name="label_15">
          <property name="text">
@@ -250,6 +253,19 @@
           <enum>Qt::Vertical</enum>
          </property>
         </widget>
+       </item>
+       <item row="10" column="1">
+        <spacer name="verticalSpacer_3">
+         <property name="orientation">
+          <enum>Qt::Vertical</enum>
+         </property>
+         <property name="sizeHint" stdset="0">
+          <size>
+           <width>20</width>
+           <height>40</height>
+          </size>
+         </property>
+        </spacer>
        </item>
        <item row="6" column="1">
         <widget class="QComboBox" name="fk_node_precision">
@@ -292,9 +308,6 @@
          </property>
         </widget>
        </item>
-       <item row="9" column="4">
-        <widget class="QComboBox" name="fk_handle_precisionalti"/>
-       </item>
        <item row="7" column="4">
         <widget class="QLineEdit" name="handle_altitude"/>
        </item>
@@ -328,19 +341,6 @@
          </property>
         </widget>
        </item>
-       <item row="9" column="1">
-        <spacer name="verticalSpacer_3">
-         <property name="orientation">
-          <enum>Qt::Vertical</enum>
-         </property>
-         <property name="sizeHint" stdset="0">
-          <size>
-           <width>20</width>
-           <height>40</height>
-          </size>
-         </property>
-        </spacer>
-       </item>
        <item row="9" column="2" colspan="2">
         <widget class="QLabel" name="label_24">
          <property name="text">
@@ -369,9 +369,9 @@
       <zorder>verticalSpacer_3</zorder>
       <zorder>handle_altitude</zorder>
       <zorder>fk_handle_precision</zorder>
-      <zorder>fk_handle_precisionalti</zorder>
       <zorder>label_22</zorder>
       <zorder>label_23</zorder>
+      <zorder>fk_handle_precisionalti</zorder>
       <zorder>label_24</zorder>
      </widget>
      <widget class="QWidget" name="tab_3">
