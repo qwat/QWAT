@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>477</width>
-    <height>505</height>
+    <width>491</width>
+    <height>520</height>
    </rect>
   </property>
   <property name="sizePolicy">
@@ -123,62 +123,12 @@
      </property>
     </spacer>
    </item>
-   <item row="2" column="4">
-    <widget class="QLabel" name="label_2">
-     <property name="text">
-      <string>Type</string>
-     </property>
-    </widget>
-   </item>
-   <item row="4" column="4">
-    <widget class="QLabel" name="label_4">
-     <property name="text">
-      <string>Conduite</string>
-     </property>
-    </widget>
-   </item>
-   <item row="6" column="4">
-    <widget class="QLabel" name="label_3">
-     <property name="text">
-      <string>Statut</string>
-     </property>
-    </widget>
-   </item>
-   <item row="7" column="4">
-    <widget class="QLabel" name="label_7">
-     <property name="text">
-      <string>Parcelle</string>
-     </property>
-    </widget>
-   </item>
-   <item row="2" column="5">
-    <widget class="QComboBox" name="fk_type"/>
-   </item>
-   <item row="6" column="5">
-    <widget class="QComboBox" name="fk_status"/>
-   </item>
-   <item row="7" column="5">
-    <widget class="QLineEdit" name="parcel"/>
-   </item>
-   <item row="8" column="5">
-    <widget class="QComboBox" name="fk_district"/>
-   </item>
    <item row="5" column="5" colspan="2">
     <widget class="Line" name="line_3">
      <property name="orientation">
       <enum>Qt::Horizontal</enum>
      </property>
     </widget>
-   </item>
-   <item row="8" column="4">
-    <widget class="QLabel" name="label_8">
-     <property name="text">
-      <string>Commune</string>
-     </property>
-    </widget>
-   </item>
-   <item row="4" column="5">
-    <widget class="QgsRelationReferenceWidget" name="fk_pipe"/>
    </item>
    <item row="10" column="0" colspan="6">
     <widget class="QPlainTextEdit" name="remark"/>
@@ -192,6 +142,46 @@
       <set>QDialogButtonBox::Cancel|QDialogButtonBox::Ok</set>
      </property>
     </widget>
+   </item>
+   <item row="2" column="4">
+    <widget class="QLabel" name="label_4">
+     <property name="text">
+      <string>Conduite</string>
+     </property>
+    </widget>
+   </item>
+   <item row="2" column="5">
+    <widget class="QgsRelationReferenceWidget" name="fk_pipe"/>
+   </item>
+   <item row="4" column="4">
+    <widget class="QLabel" name="label_3">
+     <property name="text">
+      <string>Statut</string>
+     </property>
+    </widget>
+   </item>
+   <item row="4" column="5">
+    <widget class="QComboBox" name="fk_status"/>
+   </item>
+   <item row="6" column="4">
+    <widget class="QLabel" name="label_7">
+     <property name="text">
+      <string>Parcelle</string>
+     </property>
+    </widget>
+   </item>
+   <item row="6" column="5">
+    <widget class="QLineEdit" name="parcel"/>
+   </item>
+   <item row="7" column="4">
+    <widget class="QLabel" name="label_8">
+     <property name="text">
+      <string>Commune</string>
+     </property>
+    </widget>
+   </item>
+   <item row="7" column="5">
+    <widget class="QComboBox" name="fk_district"/>
    </item>
   </layout>
  </widget>
