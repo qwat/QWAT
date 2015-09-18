@@ -14,35 +14,6 @@
    <string>Ouvrage - Réservoir</string>
   </property>
   <layout class="QGridLayout" name="gridLayout_3">
-   <item row="0" column="0">
-    <widget class="QWidget" name="widget" native="true">
-     <layout class="QGridLayout" name="gridLayout_2">
-      <property name="margin">
-       <number>0</number>
-      </property>
-      <item row="0" column="1">
-       <widget class="QLineEdit" name="id"/>
-      </item>
-      <item row="0" column="3">
-       <widget class="QComboBox" name="fk_installation"/>
-      </item>
-      <item row="0" column="2">
-       <widget class="QLabel" name="label_2">
-        <property name="text">
-         <string>Ouvrage</string>
-        </property>
-       </widget>
-      </item>
-      <item row="0" column="0">
-       <widget class="QLabel" name="label">
-        <property name="text">
-         <string>ID</string>
-        </property>
-       </widget>
-      </item>
-     </layout>
-    </widget>
-   </item>
    <item row="2" column="0">
     <widget class="QDialogButtonBox" name="buttonBox">
      <property name="orientation">
@@ -51,6 +22,15 @@
      <property name="standardButtons">
       <set>QDialogButtonBox::Cancel|QDialogButtonBox::Ok</set>
      </property>
+    </widget>
+   </item>
+   <item row="0" column="0">
+    <widget class="QWidget" name="widget" native="true">
+     <layout class="QGridLayout" name="gridLayout_2">
+      <property name="margin">
+       <number>0</number>
+      </property>
+     </layout>
     </widget>
    </item>
    <item row="1" column="0">
@@ -379,9 +359,7 @@
   <tabstop>remark</tabstop>
   <tabstop>_litrepercm</tabstop>
   <tabstop>buttonBox</tabstop>
-  <tabstop>id</tabstop>
   <tabstop>tabWidget</tabstop>
-  <tabstop>fk_installation</tabstop>
   <tabstop>cistern1_dimension_1</tabstop>
   <tabstop>cistern1_dimension_2</tabstop>
   <tabstop>cistern1_storage</tabstop>

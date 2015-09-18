@@ -17,10 +17,48 @@
    <double>1.000000000000000</double>
   </property>
   <layout class="QGridLayout" name="gridLayout">
-   <item row="1" column="1">
-    <widget class="QLineEdit" name="id">
-     <property name="readOnly">
-      <bool>true</bool>
+   <item row="3" column="0">
+    <widget class="QLabel" name="label_8">
+     <property name="text">
+      <string>Statut</string>
+     </property>
+    </widget>
+   </item>
+   <item row="3" column="4">
+    <widget class="QLineEdit" name="eca"/>
+   </item>
+   <item row="2" column="0">
+    <widget class="QLabel" name="label_2">
+     <property name="text">
+      <string>Nom</string>
+     </property>
+    </widget>
+   </item>
+   <item row="6" column="4">
+    <widget class="QComboBox" name="fk_precisionalti"/>
+   </item>
+   <item row="9" column="0" colspan="5">
+    <widget class="QWidget" name="childWidget" native="true">
+     <layout class="QGridLayout" name="gridLayout_2"/>
+    </widget>
+   </item>
+   <item row="4" column="2">
+    <widget class="QLabel" name="label_6">
+     <property name="text">
+      <string>Parcelle</string>
+     </property>
+    </widget>
+   </item>
+   <item row="8" column="1">
+    <widget class="QComboBox" name="fk_remote"/>
+   </item>
+   <item row="2" column="1">
+    <widget class="QLineEdit" name="name"/>
+   </item>
+   <item row="6" column="0">
+    <widget class="QLabel" name="label_10">
+     <property name="text">
+      <string>Altitude</string>
      </property>
     </widget>
    </item>
@@ -31,192 +69,17 @@
      </property>
     </widget>
    </item>
-   <item row="8" column="0" colspan="4">
-    <widget class="QTabWidget" name="tabWidget">
-     <property name="currentIndex">
-      <number>0</number>
-     </property>
-     <widget class="QWidget" name="tab">
-      <attribute name="title">
-       <string>Réservoir</string>
-      </attribute>
-      <layout class="QGridLayout" name="gridLayout_3">
-       <item row="0" column="0">
-        <widget class="QWidget" name="widget" native="true">
-         <property name="qgisRelation" stdset="0">
-          <string>relation_installationbuilding_tank</string>
-         </property>
-        </widget>
-       </item>
-      </layout>
-     </widget>
-     <widget class="QWidget" name="tab_3">
-      <attribute name="title">
-       <string>Source</string>
-      </attribute>
-      <layout class="QGridLayout" name="gridLayout_5">
-       <item row="0" column="0">
-        <widget class="QWidget" name="widget_4" native="true">
-         <property name="qgisRelation" stdset="0">
-          <string>relation_installationbuilding_source</string>
-         </property>
-        </widget>
-       </item>
-      </layout>
-     </widget>
-     <widget class="QWidget" name="tab_4">
-      <attribute name="title">
-       <string>Pompage</string>
-      </attribute>
-      <layout class="QGridLayout" name="gridLayout_4">
-       <item row="0" column="0">
-        <widget class="QWidget" name="widget_2" native="true">
-         <property name="qgisRelation" stdset="0">
-          <string>relation_installationbuilding_pump</string>
-         </property>
-        </widget>
-       </item>
-      </layout>
-     </widget>
-     <widget class="QWidget" name="tab_5">
-      <attribute name="title">
-       <string>Traitement</string>
-      </attribute>
-      <layout class="QGridLayout" name="gridLayout_6">
-       <item row="0" column="0">
-        <widget class="QWidget" name="widget_5" native="true">
-         <property name="qgisRelation" stdset="0">
-          <string>relation_installationbuilding_treatment</string>
-         </property>
-        </widget>
-       </item>
-      </layout>
-     </widget>
-     <widget class="QWidget" name="tab_6">
-      <attribute name="title">
-       <string>Régulation de pression</string>
-      </attribute>
-      <layout class="QGridLayout" name="gridLayout_7">
-       <item row="0" column="0">
-        <widget class="QWidget" name="widget_6" native="true">
-         <property name="qgisRelation" stdset="0">
-          <string>relation_installationbuilding_pressurecontrol</string>
-         </property>
-        </widget>
-       </item>
-      </layout>
-     </widget>
-     <widget class="QWidget" name="tab_2">
-      <attribute name="title">
-       <string>Chambre de vannes</string>
-      </attribute>
-      <layout class="QGridLayout" name="gridLayout_2">
-       <item row="0" column="0">
-        <widget class="QWidget" name="widget_7" native="true">
-         <property name="qgisRelation" stdset="0">
-          <string>relation_installationbuilding_chamber</string>
-         </property>
-        </widget>
-       </item>
-      </layout>
-     </widget>
-     <widget class="QWidget" name="tab_7">
-      <attribute name="title">
-       <string>Emplacement</string>
-      </attribute>
-      <layout class="QGridLayout" name="gridLayout_8">
-       <item row="0" column="0">
-        <layout class="QVBoxLayout" name="verticalLayout">
-         <item>
-          <widget class="QListWidget" name="fk_locationtype"/>
-         </item>
-        </layout>
-       </item>
-      </layout>
-     </widget>
-    </widget>
-   </item>
-   <item row="10" column="0" colspan="4">
-    <widget class="QDialogButtonBox" name="buttonBox">
-     <property name="orientation">
-      <enum>Qt::Horizontal</enum>
-     </property>
-     <property name="standardButtons">
-      <set>QDialogButtonBox::Cancel|QDialogButtonBox::Ok</set>
-     </property>
-    </widget>
-   </item>
-   <item row="3" column="1">
-    <widget class="QComboBox" name="fk_status"/>
-   </item>
-   <item row="3" column="0">
-    <widget class="QLabel" name="label_8">
-     <property name="text">
-      <string>Statut</string>
-     </property>
-    </widget>
-   </item>
-   <item row="2" column="0">
-    <widget class="QLabel" name="label_2">
-     <property name="text">
-      <string>Nom</string>
-     </property>
-    </widget>
-   </item>
    <item row="6" column="1">
     <widget class="QLineEdit" name="altitude"/>
    </item>
-   <item row="4" column="1">
-    <widget class="QCheckBox" name="schema_visible">
-     <property name="layoutDirection">
-      <enum>Qt::LeftToRight</enum>
-     </property>
-     <property name="text">
-      <string>Visible schéma</string>
+   <item row="1" column="4">
+    <widget class="QComboBox" name="installation_type">
+     <property name="enabled">
+      <bool>false</bool>
      </property>
     </widget>
    </item>
-   <item row="11" column="0">
-    <widget class="QWidget" name="widget_3" native="true"/>
-   </item>
-   <item row="2" column="1">
-    <widget class="QLineEdit" name="name"/>
-   </item>
-   <item row="5" column="0">
-    <widget class="QLabel" name="label_5">
-     <property name="text">
-      <string>Année</string>
-     </property>
-    </widget>
-   </item>
-   <item row="5" column="2">
-    <widget class="QLabel" name="label_7">
-     <property name="text">
-      <string>ECA</string>
-     </property>
-    </widget>
-   </item>
-   <item row="6" column="3">
-    <widget class="QComboBox" name="fk_precisionalti"/>
-   </item>
-   <item row="5" column="1">
-    <widget class="QLineEdit" name="year"/>
-   </item>
-   <item row="6" column="2">
-    <widget class="QLabel" name="label_9">
-     <property name="text">
-      <string>Précision alti.</string>
-     </property>
-    </widget>
-   </item>
-   <item row="4" column="2">
-    <widget class="QLabel" name="label_6">
-     <property name="text">
-      <string>Parcelle</string>
-     </property>
-    </widget>
-   </item>
-   <item row="9" column="0" colspan="4">
+   <item row="10" column="0" colspan="5">
     <widget class="QPlainTextEdit" name="remark">
      <property name="maximumSize">
       <size>
@@ -229,36 +92,110 @@
      </property>
     </widget>
    </item>
-   <item row="5" column="3">
-    <widget class="QLineEdit" name="eca"/>
-   </item>
-   <item row="6" column="0">
-    <widget class="QLabel" name="label_10">
-     <property name="text">
-      <string>Altitude</string>
-     </property>
-    </widget>
-   </item>
-   <item row="4" column="3">
-    <widget class="QLineEdit" name="parcel"/>
-   </item>
-   <item row="3" column="3">
-    <widget class="QComboBox" name="fk_type"/>
+   <item row="5" column="1">
+    <widget class="QLineEdit" name="year"/>
    </item>
    <item row="3" column="2">
-    <widget class="QLabel" name="label_3">
+    <widget class="QLabel" name="label_7">
      <property name="text">
-      <string>Type</string>
+      <string>ECA</string>
      </property>
     </widget>
    </item>
-   <item row="2" column="3">
+   <item row="6" column="2">
+    <widget class="QLabel" name="label_9">
+     <property name="text">
+      <string>Précision alti.</string>
+     </property>
+    </widget>
+   </item>
+   <item row="8" column="0">
+    <widget class="QLabel" name="label_12">
+     <property name="text">
+      <string>Télécom.</string>
+     </property>
+    </widget>
+   </item>
+   <item row="5" column="0">
+    <widget class="QLabel" name="label_5">
+     <property name="text">
+      <string>Année</string>
+     </property>
+    </widget>
+   </item>
+   <item row="2" column="4">
     <widget class="QLineEdit" name="identification"/>
    </item>
    <item row="2" column="2">
     <widget class="QLabel" name="label_4">
      <property name="text">
       <string>Identification</string>
+     </property>
+    </widget>
+   </item>
+   <item row="3" column="1">
+    <widget class="QComboBox" name="fk_status"/>
+   </item>
+   <item row="5" column="2">
+    <widget class="QLabel" name="label_3">
+     <property name="text">
+      <string>Anée fin</string>
+     </property>
+    </widget>
+   </item>
+   <item row="11" column="0" colspan="5">
+    <widget class="QDialogButtonBox" name="buttonBox">
+     <property name="orientation">
+      <enum>Qt::Horizontal</enum>
+     </property>
+     <property name="standardButtons">
+      <set>QDialogButtonBox::Cancel|QDialogButtonBox::Ok</set>
+     </property>
+    </widget>
+   </item>
+   <item row="4" column="4">
+    <widget class="QLineEdit" name="parcel"/>
+   </item>
+   <item row="1" column="1">
+    <widget class="QLineEdit" name="id">
+     <property name="enabled">
+      <bool>false</bool>
+     </property>
+     <property name="readOnly">
+      <bool>true</bool>
+     </property>
+    </widget>
+   </item>
+   <item row="4" column="0">
+    <widget class="QLabel" name="label_11">
+     <property name="text">
+      <string>Distributeur</string>
+     </property>
+    </widget>
+   </item>
+   <item row="8" column="4">
+    <widget class="QComboBox" name="fk_watertype"/>
+   </item>
+   <item row="4" column="1">
+    <widget class="QComboBox" name="fk_distributor"/>
+   </item>
+   <item row="5" column="4">
+    <widget class="QLineEdit" name="year_end"/>
+   </item>
+   <item row="8" column="2">
+    <widget class="QLabel" name="label_13">
+     <property name="text">
+      <string>Type d'eau</string>
+     </property>
+    </widget>
+   </item>
+   <item row="7" column="1">
+    <widget class="QComboBox" name="fk_object_reference"/>
+   </item>
+   <item row="7" column="0">
+    <widget class="QLabel" name="label_14">
+     <property name="text">
+      <string>Pt. de réf.</string>
      </property>
     </widget>
    </item>
