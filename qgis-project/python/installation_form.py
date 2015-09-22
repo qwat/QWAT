@@ -14,9 +14,9 @@ def formOpen(dialog, layer, feature):
 	            'tank',
 	            'treatment']
 
-	subForms.remove(insType)
-
 	for sf in subForms:
+		if sf == insType:
+			continue
 		childWidget = dialog.findChild(QWidget, sf)
 		childWidget.hide()
 
