@@ -7,7 +7,7 @@
     <x>0</x>
     <y>0</y>
     <width>686</width>
-    <height>1733</height>
+    <height>1778</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -17,7 +17,7 @@
    <double>1.000000000000000</double>
   </property>
   <layout class="QGridLayout" name="gridLayout">
-   <item row="17" column="0">
+   <item row="18" column="0">
     <widget class="QDialogButtonBox" name="buttonBox">
      <property name="orientation">
       <enum>Qt::Horizontal</enum>
@@ -456,6 +456,88 @@
      </layout>
     </widget>
    </item>
+   <item row="15" column="0">
+    <widget class="QGroupBox" name="treatment">
+     <property name="title">
+      <string>Traitement</string>
+     </property>
+     <layout class="QGridLayout" name="gridLayout_9">
+      <item row="0" column="0" colspan="2">
+       <widget class="QCheckBox" name="sanitization_uv">
+        <property name="text">
+         <string>désinfection UV</string>
+        </property>
+       </widget>
+      </item>
+      <item row="0" column="2">
+       <widget class="QCheckBox" name="filtration_membrane">
+        <property name="text">
+         <string>filtration membranaire</string>
+        </property>
+       </widget>
+      </item>
+      <item row="1" column="0" colspan="2">
+       <widget class="QCheckBox" name="sanitization_chlorine_liquid">
+        <property name="text">
+         <string>désinfection chlore liquide</string>
+        </property>
+       </widget>
+      </item>
+      <item row="1" column="2">
+       <widget class="QCheckBox" name="filtration_sandorgravel">
+        <property name="text">
+         <string>filtration à sable</string>
+        </property>
+       </widget>
+      </item>
+      <item row="2" column="0" colspan="2">
+       <widget class="QCheckBox" name="sanitization_chlorine_gazeous">
+        <property name="text">
+         <string>désinfection chlore gazeux</string>
+        </property>
+       </widget>
+      </item>
+      <item row="2" column="2">
+       <widget class="QCheckBox" name="flocculation">
+        <property name="text">
+         <string>flocculation</string>
+        </property>
+       </widget>
+      </item>
+      <item row="3" column="0" colspan="2">
+       <widget class="QCheckBox" name="sanitization_ozone">
+        <property name="text">
+         <string>désinfection ozone</string>
+        </property>
+       </widget>
+      </item>
+      <item row="3" column="2">
+       <widget class="QCheckBox" name="activatedcharcoal">
+        <property name="text">
+         <string>charbon actif</string>
+        </property>
+       </widget>
+      </item>
+      <item row="4" column="2">
+       <widget class="QCheckBox" name="settling">
+        <property name="text">
+         <string>décantation</string>
+        </property>
+       </widget>
+      </item>
+      <item row="5" column="0">
+       <widget class="QLabel" name="label_51">
+        <property name="text">
+         <string>capacité</string>
+        </property>
+       </widget>
+      </item>
+      <item row="5" column="1" colspan="2">
+       <widget class="QLineEdit" name="treatment_capacity"/>
+      </item>
+     </layout>
+    </widget>
+   </item>
    <item row="14" column="0">
     <widget class="QTabWidget" name="tank">
      <property name="currentIndex">
@@ -766,87 +848,18 @@
      </widget>
     </widget>
    </item>
-   <item row="15" column="0">
-    <widget class="QGroupBox" name="treatment">
-     <property name="title">
-      <string>Traitement</string>
+   <item row="17" column="0">
+    <spacer name="verticalSpacer_2">
+     <property name="orientation">
+      <enum>Qt::Vertical</enum>
      </property>
-     <layout class="QGridLayout" name="gridLayout_9">
-      <item row="0" column="0" colspan="2">
-       <widget class="QCheckBox" name="sanitization_uv">
-        <property name="text">
-         <string>désinfection UV</string>
-        </property>
-       </widget>
-      </item>
-      <item row="0" column="2">
-       <widget class="QCheckBox" name="filtration_membrane">
-        <property name="text">
-         <string>filtration membranaire</string>
-        </property>
-       </widget>
-      </item>
-      <item row="1" column="0" colspan="2">
-       <widget class="QCheckBox" name="sanitization_chlorine_liquid">
-        <property name="text">
-         <string>désinfection chlore liquide</string>
-        </property>
-       </widget>
-      </item>
-      <item row="1" column="2">
-       <widget class="QCheckBox" name="filtration_sandorgravel">
-        <property name="text">
-         <string>filtration à sable</string>
-        </property>
-       </widget>
-      </item>
-      <item row="2" column="0" colspan="2">
-       <widget class="QCheckBox" name="sanitization_chlorine_gazeous">
-        <property name="text">
-         <string>désinfection chlore gazeux</string>
-        </property>
-       </widget>
-      </item>
-      <item row="2" column="2">
-       <widget class="QCheckBox" name="flocculation">
-        <property name="text">
-         <string>flocculation</string>
-        </property>
-       </widget>
-      </item>
-      <item row="3" column="0" colspan="2">
-       <widget class="QCheckBox" name="sanitization_ozone">
-        <property name="text">
-         <string>désinfection ozone</string>
-        </property>
-       </widget>
-      </item>
-      <item row="3" column="2">
-       <widget class="QCheckBox" name="activatedcharcoal">
-        <property name="text">
-         <string>charbon actif</string>
-        </property>
-       </widget>
-      </item>
-      <item row="4" column="2">
-       <widget class="QCheckBox" name="settling">
-        <property name="text">
-         <string>décantation</string>
-        </property>
-       </widget>
-      </item>
-      <item row="5" column="0">
-       <widget class="QLabel" name="label_51">
-        <property name="text">
-         <string>capacité</string>
-        </property>
-       </widget>
-      </item>
-      <item row="5" column="1" colspan="2">
-       <widget class="QLineEdit" name="treatment_capacity"/>
-      </item>
-     </layout>
-    </widget>
+     <property name="sizeHint" stdset="0">
+      <size>
+       <width>20</width>
+       <height>40</height>
+      </size>
+     </property>
+    </spacer>
    </item>
   </layout>
  </widget>
