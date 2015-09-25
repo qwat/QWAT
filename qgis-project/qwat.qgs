@@ -5,9 +5,9 @@
     <customproperties/>
     <layer-tree-group expanded="1" checked="Qt::PartiallyChecked" name="Réseau">
       <customproperties/>
-      <layer-tree-group expanded="1" checked="Qt::PartiallyChecked" name="ouvrages">
+      <layer-tree-group expanded="0" checked="Qt::PartiallyChecked" name="ouvrages">
         <customproperties/>
-        <layer-tree-layer expanded="1" checked="Qt::Checked" id="vw_qwat_installation20150918153835436" name="ouvrage">
+        <layer-tree-layer expanded="0" checked="Qt::Checked" id="vw_qwat_installation20150918153835436" name="ouvrage">
           <customproperties/>
         </layer-tree-layer>
         <layer-tree-layer expanded="0" checked="Qt::Unchecked" id="od_cover20141219115626229" name="couvercles">
@@ -70,15 +70,15 @@
         </layer-tree-layer>
       </layer-tree-group>
     </layer-tree-group>
-    <layer-tree-group expanded="1" checked="Qt::Unchecked" name="Schématique">
+    <layer-tree-group expanded="0" checked="Qt::Unchecked" name="Schématique">
       <customproperties/>
-      <layer-tree-group expanded="1" checked="Qt::Unchecked" name="impression">
+      <layer-tree-group expanded="0" checked="Qt::Unchecked" name="impression">
         <customproperties/>
         <layer-tree-layer expanded="0" checked="Qt::Unchecked" id="vw_pipe_schema20141208162900166" name="conduite impression 5000">
           <customproperties/>
         </layer-tree-layer>
       </layer-tree-group>
-      <layer-tree-group expanded="1" checked="Qt::Unchecked" name="edition">
+      <layer-tree-group expanded="0" checked="Qt::Unchecked" name="edition">
         <customproperties/>
         <layer-tree-layer expanded="0" checked="Qt::Unchecked" id="vannes_copy20141127160745910" name="vannes edition 5000">
           <customproperties/>
@@ -91,7 +91,7 @@
         </layer-tree-layer>
       </layer-tree-group>
     </layer-tree-group>
-    <layer-tree-group expanded="1" checked="Qt::Checked" name="Annotations">
+    <layer-tree-group expanded="0" checked="Qt::Checked" name="Annotations">
       <customproperties/>
       <layer-tree-layer expanded="0" checked="Qt::Checked" id="od_annotationline20131203095020365" name="annotation - ligne">
         <customproperties/>
@@ -157,7 +157,7 @@
         <customproperties/>
       </layer-tree-layer>
     </layer-tree-group>
-    <layer-tree-group expanded="1" checked="Qt::Unchecked" name="Plans">
+    <layer-tree-group expanded="0" checked="Qt::Unchecked" name="Plans">
       <customproperties/>
       <layer-tree-layer expanded="1" checked="Qt::Unchecked" id="Landeskarte_1_25_000___LK2520150306095331254" name="CN - toutes échelles">
         <customproperties/>
@@ -178,7 +178,7 @@
         </layer-tree-layer>
       </layer-tree-group>
     </layer-tree-group>
-    <layer-tree-group expanded="0" checked="Qt::Unchecked" name="Tables auxiliaires">
+    <layer-tree-group expanded="0" checked="Qt::PartiallyChecked" name="Tables auxiliaires">
       <customproperties/>
       <layer-tree-layer expanded="1" checked="Qt::Unchecked" id="locationtype20150922082741813" name="accès">
         <customproperties/>
@@ -211,6 +211,9 @@
         <customproperties/>
       </layer-tree-layer>
       <layer-tree-layer expanded="1" checked="Qt::Unchecked" id="hydrant_provider20130304110004893" name="hydrantes - fournisseur">
+        <customproperties/>
+      </layer-tree-layer>
+      <layer-tree-layer expanded="1" checked="Qt::Checked" id="hydrant_material20150925104534891" name="hydrantes - matériau">
         <customproperties/>
       </layer-tree-layer>
       <layer-tree-layer expanded="1" checked="Qt::Unchecked" id="vl_bedding20141219112927344" name="lit de pose">
@@ -344,10 +347,10 @@
   <mapcanvas>
     <units>meters</units>
     <extent>
-      <xmin>558068.94999332341831177</xmin>
-      <ymin>138463.96024984878022224</ymin>
-      <xmax>565023.18957579589914531</xmax>
-      <ymax>145782.84160810435423627</ymax>
+      <xmin>555106.85137373628094792</xmin>
+      <ymin>144759.81606967310653999</ymin>
+      <xmax>558197.62452150182798505</xmax>
+      <ymax>148012.65222889761207625</ymax>
     </extent>
     <rotation>0</rotation>
     <projections>1</projections>
@@ -548,13 +551,14 @@
       <item>locationtype20150922082741813</item>
       <item>object_reference20150922083109152</item>
       <item>pump_operating20150922083814587</item>
+      <item>hydrant_material20150925104534891</item>
     </custom-order>
   </layer-tree-canvas>
   <legend updateDrawingOrder="false">
     <legendgroup open="true" checked="Qt::PartiallyChecked" name="Réseau">
-      <legendgroup open="true" checked="Qt::PartiallyChecked" name="ouvrages">
-        <legendlayer drawingOrder="1" open="true" checked="Qt::Checked" name="ouvrage" showFeatureCount="0">
-          <filegroup open="true" hidden="false">
+      <legendgroup open="false" checked="Qt::PartiallyChecked" name="ouvrages">
+        <legendlayer drawingOrder="1" open="false" checked="Qt::Checked" name="ouvrage" showFeatureCount="0">
+          <filegroup open="false" hidden="false">
             <legendlayerfile isInOverview="0" layerid="vw_qwat_installation20150918153835436" visible="1"/>
           </filegroup>
         </legendlayer>
@@ -641,15 +645,15 @@
         </legendlayer>
       </legendgroup>
     </legendgroup>
-    <legendgroup open="true" checked="Qt::Unchecked" name="Schématique">
-      <legendgroup open="true" checked="Qt::Unchecked" name="impression">
+    <legendgroup open="false" checked="Qt::Unchecked" name="Schématique">
+      <legendgroup open="false" checked="Qt::Unchecked" name="impression">
         <legendlayer drawingOrder="17" open="false" checked="Qt::Unchecked" name="conduite impression 5000" showFeatureCount="0">
           <filegroup open="false" hidden="false">
             <legendlayerfile isInOverview="0" layerid="vw_pipe_schema20141208162900166" visible="0"/>
           </filegroup>
         </legendlayer>
       </legendgroup>
-      <legendgroup open="true" checked="Qt::Unchecked" name="edition">
+      <legendgroup open="false" checked="Qt::Unchecked" name="edition">
         <legendlayer drawingOrder="16" open="false" checked="Qt::Unchecked" name="vannes edition 5000" showFeatureCount="0">
           <filegroup open="false" hidden="false">
             <legendlayerfile isInOverview="0" layerid="vannes_copy20141127160745910" visible="0"/>
@@ -667,7 +671,7 @@
         </legendlayer>
       </legendgroup>
     </legendgroup>
-    <legendgroup open="true" checked="Qt::Checked" name="Annotations">
+    <legendgroup open="false" checked="Qt::Checked" name="Annotations">
       <legendlayer drawingOrder="20" open="false" checked="Qt::Checked" name="annotation - ligne" showFeatureCount="0">
         <filegroup open="false" hidden="false">
           <legendlayerfile isInOverview="0" layerid="od_annotationline20131203095020365" visible="1"/>
@@ -765,7 +769,7 @@
         </filegroup>
       </legendlayer>
     </legendgroup>
-    <legendgroup open="true" checked="Qt::Unchecked" name="Plans">
+    <legendgroup open="false" checked="Qt::Unchecked" name="Plans">
       <legendlayer drawingOrder="36" open="true" checked="Qt::Unchecked" name="CN - toutes échelles" showFeatureCount="0">
         <filegroup open="true" hidden="false">
           <legendlayerfile isInOverview="0" layerid="Landeskarte_1_25_000___LK2520150306095331254" visible="0"/>
@@ -794,7 +798,7 @@
         </legendlayer>
       </legendgroup>
     </legendgroup>
-    <legendgroup open="false" checked="Qt::Unchecked" name="Tables auxiliaires">
+    <legendgroup open="false" checked="Qt::PartiallyChecked" name="Tables auxiliaires">
       <legendlayer drawingOrder="91" open="true" checked="Qt::Unchecked" name="accès" showFeatureCount="0">
         <filegroup open="true" hidden="false">
           <legendlayerfile isInOverview="0" layerid="locationtype20150922082741813" visible="0"/>
@@ -848,6 +852,11 @@
       <legendlayer drawingOrder="51" open="true" checked="Qt::Unchecked" name="hydrantes - fournisseur" showFeatureCount="0">
         <filegroup open="true" hidden="false">
           <legendlayerfile isInOverview="0" layerid="hydrant_provider20130304110004893" visible="0"/>
+        </filegroup>
+      </legendlayer>
+      <legendlayer drawingOrder="94" open="true" checked="Qt::Checked" name="hydrantes - matériau" showFeatureCount="0">
+        <filegroup open="true" hidden="false">
+          <legendlayerfile isInOverview="0" layerid="hydrant_material20150925104534891" visible="1"/>
         </filegroup>
       </legendlayer>
       <legendlayer drawingOrder="52" open="true" checked="Qt::Unchecked" name="lit de pose" showFeatureCount="0">
@@ -29254,7 +29263,7 @@
         </layer>
       </symbol>
       <ComposerMap mapRotation="325" keepLayerSet="true" id="0" previewMode="Cache" drawCanvasItems="true">
-        <Extent ymin="136695.24451208920800127" xmin="556387.41481285262852907" ymax="141145.24451662818319164" xmax="563887.41482050251215696"/>
+        <Extent ymin="136695.24451208917889744" xmin="556387.41481285262852907" ymax="141145.24451662815408781" xmax="563887.41482050251215696"/>
         <LayerSet>
           <Layer>vw_pipe_schema20141208162900166</Layer>
           <Layer>vannes_copy20141127160745910</Layer>
@@ -30925,7 +30934,7 @@
         </ComposerItem>
       </ComposerPicture>
       <ComposerMap mapRotation="325" keepLayerSet="true" id="0" previewMode="Cache" drawCanvasItems="true">
-        <Extent ymin="136695.24451208868413232" xmin="556387.41481285262852907" ymax="141145.24451662765932269" xmax="563887.41482050251215696"/>
+        <Extent ymin="136695.24451208865502849" xmin="556387.41481285262852907" ymax="141145.24451662763021886" xmax="563887.41482050251215696"/>
         <LayerSet>
           <Layer>vannes_copy20141127160745910</Layer>
           <Layer>vw_pipe_schema20141208162900166</Layer>
@@ -32521,7 +32530,7 @@
         </layer>
       </symbol>
       <ComposerMap mapRotation="0" keepLayerSet="false" id="0" previewMode="Cache" drawCanvasItems="true">
-        <Extent ymin="148940.92140767557430081" xmin="555084.52102199767250568" ymax="148994.92140773063874803" xmax="555138.52102205285336822"/>
+        <Extent ymin="148940.92140767563250847" xmin="555084.52102199767250568" ymax="148994.9214077306969557" xmax="555138.52102205285336822"/>
         <LayerSet/>
         <Grid/>
         <ComposerMapGrid rightAnnotationDirection="0" gridFramePenColor="0,0,0,255" show="0" bottomAnnotationPosition="1" annotationPrecision="3" showAnnotation="0" topFrameDivisions="0" uuid="{22202fc4-88f8-489a-842f-ca5a18a9f7bf}" leftAnnotationDirection="0" topAnnotationPosition="1" rightAnnotationDisplay="0" offsetX="0" offsetY="0" rightFrameDivisions="0" gridStyle="0" annotationFontColor="0,0,0,255" intervalX="0" gridFrameSideFlags="15" intervalY="0" bottomAnnotationDirection="0" leftAnnotationDisplay="0" leftFrameDivisions="0" frameFillColor1="255,255,255,255" annotationExpression="" frameFillColor2="0,0,0,255" crossLength="3" gridFramePenThickness="0.5" bottomAnnotationDisplay="0" unit="0" topAnnotationDisplay="0" leftAnnotationPosition="1" blendMode="0" gridFrameStyle="0" rightAnnotationPosition="1" gridFrameWidth="2" name="Grid 1" annotationFormat="0" bottomFrameDivisions="0" topAnnotationDirection="0" frameAnnotationDistance="1">
@@ -32707,7 +32716,7 @@
     </Composition>
     <Atlas hideCoverage="false" coverageLayer="valve20130304110011497" singleFile="false" filenamePattern=" &quot;id&quot;  ||'_' ||  &quot;identification&quot; ||'_'|| &quot;_district&quot; " enabled="true" filterFeatures="false" sortFeatures="false" pageNameExpression=""/>
   </Composer>
-  <projectlayers layercount="95">
+  <projectlayers layercount="96">
     <maplayer minimumScale="-4.65661e-10" maximumScale="1e+08" simplifyDrawingHints="0" minLabelScale="0" maxLabelScale="1e+08" simplifyDrawingTol="1" geometry="Line" simplifyMaxScale="1" type="vector" hasScaleBasedVisibilityFlag="0" simplifyLocal="1" scaleBasedLabelVisibilityFlag="0">
       <id>IntersectIt_Lines20130618102142813</id>
       <datasource>LineString?crs=EPSG:21781&amp;field=id:string&amp;field=type:string&amp;field=x:double&amp;field=y:double&amp;field=observation:double&amp;field=precision:double&amp;index=yes</datasource>
@@ -32797,6 +32806,7 @@
           </effect>
         </effect>
       </renderer-v2>
+      <labeling type="simple"/>
       <customproperties>
         <property key="labeling" value="pal"/>
         <property key="labeling/addDirectionSymbol" value="false"/>
@@ -33049,6 +33059,7 @@
           </effect>
         </effect>
       </renderer-v2>
+      <labeling type="simple"/>
       <customproperties/>
       <blendMode>0</blendMode>
       <featureBlendMode>0</featureBlendMode>
@@ -33247,6 +33258,7 @@
           </effect>
         </effect>
       </renderer-v2>
+      <labeling type="simple"/>
       <customproperties/>
       <blendMode>0</blendMode>
       <featureBlendMode>0</featureBlendMode>
@@ -33364,6 +33376,7 @@
           </effect>
         </effect>
       </renderer-v2>
+      <labeling type="simple"/>
       <customproperties>
         <property key="labeling" value="pal"/>
         <property key="labeling/addDirectionSymbol" value="false"/>
@@ -33655,6 +33668,7 @@
           </effect>
         </effect>
       </renderer-v2>
+      <labeling type="simple"/>
       <customproperties>
         <property key="labeling" value="pal"/>
         <property key="labeling/addDirectionSymbol" value="false"/>
@@ -35555,6 +35569,7 @@
           </effect>
         </effect>
       </renderer-v2>
+      <labeling type="simple"/>
       <customproperties>
         <property key="LinkIt_destinationField" value="fk_parent"/>
         <property key="LinkIt_name" value="Conduites parent"/>
@@ -36061,6 +36076,7 @@
           </effect>
         </effect>
       </renderer-v2>
+      <labeling type="simple"/>
       <customproperties>
         <property key="labeling" value="pal"/>
         <property key="labeling/addDirectionSymbol" value="false"/>
@@ -36347,6 +36363,7 @@
           </effect>
         </effect>
       </renderer-v2>
+      <labeling type="simple"/>
       <customproperties>
         <property key="itemBrowserCurrentItem" value="11"/>
         <property key="itemBrowserSelection" value="[]"/>
@@ -36701,6 +36718,7 @@
           </effect>
         </effect>
       </renderer-v2>
+      <labeling type="simple"/>
       <customproperties>
         <property key="itemBrowserConnected" value="no"/>
         <property key="labeling" value="pal"/>
@@ -37112,6 +37130,7 @@
           </effect>
         </effect>
       </renderer-v2>
+      <labeling type="simple"/>
       <customproperties>
         <property key="labeling" value="pal"/>
         <property key="labeling/addDirectionSymbol" value="false"/>
@@ -37320,7 +37339,7 @@
         </edittype>
       </edittypes>
     </maplayer>
-    <maplayer minimumScale="-4.65661e-10" maximumScale="10001" simplifyDrawingHints="0" minLabelScale="1" maxLabelScale="1e+08" simplifyDrawingTol="1" geometry="Point" simplifyMaxScale="1" type="vector" hasScaleBasedVisibilityFlag="1" simplifyLocal="1" scaleBasedLabelVisibilityFlag="0">
+    <maplayer minimumScale="0" maximumScale="10001" simplifyDrawingHints="0" minLabelScale="1" maxLabelScale="1e+08" simplifyDrawingTol="1" geometry="Point" simplifyMaxScale="1" type="vector" hasScaleBasedVisibilityFlag="1" simplifyLocal="1" scaleBasedLabelVisibilityFlag="0">
       <id>hydrant20130304110004848</id>
       <datasource>service='qwat' sslmode=allow key='id' srid=21781 type=Point table="qwat_od"."hydrant" (geometry) sql=</datasource>
       <title></title>
@@ -37364,10 +37383,10 @@
           <widgetv2config OrderByValue="0" AllowNull="0" FilterExpression="" UseCompleter="0" fieldEditable="1" Key="id" Layer="vl_status20130304110011436" Value="value_fr" labelOnTop="0" AllowMulti="0"/>
         </edittype>
         <edittype widgetv2type="ValueRelation" name="fk_provider">
-          <widgetv2config OrderByValue="0" AllowNull="0" FilterExpression="" UseCompleter="0" fieldEditable="1" Key="id" Layer="hydrant_provider20130304110004893" Value="name" labelOnTop="0" AllowMulti="0"/>
+          <widgetv2config OrderByValue="0" AllowNull="0" FilterExpression="" UseCompleter="0" fieldEditable="1" Key="id" Layer="hydrant_provider20130304110004893" Value="value_fr" labelOnTop="0" AllowMulti="0"/>
         </edittype>
-        <edittype widgetv2type="TextEdit" name="fk_material">
-          <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
+        <edittype widgetv2type="ValueRelation" name="fk_material">
+          <widgetv2config OrderByValue="0" AllowNull="0" FilterExpression="" UseCompleter="0" fieldEditable="1" Key="id" Layer="hydrant_material20150925104534891" Value="value_fr" labelOnTop="0" AllowMulti="0"/>
         </edittype>
         <edittype widgetv2type="ValueRelation" name="fk_precision">
           <widgetv2config OrderByValue="0" AllowNull="0" FilterExpression="" UseCompleter="0" fieldEditable="1" Key="id" Layer="vl_precision20130304110011372" Value="value_fr" labelOnTop="0" AllowMulti="0"/>
@@ -37532,7 +37551,7 @@
               <prop k="outline_width" v="1"/>
               <prop k="outline_width_map_unit_scale" v="0,0,0,0,0,0"/>
               <prop k="outline_width_unit" v="MM"/>
-              <prop k="scale_method" v="area"/>
+              <prop k="scale_method" v="diameter"/>
               <prop k="size" v="5"/>
               <prop k="size_map_unit_scale" v="0,0,0,0,0,0"/>
               <prop k="size_unit" v="MM"/>
@@ -37559,6 +37578,7 @@
           </effect>
         </effect>
       </renderer-v2>
+      <labeling type="simple"/>
       <customproperties>
         <property key="itemBrowserConnected" value="no"/>
         <property key="labeling" value="pal"/>
@@ -37589,8 +37609,10 @@
         <property key="labeling/distInMapUnits" value="false"/>
         <property key="labeling/distMapUnitMaxScale" value="0"/>
         <property key="labeling/distMapUnitMinScale" value="0"/>
+        <property key="labeling/drawLabels" value="true"/>
         <property key="labeling/enabled" value="true"/>
         <property key="labeling/fieldName" value="CASE WHEN  &quot;underground&quot; = 't' THEN 'HS' ELSE 'BH' END ||identification"/>
+        <property key="labeling/fitInPolygonOnly" value="false"/>
         <property key="labeling/fontBold" value="false"/>
         <property key="labeling/fontCapitals" value="0"/>
         <property key="labeling/fontFamily" value="Arial"/>
@@ -37624,6 +37646,8 @@
         <property key="labeling/multilineHeight" value="1"/>
         <property key="labeling/namedStyle" value="Regular"/>
         <property key="labeling/obstacle" value="true"/>
+        <property key="labeling/obstacleFactor" value="1"/>
+        <property key="labeling/obstacleType" value="0"/>
         <property key="labeling/placeDirectionSymbol" value="0"/>
         <property key="labeling/placement" value="0"/>
         <property key="labeling/placementFlags" value="0"/>
@@ -37707,6 +37731,8 @@
         <property key="labeling/xQuadOffset" value="0"/>
         <property key="labeling/yOffset" value="0"/>
         <property key="labeling/yQuadOffset" value="0"/>
+        <property key="variableNames" value="_fields_"/>
+        <property key="variableValues" value=""/>
       </customproperties>
       <blendMode>0</blendMode>
       <featureBlendMode>0</featureBlendMode>
@@ -37733,6 +37759,12 @@
         <multilineenabled fieldname="" on=""/>
         <selectedonly on=""/>
       </labelattributes>
+      <SingleCategoryDiagramRenderer diagramType="Pie">
+        <DiagramCategory penColor="#000000" labelPlacementMethod="XHeight" penWidth="0" diagramOrientation="Up" minimumSize="0" barWidth="5" penAlpha="255" maxScaleDenominator="10001" backgroundColor="#ffffff" transparency="0" width="15" scaleDependency="Area" backgroundAlpha="255" angleOffset="1440" scaleBasedVisibility="1" enabled="0" height="15" sizeType="MM" minScaleDenominator="0">
+          <fontProperties description="Cantarell,11,-1,5,50,0,0,0,0,0" style=""/>
+        </DiagramCategory>
+      </SingleCategoryDiagramRenderer>
+      <DiagramLayerSettings yPosColumn="-1" linePlacementFlags="10" placement="0" dist="0" xPosColumn="-1" priority="0" obstacle="0" showAll="1"/>
       <editform>./ui_forms/hydrant.ui</editform>
       <editforminit/>
       <featformsuppress>0</featformsuppress>
@@ -37761,10 +37793,10 @@
           <widgetv2config OrderByValue="0" AllowNull="0" FilterExpression="" UseCompleter="0" fieldEditable="1" Key="id" Layer="vl_status20130304110011436" Value="value_fr" labelOnTop="0" AllowMulti="0"/>
         </edittype>
         <edittype widgetv2type="ValueRelation" name="fk_provider">
-          <widgetv2config OrderByValue="0" AllowNull="0" FilterExpression="" UseCompleter="0" fieldEditable="1" Key="id" Layer="hydrant_provider20130304110004893" Value="name" labelOnTop="0" AllowMulti="0"/>
+          <widgetv2config OrderByValue="0" AllowNull="0" FilterExpression="" UseCompleter="0" fieldEditable="1" Key="id" Layer="hydrant_provider20130304110004893" Value="value_fr" labelOnTop="0" AllowMulti="0"/>
         </edittype>
-        <edittype widgetv2type="TextEdit" name="fk_material">
-          <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
+        <edittype widgetv2type="ValueRelation" name="fk_material">
+          <widgetv2config OrderByValue="0" AllowNull="0" FilterExpression="" UseCompleter="0" fieldEditable="1" Key="id" Layer="hydrant_material20150925104534891" Value="value_fr" labelOnTop="0" AllowMulti="0"/>
         </edittype>
         <edittype widgetv2type="ValueRelation" name="fk_precision">
           <widgetv2config OrderByValue="0" AllowNull="0" FilterExpression="" UseCompleter="0" fieldEditable="1" Key="id" Layer="vl_precision20130304110011372" Value="value_fr" labelOnTop="0" AllowMulti="0"/>
@@ -37912,6 +37944,136 @@
         </edittype>
         <edittype widgetv2type="TextEdit" name="status_sire">
           <widgetv2config IsMultiline="0" fieldEditable="0" UseHtml="0" labelOnTop="0"/>
+        </edittype>
+      </edittypes>
+    </maplayer>
+    <maplayer minimumScale="0" maximumScale="1e+08" geometry="No geometry" type="vector" hasScaleBasedVisibilityFlag="0">
+      <id>hydrant_material20150925104534891</id>
+      <datasource>service='qwat' sslmode=disable key='id' table="qwat_vl"."hydrant_material" sql=</datasource>
+      <title></title>
+      <abstract></abstract>
+      <keywordList>
+        <value></value>
+      </keywordList>
+      <layername>hydrantes - matériau</layername>
+      <srs>
+        <spatialrefsys>
+          <proj4>+proj=longlat +datum=WGS84 +no_defs</proj4>
+          <srsid>3452</srsid>
+          <srid>4326</srid>
+          <authid>EPSG:4326</authid>
+          <description>WGS 84</description>
+          <projectionacronym>longlat</projectionacronym>
+          <ellipsoidacronym>WGS84</ellipsoidacronym>
+          <geographicflag>true</geographicflag>
+        </spatialrefsys>
+      </srs>
+      <customproperties/>
+      <provider encoding="UTF-8">postgres</provider>
+      <previewExpression></previewExpression>
+      <vectorjoins/>
+      <expressionfields/>
+      <map-layer-style-manager current="">
+        <map-layer-style name=""/>
+      </map-layer-style-manager>
+      <edittypes>
+        <edittype widgetv2type="TextEdit" name="id">
+          <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
+        </edittype>
+        <edittype widgetv2type="TextEdit" name="vl_active">
+          <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
+        </edittype>
+        <edittype widgetv2type="TextEdit" name="short_fr">
+          <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
+        </edittype>
+        <edittype widgetv2type="TextEdit" name="short_en">
+          <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
+        </edittype>
+        <edittype widgetv2type="TextEdit" name="short_ro">
+          <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
+        </edittype>
+        <edittype widgetv2type="TextEdit" name="value_fr">
+          <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
+        </edittype>
+        <edittype widgetv2type="TextEdit" name="value_en">
+          <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
+        </edittype>
+        <edittype widgetv2type="TextEdit" name="value_ro">
+          <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
+        </edittype>
+        <edittype widgetv2type="TextEdit" name="description_fr">
+          <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
+        </edittype>
+        <edittype widgetv2type="TextEdit" name="description_en">
+          <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
+        </edittype>
+        <edittype widgetv2type="TextEdit" name="description_ro">
+          <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
+        </edittype>
+        <edittype widgetv2type="TextEdit" name="diameter_nominal">
+          <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
+        </edittype>
+        <edittype widgetv2type="TextEdit" name="code_sire">
+          <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
+        </edittype>
+        <edittype widgetv2type="TextEdit" name="pressure_nominal">
+          <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
+        </edittype>
+      </edittypes>
+      <editform></editform>
+      <editforminit/>
+      <featformsuppress>0</featformsuppress>
+      <annotationform></annotationform>
+      <editorlayout>generatedlayout</editorlayout>
+      <excludeAttributesWMS/>
+      <excludeAttributesWFS/>
+      <attributeactions/>
+      <conditionalstyles>
+        <rowstyles/>
+        <fieldstyles/>
+      </conditionalstyles>
+      <edittypes>
+        <edittype widgetv2type="TextEdit" name="id">
+          <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
+        </edittype>
+        <edittype widgetv2type="TextEdit" name="vl_active">
+          <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
+        </edittype>
+        <edittype widgetv2type="TextEdit" name="short_fr">
+          <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
+        </edittype>
+        <edittype widgetv2type="TextEdit" name="short_en">
+          <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
+        </edittype>
+        <edittype widgetv2type="TextEdit" name="short_ro">
+          <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
+        </edittype>
+        <edittype widgetv2type="TextEdit" name="value_fr">
+          <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
+        </edittype>
+        <edittype widgetv2type="TextEdit" name="value_en">
+          <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
+        </edittype>
+        <edittype widgetv2type="TextEdit" name="value_ro">
+          <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
+        </edittype>
+        <edittype widgetv2type="TextEdit" name="description_fr">
+          <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
+        </edittype>
+        <edittype widgetv2type="TextEdit" name="description_en">
+          <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
+        </edittype>
+        <edittype widgetv2type="TextEdit" name="description_ro">
+          <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
+        </edittype>
+        <edittype widgetv2type="TextEdit" name="diameter_nominal">
+          <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
+        </edittype>
+        <edittype widgetv2type="TextEdit" name="code_sire">
+          <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
+        </edittype>
+        <edittype widgetv2type="TextEdit" name="pressure_nominal">
+          <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
         </edittype>
       </edittypes>
     </maplayer>
@@ -38185,6 +38347,7 @@
           </effect>
         </effect>
       </renderer-v2>
+      <labeling type="simple"/>
       <customproperties>
         <property key="LinkIt_destinationField" value="fk_pipe"/>
         <property key="LinkIt_name" value="Fuite - conduites"/>
@@ -38861,6 +39024,7 @@
           </effect>
         </effect>
       </renderer-v2>
+      <labeling type="simple"/>
       <customproperties>
         <property key="itemBrowserConnected" value="no"/>
         <property key="itemBrowserCurrentItem" value="20"/>
@@ -39279,6 +39443,7 @@
           </effect>
         </effect>
       </renderer-v2>
+      <labeling type="simple"/>
       <customproperties>
         <property key="labeling" value="pal"/>
         <property key="labeling/addDirectionSymbol" value="false"/>
@@ -39552,6 +39717,7 @@
           </effect>
         </effect>
       </renderer-v2>
+      <labeling type="simple"/>
       <customproperties>
         <property key="itemBrowserSelection" value="[]"/>
         <property key="labeling" value="pal"/>
@@ -39932,6 +40098,7 @@
           </effect>
         </effect>
       </renderer-v2>
+      <labeling type="simple"/>
       <customproperties>
         <property key="labeling" value="pal"/>
         <property key="labeling/addDirectionSymbol" value="false"/>
@@ -40407,6 +40574,7 @@
           </effect>
         </effect>
       </renderer-v2>
+      <labeling type="simple"/>
       <customproperties>
         <property key="labeling" value="pal"/>
         <property key="labeling/addDirectionSymbol" value="false"/>
@@ -40699,6 +40867,7 @@
           </effect>
         </effect>
       </renderer-v2>
+      <labeling type="simple"/>
       <customproperties>
         <property key="labeling" value="pal"/>
         <property key="labeling/addDirectionSymbol" value="false"/>
@@ -41016,6 +41185,7 @@
           </effect>
         </effect>
       </renderer-v2>
+      <labeling type="simple"/>
       <customproperties>
         <property key="itemBrowserCurrentItem" value="0"/>
         <property key="itemBrowserSelection" value="[]"/>
@@ -41385,6 +41555,7 @@
           </effect>
         </effect>
       </renderer-v2>
+      <labeling type="simple"/>
       <customproperties>
         <property key="LinkIt_destinationField" value="fk_meter"/>
         <property key="LinkIt_name" value="Compteur réseau - renvoi"/>
@@ -41609,7 +41780,7 @@
         </spatialrefsys>
       </srs>
       <provider encoding="System">postgres</provider>
-      <previewExpression></previewExpression>
+      <previewExpression>COALESCE( "id", '&lt;NULL>' )</previewExpression>
       <vectorjoins/>
       <expressionfields/>
       <map-layer-style-manager current="">
@@ -41684,6 +41855,7 @@
           </effect>
         </effect>
       </renderer-v2>
+      <labeling type="simple"/>
       <customproperties>
         <property key="labeling" value="pal"/>
         <property key="labeling/addDirectionSymbol" value="false"/>
@@ -42222,6 +42394,7 @@
           </effect>
         </effect>
       </renderer-v2>
+      <labeling type="simple"/>
       <customproperties>
         <property key="labeling" value="pal"/>
         <property key="labeling/addDirectionSymbol" value="false"/>
@@ -42668,6 +42841,7 @@
           </effect>
         </effect>
       </renderer-v2>
+      <labeling type="simple"/>
       <customproperties>
         <property key="labeling" value="pal"/>
         <property key="labeling/addDirectionSymbol" value="false"/>
@@ -43011,6 +43185,7 @@
           </effect>
         </effect>
       </renderer-v2>
+      <labeling type="simple"/>
       <customproperties>
         <property key="LinkIt_destinationField" value="fk_subscriber"/>
         <property key="LinkIt_name" value="Abonné - renvoi"/>
@@ -43400,6 +43575,7 @@
           </effect>
         </effect>
       </renderer-v2>
+      <labeling type="simple"/>
       <customproperties>
         <property key="labeling" value="pal"/>
         <property key="labeling/addDirectionSymbol" value="false"/>
@@ -43916,6 +44092,7 @@
           </effect>
         </effect>
       </renderer-v2>
+      <labeling type="simple"/>
       <customproperties>
         <property key="labeling" value="pal"/>
         <property key="labeling/addDirectionSymbol" value="false"/>
@@ -44341,6 +44518,7 @@
           </effect>
         </effect>
       </renderer-v2>
+      <labeling type="simple"/>
       <customproperties>
         <property key="itemBrowserConnected" value="no"/>
         <property key="itemBrowserSelection" value="[]"/>
@@ -44737,6 +44915,7 @@
           </effect>
         </effect>
       </renderer-v2>
+      <labeling type="simple"/>
       <customproperties>
         <property key="itemBrowserConnected" value="no"/>
       </customproperties>
@@ -45265,6 +45444,7 @@
           </effect>
         </effect>
       </renderer-v2>
+      <labeling type="simple"/>
       <customproperties>
         <property key="labeling" value="pal"/>
         <property key="labeling/addDirectionSymbol" value="false"/>
@@ -45680,6 +45860,7 @@
           </effect>
         </effect>
       </renderer-v2>
+      <labeling type="simple"/>
       <customproperties>
         <property key="labeling" value="pal"/>
         <property key="labeling/addDirectionSymbol" value="false"/>
@@ -46713,6 +46894,7 @@
           </effect>
         </effect>
       </renderer-v2>
+      <labeling type="simple"/>
       <customproperties>
         <property key="LinkIt_destinationField" value="fk_pipe"/>
         <property key="LinkIt_name" value="Abonnés - conduite"/>
@@ -47076,6 +47258,7 @@
           </effect>
         </effect>
       </renderer-v2>
+      <labeling type="simple"/>
       <customproperties>
         <property key="labeling" value="pal"/>
         <property key="labeling/addDirectionSymbol" value="false"/>
@@ -47798,6 +47981,7 @@
           </effect>
         </effect>
       </renderer-v2>
+      <labeling type="simple"/>
       <customproperties>
         <property key="itemBrowserConnected" value="no"/>
         <property key="itemBrowserCurrentItem" value="95"/>
@@ -48892,6 +49076,7 @@
           </effect>
         </effect>
       </renderer-v2>
+      <labeling type="simple"/>
       <customproperties>
         <property key="labeling" value="pal"/>
         <property key="labeling/addDirectionSymbol" value="false"/>
@@ -52333,6 +52518,7 @@
           </effect>
         </effect>
       </renderer-v2>
+      <labeling type="simple"/>
       <customproperties>
         <property key="labeling" value="pal"/>
         <property key="labeling/addDirectionSymbol" value="false"/>
@@ -52802,6 +52988,7 @@
           </effect>
         </effect>
       </renderer-v2>
+      <labeling type="simple"/>
       <customproperties>
         <property key="labeling" value="pal"/>
         <property key="labeling/addDirectionSymbol" value="false"/>
@@ -53410,6 +53597,7 @@
           </effect>
         </effect>
       </renderer-v2>
+      <labeling type="simple"/>
       <customproperties>
         <property key="labeling" value="pal"/>
         <property key="labeling/addDirectionSymbol" value="false"/>
@@ -55736,6 +55924,7 @@
           </effect>
         </effect>
       </renderer-v2>
+      <labeling type="simple"/>
       <customproperties>
         <property key="labeling" value="pal"/>
         <property key="labeling/addDirectionSymbol" value="false"/>
@@ -56313,8 +56502,110 @@
       <LayerSnappingList type="QStringList">
         <value>IntersectIt_Lines20130618102142813</value>
         <value>IntersectIt_Points20130618102143276</value>
+        <value>_cadinput_techical_snap_layer_20140203092715598</value>
+        <value>ad_posnumero_maison20130514143346530</value>
+        <value>axe_rue20130514143437774</value>
+        <value>bf_bien_fonds20130514143508556</value>
+        <value>bf_ddp20130514143538213</value>
+        <value>bf_point_limite20130514143552315</value>
+        <value>bf_posimmeuble20130514143633121</value>
+        <value>cadastre20140312152032371</value>
+        <value>camac20140113144941208</value>
+        <value>conduites_copy20130709141244955</value>
+        <value>constructionpoint20130807094904851</value>
+        <value>cs_batiment20130514143721709</value>
+        <value>cs_posnumero_de_batiment20130514143756039</value>
+        <value>cs_surfacecs20130514143830750</value>
+        <value>dimension20130807094904783</value>
+        <value>district20130304110004764</value>
+        <value>folder20150629160924367</value>
+        <value>hydrant20130304110004848</value>
+        <value>leak20130821111917060</value>
+        <value>no_posnomlocallieudit20130514143906869</value>
+        <value>node20130304110005126</value>
+        <value>od_annotationline20131203095020365</value>
+        <value>od_annotationpoint20131203095020392</value>
+        <value>od_batiment_souterrain20130514143946785</value>
+        <value>od_cover20141219115626229</value>
+        <value>od_crossing20141023083754327</value>
+        <value>od_dimension_orientation20131202111155806</value>
+        <value>od_element_lineaire20130514144047075</value>
+        <value>od_element_surfacique20130514144124647</value>
+        <value>od_meter20131120073630165</value>
+        <value>od_meter_reference20140304165835390</value>
+        <value>od_node20140116161508743</value>
+        <value>od_part20140429113327995</value>
+        <value>od_remote20150116100522170</value>
+        <value>od_subscriber_reference20131206105928067</value>
+        <value>pf_pfa20130514144154766</value>
+        <value>pf_pfp20130514144226845</value>
+        <value>pipe_child_parent20130417092030507</value>
+        <value>pressurezone20130417133612105</value>
+        <value>printmap20130304110011400</value>
+        <value>protectionzone20130304110011418</value>
+        <value>servitude20150109080436604</value>
+        <value>servitude20150109080436650</value>
+        <value>subscriber20130304110011459</value>
+        <value>subscriber_pipe_relation20130417092124312</value>
+        <value>valve20130304110011497</value>
+        <value>vannes_copy20141127160745910</value>
+        <value>vw_consumptionzone20150508135647750</value>
+        <value>vw_pipe_schema20141208162900166</value>
+        <value>vw_pipe_schema_visibleitems20141127154708843</value>
+        <value>vw_qwat_installation20150918153835436</value>
       </LayerSnappingList>
       <LayerSnappingEnabledList type="QStringList">
+        <value>disabled</value>
+        <value>disabled</value>
+        <value>disabled</value>
+        <value>disabled</value>
+        <value>disabled</value>
+        <value>disabled</value>
+        <value>disabled</value>
+        <value>disabled</value>
+        <value>disabled</value>
+        <value>disabled</value>
+        <value>disabled</value>
+        <value>disabled</value>
+        <value>disabled</value>
+        <value>disabled</value>
+        <value>disabled</value>
+        <value>disabled</value>
+        <value>disabled</value>
+        <value>disabled</value>
+        <value>disabled</value>
+        <value>disabled</value>
+        <value>disabled</value>
+        <value>disabled</value>
+        <value>disabled</value>
+        <value>disabled</value>
+        <value>disabled</value>
+        <value>disabled</value>
+        <value>disabled</value>
+        <value>disabled</value>
+        <value>disabled</value>
+        <value>disabled</value>
+        <value>disabled</value>
+        <value>disabled</value>
+        <value>disabled</value>
+        <value>disabled</value>
+        <value>disabled</value>
+        <value>disabled</value>
+        <value>disabled</value>
+        <value>disabled</value>
+        <value>disabled</value>
+        <value>disabled</value>
+        <value>disabled</value>
+        <value>disabled</value>
+        <value>disabled</value>
+        <value>disabled</value>
+        <value>disabled</value>
+        <value>disabled</value>
+        <value>disabled</value>
+        <value>disabled</value>
+        <value>disabled</value>
+        <value>disabled</value>
+        <value>disabled</value>
         <value>disabled</value>
         <value>disabled</value>
       </LayerSnappingEnabledList>
@@ -56324,8 +56615,110 @@
       <LayerSnappingToleranceUnitList type="QStringList">
         <value>1</value>
         <value>1</value>
+        <value>1</value>
+        <value>1</value>
+        <value>1</value>
+        <value>1</value>
+        <value>1</value>
+        <value>1</value>
+        <value>1</value>
+        <value>1</value>
+        <value>1</value>
+        <value>1</value>
+        <value>1</value>
+        <value>1</value>
+        <value>1</value>
+        <value>1</value>
+        <value>1</value>
+        <value>1</value>
+        <value>1</value>
+        <value>1</value>
+        <value>1</value>
+        <value>1</value>
+        <value>1</value>
+        <value>1</value>
+        <value>1</value>
+        <value>1</value>
+        <value>1</value>
+        <value>1</value>
+        <value>1</value>
+        <value>1</value>
+        <value>1</value>
+        <value>1</value>
+        <value>1</value>
+        <value>1</value>
+        <value>1</value>
+        <value>1</value>
+        <value>1</value>
+        <value>1</value>
+        <value>1</value>
+        <value>1</value>
+        <value>1</value>
+        <value>1</value>
+        <value>1</value>
+        <value>1</value>
+        <value>1</value>
+        <value>1</value>
+        <value>1</value>
+        <value>1</value>
+        <value>1</value>
+        <value>1</value>
+        <value>1</value>
+        <value>1</value>
+        <value>1</value>
       </LayerSnappingToleranceUnitList>
       <LayerSnapToList type="QStringList">
+        <value>to_vertex_and_segment</value>
+        <value>to_vertex_and_segment</value>
+        <value>to_vertex_and_segment</value>
+        <value>to_vertex_and_segment</value>
+        <value>to_vertex_and_segment</value>
+        <value>to_vertex_and_segment</value>
+        <value>to_vertex_and_segment</value>
+        <value>to_vertex_and_segment</value>
+        <value>to_vertex_and_segment</value>
+        <value>to_vertex_and_segment</value>
+        <value>to_vertex_and_segment</value>
+        <value>to_vertex_and_segment</value>
+        <value>to_vertex_and_segment</value>
+        <value>to_vertex_and_segment</value>
+        <value>to_vertex_and_segment</value>
+        <value>to_vertex_and_segment</value>
+        <value>to_vertex_and_segment</value>
+        <value>to_vertex_and_segment</value>
+        <value>to_vertex_and_segment</value>
+        <value>to_vertex_and_segment</value>
+        <value>to_vertex_and_segment</value>
+        <value>to_vertex_and_segment</value>
+        <value>to_vertex_and_segment</value>
+        <value>to_vertex_and_segment</value>
+        <value>to_vertex_and_segment</value>
+        <value>to_vertex_and_segment</value>
+        <value>to_vertex_and_segment</value>
+        <value>to_vertex_and_segment</value>
+        <value>to_vertex_and_segment</value>
+        <value>to_vertex_and_segment</value>
+        <value>to_vertex_and_segment</value>
+        <value>to_vertex_and_segment</value>
+        <value>to_vertex_and_segment</value>
+        <value>to_vertex_and_segment</value>
+        <value>to_vertex_and_segment</value>
+        <value>to_vertex_and_segment</value>
+        <value>to_vertex_and_segment</value>
+        <value>to_vertex_and_segment</value>
+        <value>to_vertex_and_segment</value>
+        <value>to_vertex_and_segment</value>
+        <value>to_vertex_and_segment</value>
+        <value>to_vertex_and_segment</value>
+        <value>to_vertex_and_segment</value>
+        <value>to_vertex_and_segment</value>
+        <value>to_vertex_and_segment</value>
+        <value>to_vertex_and_segment</value>
+        <value>to_vertex_and_segment</value>
+        <value>to_vertex_and_segment</value>
+        <value>to_vertex_and_segment</value>
+        <value>to_vertex_and_segment</value>
+        <value>to_vertex_and_segment</value>
         <value>to_vertex_and_segment</value>
         <value>to_vertex_and_segment</value>
       </LayerSnapToList>
@@ -56335,6 +56728,57 @@
       <LayerSnappingToleranceList type="QStringList">
         <value>1.000000</value>
         <value>1.000000</value>
+        <value>8.000000</value>
+        <value>8.000000</value>
+        <value>8.000000</value>
+        <value>8.000000</value>
+        <value>8.000000</value>
+        <value>8.000000</value>
+        <value>8.000000</value>
+        <value>8.000000</value>
+        <value>8.000000</value>
+        <value>8.000000</value>
+        <value>8.000000</value>
+        <value>8.000000</value>
+        <value>8.000000</value>
+        <value>8.000000</value>
+        <value>8.000000</value>
+        <value>8.000000</value>
+        <value>8.000000</value>
+        <value>8.000000</value>
+        <value>8.000000</value>
+        <value>8.000000</value>
+        <value>8.000000</value>
+        <value>8.000000</value>
+        <value>8.000000</value>
+        <value>8.000000</value>
+        <value>8.000000</value>
+        <value>8.000000</value>
+        <value>8.000000</value>
+        <value>8.000000</value>
+        <value>8.000000</value>
+        <value>8.000000</value>
+        <value>8.000000</value>
+        <value>8.000000</value>
+        <value>8.000000</value>
+        <value>8.000000</value>
+        <value>8.000000</value>
+        <value>8.000000</value>
+        <value>8.000000</value>
+        <value>8.000000</value>
+        <value>8.000000</value>
+        <value>8.000000</value>
+        <value>8.000000</value>
+        <value>8.000000</value>
+        <value>8.000000</value>
+        <value>8.000000</value>
+        <value>8.000000</value>
+        <value>8.000000</value>
+        <value>8.000000</value>
+        <value>8.000000</value>
+        <value>8.000000</value>
+        <value>8.000000</value>
+        <value>8.000000</value>
       </LayerSnappingToleranceList>
     </Digitizing>
     <Identify>
@@ -57325,8 +57769,8 @@
   </properties>
   <visibility-presets>
     <visibility-preset name="250">
-      <layer style="" id="cs_posnumero_de_batiment20130514143756039"/>
       <layer style="" id="od_subscriber_reference20131206105928067"/>
+      <layer style="" id="cs_posnumero_de_batiment20130514143756039"/>
       <layer style="" id="hydrant20130304110004848"/>
       <layer style="" id="axe_rue20130514143437774"/>
       <layer style="" id="od_annotationpoint20131203095020392"/>
