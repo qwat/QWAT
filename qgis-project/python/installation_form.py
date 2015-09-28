@@ -15,8 +15,9 @@ def formOpen(dialog, layer, feature):
 	for i in range(0, typeSelector.count()):
 		widgetName = typeSelector.itemData(i)
 		childWidget = dialog.findChild(QWidget, widgetName)
-		childWidget.hide()
 		subForms.append(childWidget)
+
+	typeSelection(typeSelector.currentIndex())
 
 
 def typeSelection( index ):
