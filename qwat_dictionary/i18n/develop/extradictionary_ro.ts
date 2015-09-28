@@ -9,14 +9,14 @@
         <translation>ID</translation>
     </message>
     <message>
-        <location filename="installation.ui" line="77"/>
+        <location filename="installation.ui" line="87"/>
         <source>Statut</source>
         <translation>Stare</translation>
     </message>
     <message utf8="true">
         <location filename="meter.ui" line="20"/>
         <source>Compteur réseau</source>
-        <translation>Apometru</translation>
+        <translation>Debitmetru</translation>
     </message>
     <message>
         <location filename="installation.ui" line="167"/>
@@ -31,7 +31,7 @@
     <message>
         <location filename="subscriber.ui" line="135"/>
         <source>Folio</source>
-        <translation type="unfinished">Hărţi print</translation>
+        <translation>Hărţi print</translation>
     </message>
     <message>
         <location filename="subscriber.ui" line="33"/>
@@ -39,7 +39,7 @@
         <translation>Zonă de presiune</translation>
     </message>
     <message>
-        <location filename="installation.ui" line="780"/>
+        <location filename="installation.ui" line="800"/>
         <source>Type</source>
         <translation>Tip</translation>
     </message>
@@ -119,12 +119,12 @@
         <translation>Hidrant</translation>
     </message>
     <message utf8="true">
-        <location filename="installation.ui" line="548"/>
+        <location filename="installation.ui" line="568"/>
         <source>Général</source>
         <translation>Generalităţi</translation>
     </message>
     <message>
-        <location filename="installation.ui" line="106"/>
+        <location filename="installation.ui" line="116"/>
         <source>Distributeur</source>
         <translation>Distribuitor</translation>
     </message>
@@ -304,7 +304,7 @@
         <translation>Construcţii specifice</translation>
     </message>
     <message>
-        <location filename="installation.ui" line="67"/>
+        <location filename="installation.ui" line="77"/>
         <source>Nom</source>
         <translation>Nume</translation>
     </message>
@@ -314,22 +314,22 @@
         <translation type="obsolete">Rezervor</translation>
     </message>
     <message>
-        <location filename="installation.ui" line="382"/>
+        <location filename="installation.ui" line="406"/>
         <source>Source</source>
         <translation>Sursă</translation>
     </message>
     <message>
-        <location filename="installation.ui" line="303"/>
+        <location filename="installation.ui" line="327"/>
         <source>Pompage</source>
         <translation>Pompare</translation>
     </message>
     <message>
-        <location filename="installation.ui" line="462"/>
+        <location filename="installation.ui" line="482"/>
         <source>Traitement</source>
         <translation>Tratare</translation>
     </message>
     <message utf8="true">
-        <location filename="installation.ui" line="284"/>
+        <location filename="installation.ui" line="308"/>
         <source>Régulation de pression</source>
         <translation>Regulator presiune</translation>
     </message>
@@ -339,7 +339,7 @@
         <translation type="obsolete">Cameră vane</translation>
     </message>
     <message>
-        <location filename="installation.ui" line="53"/>
+        <location filename="installation.ui" line="63"/>
         <source>ECA</source>
         <translation>ID Brigadă pompieri</translation>
     </message>
@@ -359,87 +359,87 @@
         <translation type="obsolete">Construţie specifică</translation>
     </message>
     <message utf8="true">
-        <location filename="installation.ui" line="557"/>
+        <location filename="installation.ui" line="577"/>
         <source>Réserve totale</source>
         <translation>Rezervă totală</translation>
     </message>
     <message>
-        <location filename="installation.ui" line="564"/>
+        <location filename="installation.ui" line="584"/>
         <source>Remarques</source>
         <translation>Observaţii</translation>
     </message>
     <message utf8="true">
-        <location filename="installation.ui" line="571"/>
+        <location filename="installation.ui" line="591"/>
         <source>Rés. utile</source>
         <translation>Rezervă utilă</translation>
     </message>
     <message>
-        <location filename="installation.ui" line="581"/>
+        <location filename="installation.ui" line="601"/>
         <source>Top-plein</source>
         <translation>Prea-plin</translation>
     </message>
     <message>
-        <location filename="installation.ui" line="588"/>
+        <location filename="installation.ui" line="608"/>
         <source>Alt. trop-plein</source>
-        <translation>Alt. Prea-plin</translation>
+        <translation>Cotă Prea-plin</translation>
     </message>
     <message>
-        <location filename="installation.ui" line="808"/>
+        <location filename="installation.ui" line="828"/>
         <source>Litres/cm</source>
         <translation>Litri/cm</translation>
     </message>
     <message>
-        <location filename="installation.ui" line="634"/>
+        <location filename="installation.ui" line="654"/>
         <source>Alt. radier</source>
-        <translation>Alt. radier</translation>
+        <translation>Cotă. radier</translation>
     </message>
     <message utf8="true">
-        <location filename="installation.ui" line="641"/>
+        <location filename="installation.ui" line="661"/>
         <source>Télécommande incendie</source>
         <translation>Telecomandă incendiu</translation>
     </message>
     <message>
-        <location filename="installation.ui" line="648"/>
+        <location filename="installation.ui" line="668"/>
         <source>Vanne incendie</source>
         <translation>Vană incendiu</translation>
     </message>
     <message utf8="true">
-        <location filename="installation.ui" line="662"/>
+        <location filename="installation.ui" line="682"/>
         <source>Rés. incendie</source>
         <translation>Rez. incendiu</translation>
     </message>
     <message>
-        <location filename="installation.ui" line="675"/>
+        <location filename="installation.ui" line="695"/>
         <source>Hauteur max.</source>
         <translation>Înălţime max.</translation>
     </message>
     <message>
-        <location filename="installation.ui" line="689"/>
+        <location filename="installation.ui" line="709"/>
         <source>Cuves</source>
         <translation>Cisterne</translation>
     </message>
     <message>
-        <location filename="installation.ui" line="695"/>
+        <location filename="installation.ui" line="715"/>
         <source>Cuve 1</source>
         <translation>Cisterna 1</translation>
     </message>
     <message>
-        <location filename="installation.ui" line="787"/>
+        <location filename="installation.ui" line="807"/>
         <source>Longueur</source>
         <translation>Lungime</translation>
     </message>
     <message>
-        <location filename="installation.ui" line="794"/>
+        <location filename="installation.ui" line="814"/>
         <source>Volume</source>
         <translation>Volum</translation>
     </message>
     <message utf8="true">
-        <location filename="installation.ui" line="801"/>
+        <location filename="installation.ui" line="821"/>
         <source>Diamètre/largeur</source>
         <translation>Diametru/lăţime</translation>
     </message>
     <message>
-        <location filename="installation.ui" line="774"/>
+        <location filename="installation.ui" line="794"/>
         <source>Cuve 2</source>
         <translation>Cisterna 2</translation>
     </message>
@@ -454,7 +454,7 @@
         <translation>Material</translation>
     </message>
     <message>
-        <location filename="valve.ui" line="501"/>
+        <location filename="installation.ui" line="228"/>
         <source>Emplacement</source>
         <translation>Amplasament</translation>
     </message>
@@ -489,19 +489,19 @@
         <translation>Debit planificat</translation>
     </message>
     <message>
-        <location filename="installation.ui" line="60"/>
+        <location filename="installation.ui" line="70"/>
         <source>Altitude</source>
         <translation>Cotă</translation>
     </message>
     <message>
-        <location filename="installation.ui" line="90"/>
+        <location filename="installation.ui" line="100"/>
         <source>Type d&apos;eau</source>
         <translation>Tip apă</translation>
     </message>
     <message utf8="true">
         <location filename="installation.ui" line="130"/>
         <source>Télécom.</source>
-        <translation>Control distanţă</translation>
+        <translation>Telecomandă</translation>
     </message>
     <message utf8="true">
         <location filename="installation.ui" line="160"/>
@@ -514,152 +514,152 @@
         <translation>Pct. de ref.</translation>
     </message>
     <message>
-        <location filename="installation.ui" line="203"/>
+        <location filename="installation.ui" line="210"/>
         <source>Ouvrage principal</source>
         <translation>Structură părinte</translation>
     </message>
     <message utf8="true">
-        <location filename="installation.ui" line="211"/>
+        <location filename="installation.ui" line="228"/>
         <source>Accès</source>
-        <translation>Acces</translation>
+        <translation type="obsolete">Acces</translation>
     </message>
     <message>
-        <location filename="installation.ui" line="237"/>
+        <location filename="installation.ui" line="254"/>
         <source>Chambre</source>
         <translation>Cameră</translation>
     </message>
     <message utf8="true">
-        <location filename="installation.ui" line="243"/>
+        <location filename="installation.ui" line="260"/>
         <source>séparation de réseau</source>
         <translation>Separare reţea</translation>
     </message>
     <message>
-        <location filename="installation.ui" line="250"/>
+        <location filename="installation.ui" line="288"/>
         <source>compteur</source>
         <translation>Apometru</translation>
     </message>
     <message>
-        <location filename="installation.ui" line="257"/>
+        <location filename="installation.ui" line="274"/>
         <source>profondeur</source>
         <translation>Adâncime radier</translation>
     </message>
     <message>
-        <location filename="installation.ui" line="267"/>
+        <location filename="installation.ui" line="281"/>
         <source>nb. vannes</source>
         <translation>Număr vane</translation>
     </message>
     <message>
-        <location filename="installation.ui" line="388"/>
+        <location filename="installation.ui" line="412"/>
         <source>type</source>
         <translation>Tip</translation>
     </message>
     <message>
-        <location filename="installation.ui" line="319"/>
+        <location filename="installation.ui" line="343"/>
         <source>mode</source>
-        <translation>Mod</translation>
+        <translation>Mod operare</translation>
     </message>
     <message>
-        <location filename="installation.ui" line="329"/>
+        <location filename="installation.ui" line="353"/>
         <source>nb. pompes</source>
         <translation>Număr pompe</translation>
     </message>
     <message utf8="true">
-        <location filename="installation.ui" line="339"/>
+        <location filename="installation.ui" line="363"/>
         <source>débit refoulé</source>
         <translation>Debit refulare</translation>
     </message>
     <message>
-        <location filename="installation.ui" line="349"/>
+        <location filename="installation.ui" line="373"/>
         <source>hauteur mano.</source>
         <translation>Înălţime manometrică</translation>
     </message>
     <message utf8="true">
-        <location filename="installation.ui" line="359"/>
+        <location filename="installation.ui" line="383"/>
         <source>conduite entrée</source>
         <translation>Conductă intrare</translation>
     </message>
     <message>
-        <location filename="installation.ui" line="369"/>
+        <location filename="installation.ui" line="393"/>
         <source>conduite sortie</source>
         <translation type="unfinished">Conductă ieşire</translation>
     </message>
     <message utf8="true">
-        <location filename="installation.ui" line="398"/>
+        <location filename="installation.ui" line="422"/>
         <source>qualité</source>
         <translation>Calitate</translation>
     </message>
     <message utf8="true">
-        <location filename="installation.ui" line="408"/>
+        <location filename="installation.ui" line="432"/>
         <source>débit étiage</source>
         <translation>Debit minim</translation>
     </message>
     <message utf8="true">
-        <location filename="installation.ui" line="418"/>
+        <location filename="installation.ui" line="442"/>
         <source>débit moyen</source>
         <translation>Debit mediu</translation>
     </message>
     <message utf8="true">
-        <location filename="installation.ui" line="428"/>
+        <location filename="installation.ui" line="452"/>
         <source>débit concession</source>
         <translation>Debit exploatare</translation>
     </message>
     <message>
-        <location filename="installation.ui" line="438"/>
+        <location filename="installation.ui" line="462"/>
         <source>fin contrat</source>
         <translation>Final contract</translation>
     </message>
     <message>
-        <location filename="installation.ui" line="452"/>
+        <location filename="installation.ui" line="469"/>
         <source>chambre de rassemblement</source>
         <translation>Cameră/Puţ colector</translation>
     </message>
     <message utf8="true">
-        <location filename="installation.ui" line="468"/>
+        <location filename="installation.ui" line="488"/>
         <source>désinfection UV</source>
         <translation>Ultraviolete (UV)</translation>
     </message>
     <message>
-        <location filename="installation.ui" line="475"/>
+        <location filename="installation.ui" line="495"/>
         <source>filtration membranaire</source>
         <translation>Membrane filtrante</translation>
     </message>
     <message utf8="true">
-        <location filename="installation.ui" line="482"/>
+        <location filename="installation.ui" line="502"/>
         <source>désinfection chlore liquide</source>
         <translation>Clor lichid</translation>
     </message>
     <message utf8="true">
-        <location filename="installation.ui" line="489"/>
+        <location filename="installation.ui" line="509"/>
         <source>filtration à sable</source>
         <translation>Prin straturi nisip</translation>
     </message>
     <message utf8="true">
-        <location filename="installation.ui" line="496"/>
+        <location filename="installation.ui" line="516"/>
         <source>désinfection chlore gazeux</source>
         <translation>Clor gazos</translation>
     </message>
     <message>
-        <location filename="installation.ui" line="503"/>
+        <location filename="installation.ui" line="523"/>
         <source>flocculation</source>
         <translation>Floculare</translation>
     </message>
     <message utf8="true">
-        <location filename="installation.ui" line="510"/>
+        <location filename="installation.ui" line="530"/>
         <source>désinfection ozone</source>
         <translation>Ozonare</translation>
     </message>
     <message>
-        <location filename="installation.ui" line="517"/>
+        <location filename="installation.ui" line="537"/>
         <source>charbon actif</source>
         <translation>Carbon activ</translation>
     </message>
     <message utf8="true">
-        <location filename="installation.ui" line="524"/>
+        <location filename="installation.ui" line="544"/>
         <source>décantation</source>
         <translation>Decantare</translation>
     </message>
     <message utf8="true">
-        <location filename="installation.ui" line="531"/>
+        <location filename="installation.ui" line="551"/>
         <source>capacité</source>
         <translation>Capacitate</translation>
     </message>
@@ -677,6 +677,21 @@
         <location filename="valve.ui" line="347"/>
         <source>Précision alti. tige</source>
         <translation>Precizie cotă tijă</translation>
+    </message>
+    <message utf8="true">
+        <location filename="installation.ui" line="675"/>
+        <source>Type rés. incendie</source>
+        <translation>Rez. incendiu tip</translation>
+    </message>
+    <message>
+        <location filename="installation.ui" line="217"/>
+        <source>Eau de surface</source>
+        <translation>Apă de suprafaţă</translation>
+    </message>
+    <message utf8="true">
+        <location filename="installation.ui" line="267"/>
+        <source>débitmètre</source>
+        <translation>Debitmetru</translation>
     </message>
 </context>
 <context>
