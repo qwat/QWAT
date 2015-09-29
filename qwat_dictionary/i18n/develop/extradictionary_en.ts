@@ -9,14 +9,14 @@
         <translation>ID</translation>
     </message>
     <message>
-        <location filename="installation.ui" line="77"/>
+        <location filename="installation.ui" line="87"/>
         <source>Statut</source>
         <translation>Status</translation>
     </message>
     <message utf8="true">
         <location filename="meter.ui" line="20"/>
         <source>Compteur réseau</source>
-        <translation>Water meter</translation>
+        <translation type="unfinished">Flow meter</translation>
     </message>
     <message>
         <location filename="installation.ui" line="167"/>
@@ -39,7 +39,7 @@
         <translation>Pressure zone</translation>
     </message>
     <message>
-        <location filename="installation.ui" line="780"/>
+        <location filename="installation.ui" line="800"/>
         <source>Type</source>
         <translation>Type</translation>
     </message>
@@ -119,12 +119,12 @@
         <translation>Hydrants</translation>
     </message>
     <message utf8="true">
-        <location filename="installation.ui" line="548"/>
+        <location filename="installation.ui" line="568"/>
         <source>Général</source>
         <translation>General</translation>
     </message>
     <message>
-        <location filename="installation.ui" line="106"/>
+        <location filename="installation.ui" line="116"/>
         <source>Distributeur</source>
         <translation>Distributor</translation>
     </message>
@@ -299,7 +299,7 @@
         <translation>Installation building</translation>
     </message>
     <message>
-        <location filename="installation.ui" line="67"/>
+        <location filename="installation.ui" line="77"/>
         <source>Nom</source>
         <translation>Name</translation>
     </message>
@@ -309,22 +309,22 @@
         <translation type="obsolete">Rezervoir</translation>
     </message>
     <message>
-        <location filename="installation.ui" line="382"/>
+        <location filename="installation.ui" line="406"/>
         <source>Source</source>
         <translation>Source</translation>
     </message>
     <message>
-        <location filename="installation.ui" line="303"/>
+        <location filename="installation.ui" line="327"/>
         <source>Pompage</source>
         <translation>Pumping</translation>
     </message>
     <message>
-        <location filename="installation.ui" line="462"/>
+        <location filename="installation.ui" line="482"/>
         <source>Traitement</source>
         <translation>Treatment</translation>
     </message>
     <message utf8="true">
-        <location filename="installation.ui" line="284"/>
+        <location filename="installation.ui" line="308"/>
         <source>Régulation de pression</source>
         <translation>Pressure regulator</translation>
     </message>
@@ -334,7 +334,7 @@
         <translation type="obsolete">Valves chamber</translation>
     </message>
     <message>
-        <location filename="installation.ui" line="53"/>
+        <location filename="installation.ui" line="63"/>
         <source>ECA</source>
         <translation>Id fire brigade</translation>
     </message>
@@ -354,87 +354,87 @@
         <translation type="obsolete">Installation building</translation>
     </message>
     <message utf8="true">
-        <location filename="installation.ui" line="557"/>
+        <location filename="installation.ui" line="577"/>
         <source>Réserve totale</source>
         <translation>Total reserve</translation>
     </message>
     <message>
-        <location filename="installation.ui" line="564"/>
+        <location filename="installation.ui" line="584"/>
         <source>Remarques</source>
         <translation>Remarks</translation>
     </message>
     <message utf8="true">
-        <location filename="installation.ui" line="571"/>
+        <location filename="installation.ui" line="591"/>
         <source>Rés. utile</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="installation.ui" line="581"/>
+        <location filename="installation.ui" line="601"/>
         <source>Top-plein</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="installation.ui" line="588"/>
+        <location filename="installation.ui" line="608"/>
         <source>Alt. trop-plein</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="installation.ui" line="808"/>
+        <location filename="installation.ui" line="828"/>
         <source>Litres/cm</source>
         <translation>Liters/cm</translation>
     </message>
     <message>
-        <location filename="installation.ui" line="634"/>
+        <location filename="installation.ui" line="654"/>
         <source>Alt. radier</source>
         <translation type="unfinished"></translation>
     </message>
     <message utf8="true">
-        <location filename="installation.ui" line="641"/>
+        <location filename="installation.ui" line="661"/>
         <source>Télécommande incendie</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="installation.ui" line="648"/>
+        <location filename="installation.ui" line="668"/>
         <source>Vanne incendie</source>
         <translation>Fire valve</translation>
     </message>
     <message utf8="true">
-        <location filename="installation.ui" line="662"/>
+        <location filename="installation.ui" line="682"/>
         <source>Rés. incendie</source>
         <translation>Fire reserve</translation>
     </message>
     <message>
-        <location filename="installation.ui" line="675"/>
+        <location filename="installation.ui" line="695"/>
         <source>Hauteur max.</source>
         <translation>Height max.</translation>
     </message>
     <message>
-        <location filename="installation.ui" line="689"/>
+        <location filename="installation.ui" line="709"/>
         <source>Cuves</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="installation.ui" line="695"/>
+        <location filename="installation.ui" line="715"/>
         <source>Cuve 1</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="installation.ui" line="787"/>
+        <location filename="installation.ui" line="807"/>
         <source>Longueur</source>
         <translation>Length</translation>
     </message>
     <message>
-        <location filename="installation.ui" line="794"/>
+        <location filename="installation.ui" line="814"/>
         <source>Volume</source>
         <translation>Volume</translation>
     </message>
     <message utf8="true">
-        <location filename="installation.ui" line="801"/>
+        <location filename="installation.ui" line="821"/>
         <source>Diamètre/largeur</source>
         <translation>Diameter/width</translation>
     </message>
     <message>
-        <location filename="installation.ui" line="774"/>
+        <location filename="installation.ui" line="794"/>
         <source>Cuve 2</source>
         <translation type="unfinished"></translation>
     </message>
@@ -449,7 +449,7 @@
         <translation>Material</translation>
     </message>
     <message>
-        <location filename="valve.ui" line="501"/>
+        <location filename="installation.ui" line="228"/>
         <source>Emplacement</source>
         <translation>Location</translation>
     </message>
@@ -484,19 +484,19 @@
         <translation>Planned flow</translation>
     </message>
     <message>
-        <location filename="installation.ui" line="60"/>
+        <location filename="installation.ui" line="70"/>
         <source>Altitude</source>
         <translation>Altitude</translation>
     </message>
     <message>
-        <location filename="installation.ui" line="90"/>
+        <location filename="installation.ui" line="100"/>
         <source>Type d&apos;eau</source>
         <translation>Water type</translation>
     </message>
     <message utf8="true">
         <location filename="installation.ui" line="130"/>
         <source>Télécom.</source>
-        <translation type="unfinished"></translation>
+        <translation>Remote</translation>
     </message>
     <message utf8="true">
         <location filename="installation.ui" line="160"/>
@@ -509,152 +509,147 @@
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="installation.ui" line="203"/>
+        <location filename="installation.ui" line="210"/>
         <source>Ouvrage principal</source>
         <translation type="unfinished"></translation>
     </message>
-    <message utf8="true">
-        <location filename="installation.ui" line="211"/>
-        <source>Accès</source>
-        <translation type="unfinished"></translation>
-    </message>
     <message>
-        <location filename="installation.ui" line="237"/>
+        <location filename="installation.ui" line="254"/>
         <source>Chambre</source>
         <translation type="unfinished"></translation>
     </message>
     <message utf8="true">
-        <location filename="installation.ui" line="243"/>
+        <location filename="installation.ui" line="260"/>
         <source>séparation de réseau</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="installation.ui" line="250"/>
+        <location filename="installation.ui" line="288"/>
         <source>compteur</source>
         <translation>Meter</translation>
     </message>
     <message>
-        <location filename="installation.ui" line="257"/>
+        <location filename="installation.ui" line="274"/>
         <source>profondeur</source>
         <translation>Depth</translation>
     </message>
     <message>
-        <location filename="installation.ui" line="267"/>
+        <location filename="installation.ui" line="281"/>
         <source>nb. vannes</source>
         <translation>No. valves</translation>
     </message>
     <message>
-        <location filename="installation.ui" line="388"/>
+        <location filename="installation.ui" line="412"/>
         <source>type</source>
         <translation>Type</translation>
     </message>
     <message>
-        <location filename="installation.ui" line="319"/>
+        <location filename="installation.ui" line="343"/>
         <source>mode</source>
         <translation>Mode</translation>
     </message>
     <message>
-        <location filename="installation.ui" line="329"/>
+        <location filename="installation.ui" line="353"/>
         <source>nb. pompes</source>
         <translation>No. pumps</translation>
     </message>
     <message utf8="true">
-        <location filename="installation.ui" line="339"/>
+        <location filename="installation.ui" line="363"/>
         <source>débit refoulé</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="installation.ui" line="349"/>
+        <location filename="installation.ui" line="373"/>
         <source>hauteur mano.</source>
         <translation type="unfinished"></translation>
     </message>
     <message utf8="true">
-        <location filename="installation.ui" line="359"/>
+        <location filename="installation.ui" line="383"/>
         <source>conduite entrée</source>
         <translation>Pipe in</translation>
     </message>
     <message>
-        <location filename="installation.ui" line="369"/>
+        <location filename="installation.ui" line="393"/>
         <source>conduite sortie</source>
         <translation>Pipe out</translation>
     </message>
     <message utf8="true">
-        <location filename="installation.ui" line="398"/>
+        <location filename="installation.ui" line="422"/>
         <source>qualité</source>
         <translation>Quality</translation>
     </message>
     <message utf8="true">
-        <location filename="installation.ui" line="408"/>
+        <location filename="installation.ui" line="432"/>
         <source>débit étiage</source>
         <translation type="unfinished"></translation>
     </message>
     <message utf8="true">
-        <location filename="installation.ui" line="418"/>
+        <location filename="installation.ui" line="442"/>
         <source>débit moyen</source>
         <translation type="unfinished"></translation>
     </message>
     <message utf8="true">
-        <location filename="installation.ui" line="428"/>
+        <location filename="installation.ui" line="452"/>
         <source>débit concession</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="installation.ui" line="438"/>
+        <location filename="installation.ui" line="462"/>
         <source>fin contrat</source>
         <translation>Contract end</translation>
     </message>
     <message>
-        <location filename="installation.ui" line="452"/>
+        <location filename="installation.ui" line="469"/>
         <source>chambre de rassemblement</source>
         <translation type="unfinished"></translation>
     </message>
     <message utf8="true">
-        <location filename="installation.ui" line="468"/>
+        <location filename="installation.ui" line="488"/>
         <source>désinfection UV</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="installation.ui" line="475"/>
+        <location filename="installation.ui" line="495"/>
         <source>filtration membranaire</source>
         <translation type="unfinished"></translation>
     </message>
     <message utf8="true">
-        <location filename="installation.ui" line="482"/>
+        <location filename="installation.ui" line="502"/>
         <source>désinfection chlore liquide</source>
         <translation type="unfinished"></translation>
     </message>
     <message utf8="true">
-        <location filename="installation.ui" line="489"/>
+        <location filename="installation.ui" line="509"/>
         <source>filtration à sable</source>
         <translation type="unfinished"></translation>
     </message>
     <message utf8="true">
-        <location filename="installation.ui" line="496"/>
+        <location filename="installation.ui" line="516"/>
         <source>désinfection chlore gazeux</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="installation.ui" line="503"/>
+        <location filename="installation.ui" line="523"/>
         <source>flocculation</source>
         <translation type="unfinished"></translation>
     </message>
     <message utf8="true">
-        <location filename="installation.ui" line="510"/>
+        <location filename="installation.ui" line="530"/>
         <source>désinfection ozone</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="installation.ui" line="517"/>
+        <location filename="installation.ui" line="537"/>
         <source>charbon actif</source>
         <translation type="unfinished"></translation>
     </message>
     <message utf8="true">
-        <location filename="installation.ui" line="524"/>
+        <location filename="installation.ui" line="544"/>
         <source>décantation</source>
         <translation type="unfinished"></translation>
     </message>
     <message utf8="true">
-        <location filename="installation.ui" line="531"/>
+        <location filename="installation.ui" line="551"/>
         <source>capacité</source>
         <translation type="unfinished"></translation>
     </message>
@@ -672,6 +667,21 @@
         <location filename="valve.ui" line="347"/>
         <source>Précision alti. tige</source>
         <translation type="unfinished"></translation>
+    </message>
+    <message utf8="true">
+        <location filename="installation.ui" line="675"/>
+        <source>Type rés. incendie</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="installation.ui" line="217"/>
+        <source>Eau de surface</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message utf8="true">
+        <location filename="installation.ui" line="267"/>
+        <source>débitmètre</source>
+        <translation>Flow meter</translation>
     </message>
 </context>
 <context>
