@@ -14,10 +14,22 @@ Edit the .gitmodules file in the qWat folder and replace the url value from git@
  git submodule init
  git submodule update
 
+Then change to the data-model subdirectory and redo the procedure in order to pull the metaproject submodule
+ 
+ cd data-model
+ git submodule init
+ git submodule update
+
 In order to create the database model you need to:
 
  - create a postgresql database
  - install the postgis extension
+
+Do to this you may execute for example
+
+ psql -U postgres -c 'create database qwat;'
+ psql -U postgres -d qwat -c 'create extension postgis;'
+ psql -U postgres -d qwat -c 'create extension hstore;'
 
 You can choose whatever name for the database and whatever user as its owner.
 The script that is used to create the database model looks for the .pg_service.conf file.
