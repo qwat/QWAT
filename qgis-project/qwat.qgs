@@ -3,21 +3,20 @@
   <title></title>
   <layer-tree-group expanded="1" checked="Qt::PartiallyChecked" name="">
     <customproperties/>
-    <layer-tree-layer expanded="1" checked="Qt::Checked" id="vw_element_samplingpoint20151002161215716" name="vw_element_samplingpoint">
-      <customproperties/>
-    </layer-tree-layer>
     <layer-tree-group expanded="1" checked="Qt::PartiallyChecked" name="Réseau">
       <customproperties/>
-      <layer-tree-group expanded="1" checked="Qt::PartiallyChecked" name="ouvrages">
+      <layer-tree-group expanded="0" checked="Qt::PartiallyChecked" name="ouvrages">
         <customproperties/>
-        <layer-tree-layer expanded="0" checked="Qt::Checked" id="vw_node_installation20150918153835436" name="ouvrage">
-          <customproperties/>
+        <layer-tree-layer expanded="1" checked="Qt::Checked" id="vw_node_installation20150918153835436" name="ouvrage">
+          <customproperties>
+            <property key="expandedLegendNodes"/>
+          </customproperties>
         </layer-tree-layer>
         <layer-tree-layer expanded="0" checked="Qt::Unchecked" id="od_cover20141219115626229" name="couvercles">
           <customproperties/>
         </layer-tree-layer>
       </layer-tree-group>
-      <layer-tree-group expanded="0" checked="Qt::PartiallyChecked" name="Abonnés">
+      <layer-tree-group expanded="0" checked="Qt::Checked" name="Abonnés">
         <customproperties/>
         <layer-tree-layer expanded="0" checked="Qt::Checked" id="subscriber20130304110011459" name="abonnés">
           <customproperties/>
@@ -31,9 +30,6 @@
         <layer-tree-layer expanded="0" checked="Qt::Checked" id="od_meter_reference20140304165835390" name="Compteur réseau - renvoi">
           <customproperties/>
         </layer-tree-layer>
-        <layer-tree-layer expanded="0" checked="Qt::Unchecked" id="subscriber_pipe_relation20130417092124312" name="Fleches abonné -> conduite">
-          <customproperties/>
-        </layer-tree-layer>
       </layer-tree-group>
       <layer-tree-group expanded="1" checked="Qt::PartiallyChecked" name="Réseau">
         <customproperties/>
@@ -45,6 +41,9 @@
             </property>
           </customproperties>
         </layer-tree-layer>
+        <layer-tree-layer expanded="0" checked="Qt::Checked" id="node20130304110005126" name="noeuds">
+          <customproperties/>
+        </layer-tree-layer>
         <layer-tree-layer expanded="0" checked="Qt::Checked" id="valve20130304110011497" name="vannes">
           <customproperties>
             <property key="expandedLegendNodes"/>
@@ -53,25 +52,28 @@
         <layer-tree-layer expanded="0" checked="Qt::Checked" id="hydrant20130304110004848" name="hydrantes">
           <customproperties/>
         </layer-tree-layer>
+        <layer-tree-layer expanded="0" checked="Qt::Checked" id="od_part20140429113327995" name="Pièces d'installations">
+          <customproperties/>
+        </layer-tree-layer>
         <layer-tree-layer expanded="1" checked="Qt::Unchecked" id="od_remote20150116100522170" name="télécommande">
+          <customproperties/>
+        </layer-tree-layer>
+        <layer-tree-layer expanded="0" checked="Qt::Checked" id="od_crossing20141023083754327" name="croisements">
           <customproperties/>
         </layer-tree-layer>
         <layer-tree-layer expanded="0" checked="Qt::Unchecked" id="leak20130821111917060" name="fuite">
           <customproperties/>
         </layer-tree-layer>
-      </layer-tree-group>
-      <layer-tree-group expanded="1" checked="Qt::PartiallyChecked" name="Noeuds">
-        <customproperties/>
-        <layer-tree-layer expanded="0" checked="Qt::Checked" id="node20130304110005126" name="noeuds">
+        <layer-tree-layer expanded="1" checked="Qt::Checked" id="vw_element_samplingpoint20151002161215716" name="point de prélèvement">
           <customproperties/>
         </layer-tree-layer>
-        <layer-tree-layer expanded="0" checked="Qt::Checked" id="od_part20140429113327995" name="Pièces d'installations">
+      </layer-tree-group>
+      <layer-tree-group expanded="0" checked="Qt::Unchecked" name="Contrôle">
+        <customproperties/>
+        <layer-tree-layer expanded="0" checked="Qt::Unchecked" id="subscriber_pipe_relation20130417092124312" name="Fleches abonné -> conduite">
           <customproperties/>
         </layer-tree-layer>
         <layer-tree-layer expanded="0" checked="Qt::Unchecked" id="od_node20140116161508743" name="noeuds - tous - controle">
-          <customproperties/>
-        </layer-tree-layer>
-        <layer-tree-layer expanded="0" checked="Qt::Checked" id="od_crossing20141023083754327" name="croisements">
           <customproperties/>
         </layer-tree-layer>
       </layer-tree-group>
@@ -353,10 +355,10 @@
   <mapcanvas>
     <units>meters</units>
     <extent>
-      <xmin>561961.18938023434020579</xmin>
-      <ymin>145665.66697811239282601</ymin>
-      <xmax>562055.38104699878022075</xmax>
-      <ymax>145764.79753376709413715</ymax>
+      <xmin>560091.04585789050906897</xmin>
+      <ymin>144862.18447870985255577</ymin>
+      <xmax>560806.31382742128334939</xmax>
+      <ymax>145614.9571357847598847</ymax>
     </extent>
     <rotation>0</rotation>
     <projections>1</projections>
@@ -563,15 +565,10 @@
     </custom-order>
   </layer-tree-canvas>
   <legend updateDrawingOrder="false">
-    <legendlayer drawingOrder="95" open="true" checked="Qt::Checked" name="vw_element_samplingpoint" showFeatureCount="0">
-      <filegroup open="true" hidden="false">
-        <legendlayerfile isInOverview="0" layerid="vw_element_samplingpoint20151002161215716" visible="1"/>
-      </filegroup>
-    </legendlayer>
     <legendgroup open="true" checked="Qt::PartiallyChecked" name="Réseau">
-      <legendgroup open="true" checked="Qt::PartiallyChecked" name="ouvrages">
-        <legendlayer drawingOrder="1" open="false" checked="Qt::Checked" name="ouvrage" showFeatureCount="0">
-          <filegroup open="false" hidden="false">
+      <legendgroup open="false" checked="Qt::PartiallyChecked" name="ouvrages">
+        <legendlayer drawingOrder="1" open="true" checked="Qt::Checked" name="ouvrage" showFeatureCount="0">
+          <filegroup open="true" hidden="false">
             <legendlayerfile isInOverview="0" layerid="vw_node_installation20150918153835436" visible="1"/>
           </filegroup>
         </legendlayer>
@@ -581,7 +578,7 @@
           </filegroup>
         </legendlayer>
       </legendgroup>
-      <legendgroup open="false" checked="Qt::PartiallyChecked" name="Abonnés">
+      <legendgroup open="false" checked="Qt::Checked" name="Abonnés">
         <legendlayer drawingOrder="2" open="false" checked="Qt::Checked" name="abonnés" showFeatureCount="0">
           <filegroup open="false" hidden="false">
             <legendlayerfile isInOverview="0" layerid="subscriber20130304110011459" visible="1"/>
@@ -602,16 +599,16 @@
             <legendlayerfile isInOverview="0" layerid="od_meter_reference20140304165835390" visible="1"/>
           </filegroup>
         </legendlayer>
-        <legendlayer drawingOrder="6" open="false" checked="Qt::Unchecked" name="Fleches abonné -> conduite" showFeatureCount="0">
-          <filegroup open="false" hidden="false">
-            <legendlayerfile isInOverview="0" layerid="subscriber_pipe_relation20130417092124312" visible="0"/>
-          </filegroup>
-        </legendlayer>
       </legendgroup>
       <legendgroup open="true" checked="Qt::PartiallyChecked" name="Réseau">
         <legendlayer drawingOrder="15" open="false" checked="Qt::Checked" name="conduites" showFeatureCount="0">
           <filegroup open="false" hidden="false">
             <legendlayerfile isInOverview="0" layerid="conduites_copy20130709141244955" visible="1"/>
+          </filegroup>
+        </legendlayer>
+        <legendlayer drawingOrder="12" open="false" checked="Qt::Checked" name="noeuds" showFeatureCount="0">
+          <filegroup open="false" hidden="false">
+            <legendlayerfile isInOverview="0" layerid="node20130304110005126" visible="1"/>
           </filegroup>
         </legendlayer>
         <legendlayer drawingOrder="7" open="false" checked="Qt::Checked" name="vannes" showFeatureCount="0">
@@ -624,9 +621,19 @@
             <legendlayerfile isInOverview="0" layerid="hydrant20130304110004848" visible="1"/>
           </filegroup>
         </legendlayer>
+        <legendlayer drawingOrder="11" open="false" checked="Qt::Checked" name="Pièces d'installations" showFeatureCount="0">
+          <filegroup open="false" hidden="false">
+            <legendlayerfile isInOverview="0" layerid="od_part20140429113327995" visible="1"/>
+          </filegroup>
+        </legendlayer>
         <legendlayer drawingOrder="9" open="true" checked="Qt::Unchecked" name="télécommande" showFeatureCount="0">
           <filegroup open="true" hidden="false">
             <legendlayerfile isInOverview="0" layerid="od_remote20150116100522170" visible="0"/>
+          </filegroup>
+        </legendlayer>
+        <legendlayer drawingOrder="14" open="false" checked="Qt::Checked" name="croisements" showFeatureCount="0">
+          <filegroup open="false" hidden="false">
+            <legendlayerfile isInOverview="0" layerid="od_crossing20141023083754327" visible="1"/>
           </filegroup>
         </legendlayer>
         <legendlayer drawingOrder="10" open="false" checked="Qt::Unchecked" name="fuite" showFeatureCount="0">
@@ -634,26 +641,21 @@
             <legendlayerfile isInOverview="0" layerid="leak20130821111917060" visible="0"/>
           </filegroup>
         </legendlayer>
-      </legendgroup>
-      <legendgroup open="true" checked="Qt::PartiallyChecked" name="Noeuds">
-        <legendlayer drawingOrder="12" open="false" checked="Qt::Checked" name="noeuds" showFeatureCount="0">
-          <filegroup open="false" hidden="false">
-            <legendlayerfile isInOverview="0" layerid="node20130304110005126" visible="1"/>
+        <legendlayer drawingOrder="95" open="true" checked="Qt::Checked" name="point de prélèvement" showFeatureCount="0">
+          <filegroup open="true" hidden="false">
+            <legendlayerfile isInOverview="0" layerid="vw_element_samplingpoint20151002161215716" visible="1"/>
           </filegroup>
         </legendlayer>
-        <legendlayer drawingOrder="11" open="false" checked="Qt::Checked" name="Pièces d'installations" showFeatureCount="0">
+      </legendgroup>
+      <legendgroup open="false" checked="Qt::Unchecked" name="Contrôle">
+        <legendlayer drawingOrder="6" open="false" checked="Qt::Unchecked" name="Fleches abonné -> conduite" showFeatureCount="0">
           <filegroup open="false" hidden="false">
-            <legendlayerfile isInOverview="0" layerid="od_part20140429113327995" visible="1"/>
+            <legendlayerfile isInOverview="0" layerid="subscriber_pipe_relation20130417092124312" visible="0"/>
           </filegroup>
         </legendlayer>
         <legendlayer drawingOrder="13" open="false" checked="Qt::Unchecked" name="noeuds - tous - controle" showFeatureCount="0">
           <filegroup open="false" hidden="false">
             <legendlayerfile isInOverview="0" layerid="od_node20140116161508743" visible="0"/>
-          </filegroup>
-        </legendlayer>
-        <legendlayer drawingOrder="14" open="false" checked="Qt::Checked" name="croisements" showFeatureCount="0">
-          <filegroup open="false" hidden="false">
-            <legendlayerfile isInOverview="0" layerid="od_crossing20141023083754327" visible="1"/>
           </filegroup>
         </legendlayer>
       </legendgroup>
@@ -29276,7 +29278,7 @@
         </layer>
       </symbol>
       <ComposerMap mapRotation="325" keepLayerSet="true" id="0" previewMode="Cache" drawCanvasItems="true">
-        <Extent ymin="136695.24451208912068978" xmin="556387.41481285262852907" ymax="141145.24451662809588015" xmax="563887.41482050251215696"/>
+        <Extent ymin="136695.24451208909158595" xmin="556387.41481285262852907" ymax="141145.24451662806677632" xmax="563887.41482050251215696"/>
         <LayerSet>
           <Layer>vw_pipe_schema20141208162900166</Layer>
           <Layer>vannes_copy20141127160745910</Layer>
@@ -30947,7 +30949,7 @@
         </ComposerItem>
       </ComposerPicture>
       <ComposerMap mapRotation="325" keepLayerSet="true" id="0" previewMode="Cache" drawCanvasItems="true">
-        <Extent ymin="136695.24451208859682083" xmin="556387.41481285262852907" ymax="141145.2445166275720112" xmax="563887.41482050251215696"/>
+        <Extent ymin="136695.244512088567717" xmin="556387.41481285262852907" ymax="141145.24451662754290737" xmax="563887.41482050251215696"/>
         <LayerSet>
           <Layer>vannes_copy20141127160745910</Layer>
           <Layer>vw_pipe_schema20141208162900166</Layer>
@@ -32543,7 +32545,7 @@
         </layer>
       </symbol>
       <ComposerMap mapRotation="0" keepLayerSet="false" id="0" previewMode="Cache" drawCanvasItems="true">
-        <Extent ymin="148940.92140767574892379" xmin="555084.52102199767250568" ymax="148994.92140773081337102" xmax="555138.52102205285336822"/>
+        <Extent ymin="148940.92140767580713145" xmin="555084.52102199767250568" ymax="148994.92140773087157868" xmax="555138.52102205285336822"/>
         <LayerSet/>
         <Grid/>
         <ComposerMapGrid rightAnnotationDirection="0" gridFramePenColor="0,0,0,255" show="0" bottomAnnotationPosition="1" annotationPrecision="3" showAnnotation="0" topFrameDivisions="0" uuid="{22202fc4-88f8-489a-842f-ca5a18a9f7bf}" leftAnnotationDirection="0" topAnnotationPosition="1" rightAnnotationDisplay="0" offsetX="0" offsetY="0" rightFrameDivisions="0" gridStyle="0" annotationFontColor="0,0,0,255" intervalX="0" gridFrameSideFlags="15" intervalY="0" bottomAnnotationDirection="0" leftAnnotationDisplay="0" leftFrameDivisions="0" frameFillColor1="255,255,255,255" annotationExpression="" frameFillColor2="0,0,0,255" crossLength="3" gridFramePenThickness="0.5" bottomAnnotationDisplay="0" unit="0" topAnnotationDisplay="0" leftAnnotationPosition="1" blendMode="0" gridFrameStyle="0" rightAnnotationPosition="1" gridFrameWidth="2" name="Grid 1" annotationFormat="0" bottomFrameDivisions="0" topAnnotationDirection="0" frameAnnotationDistance="1">
@@ -38731,9 +38733,9 @@
         </edittype>
       </edittypes>
     </maplayer>
-    <maplayer minimumScale="0" maximumScale="501" simplifyDrawingHints="0" minLabelScale="1" maxLabelScale="1e+08" simplifyDrawingTol="1" geometry="Point" simplifyMaxScale="1" type="vector" hasScaleBasedVisibilityFlag="1" simplifyLocal="1" scaleBasedLabelVisibilityFlag="0">
+    <maplayer minimumScale="-4.65661e-10" maximumScale="501" simplifyDrawingHints="0" minLabelScale="1" maxLabelScale="1e+08" simplifyDrawingTol="1" geometry="Point" simplifyMaxScale="1" type="vector" hasScaleBasedVisibilityFlag="1" simplifyLocal="1" scaleBasedLabelVisibilityFlag="0">
       <id>node20130304110005126</id>
-      <datasource>service='qwat' sslmode=allow key='id' srid=21781 type=Point table="qwat_od"."node" (geometry) sql="_under_object" = 'f'</datasource>
+      <datasource>service='qwat' sslmode=allow key='id' srid=21781 type=Point table="qwat_od"."node" (geometry) sql=</datasource>
       <title></title>
       <abstract></abstract>
       <keywordList>
@@ -38809,14 +38811,14 @@
           <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
         </edittype>
       </edittypes>
-      <renderer-v2 attr="_type" forceraster="0" symbollevels="0" type="categorizedSymbol">
-        <categories>
-          <category render="true" symbol="0" value="three" label="three"/>
-          <category render="true" symbol="1" value="diff_material" label="Chg. matériau"/>
-          <category render="true" symbol="2" value="diff_year" label="Chg. année"/>
-          <category render="true" symbol="3" value="diff_diameter_material" label="Chg. diamètre + matériau"/>
-          <category render="true" symbol="4" value="diff_diameter" label="Chg. diamètre"/>
-        </categories>
+      <renderer-v2 forceraster="0" symbollevels="0" type="RuleRenderer">
+        <rules key="{43385ed0-766f-4646-ad2f-3bb352c38c57}">
+          <rule filter="_pipe_node_type = 'T'" key="{95f84ff0-270b-4dd3-9a75-2ba742aabe87}" symbol="0" label="T"/>
+          <rule filter="_pipe_node_type = 'couple_material'" key="{af3e33a5-995b-40e1-a7a4-c5693a1608d4}" symbol="1" label="Chg. matériau"/>
+          <rule filter="_pipe_node_type = 'couple_year'" key="{026d603f-cc2a-4c8b-b6d1-357175e36956}" symbol="2" label="Chg. année"/>
+          <rule filter="_pipe_node_type = 'couple_other'" key="{d148d3d0-ca6b-405e-8259-c15f88e62ccb}" symbol="3" label="Chg. diamètre + matériau"/>
+          <rule filter="_pipe_node_type = 'couple_diameter'" key="{87530b81-8a53-4983-a76e-b17b2c30ae43}" symbol="4" label="Chg. diamètre"/>
+        </rules>
         <symbols>
           <symbol alpha="1" clip_to_extent="1" type="marker" name="0">
             <layer pass="0" class="SvgMarker" locked="0">
@@ -38851,7 +38853,7 @@
               <prop k="angle" v="0"/>
               <prop k="angle_dd_active" v="1"/>
               <prop k="angle_dd_expression" v=""/>
-              <prop k="angle_dd_field" v="_orientation"/>
+              <prop k="angle_dd_field" v="_pipe_orientation"/>
               <prop k="angle_dd_useexpr" v="0"/>
               <prop k="color" v="#000000"/>
               <prop k="horizontal_anchor_point" v="1"/>
@@ -38883,7 +38885,7 @@
               <prop k="angle" v="0"/>
               <prop k="angle_dd_active" v="1"/>
               <prop k="angle_dd_expression" v=""/>
-              <prop k="angle_dd_field" v="_orientation"/>
+              <prop k="angle_dd_field" v="_pipe_orientation"/>
               <prop k="angle_dd_useexpr" v="0"/>
               <prop k="color" v="#000000"/>
               <prop k="horizontal_anchor_point" v="1"/>
@@ -38915,7 +38917,7 @@
               <prop k="angle" v="0"/>
               <prop k="angle_dd_active" v="1"/>
               <prop k="angle_dd_expression" v=""/>
-              <prop k="angle_dd_field" v="_orientation"/>
+              <prop k="angle_dd_field" v="_pipe_orientation"/>
               <prop k="angle_dd_useexpr" v="0"/>
               <prop k="color" v="#000000"/>
               <prop k="horizontal_anchor_point" v="1"/>
@@ -38947,7 +38949,7 @@
               <prop k="angle" v="0"/>
               <prop k="angle_dd_active" v="1"/>
               <prop k="angle_dd_expression" v=""/>
-              <prop k="angle_dd_field" v="_orientation"/>
+              <prop k="angle_dd_field" v="_pipe_orientation"/>
               <prop k="angle_dd_useexpr" v="0"/>
               <prop k="color" v="#000000"/>
               <prop k="horizontal_anchor_point" v="1"/>
@@ -38975,42 +38977,6 @@
             </layer>
           </symbol>
         </symbols>
-        <source-symbol>
-          <symbol alpha="1" clip_to_extent="1" type="marker" name="0">
-            <layer pass="0" class="SvgMarker" locked="0">
-              <prop k="angle" v="0"/>
-              <prop k="angle_dd_active" v="1"/>
-              <prop k="angle_dd_expression" v=""/>
-              <prop k="angle_dd_field" v="_orientation"/>
-              <prop k="angle_dd_useexpr" v="0"/>
-              <prop k="color" v="#000000"/>
-              <prop k="horizontal_anchor_point" v="1"/>
-              <prop k="name" v="./symbols/nodes/diff_diameter_material.svg"/>
-              <prop k="offset" v="0,0"/>
-              <prop k="offset_map_unit_scale" v="0,0,0,0,0,0"/>
-              <prop k="offset_unit" v="MM"/>
-              <prop k="outline_color" v="#000000"/>
-              <prop k="outline_width" v="1"/>
-              <prop k="outline_width_map_unit_scale" v="0,0,0,0,0,0"/>
-              <prop k="outline_width_unit" v="MM"/>
-              <prop k="scale_method" v="area"/>
-              <prop k="size" v="4"/>
-              <prop k="size_map_unit_scale" v="0,0,0,0,0,0"/>
-              <prop k="size_unit" v="MM"/>
-              <prop k="vertical_anchor_point" v="1"/>
-              <effect enabled="0" type="effectStack">
-                <effect type="drawSource">
-                  <prop k="blend_mode" v="0"/>
-                  <prop k="draw_mode" v="2"/>
-                  <prop k="enabled" v="1"/>
-                  <prop k="transparency" v="0"/>
-                </effect>
-              </effect>
-            </layer>
-          </symbol>
-        </source-symbol>
-        <rotation/>
-        <sizescale scalemethod="diameter"/>
         <effect enabled="0" type="effectStack">
           <effect type="drawSource">
             <prop k="blend_mode" v="0"/>
@@ -39050,12 +39016,14 @@
         <property key="labeling/distInMapUnits" value="false"/>
         <property key="labeling/distMapUnitMaxScale" value="0"/>
         <property key="labeling/distMapUnitMinScale" value="0"/>
+        <property key="labeling/drawLabels" value="false"/>
         <property key="labeling/enabled" value="false"/>
         <property key="labeling/fieldName" value="id"/>
+        <property key="labeling/fitInPolygonOnly" value="false"/>
         <property key="labeling/fontBold" value="true"/>
         <property key="labeling/fontCapitals" value="0"/>
-        <property key="labeling/fontFamily" value="Ubuntu"/>
-        <property key="labeling/fontItalic" value="true"/>
+        <property key="labeling/fontFamily" value="Cantarell"/>
+        <property key="labeling/fontItalic" value="false"/>
         <property key="labeling/fontLetterSpacing" value="0"/>
         <property key="labeling/fontLimitPixelSize" value="false"/>
         <property key="labeling/fontMaxPixelSize" value="10000"/>
@@ -39066,7 +39034,7 @@
         <property key="labeling/fontSizeMapUnitMinScale" value="0"/>
         <property key="labeling/fontStrikeout" value="false"/>
         <property key="labeling/fontUnderline" value="false"/>
-        <property key="labeling/fontWeight" value="75"/>
+        <property key="labeling/fontWeight" value="50"/>
         <property key="labeling/fontWordSpacing" value="0"/>
         <property key="labeling/formatNumbers" value="false"/>
         <property key="labeling/isExpression" value="false"/>
@@ -39083,8 +39051,10 @@
         <property key="labeling/minFeatureSize" value="0"/>
         <property key="labeling/multilineAlign" value="0"/>
         <property key="labeling/multilineHeight" value="1"/>
-        <property key="labeling/namedStyle" value="Bold Italic"/>
+        <property key="labeling/namedStyle" value="Regular"/>
         <property key="labeling/obstacle" value="true"/>
+        <property key="labeling/obstacleFactor" value="1"/>
+        <property key="labeling/obstacleType" value="0"/>
         <property key="labeling/placeDirectionSymbol" value="0"/>
         <property key="labeling/placement" value="0"/>
         <property key="labeling/placementFlags" value="0"/>
@@ -39168,6 +39138,8 @@
         <property key="labeling/xQuadOffset" value="0"/>
         <property key="labeling/yOffset" value="0"/>
         <property key="labeling/yQuadOffset" value="0"/>
+        <property key="variableNames" value="_fields_"/>
+        <property key="variableValues" value=""/>
       </customproperties>
       <blendMode>0</blendMode>
       <featureBlendMode>0</featureBlendMode>
@@ -39194,6 +39166,12 @@
         <multilineenabled fieldname="" on=""/>
         <selectedonly on=""/>
       </labelattributes>
+      <SingleCategoryDiagramRenderer diagramType="Pie">
+        <DiagramCategory penColor="#000000" labelPlacementMethod="XHeight" penWidth="0" diagramOrientation="Up" minimumSize="0" barWidth="5" penAlpha="255" maxScaleDenominator="501" backgroundColor="#ffffff" transparency="0" width="15" scaleDependency="Area" backgroundAlpha="255" angleOffset="1440" scaleBasedVisibility="1" enabled="0" height="15" sizeType="MM" minScaleDenominator="-4.65661e-10">
+          <fontProperties description="Cantarell,11,-1,5,50,0,0,0,0,0" style=""/>
+        </DiagramCategory>
+      </SingleCategoryDiagramRenderer>
+      <DiagramLayerSettings yPosColumn="-1" linePlacementFlags="10" placement="0" dist="0" xPosColumn="-1" priority="0" obstacle="0" showAll="1"/>
       <editform>.</editform>
       <editforminit/>
       <featformsuppress>0</featformsuppress>
@@ -47910,16 +47888,16 @@
       </edittypes>
       <renderer-v2 forceraster="0" symbollevels="0" type="RuleRenderer">
         <rules key="{8ac6d04b-1bb5-46e9-b2fb-236cb107ffc9}">
-          <rule scalemaxdenom="10000" description="toutes les vannes sauf organe réseau et vanne d'hydrant" filter="fk_function != 6105 AND fk_function != 6108" key="{7a025dab-c7fe-4c7c-9f0b-25a39f73abd8}" symbol="0" label="réseau">
+          <rule scalemaxdenom="10000" description="toutes les vannes sauf organe réseau et vanne d'hydrant" filter="fk_valve_function != 6105 AND fk_valve_function != 6108" key="{7a025dab-c7fe-4c7c-9f0b-25a39f73abd8}" symbol="0" scalemindenom="-2147483648" label="réseau">
             <rule filter="closed = 't'" key="{edf1c363-d849-4700-82d0-34d494178d4d}" symbol="1" label="Fermée"/>
-            <rule filter="&quot;fk_type&quot; = 6312" key="{d1ec978f-6d96-4ed2-ac03-a37e6629f13c}" symbol="2" label="elgelf"/>
-            <rule filter="&quot;fk_type&quot; =6313" key="{6c48a279-b0d9-428b-819c-2fc5371720fe}" symbol="3" label="arrêt"/>
+            <rule filter="&quot;fk_valve_type&quot; = 6312" key="{d1ec978f-6d96-4ed2-ac03-a37e6629f13c}" symbol="2" label="elgelf"/>
+            <rule filter="&quot;fk_valve_type&quot; =6313" key="{6c48a279-b0d9-428b-819c-2fc5371720fe}" symbol="3" label="arrêt"/>
             <rule filter=" &quot;valve_function_value_fr&quot; IN ( 'vidange' ,  'vidange-ventouse' )" key="{3bf2a10c-e2fe-43c6-9287-c4055baec2a1}" symbol="4" label="vidange"/>
           </rule>
-          <rule scalemaxdenom="1000" filter="fk_function = 6105 OR fk_function = 6108" key="{143022c7-b3e1-4c03-80d5-58520da677c2}" symbol="5" label="abonné">
+          <rule scalemaxdenom="1000" filter="fk_valve_function = 6105 OR fk_valve_function = 6108" key="{143022c7-b3e1-4c03-80d5-58520da677c2}" symbol="5" scalemindenom="-2147483648" label="abonné">
             <rule filter="closed = 't'" key="{ee4ed8dd-20ae-42fb-b43b-a4c02c5399e9}" symbol="6" label="Fermée"/>
-            <rule filter="&quot;fk_type&quot; =6313" key="{b149b2b9-3783-416c-b413-7a6f7de74e1d}" symbol="7" label="arrêt"/>
-            <rule filter="fk_type = 6312" key="{221f27a3-6778-4b14-8bb9-1b4c7d708bc3}" symbol="8" label="elgelf"/>
+            <rule filter="&quot;fk_valve_type&quot; =6313" key="{b149b2b9-3783-416c-b413-7a6f7de74e1d}" symbol="7" label="arrêt"/>
+            <rule filter="fk_valve_type = 6312" key="{221f27a3-6778-4b14-8bb9-1b4c7d708bc3}" symbol="8" label="elgelf"/>
             <rule filter=" &quot;valve_function_value_fr&quot; IN ( 'vidange' ,  'vidange-ventouse' )" key="{a0c08631-a6ac-4d0b-b538-41bb1efe2315}" symbol="9" label="vidange"/>
           </rule>
         </rules>
@@ -48265,8 +48243,10 @@
         <property key="labeling/distInMapUnits" value="false"/>
         <property key="labeling/distMapUnitMaxScale" value="0"/>
         <property key="labeling/distMapUnitMinScale" value="0"/>
+        <property key="labeling/drawLabels" value="true"/>
         <property key="labeling/enabled" value="true"/>
         <property key="labeling/fieldName" value="COALESCE(&quot;valve_function_short_fr&quot;,'')&#xa;||&#xa;COALESCE(&quot;valve_type_short_fr&quot;,'')&#xa;|| &#xa;identification&#xa;||&#xa;CASE&#xa;WHEN  $scale  &lt;= 6000  THEN COALESCE(' ' ||&quot;label_1_text&quot;,'')&#xa;ELSE ''&#xa;END"/>
+        <property key="labeling/fitInPolygonOnly" value="false"/>
         <property key="labeling/fontBold" value="false"/>
         <property key="labeling/fontCapitals" value="0"/>
         <property key="labeling/fontFamily" value="Arial"/>
@@ -48300,6 +48280,8 @@
         <property key="labeling/multilineHeight" value="1"/>
         <property key="labeling/namedStyle" value="Regular"/>
         <property key="labeling/obstacle" value="true"/>
+        <property key="labeling/obstacleFactor" value="1"/>
+        <property key="labeling/obstacleType" value="0"/>
         <property key="labeling/placeDirectionSymbol" value="0"/>
         <property key="labeling/placement" value="0"/>
         <property key="labeling/placementFlags" value="0"/>
@@ -48383,6 +48365,8 @@
         <property key="labeling/xQuadOffset" value="0"/>
         <property key="labeling/yOffset" value="0"/>
         <property key="labeling/yQuadOffset" value="0"/>
+        <property key="variableNames" value="_fields_"/>
+        <property key="variableValues" value=""/>
       </customproperties>
       <blendMode>0</blendMode>
       <featureBlendMode>0</featureBlendMode>
@@ -52994,7 +52978,7 @@
       <keywordList>
         <value></value>
       </keywordList>
-      <layername>vw_element_samplingpoint</layername>
+      <layername>point de prélèvement</layername>
       <srs>
         <spatialrefsys>
           <proj4>+proj=somerc +lat_0=46.95240555555556 +lon_0=7.439583333333333 +k_0=1 +x_0=600000 +y_0=200000 +ellps=bessel +towgs84=674.4,15.1,405.3,0,0,0,0 +units=m +no_defs</proj4>
@@ -53158,7 +53142,10 @@
                 <effect type="outerGlow">
                   <prop k="blend_mode" v="0"/>
                   <prop k="blur_level" v="3"/>
+                  <prop k="color1" v="0,0,255,255"/>
+                  <prop k="color2" v="0,255,0,255"/>
                   <prop k="color_type" v="0"/>
+                  <prop k="discrete" v="0"/>
                   <prop k="draw_mode" v="2"/>
                   <prop k="enabled" v="0"/>
                   <prop k="single_color" v="255,255,255,255"/>
@@ -53188,7 +53175,10 @@
                 <effect type="innerGlow">
                   <prop k="blend_mode" v="0"/>
                   <prop k="blur_level" v="3"/>
+                  <prop k="color1" v="0,0,255,255"/>
+                  <prop k="color2" v="0,255,0,255"/>
                   <prop k="color_type" v="0"/>
+                  <prop k="discrete" v="0"/>
                   <prop k="draw_mode" v="2"/>
                   <prop k="enabled" v="0"/>
                   <prop k="single_color" v="255,255,255,255"/>
@@ -53219,7 +53209,10 @@
           <effect type="outerGlow">
             <prop k="blend_mode" v="0"/>
             <prop k="blur_level" v="3"/>
+            <prop k="color1" v="0,0,255,255"/>
+            <prop k="color2" v="0,255,0,255"/>
             <prop k="color_type" v="0"/>
+            <prop k="discrete" v="0"/>
             <prop k="draw_mode" v="2"/>
             <prop k="enabled" v="0"/>
             <prop k="single_color" v="255,255,255,255"/>
@@ -53249,7 +53242,10 @@
           <effect type="innerGlow">
             <prop k="blend_mode" v="0"/>
             <prop k="blur_level" v="3"/>
+            <prop k="color1" v="0,0,255,255"/>
+            <prop k="color2" v="0,255,0,255"/>
             <prop k="color_type" v="0"/>
+            <prop k="discrete" v="0"/>
             <prop k="draw_mode" v="2"/>
             <prop k="enabled" v="0"/>
             <prop k="single_color" v="255,255,255,255"/>
@@ -53287,10 +53283,10 @@
         <multilineenabled fieldname="" on=""/>
         <selectedonly on=""/>
       </labelattributes>
-      <editform></editform>
+      <editform>.</editform>
       <editforminit/>
       <featformsuppress>0</featformsuppress>
-      <annotationform></annotationform>
+      <annotationform>.</annotationform>
       <editorlayout>generatedlayout</editorlayout>
       <excludeAttributesWMS/>
       <excludeAttributesWFS/>
@@ -57259,10 +57255,10 @@ END
         <value>valve20130304110011497</value>
         <value>vannes_copy20141127160745910</value>
         <value>vw_consumptionzone20150508135647750</value>
+        <value>vw_element_samplingpoint20151002161215716</value>
         <value>vw_node_installation20150918153835436</value>
         <value>vw_pipe_schema20141208162900166</value>
         <value>vw_pipe_schema_visibleitems20141127154708843</value>
-        <value>vw_element_samplingpoint20151002161215716</value>
       </LayerSnappingList>
       <LayerSnappingEnabledList type="QStringList">
         <value>disabled</value>
