@@ -124,27 +124,27 @@
         <translation></translation>
     </message>
     <message utf8="true">
-        <location filename="valve.ui" line="208"/>
+        <location filename="valve.ui" line="323"/>
         <source>Précision</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="valve.ui" line="287"/>
+        <location filename="valve.ui" line="302"/>
         <source>Communes</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="valve.ui" line="246"/>
+        <location filename="valve.ui" line="228"/>
         <source>Folios</source>
         <translation></translation>
     </message>
     <message utf8="true">
-        <location filename="valve.ui" line="191"/>
+        <location filename="valve.ui" line="204"/>
         <source>Altitude réelle</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="valve.ui" line="340"/>
+        <location filename="hydrant.ui" line="270"/>
         <source>Noeud</source>
         <translation></translation>
     </message>
@@ -184,37 +184,37 @@
         <translation></translation>
     </message>
     <message>
-        <location filename="valve.ui" line="379"/>
+        <location filename="valve.ui" line="372"/>
         <source>Rendu</source>
         <translation></translation>
     </message>
     <message utf8="true">
-        <location filename="valve.ui" line="385"/>
+        <location filename="valve.ui" line="378"/>
         <source>Schématique</source>
         <translation></translation>
     </message>
     <message utf8="true">
-        <location filename="valve.ui" line="397"/>
+        <location filename="valve.ui" line="390"/>
         <source>géométrie alternative</source>
         <translation></translation>
     </message>
     <message utf8="true">
-        <location filename="valve.ui" line="404"/>
+        <location filename="valve.ui" line="397"/>
         <source>Visibilité</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="valve.ui" line="444"/>
+        <location filename="valve.ui" line="437"/>
         <source>Label</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="valve.ui" line="463"/>
+        <location filename="valve.ui" line="456"/>
         <source>1/250</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="valve.ui" line="484"/>
+        <location filename="valve.ui" line="477"/>
         <source>1/5000</source>
         <translation></translation>
     </message>
@@ -379,17 +379,17 @@
         <translation></translation>
     </message>
     <message>
-        <location filename="hydrant.ui" line="354"/>
+        <location filename="hydrant.ui" line="371"/>
         <source>Hydraulique</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="hydrant.ui" line="373"/>
+        <location filename="hydrant.ui" line="390"/>
         <source>Pression dynamique</source>
         <translation></translation>
     </message>
     <message utf8="true">
-        <location filename="hydrant.ui" line="393"/>
+        <location filename="hydrant.ui" line="410"/>
         <source>Mesuré le</source>
         <translation></translation>
     </message>
@@ -399,12 +399,12 @@
         <translation></translation>
     </message>
     <message>
-        <location filename="hydrant.ui" line="416"/>
+        <location filename="hydrant.ui" line="433"/>
         <source>Pression statique</source>
         <translation></translation>
     </message>
     <message utf8="true">
-        <location filename="hydrant.ui" line="423"/>
+        <location filename="hydrant.ui" line="440"/>
         <source>Mesuré par</source>
         <translation></translation>
     </message>
@@ -599,17 +599,17 @@
         <translation></translation>
     </message>
     <message utf8="true">
-        <location filename="valve.ui" line="232"/>
+        <location filename="valve.ui" line="214"/>
         <source>Précision tige</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="valve.ui" line="307"/>
+        <location filename="valve.ui" line="245"/>
         <source>Altitude tige</source>
         <translation></translation>
     </message>
     <message utf8="true">
-        <location filename="valve.ui" line="347"/>
+        <location filename="valve.ui" line="268"/>
         <source>Précision alti. tige</source>
         <translation></translation>
     </message>
@@ -626,6 +626,11 @@
     <message utf8="true">
         <location filename="installation.ui" line="267"/>
         <source>débitmètre</source>
+        <translation></translation>
+    </message>
+    <message utf8="true">
+        <location filename="hydrant.ui" line="164"/>
+        <source>marqué</source>
         <translation></translation>
     </message>
 </context>
