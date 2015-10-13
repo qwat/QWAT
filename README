@@ -21,8 +21,6 @@ In order to create the database model you need to:
 Do to this you may execute for example
 
  psql -U postgres -c 'create database qwat;'
- psql -U postgres -d qwat -c 'create extension postgis;'
- psql -U postgres -d qwat -c 'create extension hstore;'
 
 You can choose whatever name for the database and whatever user as its owner.
 The script that is used to create the database model looks for the .pg_service.conf file.
