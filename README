@@ -11,14 +11,7 @@ In your shell:
 If you haven't added your ssh key to github, then you need to tell git to access the data-model submodule through https.
 Edit the .gitmodules file in the qWat folder and replace the url value from git@github.com:qwat/qwat-data-model.git to https://github.com/qwat/qwat-data-model.git
 
- git submodule init
- git submodule update
-
-Then change to the data-model subdirectory and redo the procedure in order to pull the metaproject submodule
- 
- cd data-model
- git submodule init
- git submodule update
+ git submodule update --init --recursive
 
 In order to create the database model you need to:
 
