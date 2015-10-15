@@ -11,13 +11,16 @@ In your shell:
 If you haven't added your ssh key to github, then you need to tell git to access the data-model submodule through https.
 Edit the .gitmodules file in the qWat folder and replace the url value from git@github.com:qwat/qwat-data-model.git to https://github.com/qwat/qwat-data-model.git
 
- git submodule init
- git submodule update
+ git submodule update --init --recursive
 
 In order to create the database model you need to:
 
  - create a postgresql database
  - install the postgis extension
+
+Do to this you may execute for example
+
+ psql -U postgres -c 'create database qwat;'
 
 You can choose whatever name for the database and whatever user as its owner.
 The script that is used to create the database model looks for the .pg_service.conf file.
