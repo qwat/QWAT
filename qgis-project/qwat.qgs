@@ -46883,8 +46883,8 @@
         <edittype widgetv2type="TextEdit" name="identification">
           <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
         </edittype>
-        <edittype widgetv2type="TextEdit" name="fk_distributor">
-          <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
+        <edittype widgetv2type="ValueRelation" name="fk_distributor">
+          <widgetv2config OrderByValue="0" AllowNull="0" FilterExpression="" UseCompleter="0" fieldEditable="1" Key="id" Layer="distributor20130304114719702" Value="name" labelOnTop="0" AllowMulti="0"/>
         </edittype>
         <edittype widgetv2type="ValueRelation" name="fk_status">
           <widgetv2config OrderByValue="0" AllowNull="0" FilterExpression="" UseCompleter="0" fieldEditable="1" Key="id" Layer="vl_status20130304110011436" Value="value_fr" labelOnTop="0" AllowMulti="0"/>
@@ -46937,8 +46937,8 @@
         <edittype widgetv2type="TextEdit" name="label_2_text">
           <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
         </edittype>
-        <edittype widgetv2type="TextEdit" name="fk_subscriber_type">
-          <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
+        <edittype widgetv2type="ValueRelation" name="fk_subscriber_type">
+          <widgetv2config OrderByValue="0" AllowNull="0" FilterExpression="" UseCompleter="0" fieldEditable="1" Key="id" Layer="vl_subscriber_type20130304110011480" Value="value_fr" labelOnTop="0" AllowMulti="0"/>
         </edittype>
         <edittype widgetv2type="RelationReference" name="fk_pipe">
           <widgetv2config OrderByValue="0" fieldEditable="1" ShowForm="0" Relation="relation_pipe_subscriber" ReadOnly="1" MapIdentification="1" labelOnTop="0" AllowNULL="1"/>
@@ -46956,12 +46956,12 @@
       <renderer-v2 forceraster="0" symbollevels="0" type="RuleRenderer">
         <rules key="{9da47fbf-2d24-4c58-a431-b86b56a823b4}">
           <rule scalemaxdenom="3000" key="{26e873de-fb8b-4cf1-9540-12b4fd50d4da}" label="Echelle">
-            <rule filter="fk_type=9401" key="{ec8badcc-9af2-4942-bd0e-f6519b9f1b97}" symbol="0" label="Abonnés"/>
+            <rule filter="fk_subscriber_type=9401" key="{ec8badcc-9af2-4942-bd0e-f6519b9f1b97}" symbol="0" label="Abonnés"/>
             <rule filter="fk_status!=1301" key="{74d11c30-58d7-4d2a-b1e3-86945e6466d5}" symbol="1" label="Inactif"/>
-            <rule filter="fk_type=9402" key="{ede67b97-6776-4785-b302-301be3e60cd7}" symbol="2" label="Arrosage"/>
-            <rule filter="fk_type = 9403" key="{e621e468-ba49-4e32-89a6-1cf8da2fa202}" symbol="3" label="Fontaine"/>
-            <rule filter="fk_type=9405" key="{d65de48d-b504-438c-b40d-009b640bac2d}" symbol="4" label="Sprinkler"/>
-            <rule filter="fk_type=9404" key="{8893b40b-a12a-4f74-a391-5e4df2572f9c}" symbol="5" label="WC"/>
+            <rule filter="fk_subscriber_type=9402" key="{ede67b97-6776-4785-b302-301be3e60cd7}" symbol="2" label="Arrosage"/>
+            <rule filter="fk_subscriber_type = 9403" key="{e621e468-ba49-4e32-89a6-1cf8da2fa202}" symbol="3" label="Fontaine"/>
+            <rule filter="fk_subscriber_type=9405" key="{d65de48d-b504-438c-b40d-009b640bac2d}" symbol="4" label="Sprinkler"/>
+            <rule filter="fk_subscriber_type=9404" key="{8893b40b-a12a-4f74-a391-5e4df2572f9c}" symbol="5" label="WC"/>
           </rule>
         </rules>
         <symbols>
@@ -47186,7 +47186,7 @@
         <property key="labeling/distMapUnitMaxScale" value="0"/>
         <property key="labeling/distMapUnitMinScale" value="0"/>
         <property key="labeling/enabled" value="true"/>
-        <property key="labeling/fieldName" value="identification ||&#xa;CASE &#xa;WHEN fk_type = 9401 THEN ''&#xa;WHEN fk_type = 9402 THEN '#!#ARR'&#xa;WHEN fk_type = 9403 THEN '#!#FON'&#xa;WHEN fk_type = 9404 THEN '#!#WC'&#xa;WHEN fk_type = 9405 THEN '#!#SPK'&#xa;ELSE ''&#xa;END"/>
+        <property key="labeling/fieldName" value="identification ||&#xa;CASE &#xa;WHEN fk_subscriber_type = 9401 THEN ''&#xa;WHEN fk_subscriber_type = 9402 THEN '#!#ARR'&#xa;WHEN fk_subscriber_type = 9403 THEN '#!#FON'&#xa;WHEN fk_subscriber_type = 9404 THEN '#!#WC'&#xa;WHEN fk_subscriber_type = 9405 THEN '#!#SPK'&#xa;ELSE ''&#xa;END"/> 
         <property key="labeling/fontBold" value="false"/>
         <property key="labeling/fontCapitals" value="0"/>
         <property key="labeling/fontFamily" value="Arial"/>
@@ -47407,8 +47407,8 @@
         <edittype widgetv2type="TextEdit" name="identification">
           <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
         </edittype>
-        <edittype widgetv2type="TextEdit" name="fk_distributor">
-          <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
+        <edittype widgetv2type="ValueRelation" name="fk_distributor">
+          <widgetv2config OrderByValue="0" AllowNull="0" FilterExpression="" UseCompleter="0" fieldEditable="1" Key="id" Layer="distributor20130304114719702" Value="name" labelOnTop="0" AllowMulti="0"/>
         </edittype>
         <edittype widgetv2type="ValueRelation" name="fk_status">
           <widgetv2config OrderByValue="0" AllowNull="0" FilterExpression="" UseCompleter="0" fieldEditable="1" Key="id" Layer="vl_status20130304110011436" Value="value_fr" labelOnTop="0" AllowMulti="0"/>

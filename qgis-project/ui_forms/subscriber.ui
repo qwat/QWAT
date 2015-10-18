@@ -7,35 +7,22 @@
     <x>0</x>
     <y>0</y>
     <width>477</width>
-    <height>402</height>
+    <height>437</height>
    </rect>
   </property>
   <property name="windowTitle">
    <string>Abonné</string>
   </property>
   <layout class="QGridLayout" name="gridLayout">
-   <item row="9" column="5">
-    <widget class="QLineEdit" name="flow_planned"/>
-   </item>
-   <item row="1" column="0" colspan="3">
-    <widget class="Line" name="line_2">
-     <property name="orientation">
-      <enum>Qt::Horizontal</enum>
-     </property>
-    </widget>
-   </item>
-   <item row="0" column="5">
-    <widget class="QComboBox" name="fk_type"/>
-   </item>
-   <item row="7" column="0">
+   <item row="11" column="0">
     <widget class="QLabel" name="label_9">
      <property name="text">
       <string>Zone de pression</string>
      </property>
     </widget>
    </item>
-   <item row="7" column="5">
-    <widget class="QComboBox" name="fk_district"/>
+   <item row="10" column="5">
+    <widget class="QLineEdit" name="parcel"/>
    </item>
    <item row="4" column="4">
     <widget class="QLabel" name="label_3">
@@ -44,19 +31,28 @@
      </property>
     </widget>
    </item>
-   <item row="2" column="0">
-    <widget class="QLabel" name="label_5">
-     <property name="text">
-      <string>Identification</string>
+   <item row="7" column="5">
+    <widget class="Line" name="line_3">
+     <property name="orientation">
+      <enum>Qt::Horizontal</enum>
      </property>
     </widget>
    </item>
-   <item row="0" column="4">
-    <widget class="QLabel" name="label_2">
-     <property name="text">
-      <string>Type</string>
+   <item row="11" column="2">
+    <widget class="QLineEdit" name="_pressurezone"/>
+   </item>
+   <item row="16" column="2">
+    <spacer name="verticalSpacer">
+     <property name="orientation">
+      <enum>Qt::Vertical</enum>
      </property>
-    </widget>
+     <property name="sizeHint" stdset="0">
+      <size>
+       <width>20</width>
+       <height>40</height>
+      </size>
+     </property>
+    </spacer>
    </item>
    <item row="4" column="5">
     <widget class="QComboBox" name="fk_status"/>
@@ -77,73 +73,24 @@
      </property>
     </spacer>
    </item>
-   <item row="6" column="5">
-    <widget class="QLineEdit" name="parcel"/>
+   <item row="0" column="5">
+    <widget class="QComboBox" name="fk_subscriber_type"/>
    </item>
-   <item row="5" column="5">
-    <widget class="Line" name="line_3">
+   <item row="1" column="0" colspan="3">
+    <widget class="Line" name="line_2">
      <property name="orientation">
       <enum>Qt::Horizontal</enum>
      </property>
     </widget>
    </item>
-   <item row="2" column="5">
-    <widget class="QgsRelationReferenceWidget" name="fk_pipe"/>
-   </item>
-   <item row="7" column="2">
-    <widget class="QLineEdit" name="_pressurezone"/>
-   </item>
-   <item row="12" column="2">
-    <spacer name="verticalSpacer">
-     <property name="orientation">
-      <enum>Qt::Vertical</enum>
-     </property>
-     <property name="sizeHint" stdset="0">
-      <size>
-       <width>20</width>
-       <height>40</height>
-      </size>
-     </property>
-    </spacer>
-   </item>
-   <item row="9" column="2">
-    <widget class="QLineEdit" name="flow_current"/>
-   </item>
-   <item row="6" column="4">
-    <widget class="QLabel" name="label_7">
-     <property name="text">
-      <string>Parcelle</string>
-     </property>
-    </widget>
-   </item>
-   <item row="0" column="2">
-    <widget class="QLineEdit" name="id">
-     <property name="enabled">
-      <bool>true</bool>
-     </property>
-     <property name="readOnly">
-      <bool>true</bool>
-     </property>
-    </widget>
-   </item>
-   <item row="6" column="2">
-    <widget class="QLineEdit" name="_printmaps"/>
-   </item>
-   <item row="6" column="0">
-    <widget class="QLabel" name="label_10">
-     <property name="text">
-      <string>Folio</string>
-     </property>
-    </widget>
-   </item>
-   <item row="7" column="4">
+   <item row="11" column="4">
     <widget class="QLabel" name="label_8">
      <property name="text">
       <string>Commune</string>
      </property>
     </widget>
    </item>
-   <item row="14" column="0" colspan="6">
+   <item row="18" column="0" colspan="6">
     <widget class="QDialogButtonBox" name="buttonBox">
      <property name="orientation">
       <enum>Qt::Horizontal</enum>
@@ -176,10 +123,10 @@
      </property>
     </widget>
    </item>
-   <item row="11" column="0" colspan="6">
+   <item row="15" column="0" colspan="6">
     <widget class="QPlainTextEdit" name="remark"/>
    </item>
-   <item row="5" column="0" colspan="3">
+   <item row="7" column="0" colspan="3">
     <widget class="Line" name="line">
      <property name="orientation">
       <enum>Qt::Horizontal</enum>
@@ -193,17 +140,80 @@
      </property>
     </widget>
    </item>
-   <item row="9" column="0">
+   <item row="13" column="0">
     <widget class="QLabel" name="label_11">
      <property name="text">
       <string>Débit</string>
      </property>
     </widget>
    </item>
-   <item row="9" column="4">
+   <item row="13" column="4">
     <widget class="QLabel" name="label_12">
      <property name="text">
       <string>Débit prévu</string>
+     </property>
+    </widget>
+   </item>
+   <item row="11" column="5">
+    <widget class="QComboBox" name="fk_district"/>
+   </item>
+   <item row="0" column="4">
+    <widget class="QLabel" name="label_2">
+     <property name="text">
+      <string>Type</string>
+     </property>
+    </widget>
+   </item>
+   <item row="2" column="5">
+    <widget class="QgsRelationReferenceWidget" name="fk_pipe"/>
+   </item>
+   <item row="13" column="5">
+    <widget class="QLineEdit" name="flow_planned"/>
+   </item>
+   <item row="2" column="0">
+    <widget class="QLabel" name="label_5">
+     <property name="text">
+      <string>Identification</string>
+     </property>
+    </widget>
+   </item>
+   <item row="13" column="2">
+    <widget class="QLineEdit" name="flow_current"/>
+   </item>
+   <item row="10" column="4">
+    <widget class="QLabel" name="label_7">
+     <property name="text">
+      <string>Parcelle</string>
+     </property>
+    </widget>
+   </item>
+   <item row="0" column="2">
+    <widget class="QLineEdit" name="id">
+     <property name="enabled">
+      <bool>true</bool>
+     </property>
+     <property name="readOnly">
+      <bool>true</bool>
+     </property>
+    </widget>
+   </item>
+   <item row="10" column="2">
+    <widget class="QLineEdit" name="_printmaps"/>
+   </item>
+   <item row="10" column="0">
+    <widget class="QLabel" name="label_10">
+     <property name="text">
+      <string>Folio</string>
+     </property>
+    </widget>
+   </item>
+   <item row="5" column="5">
+    <widget class="QComboBox" name="fk_distributor"/>
+   </item>
+   <item row="5" column="4">
+    <widget class="QLabel" name="label_13">
+     <property name="text">
+      <string>Distributeur</string>
      </property>
     </widget>
    </item>
