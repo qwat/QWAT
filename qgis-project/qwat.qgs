@@ -37509,8 +37509,8 @@
         <edittype widgetv2type="RelationReference" name="fk_folder">
           <widgetv2config OrderByValue="1" fieldEditable="1" ShowForm="0" Relation="relation_hydrant_folder" ReadOnly="0" MapIdentification="1" labelOnTop="0" AllowNULL="1"/>
         </edittype>
-        <edittype widgetv2type="TextEdit" name="fk_locationtype">
-          <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
+        <edittype widgetv2type="ValueRelation" name="fk_locationtype">
+          <widgetv2config OrderByValue="0" AllowNull="1" FilterExpression="" UseCompleter="0" fieldEditable="1" Key="id" Layer="locationtype20150922082741813" Value="value_fr" labelOnTop="0" AllowMulti="1"/>
         </edittype>
         <edittype widgetv2type="TextEdit" name="year">
           <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
@@ -37563,8 +37563,8 @@
         <edittype widgetv2type="TextEdit" name="model">
           <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
         </edittype>
-        <edittype widgetv2type="TextEdit" name="underground">
-          <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
+        <edittype widgetv2type="CheckBox" name="underground">
+          <widgetv2config fieldEditable="1" UncheckedState="f" CheckedState="t" labelOnTop="0"/>
         </edittype>
         <edittype widgetv2type="CheckBox" name="marked">
           <widgetv2config fieldEditable="1" UncheckedState="f" CheckedState="t" labelOnTop="0"/>
@@ -37926,8 +37926,8 @@
         <edittype widgetv2type="RelationReference" name="fk_folder">
           <widgetv2config OrderByValue="1" fieldEditable="1" ShowForm="0" Relation="relation_hydrant_folder" ReadOnly="0" MapIdentification="1" labelOnTop="0" AllowNULL="1"/>
         </edittype>
-        <edittype widgetv2type="TextEdit" name="fk_locationtype">
-          <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
+        <edittype widgetv2type="ValueRelation" name="fk_locationtype">
+          <widgetv2config OrderByValue="0" AllowNull="1" FilterExpression="" UseCompleter="0" fieldEditable="1" Key="id" Layer="locationtype20150922082741813" Value="value_fr" labelOnTop="0" AllowMulti="1"/>
         </edittype>
         <edittype widgetv2type="TextEdit" name="year">
           <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
@@ -37981,7 +37981,7 @@
           <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
         </edittype>
         <edittype widgetv2type="TextEdit" name="underground">
-          <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
+          <widgetv2config fieldEditable="1" UncheckedState="f" CheckedState="t" labelOnTop="0"/>
         </edittype>
         <edittype widgetv2type="TextEdit" name="marked">
           <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
