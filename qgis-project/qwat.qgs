@@ -1,5 +1,5 @@
 <!DOCTYPE qgis PUBLIC 'http://mrcc.com/qgis.dtd' 'SYSTEM'>
-<qgis projectname="" version="2.11.0-Master">
+<qgis projectname="" version="2.13.0-Master">
   <title></title>
   <layer-tree-group expanded="1" checked="Qt::PartiallyChecked" name="">
     <customproperties/>
@@ -55,7 +55,7 @@
         <layer-tree-layer expanded="0" checked="Qt::Checked" id="od_part20140429113327995" name="Pièces d'installations">
           <customproperties/>
         </layer-tree-layer>
-        <layer-tree-layer expanded="1" checked="Qt::Unchecked" id="od_remote20150116100522170" name="télécommande">
+        <layer-tree-layer expanded="1" checked="Qt::Checked" id="od_remote20150116100522170" name="télécommande">
           <customproperties/>
         </layer-tree-layer>
         <layer-tree-layer expanded="0" checked="Qt::Checked" id="od_crossing20141023083754327" name="croisements">
@@ -64,7 +64,7 @@
         <layer-tree-layer expanded="0" checked="Qt::Unchecked" id="leak20130821111917060" name="fuite">
           <customproperties/>
         </layer-tree-layer>
-        <layer-tree-layer expanded="1" checked="Qt::Checked" id="vw_element_samplingpoint20151002161215716" name="point de prélèvement">
+        <layer-tree-layer expanded="1" checked="Qt::Unchecked" id="vw_element_samplingpoint20151002161215716" name="point de prélèvement">
           <customproperties/>
         </layer-tree-layer>
       </layer-tree-group>
@@ -78,15 +78,15 @@
         </layer-tree-layer>
       </layer-tree-group>
     </layer-tree-group>
-    <layer-tree-group expanded="0" checked="Qt::Unchecked" name="Schématique">
+    <layer-tree-group expanded="1" checked="Qt::Unchecked" name="Schématique">
       <customproperties/>
-      <layer-tree-group expanded="0" checked="Qt::Unchecked" name="impression">
+      <layer-tree-group expanded="1" checked="Qt::Unchecked" name="impression">
         <customproperties/>
         <layer-tree-layer expanded="0" checked="Qt::Unchecked" id="vw_pipe_schema20141208162900166" name="conduite impression 5000">
           <customproperties/>
         </layer-tree-layer>
       </layer-tree-group>
-      <layer-tree-group expanded="0" checked="Qt::Unchecked" name="edition">
+      <layer-tree-group expanded="1" checked="Qt::Unchecked" name="edition">
         <customproperties/>
         <layer-tree-layer expanded="0" checked="Qt::Unchecked" id="vannes_copy20141127160745910" name="vannes edition 5000">
           <customproperties/>
@@ -186,7 +186,7 @@
         </layer-tree-layer>
       </layer-tree-group>
     </layer-tree-group>
-    <layer-tree-group expanded="0" checked="Qt::PartiallyChecked" name="Tables auxiliaires">
+    <layer-tree-group expanded="0" checked="Qt::Unchecked" name="Tables auxiliaires">
       <customproperties/>
       <layer-tree-layer expanded="1" checked="Qt::Unchecked" id="locationtype20150922082741813" name="emplacement">
         <customproperties/>
@@ -221,7 +221,7 @@
       <layer-tree-layer expanded="1" checked="Qt::Unchecked" id="hydrant_provider20130304110004893" name="hydrantes - fournisseur">
         <customproperties/>
       </layer-tree-layer>
-      <layer-tree-layer expanded="1" checked="Qt::Checked" id="hydrant_material20150925104534891" name="hydrantes - matériau">
+      <layer-tree-layer expanded="1" checked="Qt::Unchecked" id="hydrant_material20150925104534891" name="hydrantes - matériau">
         <customproperties/>
       </layer-tree-layer>
       <layer-tree-layer expanded="1" checked="Qt::Unchecked" id="vl_bedding20141219112927344" name="lit de pose">
@@ -355,10 +355,10 @@
   <mapcanvas>
     <units>meters</units>
     <extent>
-      <xmin>560091.04585789050906897</xmin>
-      <ymin>144862.18447870985255577</ymin>
-      <xmax>560806.31382742128334939</xmax>
-      <ymax>145614.9571357847598847</ymax>
+      <xmin>559053.89055890892632306</xmin>
+      <ymin>143537.08861544137471355</ymin>
+      <xmax>562674.93465465796180069</xmax>
+      <ymax>147348.0001918830384966</ymax>
     </extent>
     <rotation>0</rotation>
     <projections>1</projections>
@@ -626,9 +626,9 @@
             <legendlayerfile isInOverview="0" layerid="od_part20140429113327995" visible="1"/>
           </filegroup>
         </legendlayer>
-        <legendlayer drawingOrder="9" open="true" checked="Qt::Unchecked" name="télécommande" showFeatureCount="0">
+        <legendlayer drawingOrder="9" open="true" checked="Qt::Checked" name="télécommande" showFeatureCount="0">
           <filegroup open="true" hidden="false">
-            <legendlayerfile isInOverview="0" layerid="od_remote20150116100522170" visible="0"/>
+            <legendlayerfile isInOverview="0" layerid="od_remote20150116100522170" visible="1"/>
           </filegroup>
         </legendlayer>
         <legendlayer drawingOrder="14" open="false" checked="Qt::Checked" name="croisements" showFeatureCount="0">
@@ -641,9 +641,9 @@
             <legendlayerfile isInOverview="0" layerid="leak20130821111917060" visible="0"/>
           </filegroup>
         </legendlayer>
-        <legendlayer drawingOrder="95" open="true" checked="Qt::Checked" name="point de prélèvement" showFeatureCount="0">
+        <legendlayer drawingOrder="95" open="true" checked="Qt::Unchecked" name="point de prélèvement" showFeatureCount="0">
           <filegroup open="true" hidden="false">
-            <legendlayerfile isInOverview="0" layerid="vw_element_samplingpoint20151002161215716" visible="1"/>
+            <legendlayerfile isInOverview="0" layerid="vw_element_samplingpoint20151002161215716" visible="0"/>
           </filegroup>
         </legendlayer>
       </legendgroup>
@@ -660,15 +660,15 @@
         </legendlayer>
       </legendgroup>
     </legendgroup>
-    <legendgroup open="false" checked="Qt::Unchecked" name="Schématique">
-      <legendgroup open="false" checked="Qt::Unchecked" name="impression">
+    <legendgroup open="true" checked="Qt::Unchecked" name="Schématique">
+      <legendgroup open="true" checked="Qt::Unchecked" name="impression">
         <legendlayer drawingOrder="17" open="false" checked="Qt::Unchecked" name="conduite impression 5000" showFeatureCount="0">
           <filegroup open="false" hidden="false">
             <legendlayerfile isInOverview="0" layerid="vw_pipe_schema20141208162900166" visible="0"/>
           </filegroup>
         </legendlayer>
       </legendgroup>
-      <legendgroup open="false" checked="Qt::Unchecked" name="edition">
+      <legendgroup open="true" checked="Qt::Unchecked" name="edition">
         <legendlayer drawingOrder="16" open="false" checked="Qt::Unchecked" name="vannes edition 5000" showFeatureCount="0">
           <filegroup open="false" hidden="false">
             <legendlayerfile isInOverview="0" layerid="vannes_copy20141127160745910" visible="0"/>
@@ -813,7 +813,7 @@
         </legendlayer>
       </legendgroup>
     </legendgroup>
-    <legendgroup open="false" checked="Qt::PartiallyChecked" name="Tables auxiliaires">
+    <legendgroup open="false" checked="Qt::Unchecked" name="Tables auxiliaires">
       <legendlayer drawingOrder="91" open="true" checked="Qt::Unchecked" name="emplacement" showFeatureCount="0">
         <filegroup open="true" hidden="false">
           <legendlayerfile isInOverview="0" layerid="locationtype20150922082741813" visible="0"/>
@@ -869,9 +869,9 @@
           <legendlayerfile isInOverview="0" layerid="hydrant_provider20130304110004893" visible="0"/>
         </filegroup>
       </legendlayer>
-      <legendlayer drawingOrder="94" open="true" checked="Qt::Checked" name="hydrantes - matériau" showFeatureCount="0">
+      <legendlayer drawingOrder="94" open="true" checked="Qt::Unchecked" name="hydrantes - matériau" showFeatureCount="0">
         <filegroup open="true" hidden="false">
-          <legendlayerfile isInOverview="0" layerid="hydrant_material20150925104534891" visible="1"/>
+          <legendlayerfile isInOverview="0" layerid="hydrant_material20150925104534891" visible="0"/>
         </filegroup>
       </legendlayer>
       <legendlayer drawingOrder="52" open="true" checked="Qt::Unchecked" name="lit de pose" showFeatureCount="0">
@@ -1003,7 +1003,7 @@
     <legendgroup embedded="1" open="false" checked="Qt::PartiallyChecked" name="cadastre" project="../../../data/cadastre/cadastre.qgs"/>
   </legend>
   <Composer title="folio" visible="0">
-    <Composition gridVisible="1" printResolution="300" paperWidth="1030" snapGridOffsetX="0" guidesVisible="1" snapGridResolution="10" snapGridOffsetY="0" alignmentSnap="1" snapping="0" snapTolerancePixels="10" numPages="1" paperHeight="914" smartGuides="1" printAsRaster="1" generateWorldFile="0">
+    <Composition resizeToContentsMarginLeft="0" snapping="0" showPages="1" guidesVisible="1" resizeToContentsMarginTop="0" alignmentSnap="1" printResolution="300" paperWidth="1030" gridVisible="1" snapGridOffsetX="0" smartGuides="1" snapGridOffsetY="0" resizeToContentsMarginRight="0" snapTolerancePixels="10" printAsRaster="1" generateWorldFile="0" paperHeight="914" numPages="1" snapGridResolution="10" resizeToContentsMarginBottom="0">
       <symbol alpha="1" clip_to_extent="1" type="fill" name="">
         <layer pass="0" class="SimpleFill" locked="0">
           <prop k="border_width_map_unit_scale" v="0,0,0,0,0,0"/>
@@ -13767,7 +13767,7 @@
     <Atlas hideCoverage="false" coverageLayer="printmap20130304110011400" singleFile="false" filenamePattern=" 'folio_' ||  &quot;district_name&quot; || '_' || &quot;name&quot;" enabled="true" filterFeatures="false" sortFeatures="false" pageNameExpression=""/>
   </Composer>
   <Composer title="A0" visible="0">
-    <Composition gridVisible="1" printResolution="300" paperWidth="1030" snapGridOffsetX="0" guidesVisible="1" snapGridResolution="10" snapGridOffsetY="0" alignmentSnap="1" snapping="0" snapTolerancePixels="10" numPages="1" paperHeight="914" smartGuides="1" printAsRaster="1" generateWorldFile="0">
+    <Composition resizeToContentsMarginLeft="0" snapping="0" showPages="1" guidesVisible="1" resizeToContentsMarginTop="0" alignmentSnap="1" printResolution="300" paperWidth="1030" gridVisible="1" snapGridOffsetX="0" smartGuides="1" snapGridOffsetY="0" resizeToContentsMarginRight="0" snapTolerancePixels="10" printAsRaster="1" generateWorldFile="0" paperHeight="914" numPages="1" snapGridResolution="10" resizeToContentsMarginBottom="0">
       <symbol alpha="1" clip_to_extent="1" type="fill" name="">
         <layer pass="0" class="SimpleFill" locked="0">
           <prop k="border_width_map_unit_scale" v="0,0,0,0,0,0"/>
@@ -14180,7 +14180,7 @@
     </Composition>
   </Composer>
   <Composer title="extrait A4 portrait" visible="0">
-    <Composition gridVisible="0" printResolution="300" paperWidth="210" snapGridOffsetX="0" guidesVisible="1" snapGridResolution="10" snapGridOffsetY="0" alignmentSnap="1" snapping="0" snapTolerancePixels="10" numPages="1" paperHeight="297" smartGuides="1" printAsRaster="0" generateWorldFile="0">
+    <Composition resizeToContentsMarginLeft="0" snapping="0" showPages="1" guidesVisible="1" resizeToContentsMarginTop="0" alignmentSnap="1" printResolution="300" paperWidth="210" gridVisible="0" snapGridOffsetX="0" smartGuides="1" snapGridOffsetY="0" resizeToContentsMarginRight="0" snapTolerancePixels="10" printAsRaster="0" generateWorldFile="0" paperHeight="297" numPages="1" snapGridResolution="10" resizeToContentsMarginBottom="0">
       <symbol alpha="1" clip_to_extent="1" type="fill" name="">
         <layer pass="0" class="SimpleFill" locked="0">
           <prop k="border_width_map_unit_scale" v="0,0,0,0,0,0"/>
@@ -14455,7 +14455,7 @@
     </Composition>
   </Composer>
   <Composer title="extrait A4 paysage" visible="0">
-    <Composition gridVisible="0" printResolution="300" paperWidth="297" snapGridOffsetX="0" guidesVisible="1" snapGridResolution="10" snapGridOffsetY="0" alignmentSnap="1" snapping="0" snapTolerancePixels="10" numPages="1" paperHeight="210" smartGuides="1" printAsRaster="1" generateWorldFile="0">
+    <Composition resizeToContentsMarginLeft="0" snapping="0" showPages="1" guidesVisible="1" resizeToContentsMarginTop="0" alignmentSnap="1" printResolution="300" paperWidth="297" gridVisible="0" snapGridOffsetX="0" smartGuides="1" snapGridOffsetY="0" resizeToContentsMarginRight="0" snapTolerancePixels="10" printAsRaster="1" generateWorldFile="0" paperHeight="210" numPages="1" snapGridResolution="10" resizeToContentsMarginBottom="0">
       <symbol alpha="1" clip_to_extent="1" type="fill" name="">
         <layer pass="0" class="SimpleFill" locked="0">
           <prop k="border_width_map_unit_scale" v="0,0,0,0,0,0"/>
@@ -14745,7 +14745,7 @@
     </Composition>
   </Composer>
   <Composer title="extrait A3 portrait" visible="0">
-    <Composition gridVisible="0" printResolution="300" paperWidth="297" snapGridOffsetX="0" guidesVisible="1" snapGridResolution="10" snapGridOffsetY="0" alignmentSnap="1" snapping="0" snapTolerancePixels="10" numPages="1" paperHeight="420" smartGuides="1" printAsRaster="1" generateWorldFile="0">
+    <Composition resizeToContentsMarginLeft="0" snapping="0" showPages="1" guidesVisible="1" resizeToContentsMarginTop="0" alignmentSnap="1" printResolution="300" paperWidth="297" gridVisible="0" snapGridOffsetX="0" smartGuides="1" snapGridOffsetY="0" resizeToContentsMarginRight="0" snapTolerancePixels="10" printAsRaster="1" generateWorldFile="0" paperHeight="420" numPages="1" snapGridResolution="10" resizeToContentsMarginBottom="0">
       <symbol alpha="1" clip_to_extent="1" type="fill" name="">
         <layer pass="0" class="SimpleFill" locked="0">
           <prop k="border_width_map_unit_scale" v="0,0,0,0,0,0"/>
@@ -27681,7 +27681,7 @@
     </Composition>
   </Composer>
   <Composer title="extrait A3 paysage" visible="0">
-    <Composition gridVisible="0" printResolution="300" paperWidth="420" snapGridOffsetX="0" guidesVisible="1" snapGridResolution="10" snapGridOffsetY="0" alignmentSnap="1" snapping="0" snapTolerancePixels="10" numPages="1" paperHeight="297" smartGuides="1" printAsRaster="0" generateWorldFile="0">
+    <Composition resizeToContentsMarginLeft="0" snapping="0" showPages="1" guidesVisible="1" resizeToContentsMarginTop="0" alignmentSnap="1" printResolution="300" paperWidth="420" gridVisible="0" snapGridOffsetX="0" smartGuides="1" snapGridOffsetY="0" resizeToContentsMarginRight="0" snapTolerancePixels="10" printAsRaster="0" generateWorldFile="0" paperHeight="297" numPages="1" snapGridResolution="10" resizeToContentsMarginBottom="0">
       <symbol alpha="1" clip_to_extent="1" type="fill" name="">
         <layer pass="0" class="SimpleFill" locked="0">
           <prop k="border_width_map_unit_scale" v="0,0,0,0,0,0"/>
@@ -27971,7 +27971,7 @@
     </Composition>
   </Composer>
   <Composer title="5000 bouveret" visible="0">
-    <Composition gridVisible="0" printResolution="300" paperWidth="1200" snapGridOffsetX="0" guidesVisible="1" snapGridResolution="10" snapGridOffsetY="0" alignmentSnap="1" snapping="0" snapTolerancePixels="5" numPages="1" paperHeight="914" smartGuides="1" printAsRaster="0" generateWorldFile="0">
+    <Composition resizeToContentsMarginLeft="0" snapping="0" showPages="1" guidesVisible="1" resizeToContentsMarginTop="0" alignmentSnap="1" printResolution="300" paperWidth="1200" gridVisible="0" snapGridOffsetX="0" smartGuides="1" snapGridOffsetY="0" resizeToContentsMarginRight="0" snapTolerancePixels="5" printAsRaster="0" generateWorldFile="0" paperHeight="914" numPages="1" snapGridResolution="10" resizeToContentsMarginBottom="0">
       <symbol alpha="1" clip_to_extent="1" type="fill" name="">
         <layer pass="0" class="SimpleFill" locked="0">
           <prop k="border_width_map_unit_scale" v="0,0,0,0,0,0"/>
@@ -27995,7 +27995,7 @@
           </effect>
         </layer>
       </symbol>
-      <ComposerPicture resizeMode="0" pictureRotation="0" pictureWidth="274.062" file="/run/user/1000/gvfs/smb-share:server=s1laveyre,share=dao_saisie$/05_DONNEES_SIT/5000/Plaine_du_Rhone_Sources.png" pictureHeight="193.631" mapId="-1" anchorPoint="0">
+      <ComposerPicture resizeMode="0" pictureRotation="0" pictureWidth="192.45" file="/run/user/1000/gvfs/smb-share:server=s1laveyre,share=dao_saisie$/05_DONNEES_SIT/5000/Plaine_du_Rhone_Sources.png" pictureHeight="193.631" mapId="-1" anchorPoint="0">
         <ComposerItem pagey="263.369" page="1" id="" lastValidViewScaleFactor="-1" positionMode="0" positionLock="false" x="482.53" y="263.369" visibility="1" zValue="2" background="false" transparency="0" frameJoinStyle="miter" blendMode="0" width="312.689" outlineWidth="0.3" excludeFromExports="0" uuid="{6f130111-1908-4175-9002-6723e6794218}" height="193.631" itemRotation="0" frame="false" pagex="482.53">
           <FrameColor alpha="255" red="0" blue="0" green="0"/>
           <BackgroundColor alpha="255" red="255" blue="255" green="255"/>
@@ -29253,7 +29253,7 @@
     </Composition>
   </Composer>
   <Composer title="5000 impression" visible="0">
-    <Composition gridVisible="0" printResolution="300" paperWidth="1530" snapGridOffsetX="0" guidesVisible="1" snapGridResolution="10" snapGridOffsetY="0" alignmentSnap="1" snapping="0" snapTolerancePixels="5" numPages="1" paperHeight="914" smartGuides="1" printAsRaster="0" generateWorldFile="0">
+    <Composition resizeToContentsMarginLeft="0" snapping="0" showPages="1" guidesVisible="1" resizeToContentsMarginTop="0" alignmentSnap="1" printResolution="300" paperWidth="1530" gridVisible="0" snapGridOffsetX="0" smartGuides="1" snapGridOffsetY="0" resizeToContentsMarginRight="0" snapTolerancePixels="5" printAsRaster="0" generateWorldFile="0" paperHeight="914" numPages="1" snapGridResolution="10" resizeToContentsMarginBottom="0">
       <symbol alpha="1" clip_to_extent="1" type="fill" name="">
         <layer pass="0" class="SimpleFill" locked="0">
           <prop k="border_width_map_unit_scale" v="0,0,0,0,0,0"/>
@@ -29278,7 +29278,7 @@
         </layer>
       </symbol>
       <ComposerMap mapRotation="325" keepLayerSet="true" id="0" previewMode="Cache" drawCanvasItems="true">
-        <Extent ymin="136695.24451208909158595" xmin="556387.41481285262852907" ymax="141145.24451662806677632" xmax="563887.41482050251215696"/>
+        <Extent ymin="136695.24451208906248212" xmin="556387.41481285262852907" ymax="141145.24451662803767249" xmax="563887.41482050251215696"/>
         <LayerSet>
           <Layer>vw_pipe_schema20141208162900166</Layer>
           <Layer>vannes_copy20141127160745910</Layer>
@@ -30786,7 +30786,7 @@
     <Atlas hideCoverage="false" coverageLayer="printmap20130304110011400" singleFile="false" filenamePattern="'output_'||$feature" enabled="true" filterFeatures="false" sortFeatures="false" pageNameExpression=""/>
   </Composer>
   <Composer title="5000 Montreux Aval" visible="0">
-    <Composition gridVisible="0" printResolution="299" paperWidth="1530" snapGridOffsetX="0" guidesVisible="1" snapGridResolution="10" snapGridOffsetY="0" alignmentSnap="1" snapping="0" snapTolerancePixels="5" numPages="1" paperHeight="914" smartGuides="1" printAsRaster="1" generateWorldFile="0">
+    <Composition resizeToContentsMarginLeft="0" snapping="0" showPages="1" guidesVisible="1" resizeToContentsMarginTop="0" alignmentSnap="1" printResolution="299" paperWidth="1530" gridVisible="0" snapGridOffsetX="0" smartGuides="1" snapGridOffsetY="0" resizeToContentsMarginRight="0" snapTolerancePixels="5" printAsRaster="1" generateWorldFile="0" paperHeight="914" numPages="1" snapGridResolution="10" resizeToContentsMarginBottom="0">
       <symbol alpha="1" clip_to_extent="1" type="fill" name="">
         <layer pass="0" class="SimpleFill" locked="0">
           <prop k="border_width_map_unit_scale" v="0,0,0,0,0,0"/>
@@ -30949,7 +30949,7 @@
         </ComposerItem>
       </ComposerPicture>
       <ComposerMap mapRotation="325" keepLayerSet="true" id="0" previewMode="Cache" drawCanvasItems="true">
-        <Extent ymin="136695.244512088567717" xmin="556387.41481285262852907" ymax="141145.24451662754290737" xmax="563887.41482050251215696"/>
+        <Extent ymin="136695.24451208853861317" xmin="556387.41481285262852907" ymax="141145.24451662751380354" xmax="563887.41482050251215696"/>
         <LayerSet>
           <Layer>vannes_copy20141127160745910</Layer>
           <Layer>vw_pipe_schema20141208162900166</Layer>
@@ -32466,7 +32466,7 @@
     <Atlas hideCoverage="false" coverageLayer="printmap20130304110011400" singleFile="false" filenamePattern="'output_'||$feature" enabled="true" filterFeatures="false" sortFeatures="false" pageNameExpression=""/>
   </Composer>
   <Composer title="valve atlas" visible="0">
-    <Composition gridVisible="0" printResolution="300" paperWidth="300" snapGridOffsetX="0" guidesVisible="1" snapGridResolution="10" snapGridOffsetY="0" alignmentSnap="1" snapping="0" snapTolerancePixels="5" numPages="1" paperHeight="300" smartGuides="1" printAsRaster="1" generateWorldFile="0">
+    <Composition resizeToContentsMarginLeft="0" snapping="0" showPages="1" guidesVisible="1" resizeToContentsMarginTop="0" alignmentSnap="1" printResolution="300" paperWidth="300" gridVisible="0" snapGridOffsetX="0" smartGuides="1" snapGridOffsetY="0" resizeToContentsMarginRight="0" snapTolerancePixels="5" printAsRaster="1" generateWorldFile="0" paperHeight="300" numPages="1" snapGridResolution="10" resizeToContentsMarginBottom="0">
       <symbol alpha="1" clip_to_extent="1" type="fill" name="">
         <layer pass="0" class="SimpleFill" locked="0">
           <prop k="border_width_map_unit_scale" v="0,0,0,0,0,0"/>
@@ -32480,72 +32480,10 @@
           <prop k="outline_width" v="0.26"/>
           <prop k="outline_width_unit" v="MM"/>
           <prop k="style" v="solid"/>
-          <effect enabled="0" type="effectStack">
-            <effect type="dropShadow">
-              <prop k="blend_mode" v="13"/>
-              <prop k="blur_level" v="10"/>
-              <prop k="color" v="0,0,0,255"/>
-              <prop k="draw_mode" v="2"/>
-              <prop k="enabled" v="0"/>
-              <prop k="offset_angle" v="135"/>
-              <prop k="offset_distance" v="2"/>
-              <prop k="offset_unit" v="MM"/>
-              <prop k="offset_unit_scale" v="0,0,0,0,0,0"/>
-              <prop k="transparency" v="0"/>
-            </effect>
-            <effect type="outerGlow">
-              <prop k="blend_mode" v="0"/>
-              <prop k="blur_level" v="3"/>
-              <prop k="color1" v="0,0,255,255"/>
-              <prop k="color2" v="0,255,0,255"/>
-              <prop k="color_type" v="0"/>
-              <prop k="discrete" v="0"/>
-              <prop k="draw_mode" v="2"/>
-              <prop k="enabled" v="0"/>
-              <prop k="single_color" v="255,255,255,255"/>
-              <prop k="spread" v="2"/>
-              <prop k="spread_unit" v="MM"/>
-              <prop k="spread_unit_scale" v="0,0,0,0,0,0"/>
-              <prop k="transparency" v="0.5"/>
-            </effect>
-            <effect type="drawSource">
-              <prop k="blend_mode" v="0"/>
-              <prop k="draw_mode" v="2"/>
-              <prop k="enabled" v="1"/>
-              <prop k="transparency" v="0"/>
-            </effect>
-            <effect type="innerShadow">
-              <prop k="blend_mode" v="13"/>
-              <prop k="blur_level" v="10"/>
-              <prop k="color" v="0,0,0,255"/>
-              <prop k="draw_mode" v="2"/>
-              <prop k="enabled" v="0"/>
-              <prop k="offset_angle" v="135"/>
-              <prop k="offset_distance" v="2"/>
-              <prop k="offset_unit" v="MM"/>
-              <prop k="offset_unit_scale" v="0,0,0,0,0,0"/>
-              <prop k="transparency" v="0"/>
-            </effect>
-            <effect type="innerGlow">
-              <prop k="blend_mode" v="0"/>
-              <prop k="blur_level" v="3"/>
-              <prop k="color1" v="0,0,255,255"/>
-              <prop k="color2" v="0,255,0,255"/>
-              <prop k="color_type" v="0"/>
-              <prop k="discrete" v="0"/>
-              <prop k="draw_mode" v="2"/>
-              <prop k="enabled" v="0"/>
-              <prop k="single_color" v="255,255,255,255"/>
-              <prop k="spread" v="2"/>
-              <prop k="spread_unit" v="MM"/>
-              <prop k="spread_unit_scale" v="0,0,0,0,0,0"/>
-              <prop k="transparency" v="0.5"/>
-            </effect>
-          </effect>
         </layer>
       </symbol>
       <ComposerMap mapRotation="0" keepLayerSet="false" id="0" previewMode="Cache" drawCanvasItems="true">
-        <Extent ymin="148940.92140767580713145" xmin="555084.52102199767250568" ymax="148994.92140773087157868" xmax="555138.52102205285336822"/>
+        <Extent ymin="148940.92140767586533912" xmin="555084.52102199767250568" ymax="148994.92140773092978634" xmax="555138.52102205285336822"/>
         <LayerSet/>
         <Grid/>
         <ComposerMapGrid rightAnnotationDirection="0" gridFramePenColor="0,0,0,255" show="0" bottomAnnotationPosition="1" annotationPrecision="3" showAnnotation="0" topFrameDivisions="0" uuid="{22202fc4-88f8-489a-842f-ca5a18a9f7bf}" leftAnnotationDirection="0" topAnnotationPosition="1" rightAnnotationDisplay="0" offsetX="0" offsetY="0" rightFrameDivisions="0" gridStyle="0" annotationFontColor="0,0,0,255" intervalX="0" gridFrameSideFlags="15" intervalY="0" bottomAnnotationDirection="0" leftAnnotationDisplay="0" leftFrameDivisions="0" frameFillColor1="255,255,255,255" annotationExpression="" frameFillColor2="0,0,0,255" crossLength="3" gridFramePenThickness="0.5" bottomAnnotationDisplay="0" unit="0" topAnnotationDisplay="0" leftAnnotationPosition="1" blendMode="0" gridFrameStyle="0" rightAnnotationPosition="1" gridFrameWidth="2" name="Grid 1" annotationFormat="0" bottomFrameDivisions="0" topAnnotationDirection="0" frameAnnotationDistance="1">
@@ -32567,68 +32505,6 @@
                 <prop k="offset_unit" v="MM"/>
                 <prop k="use_custom_dash" v="0"/>
                 <prop k="width_map_unit_scale" v="0,0,0,0,0,0"/>
-                <effect enabled="0" type="effectStack">
-                  <effect type="dropShadow">
-                    <prop k="blend_mode" v="13"/>
-                    <prop k="blur_level" v="10"/>
-                    <prop k="color" v="0,0,0,255"/>
-                    <prop k="draw_mode" v="2"/>
-                    <prop k="enabled" v="0"/>
-                    <prop k="offset_angle" v="135"/>
-                    <prop k="offset_distance" v="2"/>
-                    <prop k="offset_unit" v="MM"/>
-                    <prop k="offset_unit_scale" v="0,0,0,0,0,0"/>
-                    <prop k="transparency" v="0"/>
-                  </effect>
-                  <effect type="outerGlow">
-                    <prop k="blend_mode" v="0"/>
-                    <prop k="blur_level" v="3"/>
-                    <prop k="color1" v="0,0,255,255"/>
-                    <prop k="color2" v="0,255,0,255"/>
-                    <prop k="color_type" v="0"/>
-                    <prop k="discrete" v="0"/>
-                    <prop k="draw_mode" v="2"/>
-                    <prop k="enabled" v="0"/>
-                    <prop k="single_color" v="255,255,255,255"/>
-                    <prop k="spread" v="2"/>
-                    <prop k="spread_unit" v="MM"/>
-                    <prop k="spread_unit_scale" v="0,0,0,0,0,0"/>
-                    <prop k="transparency" v="0.5"/>
-                  </effect>
-                  <effect type="drawSource">
-                    <prop k="blend_mode" v="0"/>
-                    <prop k="draw_mode" v="2"/>
-                    <prop k="enabled" v="1"/>
-                    <prop k="transparency" v="0"/>
-                  </effect>
-                  <effect type="innerShadow">
-                    <prop k="blend_mode" v="13"/>
-                    <prop k="blur_level" v="10"/>
-                    <prop k="color" v="0,0,0,255"/>
-                    <prop k="draw_mode" v="2"/>
-                    <prop k="enabled" v="0"/>
-                    <prop k="offset_angle" v="135"/>
-                    <prop k="offset_distance" v="2"/>
-                    <prop k="offset_unit" v="MM"/>
-                    <prop k="offset_unit_scale" v="0,0,0,0,0,0"/>
-                    <prop k="transparency" v="0"/>
-                  </effect>
-                  <effect type="innerGlow">
-                    <prop k="blend_mode" v="0"/>
-                    <prop k="blur_level" v="3"/>
-                    <prop k="color1" v="0,0,255,255"/>
-                    <prop k="color2" v="0,255,0,255"/>
-                    <prop k="color_type" v="0"/>
-                    <prop k="discrete" v="0"/>
-                    <prop k="draw_mode" v="2"/>
-                    <prop k="enabled" v="0"/>
-                    <prop k="single_color" v="255,255,255,255"/>
-                    <prop k="spread" v="2"/>
-                    <prop k="spread_unit" v="MM"/>
-                    <prop k="spread_unit_scale" v="0,0,0,0,0,0"/>
-                    <prop k="transparency" v="0.5"/>
-                  </effect>
-                </effect>
               </layer>
             </symbol>
           </lineStyle>
@@ -32652,68 +32528,6 @@
                 <prop k="size_map_unit_scale" v="0,0,0,0,0,0"/>
                 <prop k="size_unit" v="MM"/>
                 <prop k="vertical_anchor_point" v="1"/>
-                <effect enabled="0" type="effectStack">
-                  <effect type="dropShadow">
-                    <prop k="blend_mode" v="13"/>
-                    <prop k="blur_level" v="10"/>
-                    <prop k="color" v="0,0,0,255"/>
-                    <prop k="draw_mode" v="2"/>
-                    <prop k="enabled" v="0"/>
-                    <prop k="offset_angle" v="135"/>
-                    <prop k="offset_distance" v="2"/>
-                    <prop k="offset_unit" v="MM"/>
-                    <prop k="offset_unit_scale" v="0,0,0,0,0,0"/>
-                    <prop k="transparency" v="0"/>
-                  </effect>
-                  <effect type="outerGlow">
-                    <prop k="blend_mode" v="0"/>
-                    <prop k="blur_level" v="3"/>
-                    <prop k="color1" v="0,0,255,255"/>
-                    <prop k="color2" v="0,255,0,255"/>
-                    <prop k="color_type" v="0"/>
-                    <prop k="discrete" v="0"/>
-                    <prop k="draw_mode" v="2"/>
-                    <prop k="enabled" v="0"/>
-                    <prop k="single_color" v="255,255,255,255"/>
-                    <prop k="spread" v="2"/>
-                    <prop k="spread_unit" v="MM"/>
-                    <prop k="spread_unit_scale" v="0,0,0,0,0,0"/>
-                    <prop k="transparency" v="0.5"/>
-                  </effect>
-                  <effect type="drawSource">
-                    <prop k="blend_mode" v="0"/>
-                    <prop k="draw_mode" v="2"/>
-                    <prop k="enabled" v="1"/>
-                    <prop k="transparency" v="0"/>
-                  </effect>
-                  <effect type="innerShadow">
-                    <prop k="blend_mode" v="13"/>
-                    <prop k="blur_level" v="10"/>
-                    <prop k="color" v="0,0,0,255"/>
-                    <prop k="draw_mode" v="2"/>
-                    <prop k="enabled" v="0"/>
-                    <prop k="offset_angle" v="135"/>
-                    <prop k="offset_distance" v="2"/>
-                    <prop k="offset_unit" v="MM"/>
-                    <prop k="offset_unit_scale" v="0,0,0,0,0,0"/>
-                    <prop k="transparency" v="0"/>
-                  </effect>
-                  <effect type="innerGlow">
-                    <prop k="blend_mode" v="0"/>
-                    <prop k="blur_level" v="3"/>
-                    <prop k="color1" v="0,0,255,255"/>
-                    <prop k="color2" v="0,255,0,255"/>
-                    <prop k="color_type" v="0"/>
-                    <prop k="discrete" v="0"/>
-                    <prop k="draw_mode" v="2"/>
-                    <prop k="enabled" v="0"/>
-                    <prop k="single_color" v="255,255,255,255"/>
-                    <prop k="spread" v="2"/>
-                    <prop k="spread_unit" v="MM"/>
-                    <prop k="spread_unit_scale" v="0,0,0,0,0,0"/>
-                    <prop k="transparency" v="0.5"/>
-                  </effect>
-                </effect>
               </layer>
             </symbol>
           </markerStyle>
@@ -34849,7 +34663,7 @@
               <rule filter=" &quot;pipe_function_major&quot; = 'f'" key="{67caa7b7-52d8-494c-9386-6622b1e656a3}" symbol="5" label="secondaire"/>
               <rule filter=" &quot;fk_protection&quot; IS NOT NULL" key="{6082ca45-b8db-490b-a549-f86a8b5e961b}" symbol="6" label="protégée"/>
             </rule>
-            <rule filter="fk_status=1307" key="{3792c184-3d81-4254-8c66-acdf171e2b71}" symbol="7" label="Fictives"/>
+            <rule checkstate="0" filter="fk_status=1307" key="{3792c184-3d81-4254-8c66-acdf171e2b71}" symbol="7" label="Fictives"/>
           </rule>
           <rule checkstate="0" filter="fk_distributor = 1and &quot;status_active&quot; = 'f'" key="{75060a73-107d-4ace-bc35-d573de40488f}" label="inactive">
             <rule filter="COALESCE( &quot;schema_force_visible&quot;,  &quot;pipe_function_schema_visible&quot;)  = 't'" key="{5b970fd5-5c37-4865-81a5-cab18c5fb58c}" label="Schématique">
@@ -34876,7 +34690,7 @@
             </rule>
           </rule>
           <rule checkstate="0" filter="fk_distributor = 1 and &quot;status_active&quot; = 't' and COALESCE( &quot;schema_force_visible&quot;,  &quot;pipe_function_schema_visible&quot;)  = 't'" key="{9c210704-187e-4e2a-9b89-2f7917f4376c}" symbol="20" label="Couleur par zone"/>
-          <rule filter="ELSE" key="{bb9b38f1-c76d-4c6d-908b-414f0cc24f97}" symbol="21" label="incomplètes"/>
+          <rule checkstate="0" filter="ELSE" key="{bb9b38f1-c76d-4c6d-908b-414f0cc24f97}" symbol="21" label="incomplètes"/>
         </rules>
         <symbols>
           <symbol alpha="1" clip_to_extent="1" type="line" name="0">
@@ -35317,7 +35131,7 @@
             <layer pass="0" class="SimpleLine" locked="0">
               <prop k="capstyle" v="square"/>
               <prop k="customdash" v="5;2"/>
-              <prop k="customdash_map_unit_scale" v="0,0"/>
+              <prop k="customdash_map_unit_scale" v="0,0,0,0,0,0"/>
               <prop k="customdash_unit" v="MM"/>
               <prop k="draw_inside_polygon" v="0"/>
               <prop k="joinstyle" v="bevel"/>
@@ -35326,66 +35140,10 @@
               <prop k="line_width" v="1"/>
               <prop k="line_width_unit" v="MM"/>
               <prop k="offset" v="0"/>
-              <prop k="offset_map_unit_scale" v="0,0"/>
+              <prop k="offset_map_unit_scale" v="0,0,0,0,0,0"/>
               <prop k="offset_unit" v="MM"/>
               <prop k="use_custom_dash" v="0"/>
-              <prop k="width_map_unit_scale" v="0,0"/>
-              <effect enabled="0" type="effectStack">
-                <effect type="dropShadow">
-                  <prop k="blend_mode" v="13"/>
-                  <prop k="blur_level" v="10"/>
-                  <prop k="color" v="0,0,0,255"/>
-                  <prop k="draw_mode" v="2"/>
-                  <prop k="enabled" v="0"/>
-                  <prop k="offset_angle" v="135"/>
-                  <prop k="offset_distance" v="2"/>
-                  <prop k="offset_unit" v="MM"/>
-                  <prop k="offset_unit_scale" v="0,0"/>
-                  <prop k="transparency" v="0"/>
-                </effect>
-                <effect type="outerGlow">
-                  <prop k="blend_mode" v="0"/>
-                  <prop k="blur_level" v="3"/>
-                  <prop k="color_type" v="0"/>
-                  <prop k="draw_mode" v="2"/>
-                  <prop k="enabled" v="0"/>
-                  <prop k="single_color" v="255,255,255,255"/>
-                  <prop k="spread" v="2"/>
-                  <prop k="spread_unit" v="MM"/>
-                  <prop k="spread_unit_scale" v="0,0"/>
-                  <prop k="transparency" v="0.5"/>
-                </effect>
-                <effect type="drawSource">
-                  <prop k="blend_mode" v="0"/>
-                  <prop k="draw_mode" v="2"/>
-                  <prop k="enabled" v="1"/>
-                  <prop k="transparency" v="0"/>
-                </effect>
-                <effect type="innerShadow">
-                  <prop k="blend_mode" v="13"/>
-                  <prop k="blur_level" v="10"/>
-                  <prop k="color" v="0,0,0,255"/>
-                  <prop k="draw_mode" v="2"/>
-                  <prop k="enabled" v="0"/>
-                  <prop k="offset_angle" v="135"/>
-                  <prop k="offset_distance" v="2"/>
-                  <prop k="offset_unit" v="MM"/>
-                  <prop k="offset_unit_scale" v="0,0"/>
-                  <prop k="transparency" v="0"/>
-                </effect>
-                <effect type="innerGlow">
-                  <prop k="blend_mode" v="0"/>
-                  <prop k="blur_level" v="3"/>
-                  <prop k="color_type" v="0"/>
-                  <prop k="draw_mode" v="2"/>
-                  <prop k="enabled" v="0"/>
-                  <prop k="single_color" v="255,255,255,255"/>
-                  <prop k="spread" v="2"/>
-                  <prop k="spread_unit" v="MM"/>
-                  <prop k="spread_unit_scale" v="0,0"/>
-                  <prop k="transparency" v="0.5"/>
-                </effect>
-              </effect>
+              <prop k="width_map_unit_scale" v="0,0,0,0,0,0"/>
             </layer>
           </symbol>
           <symbol alpha="1" clip_to_extent="1" type="line" name="3">
@@ -37079,135 +36837,11 @@
               <prop k="offset_unit" v="MM"/>
               <prop k="use_custom_dash" v="0"/>
               <prop k="width_map_unit_scale" v="0,0,0,0,0,0"/>
-              <effect enabled="0" type="effectStack">
-                <effect type="dropShadow">
-                  <prop k="blend_mode" v="13"/>
-                  <prop k="blur_level" v="10"/>
-                  <prop k="color" v="0,0,0,255"/>
-                  <prop k="draw_mode" v="2"/>
-                  <prop k="enabled" v="0"/>
-                  <prop k="offset_angle" v="135"/>
-                  <prop k="offset_distance" v="2"/>
-                  <prop k="offset_unit" v="MM"/>
-                  <prop k="offset_unit_scale" v="0,0,0,0,0,0"/>
-                  <prop k="transparency" v="0"/>
-                </effect>
-                <effect type="outerGlow">
-                  <prop k="blend_mode" v="0"/>
-                  <prop k="blur_level" v="3"/>
-                  <prop k="color1" v="0,0,255,255"/>
-                  <prop k="color2" v="0,255,0,255"/>
-                  <prop k="color_type" v="0"/>
-                  <prop k="discrete" v="0"/>
-                  <prop k="draw_mode" v="2"/>
-                  <prop k="enabled" v="0"/>
-                  <prop k="single_color" v="255,255,255,255"/>
-                  <prop k="spread" v="2"/>
-                  <prop k="spread_unit" v="MM"/>
-                  <prop k="spread_unit_scale" v="0,0,0,0,0,0"/>
-                  <prop k="transparency" v="0.5"/>
-                </effect>
-                <effect type="drawSource">
-                  <prop k="blend_mode" v="0"/>
-                  <prop k="draw_mode" v="2"/>
-                  <prop k="enabled" v="1"/>
-                  <prop k="transparency" v="0"/>
-                </effect>
-                <effect type="innerShadow">
-                  <prop k="blend_mode" v="13"/>
-                  <prop k="blur_level" v="10"/>
-                  <prop k="color" v="0,0,0,255"/>
-                  <prop k="draw_mode" v="2"/>
-                  <prop k="enabled" v="0"/>
-                  <prop k="offset_angle" v="135"/>
-                  <prop k="offset_distance" v="2"/>
-                  <prop k="offset_unit" v="MM"/>
-                  <prop k="offset_unit_scale" v="0,0,0,0,0,0"/>
-                  <prop k="transparency" v="0"/>
-                </effect>
-                <effect type="innerGlow">
-                  <prop k="blend_mode" v="0"/>
-                  <prop k="blur_level" v="3"/>
-                  <prop k="color1" v="0,0,255,255"/>
-                  <prop k="color2" v="0,255,0,255"/>
-                  <prop k="color_type" v="0"/>
-                  <prop k="discrete" v="0"/>
-                  <prop k="draw_mode" v="2"/>
-                  <prop k="enabled" v="0"/>
-                  <prop k="single_color" v="255,255,255,255"/>
-                  <prop k="spread" v="2"/>
-                  <prop k="spread_unit" v="MM"/>
-                  <prop k="spread_unit_scale" v="0,0,0,0,0,0"/>
-                  <prop k="transparency" v="0.5"/>
-                </effect>
-              </effect>
             </layer>
           </symbol>
         </symbols>
         <rotation/>
         <sizescale scalemethod="diameter"/>
-        <effect enabled="0" type="effectStack">
-          <effect type="dropShadow">
-            <prop k="blend_mode" v="13"/>
-            <prop k="blur_level" v="10"/>
-            <prop k="color" v="0,0,0,255"/>
-            <prop k="draw_mode" v="2"/>
-            <prop k="enabled" v="0"/>
-            <prop k="offset_angle" v="135"/>
-            <prop k="offset_distance" v="2"/>
-            <prop k="offset_unit" v="MM"/>
-            <prop k="offset_unit_scale" v="0,0,0,0,0,0"/>
-            <prop k="transparency" v="0"/>
-          </effect>
-          <effect type="outerGlow">
-            <prop k="blend_mode" v="0"/>
-            <prop k="blur_level" v="3"/>
-            <prop k="color1" v="0,0,255,255"/>
-            <prop k="color2" v="0,255,0,255"/>
-            <prop k="color_type" v="0"/>
-            <prop k="discrete" v="0"/>
-            <prop k="draw_mode" v="2"/>
-            <prop k="enabled" v="0"/>
-            <prop k="single_color" v="255,255,255,255"/>
-            <prop k="spread" v="2"/>
-            <prop k="spread_unit" v="MM"/>
-            <prop k="spread_unit_scale" v="0,0,0,0,0,0"/>
-            <prop k="transparency" v="0.5"/>
-          </effect>
-          <effect type="drawSource">
-            <prop k="blend_mode" v="0"/>
-            <prop k="draw_mode" v="2"/>
-            <prop k="enabled" v="1"/>
-            <prop k="transparency" v="0"/>
-          </effect>
-          <effect type="innerShadow">
-            <prop k="blend_mode" v="13"/>
-            <prop k="blur_level" v="10"/>
-            <prop k="color" v="0,0,0,255"/>
-            <prop k="draw_mode" v="2"/>
-            <prop k="enabled" v="0"/>
-            <prop k="offset_angle" v="135"/>
-            <prop k="offset_distance" v="2"/>
-            <prop k="offset_unit" v="MM"/>
-            <prop k="offset_unit_scale" v="0,0,0,0,0,0"/>
-            <prop k="transparency" v="0"/>
-          </effect>
-          <effect type="innerGlow">
-            <prop k="blend_mode" v="0"/>
-            <prop k="blur_level" v="3"/>
-            <prop k="color1" v="0,0,255,255"/>
-            <prop k="color2" v="0,255,0,255"/>
-            <prop k="color_type" v="0"/>
-            <prop k="discrete" v="0"/>
-            <prop k="draw_mode" v="2"/>
-            <prop k="enabled" v="0"/>
-            <prop k="single_color" v="255,255,255,255"/>
-            <prop k="spread" v="2"/>
-            <prop k="spread_unit" v="MM"/>
-            <prop k="spread_unit_scale" v="0,0,0,0,0,0"/>
-            <prop k="transparency" v="0.5"/>
-          </effect>
-        </effect>
       </renderer-v2>
       <labeling type="simple"/>
       <customproperties>
@@ -37558,7 +37192,7 @@
           <widgetv2config OrderByValue="0" AllowNull="0" FilterExpression="" UseCompleter="0" fieldEditable="1" Key="id" Layer="hydrant_provider20130304110004893" Value="value_fr" labelOnTop="0" AllowMulti="0"/>
         </edittype>
         <edittype widgetv2type="ValueRelation" name="fk_material">
-          <widgetv2config OrderByValue="0" AllowNull="0" FilterExpression="" UseCompleter="0" fieldEditable="1" Key="id" Layer="hydrant_material20150925104534891" Value="_displayname_fr" labelOnTop="0" AllowMulti="0"/> 
+          <widgetv2config OrderByValue="0" AllowNull="0" FilterExpression="" UseCompleter="0" fieldEditable="1" Key="id" Layer="hydrant_material20150925104534891" Value="_displayname_fr" labelOnTop="0" AllowMulti="0"/>
         </edittype>
         <edittype widgetv2type="TextEdit" name="model">
           <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
@@ -37626,13 +37260,13 @@
           <symbol alpha="1" clip_to_extent="1" type="marker" name="0">
             <layer pass="0" class="SvgMarker" locked="0">
               <prop k="angle" v="0"/>
-              <prop k="color" v="#000000"/>
+              <prop k="color" v="0,0,0,255"/>
               <prop k="horizontal_anchor_point" v="1"/>
               <prop k="name" v="./symbols/hydrant.svg"/>
               <prop k="offset" v="0,0"/>
               <prop k="offset_map_unit_scale" v="0,0,0,0,0,0"/>
               <prop k="offset_unit" v="MM"/>
-              <prop k="outline_color" v="#000000"/>
+              <prop k="outline_color" v="0,0,0,255"/>
               <prop k="outline_width" v="1"/>
               <prop k="outline_width_map_unit_scale" v="0,0,0,0,0,0"/>
               <prop k="outline_width_unit" v="MM"/>
@@ -37884,8 +37518,8 @@
         <edittype widgetv2type="ValueRelation" name="fk_precisionalti">
           <widgetv2config OrderByValue="0" AllowNull="0" FilterExpression="" UseCompleter="0" fieldEditable="1" Key="id" Layer="vl_precisionalti20131211161429510" Value="value_fr" labelOnTop="0" AllowMulti="0"/>
         </edittype>
-        <edittype widgetv2type="TextEdit" name="fk_object_reference">
-          <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
+        <edittype widgetv2type="ValueRelation" name="fk_object_reference">
+          <widgetv2config OrderByValue="0" AllowNull="0" FilterExpression="" UseCompleter="0" fieldEditable="1" Key="id" Layer="object_reference20150922083109152" Value="value_fr" labelOnTop="0" AllowMulti="0"/>
         </edittype>
         <edittype widgetv2type="TextEdit" name="altitude">
           <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
@@ -37975,16 +37609,16 @@
           <widgetv2config OrderByValue="0" AllowNull="0" FilterExpression="" UseCompleter="0" fieldEditable="1" Key="id" Layer="hydrant_provider20130304110004893" Value="value_fr" labelOnTop="0" AllowMulti="0"/>
         </edittype>
         <edittype widgetv2type="ValueRelation" name="fk_material">
-          <widgetv2config OrderByValue="0" AllowNull="0" FilterExpression="" UseCompleter="0" fieldEditable="1" Key="id" Layer="hydrant_material20150925104534891" Value="value_fr" labelOnTop="0" AllowMulti="0"/>
+          <widgetv2config OrderByValue="0" AllowNull="0" FilterExpression="" UseCompleter="0" fieldEditable="1" Key="id" Layer="hydrant_material20150925104534891" Value="_displayname_fr" labelOnTop="0" AllowMulti="0"/>
         </edittype>
         <edittype widgetv2type="TextEdit" name="model">
           <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
         </edittype>
-        <edittype widgetv2type="TextEdit" name="underground">
+        <edittype widgetv2type="CheckBox" name="underground">
           <widgetv2config fieldEditable="1" UncheckedState="f" CheckedState="t" labelOnTop="0"/>
         </edittype>
-        <edittype widgetv2type="TextEdit" name="marked">
-          <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
+        <edittype widgetv2type="CheckBox" name="marked">
+          <widgetv2config fieldEditable="1" UncheckedState="f" CheckedState="t" labelOnTop="0"/>
         </edittype>
         <edittype widgetv2type="TextEdit" name="pressure_static">
           <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
@@ -38111,6 +37745,15 @@
         <edittype widgetv2type="TextEdit" name="pressure_nominal">
           <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
         </edittype>
+        <edittype widgetv2type="TextEdit" name="_displayname_en">
+          <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
+        </edittype>
+        <edittype widgetv2type="TextEdit" name="_displayname_fr">
+          <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
+        </edittype>
+        <edittype widgetv2type="TextEdit" name="_displayname_ro">
+          <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
+        </edittype>
       </edittypes>
       <editform>.</editform>
       <editforminit/>
@@ -38165,6 +37808,15 @@
           <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
         </edittype>
         <edittype widgetv2type="TextEdit" name="pressure_nominal">
+          <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
+        </edittype>
+        <edittype widgetv2type="TextEdit" name="_displayname_en">
+          <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
+        </edittype>
+        <edittype widgetv2type="TextEdit" name="_displayname_fr">
+          <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
+        </edittype>
+        <edittype widgetv2type="TextEdit" name="_displayname_ro">
           <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
         </edittype>
       </edittypes>
@@ -38842,7 +38494,7 @@
           <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
         </edittype>
         <edittype widgetv2type="ValueRelation" name="fk_district">
-         <widgetv2config OrderByValue="0" AllowNull="0" FilterExpression="" UseCompleter="0" fieldEditable="1" Key="id" Layer="district20130304110004764" Value="name" labelOnTop="0" AllowMulti="0"/> 
+          <widgetv2config OrderByValue="0" AllowNull="0" FilterExpression="" UseCompleter="0" fieldEditable="1" Key="id" Layer="district20130304110004764" Value="name" labelOnTop="0" AllowMulti="0"/>
         </edittype>
         <edittype widgetv2type="TextEdit" name="fk_pressurezone">
           <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
@@ -38899,13 +38551,13 @@
           <symbol alpha="1" clip_to_extent="1" type="marker" name="0">
             <layer pass="0" class="SvgMarker" locked="0">
               <prop k="angle" v="0"/>
-              <prop k="color" v="#000000"/>
+              <prop k="color" v="0,0,0,255"/>
               <prop k="horizontal_anchor_point" v="1"/>
               <prop k="name" v="./symbols/nodes/three.svg"/>
               <prop k="offset" v="0,0"/>
               <prop k="offset_map_unit_scale" v="0,0,0,0,0,0"/>
               <prop k="offset_unit" v="MM"/>
-              <prop k="outline_color" v="#000000"/>
+              <prop k="outline_color" v="0,0,0,255"/>
               <prop k="outline_width" v="1"/>
               <prop k="outline_width_map_unit_scale" v="0,0,0,0,0,0"/>
               <prop k="outline_width_unit" v="MM"/>
@@ -38931,13 +38583,13 @@
               <prop k="angle_dd_expression" v=""/>
               <prop k="angle_dd_field" v="_pipe_orientation"/>
               <prop k="angle_dd_useexpr" v="0"/>
-              <prop k="color" v="#000000"/>
+              <prop k="color" v="0,0,0,255"/>
               <prop k="horizontal_anchor_point" v="1"/>
               <prop k="name" v="./symbols/nodes/diff_material.svg"/>
               <prop k="offset" v="0,0"/>
               <prop k="offset_map_unit_scale" v="0,0,0,0,0,0"/>
               <prop k="offset_unit" v="MM"/>
-              <prop k="outline_color" v="#000000"/>
+              <prop k="outline_color" v="0,0,0,255"/>
               <prop k="outline_width" v="1"/>
               <prop k="outline_width_map_unit_scale" v="0,0,0,0,0,0"/>
               <prop k="outline_width_unit" v="MM"/>
@@ -38963,13 +38615,13 @@
               <prop k="angle_dd_expression" v=""/>
               <prop k="angle_dd_field" v="_pipe_orientation"/>
               <prop k="angle_dd_useexpr" v="0"/>
-              <prop k="color" v="#000000"/>
+              <prop k="color" v="0,0,0,255"/>
               <prop k="horizontal_anchor_point" v="1"/>
               <prop k="name" v="./symbols/nodes/diff_year.svg"/>
               <prop k="offset" v="0,0"/>
               <prop k="offset_map_unit_scale" v="0,0,0,0,0,0"/>
               <prop k="offset_unit" v="MM"/>
-              <prop k="outline_color" v="#000000"/>
+              <prop k="outline_color" v="0,0,0,255"/>
               <prop k="outline_width" v="1"/>
               <prop k="outline_width_map_unit_scale" v="0,0,0,0,0,0"/>
               <prop k="outline_width_unit" v="MM"/>
@@ -38995,13 +38647,13 @@
               <prop k="angle_dd_expression" v=""/>
               <prop k="angle_dd_field" v="_pipe_orientation"/>
               <prop k="angle_dd_useexpr" v="0"/>
-              <prop k="color" v="#000000"/>
+              <prop k="color" v="0,0,0,255"/>
               <prop k="horizontal_anchor_point" v="1"/>
               <prop k="name" v="./symbols/nodes/diff_diameter_material.svg"/>
               <prop k="offset" v="0,0"/>
               <prop k="offset_map_unit_scale" v="0,0,0,0,0,0"/>
               <prop k="offset_unit" v="MM"/>
-              <prop k="outline_color" v="#000000"/>
+              <prop k="outline_color" v="0,0,0,255"/>
               <prop k="outline_width" v="1"/>
               <prop k="outline_width_map_unit_scale" v="0,0,0,0,0,0"/>
               <prop k="outline_width_unit" v="MM"/>
@@ -39027,13 +38679,13 @@
               <prop k="angle_dd_expression" v=""/>
               <prop k="angle_dd_field" v="_pipe_orientation"/>
               <prop k="angle_dd_useexpr" v="0"/>
-              <prop k="color" v="#000000"/>
+              <prop k="color" v="0,0,0,255"/>
               <prop k="horizontal_anchor_point" v="1"/>
               <prop k="name" v="./symbols/nodes/diff_diameter.svg"/>
               <prop k="offset" v="0,0"/>
               <prop k="offset_map_unit_scale" v="0,0,0,0,0,0"/>
               <prop k="offset_unit" v="MM"/>
-              <prop k="outline_color" v="#000000"/>
+              <prop k="outline_color" v="0,0,0,255"/>
               <prop k="outline_width" v="1"/>
               <prop k="outline_width_map_unit_scale" v="0,0,0,0,0,0"/>
               <prop k="outline_width_unit" v="MM"/>
@@ -39245,6 +38897,7 @@
       <SingleCategoryDiagramRenderer diagramType="Pie">
         <DiagramCategory penColor="#000000" labelPlacementMethod="XHeight" penWidth="0" diagramOrientation="Up" minimumSize="0" barWidth="5" penAlpha="255" maxScaleDenominator="501" backgroundColor="#ffffff" transparency="0" width="15" scaleDependency="Area" backgroundAlpha="255" angleOffset="1440" scaleBasedVisibility="1" enabled="0" height="15" sizeType="MM" minScaleDenominator="-4.65661e-10">
           <fontProperties description="Cantarell,11,-1,5,50,0,0,0,0,0" style=""/>
+          <attribute field="" color="#000000" label=""/>
         </DiagramCategory>
       </SingleCategoryDiagramRenderer>
       <DiagramLayerSettings yPosColumn="-1" linePlacementFlags="10" placement="0" dist="0" xPosColumn="-1" priority="0" obstacle="0" showAll="1"/>
@@ -40004,7 +39657,7 @@
         <edittype widgetv2type="TextEdit" name="id">
           <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
         </edittype>
-        <edittype widgetv2type="ValueRelation" name="fk_district"> 
+        <edittype widgetv2type="ValueRelation" name="fk_district">
           <widgetv2config OrderByValue="0" AllowNull="0" FilterExpression="" UseCompleter="0" fieldEditable="1" Key="id" Layer="district20130304110004764" Value="name" labelOnTop="0" AllowMulti="0"/>
         </edittype>
         <edittype widgetv2type="TextEdit" name="fk_pressurezone">
@@ -41587,8 +41240,8 @@
         <edittype widgetv2type="TextEdit" name="identification">
           <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
         </edittype>
-        <edittype widgetv2type="TextEdit" name="fk_distributor">
-          <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
+        <edittype widgetv2type="ValueRelation" name="fk_distributor">
+          <widgetv2config OrderByValue="0" AllowNull="0" FilterExpression="" UseCompleter="0" fieldEditable="1" Key="id" Layer="distributor20130304114719702" Value="name" labelOnTop="0" AllowMulti="0"/>
         </edittype>
         <edittype widgetv2type="ValueRelation" name="fk_status">
           <widgetv2config OrderByValue="0" AllowNull="0" FilterExpression="" UseCompleter="0" fieldEditable="1" Key="id" Layer="vl_status20130304110011436" Value="value_fr" labelOnTop="0" AllowMulti="0"/>
@@ -42459,13 +42112,13 @@
               <prop k="angle_dd_expression" v=""/>
               <prop k="angle_dd_field" v="node__orientation"/>
               <prop k="angle_dd_useexpr" v="0"/>
-              <prop k="color" v="#000000"/>
+              <prop k="color" v="0,0,0,255"/>
               <prop k="horizontal_anchor_point" v="1"/>
               <prop k="name" v="./symbols/nodes/subscriber_meter.svg"/>
               <prop k="offset" v="0,0"/>
               <prop k="offset_map_unit_scale" v="0,0,0,0,0,0"/>
               <prop k="offset_unit" v="MM"/>
-              <prop k="outline_color" v="#000000"/>
+              <prop k="outline_color" v="0,0,0,255"/>
               <prop k="outline_width" v="1"/>
               <prop k="outline_width_map_unit_scale" v="0,0,0,0,0,0"/>
               <prop k="outline_width_unit" v="MM"/>
@@ -42491,13 +42144,13 @@
               <prop k="angle_dd_expression" v=""/>
               <prop k="angle_dd_field" v="node__orientation"/>
               <prop k="angle_dd_useexpr" v="0"/>
-              <prop k="color" v="#000000"/>
+              <prop k="color" v="0,0,0,255"/>
               <prop k="horizontal_anchor_point" v="1"/>
               <prop k="name" v="./symbols/nodes/cap.svg"/>
               <prop k="offset" v="0,0"/>
               <prop k="offset_map_unit_scale" v="0,0,0,0,0,0"/>
               <prop k="offset_unit" v="MM"/>
-              <prop k="outline_color" v="#000000"/>
+              <prop k="outline_color" v="0,0,0,255"/>
               <prop k="outline_width" v="1"/>
               <prop k="outline_width_map_unit_scale" v="0,0,0,0,0,0"/>
               <prop k="outline_width_unit" v="MM"/>
@@ -42519,13 +42172,13 @@
           <symbol alpha="1" clip_to_extent="1" type="marker" name="2">
             <layer pass="0" class="SvgMarker" locked="0">
               <prop k="angle" v="0"/>
-              <prop k="color" v="#000000"/>
+              <prop k="color" v="0,0,0,255"/>
               <prop k="horizontal_anchor_point" v="1"/>
               <prop k="name" v="./symbols/nodes/watering_output.svg"/>
               <prop k="offset" v="0,0"/>
               <prop k="offset_map_unit_scale" v="0,0,0,0,0,0"/>
               <prop k="offset_unit" v="MM"/>
-              <prop k="outline_color" v="#000000"/>
+              <prop k="outline_color" v="0,0,0,255"/>
               <prop k="outline_width" v="1"/>
               <prop k="outline_width_map_unit_scale" v="0,0,0,0,0,0"/>
               <prop k="outline_width_unit" v="MM"/>
@@ -42912,8 +42565,8 @@
         <edittype widgetv2type="TextEdit" name="label_2_text">
           <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
         </edittype>
-        <edittype widgetv2type="TextEdit" name="fk_part_type">
-          <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
+        <edittype widgetv2type="ValueRelation" name="fk_part_type">
+          <widgetv2config OrderByValue="0" AllowNull="0" FilterExpression="" UseCompleter="0" fieldEditable="1" Key="id" Layer="vl_part_type20140429114640509" Value="value_fr" labelOnTop="0" AllowMulti="0"/>
         </edittype>
         <edittype widgetv2type="TextEdit" name="fk_pipe">
           <widgetv2config IsMultiline="0" fieldEditable="0" UseHtml="0" labelOnTop="0"/>
@@ -47147,80 +46800,18 @@
               <prop k="horizontal_anchor_point" v="1"/>
               <prop k="name" v="circle"/>
               <prop k="offset" v="0,0"/>
-              <prop k="offset_map_unit_scale" v="0,0"/>
+              <prop k="offset_map_unit_scale" v="0,0,0,0,0,0"/>
               <prop k="offset_unit" v="MM"/>
               <prop k="outline_color" v="0,0,0,255"/>
               <prop k="outline_style" v="solid"/>
               <prop k="outline_width" v="0"/>
-              <prop k="outline_width_map_unit_scale" v="0,0"/>
+              <prop k="outline_width_map_unit_scale" v="0,0,0,0,0,0"/>
               <prop k="outline_width_unit" v="MM"/>
               <prop k="scale_method" v="diameter"/>
               <prop k="size" v="3"/>
-              <prop k="size_map_unit_scale" v="0,0"/>
+              <prop k="size_map_unit_scale" v="0,0,0,0,0,0"/>
               <prop k="size_unit" v="MM"/>
               <prop k="vertical_anchor_point" v="1"/>
-              <effect enabled="0" type="effectStack">
-                <effect type="dropShadow">
-                  <prop k="blend_mode" v="13"/>
-                  <prop k="blur_level" v="10"/>
-                  <prop k="color" v="0,0,0,255"/>
-                  <prop k="draw_mode" v="2"/>
-                  <prop k="enabled" v="0"/>
-                  <prop k="offset_angle" v="135"/>
-                  <prop k="offset_distance" v="2"/>
-                  <prop k="offset_unit" v="MM"/>
-                  <prop k="offset_unit_scale" v="0,0"/>
-                  <prop k="transparency" v="0"/>
-                </effect>
-                <effect type="outerGlow">
-                  <prop k="blend_mode" v="0"/>
-                  <prop k="blur_level" v="3"/>
-                  <prop k="color1" v="0,0,255,255"/>
-                  <prop k="color2" v="0,255,0,255"/>
-                  <prop k="color_type" v="0"/>
-                  <prop k="discrete" v="0"/>
-                  <prop k="draw_mode" v="2"/>
-                  <prop k="enabled" v="0"/>
-                  <prop k="single_color" v="255,255,255,255"/>
-                  <prop k="spread" v="2"/>
-                  <prop k="spread_unit" v="MM"/>
-                  <prop k="spread_unit_scale" v="0,0"/>
-                  <prop k="transparency" v="0.5"/>
-                </effect>
-                <effect type="drawSource">
-                  <prop k="blend_mode" v="0"/>
-                  <prop k="draw_mode" v="2"/>
-                  <prop k="enabled" v="1"/>
-                  <prop k="transparency" v="0"/>
-                </effect>
-                <effect type="innerShadow">
-                  <prop k="blend_mode" v="13"/>
-                  <prop k="blur_level" v="10"/>
-                  <prop k="color" v="0,0,0,255"/>
-                  <prop k="draw_mode" v="2"/>
-                  <prop k="enabled" v="0"/>
-                  <prop k="offset_angle" v="135"/>
-                  <prop k="offset_distance" v="2"/>
-                  <prop k="offset_unit" v="MM"/>
-                  <prop k="offset_unit_scale" v="0,0"/>
-                  <prop k="transparency" v="0"/>
-                </effect>
-                <effect type="innerGlow">
-                  <prop k="blend_mode" v="0"/>
-                  <prop k="blur_level" v="3"/>
-                  <prop k="color1" v="0,0,255,255"/>
-                  <prop k="color2" v="0,255,0,255"/>
-                  <prop k="color_type" v="0"/>
-                  <prop k="discrete" v="0"/>
-                  <prop k="draw_mode" v="2"/>
-                  <prop k="enabled" v="0"/>
-                  <prop k="single_color" v="255,255,255,255"/>
-                  <prop k="spread" v="2"/>
-                  <prop k="spread_unit" v="MM"/>
-                  <prop k="spread_unit_scale" v="0,0"/>
-                  <prop k="transparency" v="0.5"/>
-                </effect>
-              </effect>
             </layer>
           </symbol>
         </symbols>
@@ -47270,7 +46861,7 @@
         <property key="labeling/distMapUnitMaxScale" value="0"/>
         <property key="labeling/distMapUnitMinScale" value="0"/>
         <property key="labeling/enabled" value="true"/>
-        <property key="labeling/fieldName" value="identification ||&#xa;CASE &#xa;WHEN fk_subscriber_type = 9401 THEN ''&#xa;WHEN fk_subscriber_type = 9402 THEN '#!#ARR'&#xa;WHEN fk_subscriber_type = 9403 THEN '#!#FON'&#xa;WHEN fk_subscriber_type = 9404 THEN '#!#WC'&#xa;WHEN fk_subscriber_type = 9405 THEN '#!#SPK'&#xa;ELSE ''&#xa;END"/> 
+        <property key="labeling/fieldName" value="identification ||&#xa;CASE &#xa;WHEN fk_subscriber_type = 9401 THEN ''&#xa;WHEN fk_subscriber_type = 9402 THEN '#!#ARR'&#xa;WHEN fk_subscriber_type = 9403 THEN '#!#FON'&#xa;WHEN fk_subscriber_type = 9404 THEN '#!#WC'&#xa;WHEN fk_subscriber_type = 9405 THEN '#!#SPK'&#xa;ELSE ''&#xa;END"/>
         <property key="labeling/fontBold" value="false"/>
         <property key="labeling/fontCapitals" value="0"/>
         <property key="labeling/fontFamily" value="Arial"/>
@@ -47416,6 +47007,7 @@
       <SingleCategoryDiagramRenderer diagramType="Pie">
         <DiagramCategory penColor="#000000" labelPlacementMethod="XHeight" penWidth="0" diagramOrientation="Up" minimumSize="0" barWidth="5" penAlpha="255" maxScaleDenominator="1e+08" backgroundColor="#ffffff" transparency="0" width="15" scaleDependency="Area" backgroundAlpha="255" angleOffset="1440" scaleBasedVisibility="1" enabled="0" height="15" sizeType="MM" minScaleDenominator="4">
           <fontProperties description="Cantarell,11,-1,5,50,0,0,0,0,0" style=""/>
+          <attribute field="" color="#000000" label=""/>
         </DiagramCategory>
       </SingleCategoryDiagramRenderer>
       <DiagramLayerSettings yPosColumn="-1" linePlacementFlags="10" placement="0" dist="0" xPosColumn="-1" priority="0" obstacle="0" showAll="1"/>
@@ -47551,8 +47143,8 @@
         <edittype widgetv2type="TextEdit" name="label_2_text">
           <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
         </edittype>
-        <edittype widgetv2type="TextEdit" name="fk_subscriber_type">
-          <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
+        <edittype widgetv2type="ValueRelation" name="fk_subscriber_type">
+          <widgetv2config OrderByValue="0" AllowNull="0" FilterExpression="" UseCompleter="0" fieldEditable="1" Key="id" Layer="vl_subscriber_type20130304110011480" Value="value_fr" labelOnTop="0" AllowMulti="0"/>
         </edittype>
         <edittype widgetv2type="RelationReference" name="fk_pipe">
           <widgetv2config OrderByValue="0" fieldEditable="1" ShowForm="0" Relation="relation_pipe_subscriber" ReadOnly="1" MapIdentification="1" labelOnTop="0" AllowNULL="1"/>
@@ -47979,9 +47571,6 @@
         <edittype widgetv2type="CheckBox" name="networkseparation">
           <widgetv2config fieldEditable="1" UncheckedState="f" CheckedState="t" labelOnTop="0"/>
         </edittype>
-        <edittype widgetv2type="TextEdit" name="node_altitude">
-          <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
-        </edittype>
         <edittype widgetv2type="TextEdit" name="handle_altitude">
           <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
         </edittype>
@@ -48191,13 +47780,13 @@
               <prop k="angle_dd_expression" v="coalesce(90 - label_1_r, 45)"/>
               <prop k="angle_dd_field" v=""/>
               <prop k="angle_dd_useexpr" v="1"/>
-              <prop k="color" v="#000000"/>
+              <prop k="color" v="0,0,0,255"/>
               <prop k="horizontal_anchor_point" v="1"/>
               <prop k="name" v="./symbols/vidange.svg"/>
               <prop k="offset" v="0,-2"/>
               <prop k="offset_map_unit_scale" v="0,0,0,0,0,0"/>
               <prop k="offset_unit" v="MM"/>
-              <prop k="outline_color" v="#000000"/>
+              <prop k="outline_color" v="0,0,0,255"/>
               <prop k="outline_width" v="1"/>
               <prop k="outline_width_map_unit_scale" v="0,0,0,0,0,0"/>
               <prop k="outline_width_unit" v="MM"/>
@@ -48339,13 +47928,13 @@
               <prop k="angle_dd_expression" v="coalesce(90 - label_1_r, 45)"/>
               <prop k="angle_dd_field" v=""/>
               <prop k="angle_dd_useexpr" v="1"/>
-              <prop k="color" v="#000000"/>
+              <prop k="color" v="0,0,0,255"/>
               <prop k="horizontal_anchor_point" v="1"/>
               <prop k="name" v="./symbols/vidange_subscriber.svg"/>
               <prop k="offset" v="0,-2"/>
               <prop k="offset_map_unit_scale" v="0,0,0,0,0,0"/>
               <prop k="offset_unit" v="MM"/>
-              <prop k="outline_color" v="#000000"/>
+              <prop k="outline_color" v="0,0,0,255"/>
               <prop k="outline_width" v="1"/>
               <prop k="outline_width_map_unit_scale" v="0,0,0,0,0,0"/>
               <prop k="outline_width_unit" v="MM"/>
@@ -48608,14 +48197,14 @@
         <edittype widgetv2type="TextEdit" name="fk_printmap">
           <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
         </edittype>
-        <edittype widgetv2type="ValueRelation" name="fk_precision"> 
-           <widgetv2config OrderByValue="0" AllowNull="0" FilterExpression="" UseCompleter="0" fieldEditable="1" Key="id" Layer="vl_precision20130304110011372" Value="value_fr" labelOnTop="0" AllowMulti="0"/>
+        <edittype widgetv2type="ValueRelation" name="fk_precision">
+          <widgetv2config OrderByValue="0" AllowNull="0" FilterExpression="" UseCompleter="0" fieldEditable="1" Key="id" Layer="vl_precision20130304110011372" Value="value_fr" labelOnTop="0" AllowMulti="0"/>
         </edittype>
-        <edittype widgetv2type="TextEdit" name="fk_precisionalti">
-          <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
+        <edittype widgetv2type="ValueRelation" name="fk_precisionalti">
+          <widgetv2config OrderByValue="0" AllowNull="0" FilterExpression="" UseCompleter="0" fieldEditable="1" Key="id" Layer="vl_precisionalti20131211161429510" Value="value_fr" labelOnTop="0" AllowMulti="0"/>
         </edittype>
-        <edittype widgetv2type="TextEdit" name="fk_object_reference">
-          <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
+        <edittype widgetv2type="ValueRelation" name="fk_object_reference">
+          <widgetv2config OrderByValue="0" AllowNull="0" FilterExpression="" UseCompleter="0" fieldEditable="1" Key="id" Layer="object_reference20150922083109152" Value="value_fr" labelOnTop="0" AllowMulti="0"/>
         </edittype>
         <edittype widgetv2type="TextEdit" name="altitude">
           <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
@@ -48701,11 +48290,11 @@
         <edittype widgetv2type="TextEdit" name="label_2_text">
           <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
         </edittype>
-        <edittype widgetv2type="TextEdit" name="fk_valve_type">
-          <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
+        <edittype widgetv2type="ValueRelation" name="fk_valve_type">
+          <widgetv2config OrderByValue="0" AllowNull="0" FilterExpression="" UseCompleter="0" fieldEditable="1" Key="id" Layer="vl_valve_type20130304110011685" Value="value_fr" labelOnTop="0" AllowMulti="0"/>
         </edittype>
-        <edittype widgetv2type="TextEdit" name="fk_valve_function">
-          <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
+        <edittype widgetv2type="ValueRelation" name="fk_valve_function">
+          <widgetv2config OrderByValue="0" AllowNull="0" FilterExpression="" UseCompleter="0" fieldEditable="1" Key="id" Layer="vl_valve_function20130304110011544" Value="value_fr" labelOnTop="0" AllowMulti="0"/>
         </edittype>
         <edittype widgetv2type="ValueRelation" name="fk_actuation">
           <widgetv2config OrderByValue="0" AllowNull="0" FilterExpression="" UseCompleter="0" fieldEditable="1" Key="id" Layer="valve_actuation20150608112911022" Value="value_fr" labelOnTop="0" AllowMulti="0"/>
@@ -48728,11 +48317,8 @@
         <edittype widgetv2type="CheckBox" name="closed">
           <widgetv2config fieldEditable="1" UncheckedState="f" CheckedState="t" labelOnTop="0"/>
         </edittype>
-        <edittype widgetv2type="TextEdit" name="networkseparation">
-          <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
-        </edittype>
-        <edittype widgetv2type="TextEdit" name="node_altitude">
-          <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
+        <edittype widgetv2type="CheckBox" name="networkseparation">
+          <widgetv2config fieldEditable="1" UncheckedState="f" CheckedState="t" labelOnTop="0"/>
         </edittype>
         <edittype widgetv2type="TextEdit" name="handle_altitude">
           <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
@@ -49096,9 +48682,6 @@
         <edittype widgetv2type="TextEdit" name="networkseparation">
           <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
         </edittype>
-        <edittype widgetv2type="TextEdit" name="node_altitude">
-          <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
-        </edittype>
         <edittype widgetv2type="TextEdit" name="handle_altitude">
           <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
         </edittype>
@@ -49389,13 +48972,13 @@
               <prop k="angle_dd_expression" v="coalesce(90 - label_2_rotation, 45)"/>
               <prop k="angle_dd_field" v=""/>
               <prop k="angle_dd_useexpr" v="1"/>
-              <prop k="color" v="#000000"/>
+              <prop k="color" v="0,0,0,255"/>
               <prop k="horizontal_anchor_point" v="1"/>
               <prop k="name" v="./symbols/vidange_schema.svg"/>
               <prop k="offset" v="0,-1.7"/>
               <prop k="offset_map_unit_scale" v="0,0,0,0,0,0"/>
               <prop k="offset_unit" v="MM"/>
-              <prop k="outline_color" v="#000000"/>
+              <prop k="outline_color" v="0,0,0,255"/>
               <prop k="outline_width" v="1"/>
               <prop k="outline_width_map_unit_scale" v="0,0,0,0,0,0"/>
               <prop k="outline_width_unit" v="MM"/>
@@ -49826,9 +49409,6 @@
           <widgetv2config fieldEditable="1" UncheckedState="f" CheckedState="t" labelOnTop="0"/>
         </edittype>
         <edittype widgetv2type="TextEdit" name="networkseparation">
-          <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
-        </edittype>
-        <edittype widgetv2type="TextEdit" name="node_altitude">
           <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
         </edittype>
         <edittype widgetv2type="TextEdit" name="handle_altitude">
@@ -50944,6 +50524,9 @@
         <edittype widgetv2type="TextEdit" name="wall_thickness">
           <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
         </edittype>
+        <edittype widgetv2type="TextEdit" name="sn">
+          <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
+        </edittype>
       </edittypes>
       <editform>.</editform>
       <editforminit/>
@@ -51024,6 +50607,9 @@
           <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
         </edittype>
         <edittype widgetv2type="TextEdit" name="wall_thickness">
+          <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
+        </edittype>
+        <edittype widgetv2type="TextEdit" name="sn">
           <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
         </edittype>
       </edittypes>
@@ -53168,7 +52754,7 @@
         <edittype widgetv2type="TextEdit" name="id">
           <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
         </edittype>
-        <edittype widgetv2type="ValueRelation" name="fk_district"> 
+        <edittype widgetv2type="ValueRelation" name="fk_district">
           <widgetv2config OrderByValue="0" AllowNull="0" FilterExpression="" UseCompleter="0" fieldEditable="1" Key="id" Layer="district20130304110004764" Value="name" labelOnTop="0" AllowMulti="0"/>
         </edittype>
         <edittype widgetv2type="TextEdit" name="fk_pressurezone">
@@ -53292,135 +52878,11 @@
               <prop k="size_map_unit_scale" v="0,0,0,0,0,0"/>
               <prop k="size_unit" v="MM"/>
               <prop k="vertical_anchor_point" v="1"/>
-              <effect enabled="0" type="effectStack">
-                <effect type="dropShadow">
-                  <prop k="blend_mode" v="13"/>
-                  <prop k="blur_level" v="10"/>
-                  <prop k="color" v="0,0,0,255"/>
-                  <prop k="draw_mode" v="2"/>
-                  <prop k="enabled" v="0"/>
-                  <prop k="offset_angle" v="135"/>
-                  <prop k="offset_distance" v="2"/>
-                  <prop k="offset_unit" v="MM"/>
-                  <prop k="offset_unit_scale" v="0,0,0,0,0,0"/>
-                  <prop k="transparency" v="0"/>
-                </effect>
-                <effect type="outerGlow">
-                  <prop k="blend_mode" v="0"/>
-                  <prop k="blur_level" v="3"/>
-                  <prop k="color1" v="0,0,255,255"/>
-                  <prop k="color2" v="0,255,0,255"/>
-                  <prop k="color_type" v="0"/>
-                  <prop k="discrete" v="0"/>
-                  <prop k="draw_mode" v="2"/>
-                  <prop k="enabled" v="0"/>
-                  <prop k="single_color" v="255,255,255,255"/>
-                  <prop k="spread" v="2"/>
-                  <prop k="spread_unit" v="MM"/>
-                  <prop k="spread_unit_scale" v="0,0,0,0,0,0"/>
-                  <prop k="transparency" v="0.5"/>
-                </effect>
-                <effect type="drawSource">
-                  <prop k="blend_mode" v="0"/>
-                  <prop k="draw_mode" v="2"/>
-                  <prop k="enabled" v="1"/>
-                  <prop k="transparency" v="0"/>
-                </effect>
-                <effect type="innerShadow">
-                  <prop k="blend_mode" v="13"/>
-                  <prop k="blur_level" v="10"/>
-                  <prop k="color" v="0,0,0,255"/>
-                  <prop k="draw_mode" v="2"/>
-                  <prop k="enabled" v="0"/>
-                  <prop k="offset_angle" v="135"/>
-                  <prop k="offset_distance" v="2"/>
-                  <prop k="offset_unit" v="MM"/>
-                  <prop k="offset_unit_scale" v="0,0,0,0,0,0"/>
-                  <prop k="transparency" v="0"/>
-                </effect>
-                <effect type="innerGlow">
-                  <prop k="blend_mode" v="0"/>
-                  <prop k="blur_level" v="3"/>
-                  <prop k="color1" v="0,0,255,255"/>
-                  <prop k="color2" v="0,255,0,255"/>
-                  <prop k="color_type" v="0"/>
-                  <prop k="discrete" v="0"/>
-                  <prop k="draw_mode" v="2"/>
-                  <prop k="enabled" v="0"/>
-                  <prop k="single_color" v="255,255,255,255"/>
-                  <prop k="spread" v="2"/>
-                  <prop k="spread_unit" v="MM"/>
-                  <prop k="spread_unit_scale" v="0,0,0,0,0,0"/>
-                  <prop k="transparency" v="0.5"/>
-                </effect>
-              </effect>
             </layer>
           </symbol>
         </symbols>
         <rotation/>
         <sizescale scalemethod="diameter"/>
-        <effect enabled="0" type="effectStack">
-          <effect type="dropShadow">
-            <prop k="blend_mode" v="13"/>
-            <prop k="blur_level" v="10"/>
-            <prop k="color" v="0,0,0,255"/>
-            <prop k="draw_mode" v="2"/>
-            <prop k="enabled" v="0"/>
-            <prop k="offset_angle" v="135"/>
-            <prop k="offset_distance" v="2"/>
-            <prop k="offset_unit" v="MM"/>
-            <prop k="offset_unit_scale" v="0,0,0,0,0,0"/>
-            <prop k="transparency" v="0"/>
-          </effect>
-          <effect type="outerGlow">
-            <prop k="blend_mode" v="0"/>
-            <prop k="blur_level" v="3"/>
-            <prop k="color1" v="0,0,255,255"/>
-            <prop k="color2" v="0,255,0,255"/>
-            <prop k="color_type" v="0"/>
-            <prop k="discrete" v="0"/>
-            <prop k="draw_mode" v="2"/>
-            <prop k="enabled" v="0"/>
-            <prop k="single_color" v="255,255,255,255"/>
-            <prop k="spread" v="2"/>
-            <prop k="spread_unit" v="MM"/>
-            <prop k="spread_unit_scale" v="0,0,0,0,0,0"/>
-            <prop k="transparency" v="0.5"/>
-          </effect>
-          <effect type="drawSource">
-            <prop k="blend_mode" v="0"/>
-            <prop k="draw_mode" v="2"/>
-            <prop k="enabled" v="1"/>
-            <prop k="transparency" v="0"/>
-          </effect>
-          <effect type="innerShadow">
-            <prop k="blend_mode" v="13"/>
-            <prop k="blur_level" v="10"/>
-            <prop k="color" v="0,0,0,255"/>
-            <prop k="draw_mode" v="2"/>
-            <prop k="enabled" v="0"/>
-            <prop k="offset_angle" v="135"/>
-            <prop k="offset_distance" v="2"/>
-            <prop k="offset_unit" v="MM"/>
-            <prop k="offset_unit_scale" v="0,0,0,0,0,0"/>
-            <prop k="transparency" v="0"/>
-          </effect>
-          <effect type="innerGlow">
-            <prop k="blend_mode" v="0"/>
-            <prop k="blur_level" v="3"/>
-            <prop k="color1" v="0,0,255,255"/>
-            <prop k="color2" v="0,255,0,255"/>
-            <prop k="color_type" v="0"/>
-            <prop k="discrete" v="0"/>
-            <prop k="draw_mode" v="2"/>
-            <prop k="enabled" v="0"/>
-            <prop k="single_color" v="255,255,255,255"/>
-            <prop k="spread" v="2"/>
-            <prop k="spread_unit" v="MM"/>
-            <prop k="spread_unit_scale" v="0,0,0,0,0,0"/>
-            <prop k="transparency" v="0.5"/>
-          </effect>
-        </effect>
       </renderer-v2>
       <labeling type="simple"/>
       <customproperties/>
@@ -53949,13 +53411,13 @@ END
           <symbol alpha="1" clip_to_extent="1" type="marker" name="0">
             <layer pass="0" class="SvgMarker" locked="0">
               <prop k="angle" v="0"/>
-              <prop k="color" v="#000000"/>
+              <prop k="color" v="0,0,0,255"/>
               <prop k="horizontal_anchor_point" v="1"/>
               <prop k="name" v="./symbols/installations/meter.svg"/>
               <prop k="offset" v="0,0"/>
               <prop k="offset_map_unit_scale" v="0,0,0,0,0,0"/>
               <prop k="offset_unit" v="MM"/>
-              <prop k="outline_color" v="#ffffff"/>
+              <prop k="outline_color" v="255,255,255,255"/>
               <prop k="outline_width" v="1"/>
               <prop k="outline_width_map_unit_scale" v="0,0,0,0,0,0"/>
               <prop k="outline_width_unit" v="MM"/>
@@ -53964,80 +53426,18 @@ END
               <prop k="size_map_unit_scale" v="0,0,0,0,0,0"/>
               <prop k="size_unit" v="MM"/>
               <prop k="vertical_anchor_point" v="1"/>
-              <effect enabled="0" type="effectStack">
-                <effect type="dropShadow">
-                  <prop k="blend_mode" v="13"/>
-                  <prop k="blur_level" v="10"/>
-                  <prop k="color" v="0,0,0,255"/>
-                  <prop k="draw_mode" v="2"/>
-                  <prop k="enabled" v="0"/>
-                  <prop k="offset_angle" v="135"/>
-                  <prop k="offset_distance" v="2"/>
-                  <prop k="offset_unit" v="MM"/>
-                  <prop k="offset_unit_scale" v="0,0,0,0,0,0"/>
-                  <prop k="transparency" v="0"/>
-                </effect>
-                <effect type="outerGlow">
-                  <prop k="blend_mode" v="0"/>
-                  <prop k="blur_level" v="3"/>
-                  <prop k="color1" v="0,0,255,255"/>
-                  <prop k="color2" v="0,255,0,255"/>
-                  <prop k="color_type" v="0"/>
-                  <prop k="discrete" v="0"/>
-                  <prop k="draw_mode" v="2"/>
-                  <prop k="enabled" v="0"/>
-                  <prop k="single_color" v="255,255,255,255"/>
-                  <prop k="spread" v="2"/>
-                  <prop k="spread_unit" v="MM"/>
-                  <prop k="spread_unit_scale" v="0,0,0,0,0,0"/>
-                  <prop k="transparency" v="0.5"/>
-                </effect>
-                <effect type="drawSource">
-                  <prop k="blend_mode" v="0"/>
-                  <prop k="draw_mode" v="2"/>
-                  <prop k="enabled" v="1"/>
-                  <prop k="transparency" v="0"/>
-                </effect>
-                <effect type="innerShadow">
-                  <prop k="blend_mode" v="13"/>
-                  <prop k="blur_level" v="10"/>
-                  <prop k="color" v="0,0,0,255"/>
-                  <prop k="draw_mode" v="2"/>
-                  <prop k="enabled" v="0"/>
-                  <prop k="offset_angle" v="135"/>
-                  <prop k="offset_distance" v="2"/>
-                  <prop k="offset_unit" v="MM"/>
-                  <prop k="offset_unit_scale" v="0,0,0,0,0,0"/>
-                  <prop k="transparency" v="0"/>
-                </effect>
-                <effect type="innerGlow">
-                  <prop k="blend_mode" v="0"/>
-                  <prop k="blur_level" v="3"/>
-                  <prop k="color1" v="0,0,255,255"/>
-                  <prop k="color2" v="0,255,0,255"/>
-                  <prop k="color_type" v="0"/>
-                  <prop k="discrete" v="0"/>
-                  <prop k="draw_mode" v="2"/>
-                  <prop k="enabled" v="0"/>
-                  <prop k="single_color" v="255,255,255,255"/>
-                  <prop k="spread" v="2"/>
-                  <prop k="spread_unit" v="MM"/>
-                  <prop k="spread_unit_scale" v="0,0,0,0,0,0"/>
-                  <prop k="transparency" v="0.5"/>
-                </effect>
-              </effect>
             </layer>
           </symbol>
           <symbol alpha="1" clip_to_extent="1" type="marker" name="1">
             <layer pass="0" class="SvgMarker" locked="0">
               <prop k="angle" v="0"/>
-              <prop k="color" v="#000000"/>
+              <prop k="color" v="0,0,0,255"/>
               <prop k="horizontal_anchor_point" v="1"/>
               <prop k="name" v="./symbols/installations/chamber.svg"/>
               <prop k="offset" v="0,0"/>
               <prop k="offset_map_unit_scale" v="0,0,0,0,0,0"/>
               <prop k="offset_unit" v="MM"/>
-              <prop k="outline_color" v="#ffffff"/>
+              <prop k="outline_color" v="255,255,255,255"/>
               <prop k="outline_width" v="0"/>
               <prop k="outline_width_map_unit_scale" v="0,0,0,0,0,0"/>
               <prop k="outline_width_unit" v="MM"/>
@@ -54046,80 +53446,18 @@ END
               <prop k="size_map_unit_scale" v="0,0,0,0,0,0"/>
               <prop k="size_unit" v="MM"/>
               <prop k="vertical_anchor_point" v="1"/>
-              <effect enabled="0" type="effectStack">
-                <effect type="dropShadow">
-                  <prop k="blend_mode" v="13"/>
-                  <prop k="blur_level" v="10"/>
-                  <prop k="color" v="0,0,0,255"/>
-                  <prop k="draw_mode" v="2"/>
-                  <prop k="enabled" v="0"/>
-                  <prop k="offset_angle" v="135"/>
-                  <prop k="offset_distance" v="2"/>
-                  <prop k="offset_unit" v="MM"/>
-                  <prop k="offset_unit_scale" v="0,0,0,0,0,0"/>
-                  <prop k="transparency" v="0"/>
-                </effect>
-                <effect type="outerGlow">
-                  <prop k="blend_mode" v="0"/>
-                  <prop k="blur_level" v="3"/>
-                  <prop k="color1" v="0,0,255,255"/>
-                  <prop k="color2" v="0,255,0,255"/>
-                  <prop k="color_type" v="0"/>
-                  <prop k="discrete" v="0"/>
-                  <prop k="draw_mode" v="2"/>
-                  <prop k="enabled" v="0"/>
-                  <prop k="single_color" v="255,255,255,255"/>
-                  <prop k="spread" v="2"/>
-                  <prop k="spread_unit" v="MM"/>
-                  <prop k="spread_unit_scale" v="0,0,0,0,0,0"/>
-                  <prop k="transparency" v="0.5"/>
-                </effect>
-                <effect type="drawSource">
-                  <prop k="blend_mode" v="0"/>
-                  <prop k="draw_mode" v="2"/>
-                  <prop k="enabled" v="1"/>
-                  <prop k="transparency" v="0"/>
-                </effect>
-                <effect type="innerShadow">
-                  <prop k="blend_mode" v="13"/>
-                  <prop k="blur_level" v="10"/>
-                  <prop k="color" v="0,0,0,255"/>
-                  <prop k="draw_mode" v="2"/>
-                  <prop k="enabled" v="0"/>
-                  <prop k="offset_angle" v="135"/>
-                  <prop k="offset_distance" v="2"/>
-                  <prop k="offset_unit" v="MM"/>
-                  <prop k="offset_unit_scale" v="0,0,0,0,0,0"/>
-                  <prop k="transparency" v="0"/>
-                </effect>
-                <effect type="innerGlow">
-                  <prop k="blend_mode" v="0"/>
-                  <prop k="blur_level" v="3"/>
-                  <prop k="color1" v="0,0,255,255"/>
-                  <prop k="color2" v="0,255,0,255"/>
-                  <prop k="color_type" v="0"/>
-                  <prop k="discrete" v="0"/>
-                  <prop k="draw_mode" v="2"/>
-                  <prop k="enabled" v="0"/>
-                  <prop k="single_color" v="255,255,255,255"/>
-                  <prop k="spread" v="2"/>
-                  <prop k="spread_unit" v="MM"/>
-                  <prop k="spread_unit_scale" v="0,0,0,0,0,0"/>
-                  <prop k="transparency" v="0.5"/>
-                </effect>
-              </effect>
             </layer>
           </symbol>
           <symbol alpha="1" clip_to_extent="1" type="marker" name="10">
             <layer pass="0" class="SvgMarker" locked="0">
               <prop k="angle" v="0"/>
-              <prop k="color" v="#000000"/>
+              <prop k="color" v="0,0,0,255"/>
               <prop k="horizontal_anchor_point" v="1"/>
               <prop k="name" v="./symbols/installations/meter.svg"/>
               <prop k="offset" v="0,0"/>
               <prop k="offset_map_unit_scale" v="0,0,0,0,0,0"/>
               <prop k="offset_unit" v="MM"/>
-              <prop k="outline_color" v="#ffffff"/>
+              <prop k="outline_color" v="255,255,255,255"/>
               <prop k="outline_width" v="1"/>
               <prop k="outline_width_map_unit_scale" v="0,0,0,0,0,0"/>
               <prop k="outline_width_unit" v="MM"/>
@@ -54128,80 +53466,18 @@ END
               <prop k="size_map_unit_scale" v="0,0,0,0,0,0"/>
               <prop k="size_unit" v="MM"/>
               <prop k="vertical_anchor_point" v="1"/>
-              <effect enabled="0" type="effectStack">
-                <effect type="dropShadow">
-                  <prop k="blend_mode" v="13"/>
-                  <prop k="blur_level" v="10"/>
-                  <prop k="color" v="0,0,0,255"/>
-                  <prop k="draw_mode" v="2"/>
-                  <prop k="enabled" v="0"/>
-                  <prop k="offset_angle" v="135"/>
-                  <prop k="offset_distance" v="2"/>
-                  <prop k="offset_unit" v="MM"/>
-                  <prop k="offset_unit_scale" v="0,0,0,0,0,0"/>
-                  <prop k="transparency" v="0"/>
-                </effect>
-                <effect type="outerGlow">
-                  <prop k="blend_mode" v="0"/>
-                  <prop k="blur_level" v="3"/>
-                  <prop k="color1" v="0,0,255,255"/>
-                  <prop k="color2" v="0,255,0,255"/>
-                  <prop k="color_type" v="0"/>
-                  <prop k="discrete" v="0"/>
-                  <prop k="draw_mode" v="2"/>
-                  <prop k="enabled" v="0"/>
-                  <prop k="single_color" v="255,255,255,255"/>
-                  <prop k="spread" v="2"/>
-                  <prop k="spread_unit" v="MM"/>
-                  <prop k="spread_unit_scale" v="0,0,0,0,0,0"/>
-                  <prop k="transparency" v="0.5"/>
-                </effect>
-                <effect type="drawSource">
-                  <prop k="blend_mode" v="0"/>
-                  <prop k="draw_mode" v="2"/>
-                  <prop k="enabled" v="1"/>
-                  <prop k="transparency" v="0"/>
-                </effect>
-                <effect type="innerShadow">
-                  <prop k="blend_mode" v="13"/>
-                  <prop k="blur_level" v="10"/>
-                  <prop k="color" v="0,0,0,255"/>
-                  <prop k="draw_mode" v="2"/>
-                  <prop k="enabled" v="0"/>
-                  <prop k="offset_angle" v="135"/>
-                  <prop k="offset_distance" v="2"/>
-                  <prop k="offset_unit" v="MM"/>
-                  <prop k="offset_unit_scale" v="0,0,0,0,0,0"/>
-                  <prop k="transparency" v="0"/>
-                </effect>
-                <effect type="innerGlow">
-                  <prop k="blend_mode" v="0"/>
-                  <prop k="blur_level" v="3"/>
-                  <prop k="color1" v="0,0,255,255"/>
-                  <prop k="color2" v="0,255,0,255"/>
-                  <prop k="color_type" v="0"/>
-                  <prop k="discrete" v="0"/>
-                  <prop k="draw_mode" v="2"/>
-                  <prop k="enabled" v="0"/>
-                  <prop k="single_color" v="255,255,255,255"/>
-                  <prop k="spread" v="2"/>
-                  <prop k="spread_unit" v="MM"/>
-                  <prop k="spread_unit_scale" v="0,0,0,0,0,0"/>
-                  <prop k="transparency" v="0.5"/>
-                </effect>
-              </effect>
             </layer>
           </symbol>
           <symbol alpha="1" clip_to_extent="1" type="marker" name="11">
             <layer pass="0" class="SvgMarker" locked="0">
               <prop k="angle" v="0"/>
-              <prop k="color" v="#000000"/>
+              <prop k="color" v="0,0,0,255"/>
               <prop k="horizontal_anchor_point" v="1"/>
               <prop k="name" v="./symbols/installations/chamber.svg"/>
               <prop k="offset" v="0,0"/>
               <prop k="offset_map_unit_scale" v="0,0,0,0,0,0"/>
               <prop k="offset_unit" v="MM"/>
-              <prop k="outline_color" v="#ffffff"/>
+              <prop k="outline_color" v="255,255,255,255"/>
               <prop k="outline_width" v="0"/>
               <prop k="outline_width_map_unit_scale" v="0,0,0,0,0,0"/>
               <prop k="outline_width_unit" v="MM"/>
@@ -54210,80 +53486,18 @@ END
               <prop k="size_map_unit_scale" v="0,0,0,0,0,0"/>
               <prop k="size_unit" v="MM"/>
               <prop k="vertical_anchor_point" v="1"/>
-              <effect enabled="0" type="effectStack">
-                <effect type="dropShadow">
-                  <prop k="blend_mode" v="13"/>
-                  <prop k="blur_level" v="10"/>
-                  <prop k="color" v="0,0,0,255"/>
-                  <prop k="draw_mode" v="2"/>
-                  <prop k="enabled" v="0"/>
-                  <prop k="offset_angle" v="135"/>
-                  <prop k="offset_distance" v="2"/>
-                  <prop k="offset_unit" v="MM"/>
-                  <prop k="offset_unit_scale" v="0,0,0,0,0,0"/>
-                  <prop k="transparency" v="0"/>
-                </effect>
-                <effect type="outerGlow">
-                  <prop k="blend_mode" v="0"/>
-                  <prop k="blur_level" v="3"/>
-                  <prop k="color1" v="0,0,255,255"/>
-                  <prop k="color2" v="0,255,0,255"/>
-                  <prop k="color_type" v="0"/>
-                  <prop k="discrete" v="0"/>
-                  <prop k="draw_mode" v="2"/>
-                  <prop k="enabled" v="0"/>
-                  <prop k="single_color" v="255,255,255,255"/>
-                  <prop k="spread" v="2"/>
-                  <prop k="spread_unit" v="MM"/>
-                  <prop k="spread_unit_scale" v="0,0,0,0,0,0"/>
-                  <prop k="transparency" v="0.5"/>
-                </effect>
-                <effect type="drawSource">
-                  <prop k="blend_mode" v="0"/>
-                  <prop k="draw_mode" v="2"/>
-                  <prop k="enabled" v="1"/>
-                  <prop k="transparency" v="0"/>
-                </effect>
-                <effect type="innerShadow">
-                  <prop k="blend_mode" v="13"/>
-                  <prop k="blur_level" v="10"/>
-                  <prop k="color" v="0,0,0,255"/>
-                  <prop k="draw_mode" v="2"/>
-                  <prop k="enabled" v="0"/>
-                  <prop k="offset_angle" v="135"/>
-                  <prop k="offset_distance" v="2"/>
-                  <prop k="offset_unit" v="MM"/>
-                  <prop k="offset_unit_scale" v="0,0,0,0,0,0"/>
-                  <prop k="transparency" v="0"/>
-                </effect>
-                <effect type="innerGlow">
-                  <prop k="blend_mode" v="0"/>
-                  <prop k="blur_level" v="3"/>
-                  <prop k="color1" v="0,0,255,255"/>
-                  <prop k="color2" v="0,255,0,255"/>
-                  <prop k="color_type" v="0"/>
-                  <prop k="discrete" v="0"/>
-                  <prop k="draw_mode" v="2"/>
-                  <prop k="enabled" v="0"/>
-                  <prop k="single_color" v="255,255,255,255"/>
-                  <prop k="spread" v="2"/>
-                  <prop k="spread_unit" v="MM"/>
-                  <prop k="spread_unit_scale" v="0,0,0,0,0,0"/>
-                  <prop k="transparency" v="0.5"/>
-                </effect>
-              </effect>
             </layer>
           </symbol>
           <symbol alpha="1" clip_to_extent="1" type="marker" name="12">
             <layer pass="0" class="SvgMarker" locked="0">
               <prop k="angle" v="0"/>
-              <prop k="color" v="#000000"/>
+              <prop k="color" v="0,0,0,255"/>
               <prop k="horizontal_anchor_point" v="1"/>
               <prop k="name" v="./symbols/installations/reduction.svg"/>
               <prop k="offset" v="0,0"/>
               <prop k="offset_map_unit_scale" v="0,0,0,0,0,0"/>
               <prop k="offset_unit" v="MM"/>
-              <prop k="outline_color" v="#ffffff"/>
+              <prop k="outline_color" v="255,255,255,255"/>
               <prop k="outline_width" v="0"/>
               <prop k="outline_width_map_unit_scale" v="0,0,0,0,0,0"/>
               <prop k="outline_width_unit" v="MM"/>
@@ -54292,80 +53506,18 @@ END
               <prop k="size_map_unit_scale" v="0,0,0,0,0,0"/>
               <prop k="size_unit" v="MM"/>
               <prop k="vertical_anchor_point" v="1"/>
-              <effect enabled="0" type="effectStack">
-                <effect type="dropShadow">
-                  <prop k="blend_mode" v="13"/>
-                  <prop k="blur_level" v="10"/>
-                  <prop k="color" v="0,0,0,255"/>
-                  <prop k="draw_mode" v="2"/>
-                  <prop k="enabled" v="0"/>
-                  <prop k="offset_angle" v="135"/>
-                  <prop k="offset_distance" v="2"/>
-                  <prop k="offset_unit" v="MM"/>
-                  <prop k="offset_unit_scale" v="0,0,0,0,0,0"/>
-                  <prop k="transparency" v="0"/>
-                </effect>
-                <effect type="outerGlow">
-                  <prop k="blend_mode" v="0"/>
-                  <prop k="blur_level" v="3"/>
-                  <prop k="color1" v="0,0,255,255"/>
-                  <prop k="color2" v="0,255,0,255"/>
-                  <prop k="color_type" v="0"/>
-                  <prop k="discrete" v="0"/>
-                  <prop k="draw_mode" v="2"/>
-                  <prop k="enabled" v="0"/>
-                  <prop k="single_color" v="255,255,255,255"/>
-                  <prop k="spread" v="2"/>
-                  <prop k="spread_unit" v="MM"/>
-                  <prop k="spread_unit_scale" v="0,0,0,0,0,0"/>
-                  <prop k="transparency" v="0.5"/>
-                </effect>
-                <effect type="drawSource">
-                  <prop k="blend_mode" v="0"/>
-                  <prop k="draw_mode" v="2"/>
-                  <prop k="enabled" v="1"/>
-                  <prop k="transparency" v="0"/>
-                </effect>
-                <effect type="innerShadow">
-                  <prop k="blend_mode" v="13"/>
-                  <prop k="blur_level" v="10"/>
-                  <prop k="color" v="0,0,0,255"/>
-                  <prop k="draw_mode" v="2"/>
-                  <prop k="enabled" v="0"/>
-                  <prop k="offset_angle" v="135"/>
-                  <prop k="offset_distance" v="2"/>
-                  <prop k="offset_unit" v="MM"/>
-                  <prop k="offset_unit_scale" v="0,0,0,0,0,0"/>
-                  <prop k="transparency" v="0"/>
-                </effect>
-                <effect type="innerGlow">
-                  <prop k="blend_mode" v="0"/>
-                  <prop k="blur_level" v="3"/>
-                  <prop k="color1" v="0,0,255,255"/>
-                  <prop k="color2" v="0,255,0,255"/>
-                  <prop k="color_type" v="0"/>
-                  <prop k="discrete" v="0"/>
-                  <prop k="draw_mode" v="2"/>
-                  <prop k="enabled" v="0"/>
-                  <prop k="single_color" v="255,255,255,255"/>
-                  <prop k="spread" v="2"/>
-                  <prop k="spread_unit" v="MM"/>
-                  <prop k="spread_unit_scale" v="0,0,0,0,0,0"/>
-                  <prop k="transparency" v="0.5"/>
-                </effect>
-              </effect>
             </layer>
           </symbol>
           <symbol alpha="1" clip_to_extent="1" type="marker" name="13">
             <layer pass="0" class="SvgMarker" locked="0">
               <prop k="angle" v="0"/>
-              <prop k="color" v="#000000"/>
+              <prop k="color" v="0,0,0,255"/>
               <prop k="horizontal_anchor_point" v="1"/>
               <prop k="name" v="./symbols/installations/pressurebreak.svg"/>
               <prop k="offset" v="0,0"/>
               <prop k="offset_map_unit_scale" v="0,0,0,0,0,0"/>
               <prop k="offset_unit" v="MM"/>
-              <prop k="outline_color" v="#ffffff"/>
+              <prop k="outline_color" v="255,255,255,255"/>
               <prop k="outline_width" v="0"/>
               <prop k="outline_width_map_unit_scale" v="0,0,0,0,0,0"/>
               <prop k="outline_width_unit" v="MM"/>
@@ -54374,80 +53526,18 @@ END
               <prop k="size_map_unit_scale" v="0,0,0,0,0,0"/>
               <prop k="size_unit" v="MM"/>
               <prop k="vertical_anchor_point" v="1"/>
-              <effect enabled="0" type="effectStack">
-                <effect type="dropShadow">
-                  <prop k="blend_mode" v="13"/>
-                  <prop k="blur_level" v="10"/>
-                  <prop k="color" v="0,0,0,255"/>
-                  <prop k="draw_mode" v="2"/>
-                  <prop k="enabled" v="0"/>
-                  <prop k="offset_angle" v="135"/>
-                  <prop k="offset_distance" v="2"/>
-                  <prop k="offset_unit" v="MM"/>
-                  <prop k="offset_unit_scale" v="0,0,0,0,0,0"/>
-                  <prop k="transparency" v="0"/>
-                </effect>
-                <effect type="outerGlow">
-                  <prop k="blend_mode" v="0"/>
-                  <prop k="blur_level" v="3"/>
-                  <prop k="color1" v="0,0,255,255"/>
-                  <prop k="color2" v="0,255,0,255"/>
-                  <prop k="color_type" v="0"/>
-                  <prop k="discrete" v="0"/>
-                  <prop k="draw_mode" v="2"/>
-                  <prop k="enabled" v="0"/>
-                  <prop k="single_color" v="255,255,255,255"/>
-                  <prop k="spread" v="2"/>
-                  <prop k="spread_unit" v="MM"/>
-                  <prop k="spread_unit_scale" v="0,0,0,0,0,0"/>
-                  <prop k="transparency" v="0.5"/>
-                </effect>
-                <effect type="drawSource">
-                  <prop k="blend_mode" v="0"/>
-                  <prop k="draw_mode" v="2"/>
-                  <prop k="enabled" v="1"/>
-                  <prop k="transparency" v="0"/>
-                </effect>
-                <effect type="innerShadow">
-                  <prop k="blend_mode" v="13"/>
-                  <prop k="blur_level" v="10"/>
-                  <prop k="color" v="0,0,0,255"/>
-                  <prop k="draw_mode" v="2"/>
-                  <prop k="enabled" v="0"/>
-                  <prop k="offset_angle" v="135"/>
-                  <prop k="offset_distance" v="2"/>
-                  <prop k="offset_unit" v="MM"/>
-                  <prop k="offset_unit_scale" v="0,0,0,0,0,0"/>
-                  <prop k="transparency" v="0"/>
-                </effect>
-                <effect type="innerGlow">
-                  <prop k="blend_mode" v="0"/>
-                  <prop k="blur_level" v="3"/>
-                  <prop k="color1" v="0,0,255,255"/>
-                  <prop k="color2" v="0,255,0,255"/>
-                  <prop k="color_type" v="0"/>
-                  <prop k="discrete" v="0"/>
-                  <prop k="draw_mode" v="2"/>
-                  <prop k="enabled" v="0"/>
-                  <prop k="single_color" v="255,255,255,255"/>
-                  <prop k="spread" v="2"/>
-                  <prop k="spread_unit" v="MM"/>
-                  <prop k="spread_unit_scale" v="0,0,0,0,0,0"/>
-                  <prop k="transparency" v="0.5"/>
-                </effect>
-              </effect>
             </layer>
           </symbol>
           <symbol alpha="1" clip_to_extent="1" type="marker" name="14">
             <layer pass="0" class="SvgMarker" locked="0">
               <prop k="angle" v="0"/>
-              <prop k="color" v="#000000"/>
+              <prop k="color" v="0,0,0,255"/>
               <prop k="horizontal_anchor_point" v="1"/>
               <prop k="name" v="./symbols/installations/gathering.svg"/>
               <prop k="offset" v="0,0"/>
               <prop k="offset_map_unit_scale" v="0,0,0,0,0,0"/>
               <prop k="offset_unit" v="MM"/>
-              <prop k="outline_color" v="#ffffff"/>
+              <prop k="outline_color" v="255,255,255,255"/>
               <prop k="outline_width" v="0"/>
               <prop k="outline_width_map_unit_scale" v="0,0,0,0,0,0"/>
               <prop k="outline_width_unit" v="MM"/>
@@ -54456,80 +53546,18 @@ END
               <prop k="size_map_unit_scale" v="0,0,0,0,0,0"/>
               <prop k="size_unit" v="MM"/>
               <prop k="vertical_anchor_point" v="1"/>
-              <effect enabled="0" type="effectStack">
-                <effect type="dropShadow">
-                  <prop k="blend_mode" v="13"/>
-                  <prop k="blur_level" v="10"/>
-                  <prop k="color" v="0,0,0,255"/>
-                  <prop k="draw_mode" v="2"/>
-                  <prop k="enabled" v="0"/>
-                  <prop k="offset_angle" v="135"/>
-                  <prop k="offset_distance" v="2"/>
-                  <prop k="offset_unit" v="MM"/>
-                  <prop k="offset_unit_scale" v="0,0,0,0,0,0"/>
-                  <prop k="transparency" v="0"/>
-                </effect>
-                <effect type="outerGlow">
-                  <prop k="blend_mode" v="0"/>
-                  <prop k="blur_level" v="3"/>
-                  <prop k="color1" v="0,0,255,255"/>
-                  <prop k="color2" v="0,255,0,255"/>
-                  <prop k="color_type" v="0"/>
-                  <prop k="discrete" v="0"/>
-                  <prop k="draw_mode" v="2"/>
-                  <prop k="enabled" v="0"/>
-                  <prop k="single_color" v="255,255,255,255"/>
-                  <prop k="spread" v="2"/>
-                  <prop k="spread_unit" v="MM"/>
-                  <prop k="spread_unit_scale" v="0,0,0,0,0,0"/>
-                  <prop k="transparency" v="0.5"/>
-                </effect>
-                <effect type="drawSource">
-                  <prop k="blend_mode" v="0"/>
-                  <prop k="draw_mode" v="2"/>
-                  <prop k="enabled" v="1"/>
-                  <prop k="transparency" v="0"/>
-                </effect>
-                <effect type="innerShadow">
-                  <prop k="blend_mode" v="13"/>
-                  <prop k="blur_level" v="10"/>
-                  <prop k="color" v="0,0,0,255"/>
-                  <prop k="draw_mode" v="2"/>
-                  <prop k="enabled" v="0"/>
-                  <prop k="offset_angle" v="135"/>
-                  <prop k="offset_distance" v="2"/>
-                  <prop k="offset_unit" v="MM"/>
-                  <prop k="offset_unit_scale" v="0,0,0,0,0,0"/>
-                  <prop k="transparency" v="0"/>
-                </effect>
-                <effect type="innerGlow">
-                  <prop k="blend_mode" v="0"/>
-                  <prop k="blur_level" v="3"/>
-                  <prop k="color1" v="0,0,255,255"/>
-                  <prop k="color2" v="0,255,0,255"/>
-                  <prop k="color_type" v="0"/>
-                  <prop k="discrete" v="0"/>
-                  <prop k="draw_mode" v="2"/>
-                  <prop k="enabled" v="0"/>
-                  <prop k="single_color" v="255,255,255,255"/>
-                  <prop k="spread" v="2"/>
-                  <prop k="spread_unit" v="MM"/>
-                  <prop k="spread_unit_scale" v="0,0,0,0,0,0"/>
-                  <prop k="transparency" v="0.5"/>
-                </effect>
-              </effect>
             </layer>
           </symbol>
           <symbol alpha="1" clip_to_extent="1" type="marker" name="15">
             <layer pass="0" class="SvgMarker" locked="0">
               <prop k="angle" v="0"/>
-              <prop k="color" v="#000000"/>
+              <prop k="color" v="0,0,0,255"/>
               <prop k="horizontal_anchor_point" v="1"/>
               <prop k="name" v="./symbols/installations/pump.svg"/>
               <prop k="offset" v="0,0"/>
               <prop k="offset_map_unit_scale" v="0,0,0,0,0,0"/>
               <prop k="offset_unit" v="MM"/>
-              <prop k="outline_color" v="#ffffff"/>
+              <prop k="outline_color" v="255,255,255,255"/>
               <prop k="outline_width" v="0"/>
               <prop k="outline_width_map_unit_scale" v="0,0,0,0,0,0"/>
               <prop k="outline_width_unit" v="MM"/>
@@ -54538,80 +53566,18 @@ END
               <prop k="size_map_unit_scale" v="0,0,0,0,0,0"/>
               <prop k="size_unit" v="MM"/>
               <prop k="vertical_anchor_point" v="1"/>
-              <effect enabled="0" type="effectStack">
-                <effect type="dropShadow">
-                  <prop k="blend_mode" v="13"/>
-                  <prop k="blur_level" v="10"/>
-                  <prop k="color" v="0,0,0,255"/>
-                  <prop k="draw_mode" v="2"/>
-                  <prop k="enabled" v="0"/>
-                  <prop k="offset_angle" v="135"/>
-                  <prop k="offset_distance" v="2"/>
-                  <prop k="offset_unit" v="MM"/>
-                  <prop k="offset_unit_scale" v="0,0,0,0,0,0"/>
-                  <prop k="transparency" v="0"/>
-                </effect>
-                <effect type="outerGlow">
-                  <prop k="blend_mode" v="0"/>
-                  <prop k="blur_level" v="3"/>
-                  <prop k="color1" v="0,0,255,255"/>
-                  <prop k="color2" v="0,255,0,255"/>
-                  <prop k="color_type" v="0"/>
-                  <prop k="discrete" v="0"/>
-                  <prop k="draw_mode" v="2"/>
-                  <prop k="enabled" v="0"/>
-                  <prop k="single_color" v="255,255,255,255"/>
-                  <prop k="spread" v="2"/>
-                  <prop k="spread_unit" v="MM"/>
-                  <prop k="spread_unit_scale" v="0,0,0,0,0,0"/>
-                  <prop k="transparency" v="0.5"/>
-                </effect>
-                <effect type="drawSource">
-                  <prop k="blend_mode" v="0"/>
-                  <prop k="draw_mode" v="2"/>
-                  <prop k="enabled" v="1"/>
-                  <prop k="transparency" v="0"/>
-                </effect>
-                <effect type="innerShadow">
-                  <prop k="blend_mode" v="13"/>
-                  <prop k="blur_level" v="10"/>
-                  <prop k="color" v="0,0,0,255"/>
-                  <prop k="draw_mode" v="2"/>
-                  <prop k="enabled" v="0"/>
-                  <prop k="offset_angle" v="135"/>
-                  <prop k="offset_distance" v="2"/>
-                  <prop k="offset_unit" v="MM"/>
-                  <prop k="offset_unit_scale" v="0,0,0,0,0,0"/>
-                  <prop k="transparency" v="0"/>
-                </effect>
-                <effect type="innerGlow">
-                  <prop k="blend_mode" v="0"/>
-                  <prop k="blur_level" v="3"/>
-                  <prop k="color1" v="0,0,255,255"/>
-                  <prop k="color2" v="0,255,0,255"/>
-                  <prop k="color_type" v="0"/>
-                  <prop k="discrete" v="0"/>
-                  <prop k="draw_mode" v="2"/>
-                  <prop k="enabled" v="0"/>
-                  <prop k="single_color" v="255,255,255,255"/>
-                  <prop k="spread" v="2"/>
-                  <prop k="spread_unit" v="MM"/>
-                  <prop k="spread_unit_scale" v="0,0,0,0,0,0"/>
-                  <prop k="transparency" v="0.5"/>
-                </effect>
-              </effect>
             </layer>
           </symbol>
           <symbol alpha="1" clip_to_extent="1" type="marker" name="16">
             <layer pass="0" class="SvgMarker" locked="0">
               <prop k="angle" v="0"/>
-              <prop k="color" v="#000000"/>
+              <prop k="color" v="0,0,0,255"/>
               <prop k="horizontal_anchor_point" v="1"/>
               <prop k="name" v="./symbols/installations/source.svg"/>
               <prop k="offset" v="0,0"/>
               <prop k="offset_map_unit_scale" v="0,0,0,0,0,0"/>
               <prop k="offset_unit" v="MM"/>
-              <prop k="outline_color" v="#ffffff"/>
+              <prop k="outline_color" v="255,255,255,255"/>
               <prop k="outline_width" v="0"/>
               <prop k="outline_width_map_unit_scale" v="0,0,0,0,0,0"/>
               <prop k="outline_width_unit" v="MM"/>
@@ -54620,80 +53586,18 @@ END
               <prop k="size_map_unit_scale" v="0,0,0,0,0,0"/>
               <prop k="size_unit" v="MM"/>
               <prop k="vertical_anchor_point" v="1"/>
-              <effect enabled="0" type="effectStack">
-                <effect type="dropShadow">
-                  <prop k="blend_mode" v="13"/>
-                  <prop k="blur_level" v="10"/>
-                  <prop k="color" v="0,0,0,255"/>
-                  <prop k="draw_mode" v="2"/>
-                  <prop k="enabled" v="0"/>
-                  <prop k="offset_angle" v="135"/>
-                  <prop k="offset_distance" v="2"/>
-                  <prop k="offset_unit" v="MM"/>
-                  <prop k="offset_unit_scale" v="0,0,0,0,0,0"/>
-                  <prop k="transparency" v="0"/>
-                </effect>
-                <effect type="outerGlow">
-                  <prop k="blend_mode" v="0"/>
-                  <prop k="blur_level" v="3"/>
-                  <prop k="color1" v="0,0,255,255"/>
-                  <prop k="color2" v="0,255,0,255"/>
-                  <prop k="color_type" v="0"/>
-                  <prop k="discrete" v="0"/>
-                  <prop k="draw_mode" v="2"/>
-                  <prop k="enabled" v="0"/>
-                  <prop k="single_color" v="255,255,255,255"/>
-                  <prop k="spread" v="2"/>
-                  <prop k="spread_unit" v="MM"/>
-                  <prop k="spread_unit_scale" v="0,0,0,0,0,0"/>
-                  <prop k="transparency" v="0.5"/>
-                </effect>
-                <effect type="drawSource">
-                  <prop k="blend_mode" v="0"/>
-                  <prop k="draw_mode" v="2"/>
-                  <prop k="enabled" v="1"/>
-                  <prop k="transparency" v="0"/>
-                </effect>
-                <effect type="innerShadow">
-                  <prop k="blend_mode" v="13"/>
-                  <prop k="blur_level" v="10"/>
-                  <prop k="color" v="0,0,0,255"/>
-                  <prop k="draw_mode" v="2"/>
-                  <prop k="enabled" v="0"/>
-                  <prop k="offset_angle" v="135"/>
-                  <prop k="offset_distance" v="2"/>
-                  <prop k="offset_unit" v="MM"/>
-                  <prop k="offset_unit_scale" v="0,0,0,0,0,0"/>
-                  <prop k="transparency" v="0"/>
-                </effect>
-                <effect type="innerGlow">
-                  <prop k="blend_mode" v="0"/>
-                  <prop k="blur_level" v="3"/>
-                  <prop k="color1" v="0,0,255,255"/>
-                  <prop k="color2" v="0,255,0,255"/>
-                  <prop k="color_type" v="0"/>
-                  <prop k="discrete" v="0"/>
-                  <prop k="draw_mode" v="2"/>
-                  <prop k="enabled" v="0"/>
-                  <prop k="single_color" v="255,255,255,255"/>
-                  <prop k="spread" v="2"/>
-                  <prop k="spread_unit" v="MM"/>
-                  <prop k="spread_unit_scale" v="0,0,0,0,0,0"/>
-                  <prop k="transparency" v="0.5"/>
-                </effect>
-              </effect>
             </layer>
           </symbol>
           <symbol alpha="1" clip_to_extent="1" type="marker" name="17">
             <layer pass="0" class="SvgMarker" locked="0">
               <prop k="angle" v="0"/>
-              <prop k="color" v="#000000"/>
+              <prop k="color" v="0,0,0,255"/>
               <prop k="horizontal_anchor_point" v="1"/>
               <prop k="name" v="./symbols/installations/tank.svg"/>
               <prop k="offset" v="0,0"/>
               <prop k="offset_map_unit_scale" v="0,0,0,0,0,0"/>
               <prop k="offset_unit" v="MM"/>
-              <prop k="outline_color" v="#ffffff"/>
+              <prop k="outline_color" v="255,255,255,255"/>
               <prop k="outline_width" v="0"/>
               <prop k="outline_width_map_unit_scale" v="0,0,0,0,0,0"/>
               <prop k="outline_width_unit" v="MM"/>
@@ -54702,80 +53606,18 @@ END
               <prop k="size_map_unit_scale" v="0,0,0,0,0,0"/>
               <prop k="size_unit" v="MM"/>
               <prop k="vertical_anchor_point" v="1"/>
-              <effect enabled="0" type="effectStack">
-                <effect type="dropShadow">
-                  <prop k="blend_mode" v="13"/>
-                  <prop k="blur_level" v="10"/>
-                  <prop k="color" v="0,0,0,255"/>
-                  <prop k="draw_mode" v="2"/>
-                  <prop k="enabled" v="0"/>
-                  <prop k="offset_angle" v="135"/>
-                  <prop k="offset_distance" v="2"/>
-                  <prop k="offset_unit" v="MM"/>
-                  <prop k="offset_unit_scale" v="0,0,0,0,0,0"/>
-                  <prop k="transparency" v="0"/>
-                </effect>
-                <effect type="outerGlow">
-                  <prop k="blend_mode" v="0"/>
-                  <prop k="blur_level" v="3"/>
-                  <prop k="color1" v="0,0,255,255"/>
-                  <prop k="color2" v="0,255,0,255"/>
-                  <prop k="color_type" v="0"/>
-                  <prop k="discrete" v="0"/>
-                  <prop k="draw_mode" v="2"/>
-                  <prop k="enabled" v="0"/>
-                  <prop k="single_color" v="255,255,255,255"/>
-                  <prop k="spread" v="2"/>
-                  <prop k="spread_unit" v="MM"/>
-                  <prop k="spread_unit_scale" v="0,0,0,0,0,0"/>
-                  <prop k="transparency" v="0.5"/>
-                </effect>
-                <effect type="drawSource">
-                  <prop k="blend_mode" v="0"/>
-                  <prop k="draw_mode" v="2"/>
-                  <prop k="enabled" v="1"/>
-                  <prop k="transparency" v="0"/>
-                </effect>
-                <effect type="innerShadow">
-                  <prop k="blend_mode" v="13"/>
-                  <prop k="blur_level" v="10"/>
-                  <prop k="color" v="0,0,0,255"/>
-                  <prop k="draw_mode" v="2"/>
-                  <prop k="enabled" v="0"/>
-                  <prop k="offset_angle" v="135"/>
-                  <prop k="offset_distance" v="2"/>
-                  <prop k="offset_unit" v="MM"/>
-                  <prop k="offset_unit_scale" v="0,0,0,0,0,0"/>
-                  <prop k="transparency" v="0"/>
-                </effect>
-                <effect type="innerGlow">
-                  <prop k="blend_mode" v="0"/>
-                  <prop k="blur_level" v="3"/>
-                  <prop k="color1" v="0,0,255,255"/>
-                  <prop k="color2" v="0,255,0,255"/>
-                  <prop k="color_type" v="0"/>
-                  <prop k="discrete" v="0"/>
-                  <prop k="draw_mode" v="2"/>
-                  <prop k="enabled" v="0"/>
-                  <prop k="single_color" v="255,255,255,255"/>
-                  <prop k="spread" v="2"/>
-                  <prop k="spread_unit" v="MM"/>
-                  <prop k="spread_unit_scale" v="0,0,0,0,0,0"/>
-                  <prop k="transparency" v="0.5"/>
-                </effect>
-              </effect>
             </layer>
           </symbol>
           <symbol alpha="1" clip_to_extent="1" type="marker" name="18">
             <layer pass="0" class="SvgMarker" locked="0">
               <prop k="angle" v="0"/>
-              <prop k="color" v="#000000"/>
+              <prop k="color" v="0,0,0,255"/>
               <prop k="horizontal_anchor_point" v="1"/>
               <prop k="name" v="./symbols/installations/treatment.svg"/>
               <prop k="offset" v="0,0"/>
               <prop k="offset_map_unit_scale" v="0,0,0,0,0,0"/>
               <prop k="offset_unit" v="MM"/>
-              <prop k="outline_color" v="#ffffff"/>
+              <prop k="outline_color" v="255,255,255,255"/>
               <prop k="outline_width" v="0"/>
               <prop k="outline_width_map_unit_scale" v="0,0,0,0,0,0"/>
               <prop k="outline_width_unit" v="MM"/>
@@ -54784,68 +53626,6 @@ END
               <prop k="size_map_unit_scale" v="0,0,0,0,0,0"/>
               <prop k="size_unit" v="MM"/>
               <prop k="vertical_anchor_point" v="1"/>
-              <effect enabled="0" type="effectStack">
-                <effect type="dropShadow">
-                  <prop k="blend_mode" v="13"/>
-                  <prop k="blur_level" v="10"/>
-                  <prop k="color" v="0,0,0,255"/>
-                  <prop k="draw_mode" v="2"/>
-                  <prop k="enabled" v="0"/>
-                  <prop k="offset_angle" v="135"/>
-                  <prop k="offset_distance" v="2"/>
-                  <prop k="offset_unit" v="MM"/>
-                  <prop k="offset_unit_scale" v="0,0,0,0,0,0"/>
-                  <prop k="transparency" v="0"/>
-                </effect>
-                <effect type="outerGlow">
-                  <prop k="blend_mode" v="0"/>
-                  <prop k="blur_level" v="3"/>
-                  <prop k="color1" v="0,0,255,255"/>
-                  <prop k="color2" v="0,255,0,255"/>
-                  <prop k="color_type" v="0"/>
-                  <prop k="discrete" v="0"/>
-                  <prop k="draw_mode" v="2"/>
-                  <prop k="enabled" v="0"/>
-                  <prop k="single_color" v="255,255,255,255"/>
-                  <prop k="spread" v="2"/>
-                  <prop k="spread_unit" v="MM"/>
-                  <prop k="spread_unit_scale" v="0,0,0,0,0,0"/>
-                  <prop k="transparency" v="0.5"/>
-                </effect>
-                <effect type="drawSource">
-                  <prop k="blend_mode" v="0"/>
-                  <prop k="draw_mode" v="2"/>
-                  <prop k="enabled" v="1"/>
-                  <prop k="transparency" v="0"/>
-                </effect>
-                <effect type="innerShadow">
-                  <prop k="blend_mode" v="13"/>
-                  <prop k="blur_level" v="10"/>
-                  <prop k="color" v="0,0,0,255"/>
-                  <prop k="draw_mode" v="2"/>
-                  <prop k="enabled" v="0"/>
-                  <prop k="offset_angle" v="135"/>
-                  <prop k="offset_distance" v="2"/>
-                  <prop k="offset_unit" v="MM"/>
-                  <prop k="offset_unit_scale" v="0,0,0,0,0,0"/>
-                  <prop k="transparency" v="0"/>
-                </effect>
-                <effect type="innerGlow">
-                  <prop k="blend_mode" v="0"/>
-                  <prop k="blur_level" v="3"/>
-                  <prop k="color1" v="0,0,255,255"/>
-                  <prop k="color2" v="0,255,0,255"/>
-                  <prop k="color_type" v="0"/>
-                  <prop k="discrete" v="0"/>
-                  <prop k="draw_mode" v="2"/>
-                  <prop k="enabled" v="0"/>
-                  <prop k="single_color" v="255,255,255,255"/>
-                  <prop k="spread" v="2"/>
-                  <prop k="spread_unit" v="MM"/>
-                  <prop k="spread_unit_scale" v="0,0,0,0,0,0"/>
-                  <prop k="transparency" v="0.5"/>
-                </effect>
-              </effect>
             </layer>
           </symbol>
           <symbol alpha="1" clip_to_extent="1" type="marker" name="19">
@@ -54867,80 +53647,18 @@ END
               <prop k="size_map_unit_scale" v="0,0,0,0,0,0"/>
               <prop k="size_unit" v="MM"/>
               <prop k="vertical_anchor_point" v="1"/>
-              <effect enabled="0" type="effectStack">
-                <effect type="dropShadow">
-                  <prop k="blend_mode" v="13"/>
-                  <prop k="blur_level" v="10"/>
-                  <prop k="color" v="0,0,0,255"/>
-                  <prop k="draw_mode" v="2"/>
-                  <prop k="enabled" v="0"/>
-                  <prop k="offset_angle" v="135"/>
-                  <prop k="offset_distance" v="2"/>
-                  <prop k="offset_unit" v="MM"/>
-                  <prop k="offset_unit_scale" v="0,0,0,0,0,0"/>
-                  <prop k="transparency" v="0"/>
-                </effect>
-                <effect type="outerGlow">
-                  <prop k="blend_mode" v="0"/>
-                  <prop k="blur_level" v="3"/>
-                  <prop k="color1" v="0,0,255,255"/>
-                  <prop k="color2" v="0,255,0,255"/>
-                  <prop k="color_type" v="0"/>
-                  <prop k="discrete" v="0"/>
-                  <prop k="draw_mode" v="2"/>
-                  <prop k="enabled" v="0"/>
-                  <prop k="single_color" v="255,255,255,255"/>
-                  <prop k="spread" v="2"/>
-                  <prop k="spread_unit" v="MM"/>
-                  <prop k="spread_unit_scale" v="0,0,0,0,0,0"/>
-                  <prop k="transparency" v="0.5"/>
-                </effect>
-                <effect type="drawSource">
-                  <prop k="blend_mode" v="0"/>
-                  <prop k="draw_mode" v="2"/>
-                  <prop k="enabled" v="1"/>
-                  <prop k="transparency" v="0"/>
-                </effect>
-                <effect type="innerShadow">
-                  <prop k="blend_mode" v="13"/>
-                  <prop k="blur_level" v="10"/>
-                  <prop k="color" v="0,0,0,255"/>
-                  <prop k="draw_mode" v="2"/>
-                  <prop k="enabled" v="0"/>
-                  <prop k="offset_angle" v="135"/>
-                  <prop k="offset_distance" v="2"/>
-                  <prop k="offset_unit" v="MM"/>
-                  <prop k="offset_unit_scale" v="0,0,0,0,0,0"/>
-                  <prop k="transparency" v="0"/>
-                </effect>
-                <effect type="innerGlow">
-                  <prop k="blend_mode" v="0"/>
-                  <prop k="blur_level" v="3"/>
-                  <prop k="color1" v="0,0,255,255"/>
-                  <prop k="color2" v="0,255,0,255"/>
-                  <prop k="color_type" v="0"/>
-                  <prop k="discrete" v="0"/>
-                  <prop k="draw_mode" v="2"/>
-                  <prop k="enabled" v="0"/>
-                  <prop k="single_color" v="255,255,255,255"/>
-                  <prop k="spread" v="2"/>
-                  <prop k="spread_unit" v="MM"/>
-                  <prop k="spread_unit_scale" v="0,0,0,0,0,0"/>
-                  <prop k="transparency" v="0.5"/>
-                </effect>
-              </effect>
             </layer>
           </symbol>
           <symbol alpha="1" clip_to_extent="1" type="marker" name="2">
             <layer pass="0" class="SvgMarker" locked="0">
               <prop k="angle" v="0"/>
-              <prop k="color" v="#000000"/>
+              <prop k="color" v="0,0,0,255"/>
               <prop k="horizontal_anchor_point" v="1"/>
               <prop k="name" v="./symbols/installations/reduction.svg"/>
               <prop k="offset" v="0,0"/>
               <prop k="offset_map_unit_scale" v="0,0,0,0,0,0"/>
               <prop k="offset_unit" v="MM"/>
-              <prop k="outline_color" v="#ffffff"/>
+              <prop k="outline_color" v="255,255,255,255"/>
               <prop k="outline_width" v="0"/>
               <prop k="outline_width_map_unit_scale" v="0,0,0,0,0,0"/>
               <prop k="outline_width_unit" v="MM"/>
@@ -54949,80 +53667,18 @@ END
               <prop k="size_map_unit_scale" v="0,0,0,0,0,0"/>
               <prop k="size_unit" v="MM"/>
               <prop k="vertical_anchor_point" v="1"/>
-              <effect enabled="0" type="effectStack">
-                <effect type="dropShadow">
-                  <prop k="blend_mode" v="13"/>
-                  <prop k="blur_level" v="10"/>
-                  <prop k="color" v="0,0,0,255"/>
-                  <prop k="draw_mode" v="2"/>
-                  <prop k="enabled" v="0"/>
-                  <prop k="offset_angle" v="135"/>
-                  <prop k="offset_distance" v="2"/>
-                  <prop k="offset_unit" v="MM"/>
-                  <prop k="offset_unit_scale" v="0,0,0,0,0,0"/>
-                  <prop k="transparency" v="0"/>
-                </effect>
-                <effect type="outerGlow">
-                  <prop k="blend_mode" v="0"/>
-                  <prop k="blur_level" v="3"/>
-                  <prop k="color1" v="0,0,255,255"/>
-                  <prop k="color2" v="0,255,0,255"/>
-                  <prop k="color_type" v="0"/>
-                  <prop k="discrete" v="0"/>
-                  <prop k="draw_mode" v="2"/>
-                  <prop k="enabled" v="0"/>
-                  <prop k="single_color" v="255,255,255,255"/>
-                  <prop k="spread" v="2"/>
-                  <prop k="spread_unit" v="MM"/>
-                  <prop k="spread_unit_scale" v="0,0,0,0,0,0"/>
-                  <prop k="transparency" v="0.5"/>
-                </effect>
-                <effect type="drawSource">
-                  <prop k="blend_mode" v="0"/>
-                  <prop k="draw_mode" v="2"/>
-                  <prop k="enabled" v="1"/>
-                  <prop k="transparency" v="0"/>
-                </effect>
-                <effect type="innerShadow">
-                  <prop k="blend_mode" v="13"/>
-                  <prop k="blur_level" v="10"/>
-                  <prop k="color" v="0,0,0,255"/>
-                  <prop k="draw_mode" v="2"/>
-                  <prop k="enabled" v="0"/>
-                  <prop k="offset_angle" v="135"/>
-                  <prop k="offset_distance" v="2"/>
-                  <prop k="offset_unit" v="MM"/>
-                  <prop k="offset_unit_scale" v="0,0,0,0,0,0"/>
-                  <prop k="transparency" v="0"/>
-                </effect>
-                <effect type="innerGlow">
-                  <prop k="blend_mode" v="0"/>
-                  <prop k="blur_level" v="3"/>
-                  <prop k="color1" v="0,0,255,255"/>
-                  <prop k="color2" v="0,255,0,255"/>
-                  <prop k="color_type" v="0"/>
-                  <prop k="discrete" v="0"/>
-                  <prop k="draw_mode" v="2"/>
-                  <prop k="enabled" v="0"/>
-                  <prop k="single_color" v="255,255,255,255"/>
-                  <prop k="spread" v="2"/>
-                  <prop k="spread_unit" v="MM"/>
-                  <prop k="spread_unit_scale" v="0,0,0,0,0,0"/>
-                  <prop k="transparency" v="0.5"/>
-                </effect>
-              </effect>
             </layer>
           </symbol>
           <symbol alpha="1" clip_to_extent="1" type="marker" name="3">
             <layer pass="0" class="SvgMarker" locked="0">
               <prop k="angle" v="0"/>
-              <prop k="color" v="#000000"/>
+              <prop k="color" v="0,0,0,255"/>
               <prop k="horizontal_anchor_point" v="1"/>
               <prop k="name" v="./symbols/installations/pressurebreak.svg"/>
               <prop k="offset" v="0,0"/>
               <prop k="offset_map_unit_scale" v="0,0,0,0,0,0"/>
               <prop k="offset_unit" v="MM"/>
-              <prop k="outline_color" v="#ffffff"/>
+              <prop k="outline_color" v="255,255,255,255"/>
               <prop k="outline_width" v="0"/>
               <prop k="outline_width_map_unit_scale" v="0,0,0,0,0,0"/>
               <prop k="outline_width_unit" v="MM"/>
@@ -55031,80 +53687,18 @@ END
               <prop k="size_map_unit_scale" v="0,0,0,0,0,0"/>
               <prop k="size_unit" v="MM"/>
               <prop k="vertical_anchor_point" v="1"/>
-              <effect enabled="0" type="effectStack">
-                <effect type="dropShadow">
-                  <prop k="blend_mode" v="13"/>
-                  <prop k="blur_level" v="10"/>
-                  <prop k="color" v="0,0,0,255"/>
-                  <prop k="draw_mode" v="2"/>
-                  <prop k="enabled" v="0"/>
-                  <prop k="offset_angle" v="135"/>
-                  <prop k="offset_distance" v="2"/>
-                  <prop k="offset_unit" v="MM"/>
-                  <prop k="offset_unit_scale" v="0,0,0,0,0,0"/>
-                  <prop k="transparency" v="0"/>
-                </effect>
-                <effect type="outerGlow">
-                  <prop k="blend_mode" v="0"/>
-                  <prop k="blur_level" v="3"/>
-                  <prop k="color1" v="0,0,255,255"/>
-                  <prop k="color2" v="0,255,0,255"/>
-                  <prop k="color_type" v="0"/>
-                  <prop k="discrete" v="0"/>
-                  <prop k="draw_mode" v="2"/>
-                  <prop k="enabled" v="0"/>
-                  <prop k="single_color" v="255,255,255,255"/>
-                  <prop k="spread" v="2"/>
-                  <prop k="spread_unit" v="MM"/>
-                  <prop k="spread_unit_scale" v="0,0,0,0,0,0"/>
-                  <prop k="transparency" v="0.5"/>
-                </effect>
-                <effect type="drawSource">
-                  <prop k="blend_mode" v="0"/>
-                  <prop k="draw_mode" v="2"/>
-                  <prop k="enabled" v="1"/>
-                  <prop k="transparency" v="0"/>
-                </effect>
-                <effect type="innerShadow">
-                  <prop k="blend_mode" v="13"/>
-                  <prop k="blur_level" v="10"/>
-                  <prop k="color" v="0,0,0,255"/>
-                  <prop k="draw_mode" v="2"/>
-                  <prop k="enabled" v="0"/>
-                  <prop k="offset_angle" v="135"/>
-                  <prop k="offset_distance" v="2"/>
-                  <prop k="offset_unit" v="MM"/>
-                  <prop k="offset_unit_scale" v="0,0,0,0,0,0"/>
-                  <prop k="transparency" v="0"/>
-                </effect>
-                <effect type="innerGlow">
-                  <prop k="blend_mode" v="0"/>
-                  <prop k="blur_level" v="3"/>
-                  <prop k="color1" v="0,0,255,255"/>
-                  <prop k="color2" v="0,255,0,255"/>
-                  <prop k="color_type" v="0"/>
-                  <prop k="discrete" v="0"/>
-                  <prop k="draw_mode" v="2"/>
-                  <prop k="enabled" v="0"/>
-                  <prop k="single_color" v="255,255,255,255"/>
-                  <prop k="spread" v="2"/>
-                  <prop k="spread_unit" v="MM"/>
-                  <prop k="spread_unit_scale" v="0,0,0,0,0,0"/>
-                  <prop k="transparency" v="0.5"/>
-                </effect>
-              </effect>
             </layer>
           </symbol>
           <symbol alpha="1" clip_to_extent="1" type="marker" name="4">
             <layer pass="0" class="SvgMarker" locked="0">
               <prop k="angle" v="0"/>
-              <prop k="color" v="#000000"/>
+              <prop k="color" v="0,0,0,255"/>
               <prop k="horizontal_anchor_point" v="1"/>
               <prop k="name" v="./symbols/installations/gathering.svg"/>
               <prop k="offset" v="0,0"/>
               <prop k="offset_map_unit_scale" v="0,0,0,0,0,0"/>
               <prop k="offset_unit" v="MM"/>
-              <prop k="outline_color" v="#ffffff"/>
+              <prop k="outline_color" v="255,255,255,255"/>
               <prop k="outline_width" v="0"/>
               <prop k="outline_width_map_unit_scale" v="0,0,0,0,0,0"/>
               <prop k="outline_width_unit" v="MM"/>
@@ -55113,80 +53707,18 @@ END
               <prop k="size_map_unit_scale" v="0,0,0,0,0,0"/>
               <prop k="size_unit" v="MM"/>
               <prop k="vertical_anchor_point" v="1"/>
-              <effect enabled="0" type="effectStack">
-                <effect type="dropShadow">
-                  <prop k="blend_mode" v="13"/>
-                  <prop k="blur_level" v="10"/>
-                  <prop k="color" v="0,0,0,255"/>
-                  <prop k="draw_mode" v="2"/>
-                  <prop k="enabled" v="0"/>
-                  <prop k="offset_angle" v="135"/>
-                  <prop k="offset_distance" v="2"/>
-                  <prop k="offset_unit" v="MM"/>
-                  <prop k="offset_unit_scale" v="0,0,0,0,0,0"/>
-                  <prop k="transparency" v="0"/>
-                </effect>
-                <effect type="outerGlow">
-                  <prop k="blend_mode" v="0"/>
-                  <prop k="blur_level" v="3"/>
-                  <prop k="color1" v="0,0,255,255"/>
-                  <prop k="color2" v="0,255,0,255"/>
-                  <prop k="color_type" v="0"/>
-                  <prop k="discrete" v="0"/>
-                  <prop k="draw_mode" v="2"/>
-                  <prop k="enabled" v="0"/>
-                  <prop k="single_color" v="255,255,255,255"/>
-                  <prop k="spread" v="2"/>
-                  <prop k="spread_unit" v="MM"/>
-                  <prop k="spread_unit_scale" v="0,0,0,0,0,0"/>
-                  <prop k="transparency" v="0.5"/>
-                </effect>
-                <effect type="drawSource">
-                  <prop k="blend_mode" v="0"/>
-                  <prop k="draw_mode" v="2"/>
-                  <prop k="enabled" v="1"/>
-                  <prop k="transparency" v="0"/>
-                </effect>
-                <effect type="innerShadow">
-                  <prop k="blend_mode" v="13"/>
-                  <prop k="blur_level" v="10"/>
-                  <prop k="color" v="0,0,0,255"/>
-                  <prop k="draw_mode" v="2"/>
-                  <prop k="enabled" v="0"/>
-                  <prop k="offset_angle" v="135"/>
-                  <prop k="offset_distance" v="2"/>
-                  <prop k="offset_unit" v="MM"/>
-                  <prop k="offset_unit_scale" v="0,0,0,0,0,0"/>
-                  <prop k="transparency" v="0"/>
-                </effect>
-                <effect type="innerGlow">
-                  <prop k="blend_mode" v="0"/>
-                  <prop k="blur_level" v="3"/>
-                  <prop k="color1" v="0,0,255,255"/>
-                  <prop k="color2" v="0,255,0,255"/>
-                  <prop k="color_type" v="0"/>
-                  <prop k="discrete" v="0"/>
-                  <prop k="draw_mode" v="2"/>
-                  <prop k="enabled" v="0"/>
-                  <prop k="single_color" v="255,255,255,255"/>
-                  <prop k="spread" v="2"/>
-                  <prop k="spread_unit" v="MM"/>
-                  <prop k="spread_unit_scale" v="0,0,0,0,0,0"/>
-                  <prop k="transparency" v="0.5"/>
-                </effect>
-              </effect>
             </layer>
           </symbol>
           <symbol alpha="1" clip_to_extent="1" type="marker" name="5">
             <layer pass="0" class="SvgMarker" locked="0">
               <prop k="angle" v="0"/>
-              <prop k="color" v="#000000"/>
+              <prop k="color" v="0,0,0,255"/>
               <prop k="horizontal_anchor_point" v="1"/>
               <prop k="name" v="./symbols/installations/pump.svg"/>
               <prop k="offset" v="0,0"/>
               <prop k="offset_map_unit_scale" v="0,0,0,0,0,0"/>
               <prop k="offset_unit" v="MM"/>
-              <prop k="outline_color" v="#ffffff"/>
+              <prop k="outline_color" v="255,255,255,255"/>
               <prop k="outline_width" v="0"/>
               <prop k="outline_width_map_unit_scale" v="0,0,0,0,0,0"/>
               <prop k="outline_width_unit" v="MM"/>
@@ -55195,80 +53727,18 @@ END
               <prop k="size_map_unit_scale" v="0,0,0,0,0,0"/>
               <prop k="size_unit" v="MM"/>
               <prop k="vertical_anchor_point" v="1"/>
-              <effect enabled="0" type="effectStack">
-                <effect type="dropShadow">
-                  <prop k="blend_mode" v="13"/>
-                  <prop k="blur_level" v="10"/>
-                  <prop k="color" v="0,0,0,255"/>
-                  <prop k="draw_mode" v="2"/>
-                  <prop k="enabled" v="0"/>
-                  <prop k="offset_angle" v="135"/>
-                  <prop k="offset_distance" v="2"/>
-                  <prop k="offset_unit" v="MM"/>
-                  <prop k="offset_unit_scale" v="0,0,0,0,0,0"/>
-                  <prop k="transparency" v="0"/>
-                </effect>
-                <effect type="outerGlow">
-                  <prop k="blend_mode" v="0"/>
-                  <prop k="blur_level" v="3"/>
-                  <prop k="color1" v="0,0,255,255"/>
-                  <prop k="color2" v="0,255,0,255"/>
-                  <prop k="color_type" v="0"/>
-                  <prop k="discrete" v="0"/>
-                  <prop k="draw_mode" v="2"/>
-                  <prop k="enabled" v="0"/>
-                  <prop k="single_color" v="255,255,255,255"/>
-                  <prop k="spread" v="2"/>
-                  <prop k="spread_unit" v="MM"/>
-                  <prop k="spread_unit_scale" v="0,0,0,0,0,0"/>
-                  <prop k="transparency" v="0.5"/>
-                </effect>
-                <effect type="drawSource">
-                  <prop k="blend_mode" v="0"/>
-                  <prop k="draw_mode" v="2"/>
-                  <prop k="enabled" v="1"/>
-                  <prop k="transparency" v="0"/>
-                </effect>
-                <effect type="innerShadow">
-                  <prop k="blend_mode" v="13"/>
-                  <prop k="blur_level" v="10"/>
-                  <prop k="color" v="0,0,0,255"/>
-                  <prop k="draw_mode" v="2"/>
-                  <prop k="enabled" v="0"/>
-                  <prop k="offset_angle" v="135"/>
-                  <prop k="offset_distance" v="2"/>
-                  <prop k="offset_unit" v="MM"/>
-                  <prop k="offset_unit_scale" v="0,0,0,0,0,0"/>
-                  <prop k="transparency" v="0"/>
-                </effect>
-                <effect type="innerGlow">
-                  <prop k="blend_mode" v="0"/>
-                  <prop k="blur_level" v="3"/>
-                  <prop k="color1" v="0,0,255,255"/>
-                  <prop k="color2" v="0,255,0,255"/>
-                  <prop k="color_type" v="0"/>
-                  <prop k="discrete" v="0"/>
-                  <prop k="draw_mode" v="2"/>
-                  <prop k="enabled" v="0"/>
-                  <prop k="single_color" v="255,255,255,255"/>
-                  <prop k="spread" v="2"/>
-                  <prop k="spread_unit" v="MM"/>
-                  <prop k="spread_unit_scale" v="0,0,0,0,0,0"/>
-                  <prop k="transparency" v="0.5"/>
-                </effect>
-              </effect>
             </layer>
           </symbol>
           <symbol alpha="1" clip_to_extent="1" type="marker" name="6">
             <layer pass="0" class="SvgMarker" locked="0">
               <prop k="angle" v="0"/>
-              <prop k="color" v="#000000"/>
+              <prop k="color" v="0,0,0,255"/>
               <prop k="horizontal_anchor_point" v="1"/>
               <prop k="name" v="./symbols/installations/source.svg"/>
               <prop k="offset" v="0,0"/>
               <prop k="offset_map_unit_scale" v="0,0,0,0,0,0"/>
               <prop k="offset_unit" v="MM"/>
-              <prop k="outline_color" v="#ffffff"/>
+              <prop k="outline_color" v="255,255,255,255"/>
               <prop k="outline_width" v="0"/>
               <prop k="outline_width_map_unit_scale" v="0,0,0,0,0,0"/>
               <prop k="outline_width_unit" v="MM"/>
@@ -55277,80 +53747,18 @@ END
               <prop k="size_map_unit_scale" v="0,0,0,0,0,0"/>
               <prop k="size_unit" v="MM"/>
               <prop k="vertical_anchor_point" v="1"/>
-              <effect enabled="0" type="effectStack">
-                <effect type="dropShadow">
-                  <prop k="blend_mode" v="13"/>
-                  <prop k="blur_level" v="10"/>
-                  <prop k="color" v="0,0,0,255"/>
-                  <prop k="draw_mode" v="2"/>
-                  <prop k="enabled" v="0"/>
-                  <prop k="offset_angle" v="135"/>
-                  <prop k="offset_distance" v="2"/>
-                  <prop k="offset_unit" v="MM"/>
-                  <prop k="offset_unit_scale" v="0,0,0,0,0,0"/>
-                  <prop k="transparency" v="0"/>
-                </effect>
-                <effect type="outerGlow">
-                  <prop k="blend_mode" v="0"/>
-                  <prop k="blur_level" v="3"/>
-                  <prop k="color1" v="0,0,255,255"/>
-                  <prop k="color2" v="0,255,0,255"/>
-                  <prop k="color_type" v="0"/>
-                  <prop k="discrete" v="0"/>
-                  <prop k="draw_mode" v="2"/>
-                  <prop k="enabled" v="0"/>
-                  <prop k="single_color" v="255,255,255,255"/>
-                  <prop k="spread" v="2"/>
-                  <prop k="spread_unit" v="MM"/>
-                  <prop k="spread_unit_scale" v="0,0,0,0,0,0"/>
-                  <prop k="transparency" v="0.5"/>
-                </effect>
-                <effect type="drawSource">
-                  <prop k="blend_mode" v="0"/>
-                  <prop k="draw_mode" v="2"/>
-                  <prop k="enabled" v="1"/>
-                  <prop k="transparency" v="0"/>
-                </effect>
-                <effect type="innerShadow">
-                  <prop k="blend_mode" v="13"/>
-                  <prop k="blur_level" v="10"/>
-                  <prop k="color" v="0,0,0,255"/>
-                  <prop k="draw_mode" v="2"/>
-                  <prop k="enabled" v="0"/>
-                  <prop k="offset_angle" v="135"/>
-                  <prop k="offset_distance" v="2"/>
-                  <prop k="offset_unit" v="MM"/>
-                  <prop k="offset_unit_scale" v="0,0,0,0,0,0"/>
-                  <prop k="transparency" v="0"/>
-                </effect>
-                <effect type="innerGlow">
-                  <prop k="blend_mode" v="0"/>
-                  <prop k="blur_level" v="3"/>
-                  <prop k="color1" v="0,0,255,255"/>
-                  <prop k="color2" v="0,255,0,255"/>
-                  <prop k="color_type" v="0"/>
-                  <prop k="discrete" v="0"/>
-                  <prop k="draw_mode" v="2"/>
-                  <prop k="enabled" v="0"/>
-                  <prop k="single_color" v="255,255,255,255"/>
-                  <prop k="spread" v="2"/>
-                  <prop k="spread_unit" v="MM"/>
-                  <prop k="spread_unit_scale" v="0,0,0,0,0,0"/>
-                  <prop k="transparency" v="0.5"/>
-                </effect>
-              </effect>
             </layer>
           </symbol>
           <symbol alpha="1" clip_to_extent="1" type="marker" name="7">
             <layer pass="0" class="SvgMarker" locked="0">
               <prop k="angle" v="0"/>
-              <prop k="color" v="#000000"/>
+              <prop k="color" v="0,0,0,255"/>
               <prop k="horizontal_anchor_point" v="1"/>
               <prop k="name" v="./symbols/installations/tank.svg"/>
               <prop k="offset" v="0,0"/>
               <prop k="offset_map_unit_scale" v="0,0,0,0,0,0"/>
               <prop k="offset_unit" v="MM"/>
-              <prop k="outline_color" v="#ffffff"/>
+              <prop k="outline_color" v="255,255,255,255"/>
               <prop k="outline_width" v="0"/>
               <prop k="outline_width_map_unit_scale" v="0,0,0,0,0,0"/>
               <prop k="outline_width_unit" v="MM"/>
@@ -55359,80 +53767,18 @@ END
               <prop k="size_map_unit_scale" v="0,0,0,0,0,0"/>
               <prop k="size_unit" v="MM"/>
               <prop k="vertical_anchor_point" v="1"/>
-              <effect enabled="0" type="effectStack">
-                <effect type="dropShadow">
-                  <prop k="blend_mode" v="13"/>
-                  <prop k="blur_level" v="10"/>
-                  <prop k="color" v="0,0,0,255"/>
-                  <prop k="draw_mode" v="2"/>
-                  <prop k="enabled" v="0"/>
-                  <prop k="offset_angle" v="135"/>
-                  <prop k="offset_distance" v="2"/>
-                  <prop k="offset_unit" v="MM"/>
-                  <prop k="offset_unit_scale" v="0,0,0,0,0,0"/>
-                  <prop k="transparency" v="0"/>
-                </effect>
-                <effect type="outerGlow">
-                  <prop k="blend_mode" v="0"/>
-                  <prop k="blur_level" v="3"/>
-                  <prop k="color1" v="0,0,255,255"/>
-                  <prop k="color2" v="0,255,0,255"/>
-                  <prop k="color_type" v="0"/>
-                  <prop k="discrete" v="0"/>
-                  <prop k="draw_mode" v="2"/>
-                  <prop k="enabled" v="0"/>
-                  <prop k="single_color" v="255,255,255,255"/>
-                  <prop k="spread" v="2"/>
-                  <prop k="spread_unit" v="MM"/>
-                  <prop k="spread_unit_scale" v="0,0,0,0,0,0"/>
-                  <prop k="transparency" v="0.5"/>
-                </effect>
-                <effect type="drawSource">
-                  <prop k="blend_mode" v="0"/>
-                  <prop k="draw_mode" v="2"/>
-                  <prop k="enabled" v="1"/>
-                  <prop k="transparency" v="0"/>
-                </effect>
-                <effect type="innerShadow">
-                  <prop k="blend_mode" v="13"/>
-                  <prop k="blur_level" v="10"/>
-                  <prop k="color" v="0,0,0,255"/>
-                  <prop k="draw_mode" v="2"/>
-                  <prop k="enabled" v="0"/>
-                  <prop k="offset_angle" v="135"/>
-                  <prop k="offset_distance" v="2"/>
-                  <prop k="offset_unit" v="MM"/>
-                  <prop k="offset_unit_scale" v="0,0,0,0,0,0"/>
-                  <prop k="transparency" v="0"/>
-                </effect>
-                <effect type="innerGlow">
-                  <prop k="blend_mode" v="0"/>
-                  <prop k="blur_level" v="3"/>
-                  <prop k="color1" v="0,0,255,255"/>
-                  <prop k="color2" v="0,255,0,255"/>
-                  <prop k="color_type" v="0"/>
-                  <prop k="discrete" v="0"/>
-                  <prop k="draw_mode" v="2"/>
-                  <prop k="enabled" v="0"/>
-                  <prop k="single_color" v="255,255,255,255"/>
-                  <prop k="spread" v="2"/>
-                  <prop k="spread_unit" v="MM"/>
-                  <prop k="spread_unit_scale" v="0,0,0,0,0,0"/>
-                  <prop k="transparency" v="0.5"/>
-                </effect>
-              </effect>
             </layer>
           </symbol>
           <symbol alpha="1" clip_to_extent="1" type="marker" name="8">
             <layer pass="0" class="SvgMarker" locked="0">
               <prop k="angle" v="0"/>
-              <prop k="color" v="#000000"/>
+              <prop k="color" v="0,0,0,255"/>
               <prop k="horizontal_anchor_point" v="1"/>
               <prop k="name" v="./symbols/installations/treatment.svg"/>
               <prop k="offset" v="0,0"/>
               <prop k="offset_map_unit_scale" v="0,0,0,0,0,0"/>
               <prop k="offset_unit" v="MM"/>
-              <prop k="outline_color" v="#ffffff"/>
+              <prop k="outline_color" v="255,255,255,255"/>
               <prop k="outline_width" v="0"/>
               <prop k="outline_width_map_unit_scale" v="0,0,0,0,0,0"/>
               <prop k="outline_width_unit" v="MM"/>
@@ -55441,68 +53787,6 @@ END
               <prop k="size_map_unit_scale" v="0,0,0,0,0,0"/>
               <prop k="size_unit" v="MM"/>
               <prop k="vertical_anchor_point" v="1"/>
-              <effect enabled="0" type="effectStack">
-                <effect type="dropShadow">
-                  <prop k="blend_mode" v="13"/>
-                  <prop k="blur_level" v="10"/>
-                  <prop k="color" v="0,0,0,255"/>
-                  <prop k="draw_mode" v="2"/>
-                  <prop k="enabled" v="0"/>
-                  <prop k="offset_angle" v="135"/>
-                  <prop k="offset_distance" v="2"/>
-                  <prop k="offset_unit" v="MM"/>
-                  <prop k="offset_unit_scale" v="0,0,0,0,0,0"/>
-                  <prop k="transparency" v="0"/>
-                </effect>
-                <effect type="outerGlow">
-                  <prop k="blend_mode" v="0"/>
-                  <prop k="blur_level" v="3"/>
-                  <prop k="color1" v="0,0,255,255"/>
-                  <prop k="color2" v="0,255,0,255"/>
-                  <prop k="color_type" v="0"/>
-                  <prop k="discrete" v="0"/>
-                  <prop k="draw_mode" v="2"/>
-                  <prop k="enabled" v="0"/>
-                  <prop k="single_color" v="255,255,255,255"/>
-                  <prop k="spread" v="2"/>
-                  <prop k="spread_unit" v="MM"/>
-                  <prop k="spread_unit_scale" v="0,0,0,0,0,0"/>
-                  <prop k="transparency" v="0.5"/>
-                </effect>
-                <effect type="drawSource">
-                  <prop k="blend_mode" v="0"/>
-                  <prop k="draw_mode" v="2"/>
-                  <prop k="enabled" v="1"/>
-                  <prop k="transparency" v="0"/>
-                </effect>
-                <effect type="innerShadow">
-                  <prop k="blend_mode" v="13"/>
-                  <prop k="blur_level" v="10"/>
-                  <prop k="color" v="0,0,0,255"/>
-                  <prop k="draw_mode" v="2"/>
-                  <prop k="enabled" v="0"/>
-                  <prop k="offset_angle" v="135"/>
-                  <prop k="offset_distance" v="2"/>
-                  <prop k="offset_unit" v="MM"/>
-                  <prop k="offset_unit_scale" v="0,0,0,0,0,0"/>
-                  <prop k="transparency" v="0"/>
-                </effect>
-                <effect type="innerGlow">
-                  <prop k="blend_mode" v="0"/>
-                  <prop k="blur_level" v="3"/>
-                  <prop k="color1" v="0,0,255,255"/>
-                  <prop k="color2" v="0,255,0,255"/>
-                  <prop k="color_type" v="0"/>
-                  <prop k="discrete" v="0"/>
-                  <prop k="draw_mode" v="2"/>
-                  <prop k="enabled" v="0"/>
-                  <prop k="single_color" v="255,255,255,255"/>
-                  <prop k="spread" v="2"/>
-                  <prop k="spread_unit" v="MM"/>
-                  <prop k="spread_unit_scale" v="0,0,0,0,0,0"/>
-                  <prop k="transparency" v="0.5"/>
-                </effect>
-              </effect>
             </layer>
           </symbol>
           <symbol alpha="1" clip_to_extent="1" type="marker" name="9">
@@ -55524,133 +53808,9 @@ END
               <prop k="size_map_unit_scale" v="0,0,0,0,0,0"/>
               <prop k="size_unit" v="MM"/>
               <prop k="vertical_anchor_point" v="1"/>
-              <effect enabled="0" type="effectStack">
-                <effect type="dropShadow">
-                  <prop k="blend_mode" v="13"/>
-                  <prop k="blur_level" v="10"/>
-                  <prop k="color" v="0,0,0,255"/>
-                  <prop k="draw_mode" v="2"/>
-                  <prop k="enabled" v="0"/>
-                  <prop k="offset_angle" v="135"/>
-                  <prop k="offset_distance" v="2"/>
-                  <prop k="offset_unit" v="MM"/>
-                  <prop k="offset_unit_scale" v="0,0,0,0,0,0"/>
-                  <prop k="transparency" v="0"/>
-                </effect>
-                <effect type="outerGlow">
-                  <prop k="blend_mode" v="0"/>
-                  <prop k="blur_level" v="3"/>
-                  <prop k="color1" v="0,0,255,255"/>
-                  <prop k="color2" v="0,255,0,255"/>
-                  <prop k="color_type" v="0"/>
-                  <prop k="discrete" v="0"/>
-                  <prop k="draw_mode" v="2"/>
-                  <prop k="enabled" v="0"/>
-                  <prop k="single_color" v="255,255,255,255"/>
-                  <prop k="spread" v="2"/>
-                  <prop k="spread_unit" v="MM"/>
-                  <prop k="spread_unit_scale" v="0,0,0,0,0,0"/>
-                  <prop k="transparency" v="0.5"/>
-                </effect>
-                <effect type="drawSource">
-                  <prop k="blend_mode" v="0"/>
-                  <prop k="draw_mode" v="2"/>
-                  <prop k="enabled" v="1"/>
-                  <prop k="transparency" v="0"/>
-                </effect>
-                <effect type="innerShadow">
-                  <prop k="blend_mode" v="13"/>
-                  <prop k="blur_level" v="10"/>
-                  <prop k="color" v="0,0,0,255"/>
-                  <prop k="draw_mode" v="2"/>
-                  <prop k="enabled" v="0"/>
-                  <prop k="offset_angle" v="135"/>
-                  <prop k="offset_distance" v="2"/>
-                  <prop k="offset_unit" v="MM"/>
-                  <prop k="offset_unit_scale" v="0,0,0,0,0,0"/>
-                  <prop k="transparency" v="0"/>
-                </effect>
-                <effect type="innerGlow">
-                  <prop k="blend_mode" v="0"/>
-                  <prop k="blur_level" v="3"/>
-                  <prop k="color1" v="0,0,255,255"/>
-                  <prop k="color2" v="0,255,0,255"/>
-                  <prop k="color_type" v="0"/>
-                  <prop k="discrete" v="0"/>
-                  <prop k="draw_mode" v="2"/>
-                  <prop k="enabled" v="0"/>
-                  <prop k="single_color" v="255,255,255,255"/>
-                  <prop k="spread" v="2"/>
-                  <prop k="spread_unit" v="MM"/>
-                  <prop k="spread_unit_scale" v="0,0,0,0,0,0"/>
-                  <prop k="transparency" v="0.5"/>
-                </effect>
-              </effect>
             </layer>
           </symbol>
         </symbols>
-        <effect enabled="0" type="effectStack">
-          <effect type="dropShadow">
-            <prop k="blend_mode" v="13"/>
-            <prop k="blur_level" v="10"/>
-            <prop k="color" v="0,0,0,255"/>
-            <prop k="draw_mode" v="2"/>
-            <prop k="enabled" v="0"/>
-            <prop k="offset_angle" v="135"/>
-            <prop k="offset_distance" v="2"/>
-            <prop k="offset_unit" v="MM"/>
-            <prop k="offset_unit_scale" v="0,0,0,0,0,0"/>
-            <prop k="transparency" v="0"/>
-          </effect>
-          <effect type="outerGlow">
-            <prop k="blend_mode" v="0"/>
-            <prop k="blur_level" v="3"/>
-            <prop k="color1" v="0,0,255,255"/>
-            <prop k="color2" v="0,255,0,255"/>
-            <prop k="color_type" v="0"/>
-            <prop k="discrete" v="0"/>
-            <prop k="draw_mode" v="2"/>
-            <prop k="enabled" v="0"/>
-            <prop k="single_color" v="255,255,255,255"/>
-            <prop k="spread" v="2"/>
-            <prop k="spread_unit" v="MM"/>
-            <prop k="spread_unit_scale" v="0,0,0,0,0,0"/>
-            <prop k="transparency" v="0.5"/>
-          </effect>
-          <effect type="drawSource">
-            <prop k="blend_mode" v="0"/>
-            <prop k="draw_mode" v="2"/>
-            <prop k="enabled" v="1"/>
-            <prop k="transparency" v="0"/>
-          </effect>
-          <effect type="innerShadow">
-            <prop k="blend_mode" v="13"/>
-            <prop k="blur_level" v="10"/>
-            <prop k="color" v="0,0,0,255"/>
-            <prop k="draw_mode" v="2"/>
-            <prop k="enabled" v="0"/>
-            <prop k="offset_angle" v="135"/>
-            <prop k="offset_distance" v="2"/>
-            <prop k="offset_unit" v="MM"/>
-            <prop k="offset_unit_scale" v="0,0,0,0,0,0"/>
-            <prop k="transparency" v="0"/>
-          </effect>
-          <effect type="innerGlow">
-            <prop k="blend_mode" v="0"/>
-            <prop k="blur_level" v="3"/>
-            <prop k="color1" v="0,0,255,255"/>
-            <prop k="color2" v="0,255,0,255"/>
-            <prop k="color_type" v="0"/>
-            <prop k="discrete" v="0"/>
-            <prop k="draw_mode" v="2"/>
-            <prop k="enabled" v="0"/>
-            <prop k="single_color" v="255,255,255,255"/>
-            <prop k="spread" v="2"/>
-            <prop k="spread_unit" v="MM"/>
-            <prop k="spread_unit_scale" v="0,0,0,0,0,0"/>
-            <prop k="transparency" v="0.5"/>
-          </effect>
-        </effect>
       </renderer-v2>
       <labeling type="simple"/>
       <customproperties>
@@ -55862,8 +54022,8 @@ END
         <edittype widgetv2type="TextEdit" name="fk_printmap">
           <widgetv2config IsMultiline="0" fieldEditable="0" UseHtml="0" labelOnTop="0"/>
         </edittype>
-        <edittype widgetv2type="TextEdit" name="fk_precision">
-          <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
+        <edittype widgetv2type="ValueRelation" name="fk_precision">
+          <widgetv2config OrderByValue="0" AllowNull="0" FilterExpression="" UseCompleter="0" fieldEditable="1" Key="id" Layer="vl_precision20130304110011372" Value="value_fr" labelOnTop="0" AllowMulti="0"/>
         </edittype>
         <edittype widgetv2type="ValueRelation" name="fk_precisionalti">
           <widgetv2config OrderByValue="0" AllowNull="0" FilterExpression="" UseCompleter="0" fieldEditable="1" Key="id" Layer="vl_precisionalti20131211161429510" Value="value_fr" labelOnTop="0" AllowMulti="0"/>
@@ -55992,7 +54152,13 @@ END
         <edittype widgetv2type="CheckBox" name="networkseparation">
           <widgetv2config fieldEditable="1" UncheckedState="f" CheckedState="t" labelOnTop="0"/>
         </edittype>
-        <edittype widgetv2type="CheckBox" name="meter">
+        <edittype widgetv2type="CheckBox" name="flow_meter">
+          <widgetv2config fieldEditable="1" UncheckedState="f" CheckedState="t" labelOnTop="0"/>
+        </edittype>
+        <edittype widgetv2type="CheckBox" name="water_meter">
+          <widgetv2config fieldEditable="1" UncheckedState="f" CheckedState="t" labelOnTop="0"/>
+        </edittype>
+        <edittype widgetv2type="CheckBox" name="manometer">
           <widgetv2config fieldEditable="1" UncheckedState="f" CheckedState="t" labelOnTop="0"/>
         </edittype>
         <edittype widgetv2type="TextEdit" name="depth">
@@ -56214,8 +54380,8 @@ END
         <edittype widgetv2type="TextEdit" name="remark">
           <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
         </edittype>
-        <edittype widgetv2type="ValueRelation" name="fk_district">
-          <widgetv2config OrderByValue="1" AllowNull="0" FilterExpression="" UseCompleter="0" fieldEditable="1" Key="id" Layer="district20130304110004764" Value="name" labelOnTop="0" AllowMulti="0"/>
+        <edittype widgetv2type="TextEdit" name="fk_district">
+          <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
         </edittype>
         <edittype widgetv2type="TextEdit" name="fk_pressurezone">
           <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
@@ -56226,8 +54392,8 @@ END
         <edittype widgetv2type="TextEdit" name="_printmaps">
           <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
         </edittype>
-        <edittype widgetv2type="ValueRelation" name="label_2_visible">
-          <widgetv2config OrderByValue="0" AllowNull="0" FilterExpression="" UseCompleter="0" fieldEditable="1" Key="vl_code_int" Layer="vl_visible20130304110011703" Value="value_fr" labelOnTop="0" AllowMulti="0"/>
+        <edittype widgetv2type="TextEdit" name="label_2_visible">
+          <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
         </edittype>
         <edittype widgetv2type="TextEdit" name="label_2_text">
           <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
@@ -56317,6 +54483,9 @@ END
           <widgetv2config IsMultiline="0" fieldEditable="0" UseHtml="0" labelOnTop="0"/>
         </edittype>
         <edittype widgetv2type="TextEdit" name="pipe_material_wall_thickness">
+          <widgetv2config IsMultiline="0" fieldEditable="0" UseHtml="0" labelOnTop="0"/>
+        </edittype>
+        <edittype widgetv2type="TextEdit" name="pipe_material_sn">
           <widgetv2config IsMultiline="0" fieldEditable="0" UseHtml="0" labelOnTop="0"/>
         </edittype>
       </edittypes>
@@ -56641,8 +54810,8 @@ END
         <edittype widgetv2type="TextEdit" name="remark">
           <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
         </edittype>
-        <edittype widgetv2type="ValueRelation" name="fk_district">
-          <widgetv2config OrderByValue="1" AllowNull="0" FilterExpression="" UseCompleter="0" fieldEditable="1" Key="id" Layer="district20130304110004764" Value="name" labelOnTop="0" AllowMulti="0"/>
+        <edittype widgetv2type="TextEdit" name="fk_district">
+          <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
         </edittype>
         <edittype widgetv2type="TextEdit" name="fk_pressurezone">
           <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
@@ -56653,8 +54822,8 @@ END
         <edittype widgetv2type="TextEdit" name="_printmaps">
           <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
         </edittype>
-        <edittype widgetv2type="ValueRelation" name="label_2_visible">
-          <widgetv2config OrderByValue="0" AllowNull="0" FilterExpression="" UseCompleter="0" fieldEditable="1" Key="vl_code_int" Layer="vl_visible20130304110011703" Value="value_fr" labelOnTop="0" AllowMulti="0"/>
+        <edittype widgetv2type="TextEdit" name="label_2_visible">
+          <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
         </edittype>
         <edittype widgetv2type="TextEdit" name="label_2_text">
           <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
@@ -56746,6 +54915,9 @@ END
         <edittype widgetv2type="TextEdit" name="pipe_material_wall_thickness">
           <widgetv2config IsMultiline="0" fieldEditable="0" UseHtml="0" labelOnTop="0"/>
         </edittype>
+        <edittype widgetv2type="TextEdit" name="pipe_material_sn">
+          <widgetv2config IsMultiline="0" fieldEditable="0" UseHtml="0" labelOnTop="0"/>
+        </edittype>
       </edittypes>
     </maplayer>
     <maplayer minimumScale="0" maximumScale="1e+08" simplifyDrawingHints="0" minLabelScale="0" maxLabelScale="1e+08" simplifyDrawingTol="1" geometry="Line" simplifyMaxScale="1" type="vector" hasScaleBasedVisibilityFlag="0" simplifyLocal="1" scaleBasedLabelVisibilityFlag="0">
@@ -56782,8 +54954,8 @@ END
         <edittype widgetv2type="TextEdit" name="id">
           <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
         </edittype>
-        <edittype widgetv2type="RelationReference" name="fk_parent">
-          <widgetv2config OrderByValue="0" fieldEditable="1" ShowForm="0" Relation="relation_pipe_schema_parent" ReadOnly="1" MapIdentification="1" labelOnTop="0" AllowNULL="1"/>
+        <edittype widgetv2type="TextEdit" name="fk_parent">
+          <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
         </edittype>
         <edittype widgetv2type="TextEdit" name="fk_material">
           <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
@@ -56864,6 +55036,9 @@ END
           <widgetv2config IsMultiline="0" fieldEditable="0" UseHtml="0" labelOnTop="0"/>
         </edittype>
         <edittype widgetv2type="TextEdit" name="material_wall_thickness">
+          <widgetv2config IsMultiline="0" fieldEditable="0" UseHtml="0" labelOnTop="0"/>
+        </edittype>
+        <edittype widgetv2type="TextEdit" name="material_sn">
           <widgetv2config IsMultiline="0" fieldEditable="0" UseHtml="0" labelOnTop="0"/>
         </edittype>
       </edittypes>
@@ -57195,8 +55370,8 @@ END
         <edittype widgetv2type="TextEdit" name="id">
           <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
         </edittype>
-        <edittype widgetv2type="RelationReference" name="fk_parent">
-          <widgetv2config OrderByValue="0" fieldEditable="1" ShowForm="0" Relation="relation_pipe_schema_parent" ReadOnly="1" MapIdentification="1" labelOnTop="0" AllowNULL="1"/>
+        <edittype widgetv2type="TextEdit" name="fk_parent">
+          <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
         </edittype>
         <edittype widgetv2type="TextEdit" name="fk_material">
           <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
@@ -57277,6 +55452,9 @@ END
           <widgetv2config IsMultiline="0" fieldEditable="0" UseHtml="0" labelOnTop="0"/>
         </edittype>
         <edittype widgetv2type="TextEdit" name="material_wall_thickness">
+          <widgetv2config IsMultiline="0" fieldEditable="0" UseHtml="0" labelOnTop="0"/>
+        </edittype>
+        <edittype widgetv2type="TextEdit" name="material_sn">
           <widgetv2config IsMultiline="0" fieldEditable="0" UseHtml="0" labelOnTop="0"/>
         </edittype>
       </edittypes>
@@ -58651,38 +56829,38 @@ END
   </properties>
   <visibility-presets>
     <visibility-preset name="250">
-      <layer style="" id="cs_posnumero_de_batiment20130514143756039"/>
-      <layer style="" id="od_subscriber_reference20131206105928067"/>
-      <layer style="" id="hydrant20130304110004848"/>
-      <layer style="" id="axe_rue20130514143437774"/>
       <layer style="" id="vw_node_installation20150918153835436"/>
-      <layer style="" id="od_annotationpoint20131203095020392"/>
-      <layer style="" id="bf_posimmeuble20130514143633121"/>
-      <layer style="" id="od_part20140429113327995"/>
-      <layer style="" id="od_meter_reference20140304165835390"/>
-      <layer style="" id="node20130304110005126"/>
-      <layer style="" id="bf_ddp20130514143538213"/>
-      <layer style="" id="printmap20130304110011400"/>
+      <layer style="" id="subscriber20130304110011459"/>
+      <layer style="" id="od_subscriber_reference20131206105928067"/>
       <layer style="" id="od_meter20131120073630165"/>
+      <layer style="" id="od_meter_reference20140304165835390"/>
+      <layer style="" id="conduites_copy20130709141244955"/>
+      <layer style="" id="node20130304110005126"/>
       <layer style="" id="valve20130304110011497"/>
+      <layer style="" id="hydrant20130304110004848"/>
+      <layer style="" id="od_part20140429113327995"/>
       <layer style="" id="od_remote20150116100522170"/>
+      <layer style="" id="od_crossing20141023083754327"/>
+      <layer style="" id="od_annotationline20131203095020365"/>
+      <layer style="" id="od_annotationpoint20131203095020392"/>
+      <layer style="" id="dimension20130807094904783"/>
       <layer style="" id="od_dimension_orientation20131202111155806"/>
       <layer style="" id="cadastre20140312152032371"/>
-      <layer style="" id="od_crossing20141023083754327"/>
-      <layer style="" id="pf_pfp20130514144226845"/>
-      <layer style="" id="conduites_copy20130709141244955"/>
-      <layer style="" id="od_annotationline20131203095020365"/>
-      <layer style="" id="od_element_lineaire20130514144047075"/>
-      <layer style="" id="cs_batiment20130514143721709"/>
-      <layer style="" id="subscriber20130304110011459"/>
-      <layer style="" id="bf_bien_fonds20130514143508556"/>
-      <layer style="" id="od_element_surfacique20130514144124647"/>
-      <layer style="" id="od_batiment_souterrain20130514143946785"/>
-      <layer style="" id="dimension20130807094904783"/>
+      <layer style="" id="printmap20130304110011400"/>
       <layer style="" id="ad_posnumero_maison20130514143346530"/>
+      <layer style="" id="cs_posnumero_de_batiment20130514143756039"/>
+      <layer style="" id="bf_posimmeuble20130514143633121"/>
       <layer style="" id="no_posnomlocallieudit20130514143906869"/>
       <layer style="" id="bf_point_limite20130514143552315"/>
+      <layer style="" id="axe_rue20130514143437774"/>
+      <layer style="" id="pf_pfp20130514144226845"/>
+      <layer style="" id="bf_bien_fonds20130514143508556"/>
+      <layer style="" id="bf_ddp20130514143538213"/>
       <layer style="" id="cs_surfacecs20130514143830750"/>
+      <layer style="" id="od_element_lineaire20130514144047075"/>
+      <layer style="" id="od_element_surfacique20130514144124647"/>
+      <layer style="" id="cs_batiment20130514143721709"/>
+      <layer style="" id="od_batiment_souterrain20130514143946785"/>
       <checked-legend-nodes id="conduites_copy20130709141244955">
         <checked-legend-node id="{6c5ec343-05d3-4fcd-8dc1-283232838086}"/>
         <checked-legend-node id="{25c2e398-8d5a-4103-ac14-4ff461596d3a}"/>
@@ -58722,10 +56900,10 @@ END
       <layer style="" id="vw_pipe_schema_visibleitems20141127154708843"/>
     </visibility-preset>
     <visibility-preset name="impression 5000">
-      <layer style="" id="Landeskarte_1_25_000___LK2520150306095331254"/>
-      <layer style="" id="printmap20130304110011400"/>
-      <layer style="" id="vannes_copy20141127160745910"/>
       <layer style="" id="vw_pipe_schema20141208162900166"/>
+      <layer style="" id="vannes_copy20141127160745910"/>
+      <layer style="" id="printmap20130304110011400"/>
+      <layer style="" id="Landeskarte_1_25_000___LK2520150306095331254"/>
     </visibility-preset>
   </visibility-presets>
 </qgis>
