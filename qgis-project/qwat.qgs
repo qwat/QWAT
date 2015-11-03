@@ -355,10 +355,10 @@
   <mapcanvas>
     <units>meters</units>
     <extent>
-      <xmin>559715.85461029317229986</xmin>
-      <ymin>142870.94942376122344285</ymin>
-      <xmax>559743.76325229927897453</xmax>
-      <ymax>142900.32144025433808565</ymax>
+      <xmin>559707.90404444071464241</xmin>
+      <ymin>142866.96434145231614821</ymin>
+      <xmax>559749.76700744987465441</xmax>
+      <ymax>142911.0223661919881124</ymax>
     </extent>
     <rotation>0</rotation>
     <projections>1</projections>
@@ -29278,7 +29278,7 @@
         </layer>
       </symbol>
       <ComposerMap mapRotation="325" keepLayerSet="true" id="0" previewMode="Cache" drawCanvasItems="true">
-        <Extent ymin="136695.24451208903337829" xmin="556387.41481285262852907" ymax="141145.24451662800856866" xmax="563887.41482050251215696"/>
+        <Extent ymin="136695.24451208900427446" xmin="556387.41481285262852907" ymax="141145.24451662797946483" xmax="563887.41482050251215696"/>
         <LayerSet>
           <Layer>vw_pipe_schema20141208162900166</Layer>
           <Layer>vannes_copy20141127160745910</Layer>
@@ -30949,7 +30949,7 @@
         </ComposerItem>
       </ComposerPicture>
       <ComposerMap mapRotation="325" keepLayerSet="true" id="0" previewMode="Cache" drawCanvasItems="true">
-        <Extent ymin="136695.24451208850950934" xmin="556387.41481285262852907" ymax="141145.24451662748469971" xmax="563887.41482050251215696"/>
+        <Extent ymin="136695.24451208848040551" xmin="556387.41481285262852907" ymax="141145.24451662745559588" xmax="563887.41482050251215696"/>
         <LayerSet>
           <Layer>vannes_copy20141127160745910</Layer>
           <Layer>vw_pipe_schema20141208162900166</Layer>
@@ -32483,7 +32483,7 @@
         </layer>
       </symbol>
       <ComposerMap mapRotation="0" keepLayerSet="false" id="0" previewMode="Cache" drawCanvasItems="true">
-        <Extent ymin="148940.92140767592354678" xmin="555084.52102199767250568" ymax="148994.921407730987994" xmax="555138.52102205285336822"/>
+        <Extent ymin="148940.92140767598175444" xmin="555084.52102199767250568" ymax="148994.92140773104620166" xmax="555138.52102205285336822"/>
         <LayerSet/>
         <Grid/>
         <ComposerMapGrid rightAnnotationDirection="0" gridFramePenColor="0,0,0,255" show="0" bottomAnnotationPosition="1" annotationPrecision="3" showAnnotation="0" topFrameDivisions="0" uuid="{22202fc4-88f8-489a-842f-ca5a18a9f7bf}" leftAnnotationDirection="0" topAnnotationPosition="1" rightAnnotationDisplay="0" offsetX="0" offsetY="0" rightFrameDivisions="0" gridStyle="0" annotationFontColor="0,0,0,255" intervalX="0" gridFrameSideFlags="15" intervalY="0" bottomAnnotationDirection="0" leftAnnotationDisplay="0" leftFrameDivisions="0" frameFillColor1="255,255,255,255" annotationExpression="" frameFillColor2="0,0,0,255" crossLength="3" gridFramePenThickness="0.5" bottomAnnotationDisplay="0" unit="0" topAnnotationDisplay="0" leftAnnotationPosition="1" blendMode="0" gridFrameStyle="0" rightAnnotationPosition="1" gridFrameWidth="2" name="Grid 1" annotationFormat="0" bottomFrameDivisions="0" topAnnotationDirection="0" frameAnnotationDistance="1">
@@ -34460,13 +34460,8 @@
         <edittype widgetv2type="ValueRelation" name="fk_installmethod">
           <widgetv2config OrderByValue="0" AllowNull="0" FilterExpression="" UseCompleter="0" fieldEditable="1" Key="id" Layer="vl_pipe_installmethod20130304110005209" Value="value_fr" labelOnTop="0" AllowMulti="0"/>
         </edittype>
-        <edittype widgetv2type="RelationReference" name="fk_material">
-          <widgetv2config OrderByValue="1" fieldEditable="1" ShowForm="0" Relation="relation_pipe_material" ReadOnly="0" MapIdentification="0" labelOnTop="0" AllowNULL="0">
-            <FilterFields ChainFilters="1">
-              <field name="short_fr"/>
-              <field name="diameter"/>
-            </FilterFields>
-          </widgetv2config>
+        <edittype widgetv2type="ValueRelation" name="fk_material">
+          <widgetv2config OrderByValue="0" AllowNull="0" FilterExpression="" UseCompleter="0" fieldEditable="1" Key="id" Layer="vl_pipe_material20130304110005230" Value="_displayname_fr" labelOnTop="0" AllowMulti="0"/>
         </edittype>
         <edittype widgetv2type="ValueRelation" name="fk_distributor">
           <widgetv2config OrderByValue="0" AllowNull="0" FilterExpression="" UseCompleter="0" fieldEditable="1" Key="id" Layer="distributor20130304114719702" Value="name" labelOnTop="0" AllowMulti="0"/>
@@ -35632,13 +35627,8 @@
         <edittype widgetv2type="ValueRelation" name="fk_installmethod">
           <widgetv2config OrderByValue="0" AllowNull="0" FilterExpression="" UseCompleter="0" fieldEditable="1" Key="id" Layer="vl_pipe_installmethod20130304110005209" Value="value_fr" labelOnTop="0" AllowMulti="0"/>
         </edittype>
-        <edittype widgetv2type="RelationReference" name="fk_material">
-          <widgetv2config OrderByValue="1" fieldEditable="1" ShowForm="0" Relation="relation_pipe_material" ReadOnly="0" MapIdentification="0" labelOnTop="0" AllowNULL="0">
-            <FilterFields ChainFilters="1">
-              <field name="short_fr"/>
-              <field name="diameter"/>
-            </FilterFields>
-          </widgetv2config>
+        <edittype widgetv2type="ValueRelation" name="fk_material">
+          <widgetv2config OrderByValue="0" AllowNull="0" FilterExpression="" UseCompleter="0" fieldEditable="1" Key="id" Layer="vl_pipe_material20130304110005230" Value="_displayname_fr" labelOnTop="0" AllowMulti="0"/>
         </edittype>
         <edittype widgetv2type="ValueRelation" name="fk_distributor">
           <widgetv2config OrderByValue="0" AllowNull="0" FilterExpression="" UseCompleter="0" fieldEditable="1" Key="id" Layer="distributor20130304114719702" Value="name" labelOnTop="0" AllowMulti="0"/>
@@ -50451,7 +50441,7 @@
         <property key="itemBrowserConnected" value="no"/>
       </customproperties>
       <provider encoding="ISO-8859-1">postgres</provider>
-      <previewExpression>pressure_nominal</previewExpression>
+      <previewExpression>_displayname_fr</previewExpression>
       <vectorjoins/>
       <expressionfields/>
       <map-layer-style-manager current="">
@@ -52306,7 +52296,7 @@
     </maplayer>
     <maplayer minimumScale="-4.65661e-10" maximumScale="1e+08" simplifyDrawingHints="0" minLabelScale="0" maxLabelScale="1e+08" simplifyDrawingTol="1" geometry="Polygon" simplifyMaxScale="1" type="vector" hasScaleBasedVisibilityFlag="0" simplifyLocal="1" scaleBasedLabelVisibilityFlag="0">
       <id>vw_consumptionzone20150508135647750</id>
-      <datasource>service='qwat' sslmode=disable key='name' srid=21781 type=MultiPolygon table="qwat_od"."vw_consumptionzone" (geometry) sql=</datasource>
+      <datasource>service='qwat' sslmode=disable key='"name"' srid=21781 type=MultiPolygon table="qwat_od"."vw_consumptionzone" (geometry) sql=</datasource>
       <title></title>
       <abstract></abstract>
       <keywordList>
