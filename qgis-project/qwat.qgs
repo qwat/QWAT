@@ -42087,7 +42087,7 @@
           <widgetv2config IsMultiline="0" fieldEditable="0" UseHtml="0" labelOnTop="0"/>
         </edittype>
       </edittypes>
-      <renderer-v2 attr="fk_type" forceraster="0" symbollevels="0" type="categorizedSymbol">
+      <renderer-v2 attr="fk_part_type" forceraster="0" symbollevels="0" type="categorizedSymbol">
         <categories>
           <category render="true" symbol="0" value="9200" label="compteur"/>
           <category render="true" symbol="1" value="9201" label="bouchon"/>
@@ -42100,7 +42100,7 @@
               <prop k="angle" v="0"/>
               <prop k="angle_dd_active" v="1"/>
               <prop k="angle_dd_expression" v=""/>
-              <prop k="angle_dd_field" v="node__orientation"/>
+              <prop k="angle_dd_field" v="-_pipe_orientation"/>
               <prop k="angle_dd_useexpr" v="0"/>
               <prop k="color" v="0,0,0,255"/>
               <prop k="horizontal_anchor_point" v="1"/>
@@ -42132,7 +42132,7 @@
               <prop k="angle" v="0"/>
               <prop k="angle_dd_active" v="1"/>
               <prop k="angle_dd_expression" v=""/>
-              <prop k="angle_dd_field" v="node__orientation"/>
+              <prop k="angle_dd_field" v="-_pipe_orientation"/>
               <prop k="angle_dd_useexpr" v="0"/>
               <prop k="color" v="0,0,0,255"/>
               <prop k="horizontal_anchor_point" v="1"/>
@@ -42162,6 +42162,10 @@
           <symbol alpha="1" clip_to_extent="1" type="marker" name="2">
             <layer pass="0" class="SvgMarker" locked="0">
               <prop k="angle" v="0"/>
+              <prop k="angle_dd_active" v="1"/>
+              <prop k="angle_dd_expression" v=""/>
+              <prop k="angle_dd_field" v="-_pipe_orientation"/>
+              <prop k="angle_dd_useexpr" v="0"/>
               <prop k="color" v="0,0,0,255"/>
               <prop k="horizontal_anchor_point" v="1"/>
               <prop k="name" v="./symbols/nodes/watering_output.svg"/>
@@ -53046,13 +53050,13 @@
       <previewExpression>CASE
 WHEN  "installation_type"  = 'chamber' THEN 'C. '
 WHEN "installation_type"  = 'pressurecontrol' AND fk_pressurecontrol_type = 2801 THEN 'CR. '
-WHEN  "installation_type"  = 'pressurecontrol' AND fk_pressurecontrol_type = 2802 THEN 'CCP. ' 
+WHEN  "installation_type"  = 'pressurecontrol' AND fk_pressurecontrol_type = 2802 THEN 'CCP. '
 WHEN  "installation_type"  = 'pressurecontrol' AND fk_pressurecontrol_type = 2803 THEN 'CRA. '
-WHEN  "installation_type"  = 'pump' THEN 'P. ' 
-WHEN  "installation_type"  = 'source' THEN 'S. ' 
+WHEN  "installation_type"  = 'pump' THEN 'P. '
+WHEN  "installation_type"  = 'source' THEN 'S. '
 WHEN  "installation_type"  = 'tank' THEN 'R. '
 WHEN  "installation_type"  = 'treatment' THEN 'T. '
-ELSE '' 
+ELSE ''
 END
 ||name</previewExpression>
       <vectorjoins/>
