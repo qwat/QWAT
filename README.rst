@@ -1,9 +1,12 @@
 qWat: QGIS Water Module
+=======================
 
 INSTALL
 -------
 
 In your shell:
+
+::
 
  git clone https://github.com/qwat/qWat
  cd qWat
@@ -11,20 +14,26 @@ In your shell:
 If you haven't added your ssh key to github, then you need to tell git to access the data-model submodule through https.
 Edit the .gitmodules file in the qWat folder and replace the url value from git@github.com:qwat/qwat-data-model.git to https://github.com/qwat/qwat-data-model.git
 
+::
+
  git submodule update --init --recursive
 
 In order to create the database model you need to:
 
- - create a postgresql database
- - install the postgis extension
+- create a postgresql database
+- install the postgis extension
 
-Do to this you may execute for example
+Do to this you may execute for example:
+
+::
 
  psql -U postgres -c 'create database qwat;'
 
 You can choose whatever name for the database and whatever user as its owner.
 The script that is used to create the database model looks for the .pg_service.conf file.
 Assuming you named your database qwat, edit the ~/.pg_service.conf file and make it look like:
+
+::
 
  # Qwat service name
  [qwat]
@@ -39,10 +48,14 @@ Assuming you named your database qwat, edit the ~/.pg_service.conf file and make
 
 Now go to the 'data-model' directory and run the './init_qwat.sh' script:
 
+::
+
  cd data-model
  ./init_qwat.sh -p qwat -s 21781 -d -r
  
 The script has the following options:
+
+::
 
  -p                   PG service to connect to the database.
  -s or --srid         PostGIS SRID. Default to 21781 (ch1903)
