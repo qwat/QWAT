@@ -11,8 +11,10 @@ In your shell:
  git clone https://github.com/qwat/qWat
  cd qWat
 
-If you haven't added your ssh key to github, then you need to tell git to access the data-model submodule through https.
-Edit the .gitmodules file in the qWat folder and replace the url value from git@github.com:qwat/qwat-data-model.git to https://github.com/qwat/qwat-data-model.git
+If you haven't added your ssh key to github, then you need to tell git
+to access the data-model submodule through https.
+Edit the ``.gitmodules`` file in the qWat folder and replace the url value
+from ``git@github.com:qwat/qwat-data-model.git`` to ``https://github.com/qwat/qwat-data-model.git``
 
 ::
 
@@ -30,8 +32,8 @@ Do to this you may execute for example:
  psql -U postgres -c 'create database qwat;'
 
 You can choose whatever name for the database and whatever user as its owner.
-The script that is used to create the database model looks for the .pg_service.conf file.
-Assuming you named your database qwat, edit the ~/.pg_service.conf file and make it look like:
+The script that is used to create the database model looks for the ``.pg_service.conf`` file.
+Assuming you named your database qwat, edit the ``~/.pg_service.conf`` file and make it look like:
 
 ::
 
@@ -46,7 +48,7 @@ Assuming you named your database qwat, edit the ~/.pg_service.conf file and make
  #you can also add your password if you like
  password=YourPassword
 
-Now go to the 'data-model' directory and run the './init_qwat.sh' script:
+Now go to the ``data-model`` directory and run the ``./init_qwat.sh`` script:
 
 ::
 
@@ -55,13 +57,12 @@ Now go to the 'data-model' directory and run the './init_qwat.sh' script:
  
 The script has the following options:
 
-::
+- ``-p``                   PG service to connect to the database.
+- ``-s`` or ``--srid``         PostGIS SRID. Default to 21781 (ch1903)
+- ``-d`` or ``--drop-schema``  drop schemas (cascaded) if they exist
+- ``-r`` or ``--create-roles`` create roles in the database
 
- -p                   PG service to connect to the database.
- -s or --srid         PostGIS SRID. Default to 21781 (ch1903)
- -d or --drop-schema  drop schemas (cascaded) if they exist
- -r or --create-roles create roles in the database
+After your model gets created, in QGIS you should be able now to connect to the
+database by creating a new connection with ``Name=qwat``, ``Service=qwat``, ``SSL mode=prefer``.
 
-After your model gets created, in QGIS you should now be able to connect to the database by creating a new connection with Name=qwat, Service=qwat, SSL mode=prefer.
-
-If that works then open the qwat.qgs project in QGIS.
+If that works then open the ``qwat.qgs`` project in QGIS.
