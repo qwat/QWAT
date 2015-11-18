@@ -441,11 +441,11 @@
          </property>
         </widget>
        </item>
-       <item row="3" column="1">
-        <widget class="QDateEdit" name="observation_date"/>
-       </item>
        <item row="4" column="1">
         <widget class="QLineEdit" name="observation_source"/>
+       </item>
+       <item row="3" column="1">
+        <widget class="QgsDateTimeEdit" name="observation_date"/>
        </item>
       </layout>
      </widget>
@@ -471,6 +471,11 @@
   </layout>
  </widget>
  <customwidgets>
+  <customwidget>
+   <class>QgsDateTimeEdit</class>
+   <extends>QDateTimeEdit</extends>
+   <header>qgsdatetimeedit.h</header>
+  </customwidget>
   <customwidget>
    <class>QgsRelationReferenceWidget</class>
    <extends>QWidget</extends>
