@@ -172,16 +172,6 @@
        <string>Géométrie</string>
       </attribute>
       <layout class="QGridLayout" name="gridLayout_2">
-       <item row="3" column="4">
-        <widget class="QLineEdit" name="_districts">
-         <property name="enabled">
-          <bool>true</bool>
-         </property>
-         <property name="readOnly">
-          <bool>true</bool>
-         </property>
-        </widget>
-       </item>
        <item row="0" column="2" rowspan="5">
         <widget class="Line" name="line">
          <property name="orientation">
@@ -243,7 +233,7 @@
        <item row="3" column="3">
         <widget class="QLabel" name="label_12">
          <property name="text">
-          <string>Communes</string>
+          <string>Commune</string>
          </property>
         </widget>
        </item>
@@ -300,6 +290,9 @@
           <string>Pt. de réf.</string>
          </property>
         </widget>
+       </item>
+       <item row="3" column="4">
+        <widget class="QComboBox" name="fk_district"/>
        </item>
       </layout>
      </widget>

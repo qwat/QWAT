@@ -286,20 +286,10 @@
          </property>
         </widget>
        </item>
-       <item row="4" column="4">
-        <widget class="QLineEdit" name="_districts">
-         <property name="enabled">
-          <bool>true</bool>
-         </property>
-         <property name="readOnly">
-          <bool>true</bool>
-         </property>
-        </widget>
-       </item>
        <item row="4" column="3">
         <widget class="QLabel" name="label_12">
          <property name="text">
-          <string>Communes</string>
+          <string>Commune</string>
          </property>
         </widget>
        </item>
@@ -341,6 +331,9 @@
        <item row="5" column="1">
         <widget class="QComboBox" name="fk_object_reference"/>
        </item>
+       <item row="4" column="4">
+        <widget class="QComboBox" name="fk_district"/>
+       </item>
       </layout>
       <zorder>line</zorder>
       <zorder>altitude</zorder>
@@ -358,7 +351,6 @@
       <zorder>label_24</zorder>
       <zorder>fk_pipe</zorder>
       <zorder>label_13</zorder>
-      <zorder>_districts</zorder>
       <zorder>label_12</zorder>
       <zorder>fk_pressurezone</zorder>
       <zorder>label_14</zorder>
@@ -366,6 +358,7 @@
       <zorder>fk_precision</zorder>
       <zorder>label_26</zorder>
       <zorder>fk_object_reference</zorder>
+      <zorder>fk_district</zorder>
      </widget>
      <widget class="QWidget" name="tab_3">
       <attribute name="title">
