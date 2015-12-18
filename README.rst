@@ -65,3 +65,14 @@ After your model gets created, in QGIS you should be able now to connect to the
 database by creating a new connection with ``Name=qwat``, ``Service=qwat``, ``SSL mode=prefer``.
 
 If that works then open the ``qwat.qgs`` project in QGIS.
+
+Credits
+-------
+
+see CREDITS.rst
+
+License
+-------
+
+This work is free software and licenced under the GNU GPL version 2 or any later version.
+See LICENSE file.
