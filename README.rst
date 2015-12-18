@@ -1,4 +1,4 @@
-.. image:: https://raw.githubusercontent.com/qwat/QWAT/master/qwat.png
+.. image:: qwat.png
     :height: 80px
 
 qWat: QGIS Water Module
