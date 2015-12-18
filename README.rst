@@ -1,5 +1,5 @@
 .. image:: qwat.png
-    :height: 80px
+    :scale: 50%
 
 qWat: QGIS Water Module
 =======================
