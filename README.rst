@@ -66,6 +66,18 @@ database by creating a new connection with ``Name=qwat``, ``Service=qwat``, ``SS
 
 If that works then open the ``qwat.qgs`` project in QGIS.
 
+Documentation
+-------------
+
+Hosted version here: http://qwat.readthedocs.org/
+
+Steps to build the documentation::
+
+    $ pip install sphinx # only once if you don't have sphinx installed
+    $ cd doc/
+    $ make html
+
+
 Credits
 -------
 
