@@ -4,6 +4,10 @@
 qWat: QGIS Water Module
 =======================
 
+.. image:: https://readthedocs.org/projects/qwat/badge/?version=latest
+    :target: http://qwat.readthedocs.org/en/latest/?badge=latest
+    :alt: Documentation Status
+
 INSTALL
 -------
 
