@@ -2,9 +2,7 @@
 
 Thus, the labels, title etc. of the forms are translated to your liking.
 
-.. note::
-
- It is a complement for the translated values in the database
+Note: It is a complement for the translated values in the database
 
 It currently has French, Romanian and English (the English part has few strings untranslated).
 
