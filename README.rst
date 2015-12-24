@@ -85,10 +85,11 @@ Steps to build the documentation::
 Credits
 -------
 
-see CREDITS.rst
+see `CREDITS <https://github.com/qwat/QWAT/blob/master/CREDITS.rst>`_
 
 License
 -------
 
 This work is free software and licenced under the GNU GPL version 2 or any later version.
-See LICENSE file.
+
+You can get the `LICENSE here <https://github.com/qwat/QWAT/blob/master/LICENSE>`_ .
