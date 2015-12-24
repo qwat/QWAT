@@ -35,8 +35,12 @@ Do to this you may execute for example:
     psql -U postgres -c 'create database qwat'
 
 You can choose whatever name for the database and whatever user as its owner.
-The script that is used to create the database model looks for the ``.pg_service.conf`` file.
-Assuming you named your database qwat, edit the ``~/.pg_service.conf`` file and make it look like:
+The script that is used to create the database model looks for the
+`.pg_service.conf <http://www.postgresql.org/docs/current/static/libpq-pgservice.html>`_ file in the
+users home directory or in the directory specified by the
+`PGSYSCONFDIR or PGSERVICEFILE <http://www.postgresql.org/docs/current/static/libpq-envars.html>`_ variables.
+
+Assuming you named your database ``qwat``, edit the ``.pg_service.conf`` file and make it look like:
 
 ::
 
@@ -85,10 +89,11 @@ Steps to build the documentation::
 Credits
 -------
 
-see CREDITS.rst
+see `CREDITS <https://github.com/qwat/QWAT/blob/master/CREDITS.rst>`_
 
 License
 -------
 
 This work is free software and licenced under the GNU GPL version 2 or any later version.
-See LICENSE file.
+
+You can get the `LICENSE here <https://github.com/qwat/QWAT/blob/master/LICENSE>`_ .
