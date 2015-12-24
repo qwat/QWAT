@@ -35,8 +35,12 @@ Do to this you may execute for example:
     psql -U postgres -c 'create database qwat'
 
 You can choose whatever name for the database and whatever user as its owner.
-The script that is used to create the database model looks for the ``.pg_service.conf`` file.
-Assuming you named your database qwat, edit the ``~/.pg_service.conf`` file and make it look like:
+The script that is used to create the database model looks for the
+`.pg_service.conf <http://www.postgresql.org/docs/current/static/libpq-pgservice.html>`_ file in the
+users home directory or in the directory specified by the
+`PGSYSCONFDIR or PGSERVICEFILE <http://www.postgresql.org/docs/current/static/libpq-envars.html>`_ variables.
+
+Assuming you named your database ``qwat``, edit the ``.pg_service.conf`` file and make it look like:
 
 ::
 
