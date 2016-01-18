@@ -78,15 +78,15 @@
         </layer-tree-layer>
       </layer-tree-group>
     </layer-tree-group>
-    <layer-tree-group expanded="0" checked="Qt::Unchecked" name="Schématique">
+    <layer-tree-group expanded="1" checked="Qt::Unchecked" name="Schématique">
       <customproperties/>
-      <layer-tree-group expanded="0" checked="Qt::Unchecked" name="impression">
+      <layer-tree-group expanded="1" checked="Qt::Unchecked" name="impression">
         <customproperties/>
         <layer-tree-layer expanded="0" checked="Qt::Unchecked" id="vw_pipe_schema20141208162900166" name="conduite impression 5000">
           <customproperties/>
         </layer-tree-layer>
       </layer-tree-group>
-      <layer-tree-group expanded="0" checked="Qt::Unchecked" name="edition">
+      <layer-tree-group expanded="1" checked="Qt::Unchecked" name="edition">
         <customproperties/>
         <layer-tree-layer expanded="0" checked="Qt::Unchecked" id="vannes_copy20141127160745910" name="vannes edition 5000">
           <customproperties/>
@@ -149,7 +149,7 @@
       <layer-tree-layer expanded="1" checked="Qt::Unchecked" id="folder20150629160924367" name="dossiers techniques">
         <customproperties/>
       </layer-tree-layer>
-      <layer-tree-layer expanded="0" checked="Qt::Checked" id="district20130304110004764" name="communes">
+      <layer-tree-layer expanded="0" checked="Qt::Unchecked" id="district20130304110004764" name="communes">
         <customproperties/>
       </layer-tree-layer>
       <layer-tree-layer expanded="0" checked="Qt::Unchecked" id="pressurezone20130417133612105" name="zones de pressions">
@@ -158,7 +158,7 @@
       <layer-tree-layer expanded="0" checked="Qt::Unchecked" id="vw_consumptionzone20150508135647750" name="Zones de consommation">
         <customproperties/>
       </layer-tree-layer>
-      <layer-tree-layer expanded="0" checked="Qt::Unchecked" id="printmap20130304110011400" name="folios">
+      <layer-tree-layer expanded="0" checked="Qt::Checked" id="printmap20130304110011400" name="folios">
         <customproperties/>
       </layer-tree-layer>
       <layer-tree-layer expanded="0" checked="Qt::Unchecked" id="protectionzone20130304110011418" name="zones de protections">
@@ -355,10 +355,10 @@
   <mapcanvas>
     <units>meters</units>
     <extent>
-      <xmin>545082.7374170352704823</xmin>
-      <ymin>137597.50992067257175222</ymin>
-      <xmax>559692.35564003605395555</xmax>
-      <ymax>154064.99297687574289739</ymax>
+      <xmin>551478.90009034832473844</xmin>
+      <ymin>146267.25768903098651208</ymin>
+      <xmax>552492.94659575133118778</xmax>
+      <ymax>147410.25769019688596018</ymax>
     </extent>
     <rotation>0</rotation>
     <projections>1</projections>
@@ -475,7 +475,6 @@
       <item>subscriber_pipe_relation20130417092124312</item>
       <item>valve20130304110011497</item>
       <item>hydrant20130304110004848</item>
-      <item>od_remote20150116100522170</item>
       <item>leak20130821111917060</item>
       <item>od_part20140429113327995</item>
       <item>node20130304110005126</item>
@@ -485,6 +484,7 @@
       <item>vannes_copy20141127160745910</item>
       <item>vw_pipe_schema20141208162900166</item>
       <item>vw_pipe_schema_visibleitems20141127154708843</item>
+      <item>od_remote20150116100522170</item>
       <item>pipe_child_parent20130417092030507</item>
       <item>od_annotationline20131203095020365</item>
       <item>od_annotationpoint20131203095020392</item>
@@ -601,12 +601,12 @@
         </legendlayer>
       </legendgroup>
       <legendgroup open="true" checked="Qt::PartiallyChecked" name="Réseau">
-        <legendlayer drawingOrder="15" open="false" checked="Qt::Checked" name="conduites" showFeatureCount="0">
+        <legendlayer drawingOrder="14" open="false" checked="Qt::Checked" name="conduites" showFeatureCount="0">
           <filegroup open="false" hidden="false">
             <legendlayerfile isInOverview="0" layerid="conduites_copy20130709141244955" visible="1"/>
           </filegroup>
         </legendlayer>
-        <legendlayer drawingOrder="12" open="false" checked="Qt::Checked" name="noeuds" showFeatureCount="0">
+        <legendlayer drawingOrder="11" open="false" checked="Qt::Checked" name="noeuds" showFeatureCount="0">
           <filegroup open="false" hidden="false">
             <legendlayerfile isInOverview="0" layerid="node20130304110005126" visible="1"/>
           </filegroup>
@@ -621,22 +621,22 @@
             <legendlayerfile isInOverview="0" layerid="hydrant20130304110004848" visible="1"/>
           </filegroup>
         </legendlayer>
-        <legendlayer drawingOrder="11" open="false" checked="Qt::Checked" name="Pièces d'installations" showFeatureCount="0">
+        <legendlayer drawingOrder="10" open="false" checked="Qt::Checked" name="Pièces d'installations" showFeatureCount="0">
           <filegroup open="false" hidden="false">
             <legendlayerfile isInOverview="0" layerid="od_part20140429113327995" visible="1"/>
           </filegroup>
         </legendlayer>
-        <legendlayer drawingOrder="9" open="true" checked="Qt::Checked" name="télécommande" showFeatureCount="0">
+        <legendlayer drawingOrder="18" open="true" checked="Qt::Checked" name="télécommande" showFeatureCount="0">
           <filegroup open="true" hidden="false">
             <legendlayerfile isInOverview="0" layerid="od_remote20150116100522170" visible="1"/>
           </filegroup>
         </legendlayer>
-        <legendlayer drawingOrder="14" open="false" checked="Qt::Checked" name="croisements" showFeatureCount="0">
+        <legendlayer drawingOrder="13" open="false" checked="Qt::Checked" name="croisements" showFeatureCount="0">
           <filegroup open="false" hidden="false">
             <legendlayerfile isInOverview="0" layerid="od_crossing20141023083754327" visible="1"/>
           </filegroup>
         </legendlayer>
-        <legendlayer drawingOrder="10" open="false" checked="Qt::Unchecked" name="fuite" showFeatureCount="0">
+        <legendlayer drawingOrder="9" open="false" checked="Qt::Unchecked" name="fuite" showFeatureCount="0">
           <filegroup open="false" hidden="false">
             <legendlayerfile isInOverview="0" layerid="leak20130821111917060" visible="0"/>
           </filegroup>
@@ -653,28 +653,28 @@
             <legendlayerfile isInOverview="0" layerid="subscriber_pipe_relation20130417092124312" visible="0"/>
           </filegroup>
         </legendlayer>
-        <legendlayer drawingOrder="13" open="false" checked="Qt::Unchecked" name="noeuds - tous - controle" showFeatureCount="0">
+        <legendlayer drawingOrder="12" open="false" checked="Qt::Unchecked" name="noeuds - tous - controle" showFeatureCount="0">
           <filegroup open="false" hidden="false">
             <legendlayerfile isInOverview="0" layerid="od_node20140116161508743" visible="0"/>
           </filegroup>
         </legendlayer>
       </legendgroup>
     </legendgroup>
-    <legendgroup open="false" checked="Qt::Unchecked" name="Schématique">
-      <legendgroup open="false" checked="Qt::Unchecked" name="impression">
-        <legendlayer drawingOrder="17" open="false" checked="Qt::Unchecked" name="conduite impression 5000" showFeatureCount="0">
+    <legendgroup open="true" checked="Qt::Unchecked" name="Schématique">
+      <legendgroup open="true" checked="Qt::Unchecked" name="impression">
+        <legendlayer drawingOrder="16" open="false" checked="Qt::Unchecked" name="conduite impression 5000" showFeatureCount="0">
           <filegroup open="false" hidden="false">
             <legendlayerfile isInOverview="0" layerid="vw_pipe_schema20141208162900166" visible="0"/>
           </filegroup>
         </legendlayer>
       </legendgroup>
-      <legendgroup open="false" checked="Qt::Unchecked" name="edition">
-        <legendlayer drawingOrder="16" open="false" checked="Qt::Unchecked" name="vannes edition 5000" showFeatureCount="0">
+      <legendgroup open="true" checked="Qt::Unchecked" name="edition">
+        <legendlayer drawingOrder="15" open="false" checked="Qt::Unchecked" name="vannes edition 5000" showFeatureCount="0">
           <filegroup open="false" hidden="false">
             <legendlayerfile isInOverview="0" layerid="vannes_copy20141127160745910" visible="0"/>
           </filegroup>
         </legendlayer>
-        <legendlayer drawingOrder="18" open="true" checked="Qt::Unchecked" name="conduites edition 5000" showFeatureCount="0">
+        <legendlayer drawingOrder="17" open="true" checked="Qt::Unchecked" name="conduites edition 5000" showFeatureCount="0">
           <filegroup open="true" hidden="false">
             <legendlayerfile isInOverview="0" layerid="vw_pipe_schema_visibleitems20141127154708843" visible="0"/>
           </filegroup>
@@ -758,9 +758,9 @@
           <legendlayerfile isInOverview="0" layerid="folder20150629160924367" visible="0"/>
         </filegroup>
       </legendlayer>
-      <legendlayer drawingOrder="32" open="false" checked="Qt::Checked" name="communes" showFeatureCount="0">
+      <legendlayer drawingOrder="32" open="false" checked="Qt::Unchecked" name="communes" showFeatureCount="0">
         <filegroup open="false" hidden="false">
-          <legendlayerfile isInOverview="0" layerid="district20130304110004764" visible="1"/>
+          <legendlayerfile isInOverview="0" layerid="district20130304110004764" visible="0"/>
         </filegroup>
       </legendlayer>
       <legendlayer drawingOrder="33" open="false" checked="Qt::Unchecked" name="zones de pressions" showFeatureCount="0">
@@ -773,9 +773,9 @@
           <legendlayerfile isInOverview="0" layerid="vw_consumptionzone20150508135647750" visible="0"/>
         </filegroup>
       </legendlayer>
-      <legendlayer drawingOrder="34" open="false" checked="Qt::Unchecked" name="folios" showFeatureCount="0">
+      <legendlayer drawingOrder="34" open="false" checked="Qt::Checked" name="folios" showFeatureCount="0">
         <filegroup open="false" hidden="false">
-          <legendlayerfile isInOverview="0" layerid="printmap20130304110011400" visible="0"/>
+          <legendlayerfile isInOverview="0" layerid="printmap20130304110011400" visible="1"/>
         </filegroup>
       </legendlayer>
       <legendlayer drawingOrder="35" open="false" checked="Qt::Unchecked" name="zones de protections" showFeatureCount="0">
@@ -29278,7 +29278,7 @@
         </layer>
       </symbol>
       <ComposerMap mapRotation="325" keepLayerSet="true" id="0" previewMode="Cache" drawCanvasItems="true">
-        <Extent ymin="136695.24451208850950934" xmin="556387.41481285262852907" ymax="141145.24451662748469971" xmax="563887.41482050251215696"/>
+        <Extent ymin="136695.24451208848040551" xmin="556387.41481285262852907" ymax="141145.24451662745559588" xmax="563887.41482050251215696"/>
         <LayerSet>
           <Layer>vw_pipe_schema20141208162900166</Layer>
           <Layer>vannes_copy20141127160745910</Layer>
@@ -30949,7 +30949,7 @@
         </ComposerItem>
       </ComposerPicture>
       <ComposerMap mapRotation="325" keepLayerSet="true" id="0" previewMode="Cache" drawCanvasItems="true">
-        <Extent ymin="136695.24451208798564039" xmin="556387.41481285262852907" ymax="141145.24451662696083076" xmax="563887.41482050251215696"/>
+        <Extent ymin="136695.24451208795653656" xmin="556387.41481285262852907" ymax="141145.24451662693172693" xmax="563887.41482050251215696"/>
         <LayerSet>
           <Layer>vannes_copy20141127160745910</Layer>
           <Layer>vw_pipe_schema20141208162900166</Layer>
@@ -32483,7 +32483,7 @@
         </layer>
       </symbol>
       <ComposerMap mapRotation="0" keepLayerSet="false" id="0" previewMode="Cache" drawCanvasItems="true">
-        <Extent ymin="148940.92140767697128467" xmin="555084.52102199767250568" ymax="148994.9214077320357319" xmax="555138.52102205285336822"/>
+        <Extent ymin="148940.92140767702949233" xmin="555084.52102199767250568" ymax="148994.92140773209393956" xmax="555138.52102205285336822"/>
         <LayerSet/>
         <Grid/>
         <ComposerMapGrid rightAnnotationDirection="0" gridFramePenColor="0,0,0,255" show="0" bottomAnnotationPosition="1" annotationPrecision="3" showAnnotation="0" topFrameDivisions="0" uuid="{22202fc4-88f8-489a-842f-ca5a18a9f7bf}" leftAnnotationDirection="0" topAnnotationPosition="1" rightAnnotationDisplay="0" offsetX="0" offsetY="0" rightFrameDivisions="0" gridStyle="0" annotationFontColor="0,0,0,255" intervalX="0" gridFrameSideFlags="15" intervalY="0" bottomAnnotationDirection="0" leftAnnotationDisplay="0" leftFrameDivisions="0" frameFillColor1="255,255,255,255" annotationExpression="" frameFillColor2="0,0,0,255" crossLength="3" gridFramePenThickness="0.5" bottomAnnotationDisplay="0" unit="0" topAnnotationDisplay="0" leftAnnotationPosition="1" blendMode="0" gridFrameStyle="0" rightAnnotationPosition="1" gridFrameWidth="2" name="Grid 1" annotationFormat="0" bottomFrameDivisions="0" topAnnotationDirection="0" frameAnnotationDistance="1">
@@ -57129,10 +57129,10 @@ def closeProject():
       </checked-legend-nodes>
     </visibility-preset>
     <visibility-preset name="edition 5000">
-      <layer style="" id="Landeskarte_1_25_000___LK2520150306095331254"/>
-      <layer style="" id="printmap20130304110011400"/>
       <layer style="" id="vannes_copy20141127160745910"/>
       <layer style="" id="vw_pipe_schema_visibleitems20141127154708843"/>
+      <layer style="" id="printmap20130304110011400"/>
+      <layer style="" id="Landeskarte_1_25_000___LK2520150306095331254"/>
     </visibility-preset>
     <visibility-preset name="impression 5000">
       <layer style="" id="vw_pipe_schema20141208162900166"/>
