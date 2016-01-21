@@ -361,10 +361,10 @@
   <mapcanvas>
     <units>meters</units>
     <extent>
-      <xmin>548516.72368976101279259</xmin>
-      <ymin>141372.72884488321142271</ymin>
-      <xmax>571757.26618318515829742</xmax>
-      <ymax>148012.88384300202596933</ymax>
+      <xmin>555535.32203369110357016</xmin>
+      <ymin>143890.06730155277182348</ymin>
+      <xmax>560126.04647683666553348</xmax>
+      <ymax>145201.70285673669422977</ymax>
     </extent>
     <rotation>0</rotation>
     <projections>1</projections>
@@ -56888,7 +56888,7 @@ def my_form_open(dialog, layer, feature):
         </edittype>
       </edittypes>
     </maplayer>
-    <maplayer minimumScale="-4.65661e-10" maximumScale="1e+08" simplifyDrawingHints="0" minLabelScale="0" maxLabelScale="1e+08" simplifyDrawingTol="1" geometry="Point" simplifyMaxScale="1" type="vector" hasScaleBasedVisibilityFlag="0" simplifyLocal="1" scaleBasedLabelVisibilityFlag="0">
+    <maplayer minimumScale="0" maximumScale="1e+08" simplifyDrawingHints="0" minLabelScale="0" maxLabelScale="1e+08" simplifyDrawingTol="1" geometry="Point" simplifyMaxScale="1" type="vector" hasScaleBasedVisibilityFlag="0" simplifyLocal="1" scaleBasedLabelVisibilityFlag="0">
       <id>vw_node_installation20150918153835436</id>
       <datasource>service='qwat' sslmode=disable key='id' srid=21781 type=Point table="qwat_od"."vw_element_installation" (geometry) sql=</datasource>
       <shortname></shortname>
@@ -57740,7 +57740,7 @@ END
         <property key="labeling/distMapUnitMinScale" value="0"/>
         <property key="labeling/drawLabels" value="true"/>
         <property key="labeling/enabled" value="true"/>
-        <property key="labeling/fieldName" value=""/>
+        <property key="labeling/fieldName" value="CASE&#xa;WHEN  &quot;installation_type&quot;  = 'chamber' THEN 'C. '&#xa;WHEN &quot;installation_type&quot;  = 'pressurecontrol' AND fk_pressurecontrol_type = 2801 THEN 'CR. '&#xa;WHEN  &quot;installation_type&quot;  = 'pressurecontrol' AND fk_pressurecontrol_type = 2802 THEN 'CCP. ' &#xa;WHEN  &quot;installation_type&quot;  = 'pressurecontrol' AND fk_pressurecontrol_type = 2803 THEN 'CRA. '&#xa;WHEN  &quot;installation_type&quot;  = 'pump' THEN 'P. ' &#xa;WHEN  &quot;installation_type&quot;  = 'source' THEN 'S. ' &#xa;WHEN  &quot;installation_type&quot;  = 'tank' THEN 'R. '&#xa;WHEN  &quot;installation_type&quot;  = 'treatment' THEN 'T. '&#xa;ELSE '' &#xa;END&#xa;||name"/>
         <property key="labeling/fitInPolygonOnly" value="false"/>
         <property key="labeling/fontBold" value="false"/>
         <property key="labeling/fontCapitals" value="0"/>
@@ -57890,7 +57890,7 @@ END
         <selectedonly on=""/>
       </labelattributes>
       <SingleCategoryDiagramRenderer diagramType="Pie">
-        <DiagramCategory penColor="#000000" labelPlacementMethod="XHeight" penWidth="0" diagramOrientation="Up" minimumSize="0" barWidth="5" penAlpha="255" maxScaleDenominator="1e+08" backgroundColor="#ffffff" transparency="0" width="15" scaleDependency="Area" backgroundAlpha="255" angleOffset="1440" scaleBasedVisibility="0" enabled="0" height="15" sizeType="MM" minScaleDenominator="-4.65661e-10">
+        <DiagramCategory penColor="#000000" labelPlacementMethod="XHeight" penWidth="0" diagramOrientation="Up" minimumSize="0" barWidth="5" penAlpha="255" maxScaleDenominator="1e+08" backgroundColor="#ffffff" transparency="0" width="15" scaleDependency="Area" backgroundAlpha="255" angleOffset="1440" scaleBasedVisibility="0" enabled="0" height="15" sizeType="MM" minScaleDenominator="0">
           <fontProperties description="Cantarell,11,-1,5,50,0,0,0,0,0" style=""/>
           <attribute field="" color="#000000" label=""/>
         </DiagramCategory>
