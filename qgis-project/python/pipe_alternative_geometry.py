@@ -1,35 +1,70 @@
 
-
 from PyQt4.QtCore import QSettings
 from PyQt4.QtGui import QDialog
 from qgis.core import QgsMapLayerRegistry, QgsFeature, QgsFeatureRequest
 from qgis.gui import QgisInterface
 from python.pipe_geom_alt_dialog import Ui_PipeGeomAltDialog
 
+pipeLayerId = "conduites_copy20130709141244955"
+valveLayerId = "vw_node_installation20150918153835436"
+installLayerId = "vw_node_installation20150918153835436"
 
 
+# PIPE
+def pipeConnectGeomModified():
+	pipeLayer = QgsMapLayerRegistry.instance().mapLayer(pipeLayerId)
+	pipeLayer.editingStarted.connect(pipeEditingStarted)
+	
+def pipeEditingStarted():
+	pipeLayer = QgsMapLayerRegistry.instance().mapLayer(pipeLayerId)
+	editBuffer = pipeLayer.editBuffer()
+	editBuffer.geometryChanged.connect(pipeGeomModified)
+
+def pipeGeomModified(featureId, geom):
+	pipeLayer = QgsMapLayerRegistry.instance().mapLayer(pipeLayerId)
+	geomModified(pipeLayer, featureId)
+	
+# VALVES	
+def valveConnectGeomModified():
+	valveLayer = QgsMapLayerRegistry.instance().mapLayer(valveLayerId)
+	valveLayer.editingStarted.connect(valveEditingStarted)
+	
+def valveEditingStarted():
+	valveLayer = QgsMapLayerRegistry.instance().mapLayer(valveLayerId)
+	editBuffer = valveLayer.editBuffer()
+	editBuffer.geometryChanged.connect(valveGeomModified)
+
+def valveGeomModified(featureId, geom):
+	valveLayer = QgsMapLayerRegistry.instance().mapLayer(valveLayerId)
+	geomModified(valveLayer, featureId)	
+	
+# INSTALLATIONS	
+def installConnectGeomModified():
+	installLayer = QgsMapLayerRegistry.instance().mapLayer(installLayerId)
+	installLayer.editingStarted.connect(installEditingStarted)
+	
+def installEditingStarted():
+	installLayer = QgsMapLayerRegistry.instance().mapLayer(installLayerId)
+	editBuffer = installLayer.editBuffer()
+	editBuffer.geometryChanged.connect(installGeomModified)
+
+def installGeomModified(featureId, geom):
+	installLayer = QgsMapLayerRegistry.instance().mapLayer(installLayerId)
+	geomModified(installLayer, featureId)	
+	
+
+# DIALOG
 class PipeGeomAltDialog(QDialog, Ui_PipeGeomAltDialog):
 	def __init__(self):
 		QDialog.__init__(self)
 		self.setupUi(self)
-
-
-def connectPipeGeomModified():
-	pipeLayer = QgsMapLayerRegistry.instance().mapLayer("conduites_copy20130709141244955")
-	pipeLayer.editingStarted.connect(editingStarted)
 	
-
-def editingStarted():
-	pipeLayer = QgsMapLayerRegistry.instance().mapLayer("conduites_copy20130709141244955")
-	editBuffer = pipeLayer.editBuffer()
-	editBuffer.geometryChanged.connect(pipeGeomModified)
-
-
-def pipeGeomModified(featureId, geom):
-	pipeLayer = QgsMapLayerRegistry.instance().mapLayer("conduites_copy20130709141244955")
+	
+# GENERIC FUNCTION TO ASK USER IF CHANGES ON MAIN GEOMETRY SHOULD BE FORWARDED TO ALTERNATIVE GEOMETRY	
+def geomModified(layer, featureId):
 	
 	f = QgsFeature()
-	if pipeLayer.getFeatures(QgsFeatureRequest().setFilterFid(featureId)).nextFeature(f) is False:
+	if layer.getFeatures(QgsFeatureRequest().setFilterFid(featureId)).nextFeature(f) is False:
 		return
 		
 	if f.attribute("update_geometry_alt1") in ('t','f') and f.attribute("update_geometry_alt2") in ('t','f'):
@@ -55,6 +90,6 @@ def pipeGeomModified(featureId, geom):
 			continue
 			
 		editBuffer = pipeLayer.editBuffer()
-		editBuffer.changeAttributeValue( featureId, pipeLayer.fieldNameIndex("update_geometry_alt1"), "t" if dlg.updateAlt1.isChecked() else "f" )
-		editBuffer.changeAttributeValue( featureId, pipeLayer.fieldNameIndex("update_geometry_alt2"), "t" if dlg.updateAlt2.isChecked() else "f" )
+		editBuffer.changeAttributeValue( featureId, layer.fieldNameIndex("update_geometry_alt1"), "t" if dlg.updateAlt1.isChecked() else "f" )
+		editBuffer.changeAttributeValue( featureId, layer.fieldNameIndex("update_geometry_alt2"), "t" if dlg.updateAlt2.isChecked() else "f" )
 
