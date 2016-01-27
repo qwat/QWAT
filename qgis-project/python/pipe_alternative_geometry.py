@@ -89,7 +89,7 @@ def geomModified(layer, featureId):
 		while not dlg.exec_():
 			continue
 			
-		editBuffer = pipeLayer.editBuffer()
+		editBuffer = layer.editBuffer()
 		editBuffer.changeAttributeValue( featureId, layer.fieldNameIndex("update_geometry_alt1"), "t" if dlg.updateAlt1.isChecked() else "f" )
 		editBuffer.changeAttributeValue( featureId, layer.fieldNameIndex("update_geometry_alt2"), "t" if dlg.updateAlt2.isChecked() else "f" )
 
