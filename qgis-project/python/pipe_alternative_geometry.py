@@ -6,7 +6,7 @@ from qgis.gui import QgisInterface
 from python.pipe_geom_alt_dialog import Ui_PipeGeomAltDialog
 
 pipeLayerId = "conduites_copy20130709141244955"
-valveLayerId = "vw_node_installation20150918153835436"
+valveLayerId = "valve20130304110011497"
 installLayerId = "vw_node_installation20150918153835436"
 
 
