@@ -3,11 +3,12 @@ from PyQt4.QtCore import QSettings
 from PyQt4.QtGui import QDialog
 from qgis.core import QgsMapLayerRegistry, QgsFeature, QgsFeatureRequest
 from qgis.gui import QgisInterface
-from python.pipe_geom_alt_dialog import Ui_PipeGeomAltDialog
+from python.ui_alternative_geometry_dialog import Ui_AltGeomDialog
 
 pipeLayerId = "conduites_copy20130709141244955"
 valveLayerId = "valve20130304110011497"
 installLayerId = "vw_node_installation20150918153835436"
+remoteLayerId = "od_remote20150116100522170"
 
 
 # PIPE
@@ -52,9 +53,23 @@ def installGeomModified(featureId, geom):
 	installLayer = QgsMapLayerRegistry.instance().mapLayer(installLayerId)
 	geomModified(installLayer, featureId)	
 	
+# REMOTE	
+def remoteConnectGeomModified():
+	remoteLayer = QgsMapLayerRegistry.instance().mapLayer(remoteLayerId)
+	remoteLayer.editingStarted.connect(remoteEditingStarted)
+	
+def remoteEditingStarted():
+	remoteLayer = QgsMapLayerRegistry.instance().mapLayer(remoteLayerId)
+	editBuffer = remoteLayer.editBuffer()
+	editBuffer.geometryChanged.connect(remoteGeomModified)
+
+def remoteGeomModified(featureId, geom):
+	remoteLayer = QgsMapLayerRegistry.instance().mapLayer(remoteLayerId)
+	geomModified(remoteLayer, featureId)	
+	
 
 # DIALOG
-class PipeGeomAltDialog(QDialog, Ui_PipeGeomAltDialog):
+class AltGeomDialog(QDialog, Ui_AltGeomDialog):
 	def __init__(self):
 		QDialog.__init__(self)
 		self.setupUi(self)
@@ -75,7 +90,7 @@ def geomModified(layer, featureId):
 	_geometry_alt2_used = f.attribute("_geometry_alt2_used") == 't'
 		
 	if _geometry_alt1_used and f.attribute("update_geometry_alt1").isNull() or _geometry_alt2_used and f.attribute("update_geometry_alt2").isNull():
-		dlg = PipeGeomAltDialog()
+		dlg = AltGeomDialog()
 		if f.attribute("update_geometry_alt1").isNull():
 			dlg.updateAlt1.setChecked( False if _geometry_alt1_used else True )
 		else:
