@@ -269,16 +269,6 @@
          </property>
         </widget>
        </item>
-       <item row="2" column="4">
-        <widget class="QLineEdit" name="fk_pipe">
-         <property name="enabled">
-          <bool>true</bool>
-         </property>
-         <property name="readOnly">
-          <bool>true</bool>
-         </property>
-        </widget>
-       </item>
        <item row="2" column="3">
         <widget class="QLabel" name="label_13">
          <property name="text">
@@ -334,6 +324,9 @@
        <item row="4" column="4">
         <widget class="QComboBox" name="fk_district"/>
        </item>
+       <item row="2" column="4">
+        <widget class="QgsRelationReferenceWidget" name="mRelationReference"/>
+       </item>
       </layout>
       <zorder>line</zorder>
       <zorder>altitude</zorder>
@@ -349,7 +342,6 @@
       <zorder>label_23</zorder>
       <zorder>fk_handle_precisionalti</zorder>
       <zorder>label_24</zorder>
-      <zorder>fk_pipe</zorder>
       <zorder>label_13</zorder>
       <zorder>label_12</zorder>
       <zorder>fk_pressurezone</zorder>
@@ -359,6 +351,7 @@
       <zorder>label_26</zorder>
       <zorder>fk_object_reference</zorder>
       <zorder>fk_district</zorder>
+      <zorder>mRelationReference</zorder>
      </widget>
      <widget class="QWidget" name="tab_3">
       <attribute name="title">
