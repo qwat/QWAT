@@ -96,6 +96,296 @@ qwat_sys.if_modified_func
 Redirection trigger functions
 =============================
 
+ft_element_hydrant_delete
+-------------------------
+* DELETE `hydrant`_
+* DELETE `vw_node_element`_
+
+ft_element_hydrant_insert
+-------------------------
+* INSERT `vw_node_element`_
+* INSERT `hydrant`_
+
+ft_element_hydrant_update
+-------------------------
+* UPDATE `vw_node_element`_
+* UPDATE `hydrant`_
+
+ft_element_installation_delete
+------------------------------
+* DELETE `vw_qwat_installation`_
+* DELETE `vw_node_element`_
+
+ft_element_installation_insert
+------------------------------
+* INSERT `vw_node_element`_
+* INSERT `vw_qwat_installation`_
+
+ft_element_installation_update
+------------------------------
+* UPDATE `vw_node_element`_
+* UPDATE `vw_qwat_installation`_
+
+ft_element_meter_delete
+-----------------------
+* DELETE `meter`_
+* DELETE `vw_node_element`_
+
+ft_element_meter_insert
+-----------------------
+* INSERT `vw_node_element`_
+* INSERT `meter`_
+
+ft_element_meter_update
+-----------------------
+* UPDATE `vw_node_element`_
+* UPDATE `meter`_
+
+ft_element_part_delete
+----------------------
+* DELETE `part`_
+* DELETE `vw_node_element`_
+
+ft_element_part_insert
+----------------------
+* INSERT `vw_node_element`_
+* INSERT `part`_
+
+ft_element_part_update
+----------------------
+* UPDATE `vw_node_element`_
+* UPDATE `part`_
+
+ft_element_samplingpoint_delete
+-------------------------------
+* DELETE `samplingpoint`_
+* DELETE `vw_node_element`_
+
+ft_element_samplingpoint_insert
+-------------------------------
+* INSERT `vw_node_element`_
+* INSERT `samplingpoint`_
+
+ft_element_samplingpoint_update
+-------------------------------
+* UPDATE `vw_node_element`_
+
+ft_element_subscriber_delete
+----------------------------
+* DELETE `subscriber`_
+* DELETE `vw_node_element`_
+
+ft_element_subscriber_insert
+----------------------------
+* INSERT `vw_node_element`_
+* INSERT `subscriber`_
+
+ft_element_subscriber_update
+----------------------------
+* UPDATE `vw_node_element`_
+
+
+ft_element_valve_delete
+-----------------------
+* DELETE `valve`_
+* DELETE `vw_node_element`_
+
+ft_element_valve_insert
+-----------------------
+* INSERT `vw_node_element`_
+* INSERT `valve`_
+
+ft_element_valve_update
+-----------------------
+* UPDATE `vw_node_element`_
+* UPDATE `valve`_
+
+ft_installation_chamber_delete
+------------------------------
+* DELETE `chamber`_
+* DELETE `installation`_
+
+ft_installation_chamber_insert
+------------------------------
+* INSERT `installation`_
+* INSERT `chamber`_
+
+ft_installation_chamber_update
+------------------------------
+* UPDATE `installation`_
+* UPDATE `chamber`_
+
+ft_installation_pressurecontrol_delete
+--------------------------------------
+* DELETE `pressurecontrol`_
+* DELETE `installation`_
+
+ft_installation_pressurecontrol_insert
+--------------------------------------
+* INSERT `installation`_
+* INSERT `pressurecontrol`_
+
+ft_installation_pressurecontrol_update
+--------------------------------------
+* UPDATE `installation`_
+* UPDATE `pressurecontrol`_
+
+ft_installation_pump_delete
+---------------------------
+* DELETE `pump`_
+* DELETE `installation`_
+
+ft_installation_pump_insert
+---------------------------
+* INSERT `installation`_
+* INSERT `pump`_
+
+ft_installation_pump_update
+---------------------------
+* UPDATE `installation`_
+* UPDATE `pump`_
+
+ft_installation_source_delete
+-----------------------------
+* DELETE `source`_
+* DELETE `installation`_
+
+ft_installation_source_insert
+-----------------------------
+* INSERT `installation`_
+* INSERT `source`_
+
+ft_installation_source_update
+-----------------------------
+* UPDATE `installation`_
+* UPDATE `source`_
+
+ft_installation_tank_delete
+---------------------------
+* DELETE `tank`_
+* DELETE `installation`_
+
+ft_installation_tank_insert
+---------------------------
+* INSERT `installation`_
+* INSERT `tank`_
+
+ft_installation_tank_update
+---------------------------
+* UPDATE `installation`_
+* UPDATE `tank`_
+
+ft_installation_treatment_delete
+--------------------------------
+* DELETE `treatment`_
+* DELETE `installation`_
+
+ft_installation_treatment_insert
+--------------------------------
+* INSERT `installation`_
+* INSERT `treatment`_
+
+ft_installation_treatment_update
+--------------------------------
+* UPDATE `installation`_
+* UPDATE `treatment`_
+
+ft_node_element_delete
+----------------------
+* DELETE `network_element`_
+* `fn_node_set_type`_
+
+ft_node_element_insert
+----------------------
+* Update table fields
+* `fn_node_create`_
+* INSERT `network_element`_
+
+ft_node_element_update
+----------------------
+* UPDATE `node`_
+* UPDATE `network_element`_
+
+ft_vw_qwat_node_delete
+----------------------
+* DELETE `network_element`_
+* `fn_node_set_type`_
+ 
+ft_vw_qwat_node_insert
+----------------------
+* Update table fields
+* `fn_node_create`_
+* UPDATE `node`_
+* UPDATE `network_element`_
+
+ft_vw_qwat_node_update
+----------------------
+* Update table fields
+* UPDATE `node`_
+* UPDATE `network_element`_
+
+ft_vw_qwat_installation_delete
+------------------------------
+* DELETE `source`_
+* DELETE `pump`_
+* DELETE `tank`_
+* DELETE `treatment`_
+* DELETE `chamber`_
+* DELETE `pressurecontrol`_
+* DELETE `installation`_
+
+ft_vw_qwat_installation_insert
+------------------------------
+* INSERT `installation`_
+* INSERT `source`_
+* INSERT `pump`_
+* INSERT `tank`_
+* INSERT `treatment`_
+* INSERT `chamber`_
+* INSERT `pressurecontrol`_
+
+ft_vw_qwat_installation_update
+------------------------------
+* UPDATE `installation`_
+* UPDATE `source`_
+* UPDATE `pump`_
+* UPDATE `tank`_
+* UPDATE `treatment`_
+* UPDATE `chamber`_
+* UPDATE `pressurecontrol`_
+
+ft_vw_qwat_network_element_delete
+---------------------------------
+* DELETE `subscriber`_
+* DELETE `part`_
+* DELETE `vw_qwat_installation`_
+* DELETE `hydrant`_
+* DELETE `samplingpoint`_
+* DELETE `valve`_
+* DELETE `meter`_
+* DELETE `vw_node_element`_
+
+ft_vw_qwat_network_element_insert
+---------------------------------
+* INSERT `vw_node_element`_
+* INSERT `subscriber`_
+* INSERT `part`_
+* INSERT `vw_qwat_installation`_
+* INSERT `hydrant`_
+* INSERT `samplingpoint`_
+* INSERT `valve`_
+* INSERT `meter`_
+
+ft_vw_qwat_network_element_update
+---------------------------------
+* UPDATE `vw_node_element`_
+* UPDATE `subscriber`_
+* UPDATE `part`_
+* UPDATE `vw_qwat_installation`_
+* UPDATE `hydrant`_
+* UPDATE `valve`_
+* UPDATE `meter`_
+
 
 Functions
 =========
@@ -292,14 +582,8 @@ Views
 vw_element_hydrant
 ------------------
 * DELETE - `ft_element_hydrant_delete`_
-DELETE hydrant
-DELETE vw_node_element
 * INSERT - `ft_element_hydrant_insert`_
-INSERT vw_node_element
-INSERT hydrant
 * UPDATE - `ft_element_hydrant_update`_
-UPDATE vw_node_element
-UPDATE hydrant
 
 vw_consumptionzone
 ------------------
@@ -308,61 +592,32 @@ vw_consumptionzone
 vw_element_installation
 -----------------------
 * DELETE - `ft_element_installation_delete`_
-DELETE vw_qwat_installation
-DELETE vw_node_element
 * INSERT - `ft_element_installation_insert`_
-INSERT vw_node_element
-INSERT vw_qwat_installation
 * UPDATE - `ft_element_installation_update`_
-UPDATE vw_node_element
-UPDATE vw_qwat_installation
 
 vw_element_meter
 ----------------
 * DELETE - `ft_element_meter_delete`_
-DELETE meter
-DELETE vw_node_element
 * INSERT - `ft_element_meter_insert`_
-INSERT vw_node_element
-INSERT meter
 * UPDATE - `ft_element_meter_update`_
-UPDATE vw_node_element
-UPDATE meter
 
 vw_element_part
 ---------------
 * DELETE - `ft_element_part_delete`_
-DELETE part
-DELETE vw_node_element
 * INSERT - `ft_element_part_insert`_
-INSERT vw_node_element
-INSERT part
 * UPDATE - `ft_element_part_update`_
-UPDATE vw_node_element
-UPDATE part
 
 vw_element_samplingpoint
 ------------------------
 * DELETE - `ft_element_samplingpoint_delete`_
-DELETE samplingpoint
-DELETE vw_node_element
 * INSERT - `ft_element_samplingpoint_insert`_
-INSERT vw_node_element
-INSERT samplingpoint
 * UPDATE - `ft_element_samplingpoint_update`_
-UPDATE vw_node_element
 
 vw_element_subscriber
 ---------------------
 * DELETE - `ft_element_subscriber_delete`_
-DELETE subscriber
-DELETE vw_node_element
 * INSERT - `ft_element_subscriber_insert`_
-INSERT vw_node_element
-INSERT subscriber
 * UPDATE - `ft_element_subscriber_update`_
-UPDATE vw_node_element
-UPDATE subscriber
 
 vw_export_hydrant
 -----------------
@@ -391,86 +646,44 @@ vw_export_valve
 vw_element_valve
 ----------------
 * DELETE - `ft_element_valve_delete`_
-DELETE valve
-DELETE vw_node_element
 * INSERT - `ft_element_valve_insert`_
-INSERT vw_node_element
-INSERT valve
 * UPDATE - `ft_element_valve_update`_
-UPDATE vw_node_element
-UPDATE valve
 
 vw_installation_chamber
 -----------------------
 * DELETE - `ft_installation_chamber_delete`_
-DELETE chamber
-DELETE installation
 * INSERT - `ft_installation_chamber_insert`_
-INSERT installation
-INSERT chamber
 * UPDATE - `ft_installation_chamber_update`_
-UPDATE installation
-UPDATE chamber
 
 vw_installation_pressurecontrol
 -------------------------------
 * DELETE - `ft_installation_pressurecontrol_delete`_
-DELETE pressurecontrol
-DELETE installation
 * INSERT - `ft_installation_pressurecontrol_insert`_
-INSERT installation
-INSERT pressurecontrol
 * UPDATE - `ft_installation_pressurecontrol_update`_
-UPDATE installation
-UPDATE pressurecontrol
 
 vw_installation_pump
 --------------------
 * DELETE - `ft_installation_pump_delete`_
-DELETE pump
-DELETE installation
 * INSERT - `ft_installation_pump_insert`_
-INSERT installation
-INSERT pump
 * UPDATE - `ft_installation_pump_update`_
-UPDATE installation
-UPDATE pump
 
 vw_installation_source
 ----------------------
 * DELETE - `ft_installation_source_delete`_
-DELETE source
-DELETE installation
 * INSERT - `ft_installation_source_insert`_
-INSERT installation
-INSERT source
 * UPDATE - `ft_installation_source_update`_
-UPDATE installation
-UPDATE source
 
 vw_installation_tank
 --------------------
 * DELETE - `ft_installation_tank_delete`_
-DELETE tank
-DELETE installation
 * INSERT - `ft_installation_tank_insert`_
-INSERT installation
-INSERT tank
 * UPDATE - `ft_installation_tank_update`_
-UPDATE installation
-UPDATE tank
 
 vw_installation_treatment
 -------------------------
 * DELETE - `ft_installation_treatment_delete`_
-DELETE treatment
-DELETE installation
 * INSERT - `ft_installation_treatment_insert`_
-INSERT installation
-INSERT treatment
 * UPDATE - `ft_installation_treatment_update`_
-UPDATE installation
-UPDATE treatment
 
 vw_leak
 -------
@@ -479,15 +692,8 @@ vw_leak
 vw_node_element
 ---------------
 * DELETE - `ft_node_element_delete`_
- DELETE network_element
- `fn_node_set_type`_
 * INSERT - `ft_node_element_insert`_
- Update table fields
- `fn_node_create`_
- INSERT network_element
 * UPDATE - `ft_node_element_update`_
- UPDATE node
- UPDATE network_element
 
 vw_pipe
 -------
@@ -499,7 +705,7 @@ vw_pipe_child_parent
 
 vw_pipe_schema
 --------------
-* RULE - update pipe
+* RULE - UPDATE `pipe`_
 
 vw_pipe_schema_error
 --------------------
@@ -511,8 +717,8 @@ vw_pipe_schema_merged
 
 vw_pipe_schema_visibleitems
 ---------------------------
-* RULE - DELETE - UPDATE pipe
-* RULE - UPDATE - UPDATE pipe
+* RULE - DELETE / UPDATE `pipe`_
+* RULE - UPDATE / UPDATE `pipe`_
 
 vw_printmap
 -----------
@@ -525,73 +731,20 @@ vw_protectionzone
 vw_qwat_installation
 --------------------
 * DELETE - `ft_vw_qwat_installation_delete`_
- DELETE source
- DELETE pump
- DELETE tank
- DELETE treatment
- DELETE chamber
- DELETE pressurecontrol
- DELETE installation
 * INSERT - `ft_vw_qwat_installation_insert`_
- INSERT installation
- INSERT source
- INSERT pump
- INSERT tank
- INSERT treatment
- INSERT chamber
- INSERT pressurecontrol
 * UPDATE - `ft_vw_qwat_installation_update`_
- UPDATE installation
- UPDATE source
- UPDATE pump
- UPDATE tank
- UPDATE treatment
- UPDATE chamber
- UPDATE pressurecontrol
 
 vw_qwat_network_element
 -----------------------
 * DELETE - `ft_vw_qwat_network_element_delete`_
- DELETE subscriber
- DELETE part
- DELETE vw_qwat_installation
- DELETE hydrant
- DELETE samplingpoint
- DELETE valve
- DELETE meter
- DELETE vw_node_element
 * INSERT - `ft_vw_qwat_network_element_insert`_
- INSERT vw_node_element
- INSERT subscriber
- INSERT part
- INSERT vw_qwat_installation
- INSERT hydrant
- INSERT samplingpoint
- INSERT valve
- INSERT meter
 * UPDATE - `ft_vw_qwat_network_element_update`_
- UPDATE vw_node_element
- UPDATE subscriber
- UPDATE part
- UPDATE vw_qwat_installation
- UPDATE hydrant
- UPDATE valve
- UPDATE meter
 
 vw_qwat_node
 ------------
 * DELETE - `ft_vw_qwat_node_delete`_
- DELETE network_element
- `fn_node_set_type`_
 * INSERT - `ft_vw_qwat_node_insert`_
- Update table fields
- `fn_node_create`_
- UPDATE node
- UPDATE network_element
 * UPDATE - `ft_vw_qwat_node_update`_
- Update table fields
- UPDATE node
- UPDATE network_element
 
 vw_remote
 ---------
