@@ -92,6 +92,7 @@ qwat_sys.if_modified_func
 -------------------------
 * Audit trigger
 
+Add a new record in *qwat_sys.logged_actions* (schema, table, user, time...).
 
 Redirection trigger functions
 =============================
