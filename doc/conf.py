@@ -16,6 +16,8 @@ import sys
 import os
 import shlex
 
+import sphinx_rtd_theme
+
 # If extensions (or modules to document with autodoc) are in another directory,
 # add these directories to sys.path here. If the directory is relative to the
 # documentation root, use os.path.abspath to make it absolute, like shown here.
@@ -47,8 +49,8 @@ master_doc = 'index'
 
 # General information about the project.
 project = u'qWat'
-copyright = u'2015, Denis Rouzaud'
-author = u'Denis Rouzaud'
+copyright = u'2015, qWat Team'
+author = u'qWat Team'
 
 # The version info for the project you're documenting, acts as replacement for
 # |version| and |release|, also used in various other places throughout the
@@ -108,7 +110,9 @@ todo_include_todos = False
 
 # The theme to use for HTML and HTML Help pages.  See the documentation for
 # a list of builtin themes.
-html_theme = 'alabaster'
+#html_theme = 'alabaster'
+html_theme = "sphinx_rtd_theme"
+html_theme_path = [sphinx_rtd_theme.get_html_theme_path()]
 
 # Theme options are theme-specific and customize the look and feel of a theme
 # further.  For a list of options available for each theme, see the
@@ -223,7 +227,7 @@ latex_elements = {
 #  author, documentclass [howto, manual, or own class]).
 latex_documents = [
   (master_doc, 'qWat.tex', u'qWat Documentation',
-   u'Denis Rouzaud', 'manual'),
+   u'qWat Team', 'manual'),
 ]
 
 # The name of an image file (relative to this directory) to place at the top of
