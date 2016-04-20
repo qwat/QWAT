@@ -486,7 +486,7 @@ node
 
 part
 ----
-16.1 No triggers
+* No triggers
 
 pipe
 ----
