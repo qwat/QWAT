@@ -390,27 +390,168 @@ ft_vw_qwat_network_element_update
 Functions
 =========
 
-fn_pipe_get_id
---------------
-.. warning:: to be completed
+fn_get_district
+---------------
+Returns the id of the first overlapping district.
 
-fn_node_create
---------------
-* INSERT into node
+Params:
+    * geom
 
-.. warning:: to be completed
+Perform an intersection between the geom and `district`_.
 
-fn_node_set_type
+
+fn_get_pressurezone
+-------------------
+Returns the id of the first overlapping pressurezone.
+
+Params:
+    * geom
+
+Perform an intersection between the geom and the `pressurezone`_ geometry.
+
+fn_get_printmap_id
+------------------
+Returns the id of the first overlapping printmap.
+
+Params:
+    * geom
+
+Perform an intersection between the geom and `printmap`_ geometry.
+
+fn_get_printmaps
 ----------------
-.. warning:: to be completed
+Returns a string contaning all the short names of the polygons in table printmap which overlap the given geometry.
+
+Params:
+    * geom
+    * result
+
+Perform an intersection between the geom and the `printmap`_ geometry.
 
 fn_litres_per_cm
 ----------------
+Calculate the litres_per_cm of a `tank`_ cistern.
+
+Params:
+    * fk_type
+    * dim1
+    * dim2
+
+Perform a calculation with dim1 & dim2.
+
+fn_node_create
+--------------
+Returns the node for a given geometry (point). If node does not exist, create it.
+
+Params:
+    * _point (geometry)
+    * deactivate_node_add_pipe_vertex
+
+Behaviour:
+    * Search for a node a the _point location.
+    * If a node if found
+        * Deactivate the node_add_pipe_vertex_insert trigger if needed
+        * INSERT into `node`_
+        * Reactivate the node_add_pipe_vertex_insert trigger if needed
+
+fn_node_get_ids
+---------------
+Returns a list of node IDs contained a given extent.
+
+Params:
+    * extent
+
+Perform a selection on `node`_ with the given extent. If no extent is provided, return all ids.
+
+fn_node_set_type[]
+------------------
+Set the type and orientation for node. If three pipe arrives at the node: intersection. If one pipe: end. If two: depends on characteristics of pipe: year (is different), material (and year), diameter(and material/year).
+
+Params:
+    * _node_ids[]
+
+Perform `fn_node_set_type`_ for each `node`_ given in param. If no ids are given, the process is perform on all `node`_ ids.
+
+fn_node_set_type
+----------------
+Set the orientation and type for a node. If three pipe arrives at the node: intersection. If one pipe: end. If two: depends on characteristics of pipe: year (is different), material (and year), diameter(and material/year).
+
+Params:
+    * _node_id
+
+Perform a lot of processing:
+    * Count the active pipes associated to this `node`_ (by joining tables from qwat_vlstatus & qwat_vl_pipe_function)
+    * If count = 0:
+        * If _node_id not on a `pipe`_ extremity (fk_node_a, fk_node_b)
+            * If this is really a `node`_, delete it from node
+            * Else, the node must be on the pipe vertex
+                * Get geometry of the `pipe`_
+                * If the geometry is null: raise an error
+                * Else calculate the orientation of the `pipe`_
+
+    * If count = 1 or 2
+        * Loop over them, and take the 2 first/last vertices of the `pipe`_ to determine orientation (used for symbology)
+    * If count > 2
+        * Nothing to do
+
+    * UPDATE node (_pipe_node_type, _pipe_orientation, _pipe_schema_visible)
+
+fn_node_update_id
+-----------------
+Not used anymore ?
+
 .. warning:: to be completed
+
+fn_pipe_get_id
+--------------
+Returns the `pipe`_ at a given position. If geometry is a point, do not return a `pipe`_ which ends on it.
+
+Params:
+    * geometry
+
+Perform an intersection between the geometry and the `pipe`_ geometries.
 
 fn_pipe_update_valve
 --------------------
-.. warning:: to be completed
+Update `pipe`_ valves informations.
+
+Params:
+    * _pipe_id
+
+Perform an update on `pipe`_ (_valve_count, _valve_closed) by joining `valve`_.
+
+fn_update_pipe_crossing
+-----------------------
+
+
+Params:
+    * update_existing
+    * delete_unused
+
+Process:
+    * Get all crossing points (by performing intersections between pipes)
+    * For each point
+        * If point is at the end of a pipe: do nothing
+        * Else, for the 2 crossing pipes :
+            * Perform azimuth for all segments of the pipes with the corresponding linear referencing
+            * Find the correct segment according to linear referencing of the crossing point
+            * Get the corresponding azimuth according to segment id
+            * Reports errors if azimuth are null
+            * If the crossing is already existing: update it (_pipe1_id, _pipe1_angle, _pipe2_id, _pipe2_angle,geometry)
+            * Else: create it
+        * Delete the old crossing
+
+.. warning:: This trigger use a fixed fk_status values = 1301
+
+
+fn_update_sequences
+-------------------
+Update a specific sequence.
+
+Params:
+    * none
+
+For all columns in the DB associated to a sequence, calculate the max value + 1 for the column, and reassociate the next value of the sequence to that max.
 
 
 Tables
