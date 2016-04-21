@@ -19,10 +19,13 @@ Behaviour Trigger functions
 ft_geom3d_altitude
 ------------------
 * UPDATE altitude
+* UPDATE geometry
+
+Altitude is prioritary on Z value of the geometry (if both changed, only altitude is taken into account)
 
 ft_controled_crossing
 ---------------------
-* UPDATE controled
+* UPDATE controled = True
 
 ft_leak_pipe
 ------------
@@ -50,7 +53,7 @@ ft_node_geom
 
 ft_pipe_node_moved
 ------------------
-* UPDATE `pipe`_
+* UPDATE `pipe`_ (fk_node_a, fk_node_b) using `fn_node_create`_
 
 ft_pipe_geom
 ------------
