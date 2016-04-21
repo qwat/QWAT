@@ -37,7 +37,11 @@ ft_leak_repaired
 
 ft_node_add_pipe_vertex
 -----------------------
-* UPDATE pipe (geometry)
+Add a vertex to the corresponding pipe if it intersects.
+When the node is close enough to the pipe (< 1 micrometer) the node is considered to intersect the pipe
+It allows to deal with intersections that cannot be represented by floating point numbers
+
+* UPDATE pipe (geometry) using St_Snap
 
 ft_geometry_alternative_aux
 ---------------------------
@@ -50,10 +54,18 @@ ft_geometry_alternative_main
 ft_node_geom
 ------------
 * Update table fields
+* `fn_get_district`_
+* `fn_get_pressurezone`_
+* `fn_get_printmap_id`_
+* `fn_get_printmaps`_
 
 ft_pipe_node_moved
 ------------------
+Update pipe's nodes extremities by creating new nodes, or taking existing ones.
+
 * UPDATE `pipe`_ (fk_node_a, fk_node_b) using `fn_node_create`_
+
+
 
 ft_pipe_geom
 ------------
