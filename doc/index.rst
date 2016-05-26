@@ -12,6 +12,7 @@ Contents:
    :maxdepth: 2
 
    Triggers <triggers>
+   Upgrade DB <upgrade>
 
 
 Indices and tables
