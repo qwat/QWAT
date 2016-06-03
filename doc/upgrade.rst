@@ -5,11 +5,14 @@ Upgrade database
 Create a new upgrade delta
 ==========================
 
-You have to create a new SQL delta file in *data-model/update/delta*.
+* First create a new branch for your modification on the model
+* Modify the SQL creation code at your convenience
+* Create the corresponding SQL delta file in *data-model/update/delta*.
+  * file must be named : delta_{tag_number}_{year_month_day}.sql (delta_x.x.x_ddmmyyyy.sql)
+* Push your branch, and check travis result
+* If travis test is OK, then you can merge in master
 
-* file must be named : delta_{tag_number}_{year_month_day}.sql (delta_x.x.x_ddmmyyyy.sql)
-* file must contain SQL queries to alter the DB according to the modifications you want to do.
-* file must be pushed on the master branch
+.. notice:: Data model should be TAGGED. Tag should respect the following syntax like this: x.x.x. For each major version, the tag MUSt be called x.0.0
 
 
 Migrate an existing database
