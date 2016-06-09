@@ -7,7 +7,7 @@
     <customproperties/>
     <layer-tree-group expanded="1" checked="Qt::PartiallyChecked" name="Réseau">
       <customproperties/>
-      <layer-tree-group expanded="1" checked="Qt::PartiallyChecked" name="ouvrages">
+      <layer-tree-group expanded="0" checked="Qt::PartiallyChecked" name="ouvrages">
         <customproperties/>
         <layer-tree-layer expanded="0" checked="Qt::Checked" id="vw_node_installation20150918153835436" name="ouvrage">
           <customproperties>
@@ -37,13 +37,13 @@
         <customproperties/>
         <layer-tree-layer expanded="0" checked="Qt::Checked" id="conduites_copy20130709141244955" name="conduites">
           <customproperties>
-            <property key="expandedLegendNodes" value="{f550eef3-fdaa-427b-b415-bd7e8fc25f9e}"/>
+            <property key="expandedLegendNodes" value="{d7cd7ce7-c1fb-444f-9fd7-375e42e1119d}"/>
           </customproperties>
         </layer-tree-layer>
         <layer-tree-layer expanded="0" checked="Qt::Checked" id="node20130304110005126" name="noeuds">
           <customproperties/>
         </layer-tree-layer>
-        <layer-tree-layer expanded="1" checked="Qt::Checked" id="valve20130304110011497" name="vannes">
+        <layer-tree-layer expanded="0" checked="Qt::Checked" id="valve20130304110011497" name="vannes">
           <customproperties>
             <property key="expandedLegendNodes"/>
           </customproperties>
@@ -79,7 +79,7 @@
     </layer-tree-group>
     <layer-tree-group expanded="1" checked="Qt::Unchecked" name="Schématique">
       <customproperties/>
-      <layer-tree-group expanded="1" checked="Qt::Unchecked" name="impression">
+      <layer-tree-group expanded="0" checked="Qt::Unchecked" name="impression">
         <customproperties/>
         <layer-tree-layer expanded="0" checked="Qt::Unchecked" id="hydrantes_copy20160127124839887" name="hydrantes 5000 (pression)">
           <customproperties>
@@ -146,7 +146,7 @@
         <customproperties/>
       </layer-tree-layer>
     </layer-tree-group>
-    <layer-tree-group expanded="1" checked="Qt::PartiallyChecked" name="cadastre sige">
+    <layer-tree-group expanded="0" checked="Qt::PartiallyChecked" name="cadastre sige">
       <customproperties/>
       <layer-tree-layer expanded="0" checked="Qt::Checked" id="nom_rue20160215151152641" name="nom_rue">
         <customproperties/>
@@ -167,7 +167,7 @@
         <customproperties/>
       </layer-tree-layer>
     </layer-tree-group>
-    <layer-tree-group expanded="1" checked="Qt::PartiallyChecked" name="Zones">
+    <layer-tree-group expanded="0" checked="Qt::PartiallyChecked" name="Zones">
       <customproperties/>
       <layer-tree-layer expanded="1" checked="Qt::Unchecked" id="folder20150629160924367" name="dossiers techniques">
         <customproperties/>
@@ -396,10 +396,10 @@
   <mapcanvas>
     <units>meters</units>
     <extent>
-      <xmin>562148.27615683549083769</xmin>
-      <ymin>146410.949450427578995</ymin>
-      <xmax>563120.89084116090089083</xmax>
-      <ymax>147153.81743302146787755</ymax>
+      <xmin>553492.47268097708001733</xmin>
+      <ymin>135608.64486817445140332</ymin>
+      <xmax>570538.15490568662062287</xmax>
+      <ymax>148627.87208145402837545</ymax>
     </extent>
     <rotation>0</rotation>
     <projections>1</projections>
@@ -629,7 +629,7 @@
   </layer-tree-canvas>
   <legend updateDrawingOrder="false">
     <legendgroup open="true" checked="Qt::PartiallyChecked" name="Réseau">
-      <legendgroup open="true" checked="Qt::PartiallyChecked" name="ouvrages">
+      <legendgroup open="false" checked="Qt::PartiallyChecked" name="ouvrages">
         <legendlayer drawingOrder="1" open="false" checked="Qt::Checked" name="ouvrage" showFeatureCount="0">
           <filegroup open="false" hidden="false">
             <legendlayerfile isInOverview="0" layerid="vw_node_installation20150918153835436" visible="1"/>
@@ -674,8 +674,8 @@
             <legendlayerfile isInOverview="0" layerid="node20130304110005126" visible="1"/>
           </filegroup>
         </legendlayer>
-        <legendlayer drawingOrder="7" open="true" checked="Qt::Checked" name="vannes" showFeatureCount="0">
-          <filegroup open="true" hidden="false">
+        <legendlayer drawingOrder="7" open="false" checked="Qt::Checked" name="vannes" showFeatureCount="0">
+          <filegroup open="false" hidden="false">
             <legendlayerfile isInOverview="0" layerid="valve20130304110011497" visible="1"/>
           </filegroup>
         </legendlayer>
@@ -724,7 +724,7 @@
       </legendgroup>
     </legendgroup>
     <legendgroup open="true" checked="Qt::Unchecked" name="Schématique">
-      <legendgroup open="true" checked="Qt::Unchecked" name="impression">
+      <legendgroup open="false" checked="Qt::Unchecked" name="impression">
         <legendlayer drawingOrder="98" open="false" checked="Qt::Unchecked" name="hydrantes 5000 (pression)" showFeatureCount="0">
           <filegroup open="false" hidden="false">
             <legendlayerfile isInOverview="0" layerid="hydrantes_copy20160127124839887" visible="0"/>
@@ -808,7 +808,7 @@
         </filegroup>
       </legendlayer>
     </legendgroup>
-    <legendgroup open="true" checked="Qt::PartiallyChecked" name="cadastre sige">
+    <legendgroup open="false" checked="Qt::PartiallyChecked" name="cadastre sige">
       <legendlayer drawingOrder="103" open="false" checked="Qt::Checked" name="nom_rue" showFeatureCount="0">
         <filegroup open="false" hidden="false">
           <legendlayerfile isInOverview="0" layerid="nom_rue20160215151152641" visible="1"/>
@@ -840,7 +840,7 @@
         </filegroup>
       </legendlayer>
     </legendgroup>
-    <legendgroup open="true" checked="Qt::PartiallyChecked" name="Zones">
+    <legendgroup open="false" checked="Qt::PartiallyChecked" name="Zones">
       <legendlayer drawingOrder="92" open="true" checked="Qt::Unchecked" name="dossiers techniques" showFeatureCount="0">
         <filegroup open="true" hidden="false">
           <legendlayerfile isInOverview="0" layerid="folder20150629160924367" visible="0"/>
@@ -35440,41 +35440,47 @@ def my_form_open(dialog, layer, feature):
                 <rule filter=" &quot;pipe_function_major&quot; = 't'" key="{6f5c08e7-bf93-4eee-94df-3f749becb926}" symbol="8" label="principale"/>
                 <rule filter=" &quot;pipe_function_major&quot; = 'f'" key="{8f3bf5ad-c837-4d67-9ba8-2a0c37ad6ae0}" symbol="9" label="secondaire"/>
                 <rule filter=" &quot;fk_protection&quot; IS NOT NULL" key="{1c3be22e-50cf-4ddb-a382-cb79acc30446}" symbol="10" label="protégée"/>
+                <rule scalemaxdenom="3000" checkstate="0" filter=" &quot;fk_installmethod&quot;  =4202" key="{835c4cad-787b-45b7-b242-516a4da8a7f7}" symbol="11" scalemindenom="1" label="chemisée"/>
               </rule>
               <rule scalemaxdenom="3000" filter="COALESCE( &quot;schema_force_visible&quot;,  &quot;pipe_function_schema_visible&quot;)  = 'f'" key="{d7cd7ce7-c1fb-444f-9fd7-375e42e1119d}" label="Détail">
-                <rule filter=" &quot;pipe_function_major&quot; = 't'" key="{820fcdfc-cca8-4a16-a307-192cf4ddd396}" symbol="11" label="principale"/>
-                <rule filter=" &quot;pipe_function_major&quot; = 'f'" key="{1f73b079-4d8c-4982-b2ab-6e9b5756b800}" symbol="12" label="secondaire"/>
-                <rule filter=" &quot;fk_protection&quot; IS NOT NULL" key="{e3509205-7271-40dd-aa3a-b8edce4c3ffe}" symbol="13" label="protégée"/>
+                <rule filter=" &quot;pipe_function_major&quot; = 't'" key="{820fcdfc-cca8-4a16-a307-192cf4ddd396}" symbol="12" label="principale"/>
+                <rule filter=" &quot;pipe_function_major&quot; = 'f'" key="{1f73b079-4d8c-4982-b2ab-6e9b5756b800}" symbol="13" label="secondaire"/>
+                <rule filter=" &quot;fk_protection&quot; IS NOT NULL" key="{e3509205-7271-40dd-aa3a-b8edce4c3ffe}" symbol="14" label="protégée"/>
+                <rule scalemaxdenom="3000" checkstate="0" filter=" &quot;fk_installmethod&quot;  =4202" key="{846076c3-b88b-4391-801a-578d0abcdaf9}" symbol="15" scalemindenom="1" label="chemisée"/>
               </rule>
             </rule>
-            <rule checkstate="0" filter="fk_status=1307" key="{7c5fde76-05d7-4d4a-9eaa-953db28fbe87}" symbol="14" label="Fictives"/>
+            <rule checkstate="0" filter="fk_status=1307" key="{7c5fde76-05d7-4d4a-9eaa-953db28fbe87}" symbol="16" label="Fictives"/>
           </rule>
           <rule checkstate="0" filter="fk_distributor = 1and &quot;status_functional&quot; = 'f'" key="{75060a73-107d-4ace-bc35-d573de40488f}" label="non fonctionnel">
             <rule filter="COALESCE( &quot;schema_force_visible&quot;,  &quot;pipe_function_schema_visible&quot;)  = 't'" key="{5b970fd5-5c37-4865-81a5-cab18c5fb58c}" label="Schématique">
-              <rule filter=" &quot;pipe_function_major&quot; = 't'" key="{783f2167-c790-4baf-a58d-d6fd65a299a4}" symbol="15" label="principale"/>
-              <rule filter=" &quot;pipe_function_major&quot; = 'f'" key="{46c7536a-ac7b-4e7b-afe6-33f9fee2f171}" symbol="16" label="secondaire"/>
-              <rule filter=" &quot;fk_protection&quot; IS NOT NULL" key="{bd93e9ea-b64b-4fbd-bf89-6d4395730e60}" symbol="17" label="protégée"/>
+              <rule filter=" &quot;pipe_function_major&quot; = 't'" key="{783f2167-c790-4baf-a58d-d6fd65a299a4}" symbol="17" label="principale"/>
+              <rule filter=" &quot;pipe_function_major&quot; = 'f'" key="{46c7536a-ac7b-4e7b-afe6-33f9fee2f171}" symbol="18" label="secondaire"/>
+              <rule filter=" &quot;fk_protection&quot; IS NOT NULL" key="{bd93e9ea-b64b-4fbd-bf89-6d4395730e60}" symbol="19" label="protégée"/>
+              <rule scalemaxdenom="3000" checkstate="0" filter=" &quot;fk_installmethod&quot;  =4202" key="{74f7b3d4-379f-41de-8006-12185dd708e0}" symbol="20" scalemindenom="1" label="chemisée"/>
             </rule>
             <rule scalemaxdenom="3000" filter="COALESCE( &quot;schema_force_visible&quot;,  &quot;pipe_function_schema_visible&quot;)  = 'f'" key="{7d0cfa7a-eaf4-499a-b977-1238b90ca15f}" label="Détail">
-              <rule filter=" &quot;pipe_function_major&quot; = 't'" key="{c0af50d9-d68b-4c2f-b9fa-9e2be9ec0e34}" symbol="18" label="principale"/>
-              <rule filter=" &quot;pipe_function_major&quot; = 'f'" key="{f2f26723-dc46-40c5-abe2-ef61a8c502e3}" symbol="19" label="secondaire"/>
-              <rule filter=" &quot;fk_protection&quot; IS NOT NULL" key="{9486a529-9a4e-4a3c-83fe-86f6f93102c0}" symbol="20" label="protégée"/>
+              <rule filter=" &quot;pipe_function_major&quot; = 't'" key="{c0af50d9-d68b-4c2f-b9fa-9e2be9ec0e34}" symbol="21" label="principale"/>
+              <rule filter=" &quot;pipe_function_major&quot; = 'f'" key="{f2f26723-dc46-40c5-abe2-ef61a8c502e3}" symbol="22" label="secondaire"/>
+              <rule filter=" &quot;fk_protection&quot; IS NOT NULL" key="{9486a529-9a4e-4a3c-83fe-86f6f93102c0}" symbol="23" label="protégée"/>
+              <rule scalemaxdenom="3000" checkstate="0" filter=" &quot;fk_installmethod&quot;  =4202" key="{d7881ca8-054a-42d7-8a53-bc586b51d9de}" symbol="24" scalemindenom="1" label="chemisée"/>
             </rule>
           </rule>
           <rule filter="fk_distributor != 1" key="{013429dc-a1cd-4a17-904a-6550a0175046}" label="étranger">
             <rule filter="COALESCE( &quot;schema_force_visible&quot;,  &quot;pipe_function_schema_visible&quot;)  = 't'" key="{2513a8b8-a110-4727-854c-6084f64e3bdf}" label="Schématique">
-              <rule filter=" &quot;pipe_function_major&quot; = 't'" key="{f798c83b-a461-46c3-8031-8b5bc3caffd8}" symbol="21" label="principale"/>
-              <rule filter=" &quot;pipe_function_major&quot; = 'f'" key="{ca06b6f2-f1ee-4958-b79a-6cb6cbc2059b}" symbol="22" label="secondaire"/>
-              <rule filter=" &quot;fk_protection&quot; IS NOT NULL" key="{6c5ec343-05d3-4fcd-8dc1-283232838086}" symbol="23" label="protégée"/>
+              <rule filter=" &quot;pipe_function_major&quot; = 't'" key="{f798c83b-a461-46c3-8031-8b5bc3caffd8}" symbol="25" label="principale"/>
+              <rule filter=" &quot;pipe_function_major&quot; = 'f'" key="{ca06b6f2-f1ee-4958-b79a-6cb6cbc2059b}" symbol="26" label="secondaire"/>
+              <rule scalemaxdenom="3000" checkstate="0" filter=" &quot;fk_installmethod&quot;  =4202" key="{8a8783e2-f346-41fc-b13b-f815824d51f5}" symbol="27" scalemindenom="1" label="chemisée"/>
+              <rule filter=" &quot;fk_protection&quot; IS NOT NULL" key="{6c5ec343-05d3-4fcd-8dc1-283232838086}" symbol="28" label="protégée"/>
             </rule>
             <rule scalemaxdenom="3000" filter="COALESCE( &quot;schema_force_visible&quot;,  &quot;pipe_function_schema_visible&quot;)  = 'f'" key="{2e14d53a-6d2f-40b3-bf3b-4f32112e3d59}" label="Détail">
-              <rule filter=" &quot;pipe_function_major&quot; = 't'" key="{fb522923-eeee-47bb-8352-65a3d5637c4c}" symbol="24" label="principale"/>
-              <rule filter=" &quot;pipe_function_major&quot; = 'f'" key="{b8c5c345-6f26-4237-a405-a503b361b9da}" symbol="25" label="secondaire"/>
-              <rule filter=" &quot;fk_protection&quot; IS NOT NULL" key="{65e92041-f079-42f0-80be-f3bedfbdcdac}" symbol="26" label="protégée"/>
+              <rule filter=" &quot;pipe_function_major&quot; = 't'" key="{fb522923-eeee-47bb-8352-65a3d5637c4c}" symbol="29" label="principale"/>
+              <rule checkstate="0" filter=" &quot;pipe_function_major&quot; = 'f'" key="{1c861330-b48b-4ae4-91a2-d8e1a336c5f9}" symbol="30" label="secondaire"/>
+              <rule checkstate="0" filter=" &quot;fk_protection&quot; IS NOT NULL" key="{e9048c41-9d67-475a-8909-a027412c34d1}" symbol="31" label="protégée"/>
+              <rule scalemaxdenom="3000" checkstate="0" filter=" &quot;fk_installmethod&quot;  =4202" key="{2ce95337-6d17-4772-a67e-31f016923af4}" symbol="32" scalemindenom="1" label="chemisée"/>
             </rule>
           </rule>
-          <rule checkstate="0" filter="fk_distributor = 1 and &quot;status_active&quot; = 't' and COALESCE( &quot;schema_force_visible&quot;,  &quot;pipe_function_schema_visible&quot;)  = 't'" key="{9c210704-187e-4e2a-9b89-2f7917f4376c}" symbol="27" label="Couleur par zone"/>
-          <rule checkstate="0" filter="ELSE" key="{bb9b38f1-c76d-4c6d-908b-414f0cc24f97}" symbol="28" label="incomplètes"/>
+          <rule checkstate="0" filter="fk_distributor = 1 and &quot;status_active&quot; = 't' and COALESCE( &quot;schema_force_visible&quot;,  &quot;pipe_function_schema_visible&quot;)  = 't'" key="{9c210704-187e-4e2a-9b89-2f7917f4376c}" symbol="33" label="Couleur par zone"/>
+          <rule checkstate="0" filter="ELSE" key="{bb9b38f1-c76d-4c6d-908b-414f0cc24f97}" symbol="34" label="incomplètes"/>
         </rules>
         <symbols>
           <symbol alpha="1" clip_to_extent="1" type="line" name="0">
@@ -35572,6 +35578,76 @@ def my_form_open(dialog, layer, feature):
           </symbol>
           <symbol alpha="1" clip_to_extent="1" type="line" name="11">
             <layer pass="0" class="SimpleLine" locked="0">
+              <prop k="capstyle" v="flat"/>
+              <prop k="customdash" v="5;2"/>
+              <prop k="customdash_map_unit_scale" v="0,0,0,0,0,0"/>
+              <prop k="customdash_unit" v="MM"/>
+              <prop k="draw_inside_polygon" v="0"/>
+              <prop k="joinstyle" v="bevel"/>
+              <prop k="line_color" v="217,0,0,255"/>
+              <prop k="line_style" v="dot"/>
+              <prop k="line_width" v="0.3"/>
+              <prop k="line_width_unit" v="MM"/>
+              <prop k="offset" v="-1.2"/>
+              <prop k="offset_map_unit_scale" v="0,0,0,0,0,0"/>
+              <prop k="offset_unit" v="MM"/>
+              <prop k="use_custom_dash" v="0"/>
+              <prop k="width_map_unit_scale" v="0,0,0,0,0,0"/>
+              <effect enabled="0" type="effectStack">
+                <effect type="transform">
+                  <prop k="draw_mode" v="2"/>
+                  <prop k="enabled" v="1"/>
+                  <prop k="reflect_x" v="0"/>
+                  <prop k="reflect_y" v="0"/>
+                  <prop k="rotation" v="0"/>
+                  <prop k="scale_x" v="1"/>
+                  <prop k="scale_y" v="1"/>
+                  <prop k="shear_x" v="0"/>
+                  <prop k="shear_y" v="0"/>
+                  <prop k="translate_unit" v="MM"/>
+                  <prop k="translate_unit_scale" v="0,0,0,0,0,0"/>
+                  <prop k="translate_x" v="5.55112e-17"/>
+                  <prop k="translate_y" v="1.6"/>
+                </effect>
+              </effect>
+            </layer>
+            <layer pass="0" class="SimpleLine" locked="0">
+              <prop k="capstyle" v="flat"/>
+              <prop k="customdash" v="5;2"/>
+              <prop k="customdash_map_unit_scale" v="0,0,0,0,0,0"/>
+              <prop k="customdash_unit" v="MM"/>
+              <prop k="draw_inside_polygon" v="0"/>
+              <prop k="joinstyle" v="bevel"/>
+              <prop k="line_color" v="217,0,0,255"/>
+              <prop k="line_style" v="dot"/>
+              <prop k="line_width" v="0.3"/>
+              <prop k="line_width_unit" v="MM"/>
+              <prop k="offset" v="1.2"/>
+              <prop k="offset_map_unit_scale" v="0,0,0,0,0,0"/>
+              <prop k="offset_unit" v="MM"/>
+              <prop k="use_custom_dash" v="0"/>
+              <prop k="width_map_unit_scale" v="0,0,0,0,0,0"/>
+              <effect enabled="0" type="effectStack">
+                <effect type="transform">
+                  <prop k="draw_mode" v="2"/>
+                  <prop k="enabled" v="1"/>
+                  <prop k="reflect_x" v="0"/>
+                  <prop k="reflect_y" v="0"/>
+                  <prop k="rotation" v="0"/>
+                  <prop k="scale_x" v="1"/>
+                  <prop k="scale_y" v="1"/>
+                  <prop k="shear_x" v="0"/>
+                  <prop k="shear_y" v="0"/>
+                  <prop k="translate_unit" v="MM"/>
+                  <prop k="translate_unit_scale" v="0,0,0,0,0,0"/>
+                  <prop k="translate_x" v="0"/>
+                  <prop k="translate_y" v="-1.6"/>
+                </effect>
+              </effect>
+            </layer>
+          </symbol>
+          <symbol alpha="1" clip_to_extent="1" type="line" name="12">
+            <layer pass="0" class="SimpleLine" locked="0">
               <prop k="capstyle" v="square"/>
               <prop k="customdash" v="5;2"/>
               <prop k="customdash_map_unit_scale" v="0,0,0,0,0,0"/>
@@ -35601,7 +35677,7 @@ def my_form_open(dialog, layer, feature):
               </effect>
             </layer>
           </symbol>
-          <symbol alpha="1" clip_to_extent="1" type="line" name="12">
+          <symbol alpha="1" clip_to_extent="1" type="line" name="13">
             <layer pass="0" class="SimpleLine" locked="0">
               <prop k="capstyle" v="square"/>
               <prop k="customdash" v="2;1.3"/>
@@ -35632,7 +35708,7 @@ def my_form_open(dialog, layer, feature):
               </effect>
             </layer>
           </symbol>
-          <symbol alpha="1" clip_to_extent="1" type="line" name="13">
+          <symbol alpha="1" clip_to_extent="1" type="line" name="14">
             <layer pass="0" class="SimpleLine" locked="0">
               <prop k="capstyle" v="flat"/>
               <prop k="customdash" v="5;2"/>
@@ -35663,7 +35739,77 @@ def my_form_open(dialog, layer, feature):
               </effect>
             </layer>
           </symbol>
-          <symbol alpha="1" clip_to_extent="1" type="line" name="14">
+          <symbol alpha="1" clip_to_extent="1" type="line" name="15">
+            <layer pass="0" class="SimpleLine" locked="0">
+              <prop k="capstyle" v="flat"/>
+              <prop k="customdash" v="5;2"/>
+              <prop k="customdash_map_unit_scale" v="0,0,0,0,0,0"/>
+              <prop k="customdash_unit" v="MM"/>
+              <prop k="draw_inside_polygon" v="0"/>
+              <prop k="joinstyle" v="bevel"/>
+              <prop k="line_color" v="217,0,0,255"/>
+              <prop k="line_style" v="dot"/>
+              <prop k="line_width" v="0.3"/>
+              <prop k="line_width_unit" v="MM"/>
+              <prop k="offset" v="-1.2"/>
+              <prop k="offset_map_unit_scale" v="0,0,0,0,0,0"/>
+              <prop k="offset_unit" v="MM"/>
+              <prop k="use_custom_dash" v="0"/>
+              <prop k="width_map_unit_scale" v="0,0,0,0,0,0"/>
+              <effect enabled="0" type="effectStack">
+                <effect type="transform">
+                  <prop k="draw_mode" v="2"/>
+                  <prop k="enabled" v="1"/>
+                  <prop k="reflect_x" v="0"/>
+                  <prop k="reflect_y" v="0"/>
+                  <prop k="rotation" v="0"/>
+                  <prop k="scale_x" v="1"/>
+                  <prop k="scale_y" v="1"/>
+                  <prop k="shear_x" v="0"/>
+                  <prop k="shear_y" v="0"/>
+                  <prop k="translate_unit" v="MM"/>
+                  <prop k="translate_unit_scale" v="0,0,0,0,0,0"/>
+                  <prop k="translate_x" v="5.55112e-17"/>
+                  <prop k="translate_y" v="1.6"/>
+                </effect>
+              </effect>
+            </layer>
+            <layer pass="0" class="SimpleLine" locked="0">
+              <prop k="capstyle" v="flat"/>
+              <prop k="customdash" v="5;2"/>
+              <prop k="customdash_map_unit_scale" v="0,0,0,0,0,0"/>
+              <prop k="customdash_unit" v="MM"/>
+              <prop k="draw_inside_polygon" v="0"/>
+              <prop k="joinstyle" v="bevel"/>
+              <prop k="line_color" v="217,0,0,255"/>
+              <prop k="line_style" v="dot"/>
+              <prop k="line_width" v="0.3"/>
+              <prop k="line_width_unit" v="MM"/>
+              <prop k="offset" v="1.2"/>
+              <prop k="offset_map_unit_scale" v="0,0,0,0,0,0"/>
+              <prop k="offset_unit" v="MM"/>
+              <prop k="use_custom_dash" v="0"/>
+              <prop k="width_map_unit_scale" v="0,0,0,0,0,0"/>
+              <effect enabled="0" type="effectStack">
+                <effect type="transform">
+                  <prop k="draw_mode" v="2"/>
+                  <prop k="enabled" v="1"/>
+                  <prop k="reflect_x" v="0"/>
+                  <prop k="reflect_y" v="0"/>
+                  <prop k="rotation" v="0"/>
+                  <prop k="scale_x" v="1"/>
+                  <prop k="scale_y" v="1"/>
+                  <prop k="shear_x" v="0"/>
+                  <prop k="shear_y" v="0"/>
+                  <prop k="translate_unit" v="MM"/>
+                  <prop k="translate_unit_scale" v="0,0,0,0,0,0"/>
+                  <prop k="translate_x" v="0"/>
+                  <prop k="translate_y" v="-1.6"/>
+                </effect>
+              </effect>
+            </layer>
+          </symbol>
+          <symbol alpha="1" clip_to_extent="1" type="line" name="16">
             <layer pass="0" class="SimpleLine" locked="0">
               <prop k="capstyle" v="square"/>
               <prop k="customdash" v="5;2"/>
@@ -35694,7 +35840,7 @@ def my_form_open(dialog, layer, feature):
               </effect>
             </layer>
           </symbol>
-          <symbol alpha="1" clip_to_extent="1" type="line" name="15">
+          <symbol alpha="1" clip_to_extent="1" type="line" name="17">
             <layer pass="0" class="SimpleLine" locked="0">
               <prop k="capstyle" v="square"/>
               <prop k="customdash" v="5;2"/>
@@ -35725,7 +35871,7 @@ def my_form_open(dialog, layer, feature):
               </effect>
             </layer>
           </symbol>
-          <symbol alpha="1" clip_to_extent="1" type="line" name="16">
+          <symbol alpha="1" clip_to_extent="1" type="line" name="18">
             <layer pass="0" class="SimpleLine" locked="0">
               <prop k="capstyle" v="square"/>
               <prop k="customdash" v="2;1.3"/>
@@ -35756,7 +35902,7 @@ def my_form_open(dialog, layer, feature):
               </effect>
             </layer>
           </symbol>
-          <symbol alpha="1" clip_to_extent="1" type="line" name="17">
+          <symbol alpha="1" clip_to_extent="1" type="line" name="19">
             <layer pass="0" class="SimpleLine" locked="0">
               <prop k="capstyle" v="flat"/>
               <prop k="customdash" v="5;2"/>
@@ -35774,68 +35920,6 @@ def my_form_open(dialog, layer, feature):
               <prop k="use_custom_dash" v="0"/>
               <prop k="width_dd_active" v="1"/>
               <prop k="width_dd_expression" v="CASE WHEN &quot;pipe_material_diameter&quot; is not NULL&#xa;THEN toreal(COALESCE(&quot;pipe_material_diameter_external&quot;,&quot;pipe_material_diameter_nominal&quot;)) / 900 + 1.2&#xa;ELSE 1.2&#xa;END"/>
-              <prop k="width_dd_field" v=""/>
-              <prop k="width_dd_useexpr" v="1"/>
-              <prop k="width_map_unit_scale" v="0,0,0,0,0,0"/>
-              <effect enabled="0" type="effectStack">
-                <effect type="drawSource">
-                  <prop k="blend_mode" v="0"/>
-                  <prop k="draw_mode" v="2"/>
-                  <prop k="enabled" v="1"/>
-                  <prop k="transparency" v="0"/>
-                </effect>
-              </effect>
-            </layer>
-          </symbol>
-          <symbol alpha="1" clip_to_extent="1" type="line" name="18">
-            <layer pass="0" class="SimpleLine" locked="0">
-              <prop k="capstyle" v="square"/>
-              <prop k="customdash" v="5;2"/>
-              <prop k="customdash_map_unit_scale" v="0,0,0,0,0,0"/>
-              <prop k="customdash_unit" v="MM"/>
-              <prop k="draw_inside_polygon" v="0"/>
-              <prop k="joinstyle" v="bevel"/>
-              <prop k="line_color" v="217,0,0,255"/>
-              <prop k="line_style" v="solid"/>
-              <prop k="line_width" v="0.9"/>
-              <prop k="line_width_unit" v="MM"/>
-              <prop k="offset" v="0"/>
-              <prop k="offset_map_unit_scale" v="0,0,0,0,0,0"/>
-              <prop k="offset_unit" v="MM"/>
-              <prop k="use_custom_dash" v="0"/>
-              <prop k="width_dd_active" v="1"/>
-              <prop k="width_dd_expression" v="CASE WHEN &quot;pipe_material_diameter&quot; is not NULL&#xa;THEN toreal(COALESCE(&quot;pipe_material_diameter_external&quot;,&quot;pipe_material_diameter_nominal&quot;)) / 900 + 0.2&#xa;ELSE 0.2&#xa;END"/>
-              <prop k="width_dd_field" v=""/>
-              <prop k="width_dd_useexpr" v="1"/>
-              <prop k="width_map_unit_scale" v="0,0,0,0,0,0"/>
-              <effect enabled="0" type="effectStack">
-                <effect type="drawSource">
-                  <prop k="blend_mode" v="0"/>
-                  <prop k="draw_mode" v="2"/>
-                  <prop k="enabled" v="1"/>
-                  <prop k="transparency" v="0"/>
-                </effect>
-              </effect>
-            </layer>
-          </symbol>
-          <symbol alpha="1" clip_to_extent="1" type="line" name="19">
-            <layer pass="0" class="SimpleLine" locked="0">
-              <prop k="capstyle" v="square"/>
-              <prop k="customdash" v="2;1.3"/>
-              <prop k="customdash_map_unit_scale" v="0,0,0,0,0,0"/>
-              <prop k="customdash_unit" v="MM"/>
-              <prop k="draw_inside_polygon" v="0"/>
-              <prop k="joinstyle" v="bevel"/>
-              <prop k="line_color" v="217,0,0,255"/>
-              <prop k="line_style" v="solid"/>
-              <prop k="line_width" v="0.7"/>
-              <prop k="line_width_unit" v="MM"/>
-              <prop k="offset" v="0"/>
-              <prop k="offset_map_unit_scale" v="0,0,0,0,0,0"/>
-              <prop k="offset_unit" v="MM"/>
-              <prop k="use_custom_dash" v="1"/>
-              <prop k="width_dd_active" v="1"/>
-              <prop k="width_dd_expression" v="CASE WHEN &quot;pipe_material_diameter&quot; is not NULL&#xa;THEN toreal(COALESCE(&quot;pipe_material_diameter_external&quot;,&quot;pipe_material_diameter_nominal&quot;)) / 900 + 0.2&#xa;ELSE 0.2&#xa;END"/>
               <prop k="width_dd_field" v=""/>
               <prop k="width_dd_useexpr" v="1"/>
               <prop k="width_map_unit_scale" v="0,0,0,0,0,0"/>
@@ -35888,25 +35972,64 @@ def my_form_open(dialog, layer, feature):
               <prop k="customdash_unit" v="MM"/>
               <prop k="draw_inside_polygon" v="0"/>
               <prop k="joinstyle" v="bevel"/>
-              <prop k="line_color" v="217,0,0,70"/>
-              <prop k="line_style" v="solid"/>
-              <prop k="line_width" v="2"/>
+              <prop k="line_color" v="217,0,0,255"/>
+              <prop k="line_style" v="dot"/>
+              <prop k="line_width" v="0.3"/>
               <prop k="line_width_unit" v="MM"/>
-              <prop k="offset" v="0"/>
+              <prop k="offset" v="-1.2"/>
               <prop k="offset_map_unit_scale" v="0,0,0,0,0,0"/>
               <prop k="offset_unit" v="MM"/>
               <prop k="use_custom_dash" v="0"/>
-              <prop k="width_dd_active" v="1"/>
-              <prop k="width_dd_expression" v="CASE WHEN &quot;pipe_material_diameter&quot; is not NULL&#xa;THEN toreal(COALESCE(&quot;pipe_material_diameter_external&quot;,&quot;pipe_material_diameter_nominal&quot;)) / 900 + 1.2&#xa;ELSE 1.2&#xa;END"/>
-              <prop k="width_dd_field" v=""/>
-              <prop k="width_dd_useexpr" v="1"/>
               <prop k="width_map_unit_scale" v="0,0,0,0,0,0"/>
               <effect enabled="0" type="effectStack">
-                <effect type="drawSource">
-                  <prop k="blend_mode" v="0"/>
+                <effect type="transform">
                   <prop k="draw_mode" v="2"/>
                   <prop k="enabled" v="1"/>
-                  <prop k="transparency" v="0"/>
+                  <prop k="reflect_x" v="0"/>
+                  <prop k="reflect_y" v="0"/>
+                  <prop k="rotation" v="0"/>
+                  <prop k="scale_x" v="1"/>
+                  <prop k="scale_y" v="1"/>
+                  <prop k="shear_x" v="0"/>
+                  <prop k="shear_y" v="0"/>
+                  <prop k="translate_unit" v="MM"/>
+                  <prop k="translate_unit_scale" v="0,0,0,0,0,0"/>
+                  <prop k="translate_x" v="5.55112e-17"/>
+                  <prop k="translate_y" v="1.6"/>
+                </effect>
+              </effect>
+            </layer>
+            <layer pass="0" class="SimpleLine" locked="0">
+              <prop k="capstyle" v="flat"/>
+              <prop k="customdash" v="5;2"/>
+              <prop k="customdash_map_unit_scale" v="0,0,0,0,0,0"/>
+              <prop k="customdash_unit" v="MM"/>
+              <prop k="draw_inside_polygon" v="0"/>
+              <prop k="joinstyle" v="bevel"/>
+              <prop k="line_color" v="217,0,0,255"/>
+              <prop k="line_style" v="dot"/>
+              <prop k="line_width" v="0.3"/>
+              <prop k="line_width_unit" v="MM"/>
+              <prop k="offset" v="1.2"/>
+              <prop k="offset_map_unit_scale" v="0,0,0,0,0,0"/>
+              <prop k="offset_unit" v="MM"/>
+              <prop k="use_custom_dash" v="0"/>
+              <prop k="width_map_unit_scale" v="0,0,0,0,0,0"/>
+              <effect enabled="0" type="effectStack">
+                <effect type="transform">
+                  <prop k="draw_mode" v="2"/>
+                  <prop k="enabled" v="1"/>
+                  <prop k="reflect_x" v="0"/>
+                  <prop k="reflect_y" v="0"/>
+                  <prop k="rotation" v="0"/>
+                  <prop k="scale_x" v="1"/>
+                  <prop k="scale_y" v="1"/>
+                  <prop k="shear_x" v="0"/>
+                  <prop k="shear_y" v="0"/>
+                  <prop k="translate_unit" v="MM"/>
+                  <prop k="translate_unit_scale" v="0,0,0,0,0,0"/>
+                  <prop k="translate_x" v="0"/>
+                  <prop k="translate_y" v="-1.6"/>
                 </effect>
               </effect>
             </layer>
@@ -35919,7 +36042,7 @@ def my_form_open(dialog, layer, feature):
               <prop k="customdash_unit" v="MM"/>
               <prop k="draw_inside_polygon" v="0"/>
               <prop k="joinstyle" v="bevel"/>
-              <prop k="line_color" v="40,180,16,255"/>
+              <prop k="line_color" v="217,0,0,255"/>
               <prop k="line_style" v="solid"/>
               <prop k="line_width" v="0.9"/>
               <prop k="line_width_unit" v="MM"/>
@@ -35950,8 +36073,8 @@ def my_form_open(dialog, layer, feature):
               <prop k="customdash_unit" v="MM"/>
               <prop k="draw_inside_polygon" v="0"/>
               <prop k="joinstyle" v="bevel"/>
-              <prop k="line_color" v="40,180,16,255"/>
-              <prop k="line_style" v="dash"/>
+              <prop k="line_color" v="217,0,0,255"/>
+              <prop k="line_style" v="solid"/>
               <prop k="line_width" v="0.7"/>
               <prop k="line_width_unit" v="MM"/>
               <prop k="offset" v="0"/>
@@ -35981,7 +36104,7 @@ def my_form_open(dialog, layer, feature):
               <prop k="customdash_unit" v="MM"/>
               <prop k="draw_inside_polygon" v="0"/>
               <prop k="joinstyle" v="bevel"/>
-              <prop k="line_color" v="0,0,0,70"/>
+              <prop k="line_color" v="217,0,0,70"/>
               <prop k="line_style" v="solid"/>
               <prop k="line_width" v="2"/>
               <prop k="line_width_unit" v="MM"/>
@@ -36005,6 +36128,76 @@ def my_form_open(dialog, layer, feature):
             </layer>
           </symbol>
           <symbol alpha="1" clip_to_extent="1" type="line" name="24">
+            <layer pass="0" class="SimpleLine" locked="0">
+              <prop k="capstyle" v="flat"/>
+              <prop k="customdash" v="5;2"/>
+              <prop k="customdash_map_unit_scale" v="0,0,0,0,0,0"/>
+              <prop k="customdash_unit" v="MM"/>
+              <prop k="draw_inside_polygon" v="0"/>
+              <prop k="joinstyle" v="bevel"/>
+              <prop k="line_color" v="217,0,0,255"/>
+              <prop k="line_style" v="dot"/>
+              <prop k="line_width" v="0.3"/>
+              <prop k="line_width_unit" v="MM"/>
+              <prop k="offset" v="-1.2"/>
+              <prop k="offset_map_unit_scale" v="0,0,0,0,0,0"/>
+              <prop k="offset_unit" v="MM"/>
+              <prop k="use_custom_dash" v="0"/>
+              <prop k="width_map_unit_scale" v="0,0,0,0,0,0"/>
+              <effect enabled="0" type="effectStack">
+                <effect type="transform">
+                  <prop k="draw_mode" v="2"/>
+                  <prop k="enabled" v="1"/>
+                  <prop k="reflect_x" v="0"/>
+                  <prop k="reflect_y" v="0"/>
+                  <prop k="rotation" v="0"/>
+                  <prop k="scale_x" v="1"/>
+                  <prop k="scale_y" v="1"/>
+                  <prop k="shear_x" v="0"/>
+                  <prop k="shear_y" v="0"/>
+                  <prop k="translate_unit" v="MM"/>
+                  <prop k="translate_unit_scale" v="0,0,0,0,0,0"/>
+                  <prop k="translate_x" v="5.55112e-17"/>
+                  <prop k="translate_y" v="1.6"/>
+                </effect>
+              </effect>
+            </layer>
+            <layer pass="0" class="SimpleLine" locked="0">
+              <prop k="capstyle" v="flat"/>
+              <prop k="customdash" v="5;2"/>
+              <prop k="customdash_map_unit_scale" v="0,0,0,0,0,0"/>
+              <prop k="customdash_unit" v="MM"/>
+              <prop k="draw_inside_polygon" v="0"/>
+              <prop k="joinstyle" v="bevel"/>
+              <prop k="line_color" v="217,0,0,255"/>
+              <prop k="line_style" v="dot"/>
+              <prop k="line_width" v="0.3"/>
+              <prop k="line_width_unit" v="MM"/>
+              <prop k="offset" v="1.2"/>
+              <prop k="offset_map_unit_scale" v="0,0,0,0,0,0"/>
+              <prop k="offset_unit" v="MM"/>
+              <prop k="use_custom_dash" v="0"/>
+              <prop k="width_map_unit_scale" v="0,0,0,0,0,0"/>
+              <effect enabled="0" type="effectStack">
+                <effect type="transform">
+                  <prop k="draw_mode" v="2"/>
+                  <prop k="enabled" v="1"/>
+                  <prop k="reflect_x" v="0"/>
+                  <prop k="reflect_y" v="0"/>
+                  <prop k="rotation" v="0"/>
+                  <prop k="scale_x" v="1"/>
+                  <prop k="scale_y" v="1"/>
+                  <prop k="shear_x" v="0"/>
+                  <prop k="shear_y" v="0"/>
+                  <prop k="translate_unit" v="MM"/>
+                  <prop k="translate_unit_scale" v="0,0,0,0,0,0"/>
+                  <prop k="translate_x" v="0"/>
+                  <prop k="translate_y" v="-1.6"/>
+                </effect>
+              </effect>
+            </layer>
+          </symbol>
+          <symbol alpha="1" clip_to_extent="1" type="line" name="25">
             <layer pass="0" class="SimpleLine" locked="0">
               <prop k="capstyle" v="square"/>
               <prop k="customdash" v="5;2"/>
@@ -36035,7 +36228,7 @@ def my_form_open(dialog, layer, feature):
               </effect>
             </layer>
           </symbol>
-          <symbol alpha="1" clip_to_extent="1" type="line" name="25">
+          <symbol alpha="1" clip_to_extent="1" type="line" name="26">
             <layer pass="0" class="SimpleLine" locked="0">
               <prop k="capstyle" v="square"/>
               <prop k="customdash" v="2;1.3"/>
@@ -36044,7 +36237,7 @@ def my_form_open(dialog, layer, feature):
               <prop k="draw_inside_polygon" v="0"/>
               <prop k="joinstyle" v="bevel"/>
               <prop k="line_color" v="40,180,16,255"/>
-              <prop k="line_style" v="solid"/>
+              <prop k="line_style" v="dash"/>
               <prop k="line_width" v="0.7"/>
               <prop k="line_width_unit" v="MM"/>
               <prop k="offset" v="0"/>
@@ -36066,7 +36259,7 @@ def my_form_open(dialog, layer, feature):
               </effect>
             </layer>
           </symbol>
-          <symbol alpha="1" clip_to_extent="1" type="line" name="26">
+          <symbol alpha="1" clip_to_extent="1" type="line" name="27">
             <layer pass="0" class="SimpleLine" locked="0">
               <prop k="capstyle" v="flat"/>
               <prop k="customdash" v="5;2"/>
@@ -36074,7 +36267,77 @@ def my_form_open(dialog, layer, feature):
               <prop k="customdash_unit" v="MM"/>
               <prop k="draw_inside_polygon" v="0"/>
               <prop k="joinstyle" v="bevel"/>
-              <prop k="line_color" v="0,0,0,70"/>
+              <prop k="line_color" v="40,180,16,255"/>
+              <prop k="line_style" v="dot"/>
+              <prop k="line_width" v="0.3"/>
+              <prop k="line_width_unit" v="MM"/>
+              <prop k="offset" v="-1.2"/>
+              <prop k="offset_map_unit_scale" v="0,0,0,0,0,0"/>
+              <prop k="offset_unit" v="MM"/>
+              <prop k="use_custom_dash" v="0"/>
+              <prop k="width_map_unit_scale" v="0,0,0,0,0,0"/>
+              <effect enabled="0" type="effectStack">
+                <effect type="transform">
+                  <prop k="draw_mode" v="2"/>
+                  <prop k="enabled" v="1"/>
+                  <prop k="reflect_x" v="0"/>
+                  <prop k="reflect_y" v="0"/>
+                  <prop k="rotation" v="0"/>
+                  <prop k="scale_x" v="1"/>
+                  <prop k="scale_y" v="1"/>
+                  <prop k="shear_x" v="0"/>
+                  <prop k="shear_y" v="0"/>
+                  <prop k="translate_unit" v="MM"/>
+                  <prop k="translate_unit_scale" v="0,0,0,0,0,0"/>
+                  <prop k="translate_x" v="5.55112e-17"/>
+                  <prop k="translate_y" v="1.6"/>
+                </effect>
+              </effect>
+            </layer>
+            <layer pass="0" class="SimpleLine" locked="0">
+              <prop k="capstyle" v="flat"/>
+              <prop k="customdash" v="5;2"/>
+              <prop k="customdash_map_unit_scale" v="0,0,0,0,0,0"/>
+              <prop k="customdash_unit" v="MM"/>
+              <prop k="draw_inside_polygon" v="0"/>
+              <prop k="joinstyle" v="bevel"/>
+              <prop k="line_color" v="40,180,16,255"/>
+              <prop k="line_style" v="dot"/>
+              <prop k="line_width" v="0.3"/>
+              <prop k="line_width_unit" v="MM"/>
+              <prop k="offset" v="1.2"/>
+              <prop k="offset_map_unit_scale" v="0,0,0,0,0,0"/>
+              <prop k="offset_unit" v="MM"/>
+              <prop k="use_custom_dash" v="0"/>
+              <prop k="width_map_unit_scale" v="0,0,0,0,0,0"/>
+              <effect enabled="0" type="effectStack">
+                <effect type="transform">
+                  <prop k="draw_mode" v="2"/>
+                  <prop k="enabled" v="1"/>
+                  <prop k="reflect_x" v="0"/>
+                  <prop k="reflect_y" v="0"/>
+                  <prop k="rotation" v="0"/>
+                  <prop k="scale_x" v="1"/>
+                  <prop k="scale_y" v="1"/>
+                  <prop k="shear_x" v="0"/>
+                  <prop k="shear_y" v="0"/>
+                  <prop k="translate_unit" v="MM"/>
+                  <prop k="translate_unit_scale" v="0,0,0,0,0,0"/>
+                  <prop k="translate_x" v="0"/>
+                  <prop k="translate_y" v="-1.6"/>
+                </effect>
+              </effect>
+            </layer>
+          </symbol>
+          <symbol alpha="1" clip_to_extent="1" type="line" name="28">
+            <layer pass="0" class="SimpleLine" locked="0">
+              <prop k="capstyle" v="flat"/>
+              <prop k="customdash" v="5;2"/>
+              <prop k="customdash_map_unit_scale" v="0,0,0,0,0,0"/>
+              <prop k="customdash_unit" v="MM"/>
+              <prop k="draw_inside_polygon" v="0"/>
+              <prop k="joinstyle" v="bevel"/>
+              <prop k="line_color" v="40,180,16,69"/>
               <prop k="line_style" v="solid"/>
               <prop k="line_width" v="2"/>
               <prop k="line_width_unit" v="MM"/>
@@ -36097,26 +36360,26 @@ def my_form_open(dialog, layer, feature):
               </effect>
             </layer>
           </symbol>
-          <symbol alpha="1" clip_to_extent="1" type="line" name="27">
+          <symbol alpha="1" clip_to_extent="1" type="line" name="29">
             <layer pass="0" class="SimpleLine" locked="0">
               <prop k="capstyle" v="square"/>
-              <prop k="color_dd_active" v="1"/>
-              <prop k="color_dd_expression" v="CASE WHEN &quot;pressurezone_colorcode&quot; = 1 THEN '21,133,248,255' WHEN &quot;pressurezone_colorcode&quot; = 2 THEN '248,21,64,255' WHEN &quot;pressurezone_colorcode&quot; = 3 THEN '32,205,36,255' ELSE '0,0,0,255' END"/>
-              <prop k="color_dd_field" v=""/>
-              <prop k="color_dd_useexpr" v="1"/>
               <prop k="customdash" v="5;2"/>
               <prop k="customdash_map_unit_scale" v="0,0,0,0,0,0"/>
               <prop k="customdash_unit" v="MM"/>
               <prop k="draw_inside_polygon" v="0"/>
               <prop k="joinstyle" v="bevel"/>
-              <prop k="line_color" v="24,233,178,255"/>
+              <prop k="line_color" v="40,180,16,255"/>
               <prop k="line_style" v="solid"/>
-              <prop k="line_width" v="0.4"/>
+              <prop k="line_width" v="0.9"/>
               <prop k="line_width_unit" v="MM"/>
               <prop k="offset" v="0"/>
               <prop k="offset_map_unit_scale" v="0,0,0,0,0,0"/>
               <prop k="offset_unit" v="MM"/>
               <prop k="use_custom_dash" v="0"/>
+              <prop k="width_dd_active" v="1"/>
+              <prop k="width_dd_expression" v="CASE WHEN &quot;pipe_material_diameter&quot; is not NULL&#xa;THEN toreal(COALESCE(&quot;pipe_material_diameter_external&quot;,&quot;pipe_material_diameter_nominal&quot;)) / 900 + 0.2&#xa;ELSE 0.2&#xa;END"/>
+              <prop k="width_dd_field" v=""/>
+              <prop k="width_dd_useexpr" v="1"/>
               <prop k="width_map_unit_scale" v="0,0,0,0,0,0"/>
               <effect enabled="0" type="effectStack">
                 <effect type="drawSource">
@@ -36126,25 +36389,6 @@ def my_form_open(dialog, layer, feature):
                   <prop k="transparency" v="0"/>
                 </effect>
               </effect>
-            </layer>
-          </symbol>
-          <symbol alpha="1" clip_to_extent="1" type="line" name="28">
-            <layer pass="0" class="SimpleLine" locked="0">
-              <prop k="capstyle" v="square"/>
-              <prop k="customdash" v="5;2"/>
-              <prop k="customdash_map_unit_scale" v="0,0,0,0,0,0"/>
-              <prop k="customdash_unit" v="MM"/>
-              <prop k="draw_inside_polygon" v="0"/>
-              <prop k="joinstyle" v="bevel"/>
-              <prop k="line_color" v="243,69,255,255"/>
-              <prop k="line_style" v="solid"/>
-              <prop k="line_width" v="1"/>
-              <prop k="line_width_unit" v="MM"/>
-              <prop k="offset" v="0"/>
-              <prop k="offset_map_unit_scale" v="0,0,0,0,0,0"/>
-              <prop k="offset_unit" v="MM"/>
-              <prop k="use_custom_dash" v="0"/>
-              <prop k="width_map_unit_scale" v="0,0,0,0,0,0"/>
             </layer>
           </symbol>
           <symbol alpha="1" clip_to_extent="1" type="line" name="3">
@@ -36215,6 +36459,188 @@ def my_form_open(dialog, layer, feature):
                   <prop k="translate_y" v="-1.6"/>
                 </effect>
               </effect>
+            </layer>
+          </symbol>
+          <symbol alpha="1" clip_to_extent="1" type="line" name="30">
+            <layer pass="0" class="SimpleLine" locked="0">
+              <prop k="capstyle" v="square"/>
+              <prop k="customdash" v="2;1.3"/>
+              <prop k="customdash_map_unit_scale" v="0,0,0,0,0,0"/>
+              <prop k="customdash_unit" v="MM"/>
+              <prop k="draw_inside_polygon" v="0"/>
+              <prop k="joinstyle" v="bevel"/>
+              <prop k="line_color" v="40,180,16,255"/>
+              <prop k="line_style" v="solid"/>
+              <prop k="line_width" v="0.7"/>
+              <prop k="line_width_unit" v="MM"/>
+              <prop k="offset" v="0"/>
+              <prop k="offset_map_unit_scale" v="0,0,0,0,0,0"/>
+              <prop k="offset_unit" v="MM"/>
+              <prop k="use_custom_dash" v="1"/>
+              <prop k="width_dd_active" v="1"/>
+              <prop k="width_dd_expression" v="CASE WHEN &quot;pipe_material_diameter&quot; is not NULL&#xa;THEN toreal(COALESCE(&quot;pipe_material_diameter_external&quot;,&quot;pipe_material_diameter_nominal&quot;)) / 900 + 0.2&#xa;ELSE 0.2&#xa;END"/>
+              <prop k="width_dd_field" v=""/>
+              <prop k="width_dd_useexpr" v="1"/>
+              <prop k="width_map_unit_scale" v="0,0,0,0,0,0"/>
+              <effect enabled="0" type="effectStack">
+                <effect type="drawSource">
+                  <prop k="blend_mode" v="0"/>
+                  <prop k="draw_mode" v="2"/>
+                  <prop k="enabled" v="1"/>
+                  <prop k="transparency" v="0"/>
+                </effect>
+              </effect>
+            </layer>
+          </symbol>
+          <symbol alpha="1" clip_to_extent="1" type="line" name="31">
+            <layer pass="0" class="SimpleLine" locked="0">
+              <prop k="capstyle" v="flat"/>
+              <prop k="customdash" v="5;2"/>
+              <prop k="customdash_map_unit_scale" v="0,0,0,0,0,0"/>
+              <prop k="customdash_unit" v="MM"/>
+              <prop k="draw_inside_polygon" v="0"/>
+              <prop k="joinstyle" v="bevel"/>
+              <prop k="line_color" v="40,180,16,69"/>
+              <prop k="line_style" v="solid"/>
+              <prop k="line_width" v="2"/>
+              <prop k="line_width_unit" v="MM"/>
+              <prop k="offset" v="0"/>
+              <prop k="offset_map_unit_scale" v="0,0,0,0,0,0"/>
+              <prop k="offset_unit" v="MM"/>
+              <prop k="use_custom_dash" v="0"/>
+              <prop k="width_dd_active" v="1"/>
+              <prop k="width_dd_expression" v="CASE WHEN &quot;pipe_material_diameter&quot; is not NULL&#xa;THEN toreal(COALESCE(&quot;pipe_material_diameter_external&quot;,&quot;pipe_material_diameter_nominal&quot;)) / 900 + 1.2&#xa;ELSE 1.2&#xa;END"/>
+              <prop k="width_dd_field" v=""/>
+              <prop k="width_dd_useexpr" v="1"/>
+              <prop k="width_map_unit_scale" v="0,0,0,0,0,0"/>
+              <effect enabled="0" type="effectStack">
+                <effect type="drawSource">
+                  <prop k="blend_mode" v="0"/>
+                  <prop k="draw_mode" v="2"/>
+                  <prop k="enabled" v="1"/>
+                  <prop k="transparency" v="0"/>
+                </effect>
+              </effect>
+            </layer>
+          </symbol>
+          <symbol alpha="1" clip_to_extent="1" type="line" name="32">
+            <layer pass="0" class="SimpleLine" locked="0">
+              <prop k="capstyle" v="flat"/>
+              <prop k="customdash" v="5;2"/>
+              <prop k="customdash_map_unit_scale" v="0,0,0,0,0,0"/>
+              <prop k="customdash_unit" v="MM"/>
+              <prop k="draw_inside_polygon" v="0"/>
+              <prop k="joinstyle" v="bevel"/>
+              <prop k="line_color" v="40,180,16,255"/>
+              <prop k="line_style" v="dot"/>
+              <prop k="line_width" v="0.3"/>
+              <prop k="line_width_unit" v="MM"/>
+              <prop k="offset" v="-1.2"/>
+              <prop k="offset_map_unit_scale" v="0,0,0,0,0,0"/>
+              <prop k="offset_unit" v="MM"/>
+              <prop k="use_custom_dash" v="0"/>
+              <prop k="width_map_unit_scale" v="0,0,0,0,0,0"/>
+              <effect enabled="0" type="effectStack">
+                <effect type="transform">
+                  <prop k="draw_mode" v="2"/>
+                  <prop k="enabled" v="1"/>
+                  <prop k="reflect_x" v="0"/>
+                  <prop k="reflect_y" v="0"/>
+                  <prop k="rotation" v="0"/>
+                  <prop k="scale_x" v="1"/>
+                  <prop k="scale_y" v="1"/>
+                  <prop k="shear_x" v="0"/>
+                  <prop k="shear_y" v="0"/>
+                  <prop k="translate_unit" v="MM"/>
+                  <prop k="translate_unit_scale" v="0,0,0,0,0,0"/>
+                  <prop k="translate_x" v="5.55112e-17"/>
+                  <prop k="translate_y" v="1.6"/>
+                </effect>
+              </effect>
+            </layer>
+            <layer pass="0" class="SimpleLine" locked="0">
+              <prop k="capstyle" v="flat"/>
+              <prop k="customdash" v="5;2"/>
+              <prop k="customdash_map_unit_scale" v="0,0,0,0,0,0"/>
+              <prop k="customdash_unit" v="MM"/>
+              <prop k="draw_inside_polygon" v="0"/>
+              <prop k="joinstyle" v="bevel"/>
+              <prop k="line_color" v="40,180,16,255"/>
+              <prop k="line_style" v="dot"/>
+              <prop k="line_width" v="0.3"/>
+              <prop k="line_width_unit" v="MM"/>
+              <prop k="offset" v="1.2"/>
+              <prop k="offset_map_unit_scale" v="0,0,0,0,0,0"/>
+              <prop k="offset_unit" v="MM"/>
+              <prop k="use_custom_dash" v="0"/>
+              <prop k="width_map_unit_scale" v="0,0,0,0,0,0"/>
+              <effect enabled="0" type="effectStack">
+                <effect type="transform">
+                  <prop k="draw_mode" v="2"/>
+                  <prop k="enabled" v="1"/>
+                  <prop k="reflect_x" v="0"/>
+                  <prop k="reflect_y" v="0"/>
+                  <prop k="rotation" v="0"/>
+                  <prop k="scale_x" v="1"/>
+                  <prop k="scale_y" v="1"/>
+                  <prop k="shear_x" v="0"/>
+                  <prop k="shear_y" v="0"/>
+                  <prop k="translate_unit" v="MM"/>
+                  <prop k="translate_unit_scale" v="0,0,0,0,0,0"/>
+                  <prop k="translate_x" v="0"/>
+                  <prop k="translate_y" v="-1.6"/>
+                </effect>
+              </effect>
+            </layer>
+          </symbol>
+          <symbol alpha="1" clip_to_extent="1" type="line" name="33">
+            <layer pass="0" class="SimpleLine" locked="0">
+              <prop k="capstyle" v="square"/>
+              <prop k="color_dd_active" v="1"/>
+              <prop k="color_dd_expression" v="CASE WHEN &quot;pressurezone_colorcode&quot; = 1 THEN '21,133,248,255' WHEN &quot;pressurezone_colorcode&quot; = 2 THEN '248,21,64,255' WHEN &quot;pressurezone_colorcode&quot; = 3 THEN '32,205,36,255' ELSE '0,0,0,255' END"/>
+              <prop k="color_dd_field" v=""/>
+              <prop k="color_dd_useexpr" v="1"/>
+              <prop k="customdash" v="5;2"/>
+              <prop k="customdash_map_unit_scale" v="0,0,0,0,0,0"/>
+              <prop k="customdash_unit" v="MM"/>
+              <prop k="draw_inside_polygon" v="0"/>
+              <prop k="joinstyle" v="bevel"/>
+              <prop k="line_color" v="24,233,178,255"/>
+              <prop k="line_style" v="solid"/>
+              <prop k="line_width" v="0.4"/>
+              <prop k="line_width_unit" v="MM"/>
+              <prop k="offset" v="0"/>
+              <prop k="offset_map_unit_scale" v="0,0,0,0,0,0"/>
+              <prop k="offset_unit" v="MM"/>
+              <prop k="use_custom_dash" v="0"/>
+              <prop k="width_map_unit_scale" v="0,0,0,0,0,0"/>
+              <effect enabled="0" type="effectStack">
+                <effect type="drawSource">
+                  <prop k="blend_mode" v="0"/>
+                  <prop k="draw_mode" v="2"/>
+                  <prop k="enabled" v="1"/>
+                  <prop k="transparency" v="0"/>
+                </effect>
+              </effect>
+            </layer>
+          </symbol>
+          <symbol alpha="1" clip_to_extent="1" type="line" name="34">
+            <layer pass="0" class="SimpleLine" locked="0">
+              <prop k="capstyle" v="square"/>
+              <prop k="customdash" v="5;2"/>
+              <prop k="customdash_map_unit_scale" v="0,0,0,0,0,0"/>
+              <prop k="customdash_unit" v="MM"/>
+              <prop k="draw_inside_polygon" v="0"/>
+              <prop k="joinstyle" v="bevel"/>
+              <prop k="line_color" v="243,69,255,255"/>
+              <prop k="line_style" v="solid"/>
+              <prop k="line_width" v="1"/>
+              <prop k="line_width_unit" v="MM"/>
+              <prop k="offset" v="0"/>
+              <prop k="offset_map_unit_scale" v="0,0,0,0,0,0"/>
+              <prop k="offset_unit" v="MM"/>
+              <prop k="use_custom_dash" v="0"/>
+              <prop k="width_map_unit_scale" v="0,0,0,0,0,0"/>
             </layer>
           </symbol>
           <symbol alpha="1" clip_to_extent="1" type="line" name="4">
@@ -57664,70 +58090,70 @@ END
       </edittypes>
       <renderer-v2 forceraster="0" symbollevels="0" type="RuleRenderer" enableorderby="0">
         <rules key="{89d1d7f3-6dd2-48ab-a978-572c899af422}">
-          <rule filter="fk_distributor = 1 AND status_functional = 't'" key="{69b3bf49-4ced-4bb9-8799-da2f168ad22c}" label="fonctionnel">
-            <rule filter="status_active = 't' AND (fk_parent IS NULL OR @map_scale &lt; 501)" key="{6f043e9f-1731-47a8-86d1-a6084a99e57b}" label="actif">
-              <rule filter="installation_type = 'chamber'" key="{e50fbbc2-a891-4432-a846-34d4f3e99c86}" label="Chambre">
-                <rule filter="flow_meter = 't' or water_meter = 't' or manometer = 't'" key="{c5aa7421-12d9-4e1f-b39e-ddc5f7c287e9}" symbol="0" label="Chambre débitmètre"/>
-                <rule filter="ELSE" key="{278ef659-c656-449d-a1c5-7c60acabaa65}" symbol="1" label="Chambre"/>
+          <rule checkstate="0" filter="fk_distributor = 1 AND status_functional = 't'" key="{69b3bf49-4ced-4bb9-8799-da2f168ad22c}" label="fonctionnel">
+            <rule checkstate="0" filter="status_active = 't' AND (fk_parent IS NULL OR @map_scale &lt; 501)" key="{6f043e9f-1731-47a8-86d1-a6084a99e57b}" label="actif">
+              <rule checkstate="0" filter="installation_type = 'chamber'" key="{e50fbbc2-a891-4432-a846-34d4f3e99c86}" label="Chambre">
+                <rule checkstate="0" filter="flow_meter = 't' or water_meter = 't' or manometer = 't'" key="{c5aa7421-12d9-4e1f-b39e-ddc5f7c287e9}" symbol="0" label="Chambre débitmètre"/>
+                <rule checkstate="0" filter="ELSE" key="{278ef659-c656-449d-a1c5-7c60acabaa65}" symbol="1" label="Chambre"/>
               </rule>
-              <rule filter="installation_type = 'pressurecontrol'" key="{dcad679b-71a0-497e-b02e-93f46651826b}" label="pressurecontrol">
-                <rule filter=" &quot;fk_pressurecontrol_type&quot; =  2801 " key="{980ea4bf-d999-4d98-b45a-9c3890a64496}" symbol="2" label="Chambre réducteur"/>
-                <rule filter=" &quot;fk_pressurecontrol_type&quot; =  2802" key="{37877255-94b0-449e-ae98-71803ed4ef1c}" symbol="3" label="Chambre coupe pression"/>
-                <rule filter=" &quot;fk_pressurecontrol_type&quot; =  2803" key="{7e777116-29bb-4af3-883d-504a8f109298}" symbol="4" label="Chambre de rassemblement"/>
+              <rule checkstate="0" filter="installation_type = 'pressurecontrol'" key="{dcad679b-71a0-497e-b02e-93f46651826b}" label="pressurecontrol">
+                <rule checkstate="0" filter=" &quot;fk_pressurecontrol_type&quot; =  2801 " key="{980ea4bf-d999-4d98-b45a-9c3890a64496}" symbol="2" label="Chambre réducteur"/>
+                <rule checkstate="0" filter=" &quot;fk_pressurecontrol_type&quot; =  2802" key="{37877255-94b0-449e-ae98-71803ed4ef1c}" symbol="3" label="Chambre coupe pression"/>
+                <rule checkstate="0" filter=" &quot;fk_pressurecontrol_type&quot; =  2803" key="{7e777116-29bb-4af3-883d-504a8f109298}" symbol="4" label="Chambre de rassemblement"/>
               </rule>
-              <rule filter="installation_type = 'pump'" key="{3c04b823-cf69-4ac1-89cf-d04e9bdd4989}" symbol="5" label="pump"/>
-              <rule filter="installation_type = 'source'" key="{6be86ca3-25cf-47e9-a4d8-09d481490c9c}" symbol="6" label="source"/>
-              <rule filter="installation_type = 'tank'" key="{cdead7aa-d728-472d-b382-91cf70fd6e5f}" symbol="7" label="tank"/>
-              <rule filter="installation_type = 'treatment'" key="{a841e611-3390-4ae1-b9f5-e7fee4fea027}" symbol="8" label="treatment"/>
-              <rule filter="ELSE" key="{5d01efe9-2c1b-4052-a11f-5ce82dd09f65}" symbol="9"/>
+              <rule checkstate="0" filter="installation_type = 'pump'" key="{3c04b823-cf69-4ac1-89cf-d04e9bdd4989}" symbol="5" label="pump"/>
+              <rule checkstate="0" filter="installation_type = 'source'" key="{6be86ca3-25cf-47e9-a4d8-09d481490c9c}" symbol="6" label="source"/>
+              <rule checkstate="0" filter="installation_type = 'tank'" key="{cdead7aa-d728-472d-b382-91cf70fd6e5f}" symbol="7" label="tank"/>
+              <rule checkstate="0" filter="installation_type = 'treatment'" key="{a841e611-3390-4ae1-b9f5-e7fee4fea027}" symbol="8" label="treatment"/>
+              <rule checkstate="0" filter="ELSE" key="{5d01efe9-2c1b-4052-a11f-5ce82dd09f65}" symbol="9"/>
             </rule>
-            <rule filter="status_active = 'f' AND (fk_parent IS NULL OR @map_scale &lt; 501)" key="{f955cc23-5f5f-4ac6-949b-6711a8862c7a}" label="inactif">
-              <rule filter="installation_type = 'chamber'" key="{33dee9ac-9240-41d9-8da7-d047d8521f65}" label="Chambre">
-                <rule filter="flow_meter = 't' or water_meter = 't' or manometer = 't'" key="{b30d473c-b7f4-448a-b647-b2a5ceb1a131}" symbol="10" label="Chambre débitmètre"/>
-                <rule filter="ELSE" key="{ee6ec74f-d3e1-435a-90d0-b91da4a9537f}" symbol="11" label="Chambre"/>
+            <rule checkstate="0" filter="status_active = 'f' AND (fk_parent IS NULL OR @map_scale &lt; 501)" key="{f955cc23-5f5f-4ac6-949b-6711a8862c7a}" label="inactif">
+              <rule checkstate="0" filter="installation_type = 'chamber'" key="{33dee9ac-9240-41d9-8da7-d047d8521f65}" label="Chambre">
+                <rule checkstate="0" filter="flow_meter = 't' or water_meter = 't' or manometer = 't'" key="{b30d473c-b7f4-448a-b647-b2a5ceb1a131}" symbol="10" label="Chambre débitmètre"/>
+                <rule checkstate="0" filter="ELSE" key="{ee6ec74f-d3e1-435a-90d0-b91da4a9537f}" symbol="11" label="Chambre"/>
               </rule>
-              <rule filter="installation_type = 'pressurecontrol'" key="{dc540c42-11d4-4a71-a720-5c18f763734e}" label="pressurecontrol">
-                <rule filter=" &quot;fk_pressurecontrol_type&quot; =  2801 " key="{e2eb5440-e94b-4c54-a2bc-91b66b6e2c21}" symbol="12" label="Chambre réducteur"/>
-                <rule filter=" &quot;fk_pressurecontrol_type&quot; =  2802" key="{a36e1dd4-a5ba-4a46-8647-4b6ecf6a4e58}" symbol="13" label="Chambre coupe pression"/>
-                <rule filter=" &quot;fk_pressurecontrol_type&quot; =  2803" key="{5fb13620-50f9-41de-93f9-9ab384ab087f}" symbol="14" label="Chambre de rassemblement"/>
+              <rule checkstate="0" filter="installation_type = 'pressurecontrol'" key="{dc540c42-11d4-4a71-a720-5c18f763734e}" label="pressurecontrol">
+                <rule checkstate="0" filter=" &quot;fk_pressurecontrol_type&quot; =  2801 " key="{e2eb5440-e94b-4c54-a2bc-91b66b6e2c21}" symbol="12" label="Chambre réducteur"/>
+                <rule checkstate="0" filter=" &quot;fk_pressurecontrol_type&quot; =  2802" key="{a36e1dd4-a5ba-4a46-8647-4b6ecf6a4e58}" symbol="13" label="Chambre coupe pression"/>
+                <rule checkstate="0" filter=" &quot;fk_pressurecontrol_type&quot; =  2803" key="{5fb13620-50f9-41de-93f9-9ab384ab087f}" symbol="14" label="Chambre de rassemblement"/>
               </rule>
-              <rule filter="installation_type = 'pump'" key="{082eff42-4984-492f-97dc-caedb6a17a07}" symbol="15" label="pump"/>
-              <rule filter="installation_type = 'source'" key="{a6946f96-07f0-4f35-aa70-ad33d6866b8d}" symbol="16" label="source"/>
-              <rule filter="installation_type = 'tank'" key="{ffab370b-cfc7-4704-9929-5e4dd09ee8f3}" symbol="17" label="tank"/>
-              <rule filter="installation_type = 'treatment'" key="{224820ff-9d97-46ba-88a8-8073f0a09a29}" symbol="18" label="treatment"/>
-              <rule filter="ELSE" key="{0b8281d6-7c39-44b5-8a40-ecb1889399cb}" symbol="19"/>
+              <rule checkstate="0" filter="installation_type = 'pump'" key="{082eff42-4984-492f-97dc-caedb6a17a07}" symbol="15" label="pump"/>
+              <rule checkstate="0" filter="installation_type = 'source'" key="{a6946f96-07f0-4f35-aa70-ad33d6866b8d}" symbol="16" label="source"/>
+              <rule checkstate="0" filter="installation_type = 'tank'" key="{ffab370b-cfc7-4704-9929-5e4dd09ee8f3}" symbol="17" label="tank"/>
+              <rule checkstate="0" filter="installation_type = 'treatment'" key="{224820ff-9d97-46ba-88a8-8073f0a09a29}" symbol="18" label="treatment"/>
+              <rule checkstate="0" filter="ELSE" key="{0b8281d6-7c39-44b5-8a40-ecb1889399cb}" symbol="19"/>
             </rule>
           </rule>
           <rule checkstate="0" filter="fk_distributor = 1 AND status_functional = 'f'" key="{1a64d4d9-3bd2-437b-9620-740b13e32509}" label="non fonctionnel">
-            <rule filter="installation_type = 'chamber'" key="{ce0c94bb-b016-41a1-931c-3109807689b0}" label="Chambre">
-              <rule filter="flow_meter = 't' or water_meter = 't' or manometer = 't'" key="{f16643c2-ce75-4f94-beee-56389f55aee7}" symbol="20" label="Chambre débitmètre"/>
-              <rule filter="ELSE" key="{8366c510-1142-41fb-85a1-bf9663ad9d11}" symbol="21" label="Chambre"/>
+            <rule checkstate="0" filter="installation_type = 'chamber'" key="{ce0c94bb-b016-41a1-931c-3109807689b0}" label="Chambre">
+              <rule checkstate="0" filter="flow_meter = 't' or water_meter = 't' or manometer = 't'" key="{f16643c2-ce75-4f94-beee-56389f55aee7}" symbol="20" label="Chambre débitmètre"/>
+              <rule checkstate="0" filter="ELSE" key="{8366c510-1142-41fb-85a1-bf9663ad9d11}" symbol="21" label="Chambre"/>
             </rule>
-            <rule filter="installation_type = 'pressurecontrol'" key="{d31ae609-73ec-4d88-8324-5300f14ed738}" label="pressurecontrol">
-              <rule filter=" &quot;fk_pressurecontrol_type&quot; =  2801 " key="{5b2d8e5a-3356-4b07-b16a-4d65880b37be}" symbol="22" label="Chambre réducteur"/>
-              <rule filter=" &quot;fk_pressurecontrol_type&quot; =  2802" key="{58ca52b5-c570-46bb-a8d6-37620ad6dfdd}" symbol="23" label="Chambre coupe pression"/>
-              <rule filter=" &quot;fk_pressurecontrol_type&quot; =  2803" key="{e5d0325a-e0da-4e48-9d56-e1af3d322a7c}" symbol="24" label="Chambre de rassemblement"/>
+            <rule checkstate="0" filter="installation_type = 'pressurecontrol'" key="{d31ae609-73ec-4d88-8324-5300f14ed738}" label="pressurecontrol">
+              <rule checkstate="0" filter=" &quot;fk_pressurecontrol_type&quot; =  2801 " key="{5b2d8e5a-3356-4b07-b16a-4d65880b37be}" symbol="22" label="Chambre réducteur"/>
+              <rule checkstate="0" filter=" &quot;fk_pressurecontrol_type&quot; =  2802" key="{58ca52b5-c570-46bb-a8d6-37620ad6dfdd}" symbol="23" label="Chambre coupe pression"/>
+              <rule checkstate="0" filter=" &quot;fk_pressurecontrol_type&quot; =  2803" key="{e5d0325a-e0da-4e48-9d56-e1af3d322a7c}" symbol="24" label="Chambre de rassemblement"/>
             </rule>
-            <rule filter="installation_type = 'pump'" key="{53d7b7ef-bd10-4993-87fd-3d4573cd83ce}" symbol="25" label="pump"/>
-            <rule filter="installation_type = 'source'" key="{18febfc6-d9a9-4440-bee8-fa580f8b5d76}" symbol="26" label="source"/>
-            <rule filter="installation_type = 'tank'" key="{006b8eb0-9edd-4fe7-8811-9db931679b5f}" symbol="27" label="tank"/>
-            <rule filter="installation_type = 'treatment'" key="{d9e91fdc-4236-40c2-9a43-470f8c8503cf}" symbol="28" label="treatment"/>
-            <rule filter="ELSE" key="{502f5a4d-e6dd-456d-9170-febbacdf05b8}" symbol="29"/>
+            <rule checkstate="0" filter="installation_type = 'pump'" key="{53d7b7ef-bd10-4993-87fd-3d4573cd83ce}" symbol="25" label="pump"/>
+            <rule checkstate="0" filter="installation_type = 'source'" key="{18febfc6-d9a9-4440-bee8-fa580f8b5d76}" symbol="26" label="source"/>
+            <rule checkstate="0" filter="installation_type = 'tank'" key="{006b8eb0-9edd-4fe7-8811-9db931679b5f}" symbol="27" label="tank"/>
+            <rule checkstate="0" filter="installation_type = 'treatment'" key="{d9e91fdc-4236-40c2-9a43-470f8c8503cf}" symbol="28" label="treatment"/>
+            <rule checkstate="0" filter="ELSE" key="{502f5a4d-e6dd-456d-9170-febbacdf05b8}" symbol="29"/>
           </rule>
-          <rule filter="fk_distributor != 1" key="{05336f6d-543d-4bf7-bea5-a474d431bdf3}" label="étranger">
-            <rule filter="installation_type = 'chamber'" key="{8beaf9ba-e486-46ce-8f70-957911d5515b}" label="Chambre">
-              <rule filter="flow_meter = 't' or water_meter = 't' or manometer = 't'" key="{5f09c1ec-36a2-4dba-98f0-bcd568e24533}" symbol="30" label="Chambre débitmètre"/>
-              <rule filter="ELSE" key="{a6204137-028d-44b7-b245-5d3b24a7d399}" symbol="31" label="Chambre"/>
+          <rule checkstate="0" filter="fk_distributor != 1" key="{05336f6d-543d-4bf7-bea5-a474d431bdf3}" label="étranger">
+            <rule checkstate="0" filter="installation_type = 'chamber'" key="{8beaf9ba-e486-46ce-8f70-957911d5515b}" label="Chambre">
+              <rule checkstate="0" filter="flow_meter = 't' or water_meter = 't' or manometer = 't'" key="{5f09c1ec-36a2-4dba-98f0-bcd568e24533}" symbol="30" label="Chambre débitmètre"/>
+              <rule checkstate="0" filter="ELSE" key="{a6204137-028d-44b7-b245-5d3b24a7d399}" symbol="31" label="Chambre"/>
             </rule>
-            <rule filter="installation_type = 'pressurecontrol'" key="{94454820-5d27-4427-80f6-24d28c5c51a3}" label="pressurecontrol">
-              <rule filter=" &quot;fk_pressurecontrol_type&quot; =  2801 " key="{d2372040-fe4c-4b5f-8432-b8fe2a68d576}" symbol="32" label="Chambre réducteur"/>
-              <rule filter=" &quot;fk_pressurecontrol_type&quot; =  2802" key="{9402cda0-5af5-4a12-8353-366c479faed7}" symbol="33" label="Chambre coupe pression"/>
-              <rule filter=" &quot;fk_pressurecontrol_type&quot; =  2803" key="{318b69f6-b284-41b7-aa22-bdf34451d264}" symbol="34" label="Chambre de rassemblement"/>
+            <rule checkstate="0" filter="installation_type = 'pressurecontrol'" key="{94454820-5d27-4427-80f6-24d28c5c51a3}" label="pressurecontrol">
+              <rule checkstate="0" filter=" &quot;fk_pressurecontrol_type&quot; =  2801 " key="{d2372040-fe4c-4b5f-8432-b8fe2a68d576}" symbol="32" label="Chambre réducteur"/>
+              <rule checkstate="0" filter=" &quot;fk_pressurecontrol_type&quot; =  2802" key="{9402cda0-5af5-4a12-8353-366c479faed7}" symbol="33" label="Chambre coupe pression"/>
+              <rule checkstate="0" filter=" &quot;fk_pressurecontrol_type&quot; =  2803" key="{318b69f6-b284-41b7-aa22-bdf34451d264}" symbol="34" label="Chambre de rassemblement"/>
             </rule>
-            <rule filter="installation_type = 'pump'" key="{c43ff5da-3940-4343-ba73-5421a97e3150}" symbol="35" label="pump"/>
-            <rule filter="installation_type = 'source'" key="{79439a36-597f-4775-89a8-7c072e5beef5}" symbol="36" label="source"/>
-            <rule filter="installation_type = 'tank'" key="{2da4b3f5-47c6-44d2-8e96-2a0b70b6ad15}" symbol="37" label="tank"/>
-            <rule filter="installation_type = 'treatment'" key="{da2a0958-a57b-43fc-9c43-8725b703dedc}" symbol="38" label="treatment"/>
+            <rule checkstate="0" filter="installation_type = 'pump'" key="{c43ff5da-3940-4343-ba73-5421a97e3150}" symbol="35" label="pump"/>
+            <rule checkstate="0" filter="installation_type = 'source'" key="{79439a36-597f-4775-89a8-7c072e5beef5}" symbol="36" label="source"/>
+            <rule checkstate="0" filter="installation_type = 'tank'" key="{2da4b3f5-47c6-44d2-8e96-2a0b70b6ad15}" symbol="37" label="tank"/>
+            <rule checkstate="0" filter="installation_type = 'treatment'" key="{da2a0958-a57b-43fc-9c43-8725b703dedc}" symbol="38" label="treatment"/>
             <rule checkstate="0" filter="ELSE" key="{95c23bff-05b6-444b-ba53-a19d85aec669}" symbol="39"/>
           </rule>
         </rules>
@@ -59137,7 +59563,8 @@ END
       <renderer-v2 forceraster="0" symbollevels="0" type="RuleRenderer" enableorderby="0">
         <rules key="{6d5d664c-b9fc-488b-8315-60819bd5cb9c}">
           <rule filter="true" key="{6bc77f86-9668-4ab7-8fb8-7de8905e0db2}" symbol="0"/>
-          <rule filter=" &quot;fk_protection&quot; IS NOT NULL OR &quot;fk_installmethod&quot; =4202" key="{a95a4acd-9cc7-42c0-8dc2-fa8bdc1dcb90}" symbol="1" label="protégée"/>
+          <rule scalemaxdenom="6000" filter=" &quot;fk_protection&quot; IS NOT NULL" key="{a95a4acd-9cc7-42c0-8dc2-fa8bdc1dcb90}" symbol="1" scalemindenom="1000" label="protégée"/>
+          <rule scalemaxdenom="6000" filter=" &quot;fk_installmethod&quot;  =4202" key="{a50d0b92-3d13-4426-a8cd-f8ce3a0d442f}" symbol="2" scalemindenom="1" label="chemisée"/>
         </rules>
         <symbols>
           <symbol alpha="1" clip_to_extent="1" type="line" name="0">
@@ -59175,7 +59602,7 @@ END
             <layer pass="0" class="SimpleLine" locked="0">
               <prop k="capstyle" v="flat"/>
               <prop k="color_dd_active" v="1"/>
-              <prop k="color_dd_expression" v="case when &quot;fk_distributor&quot; = 1 then '0,80,255,80'&#xa; else '0,0,0,80'&#xa; end"/>
+              <prop k="color_dd_expression" v="case &#xa;when &quot;fk_status&quot; = 1302 then '217,0,0,80'&#xa;when &quot;fk_distributor&quot; = 1 then '0,80,255,80'&#xa; else '40,180,16,80'&#xa; end"/>
               <prop k="color_dd_field" v=""/>
               <prop k="color_dd_useexpr" v="1"/>
               <prop k="customdash" v="5;2"/>
@@ -59202,6 +59629,84 @@ END
                   <prop k="draw_mode" v="2"/>
                   <prop k="enabled" v="1"/>
                   <prop k="transparency" v="0"/>
+                </effect>
+              </effect>
+            </layer>
+          </symbol>
+          <symbol alpha="1" clip_to_extent="1" type="line" name="2">
+            <layer pass="0" class="SimpleLine" locked="0">
+              <prop k="capstyle" v="flat"/>
+              <prop k="color_dd_active" v="1"/>
+              <prop k="color_dd_expression" v="case &#xa;when &quot;fk_status&quot; = 1302 then '217,0,0'&#xa;when &quot;fk_distributor&quot; = 1 then '0,80,255'&#xa; else '40,180,16'&#xa; end"/>
+              <prop k="color_dd_field" v=""/>
+              <prop k="color_dd_useexpr" v="1"/>
+              <prop k="customdash" v="5;2"/>
+              <prop k="customdash_map_unit_scale" v="0,0,0,0,0,0"/>
+              <prop k="customdash_unit" v="MM"/>
+              <prop k="draw_inside_polygon" v="0"/>
+              <prop k="joinstyle" v="bevel"/>
+              <prop k="line_color" v="0,140,255,255"/>
+              <prop k="line_style" v="dot"/>
+              <prop k="line_width" v="0.3"/>
+              <prop k="line_width_unit" v="MM"/>
+              <prop k="offset" v="-1.2"/>
+              <prop k="offset_map_unit_scale" v="0,0,0,0,0,0"/>
+              <prop k="offset_unit" v="MM"/>
+              <prop k="use_custom_dash" v="0"/>
+              <prop k="width_map_unit_scale" v="0,0,0,0,0,0"/>
+              <effect enabled="0" type="effectStack">
+                <effect type="transform">
+                  <prop k="draw_mode" v="2"/>
+                  <prop k="enabled" v="1"/>
+                  <prop k="reflect_x" v="0"/>
+                  <prop k="reflect_y" v="0"/>
+                  <prop k="rotation" v="0"/>
+                  <prop k="scale_x" v="1"/>
+                  <prop k="scale_y" v="1"/>
+                  <prop k="shear_x" v="0"/>
+                  <prop k="shear_y" v="0"/>
+                  <prop k="translate_unit" v="MM"/>
+                  <prop k="translate_unit_scale" v="0,0,0,0,0,0"/>
+                  <prop k="translate_x" v="5.55112e-17"/>
+                  <prop k="translate_y" v="1.6"/>
+                </effect>
+              </effect>
+            </layer>
+            <layer pass="0" class="SimpleLine" locked="0">
+              <prop k="capstyle" v="flat"/>
+              <prop k="color_dd_active" v="1"/>
+              <prop k="color_dd_expression" v="case &#xa;when &quot;fk_status&quot; = 1302 then '217,0,0'&#xa;when &quot;fk_distributor&quot; = 1 then '0,80,255'&#xa; else '40,180,16'&#xa; end"/>
+              <prop k="color_dd_field" v=""/>
+              <prop k="color_dd_useexpr" v="1"/>
+              <prop k="customdash" v="5;2"/>
+              <prop k="customdash_map_unit_scale" v="0,0,0,0,0,0"/>
+              <prop k="customdash_unit" v="MM"/>
+              <prop k="draw_inside_polygon" v="0"/>
+              <prop k="joinstyle" v="bevel"/>
+              <prop k="line_color" v="0,140,255,255"/>
+              <prop k="line_style" v="dot"/>
+              <prop k="line_width" v="0.3"/>
+              <prop k="line_width_unit" v="MM"/>
+              <prop k="offset" v="1.2"/>
+              <prop k="offset_map_unit_scale" v="0,0,0,0,0,0"/>
+              <prop k="offset_unit" v="MM"/>
+              <prop k="use_custom_dash" v="0"/>
+              <prop k="width_map_unit_scale" v="0,0,0,0,0,0"/>
+              <effect enabled="0" type="effectStack">
+                <effect type="transform">
+                  <prop k="draw_mode" v="2"/>
+                  <prop k="enabled" v="1"/>
+                  <prop k="reflect_x" v="0"/>
+                  <prop k="reflect_y" v="0"/>
+                  <prop k="rotation" v="0"/>
+                  <prop k="scale_x" v="1"/>
+                  <prop k="scale_y" v="1"/>
+                  <prop k="shear_x" v="0"/>
+                  <prop k="shear_y" v="0"/>
+                  <prop k="translate_unit" v="MM"/>
+                  <prop k="translate_unit_scale" v="0,0,0,0,0,0"/>
+                  <prop k="translate_x" v="0"/>
+                  <prop k="translate_y" v="-1.6"/>
                 </effect>
               </effect>
             </layer>
@@ -61805,43 +62310,41 @@ def closeProject():
       <layer style="" id="cs_batiment20130514143721709"/>
       <layer style="" id="od_batiment_souterrain20130514143946785"/>
       <checked-legend-nodes id="conduites_copy20130709141244955">
-        <checked-legend-node id="{1db41c6f-d632-42a2-a453-287300377f48}"/>
-        <checked-legend-node id="{013429dc-a1cd-4a17-904a-6550a0175046}"/>
-        <checked-legend-node id="{1c3be22e-50cf-4ddb-a382-cb79acc30446}"/>
-        <checked-legend-node id="{2513a8b8-a110-4727-854c-6084f64e3bdf}"/>
         <checked-legend-node id="{6c5ec343-05d3-4fcd-8dc1-283232838086}"/>
-        <checked-legend-node id="{af5a1df4-2d61-4c6c-9951-0f6f900354d9}"/>
-        <checked-legend-node id="{b8c5c345-6f26-4237-a405-a503b361b9da}"/>
-        <checked-legend-node id="{ab1fe7d1-2f11-4eea-915b-f4a08a217886}"/>
-        <checked-legend-node id="{ca06b6f2-f1ee-4958-b79a-6cb6cbc2059b}"/>
-        <checked-legend-node id="{7d0cfa7a-eaf4-499a-b977-1238b90ca15f}"/>
-        <checked-legend-node id="{f550eef3-fdaa-427b-b415-bd7e8fc25f9e}"/>
-        <checked-legend-node id="{d1bbbb53-b702-4d56-9f8b-ccf8029e5318}"/>
-        <checked-legend-node id="{03ff9811-2539-4b32-b396-20796c2639bf}"/>
         <checked-legend-node id="{fb522923-eeee-47bb-8352-65a3d5637c4c}"/>
-        <checked-legend-node id="{6f5c08e7-bf93-4eee-94df-3f749becb926}"/>
-        <checked-legend-node id="{684b69b2-b4e2-49e4-82f1-ea1e9a680e64}"/>
-        <checked-legend-node id="{59ae2c57-00c7-4afe-bfba-16af06381694}"/>
-        <checked-legend-node id="{1d54e4f9-8261-4fb7-ab45-581756bf08a2}"/>
-        <checked-legend-node id="{820fcdfc-cca8-4a16-a307-192cf4ddd396}"/>
-        <checked-legend-node id="{bd93e9ea-b64b-4fbd-bf89-6d4395730e60}"/>
         <checked-legend-node id="{e3509205-7271-40dd-aa3a-b8edce4c3ffe}"/>
-        <checked-legend-node id="{cbedc12d-c79c-4e2f-b007-5bbfcaa3cfd2}"/>
-        <checked-legend-node id="{8f3bf5ad-c837-4d67-9ba8-2a0c37ad6ae0}"/>
-        <checked-legend-node id="{f798c83b-a461-46c3-8031-8b5bc3caffd8}"/>
-        <checked-legend-node id="{65e92041-f079-42f0-80be-f3bedfbdcdac}"/>
-        <checked-legend-node id="{ad349920-d2f8-4ac3-ae12-639c93ed9224}"/>
-        <checked-legend-node id="{9486a529-9a4e-4a3c-83fe-86f6f93102c0}"/>
-        <checked-legend-node id="{2e14d53a-6d2f-40b3-bf3b-4f32112e3d59}"/>
-        <checked-legend-node id="{5b970fd5-5c37-4865-81a5-cab18c5fb58c}"/>
-        <checked-legend-node id="{85a03431-ffdc-4bd4-9796-2113d60c4125}"/>
-        <checked-legend-node id="{46c7536a-ac7b-4e7b-afe6-33f9fee2f171}"/>
-        <checked-legend-node id="{d0b9168b-e603-49dd-8c84-e17551131f81}"/>
-        <checked-legend-node id="{1f73b079-4d8c-4982-b2ab-6e9b5756b800}"/>
-        <checked-legend-node id="{f2f26723-dc46-40c5-abe2-ef61a8c502e3}"/>
         <checked-legend-node id="{f683634b-6b3e-459a-b735-1e5d0fe53ae9}"/>
+        <checked-legend-node id="{d1bbbb53-b702-4d56-9f8b-ccf8029e5318}"/>
+        <checked-legend-node id="{f550eef3-fdaa-427b-b415-bd7e8fc25f9e}"/>
+        <checked-legend-node id="{1db41c6f-d632-42a2-a453-287300377f48}"/>
         <checked-legend-node id="{c0af50d9-d68b-4c2f-b9fa-9e2be9ec0e34}"/>
+        <checked-legend-node id="{2e14d53a-6d2f-40b3-bf3b-4f32112e3d59}"/>
+        <checked-legend-node id="{46c7536a-ac7b-4e7b-afe6-33f9fee2f171}"/>
+        <checked-legend-node id="{5b970fd5-5c37-4865-81a5-cab18c5fb58c}"/>
+        <checked-legend-node id="{6f5c08e7-bf93-4eee-94df-3f749becb926}"/>
+        <checked-legend-node id="{013429dc-a1cd-4a17-904a-6550a0175046}"/>
+        <checked-legend-node id="{ca06b6f2-f1ee-4958-b79a-6cb6cbc2059b}"/>
+        <checked-legend-node id="{ab1fe7d1-2f11-4eea-915b-f4a08a217886}"/>
+        <checked-legend-node id="{2513a8b8-a110-4727-854c-6084f64e3bdf}"/>
+        <checked-legend-node id="{bd93e9ea-b64b-4fbd-bf89-6d4395730e60}"/>
+        <checked-legend-node id="{ad349920-d2f8-4ac3-ae12-639c93ed9224}"/>
+        <checked-legend-node id="{d0b9168b-e603-49dd-8c84-e17551131f81}"/>
         <checked-legend-node id="{d7cd7ce7-c1fb-444f-9fd7-375e42e1119d}"/>
+        <checked-legend-node id="{59ae2c57-00c7-4afe-bfba-16af06381694}"/>
+        <checked-legend-node id="{af5a1df4-2d61-4c6c-9951-0f6f900354d9}"/>
+        <checked-legend-node id="{1c3be22e-50cf-4ddb-a382-cb79acc30446}"/>
+        <checked-legend-node id="{cbedc12d-c79c-4e2f-b007-5bbfcaa3cfd2}"/>
+        <checked-legend-node id="{03ff9811-2539-4b32-b396-20796c2639bf}"/>
+        <checked-legend-node id="{8f3bf5ad-c837-4d67-9ba8-2a0c37ad6ae0}"/>
+        <checked-legend-node id="{820fcdfc-cca8-4a16-a307-192cf4ddd396}"/>
+        <checked-legend-node id="{85a03431-ffdc-4bd4-9796-2113d60c4125}"/>
+        <checked-legend-node id="{f2f26723-dc46-40c5-abe2-ef61a8c502e3}"/>
+        <checked-legend-node id="{684b69b2-b4e2-49e4-82f1-ea1e9a680e64}"/>
+        <checked-legend-node id="{9486a529-9a4e-4a3c-83fe-86f6f93102c0}"/>
+        <checked-legend-node id="{f798c83b-a461-46c3-8031-8b5bc3caffd8}"/>
+        <checked-legend-node id="{1f73b079-4d8c-4982-b2ab-6e9b5756b800}"/>
+        <checked-legend-node id="{7d0cfa7a-eaf4-499a-b977-1238b90ca15f}"/>
+        <checked-legend-node id="{1d54e4f9-8261-4fb7-ab45-581756bf08a2}"/>
         <checked-legend-node id="{783f2167-c790-4baf-a58d-d6fd65a299a4}"/>
       </checked-legend-nodes>
       <checked-legend-nodes id="nom_rue20160215151152641">
