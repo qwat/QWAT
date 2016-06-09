@@ -13,6 +13,7 @@ Contents:
 
    Triggers <triggers>
    Upgrade DB <upgrade>
+   Using QWAT <use>
 
 
 Indices and tables
