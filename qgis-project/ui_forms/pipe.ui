@@ -6,7 +6,7 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>600</width>
+    <width>645</width>
     <height>639</height>
    </rect>
   </property>
@@ -218,7 +218,10 @@
            <widget class="QComboBox" name="fk_bedding"/>
           </item>
           <item row="2" column="1">
-           <widget class="QComboBox" name="fk_material"/>
+           <widget class="QgsRelationReferenceWidget" name="fk_material"/>
+          </item>
+          <item row="6" column="0">
+           <widget class="QgsRelationReferenceWidget" name="mRelationReference"/>
           </item>
          </layout>
         </widget>
@@ -690,7 +693,7 @@
          <property name="collapsed">
           <bool>false</bool>
          </property>
-         <property name="qgisRelation">
+         <property name="qgisRelation" stdset="0">
           <string notr="true">relation_pipe_subscriber</string>
          </property>
         </widget>
@@ -707,7 +710,7 @@
          <property name="collapsed">
           <bool>false</bool>
          </property>
-         <property name="qgisRelation">
+         <property name="qgisRelation" stdset="0">
           <string notr="true">relation_pipe_leak</string>
          </property>
         </widget>

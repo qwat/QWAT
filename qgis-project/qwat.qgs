@@ -396,10 +396,10 @@
   <mapcanvas>
     <units>meters</units>
     <extent>
-      <xmin>554135.55864192370790988</xmin>
-      <ymin>135653.75469495661673136</ymin>
-      <xmax>559180.84353554795961827</xmax>
-      <ymax>139507.26489888716605492</ymax>
+      <xmin>554427.20868689939379692</xmin>
+      <ymin>146288.02853288681944832</ymin>
+      <xmax>554870.76995001500472426</xmax>
+      <ymax>146626.81373323244042695</ymax>
     </extent>
     <rotation>0</rotation>
     <projections>1</projections>
@@ -27834,7 +27834,7 @@ def my_form_open(dialog, layer, feature):
           <annotationFontProperties description="Ubuntu,11,-1,5,50,0,0,0,0,0" style=""/>
         </ComposerMapGrid>
         <AtlasMap scalingMode="0" atlasDriven="1" margin="0.10000000000000001"/>
-        <ComposerItem pagey="10" page="1" id="" lastValidViewScaleFactor="0.871917" positionMode="0" positionLock="false" x="11" y="10" visibility="1" zValue="1" background="true" transparency="0" frameJoinStyle="miter" blendMode="0" width="1340" outlineWidth="0.3" excludeFromExports="0" uuid="{1faa5f82-8fea-47c0-b6e3-33483d8b7056}" height="800" itemRotation="0" frame="true" pagex="11">
+        <ComposerItem pagey="10" page="1" id="" lastValidViewScaleFactor="9.93167" positionMode="0" positionLock="false" x="11" y="10" visibility="1" zValue="1" background="true" transparency="0" frameJoinStyle="miter" blendMode="0" width="1340" outlineWidth="0.3" excludeFromExports="0" uuid="{1faa5f82-8fea-47c0-b6e3-33483d8b7056}" height="800" itemRotation="0" frame="true" pagex="11">
           <FrameColor alpha="255" red="0" blue="0" green="0"/>
           <BackgroundColor alpha="255" red="255" blue="255" green="255"/>
           <dataDefinedMapRotation expr="0" field="" active="true" useExpr="true"/>
@@ -35223,8 +35223,13 @@ def my_form_open(dialog, layer, feature):
         <edittype widgetv2type="ValueRelation" name="fk_installmethod">
           <widgetv2config OrderByValue="0" AllowNull="0" FilterExpression="" UseCompleter="0" fieldEditable="1" Key="id" constraint="" Layer="vl_pipe_installmethod20130304110005209" Value="value_fr" labelOnTop="0" constraintDescription="" AllowMulti="0" notNull="0"/>
         </edittype>
-        <edittype widgetv2type="ValueRelation" name="fk_material">
-          <widgetv2config OrderByValue="0" AllowNull="0" FilterExpression="" UseCompleter="0" fieldEditable="1" Key="id" constraint="" Layer="vl_pipe_material20130304110005230" Value="_displayname_fr" labelOnTop="0" constraintDescription="" AllowMulti="0" notNull="0"/>
+        <edittype widgetv2type="RelationReference" name="fk_material">
+          <widgetv2config OrderByValue="0" fieldEditable="1" AllowAddFeatures="0" ShowForm="0" Relation="relation_pipe_material" ReadOnly="0" constraint="" MapIdentification="0" labelOnTop="0" constraintDescription="" notNull="0" AllowNULL="0">
+            <FilterFields ChainFilters="1">
+              <field name="short_fr"/>
+              <field name="diameter"/>
+            </FilterFields>
+          </widgetv2config>
         </edittype>
         <edittype widgetv2type="ValueRelation" name="fk_distributor">
           <widgetv2config OrderByValue="0" AllowNull="0" FilterExpression="" UseCompleter="0" fieldEditable="1" Key="id" constraint="" Layer="distributor20130304114719702" Value="name" labelOnTop="0" constraintDescription="" AllowMulti="0" notNull="0"/>
@@ -36880,8 +36885,8 @@ def my_form_open(dialog, layer, feature):
         </effect>
       </renderer-v2>
       <labeling type="rule-based">
-        <rules key="{007fea31-ca51-4994-87b3-46bf71799d91}">
-          <rule scalemaxdenom="3000" description="Matériau - diamètre- année" key="{d9ad8fee-37c5-49a5-8307-fdb4d02ca87b}" scalemindenom="1">
+        <rules key="{31c42ba0-aec6-44f4-a50b-a767352c4651}">
+          <rule scalemaxdenom="3000" description="Matériau - diamètre- année" key="{efec11bb-f4e1-465c-8f4e-ee311cd86b51}" scalemindenom="1">
             <settings>
               <text-style fontItalic="0" fontFamily="Arial" fontLetterSpacing="0" fontUnderline="0" fontWeight="50" fontStrikeout="0" textTransp="0" previewBkgrdColor="#ffffff" fontCapitals="0" textColor="0,80,255,255" fontSizeInMapUnits="0" isExpression="1" blendMode="0" fontSizeMapUnitScale="0,0,0,0,0,0" fontSize="8" fieldName=" replace( &quot;pipe_material_short_fr&quot;||' ','Inconnu ','') ||  &quot;pipe_material_diameter&quot;&#xa;" namedStyle="Regular" fontWordSpacing="0"/>
               <text-format placeDirectionSymbol="0" multilineAlign="0" rightDirectionSymbol=">" multilineHeight="1" plussign="0" addDirectionSymbol="0" leftDirectionSymbol="&lt;" formatNumbers="0" decimals="3" wrapChar="" reverseDirectionSymbol="0"/>
@@ -36897,7 +36902,7 @@ def my_form_open(dialog, layer, feature):
               </data-defined>
             </settings>
           </rule>
-          <rule scalemaxdenom="501" description="Imprécis" filter="&quot;fk_precision&quot; IN (1101,1103,1105)" key="{8f021c47-054b-4b6f-bc6f-aa91cddd72b7}" scalemindenom="1">
+          <rule scalemaxdenom="501" description="Imprécis" filter="&quot;fk_precision&quot; IN (1101,1103,1105)" key="{e3d0dac3-48f9-4c7a-9c11-3473483de8a8}" scalemindenom="1">
             <settings>
               <text-style fontItalic="0" fontFamily="Arial" fontLetterSpacing="0" fontUnderline="0" fontWeight="50" fontStrikeout="0" textTransp="0" previewBkgrdColor="#ffffff" fontCapitals="0" textColor="0,80,255,255" fontSizeInMapUnits="0" isExpression="1" blendMode="0" fontSizeMapUnitScale="0,0,0,0,0,0" fontSize="8" fieldName="' Imprécis '" namedStyle="Regular" fontWordSpacing="0"/>
               <text-format placeDirectionSymbol="0" multilineAlign="0" rightDirectionSymbol=">" multilineHeight="1" plussign="0" addDirectionSymbol="0" leftDirectionSymbol="&lt;" formatNumbers="0" decimals="3" wrapChar="" reverseDirectionSymbol="0"/>
@@ -36912,7 +36917,7 @@ def my_form_open(dialog, layer, feature):
               </data-defined>
             </settings>
           </rule>
-          <rule scalemaxdenom="501" description="Année" key="{83c6f4b0-63ed-48d1-a2f1-18fed040b8c7}" scalemindenom="1">
+          <rule scalemaxdenom="501" description="Année" key="{86468f92-3af6-4f5d-b037-b33e5a608ca7}" scalemindenom="1">
             <settings>
               <text-style fontItalic="0" fontFamily="Arial" fontLetterSpacing="0" fontUnderline="0" fontWeight="50" fontStrikeout="0" textTransp="0" previewBkgrdColor="#ffffff" fontCapitals="0" textColor="0,80,255,255" fontSizeInMapUnits="0" isExpression="1" blendMode="0" fontSizeMapUnitScale="0,0,0,0,0,0" fontSize="8" fieldName="' '  ||&quot;year&quot;  ||' ' " namedStyle="Regular" fontWordSpacing="0"/>
               <text-format placeDirectionSymbol="0" multilineAlign="0" rightDirectionSymbol=">" multilineHeight="1" plussign="0" addDirectionSymbol="0" leftDirectionSymbol="&lt;" formatNumbers="0" decimals="3" wrapChar="" reverseDirectionSymbol="0"/>
@@ -36927,7 +36932,7 @@ def my_form_open(dialog, layer, feature):
               </data-defined>
             </settings>
           </rule>
-          <rule scalemaxdenom="1501" description="Protection" key="{e3d85622-2a51-4588-82bf-e812f594432c}" scalemindenom="1">
+          <rule scalemaxdenom="1501" description="Protection" key="{5fc94904-0287-458d-84c0-b042aa92ba1c}" scalemindenom="1">
             <settings>
               <text-style fontItalic="0" fontFamily="Arial" fontLetterSpacing="0" fontUnderline="0" fontWeight="50" fontStrikeout="0" textTransp="0" previewBkgrdColor="#ffffff" fontCapitals="0" textColor="0,80,255,255" fontSizeInMapUnits="0" isExpression="0" blendMode="0" fontSizeMapUnitScale="0,0,0,0,0,0" fontSize="8" fieldName="pipe_protection_value_fr" namedStyle="Regular" fontWordSpacing="0"/>
               <text-format placeDirectionSymbol="0" multilineAlign="0" rightDirectionSymbol=">" multilineHeight="1" plussign="0" addDirectionSymbol="0" leftDirectionSymbol="&lt;" formatNumbers="0" decimals="3" wrapChar="" reverseDirectionSymbol="0"/>
@@ -36942,7 +36947,7 @@ def my_form_open(dialog, layer, feature):
               </data-defined>
             </settings>
           </rule>
-          <rule scalemaxdenom="3000" description="Remarque" key="{7074a5f8-52a8-4ac6-afde-c468e3d214f9}" scalemindenom="1">
+          <rule scalemaxdenom="3000" description="Remarque" key="{77c985e0-b4a2-4b55-9044-599fb6e68771}" scalemindenom="1">
             <settings>
               <text-style fontItalic="0" fontFamily="Arial" fontLetterSpacing="0" fontUnderline="0" fontWeight="50" fontStrikeout="0" textTransp="0" previewBkgrdColor="#ffffff" fontCapitals="0" textColor="0,80,255,255" fontSizeInMapUnits="0" isExpression="0" blendMode="0" fontSizeMapUnitScale="0,0,0,0,0,0" fontSize="8" fieldName="remark" namedStyle="Regular" fontWordSpacing="0"/>
               <text-format placeDirectionSymbol="0" multilineAlign="0" rightDirectionSymbol=">" multilineHeight="1" plussign="0" addDirectionSymbol="0" leftDirectionSymbol="&lt;" formatNumbers="0" decimals="3" wrapChar="" reverseDirectionSymbol="0"/>
@@ -36963,6 +36968,7 @@ def my_form_open(dialog, layer, feature):
         <property key="LinkIt_destinationField" value="fk_parent"/>
         <property key="LinkIt_name" value="Conduites parent"/>
         <property key="LinkIt_sourceLayer" value="conduites_copy20130709141244955"/>
+        <property key="embeddedWidgets/count" value="0"/>
         <property key="itemBrowserCurrentItem" value="-1"/>
         <property key="itemBrowserSelection" value="[]"/>
         <property key="labeling/addDirectionSymbol" value="false"/>
@@ -37187,7 +37193,7 @@ def my_form_open(dialog, layer, feature):
           <column width="-1" hidden="0" type="field" name="fk_parent"/>
           <column width="-1" hidden="0" type="field" name="fk_function"/>
           <column width="-1" hidden="0" type="field" name="fk_installmethod"/>
-          <column width="-1" hidden="0" type="field" name="fk_material"/>
+          <column width="256" hidden="0" type="field" name="fk_material"/>
           <column width="-1" hidden="0" type="field" name="fk_distributor"/>
           <column width="-1" hidden="0" type="field" name="fk_precision"/>
           <column width="-1" hidden="0" type="field" name="fk_bedding"/>
