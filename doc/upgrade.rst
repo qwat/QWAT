@@ -10,7 +10,7 @@ Create a new upgrade delta
 * Create the corresponding SQL delta file in *data-model/update/delta*.
   * file must be named : delta_{tag_number}_{year_month_day}.sql (delta_x.x.x_ddmmyyyy.sql)
 * Push your branch, and check travis result
-* If travis test is OK, then you can merge in master
+* If travis test is OK, then you can create a pull request to merge your modifications in master
 
 .. notice:: Data model should be TAGGED. Tag should respect the following syntax like this: x.x.x. For each major version, the tag MUSt be called x.0.0
 
