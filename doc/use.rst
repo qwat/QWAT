@@ -108,9 +108,7 @@ La mise à jour sur QWAT se fait dans l’ordre suivant :
 
 La saisie du réseau doit être effectuée en respectant les directives fixées par SIRE, selon les exemples ci‐après.
 
-
-TODO
-
+.. image:: img/SIRE.png
 
 
 3. Création d’objets dans QWAT
