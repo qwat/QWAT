@@ -38,9 +38,6 @@
      </property>
     </widget>
    </item>
-   <item row="11" column="2">
-    <widget class="QLineEdit" name="_pressurezone"/>
-   </item>
    <item row="16" column="2">
     <spacer name="verticalSpacer">
      <property name="orientation">
@@ -97,19 +94,6 @@
      </property>
      <property name="standardButtons">
       <set>QDialogButtonBox::Cancel|QDialogButtonBox::Ok</set>
-     </property>
-    </widget>
-   </item>
-   <item row="4" column="2">
-    <widget class="QLineEdit" name="_identification_full"/>
-   </item>
-   <item row="4" column="0">
-    <widget class="QLabel" name="label_6">
-     <property name="text">
-      <string>Identification complète</string>
-     </property>
-     <property name="wordWrap">
-      <bool>true</bool>
      </property>
     </widget>
    </item>
@@ -177,28 +161,12 @@
      </property>
     </widget>
    </item>
-   <item row="13" column="2">
-    <widget class="QLineEdit" name="flow_current"/>
-   </item>
    <item row="10" column="4">
     <widget class="QLabel" name="label_7">
      <property name="text">
       <string>Parcelle</string>
      </property>
     </widget>
-   </item>
-   <item row="0" column="2">
-    <widget class="QLineEdit" name="id">
-     <property name="enabled">
-      <bool>true</bool>
-     </property>
-     <property name="readOnly">
-      <bool>true</bool>
-     </property>
-    </widget>
-   </item>
-   <item row="10" column="2">
-    <widget class="QLineEdit" name="_printmaps"/>
    </item>
    <item row="10" column="0">
     <widget class="QLabel" name="label_10">
@@ -226,6 +194,28 @@
    </item>
    <item row="12" column="5">
     <widget class="QComboBox" name="fk_precision"/>
+   </item>
+   <item row="2" column="1">
+    <widget class="QLineEdit" name="district_prefix"/>
+   </item>
+   <item row="0" column="1" colspan="2">
+    <widget class="QLineEdit" name="id">
+     <property name="enabled">
+      <bool>true</bool>
+     </property>
+     <property name="readOnly">
+      <bool>true</bool>
+     </property>
+    </widget>
+   </item>
+   <item row="10" column="1" colspan="2">
+    <widget class="QLineEdit" name="_printmaps"/>
+   </item>
+   <item row="11" column="1" colspan="2">
+    <widget class="QLineEdit" name="_pressurezone"/>
+   </item>
+   <item row="13" column="1" colspan="2">
+    <widget class="QLineEdit" name="flow_current"/>
    </item>
   </layout>
  </widget>
