@@ -23,9 +23,9 @@ If you use an old version of qWat model, you can upgrade it by following the ins
 .. warning:: You should always save you current database before upgrading
 
 * Open a terminal, and move to *qwat_project/data-model/update*
-* Launch upgrade command: ./upgrade_db.sh
+* Launch upgrade command: ``./upgrade_db.sh``
     * This will test the migration process
-* If the migration process is OK, then luanch again the command with the parameter to upgrade the real DB : ./upgrade_db.sh --upgrade yes
+* If the migration process is OK, then launch again the command with the parameter to upgrade the real DB : ``./upgrade_db.sh --upgrade yes``
 
 .. notice:: Your *.pg_service.conf* must contain connexions to qwat, qwat_test and qwat_conform DB
 
