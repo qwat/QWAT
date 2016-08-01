@@ -1,3 +1,5 @@
+.. _user-guide:
+
 *************
 Utiliser QWAT
 *************
@@ -195,7 +197,7 @@ Le masque de la conduite s’ouvre, il faut remplir les champs suivants:
 * Hydraulique
     * Qualité eau
 * Géométrie
-    *Précision
+    * Précision
 * Rendu
     * « Schématique » à cocher si on veut que la conduite apparaisse sur la schématique
 * Fuites

@@ -18,8 +18,8 @@ How to install the data sample from the qWAT water distribution management proje
 
 .. note::
 
- If you're on **Windows 10** it has a new feature which permits running dirrectly the  **Linux Bash Shell**
- and you can do easily all the steps outlined here.
+ If you're on **Windows 10** it has a new feature which permits running the  **Linux Bash Shell**
+ and you can easily do all the steps outlined here while getting accustomed the Linux Shell.
 
 Install guide
 -------------
@@ -107,13 +107,14 @@ Demo Virtual Machine
 ====================
 
 This represents a guide on how to download and install a virtual machine (VM) that has a working QWAT installation
-with a preinstalled demo dataset.
+with a demo dataset. The VM also has a working demo of the `QGEP waste-water project <http://github.com/QGEP/QGEP>`_.
 
 **About**
 
 The VM is based on Debian Testing with Cinnamon Desktop.
 Debian Testing was chosen in order to have GDAL 2.x and also benefit from latest linux kernel so that latest hardware
-won't be a problem for the case where the VM is used outside virtualization (use the VM as basis for a usb-stick - not virtualized).
+won't be a problem for the case where the VM is used outside virtualization (e.g use the virtual disk as basis to create
+a non-virtualized usb-stick to be used for demo purposes).
 
 Installed software:
 
@@ -148,8 +149,8 @@ Download the vm from http://docs.qtibia.ro/qgis.vdi.xz
 
   The size of the VM is around 4GB compressed and up to 15GB uncompressed.
 
-Extract
-^^^^^^^^
+**Extract**
+
 The virtual disk is archived using XZ compression.
 
 To extract the archive:
@@ -164,4 +165,13 @@ You can run the VM as you would do with any VirtualBox VM.
  As the VM is based on Linux it is fairly simple to convert the image to a raw disk
  and put it on a USB stick (minimum 16GB) or a faster storage. This would enable you
  to run the app without the virtualization penalty and enjoy the full speed of your hardware.
+
+**Run QWAT**
+
+After logging in with ``qgis`` user and the same password, by  clicking the QGIS icon located in the bottom bar
+you will get the following image:
+
+.. figure:: img/vm_demo.jpg
+
+Clicking the **qwat** project and following the :ref:`user-guide` should get you started.
 
