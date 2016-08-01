@@ -18,6 +18,7 @@ Please look into the guide corresponding to your profile :
    The administrator's guide <administrator>
    The contributor's guide <contributor>
    The developer's guide <developer>
+   Demo data <demo>
    FAQ <faq>
    Glossary <glossary>
    Translation <translation>
