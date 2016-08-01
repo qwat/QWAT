@@ -102,3 +102,66 @@ You can open the **qwat.qgs** project from the qwat-data-sample directory and yo
  You can also try out the latest **qwat.qgs** project from the qWat directory. Keep in mind that there there's a chance
  that it doesn't fit the sample data model. This is because the sample data model may be a little older than the latest
  data model and only the corresponding **.qgs** project has been matched.
+
+Demo Virtual Machine
+====================
+
+This represents a guide on how to download and install a virtual machine (VM) that has a working QWAT installation
+with a preinstalled demo dataset.
+
+**About**
+
+The VM is based on Debian Testing with Cinnamon Desktop.
+Debian Testing was chosen in order to have GDAL 2.x and also benefit from latest linux kernel so that latest hardware
+won't be a problem for the case where the VM is used outside virtualization (use the VM as basis for a usb-stick - not virtualized).
+
+Installed software:
+
+- PostgreSQL 9.5.2 with Postgis 2.2.2
+- QGIS 2.16
+
+Settings that are changed from a default software install:
+
+- ``pg_hba.conf`` has ``trust`` for local connections
+- QGIS is setup with `multithreaded rendering enabled <http://www.lutraconsulting.co.uk/products/qgis-mtr>`_
+
+.. note::
+
+ The users ``qgis`` and ``root`` have the password ``qgis``. You should login with the ``qgis`` user.
+
+.. note::
+
+ QGIS has been build from source as Debian developpers have dropped QtWebKit python support in the packages.
+ After the QGIS ecosystem will remove its QtWebKit dependencies the VM will benefit again from the QGIS repo packages.
+
+If you decide to use the VM in production, it is recommended to:
+
+- change the passwords
+- regenerate the ssh keys by running in a terminal: ``sudo rm /etc/ssh/ssh_host_* && sudo dpkg-reconfigure openssh-server``
+
+
+**Download**
+
+Download the vm from http://docs.qtibia.ro/qgis.vdi.xz
+
+.. note::
+
+  The size of the VM is around 4GB compressed and up to 15GB uncompressed.
+
+Extract
+^^^^^^^^
+The virtual disk is archived using XZ compression.
+
+To extract the archive:
+
+- **Windows:** you can use `7-Zip <http://7-zip.org/>`_ to extract the archive.
+- **Linux:** cd to the download directory and run ``xz -d qgis.vdi.xz``
+
+You can run the VM as you would do with any VirtualBox VM.
+
+.. note::
+
+ As the VM is based on Linux it is fairly simple to convert the image to a raw disk
+ and put it on a USB stick (minimum 16GB) or a faster storage. This would enable you
+ to run the app without the virtualization penalty and enjoy the full speed of your hardware.
+
