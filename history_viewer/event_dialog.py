@@ -34,6 +34,41 @@ def ewkb_to_geom(ewkb_str):
     g.fromWkb(w)
     return g
 
+class GeometryDisplayer:
+
+    def __init__(self, canvas ):
+        self.canvas = canvas
+        # main rubber
+        self.rubber1 = QgsRubberBand(self.canvas)
+        self.rubber1.setWidth(2)
+        self.rubber1.setBorderColor(QColor("#f00"))
+        self.rubber1.setFillColor(QColor("#ff6969"))
+        # old geometry rubber
+        self.rubber2 = QgsRubberBand(self.canvas)
+        self.rubber2.setWidth(2)
+        self.rubber2.setBorderColor(QColor("#bbb"))
+        self.rubber2.setFillColor(QColor("#ccc"))
+
+    def reset(self):
+        self.rubber1.reset()
+        self.rubber2.reset()
+
+    def display(self, geom1, geom2 = None):
+        """
+        @param geom1 base geometry (old geometry for an update)
+        @param geom2 new geometry for an update
+        """
+        if geom2 is None:
+            bbox = geom1.boundingBox()
+            self.rubber1.setToGeometry(geom1, None)
+        else:
+            bbox = geom1.boundingBox()
+            bbox.combineExtentWith(geom2.boundingBox())
+            self.rubber1.setToGeometry(geom2, None)
+            self.rubber2.setToGeometry(geom1, None)
+        bbox.scale(1.5)
+        self.canvas.setExtent(bbox)        
+
 class EventDialog(QtGui.QDialog, FORM_CLASS):
     def __init__(self, parent, conn, map_canvas):
         """Constructor."""
@@ -56,11 +91,6 @@ class EventDialog(QtGui.QDialog, FORM_CLASS):
         self.eventTable.itemSelectionChanged.connect(self.onEventSelection)
         self.dataTable.hide()
 
-        # rubber band on the main canvas
-        self.rubber = QgsRubberBand(self.map_canvas)
-        self.rubber.setWidth(2)
-        self.rubber.setBorderColor(QColor("red"))
-
         #
         # inner canvas
         self.vbox = QVBoxLayout()
@@ -78,16 +108,14 @@ class EventDialog(QtGui.QDialog, FORM_CLASS):
         self.geometryGroup.setLayout(self.vbox)
         self.geometryGroup.hide()
 
-        # rubber band on the inner canvas
-        self.inner_rubber = QgsRubberBand(self.inner_canvas)
-        self.inner_rubber.setWidth(2)
-        self.inner_rubber.setBorderColor(QColor("red"))
-        self.inner_rubber_d = QgsRubberBand(self.inner_canvas)
-        self.inner_rubber_d.setWidth(2)
-        self.inner_rubber_d.setBorderColor(QColor("#888"))
-
         self.hsplitter.setSizes([100,100])
 
+        self.displayer = GeometryDisplayer(self.map_canvas)
+        self.inner_displayer = GeometryDisplayer(self.inner_canvas)
+
+    def done(self, status):
+        self.undisplayGeometry()
+        return QDialog.done(self, status)
 
     def populate(self):
         self.row_data = []
@@ -156,7 +184,7 @@ class EventDialog(QtGui.QDialog, FORM_CLASS):
                 if k == self.geometry_columns[0]:
                     w = changed_fields.get(k)
                     if w is not None:
-                        self.displayGeometry(ewkb_to_geom(w), ewkb_to_geom(v))
+                        self.displayGeometry(ewkb_to_geom(v), ewkb_to_geom(w))
                     continue
                 if k in self.geometry_columns:
                     continue
@@ -177,21 +205,12 @@ class EventDialog(QtGui.QDialog, FORM_CLASS):
 
     def undisplayGeometry(self):
         self.geometryGroup.hide()
-        self.inner_rubber.reset()
-        self.inner_rubber_d.reset()
-        self.rubber.reset()
+        self.displayer.reset()
+        self.inner_displayer.reset()
         
     def displayGeometry(self, geom, geom2 = None):
-        bbox = geom.boundingBox()
-        self.inner_rubber.setToGeometry(geom, None)
-
-        if geom2 is not None:
-            bbox.combineExtentWith(geom2.boundingBox())
-            self.inner_rubber_d.setToGeometry(geom2, None)
-        bbox.scale(1.5)
-        self.inner_canvas.setExtent(bbox)
+        self.inner_displayer.display(geom, geom2)
         self.geometryGroup.show()
 
         if self.onMainCanvas.isChecked():
-            self.rubber.setToGeometry(geom, None)
-            self.map_canvas.setExtent(bbox)
+            self.displayer.display(geom, geom2)
