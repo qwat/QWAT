@@ -4,7 +4,7 @@ PLUGINNAME = qwat_history_viewer
 
 PY_FILES = main.py __init__.py event_dialog.py
 
-EXTRAS = metadata.txt icons/*.png
+EXTRAS = metadata.txt icons/*.png icons/*.svg
 
 UI_FILES = event_dialog.ui
 

@@ -5,7 +5,7 @@ from PyQt4 import QtGui, uic
 from PyQt4.QtCore import *
 from PyQt4.QtGui import *
 
-from qgis.core import QgsGeometry
+from qgis.core import QgsGeometry, QgsMapLayerRegistry
 from qgis.gui import QgsRubberBand, QgsMapCanvas, QgsMapCanvasLayer
 
 FORM_CLASS, _ = uic.loadUiType(os.path.join(
@@ -33,6 +33,12 @@ def ewkb_to_geom(ewkb_str):
     g = QgsGeometry()
     g.fromWkb(w)
     return g
+
+def reset_table_widget(table_widget):
+    table_widget.clearContents()
+    for r in range(table_widget.rowCount() - 1, -1, -1):
+        table_widget.removeRow(r)
+
 
 class GeometryDisplayer:
 
@@ -70,8 +76,14 @@ class GeometryDisplayer:
         self.canvas.setExtent(bbox)        
 
 class EventDialog(QtGui.QDialog, FORM_CLASS):
-    def __init__(self, parent, conn, map_canvas):
-        """Constructor."""
+    def __init__(self, parent, conn, map_canvas, table_map = {}, geometry_columns = ["geometry"]):
+        """Constructor.
+        @param parent parent widget
+        @param conn dbapi2 connection to the postgresql database where logs are stored
+        @param map_canvas the main QgsMapCanvas
+        @param table_map a dict that associates database table name to a QGIS layer id layer_id : table_name
+        @param geometry_columns list of geometry column names to consider
+        """
         super(EventDialog, self).__init__(parent)
         # Set up the user interface from Designer.
         # After setupUI you can access any designer object by doing
@@ -79,12 +91,21 @@ class EventDialog(QtGui.QDialog, FORM_CLASS):
         # http://qt-project.org/doc/qt-4.8/designer-using-a-ui-file.html
         # #widgets-and-dialogs-with-auto-connect
         self.setupUi(self)
+        # reload button icon
+        self.searchButton.setIcon(QIcon(os.path.join(os.path.dirname(__file__), 'icons', 'mActionFilter2.svg')))
 
         self.conn = conn
         self.map_canvas = map_canvas
 
-        # FIXME pass as parameters
-        self.geometry_columns = ["geometry", "geometry_alt1", "geometry_alt2"]
+        self.geometry_columns = geometry_columns
+        self.table_map = table_map
+
+        # populate layer combo
+        for layer_id in self.table_map.keys():
+            l = QgsMapLayerRegistry.instance().mapLayer( layer_id )
+            if l is None:
+                continue
+            self.layerCombo.addItem(l.name(), layer_id)
 
         self.populate()
 
@@ -113,6 +134,8 @@ class EventDialog(QtGui.QDialog, FORM_CLASS):
         self.displayer = GeometryDisplayer(self.map_canvas)
         self.inner_displayer = GeometryDisplayer(self.inner_canvas)
 
+        self.searchButton.clicked.connect(self.populate)
+
     def done(self, status):
         self.undisplayGeometry()
         return QDialog.done(self, status)
@@ -120,10 +143,26 @@ class EventDialog(QtGui.QDialog, FORM_CLASS):
     def populate(self):
         self.row_data = []
         self.changed_fields = []
+
+        wheres = []
         
+        # get selected layer/table
+        index = self.layerCombo.currentIndex()
+        if index > 0:
+            lid = self.layerCombo.itemData(index)
+            schema, table = self.table_map[lid].split(".")
+            wheres.append("schema_name = '{}'".format(schema))
+            wheres.append("table_name = '{}'".format(table))
+
         cur = self.conn.cursor()
-        cur.execute("SELECT action_tstamp_clk, schema_name || '.' || table_name, action, application_name, row_data, changed_fields FROM qwat_sys.logged_actions")
-        self.eventTable.clear()
+        # base query
+        q = "SELECT action_tstamp_clk, schema_name || '.' || table_name, action, application_name, row_data, changed_fields FROM qwat_sys.logged_actions"
+        # where clause
+        if len(wheres) > 0:
+            q += " WHERE " + " AND ".join(wheres)
+        print(q)
+        cur.execute(q)
+        reset_table_widget(self.eventTable)
         self.eventTable.setHorizontalHeaderLabels(["Date", "Table", "Action", "Application"])
         i = 0
         for row in cur.fetchall():
@@ -149,14 +188,19 @@ class EventDialog(QtGui.QDialog, FORM_CLASS):
         self.eventTable.resizeColumnsToContents()
 
     def onEventSelection(self):
-        i = self.eventTable.currentRow()
+        reset_table_widget(self.dataTable)
+        self.undisplayGeometry()
+
+        # get current selection
+        rows = [i.row() for i in self.eventTable.selectedItems()]
+        if len(rows) == 0:
+            self.dataTable.hide()
+            return
+        i = rows[0]
+        # action from current selection
         action = self.eventTable.item(i, 2).data(Qt.UserRole)
 
-        self.dataTable.clear()
-        for r in range(self.dataTable.rowCount() - 1, -1, -1):
-            self.dataTable.removeRow(r)
-
-        self.undisplayGeometry()
+        # insertion or deletion
         if action == 'I' or action == 'D':
             self.dataTable.setColumnCount(2)
             self.dataTable.setHorizontalHeaderLabels(["Column", "Value"])
@@ -174,6 +218,7 @@ class EventDialog(QtGui.QDialog, FORM_CLASS):
                 self.dataTable.setItem(j, 0, QTableWidgetItem(k))
                 self.dataTable.setItem(j, 1, QTableWidgetItem(v))
                 j += 1
+        # update
         elif action == 'U':
             self.dataTable.setColumnCount(3)
             self.dataTable.setHorizontalHeaderLabels(["Column", "Old value", "New value"])

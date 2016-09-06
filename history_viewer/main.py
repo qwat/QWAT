@@ -6,6 +6,8 @@ from . import name as plugin_name
 from PyQt4.QtCore import QSettings
 from PyQt4.QtGui import QAction, QIcon
 
+from qgis.core import QgsMapLayerRegistry
+
 import psycopg2
 
 import event_dialog
@@ -32,7 +34,19 @@ class Plugin():
 
     def onListEvents(self):
         conn = psycopg2.connect(database_connection_string())
+
+        table_map = {}
+        l = QgsMapLayerRegistry.instance().mapLayersByName(u"conduites")
+        if len(l) > 0:
+            table_map[l[0].id()] = "qwat_od.pipe"
+        l = QgsMapLayerRegistry.instance().mapLayersByName(u"vannes")
+        if len(l) > 0:
+            table_map[l[0].id()] = "qwat_od.valve"
         
-        self.dlg = event_dialog.EventDialog(self.iface.mainWindow(), conn, self.iface.mapCanvas())
+        self.dlg = event_dialog.EventDialog(self.iface.mainWindow(),
+                                            conn,
+                                            self.iface.mapCanvas(),
+                                            table_map = table_map,
+                                            geometry_columns = ["geometry", "geometry_alt1", "geometry_alt2"])
         self.dlg.show()
 
