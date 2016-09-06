@@ -134,7 +134,14 @@ class EventDialog(QtGui.QDialog, FORM_CLASS):
         self.displayer = GeometryDisplayer(self.map_canvas)
         self.inner_displayer = GeometryDisplayer(self.inner_canvas)
 
+        # refresh results when the search button is clicked
         self.searchButton.clicked.connect(self.populate)
+
+        # update the feature id line edit visiblity based on the current layer selection
+        self.layerCombo.currentIndexChanged.connect(self.onCurrentLayerChanged)
+
+    def onCurrentLayerChanged(self, index):
+        self.idEdit.setEnabled(index > 0)
 
     def done(self, status):
         self.undisplayGeometry()
@@ -146,13 +153,21 @@ class EventDialog(QtGui.QDialog, FORM_CLASS):
 
         wheres = []
         
-        # get selected layer/table
+        # filter by selected layer/table
         index = self.layerCombo.currentIndex()
         if index > 0:
             lid = self.layerCombo.itemData(index)
             schema, table = self.table_map[lid].split(".")
             wheres.append("schema_name = '{}'".format(schema))
             wheres.append("table_name = '{}'".format(table))
+
+        # filter by feature id, if any
+        if len(self.idEdit.text()) > 0:
+            try:
+                id = int(self.idEdit.text())
+                wheres.append("row_data->'id'='{}'".format(id))
+            except ValueError:
+                pass
 
         cur = self.conn.cursor()
         # base query
