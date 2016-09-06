@@ -134,6 +134,11 @@ class EventDialog(QtGui.QDialog, FORM_CLASS):
         self.displayer = GeometryDisplayer(self.map_canvas)
         self.inner_displayer = GeometryDisplayer(self.inner_canvas)
 
+        self.afterDt.setDateTime(QDateTime.currentDateTime())
+        self.beforeDt.setDateTime(QDateTime.currentDateTime())
+
+        self.advancedGroup.setCollapsed(True)
+
         # refresh results when the search button is clicked
         self.searchButton.clicked.connect(self.populate)
 
@@ -171,11 +176,29 @@ class EventDialog(QtGui.QDialog, FORM_CLASS):
 
         # filter by data
         join = ''
-        if len(self.dataEdit.text()) > 0:
+        if self.dataChck.isChecked():
             v = self.dataEdit.text()
             v = v.replace('\\', '\\\\').replace("'", "''").replace('%', '\\%').replace('_', '\\_')
             join = " JOIN (SELECT event_id, svals(row_data) AS svals FROM qwat_sys.logged_actions) t ON l.event_id = t.event_id"
             wheres.append("svals LIKE '%{}%'".format(v))
+
+        # filter by event type
+        types = []
+        if self.insertsChck.isChecked():
+            types.append('I')
+        if self.updatesChck.isChecked():
+            types.append('U')
+        if self.deletesChck.isChecked():
+            types.append('D')
+        wheres.append("action IN ('{}')".format("','".join(types)))
+
+        # filter by dates
+        if self.afterChck.isChecked():
+            dt = self.afterDt.dateTime()
+            wheres.append("action_tstamp_clk > '{}'".format(dt.toString(Qt.ISODate)))
+        if self.beforeChck.isChecked():
+            dt = self.beforeDt.dateTime()
+            wheres.append("action_tstamp_clk < '{}'".format(dt.toString(Qt.ISODate)))
 
         cur = self.conn.cursor()
         # base query
