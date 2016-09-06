@@ -290,6 +290,11 @@ class EventDialog(QtGui.QDialog, FORM_CLASS):
                     self.dataTable.setItem(j, 2, QTableWidgetItem(v))
                 else:
                     self.dataTable.setItem(j, 2, QTableWidgetItem(w))
+                    if v != w:
+                        b = QBrush(QColor("#ff8888"))
+                        self.dataTable.item(j, 0).setBackground(b)
+                        self.dataTable.item(j, 1).setBackground(b)
+                        self.dataTable.item(j, 2).setBackground(b)
                 j += 1
         self.dataTable.resizeColumnsToContents()
         #self.dataTable.sortByColumn(0, Qt.DescendingOrder)
