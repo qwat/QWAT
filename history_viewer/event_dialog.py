@@ -142,7 +142,7 @@ class EventDialog(QtGui.QDialog, FORM_CLASS):
 
     def onCurrentLayerChanged(self, index):
         self.idEdit.setEnabled(index > 0)
-
+        
     def done(self, status):
         self.undisplayGeometry()
         return QDialog.done(self, status)
@@ -169,9 +169,18 @@ class EventDialog(QtGui.QDialog, FORM_CLASS):
             except ValueError:
                 pass
 
+        # filter by data
+        join = ''
+        if len(self.dataEdit.text()) > 0:
+            v = self.dataEdit.text()
+            v = v.replace('\\', '\\\\').replace("'", "''").replace('%', '\\%').replace('_', '\\_')
+            join = " JOIN (SELECT event_id, svals(row_data) AS svals FROM qwat_sys.logged_actions) t ON l.event_id = t.event_id"
+            wheres.append("svals LIKE '%{}%'".format(v))
+
         cur = self.conn.cursor()
         # base query
-        q = "SELECT action_tstamp_clk, schema_name || '.' || table_name, action, application_name, row_data, changed_fields FROM qwat_sys.logged_actions"
+        q = "SELECT action_tstamp_clk, schema_name || '.' || table_name, action, application_name, row_data, changed_fields FROM qwat_sys.logged_actions l"
+        q += join
         # where clause
         if len(wheres) > 0:
             q += " WHERE " + " AND ".join(wheres)
