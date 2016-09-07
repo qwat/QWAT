@@ -76,13 +76,15 @@ class GeometryDisplayer:
         self.canvas.setExtent(bbox)        
 
 class EventDialog(QtGui.QDialog, FORM_CLASS):
-    def __init__(self, parent, conn, map_canvas, table_map = {}, geometry_columns = ["geometry"]):
+    def __init__(self, parent, conn, map_canvas, table_map = {}, geometry_columns = ["geometry"], selected_layer_id = None, selected_feature_id = None):
         """Constructor.
         @param parent parent widget
         @param conn dbapi2 connection to the postgresql database where logs are stored
         @param map_canvas the main QgsMapCanvas
         @param table_map a dict that associates database table name to a QGIS layer id layer_id : table_name
         @param geometry_columns list of geometry column names to consider
+        @param selected_layer_id selected layer
+        @param selected_feature_id selected feature_id
         """
         super(EventDialog, self).__init__(parent)
         # Set up the user interface from Designer.
@@ -101,11 +103,21 @@ class EventDialog(QtGui.QDialog, FORM_CLASS):
         self.table_map = table_map
 
         # populate layer combo
-        for layer_id in self.table_map.keys():
+        layer_idx = None
+        for i, layer_id in enumerate(self.table_map.keys()):
             l = QgsMapLayerRegistry.instance().mapLayer( layer_id )
             if l is None:
                 continue
+            print layer_id, selected_layer_id
+            if layer_id == selected_layer_id:
+                layer_idx = i + 1
             self.layerCombo.addItem(l.name(), layer_id)
+        if layer_idx is not None:
+            self.layerCombo.setCurrentIndex(layer_idx)
+
+        if selected_feature_id is not None:
+            self.idEdit.setEnabled(True)
+            self.idEdit.setText(str(selected_feature_id))
 
         self.populate()
 
@@ -169,13 +181,13 @@ class EventDialog(QtGui.QDialog, FORM_CLASS):
             wheres.append("schema_name = '{}'".format(schema))
             wheres.append("table_name = '{}'".format(table))
 
-        # filter by feature id, if any
-        if len(self.idEdit.text()) > 0:
-            try:
-                id = int(self.idEdit.text())
-                wheres.append("row_data->'id'='{}'".format(id))
-            except ValueError:
-                pass
+            # filter by feature id, if any
+            if len(self.idEdit.text()) > 0:
+                try:
+                    id = int(self.idEdit.text())
+                    wheres.append("row_data->'id'='{}'".format(id))
+                except ValueError:
+                    pass
 
         # filter by data
         join = ''

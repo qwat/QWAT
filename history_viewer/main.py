@@ -32,7 +32,7 @@ class Plugin():
         self.iface.removeToolBarIcon(self.listEventsAction)
         self.iface.removePluginMenu(plugin_name(),self.listEventsAction)
 
-    def onListEvents(self):
+    def onListEvents(self, layer_id = None, feature_id = None):
         conn = psycopg2.connect(database_connection_string())
 
         table_map = {}
@@ -47,6 +47,8 @@ class Plugin():
                                             conn,
                                             self.iface.mapCanvas(),
                                             table_map = table_map,
-                                            geometry_columns = ["geometry", "geometry_alt1", "geometry_alt2"])
+                                            geometry_columns = ["geometry", "geometry_alt1", "geometry_alt2"],
+                                            selected_layer_id = layer_id,
+                                            selected_feature_id = feature_id)
         self.dlg.show()
 
