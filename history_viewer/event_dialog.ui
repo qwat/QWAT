@@ -265,11 +265,25 @@
         </widget>
        </item>
        <item>
-        <widget class="QCheckBox" name="onMainCanvas">
-         <property name="text">
-          <string>Display geometries on the main canvas</string>
-         </property>
-        </widget>
+        <layout class="QHBoxLayout" name="horizontalLayout_5">
+         <item>
+          <widget class="QCheckBox" name="onMainCanvas">
+           <property name="text">
+            <string>Display geometries on the main canvas</string>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QPushButton" name="replayButton">
+           <property name="enabled">
+            <bool>false</bool>
+           </property>
+           <property name="text">
+            <string>Replay</string>
+           </property>
+          </widget>
+         </item>
+        </layout>
        </item>
       </layout>
      </widget>

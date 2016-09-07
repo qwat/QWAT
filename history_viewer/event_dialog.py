@@ -145,6 +145,9 @@ class EventDialog(QtGui.QDialog, FORM_CLASS):
         # update the feature id line edit visiblity based on the current layer selection
         self.layerCombo.currentIndexChanged.connect(self.onCurrentLayerChanged)
 
+        # replay button
+        self.replayButton.clicked.connect(self.onReplayEvent)
+
     def onCurrentLayerChanged(self, index):
         self.idEdit.setEnabled(index > 0)
         
@@ -202,7 +205,7 @@ class EventDialog(QtGui.QDialog, FORM_CLASS):
 
         cur = self.conn.cursor()
         # base query
-        q = "SELECT action_tstamp_clk, schema_name || '.' || table_name, action, application_name, row_data, changed_fields FROM qwat_sys.logged_actions l"
+        q = "SELECT event_id, action_tstamp_clk, schema_name || '.' || table_name, action, application_name, row_data, changed_fields FROM qwat_sys.logged_actions l"
         q += join
         # where clause
         if len(wheres) > 0:
@@ -213,9 +216,12 @@ class EventDialog(QtGui.QDialog, FORM_CLASS):
         self.eventTable.setHorizontalHeaderLabels(["Date", "Table", "Action", "Application"])
         i = 0
         for row in cur.fetchall():
-            tstamp, table_name, action, application, row_data, changed_fields = row
+            event_id, tstamp, table_name, action, application, row_data, changed_fields = row
+            # column 0 data: event_id
+            # column 2 data: action
             self.eventTable.insertRow(i)
             self.eventTable.setItem(i, 0, QTableWidgetItem(tstamp.strftime("%x - %X")))
+            self.eventTable.item(i, 0).setData(Qt.UserRole, event_id)
             self.eventTable.setItem(i, 1, QTableWidgetItem(table_name))
             if action == 'I':
                 self.eventTable.setItem(i, 2, QTableWidgetItem("Insertion"))
@@ -237,6 +243,7 @@ class EventDialog(QtGui.QDialog, FORM_CLASS):
     def onEventSelection(self):
         reset_table_widget(self.dataTable)
         self.undisplayGeometry()
+        self.replayButton.setEnabled(False)
 
         # get current selection
         rows = [i.row() for i in self.eventTable.selectedItems()]
@@ -246,6 +253,7 @@ class EventDialog(QtGui.QDialog, FORM_CLASS):
         i = rows[0]
         # action from current selection
         action = self.eventTable.item(i, 2).data(Qt.UserRole)
+        self.replayButton.setEnabled(True)
 
         # insertion or deletion
         if action == 'I' or action == 'D':
@@ -311,3 +319,26 @@ class EventDialog(QtGui.QDialog, FORM_CLASS):
 
         if self.onMainCanvas.isChecked():
             self.displayer.display(geom, geom2)
+
+    def onReplayEvent(self):
+        rows = [i.row() for i in self.eventTable.selectedItems()]
+        if len(rows) == 0:
+            return
+        i = rows[0]
+        # event_id from current selection
+        event_id = self.eventTable.item(i, 0).data(Qt.UserRole)
+
+        r = QMessageBox.question(self, u"Replay", u"Are your sure you want to replay the selected event ?", QMessageBox.Yes | QMessageBox.No )
+        if r == QMessageBox.No:
+            return
+
+        cur = self.conn.cursor()
+        cur.execute("SELECT qwat_sys.replay_event({})".format(event_id))
+        self.conn.commit()
+
+        # refresh table
+        self.populate()
+
+
+        
+        

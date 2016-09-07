@@ -16,8 +16,8 @@ VERSION=$(shell grep "version=" metadata.txt | cut -d'=' -f 2)
 # The deploy  target only works on unix like operating system where
 # the Python plugin directory is located at:
 # $HOME/.qgis2/python/plugins
-#PLUGINDIR=$(HOME)/.qgis2/python/plugins/$(PLUGINNAME)
-PLUGINDIR=$(HOME)/.qgis-dev/python/plugins/$(PLUGINNAME)
+PLUGINDIR=$(HOME)/.qgis2/python/plugins/$(PLUGINNAME)
+#PLUGINDIR=$(HOME)/.qgis-dev/python/plugins/$(PLUGINNAME)
 deploy: transcompile
 	mkdir -p $(PLUGINDIR)
 	cp -vf $(PY_FILES) $(PLUGINDIR)
