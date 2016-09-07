@@ -190,12 +190,10 @@ class EventDialog(QtGui.QDialog, FORM_CLASS):
                     pass
 
         # filter by data
-        join = ''
         if self.dataChck.isChecked():
             v = self.dataEdit.text()
             v = v.replace('\\', '\\\\').replace("'", "''").replace('%', '\\%').replace('_', '\\_')
-            join = " JOIN (SELECT event_id, svals(row_data) AS svals FROM qwat_sys.logged_actions) t ON l.event_id = t.event_id"
-            wheres.append("svals LIKE '%{}%'".format(v))
+            wheres.append("(SELECT string_agg(v,' ') FROM svals(row_data) as v) ILIKE '%{}%'".format(v))
 
         # filter by event type
         types = []
@@ -218,7 +216,6 @@ class EventDialog(QtGui.QDialog, FORM_CLASS):
         cur = self.conn.cursor()
         # base query
         q = "SELECT event_id, action_tstamp_clk, schema_name || '.' || table_name, action, application_name, row_data, changed_fields FROM qwat_sys.logged_actions l"
-        q += join
         # where clause
         if len(wheres) > 0:
             q += " WHERE " + " AND ".join(wheres)
