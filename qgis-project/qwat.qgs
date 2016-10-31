@@ -1,5 +1,5 @@
 <!DOCTYPE qgis PUBLIC 'http://mrcc.com/qgis.dtd' 'SYSTEM'>
-<qgis projectname="" version="2.16.2">
+<qgis projectname="" version="2.17.0">
   <title></title>
   <autotransaction active="0"/>
   <evaluateDefaultValues active="0"/>
@@ -35,7 +35,7 @@
       </layer-tree-group>
       <layer-tree-group expanded="1" checked="Qt::PartiallyChecked" name="Réseau">
         <customproperties/>
-        <layer-tree-layer expanded="0" checked="Qt::Checked" id="conduites_copy20130709141244955" name="conduites">
+        <layer-tree-layer expanded="1" checked="Qt::Checked" id="conduites_copy20130709141244955" name="conduites">
           <customproperties>
             <property key="expandedLegendNodes">
               <value>{d7cd7ce7-c1fb-444f-9fd7-375e42e1119d}</value>
@@ -218,6 +218,9 @@
           <customproperties/>
         </layer-tree-layer>
       </layer-tree-group>
+      <layer-tree-layer expanded="0" checked="Qt::Unchecked" id="SWISSIMAGE20161031083131993" name="SWISSIMAGE">
+        <customproperties/>
+      </layer-tree-layer>
     </layer-tree-group>
     <layer-tree-group expanded="0" checked="Qt::Unchecked" name="Tables auxiliaires">
       <customproperties/>
@@ -399,10 +402,10 @@
   <mapcanvas>
     <units>meters</units>
     <extent>
-      <xmin>562317.22349855327047408</xmin>
-      <ymin>144711.30885338137159124</ymin>
-      <xmax>562427.66733985883183777</xmax>
-      <ymax>144792.99895763158565387</ymax>
+      <xmin>552258.14455471944529563</xmin>
+      <ymin>148132.24604532666853629</ymin>
+      <xmax>552699.91991994169075042</xmax>
+      <ymax>148459.00646232752478682</ymax>
     </extent>
     <rotation>0</rotation>
     <projections>1</projections>
@@ -465,6 +468,7 @@
       <layer_coordinate_transform destAuthId="EPSG:21781" srcAuthId="EPSG:21781" srcDatumTransform="-1" destDatumTransform="-1" layerid="node20130304110005126"/>
       <layer_coordinate_transform destAuthId="EPSG:21781" srcAuthId="EPSG:21781" srcDatumTransform="-1" destDatumTransform="-1" layerid="vw_consumptionzone20150508135647750"/>
       <layer_coordinate_transform destAuthId="EPSG:21781" srcAuthId="EPSG:21781" srcDatumTransform="-1" destDatumTransform="-1" layerid="bf_posimmeuble20140214143633121"/>
+      <layer_coordinate_transform destAuthId="EPSG:21781" srcAuthId="EPSG:21781" srcDatumTransform="-1" destDatumTransform="-1" layerid="SWISSIMAGE20161031083131993"/>
       <layer_coordinate_transform destAuthId="EPSG:21781" srcAuthId="EPSG:21781" srcDatumTransform="-1" destDatumTransform="-1" layerid="cn124420130327085332476"/>
       <layer_coordinate_transform destAuthId="EPSG:21781" srcAuthId="EPSG:21781" srcDatumTransform="-1" destDatumTransform="-1" layerid="conduites_copy20141202101427367"/>
       <layer_coordinate_transform destAuthId="EPSG:21781" srcAuthId="EPSG:21781" srcDatumTransform="-1" destDatumTransform="-1" layerid="vw_node_installation20150918153835436"/>
@@ -628,6 +632,7 @@
       <item>hydrant_output20160205143014497</item>
       <item>nom_rue20160215151152641</item>
       <item>zone_pression20160314171914432</item>
+      <item>SWISSIMAGE20161031083131993</item>
     </custom-order>
   </layer-tree-canvas>
   <legend updateDrawingOrder="false">
@@ -667,8 +672,8 @@
         </legendlayer>
       </legendgroup>
       <legendgroup open="true" checked="Qt::PartiallyChecked" name="Réseau">
-        <legendlayer drawingOrder="14" open="false" checked="Qt::Checked" name="conduites" showFeatureCount="0">
-          <filegroup open="false" hidden="false">
+        <legendlayer drawingOrder="14" open="true" checked="Qt::Checked" name="conduites" showFeatureCount="0">
+          <filegroup open="true" hidden="false">
             <legendlayerfile isInOverview="0" layerid="conduites_copy20130709141244955" visible="1"/>
           </filegroup>
         </legendlayer>
@@ -904,6 +909,11 @@
           </filegroup>
         </legendlayer>
       </legendgroup>
+      <legendlayer drawingOrder="105" open="false" checked="Qt::Unchecked" name="SWISSIMAGE" showFeatureCount="0">
+        <filegroup open="false" hidden="false">
+          <legendlayerfile isInOverview="0" layerid="SWISSIMAGE20161031083131993" visible="0"/>
+        </filegroup>
+      </legendlayer>
     </legendgroup>
     <legendgroup open="false" checked="Qt::Unchecked" name="Tables auxiliaires">
       <legendlayer drawingOrder="99" open="true" checked="Qt::Unchecked" name="protectionzone_type" showFeatureCount="0">
@@ -1140,7 +1150,7 @@
       </symbol>
       <SnapLine y1="0" x1="0" y2="914" x2="0"/>
       <SnapLine y1="0" x1="0" y2="914" x2="0"/>
-      <ComposerPicture resizeMode="0" svgBorderWidth="0.2" pictureRotation="0" pictureWidth="65.0528" svgFillColor="255,255,255,255" svgBorderColor="0,0,0,255" file="./composer/logo_sige_2.png" pictureHeight="17.2645" mapId="-1" anchorPoint="0">
+      <ComposerPicture resizeMode="0" svgBorderWidth="0.2" pictureRotation="0" pictureWidth="65.0528" svgFillColor="255,255,255,255" svgBorderColor="0,0,0,255" northMode="0" file="./composer/logo_sige_2.png" northOffset="0" pictureHeight="17.2645" mapId="-1" anchorPoint="0">
         <ComposerItem pagey="114.75" page="1" id="" lastValidViewScaleFactor="3.43631" positionMode="0" positionLock="false" x="227.474" y="114.75" visibility="1" zValue="12" background="false" transparency="0" frameJoinStyle="miter" blendMode="0" width="65.0528" outlineWidth="0.3" excludeFromExports="0" uuid="{6ff40824-9bb7-4700-bcd2-d9a7063e092c}" height="20.5" itemRotation="0" frame="false" pagex="227.474">
           <FrameColor alpha="255" red="0" blue="0" green="0"/>
           <BackgroundColor alpha="255" red="255" blue="255" green="255"/>
@@ -13519,7 +13529,7 @@ def my_form_open(dialog, layer, feature):
           <customproperties/>
         </ComposerItem>
       </ComposerShape>
-      <ComposerPicture resizeMode="0" svgBorderWidth="0.2" pictureRotation="0" pictureWidth="81.5248" svgFillColor="255,255,255,255" svgBorderColor="0,0,0,255" file="./composer/logo_sige_2.png" pictureHeight="21.6361" mapId="-1" anchorPoint="0">
+      <ComposerPicture resizeMode="0" svgBorderWidth="0.2" pictureRotation="0" pictureWidth="81.5248" svgFillColor="255,255,255,255" svgBorderColor="0,0,0,255" northMode="0" file="./composer/logo_sige_2.png" northOffset="0" pictureHeight="21.6361" mapId="-1" anchorPoint="0">
         <ComposerItem pagey="113.464" page="1" id="" lastValidViewScaleFactor="5.15342" positionMode="0" positionLock="false" x="19.5928" y="113.464" visibility="1" zValue="16" background="false" transparency="0" frameJoinStyle="miter" blendMode="0" width="89.3023" outlineWidth="0.3" excludeFromExports="0" uuid="{a38ee953-069b-4cfd-90c8-e5067416ce0b}" height="21.6361" itemRotation="0" frame="false" pagex="19.5928">
           <FrameColor alpha="255" red="0" blue="0" green="0"/>
           <BackgroundColor alpha="255" red="255" blue="255" green="255"/>
@@ -13871,7 +13881,7 @@ def my_form_open(dialog, layer, feature):
           </effect>
         </layer>
       </symbol>
-      <ComposerPicture resizeMode="0" svgBorderWidth="0.2" pictureRotation="0" pictureWidth="35" svgFillColor="255,255,255,255" svgBorderColor="0,0,0,255" file="./symbols/wind_rose.svg" pictureHeight="35" mapId="0" anchorPoint="0">
+      <ComposerPicture resizeMode="0" svgBorderWidth="0.2" pictureRotation="0" pictureWidth="35" svgFillColor="255,255,255,255" svgBorderColor="0,0,0,255" northMode="0" file="./symbols/wind_rose.svg" northOffset="0" pictureHeight="35" mapId="0" anchorPoint="0">
         <ComposerItem pagey="228.277" page="1" id="" lastValidViewScaleFactor="2.7764" positionMode="0" positionLock="false" x="164.306" y="228.277" visibility="1" zValue="15" background="false" transparency="0" frameJoinStyle="miter" blendMode="0" width="35" outlineWidth="0.3" excludeFromExports="0" uuid="{973785d9-e3b3-427b-ba56-be9de77460fb}" height="35" itemRotation="0" frame="false" pagex="164.306">
           <FrameColor alpha="255" red="0" blue="0" green="0"/>
           <BackgroundColor alpha="255" red="255" blue="255" green="255"/>
@@ -13975,7 +13985,7 @@ def my_form_open(dialog, layer, feature):
           <customproperties/>
         </ComposerItem>
       </ComposerLabel>
-      <ComposerPicture resizeMode="0" svgBorderWidth="0.2" pictureRotation="0" pictureWidth="75.36" svgFillColor="255,255,255,255" svgBorderColor="0,0,0,255" file="./composer/logo_sige_2.png" pictureHeight="20" mapId="-1" anchorPoint="0">
+      <ComposerPicture resizeMode="0" svgBorderWidth="0.2" pictureRotation="0" pictureWidth="75.36" svgFillColor="255,255,255,255" svgBorderColor="0,0,0,255" northMode="0" file="./composer/logo_sige_2.png" northOffset="0" pictureHeight="20" mapId="-1" anchorPoint="0">
         <ComposerItem pagey="5.67" page="1" id="" lastValidViewScaleFactor="3.73602" positionMode="0" positionLock="false" x="12.0224" y="5.67" visibility="1" zValue="4" background="true" transparency="0" frameJoinStyle="miter" blendMode="0" width="85.9551" outlineWidth="0.3" excludeFromExports="0" uuid="{b6be99f3-75c7-4fac-b431-f87a8cf27e55}" height="20" itemRotation="0" frame="false" pagex="12.0224">
           <FrameColor alpha="255" red="0" blue="0" green="0"/>
           <BackgroundColor alpha="255" red="255" blue="255" green="255"/>
@@ -14147,7 +14157,7 @@ def my_form_open(dialog, layer, feature):
           </effect>
         </layer>
       </symbol>
-      <ComposerPicture resizeMode="0" svgBorderWidth="0.2" pictureRotation="349" pictureWidth="29.8524" svgFillColor="255,255,255,255" svgBorderColor="0,0,0,255" file="./symbols/wind_rose.svg" pictureHeight="29.8524" mapId="0" anchorPoint="0">
+      <ComposerPicture resizeMode="0" svgBorderWidth="0.2" pictureRotation="349" pictureWidth="29.8524" svgFillColor="255,255,255,255" svgBorderColor="0,0,0,255" northMode="0" file="./symbols/wind_rose.svg" northOffset="0" pictureHeight="29.8524" mapId="0" anchorPoint="0">
         <ComposerItem pagey="22.5" page="1" id="" lastValidViewScaleFactor="2.27094" positionMode="0" positionLock="false" x="248.711" y="22.5" visibility="1" zValue="15" background="false" transparency="0" frameJoinStyle="miter" blendMode="0" width="35" outlineWidth="0.3" excludeFromExports="0" uuid="{8d3ba240-9cfb-4183-815f-a851393125db}" height="35" itemRotation="0" frame="false" pagex="248.711">
           <FrameColor alpha="255" red="0" blue="0" green="0"/>
           <BackgroundColor alpha="255" red="255" blue="255" green="255"/>
@@ -14251,7 +14261,7 @@ def my_form_open(dialog, layer, feature):
           <customproperties/>
         </ComposerItem>
       </ComposerLabel>
-      <ComposerPicture resizeMode="0" svgBorderWidth="0.2" pictureRotation="0" pictureWidth="75.36" svgFillColor="255,255,255,255" svgBorderColor="0,0,0,255" file="./composer/logo_sige_2.png" pictureHeight="20" mapId="-1" anchorPoint="0">
+      <ComposerPicture resizeMode="0" svgBorderWidth="0.2" pictureRotation="0" pictureWidth="75.36" svgFillColor="255,255,255,255" svgBorderColor="0,0,0,255" northMode="0" file="./composer/logo_sige_2.png" northOffset="0" pictureHeight="20" mapId="-1" anchorPoint="0">
         <ComposerItem pagey="5.67" page="1" id="" lastValidViewScaleFactor="4.93952" positionMode="0" positionLock="false" x="9.7453" y="5.67" visibility="1" zValue="4" background="true" transparency="0" frameJoinStyle="miter" blendMode="0" width="90.5094" outlineWidth="0.3" excludeFromExports="0" uuid="{4bf8c0c9-7ad1-4b72-a195-f79e0048f573}" height="20" itemRotation="0" frame="false" pagex="9.7453">
           <FrameColor alpha="255" red="0" blue="0" green="0"/>
           <BackgroundColor alpha="255" red="255" blue="255" green="255"/>
@@ -14438,7 +14448,7 @@ def my_form_open(dialog, layer, feature):
           </effect>
         </layer>
       </symbol>
-      <ComposerPicture resizeMode="0" svgBorderWidth="0.2" pictureRotation="0" pictureWidth="35" svgFillColor="255,255,255,255" svgBorderColor="0,0,0,255" file="./symbols/wind_rose.svg" pictureHeight="35" mapId="0" anchorPoint="0">
+      <ComposerPicture resizeMode="0" svgBorderWidth="0.2" pictureRotation="0" pictureWidth="35" svgFillColor="255,255,255,255" svgBorderColor="0,0,0,255" northMode="0" file="./symbols/wind_rose.svg" northOffset="0" pictureHeight="35" mapId="0" anchorPoint="0">
         <ComposerItem pagey="353.045" page="1" id="" lastValidViewScaleFactor="2.22011" positionMode="0" positionLock="false" x="250.338" y="353.045" visibility="1" zValue="15" background="false" transparency="0" frameJoinStyle="miter" blendMode="0" width="35" outlineWidth="0.3" excludeFromExports="0" uuid="{11f7444e-daed-4c7b-9666-3c634c3844b3}" height="35" itemRotation="0" frame="false" pagex="250.338">
           <FrameColor alpha="255" red="0" blue="0" green="0"/>
           <BackgroundColor alpha="255" red="255" blue="255" green="255"/>
@@ -14542,7 +14552,7 @@ def my_form_open(dialog, layer, feature):
           <customproperties/>
         </ComposerItem>
       </ComposerLabel>
-      <ComposerPicture resizeMode="0" svgBorderWidth="0.2" pictureRotation="0" pictureWidth="78.2614" svgFillColor="255,255,255,255" svgBorderColor="0,0,0,255" file="./composer/logo_sige_2.png" pictureHeight="20.77" mapId="-1" anchorPoint="0">
+      <ComposerPicture resizeMode="0" svgBorderWidth="0.2" pictureRotation="0" pictureWidth="78.2614" svgFillColor="255,255,255,255" svgBorderColor="0,0,0,255" northMode="0" file="./composer/logo_sige_2.png" northOffset="0" pictureHeight="20.77" mapId="-1" anchorPoint="0">
         <ComposerItem pagey="6.2771" page="1" id="" lastValidViewScaleFactor="3.4999" positionMode="0" positionLock="false" x="12.4716" y="6.2771" visibility="1" zValue="4" background="true" transparency="0" frameJoinStyle="miter" blendMode="0" width="85.0567" outlineWidth="0.3" excludeFromExports="0" uuid="{4e3f39cf-2b41-4a58-970c-31f7f923057e}" height="20.77" itemRotation="0" frame="false" pagex="12.4716">
           <FrameColor alpha="255" red="0" blue="0" green="0"/>
           <BackgroundColor alpha="255" red="255" blue="255" green="255"/>
@@ -27375,7 +27385,7 @@ def my_form_open(dialog, layer, feature):
           </effect>
         </layer>
       </symbol>
-      <ComposerPicture resizeMode="0" svgBorderWidth="0.2" pictureRotation="0" pictureWidth="81.5248" svgFillColor="255,255,255,255" svgBorderColor="0,0,0,255" file="./composer/logo_sige_2.png" pictureHeight="21.6361" mapId="-1" anchorPoint="0">
+      <ComposerPicture resizeMode="0" svgBorderWidth="0.2" pictureRotation="0" pictureWidth="81.5248" svgFillColor="255,255,255,255" svgBorderColor="0,0,0,255" northMode="0" file="./composer/logo_sige_2.png" northOffset="0" pictureHeight="21.6361" mapId="-1" anchorPoint="0">
         <ComposerItem pagey="8.36388" page="1" id="" lastValidViewScaleFactor="5.15342" positionMode="0" positionLock="false" x="9.49283" y="8.36388" visibility="1" zValue="15" background="false" transparency="0" frameJoinStyle="miter" blendMode="0" width="89.3023" outlineWidth="0.3" excludeFromExports="0" uuid="{fa31ca13-d3c6-4c1b-92e7-d5ced89ab5f9}" height="21.6361" itemRotation="0" frame="false" pagex="9.49283">
           <FrameColor alpha="255" red="0" blue="0" green="0"/>
           <BackgroundColor alpha="255" red="255" blue="255" green="255"/>
@@ -27383,7 +27393,7 @@ def my_form_open(dialog, layer, feature):
           <customproperties/>
         </ComposerItem>
       </ComposerPicture>
-      <ComposerPicture resizeMode="0" svgBorderWidth="0.2" pictureRotation="0" pictureWidth="35" svgFillColor="255,255,255,255" svgBorderColor="0,0,0,255" file="./symbols/wind_rose.svg" pictureHeight="35" mapId="0" anchorPoint="0">
+      <ComposerPicture resizeMode="0" svgBorderWidth="0.2" pictureRotation="0" pictureWidth="35" svgFillColor="255,255,255,255" svgBorderColor="0,0,0,255" northMode="0" file="./symbols/wind_rose.svg" northOffset="0" pictureHeight="35" mapId="0" anchorPoint="0">
         <ComposerItem pagey="250.766" page="1" id="" lastValidViewScaleFactor="1.90655" positionMode="0" positionLock="false" x="372.549" y="250.766" visibility="1" zValue="14" background="false" transparency="0" frameJoinStyle="miter" blendMode="0" width="35" outlineWidth="0.3" excludeFromExports="0" uuid="{02f4883c-455f-48d7-a2ee-d28d29160034}" height="35" itemRotation="0" frame="false" pagex="372.549">
           <FrameColor alpha="255" red="0" blue="0" green="0"/>
           <BackgroundColor alpha="255" red="255" blue="255" green="255"/>
@@ -27744,7 +27754,7 @@ def my_form_open(dialog, layer, feature):
           <customproperties/>
         </ComposerItem>
       </ComposerLabel>
-      <ComposerPicture resizeMode="0" svgBorderWidth="0.2" pictureRotation="0" pictureWidth="89.0559" svgFillColor="255,255,255,255" svgBorderColor="0,0,0,255" file="./composer/logo_sige_2.png" pictureHeight="23.6348" mapId="-1" anchorPoint="0">
+      <ComposerPicture resizeMode="0" svgBorderWidth="0.2" pictureRotation="0" pictureWidth="89.0559" svgFillColor="255,255,255,255" svgBorderColor="0,0,0,255" northMode="0" file="./composer/logo_sige_2.png" northOffset="0" pictureHeight="23.6348" mapId="-1" anchorPoint="0">
         <ComposerItem pagey="698.12" page="1" id="" lastValidViewScaleFactor="5.15342" positionMode="0" positionLock="false" x="1170.85" y="698.12" visibility="1" zValue="6" background="false" transparency="0" frameJoinStyle="miter" blendMode="0" width="93.7993" outlineWidth="0.3" excludeFromExports="0" uuid="{4e1fd0dd-1b97-43a0-a225-c0f3faa4f226}" height="23.6348" itemRotation="0" frame="false" pagex="1170.85">
           <FrameColor alpha="255" red="0" blue="0" green="0"/>
           <BackgroundColor alpha="255" red="255" blue="255" green="255"/>
@@ -27752,7 +27762,7 @@ def my_form_open(dialog, layer, feature):
           <customproperties/>
         </ComposerItem>
       </ComposerPicture>
-      <ComposerPicture resizeMode="0" svgBorderWidth="0.2" pictureRotation="0" pictureWidth="185.022" svgFillColor="255,255,255,255" svgBorderColor="0,0,0,255" file="./composer/schematic_legend.svg" pictureHeight="70.378" mapId="-1" anchorPoint="0">
+      <ComposerPicture resizeMode="0" svgBorderWidth="0.2" pictureRotation="0" pictureWidth="185.022" svgFillColor="255,255,255,255" svgBorderColor="0,0,0,255" northMode="0" file="./composer/schematic_legend.svg" northOffset="0" pictureHeight="70.378" mapId="-1" anchorPoint="0">
         <ComposerItem pagey="739.672" page="1" id="" lastValidViewScaleFactor="-1" positionMode="0" positionLock="false" x="1161.05" y="739.672" visibility="1" zValue="5" background="true" transparency="0" frameJoinStyle="miter" blendMode="0" width="210" outlineWidth="0.2" excludeFromExports="0" uuid="{b98632f4-f6dc-4a60-96f0-c0c00d118b15}" height="70.378" itemRotation="0" frame="true" pagex="1161.05">
           <FrameColor alpha="255" red="0" blue="0" green="0"/>
           <BackgroundColor alpha="255" red="255" blue="255" green="255"/>
@@ -27769,7 +27779,7 @@ def my_form_open(dialog, layer, feature):
           <customproperties/>
         </ComposerItem>
       </ComposerLabel>
-      <ComposerPicture resizeMode="2" svgBorderWidth="0.2" pictureRotation="0" pictureWidth="312.689" svgFillColor="255,255,255,255" svgBorderColor="0,0,0,255" file="/run/user/1000/gvfs/smb-share:server=s1laveyre,share=dao_saisie$/05_DONNEES_SIT/5000/Plaine_du_Rhone_Sources.png" pictureHeight="193.631" mapId="-1" anchorPoint="0">
+      <ComposerPicture resizeMode="2" svgBorderWidth="0.2" pictureRotation="0" pictureWidth="312.689" svgFillColor="255,255,255,255" svgBorderColor="0,0,0,255" northMode="0" file="/run/user/1000/gvfs/smb-share:server=s1laveyre,share=dao_saisie$/05_DONNEES_SIT/5000/Plaine_du_Rhone_Sources.png" northOffset="0" pictureHeight="193.631" mapId="-1" anchorPoint="0">
         <ComposerItem pagey="322.709" page="1" id="" lastValidViewScaleFactor="-1" positionMode="0" positionLock="false" x="538.219" y="322.709" visibility="1" zValue="3" background="false" transparency="0" frameJoinStyle="miter" blendMode="0" width="312.689" outlineWidth="0.3" excludeFromExports="0" uuid="{6f130111-1908-4175-9002-6723e6794218}" height="193.631" itemRotation="0" frame="true" pagex="538.219">
           <FrameColor alpha="255" red="0" blue="0" green="0"/>
           <BackgroundColor alpha="255" red="255" blue="255" green="255"/>
@@ -27932,7 +27942,7 @@ def my_form_open(dialog, layer, feature):
         </ComposerItem>
       </ComposerLabel>
       <ComposerMap followPreset="true" mapRotation="1" keepLayerSet="false" followPresetName="minimap 1000" id="3" previewMode="Cache" drawCanvasItems="true">
-        <Extent ymin="141259.3432006103976164" xmin="560672.80429450585506856" ymax="141434.65369718542206101" xmax="560845.30429468187503517"/>
+        <Extent ymin="141259.34320061051403172" xmin="560672.80429450585506856" ymax="141434.65369718553847633" xmax="560845.30429468187503517"/>
         <LayerSet/>
         <Grid/>
         <ComposerMapGrid rightAnnotationDirection="0" gridFramePenColor="0,0,0,255" show="0" bottomAnnotationPosition="1" annotationPrecision="3" showAnnotation="0" topFrameDivisions="0" uuid="{66e915cb-9fde-4ca7-a28a-c7e0bb6f1c52}" leftAnnotationDirection="0" topAnnotationPosition="1" rightAnnotationDisplay="0" offsetX="0" offsetY="0" rightFrameDivisions="0" gridStyle="0" annotationFontColor="0,0,0,255" intervalX="0" gridFrameSideFlags="15" intervalY="0" bottomAnnotationDirection="0" leftAnnotationDisplay="0" leftFrameDivisions="0" frameFillColor1="255,255,255,255" annotationExpression="" frameFillColor2="0,0,0,255" crossLength="3" gridFramePenThickness="0.5" bottomAnnotationDisplay="0" unit="0" topAnnotationDisplay="0" leftAnnotationPosition="1" blendMode="0" gridFrameStyle="0" rightAnnotationPosition="1" gridFrameWidth="2" name="Grid 1" annotationFormat="0" bottomFrameDivisions="0" topAnnotationDirection="0" frameAnnotationDistance="1">
@@ -28061,7 +28071,7 @@ def my_form_open(dialog, layer, feature):
         </ComposerItem>
       </ComposerLabel>
       <ComposerMap followPreset="true" mapRotation="0" keepLayerSet="false" followPresetName="minimap 1000" id="1" previewMode="Cache" drawCanvasItems="true">
-        <Extent ymin="142996.75729705768753774" xmin="559224.55663845222443342" ymax="143160.60991081045358442" xmax="559407.55663863895460963"/>
+        <Extent ymin="142996.75729705774574541" xmin="559224.55663845222443342" ymax="143160.60991081051179208" xmax="559407.55663863895460963"/>
         <LayerSet/>
         <Grid/>
         <ComposerMapGrid rightAnnotationDirection="0" gridFramePenColor="0,0,0,255" show="0" bottomAnnotationPosition="1" annotationPrecision="3" showAnnotation="0" topFrameDivisions="0" uuid="{6ebd3253-31c2-4af7-b9a5-f6c63733c886}" leftAnnotationDirection="0" topAnnotationPosition="1" rightAnnotationDisplay="0" offsetX="0" offsetY="0" rightFrameDivisions="0" gridStyle="0" annotationFontColor="0,0,0,255" intervalX="0" gridFrameSideFlags="15" intervalY="0" bottomAnnotationDirection="0" leftAnnotationDisplay="0" leftFrameDivisions="0" frameFillColor1="255,255,255,255" annotationExpression="" frameFillColor2="0,0,0,255" crossLength="3" gridFramePenThickness="0.5" bottomAnnotationDisplay="0" unit="0" topAnnotationDisplay="0" leftAnnotationPosition="1" blendMode="0" gridFrameStyle="0" rightAnnotationPosition="1" gridFrameWidth="2" name="Grid 1" annotationFormat="0" bottomFrameDivisions="0" topAnnotationDirection="0" frameAnnotationDistance="1">
@@ -28235,7 +28245,7 @@ def my_form_open(dialog, layer, feature):
         </ComposerItem>
       </ComposerArrow>
       <ComposerMap followPreset="true" mapRotation="325" keepLayerSet="false" followPresetName="impression 5000" id="0" previewMode="Cache" drawCanvasItems="true">
-        <Extent ymin="136695.24451208504615352" xmin="556387.41481285262852907" ymax="141145.24451662402134389" xmax="563887.41482050251215696"/>
+        <Extent ymin="136695.24451208498794585" xmin="556387.41481285262852907" ymax="141145.24451662396313623" xmax="563887.41482050251215696"/>
         <LayerSet/>
         <Grid/>
         <ComposerMapGrid rightAnnotationDirection="0" gridFramePenColor="0,0,0,255" show="0" bottomAnnotationPosition="1" annotationPrecision="3" showAnnotation="0" topFrameDivisions="0" uuid="{2073cae7-1df2-4dc0-9ef6-9145db687101}" leftAnnotationDirection="0" topAnnotationPosition="1" rightAnnotationDisplay="0" offsetX="0" offsetY="0" rightFrameDivisions="0" gridStyle="0" annotationFontColor="0,0,0,255" intervalX="0" gridFrameSideFlags="15" intervalY="0" bottomAnnotationDirection="0" leftAnnotationDisplay="0" leftFrameDivisions="0" frameFillColor1="255,255,255,255" annotationExpression="" frameFillColor2="0,0,0,255" crossLength="3" gridFramePenThickness="0.5" bottomAnnotationDisplay="0" unit="0" topAnnotationDisplay="0" leftAnnotationPosition="1" blendMode="0" gridFrameStyle="0" rightAnnotationPosition="1" gridFrameWidth="2" name="Grid 1" annotationFormat="0" bottomFrameDivisions="0" topAnnotationDirection="0" frameAnnotationDistance="1">
@@ -28383,7 +28393,7 @@ def my_form_open(dialog, layer, feature):
         </layer>
       </symbol>
       <ComposerMap followPreset="false" mapRotation="0" keepLayerSet="false" followPresetName="" id="0" previewMode="Cache" drawCanvasItems="true">
-        <Extent ymin="148940.92140768127865158" xmin="555084.52102199767250568" ymax="148994.9214077363430988" xmax="555138.52102205285336822"/>
+        <Extent ymin="148940.9214076813950669" xmin="555084.52102199767250568" ymax="148994.92140773645951413" xmax="555138.52102205285336822"/>
         <LayerSet/>
         <Grid/>
         <ComposerMapGrid rightAnnotationDirection="0" gridFramePenColor="0,0,0,255" show="0" bottomAnnotationPosition="1" annotationPrecision="3" showAnnotation="0" topFrameDivisions="0" uuid="{22202fc4-88f8-489a-842f-ca5a18a9f7bf}" leftAnnotationDirection="0" topAnnotationPosition="1" rightAnnotationDisplay="0" offsetX="0" offsetY="0" rightFrameDivisions="0" gridStyle="0" annotationFontColor="0,0,0,255" intervalX="0" gridFrameSideFlags="15" intervalY="0" bottomAnnotationDirection="0" leftAnnotationDisplay="0" leftFrameDivisions="0" frameFillColor1="255,255,255,255" annotationExpression="" frameFillColor2="0,0,0,255" crossLength="3" gridFramePenThickness="0.5" bottomAnnotationDisplay="0" unit="0" topAnnotationDisplay="0" leftAnnotationPosition="1" blendMode="0" gridFrameStyle="0" rightAnnotationPosition="1" gridFrameWidth="2" name="Grid 1" annotationFormat="0" bottomFrameDivisions="0" topAnnotationDirection="0" frameAnnotationDistance="1">
@@ -28532,7 +28542,7 @@ def my_form_open(dialog, layer, feature):
         </ComposerItem>
       </ComposerMap>
       <ComposerMap followPreset="true" mapRotation="325" keepLayerSet="false" followPresetName="impression 5000" id="0" previewMode="Cache" drawCanvasItems="true">
-        <Extent ymin="136695.2445120848424267" xmin="556387.41481285262852907" ymax="141145.24451662381761707" xmax="563887.41482050251215696"/>
+        <Extent ymin="136695.24451208478421904" xmin="556387.41481285262852907" ymax="141145.24451662375940941" xmax="563887.41482050251215696"/>
         <LayerSet/>
         <Grid/>
         <ComposerMapGrid rightAnnotationDirection="0" gridFramePenColor="0,0,0,255" show="0" bottomAnnotationPosition="1" annotationPrecision="3" showAnnotation="0" topFrameDivisions="0" uuid="{2073cae7-1df2-4dc0-9ef6-9145db687101}" leftAnnotationDirection="0" topAnnotationPosition="1" rightAnnotationDisplay="0" offsetX="0" offsetY="0" rightFrameDivisions="0" gridStyle="0" annotationFontColor="0,0,0,255" intervalX="0" gridFrameSideFlags="15" intervalY="0" bottomAnnotationDirection="0" leftAnnotationDisplay="0" leftFrameDivisions="0" frameFillColor1="255,255,255,255" annotationExpression="" frameFillColor2="0,0,0,255" crossLength="3" gridFramePenThickness="0.5" bottomAnnotationDisplay="0" unit="0" topAnnotationDisplay="0" leftAnnotationPosition="1" blendMode="0" gridFrameStyle="0" rightAnnotationPosition="1" gridFrameWidth="2" name="Grid 1" annotationFormat="0" bottomFrameDivisions="0" topAnnotationDirection="0" frameAnnotationDistance="1">
@@ -28704,7 +28714,7 @@ def my_form_open(dialog, layer, feature):
           <customproperties/>
         </ComposerItem>
       </ComposerLabel>
-      <ComposerPicture resizeMode="0" svgBorderWidth="0.2" pictureRotation="0" pictureWidth="89.0559" svgFillColor="255,255,255,255" svgBorderColor="0,0,0,255" file="./composer/logo_sige_2.png" pictureHeight="23.6348" mapId="0" anchorPoint="0">
+      <ComposerPicture resizeMode="0" svgBorderWidth="0.2" pictureRotation="0" pictureWidth="89.0559" svgFillColor="255,255,255,255" svgBorderColor="0,0,0,255" northMode="0" file="./composer/logo_sige_2.png" northOffset="0" pictureHeight="23.6348" mapId="0" anchorPoint="0">
         <ComposerItem pagey="15.2496" page="1" id="" lastValidViewScaleFactor="5.15342" positionMode="0" positionLock="false" x="24.8959" y="15.2496" visibility="1" zValue="8" background="false" transparency="0" frameJoinStyle="miter" blendMode="0" width="93.7993" outlineWidth="0.3" excludeFromExports="0" uuid="{ff62870f-a4d9-4e78-a925-22804ae64970}" height="23.6348" itemRotation="0" frame="false" pagex="24.8959">
           <FrameColor alpha="255" red="0" blue="0" green="0"/>
           <BackgroundColor alpha="255" red="255" blue="255" green="255"/>
@@ -28712,7 +28722,7 @@ def my_form_open(dialog, layer, feature):
           <customproperties/>
         </ComposerItem>
       </ComposerPicture>
-      <ComposerPicture resizeMode="0" svgBorderWidth="0.2" pictureRotation="0" pictureWidth="185.022" svgFillColor="255,255,255,255" svgBorderColor="0,0,0,255" file="./composer/schematic_legend.svg" pictureHeight="70.378" mapId="0" anchorPoint="0">
+      <ComposerPicture resizeMode="0" svgBorderWidth="0.2" pictureRotation="0" pictureWidth="185.022" svgFillColor="255,255,255,255" svgBorderColor="0,0,0,255" northMode="0" file="./composer/schematic_legend.svg" northOffset="0" pictureHeight="70.378" mapId="0" anchorPoint="0">
         <ComposerItem pagey="56.8021" page="1" id="" lastValidViewScaleFactor="-1" positionMode="0" positionLock="false" x="15.1" y="56.8021" visibility="1" zValue="7" background="true" transparency="0" frameJoinStyle="miter" blendMode="0" width="210" outlineWidth="0.2" excludeFromExports="0" uuid="{7901b3da-37f1-48f0-a191-429bd98c6e8e}" height="70.378" itemRotation="0" frame="true" pagex="15.1">
           <FrameColor alpha="255" red="0" blue="0" green="0"/>
           <BackgroundColor alpha="255" red="255" blue="255" green="255"/>
@@ -28811,7 +28821,7 @@ def my_form_open(dialog, layer, feature):
         </ComposerItem>
       </ComposerShape>
       <ComposerMap followPreset="true" mapRotation="325" keepLayerSet="false" followPresetName="impression 5000" id="0" previewMode="Cache" drawCanvasItems="true">
-        <Extent ymin="136695.24451208443497308" xmin="556387.41481285262852907" ymax="141145.24451662341016345" xmax="563887.41482050251215696"/>
+        <Extent ymin="136695.24451208437676542" xmin="556387.41481285262852907" ymax="141145.24451662335195579" xmax="563887.41482050251215696"/>
         <LayerSet/>
         <Grid/>
         <ComposerMapGrid rightAnnotationDirection="0" gridFramePenColor="0,0,0,255" show="0" bottomAnnotationPosition="1" annotationPrecision="3" showAnnotation="0" topFrameDivisions="0" uuid="{2073cae7-1df2-4dc0-9ef6-9145db687101}" leftAnnotationDirection="0" topAnnotationPosition="1" rightAnnotationDisplay="0" offsetX="0" offsetY="0" rightFrameDivisions="0" gridStyle="0" annotationFontColor="0,0,0,255" intervalX="0" gridFrameSideFlags="15" intervalY="0" bottomAnnotationDirection="0" leftAnnotationDisplay="0" leftFrameDivisions="0" frameFillColor1="255,255,255,255" annotationExpression="" frameFillColor2="0,0,0,255" crossLength="3" gridFramePenThickness="0.5" bottomAnnotationDisplay="0" unit="0" topAnnotationDisplay="0" leftAnnotationPosition="1" blendMode="0" gridFrameStyle="0" rightAnnotationPosition="1" gridFrameWidth="2" name="Grid 1" annotationFormat="0" bottomFrameDivisions="0" topAnnotationDirection="0" frameAnnotationDistance="1">
@@ -28961,7 +28971,7 @@ def my_form_open(dialog, layer, feature):
         </ComposerItem>
       </ComposerLabel>
       <ComposerMap followPreset="true" mapRotation="0" keepLayerSet="false" followPresetName="minimap 1000" id="5" previewMode="Cache" drawCanvasItems="true">
-        <Extent ymin="145620.55536084464984015" xmin="555146.75582698069047183" ymax="145729.55536095582647249" xmax="555294.75582713156472892"/>
+        <Extent ymin="145620.55536084459163249" xmin="555146.75582698069047183" ymax="145729.55536095576826483" xmax="555294.75582713156472892"/>
         <LayerSet/>
         <Grid/>
         <ComposerMapGrid rightAnnotationDirection="0" gridFramePenColor="0,0,0,255" show="0" bottomAnnotationPosition="1" annotationPrecision="3" showAnnotation="0" topFrameDivisions="0" uuid="{69d50421-6027-4f5e-8b93-7ecaaa04f8e9}" leftAnnotationDirection="0" topAnnotationPosition="1" rightAnnotationDisplay="0" offsetX="0" offsetY="0" rightFrameDivisions="0" gridStyle="0" annotationFontColor="0,0,0,255" intervalX="0" gridFrameSideFlags="15" intervalY="0" bottomAnnotationDirection="0" leftAnnotationDisplay="0" leftFrameDivisions="0" frameFillColor1="255,255,255,255" annotationExpression="" frameFillColor2="0,0,0,255" crossLength="3" gridFramePenThickness="0.5" bottomAnnotationDisplay="0" unit="0" topAnnotationDisplay="0" leftAnnotationPosition="1" blendMode="0" gridFrameStyle="0" rightAnnotationPosition="1" gridFrameWidth="2" name="Grid 1" annotationFormat="0" bottomFrameDivisions="0" topAnnotationDirection="0" frameAnnotationDistance="1">
@@ -29081,7 +29091,7 @@ def my_form_open(dialog, layer, feature):
         </ComposerItem>
       </ComposerMap>
       <ComposerMap followPreset="true" mapRotation="0" keepLayerSet="false" followPresetName="minimap 1000" id="4" previewMode="Cache" drawCanvasItems="true">
-        <Extent ymin="145760.12771927009453066" xmin="555352.02931586769409478" ymax="145918.49579549694317393" xmax="555550.02931606955826283"/>
+        <Extent ymin="145760.127719270036323" xmin="555352.02931586769409478" ymax="145918.49579549688496627" xmax="555550.02931606955826283"/>
         <LayerSet/>
         <Grid/>
         <ComposerMapGrid rightAnnotationDirection="0" gridFramePenColor="0,0,0,255" show="0" bottomAnnotationPosition="1" annotationPrecision="3" showAnnotation="0" topFrameDivisions="0" uuid="{2d55993e-c920-4079-aa37-c8a238343d11}" leftAnnotationDirection="0" topAnnotationPosition="1" rightAnnotationDisplay="0" offsetX="0" offsetY="0" rightFrameDivisions="0" gridStyle="0" annotationFontColor="0,0,0,255" intervalX="0" gridFrameSideFlags="15" intervalY="0" bottomAnnotationDirection="0" leftAnnotationDisplay="0" leftFrameDivisions="0" frameFillColor1="255,255,255,255" annotationExpression="" frameFillColor2="0,0,0,255" crossLength="3" gridFramePenThickness="0.5" bottomAnnotationDisplay="0" unit="0" topAnnotationDisplay="0" leftAnnotationPosition="1" blendMode="0" gridFrameStyle="0" rightAnnotationPosition="1" gridFrameWidth="2" name="Grid 1" annotationFormat="0" bottomFrameDivisions="0" topAnnotationDirection="0" frameAnnotationDistance="1">
@@ -29171,7 +29181,7 @@ def my_form_open(dialog, layer, feature):
         </ComposerItem>
       </ComposerArrow>
       <ComposerMap followPreset="true" mapRotation="320" keepLayerSet="false" followPresetName="minimap 1000" id="3" previewMode="Cache" drawCanvasItems="true">
-        <Extent ymin="146957.55529282017960213" xmin="554414.48823976842686534" ymax="147098.40062013218994252" xmax="554733.98824009438976645"/>
+        <Extent ymin="146957.55529282023780979" xmin="554414.48823976842686534" ymax="147098.40062013224815018" xmax="554733.98824009438976645"/>
         <LayerSet/>
         <Grid/>
         <ComposerMapGrid rightAnnotationDirection="0" gridFramePenColor="0,0,0,255" show="0" bottomAnnotationPosition="1" annotationPrecision="3" showAnnotation="0" topFrameDivisions="0" uuid="{43d41761-1e39-410e-ace4-b9fe8913f7a7}" leftAnnotationDirection="0" topAnnotationPosition="1" rightAnnotationDisplay="0" offsetX="0" offsetY="0" rightFrameDivisions="0" gridStyle="0" annotationFontColor="0,0,0,255" intervalX="0" gridFrameSideFlags="15" intervalY="0" bottomAnnotationDirection="0" leftAnnotationDisplay="0" leftFrameDivisions="0" frameFillColor1="255,255,255,255" annotationExpression="" frameFillColor2="0,0,0,255" crossLength="3" gridFramePenThickness="0.5" bottomAnnotationDisplay="0" unit="0" topAnnotationDisplay="0" leftAnnotationPosition="1" blendMode="0" gridFrameStyle="0" rightAnnotationPosition="1" gridFrameWidth="2" name="Grid 1" annotationFormat="0" bottomFrameDivisions="0" topAnnotationDirection="0" frameAnnotationDistance="1">
@@ -29261,7 +29271,7 @@ def my_form_open(dialog, layer, feature):
         </ComposerItem>
       </ComposerArrow>
       <ComposerMap followPreset="true" mapRotation="325" keepLayerSet="false" followPresetName="minimap 250" id="1" previewMode="Cache" drawCanvasItems="true">
-        <Extent ymin="146519.11599998528254218" xmin="554434.94899998628534377" ymax="146543.49708991634543054" xmax="554461.94900001375935972"/>
+        <Extent ymin="146519.11599998522433452" xmin="554434.94899998628534377" ymax="146543.49708991628722288" xmax="554461.94900001375935972"/>
         <LayerSet/>
         <Grid/>
         <ComposerMapGrid rightAnnotationDirection="0" gridFramePenColor="0,0,0,255" show="0" bottomAnnotationPosition="1" annotationPrecision="3" showAnnotation="0" topFrameDivisions="0" uuid="{5a131054-b83a-48c2-9b77-b4604e36f33e}" leftAnnotationDirection="0" topAnnotationPosition="1" rightAnnotationDisplay="0" offsetX="0" offsetY="0" rightFrameDivisions="0" gridStyle="0" annotationFontColor="0,0,0,255" intervalX="0" gridFrameSideFlags="15" intervalY="0" bottomAnnotationDirection="0" leftAnnotationDisplay="0" leftFrameDivisions="0" frameFillColor1="255,255,255,255" annotationExpression="" frameFillColor2="0,0,0,255" crossLength="3" gridFramePenThickness="0.5" bottomAnnotationDisplay="0" unit="0" topAnnotationDisplay="0" leftAnnotationPosition="1" blendMode="0" gridFrameStyle="0" rightAnnotationPosition="1" gridFrameWidth="2" name="Grid 1" annotationFormat="0" bottomFrameDivisions="0" topAnnotationDirection="0" frameAnnotationDistance="1">
@@ -29419,7 +29429,7 @@ def my_form_open(dialog, layer, feature):
         </ComposerItem>
       </ComposerArrow>
       <ComposerMap followPreset="true" mapRotation="325" keepLayerSet="false" followPresetName="impression 5000" id="0" previewMode="Cache" drawCanvasItems="true">
-        <Extent ymin="136695.2445120838820003" xmin="556387.41481285262852907" ymax="141145.24451662285719067" xmax="563887.41482050251215696"/>
+        <Extent ymin="136695.24451208382379264" xmin="556387.41481285262852907" ymax="141145.24451662279898301" xmax="563887.41482050251215696"/>
         <LayerSet/>
         <Grid/>
         <ComposerMapGrid rightAnnotationDirection="0" gridFramePenColor="0,0,0,255" show="0" bottomAnnotationPosition="1" annotationPrecision="3" showAnnotation="0" topFrameDivisions="0" uuid="{2073cae7-1df2-4dc0-9ef6-9145db687101}" leftAnnotationDirection="0" topAnnotationPosition="1" rightAnnotationDisplay="0" offsetX="0" offsetY="0" rightFrameDivisions="0" gridStyle="0" annotationFontColor="0,0,0,255" intervalX="0" gridFrameSideFlags="15" intervalY="0" bottomAnnotationDirection="0" leftAnnotationDisplay="0" leftFrameDivisions="0" frameFillColor1="255,255,255,255" annotationExpression="" frameFillColor2="0,0,0,255" crossLength="3" gridFramePenThickness="0.5" bottomAnnotationDisplay="0" unit="0" topAnnotationDisplay="0" leftAnnotationPosition="1" blendMode="0" gridFrameStyle="0" rightAnnotationPosition="1" gridFrameWidth="2" name="Grid 1" annotationFormat="0" bottomFrameDivisions="0" topAnnotationDirection="0" frameAnnotationDistance="1">
@@ -29659,7 +29669,7 @@ def my_form_open(dialog, layer, feature):
           <customproperties/>
         </ComposerItem>
       </ComposerLabel>
-      <ComposerPicture resizeMode="0" svgBorderWidth="0.2" pictureRotation="0" pictureWidth="89.0559" svgFillColor="255,255,255,255" svgBorderColor="0,0,0,255" file="./composer/logo_sige_2.png" pictureHeight="23.6348" mapId="-1" anchorPoint="0">
+      <ComposerPicture resizeMode="0" svgBorderWidth="0.2" pictureRotation="0" pictureWidth="89.0559" svgFillColor="255,255,255,255" svgBorderColor="0,0,0,255" northMode="0" file="./composer/logo_sige_2.png" northOffset="0" pictureHeight="23.6348" mapId="-1" anchorPoint="0">
         <ComposerItem pagey="718.12" page="1" id="" lastValidViewScaleFactor="5.15342" positionMode="0" positionLock="false" x="1409.85" y="718.12" visibility="1" zValue="23" background="false" transparency="0" frameJoinStyle="miter" blendMode="0" width="93.7993" outlineWidth="0.3" excludeFromExports="0" uuid="{476a1feb-ffa5-49ca-ad79-4b5482db805e}" height="23.6348" itemRotation="0" frame="false" pagex="1409.85">
           <FrameColor alpha="255" red="0" blue="0" green="0"/>
           <BackgroundColor alpha="255" red="255" blue="255" green="255"/>
@@ -29667,7 +29677,7 @@ def my_form_open(dialog, layer, feature):
           <customproperties/>
         </ComposerItem>
       </ComposerPicture>
-      <ComposerPicture resizeMode="0" svgBorderWidth="0.2" pictureRotation="0" pictureWidth="185.022" svgFillColor="255,255,255,255" svgBorderColor="0,0,0,255" file="./composer/schematic_legend.svg" pictureHeight="70.378" mapId="-1" anchorPoint="0">
+      <ComposerPicture resizeMode="0" svgBorderWidth="0.2" pictureRotation="0" pictureWidth="185.022" svgFillColor="255,255,255,255" svgBorderColor="0,0,0,255" northMode="0" file="./composer/schematic_legend.svg" northOffset="0" pictureHeight="70.378" mapId="-1" anchorPoint="0">
         <ComposerItem pagey="759.672" page="1" id="" lastValidViewScaleFactor="-1" positionMode="0" positionLock="false" x="1400.05" y="759.672" visibility="1" zValue="22" background="true" transparency="0" frameJoinStyle="miter" blendMode="0" width="210" outlineWidth="0.2" excludeFromExports="0" uuid="{2db8e7fe-9f76-46aa-a6a2-11bd784bb322}" height="70.378" itemRotation="0" frame="true" pagex="1400.05">
           <FrameColor alpha="255" red="0" blue="0" green="0"/>
           <BackgroundColor alpha="255" red="255" blue="255" green="255"/>
@@ -29811,7 +29821,7 @@ def my_form_open(dialog, layer, feature):
         </ComposerItem>
       </ComposerLabel>
       <ComposerMap followPreset="true" mapRotation="0" keepLayerSet="false" followPresetName="minimap 1000" id="5" previewMode="Cache" drawCanvasItems="true">
-        <Extent ymin="145620.55499994341516867" xmin="555146.75599992461502552" ymax="145729.55500005459180102" xmax="555294.75600007548928261"/>
+        <Extent ymin="145620.55499994335696101" xmin="555146.75599992461502552" ymax="145729.55500005453359336" xmax="555294.75600007548928261"/>
         <LayerSet/>
         <Grid/>
         <ComposerMapGrid rightAnnotationDirection="0" gridFramePenColor="0,0,0,255" show="0" bottomAnnotationPosition="1" annotationPrecision="3" showAnnotation="0" topFrameDivisions="0" uuid="{69d50421-6027-4f5e-8b93-7ecaaa04f8e9}" leftAnnotationDirection="0" topAnnotationPosition="1" rightAnnotationDisplay="0" offsetX="0" offsetY="0" rightFrameDivisions="0" gridStyle="0" annotationFontColor="0,0,0,255" intervalX="0" gridFrameSideFlags="15" intervalY="0" bottomAnnotationDirection="0" leftAnnotationDisplay="0" leftFrameDivisions="0" frameFillColor1="255,255,255,255" annotationExpression="" frameFillColor2="0,0,0,255" crossLength="3" gridFramePenThickness="0.5" bottomAnnotationDisplay="0" unit="0" topAnnotationDisplay="0" leftAnnotationPosition="1" blendMode="0" gridFrameStyle="0" rightAnnotationPosition="1" gridFrameWidth="2" name="Grid 1" annotationFormat="0" bottomFrameDivisions="0" topAnnotationDirection="0" frameAnnotationDistance="1">
@@ -29931,7 +29941,7 @@ def my_form_open(dialog, layer, feature):
         </ComposerItem>
       </ComposerMap>
       <ComposerMap followPreset="true" mapRotation="0" keepLayerSet="false" followPresetName="minimap 1000" id="4" previewMode="Cache" drawCanvasItems="true">
-        <Extent ymin="145760.12771926968707703" xmin="555352.02931586769409478" ymax="145918.4957954965357203" xmax="555550.02931606955826283"/>
+        <Extent ymin="145760.12771926962886937" xmin="555352.02931586769409478" ymax="145918.49579549647751264" xmax="555550.02931606955826283"/>
         <LayerSet/>
         <Grid/>
         <ComposerMapGrid rightAnnotationDirection="0" gridFramePenColor="0,0,0,255" show="0" bottomAnnotationPosition="1" annotationPrecision="3" showAnnotation="0" topFrameDivisions="0" uuid="{2d55993e-c920-4079-aa37-c8a238343d11}" leftAnnotationDirection="0" topAnnotationPosition="1" rightAnnotationDisplay="0" offsetX="0" offsetY="0" rightFrameDivisions="0" gridStyle="0" annotationFontColor="0,0,0,255" intervalX="0" gridFrameSideFlags="15" intervalY="0" bottomAnnotationDirection="0" leftAnnotationDisplay="0" leftFrameDivisions="0" frameFillColor1="255,255,255,255" annotationExpression="" frameFillColor2="0,0,0,255" crossLength="3" gridFramePenThickness="0.5" bottomAnnotationDisplay="0" unit="0" topAnnotationDisplay="0" leftAnnotationPosition="1" blendMode="0" gridFrameStyle="0" rightAnnotationPosition="1" gridFrameWidth="2" name="Grid 1" annotationFormat="0" bottomFrameDivisions="0" topAnnotationDirection="0" frameAnnotationDistance="1">
@@ -30021,7 +30031,7 @@ def my_form_open(dialog, layer, feature):
         </ComposerItem>
       </ComposerArrow>
       <ComposerMap followPreset="true" mapRotation="320" keepLayerSet="false" followPresetName="minimap 1000" id="3" previewMode="Cache" drawCanvasItems="true">
-        <Extent ymin="146957.5552928205288481" xmin="554414.48823976842686534" ymax="147098.40062013253918849" xmax="554733.98824009438976645"/>
+        <Extent ymin="146957.55529282058705576" xmin="554414.48823976842686534" ymax="147098.40062013259739615" xmax="554733.98824009438976645"/>
         <LayerSet/>
         <Grid/>
         <ComposerMapGrid rightAnnotationDirection="0" gridFramePenColor="0,0,0,255" show="0" bottomAnnotationPosition="1" annotationPrecision="3" showAnnotation="0" topFrameDivisions="0" uuid="{43d41761-1e39-410e-ace4-b9fe8913f7a7}" leftAnnotationDirection="0" topAnnotationPosition="1" rightAnnotationDisplay="0" offsetX="0" offsetY="0" rightFrameDivisions="0" gridStyle="0" annotationFontColor="0,0,0,255" intervalX="0" gridFrameSideFlags="15" intervalY="0" bottomAnnotationDirection="0" leftAnnotationDisplay="0" leftFrameDivisions="0" frameFillColor1="255,255,255,255" annotationExpression="" frameFillColor2="0,0,0,255" crossLength="3" gridFramePenThickness="0.5" bottomAnnotationDisplay="0" unit="0" topAnnotationDisplay="0" leftAnnotationPosition="1" blendMode="0" gridFrameStyle="0" rightAnnotationPosition="1" gridFrameWidth="2" name="Grid 1" annotationFormat="0" bottomFrameDivisions="0" topAnnotationDirection="0" frameAnnotationDistance="1">
@@ -30111,7 +30121,7 @@ def my_form_open(dialog, layer, feature):
         </ComposerItem>
       </ComposerArrow>
       <ComposerMap followPreset="true" mapRotation="325" keepLayerSet="false" followPresetName="minimap 250" id="1" previewMode="Cache" drawCanvasItems="true">
-        <Extent ymin="146519.11599998496240005" xmin="554434.94899998628534377" ymax="146543.4970899160252884" xmax="554461.94900001375935972"/>
+        <Extent ymin="146519.11599998490419239" xmin="554434.94899998628534377" ymax="146543.49708991596708074" xmax="554461.94900001375935972"/>
         <LayerSet/>
         <Grid/>
         <ComposerMapGrid rightAnnotationDirection="0" gridFramePenColor="0,0,0,255" show="0" bottomAnnotationPosition="1" annotationPrecision="3" showAnnotation="0" topFrameDivisions="0" uuid="{5a131054-b83a-48c2-9b77-b4604e36f33e}" leftAnnotationDirection="0" topAnnotationPosition="1" rightAnnotationDisplay="0" offsetX="0" offsetY="0" rightFrameDivisions="0" gridStyle="0" annotationFontColor="0,0,0,255" intervalX="0" gridFrameSideFlags="15" intervalY="0" bottomAnnotationDirection="0" leftAnnotationDisplay="0" leftFrameDivisions="0" frameFillColor1="255,255,255,255" annotationExpression="" frameFillColor2="0,0,0,255" crossLength="3" gridFramePenThickness="0.5" bottomAnnotationDisplay="0" unit="0" topAnnotationDisplay="0" leftAnnotationPosition="1" blendMode="0" gridFrameStyle="0" rightAnnotationPosition="1" gridFrameWidth="2" name="Grid 1" annotationFormat="0" bottomFrameDivisions="0" topAnnotationDirection="0" frameAnnotationDistance="1">
@@ -30546,7 +30556,7 @@ def my_form_open(dialog, layer, feature):
         </ComposerItem>
       </ComposerLabel>
       <ComposerMap followPreset="true" mapRotation="0" keepLayerSet="false" followPresetName="minimap 1000" id="5" previewMode="Cache" drawCanvasItems="true">
-        <Extent ymin="145620.55499994318233803" xmin="555146.75599992461502552" ymax="145729.55500005435897037" xmax="555294.75600007548928261"/>
+        <Extent ymin="145620.55499994312413037" xmin="555146.75599992461502552" ymax="145729.55500005430076271" xmax="555294.75600007548928261"/>
         <LayerSet/>
         <Grid/>
         <ComposerMapGrid rightAnnotationDirection="0" gridFramePenColor="0,0,0,255" show="0" bottomAnnotationPosition="1" annotationPrecision="3" showAnnotation="0" topFrameDivisions="0" uuid="{69d50421-6027-4f5e-8b93-7ecaaa04f8e9}" leftAnnotationDirection="0" topAnnotationPosition="1" rightAnnotationDisplay="0" offsetX="0" offsetY="0" rightFrameDivisions="0" gridStyle="0" annotationFontColor="0,0,0,255" intervalX="0" gridFrameSideFlags="15" intervalY="0" bottomAnnotationDirection="0" leftAnnotationDisplay="0" leftFrameDivisions="0" frameFillColor1="255,255,255,255" annotationExpression="" frameFillColor2="0,0,0,255" crossLength="3" gridFramePenThickness="0.5" bottomAnnotationDisplay="0" unit="0" topAnnotationDisplay="0" leftAnnotationPosition="1" blendMode="0" gridFrameStyle="0" rightAnnotationPosition="1" gridFrameWidth="2" name="Grid 1" annotationFormat="0" bottomFrameDivisions="0" topAnnotationDirection="0" frameAnnotationDistance="1">
@@ -30644,7 +30654,7 @@ def my_form_open(dialog, layer, feature):
         </ComposerItem>
       </ComposerArrow>
       <ComposerMap followPreset="true" mapRotation="320" keepLayerSet="false" followPresetName="minimap 1000" id="3" previewMode="Cache" drawCanvasItems="true">
-        <Extent ymin="146957.55529282061615959" xmin="554414.48823976842686534" ymax="147098.40062013262649998" xmax="554733.98824009438976645"/>
+        <Extent ymin="146957.55529282067436725" xmin="554414.48823976842686534" ymax="147098.40062013268470764" xmax="554733.98824009438976645"/>
         <LayerSet/>
         <Grid/>
         <ComposerMapGrid rightAnnotationDirection="0" gridFramePenColor="0,0,0,255" show="0" bottomAnnotationPosition="1" annotationPrecision="3" showAnnotation="0" topFrameDivisions="0" uuid="{43d41761-1e39-410e-ace4-b9fe8913f7a7}" leftAnnotationDirection="0" topAnnotationPosition="1" rightAnnotationDisplay="0" offsetX="0" offsetY="0" rightFrameDivisions="0" gridStyle="0" annotationFontColor="0,0,0,255" intervalX="0" gridFrameSideFlags="15" intervalY="0" bottomAnnotationDirection="0" leftAnnotationDisplay="0" leftFrameDivisions="0" frameFillColor1="255,255,255,255" annotationExpression="" frameFillColor2="0,0,0,255" crossLength="3" gridFramePenThickness="0.5" bottomAnnotationDisplay="0" unit="0" topAnnotationDisplay="0" leftAnnotationPosition="1" blendMode="0" gridFrameStyle="0" rightAnnotationPosition="1" gridFrameWidth="2" name="Grid 1" annotationFormat="0" bottomFrameDivisions="0" topAnnotationDirection="0" frameAnnotationDistance="1">
@@ -30704,7 +30714,7 @@ def my_form_open(dialog, layer, feature):
         </ComposerItem>
       </ComposerMap>
       <ComposerMap followPreset="true" mapRotation="0" keepLayerSet="false" followPresetName="minimap 1000" id="4" previewMode="Cache" drawCanvasItems="true">
-        <Extent ymin="145760.12771926939603873" xmin="555352.02931586769409478" ymax="145918.495795496244682" xmax="555550.02931606955826283"/>
+        <Extent ymin="145760.12771926933783107" xmin="555352.02931586769409478" ymax="145918.49579549618647434" xmax="555550.02931606955826283"/>
         <LayerSet/>
         <Grid/>
         <ComposerMapGrid rightAnnotationDirection="0" gridFramePenColor="0,0,0,255" show="0" bottomAnnotationPosition="1" annotationPrecision="3" showAnnotation="0" topFrameDivisions="0" uuid="{2d55993e-c920-4079-aa37-c8a238343d11}" leftAnnotationDirection="0" topAnnotationPosition="1" rightAnnotationDisplay="0" offsetX="0" offsetY="0" rightFrameDivisions="0" gridStyle="0" annotationFontColor="0,0,0,255" intervalX="0" gridFrameSideFlags="15" intervalY="0" bottomAnnotationDirection="0" leftAnnotationDisplay="0" leftFrameDivisions="0" frameFillColor1="255,255,255,255" annotationExpression="" frameFillColor2="0,0,0,255" crossLength="3" gridFramePenThickness="0.5" bottomAnnotationDisplay="0" unit="0" topAnnotationDisplay="0" leftAnnotationPosition="1" blendMode="0" gridFrameStyle="0" rightAnnotationPosition="1" gridFrameWidth="2" name="Grid 1" annotationFormat="0" bottomFrameDivisions="0" topAnnotationDirection="0" frameAnnotationDistance="1">
@@ -30839,7 +30849,7 @@ def my_form_open(dialog, layer, feature):
           <customproperties/>
         </ComposerItem>
       </ComposerArrow>
-      <ComposerPicture resizeMode="0" svgBorderWidth="0.2" pictureRotation="0" pictureWidth="89.0559" svgFillColor="255,255,255,255" svgBorderColor="0,0,0,255" file="./composer/logo_sige_2.png" pictureHeight="23.6348" mapId="-1" anchorPoint="0">
+      <ComposerPicture resizeMode="0" svgBorderWidth="0.2" pictureRotation="0" pictureWidth="89.0559" svgFillColor="255,255,255,255" svgBorderColor="0,0,0,255" northMode="0" file="./composer/logo_sige_2.png" northOffset="0" pictureHeight="23.6348" mapId="-1" anchorPoint="0">
         <ComposerItem pagey="718.12" page="1" id="" lastValidViewScaleFactor="5.15342" positionMode="0" positionLock="false" x="1489.85" y="718.12" visibility="1" zValue="9" background="false" transparency="0" frameJoinStyle="miter" blendMode="0" width="93.7993" outlineWidth="0.3" excludeFromExports="0" uuid="{57bd79b7-7d1f-47e1-afda-b65f4e388948}" height="23.6348" itemRotation="0" frame="false" pagex="1489.85">
           <FrameColor alpha="255" red="0" blue="0" green="0"/>
           <BackgroundColor alpha="255" red="255" blue="255" green="255"/>
@@ -30847,7 +30857,7 @@ def my_form_open(dialog, layer, feature):
           <customproperties/>
         </ComposerItem>
       </ComposerPicture>
-      <ComposerPicture resizeMode="0" svgBorderWidth="0.2" pictureRotation="0" pictureWidth="185.022" svgFillColor="255,255,255,255" svgBorderColor="0,0,0,255" file="./composer/schematic_legend.svg" pictureHeight="70.378" mapId="-1" anchorPoint="0">
+      <ComposerPicture resizeMode="0" svgBorderWidth="0.2" pictureRotation="0" pictureWidth="185.022" svgFillColor="255,255,255,255" svgBorderColor="0,0,0,255" northMode="0" file="./composer/schematic_legend.svg" northOffset="0" pictureHeight="70.378" mapId="-1" anchorPoint="0">
         <ComposerItem pagey="759.672" page="1" id="" lastValidViewScaleFactor="-1" positionMode="0" positionLock="false" x="1480.05" y="759.672" visibility="1" zValue="8" background="true" transparency="0" frameJoinStyle="miter" blendMode="0" width="210" outlineWidth="0.2" excludeFromExports="0" uuid="{ce5fb0e7-2cb2-4071-96a8-e05ddc4f424c}" height="70.378" itemRotation="0" frame="true" pagex="1480.05">
           <FrameColor alpha="255" red="0" blue="0" green="0"/>
           <BackgroundColor alpha="255" red="255" blue="255" green="255"/>
@@ -30916,7 +30926,7 @@ def my_form_open(dialog, layer, feature):
         </ComposerItem>
       </ComposerLabel>
       <ComposerMap followPreset="true" mapRotation="325" keepLayerSet="false" followPresetName="minimap 250" id="1" previewMode="Cache" drawCanvasItems="true">
-        <Extent ymin="146519.11599998470046557" xmin="554434.94899998628534377" ymax="146543.49708991576335393" xmax="554461.94900001375935972"/>
+        <Extent ymin="146519.11599998464225791" xmin="554434.94899998628534377" ymax="146543.49708991570514627" xmax="554461.94900001375935972"/>
         <LayerSet/>
         <Grid/>
         <ComposerMapGrid rightAnnotationDirection="0" gridFramePenColor="0,0,0,255" show="0" bottomAnnotationPosition="1" annotationPrecision="3" showAnnotation="0" topFrameDivisions="0" uuid="{5a131054-b83a-48c2-9b77-b4604e36f33e}" leftAnnotationDirection="0" topAnnotationPosition="1" rightAnnotationDisplay="0" offsetX="0" offsetY="0" rightFrameDivisions="0" gridStyle="0" annotationFontColor="0,0,0,255" intervalX="0" gridFrameSideFlags="15" intervalY="0" bottomAnnotationDirection="0" leftAnnotationDisplay="0" leftFrameDivisions="0" frameFillColor1="255,255,255,255" annotationExpression="" frameFillColor2="0,0,0,255" crossLength="3" gridFramePenThickness="0.5" bottomAnnotationDisplay="0" unit="0" topAnnotationDisplay="0" leftAnnotationPosition="1" blendMode="0" gridFrameStyle="0" rightAnnotationPosition="1" gridFrameWidth="2" name="Grid 1" annotationFormat="0" bottomFrameDivisions="0" topAnnotationDirection="0" frameAnnotationDistance="1">
@@ -31263,7 +31273,7 @@ def my_form_open(dialog, layer, feature):
           <customproperties/>
         </ComposerItem>
       </ComposerLabel>
-      <ComposerPicture resizeMode="0" svgBorderWidth="0.2" pictureRotation="0" pictureWidth="89.0559" svgFillColor="255,255,255,255" svgBorderColor="0,0,0,255" file="./composer/logo_sige_2.png" pictureHeight="23.6348" mapId="-1" anchorPoint="0">
+      <ComposerPicture resizeMode="0" svgBorderWidth="0.2" pictureRotation="0" pictureWidth="89.0559" svgFillColor="255,255,255,255" svgBorderColor="0,0,0,255" northMode="0" file="./composer/logo_sige_2.png" northOffset="0" pictureHeight="23.6348" mapId="-1" anchorPoint="0">
         <ComposerItem pagey="718.12" page="1" id="" lastValidViewScaleFactor="5.15342" positionMode="0" positionLock="false" x="1489.85" y="718.12" visibility="1" zValue="14" background="false" transparency="0" frameJoinStyle="miter" blendMode="0" width="93.7993" outlineWidth="0.3" excludeFromExports="0" uuid="{5ca9fa41-96bf-4cd9-be73-3e5aa9bbe873}" height="23.6348" itemRotation="0" frame="false" pagex="1489.85">
           <FrameColor alpha="255" red="0" blue="0" green="0"/>
           <BackgroundColor alpha="255" red="255" blue="255" green="255"/>
@@ -31271,7 +31281,7 @@ def my_form_open(dialog, layer, feature):
           <customproperties/>
         </ComposerItem>
       </ComposerPicture>
-      <ComposerPicture resizeMode="0" svgBorderWidth="0.2" pictureRotation="0" pictureWidth="185.022" svgFillColor="255,255,255,255" svgBorderColor="0,0,0,255" file="./composer/schematic_legend.svg" pictureHeight="70.378" mapId="-1" anchorPoint="0">
+      <ComposerPicture resizeMode="0" svgBorderWidth="0.2" pictureRotation="0" pictureWidth="185.022" svgFillColor="255,255,255,255" svgBorderColor="0,0,0,255" northMode="0" file="./composer/schematic_legend.svg" northOffset="0" pictureHeight="70.378" mapId="-1" anchorPoint="0">
         <ComposerItem pagey="759.672" page="1" id="" lastValidViewScaleFactor="-1" positionMode="0" positionLock="false" x="1480.05" y="759.672" visibility="1" zValue="13" background="true" transparency="0" frameJoinStyle="miter" blendMode="0" width="210" outlineWidth="0.2" excludeFromExports="0" uuid="{db1c2329-1b18-4517-a505-ded5cec73a05}" height="70.378" itemRotation="0" frame="true" pagex="1480.05">
           <FrameColor alpha="255" red="0" blue="0" green="0"/>
           <BackgroundColor alpha="255" red="255" blue="255" green="255"/>
@@ -31337,7 +31347,7 @@ def my_form_open(dialog, layer, feature):
         </ComposerItem>
       </ComposerLabel>
       <ComposerMap followPreset="true" mapRotation="0" keepLayerSet="false" followPresetName="minimap 1000" id="3" previewMode="Cache" drawCanvasItems="true">
-        <Extent ymin="141259.34320061045582406" xmin="560672.80429450585506856" ymax="141434.65369718548026867" xmax="560845.30429468187503517"/>
+        <Extent ymin="141259.34320061057223938" xmin="560672.80429450585506856" ymax="141434.65369718559668399" xmax="560845.30429468187503517"/>
         <LayerSet/>
         <Grid/>
         <ComposerMapGrid rightAnnotationDirection="0" gridFramePenColor="0,0,0,255" show="0" bottomAnnotationPosition="1" annotationPrecision="3" showAnnotation="0" topFrameDivisions="0" uuid="{66e915cb-9fde-4ca7-a28a-c7e0bb6f1c52}" leftAnnotationDirection="0" topAnnotationPosition="1" rightAnnotationDisplay="0" offsetX="0" offsetY="0" rightFrameDivisions="0" gridStyle="0" annotationFontColor="0,0,0,255" intervalX="0" gridFrameSideFlags="15" intervalY="0" bottomAnnotationDirection="0" leftAnnotationDisplay="0" leftFrameDivisions="0" frameFillColor1="255,255,255,255" annotationExpression="" frameFillColor2="0,0,0,255" crossLength="3" gridFramePenThickness="0.5" bottomAnnotationDisplay="0" unit="0" topAnnotationDisplay="0" leftAnnotationPosition="1" blendMode="0" gridFrameStyle="0" rightAnnotationPosition="1" gridFrameWidth="2" name="Grid 1" annotationFormat="0" bottomFrameDivisions="0" topAnnotationDirection="0" frameAnnotationDistance="1">
@@ -31466,7 +31476,7 @@ def my_form_open(dialog, layer, feature):
         </ComposerItem>
       </ComposerLabel>
       <ComposerMap followPreset="true" mapRotation="0" keepLayerSet="false" followPresetName="minimap 1000" id="1" previewMode="Cache" drawCanvasItems="true">
-        <Extent ymin="142996.75729705792036839" xmin="559224.55663845222443342" ymax="143160.60991081068641506" xmax="559407.55663863895460963"/>
+        <Extent ymin="142996.75729705797857605" xmin="559224.55663845222443342" ymax="143160.60991081074462272" xmax="559407.55663863895460963"/>
         <LayerSet/>
         <Grid/>
         <ComposerMapGrid rightAnnotationDirection="0" gridFramePenColor="0,0,0,255" show="0" bottomAnnotationPosition="1" annotationPrecision="3" showAnnotation="0" topFrameDivisions="0" uuid="{6ebd3253-31c2-4af7-b9a5-f6c63733c886}" leftAnnotationDirection="0" topAnnotationPosition="1" rightAnnotationDisplay="0" offsetX="0" offsetY="0" rightFrameDivisions="0" gridStyle="0" annotationFontColor="0,0,0,255" intervalX="0" gridFrameSideFlags="15" intervalY="0" bottomAnnotationDirection="0" leftAnnotationDisplay="0" leftFrameDivisions="0" frameFillColor1="255,255,255,255" annotationExpression="" frameFillColor2="0,0,0,255" crossLength="3" gridFramePenThickness="0.5" bottomAnnotationDisplay="0" unit="0" topAnnotationDisplay="0" leftAnnotationPosition="1" blendMode="0" gridFrameStyle="0" rightAnnotationPosition="1" gridFrameWidth="2" name="Grid 1" annotationFormat="0" bottomFrameDivisions="0" topAnnotationDirection="0" frameAnnotationDistance="1">
@@ -31915,7 +31925,7 @@ def my_form_open(dialog, layer, feature):
           <customproperties/>
         </ComposerItem>
       </ComposerLabel>
-      <ComposerPicture resizeMode="0" svgBorderWidth="0.2" pictureRotation="0" pictureWidth="89.0559" svgFillColor="255,255,255,255" svgBorderColor="0,0,0,255" file="./composer/logo_sige_2.png" pictureHeight="23.6348" mapId="-1" anchorPoint="0">
+      <ComposerPicture resizeMode="0" svgBorderWidth="0.2" pictureRotation="0" pictureWidth="89.0559" svgFillColor="255,255,255,255" svgBorderColor="0,0,0,255" northMode="0" file="./composer/logo_sige_2.png" northOffset="0" pictureHeight="23.6348" mapId="-1" anchorPoint="0">
         <ComposerItem pagey="33.1" page="1" id="" lastValidViewScaleFactor="5.15342" positionMode="0" positionLock="false" x="1009.85" y="33.1" visibility="1" zValue="5" background="false" transparency="0" frameJoinStyle="miter" blendMode="0" width="93.7993" outlineWidth="0.3" excludeFromExports="0" uuid="{b37c1361-4d09-4442-9b22-13a9cf01493b}" height="23.6348" itemRotation="0" frame="false" pagex="1009.85">
           <FrameColor alpha="255" red="0" blue="0" green="0"/>
           <BackgroundColor alpha="255" red="255" blue="255" green="255"/>
@@ -31923,7 +31933,7 @@ def my_form_open(dialog, layer, feature):
           <customproperties/>
         </ComposerItem>
       </ComposerPicture>
-      <ComposerPicture resizeMode="0" svgBorderWidth="0.2" pictureRotation="0" pictureWidth="185.022" svgFillColor="255,255,255,255" svgBorderColor="0,0,0,255" file="./composer/schematic_legend.svg" pictureHeight="70.378" mapId="-1" anchorPoint="0">
+      <ComposerPicture resizeMode="0" svgBorderWidth="0.2" pictureRotation="0" pictureWidth="185.022" svgFillColor="255,255,255,255" svgBorderColor="0,0,0,255" northMode="0" file="./composer/schematic_legend.svg" northOffset="0" pictureHeight="70.378" mapId="-1" anchorPoint="0">
         <ComposerItem pagey="74.652" page="1" id="" lastValidViewScaleFactor="-1" positionMode="0" positionLock="false" x="1000.05" y="74.652" visibility="1" zValue="4" background="true" transparency="0" frameJoinStyle="miter" blendMode="0" width="210" outlineWidth="0.2" excludeFromExports="0" uuid="{1d76ccd6-ec53-4682-972c-05c7bf1cdbb4}" height="70.378" itemRotation="0" frame="true" pagex="1000.05">
           <FrameColor alpha="255" red="0" blue="0" green="0"/>
           <BackgroundColor alpha="255" red="255" blue="255" green="255"/>
@@ -32188,7 +32198,7 @@ def my_form_open(dialog, layer, feature):
           <customproperties/>
         </ComposerItem>
       </ComposerLabel>
-      <ComposerPicture resizeMode="0" svgBorderWidth="0.2" pictureRotation="0" pictureWidth="45.4477" svgFillColor="255,255,255,255" svgBorderColor="0,0,0,255" file="./composer/logo_sige_2.png" pictureHeight="12.0615" mapId="-1" anchorPoint="0">
+      <ComposerPicture resizeMode="0" svgBorderWidth="0.2" pictureRotation="0" pictureWidth="45.4477" svgFillColor="255,255,255,255" svgBorderColor="0,0,0,255" northMode="0" file="./composer/logo_sige_2.png" northOffset="0" pictureHeight="12.0615" mapId="-1" anchorPoint="0">
         <ComposerItem pagey="7.43848" page="1" id="" lastValidViewScaleFactor="3.73602" positionMode="0" positionLock="false" x="153.263" y="7.43848" visibility="1" zValue="2" background="true" transparency="0" frameJoinStyle="miter" blendMode="0" width="51.8375" outlineWidth="0.3" excludeFromExports="0" uuid="{4dc416a9-6ef2-47c0-87eb-b8c323a8e832}" height="12.0615" itemRotation="0" frame="false" pagex="153.263">
           <FrameColor alpha="255" red="0" blue="0" green="0"/>
           <BackgroundColor alpha="255" red="255" blue="255" green="255"/>
@@ -32755,6 +32765,51 @@ def my_form_open(dialog, layer, feature):
       </map-layer-style-manager>
       <pipe>
         <rasterrenderer opacity="0.0980392" alphaBand="0" band="1" type="singlebandcolordata">
+          <rasterTransparency/>
+        </rasterrenderer>
+        <brightnesscontrast brightness="0" contrast="0"/>
+        <huesaturation colorizeGreen="128" colorizeOn="0" colorizeRed="255" colorizeBlue="128" grayscaleMode="0" saturation="0" colorizeStrength="100"/>
+        <rasterresampler maxOversampling="2"/>
+      </pipe>
+      <blendMode>0</blendMode>
+    </maplayer>
+    <maplayer minimumScale="0" maximumScale="1e+08" type="raster" hasScaleBasedVisibilityFlag="0">
+      <extent>
+        <xmin>419995.70888743817340583</xmin>
+        <ymin>27366.12590403261128813</ymin>
+        <xmax>916216.83972122299019247</xmax>
+        <ymax>350004.34664214466465637</ymax>
+      </extent>
+      <id>SWISSIMAGE20161031083131993</id>
+      <datasource>contextualWMSLegend=0&amp;crs=EPSG:21781&amp;dpiMode=7&amp;featureCount=10&amp;format=image/jpeg&amp;layers=ch.swisstopo.swissimage&amp;referer=http://map.geo.admin.ch&amp;styles=ch.swisstopo.swissimage&amp;tileDimensions=Time%3Dcurrent&amp;tileMatrixSet=21781_27&amp;url=http://wmts.geo.admin.ch/1.0.0/WMTSCapabilities.xml</datasource>
+      <keywordList>
+        <value></value>
+      </keywordList>
+      <layername>SWISSIMAGE</layername>
+      <srs>
+        <spatialrefsys>
+          <proj4>+proj=somerc +lat_0=46.95240555555556 +lon_0=7.439583333333333 +k_0=1 +x_0=600000 +y_0=200000 +ellps=bessel +towgs84=674.4,15.1,405.3,0,0,0,0 +units=m +no_defs</proj4>
+          <srsid>1919</srsid>
+          <srid>21781</srid>
+          <authid>EPSG:21781</authid>
+          <description>CH1903 / LV03</description>
+          <projectionacronym>somerc</projectionacronym>
+          <ellipsoidacronym>bessel</ellipsoidacronym>
+          <geographicflag>false</geographicflag>
+        </spatialrefsys>
+      </srs>
+      <customproperties>
+        <property key="identify/format" value="Undefined"/>
+      </customproperties>
+      <provider>wms</provider>
+      <noData>
+        <noDataList bandNo="1" useSrcNoData="0"/>
+      </noData>
+      <map-layer-style-manager current="">
+        <map-layer-style name=""/>
+      </map-layer-style-manager>
+      <pipe>
+        <rasterrenderer opacity="1" alphaBand="-1" band="1" type="singlebandcolordata">
           <rasterTransparency/>
         </rasterrenderer>
         <brightnesscontrast brightness="0" contrast="0"/>
@@ -37869,7 +37924,7 @@ def my_form_open(dialog, layer, feature):
       <featformsuppress>0</featformsuppress>
       <editorlayout>uifilelayout</editorlayout>
       <attributeEditorForm>
-        <attributeEditorContainer showLabel="1" name="Général" groupBox="0" columnCount="1">
+        <attributeEditorContainer showLabel="1" visibilityExpressionEnabled="0" visibilityExpression="" name="Général" groupBox="0" columnCount="1">
           <attributeEditorField showLabel="1" index="0" name="id"/>
           <attributeEditorField showLabel="1" index="5" name="fk_distributor"/>
           <attributeEditorField showLabel="1" index="12" name="fk_folder"/>
@@ -41684,7 +41739,7 @@ def my_form_open(dialog, layer, feature):
       <featformsuppress>0</featformsuppress>
       <editorlayout>uifilelayout</editorlayout>
       <attributeEditorForm>
-        <attributeEditorContainer showLabel="1" name="hgf" groupBox="0" columnCount="0">
+        <attributeEditorContainer showLabel="1" visibilityExpressionEnabled="0" visibilityExpression="" name="hgf" groupBox="0" columnCount="0">
           <attributeEditorField showLabel="1" index="0" name="id"/>
         </attributeEditorContainer>
       </attributeEditorForm>
@@ -66388,11 +66443,11 @@ def closeProject():
         <checked-legend-node id="{2e14d53a-6d2f-40b3-bf3b-4f32112e3d59}"/>
         <checked-legend-node id="{46c7536a-ac7b-4e7b-afe6-33f9fee2f171}"/>
         <checked-legend-node id="{5b970fd5-5c37-4865-81a5-cab18c5fb58c}"/>
-        <checked-legend-node id="{6f5c08e7-bf93-4eee-94df-3f749becb926}"/>
         <checked-legend-node id="{013429dc-a1cd-4a17-904a-6550a0175046}"/>
+        <checked-legend-node id="{6f5c08e7-bf93-4eee-94df-3f749becb926}"/>
         <checked-legend-node id="{ca06b6f2-f1ee-4958-b79a-6cb6cbc2059b}"/>
-        <checked-legend-node id="{ab1fe7d1-2f11-4eea-915b-f4a08a217886}"/>
         <checked-legend-node id="{2513a8b8-a110-4727-854c-6084f64e3bdf}"/>
+        <checked-legend-node id="{ab1fe7d1-2f11-4eea-915b-f4a08a217886}"/>
         <checked-legend-node id="{bd93e9ea-b64b-4fbd-bf89-6d4395730e60}"/>
         <checked-legend-node id="{ad349920-d2f8-4ac3-ae12-639c93ed9224}"/>
         <checked-legend-node id="{d0b9168b-e603-49dd-8c84-e17551131f81}"/>
@@ -66436,8 +66491,8 @@ def closeProject():
         <checked-legend-node id="{c5aa7421-12d9-4e1f-b39e-ddc5f7c287e9}"/>
         <checked-legend-node id="{5fb13620-50f9-41de-93f9-9ab384ab087f}"/>
         <checked-legend-node id="{e50fbbc2-a891-4432-a846-34d4f3e99c86}"/>
-        <checked-legend-node id="{ce0c94bb-b016-41a1-931c-3109807689b0}"/>
         <checked-legend-node id="{5f09c1ec-36a2-4dba-98f0-bcd568e24533}"/>
+        <checked-legend-node id="{ce0c94bb-b016-41a1-931c-3109807689b0}"/>
         <checked-legend-node id="{18febfc6-d9a9-4440-bee8-fa580f8b5d76}"/>
         <checked-legend-node id="{37877255-94b0-449e-ae98-71803ed4ef1c}"/>
         <checked-legend-node id="{980ea4bf-d999-4d98-b45a-9c3890a64496}"/>
@@ -66449,8 +66504,8 @@ def closeProject():
         <checked-legend-node id="{a6204137-028d-44b7-b245-5d3b24a7d399}"/>
         <checked-legend-node id="{224820ff-9d97-46ba-88a8-8073f0a09a29}"/>
         <checked-legend-node id="{0b8281d6-7c39-44b5-8a40-ecb1889399cb}"/>
-        <checked-legend-node id="{5d01efe9-2c1b-4052-a11f-5ce82dd09f65}"/>
         <checked-legend-node id="{94454820-5d27-4427-80f6-24d28c5c51a3}"/>
+        <checked-legend-node id="{5d01efe9-2c1b-4052-a11f-5ce82dd09f65}"/>
         <checked-legend-node id="{9402cda0-5af5-4a12-8353-366c479faed7}"/>
         <checked-legend-node id="{05336f6d-543d-4bf7-bea5-a474d431bdf3}"/>
         <checked-legend-node id="{318b69f6-b284-41b7-aa22-bdf34451d264}"/>
@@ -66461,8 +66516,8 @@ def closeProject():
         <checked-legend-node id="{6be86ca3-25cf-47e9-a4d8-09d481490c9c}"/>
         <checked-legend-node id="{5b2d8e5a-3356-4b07-b16a-4d65880b37be}"/>
         <checked-legend-node id="{8366c510-1142-41fb-85a1-bf9663ad9d11}"/>
-        <checked-legend-node id="{cdead7aa-d728-472d-b382-91cf70fd6e5f}"/>
         <checked-legend-node id="{95c23bff-05b6-444b-ba53-a19d85aec669}"/>
+        <checked-legend-node id="{cdead7aa-d728-472d-b382-91cf70fd6e5f}"/>
         <checked-legend-node id="{ffab370b-cfc7-4704-9929-5e4dd09ee8f3}"/>
         <checked-legend-node id="{7e777116-29bb-4af3-883d-504a8f109298}"/>
         <checked-legend-node id="{b30d473c-b7f4-448a-b647-b2a5ceb1a131}"/>
