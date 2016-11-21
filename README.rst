@@ -74,6 +74,19 @@ database by creating a new connection with ``Name=qwat``, ``Service=qwat``, ``SS
 
 If that works then open the ``qwat.qgs`` project in QGIS.
 
+You can either choose to restore a sample dataset , then instead of running the init script, just run :
+
+::
+
+  cd ..
+  git clone https://github.com/qwat/qwat-data-sample
+  psql -U postgres -c 'create database qwat;'
+  psql -U postgres -d qwat -c 'create extension postgis;'
+  psql -U postgres -d qwat -c 'create extension hstore;'
+  pg_restore --dbname qwat -e --no-owner --verbose --port 5432 qwat_data_sample.backup
+
+
+
 Documentation
 -------------
 
