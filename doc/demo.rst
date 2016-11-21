@@ -70,7 +70,7 @@ You can use the following command in linux::
  port=5432
  user=postgres
  #you can also add your password if you like
- password=YourPassword" >> ~/.pg_service.conf 
+ password=YourPassword" >> ~/.pg_service.conf
 
 If you just want to run the data model (without the sample data) you can simply open the **qwat.qgs** project from the qWat directory.
 
@@ -89,7 +89,7 @@ Restore the sample data model using pgadmin or with command below::
  git remote add upstream https://github.com/tudorbarascu/qwat-data-sample
  git pull upstream master
 
- psql -U postgres -d qwat -f 201600302_plain_qwat.backup
+ pg_restore --dbname qwat -e --no-owner --verbose --port 5432 qwat_data_sample.backup
 
 **Open the qgis project**
 
@@ -119,7 +119,7 @@ a non-virtualized usb-stick to be used for demo purposes).
 Installed software:
 
 - PostgreSQL 9.5.2 with Postgis 2.2.2
-- QGIS 2.16
+- QGIS 2.18
 
 Settings that are changed from a default software install:
 
@@ -174,4 +174,3 @@ you will get the following image:
 .. figure:: img/vm_demo.jpg
 
 Clicking the **qwat** project and following the :ref:`user-guide` should get you started.
-
