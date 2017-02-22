@@ -400,10 +400,10 @@
   <mapcanvas>
     <units>meters</units>
     <extent>
-      <xmin>537781.30412199872080237</xmin>
-      <ymin>154310.3103613198036328</ymin>
-      <xmax>537808.68849702656734735</xmax>
-      <ymax>154326.80865121667739004</ymax>
+      <xmin>537685.65782375447452068</xmin>
+      <ymin>154278.28895185768487863</ymin>
+      <xmax>537904.73282397724688053</xmax>
+      <ymax>154410.27527103267493658</ymax>
     </extent>
     <rotation>0</rotation>
     <projections>1</projections>
@@ -29725,8 +29725,8 @@ def my_form_open(dialog, layer, feature):
         <edittype widgetv2type="ValueRelation" name="fk_watertype">
           <widgetv2config OrderByValue="0" AllowNull="0" FilterExpression="" UseCompleter="0" fieldEditable="1" Key="id" constraint="" Layer="vl_watertype20131217141603877" Value="value_fr" labelOnTop="0" constraintDescription="" AllowMulti="0" notNull="0"/>
         </edittype>
-        <edittype widgetv2type="TextEdit" name="fk_locationtype">
-          <widgetv2config IsMultiline="0" fieldEditable="1" constraint="" UseHtml="0" labelOnTop="0" constraintDescription="" notNull="0"/>
+        <edittype widgetv2type="ValueRelation" name="fk_locationtype">
+          <widgetv2config OrderByValue="0" AllowNull="0" FilterExpression="" UseCompleter="0" fieldEditable="1" Key="id" constraint="" Layer="locationtype20150922082741813" Value="value_fr" labelOnTop="0" constraintDescription="" AllowMulti="1" notNull="0"/>
         </edittype>
         <edittype widgetv2type="RelationReference" name="fk_folder">
           <widgetv2config OrderByValue="1" fieldEditable="1" AllowAddFeatures="0" ShowForm="0" Relation="relation_pipe_folder" ReadOnly="0" constraint="" MapIdentification="1" labelOnTop="0" constraintDescription="" notNull="0" AllowNULL="1"/>
@@ -31361,8 +31361,8 @@ def my_form_open(dialog, layer, feature):
         </effect>
       </renderer-v2>
       <labeling type="rule-based">
-        <rules key="{5fe71237-8fd2-41a9-ae5c-5d6874ca018f}">
-          <rule scalemaxdenom="3000" description="Matériau - diamètre- année" key="{1155d954-97c3-43ed-99bb-1d5c7cb9fb10}" scalemindenom="1">
+        <rules key="{0cec0cf4-fc92-455a-9e2f-fea4db9d28d6}">
+          <rule scalemaxdenom="3000" description="Matériau - diamètre- année" key="{0863bc4e-1da6-4765-bf6b-af229c677a42}" scalemindenom="1">
             <settings>
               <text-style fontItalic="0" fontFamily="Lato" fontLetterSpacing="0" fontUnderline="0" fontWeight="50" fontStrikeout="0" textTransp="0" previewBkgrdColor="#ffffff" fontCapitals="0" textColor="0,80,255,255" fontSizeInMapUnits="0" isExpression="1" blendMode="0" fontSizeMapUnitScale="0,0,0,0,0,0" fontSize="8" fieldName=" replace( &quot;pipe_material_short_fr&quot;||' ','Inconnu ','') ||  &quot;pipe_material_diameter&quot;&#xa;" namedStyle="Regular" fontWordSpacing="0" useSubstitutions="0">
                 <substitutions/>
@@ -31380,7 +31380,7 @@ def my_form_open(dialog, layer, feature):
               </data-defined>
             </settings>
           </rule>
-          <rule scalemaxdenom="501" description="Imprécis" filter="&quot;fk_precision&quot; IN (1101,1103,1105)" key="{a66b6749-bfc2-4c3c-91ff-2a662a8039e3}" scalemindenom="1">
+          <rule scalemaxdenom="501" description="Imprécis" filter="&quot;fk_precision&quot; IN (1101,1103,1105)" key="{b32729a7-2781-41bd-aedb-d609ba3253af}" scalemindenom="1">
             <settings>
               <text-style fontItalic="0" fontFamily="Lato" fontLetterSpacing="0" fontUnderline="0" fontWeight="50" fontStrikeout="0" textTransp="0" previewBkgrdColor="#ffffff" fontCapitals="0" textColor="0,80,255,255" fontSizeInMapUnits="0" isExpression="1" blendMode="0" fontSizeMapUnitScale="0,0,0,0,0,0" fontSize="8" fieldName="' Imprécis '" namedStyle="Regular" fontWordSpacing="0" useSubstitutions="0">
                 <substitutions/>
@@ -31397,7 +31397,7 @@ def my_form_open(dialog, layer, feature):
               </data-defined>
             </settings>
           </rule>
-          <rule scalemaxdenom="501" description="Année" key="{c8ec240a-0606-4624-b34f-ae1ac2be7018}" scalemindenom="1">
+          <rule scalemaxdenom="501" description="Année" key="{f964987f-9418-4a46-94cd-0fb36fbc6670}" scalemindenom="1">
             <settings>
               <text-style fontItalic="0" fontFamily="Lato" fontLetterSpacing="0" fontUnderline="0" fontWeight="50" fontStrikeout="0" textTransp="0" previewBkgrdColor="#ffffff" fontCapitals="0" textColor="0,80,255,255" fontSizeInMapUnits="0" isExpression="1" blendMode="0" fontSizeMapUnitScale="0,0,0,0,0,0" fontSize="8" fieldName="' '  ||&quot;year&quot;  ||' ' " namedStyle="Regular" fontWordSpacing="0" useSubstitutions="0">
                 <substitutions/>
@@ -31414,7 +31414,7 @@ def my_form_open(dialog, layer, feature):
               </data-defined>
             </settings>
           </rule>
-          <rule scalemaxdenom="1501" description="Protection" key="{ecf7fc4d-1b94-43a2-b04b-00a429d4cb30}" scalemindenom="1">
+          <rule scalemaxdenom="1501" description="Protection" key="{39483acf-7218-4ef2-a82d-3e7a97c65385}" scalemindenom="1">
             <settings>
               <text-style fontItalic="0" fontFamily="Lato" fontLetterSpacing="0" fontUnderline="0" fontWeight="50" fontStrikeout="0" textTransp="0" previewBkgrdColor="#ffffff" fontCapitals="0" textColor="0,80,255,255" fontSizeInMapUnits="0" isExpression="0" blendMode="0" fontSizeMapUnitScale="0,0,0,0,0,0" fontSize="8" fieldName="pipe_protection_value_fr" namedStyle="Regular" fontWordSpacing="0" useSubstitutions="0">
                 <substitutions/>
@@ -31431,7 +31431,7 @@ def my_form_open(dialog, layer, feature):
               </data-defined>
             </settings>
           </rule>
-          <rule scalemaxdenom="3000" description="Remarque" key="{0c2ed257-b03d-43ae-8b1f-948eb2370ace}" scalemindenom="1">
+          <rule scalemaxdenom="3000" description="Remarque" key="{63d3d56b-80d8-4413-96c8-c3717d327a0e}" scalemindenom="1">
             <settings>
               <text-style fontItalic="0" fontFamily="Lato" fontLetterSpacing="0" fontUnderline="0" fontWeight="50" fontStrikeout="0" textTransp="0" previewBkgrdColor="#ffffff" fontCapitals="0" textColor="0,80,255,255" fontSizeInMapUnits="0" isExpression="0" blendMode="0" fontSizeMapUnitScale="0,0,0,0,0,0" fontSize="8" fieldName="remark" namedStyle="Regular" fontWordSpacing="0" useSubstitutions="0">
                 <substitutions/>
@@ -31609,8 +31609,8 @@ def my_form_open(dialog, layer, feature):
         <property key="labeling/yOffset" value="0"/>
         <property key="labeling/yQuadOffset" value="0"/>
         <property key="labeling/zIndex" value="0"/>
-        <property key="variableNames" value="_fields_"/>
-        <property key="variableValues" value=""/>
+        <property key="variableNames"/>
+        <property key="variableValues"/>
       </customproperties>
       <blendMode>0</blendMode>
       <featureBlendMode>0</featureBlendMode>
@@ -31814,6 +31814,7 @@ def my_form_open(dialog, layer, feature):
           <column width="-1" hidden="0" type="field" name="status_active"/>
           <column width="-1" hidden="0" type="field" name="__schema_visible"/>
           <column width="-1" hidden="1" type="actions"/>
+          <column width="-1" hidden="0" type="field" name="status_functional"/>
         </columns>
       </attributetableconfig>
       <editform>./ui_forms/pipe.ui</editform>
@@ -57706,15 +57707,15 @@ def my_form_open(dialog, layer, feature):
       <vectorLayer type="QString">node20130304110005126</vectorLayer>
       <dtmLayer type="QString">riviera20130405112707706</dtmLayer>
     </landit>
-    <Legend>
-      <filterByMap type="bool">false</filterByMap>
-    </Legend>
     <WMSExtent type="QStringList">
       <value>549759.89072271669283509</value>
       <value>135552.6009769570955541</value>
       <value>570524.14072271669283509</value>
       <value>152569.00963780135498382</value>
     </WMSExtent>
+    <Legend>
+      <filterByMap type="bool">false</filterByMap>
+    </Legend>
     <postgres91plusauditor>
       <redefineSubset type="bool">true</redefineSubset>
       <logLayer type="QString">logged_actions20130304110005081</logLayer>
@@ -59145,21 +59146,21 @@ def closeProject():
         <checked-legend-node id="{7c5fde76-05d7-4d4a-9eaa-953db28fbe87}"/>
         <checked-legend-node id="{013429dc-a1cd-4a17-904a-6550a0175046}"/>
         <checked-legend-node id="{1c3be22e-50cf-4ddb-a382-cb79acc30446}"/>
-        <checked-legend-node id="{2513a8b8-a110-4727-854c-6084f64e3bdf}"/>
         <checked-legend-node id="{2ce95337-6d17-4772-a67e-31f016923af4}"/>
-        <checked-legend-node id="{af5a1df4-2d61-4c6c-9951-0f6f900354d9}"/>
+        <checked-legend-node id="{2513a8b8-a110-4727-854c-6084f64e3bdf}"/>
         <checked-legend-node id="{6c5ec343-05d3-4fcd-8dc1-283232838086}"/>
+        <checked-legend-node id="{af5a1df4-2d61-4c6c-9951-0f6f900354d9}"/>
         <checked-legend-node id="{ab1fe7d1-2f11-4eea-915b-f4a08a217886}"/>
-        <checked-legend-node id="{75060a73-107d-4ace-bc35-d573de40488f}"/>
         <checked-legend-node id="{ca06b6f2-f1ee-4958-b79a-6cb6cbc2059b}"/>
+        <checked-legend-node id="{75060a73-107d-4ace-bc35-d573de40488f}"/>
         <checked-legend-node id="{e9048c41-9d67-475a-8909-a027412c34d1}"/>
         <checked-legend-node id="{7d0cfa7a-eaf4-499a-b977-1238b90ca15f}"/>
         <checked-legend-node id="{f550eef3-fdaa-427b-b415-bd7e8fc25f9e}"/>
         <checked-legend-node id="{d1bbbb53-b702-4d56-9f8b-ccf8029e5318}"/>
         <checked-legend-node id="{03ff9811-2539-4b32-b396-20796c2639bf}"/>
         <checked-legend-node id="{846076c3-b88b-4391-801a-578d0abcdaf9}"/>
-        <checked-legend-node id="{6f5c08e7-bf93-4eee-94df-3f749becb926}"/>
         <checked-legend-node id="{fb522923-eeee-47bb-8352-65a3d5637c4c}"/>
+        <checked-legend-node id="{6f5c08e7-bf93-4eee-94df-3f749becb926}"/>
         <checked-legend-node id="{684b69b2-b4e2-49e4-82f1-ea1e9a680e64}"/>
         <checked-legend-node id="{59ae2c57-00c7-4afe-bfba-16af06381694}"/>
         <checked-legend-node id="{1d54e4f9-8261-4fb7-ab45-581756bf08a2}"/>
@@ -59175,9 +59176,9 @@ def closeProject():
         <checked-legend-node id="{ad349920-d2f8-4ac3-ae12-639c93ed9224}"/>
         <checked-legend-node id="{835c4cad-787b-45b7-b242-516a4da8a7f7}"/>
         <checked-legend-node id="{9486a529-9a4e-4a3c-83fe-86f6f93102c0}"/>
+        <checked-legend-node id="{2e14d53a-6d2f-40b3-bf3b-4f32112e3d59}"/>
         <checked-legend-node id="{5b970fd5-5c37-4865-81a5-cab18c5fb58c}"/>
         <checked-legend-node id="{85a03431-ffdc-4bd4-9796-2113d60c4125}"/>
-        <checked-legend-node id="{2e14d53a-6d2f-40b3-bf3b-4f32112e3d59}"/>
         <checked-legend-node id="{46c7536a-ac7b-4e7b-afe6-33f9fee2f171}"/>
         <checked-legend-node id="{d0b9168b-e603-49dd-8c84-e17551131f81}"/>
         <checked-legend-node id="{1f73b079-4d8c-4982-b2ab-6e9b5756b800}"/>

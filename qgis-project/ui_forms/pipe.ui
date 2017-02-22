@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>943</width>
-    <height>639</height>
+    <width>742</width>
+    <height>648</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -29,6 +29,12 @@
    </item>
    <item row="0" column="0">
     <widget class="QTabWidget" name="tabWidget">
+     <property name="sizePolicy">
+      <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+       <horstretch>0</horstretch>
+       <verstretch>0</verstretch>
+      </sizepolicy>
+     </property>
      <property name="currentIndex">
       <number>0</number>
      </property>
@@ -36,8 +42,8 @@
       <attribute name="title">
        <string>Général</string>
       </attribute>
-      <layout class="QGridLayout" name="gridLayout_2">
-       <item row="0" column="0">
+      <layout class="QHBoxLayout" name="horizontalLayout">
+       <item>
         <widget class="QWidget" name="widget" native="true">
          <layout class="QFormLayout" name="formLayout_4">
           <property name="fieldGrowthPolicy">
@@ -54,6 +60,12 @@
            <widget class="QLineEdit" name="id">
             <property name="enabled">
              <bool>true</bool>
+            </property>
+            <property name="sizePolicy">
+             <sizepolicy hsizetype="Preferred" vsizetype="Fixed">
+              <horstretch>0</horstretch>
+              <verstretch>0</verstretch>
+             </sizepolicy>
             </property>
             <property name="readOnly">
              <bool>true</bool>
@@ -111,7 +123,14 @@
            </widget>
           </item>
           <item row="2" column="1">
-           <widget class="QgsRelationReferenceWidget" name="fk_folder"/>
+           <widget class="QgsRelationReferenceWidget" name="fk_folder">
+            <property name="minimumSize">
+             <size>
+              <width>0</width>
+              <height>35</height>
+             </size>
+            </property>
+           </widget>
           </item>
           <item row="4" column="1">
            <widget class="QLineEdit" name="year_rehabilitation"/>
@@ -126,7 +145,20 @@
          </layout>
         </widget>
        </item>
-       <item row="0" column="2">
+       <item>
+        <widget class="Line" name="line_3">
+         <property name="sizePolicy">
+          <sizepolicy hsizetype="Preferred" vsizetype="Minimum">
+           <horstretch>0</horstretch>
+           <verstretch>0</verstretch>
+          </sizepolicy>
+         </property>
+         <property name="orientation">
+          <enum>Qt::Vertical</enum>
+         </property>
+        </widget>
+       </item>
+       <item>
         <widget class="QWidget" name="widget_2" native="true">
          <property name="minimumSize">
           <size>
@@ -179,62 +211,77 @@
             </property>
            </widget>
           </item>
-          <item row="2" column="1">
-           <widget class="QgsRelationReferenceWidget" name="fk_material"/>
-          </item>
-          <item row="3" column="0">
+          <item row="4" column="0">
            <widget class="QLabel" name="label_19">
             <property name="text">
              <string>Mode de pose</string>
             </property>
            </widget>
           </item>
-          <item row="3" column="1">
+          <item row="4" column="1">
            <widget class="QComboBox" name="fk_installmethod">
             <property name="sizeAdjustPolicy">
              <enum>QComboBox::AdjustToContents</enum>
             </property>
            </widget>
           </item>
-          <item row="4" column="0">
+          <item row="5" column="0">
            <widget class="QLabel" name="label_20">
             <property name="text">
              <string>Protection</string>
             </property>
            </widget>
           </item>
-          <item row="4" column="1">
+          <item row="5" column="1">
            <widget class="QComboBox" name="fk_protection">
             <property name="sizeAdjustPolicy">
              <enum>QComboBox::AdjustToContents</enum>
             </property>
            </widget>
           </item>
-          <item row="5" column="0">
+          <item row="6" column="0">
            <widget class="QLabel" name="label_26">
             <property name="text">
              <string>Lit de pose</string>
             </property>
            </widget>
           </item>
-          <item row="5" column="1">
+          <item row="6" column="1">
            <widget class="QComboBox" name="fk_bedding"/>
           </item>
+          <item row="2" column="1">
+           <widget class="QgsRelationReferenceWidget" name="fk_material">
+            <property name="sizePolicy">
+             <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+              <horstretch>0</horstretch>
+              <verstretch>0</verstretch>
+             </sizepolicy>
+            </property>
+            <property name="minimumSize">
+             <size>
+              <width>100</width>
+              <height>35</height>
+             </size>
+            </property>
+            <property name="baseSize">
+             <size>
+              <width>100</width>
+              <height>30</height>
+             </size>
+            </property>
+            <property name="toolTip">
+             <string>Choisir un matériaux de conduite (filtrage par matériaux / diamètre</string>
+            </property>
+           </widget>
+          </item>
          </layout>
-        </widget>
-       </item>
-       <item row="0" column="1">
-        <widget class="Line" name="line_3">
-         <property name="orientation">
-          <enum>Qt::Vertical</enum>
-         </property>
         </widget>
        </item>
       </layout>
      </widget>
      <widget class="QWidget" name="tab_4">
       <attribute name="title">
-       <string>Hydrauliqe</string>
+       <string>Hydraulique</string>
       </attribute>
       <layout class="QGridLayout" name="gridLayout_8">
        <item row="0" column="3" rowspan="2">
@@ -285,6 +332,9 @@
        </item>
        <item row="0" column="0">
         <widget class="QLabel" name="label_14">
+         <property name="contextMenuPolicy">
+          <enum>Qt::CustomContextMenu</enum>
+         </property>
          <property name="text">
           <string>Qualité eau</string>
          </property>
@@ -743,6 +793,7 @@
    <class>QgsRelationEditorWidget</class>
    <extends>QgsCollapsibleGroupBox</extends>
    <header>qgsrelationeditorwidget.h</header>
+   <container>1</container>
   </customwidget>
   <customwidget>
    <class>QgsRelationReferenceWidget</class>
