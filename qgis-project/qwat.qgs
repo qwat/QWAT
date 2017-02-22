@@ -235,7 +235,7 @@
         <customproperties/>
       </layer-tree-layer>
     </layer-tree-group>
-    <layer-tree-group expanded="0" checked="Qt::Unchecked" name="Tables auxiliaires">
+    <layer-tree-group expanded="1" checked="Qt::Unchecked" name="Tables auxiliaires">
       <customproperties/>
       <layer-tree-layer expanded="1" checked="Qt::Unchecked" id="protectionzone_type20160205143014456" name="protectionzone_type">
         <customproperties/>
@@ -400,10 +400,10 @@
   <mapcanvas>
     <units>meters</units>
     <extent>
-      <xmin>537685.65782375447452068</xmin>
-      <ymin>154278.28895185768487863</ymin>
-      <xmax>537904.73282397724688053</xmax>
-      <ymax>154410.27527103267493658</ymax>
+      <xmin>537751.19452893058769405</xmin>
+      <ymin>154751.82328406668966636</ymin>
+      <xmax>537778.57890395843423903</xmax>
+      <ymax>154773.85542515333509073</ymax>
     </extent>
     <rotation>0</rotation>
     <projections>1</projections>
@@ -830,7 +830,7 @@
         </filegroup>
       </legendlayer>
     </legendgroup>
-    <legendgroup open="false" checked="Qt::Unchecked" name="Tables auxiliaires">
+    <legendgroup open="true" checked="Qt::Unchecked" name="Tables auxiliaires">
       <legendlayer drawingOrder="71" open="true" checked="Qt::Unchecked" name="protectionzone_type" showFeatureCount="0">
         <filegroup open="true" hidden="false">
           <legendlayerfile isInOverview="0" layerid="protectionzone_type20160205143014456" visible="0"/>
@@ -39567,7 +39567,7 @@ def my_form_open(dialog, layer, feature):
       <excludeAttributesWMS/>
       <excludeAttributesWFS/>
       <attributeactions default="-1"/>
-      <attributetableconfig actionWidgetStyle="dropDown" sortExpression="" sortOrder="0">
+      <attributetableconfig actionWidgetStyle="dropDown" sortExpression="&quot;id&quot;" sortOrder="0">
         <columns>
           <column width="-1" hidden="0" type="field" name="id"/>
           <column width="-1" hidden="0" type="field" name="fk_district"/>
@@ -39617,10 +39617,10 @@ def my_form_open(dialog, layer, feature):
     </maplayer>
     <maplayer simplifyAlgorithm="0" minimumScale="0" maximumScale="1000" simplifyDrawingHints="0" readOnly="0" minLabelScale="0" maxLabelScale="1e+08" simplifyDrawingTol="3.6" geometry="Point" simplifyMaxScale="1" type="vector" hasScaleBasedVisibilityFlag="1" simplifyLocal="0" scaleBasedLabelVisibilityFlag="0">
       <extent>
-        <xmin>551180.72481756994966418</xmin>
-        <ymin>136178.64705177501309663</ymin>
-        <xmax>564577.832066860049963</xmax>
-        <ymax>151756.4882311699911952</ymax>
+        <xmin>537541.09799999999813735</xmin>
+        <ymin>153780.17300000000977889</ymin>
+        <xmax>537887.91104132996406406</xmax>
+        <ymax>155048.23800000001210719</ymax>
       </extent>
       <id>od_part20140429113327995</id>
       <datasource>service='qwat' sslmode=disable key='id' estimatedmetadata=true srid=21781 type=PointZ table="qwat_od"."vw_element_part" (geometry) sql=</datasource>
@@ -39697,8 +39697,8 @@ def my_form_open(dialog, layer, feature):
         <default field="fk_part_type" expression=""/>
         <default field="fk_pipe" expression=""/>
       </defaults>
-      <map-layer-style-manager current="">
-        <map-layer-style name=""/>
+      <map-layer-style-manager current="install_parts">
+        <map-layer-style name="install_parts"/>
       </map-layer-style-manager>
       <edittypes>
         <edittype widgetv2type="TextEdit" name="id">
@@ -39827,26 +39827,34 @@ def my_form_open(dialog, layer, feature):
           <category render="true" symbol="0" value="9200" label="compteur"/>
           <category render="true" symbol="1" value="9201" label="bouchon"/>
           <category render="true" symbol="2" value="9202" label="bouche d'arrosage"/>
-          <category render="true" symbol="3" value="" label=""/>
+          <category render="true" symbol="3" value="9203" label="raccord en T"/>
+          <category render="true" symbol="4" value="9204" label="raccord  coudé"/>
+          <category render="true" symbol="5" value="9206" label="réducteur de diamètre"/>
+          <category render="true" symbol="6" value="9207" label="raccord en croix"/>
+          <category render="true" symbol="7" value="9208" label="raccord inconnu"/>
+          <category render="true" symbol="8" value="9209" label="manomètre"/>
+          <category render="true" symbol="9" value="9210" label="débitmètre"/>
         </categories>
         <symbols>
           <symbol alpha="1" clip_to_extent="1" type="marker" name="0">
-            <layer pass="0" class="SimpleMarker" locked="0">
+            <layer pass="0" class="SvgMarker" locked="0">
               <prop k="angle" v="0"/>
+              <prop k="angle_dd_active" v="1"/>
+              <prop k="angle_dd_expression" v="- &quot;_pipe_orientation&quot;"/>
+              <prop k="angle_dd_field" v="_pipe_orientation"/>
+              <prop k="angle_dd_useexpr" v="1"/>
               <prop k="color" v="0,0,0,255"/>
               <prop k="horizontal_anchor_point" v="1"/>
-              <prop k="joinstyle" v="bevel"/>
-              <prop k="name" v="circle"/>
-              <prop k="offset" v="1.39999999999999991,0"/>
+              <prop k="name" v="./symbols/nodes/subscriber_meter.svg"/>
+              <prop k="offset" v="0,0"/>
               <prop k="offset_map_unit_scale" v="0,0,0,0,0,0"/>
               <prop k="offset_unit" v="MM"/>
               <prop k="outline_color" v="0,0,0,255"/>
-              <prop k="outline_style" v="solid"/>
-              <prop k="outline_width" v="0"/>
+              <prop k="outline_width" v="1"/>
               <prop k="outline_width_map_unit_scale" v="0,0,0,0,0,0"/>
               <prop k="outline_width_unit" v="MM"/>
-              <prop k="scale_method" v="area"/>
-              <prop k="size" v="2"/>
+              <prop k="scale_method" v="diameter"/>
+              <prop k="size" v="4"/>
               <prop k="size_map_unit_scale" v="0,0,0,0,0,0"/>
               <prop k="size_unit" v="MM"/>
               <prop k="vertical_anchor_point" v="1"/>
@@ -39861,22 +39869,24 @@ def my_form_open(dialog, layer, feature):
             </layer>
           </symbol>
           <symbol alpha="1" clip_to_extent="1" type="marker" name="1">
-            <layer pass="0" class="SimpleMarker" locked="0">
+            <layer pass="0" class="SvgMarker" locked="0">
               <prop k="angle" v="0"/>
+              <prop k="angle_dd_active" v="1"/>
+              <prop k="angle_dd_expression" v="- &quot;_pipe_orientation&quot;"/>
+              <prop k="angle_dd_field" v="-_pipe_orientation"/>
+              <prop k="angle_dd_useexpr" v="1"/>
               <prop k="color" v="0,0,0,255"/>
               <prop k="horizontal_anchor_point" v="1"/>
-              <prop k="joinstyle" v="bevel"/>
-              <prop k="name" v="circle"/>
-              <prop k="offset" v="1.39999999999999991,0"/>
+              <prop k="name" v="./symbols/nodes/cap.svg"/>
+              <prop k="offset" v="0,0"/>
               <prop k="offset_map_unit_scale" v="0,0,0,0,0,0"/>
               <prop k="offset_unit" v="MM"/>
               <prop k="outline_color" v="0,0,0,255"/>
-              <prop k="outline_style" v="solid"/>
-              <prop k="outline_width" v="0"/>
+              <prop k="outline_width" v="1"/>
               <prop k="outline_width_map_unit_scale" v="0,0,0,0,0,0"/>
               <prop k="outline_width_unit" v="MM"/>
-              <prop k="scale_method" v="area"/>
-              <prop k="size" v="2"/>
+              <prop k="scale_method" v="diameter"/>
+              <prop k="size" v="4"/>
               <prop k="size_map_unit_scale" v="0,0,0,0,0,0"/>
               <prop k="size_unit" v="MM"/>
               <prop k="vertical_anchor_point" v="1"/>
@@ -39891,22 +39901,24 @@ def my_form_open(dialog, layer, feature):
             </layer>
           </symbol>
           <symbol alpha="1" clip_to_extent="1" type="marker" name="2">
-            <layer pass="0" class="SimpleMarker" locked="0">
+            <layer pass="0" class="SvgMarker" locked="0">
               <prop k="angle" v="0"/>
+              <prop k="angle_dd_active" v="1"/>
+              <prop k="angle_dd_expression" v="- &quot;_pipe_orientation&quot;"/>
+              <prop k="angle_dd_field" v="-_pipe_orientation"/>
+              <prop k="angle_dd_useexpr" v="1"/>
               <prop k="color" v="0,0,0,255"/>
               <prop k="horizontal_anchor_point" v="1"/>
-              <prop k="joinstyle" v="bevel"/>
-              <prop k="name" v="circle"/>
-              <prop k="offset" v="1.39999999999999991,0"/>
+              <prop k="name" v="./symbols/nodes/watering_output.svg"/>
+              <prop k="offset" v="0,0"/>
               <prop k="offset_map_unit_scale" v="0,0,0,0,0,0"/>
               <prop k="offset_unit" v="MM"/>
               <prop k="outline_color" v="0,0,0,255"/>
-              <prop k="outline_style" v="solid"/>
-              <prop k="outline_width" v="0"/>
+              <prop k="outline_width" v="1"/>
               <prop k="outline_width_map_unit_scale" v="0,0,0,0,0,0"/>
               <prop k="outline_width_unit" v="MM"/>
-              <prop k="scale_method" v="area"/>
-              <prop k="size" v="2"/>
+              <prop k="scale_method" v="diameter"/>
+              <prop k="size" v="4"/>
               <prop k="size_map_unit_scale" v="0,0,0,0,0,0"/>
               <prop k="size_unit" v="MM"/>
               <prop k="vertical_anchor_point" v="1"/>
@@ -39923,31 +39935,293 @@ def my_form_open(dialog, layer, feature):
           <symbol alpha="1" clip_to_extent="1" type="marker" name="3">
             <layer pass="0" class="SimpleMarker" locked="0">
               <prop k="angle" v="0"/>
-              <prop k="color" v="128,168,121,255"/>
+              <prop k="color" v="57,165,170,255"/>
               <prop k="horizontal_anchor_point" v="1"/>
-              <prop k="joinstyle" v="bevel"/>
-              <prop k="name" v="circle"/>
-              <prop k="offset" v="1.39999999999999991,0"/>
+              <prop k="joinstyle" v="miter"/>
+              <prop k="name" v="line"/>
+              <prop k="offset" v="0,0"/>
               <prop k="offset_map_unit_scale" v="0,0,0,0,0,0"/>
               <prop k="offset_unit" v="MM"/>
-              <prop k="outline_color" v="0,0,0,255"/>
+              <prop k="outline_color" v="39,158,255,255"/>
               <prop k="outline_style" v="solid"/>
-              <prop k="outline_width" v="0"/>
+              <prop k="outline_width" v="0.6"/>
               <prop k="outline_width_map_unit_scale" v="0,0,0,0,0,0"/>
               <prop k="outline_width_unit" v="MM"/>
-              <prop k="scale_method" v="area"/>
-              <prop k="size" v="2"/>
+              <prop k="scale_method" v="diameter"/>
+              <prop k="size" v="2.6"/>
               <prop k="size_map_unit_scale" v="0,0,0,0,0,0"/>
               <prop k="size_unit" v="MM"/>
               <prop k="vertical_anchor_point" v="1"/>
-              <effect enabled="0" type="effectStack">
-                <effect type="drawSource">
-                  <prop k="blend_mode" v="0"/>
-                  <prop k="draw_mode" v="2"/>
-                  <prop k="enabled" v="1"/>
-                  <prop k="transparency" v="0"/>
-                </effect>
-              </effect>
+            </layer>
+            <layer pass="0" class="SimpleMarker" locked="0">
+              <prop k="angle" v="90"/>
+              <prop k="color" v="255,0,0,255"/>
+              <prop k="horizontal_anchor_point" v="1"/>
+              <prop k="joinstyle" v="bevel"/>
+              <prop k="name" v="line"/>
+              <prop k="offset" v="-1.42352900000000004,0"/>
+              <prop k="offset_map_unit_scale" v="0,0,0,0,0,0"/>
+              <prop k="offset_unit" v="MM"/>
+              <prop k="outline_color" v="39,158,255,255"/>
+              <prop k="outline_style" v="solid"/>
+              <prop k="outline_width" v="0.8"/>
+              <prop k="outline_width_map_unit_scale" v="0,0,0,0,0,0"/>
+              <prop k="outline_width_unit" v="MM"/>
+              <prop k="scale_method" v="diameter"/>
+              <prop k="size" v="2.44706"/>
+              <prop k="size_map_unit_scale" v="0,0,0,0,0,0"/>
+              <prop k="size_unit" v="MM"/>
+              <prop k="vertical_anchor_point" v="1"/>
+            </layer>
+          </symbol>
+          <symbol alpha="1" clip_to_extent="1" type="marker" name="4">
+            <layer pass="0" class="SimpleMarker" locked="0">
+              <prop k="angle" v="270"/>
+              <prop k="color" v="255,0,0,255"/>
+              <prop k="horizontal_anchor_point" v="1"/>
+              <prop k="joinstyle" v="bevel"/>
+              <prop k="name" v="arrowhead"/>
+              <prop k="offset" v="1,0"/>
+              <prop k="offset_map_unit_scale" v="0,0,0,0,0,0"/>
+              <prop k="offset_unit" v="MM"/>
+              <prop k="outline_color" v="39,158,255,255"/>
+              <prop k="outline_style" v="solid"/>
+              <prop k="outline_width" v="0.8"/>
+              <prop k="outline_width_map_unit_scale" v="0,0,0,0,0,0"/>
+              <prop k="outline_width_unit" v="MM"/>
+              <prop k="scale_method" v="diameter"/>
+              <prop k="size" v="2.44706"/>
+              <prop k="size_map_unit_scale" v="0,0,0,0,0,0"/>
+              <prop k="size_unit" v="MM"/>
+              <prop k="vertical_anchor_point" v="1"/>
+            </layer>
+          </symbol>
+          <symbol alpha="1" clip_to_extent="1" type="marker" name="5">
+            <layer pass="0" class="SimpleMarker" locked="0">
+              <prop k="angle" v="90"/>
+              <prop k="color" v="57,165,170,255"/>
+              <prop k="horizontal_anchor_point" v="1"/>
+              <prop k="joinstyle" v="miter"/>
+              <prop k="name" v="line"/>
+              <prop k="offset" v="-0.89999999999999991,-1.60000000000000009"/>
+              <prop k="offset_map_unit_scale" v="0,0,0,0,0,0"/>
+              <prop k="offset_unit" v="MM"/>
+              <prop k="outline_color" v="39,158,255,255"/>
+              <prop k="outline_style" v="solid"/>
+              <prop k="outline_width" v="0.8"/>
+              <prop k="outline_width_map_unit_scale" v="0,0,0,0,0,0"/>
+              <prop k="outline_width_unit" v="MM"/>
+              <prop k="scale_method" v="diameter"/>
+              <prop k="size" v="2.6"/>
+              <prop k="size_map_unit_scale" v="0,0,0,0,0,0"/>
+              <prop k="size_unit" v="MM"/>
+              <prop k="vertical_anchor_point" v="1"/>
+            </layer>
+            <layer pass="0" class="SimpleMarker" locked="0">
+              <prop k="angle" v="90"/>
+              <prop k="color" v="57,165,170,255"/>
+              <prop k="horizontal_anchor_point" v="1"/>
+              <prop k="joinstyle" v="miter"/>
+              <prop k="name" v="line"/>
+              <prop k="offset" v="0.90000000000000013,-1.59999999999999987"/>
+              <prop k="offset_map_unit_scale" v="0,0,0,0,0,0"/>
+              <prop k="offset_unit" v="MM"/>
+              <prop k="outline_color" v="39,158,255,255"/>
+              <prop k="outline_style" v="solid"/>
+              <prop k="outline_width" v="0.8"/>
+              <prop k="outline_width_map_unit_scale" v="0,0,0,0,0,0"/>
+              <prop k="outline_width_unit" v="MM"/>
+              <prop k="scale_method" v="diameter"/>
+              <prop k="size" v="2.6"/>
+              <prop k="size_map_unit_scale" v="0,0,0,0,0,0"/>
+              <prop k="size_unit" v="MM"/>
+              <prop k="vertical_anchor_point" v="1"/>
+            </layer>
+            <layer pass="0" class="SimpleMarker" locked="0">
+              <prop k="angle" v="90"/>
+              <prop k="color" v="57,165,170,255"/>
+              <prop k="horizontal_anchor_point" v="1"/>
+              <prop k="joinstyle" v="miter"/>
+              <prop k="name" v="line"/>
+              <prop k="offset" v="1.5,1.39999999999999991"/>
+              <prop k="offset_map_unit_scale" v="0,0,0,0,0,0"/>
+              <prop k="offset_unit" v="MM"/>
+              <prop k="outline_color" v="39,158,255,255"/>
+              <prop k="outline_style" v="solid"/>
+              <prop k="outline_width" v="0.8"/>
+              <prop k="outline_width_map_unit_scale" v="0,0,0,0,0,0"/>
+              <prop k="outline_width_unit" v="MM"/>
+              <prop k="scale_method" v="diameter"/>
+              <prop k="size" v="2.6"/>
+              <prop k="size_map_unit_scale" v="0,0,0,0,0,0"/>
+              <prop k="size_unit" v="MM"/>
+              <prop k="vertical_anchor_point" v="1"/>
+            </layer>
+            <layer pass="0" class="SimpleMarker" locked="0">
+              <prop k="angle" v="90"/>
+              <prop k="color" v="255,0,0,255"/>
+              <prop k="horizontal_anchor_point" v="1"/>
+              <prop k="joinstyle" v="bevel"/>
+              <prop k="name" v="line"/>
+              <prop k="offset" v="-1.5,1.39999999999999991"/>
+              <prop k="offset_map_unit_scale" v="0,0,0,0,0,0"/>
+              <prop k="offset_unit" v="MM"/>
+              <prop k="outline_color" v="39,158,255,255"/>
+              <prop k="outline_style" v="solid"/>
+              <prop k="outline_width" v="0.8"/>
+              <prop k="outline_width_map_unit_scale" v="0,0,0,0,0,0"/>
+              <prop k="outline_width_unit" v="MM"/>
+              <prop k="scale_method" v="diameter"/>
+              <prop k="size" v="2.5"/>
+              <prop k="size_map_unit_scale" v="0,0,0,0,0,0"/>
+              <prop k="size_unit" v="MM"/>
+              <prop k="vertical_anchor_point" v="1"/>
+            </layer>
+          </symbol>
+          <symbol alpha="1" clip_to_extent="1" type="marker" name="6">
+            <layer pass="0" class="SimpleMarker" locked="0">
+              <prop k="angle" v="0"/>
+              <prop k="color" v="57,165,170,255"/>
+              <prop k="horizontal_anchor_point" v="1"/>
+              <prop k="joinstyle" v="miter"/>
+              <prop k="name" v="line"/>
+              <prop k="offset" v="0,0"/>
+              <prop k="offset_map_unit_scale" v="0,0,0,0,0,0"/>
+              <prop k="offset_unit" v="MM"/>
+              <prop k="outline_color" v="39,158,255,255"/>
+              <prop k="outline_style" v="solid"/>
+              <prop k="outline_width" v="0.6"/>
+              <prop k="outline_width_map_unit_scale" v="0,0,0,0,0,0"/>
+              <prop k="outline_width_unit" v="MM"/>
+              <prop k="scale_method" v="diameter"/>
+              <prop k="size" v="2.6"/>
+              <prop k="size_map_unit_scale" v="0,0,0,0,0,0"/>
+              <prop k="size_unit" v="MM"/>
+              <prop k="vertical_anchor_point" v="1"/>
+            </layer>
+            <layer pass="0" class="SimpleMarker" locked="0">
+              <prop k="angle" v="90"/>
+              <prop k="color" v="255,0,0,255"/>
+              <prop k="horizontal_anchor_point" v="1"/>
+              <prop k="joinstyle" v="bevel"/>
+              <prop k="name" v="line"/>
+              <prop k="offset" v="0,0"/>
+              <prop k="offset_map_unit_scale" v="0,0,0,0,0,0"/>
+              <prop k="offset_unit" v="MM"/>
+              <prop k="outline_color" v="39,158,255,255"/>
+              <prop k="outline_style" v="solid"/>
+              <prop k="outline_width" v="0.8"/>
+              <prop k="outline_width_map_unit_scale" v="0,0,0,0,0,0"/>
+              <prop k="outline_width_unit" v="MM"/>
+              <prop k="scale_method" v="diameter"/>
+              <prop k="size" v="2.44706"/>
+              <prop k="size_map_unit_scale" v="0,0,0,0,0,0"/>
+              <prop k="size_unit" v="MM"/>
+              <prop k="vertical_anchor_point" v="1"/>
+            </layer>
+          </symbol>
+          <symbol alpha="1" clip_to_extent="1" type="marker" name="7">
+            <layer pass="0" class="SimpleMarker" locked="0">
+              <prop k="angle" v="0"/>
+              <prop k="color" v="255,255,255,255"/>
+              <prop k="horizontal_anchor_point" v="1"/>
+              <prop k="joinstyle" v="bevel"/>
+              <prop k="name" v="circle"/>
+              <prop k="offset" v="0,0"/>
+              <prop k="offset_map_unit_scale" v="0,0,0,0,0,0"/>
+              <prop k="offset_unit" v="MM"/>
+              <prop k="outline_color" v="39,158,255,255"/>
+              <prop k="outline_style" v="solid"/>
+              <prop k="outline_width" v="0.6"/>
+              <prop k="outline_width_map_unit_scale" v="0,0,0,0,0,0"/>
+              <prop k="outline_width_unit" v="MM"/>
+              <prop k="scale_method" v="area"/>
+              <prop k="size" v="3.6"/>
+              <prop k="size_map_unit_scale" v="0,0,0,0,0,0"/>
+              <prop k="size_unit" v="MM"/>
+              <prop k="vertical_anchor_point" v="1"/>
+            </layer>
+            <layer pass="0" class="FontMarker" locked="0">
+              <prop k="angle" v="0"/>
+              <prop k="chr" v="?"/>
+              <prop k="color" v="39,158,255,255"/>
+              <prop k="font" v="DejaVu Sans"/>
+              <prop k="horizontal_anchor_point" v="1"/>
+              <prop k="joinstyle" v="bevel"/>
+              <prop k="offset" v="0.19999999999999996,-0.20000000000000001"/>
+              <prop k="offset_map_unit_scale" v="0,0,0,0,0,0"/>
+              <prop k="offset_unit" v="MM"/>
+              <prop k="outline_color" v="0,0,0,255"/>
+              <prop k="outline_width" v="0"/>
+              <prop k="outline_width_map_unit_scale" v="0,0,0,0,0,0"/>
+              <prop k="outline_width_unit" v="MM"/>
+              <prop k="size" v="3"/>
+              <prop k="size_map_unit_scale" v="0,0,0,0,0,0"/>
+              <prop k="size_unit" v="MM"/>
+              <prop k="vertical_anchor_point" v="1"/>
+            </layer>
+          </symbol>
+          <symbol alpha="1" clip_to_extent="1" type="marker" name="8">
+            <layer pass="0" class="SimpleMarker" locked="0">
+              <prop k="angle" v="0"/>
+              <prop k="color" v="255,255,255,255"/>
+              <prop k="horizontal_anchor_point" v="1"/>
+              <prop k="joinstyle" v="bevel"/>
+              <prop k="name" v="circle"/>
+              <prop k="offset" v="0,0"/>
+              <prop k="offset_map_unit_scale" v="0,0,0,0,0,0"/>
+              <prop k="offset_unit" v="MM"/>
+              <prop k="outline_color" v="39,158,255,255"/>
+              <prop k="outline_style" v="solid"/>
+              <prop k="outline_width" v="0.6"/>
+              <prop k="outline_width_map_unit_scale" v="0,0,0,0,0,0"/>
+              <prop k="outline_width_unit" v="MM"/>
+              <prop k="scale_method" v="area"/>
+              <prop k="size" v="3.6"/>
+              <prop k="size_map_unit_scale" v="0,0,0,0,0,0"/>
+              <prop k="size_unit" v="MM"/>
+              <prop k="vertical_anchor_point" v="1"/>
+            </layer>
+            <layer pass="0" class="FontMarker" locked="0">
+              <prop k="angle" v="0"/>
+              <prop k="chr" v="P"/>
+              <prop k="color" v="39,158,255,255"/>
+              <prop k="font" v="DejaVu Sans"/>
+              <prop k="horizontal_anchor_point" v="1"/>
+              <prop k="joinstyle" v="bevel"/>
+              <prop k="offset" v="0.20000000000000001,-0.20000000000000007"/>
+              <prop k="offset_map_unit_scale" v="0,0,0,0,0,0"/>
+              <prop k="offset_unit" v="MM"/>
+              <prop k="outline_color" v="0,0,0,255"/>
+              <prop k="outline_width" v="0"/>
+              <prop k="outline_width_map_unit_scale" v="0,0,0,0,0,0"/>
+              <prop k="outline_width_unit" v="MM"/>
+              <prop k="size" v="3"/>
+              <prop k="size_map_unit_scale" v="0,0,0,0,0,0"/>
+              <prop k="size_unit" v="MM"/>
+              <prop k="vertical_anchor_point" v="1"/>
+            </layer>
+          </symbol>
+          <symbol alpha="1" clip_to_extent="1" type="marker" name="9">
+            <layer pass="0" class="SimpleMarker" locked="0">
+              <prop k="angle" v="270"/>
+              <prop k="color" v="255,0,0,255"/>
+              <prop k="horizontal_anchor_point" v="1"/>
+              <prop k="joinstyle" v="bevel"/>
+              <prop k="name" v="arrowhead"/>
+              <prop k="offset" v="1.00000048076923087,0"/>
+              <prop k="offset_map_unit_scale" v="0,0,0,0,0,0"/>
+              <prop k="offset_unit" v="MM"/>
+              <prop k="outline_color" v="39,158,255,255"/>
+              <prop k="outline_style" v="solid"/>
+              <prop k="outline_width" v="0.8"/>
+              <prop k="outline_width_map_unit_scale" v="0,0,0,0,0,0"/>
+              <prop k="outline_width_unit" v="MM"/>
+              <prop k="scale_method" v="diameter"/>
+              <prop k="size" v="2.44706"/>
+              <prop k="size_map_unit_scale" v="0,0,0,0,0,0"/>
+              <prop k="size_unit" v="MM"/>
+              <prop k="vertical_anchor_point" v="1"/>
             </layer>
           </symbol>
         </symbols>
@@ -39959,7 +40233,7 @@ def my_form_open(dialog, layer, feature):
               <prop k="horizontal_anchor_point" v="1"/>
               <prop k="joinstyle" v="bevel"/>
               <prop k="name" v="circle"/>
-              <prop k="offset" v="1.39999999999999991,0"/>
+              <prop k="offset" v="0,0"/>
               <prop k="offset_map_unit_scale" v="0,0,0,0,0,0"/>
               <prop k="offset_unit" v="MM"/>
               <prop k="outline_color" v="0,0,0,255"/>
@@ -40158,8 +40432,8 @@ def my_form_open(dialog, layer, feature):
         <property key="labeling/xOffset" value="0"/>
         <property key="labeling/yOffset" value="0"/>
         <property key="labeling/zIndex" value="0"/>
-        <property key="variableNames" value="_fields_"/>
-        <property key="variableValues" value=""/>
+        <property key="variableNames"/>
+        <property key="variableValues"/>
       </customproperties>
       <blendMode>0</blendMode>
       <featureBlendMode>0</featureBlendMode>
@@ -40260,7 +40534,9 @@ def my_form_open(dialog, layer, feature):
       </aliases>
       <excludeAttributesWMS/>
       <excludeAttributesWFS/>
-      <attributeactions default="-1"/>
+      <attributeactions default="0">
+        <actionsetting showInAttributeTable="1" action="qgis.utils.plugins['postgres91plusauditor'].audit('od_part20140429113327995',[% $id %])" icon="" capture="0" type="1" name="History audit" shortTitle=""/>
+      </attributeactions>
       <attributetableconfig actionWidgetStyle="dropDown" sortExpression="" sortOrder="0">
         <columns>
           <column width="-1" hidden="0" type="field" name="id"/>
@@ -40282,13 +40558,8 @@ def my_form_open(dialog, layer, feature):
           <column width="-1" hidden="0" type="field" name="fk_status"/>
           <column width="-1" hidden="0" type="field" name="fk_folder"/>
           <column width="-1" hidden="0" type="field" name="fk_locationtype"/>
-          <column width="-1" hidden="0" type="field" name="fk_precision"/>
-          <column width="-1" hidden="0" type="field" name="fk_precisionalti"/>
-          <column width="-1" hidden="0" type="field" name="fk_object_reference"/>
-          <column width="-1" hidden="0" type="field" name="altitude"/>
           <column width="-1" hidden="0" type="field" name="year"/>
           <column width="-1" hidden="0" type="field" name="year_end"/>
-          <column width="-1" hidden="0" type="field" name="orientation"/>
           <column width="-1" hidden="0" type="field" name="remark"/>
           <column width="-1" hidden="0" type="field" name="schema_force_visible"/>
           <column width="-1" hidden="0" type="field" name="label_1_visible"/>
@@ -40301,6 +40572,11 @@ def my_form_open(dialog, layer, feature):
           <column width="-1" hidden="0" type="field" name="label_2_y"/>
           <column width="-1" hidden="0" type="field" name="label_2_rotation"/>
           <column width="-1" hidden="0" type="field" name="label_2_text"/>
+          <column width="-1" hidden="0" type="field" name="fk_precision"/>
+          <column width="-1" hidden="0" type="field" name="fk_precisionalti"/>
+          <column width="-1" hidden="0" type="field" name="fk_object_reference"/>
+          <column width="-1" hidden="0" type="field" name="altitude"/>
+          <column width="-1" hidden="0" type="field" name="orientation"/>
           <column width="-1" hidden="0" type="field" name="fk_part_type"/>
           <column width="-1" hidden="0" type="field" name="fk_pipe"/>
           <column width="-1" hidden="1" type="actions"/>
@@ -51493,7 +51769,7 @@ def my_form_open(dialog, layer, feature):
       </srs>
       <customproperties/>
       <provider encoding="UTF-8">postgres</provider>
-      <previewExpression></previewExpression>
+      <previewExpression>COALESCE("id", '&lt;NULL>')</previewExpression>
       <vectorjoins/>
       <layerDependencies/>
       <expressionfields/>
@@ -51568,7 +51844,20 @@ def my_form_open(dialog, layer, feature):
         <actionsetting showInAttributeTable="1" action="qgis.utils.plugins['postgres91plusauditor'].audit('vl_part_type20140429114640509',[% $id %])" icon="" capture="0" type="1" name="History audit" shortTitle=""/>
       </attributeactions>
       <attributetableconfig actionWidgetStyle="dropDown" sortExpression="" sortOrder="0">
-        <columns/>
+        <columns>
+          <column width="-1" hidden="0" type="field" name="id"/>
+          <column width="-1" hidden="0" type="field" name="vl_active"/>
+          <column width="-1" hidden="0" type="field" name="short_fr"/>
+          <column width="-1" hidden="0" type="field" name="short_en"/>
+          <column width="-1" hidden="0" type="field" name="short_ro"/>
+          <column width="-1" hidden="0" type="field" name="value_fr"/>
+          <column width="209" hidden="0" type="field" name="value_en"/>
+          <column width="-1" hidden="0" type="field" name="value_ro"/>
+          <column width="-1" hidden="0" type="field" name="description_fr"/>
+          <column width="-1" hidden="0" type="field" name="description_en"/>
+          <column width="-1" hidden="0" type="field" name="description_ro"/>
+          <column width="-1" hidden="1" type="actions"/>
+        </columns>
       </attributetableconfig>
       <editform>.</editform>
       <editforminit/>
@@ -59133,7 +59422,7 @@ def closeProject():
       <layer style="" id="node20130304110005126"/>
       <layer style="" id="valve20130304110011497"/>
       <layer style="" id="hydrant20130304110004848"/>
-      <layer style="" id="od_part20140429113327995"/>
+      <layer style="install_parts" id="od_part20140429113327995"/>
       <layer style="" id="od_remote20150116100522170"/>
       <layer style="" id="od_crossing20141023083754327"/>
       <layer style="" id="od_annotationline20131203095020365"/>
@@ -59244,7 +59533,7 @@ def closeProject():
       <layer style="" id="node20130304110005126"/>
       <layer style="DXF" id="valve20130304110011497"/>
       <layer style="" id="hydrant20130304110004848"/>
-      <layer style="" id="od_part20140429113327995"/>
+      <layer style="install_parts" id="od_part20140429113327995"/>
       <layer style="" id="od_remote20150116100522170"/>
       <checked-legend-nodes id="conduites_copy20130709141244955">
         <checked-legend-node id="{6c5ec343-05d3-4fcd-8dc1-283232838086}"/>
@@ -59387,7 +59676,7 @@ def closeProject():
       <layer style="" id="node20130304110005126"/>
       <layer style="" id="valve20130304110011497"/>
       <layer style="" id="hydrant20130304110004848"/>
-      <layer style="" id="od_part20140429113327995"/>
+      <layer style="install_parts" id="od_part20140429113327995"/>
       <layer style="" id="od_remote20150116100522170"/>
       <layer style="" id="od_crossing20141023083754327"/>
       <layer style="" id="printmap20130304110011400"/>
