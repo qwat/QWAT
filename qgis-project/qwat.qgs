@@ -39,7 +39,7 @@
         <customproperties/>
         <layer-tree-layer expanded="1" checked="Qt::Checked" id="subscriber20130304110011459" name="abonnés">
           <customproperties>
-            <property key="showFeatureCount" value="1"/>
+            <property key="showFeatureCount" value="0"/>
           </customproperties>
         </layer-tree-layer>
         <layer-tree-layer expanded="0" checked="Qt::Checked" id="od_subscriber_reference20131206105928067" name="abonnés - renvoi">
@@ -65,12 +65,12 @@
               <value>{7d0cfa7a-eaf4-499a-b977-1238b90ca15f}</value>
               <value>{2e14d53a-6d2f-40b3-bf3b-4f32112e3d59}</value>
             </property>
-            <property key="showFeatureCount" value="1"/>
+            <property key="showFeatureCount" value="0"/>
           </customproperties>
         </layer-tree-layer>
         <layer-tree-layer expanded="1" checked="Qt::Checked" id="node20130304110005126" name="noeuds">
           <customproperties>
-            <property key="showFeatureCount" value="1"/>
+            <property key="showFeatureCount" value="0"/>
           </customproperties>
         </layer-tree-layer>
         <layer-tree-layer expanded="1" checked="Qt::Checked" id="valve20130304110011497" name="vannes">
@@ -130,9 +130,6 @@
             <property key="expandedLegendNodes" value="{a83ef0cf-9977-418a-84e8-92fa1cc4523e}"/>
           </customproperties>
         </layer-tree-layer>
-        <layer-tree-layer expanded="0" checked="Qt::Unchecked" id="vw_pipe_schema20141208162900166" name="conduite impression 5000">
-          <customproperties/>
-        </layer-tree-layer>
         <layer-tree-layer expanded="0" checked="Qt::Unchecked" id="ouvrage_copy20160125132737527" name="ouvrage 5000">
           <customproperties>
             <property key="expandedLegendNodes">
@@ -169,7 +166,7 @@
         <customproperties/>
       </layer-tree-layer>
     </layer-tree-group>
-    <layer-tree-group expanded="0" checked="Qt::PartiallyChecked" name="Côtes">
+    <layer-tree-group expanded="1" checked="Qt::PartiallyChecked" name="Côtes">
       <customproperties/>
       <layer-tree-layer expanded="0" checked="Qt::Checked" id="dimension20130807094904783" name="côtes distance">
         <customproperties/>
@@ -400,10 +397,10 @@
   <mapcanvas>
     <units>meters</units>
     <extent>
-      <xmin>537751.19452893058769405</xmin>
-      <ymin>154751.82328406668966636</ymin>
-      <xmax>537778.57890395843423903</xmax>
-      <ymax>154773.85542515333509073</ymax>
+      <xmin>515527.13618492672685534</xmin>
+      <ymin>157833.57972585508832708</ymin>
+      <xmax>515777.17107946018222719</xmax>
+      <ymax>157980.53031193936476484</ymax>
     </extent>
     <rotation>0</rotation>
     <projections>1</projections>
@@ -542,7 +539,6 @@
       <item>conduites_copy20130709141244955</item>
       <item>ouvrage_copy20160125132737527</item>
       <item>vannes_copy20141127160745910</item>
-      <item>vw_pipe_schema20141208162900166</item>
       <item>télécommande_copy20160127112146958</item>
       <item>vw_pipe_schema_visibleitems20141127154708843</item>
       <item>od_remote20150116100522170</item>
@@ -618,7 +614,7 @@
         </legendlayer>
       </legendgroup>
       <legendgroup open="true" checked="Qt::Checked" name="Abonnés">
-        <legendlayer drawingOrder="2" open="true" checked="Qt::Checked" name="abonnés" showFeatureCount="1">
+        <legendlayer drawingOrder="2" open="true" checked="Qt::Checked" name="abonnés" showFeatureCount="0">
           <filegroup open="true" hidden="false">
             <legendlayerfile isInOverview="0" layerid="subscriber20130304110011459" visible="1"/>
           </filegroup>
@@ -640,12 +636,12 @@
         </legendlayer>
       </legendgroup>
       <legendgroup open="true" checked="Qt::PartiallyChecked" name="Réseau">
-        <legendlayer drawingOrder="14" open="true" checked="Qt::Checked" name="conduites" showFeatureCount="1">
+        <legendlayer drawingOrder="14" open="true" checked="Qt::Checked" name="conduites" showFeatureCount="0">
           <filegroup open="true" hidden="false">
             <legendlayerfile isInOverview="0" layerid="conduites_copy20130709141244955" visible="1"/>
           </filegroup>
         </legendlayer>
-        <legendlayer drawingOrder="11" open="true" checked="Qt::Checked" name="noeuds" showFeatureCount="1">
+        <legendlayer drawingOrder="11" open="true" checked="Qt::Checked" name="noeuds" showFeatureCount="0">
           <filegroup open="true" hidden="false">
             <legendlayerfile isInOverview="0" layerid="node20130304110005126" visible="1"/>
           </filegroup>
@@ -665,7 +661,7 @@
             <legendlayerfile isInOverview="0" layerid="od_part20140429113327995" visible="1"/>
           </filegroup>
         </legendlayer>
-        <legendlayer drawingOrder="20" open="true" checked="Qt::Checked" name="télécommande" showFeatureCount="1">
+        <legendlayer drawingOrder="19" open="true" checked="Qt::Checked" name="télécommande" showFeatureCount="1">
           <filegroup open="true" hidden="false">
             <legendlayerfile isInOverview="0" layerid="od_remote20150116100522170" visible="1"/>
           </filegroup>
@@ -680,7 +676,7 @@
             <legendlayerfile isInOverview="0" layerid="leak20130821111917060" visible="0"/>
           </filegroup>
         </legendlayer>
-        <legendlayer drawingOrder="69" open="true" checked="Qt::Unchecked" name="point de prélèvement" showFeatureCount="1">
+        <legendlayer drawingOrder="68" open="true" checked="Qt::Unchecked" name="point de prélèvement" showFeatureCount="1">
           <filegroup open="true" hidden="false">
             <legendlayerfile isInOverview="0" layerid="vw_element_samplingpoint20151002161215716" visible="0"/>
           </filegroup>
@@ -701,14 +697,9 @@
     </legendgroup>
     <legendgroup open="true" checked="Qt::Unchecked" name="Schématique">
       <legendgroup open="true" checked="Qt::Unchecked" name="impression">
-        <legendlayer drawingOrder="70" open="true" checked="Qt::Unchecked" name="hydrantes 5000 (pression)" showFeatureCount="0">
+        <legendlayer drawingOrder="69" open="true" checked="Qt::Unchecked" name="hydrantes 5000 (pression)" showFeatureCount="0">
           <filegroup open="true" hidden="false">
             <legendlayerfile isInOverview="0" layerid="hydrantes_copy20160127124839887" visible="0"/>
-          </filegroup>
-        </legendlayer>
-        <legendlayer drawingOrder="17" open="false" checked="Qt::Unchecked" name="conduite impression 5000" showFeatureCount="0">
-          <filegroup open="false" hidden="false">
-            <legendlayerfile isInOverview="0" layerid="vw_pipe_schema20141208162900166" visible="0"/>
           </filegroup>
         </legendlayer>
         <legendlayer drawingOrder="15" open="false" checked="Qt::Unchecked" name="ouvrage 5000" showFeatureCount="0">
@@ -721,19 +712,19 @@
             <legendlayerfile isInOverview="0" layerid="vannes_copy20141127160745910" visible="0"/>
           </filegroup>
         </legendlayer>
-        <legendlayer drawingOrder="18" open="true" checked="Qt::Unchecked" name="télécommande 5000" showFeatureCount="0">
+        <legendlayer drawingOrder="17" open="true" checked="Qt::Unchecked" name="télécommande 5000" showFeatureCount="0">
           <filegroup open="true" hidden="false">
             <legendlayerfile isInOverview="0" layerid="télécommande_copy20160127112146958" visible="0"/>
           </filegroup>
         </legendlayer>
       </legendgroup>
       <legendgroup open="true" checked="Qt::Unchecked" name="edition">
-        <legendlayer drawingOrder="19" open="true" checked="Qt::Unchecked" name="conduites edition 5000" showFeatureCount="0">
+        <legendlayer drawingOrder="18" open="true" checked="Qt::Unchecked" name="conduites edition 5000" showFeatureCount="0">
           <filegroup open="true" hidden="false">
             <legendlayerfile isInOverview="0" layerid="vw_pipe_schema_visibleitems20141127154708843" visible="0"/>
           </filegroup>
         </legendlayer>
-        <legendlayer drawingOrder="21" open="false" checked="Qt::Unchecked" name="Flèche conduite enfant -> parent" showFeatureCount="0">
+        <legendlayer drawingOrder="20" open="false" checked="Qt::Unchecked" name="Flèche conduite enfant -> parent" showFeatureCount="0">
           <filegroup open="false" hidden="false">
             <legendlayerfile isInOverview="0" layerid="pipe_child_parent20130417092030507" visible="0"/>
           </filegroup>
@@ -741,71 +732,71 @@
       </legendgroup>
     </legendgroup>
     <legendgroup open="true" checked="Qt::Checked" name="Annotations">
-      <legendlayer drawingOrder="22" open="false" checked="Qt::Checked" name="annotation - ligne" showFeatureCount="0">
+      <legendlayer drawingOrder="21" open="false" checked="Qt::Checked" name="annotation - ligne" showFeatureCount="0">
         <filegroup open="false" hidden="false">
           <legendlayerfile isInOverview="0" layerid="od_annotationline20131203095020365" visible="1"/>
         </filegroup>
       </legendlayer>
-      <legendlayer drawingOrder="23" open="false" checked="Qt::Checked" name="annotation - point" showFeatureCount="0">
+      <legendlayer drawingOrder="22" open="false" checked="Qt::Checked" name="annotation - point" showFeatureCount="0">
         <filegroup open="false" hidden="false">
           <legendlayerfile isInOverview="0" layerid="od_annotationpoint20131203095020392" visible="1"/>
         </filegroup>
       </legendlayer>
     </legendgroup>
-    <legendgroup open="false" checked="Qt::PartiallyChecked" name="Côtes">
-      <legendlayer drawingOrder="24" open="false" checked="Qt::Checked" name="côtes distance" showFeatureCount="0">
+    <legendgroup open="true" checked="Qt::PartiallyChecked" name="Côtes">
+      <legendlayer drawingOrder="23" open="false" checked="Qt::Checked" name="côtes distance" showFeatureCount="0">
         <filegroup open="false" hidden="false">
           <legendlayerfile isInOverview="0" layerid="dimension20130807094904783" visible="1"/>
         </filegroup>
       </legendlayer>
-      <legendlayer drawingOrder="25" open="false" checked="Qt::Checked" name="côtes orientation" showFeatureCount="0">
+      <legendlayer drawingOrder="24" open="false" checked="Qt::Checked" name="côtes orientation" showFeatureCount="0">
         <filegroup open="false" hidden="false">
           <legendlayerfile isInOverview="0" layerid="od_dimension_orientation20131202111155806" visible="1"/>
         </filegroup>
       </legendlayer>
-      <legendlayer drawingOrder="26" open="false" checked="Qt::Unchecked" name="points de construction" showFeatureCount="0">
+      <legendlayer drawingOrder="25" open="false" checked="Qt::Unchecked" name="points de construction" showFeatureCount="0">
         <filegroup open="false" hidden="false">
           <legendlayerfile isInOverview="0" layerid="constructionpoint20130807094904851" visible="0"/>
         </filegroup>
       </legendlayer>
-      <legendlayer drawingOrder="27" open="false" checked="Qt::Unchecked" name="IntersectIt Points" showFeatureCount="0">
+      <legendlayer drawingOrder="26" open="false" checked="Qt::Unchecked" name="IntersectIt Points" showFeatureCount="0">
         <filegroup open="false" hidden="false">
           <legendlayerfile isInOverview="0" layerid="IntersectIt_Points20130618102143276" visible="0"/>
         </filegroup>
       </legendlayer>
-      <legendlayer drawingOrder="28" open="false" checked="Qt::Unchecked" name="IntersectIt Lines" showFeatureCount="0">
+      <legendlayer drawingOrder="27" open="false" checked="Qt::Unchecked" name="IntersectIt Lines" showFeatureCount="0">
         <filegroup open="false" hidden="false">
           <legendlayerfile isInOverview="0" layerid="IntersectIt_Lines20130618102142813" visible="0"/>
         </filegroup>
       </legendlayer>
     </legendgroup>
     <legendgroup open="true" checked="Qt::PartiallyChecked" name="Zones">
-      <legendlayer drawingOrder="64" open="true" checked="Qt::Unchecked" name="dossiers techniques" showFeatureCount="0">
+      <legendlayer drawingOrder="63" open="true" checked="Qt::Unchecked" name="dossiers techniques" showFeatureCount="0">
         <filegroup open="true" hidden="false">
           <legendlayerfile isInOverview="0" layerid="folder20150629160924367" visible="0"/>
         </filegroup>
       </legendlayer>
-      <legendlayer drawingOrder="29" open="false" checked="Qt::Unchecked" name="communes" showFeatureCount="1">
+      <legendlayer drawingOrder="28" open="false" checked="Qt::Unchecked" name="communes" showFeatureCount="1">
         <filegroup open="false" hidden="false">
           <legendlayerfile isInOverview="0" layerid="district20130304110004764" visible="0"/>
         </filegroup>
       </legendlayer>
-      <legendlayer drawingOrder="30" open="true" checked="Qt::Unchecked" name="zones de pressions" showFeatureCount="0">
+      <legendlayer drawingOrder="29" open="true" checked="Qt::Unchecked" name="zones de pressions" showFeatureCount="0">
         <filegroup open="true" hidden="false">
           <legendlayerfile isInOverview="0" layerid="pressurezone20130417133612105" visible="0"/>
         </filegroup>
       </legendlayer>
-      <legendlayer drawingOrder="62" open="true" checked="Qt::Unchecked" name="Zones de consommation" showFeatureCount="0">
+      <legendlayer drawingOrder="61" open="true" checked="Qt::Unchecked" name="Zones de consommation" showFeatureCount="0">
         <filegroup open="true" hidden="false">
           <legendlayerfile isInOverview="0" layerid="vw_consumptionzone20150508135647750" visible="0"/>
         </filegroup>
       </legendlayer>
-      <legendlayer drawingOrder="31" open="true" checked="Qt::Checked" name="folios" showFeatureCount="0">
+      <legendlayer drawingOrder="30" open="true" checked="Qt::Checked" name="folios" showFeatureCount="0">
         <filegroup open="true" hidden="false">
           <legendlayerfile isInOverview="0" layerid="printmap20130304110011400" visible="1"/>
         </filegroup>
       </legendlayer>
-      <legendlayer drawingOrder="32" open="false" checked="Qt::Unchecked" name="zones de protections" showFeatureCount="1">
+      <legendlayer drawingOrder="31" open="false" checked="Qt::Unchecked" name="zones de protections" showFeatureCount="1">
         <filegroup open="false" hidden="false">
           <legendlayerfile isInOverview="0" layerid="protectionzone20130304110011418" visible="0"/>
         </filegroup>
@@ -813,200 +804,200 @@
     </legendgroup>
     <legendgroup open="true" checked="Qt::Unchecked" name="Fond de plan">
       <legendgroup embedded="1" open="false" checked="Qt::Unchecked" name="cadastre" project="../../../data/cadastre/cadastre.qgs"/>
-      <legendlayer drawingOrder="33" open="false" checked="Qt::Unchecked" name="CN - toutes échelles" showFeatureCount="0">
+      <legendlayer drawingOrder="32" open="false" checked="Qt::Unchecked" name="CN - toutes échelles" showFeatureCount="0">
         <filegroup open="false" hidden="false">
           <legendlayerfile isInOverview="0" layerid="Landeskarte_1_25_000___LK2520150306095331254" visible="0"/>
         </filegroup>
       </legendlayer>
-      <legendlayer drawingOrder="34" open="false" checked="Qt::Unchecked" name="CN - 25k" showFeatureCount="0">
+      <legendlayer drawingOrder="33" open="false" checked="Qt::Unchecked" name="CN - 25k" showFeatureCount="0">
         <filegroup open="false" hidden="false">
           <legendlayerfile isInOverview="0" layerid="Landeskarte_1_25_000___LK2520150306095256537" visible="0"/>
         </filegroup>
       </legendlayer>
       <legendgroup open="false" checked="Qt::Unchecked" name="CN"/>
-      <legendlayer drawingOrder="75" open="false" checked="Qt::Unchecked" name="SWISSIMAGE" showFeatureCount="0">
+      <legendlayer drawingOrder="74" open="false" checked="Qt::Unchecked" name="SWISSIMAGE" showFeatureCount="0">
         <filegroup open="false" hidden="false">
           <legendlayerfile isInOverview="0" layerid="SWISSIMAGE20161031083131993" visible="0"/>
         </filegroup>
       </legendlayer>
     </legendgroup>
     <legendgroup open="true" checked="Qt::Unchecked" name="Tables auxiliaires">
-      <legendlayer drawingOrder="71" open="true" checked="Qt::Unchecked" name="protectionzone_type" showFeatureCount="0">
+      <legendlayer drawingOrder="70" open="true" checked="Qt::Unchecked" name="protectionzone_type" showFeatureCount="0">
         <filegroup open="true" hidden="false">
           <legendlayerfile isInOverview="0" layerid="protectionzone_type20160205143014456" visible="0"/>
         </filegroup>
       </legendlayer>
-      <legendlayer drawingOrder="65" open="true" checked="Qt::Unchecked" name="emplacement" showFeatureCount="0">
+      <legendlayer drawingOrder="64" open="true" checked="Qt::Unchecked" name="emplacement" showFeatureCount="0">
         <filegroup open="true" hidden="false">
           <legendlayerfile isInOverview="0" layerid="locationtype20150922082741813" visible="0"/>
         </filegroup>
       </legendlayer>
-      <legendlayer drawingOrder="35" open="true" checked="Qt::Unchecked" name="abonnés - type" showFeatureCount="0">
+      <legendlayer drawingOrder="34" open="true" checked="Qt::Unchecked" name="abonnés - type" showFeatureCount="0">
         <filegroup open="true" hidden="false">
           <legendlayerfile isInOverview="0" layerid="vl_subscriber_type20130304110011480" visible="0"/>
         </filegroup>
       </legendlayer>
-      <legendlayer drawingOrder="36" open="true" checked="Qt::Unchecked" name="conduites - protection" showFeatureCount="0">
+      <legendlayer drawingOrder="35" open="true" checked="Qt::Unchecked" name="conduites - protection" showFeatureCount="0">
         <filegroup open="true" hidden="false">
           <legendlayerfile isInOverview="0" layerid="vl_pipe_protection20130304110005258" visible="0"/>
         </filegroup>
       </legendlayer>
-      <legendlayer drawingOrder="37" open="true" checked="Qt::Unchecked" name="conduites - matériaux" showFeatureCount="0">
+      <legendlayer drawingOrder="36" open="true" checked="Qt::Unchecked" name="conduites - matériaux" showFeatureCount="0">
         <filegroup open="true" hidden="false">
           <legendlayerfile isInOverview="0" layerid="vl_pipe_material20130304110005230" visible="0"/>
         </filegroup>
       </legendlayer>
-      <legendlayer drawingOrder="38" open="true" checked="Qt::Unchecked" name="conduites - mode de pose" showFeatureCount="0">
+      <legendlayer drawingOrder="37" open="true" checked="Qt::Unchecked" name="conduites - mode de pose" showFeatureCount="0">
         <filegroup open="true" hidden="false">
           <legendlayerfile isInOverview="0" layerid="vl_pipe_installmethod20130304110005209" visible="0"/>
         </filegroup>
       </legendlayer>
-      <legendlayer drawingOrder="39" open="true" checked="Qt::Unchecked" name="conduites - fonction" showFeatureCount="0">
+      <legendlayer drawingOrder="38" open="true" checked="Qt::Unchecked" name="conduites - fonction" showFeatureCount="0">
         <filegroup open="true" hidden="false">
           <legendlayerfile isInOverview="0" layerid="vl_pipe_function20130304110005186" visible="0"/>
         </filegroup>
       </legendlayer>
-      <legendlayer drawingOrder="40" open="true" checked="Qt::Unchecked" name="couvercles - Type" showFeatureCount="0">
+      <legendlayer drawingOrder="39" open="true" checked="Qt::Unchecked" name="couvercles - Type" showFeatureCount="0">
         <filegroup open="true" hidden="false">
           <legendlayerfile isInOverview="0" layerid="vl_cover_type20141219115626290" visible="0"/>
         </filegroup>
       </legendlayer>
-      <legendlayer drawingOrder="41" open="true" checked="Qt::Unchecked" name="distributeur" showFeatureCount="0">
+      <legendlayer drawingOrder="40" open="true" checked="Qt::Unchecked" name="distributeur" showFeatureCount="0">
         <filegroup open="true" hidden="false">
           <legendlayerfile isInOverview="0" layerid="distributor20130304114719702" visible="0"/>
         </filegroup>
       </legendlayer>
-      <legendlayer drawingOrder="42" open="true" checked="Qt::Unchecked" name="fuite - cause" showFeatureCount="0">
+      <legendlayer drawingOrder="41" open="true" checked="Qt::Unchecked" name="fuite - cause" showFeatureCount="0">
         <filegroup open="true" hidden="false">
           <legendlayerfile isInOverview="0" layerid="vl_leak_cause20130822081237639" visible="0"/>
         </filegroup>
       </legendlayer>
-      <legendlayer drawingOrder="72" open="true" checked="Qt::Unchecked" name="hydrant_model_inf" showFeatureCount="0">
+      <legendlayer drawingOrder="71" open="true" checked="Qt::Unchecked" name="hydrant_model_inf" showFeatureCount="0">
         <filegroup open="true" hidden="false">
           <legendlayerfile isInOverview="0" layerid="hydrant_model_inf20160205143014472" visible="0"/>
         </filegroup>
       </legendlayer>
-      <legendlayer drawingOrder="73" open="true" checked="Qt::Unchecked" name="hydrant_model_sup" showFeatureCount="0">
+      <legendlayer drawingOrder="72" open="true" checked="Qt::Unchecked" name="hydrant_model_sup" showFeatureCount="0">
         <filegroup open="true" hidden="false">
           <legendlayerfile isInOverview="0" layerid="hydrant_model_sup20160205143014484" visible="0"/>
         </filegroup>
       </legendlayer>
-      <legendlayer drawingOrder="74" open="true" checked="Qt::Unchecked" name="hydrant_output" showFeatureCount="0">
+      <legendlayer drawingOrder="73" open="true" checked="Qt::Unchecked" name="hydrant_output" showFeatureCount="0">
         <filegroup open="true" hidden="false">
           <legendlayerfile isInOverview="0" layerid="hydrant_output20160205143014497" visible="0"/>
         </filegroup>
       </legendlayer>
-      <legendlayer drawingOrder="43" open="true" checked="Qt::Unchecked" name="hydrantes - fournisseur" showFeatureCount="0">
+      <legendlayer drawingOrder="42" open="true" checked="Qt::Unchecked" name="hydrantes - fournisseur" showFeatureCount="0">
         <filegroup open="true" hidden="false">
           <legendlayerfile isInOverview="0" layerid="hydrant_provider20130304110004893" visible="0"/>
         </filegroup>
       </legendlayer>
-      <legendlayer drawingOrder="68" open="true" checked="Qt::Unchecked" name="hydrantes - matériau" showFeatureCount="0">
+      <legendlayer drawingOrder="67" open="true" checked="Qt::Unchecked" name="hydrantes - matériau" showFeatureCount="0">
         <filegroup open="true" hidden="false">
           <legendlayerfile isInOverview="0" layerid="hydrant_material20150925104534891" visible="0"/>
         </filegroup>
       </legendlayer>
-      <legendlayer drawingOrder="44" open="true" checked="Qt::Unchecked" name="lit de pose" showFeatureCount="0">
+      <legendlayer drawingOrder="43" open="true" checked="Qt::Unchecked" name="lit de pose" showFeatureCount="0">
         <filegroup open="true" hidden="false">
           <legendlayerfile isInOverview="0" layerid="vl_bedding20141219112927344" visible="0"/>
         </filegroup>
       </legendlayer>
-      <legendlayer drawingOrder="67" open="true" checked="Qt::Unchecked" name="ouvrage - pompe - mode" showFeatureCount="0">
+      <legendlayer drawingOrder="66" open="true" checked="Qt::Unchecked" name="ouvrage - pompe - mode" showFeatureCount="0">
         <filegroup open="true" hidden="false">
           <legendlayerfile isInOverview="0" layerid="pump_operating20150922083814587" visible="0"/>
         </filegroup>
       </legendlayer>
-      <legendlayer drawingOrder="45" open="true" checked="Qt::Unchecked" name="ouvrage - pompe - type" showFeatureCount="0">
+      <legendlayer drawingOrder="44" open="true" checked="Qt::Unchecked" name="ouvrage - pompe - type" showFeatureCount="0">
         <filegroup open="true" hidden="false">
           <legendlayerfile isInOverview="0" layerid="vl_pumptype20130816140237776" visible="0"/>
         </filegroup>
       </legendlayer>
-      <legendlayer drawingOrder="46" open="true" checked="Qt::Unchecked" name="Ouvrage - rég. de pression - type" showFeatureCount="0">
+      <legendlayer drawingOrder="45" open="true" checked="Qt::Unchecked" name="Ouvrage - rég. de pression - type" showFeatureCount="0">
         <filegroup open="true" hidden="false">
           <legendlayerfile isInOverview="0" layerid="pressurecontrol_type20150203100321270" visible="0"/>
         </filegroup>
       </legendlayer>
-      <legendlayer drawingOrder="47" open="true" checked="Qt::Unchecked" name="Ouvrage - réservoir - type trop plein" showFeatureCount="0">
+      <legendlayer drawingOrder="46" open="true" checked="Qt::Unchecked" name="Ouvrage - réservoir - type trop plein" showFeatureCount="0">
         <filegroup open="true" hidden="false">
           <legendlayerfile isInOverview="0" layerid="vl_overflow20130304170704046" visible="0"/>
         </filegroup>
       </legendlayer>
-      <legendlayer drawingOrder="48" open="true" checked="Qt::Unchecked" name="Ouvrage - réservoir - type incendie" showFeatureCount="0">
+      <legendlayer drawingOrder="47" open="true" checked="Qt::Unchecked" name="Ouvrage - réservoir - type incendie" showFeatureCount="0">
         <filegroup open="true" hidden="false">
           <legendlayerfile isInOverview="0" layerid="vl_tank_firestorage20130304170704030" visible="0"/>
         </filegroup>
       </legendlayer>
-      <legendlayer drawingOrder="49" open="true" checked="Qt::Unchecked" name="Ouvrage - réservoir - type de cuve" showFeatureCount="0">
+      <legendlayer drawingOrder="48" open="true" checked="Qt::Unchecked" name="Ouvrage - réservoir - type de cuve" showFeatureCount="0">
         <filegroup open="true" hidden="false">
           <legendlayerfile isInOverview="0" layerid="vl_cistern20130304110005061" visible="0"/>
         </filegroup>
       </legendlayer>
-      <legendlayer drawingOrder="50" open="true" checked="Qt::Unchecked" name="ouvrage - source - qualité" showFeatureCount="0">
+      <legendlayer drawingOrder="49" open="true" checked="Qt::Unchecked" name="ouvrage - source - qualité" showFeatureCount="0">
         <filegroup open="true" hidden="false">
           <legendlayerfile isInOverview="0" layerid="vl_sourcequality20130820110518810" visible="0"/>
         </filegroup>
       </legendlayer>
-      <legendlayer drawingOrder="51" open="true" checked="Qt::Unchecked" name="ouvrage - source - type" showFeatureCount="0">
+      <legendlayer drawingOrder="50" open="true" checked="Qt::Unchecked" name="ouvrage - source - type" showFeatureCount="0">
         <filegroup open="true" hidden="false">
           <legendlayerfile isInOverview="0" layerid="vl_sourcetype20130820110518791" visible="0"/>
         </filegroup>
       </legendlayer>
-      <legendlayer drawingOrder="52" open="false" checked="Qt::Unchecked" name="pièces d'installation - type" showFeatureCount="0">
+      <legendlayer drawingOrder="51" open="false" checked="Qt::Unchecked" name="pièces d'installation - type" showFeatureCount="0">
         <filegroup open="false" hidden="false">
           <legendlayerfile isInOverview="0" layerid="vl_part_type20140429114640509" visible="0"/>
         </filegroup>
       </legendlayer>
-      <legendlayer drawingOrder="66" open="true" checked="Qt::Unchecked" name="point de référence" showFeatureCount="0">
+      <legendlayer drawingOrder="65" open="true" checked="Qt::Unchecked" name="point de référence" showFeatureCount="0">
         <filegroup open="true" hidden="false">
           <legendlayerfile isInOverview="0" layerid="object_reference20150922083109152" visible="0"/>
         </filegroup>
       </legendlayer>
-      <legendlayer drawingOrder="53" open="true" checked="Qt::Unchecked" name="précision" showFeatureCount="0">
+      <legendlayer drawingOrder="52" open="true" checked="Qt::Unchecked" name="précision" showFeatureCount="0">
         <filegroup open="true" hidden="false">
           <legendlayerfile isInOverview="0" layerid="vl_precision20130304110011372" visible="0"/>
         </filegroup>
       </legendlayer>
-      <legendlayer drawingOrder="54" open="false" checked="Qt::Unchecked" name="précision altimétrique" showFeatureCount="0">
+      <legendlayer drawingOrder="53" open="false" checked="Qt::Unchecked" name="précision altimétrique" showFeatureCount="0">
         <filegroup open="false" hidden="false">
           <legendlayerfile isInOverview="0" layerid="vl_precisionalti20131211161429510" visible="0"/>
         </filegroup>
       </legendlayer>
-      <legendlayer drawingOrder="55" open="true" checked="Qt::Unchecked" name="Télécommande - type" showFeatureCount="0">
+      <legendlayer drawingOrder="54" open="true" checked="Qt::Unchecked" name="Télécommande - type" showFeatureCount="0">
         <filegroup open="true" hidden="false">
           <legendlayerfile isInOverview="0" layerid="remote_type20130304110004987" visible="0"/>
         </filegroup>
       </legendlayer>
-      <legendlayer drawingOrder="56" open="true" checked="Qt::Unchecked" name="Statut" showFeatureCount="0">
+      <legendlayer drawingOrder="55" open="true" checked="Qt::Unchecked" name="Statut" showFeatureCount="0">
         <filegroup open="true" hidden="false">
           <legendlayerfile isInOverview="0" layerid="vl_status20130304110011436" visible="0"/>
         </filegroup>
       </legendlayer>
-      <legendlayer drawingOrder="57" open="false" checked="Qt::Unchecked" name="Type d'eau" showFeatureCount="0">
+      <legendlayer drawingOrder="56" open="false" checked="Qt::Unchecked" name="Type d'eau" showFeatureCount="0">
         <filegroup open="false" hidden="false">
           <legendlayerfile isInOverview="0" layerid="vl_watertype20131217141603877" visible="0"/>
         </filegroup>
       </legendlayer>
-      <legendlayer drawingOrder="63" open="true" checked="Qt::Unchecked" name="vanne - actionnement" showFeatureCount="0">
+      <legendlayer drawingOrder="62" open="true" checked="Qt::Unchecked" name="vanne - actionnement" showFeatureCount="0">
         <filegroup open="true" hidden="false">
           <legendlayerfile isInOverview="0" layerid="valve_actuation20150608112911022" visible="0"/>
         </filegroup>
       </legendlayer>
-      <legendlayer drawingOrder="58" open="true" checked="Qt::Unchecked" name="Vannes - maintenance" showFeatureCount="0">
+      <legendlayer drawingOrder="57" open="true" checked="Qt::Unchecked" name="Vannes - maintenance" showFeatureCount="0">
         <filegroup open="true" hidden="false">
           <legendlayerfile isInOverview="0" layerid="vl_valve_maintenance20130304110011567" visible="0"/>
         </filegroup>
       </legendlayer>
-      <legendlayer drawingOrder="59" open="true" checked="Qt::Unchecked" name="Vannes - type" showFeatureCount="0">
+      <legendlayer drawingOrder="58" open="true" checked="Qt::Unchecked" name="Vannes - type" showFeatureCount="0">
         <filegroup open="true" hidden="false">
           <legendlayerfile isInOverview="0" layerid="vl_valve_type20130304110011685" visible="0"/>
         </filegroup>
       </legendlayer>
-      <legendlayer drawingOrder="60" open="true" checked="Qt::Unchecked" name="Vannes - fonction" showFeatureCount="0">
+      <legendlayer drawingOrder="59" open="true" checked="Qt::Unchecked" name="Vannes - fonction" showFeatureCount="0">
         <filegroup open="true" hidden="false">
           <legendlayerfile isInOverview="0" layerid="vl_valve_function20130304110011544" visible="0"/>
         </filegroup>
       </legendlayer>
-      <legendlayer drawingOrder="61" open="true" checked="Qt::Unchecked" name="Visibilité" showFeatureCount="0">
+      <legendlayer drawingOrder="60" open="true" checked="Qt::Unchecked" name="Visibilité" showFeatureCount="0">
         <filegroup open="true" hidden="false">
           <legendlayerfile isInOverview="0" layerid="vl_visible20130304110011703" visible="0"/>
         </filegroup>
@@ -29902,7 +29893,7 @@ def my_form_open(dialog, layer, feature):
       </edittypes>
       <renderer-v2 forceraster="0" symbollevels="0" type="RuleRenderer" enableorderby="0">
         <rules key="{dbde1c2b-a27d-484e-8dd5-d13dcd527b89}">
-          <rule filter="fk_distributor = 1  and &quot;status_value_en&quot; =  'in use' " key="{f550eef3-fdaa-427b-b415-bd7e8fc25f9e}" label="fonctionel">
+          <rule filter="fk_distributor = 1  and &quot;status_value_en&quot; =  'in use' " key="{f550eef3-fdaa-427b-b415-bd7e8fc25f9e}" label="fonctionnel">
             <rule filter="status_active = 't'" key="{f683634b-6b3e-459a-b735-1e5d0fe53ae9}" label="actif">
               <rule filter="COALESCE( &quot;schema_force_visible&quot;,  &quot;pipe_function_schema_visible&quot;) = 't' AND fk_status != 1307" key="{1db41c6f-d632-42a2-a453-287300377f48}" label="Schématique">
                 <rule filter=" &quot;pipe_function_major&quot;  = 't'" key="{684b69b2-b4e2-49e4-82f1-ea1e9a680e64}" symbol="0" label="principale"/>
@@ -40003,16 +39994,16 @@ def my_form_open(dialog, layer, feature):
               <prop k="horizontal_anchor_point" v="1"/>
               <prop k="joinstyle" v="miter"/>
               <prop k="name" v="line"/>
-              <prop k="offset" v="-0.89999999999999991,-1.60000000000000009"/>
+              <prop k="offset" v="-0.62307692307692286,-1.1076923076923082"/>
               <prop k="offset_map_unit_scale" v="0,0,0,0,0,0"/>
               <prop k="offset_unit" v="MM"/>
               <prop k="outline_color" v="39,158,255,255"/>
               <prop k="outline_style" v="solid"/>
-              <prop k="outline_width" v="0.8"/>
+              <prop k="outline_width" v="0.6"/>
               <prop k="outline_width_map_unit_scale" v="0,0,0,0,0,0"/>
               <prop k="outline_width_unit" v="MM"/>
               <prop k="scale_method" v="diameter"/>
-              <prop k="size" v="2.6"/>
+              <prop k="size" v="1.8"/>
               <prop k="size_map_unit_scale" v="0,0,0,0,0,0"/>
               <prop k="size_unit" v="MM"/>
               <prop k="vertical_anchor_point" v="1"/>
@@ -40023,16 +40014,16 @@ def my_form_open(dialog, layer, feature):
               <prop k="horizontal_anchor_point" v="1"/>
               <prop k="joinstyle" v="miter"/>
               <prop k="name" v="line"/>
-              <prop k="offset" v="0.90000000000000013,-1.59999999999999987"/>
+              <prop k="offset" v="0.62307692307692308,-1.10769230769230731"/>
               <prop k="offset_map_unit_scale" v="0,0,0,0,0,0"/>
               <prop k="offset_unit" v="MM"/>
               <prop k="outline_color" v="39,158,255,255"/>
               <prop k="outline_style" v="solid"/>
-              <prop k="outline_width" v="0.8"/>
+              <prop k="outline_width" v="0.6"/>
               <prop k="outline_width_map_unit_scale" v="0,0,0,0,0,0"/>
               <prop k="outline_width_unit" v="MM"/>
               <prop k="scale_method" v="diameter"/>
-              <prop k="size" v="2.6"/>
+              <prop k="size" v="1.8"/>
               <prop k="size_map_unit_scale" v="0,0,0,0,0,0"/>
               <prop k="size_unit" v="MM"/>
               <prop k="vertical_anchor_point" v="1"/>
@@ -40043,16 +40034,16 @@ def my_form_open(dialog, layer, feature):
               <prop k="horizontal_anchor_point" v="1"/>
               <prop k="joinstyle" v="miter"/>
               <prop k="name" v="line"/>
-              <prop k="offset" v="1.5,1.39999999999999991"/>
+              <prop k="offset" v="1.13846200000000009,0.96923099999999995"/>
               <prop k="offset_map_unit_scale" v="0,0,0,0,0,0"/>
               <prop k="offset_unit" v="MM"/>
               <prop k="outline_color" v="39,158,255,255"/>
               <prop k="outline_style" v="solid"/>
-              <prop k="outline_width" v="0.8"/>
+              <prop k="outline_width" v="0.6"/>
               <prop k="outline_width_map_unit_scale" v="0,0,0,0,0,0"/>
               <prop k="outline_width_unit" v="MM"/>
               <prop k="scale_method" v="diameter"/>
-              <prop k="size" v="2.6"/>
+              <prop k="size" v="1.8"/>
               <prop k="size_map_unit_scale" v="0,0,0,0,0,0"/>
               <prop k="size_unit" v="MM"/>
               <prop k="vertical_anchor_point" v="1"/>
@@ -40063,16 +40054,16 @@ def my_form_open(dialog, layer, feature):
               <prop k="horizontal_anchor_point" v="1"/>
               <prop k="joinstyle" v="bevel"/>
               <prop k="name" v="line"/>
-              <prop k="offset" v="-1.5,1.39999999999999991"/>
+              <prop k="offset" v="-1.038462,0.96923099999999995"/>
               <prop k="offset_map_unit_scale" v="0,0,0,0,0,0"/>
               <prop k="offset_unit" v="MM"/>
               <prop k="outline_color" v="39,158,255,255"/>
               <prop k="outline_style" v="solid"/>
-              <prop k="outline_width" v="0.8"/>
+              <prop k="outline_width" v="0.6"/>
               <prop k="outline_width_map_unit_scale" v="0,0,0,0,0,0"/>
               <prop k="outline_width_unit" v="MM"/>
               <prop k="scale_method" v="diameter"/>
-              <prop k="size" v="2.5"/>
+              <prop k="size" v="1.73077"/>
               <prop k="size_map_unit_scale" v="0,0,0,0,0,0"/>
               <prop k="size_unit" v="MM"/>
               <prop k="vertical_anchor_point" v="1"/>
@@ -56598,758 +56589,6 @@ END
         <fieldstyles/>
       </conditionalstyles>
     </maplayer>
-    <maplayer simplifyAlgorithm="0" minimumScale="100000" maximumScale="1e+08" simplifyDrawingHints="0" readOnly="0" minLabelScale="0" maxLabelScale="1e+08" simplifyDrawingTol="1" geometry="Line" simplifyMaxScale="1" type="vector" hasScaleBasedVisibilityFlag="0" simplifyLocal="1" scaleBasedLabelVisibilityFlag="0">
-      <id>vw_pipe_schema20141208162900166</id>
-      <datasource>service='qwat' sslmode=disable key='id' srid=21781 type=LineStringZ table="qwat_od"."vw_pipe_schema" (geometry) sql=</datasource>
-      <keywordList>
-        <value></value>
-      </keywordList>
-      <layername>conduite impression 5000</layername>
-      <srs>
-        <spatialrefsys>
-          <proj4>+proj=somerc +lat_0=46.95240555555556 +lon_0=7.439583333333333 +k_0=1 +x_0=600000 +y_0=200000 +ellps=bessel +towgs84=674.4,15.1,405.3,0,0,0,0 +units=m +no_defs</proj4>
-          <srsid>1919</srsid>
-          <srid>21781</srid>
-          <authid>EPSG:21781</authid>
-          <description>CH1903 / LV03</description>
-          <projectionacronym>somerc</projectionacronym>
-          <ellipsoidacronym>bessel</ellipsoidacronym>
-          <geographicflag>false</geographicflag>
-        </spatialrefsys>
-      </srs>
-      <provider encoding="UTF-8">postgres</provider>
-      <previewExpression>COALESCE( "id", '&lt;NULL>' )</previewExpression>
-      <vectorjoins>
-        <join hasCustomPrefix="1" joinFieldName="id" customPrefix="pipe_material_" targetFieldName="fk_material" memoryCache="1" joinLayerId="vl_pipe_material20130304110005230"/>
-      </vectorjoins>
-      <layerDependencies/>
-      <expressionfields/>
-      <defaults>
-        <default field="id" expression=""/>
-        <default field="fk_function" expression=""/>
-        <default field="fk_installmethod" expression=""/>
-        <default field="fk_material" expression=""/>
-        <default field="fk_distributor" expression=""/>
-        <default field="fk_precision" expression=""/>
-        <default field="fk_protection" expression=""/>
-        <default field="fk_status" expression=""/>
-        <default field="fk_folder" expression=""/>
-        <default field="year" expression=""/>
-        <default field="year_end" expression=""/>
-        <default field="pressure_nominal" expression=""/>
-        <default field="remark" expression=""/>
-        <default field="fk_district" expression=""/>
-        <default field="fk_pressurezone" expression=""/>
-        <default field="fk_printmap" expression=""/>
-        <default field="_printmaps" expression=""/>
-        <default field="label_2_visible" expression=""/>
-        <default field="label_2_text" expression=""/>
-        <default field="_length2d" expression=""/>
-        <default field="_length3d" expression=""/>
-        <default field="number_of_pipe" expression=""/>
-        <default field="tunnel_or_bridge" expression=""/>
-        <default field="_valve_count" expression=""/>
-        <default field="_valve_closed" expression=""/>
-        <default field="_pressurezone" expression=""/>
-        <default field="_pressurezone_colorcode" expression=""/>
-        <default field="pipe_material_vl_active" expression=""/>
-        <default field="pipe_material_short_fr" expression=""/>
-        <default field="pipe_material_short_en" expression=""/>
-        <default field="pipe_material_short_ro" expression=""/>
-        <default field="pipe_material_value_fr" expression=""/>
-        <default field="pipe_material_value_en" expression=""/>
-        <default field="pipe_material_value_ro" expression=""/>
-        <default field="pipe_material_description_fr" expression=""/>
-        <default field="pipe_material_description_en" expression=""/>
-        <default field="pipe_material_description_ro" expression=""/>
-        <default field="pipe_material__displayname_fr" expression=""/>
-        <default field="pipe_material__displayname_en" expression=""/>
-        <default field="pipe_material__displayname_ro" expression=""/>
-        <default field="pipe_material_diameter" expression=""/>
-        <default field="pipe_material_diameter_nominal" expression=""/>
-        <default field="pipe_material_diameter_internal" expression=""/>
-        <default field="pipe_material_diameter_external" expression=""/>
-        <default field="pipe_material_code_sire" expression=""/>
-        <default field="pipe_material_pressure_nominal" expression=""/>
-        <default field="pipe_material_sdr" expression=""/>
-        <default field="pipe_material_wall_thickness" expression=""/>
-        <default field="pipe_material_sn" expression=""/>
-      </defaults>
-      <map-layer-style-manager current="">
-        <map-layer-style name=""/>
-      </map-layer-style-manager>
-      <edittypes>
-        <edittype widgetv2type="TextEdit" name="id">
-          <widgetv2config IsMultiline="0" fieldEditable="1" constraint="" UseHtml="0" labelOnTop="0" constraintDescription="" notNull="0"/>
-        </edittype>
-        <edittype widgetv2type="TextEdit" name="fk_function">
-          <widgetv2config IsMultiline="0" fieldEditable="1" constraint="" UseHtml="0" labelOnTop="0" constraintDescription="" notNull="0"/>
-        </edittype>
-        <edittype widgetv2type="TextEdit" name="fk_installmethod">
-          <widgetv2config IsMultiline="0" fieldEditable="1" constraint="" UseHtml="0" labelOnTop="0" constraintDescription="" notNull="0"/>
-        </edittype>
-        <edittype widgetv2type="TextEdit" name="fk_material">
-          <widgetv2config IsMultiline="0" fieldEditable="1" constraint="" UseHtml="0" labelOnTop="0" constraintDescription="" notNull="0"/>
-        </edittype>
-        <edittype widgetv2type="TextEdit" name="fk_distributor">
-          <widgetv2config IsMultiline="0" fieldEditable="1" constraint="" UseHtml="0" labelOnTop="0" constraintDescription="" notNull="0"/>
-        </edittype>
-        <edittype widgetv2type="TextEdit" name="fk_precision">
-          <widgetv2config IsMultiline="0" fieldEditable="1" constraint="" UseHtml="0" labelOnTop="0" constraintDescription="" notNull="0"/>
-        </edittype>
-        <edittype widgetv2type="TextEdit" name="fk_protection">
-          <widgetv2config IsMultiline="0" fieldEditable="1" constraint="" UseHtml="0" labelOnTop="0" constraintDescription="" notNull="0"/>
-        </edittype>
-        <edittype widgetv2type="TextEdit" name="fk_status">
-          <widgetv2config IsMultiline="0" fieldEditable="1" constraint="" UseHtml="0" labelOnTop="0" constraintDescription="" notNull="0"/>
-        </edittype>
-        <edittype widgetv2type="TextEdit" name="fk_folder">
-          <widgetv2config IsMultiline="0" fieldEditable="1" constraint="" UseHtml="0" labelOnTop="0" constraintDescription="" notNull="0"/>
-        </edittype>
-        <edittype widgetv2type="TextEdit" name="year">
-          <widgetv2config IsMultiline="0" fieldEditable="1" constraint="" UseHtml="0" labelOnTop="0" constraintDescription="" notNull="0"/>
-        </edittype>
-        <edittype widgetv2type="TextEdit" name="year_end">
-          <widgetv2config IsMultiline="0" fieldEditable="1" constraint="" UseHtml="0" labelOnTop="0" constraintDescription="" notNull="0"/>
-        </edittype>
-        <edittype widgetv2type="TextEdit" name="pressure_nominal">
-          <widgetv2config IsMultiline="0" fieldEditable="1" constraint="" UseHtml="0" labelOnTop="0" constraintDescription="" notNull="0"/>
-        </edittype>
-        <edittype widgetv2type="TextEdit" name="remark">
-          <widgetv2config IsMultiline="0" fieldEditable="1" constraint="" UseHtml="0" labelOnTop="0" constraintDescription="" notNull="0"/>
-        </edittype>
-        <edittype widgetv2type="TextEdit" name="fk_district">
-          <widgetv2config IsMultiline="0" fieldEditable="1" constraint="" UseHtml="0" labelOnTop="0" constraintDescription="" notNull="0"/>
-        </edittype>
-        <edittype widgetv2type="TextEdit" name="fk_pressurezone">
-          <widgetv2config IsMultiline="0" fieldEditable="1" constraint="" UseHtml="0" labelOnTop="0" constraintDescription="" notNull="0"/>
-        </edittype>
-        <edittype widgetv2type="TextEdit" name="fk_printmap">
-          <widgetv2config IsMultiline="0" fieldEditable="1" constraint="" UseHtml="0" labelOnTop="0" constraintDescription="" notNull="0"/>
-        </edittype>
-        <edittype widgetv2type="TextEdit" name="_printmaps">
-          <widgetv2config IsMultiline="0" fieldEditable="1" constraint="" UseHtml="0" labelOnTop="0" constraintDescription="" notNull="0"/>
-        </edittype>
-        <edittype widgetv2type="TextEdit" name="label_2_visible">
-          <widgetv2config IsMultiline="0" fieldEditable="1" constraint="" UseHtml="0" labelOnTop="0" constraintDescription="" notNull="0"/>
-        </edittype>
-        <edittype widgetv2type="TextEdit" name="label_2_text">
-          <widgetv2config IsMultiline="0" fieldEditable="1" constraint="" UseHtml="0" labelOnTop="0" constraintDescription="" notNull="0"/>
-        </edittype>
-        <edittype widgetv2type="TextEdit" name="_length2d">
-          <widgetv2config IsMultiline="0" fieldEditable="1" constraint="" UseHtml="0" labelOnTop="0" constraintDescription="" notNull="0"/>
-        </edittype>
-        <edittype widgetv2type="TextEdit" name="_length3d">
-          <widgetv2config IsMultiline="0" fieldEditable="1" constraint="" UseHtml="0" labelOnTop="0" constraintDescription="" notNull="0"/>
-        </edittype>
-        <edittype widgetv2type="TextEdit" name="number_of_pipe">
-          <widgetv2config IsMultiline="0" fieldEditable="1" constraint="" UseHtml="0" labelOnTop="0" constraintDescription="" notNull="0"/>
-        </edittype>
-        <edittype widgetv2type="TextEdit" name="tunnel_or_bridge">
-          <widgetv2config IsMultiline="0" fieldEditable="1" constraint="" UseHtml="0" labelOnTop="0" constraintDescription="" notNull="0"/>
-        </edittype>
-        <edittype widgetv2type="TextEdit" name="_valve_count">
-          <widgetv2config IsMultiline="0" fieldEditable="1" constraint="" UseHtml="0" labelOnTop="0" constraintDescription="" notNull="0"/>
-        </edittype>
-        <edittype widgetv2type="TextEdit" name="_valve_closed">
-          <widgetv2config IsMultiline="0" fieldEditable="1" constraint="" UseHtml="0" labelOnTop="0" constraintDescription="" notNull="0"/>
-        </edittype>
-        <edittype widgetv2type="TextEdit" name="_pressurezone">
-          <widgetv2config IsMultiline="0" fieldEditable="1" constraint="" UseHtml="0" labelOnTop="0" constraintDescription="" notNull="0"/>
-        </edittype>
-        <edittype widgetv2type="TextEdit" name="_pressurezone_colorcode">
-          <widgetv2config IsMultiline="0" fieldEditable="1" constraint="" UseHtml="0" labelOnTop="0" constraintDescription="" notNull="0"/>
-        </edittype>
-        <edittype widgetv2type="TextEdit" name="pipe_material_vl_active">
-          <widgetv2config IsMultiline="0" fieldEditable="0" constraint="" UseHtml="0" labelOnTop="0" constraintDescription="" notNull="0"/>
-        </edittype>
-        <edittype widgetv2type="TextEdit" name="pipe_material_short_fr">
-          <widgetv2config IsMultiline="0" fieldEditable="0" constraint="" UseHtml="0" labelOnTop="0" constraintDescription="" notNull="0"/>
-        </edittype>
-        <edittype widgetv2type="TextEdit" name="pipe_material_short_en">
-          <widgetv2config IsMultiline="0" fieldEditable="0" constraint="" UseHtml="0" labelOnTop="0" constraintDescription="" notNull="0"/>
-        </edittype>
-        <edittype widgetv2type="TextEdit" name="pipe_material_short_ro">
-          <widgetv2config IsMultiline="0" fieldEditable="0" constraint="" UseHtml="0" labelOnTop="0" constraintDescription="" notNull="0"/>
-        </edittype>
-        <edittype widgetv2type="TextEdit" name="pipe_material_value_fr">
-          <widgetv2config IsMultiline="0" fieldEditable="0" constraint="" UseHtml="0" labelOnTop="0" constraintDescription="" notNull="0"/>
-        </edittype>
-        <edittype widgetv2type="TextEdit" name="pipe_material_value_en">
-          <widgetv2config IsMultiline="0" fieldEditable="0" constraint="" UseHtml="0" labelOnTop="0" constraintDescription="" notNull="0"/>
-        </edittype>
-        <edittype widgetv2type="TextEdit" name="pipe_material_value_ro">
-          <widgetv2config IsMultiline="0" fieldEditable="0" constraint="" UseHtml="0" labelOnTop="0" constraintDescription="" notNull="0"/>
-        </edittype>
-        <edittype widgetv2type="TextEdit" name="pipe_material_description_fr">
-          <widgetv2config IsMultiline="0" fieldEditable="0" constraint="" UseHtml="0" labelOnTop="0" constraintDescription="" notNull="0"/>
-        </edittype>
-        <edittype widgetv2type="TextEdit" name="pipe_material_description_en">
-          <widgetv2config IsMultiline="0" fieldEditable="0" constraint="" UseHtml="0" labelOnTop="0" constraintDescription="" notNull="0"/>
-        </edittype>
-        <edittype widgetv2type="TextEdit" name="pipe_material_description_ro">
-          <widgetv2config IsMultiline="0" fieldEditable="0" constraint="" UseHtml="0" labelOnTop="0" constraintDescription="" notNull="0"/>
-        </edittype>
-        <edittype widgetv2type="TextEdit" name="pipe_material__displayname_fr">
-          <widgetv2config IsMultiline="0" fieldEditable="0" constraint="" UseHtml="0" labelOnTop="0" constraintDescription="" notNull="0"/>
-        </edittype>
-        <edittype widgetv2type="TextEdit" name="pipe_material__displayname_en">
-          <widgetv2config IsMultiline="0" fieldEditable="0" constraint="" UseHtml="0" labelOnTop="0" constraintDescription="" notNull="0"/>
-        </edittype>
-        <edittype widgetv2type="TextEdit" name="pipe_material__displayname_ro">
-          <widgetv2config IsMultiline="0" fieldEditable="0" constraint="" UseHtml="0" labelOnTop="0" constraintDescription="" notNull="0"/>
-        </edittype>
-        <edittype widgetv2type="TextEdit" name="pipe_material_diameter">
-          <widgetv2config IsMultiline="0" fieldEditable="0" constraint="" UseHtml="0" labelOnTop="0" constraintDescription="" notNull="0"/>
-        </edittype>
-        <edittype widgetv2type="TextEdit" name="pipe_material_diameter_nominal">
-          <widgetv2config IsMultiline="0" fieldEditable="0" constraint="" UseHtml="0" labelOnTop="0" constraintDescription="" notNull="0"/>
-        </edittype>
-        <edittype widgetv2type="TextEdit" name="pipe_material_diameter_internal">
-          <widgetv2config IsMultiline="0" fieldEditable="0" constraint="" UseHtml="0" labelOnTop="0" constraintDescription="" notNull="0"/>
-        </edittype>
-        <edittype widgetv2type="TextEdit" name="pipe_material_diameter_external">
-          <widgetv2config IsMultiline="0" fieldEditable="0" constraint="" UseHtml="0" labelOnTop="0" constraintDescription="" notNull="0"/>
-        </edittype>
-        <edittype widgetv2type="TextEdit" name="pipe_material_code_sire">
-          <widgetv2config IsMultiline="0" fieldEditable="0" constraint="" UseHtml="0" labelOnTop="0" constraintDescription="" notNull="0"/>
-        </edittype>
-        <edittype widgetv2type="TextEdit" name="pipe_material_pressure_nominal">
-          <widgetv2config IsMultiline="0" fieldEditable="0" constraint="" UseHtml="0" labelOnTop="0" constraintDescription="" notNull="0"/>
-        </edittype>
-        <edittype widgetv2type="TextEdit" name="pipe_material_sdr">
-          <widgetv2config IsMultiline="0" fieldEditable="0" constraint="" UseHtml="0" labelOnTop="0" constraintDescription="" notNull="0"/>
-        </edittype>
-        <edittype widgetv2type="TextEdit" name="pipe_material_wall_thickness">
-          <widgetv2config IsMultiline="0" fieldEditable="0" constraint="" UseHtml="0" labelOnTop="0" constraintDescription="" notNull="0"/>
-        </edittype>
-        <edittype widgetv2type="TextEdit" name="pipe_material_sn">
-          <widgetv2config IsMultiline="0" fieldEditable="0" constraint="" UseHtml="0" labelOnTop="0" constraintDescription="" notNull="0"/>
-        </edittype>
-      </edittypes>
-      <renderer-v2 forceraster="0" symbollevels="0" type="RuleRenderer" enableorderby="0">
-        <rules key="{6d5d664c-b9fc-488b-8315-60819bd5cb9c}">
-          <rule filter="true" key="{6bc77f86-9668-4ab7-8fb8-7de8905e0db2}" symbol="0"/>
-          <rule scalemaxdenom="6000" filter=" &quot;fk_protection&quot; IS NOT NULL" key="{a95a4acd-9cc7-42c0-8dc2-fa8bdc1dcb90}" symbol="1" scalemindenom="1000" label="protégée"/>
-          <rule scalemaxdenom="6000" filter=" &quot;fk_installmethod&quot;  =4202" key="{a50d0b92-3d13-4426-a8cd-f8ce3a0d442f}" symbol="2" scalemindenom="1" label="chemisée"/>
-        </rules>
-        <symbols>
-          <symbol alpha="1" clip_to_extent="1" type="line" name="0">
-            <layer pass="0" class="SimpleLine" locked="0">
-              <prop k="capstyle" v="square"/>
-              <prop k="color_dd_active" v="1"/>
-              <prop k="color_dd_expression" v="case &#xa;when &quot;fk_status&quot; = 1302 then '217,0,0'&#xa;when &quot;fk_distributor&quot; = 1 then '0,80,255'&#xa; else '40,180,16'&#xa; end"/>
-              <prop k="color_dd_field" v=""/>
-              <prop k="color_dd_useexpr" v="1"/>
-              <prop k="customdash" v="5;2"/>
-              <prop k="customdash_map_unit_scale" v="0,0,0,0,0,0"/>
-              <prop k="customdash_unit" v="MM"/>
-              <prop k="draw_inside_polygon" v="0"/>
-              <prop k="joinstyle" v="bevel"/>
-              <prop k="line_color" v="0,80,255,255"/>
-              <prop k="line_style" v="solid"/>
-              <prop k="line_width" v="0.55"/>
-              <prop k="line_width_unit" v="MM"/>
-              <prop k="offset" v="0"/>
-              <prop k="offset_map_unit_scale" v="0,0,0,0,0,0"/>
-              <prop k="offset_unit" v="MM"/>
-              <prop k="use_custom_dash" v="0"/>
-              <prop k="width_map_unit_scale" v="0,0,0,0,0,0"/>
-              <effect enabled="0" type="effectStack">
-                <effect type="drawSource">
-                  <prop k="blend_mode" v="0"/>
-                  <prop k="draw_mode" v="2"/>
-                  <prop k="enabled" v="1"/>
-                  <prop k="transparency" v="0"/>
-                </effect>
-              </effect>
-            </layer>
-          </symbol>
-          <symbol alpha="1" clip_to_extent="1" type="line" name="1">
-            <layer pass="0" class="SimpleLine" locked="0">
-              <prop k="capstyle" v="flat"/>
-              <prop k="color_dd_active" v="1"/>
-              <prop k="color_dd_expression" v="case &#xa;when &quot;fk_status&quot; = 1302 then '217,0,0,80'&#xa;when &quot;fk_distributor&quot; = 1 then '0,80,255,80'&#xa; else '40,180,16,80'&#xa; end"/>
-              <prop k="color_dd_field" v=""/>
-              <prop k="color_dd_useexpr" v="1"/>
-              <prop k="customdash" v="5;2"/>
-              <prop k="customdash_map_unit_scale" v="0,0,0,0,0,0"/>
-              <prop k="customdash_unit" v="MM"/>
-              <prop k="draw_inside_polygon" v="0"/>
-              <prop k="joinstyle" v="bevel"/>
-              <prop k="line_color" v="0,140,255,70"/>
-              <prop k="line_style" v="solid"/>
-              <prop k="line_width" v="1.4"/>
-              <prop k="line_width_unit" v="MM"/>
-              <prop k="offset" v="0"/>
-              <prop k="offset_map_unit_scale" v="0,0,0,0,0,0"/>
-              <prop k="offset_unit" v="MM"/>
-              <prop k="use_custom_dash" v="0"/>
-              <prop k="width_dd_active" v="0"/>
-              <prop k="width_dd_expression" v="CASE WHEN &quot;pipe_material_diameter&quot; is not NULL&#xa;THEN toreal(COALESCE(&quot;pipe_material_diameter_external&quot;,&quot;pipe_material_diameter_nominal&quot;)) / 900 + 1.2&#xa;ELSE 1.2&#xa;END"/>
-              <prop k="width_dd_field" v=""/>
-              <prop k="width_dd_useexpr" v="1"/>
-              <prop k="width_map_unit_scale" v="0,0,0,0,0,0"/>
-              <effect enabled="0" type="effectStack">
-                <effect type="drawSource">
-                  <prop k="blend_mode" v="0"/>
-                  <prop k="draw_mode" v="2"/>
-                  <prop k="enabled" v="1"/>
-                  <prop k="transparency" v="0"/>
-                </effect>
-              </effect>
-            </layer>
-          </symbol>
-          <symbol alpha="1" clip_to_extent="1" type="line" name="2">
-            <layer pass="0" class="SimpleLine" locked="0">
-              <prop k="capstyle" v="flat"/>
-              <prop k="color_dd_active" v="1"/>
-              <prop k="color_dd_expression" v="case &#xa;when &quot;fk_status&quot; = 1302 then '217,0,0'&#xa;when &quot;fk_distributor&quot; = 1 then '0,80,255'&#xa; else '40,180,16'&#xa; end"/>
-              <prop k="color_dd_field" v=""/>
-              <prop k="color_dd_useexpr" v="1"/>
-              <prop k="customdash" v="5;2"/>
-              <prop k="customdash_map_unit_scale" v="0,0,0,0,0,0"/>
-              <prop k="customdash_unit" v="MM"/>
-              <prop k="draw_inside_polygon" v="0"/>
-              <prop k="joinstyle" v="bevel"/>
-              <prop k="line_color" v="0,140,255,255"/>
-              <prop k="line_style" v="dot"/>
-              <prop k="line_width" v="0.3"/>
-              <prop k="line_width_unit" v="MM"/>
-              <prop k="offset" v="-1.2"/>
-              <prop k="offset_map_unit_scale" v="0,0,0,0,0,0"/>
-              <prop k="offset_unit" v="MM"/>
-              <prop k="use_custom_dash" v="0"/>
-              <prop k="width_map_unit_scale" v="0,0,0,0,0,0"/>
-              <effect enabled="0" type="effectStack">
-                <effect type="transform">
-                  <prop k="draw_mode" v="2"/>
-                  <prop k="enabled" v="1"/>
-                  <prop k="reflect_x" v="0"/>
-                  <prop k="reflect_y" v="0"/>
-                  <prop k="rotation" v="0"/>
-                  <prop k="scale_x" v="1"/>
-                  <prop k="scale_y" v="1"/>
-                  <prop k="shear_x" v="0"/>
-                  <prop k="shear_y" v="0"/>
-                  <prop k="translate_unit" v="MM"/>
-                  <prop k="translate_unit_scale" v="0,0,0,0,0,0"/>
-                  <prop k="translate_x" v="5.55112e-17"/>
-                  <prop k="translate_y" v="1.6"/>
-                </effect>
-              </effect>
-            </layer>
-            <layer pass="0" class="SimpleLine" locked="0">
-              <prop k="capstyle" v="flat"/>
-              <prop k="color_dd_active" v="1"/>
-              <prop k="color_dd_expression" v="case &#xa;when &quot;fk_status&quot; = 1302 then '217,0,0'&#xa;when &quot;fk_distributor&quot; = 1 then '0,80,255'&#xa; else '40,180,16'&#xa; end"/>
-              <prop k="color_dd_field" v=""/>
-              <prop k="color_dd_useexpr" v="1"/>
-              <prop k="customdash" v="5;2"/>
-              <prop k="customdash_map_unit_scale" v="0,0,0,0,0,0"/>
-              <prop k="customdash_unit" v="MM"/>
-              <prop k="draw_inside_polygon" v="0"/>
-              <prop k="joinstyle" v="bevel"/>
-              <prop k="line_color" v="0,140,255,255"/>
-              <prop k="line_style" v="dot"/>
-              <prop k="line_width" v="0.3"/>
-              <prop k="line_width_unit" v="MM"/>
-              <prop k="offset" v="1.2"/>
-              <prop k="offset_map_unit_scale" v="0,0,0,0,0,0"/>
-              <prop k="offset_unit" v="MM"/>
-              <prop k="use_custom_dash" v="0"/>
-              <prop k="width_map_unit_scale" v="0,0,0,0,0,0"/>
-              <effect enabled="0" type="effectStack">
-                <effect type="transform">
-                  <prop k="draw_mode" v="2"/>
-                  <prop k="enabled" v="1"/>
-                  <prop k="reflect_x" v="0"/>
-                  <prop k="reflect_y" v="0"/>
-                  <prop k="rotation" v="0"/>
-                  <prop k="scale_x" v="1"/>
-                  <prop k="scale_y" v="1"/>
-                  <prop k="shear_x" v="0"/>
-                  <prop k="shear_y" v="0"/>
-                  <prop k="translate_unit" v="MM"/>
-                  <prop k="translate_unit_scale" v="0,0,0,0,0,0"/>
-                  <prop k="translate_x" v="0"/>
-                  <prop k="translate_y" v="-1.6"/>
-                </effect>
-              </effect>
-            </layer>
-          </symbol>
-        </symbols>
-        <effect enabled="0" type="effectStack">
-          <effect type="drawSource">
-            <prop k="blend_mode" v="0"/>
-            <prop k="draw_mode" v="2"/>
-            <prop k="enabled" v="1"/>
-            <prop k="transparency" v="0"/>
-          </effect>
-        </effect>
-      </renderer-v2>
-      <labeling type="simple"/>
-      <customproperties>
-        <property key="embeddedWidgets/count" value="0"/>
-        <property key="labeling" value="pal"/>
-        <property key="labeling/addDirectionSymbol" value="false"/>
-        <property key="labeling/angleOffset" value="0"/>
-        <property key="labeling/blendMode" value="0"/>
-        <property key="labeling/bufferBlendMode" value="0"/>
-        <property key="labeling/bufferColorA" value="255"/>
-        <property key="labeling/bufferColorB" value="255"/>
-        <property key="labeling/bufferColorG" value="255"/>
-        <property key="labeling/bufferColorR" value="255"/>
-        <property key="labeling/bufferDraw" value="false"/>
-        <property key="labeling/bufferJoinStyle" value="64"/>
-        <property key="labeling/bufferNoFill" value="false"/>
-        <property key="labeling/bufferSize" value="1"/>
-        <property key="labeling/bufferSizeInMapUnits" value="false"/>
-        <property key="labeling/bufferSizeMapUnitMaxScale" value="0"/>
-        <property key="labeling/bufferSizeMapUnitMinScale" value="0"/>
-        <property key="labeling/bufferSizeMapUnitScale" value="0,0,0,0,0,0"/>
-        <property key="labeling/bufferTransp" value="0"/>
-        <property key="labeling/centroidInside" value="false"/>
-        <property key="labeling/centroidWhole" value="false"/>
-        <property key="labeling/dataDefined/AlwaysShow" value="1~~1~~CASE WHEN  &quot;label_2_visible&quot; = 2 THEN 1 ELSE 0 END~~"/>
-        <property key="labeling/dataDefined/Color" value="1~~1~~case when &quot;fk_distributor&quot; = 1 then '0,80,255'&#xa; else '0,0,0'&#xa; end~~"/>
-        <property key="labeling/dataDefined/Show" value="1~~0~~~~label_2_visible"/>
-        <property key="labeling/decimals" value="3"/>
-        <property key="labeling/displayAll" value="false"/>
-        <property key="labeling/dist" value="0.4"/>
-        <property key="labeling/distInMapUnits" value="false"/>
-        <property key="labeling/distMapUnitMaxScale" value="0"/>
-        <property key="labeling/distMapUnitMinScale" value="0"/>
-        <property key="labeling/distMapUnitScale" value="0,0,0,0,0,0"/>
-        <property key="labeling/drawLabels" value="true"/>
-        <property key="labeling/enabled" value="true"/>
-        <property key="labeling/fieldName" value=" replace( &quot;pipe_material_short_fr&quot;||' ','Inconnu ','')&#xa; ||&#xa; &quot;pipe_material_diameter&quot; &#xa; || COALESCE( ' '||&quot;label_2_text&quot;, '' )&#xa; || CASE &#xa; WHEN &quot;fk_protection&quot; IS NOT NULL &#xa; THEN ' protégée' &#xa; ELSE ''&#xa; END&#xa;|| CASE WHEN &quot;fk_installmethod&quot; =4202 THEN ' chemisée' ELSE '' END"/>
-        <property key="labeling/fitInPolygonOnly" value="false"/>
-        <property key="labeling/fontBold" value="false"/>
-        <property key="labeling/fontCapitals" value="0"/>
-        <property key="labeling/fontFamily" value="Lato"/>
-        <property key="labeling/fontItalic" value="false"/>
-        <property key="labeling/fontLetterSpacing" value="0"/>
-        <property key="labeling/fontLimitPixelSize" value="false"/>
-        <property key="labeling/fontMaxPixelSize" value="10000"/>
-        <property key="labeling/fontMinPixelSize" value="3"/>
-        <property key="labeling/fontSize" value="6"/>
-        <property key="labeling/fontSizeInMapUnits" value="false"/>
-        <property key="labeling/fontSizeMapUnitMaxScale" value="0"/>
-        <property key="labeling/fontSizeMapUnitMinScale" value="0"/>
-        <property key="labeling/fontSizeMapUnitScale" value="0,0,0,0,0,0"/>
-        <property key="labeling/fontStrikeout" value="false"/>
-        <property key="labeling/fontUnderline" value="false"/>
-        <property key="labeling/fontWeight" value="50"/>
-        <property key="labeling/fontWordSpacing" value="0"/>
-        <property key="labeling/formatNumbers" value="false"/>
-        <property key="labeling/isExpression" value="true"/>
-        <property key="labeling/labelOffsetInMapUnits" value="true"/>
-        <property key="labeling/labelOffsetMapUnitMaxScale" value="0"/>
-        <property key="labeling/labelOffsetMapUnitMinScale" value="0"/>
-        <property key="labeling/labelOffsetMapUnitScale" value="0,0,0,0,0,0"/>
-        <property key="labeling/labelPerPart" value="false"/>
-        <property key="labeling/leftDirectionSymbol" value="&lt;"/>
-        <property key="labeling/limitNumLabels" value="false"/>
-        <property key="labeling/maxCurvedCharAngleIn" value="20"/>
-        <property key="labeling/maxCurvedCharAngleOut" value="-20"/>
-        <property key="labeling/maxNumLabels" value="2000"/>
-        <property key="labeling/mergeLines" value="false"/>
-        <property key="labeling/minFeatureSize" value="0"/>
-        <property key="labeling/multilineAlign" value="0"/>
-        <property key="labeling/multilineHeight" value="1"/>
-        <property key="labeling/namedStyle" value="Regular"/>
-        <property key="labeling/obstacle" value="true"/>
-        <property key="labeling/obstacleFactor" value="1"/>
-        <property key="labeling/obstacleType" value="0"/>
-        <property key="labeling/offsetType" value="0"/>
-        <property key="labeling/placeDirectionSymbol" value="0"/>
-        <property key="labeling/placement" value="2"/>
-        <property key="labeling/placementFlags" value="14"/>
-        <property key="labeling/plussign" value="false"/>
-        <property key="labeling/predefinedPositionOrder" value="TR,TL,BR,BL,R,L,TSR,BSR"/>
-        <property key="labeling/preserveRotation" value="true"/>
-        <property key="labeling/previewBkgrdColor" value="#ffffff"/>
-        <property key="labeling/priority" value="5"/>
-        <property key="labeling/quadOffset" value="4"/>
-        <property key="labeling/repeatDistance" value="0"/>
-        <property key="labeling/repeatDistanceMapUnitMaxScale" value="0"/>
-        <property key="labeling/repeatDistanceMapUnitMinScale" value="0"/>
-        <property key="labeling/repeatDistanceMapUnitScale" value="0,0,0,0,0,0"/>
-        <property key="labeling/repeatDistanceUnit" value="1"/>
-        <property key="labeling/reverseDirectionSymbol" value="false"/>
-        <property key="labeling/rightDirectionSymbol" value=">"/>
-        <property key="labeling/scaleMax" value="10000000"/>
-        <property key="labeling/scaleMin" value="1"/>
-        <property key="labeling/scaleVisibility" value="false"/>
-        <property key="labeling/shadowBlendMode" value="6"/>
-        <property key="labeling/shadowColorB" value="0"/>
-        <property key="labeling/shadowColorG" value="0"/>
-        <property key="labeling/shadowColorR" value="0"/>
-        <property key="labeling/shadowDraw" value="false"/>
-        <property key="labeling/shadowOffsetAngle" value="135"/>
-        <property key="labeling/shadowOffsetDist" value="1"/>
-        <property key="labeling/shadowOffsetGlobal" value="true"/>
-        <property key="labeling/shadowOffsetMapUnitMaxScale" value="0"/>
-        <property key="labeling/shadowOffsetMapUnitMinScale" value="0"/>
-        <property key="labeling/shadowOffsetMapUnitScale" value="0,0,0,0,0,0"/>
-        <property key="labeling/shadowOffsetUnits" value="1"/>
-        <property key="labeling/shadowRadius" value="1.5"/>
-        <property key="labeling/shadowRadiusAlphaOnly" value="false"/>
-        <property key="labeling/shadowRadiusMapUnitMaxScale" value="0"/>
-        <property key="labeling/shadowRadiusMapUnitMinScale" value="0"/>
-        <property key="labeling/shadowRadiusMapUnitScale" value="0,0,0,0,0,0"/>
-        <property key="labeling/shadowRadiusUnits" value="1"/>
-        <property key="labeling/shadowScale" value="100"/>
-        <property key="labeling/shadowTransparency" value="30"/>
-        <property key="labeling/shadowUnder" value="0"/>
-        <property key="labeling/shapeBlendMode" value="0"/>
-        <property key="labeling/shapeBorderColorA" value="255"/>
-        <property key="labeling/shapeBorderColorB" value="128"/>
-        <property key="labeling/shapeBorderColorG" value="128"/>
-        <property key="labeling/shapeBorderColorR" value="128"/>
-        <property key="labeling/shapeBorderWidth" value="0"/>
-        <property key="labeling/shapeBorderWidthMapUnitMaxScale" value="0"/>
-        <property key="labeling/shapeBorderWidthMapUnitMinScale" value="0"/>
-        <property key="labeling/shapeBorderWidthMapUnitScale" value="0,0,0,0,0,0"/>
-        <property key="labeling/shapeBorderWidthUnits" value="1"/>
-        <property key="labeling/shapeDraw" value="false"/>
-        <property key="labeling/shapeFillColorA" value="255"/>
-        <property key="labeling/shapeFillColorB" value="255"/>
-        <property key="labeling/shapeFillColorG" value="255"/>
-        <property key="labeling/shapeFillColorR" value="255"/>
-        <property key="labeling/shapeJoinStyle" value="64"/>
-        <property key="labeling/shapeOffsetMapUnitMaxScale" value="0"/>
-        <property key="labeling/shapeOffsetMapUnitMinScale" value="0"/>
-        <property key="labeling/shapeOffsetMapUnitScale" value="0,0,0,0,0,0"/>
-        <property key="labeling/shapeOffsetUnits" value="1"/>
-        <property key="labeling/shapeOffsetX" value="0"/>
-        <property key="labeling/shapeOffsetY" value="0"/>
-        <property key="labeling/shapeRadiiMapUnitMaxScale" value="0"/>
-        <property key="labeling/shapeRadiiMapUnitMinScale" value="0"/>
-        <property key="labeling/shapeRadiiMapUnitScale" value="0,0,0,0,0,0"/>
-        <property key="labeling/shapeRadiiUnits" value="1"/>
-        <property key="labeling/shapeRadiiX" value="0"/>
-        <property key="labeling/shapeRadiiY" value="0"/>
-        <property key="labeling/shapeRotation" value="0"/>
-        <property key="labeling/shapeRotationType" value="0"/>
-        <property key="labeling/shapeSVGFile" value=""/>
-        <property key="labeling/shapeSizeMapUnitMaxScale" value="0"/>
-        <property key="labeling/shapeSizeMapUnitMinScale" value="0"/>
-        <property key="labeling/shapeSizeMapUnitScale" value="0,0,0,0,0,0"/>
-        <property key="labeling/shapeSizeType" value="0"/>
-        <property key="labeling/shapeSizeUnits" value="1"/>
-        <property key="labeling/shapeSizeX" value="0"/>
-        <property key="labeling/shapeSizeY" value="0"/>
-        <property key="labeling/shapeTransparency" value="0"/>
-        <property key="labeling/shapeType" value="0"/>
-        <property key="labeling/substitutions" value="&lt;substitutions/>"/>
-        <property key="labeling/textColorA" value="255"/>
-        <property key="labeling/textColorB" value="255"/>
-        <property key="labeling/textColorG" value="80"/>
-        <property key="labeling/textColorR" value="0"/>
-        <property key="labeling/textTransp" value="0"/>
-        <property key="labeling/upsidedownLabels" value="0"/>
-        <property key="labeling/useSubstitutions" value="false"/>
-        <property key="labeling/wrapChar" value=""/>
-        <property key="labeling/xOffset" value="0"/>
-        <property key="labeling/yOffset" value="0"/>
-        <property key="labeling/zIndex" value="0"/>
-        <property key="variableNames" value="_fields_"/>
-        <property key="variableValues" value=""/>
-      </customproperties>
-      <blendMode>0</blendMode>
-      <featureBlendMode>0</featureBlendMode>
-      <layerTransparency>0</layerTransparency>
-      <displayfield>id</displayfield>
-      <label>0</label>
-      <labelattributes>
-        <label fieldname="" text="Label"/>
-        <family fieldname="" name="Ubuntu"/>
-        <size fieldname="" units="pt" value="12"/>
-        <bold fieldname="" on="0"/>
-        <italic fieldname="" on="0"/>
-        <underline fieldname="" on="0"/>
-        <strikeout fieldname="" on="0"/>
-        <color fieldname="" red="0" blue="0" green="0"/>
-        <x fieldname=""/>
-        <y fieldname=""/>
-        <offset x="0" y="0" units="pt" yfieldname="" xfieldname=""/>
-        <angle fieldname="" value="0" auto="0"/>
-        <alignment fieldname="" value="center"/>
-        <buffercolor fieldname="" red="255" blue="255" green="255"/>
-        <buffersize fieldname="" units="pt" value="1"/>
-        <bufferenabled fieldname="" on=""/>
-        <multilineenabled fieldname="" on=""/>
-        <selectedonly on=""/>
-      </labelattributes>
-      <SingleCategoryDiagramRenderer diagramType="Pie" sizeLegend="0" attributeLegend="1">
-        <DiagramCategory penColor="#000000" labelPlacementMethod="XHeight" penWidth="0" diagramOrientation="Up" sizeScale="0,0,0,0,0,0" minimumSize="0" barWidth="5" penAlpha="255" maxScaleDenominator="1e+08" backgroundColor="#ffffff" transparency="0" width="15" scaleDependency="Area" backgroundAlpha="255" angleOffset="1440" scaleBasedVisibility="0" enabled="0" height="15" lineSizeScale="0,0,0,0,0,0" sizeType="MM" lineSizeType="MM" minScaleDenominator="100000">
-          <fontProperties description="Cantarell,11,-1,5,50,0,0,0,0,0" style=""/>
-          <attribute field="" color="#000000" label=""/>
-        </DiagramCategory>
-        <symbol alpha="1" clip_to_extent="1" type="marker" name="sizeSymbol">
-          <layer pass="0" class="SimpleMarker" locked="0">
-            <prop k="angle" v="0"/>
-            <prop k="color" v="255,0,0,255"/>
-            <prop k="horizontal_anchor_point" v="1"/>
-            <prop k="joinstyle" v="bevel"/>
-            <prop k="name" v="circle"/>
-            <prop k="offset" v="0,0"/>
-            <prop k="offset_map_unit_scale" v="0,0,0,0,0,0"/>
-            <prop k="offset_unit" v="MM"/>
-            <prop k="outline_color" v="0,0,0,255"/>
-            <prop k="outline_style" v="solid"/>
-            <prop k="outline_width" v="0"/>
-            <prop k="outline_width_map_unit_scale" v="0,0,0,0,0,0"/>
-            <prop k="outline_width_unit" v="MM"/>
-            <prop k="scale_method" v="diameter"/>
-            <prop k="size" v="2"/>
-            <prop k="size_map_unit_scale" v="0,0,0,0,0,0"/>
-            <prop k="size_unit" v="MM"/>
-            <prop k="vertical_anchor_point" v="1"/>
-          </layer>
-        </symbol>
-      </SingleCategoryDiagramRenderer>
-      <DiagramLayerSettings yPosColumn="-1" showColumn="0" linePlacementFlags="10" placement="2" dist="0" xPosColumn="-1" priority="0" obstacle="0" zIndex="0" showAll="1"/>
-      <annotationform>.</annotationform>
-      <aliases>
-        <alias field="id" index="0" name=""/>
-        <alias field="fk_function" index="1" name=""/>
-        <alias field="fk_installmethod" index="2" name=""/>
-        <alias field="fk_material" index="3" name=""/>
-        <alias field="fk_distributor" index="4" name=""/>
-        <alias field="fk_precision" index="5" name=""/>
-        <alias field="fk_protection" index="6" name=""/>
-        <alias field="fk_status" index="7" name=""/>
-        <alias field="fk_folder" index="8" name=""/>
-        <alias field="year" index="9" name=""/>
-        <alias field="year_end" index="10" name=""/>
-        <alias field="pressure_nominal" index="11" name=""/>
-        <alias field="remark" index="12" name=""/>
-        <alias field="fk_district" index="13" name=""/>
-        <alias field="fk_pressurezone" index="14" name=""/>
-        <alias field="fk_printmap" index="15" name=""/>
-        <alias field="_printmaps" index="16" name=""/>
-        <alias field="label_2_visible" index="17" name=""/>
-        <alias field="label_2_text" index="18" name=""/>
-        <alias field="_length2d" index="19" name=""/>
-        <alias field="_length3d" index="20" name=""/>
-        <alias field="number_of_pipe" index="21" name=""/>
-        <alias field="tunnel_or_bridge" index="22" name=""/>
-        <alias field="_valve_count" index="23" name=""/>
-        <alias field="_valve_closed" index="24" name=""/>
-        <alias field="_pressurezone" index="25" name=""/>
-        <alias field="_pressurezone_colorcode" index="26" name=""/>
-        <alias field="pipe_material_vl_active" index="27" name=""/>
-        <alias field="pipe_material_short_fr" index="28" name=""/>
-        <alias field="pipe_material_short_en" index="29" name=""/>
-        <alias field="pipe_material_short_ro" index="30" name=""/>
-        <alias field="pipe_material_value_fr" index="31" name=""/>
-        <alias field="pipe_material_value_en" index="32" name=""/>
-        <alias field="pipe_material_value_ro" index="33" name=""/>
-        <alias field="pipe_material_description_fr" index="34" name=""/>
-        <alias field="pipe_material_description_en" index="35" name=""/>
-        <alias field="pipe_material_description_ro" index="36" name=""/>
-        <alias field="pipe_material__displayname_fr" index="37" name=""/>
-        <alias field="pipe_material__displayname_en" index="38" name=""/>
-        <alias field="pipe_material__displayname_ro" index="39" name=""/>
-        <alias field="pipe_material_diameter" index="40" name=""/>
-        <alias field="pipe_material_diameter_nominal" index="41" name=""/>
-        <alias field="pipe_material_diameter_internal" index="42" name=""/>
-        <alias field="pipe_material_diameter_external" index="43" name=""/>
-        <alias field="pipe_material_code_sire" index="44" name=""/>
-        <alias field="pipe_material_pressure_nominal" index="45" name=""/>
-        <alias field="pipe_material_sdr" index="46" name=""/>
-        <alias field="pipe_material_wall_thickness" index="47" name=""/>
-        <alias field="pipe_material_sn" index="48" name=""/>
-      </aliases>
-      <excludeAttributesWMS/>
-      <excludeAttributesWFS/>
-      <attributeactions default="-1"/>
-      <attributetableconfig actionWidgetStyle="dropDown" sortExpression="" sortOrder="0">
-        <columns>
-          <column width="-1" hidden="0" type="field" name="id"/>
-          <column width="-1" hidden="0" type="field" name="fk_function"/>
-          <column width="-1" hidden="0" type="field" name="fk_installmethod"/>
-          <column width="-1" hidden="0" type="field" name="fk_material"/>
-          <column width="-1" hidden="0" type="field" name="fk_distributor"/>
-          <column width="-1" hidden="0" type="field" name="fk_precision"/>
-          <column width="-1" hidden="0" type="field" name="fk_protection"/>
-          <column width="-1" hidden="0" type="field" name="fk_status"/>
-          <column width="-1" hidden="0" type="field" name="fk_folder"/>
-          <column width="-1" hidden="0" type="field" name="year"/>
-          <column width="-1" hidden="0" type="field" name="year_end"/>
-          <column width="-1" hidden="0" type="field" name="pressure_nominal"/>
-          <column width="-1" hidden="0" type="field" name="remark"/>
-          <column width="-1" hidden="0" type="field" name="fk_district"/>
-          <column width="-1" hidden="0" type="field" name="fk_pressurezone"/>
-          <column width="-1" hidden="0" type="field" name="fk_printmap"/>
-          <column width="-1" hidden="0" type="field" name="_printmaps"/>
-          <column width="-1" hidden="0" type="field" name="label_2_visible"/>
-          <column width="-1" hidden="0" type="field" name="label_2_text"/>
-          <column width="-1" hidden="0" type="field" name="_length2d"/>
-          <column width="-1" hidden="0" type="field" name="_length3d"/>
-          <column width="-1" hidden="0" type="field" name="number_of_pipe"/>
-          <column width="-1" hidden="0" type="field" name="tunnel_or_bridge"/>
-          <column width="-1" hidden="0" type="field" name="_valve_count"/>
-          <column width="-1" hidden="0" type="field" name="_valve_closed"/>
-          <column width="-1" hidden="0" type="field" name="_pressurezone"/>
-          <column width="-1" hidden="0" type="field" name="_pressurezone_colorcode"/>
-          <column width="-1" hidden="0" type="field" name="pipe_material_vl_active"/>
-          <column width="-1" hidden="0" type="field" name="pipe_material_short_fr"/>
-          <column width="-1" hidden="0" type="field" name="pipe_material_short_en"/>
-          <column width="-1" hidden="0" type="field" name="pipe_material_short_ro"/>
-          <column width="-1" hidden="0" type="field" name="pipe_material_value_fr"/>
-          <column width="-1" hidden="0" type="field" name="pipe_material_value_en"/>
-          <column width="-1" hidden="0" type="field" name="pipe_material_value_ro"/>
-          <column width="-1" hidden="0" type="field" name="pipe_material_description_fr"/>
-          <column width="-1" hidden="0" type="field" name="pipe_material_description_en"/>
-          <column width="-1" hidden="0" type="field" name="pipe_material_description_ro"/>
-          <column width="-1" hidden="0" type="field" name="pipe_material__displayname_fr"/>
-          <column width="-1" hidden="0" type="field" name="pipe_material__displayname_en"/>
-          <column width="-1" hidden="0" type="field" name="pipe_material__displayname_ro"/>
-          <column width="-1" hidden="0" type="field" name="pipe_material_diameter"/>
-          <column width="-1" hidden="0" type="field" name="pipe_material_diameter_nominal"/>
-          <column width="-1" hidden="0" type="field" name="pipe_material_diameter_internal"/>
-          <column width="-1" hidden="0" type="field" name="pipe_material_diameter_external"/>
-          <column width="-1" hidden="0" type="field" name="pipe_material_code_sire"/>
-          <column width="-1" hidden="0" type="field" name="pipe_material_pressure_nominal"/>
-          <column width="-1" hidden="0" type="field" name="pipe_material_sdr"/>
-          <column width="-1" hidden="0" type="field" name="pipe_material_wall_thickness"/>
-          <column width="-1" hidden="0" type="field" name="pipe_material_sn"/>
-          <column width="-1" hidden="1" type="actions"/>
-        </columns>
-      </attributetableconfig>
-      <editform>.</editform>
-      <editforminit/>
-      <editforminitcodesource>0</editforminitcodesource>
-      <editforminitfilepath>.</editforminitfilepath>
-      <editforminitcode><![CDATA[# -*- coding: utf-8 -*-
-"""
-QGIS forms can have a Python function that is called when the form is
-opened.
-
-Use this function to add extra logic to your forms.
-
-Enter the name of the function in the "Python Init function"
-field.
-An example follows:
-"""
-from PyQt4.QtGui import QWidget
-
-def my_form_open(dialog, layer, feature):
-	geom = feature.geometry()
-	control = dialog.findChild(QWidget, "MyLineEdit")
-]]></editforminitcode>
-      <featformsuppress>0</featformsuppress>
-      <editorlayout>generatedlayout</editorlayout>
-      <widgets/>
-      <conditionalstyles>
-        <rowstyles/>
-        <fieldstyles/>
-      </conditionalstyles>
-    </maplayer>
     <maplayer simplifyAlgorithm="0" minimumScale="0" maximumScale="1e+08" simplifyDrawingHints="0" readOnly="0" minLabelScale="0" maxLabelScale="1e+08" simplifyDrawingTol="1" geometry="Line" simplifyMaxScale="1" type="vector" hasScaleBasedVisibilityFlag="0" simplifyLocal="1" scaleBasedLabelVisibilityFlag="0">
       <id>vw_pipe_schema_visibleitems20141127154708843</id>
       <datasource>service='qwat' sslmode=disable key='id' srid=21781 type=LineStringZ table="qwat_od"."vw_pipe_schema_visibleitems" (geometry) sql=</datasource>
@@ -59435,21 +58674,21 @@ def closeProject():
         <checked-legend-node id="{7c5fde76-05d7-4d4a-9eaa-953db28fbe87}"/>
         <checked-legend-node id="{013429dc-a1cd-4a17-904a-6550a0175046}"/>
         <checked-legend-node id="{1c3be22e-50cf-4ddb-a382-cb79acc30446}"/>
-        <checked-legend-node id="{2ce95337-6d17-4772-a67e-31f016923af4}"/>
         <checked-legend-node id="{2513a8b8-a110-4727-854c-6084f64e3bdf}"/>
-        <checked-legend-node id="{6c5ec343-05d3-4fcd-8dc1-283232838086}"/>
+        <checked-legend-node id="{2ce95337-6d17-4772-a67e-31f016923af4}"/>
         <checked-legend-node id="{af5a1df4-2d61-4c6c-9951-0f6f900354d9}"/>
+        <checked-legend-node id="{6c5ec343-05d3-4fcd-8dc1-283232838086}"/>
         <checked-legend-node id="{ab1fe7d1-2f11-4eea-915b-f4a08a217886}"/>
-        <checked-legend-node id="{ca06b6f2-f1ee-4958-b79a-6cb6cbc2059b}"/>
         <checked-legend-node id="{75060a73-107d-4ace-bc35-d573de40488f}"/>
+        <checked-legend-node id="{ca06b6f2-f1ee-4958-b79a-6cb6cbc2059b}"/>
         <checked-legend-node id="{e9048c41-9d67-475a-8909-a027412c34d1}"/>
         <checked-legend-node id="{7d0cfa7a-eaf4-499a-b977-1238b90ca15f}"/>
         <checked-legend-node id="{f550eef3-fdaa-427b-b415-bd7e8fc25f9e}"/>
         <checked-legend-node id="{d1bbbb53-b702-4d56-9f8b-ccf8029e5318}"/>
         <checked-legend-node id="{03ff9811-2539-4b32-b396-20796c2639bf}"/>
         <checked-legend-node id="{846076c3-b88b-4391-801a-578d0abcdaf9}"/>
-        <checked-legend-node id="{fb522923-eeee-47bb-8352-65a3d5637c4c}"/>
         <checked-legend-node id="{6f5c08e7-bf93-4eee-94df-3f749becb926}"/>
+        <checked-legend-node id="{fb522923-eeee-47bb-8352-65a3d5637c4c}"/>
         <checked-legend-node id="{684b69b2-b4e2-49e4-82f1-ea1e9a680e64}"/>
         <checked-legend-node id="{59ae2c57-00c7-4afe-bfba-16af06381694}"/>
         <checked-legend-node id="{1d54e4f9-8261-4fb7-ab45-581756bf08a2}"/>
@@ -59465,9 +58704,9 @@ def closeProject():
         <checked-legend-node id="{ad349920-d2f8-4ac3-ae12-639c93ed9224}"/>
         <checked-legend-node id="{835c4cad-787b-45b7-b242-516a4da8a7f7}"/>
         <checked-legend-node id="{9486a529-9a4e-4a3c-83fe-86f6f93102c0}"/>
-        <checked-legend-node id="{2e14d53a-6d2f-40b3-bf3b-4f32112e3d59}"/>
         <checked-legend-node id="{5b970fd5-5c37-4865-81a5-cab18c5fb58c}"/>
         <checked-legend-node id="{85a03431-ffdc-4bd4-9796-2113d60c4125}"/>
+        <checked-legend-node id="{2e14d53a-6d2f-40b3-bf3b-4f32112e3d59}"/>
         <checked-legend-node id="{46c7536a-ac7b-4e7b-afe6-33f9fee2f171}"/>
         <checked-legend-node id="{d0b9168b-e603-49dd-8c84-e17551131f81}"/>
         <checked-legend-node id="{1f73b079-4d8c-4982-b2ab-6e9b5756b800}"/>
@@ -59568,7 +58807,6 @@ def closeProject():
     </visibility-preset>
     <visibility-preset name="impression 5000">
       <layer style="" id="hydrantes_copy20160127124839887"/>
-      <layer style="" id="vw_pipe_schema20141208162900166"/>
       <layer style="" id="ouvrage_copy20160125132737527"/>
       <layer style="" id="vannes_copy20141127160745910"/>
       <layer style="" id="printmap20130304110011400"/>
@@ -59634,7 +58872,6 @@ def closeProject():
       </checked-legend-nodes>
     </visibility-preset>
     <visibility-preset name="minimap 1000">
-      <layer style="" id="vw_pipe_schema20141208162900166"/>
       <layer style="automatic labeling" id="ouvrage_copy20160125132737527"/>
       <layer style="" id="vannes_copy20141127160745910"/>
       <layer style="" id="télécommande_copy20160127112146958"/>
