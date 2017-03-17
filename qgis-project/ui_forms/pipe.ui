@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>742</width>
-    <height>648</height>
+    <width>943</width>
+    <height>639</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -15,7 +15,14 @@
   </property>
   <layout class="QGridLayout" name="gridLayout_3">
    <item row="11" column="0">
-    <widget class="QPlainTextEdit" name="remark"/>
+    <widget class="QPlainTextEdit" name="remark">
+     <property name="toolTip">
+      <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Commentaire général sur la conduite&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+     </property>
+     <property name="autoFillBackground">
+      <bool>false</bool>
+     </property>
+    </widget>
    </item>
    <item row="12" column="0">
     <widget class="QDialogButtonBox" name="buttonBox">
@@ -29,12 +36,6 @@
    </item>
    <item row="0" column="0">
     <widget class="QTabWidget" name="tabWidget">
-     <property name="sizePolicy">
-      <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
-       <horstretch>0</horstretch>
-       <verstretch>0</verstretch>
-      </sizepolicy>
-     </property>
      <property name="currentIndex">
       <number>0</number>
      </property>
@@ -42,8 +43,8 @@
       <attribute name="title">
        <string>Général</string>
       </attribute>
-      <layout class="QHBoxLayout" name="horizontalLayout">
-       <item>
+      <layout class="QGridLayout" name="gridLayout_2">
+       <item row="0" column="0">
         <widget class="QWidget" name="widget" native="true">
          <layout class="QFormLayout" name="formLayout_4">
           <property name="fieldGrowthPolicy">
@@ -60,12 +61,6 @@
            <widget class="QLineEdit" name="id">
             <property name="enabled">
              <bool>true</bool>
-            </property>
-            <property name="sizePolicy">
-             <sizepolicy hsizetype="Preferred" vsizetype="Fixed">
-              <horstretch>0</horstretch>
-              <verstretch>0</verstretch>
-             </sizepolicy>
             </property>
             <property name="readOnly">
              <bool>true</bool>
@@ -95,13 +90,20 @@
           </item>
           <item row="3" column="0">
            <widget class="QLabel" name="label_7">
+            <property name="toolTip">
+             <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Année (obligatoire)&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+            </property>
             <property name="text">
              <string>Année</string>
             </property>
            </widget>
           </item>
           <item row="3" column="1">
-           <widget class="QLineEdit" name="year"/>
+           <widget class="QLineEdit" name="year">
+            <property name="toolTip">
+             <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Année (&lt;span style=&quot; font-weight:600;&quot;&gt;obligatoire&lt;/span&gt;)&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+            </property>
+           </widget>
           </item>
           <item row="5" column="0" colspan="2">
            <widget class="QCheckBox" name="tunnel_or_bridge">
@@ -123,14 +125,7 @@
            </widget>
           </item>
           <item row="2" column="1">
-           <widget class="QgsRelationReferenceWidget" name="fk_folder">
-            <property name="minimumSize">
-             <size>
-              <width>0</width>
-              <height>35</height>
-             </size>
-            </property>
-           </widget>
+           <widget class="QgsRelationReferenceWidget" name="fk_folder"/>
           </item>
           <item row="4" column="1">
            <widget class="QLineEdit" name="year_rehabilitation"/>
@@ -145,20 +140,7 @@
          </layout>
         </widget>
        </item>
-       <item>
-        <widget class="Line" name="line_3">
-         <property name="sizePolicy">
-          <sizepolicy hsizetype="Preferred" vsizetype="Minimum">
-           <horstretch>0</horstretch>
-           <verstretch>0</verstretch>
-          </sizepolicy>
-         </property>
-         <property name="orientation">
-          <enum>Qt::Vertical</enum>
-         </property>
-        </widget>
-       </item>
-       <item>
+       <item row="0" column="2">
         <widget class="QWidget" name="widget_2" native="true">
          <property name="minimumSize">
           <size>
@@ -179,6 +161,9 @@
           </item>
           <item row="0" column="1">
            <widget class="QComboBox" name="fk_function">
+            <property name="toolTip">
+             <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Fonction de la conduite (&lt;span style=&quot; font-weight:600;&quot;&gt;obligatoire&lt;/span&gt;)&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+            </property>
             <property name="editable">
              <bool>false</bool>
             </property>
@@ -196,6 +181,9 @@
           </item>
           <item row="1" column="1">
            <widget class="QComboBox" name="fk_status">
+            <property name="toolTip">
+             <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Statut de la conduite (&lt;span style=&quot; font-weight:600;&quot;&gt;obligatoire&lt;/span&gt;)&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+            </property>
             <property name="editable">
              <bool>false</bool>
             </property>
@@ -211,70 +199,69 @@
             </property>
            </widget>
           </item>
-          <item row="4" column="0">
+          <item row="2" column="1">
+           <widget class="QgsRelationReferenceWidget" name="fk_material">
+            <property name="toolTip">
+             <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Matériau de la conduite (&lt;span style=&quot; font-weight:600;&quot;&gt;obligatoire&lt;/span&gt;)&lt;/p&gt;&lt;p&gt;pré- filtre possibles par type de matériaux et diamètre.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+            </property>
+           </widget>
+          </item>
+          <item row="3" column="0">
            <widget class="QLabel" name="label_19">
             <property name="text">
              <string>Mode de pose</string>
             </property>
            </widget>
           </item>
-          <item row="4" column="1">
+          <item row="3" column="1">
            <widget class="QComboBox" name="fk_installmethod">
+            <property name="toolTip">
+             <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Mode de pose (&lt;span style=&quot; font-weight:600;&quot;&gt;obligatoire&lt;/span&gt;)&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+            </property>
             <property name="sizeAdjustPolicy">
              <enum>QComboBox::AdjustToContents</enum>
             </property>
            </widget>
           </item>
-          <item row="5" column="0">
+          <item row="4" column="0">
            <widget class="QLabel" name="label_20">
             <property name="text">
              <string>Protection</string>
             </property>
            </widget>
           </item>
-          <item row="5" column="1">
+          <item row="4" column="1">
            <widget class="QComboBox" name="fk_protection">
+            <property name="toolTip">
+             <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Protection (&lt;span style=&quot; font-weight:600;&quot;&gt;obligatoire&lt;/span&gt;)&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+            </property>
             <property name="sizeAdjustPolicy">
              <enum>QComboBox::AdjustToContents</enum>
             </property>
            </widget>
           </item>
-          <item row="6" column="0">
+          <item row="5" column="0">
            <widget class="QLabel" name="label_26">
             <property name="text">
              <string>Lit de pose</string>
             </property>
            </widget>
           </item>
-          <item row="6" column="1">
-           <widget class="QComboBox" name="fk_bedding"/>
-          </item>
-          <item row="2" column="1">
-           <widget class="QgsRelationReferenceWidget" name="fk_material">
-            <property name="sizePolicy">
-             <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
-              <horstretch>0</horstretch>
-              <verstretch>0</verstretch>
-             </sizepolicy>
-            </property>
-            <property name="minimumSize">
-             <size>
-              <width>100</width>
-              <height>35</height>
-             </size>
-            </property>
-            <property name="baseSize">
-             <size>
-              <width>100</width>
-              <height>30</height>
-             </size>
-            </property>
+          <item row="5" column="1">
+           <widget class="QComboBox" name="fk_bedding">
             <property name="toolTip">
-             <string>Choisir un matériaux de conduite (filtrage par matériaux / diamètre</string>
+             <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Lit de pose (&lt;span style=&quot; font-weight:600;&quot;&gt;obligatoire&lt;/span&gt;)&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
             </property>
            </widget>
           </item>
          </layout>
+        </widget>
+       </item>
+       <item row="0" column="1">
+        <widget class="Line" name="line_3">
+         <property name="orientation">
+          <enum>Qt::Vertical</enum>
+         </property>
         </widget>
        </item>
       </layout>
@@ -332,9 +319,6 @@
        </item>
        <item row="0" column="0">
         <widget class="QLabel" name="label_14">
-         <property name="contextMenuPolicy">
-          <enum>Qt::CustomContextMenu</enum>
-         </property>
          <property name="text">
           <string>Qualité eau</string>
          </property>
@@ -551,6 +535,9 @@
           </item>
           <item row="5" column="1">
            <widget class="QComboBox" name="fk_precision">
+            <property name="toolTip">
+             <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Précision géométrique de la localisation XY (&lt;span style=&quot; font-weight:600;&quot;&gt;obligatoire&lt;/span&gt;)&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+            </property>
             <property name="sizeAdjustPolicy">
              <enum>QComboBox::AdjustToContents</enum>
             </property>
@@ -664,6 +651,9 @@
          <layout class="QGridLayout" name="gridLayout_6">
           <item row="0" column="1">
            <widget class="QComboBox" name="schema_force_visible">
+            <property name="toolTip">
+             <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Permet de forcer la visibilité sur le plan schématique&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+            </property>
             <property name="editable">
              <bool>false</bool>
             </property>
@@ -714,6 +704,9 @@
           </item>
           <item row="3" column="1">
            <widget class="QgsRelationReferenceWidget" name="fk_parent">
+            <property name="toolTip">
+             <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Permet d'associer cette conduite à une autre pour les agréger dans le rendu schématique&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+            </property>
             <property name="embedForm" stdset="0">
              <bool>false</bool>
             </property>
@@ -772,12 +765,23 @@
        <item row="0" column="0">
         <layout class="QVBoxLayout" name="verticalLayout">
          <item>
-          <widget class="QListWidget" name="fk_locationtype"/>
+          <widget class="QListWidget" name="fk_locationtype">
+           <property name="toolTip">
+            <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Emplacement de la conduite&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+           </property>
+          </widget>
          </item>
         </layout>
        </item>
       </layout>
      </widget>
+    </widget>
+   </item>
+   <item row="1" column="0">
+    <widget class="QLabel" name="label_28">
+     <property name="text">
+      <string>Commentaire sur la conduite:</string>
+     </property>
     </widget>
    </item>
   </layout>
