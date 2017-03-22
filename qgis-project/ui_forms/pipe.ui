@@ -15,7 +15,14 @@
   </property>
   <layout class="QGridLayout" name="gridLayout_3">
    <item row="11" column="0">
-    <widget class="QPlainTextEdit" name="remark"/>
+    <widget class="QPlainTextEdit" name="remark">
+     <property name="toolTip">
+      <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Commentaire général sur la conduite&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+     </property>
+     <property name="autoFillBackground">
+      <bool>false</bool>
+     </property>
+    </widget>
    </item>
    <item row="12" column="0">
     <widget class="QDialogButtonBox" name="buttonBox">
@@ -83,13 +90,20 @@
           </item>
           <item row="3" column="0">
            <widget class="QLabel" name="label_7">
+            <property name="toolTip">
+             <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Année (obligatoire)&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+            </property>
             <property name="text">
              <string>Année</string>
             </property>
            </widget>
           </item>
           <item row="3" column="1">
-           <widget class="QLineEdit" name="year"/>
+           <widget class="QLineEdit" name="year">
+            <property name="toolTip">
+             <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Année (&lt;span style=&quot; font-weight:600;&quot;&gt;obligatoire&lt;/span&gt;)&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+            </property>
+           </widget>
           </item>
           <item row="5" column="0" colspan="2">
            <widget class="QCheckBox" name="tunnel_or_bridge">
@@ -147,6 +161,9 @@
           </item>
           <item row="0" column="1">
            <widget class="QComboBox" name="fk_function">
+            <property name="toolTip">
+             <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Fonction de la conduite (&lt;span style=&quot; font-weight:600;&quot;&gt;obligatoire&lt;/span&gt;)&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+            </property>
             <property name="editable">
              <bool>false</bool>
             </property>
@@ -164,6 +181,9 @@
           </item>
           <item row="1" column="1">
            <widget class="QComboBox" name="fk_status">
+            <property name="toolTip">
+             <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Statut de la conduite (&lt;span style=&quot; font-weight:600;&quot;&gt;obligatoire&lt;/span&gt;)&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+            </property>
             <property name="editable">
              <bool>false</bool>
             </property>
@@ -180,7 +200,11 @@
            </widget>
           </item>
           <item row="2" column="1">
-           <widget class="QgsRelationReferenceWidget" name="fk_material"/>
+           <widget class="QgsRelationReferenceWidget" name="fk_material">
+            <property name="toolTip">
+             <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Matériau de la conduite (&lt;span style=&quot; font-weight:600;&quot;&gt;obligatoire&lt;/span&gt;)&lt;/p&gt;&lt;p&gt;pré- filtre possibles par type de matériaux et diamètre.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+            </property>
+           </widget>
           </item>
           <item row="3" column="0">
            <widget class="QLabel" name="label_19">
@@ -191,6 +215,9 @@
           </item>
           <item row="3" column="1">
            <widget class="QComboBox" name="fk_installmethod">
+            <property name="toolTip">
+             <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Mode de pose (&lt;span style=&quot; font-weight:600;&quot;&gt;obligatoire&lt;/span&gt;)&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+            </property>
             <property name="sizeAdjustPolicy">
              <enum>QComboBox::AdjustToContents</enum>
             </property>
@@ -205,6 +232,9 @@
           </item>
           <item row="4" column="1">
            <widget class="QComboBox" name="fk_protection">
+            <property name="toolTip">
+             <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Protection (&lt;span style=&quot; font-weight:600;&quot;&gt;obligatoire&lt;/span&gt;)&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+            </property>
             <property name="sizeAdjustPolicy">
              <enum>QComboBox::AdjustToContents</enum>
             </property>
@@ -218,7 +248,11 @@
            </widget>
           </item>
           <item row="5" column="1">
-           <widget class="QComboBox" name="fk_bedding"/>
+           <widget class="QComboBox" name="fk_bedding">
+            <property name="toolTip">
+             <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Lit de pose (&lt;span style=&quot; font-weight:600;&quot;&gt;obligatoire&lt;/span&gt;)&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+            </property>
+           </widget>
           </item>
          </layout>
         </widget>
@@ -234,7 +268,7 @@
      </widget>
      <widget class="QWidget" name="tab_4">
       <attribute name="title">
-       <string>Hydrauliqe</string>
+       <string>Hydraulique</string>
       </attribute>
       <layout class="QGridLayout" name="gridLayout_8">
        <item row="0" column="3" rowspan="2">
@@ -501,6 +535,9 @@
           </item>
           <item row="5" column="1">
            <widget class="QComboBox" name="fk_precision">
+            <property name="toolTip">
+             <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Précision géométrique de la localisation XY (&lt;span style=&quot; font-weight:600;&quot;&gt;obligatoire&lt;/span&gt;)&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+            </property>
             <property name="sizeAdjustPolicy">
              <enum>QComboBox::AdjustToContents</enum>
             </property>
@@ -614,6 +651,9 @@
          <layout class="QGridLayout" name="gridLayout_6">
           <item row="0" column="1">
            <widget class="QComboBox" name="schema_force_visible">
+            <property name="toolTip">
+             <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Permet de forcer la visibilité sur le plan schématique&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+            </property>
             <property name="editable">
              <bool>false</bool>
             </property>
@@ -664,6 +704,9 @@
           </item>
           <item row="3" column="1">
            <widget class="QgsRelationReferenceWidget" name="fk_parent">
+            <property name="toolTip">
+             <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Permet d'associer cette conduite à une autre pour les agréger dans le rendu schématique&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+            </property>
             <property name="embedForm" stdset="0">
              <bool>false</bool>
             </property>
@@ -722,12 +765,23 @@
        <item row="0" column="0">
         <layout class="QVBoxLayout" name="verticalLayout">
          <item>
-          <widget class="QListWidget" name="fk_locationtype"/>
+          <widget class="QListWidget" name="fk_locationtype">
+           <property name="toolTip">
+            <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Emplacement de la conduite&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+           </property>
+          </widget>
          </item>
         </layout>
        </item>
       </layout>
      </widget>
+    </widget>
+   </item>
+   <item row="1" column="0">
+    <widget class="QLabel" name="label_28">
+     <property name="text">
+      <string>Commentaire sur la conduite:</string>
+     </property>
     </widget>
    </item>
   </layout>
@@ -743,6 +797,7 @@
    <class>QgsRelationEditorWidget</class>
    <extends>QgsCollapsibleGroupBox</extends>
    <header>qgsrelationeditorwidget.h</header>
+   <container>1</container>
   </customwidget>
   <customwidget>
    <class>QgsRelationReferenceWidget</class>
