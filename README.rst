@@ -1,7 +1,7 @@
 .. image:: qwat.png
 
 
-QWat: QGIS Water Module
+QWAT: QGIS Water Module
 =======================
 
 Documentation
