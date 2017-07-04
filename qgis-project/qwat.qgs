@@ -5,7 +5,7 @@
   <evaluateDefaultValues active="0"/>
   <layer-tree-group expanded="1" checked="Qt::PartiallyChecked" name="">
     <customproperties/>
-    <layer-tree-group expanded="1" checked="Qt::PartiallyChecked" name="QWAT">
+    <layer-tree-group expanded="1" checked="Qt::PartiallyChecked" name="Réseau">
       <customproperties/>
       <layer-tree-group expanded="1" checked="Qt::PartiallyChecked" name="ouvrages">
         <customproperties/>
@@ -52,65 +52,62 @@
           <customproperties/>
         </layer-tree-layer>
       </layer-tree-group>
-      <layer-tree-group expanded="1" checked="Qt::PartiallyChecked" name="Réseau">
+      <layer-tree-layer expanded="1" providerKey="postgres" checked="Qt::Checked" id="conduites_copy20130709141244955" source="service='qwat' sslmode=disable key='id' srid=21781 type=LineStringZ table=&quot;qwat_od&quot;.&quot;pipe&quot; (geometry) sql=" name="conduites">
+        <customproperties>
+          <property key="expandedLegendNodes">
+            <value>{1db41c6f-d632-42a2-a453-287300377f48}</value>
+            <value>{cbedc12d-c79c-4e2f-b007-5bbfcaa3cfd2}</value>
+            <value>{85a03431-ffdc-4bd4-9796-2113d60c4125}</value>
+            <value>{d7cd7ce7-c1fb-444f-9fd7-375e42e1119d}</value>
+            <value>{5b970fd5-5c37-4865-81a5-cab18c5fb58c}</value>
+            <value>{7d0cfa7a-eaf4-499a-b977-1238b90ca15f}</value>
+            <value>{2e14d53a-6d2f-40b3-bf3b-4f32112e3d59}</value>
+          </property>
+          <property key="showFeatureCount" value="0"/>
+        </customproperties>
+      </layer-tree-layer>
+      <layer-tree-layer expanded="1" providerKey="postgres" checked="Qt::Checked" id="node20130304110005126" source="service='qwat' sslmode=allow key='id' srid=21781 type=PointZ table=&quot;qwat_od&quot;.&quot;node&quot; (geometry) sql=" name="noeuds">
+        <customproperties>
+          <property key="showFeatureCount" value="0"/>
+        </customproperties>
+      </layer-tree-layer>
+      <layer-tree-layer expanded="1" providerKey="postgres" checked="Qt::Checked" id="valve20130304110011497" source="service='qwat' sslmode=allow key='id' srid=21781 type=PointZ table=&quot;qwat_od&quot;.&quot;valve&quot; (geometry) sql=" name="vannes">
+        <customproperties>
+          <property key="expandedLegendNodes">
+            <value>{7a025dab-c7fe-4c7c-9f0b-25a39f73abd8}</value>
+            <value>{143022c7-b3e1-4c03-80d5-58520da677c2}</value>
+          </property>
+          <property key="showFeatureCount" value="1"/>
+        </customproperties>
+      </layer-tree-layer>
+      <layer-tree-layer expanded="0" providerKey="postgres" checked="Qt::Checked" id="hydrant20130304110004848" source="service='qwat' sslmode=allow key='id' srid=21781 type=PointZ table=&quot;qwat_od&quot;.&quot;vw_element_hydrant&quot; (geometry) sql=" name="hydrantes">
         <customproperties/>
-        <layer-tree-layer expanded="1" providerKey="postgres" checked="Qt::Checked" id="conduites_copy20130709141244955" source="service='qwat' sslmode=disable key='id' srid=21781 type=LineStringZ table=&quot;qwat_od&quot;.&quot;pipe&quot; (geometry) sql=" name="conduites">
-          <customproperties>
-            <property key="expandedLegendNodes">
-              <value>{1db41c6f-d632-42a2-a453-287300377f48}</value>
-              <value>{cbedc12d-c79c-4e2f-b007-5bbfcaa3cfd2}</value>
-              <value>{85a03431-ffdc-4bd4-9796-2113d60c4125}</value>
-              <value>{d7cd7ce7-c1fb-444f-9fd7-375e42e1119d}</value>
-              <value>{5b970fd5-5c37-4865-81a5-cab18c5fb58c}</value>
-              <value>{7d0cfa7a-eaf4-499a-b977-1238b90ca15f}</value>
-              <value>{2e14d53a-6d2f-40b3-bf3b-4f32112e3d59}</value>
-            </property>
-            <property key="showFeatureCount" value="0"/>
-          </customproperties>
-        </layer-tree-layer>
-        <layer-tree-layer expanded="1" providerKey="postgres" checked="Qt::Checked" id="node20130304110005126" source="service='qwat' sslmode=allow key='id' srid=21781 type=PointZ table=&quot;qwat_od&quot;.&quot;node&quot; (geometry) sql=" name="noeuds">
-          <customproperties>
-            <property key="showFeatureCount" value="0"/>
-          </customproperties>
-        </layer-tree-layer>
-        <layer-tree-layer expanded="1" providerKey="postgres" checked="Qt::Checked" id="valve20130304110011497" source="service='qwat' sslmode=allow key='id' srid=21781 type=PointZ table=&quot;qwat_od&quot;.&quot;valve&quot; (geometry) sql=" name="vannes">
-          <customproperties>
-            <property key="expandedLegendNodes">
-              <value>{7a025dab-c7fe-4c7c-9f0b-25a39f73abd8}</value>
-              <value>{143022c7-b3e1-4c03-80d5-58520da677c2}</value>
-            </property>
-            <property key="showFeatureCount" value="1"/>
-          </customproperties>
-        </layer-tree-layer>
-        <layer-tree-layer expanded="0" providerKey="postgres" checked="Qt::Checked" id="hydrant20130304110004848" source="service='qwat' sslmode=allow key='id' srid=21781 type=PointZ table=&quot;qwat_od&quot;.&quot;vw_element_hydrant&quot; (geometry) sql=" name="hydrantes">
-          <customproperties/>
-        </layer-tree-layer>
-        <layer-tree-layer expanded="1" providerKey="postgres" checked="Qt::Checked" id="od_part20140429113327995" source="service='qwat' sslmode=disable key='id' estimatedmetadata=true srid=21781 type=PointZ table=&quot;qwat_od&quot;.&quot;vw_element_part&quot; (geometry) sql=" name="Pièces d'installations">
-          <customproperties>
-            <property key="showFeatureCount" value="1"/>
-          </customproperties>
-        </layer-tree-layer>
-        <layer-tree-layer expanded="1" providerKey="postgres" checked="Qt::Checked" id="od_remote20150116100522170" source="service='qwat' sslmode=disable key='id' srid=21781 type=MultiLineString table=&quot;qwat_od&quot;.&quot;remote&quot; (geometry) sql=" name="télécommandes">
-          <customproperties>
-            <property key="showFeatureCount" value="1"/>
-          </customproperties>
-        </layer-tree-layer>
-        <layer-tree-layer expanded="0" providerKey="postgres" checked="Qt::Checked" id="od_crossing20141023083754327" source="service='qwat' sslmode=disable key='id' srid=21781 type=Point table=&quot;qwat_od&quot;.&quot;crossing&quot; (geometry) sql=" name="croisements">
-          <customproperties>
-            <property key="showFeatureCount" value="1"/>
-          </customproperties>
-        </layer-tree-layer>
-        <layer-tree-layer expanded="0" providerKey="postgres" checked="Qt::Unchecked" id="leak20130821111917060" source="service='qwat' sslmode=disable key='id' srid=21781 type=Point table=&quot;qwat_od&quot;.&quot;leak&quot; (geometry) sql=" name="fuites">
-          <customproperties>
-            <property key="showFeatureCount" value="1"/>
-          </customproperties>
-        </layer-tree-layer>
-        <layer-tree-layer expanded="1" providerKey="postgres" checked="Qt::Unchecked" id="vw_element_samplingpoint20151002161215716" source="service='qwat' sslmode=disable key='id' srid=21781 type=PointZ table=&quot;qwat_od&quot;.&quot;vw_element_samplingpoint&quot; (geometry) sql=" name="point de prélèvement">
-          <customproperties>
-            <property key="showFeatureCount" value="1"/>
-          </customproperties>
-        </layer-tree-layer>
-      </layer-tree-group>
+      </layer-tree-layer>
+      <layer-tree-layer expanded="0" providerKey="postgres" checked="Qt::Checked" id="od_part20140429113327995" source="service='qwat' sslmode=disable key='id' estimatedmetadata=true srid=21781 type=PointZ table=&quot;qwat_od&quot;.&quot;vw_element_part&quot; (geometry) sql=" name="Pièces d'installations">
+        <customproperties>
+          <property key="showFeatureCount" value="1"/>
+        </customproperties>
+      </layer-tree-layer>
+      <layer-tree-layer expanded="1" providerKey="postgres" checked="Qt::Checked" id="od_remote20150116100522170" source="service='qwat' sslmode=disable key='id' srid=21781 type=MultiLineString table=&quot;qwat_od&quot;.&quot;remote&quot; (geometry) sql=" name="télécommandes">
+        <customproperties>
+          <property key="showFeatureCount" value="1"/>
+        </customproperties>
+      </layer-tree-layer>
+      <layer-tree-layer expanded="0" providerKey="postgres" checked="Qt::Checked" id="od_crossing20141023083754327" source="service='qwat' sslmode=disable key='id' srid=21781 type=Point table=&quot;qwat_od&quot;.&quot;crossing&quot; (geometry) sql=" name="croisements">
+        <customproperties>
+          <property key="showFeatureCount" value="1"/>
+        </customproperties>
+      </layer-tree-layer>
+      <layer-tree-layer expanded="0" providerKey="postgres" checked="Qt::Unchecked" id="leak20130821111917060" source="service='qwat' sslmode=disable key='id' srid=21781 type=Point table=&quot;qwat_od&quot;.&quot;leak&quot; (geometry) sql=" name="fuites">
+        <customproperties>
+          <property key="showFeatureCount" value="1"/>
+        </customproperties>
+      </layer-tree-layer>
+      <layer-tree-layer expanded="1" providerKey="postgres" checked="Qt::Unchecked" id="vw_element_samplingpoint20151002161215716" source="service='qwat' sslmode=disable key='id' srid=21781 type=PointZ table=&quot;qwat_od&quot;.&quot;vw_element_samplingpoint&quot; (geometry) sql=" name="point de prélèvement">
+        <customproperties>
+          <property key="showFeatureCount" value="1"/>
+        </customproperties>
+      </layer-tree-layer>
       <layer-tree-group expanded="1" checked="Qt::Unchecked" name="Contrôle">
         <customproperties/>
         <layer-tree-layer expanded="0" providerKey="postgres" checked="Qt::Unchecked" id="subscriber_pipe_relation20130417092124312" source="service='qwat' sslmode=disable key='id' srid=21781 type=LineString table=&quot;qwat_od&quot;.&quot;vw_subscriber_pipe_relation&quot; (geometry) sql=" name="Fleches abonné -> conduite">
@@ -605,7 +602,7 @@
     </custom-order>
   </layer-tree-canvas>
   <legend updateDrawingOrder="false">
-    <legendgroup open="true" checked="Qt::PartiallyChecked" name="QWAT">
+    <legendgroup open="true" checked="Qt::PartiallyChecked" name="Réseau">
       <legendgroup open="true" checked="Qt::PartiallyChecked" name="ouvrages">
         <legendlayer drawingOrder="1" open="false" checked="Qt::Checked" name="ouvrage" showFeatureCount="1">
           <filegroup open="false" hidden="false">
@@ -640,53 +637,51 @@
           </filegroup>
         </legendlayer>
       </legendgroup>
-      <legendgroup open="true" checked="Qt::PartiallyChecked" name="Réseau">
-        <legendlayer drawingOrder="14" open="true" checked="Qt::Checked" name="conduites" showFeatureCount="0">
-          <filegroup open="true" hidden="false">
-            <legendlayerfile isInOverview="0" layerid="conduites_copy20130709141244955" visible="1"/>
-          </filegroup>
-        </legendlayer>
-        <legendlayer drawingOrder="11" open="true" checked="Qt::Checked" name="noeuds" showFeatureCount="0">
-          <filegroup open="true" hidden="false">
-            <legendlayerfile isInOverview="0" layerid="node20130304110005126" visible="1"/>
-          </filegroup>
-        </legendlayer>
-        <legendlayer drawingOrder="7" open="true" checked="Qt::Checked" name="vannes" showFeatureCount="1">
-          <filegroup open="true" hidden="false">
-            <legendlayerfile isInOverview="0" layerid="valve20130304110011497" visible="1"/>
-          </filegroup>
-        </legendlayer>
-        <legendlayer drawingOrder="8" open="false" checked="Qt::Checked" name="hydrantes" showFeatureCount="0">
-          <filegroup open="false" hidden="false">
-            <legendlayerfile isInOverview="0" layerid="hydrant20130304110004848" visible="1"/>
-          </filegroup>
-        </legendlayer>
-        <legendlayer drawingOrder="10" open="true" checked="Qt::Checked" name="Pièces d'installations" showFeatureCount="1">
-          <filegroup open="true" hidden="false">
-            <legendlayerfile isInOverview="0" layerid="od_part20140429113327995" visible="1"/>
-          </filegroup>
-        </legendlayer>
-        <legendlayer drawingOrder="19" open="true" checked="Qt::Checked" name="télécommandes" showFeatureCount="1">
-          <filegroup open="true" hidden="false">
-            <legendlayerfile isInOverview="0" layerid="od_remote20150116100522170" visible="1"/>
-          </filegroup>
-        </legendlayer>
-        <legendlayer drawingOrder="13" open="false" checked="Qt::Checked" name="croisements" showFeatureCount="1">
-          <filegroup open="false" hidden="false">
-            <legendlayerfile isInOverview="0" layerid="od_crossing20141023083754327" visible="1"/>
-          </filegroup>
-        </legendlayer>
-        <legendlayer drawingOrder="9" open="false" checked="Qt::Unchecked" name="fuites" showFeatureCount="1">
-          <filegroup open="false" hidden="false">
-            <legendlayerfile isInOverview="0" layerid="leak20130821111917060" visible="0"/>
-          </filegroup>
-        </legendlayer>
-        <legendlayer drawingOrder="68" open="true" checked="Qt::Unchecked" name="point de prélèvement" showFeatureCount="1">
-          <filegroup open="true" hidden="false">
-            <legendlayerfile isInOverview="0" layerid="vw_element_samplingpoint20151002161215716" visible="0"/>
-          </filegroup>
-        </legendlayer>
-      </legendgroup>
+      <legendlayer drawingOrder="14" open="true" checked="Qt::Checked" name="conduites" showFeatureCount="0">
+        <filegroup open="true" hidden="false">
+          <legendlayerfile isInOverview="0" layerid="conduites_copy20130709141244955" visible="1"/>
+        </filegroup>
+      </legendlayer>
+      <legendlayer drawingOrder="11" open="true" checked="Qt::Checked" name="noeuds" showFeatureCount="0">
+        <filegroup open="true" hidden="false">
+          <legendlayerfile isInOverview="0" layerid="node20130304110005126" visible="1"/>
+        </filegroup>
+      </legendlayer>
+      <legendlayer drawingOrder="7" open="true" checked="Qt::Checked" name="vannes" showFeatureCount="1">
+        <filegroup open="true" hidden="false">
+          <legendlayerfile isInOverview="0" layerid="valve20130304110011497" visible="1"/>
+        </filegroup>
+      </legendlayer>
+      <legendlayer drawingOrder="8" open="false" checked="Qt::Checked" name="hydrantes" showFeatureCount="0">
+        <filegroup open="false" hidden="false">
+          <legendlayerfile isInOverview="0" layerid="hydrant20130304110004848" visible="1"/>
+        </filegroup>
+      </legendlayer>
+      <legendlayer drawingOrder="10" open="false" checked="Qt::Checked" name="Pièces d'installations" showFeatureCount="1">
+        <filegroup open="false" hidden="false">
+          <legendlayerfile isInOverview="0" layerid="od_part20140429113327995" visible="1"/>
+        </filegroup>
+      </legendlayer>
+      <legendlayer drawingOrder="19" open="true" checked="Qt::Checked" name="télécommandes" showFeatureCount="1">
+        <filegroup open="true" hidden="false">
+          <legendlayerfile isInOverview="0" layerid="od_remote20150116100522170" visible="1"/>
+        </filegroup>
+      </legendlayer>
+      <legendlayer drawingOrder="13" open="false" checked="Qt::Checked" name="croisements" showFeatureCount="1">
+        <filegroup open="false" hidden="false">
+          <legendlayerfile isInOverview="0" layerid="od_crossing20141023083754327" visible="1"/>
+        </filegroup>
+      </legendlayer>
+      <legendlayer drawingOrder="9" open="false" checked="Qt::Unchecked" name="fuites" showFeatureCount="1">
+        <filegroup open="false" hidden="false">
+          <legendlayerfile isInOverview="0" layerid="leak20130821111917060" visible="0"/>
+        </filegroup>
+      </legendlayer>
+      <legendlayer drawingOrder="68" open="true" checked="Qt::Unchecked" name="point de prélèvement" showFeatureCount="1">
+        <filegroup open="true" hidden="false">
+          <legendlayerfile isInOverview="0" layerid="vw_element_samplingpoint20151002161215716" visible="0"/>
+        </filegroup>
+      </legendlayer>
       <legendgroup open="true" checked="Qt::Unchecked" name="Contrôle">
         <legendlayer drawingOrder="6" open="false" checked="Qt::Unchecked" name="Fleches abonné -> conduite" showFeatureCount="0">
           <filegroup open="false" hidden="false">
