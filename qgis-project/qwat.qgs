@@ -29,6 +29,9 @@
             <property key="showFeatureCount" value="1"/>
           </customproperties>
         </layer-tree-layer>
+        <layer-tree-layer expanded="1" providerKey="postgres" checked="Qt::Checked" id="vw_element_installation20170706152829679" source="service='qwat' sslmode=disable key='id' srid=21781 type=MultiPolygon table=&quot;qwat_od&quot;.&quot;vw_element_installation&quot; (geometry_polygon) sql=" name="ouvrage_polygon">
+          <customproperties/>
+        </layer-tree-layer>
         <layer-tree-layer expanded="1" providerKey="postgres" checked="Qt::Unchecked" id="od_cover20141219115626229" source="service='qwat' sslmode=disable key='id' srid=21781 type=PointZ table=&quot;qwat_od&quot;.&quot;cover&quot; (geometry) sql=" name="couvercles">
           <customproperties>
             <property key="showFeatureCount" value="1"/>
@@ -397,9 +400,9 @@
   <mapcanvas>
     <units>meters</units>
     <extent>
-      <xmin>515558.26681433472549543</xmin>
+      <xmin>515374.7496262900531292</xmin>
       <ymin>157704.20343968755332753</ymin>
-      <xmax>515764.64283714181510732</xmax>
+      <xmax>515948.16002518648747355</xmax>
       <ymax>157868.03498222940834239</ymax>
     </extent>
     <rotation>0</rotation>
@@ -454,6 +457,7 @@
       <layer_coordinate_transform destAuthId="EPSG:21781" srcAuthId="EPSG:21781" srcDatumTransform="-1" destDatumTransform="-1" layerid="installation_chamber20131107105006707"/>
       <layer_coordinate_transform destAuthId="EPSG:21781" srcAuthId="EPSG:21781" srcDatumTransform="-1" destDatumTransform="-1" layerid="riviera20130902113350360"/>
       <layer_coordinate_transform destAuthId="EPSG:21781" srcAuthId="EPSG:21781" srcDatumTransform="-1" destDatumTransform="-1" layerid="od_remote20150116100522170"/>
+      <layer_coordinate_transform destAuthId="EPSG:21781" srcAuthId="EPSG:21781" srcDatumTransform="-1" destDatumTransform="-1" layerid="vw_element_installation20170706152829679"/>
       <layer_coordinate_transform destAuthId="EPSG:21781" srcAuthId="EPSG:21781" srcDatumTransform="-1" destDatumTransform="-1" layerid="pressurezone20130417133612105"/>
       <layer_coordinate_transform destAuthId="EPSG:21781" srcAuthId="EPSG:21781" srcDatumTransform="-1" destDatumTransform="-1" layerid="od_valve20141218090331728"/>
       <layer_coordinate_transform destAuthId="EPSG:21781" srcAuthId="EPSG:21781" srcDatumTransform="-1" destDatumTransform="-1" layerid="nom_rue20160215151152641"/>
@@ -599,6 +603,7 @@
       <item>hydrant_output20160205143014497</item>
       <item>SWISSIMAGE20161031083131993</item>
       <item>vw_pipe_schema20170306143352379179081243</item>
+      <item>vw_element_installation20170706152829679</item>
     </custom-order>
   </layer-tree-canvas>
   <legend updateDrawingOrder="false">
@@ -607,6 +612,11 @@
         <legendlayer drawingOrder="1" open="false" checked="Qt::Checked" name="ouvrage" showFeatureCount="1">
           <filegroup open="false" hidden="false">
             <legendlayerfile isInOverview="0" layerid="vw_node_installation20150918153835436" visible="1"/>
+          </filegroup>
+        </legendlayer>
+        <legendlayer drawingOrder="76" open="true" checked="Qt::Checked" name="ouvrage_polygon" showFeatureCount="0">
+          <filegroup open="true" hidden="false">
+            <legendlayerfile isInOverview="0" layerid="vw_element_installation20170706152829679" visible="1"/>
           </filegroup>
         </legendlayer>
         <legendlayer drawingOrder="0" open="true" checked="Qt::Unchecked" name="couvercles" showFeatureCount="1">
@@ -45340,6 +45350,938 @@ def my_form_open(dialog, layer, feature):
         <default field="_sum_subscriber" expression=""/>
       </defaults>
       <previewExpression>COALESCE( "name", '&lt;NULL>' )</previewExpression>
+    </maplayer>
+    <maplayer simplifyAlgorithm="0" minimumScale="100000" maximumScale="1e+08" simplifyDrawingHints="0" minLabelScale="0" maxLabelScale="1e+08" simplifyDrawingTol="1" readOnly="0" geometry="Polygon" simplifyMaxScale="1" type="vector" hasScaleBasedVisibilityFlag="0" simplifyLocal="1" scaleBasedLabelVisibilityFlag="0">
+      <extent>
+        <xmin>515581.16486522898776457</xmin>
+        <ymin>157770.85384369498933665</ymin>
+        <xmax>515687.43530656100483611</xmax>
+        <ymax>157841.60294966498622671</ymax>
+      </extent>
+      <id>vw_element_installation20170706152829679</id>
+      <datasource>service='qwat' sslmode=disable key='id' srid=21781 type=MultiPolygon table="qwat_od"."vw_element_installation" (geometry_polygon) sql=</datasource>
+      <keywordList>
+        <value></value>
+      </keywordList>
+      <layername>ouvrage_polygon</layername>
+      <srs>
+        <spatialrefsys>
+          <proj4>+proj=somerc +lat_0=46.95240555555556 +lon_0=7.439583333333333 +k_0=1 +x_0=600000 +y_0=200000 +ellps=bessel +towgs84=674.4,15.1,405.3,0,0,0,0 +units=m +no_defs</proj4>
+          <srsid>1919</srsid>
+          <srid>21781</srid>
+          <authid>EPSG:21781</authid>
+          <description>CH1903 / LV03</description>
+          <projectionacronym>somerc</projectionacronym>
+          <ellipsoidacronym>bessel</ellipsoidacronym>
+          <geographicflag>false</geographicflag>
+        </spatialrefsys>
+      </srs>
+      <provider encoding="System">postgres</provider>
+      <vectorjoins/>
+      <layerDependencies/>
+      <expressionfields/>
+      <map-layer-style-manager current="">
+        <map-layer-style name=""/>
+      </map-layer-style-manager>
+      <edittypes>
+        <edittype widgetv2type="TextEdit" name="id">
+          <widgetv2config IsMultiline="0" fieldEditable="1" constraint="" UseHtml="0" labelOnTop="0" constraintDescription="" notNull="0"/>
+        </edittype>
+        <edittype widgetv2type="ValueRelation" name="fk_district">
+          <widgetv2config OrderByValue="0" AllowNull="0" FilterExpression="" UseCompleter="0" fieldEditable="0" Key="id" constraint="" Layer="district20130304110004764" Value="name" labelOnTop="0" constraintDescription="" AllowMulti="0" notNull="0"/>
+        </edittype>
+        <edittype widgetv2type="ValueRelation" name="fk_pressurezone">
+          <widgetv2config OrderByValue="0" AllowNull="0" FilterExpression="" UseCompleter="0" fieldEditable="1" Key="id" constraint="" Layer="pressurezone20130417133612105" Value="name" labelOnTop="0" constraintDescription="" AllowMulti="0" notNull="0"/>
+        </edittype>
+        <edittype widgetv2type="TextEdit" name="fk_printmap">
+          <widgetv2config IsMultiline="0" fieldEditable="0" constraint="" UseHtml="0" labelOnTop="0" constraintDescription="" notNull="0"/>
+        </edittype>
+        <edittype widgetv2type="TextEdit" name="_printmaps">
+          <widgetv2config IsMultiline="0" fieldEditable="0" constraint="" UseHtml="0" labelOnTop="0" constraintDescription="" notNull="0"/>
+        </edittype>
+        <edittype widgetv2type="TextEdit" name="_geometry_alt1_used">
+          <widgetv2config IsMultiline="0" fieldEditable="1" constraint="" UseHtml="0" labelOnTop="0" constraintDescription="" notNull="0"/>
+        </edittype>
+        <edittype widgetv2type="TextEdit" name="_geometry_alt2_used">
+          <widgetv2config IsMultiline="0" fieldEditable="1" constraint="" UseHtml="0" labelOnTop="0" constraintDescription="" notNull="0"/>
+        </edittype>
+        <edittype widgetv2type="TextEdit" name="_pipe_node_type">
+          <widgetv2config IsMultiline="0" fieldEditable="1" constraint="" UseHtml="0" labelOnTop="0" constraintDescription="" notNull="0"/>
+        </edittype>
+        <edittype widgetv2type="TextEdit" name="_pipe_orientation">
+          <widgetv2config IsMultiline="0" fieldEditable="1" constraint="" UseHtml="0" labelOnTop="0" constraintDescription="" notNull="0"/>
+        </edittype>
+        <edittype widgetv2type="TextEdit" name="_pipe_schema_visible">
+          <widgetv2config IsMultiline="0" fieldEditable="1" constraint="" UseHtml="0" labelOnTop="0" constraintDescription="" notNull="0"/>
+        </edittype>
+        <edittype widgetv2type="TextEdit" name="geometry">
+          <widgetv2config IsMultiline="0" fieldEditable="1" constraint="" UseHtml="0" labelOnTop="0" constraintDescription="" notNull="0"/>
+        </edittype>
+        <edittype widgetv2type="TextEdit" name="geometry_alt1">
+          <widgetv2config IsMultiline="0" fieldEditable="1" constraint="" UseHtml="0" labelOnTop="0" constraintDescription="" notNull="0"/>
+        </edittype>
+        <edittype widgetv2type="TextEdit" name="geometry_alt2">
+          <widgetv2config IsMultiline="0" fieldEditable="1" constraint="" UseHtml="0" labelOnTop="0" constraintDescription="" notNull="0"/>
+        </edittype>
+        <edittype widgetv2type="TextEdit" name="update_geometry_alt1">
+          <widgetv2config IsMultiline="0" fieldEditable="1" constraint="" UseHtml="0" labelOnTop="0" constraintDescription="" notNull="0"/>
+        </edittype>
+        <edittype widgetv2type="TextEdit" name="update_geometry_alt2">
+          <widgetv2config IsMultiline="0" fieldEditable="1" constraint="" UseHtml="0" labelOnTop="0" constraintDescription="" notNull="0"/>
+        </edittype>
+        <edittype widgetv2type="TextEdit" name="identification">
+          <widgetv2config IsMultiline="0" fieldEditable="1" constraint="" UseHtml="0" labelOnTop="0" constraintDescription="" notNull="0"/>
+        </edittype>
+        <edittype widgetv2type="ValueRelation" name="fk_distributor">
+          <widgetv2config OrderByValue="0" AllowNull="0" FilterExpression="" UseCompleter="0" fieldEditable="1" Key="id" constraint="" Layer="distributor20130304114719702" Value="name" labelOnTop="0" constraintDescription="" AllowMulti="0" notNull="0"/>
+        </edittype>
+        <edittype widgetv2type="ValueRelation" name="fk_status">
+          <widgetv2config OrderByValue="0" AllowNull="0" FilterExpression="" UseCompleter="0" fieldEditable="1" Key="id" constraint="" Layer="vl_status20130304110011436" Value="value_fr" labelOnTop="0" constraintDescription="" AllowMulti="0" notNull="0"/>
+        </edittype>
+        <edittype widgetv2type="TextEdit" name="fk_folder">
+          <widgetv2config IsMultiline="0" fieldEditable="1" constraint="" UseHtml="0" labelOnTop="0" constraintDescription="" notNull="0"/>
+        </edittype>
+        <edittype widgetv2type="ValueRelation" name="fk_locationtype">
+          <widgetv2config OrderByValue="0" AllowNull="1" FilterExpression="" UseCompleter="0" fieldEditable="1" Key="id" constraint="" Layer="locationtype20150922082741813" Value="value_fr" labelOnTop="0" constraintDescription="" AllowMulti="1" notNull="0"/>
+        </edittype>
+        <edittype widgetv2type="ValueRelation" name="fk_precision">
+          <widgetv2config OrderByValue="0" AllowNull="0" FilterExpression="" UseCompleter="0" fieldEditable="1" Key="id" constraint="" Layer="vl_precision20130304110011372" Value="value_fr" labelOnTop="0" constraintDescription="" AllowMulti="0" notNull="0"/>
+        </edittype>
+        <edittype widgetv2type="ValueRelation" name="fk_precisionalti">
+          <widgetv2config OrderByValue="0" AllowNull="0" FilterExpression="" UseCompleter="0" fieldEditable="1" Key="id" constraint="" Layer="vl_precisionalti20131211161429510" Value="value_fr" labelOnTop="0" constraintDescription="" AllowMulti="0" notNull="0"/>
+        </edittype>
+        <edittype widgetv2type="ValueRelation" name="fk_object_reference">
+          <widgetv2config OrderByValue="0" AllowNull="0" FilterExpression="" UseCompleter="0" fieldEditable="1" Key="id" constraint="" Layer="object_reference20150922083109152" Value="value_fr" labelOnTop="0" constraintDescription="" AllowMulti="0" notNull="0"/>
+        </edittype>
+        <edittype widgetv2type="TextEdit" name="altitude">
+          <widgetv2config IsMultiline="0" fieldEditable="1" constraint="" UseHtml="0" labelOnTop="0" constraintDescription="" notNull="0"/>
+        </edittype>
+        <edittype widgetv2type="TextEdit" name="year">
+          <widgetv2config IsMultiline="0" fieldEditable="1" constraint="" UseHtml="0" labelOnTop="0" constraintDescription="" notNull="0"/>
+        </edittype>
+        <edittype widgetv2type="TextEdit" name="year_end">
+          <widgetv2config IsMultiline="0" fieldEditable="1" constraint="" UseHtml="0" labelOnTop="0" constraintDescription="" notNull="0"/>
+        </edittype>
+        <edittype widgetv2type="TextEdit" name="orientation">
+          <widgetv2config IsMultiline="0" fieldEditable="1" constraint="" UseHtml="0" labelOnTop="0" constraintDescription="" notNull="0"/>
+        </edittype>
+        <edittype widgetv2type="TextEdit" name="remark">
+          <widgetv2config IsMultiline="1" fieldEditable="1" constraint="" UseHtml="0" labelOnTop="0" constraintDescription="" notNull="0"/>
+        </edittype>
+        <edittype widgetv2type="TextEdit" name="schema_force_visible">
+          <widgetv2config IsMultiline="0" fieldEditable="1" constraint="" UseHtml="0" labelOnTop="0" constraintDescription="" notNull="0"/>
+        </edittype>
+        <edittype widgetv2type="TextEdit" name="label_1_visible">
+          <widgetv2config IsMultiline="0" fieldEditable="1" constraint="" UseHtml="0" labelOnTop="0" constraintDescription="" notNull="0"/>
+        </edittype>
+        <edittype widgetv2type="TextEdit" name="label_1_x">
+          <widgetv2config IsMultiline="0" fieldEditable="1" constraint="" UseHtml="0" labelOnTop="0" constraintDescription="" notNull="0"/>
+        </edittype>
+        <edittype widgetv2type="TextEdit" name="label_1_y">
+          <widgetv2config IsMultiline="0" fieldEditable="1" constraint="" UseHtml="0" labelOnTop="0" constraintDescription="" notNull="0"/>
+        </edittype>
+        <edittype widgetv2type="TextEdit" name="label_1_rotation">
+          <widgetv2config IsMultiline="0" fieldEditable="1" constraint="" UseHtml="0" labelOnTop="0" constraintDescription="" notNull="0"/>
+        </edittype>
+        <edittype widgetv2type="TextEdit" name="label_1_text">
+          <widgetv2config IsMultiline="0" fieldEditable="1" constraint="" UseHtml="0" labelOnTop="0" constraintDescription="" notNull="0"/>
+        </edittype>
+        <edittype widgetv2type="TextEdit" name="label_2_visible">
+          <widgetv2config IsMultiline="0" fieldEditable="1" constraint="" UseHtml="0" labelOnTop="0" constraintDescription="" notNull="0"/>
+        </edittype>
+        <edittype widgetv2type="TextEdit" name="label_2_x">
+          <widgetv2config IsMultiline="0" fieldEditable="1" constraint="" UseHtml="0" labelOnTop="0" constraintDescription="" notNull="0"/>
+        </edittype>
+        <edittype widgetv2type="TextEdit" name="label_2_y">
+          <widgetv2config IsMultiline="0" fieldEditable="1" constraint="" UseHtml="0" labelOnTop="0" constraintDescription="" notNull="0"/>
+        </edittype>
+        <edittype widgetv2type="TextEdit" name="label_2_rotation">
+          <widgetv2config IsMultiline="0" fieldEditable="1" constraint="" UseHtml="0" labelOnTop="0" constraintDescription="" notNull="0"/>
+        </edittype>
+        <edittype widgetv2type="TextEdit" name="label_2_text">
+          <widgetv2config IsMultiline="0" fieldEditable="1" constraint="" UseHtml="0" labelOnTop="0" constraintDescription="" notNull="0"/>
+        </edittype>
+        <edittype widgetv2type="ValueMap" name="installation_type">
+          <widgetv2config fieldEditable="1" constraint="" labelOnTop="0" constraintDescription="" notNull="0">
+            <value key="chambre" value="chamber"/>
+            <value key="pompage" value="pump"/>
+            <value key="régulation de pression" value="pressurecontrol"/>
+            <value key="réservoir" value="tank"/>
+            <value key="source" value="source"/>
+            <value key="traitement" value="treatment"/>
+          </widgetv2config>
+        </edittype>
+        <edittype widgetv2type="TextEdit" name="name">
+          <widgetv2config IsMultiline="0" fieldEditable="1" constraint="" UseHtml="0" labelOnTop="0" constraintDescription="" notNull="0"/>
+        </edittype>
+        <edittype widgetv2type="RelationReference" name="fk_parent">
+          <widgetv2config OrderByValue="0" fieldEditable="1" AllowAddFeatures="0" ShowForm="0" Relation="relation_installation_parent" ReadOnly="0" constraint="" MapIdentification="1" labelOnTop="0" constraintDescription="" notNull="0" AllowNULL="1"/>
+        </edittype>
+        <edittype widgetv2type="ValueRelation" name="fk_remote">
+          <widgetv2config OrderByValue="0" AllowNull="0" FilterExpression="" UseCompleter="0" fieldEditable="1" Key="id" constraint="" Layer="remote_type20130304110004987" Value="value_fr" labelOnTop="0" constraintDescription="" AllowMulti="0" notNull="0"/>
+        </edittype>
+        <edittype widgetv2type="ValueRelation" name="fk_watertype">
+          <widgetv2config OrderByValue="0" AllowNull="0" FilterExpression="" UseCompleter="0" fieldEditable="1" Key="id" constraint="" Layer="vl_watertype20131217141603877" Value="value_fr" labelOnTop="0" constraintDescription="" AllowMulti="0" notNull="0"/>
+        </edittype>
+        <edittype widgetv2type="TextEdit" name="parcel">
+          <widgetv2config IsMultiline="0" fieldEditable="1" constraint="" UseHtml="0" labelOnTop="0" constraintDescription="" notNull="0"/>
+        </edittype>
+        <edittype widgetv2type="TextEdit" name="eca">
+          <widgetv2config IsMultiline="0" fieldEditable="1" constraint="" UseHtml="0" labelOnTop="0" constraintDescription="" notNull="0"/>
+        </edittype>
+        <edittype widgetv2type="CheckBox" name="open_water_surface">
+          <widgetv2config fieldEditable="1" UncheckedState="f" constraint="" CheckedState="t" labelOnTop="0" constraintDescription="" notNull="0"/>
+        </edittype>
+        <edittype widgetv2type="ValueRelation" name="fk_source_type">
+          <widgetv2config OrderByValue="0" AllowNull="0" FilterExpression="" UseCompleter="0" fieldEditable="1" Key="id" constraint="" Layer="vl_sourcetype20130820110518791" Value="value_fr" labelOnTop="0" constraintDescription="" AllowMulti="0" notNull="0"/>
+        </edittype>
+        <edittype widgetv2type="ValueRelation" name="fk_source_quality">
+          <widgetv2config OrderByValue="0" AllowNull="0" FilterExpression="" UseCompleter="0" fieldEditable="1" Key="id" constraint="" Layer="vl_sourcequality20130820110518810" Value="value_fr" labelOnTop="0" constraintDescription="" AllowMulti="0" notNull="0"/>
+        </edittype>
+        <edittype widgetv2type="TextEdit" name="flow_lowest">
+          <widgetv2config IsMultiline="0" fieldEditable="1" constraint="" UseHtml="0" labelOnTop="0" constraintDescription="" notNull="0"/>
+        </edittype>
+        <edittype widgetv2type="TextEdit" name="flow_average">
+          <widgetv2config IsMultiline="0" fieldEditable="1" constraint="" UseHtml="0" labelOnTop="0" constraintDescription="" notNull="0"/>
+        </edittype>
+        <edittype widgetv2type="TextEdit" name="flow_concession">
+          <widgetv2config IsMultiline="0" fieldEditable="1" constraint="" UseHtml="0" labelOnTop="0" constraintDescription="" notNull="0"/>
+        </edittype>
+        <edittype widgetv2type="DateTime" name="contract_end">
+          <widgetv2config fieldEditable="1" calendar_popup="1" allow_null="1" display_format="yyyy-MM-dd" field_format="yyyy-MM-dd" constraint="" labelOnTop="0" constraintDescription="" notNull="0"/>
+        </edittype>
+        <edittype widgetv2type="CheckBox" name="gathering_chamber">
+          <widgetv2config fieldEditable="1" UncheckedState="f" constraint="" CheckedState="t" labelOnTop="0" constraintDescription="" notNull="0"/>
+        </edittype>
+        <edittype widgetv2type="ValueRelation" name="fk_pump_type">
+          <widgetv2config OrderByValue="0" AllowNull="0" FilterExpression="" UseCompleter="0" fieldEditable="1" Key="id" constraint="" Layer="vl_pumptype20130816140237776" Value="value_fr" labelOnTop="0" constraintDescription="" AllowMulti="0" notNull="0"/>
+        </edittype>
+        <edittype widgetv2type="RelationReference" name="fk_pipe_in">
+          <widgetv2config OrderByValue="0" fieldEditable="1" AllowAddFeatures="0" ShowForm="0" Relation="relation_pump_pipe_in" ReadOnly="1" constraint="" MapIdentification="1" labelOnTop="0" constraintDescription="" notNull="0" AllowNULL="1"/>
+        </edittype>
+        <edittype widgetv2type="RelationReference" name="fk_pipe_out">
+          <widgetv2config OrderByValue="0" fieldEditable="1" AllowAddFeatures="0" ShowForm="0" Relation="relation_pump_pipe_out" ReadOnly="1" constraint="" MapIdentification="1" labelOnTop="0" constraintDescription="" notNull="0" AllowNULL="1"/>
+        </edittype>
+        <edittype widgetv2type="ValueRelation" name="fk_pump_operating">
+          <widgetv2config OrderByValue="0" AllowNull="0" FilterExpression="" UseCompleter="0" fieldEditable="1" Key="id" constraint="" Layer="pump_operating20150922083814587" Value="value_fr" labelOnTop="0" constraintDescription="" AllowMulti="0" notNull="0"/>
+        </edittype>
+        <edittype widgetv2type="Range" name="no_pumps">
+          <widgetv2config AllowNull="1" fieldEditable="1" Step="1" constraint="" Style="SpinBox" labelOnTop="0" constraintDescription="" Min="0" notNull="0" Max="99"/>
+        </edittype>
+        <edittype widgetv2type="TextEdit" name="rejected_flow">
+          <widgetv2config IsMultiline="0" fieldEditable="1" constraint="" UseHtml="0" labelOnTop="0" constraintDescription="" notNull="0"/>
+        </edittype>
+        <edittype widgetv2type="TextEdit" name="manometric_height">
+          <widgetv2config IsMultiline="0" fieldEditable="1" constraint="" UseHtml="0" labelOnTop="0" constraintDescription="" notNull="0"/>
+        </edittype>
+        <edittype widgetv2type="ValueRelation" name="fk_overflow">
+          <widgetv2config OrderByValue="0" AllowNull="0" FilterExpression="" UseCompleter="0" fieldEditable="1" Key="id" constraint="" Layer="vl_overflow20130304170704046" Value="value_fr" labelOnTop="0" constraintDescription="" AllowMulti="0" notNull="0"/>
+        </edittype>
+        <edittype widgetv2type="ValueRelation" name="fk_tank_firestorage">
+          <widgetv2config OrderByValue="0" AllowNull="0" FilterExpression="" UseCompleter="0" fieldEditable="1" Key="id" constraint="" Layer="vl_tank_firestorage20130304170704030" Value="value_fr" labelOnTop="0" constraintDescription="" AllowMulti="0" notNull="0"/>
+        </edittype>
+        <edittype widgetv2type="TextEdit" name="storage_total">
+          <widgetv2config IsMultiline="0" fieldEditable="1" constraint="" UseHtml="0" labelOnTop="0" constraintDescription="" notNull="0"/>
+        </edittype>
+        <edittype widgetv2type="TextEdit" name="storage_supply">
+          <widgetv2config IsMultiline="0" fieldEditable="1" constraint="" UseHtml="0" labelOnTop="0" constraintDescription="" notNull="0"/>
+        </edittype>
+        <edittype widgetv2type="TextEdit" name="storage_fire">
+          <widgetv2config IsMultiline="0" fieldEditable="1" constraint="" UseHtml="0" labelOnTop="0" constraintDescription="" notNull="0"/>
+        </edittype>
+        <edittype widgetv2type="TextEdit" name="altitude_overflow">
+          <widgetv2config IsMultiline="0" fieldEditable="1" constraint="" UseHtml="0" labelOnTop="0" constraintDescription="" notNull="0"/>
+        </edittype>
+        <edittype widgetv2type="TextEdit" name="altitude_apron">
+          <widgetv2config IsMultiline="0" fieldEditable="1" constraint="" UseHtml="0" labelOnTop="0" constraintDescription="" notNull="0"/>
+        </edittype>
+        <edittype widgetv2type="TextEdit" name="height_max">
+          <widgetv2config IsMultiline="0" fieldEditable="1" constraint="" UseHtml="0" labelOnTop="0" constraintDescription="" notNull="0"/>
+        </edittype>
+        <edittype widgetv2type="CheckBox" name="fire_valve">
+          <widgetv2config fieldEditable="1" UncheckedState="f" constraint="" CheckedState="t" labelOnTop="0" constraintDescription="" notNull="0"/>
+        </edittype>
+        <edittype widgetv2type="CheckBox" name="fire_remote">
+          <widgetv2config fieldEditable="1" UncheckedState="f" constraint="" CheckedState="t" labelOnTop="0" constraintDescription="" notNull="0"/>
+        </edittype>
+        <edittype widgetv2type="TextEdit" name="_litrepercm">
+          <widgetv2config IsMultiline="0" fieldEditable="1" constraint="" UseHtml="0" labelOnTop="0" constraintDescription="" notNull="0"/>
+        </edittype>
+        <edittype widgetv2type="ValueRelation" name="cistern1_fk_type">
+          <widgetv2config OrderByValue="0" AllowNull="1" FilterExpression="" UseCompleter="0" fieldEditable="1" Key="id" constraint="" Layer="vl_cistern20130304110005061" Value="value_fr" labelOnTop="0" constraintDescription="" AllowMulti="0" notNull="0"/>
+        </edittype>
+        <edittype widgetv2type="TextEdit" name="cistern1_dimension_1">
+          <widgetv2config IsMultiline="0" fieldEditable="1" constraint="" UseHtml="0" labelOnTop="0" constraintDescription="" notNull="0"/>
+        </edittype>
+        <edittype widgetv2type="TextEdit" name="cistern1_dimension_2">
+          <widgetv2config IsMultiline="0" fieldEditable="1" constraint="" UseHtml="0" labelOnTop="0" constraintDescription="" notNull="0"/>
+        </edittype>
+        <edittype widgetv2type="TextEdit" name="cistern1_storage">
+          <widgetv2config IsMultiline="0" fieldEditable="1" constraint="" UseHtml="0" labelOnTop="0" constraintDescription="" notNull="0"/>
+        </edittype>
+        <edittype widgetv2type="TextEdit" name="_cistern1_litrepercm">
+          <widgetv2config IsMultiline="0" fieldEditable="1" constraint="" UseHtml="0" labelOnTop="0" constraintDescription="" notNull="0"/>
+        </edittype>
+        <edittype widgetv2type="ValueRelation" name="cistern2_fk_type">
+          <widgetv2config OrderByValue="0" AllowNull="1" FilterExpression="" UseCompleter="0" fieldEditable="1" Key="id" constraint="" Layer="vl_cistern20130304110005061" Value="value_fr" labelOnTop="0" constraintDescription="" AllowMulti="0" notNull="0"/>
+        </edittype>
+        <edittype widgetv2type="TextEdit" name="cistern2_dimension_1">
+          <widgetv2config IsMultiline="0" fieldEditable="1" constraint="" UseHtml="0" labelOnTop="0" constraintDescription="" notNull="0"/>
+        </edittype>
+        <edittype widgetv2type="TextEdit" name="cistern2_dimension_2">
+          <widgetv2config IsMultiline="0" fieldEditable="1" constraint="" UseHtml="0" labelOnTop="0" constraintDescription="" notNull="0"/>
+        </edittype>
+        <edittype widgetv2type="TextEdit" name="cistern2_storage">
+          <widgetv2config IsMultiline="0" fieldEditable="1" constraint="" UseHtml="0" labelOnTop="0" constraintDescription="" notNull="0"/>
+        </edittype>
+        <edittype widgetv2type="TextEdit" name="_cistern2_litrepercm">
+          <widgetv2config IsMultiline="0" fieldEditable="1" constraint="" UseHtml="0" labelOnTop="0" constraintDescription="" notNull="0"/>
+        </edittype>
+        <edittype widgetv2type="CheckBox" name="sanitization_uv">
+          <widgetv2config fieldEditable="1" UncheckedState="f" constraint="" CheckedState="t" labelOnTop="0" constraintDescription="" notNull="0"/>
+        </edittype>
+        <edittype widgetv2type="CheckBox" name="sanitization_chlorine_liquid">
+          <widgetv2config fieldEditable="1" UncheckedState="f" constraint="" CheckedState="t" labelOnTop="0" constraintDescription="" notNull="0"/>
+        </edittype>
+        <edittype widgetv2type="CheckBox" name="sanitization_chlorine_gazeous">
+          <widgetv2config fieldEditable="1" UncheckedState="f" constraint="" CheckedState="t" labelOnTop="0" constraintDescription="" notNull="0"/>
+        </edittype>
+        <edittype widgetv2type="CheckBox" name="sanitization_ozone">
+          <widgetv2config fieldEditable="1" UncheckedState="f" constraint="" CheckedState="t" labelOnTop="0" constraintDescription="" notNull="0"/>
+        </edittype>
+        <edittype widgetv2type="CheckBox" name="filtration_membrane">
+          <widgetv2config fieldEditable="1" UncheckedState="f" constraint="" CheckedState="t" labelOnTop="0" constraintDescription="" notNull="0"/>
+        </edittype>
+        <edittype widgetv2type="CheckBox" name="filtration_sandorgravel">
+          <widgetv2config fieldEditable="1" UncheckedState="f" constraint="" CheckedState="t" labelOnTop="0" constraintDescription="" notNull="0"/>
+        </edittype>
+        <edittype widgetv2type="CheckBox" name="flocculation">
+          <widgetv2config fieldEditable="1" UncheckedState="f" constraint="" CheckedState="t" labelOnTop="0" constraintDescription="" notNull="0"/>
+        </edittype>
+        <edittype widgetv2type="CheckBox" name="activatedcharcoal">
+          <widgetv2config fieldEditable="1" UncheckedState="f" constraint="" CheckedState="t" labelOnTop="0" constraintDescription="" notNull="0"/>
+        </edittype>
+        <edittype widgetv2type="CheckBox" name="settling">
+          <widgetv2config fieldEditable="1" UncheckedState="f" constraint="" CheckedState="t" labelOnTop="0" constraintDescription="" notNull="0"/>
+        </edittype>
+        <edittype widgetv2type="TextEdit" name="treatment_capacity">
+          <widgetv2config IsMultiline="0" fieldEditable="1" constraint="" UseHtml="0" labelOnTop="0" constraintDescription="" notNull="0"/>
+        </edittype>
+        <edittype widgetv2type="CheckBox" name="networkseparation">
+          <widgetv2config fieldEditable="1" UncheckedState="f" constraint="" CheckedState="t" labelOnTop="0" constraintDescription="" notNull="0"/>
+        </edittype>
+        <edittype widgetv2type="CheckBox" name="flow_meter">
+          <widgetv2config fieldEditable="1" UncheckedState="f" constraint="" CheckedState="t" labelOnTop="0" constraintDescription="" notNull="0"/>
+        </edittype>
+        <edittype widgetv2type="CheckBox" name="water_meter">
+          <widgetv2config fieldEditable="1" UncheckedState="f" constraint="" CheckedState="t" labelOnTop="0" constraintDescription="" notNull="0"/>
+        </edittype>
+        <edittype widgetv2type="CheckBox" name="manometer">
+          <widgetv2config fieldEditable="1" UncheckedState="f" constraint="" CheckedState="t" labelOnTop="0" constraintDescription="" notNull="0"/>
+        </edittype>
+        <edittype widgetv2type="TextEdit" name="depth">
+          <widgetv2config IsMultiline="0" fieldEditable="1" constraint="" UseHtml="0" labelOnTop="0" constraintDescription="" notNull="0"/>
+        </edittype>
+        <edittype widgetv2type="Range" name="no_valves">
+          <widgetv2config AllowNull="1" fieldEditable="1" Step="1" constraint="" Style="SpinBox" labelOnTop="0" constraintDescription="" Min="0" notNull="0" Max="99"/>
+        </edittype>
+        <edittype widgetv2type="ValueRelation" name="fk_pressurecontrol_type">
+          <widgetv2config OrderByValue="0" AllowNull="0" FilterExpression="" UseCompleter="0" fieldEditable="1" Key="id" constraint="" Layer="pressurecontrol_type20150203100321270" Value="value_fr" labelOnTop="0" constraintDescription="" AllowMulti="0" notNull="0"/>
+        </edittype>
+      </edittypes>
+      <renderer-v2 forceraster="0" symbollevels="0" type="singleSymbol" enableorderby="0">
+        <symbols>
+          <symbol alpha="1" clip_to_extent="1" type="fill" name="0">
+            <layer pass="0" class="GradientFill" locked="0">
+              <prop k="angle" v="0"/>
+              <prop k="color" v="0,213,255,187"/>
+              <prop k="color1" v="0,0,255,255"/>
+              <prop k="color2" v="0,255,0,255"/>
+              <prop k="color_type" v="0"/>
+              <prop k="coordinate_mode" v="0"/>
+              <prop k="discrete" v="0"/>
+              <prop k="gradient_color2" v="255,255,255,255"/>
+              <prop k="offset" v="0,0"/>
+              <prop k="offset_map_unit_scale" v="0,0,0,0,0,0"/>
+              <prop k="offset_unit" v="MM"/>
+              <prop k="reference_point1" v="0,0"/>
+              <prop k="reference_point1_iscentroid" v="0"/>
+              <prop k="reference_point2" v="1,1"/>
+              <prop k="reference_point2_iscentroid" v="0"/>
+              <prop k="spread" v="0"/>
+              <prop k="type" v="1"/>
+            </layer>
+          </symbol>
+        </symbols>
+        <rotation/>
+        <sizescale scalemethod="diameter"/>
+      </renderer-v2>
+      <labeling type="simple"/>
+      <customproperties>
+        <property key="embeddedWidgets/count" value="0"/>
+        <property key="labeling" value="pal"/>
+        <property key="labeling/addDirectionSymbol" value="false"/>
+        <property key="labeling/angleOffset" value="0"/>
+        <property key="labeling/blendMode" value="0"/>
+        <property key="labeling/bufferBlendMode" value="0"/>
+        <property key="labeling/bufferColorA" value="255"/>
+        <property key="labeling/bufferColorB" value="255"/>
+        <property key="labeling/bufferColorG" value="255"/>
+        <property key="labeling/bufferColorR" value="255"/>
+        <property key="labeling/bufferDraw" value="true"/>
+        <property key="labeling/bufferJoinStyle" value="64"/>
+        <property key="labeling/bufferNoFill" value="false"/>
+        <property key="labeling/bufferSize" value="1"/>
+        <property key="labeling/bufferSizeInMapUnits" value="false"/>
+        <property key="labeling/bufferSizeMapUnitMaxScale" value="0"/>
+        <property key="labeling/bufferSizeMapUnitMinScale" value="0"/>
+        <property key="labeling/bufferSizeMapUnitScale" value="0,0,0,0,0,0"/>
+        <property key="labeling/bufferTransp" value="0"/>
+        <property key="labeling/centroidInside" value="false"/>
+        <property key="labeling/centroidWhole" value="false"/>
+        <property key="labeling/dataDefined/PositionX" value="0~~0~~~~label_1_x"/>
+        <property key="labeling/dataDefined/PositionY" value="0~~0~~~~label_1_y"/>
+        <property key="labeling/dataDefined/Rotation" value="0~~0~~~~label_1_rotation"/>
+        <property key="labeling/decimals" value="3"/>
+        <property key="labeling/displayAll" value="true"/>
+        <property key="labeling/dist" value="3"/>
+        <property key="labeling/distInMapUnits" value="false"/>
+        <property key="labeling/distMapUnitMaxScale" value="0"/>
+        <property key="labeling/distMapUnitMinScale" value="0"/>
+        <property key="labeling/distMapUnitScale" value="0,0,0,0,0,0"/>
+        <property key="labeling/drawLabels" value="false"/>
+        <property key="labeling/enabled" value="false"/>
+        <property key="labeling/fieldName" value="CASE&#xa;WHEN  &quot;installation_type&quot;  = 'chamber' THEN 'C. '&#xa;WHEN &quot;installation_type&quot;  = 'pressurecontrol' AND fk_pressurecontrol_type = 2801 THEN 'CR. '&#xa;WHEN  &quot;installation_type&quot;  = 'pressurecontrol' AND fk_pressurecontrol_type = 2802 THEN 'CCP. ' &#xa;WHEN  &quot;installation_type&quot;  = 'pressurecontrol' AND fk_pressurecontrol_type = 2803 THEN 'CRA. '&#xa;WHEN  &quot;installation_type&quot;  = 'pump' THEN 'P. ' &#xa;WHEN  &quot;installation_type&quot;  = 'source' THEN 'S. ' &#xa;WHEN  &quot;installation_type&quot;  = 'tank' THEN 'R. '&#xa;WHEN  &quot;installation_type&quot;  = 'treatment' THEN 'T. '&#xa;ELSE '' &#xa;END&#xa;|| coalesce(name, '')"/>
+        <property key="labeling/fitInPolygonOnly" value="false"/>
+        <property key="labeling/fontBold" value="false"/>
+        <property key="labeling/fontCapitals" value="0"/>
+        <property key="labeling/fontFamily" value="Lato"/>
+        <property key="labeling/fontItalic" value="false"/>
+        <property key="labeling/fontLetterSpacing" value="0"/>
+        <property key="labeling/fontLimitPixelSize" value="false"/>
+        <property key="labeling/fontMaxPixelSize" value="10000"/>
+        <property key="labeling/fontMinPixelSize" value="3"/>
+        <property key="labeling/fontSize" value="11"/>
+        <property key="labeling/fontSizeInMapUnits" value="false"/>
+        <property key="labeling/fontSizeMapUnitMaxScale" value="0"/>
+        <property key="labeling/fontSizeMapUnitMinScale" value="0"/>
+        <property key="labeling/fontSizeMapUnitScale" value="0,0,0,0,0,0"/>
+        <property key="labeling/fontStrikeout" value="false"/>
+        <property key="labeling/fontUnderline" value="false"/>
+        <property key="labeling/fontWeight" value="50"/>
+        <property key="labeling/fontWordSpacing" value="0"/>
+        <property key="labeling/formatNumbers" value="false"/>
+        <property key="labeling/isExpression" value="true"/>
+        <property key="labeling/labelOffsetInMapUnits" value="true"/>
+        <property key="labeling/labelOffsetMapUnitMaxScale" value="0"/>
+        <property key="labeling/labelOffsetMapUnitMinScale" value="0"/>
+        <property key="labeling/labelOffsetMapUnitScale" value="0,0,0,0,0,0"/>
+        <property key="labeling/labelPerPart" value="false"/>
+        <property key="labeling/leftDirectionSymbol" value="&lt;"/>
+        <property key="labeling/limitNumLabels" value="false"/>
+        <property key="labeling/maxCurvedCharAngleIn" value="20"/>
+        <property key="labeling/maxCurvedCharAngleOut" value="-20"/>
+        <property key="labeling/maxNumLabels" value="2000"/>
+        <property key="labeling/mergeLines" value="false"/>
+        <property key="labeling/minFeatureSize" value="0"/>
+        <property key="labeling/multilineAlign" value="1"/>
+        <property key="labeling/multilineHeight" value="1"/>
+        <property key="labeling/namedStyle" value="Regular"/>
+        <property key="labeling/obstacle" value="true"/>
+        <property key="labeling/obstacleFactor" value="1"/>
+        <property key="labeling/obstacleType" value="0"/>
+        <property key="labeling/offsetType" value="0"/>
+        <property key="labeling/placeDirectionSymbol" value="0"/>
+        <property key="labeling/placement" value="0"/>
+        <property key="labeling/placementFlags" value="10"/>
+        <property key="labeling/plussign" value="false"/>
+        <property key="labeling/predefinedPositionOrder" value="TR,TL,BR,BL,R,L,TSR,BSR"/>
+        <property key="labeling/preserveRotation" value="true"/>
+        <property key="labeling/previewBkgrdColor" value="#ffffff"/>
+        <property key="labeling/priority" value="5"/>
+        <property key="labeling/quadOffset" value="4"/>
+        <property key="labeling/repeatDistance" value="0"/>
+        <property key="labeling/repeatDistanceMapUnitMaxScale" value="0"/>
+        <property key="labeling/repeatDistanceMapUnitMinScale" value="0"/>
+        <property key="labeling/repeatDistanceMapUnitScale" value="0,0,0,0,0,0"/>
+        <property key="labeling/repeatDistanceUnit" value="1"/>
+        <property key="labeling/reverseDirectionSymbol" value="false"/>
+        <property key="labeling/rightDirectionSymbol" value=">"/>
+        <property key="labeling/scaleMax" value="10000000"/>
+        <property key="labeling/scaleMin" value="1"/>
+        <property key="labeling/scaleVisibility" value="false"/>
+        <property key="labeling/shadowBlendMode" value="6"/>
+        <property key="labeling/shadowColorB" value="0"/>
+        <property key="labeling/shadowColorG" value="0"/>
+        <property key="labeling/shadowColorR" value="0"/>
+        <property key="labeling/shadowDraw" value="false"/>
+        <property key="labeling/shadowOffsetAngle" value="135"/>
+        <property key="labeling/shadowOffsetDist" value="1"/>
+        <property key="labeling/shadowOffsetGlobal" value="true"/>
+        <property key="labeling/shadowOffsetMapUnitMaxScale" value="0"/>
+        <property key="labeling/shadowOffsetMapUnitMinScale" value="0"/>
+        <property key="labeling/shadowOffsetMapUnitScale" value="0,0,0,0,0,0"/>
+        <property key="labeling/shadowOffsetUnits" value="1"/>
+        <property key="labeling/shadowRadius" value="1.5"/>
+        <property key="labeling/shadowRadiusAlphaOnly" value="false"/>
+        <property key="labeling/shadowRadiusMapUnitMaxScale" value="0"/>
+        <property key="labeling/shadowRadiusMapUnitMinScale" value="0"/>
+        <property key="labeling/shadowRadiusMapUnitScale" value="0,0,0,0,0,0"/>
+        <property key="labeling/shadowRadiusUnits" value="1"/>
+        <property key="labeling/shadowScale" value="100"/>
+        <property key="labeling/shadowTransparency" value="30"/>
+        <property key="labeling/shadowUnder" value="0"/>
+        <property key="labeling/shapeBlendMode" value="0"/>
+        <property key="labeling/shapeBorderColorA" value="255"/>
+        <property key="labeling/shapeBorderColorB" value="128"/>
+        <property key="labeling/shapeBorderColorG" value="128"/>
+        <property key="labeling/shapeBorderColorR" value="128"/>
+        <property key="labeling/shapeBorderWidth" value="0"/>
+        <property key="labeling/shapeBorderWidthMapUnitMaxScale" value="0"/>
+        <property key="labeling/shapeBorderWidthMapUnitMinScale" value="0"/>
+        <property key="labeling/shapeBorderWidthMapUnitScale" value="0,0,0,0,0,0"/>
+        <property key="labeling/shapeBorderWidthUnits" value="1"/>
+        <property key="labeling/shapeDraw" value="false"/>
+        <property key="labeling/shapeFillColorA" value="255"/>
+        <property key="labeling/shapeFillColorB" value="255"/>
+        <property key="labeling/shapeFillColorG" value="255"/>
+        <property key="labeling/shapeFillColorR" value="255"/>
+        <property key="labeling/shapeJoinStyle" value="64"/>
+        <property key="labeling/shapeOffsetMapUnitMaxScale" value="0"/>
+        <property key="labeling/shapeOffsetMapUnitMinScale" value="0"/>
+        <property key="labeling/shapeOffsetMapUnitScale" value="0,0,0,0,0,0"/>
+        <property key="labeling/shapeOffsetUnits" value="1"/>
+        <property key="labeling/shapeOffsetX" value="0"/>
+        <property key="labeling/shapeOffsetY" value="0"/>
+        <property key="labeling/shapeRadiiMapUnitMaxScale" value="0"/>
+        <property key="labeling/shapeRadiiMapUnitMinScale" value="0"/>
+        <property key="labeling/shapeRadiiMapUnitScale" value="0,0,0,0,0,0"/>
+        <property key="labeling/shapeRadiiUnits" value="1"/>
+        <property key="labeling/shapeRadiiX" value="0"/>
+        <property key="labeling/shapeRadiiY" value="0"/>
+        <property key="labeling/shapeRotation" value="0"/>
+        <property key="labeling/shapeRotationType" value="0"/>
+        <property key="labeling/shapeSVGFile" value=""/>
+        <property key="labeling/shapeSizeMapUnitMaxScale" value="0"/>
+        <property key="labeling/shapeSizeMapUnitMinScale" value="0"/>
+        <property key="labeling/shapeSizeMapUnitScale" value="0,0,0,0,0,0"/>
+        <property key="labeling/shapeSizeType" value="0"/>
+        <property key="labeling/shapeSizeUnits" value="1"/>
+        <property key="labeling/shapeSizeX" value="0"/>
+        <property key="labeling/shapeSizeY" value="0"/>
+        <property key="labeling/shapeTransparency" value="0"/>
+        <property key="labeling/shapeType" value="0"/>
+        <property key="labeling/substitutions" value="&lt;substitutions/>"/>
+        <property key="labeling/textColorA" value="255"/>
+        <property key="labeling/textColorB" value="0"/>
+        <property key="labeling/textColorG" value="0"/>
+        <property key="labeling/textColorR" value="0"/>
+        <property key="labeling/textTransp" value="0"/>
+        <property key="labeling/upsidedownLabels" value="0"/>
+        <property key="labeling/useSubstitutions" value="false"/>
+        <property key="labeling/wrapChar" value=""/>
+        <property key="labeling/xOffset" value="0"/>
+        <property key="labeling/yOffset" value="0"/>
+        <property key="labeling/zIndex" value="0"/>
+        <property key="variableNames"/>
+        <property key="variableValues"/>
+      </customproperties>
+      <blendMode>0</blendMode>
+      <featureBlendMode>0</featureBlendMode>
+      <layerTransparency>0</layerTransparency>
+      <displayfield>name</displayfield>
+      <label>0</label>
+      <labelattributes>
+        <label fieldname="" text="Label"/>
+        <family fieldname="" name="Cantarell"/>
+        <size fieldname="" units="pt" value="12"/>
+        <bold fieldname="" on="0"/>
+        <italic fieldname="" on="0"/>
+        <underline fieldname="" on="0"/>
+        <strikeout fieldname="" on="0"/>
+        <color fieldname="" red="0" blue="0" green="0"/>
+        <x fieldname=""/>
+        <y fieldname=""/>
+        <offset x="0" y="0" units="pt" yfieldname="" xfieldname=""/>
+        <angle fieldname="" value="0" auto="0"/>
+        <alignment fieldname="" value="center"/>
+        <buffercolor fieldname="" red="255" blue="255" green="255"/>
+        <buffersize fieldname="" units="pt" value="1"/>
+        <bufferenabled fieldname="" on=""/>
+        <multilineenabled fieldname="" on=""/>
+        <selectedonly on=""/>
+      </labelattributes>
+      <SingleCategoryDiagramRenderer diagramType="Pie" sizeLegend="0" attributeLegend="1">
+        <DiagramCategory penColor="#000000" labelPlacementMethod="XHeight" penWidth="0" diagramOrientation="Up" sizeScale="0,0,0,0,0,0" minimumSize="0" barWidth="5" penAlpha="255" maxScaleDenominator="1e+08" backgroundColor="#ffffff" transparency="0" width="15" scaleDependency="Area" backgroundAlpha="255" angleOffset="1440" scaleBasedVisibility="0" enabled="0" height="15" lineSizeScale="0,0,0,0,0,0" sizeType="MM" lineSizeType="MM" minScaleDenominator="100000">
+          <fontProperties description="Cantarell,11,-1,5,50,0,0,0,0,0" style=""/>
+          <attribute field="" color="#000000" label=""/>
+        </DiagramCategory>
+        <symbol alpha="1" clip_to_extent="1" type="marker" name="sizeSymbol">
+          <layer pass="0" class="SimpleMarker" locked="0">
+            <prop k="angle" v="0"/>
+            <prop k="color" v="255,0,0,255"/>
+            <prop k="horizontal_anchor_point" v="1"/>
+            <prop k="joinstyle" v="bevel"/>
+            <prop k="name" v="circle"/>
+            <prop k="offset" v="0,0"/>
+            <prop k="offset_map_unit_scale" v="0,0,0,0,0,0"/>
+            <prop k="offset_unit" v="MM"/>
+            <prop k="outline_color" v="0,0,0,255"/>
+            <prop k="outline_style" v="solid"/>
+            <prop k="outline_width" v="0"/>
+            <prop k="outline_width_map_unit_scale" v="0,0,0,0,0,0"/>
+            <prop k="outline_width_unit" v="MM"/>
+            <prop k="scale_method" v="diameter"/>
+            <prop k="size" v="2"/>
+            <prop k="size_map_unit_scale" v="0,0,0,0,0,0"/>
+            <prop k="size_unit" v="MM"/>
+            <prop k="vertical_anchor_point" v="1"/>
+          </layer>
+        </symbol>
+      </SingleCategoryDiagramRenderer>
+      <DiagramLayerSettings yPosColumn="-1" showColumn="0" linePlacementFlags="10" placement="0" dist="0" xPosColumn="-1" priority="0" obstacle="0" zIndex="0" showAll="1"/>
+      <annotationform>.</annotationform>
+      <aliases>
+        <alias field="id" index="0" name=""/>
+        <alias field="fk_district" index="1" name=""/>
+        <alias field="fk_pressurezone" index="2" name=""/>
+        <alias field="fk_printmap" index="3" name=""/>
+        <alias field="_printmaps" index="4" name=""/>
+        <alias field="_geometry_alt1_used" index="5" name=""/>
+        <alias field="_geometry_alt2_used" index="6" name=""/>
+        <alias field="_pipe_node_type" index="7" name=""/>
+        <alias field="_pipe_orientation" index="8" name=""/>
+        <alias field="_pipe_schema_visible" index="9" name=""/>
+        <alias field="geometry" index="10" name=""/>
+        <alias field="geometry_alt1" index="11" name=""/>
+        <alias field="geometry_alt2" index="12" name=""/>
+        <alias field="update_geometry_alt1" index="13" name=""/>
+        <alias field="update_geometry_alt2" index="14" name=""/>
+        <alias field="identification" index="15" name=""/>
+        <alias field="fk_distributor" index="16" name=""/>
+        <alias field="fk_status" index="17" name=""/>
+        <alias field="fk_folder" index="18" name=""/>
+        <alias field="fk_locationtype" index="19" name=""/>
+        <alias field="fk_precision" index="20" name=""/>
+        <alias field="fk_precisionalti" index="21" name=""/>
+        <alias field="fk_object_reference" index="22" name=""/>
+        <alias field="altitude" index="23" name=""/>
+        <alias field="year" index="24" name=""/>
+        <alias field="year_end" index="25" name=""/>
+        <alias field="orientation" index="26" name=""/>
+        <alias field="remark" index="27" name=""/>
+        <alias field="schema_force_visible" index="28" name=""/>
+        <alias field="label_1_visible" index="29" name=""/>
+        <alias field="label_1_x" index="30" name=""/>
+        <alias field="label_1_y" index="31" name=""/>
+        <alias field="label_1_rotation" index="32" name=""/>
+        <alias field="label_1_text" index="33" name=""/>
+        <alias field="label_2_visible" index="34" name=""/>
+        <alias field="label_2_x" index="35" name=""/>
+        <alias field="label_2_y" index="36" name=""/>
+        <alias field="label_2_rotation" index="37" name=""/>
+        <alias field="label_2_text" index="38" name=""/>
+        <alias field="installation_type" index="39" name=""/>
+        <alias field="name" index="40" name=""/>
+        <alias field="fk_parent" index="41" name=""/>
+        <alias field="fk_remote" index="42" name=""/>
+        <alias field="fk_watertype" index="43" name=""/>
+        <alias field="parcel" index="44" name=""/>
+        <alias field="eca" index="45" name=""/>
+        <alias field="open_water_surface" index="46" name=""/>
+        <alias field="fk_source_type" index="47" name=""/>
+        <alias field="fk_source_quality" index="48" name=""/>
+        <alias field="flow_lowest" index="49" name=""/>
+        <alias field="flow_average" index="50" name=""/>
+        <alias field="flow_concession" index="51" name=""/>
+        <alias field="contract_end" index="52" name=""/>
+        <alias field="gathering_chamber" index="53" name=""/>
+        <alias field="fk_pump_type" index="54" name=""/>
+        <alias field="fk_pipe_in" index="55" name=""/>
+        <alias field="fk_pipe_out" index="56" name=""/>
+        <alias field="fk_pump_operating" index="57" name=""/>
+        <alias field="no_pumps" index="58" name=""/>
+        <alias field="rejected_flow" index="59" name=""/>
+        <alias field="manometric_height" index="60" name=""/>
+        <alias field="fk_overflow" index="61" name=""/>
+        <alias field="fk_tank_firestorage" index="62" name=""/>
+        <alias field="storage_total" index="63" name=""/>
+        <alias field="storage_supply" index="64" name=""/>
+        <alias field="storage_fire" index="65" name=""/>
+        <alias field="altitude_overflow" index="66" name=""/>
+        <alias field="altitude_apron" index="67" name=""/>
+        <alias field="height_max" index="68" name=""/>
+        <alias field="fire_valve" index="69" name=""/>
+        <alias field="fire_remote" index="70" name=""/>
+        <alias field="_litrepercm" index="71" name=""/>
+        <alias field="cistern1_fk_type" index="72" name=""/>
+        <alias field="cistern1_dimension_1" index="73" name=""/>
+        <alias field="cistern1_dimension_2" index="74" name=""/>
+        <alias field="cistern1_storage" index="75" name=""/>
+        <alias field="_cistern1_litrepercm" index="76" name=""/>
+        <alias field="cistern2_fk_type" index="77" name=""/>
+        <alias field="cistern2_dimension_1" index="78" name=""/>
+        <alias field="cistern2_dimension_2" index="79" name=""/>
+        <alias field="cistern2_storage" index="80" name=""/>
+        <alias field="_cistern2_litrepercm" index="81" name=""/>
+        <alias field="sanitization_uv" index="82" name=""/>
+        <alias field="sanitization_chlorine_liquid" index="83" name=""/>
+        <alias field="sanitization_chlorine_gazeous" index="84" name=""/>
+        <alias field="sanitization_ozone" index="85" name=""/>
+        <alias field="filtration_membrane" index="86" name=""/>
+        <alias field="filtration_sandorgravel" index="87" name=""/>
+        <alias field="flocculation" index="88" name=""/>
+        <alias field="activatedcharcoal" index="89" name=""/>
+        <alias field="settling" index="90" name=""/>
+        <alias field="treatment_capacity" index="91" name=""/>
+        <alias field="networkseparation" index="92" name=""/>
+        <alias field="flow_meter" index="93" name=""/>
+        <alias field="water_meter" index="94" name=""/>
+        <alias field="manometer" index="95" name=""/>
+        <alias field="depth" index="96" name=""/>
+        <alias field="no_valves" index="97" name=""/>
+        <alias field="fk_pressurecontrol_type" index="98" name=""/>
+      </aliases>
+      <excludeAttributesWMS/>
+      <excludeAttributesWFS/>
+      <attributeactions default="-1"/>
+      <attributetableconfig actionWidgetStyle="dropDown" sortExpression="" sortOrder="0">
+        <columns>
+          <column width="-1" hidden="0" type="field" name="id"/>
+          <column width="-1" hidden="0" type="field" name="fk_district"/>
+          <column width="-1" hidden="0" type="field" name="fk_pressurezone"/>
+          <column width="-1" hidden="0" type="field" name="fk_printmap"/>
+          <column width="-1" hidden="0" type="field" name="_printmaps"/>
+          <column width="-1" hidden="0" type="field" name="_geometry_alt1_used"/>
+          <column width="-1" hidden="0" type="field" name="_geometry_alt2_used"/>
+          <column width="-1" hidden="0" type="field" name="_pipe_node_type"/>
+          <column width="-1" hidden="0" type="field" name="_pipe_orientation"/>
+          <column width="-1" hidden="0" type="field" name="_pipe_schema_visible"/>
+          <column width="-1" hidden="0" type="field" name="geometry_alt1"/>
+          <column width="-1" hidden="0" type="field" name="geometry_alt2"/>
+          <column width="-1" hidden="0" type="field" name="update_geometry_alt1"/>
+          <column width="-1" hidden="0" type="field" name="update_geometry_alt2"/>
+          <column width="-1" hidden="0" type="field" name="identification"/>
+          <column width="-1" hidden="0" type="field" name="fk_distributor"/>
+          <column width="-1" hidden="0" type="field" name="fk_status"/>
+          <column width="-1" hidden="0" type="field" name="fk_folder"/>
+          <column width="-1" hidden="0" type="field" name="fk_locationtype"/>
+          <column width="-1" hidden="0" type="field" name="year"/>
+          <column width="-1" hidden="0" type="field" name="year_end"/>
+          <column width="-1" hidden="0" type="field" name="remark"/>
+          <column width="-1" hidden="0" type="field" name="schema_force_visible"/>
+          <column width="-1" hidden="0" type="field" name="label_1_visible"/>
+          <column width="-1" hidden="0" type="field" name="label_1_x"/>
+          <column width="-1" hidden="0" type="field" name="label_1_y"/>
+          <column width="-1" hidden="0" type="field" name="label_1_rotation"/>
+          <column width="-1" hidden="0" type="field" name="label_1_text"/>
+          <column width="-1" hidden="0" type="field" name="label_2_visible"/>
+          <column width="-1" hidden="0" type="field" name="label_2_x"/>
+          <column width="-1" hidden="0" type="field" name="label_2_y"/>
+          <column width="-1" hidden="0" type="field" name="label_2_rotation"/>
+          <column width="-1" hidden="0" type="field" name="label_2_text"/>
+          <column width="-1" hidden="0" type="field" name="fk_precision"/>
+          <column width="-1" hidden="0" type="field" name="fk_precisionalti"/>
+          <column width="-1" hidden="0" type="field" name="fk_object_reference"/>
+          <column width="-1" hidden="0" type="field" name="altitude"/>
+          <column width="-1" hidden="0" type="field" name="orientation"/>
+          <column width="-1" hidden="0" type="field" name="installation_type"/>
+          <column width="-1" hidden="0" type="field" name="name"/>
+          <column width="-1" hidden="0" type="field" name="fk_parent"/>
+          <column width="-1" hidden="0" type="field" name="fk_remote"/>
+          <column width="-1" hidden="0" type="field" name="fk_watertype"/>
+          <column width="-1" hidden="0" type="field" name="parcel"/>
+          <column width="-1" hidden="0" type="field" name="eca"/>
+          <column width="-1" hidden="0" type="field" name="open_water_surface"/>
+          <column width="-1" hidden="0" type="field" name="fk_source_type"/>
+          <column width="-1" hidden="0" type="field" name="fk_source_quality"/>
+          <column width="-1" hidden="0" type="field" name="flow_lowest"/>
+          <column width="-1" hidden="0" type="field" name="flow_average"/>
+          <column width="-1" hidden="0" type="field" name="flow_concession"/>
+          <column width="-1" hidden="0" type="field" name="contract_end"/>
+          <column width="-1" hidden="0" type="field" name="gathering_chamber"/>
+          <column width="-1" hidden="0" type="field" name="fk_pump_type"/>
+          <column width="-1" hidden="0" type="field" name="fk_pipe_in"/>
+          <column width="-1" hidden="0" type="field" name="fk_pipe_out"/>
+          <column width="-1" hidden="0" type="field" name="fk_pump_operating"/>
+          <column width="-1" hidden="0" type="field" name="no_pumps"/>
+          <column width="-1" hidden="0" type="field" name="rejected_flow"/>
+          <column width="-1" hidden="0" type="field" name="manometric_height"/>
+          <column width="-1" hidden="0" type="field" name="fk_overflow"/>
+          <column width="-1" hidden="0" type="field" name="fk_tank_firestorage"/>
+          <column width="-1" hidden="0" type="field" name="storage_total"/>
+          <column width="-1" hidden="0" type="field" name="storage_supply"/>
+          <column width="-1" hidden="0" type="field" name="storage_fire"/>
+          <column width="-1" hidden="0" type="field" name="altitude_overflow"/>
+          <column width="-1" hidden="0" type="field" name="altitude_apron"/>
+          <column width="-1" hidden="0" type="field" name="height_max"/>
+          <column width="-1" hidden="0" type="field" name="fire_valve"/>
+          <column width="-1" hidden="0" type="field" name="fire_remote"/>
+          <column width="-1" hidden="0" type="field" name="_litrepercm"/>
+          <column width="-1" hidden="0" type="field" name="cistern1_fk_type"/>
+          <column width="-1" hidden="0" type="field" name="cistern1_dimension_1"/>
+          <column width="-1" hidden="0" type="field" name="cistern1_dimension_2"/>
+          <column width="-1" hidden="0" type="field" name="cistern1_storage"/>
+          <column width="-1" hidden="0" type="field" name="_cistern1_litrepercm"/>
+          <column width="-1" hidden="0" type="field" name="cistern2_fk_type"/>
+          <column width="-1" hidden="0" type="field" name="cistern2_dimension_1"/>
+          <column width="-1" hidden="0" type="field" name="cistern2_dimension_2"/>
+          <column width="-1" hidden="0" type="field" name="cistern2_storage"/>
+          <column width="-1" hidden="0" type="field" name="_cistern2_litrepercm"/>
+          <column width="-1" hidden="0" type="field" name="sanitization_uv"/>
+          <column width="-1" hidden="0" type="field" name="sanitization_chlorine_liquid"/>
+          <column width="-1" hidden="0" type="field" name="sanitization_chlorine_gazeous"/>
+          <column width="-1" hidden="0" type="field" name="sanitization_ozone"/>
+          <column width="-1" hidden="0" type="field" name="filtration_membrane"/>
+          <column width="-1" hidden="0" type="field" name="filtration_sandorgravel"/>
+          <column width="-1" hidden="0" type="field" name="flocculation"/>
+          <column width="-1" hidden="0" type="field" name="activatedcharcoal"/>
+          <column width="-1" hidden="0" type="field" name="settling"/>
+          <column width="-1" hidden="0" type="field" name="treatment_capacity"/>
+          <column width="-1" hidden="0" type="field" name="networkseparation"/>
+          <column width="-1" hidden="0" type="field" name="flow_meter"/>
+          <column width="-1" hidden="0" type="field" name="water_meter"/>
+          <column width="-1" hidden="0" type="field" name="manometer"/>
+          <column width="-1" hidden="0" type="field" name="depth"/>
+          <column width="-1" hidden="0" type="field" name="no_valves"/>
+          <column width="-1" hidden="0" type="field" name="fk_pressurecontrol_type"/>
+          <column width="-1" hidden="1" type="actions"/>
+          <column width="-1" hidden="0" type="field" name="geometry"/>
+        </columns>
+      </attributetableconfig>
+      <editform>./ui_forms/installation.ui</editform>
+      <editforminit>formOpen</editforminit>
+      <editforminitcodesource>1</editforminitcodesource>
+      <editforminitfilepath>./python/installation_form.py</editforminitfilepath>
+      <editforminitcode><![CDATA[from python.installation_form import formOpen
+]]></editforminitcode>
+      <featformsuppress>0</featformsuppress>
+      <editorlayout>uifilelayout</editorlayout>
+      <widgets>
+        <widget name="relation_cover_installation">
+          <config/>
+        </widget>
+        <widget name="relation_installation_parent">
+          <config/>
+        </widget>
+      </widgets>
+      <conditionalstyles>
+        <rowstyles/>
+        <fieldstyles/>
+      </conditionalstyles>
+      <defaults>
+        <default field="id" expression=""/>
+        <default field="fk_district" expression=""/>
+        <default field="fk_pressurezone" expression=""/>
+        <default field="fk_printmap" expression=""/>
+        <default field="_printmaps" expression=""/>
+        <default field="_geometry_alt1_used" expression=""/>
+        <default field="_geometry_alt2_used" expression=""/>
+        <default field="_pipe_node_type" expression=""/>
+        <default field="_pipe_orientation" expression=""/>
+        <default field="_pipe_schema_visible" expression=""/>
+        <default field="geometry" expression=""/>
+        <default field="geometry_alt1" expression=""/>
+        <default field="geometry_alt2" expression=""/>
+        <default field="update_geometry_alt1" expression=""/>
+        <default field="update_geometry_alt2" expression=""/>
+        <default field="identification" expression=""/>
+        <default field="fk_distributor" expression=""/>
+        <default field="fk_status" expression=""/>
+        <default field="fk_folder" expression=""/>
+        <default field="fk_locationtype" expression=""/>
+        <default field="fk_precision" expression=""/>
+        <default field="fk_precisionalti" expression=""/>
+        <default field="fk_object_reference" expression=""/>
+        <default field="altitude" expression=""/>
+        <default field="year" expression=""/>
+        <default field="year_end" expression=""/>
+        <default field="orientation" expression=""/>
+        <default field="remark" expression=""/>
+        <default field="schema_force_visible" expression=""/>
+        <default field="label_1_visible" expression=""/>
+        <default field="label_1_x" expression=""/>
+        <default field="label_1_y" expression=""/>
+        <default field="label_1_rotation" expression=""/>
+        <default field="label_1_text" expression=""/>
+        <default field="label_2_visible" expression=""/>
+        <default field="label_2_x" expression=""/>
+        <default field="label_2_y" expression=""/>
+        <default field="label_2_rotation" expression=""/>
+        <default field="label_2_text" expression=""/>
+        <default field="installation_type" expression=""/>
+        <default field="name" expression=""/>
+        <default field="fk_parent" expression=""/>
+        <default field="fk_remote" expression=""/>
+        <default field="fk_watertype" expression=""/>
+        <default field="parcel" expression=""/>
+        <default field="eca" expression=""/>
+        <default field="open_water_surface" expression=""/>
+        <default field="fk_source_type" expression=""/>
+        <default field="fk_source_quality" expression=""/>
+        <default field="flow_lowest" expression=""/>
+        <default field="flow_average" expression=""/>
+        <default field="flow_concession" expression=""/>
+        <default field="contract_end" expression=""/>
+        <default field="gathering_chamber" expression=""/>
+        <default field="fk_pump_type" expression=""/>
+        <default field="fk_pipe_in" expression=""/>
+        <default field="fk_pipe_out" expression=""/>
+        <default field="fk_pump_operating" expression=""/>
+        <default field="no_pumps" expression=""/>
+        <default field="rejected_flow" expression=""/>
+        <default field="manometric_height" expression=""/>
+        <default field="fk_overflow" expression=""/>
+        <default field="fk_tank_firestorage" expression=""/>
+        <default field="storage_total" expression=""/>
+        <default field="storage_supply" expression=""/>
+        <default field="storage_fire" expression=""/>
+        <default field="altitude_overflow" expression=""/>
+        <default field="altitude_apron" expression=""/>
+        <default field="height_max" expression=""/>
+        <default field="fire_valve" expression=""/>
+        <default field="fire_remote" expression=""/>
+        <default field="_litrepercm" expression=""/>
+        <default field="cistern1_fk_type" expression=""/>
+        <default field="cistern1_dimension_1" expression=""/>
+        <default field="cistern1_dimension_2" expression=""/>
+        <default field="cistern1_storage" expression=""/>
+        <default field="_cistern1_litrepercm" expression=""/>
+        <default field="cistern2_fk_type" expression=""/>
+        <default field="cistern2_dimension_1" expression=""/>
+        <default field="cistern2_dimension_2" expression=""/>
+        <default field="cistern2_storage" expression=""/>
+        <default field="_cistern2_litrepercm" expression=""/>
+        <default field="sanitization_uv" expression=""/>
+        <default field="sanitization_chlorine_liquid" expression=""/>
+        <default field="sanitization_chlorine_gazeous" expression=""/>
+        <default field="sanitization_ozone" expression=""/>
+        <default field="filtration_membrane" expression=""/>
+        <default field="filtration_sandorgravel" expression=""/>
+        <default field="flocculation" expression=""/>
+        <default field="activatedcharcoal" expression=""/>
+        <default field="settling" expression=""/>
+        <default field="treatment_capacity" expression=""/>
+        <default field="networkseparation" expression=""/>
+        <default field="flow_meter" expression=""/>
+        <default field="water_meter" expression=""/>
+        <default field="manometer" expression=""/>
+        <default field="depth" expression=""/>
+        <default field="no_valves" expression=""/>
+        <default field="fk_pressurecontrol_type" expression=""/>
+      </defaults>
+      <previewExpression>coalesce(identification|| ' ','') || CASE
+WHEN  "installation_type"  = 'chamber' THEN 'C. '
+WHEN "installation_type"  = 'pressurecontrol' AND fk_pressurecontrol_type = 2801 THEN 'CR. '
+WHEN  "installation_type"  = 'pressurecontrol' AND fk_pressurecontrol_type = 2802 THEN 'CCP. '
+WHEN  "installation_type"  = 'pressurecontrol' AND fk_pressurecontrol_type = 2803 THEN 'CRA. '
+WHEN  "installation_type"  = 'pump' THEN 'P. '
+WHEN  "installation_type"  = 'source' THEN 'S. '
+WHEN  "installation_type"  = 'tank' THEN 'R. '
+WHEN  "installation_type"  = 'treatment' THEN 'T. '
+ELSE ''
+END
+|| coalesce(name,'')</previewExpression>
     </maplayer>
     <maplayer simplifyAlgorithm="0" minimumScale="0" maximumScale="1e+08" simplifyDrawingHints="0" minLabelScale="0" maxLabelScale="1e+08" simplifyDrawingTol="1" readOnly="0" geometry="Point" simplifyMaxScale="1" type="vector" hasScaleBasedVisibilityFlag="0" simplifyLocal="1" scaleBasedLabelVisibilityFlag="0">
       <extent>
