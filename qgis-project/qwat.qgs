@@ -29,33 +29,35 @@
             <property key="showFeatureCount" value="1"/>
           </customproperties>
         </layer-tree-layer>
-        <layer-tree-layer expanded="1" providerKey="postgres" checked="Qt::Checked" id="vw_element_installation20170706152829679" source="service='qwat' sslmode=disable key='id' srid=21781 type=MultiPolygon table=&quot;qwat_od&quot;.&quot;vw_element_installation&quot; (geometry_polygon) sql=" name="ouvrage_polygon">
+        <layer-tree-layer expanded="1" providerKey="postgres" checked="Qt::Unchecked" id="vw_element_installation20170706152829679" source="service='qwat' sslmode=disable key='id' srid=21781 type=MultiPolygon table=&quot;qwat_od&quot;.&quot;vw_element_installation&quot; (geometry_polygon) sql=" name="Ouvrage_polygon">
           <customproperties/>
         </layer-tree-layer>
-        <layer-tree-layer expanded="1" providerKey="postgres" checked="Qt::Unchecked" id="od_cover20141219115626229" source="service='qwat' sslmode=disable key='id' srid=21781 type=PointZ table=&quot;qwat_od&quot;.&quot;cover&quot; (geometry) sql=" name="couvercles">
+        <layer-tree-layer expanded="1" providerKey="postgres" checked="Qt::Unchecked" id="od_cover20141219115626229" source="service='qwat' sslmode=disable key='id' srid=21781 type=PointZ table=&quot;qwat_od&quot;.&quot;cover&quot; (geometry) sql=" name="Couvercles">
           <customproperties>
             <property key="showFeatureCount" value="1"/>
           </customproperties>
         </layer-tree-layer>
       </layer-tree-group>
-      <layer-tree-group expanded="1" checked="Qt::Checked" name="Abonnés">
+      <layer-tree-group expanded="1" checked="Qt::PartiallyChecked" name="Abonnés">
         <customproperties/>
-        <layer-tree-layer expanded="1" providerKey="postgres" checked="Qt::Checked" id="subscriber20130304110011459" source="service='qwat' sslmode=allow key='id' srid=21781 type=PointZ table=&quot;qwat_od&quot;.&quot;vw_element_subscriber&quot; (geometry) sql=" name="abonnés">
+        <layer-tree-layer expanded="1" providerKey="postgres" checked="Qt::Checked" id="subscriber20130304110011459" source="service='qwat' sslmode=allow key='id' srid=21781 type=PointZ table=&quot;qwat_od&quot;.&quot;vw_element_subscriber&quot; (geometry) sql=" name="Abonnés">
           <customproperties>
             <property key="showFeatureCount" value="0"/>
           </customproperties>
         </layer-tree-layer>
-        <layer-tree-layer expanded="0" providerKey="postgres" checked="Qt::Checked" id="od_subscriber_reference20131206105928067" source="service='qwat' sslmode=disable key='id' estimatedmetadata=true srid=21781 type=Point table=&quot;qwat_od&quot;.&quot;subscriber_reference&quot; (geometry) sql=" name="abonnés - renvoi">
+        <layer-tree-layer expanded="0" providerKey="postgres" checked="Qt::Checked" id="od_subscriber_reference20131206105928067" source="service='qwat' sslmode=disable key='id' estimatedmetadata=true srid=21781 type=Point table=&quot;qwat_od&quot;.&quot;subscriber_reference&quot; (geometry) sql=" name="Abonnés - renvoi">
           <customproperties/>
         </layer-tree-layer>
-        <layer-tree-layer expanded="0" providerKey="postgres" checked="Qt::Checked" id="od_meter20131120073630165" source="service='qwat' sslmode=disable key='id' estimatedmetadata=true srid=21781 type=PointZ table=&quot;qwat_od&quot;.&quot;vw_element_meter&quot; (geometry) sql=" name="compteurs réseau">
-          <customproperties/>
+        <layer-tree-layer expanded="1" providerKey="postgres" checked="Qt::Unchecked" id="od_meter20131120073630165" source="service='qwat' sslmode=disable key='id' estimatedmetadata=true srid=21781 type=PointZ table=&quot;qwat_od&quot;.&quot;vw_element_meter&quot; (geometry) sql=" name="Compteurs réseau">
+          <customproperties>
+            <property key="expandedLegendNodes" value="{b2973097-d399-4a68-9a23-ed3d14a767fb}"/>
+          </customproperties>
         </layer-tree-layer>
-        <layer-tree-layer expanded="0" providerKey="postgres" checked="Qt::Checked" id="od_meter_reference20140304165835390" source="service='qwat' sslmode=disable key='id' estimatedmetadata=true srid=21781 type=Point table=&quot;qwat_od&quot;.&quot;meter_reference&quot; (geometry) sql=" name="Compteurs réseau - renvoi">
+        <layer-tree-layer expanded="0" providerKey="postgres" checked="Qt::Unchecked" id="od_meter_reference20140304165835390" source="service='qwat' sslmode=disable key='id' estimatedmetadata=true srid=21781 type=Point table=&quot;qwat_od&quot;.&quot;meter_reference&quot; (geometry) sql=" name="Compteurs réseau - renvoi">
           <customproperties/>
         </layer-tree-layer>
       </layer-tree-group>
-      <layer-tree-layer expanded="1" providerKey="postgres" checked="Qt::Checked" id="conduites_copy20130709141244955" source="service='qwat' sslmode=disable key='id' srid=21781 type=LineStringZ table=&quot;qwat_od&quot;.&quot;pipe&quot; (geometry) sql=" name="conduites">
+      <layer-tree-layer expanded="1" providerKey="postgres" checked="Qt::Checked" id="conduites_copy20130709141244955" source="service='qwat' sslmode=disable key='id' srid=21781 type=LineStringZ table=&quot;qwat_od&quot;.&quot;pipe&quot; (geometry) sql=" name="Conduites">
         <customproperties>
           <property key="expandedLegendNodes">
             <value>{1db41c6f-d632-42a2-a453-287300377f48}</value>
@@ -69,12 +71,12 @@
           <property key="showFeatureCount" value="0"/>
         </customproperties>
       </layer-tree-layer>
-      <layer-tree-layer expanded="1" providerKey="postgres" checked="Qt::Checked" id="node20130304110005126" source="service='qwat' sslmode=allow key='id' srid=21781 type=PointZ table=&quot;qwat_od&quot;.&quot;node&quot; (geometry) sql=" name="noeuds">
+      <layer-tree-layer expanded="1" providerKey="postgres" checked="Qt::Checked" id="node20130304110005126" source="service='qwat' sslmode=allow key='id' srid=21781 type=PointZ table=&quot;qwat_od&quot;.&quot;node&quot; (geometry) sql=" name="Noeuds (réseau et ouvrages)">
         <customproperties>
           <property key="showFeatureCount" value="0"/>
         </customproperties>
       </layer-tree-layer>
-      <layer-tree-layer expanded="1" providerKey="postgres" checked="Qt::Checked" id="valve20130304110011497" source="service='qwat' sslmode=allow key='id' srid=21781 type=PointZ table=&quot;qwat_od&quot;.&quot;valve&quot; (geometry) sql=" name="vannes">
+      <layer-tree-layer expanded="1" providerKey="postgres" checked="Qt::Unchecked" id="valve20130304110011497" source="service='qwat' sslmode=allow key='id' srid=21781 type=PointZ table=&quot;qwat_od&quot;.&quot;valve&quot; (geometry) sql=" name="Vannes">
         <customproperties>
           <property key="expandedLegendNodes">
             <value>{7a025dab-c7fe-4c7c-9f0b-25a39f73abd8}</value>
@@ -83,40 +85,40 @@
           <property key="showFeatureCount" value="1"/>
         </customproperties>
       </layer-tree-layer>
-      <layer-tree-layer expanded="0" providerKey="postgres" checked="Qt::Checked" id="hydrant20130304110004848" source="service='qwat' sslmode=allow key='id' srid=21781 type=PointZ table=&quot;qwat_od&quot;.&quot;vw_element_hydrant&quot; (geometry) sql=" name="hydrantes">
+      <layer-tree-layer expanded="0" providerKey="postgres" checked="Qt::Unchecked" id="hydrant20130304110004848" source="service='qwat' sslmode=allow key='id' srid=21781 type=PointZ table=&quot;qwat_od&quot;.&quot;vw_element_hydrant&quot; (geometry) sql=" name="Hydrantes (bornes incendie)">
         <customproperties/>
       </layer-tree-layer>
-      <layer-tree-layer expanded="0" providerKey="postgres" checked="Qt::Checked" id="od_part20140429113327995" source="service='qwat' sslmode=disable key='id' estimatedmetadata=true srid=21781 type=PointZ table=&quot;qwat_od&quot;.&quot;vw_element_part&quot; (geometry) sql=" name="Pièces d'installations">
+      <layer-tree-layer expanded="1" providerKey="postgres" checked="Qt::Unchecked" id="od_part20140429113327995" source="service='qwat' sslmode=disable key='id' estimatedmetadata=true srid=21781 type=PointZ table=&quot;qwat_od&quot;.&quot;vw_element_part&quot; (geometry) sql=" name="Pièces d'installations">
         <customproperties>
           <property key="showFeatureCount" value="1"/>
         </customproperties>
       </layer-tree-layer>
-      <layer-tree-layer expanded="1" providerKey="postgres" checked="Qt::Checked" id="od_remote20150116100522170" source="service='qwat' sslmode=disable key='id' srid=21781 type=MultiLineString table=&quot;qwat_od&quot;.&quot;remote&quot; (geometry) sql=" name="télécommandes">
+      <layer-tree-layer expanded="1" providerKey="postgres" checked="Qt::Unchecked" id="od_remote20150116100522170" source="service='qwat' sslmode=disable key='id' srid=21781 type=MultiLineString table=&quot;qwat_od&quot;.&quot;remote&quot; (geometry) sql=" name="Télécommandes">
         <customproperties>
           <property key="showFeatureCount" value="1"/>
         </customproperties>
       </layer-tree-layer>
-      <layer-tree-layer expanded="0" providerKey="postgres" checked="Qt::Checked" id="od_crossing20141023083754327" source="service='qwat' sslmode=disable key='id' srid=21781 type=Point table=&quot;qwat_od&quot;.&quot;crossing&quot; (geometry) sql=" name="croisements">
+      <layer-tree-layer expanded="1" providerKey="postgres" checked="Qt::Unchecked" id="od_crossing20141023083754327" source="service='qwat' sslmode=disable key='id' srid=21781 type=Point table=&quot;qwat_od&quot;.&quot;crossing&quot; (geometry) sql=" name="Croisements">
         <customproperties>
           <property key="showFeatureCount" value="1"/>
         </customproperties>
       </layer-tree-layer>
-      <layer-tree-layer expanded="0" providerKey="postgres" checked="Qt::Unchecked" id="leak20130821111917060" source="service='qwat' sslmode=disable key='id' srid=21781 type=Point table=&quot;qwat_od&quot;.&quot;leak&quot; (geometry) sql=" name="fuites">
+      <layer-tree-layer expanded="0" providerKey="postgres" checked="Qt::Unchecked" id="leak20130821111917060" source="service='qwat' sslmode=disable key='id' srid=21781 type=Point table=&quot;qwat_od&quot;.&quot;leak&quot; (geometry) sql=" name="Fuites">
         <customproperties>
           <property key="showFeatureCount" value="1"/>
         </customproperties>
       </layer-tree-layer>
-      <layer-tree-layer expanded="1" providerKey="postgres" checked="Qt::Unchecked" id="vw_element_samplingpoint20151002161215716" source="service='qwat' sslmode=disable key='id' srid=21781 type=PointZ table=&quot;qwat_od&quot;.&quot;vw_element_samplingpoint&quot; (geometry) sql=" name="point de prélèvement">
+      <layer-tree-layer expanded="1" providerKey="postgres" checked="Qt::Unchecked" id="vw_element_samplingpoint20151002161215716" source="service='qwat' sslmode=disable key='id' srid=21781 type=PointZ table=&quot;qwat_od&quot;.&quot;vw_element_samplingpoint&quot; (geometry) sql=" name="Point de prélèvement">
         <customproperties>
           <property key="showFeatureCount" value="1"/>
         </customproperties>
       </layer-tree-layer>
-      <layer-tree-group expanded="1" checked="Qt::Unchecked" name="Contrôle">
+      <layer-tree-group expanded="1" checked="Qt::PartiallyChecked" name="Contrôle">
         <customproperties/>
-        <layer-tree-layer expanded="0" providerKey="postgres" checked="Qt::Unchecked" id="subscriber_pipe_relation20130417092124312" source="service='qwat' sslmode=disable key='id' srid=21781 type=LineString table=&quot;qwat_od&quot;.&quot;vw_subscriber_pipe_relation&quot; (geometry) sql=" name="Fleches abonné -> conduite">
+        <layer-tree-layer expanded="0" providerKey="postgres" checked="Qt::Checked" id="subscriber_pipe_relation20130417092124312" source="service='qwat' sslmode=disable key='id' srid=21781 type=LineString table=&quot;qwat_od&quot;.&quot;vw_subscriber_pipe_relation&quot; (geometry) sql=" name="Fleches abonné -> conduite">
           <customproperties/>
         </layer-tree-layer>
-        <layer-tree-layer expanded="0" providerKey="postgres" checked="Qt::Unchecked" id="od_node20140116161508743" source="service='qwat' sslmode=disable key='id' estimatedmetadata=true srid=21781 type=PointZ table=&quot;qwat_od&quot;.&quot;node&quot; (geometry) sql=" name="noeuds - tous - controle">
+        <layer-tree-layer expanded="0" providerKey="postgres" checked="Qt::Unchecked" id="od_node20140116161508743" source="service='qwat' sslmode=disable key='id' estimatedmetadata=true srid=21781 type=PointZ table=&quot;qwat_od&quot;.&quot;node&quot; (geometry) sql=" name="Noeuds - tous - controle">
           <customproperties/>
         </layer-tree-layer>
       </layer-tree-group>
@@ -125,12 +127,12 @@
       <customproperties/>
       <layer-tree-group expanded="1" checked="Qt::Unchecked" name="impression">
         <customproperties/>
-        <layer-tree-layer expanded="1" providerKey="postgres" checked="Qt::Unchecked" id="hydrantes_copy20160127124839887" source="service='qwat' sslmode=allow key='id' srid=21781 type=PointZ table=&quot;qwat_od&quot;.&quot;vw_element_hydrant&quot; (geometry) sql=" name="hydrantes 5000 (pression)">
+        <layer-tree-layer expanded="1" providerKey="postgres" checked="Qt::Unchecked" id="hydrantes_copy20160127124839887" source="service='qwat' sslmode=allow key='id' srid=21781 type=PointZ table=&quot;qwat_od&quot;.&quot;vw_element_hydrant&quot; (geometry) sql=" name="Hydrantes 5000 (pression)">
           <customproperties>
             <property key="expandedLegendNodes" value="{a83ef0cf-9977-418a-84e8-92fa1cc4523e}"/>
           </customproperties>
         </layer-tree-layer>
-        <layer-tree-layer expanded="0" providerKey="postgres" checked="Qt::Unchecked" id="ouvrage_copy20160125132737527" source="service='qwat' sslmode=disable key='id' srid=21781 type=PointZ table=&quot;qwat_od&quot;.&quot;vw_element_installation&quot; (geometry_alt2) sql=" name="ouvrages 5000">
+        <layer-tree-layer expanded="1" providerKey="postgres" checked="Qt::Unchecked" id="ouvrage_copy20160125132737527" source="service='qwat' sslmode=disable key='id' srid=21781 type=PointZ table=&quot;qwat_od&quot;.&quot;vw_element_installation&quot; (geometry_alt2) sql=" name="Ouvrages 5000">
           <customproperties>
             <property key="expandedLegendNodes">
               <value>{d31d075b-227e-40b6-ab03-8d810a0d69b8}</value>
@@ -138,21 +140,21 @@
             </property>
           </customproperties>
         </layer-tree-layer>
-        <layer-tree-layer expanded="0" providerKey="postgres" checked="Qt::Unchecked" id="vannes_copy20141127160745910" source="service='qwat' sslmode=allow key='id' srid=21781 type=PointZ table=&quot;qwat_od&quot;.&quot;valve&quot; (geometry_alt2) sql=" name="vannes 5000">
+        <layer-tree-layer expanded="1" providerKey="postgres" checked="Qt::Unchecked" id="vannes_copy20141127160745910" source="service='qwat' sslmode=allow key='id' srid=21781 type=PointZ table=&quot;qwat_od&quot;.&quot;valve&quot; (geometry_alt2) sql=" name="Vannes 5000">
           <customproperties>
-            <property key="expandedLegendNodes"/>
+            <property key="expandedLegendNodes" value="{7a025dab-c7fe-4c7c-9f0b-25a39f73abd8}"/>
           </customproperties>
         </layer-tree-layer>
-        <layer-tree-layer expanded="1" providerKey="postgres" checked="Qt::Unchecked" id="vw_pipe_schema20170306143352379179081243" source="service='qwat' sslmode=disable key='id' srid=21781 type=LineStringZ table=&quot;qwat_od&quot;.&quot;vw_pipe_schema&quot; (geometry) sql=" name="conduites impression 5000">
+        <layer-tree-layer expanded="1" providerKey="postgres" checked="Qt::Unchecked" id="vw_pipe_schema20170306143352379179081243" source="service='qwat' sslmode=disable key='id' srid=21781 type=LineStringZ table=&quot;qwat_od&quot;.&quot;vw_pipe_schema&quot; (geometry) sql=" name="Conduites impression 5000">
           <customproperties/>
         </layer-tree-layer>
-        <layer-tree-layer expanded="1" providerKey="postgres" checked="Qt::Unchecked" id="télécommande_copy20160127112146958" source="service='qwat' sslmode=disable key='id' srid=21781 type=MultiLineString table=&quot;qwat_od&quot;.&quot;remote&quot; (geometry_alt2) sql=" name="télécommande 5000">
+        <layer-tree-layer expanded="1" providerKey="postgres" checked="Qt::Unchecked" id="télécommande_copy20160127112146958" source="service='qwat' sslmode=disable key='id' srid=21781 type=MultiLineString table=&quot;qwat_od&quot;.&quot;remote&quot; (geometry_alt2) sql=" name="Télécommande 5000">
           <customproperties/>
         </layer-tree-layer>
       </layer-tree-group>
-      <layer-tree-group expanded="1" checked="Qt::Unchecked" name="edition">
+      <layer-tree-group expanded="1" checked="Qt::Unchecked" name="Édition">
         <customproperties/>
-        <layer-tree-layer expanded="1" providerKey="postgres" checked="Qt::Unchecked" id="vw_pipe_schema_visibleitems20141127154708843" source="service='qwat' sslmode=disable key='id' srid=21781 type=LineStringZ table=&quot;qwat_od&quot;.&quot;vw_pipe_schema_visibleitems&quot; (geometry) sql=" name="conduites edition 5000">
+        <layer-tree-layer expanded="1" providerKey="postgres" checked="Qt::Unchecked" id="vw_pipe_schema_visibleitems20141127154708843" source="service='qwat' sslmode=disable key='id' srid=21781 type=LineStringZ table=&quot;qwat_od&quot;.&quot;vw_pipe_schema_visibleitems&quot; (geometry) sql=" name="Conduites edition 5000">
           <customproperties/>
         </layer-tree-layer>
         <layer-tree-layer expanded="0" providerKey="postgres" checked="Qt::Unchecked" id="pipe_child_parent20130417092030507" source="service='qwat' sslmode=disable key='child' srid=21781 type=LineString table=&quot;qwat_od&quot;.&quot;vw_pipe_child_parent&quot; (geometry) sql=" name="Flèches conduite enfant -> parent">
@@ -160,24 +162,24 @@
         </layer-tree-layer>
       </layer-tree-group>
     </layer-tree-group>
-    <layer-tree-group expanded="1" checked="Qt::Checked" name="Annotations">
+    <layer-tree-group expanded="1" checked="Qt::Unchecked" name="Annotations">
       <customproperties/>
-      <layer-tree-layer expanded="0" providerKey="postgres" checked="Qt::Checked" id="od_annotationline20131203095020365" source="service='qwat' sslmode=disable key='id' estimatedmetadata=true srid=21781 type=LineString table=&quot;qwat_dr&quot;.&quot;annotationline&quot; (geometry) sql=" name="annotations - ligne">
+      <layer-tree-layer expanded="0" providerKey="postgres" checked="Qt::Unchecked" id="od_annotationline20131203095020365" source="service='qwat' sslmode=disable key='id' estimatedmetadata=true srid=21781 type=LineString table=&quot;qwat_dr&quot;.&quot;annotationline&quot; (geometry) sql=" name="Annotations - ligne">
         <customproperties/>
       </layer-tree-layer>
-      <layer-tree-layer expanded="0" providerKey="postgres" checked="Qt::Checked" id="od_annotationpoint20131203095020392" source="service='qwat' sslmode=disable key='id' estimatedmetadata=true srid=21781 type=Point table=&quot;qwat_dr&quot;.&quot;annotationpoint&quot; (geometry) sql=" name="annotations - point">
+      <layer-tree-layer expanded="0" providerKey="postgres" checked="Qt::Unchecked" id="od_annotationpoint20131203095020392" source="service='qwat' sslmode=disable key='id' estimatedmetadata=true srid=21781 type=Point table=&quot;qwat_dr&quot;.&quot;annotationpoint&quot; (geometry) sql=" name="Annotations - point">
         <customproperties/>
       </layer-tree-layer>
     </layer-tree-group>
-    <layer-tree-group expanded="1" checked="Qt::PartiallyChecked" name="Côtes">
+    <layer-tree-group expanded="1" checked="Qt::Unchecked" name="Côtes">
       <customproperties/>
-      <layer-tree-layer expanded="0" providerKey="postgres" checked="Qt::Checked" id="dimension20130807094904783" source="service='qwat' sslmode=disable key='id' srid=21781 type=LineString table=&quot;qwat_dr&quot;.&quot;dimension_distance&quot; (geometry) sql=" name="côtes distance">
+      <layer-tree-layer expanded="0" providerKey="postgres" checked="Qt::Unchecked" id="dimension20130807094904783" source="service='qwat' sslmode=disable key='id' srid=21781 type=LineString table=&quot;qwat_dr&quot;.&quot;dimension_distance&quot; (geometry) sql=" name="Côtes distance">
         <customproperties/>
       </layer-tree-layer>
-      <layer-tree-layer expanded="0" providerKey="postgres" checked="Qt::Checked" id="od_dimension_orientation20131202111155806" source="service='qwat' sslmode=disable key='id' estimatedmetadata=true srid=21781 type=LineString table=&quot;qwat_dr&quot;.&quot;dimension_orientation&quot; (geometry) sql=" name="côtes orientation">
+      <layer-tree-layer expanded="0" providerKey="postgres" checked="Qt::Unchecked" id="od_dimension_orientation20131202111155806" source="service='qwat' sslmode=disable key='id' estimatedmetadata=true srid=21781 type=LineString table=&quot;qwat_dr&quot;.&quot;dimension_orientation&quot; (geometry) sql=" name="Côtes orientation">
         <customproperties/>
       </layer-tree-layer>
-      <layer-tree-layer expanded="0" providerKey="postgres" checked="Qt::Unchecked" id="constructionpoint20130807094904851" source="service='qwat' sslmode=disable key='id' srid=21781 type=Point table=&quot;qwat_dr&quot;.&quot;constructionpoint&quot; (geometry) sql=" name="points de construction">
+      <layer-tree-layer expanded="0" providerKey="postgres" checked="Qt::Unchecked" id="constructionpoint20130807094904851" source="service='qwat' sslmode=disable key='id' srid=21781 type=Point table=&quot;qwat_dr&quot;.&quot;constructionpoint&quot; (geometry) sql=" name="Points de construction">
         <customproperties/>
       </layer-tree-layer>
       <layer-tree-layer expanded="0" providerKey="memory" checked="Qt::Unchecked" id="IntersectIt_Points20130618102143276" source="memory?geometry=Point&amp;crs=EPSG:21781&amp;index=yes&amp;field=id:string(255,0)" name="IntersectIt Points">
@@ -187,9 +189,9 @@
         <customproperties/>
       </layer-tree-layer>
     </layer-tree-group>
-    <layer-tree-group expanded="1" checked="Qt::PartiallyChecked" name="Zones">
+    <layer-tree-group expanded="1" checked="Qt::Unchecked" name="Zones">
       <customproperties/>
-      <layer-tree-layer expanded="1" providerKey="postgres" checked="Qt::Unchecked" id="folder20150629160924367" source="service='qwat' sslmode=disable key='id' srid=21781 type=MultiLineString table=&quot;qwat_od&quot;.&quot;folder&quot; (geometry_line) sql=" name="dossiers techniques">
+      <layer-tree-layer expanded="1" providerKey="postgres" checked="Qt::Unchecked" id="folder20150629160924367" source="service='qwat' sslmode=disable key='id' srid=21781 type=MultiLineString table=&quot;qwat_od&quot;.&quot;folder&quot; (geometry_line) sql=" name="Dossiers techniques (chantiers)">
         <customproperties/>
       </layer-tree-layer>
       <layer-tree-layer expanded="0" providerKey="postgres" checked="Qt::Unchecked" id="district20130304110004764" source="service='qwat' sslmode=allow key='id' srid=21781 type=MultiPolygon table=&quot;qwat_od&quot;.&quot;district&quot; (geometry) sql=" name="communes">
@@ -198,22 +200,22 @@
           <property key="showFeatureCount" value="1"/>
         </customproperties>
       </layer-tree-layer>
-      <layer-tree-layer expanded="1" providerKey="postgres" checked="Qt::Unchecked" id="pressurezone20130417133612105" source="service='qwat' sslmode=disable key='id' srid=21781 type=MultiPolygon table=&quot;qwat_od&quot;.&quot;pressurezone&quot; (geometry) sql=" name="zones de pressions">
+      <layer-tree-layer expanded="1" providerKey="postgres" checked="Qt::Unchecked" id="pressurezone20130417133612105" source="service='qwat' sslmode=disable key='id' srid=21781 type=MultiPolygon table=&quot;qwat_od&quot;.&quot;pressurezone&quot; (geometry) sql=" name="Zones de pression">
         <customproperties/>
       </layer-tree-layer>
       <layer-tree-layer expanded="1" providerKey="postgres" checked="Qt::Unchecked" id="vw_consumptionzone20150508135647750" source="service='qwat' sslmode=disable key='name' srid=21781 type=MultiPolygon table=&quot;qwat_od&quot;.&quot;vw_consumptionzone&quot; (geometry) sql=" name="Zones de consommation">
         <customproperties/>
       </layer-tree-layer>
-      <layer-tree-layer expanded="1" providerKey="postgres" checked="Qt::Checked" id="printmap20130304110011400" source="service='qwat' sslmode=allow key='id' srid=21781 type=Polygon table=&quot;qwat_od&quot;.&quot;printmap&quot; (geometry) sql=" name="folios">
+      <layer-tree-layer expanded="1" providerKey="postgres" checked="Qt::Unchecked" id="printmap20130304110011400" source="service='qwat' sslmode=allow key='id' srid=21781 type=Polygon table=&quot;qwat_od&quot;.&quot;printmap&quot; (geometry) sql=" name="Folios (zones d'impression)">
         <customproperties/>
       </layer-tree-layer>
-      <layer-tree-layer expanded="0" providerKey="postgres" checked="Qt::Unchecked" id="protectionzone20130304110011418" source="service='qwat' sslmode=allow key='id' srid=21781 type=MultiPolygon table=&quot;qwat_od&quot;.&quot;protectionzone&quot; (geometry) sql=" name="zones de protections">
+      <layer-tree-layer expanded="0" providerKey="postgres" checked="Qt::Unchecked" id="protectionzone20130304110011418" source="service='qwat' sslmode=allow key='id' srid=21781 type=MultiPolygon table=&quot;qwat_od&quot;.&quot;protectionzone&quot; (geometry) sql=" name="Zones de protections">
         <customproperties>
           <property key="showFeatureCount" value="1"/>
         </customproperties>
       </layer-tree-layer>
     </layer-tree-group>
-    <layer-tree-group expanded="1" checked="Qt::Unchecked" mutually-exclusive="1" name="Fond de plan" mutually-exclusive-child="1">
+    <layer-tree-group expanded="1" checked="Qt::Unchecked" mutually-exclusive="1" name="Fond de plan" mutually-exclusive-child="4">
       <customproperties/>
       <layer-tree-group expanded="0" checked="Qt::Unchecked" name="cadastre">
         <customproperties>
@@ -608,97 +610,97 @@
   </layer-tree-canvas>
   <legend updateDrawingOrder="false">
     <legendgroup open="true" checked="Qt::PartiallyChecked" name="Réseau">
-      <legendgroup open="true" checked="Qt::PartiallyChecked" name="ouvrages">
-        <legendlayer drawingOrder="1" open="false" checked="Qt::Checked" name="ouvrage" showFeatureCount="1">
+      <legendgroup open="true" checked="Qt::Unchecked" name="Ouvrages">
+        <legendlayer drawingOrder="1" open="false" checked="Qt::Unchecked" name="Ouvrage" showFeatureCount="1">
           <filegroup open="false" hidden="false">
-            <legendlayerfile isInOverview="0" layerid="vw_node_installation20150918153835436" visible="1"/>
+            <legendlayerfile isInOverview="0" layerid="vw_node_installation20150918153835436" visible="0"/>
           </filegroup>
         </legendlayer>
-        <legendlayer drawingOrder="76" open="true" checked="Qt::Checked" name="ouvrage_polygon" showFeatureCount="0">
+        <legendlayer drawingOrder="76" open="true" checked="Qt::Unchecked" name="Ouvrage_polygon" showFeatureCount="0">
           <filegroup open="true" hidden="false">
-            <legendlayerfile isInOverview="0" layerid="vw_element_installation20170706152829679" visible="1"/>
+            <legendlayerfile isInOverview="0" layerid="vw_element_installation20170706152829679" visible="0"/>
           </filegroup>
         </legendlayer>
-        <legendlayer drawingOrder="0" open="true" checked="Qt::Unchecked" name="couvercles" showFeatureCount="1">
+        <legendlayer drawingOrder="0" open="true" checked="Qt::Unchecked" name="Couvercles" showFeatureCount="1">
           <filegroup open="true" hidden="false">
             <legendlayerfile isInOverview="0" layerid="od_cover20141219115626229" visible="0"/>
           </filegroup>
         </legendlayer>
       </legendgroup>
-      <legendgroup open="true" checked="Qt::Checked" name="Abonnés">
-        <legendlayer drawingOrder="2" open="true" checked="Qt::Checked" name="abonnés" showFeatureCount="0">
+      <legendgroup open="true" checked="Qt::PartiallyChecked" name="Abonnés">
+        <legendlayer drawingOrder="2" open="true" checked="Qt::Checked" name="Abonnés" showFeatureCount="0">
           <filegroup open="true" hidden="false">
             <legendlayerfile isInOverview="0" layerid="subscriber20130304110011459" visible="1"/>
           </filegroup>
         </legendlayer>
-        <legendlayer drawingOrder="3" open="false" checked="Qt::Checked" name="abonnés - renvoi" showFeatureCount="0">
+        <legendlayer drawingOrder="3" open="false" checked="Qt::Checked" name="Abonnés - renvoi" showFeatureCount="0">
           <filegroup open="false" hidden="false">
             <legendlayerfile isInOverview="0" layerid="od_subscriber_reference20131206105928067" visible="1"/>
           </filegroup>
         </legendlayer>
-        <legendlayer drawingOrder="4" open="false" checked="Qt::Checked" name="compteurs réseau" showFeatureCount="0">
-          <filegroup open="false" hidden="false">
-            <legendlayerfile isInOverview="0" layerid="od_meter20131120073630165" visible="1"/>
+        <legendlayer drawingOrder="4" open="true" checked="Qt::Unchecked" name="Compteurs réseau" showFeatureCount="0">
+          <filegroup open="true" hidden="false">
+            <legendlayerfile isInOverview="0" layerid="od_meter20131120073630165" visible="0"/>
           </filegroup>
         </legendlayer>
-        <legendlayer drawingOrder="5" open="false" checked="Qt::Checked" name="Compteurs réseau - renvoi" showFeatureCount="0">
+        <legendlayer drawingOrder="5" open="false" checked="Qt::Unchecked" name="Compteurs réseau - renvoi" showFeatureCount="0">
           <filegroup open="false" hidden="false">
-            <legendlayerfile isInOverview="0" layerid="od_meter_reference20140304165835390" visible="1"/>
+            <legendlayerfile isInOverview="0" layerid="od_meter_reference20140304165835390" visible="0"/>
           </filegroup>
         </legendlayer>
       </legendgroup>
-      <legendlayer drawingOrder="14" open="true" checked="Qt::Checked" name="conduites" showFeatureCount="0">
+      <legendlayer drawingOrder="14" open="true" checked="Qt::Checked" name="Conduites" showFeatureCount="0">
         <filegroup open="true" hidden="false">
           <legendlayerfile isInOverview="0" layerid="conduites_copy20130709141244955" visible="1"/>
         </filegroup>
       </legendlayer>
-      <legendlayer drawingOrder="11" open="true" checked="Qt::Checked" name="noeuds" showFeatureCount="0">
+      <legendlayer drawingOrder="11" open="true" checked="Qt::Checked" name="Noeuds (réseau et ouvrages)" showFeatureCount="0">
         <filegroup open="true" hidden="false">
           <legendlayerfile isInOverview="0" layerid="node20130304110005126" visible="1"/>
         </filegroup>
       </legendlayer>
-      <legendlayer drawingOrder="7" open="true" checked="Qt::Checked" name="vannes" showFeatureCount="1">
+      <legendlayer drawingOrder="7" open="true" checked="Qt::Unchecked" name="Vannes" showFeatureCount="1">
         <filegroup open="true" hidden="false">
-          <legendlayerfile isInOverview="0" layerid="valve20130304110011497" visible="1"/>
+          <legendlayerfile isInOverview="0" layerid="valve20130304110011497" visible="0"/>
         </filegroup>
       </legendlayer>
-      <legendlayer drawingOrder="8" open="false" checked="Qt::Checked" name="hydrantes" showFeatureCount="0">
+      <legendlayer drawingOrder="8" open="false" checked="Qt::Unchecked" name="Hydrantes (bornes incendie)" showFeatureCount="0">
         <filegroup open="false" hidden="false">
-          <legendlayerfile isInOverview="0" layerid="hydrant20130304110004848" visible="1"/>
+          <legendlayerfile isInOverview="0" layerid="hydrant20130304110004848" visible="0"/>
         </filegroup>
       </legendlayer>
-      <legendlayer drawingOrder="10" open="false" checked="Qt::Checked" name="Pièces d'installations" showFeatureCount="1">
-        <filegroup open="false" hidden="false">
-          <legendlayerfile isInOverview="0" layerid="od_part20140429113327995" visible="1"/>
-        </filegroup>
-      </legendlayer>
-      <legendlayer drawingOrder="19" open="true" checked="Qt::Checked" name="télécommandes" showFeatureCount="1">
+      <legendlayer drawingOrder="10" open="true" checked="Qt::Unchecked" name="Pièces d'installations" showFeatureCount="1">
         <filegroup open="true" hidden="false">
-          <legendlayerfile isInOverview="0" layerid="od_remote20150116100522170" visible="1"/>
+          <legendlayerfile isInOverview="0" layerid="od_part20140429113327995" visible="0"/>
         </filegroup>
       </legendlayer>
-      <legendlayer drawingOrder="13" open="false" checked="Qt::Checked" name="croisements" showFeatureCount="1">
-        <filegroup open="false" hidden="false">
-          <legendlayerfile isInOverview="0" layerid="od_crossing20141023083754327" visible="1"/>
+      <legendlayer drawingOrder="19" open="true" checked="Qt::Unchecked" name="Télécommandes" showFeatureCount="1">
+        <filegroup open="true" hidden="false">
+          <legendlayerfile isInOverview="0" layerid="od_remote20150116100522170" visible="0"/>
         </filegroup>
       </legendlayer>
-      <legendlayer drawingOrder="9" open="false" checked="Qt::Unchecked" name="fuites" showFeatureCount="1">
+      <legendlayer drawingOrder="13" open="true" checked="Qt::Unchecked" name="Croisements" showFeatureCount="1">
+        <filegroup open="true" hidden="false">
+          <legendlayerfile isInOverview="0" layerid="od_crossing20141023083754327" visible="0"/>
+        </filegroup>
+      </legendlayer>
+      <legendlayer drawingOrder="9" open="false" checked="Qt::Unchecked" name="Fuites" showFeatureCount="1">
         <filegroup open="false" hidden="false">
           <legendlayerfile isInOverview="0" layerid="leak20130821111917060" visible="0"/>
         </filegroup>
       </legendlayer>
-      <legendlayer drawingOrder="68" open="true" checked="Qt::Unchecked" name="point de prélèvement" showFeatureCount="1">
+      <legendlayer drawingOrder="68" open="true" checked="Qt::Unchecked" name="Point de prélèvement" showFeatureCount="1">
         <filegroup open="true" hidden="false">
           <legendlayerfile isInOverview="0" layerid="vw_element_samplingpoint20151002161215716" visible="0"/>
         </filegroup>
       </legendlayer>
-      <legendgroup open="true" checked="Qt::Unchecked" name="Contrôle">
-        <legendlayer drawingOrder="6" open="false" checked="Qt::Unchecked" name="Fleches abonné -> conduite" showFeatureCount="0">
+      <legendgroup open="true" checked="Qt::PartiallyChecked" name="Contrôle">
+        <legendlayer drawingOrder="6" open="false" checked="Qt::Checked" name="Fleches abonné -> conduite" showFeatureCount="0">
           <filegroup open="false" hidden="false">
-            <legendlayerfile isInOverview="0" layerid="subscriber_pipe_relation20130417092124312" visible="0"/>
+            <legendlayerfile isInOverview="0" layerid="subscriber_pipe_relation20130417092124312" visible="1"/>
           </filegroup>
         </legendlayer>
-        <legendlayer drawingOrder="12" open="false" checked="Qt::Unchecked" name="noeuds - tous - controle" showFeatureCount="0">
+        <legendlayer drawingOrder="12" open="false" checked="Qt::Unchecked" name="Noeuds - tous - controle" showFeatureCount="0">
           <filegroup open="false" hidden="false">
             <legendlayerfile isInOverview="0" layerid="od_node20140116161508743" visible="0"/>
           </filegroup>
@@ -707,34 +709,34 @@
     </legendgroup>
     <legendgroup open="true" checked="Qt::Unchecked" name="Schématique">
       <legendgroup open="true" checked="Qt::Unchecked" name="impression">
-        <legendlayer drawingOrder="69" open="true" checked="Qt::Unchecked" name="hydrantes 5000 (pression)" showFeatureCount="0">
+        <legendlayer drawingOrder="69" open="true" checked="Qt::Unchecked" name="Hydrantes 5000 (pression)" showFeatureCount="0">
           <filegroup open="true" hidden="false">
             <legendlayerfile isInOverview="0" layerid="hydrantes_copy20160127124839887" visible="0"/>
           </filegroup>
         </legendlayer>
-        <legendlayer drawingOrder="15" open="false" checked="Qt::Unchecked" name="ouvrages 5000" showFeatureCount="0">
-          <filegroup open="false" hidden="false">
+        <legendlayer drawingOrder="15" open="true" checked="Qt::Unchecked" name="Ouvrages 5000" showFeatureCount="0">
+          <filegroup open="true" hidden="false">
             <legendlayerfile isInOverview="0" layerid="ouvrage_copy20160125132737527" visible="0"/>
           </filegroup>
         </legendlayer>
-        <legendlayer drawingOrder="16" open="false" checked="Qt::Unchecked" name="vannes 5000" showFeatureCount="0">
-          <filegroup open="false" hidden="false">
+        <legendlayer drawingOrder="16" open="true" checked="Qt::Unchecked" name="Vannes 5000" showFeatureCount="0">
+          <filegroup open="true" hidden="false">
             <legendlayerfile isInOverview="0" layerid="vannes_copy20141127160745910" visible="0"/>
           </filegroup>
         </legendlayer>
-        <legendlayer drawingOrder="75" open="true" checked="Qt::Unchecked" name="conduites impression 5000" showFeatureCount="0">
+        <legendlayer drawingOrder="75" open="true" checked="Qt::Unchecked" name="Conduites impression 5000" showFeatureCount="0">
           <filegroup open="true" hidden="false">
             <legendlayerfile isInOverview="0" layerid="vw_pipe_schema20170306143352379179081243" visible="0"/>
           </filegroup>
         </legendlayer>
-        <legendlayer drawingOrder="17" open="true" checked="Qt::Unchecked" name="télécommande 5000" showFeatureCount="0">
+        <legendlayer drawingOrder="17" open="true" checked="Qt::Unchecked" name="Télécommande 5000" showFeatureCount="0">
           <filegroup open="true" hidden="false">
             <legendlayerfile isInOverview="0" layerid="télécommande_copy20160127112146958" visible="0"/>
           </filegroup>
         </legendlayer>
       </legendgroup>
-      <legendgroup open="true" checked="Qt::Unchecked" name="edition">
-        <legendlayer drawingOrder="18" open="true" checked="Qt::Unchecked" name="conduites edition 5000" showFeatureCount="0">
+      <legendgroup open="true" checked="Qt::Unchecked" name="Édition">
+        <legendlayer drawingOrder="18" open="true" checked="Qt::Unchecked" name="Conduites edition 5000" showFeatureCount="0">
           <filegroup open="true" hidden="false">
             <legendlayerfile isInOverview="0" layerid="vw_pipe_schema_visibleitems20141127154708843" visible="0"/>
           </filegroup>
@@ -746,30 +748,30 @@
         </legendlayer>
       </legendgroup>
     </legendgroup>
-    <legendgroup open="true" checked="Qt::Checked" name="Annotations">
-      <legendlayer drawingOrder="21" open="false" checked="Qt::Checked" name="annotations - ligne" showFeatureCount="0">
+    <legendgroup open="true" checked="Qt::Unchecked" name="Annotations">
+      <legendlayer drawingOrder="21" open="false" checked="Qt::Unchecked" name="Annotations - ligne" showFeatureCount="0">
         <filegroup open="false" hidden="false">
-          <legendlayerfile isInOverview="0" layerid="od_annotationline20131203095020365" visible="1"/>
+          <legendlayerfile isInOverview="0" layerid="od_annotationline20131203095020365" visible="0"/>
         </filegroup>
       </legendlayer>
-      <legendlayer drawingOrder="22" open="false" checked="Qt::Checked" name="annotations - point" showFeatureCount="0">
+      <legendlayer drawingOrder="22" open="false" checked="Qt::Unchecked" name="Annotations - point" showFeatureCount="0">
         <filegroup open="false" hidden="false">
-          <legendlayerfile isInOverview="0" layerid="od_annotationpoint20131203095020392" visible="1"/>
+          <legendlayerfile isInOverview="0" layerid="od_annotationpoint20131203095020392" visible="0"/>
         </filegroup>
       </legendlayer>
     </legendgroup>
-    <legendgroup open="true" checked="Qt::PartiallyChecked" name="Côtes">
-      <legendlayer drawingOrder="23" open="false" checked="Qt::Checked" name="côtes distance" showFeatureCount="0">
+    <legendgroup open="true" checked="Qt::Unchecked" name="Côtes">
+      <legendlayer drawingOrder="23" open="false" checked="Qt::Unchecked" name="Côtes distance" showFeatureCount="0">
         <filegroup open="false" hidden="false">
-          <legendlayerfile isInOverview="0" layerid="dimension20130807094904783" visible="1"/>
+          <legendlayerfile isInOverview="0" layerid="dimension20130807094904783" visible="0"/>
         </filegroup>
       </legendlayer>
-      <legendlayer drawingOrder="24" open="false" checked="Qt::Checked" name="côtes orientation" showFeatureCount="0">
+      <legendlayer drawingOrder="24" open="false" checked="Qt::Unchecked" name="Côtes orientation" showFeatureCount="0">
         <filegroup open="false" hidden="false">
-          <legendlayerfile isInOverview="0" layerid="od_dimension_orientation20131202111155806" visible="1"/>
+          <legendlayerfile isInOverview="0" layerid="od_dimension_orientation20131202111155806" visible="0"/>
         </filegroup>
       </legendlayer>
-      <legendlayer drawingOrder="25" open="false" checked="Qt::Unchecked" name="points de construction" showFeatureCount="0">
+      <legendlayer drawingOrder="25" open="false" checked="Qt::Unchecked" name="Points de construction" showFeatureCount="0">
         <filegroup open="false" hidden="false">
           <legendlayerfile isInOverview="0" layerid="constructionpoint20130807094904851" visible="0"/>
         </filegroup>
@@ -785,8 +787,8 @@
         </filegroup>
       </legendlayer>
     </legendgroup>
-    <legendgroup open="true" checked="Qt::PartiallyChecked" name="Zones">
-      <legendlayer drawingOrder="63" open="true" checked="Qt::Unchecked" name="dossiers techniques" showFeatureCount="0">
+    <legendgroup open="true" checked="Qt::Unchecked" name="Zones">
+      <legendlayer drawingOrder="63" open="true" checked="Qt::Unchecked" name="Dossiers techniques (chantiers)" showFeatureCount="0">
         <filegroup open="true" hidden="false">
           <legendlayerfile isInOverview="0" layerid="folder20150629160924367" visible="0"/>
         </filegroup>
@@ -796,7 +798,7 @@
           <legendlayerfile isInOverview="0" layerid="district20130304110004764" visible="0"/>
         </filegroup>
       </legendlayer>
-      <legendlayer drawingOrder="29" open="true" checked="Qt::Unchecked" name="zones de pressions" showFeatureCount="0">
+      <legendlayer drawingOrder="29" open="true" checked="Qt::Unchecked" name="Zones de pression" showFeatureCount="0">
         <filegroup open="true" hidden="false">
           <legendlayerfile isInOverview="0" layerid="pressurezone20130417133612105" visible="0"/>
         </filegroup>
@@ -806,12 +808,12 @@
           <legendlayerfile isInOverview="0" layerid="vw_consumptionzone20150508135647750" visible="0"/>
         </filegroup>
       </legendlayer>
-      <legendlayer drawingOrder="30" open="true" checked="Qt::Checked" name="folios" showFeatureCount="0">
+      <legendlayer drawingOrder="30" open="true" checked="Qt::Unchecked" name="Folios (zones d'impression)" showFeatureCount="0">
         <filegroup open="true" hidden="false">
-          <legendlayerfile isInOverview="0" layerid="printmap20130304110011400" visible="1"/>
+          <legendlayerfile isInOverview="0" layerid="printmap20130304110011400" visible="0"/>
         </filegroup>
       </legendlayer>
-      <legendlayer drawingOrder="31" open="false" checked="Qt::Unchecked" name="zones de protections" showFeatureCount="1">
+      <legendlayer drawingOrder="31" open="false" checked="Qt::Unchecked" name="Zones de protections" showFeatureCount="1">
         <filegroup open="false" hidden="false">
           <legendlayerfile isInOverview="0" layerid="protectionzone20130304110011418" visible="0"/>
         </filegroup>
@@ -1134,7 +1136,7 @@
       <ComposerMap followPreset="false" mapRotation="0" keepLayerSet="true" followPresetName="" id="1" previewMode="Render" drawCanvasItems="true">
         <Extent ymin="145174.34327699668938294" xmin="555252.08216445404104888" ymax="145586.84327741741435602" xmax="556077.08216529549099505"/>
         <LayerSet>
-          <Layer provider="postgres" source="service='qwat' sslmode=allow key='id' srid=21781 type=Polygon table=&quot;qwat_od&quot;.&quot;printmap&quot; (geometry) sql=" name="folios">printmap20130304110011400</Layer>
+          <Layer provider="postgres" source="service='qwat' sslmode=allow key='id' srid=21781 type=Polygon table=&quot;qwat_od&quot;.&quot;printmap&quot; (geometry) sql=" name="Folios (zones d'impression)">printmap20130304110011400</Layer>
         </LayerSet>
         <Grid/>
         <ComposerMapGrid rightAnnotationDirection="0" gridFramePenColor="0,0,0,255" show="0" bottomAnnotationPosition="1" annotationPrecision="3" showAnnotation="0" topFrameDivisions="0" uuid="{a5ffcd5f-75c9-4a4f-9c9e-bcd04a79ad90}" leftAnnotationDirection="0" topAnnotationPosition="1" rightAnnotationDisplay="0" offsetX="0" offsetY="0" rightFrameDivisions="0" gridStyle="0" annotationFontColor="0,0,0,255" intervalX="0" gridFrameSideFlags="15" intervalY="0" bottomAnnotationDirection="0" leftAnnotationDisplay="0" leftFrameDivisions="0" frameFillColor1="255,255,255,255" annotationExpression="" frameFillColor2="0,0,0,255" crossLength="3" gridFramePenThickness="0.5" bottomAnnotationDisplay="0" unit="0" topAnnotationDisplay="0" leftAnnotationPosition="1" blendMode="0" gridFrameStyle="0" rightAnnotationPosition="1" gridFrameWidth="2" name="Grid 1" annotationFormat="0" bottomFrameDivisions="0" topAnnotationDirection="0" frameAnnotationDistance="1">
@@ -1265,26 +1267,26 @@
       <ComposerMap followPreset="false" mapRotation="0" keepLayerSet="true" followPresetName="" id="0" previewMode="Render" drawCanvasItems="true">
         <Extent ymin="145378.57302560043171979" xmin="555539.58216474729124457" ymax="145545.23977577040204778" xmax="555789.58216500224079937"/>
         <LayerSet>
-          <Layer provider="postgres" source="service='qwat' sslmode=disable key='id' srid=21781 type=PointZ table=&quot;qwat_od&quot;.&quot;vw_element_installation&quot; (geometry) sql=" name="ouvrage">vw_node_installation20150918153835436</Layer>
-          <Layer provider="postgres" source="service='qwat' sslmode=allow key='id' srid=21781 type=PointZ table=&quot;qwat_od&quot;.&quot;vw_element_subscriber&quot; (geometry) sql=" name="abonnés">subscriber20130304110011459</Layer>
-          <Layer provider="postgres" source="service='qwat' sslmode=disable key='id' estimatedmetadata=true srid=21781 type=Point table=&quot;qwat_od&quot;.&quot;subscriber_reference&quot; (geometry) sql=" name="abonnés - renvoi">od_subscriber_reference20131206105928067</Layer>
-          <Layer provider="postgres" source="service='qwat' sslmode=disable key='id' estimatedmetadata=true srid=21781 type=PointZ table=&quot;qwat_od&quot;.&quot;vw_element_meter&quot; (geometry) sql=" name="compteurs réseau">od_meter20131120073630165</Layer>
+          <Layer provider="postgres" source="service='qwat' sslmode=disable key='id' srid=21781 type=PointZ table=&quot;qwat_od&quot;.&quot;vw_element_installation&quot; (geometry) sql=" name="Ouvrage">vw_node_installation20150918153835436</Layer>
+          <Layer provider="postgres" source="service='qwat' sslmode=allow key='id' srid=21781 type=PointZ table=&quot;qwat_od&quot;.&quot;vw_element_subscriber&quot; (geometry) sql=" name="Abonnés">subscriber20130304110011459</Layer>
+          <Layer provider="postgres" source="service='qwat' sslmode=disable key='id' estimatedmetadata=true srid=21781 type=Point table=&quot;qwat_od&quot;.&quot;subscriber_reference&quot; (geometry) sql=" name="Abonnés - renvoi">od_subscriber_reference20131206105928067</Layer>
+          <Layer provider="postgres" source="service='qwat' sslmode=disable key='id' estimatedmetadata=true srid=21781 type=PointZ table=&quot;qwat_od&quot;.&quot;vw_element_meter&quot; (geometry) sql=" name="Compteurs réseau">od_meter20131120073630165</Layer>
           <Layer provider="postgres" source="service='qwat' sslmode=disable key='id' estimatedmetadata=true srid=21781 type=Point table=&quot;qwat_od&quot;.&quot;meter_reference&quot; (geometry) sql=" name="Compteurs réseau - renvoi">od_meter_reference20140304165835390</Layer>
-          <Layer provider="postgres" source="service='qwat' sslmode=allow key='id' srid=21781 type=PointZ table=&quot;qwat_od&quot;.&quot;valve&quot; (geometry) sql=" name="vannes">valve20130304110011497</Layer>
-          <Layer provider="postgres" source="service='qwat' sslmode=allow key='id' srid=21781 type=PointZ table=&quot;qwat_od&quot;.&quot;vw_element_hydrant&quot; (geometry) sql=" name="hydrantes">hydrant20130304110004848</Layer>
+          <Layer provider="postgres" source="service='qwat' sslmode=allow key='id' srid=21781 type=PointZ table=&quot;qwat_od&quot;.&quot;valve&quot; (geometry) sql=" name="Vannes">valve20130304110011497</Layer>
+          <Layer provider="postgres" source="service='qwat' sslmode=allow key='id' srid=21781 type=PointZ table=&quot;qwat_od&quot;.&quot;vw_element_hydrant&quot; (geometry) sql=" name="Hydrantes (bornes incendie)">hydrant20130304110004848</Layer>
           <Layer provider="postgres" source="service='qwat' sslmode=disable key='id' estimatedmetadata=true srid=21781 type=PointZ table=&quot;qwat_od&quot;.&quot;vw_element_part&quot; (geometry) sql=" name="Pièces d'installations">od_part20140429113327995</Layer>
-          <Layer provider="postgres" source="service='qwat' sslmode=allow key='id' srid=21781 type=PointZ table=&quot;qwat_od&quot;.&quot;node&quot; (geometry) sql=" name="noeuds">node20130304110005126</Layer>
-          <Layer provider="postgres" source="service='qwat' sslmode=disable key='id' srid=21781 type=Point table=&quot;qwat_od&quot;.&quot;crossing&quot; (geometry) sql=" name="croisements">od_crossing20141023083754327</Layer>
-          <Layer provider="postgres" source="service='qwat' sslmode=disable key='id' srid=21781 type=LineStringZ table=&quot;qwat_od&quot;.&quot;pipe&quot; (geometry) sql=" name="conduites">conduites_copy20130709141244955</Layer>
-          <Layer provider="postgres" source="service='qwat' sslmode=disable key='id' srid=21781 type=MultiLineString table=&quot;qwat_od&quot;.&quot;remote&quot; (geometry) sql=" name="télécommandes">od_remote20150116100522170</Layer>
-          <Layer provider="postgres" source="service='qwat' sslmode=disable key='id' estimatedmetadata=true srid=21781 type=LineString table=&quot;qwat_dr&quot;.&quot;annotationline&quot; (geometry) sql=" name="annotations - ligne">od_annotationline20131203095020365</Layer>
-          <Layer provider="postgres" source="service='qwat' sslmode=disable key='id' estimatedmetadata=true srid=21781 type=Point table=&quot;qwat_dr&quot;.&quot;annotationpoint&quot; (geometry) sql=" name="annotations - point">od_annotationpoint20131203095020392</Layer>
-          <Layer provider="postgres" source="service='qwat' sslmode=disable key='id' srid=21781 type=LineString table=&quot;qwat_dr&quot;.&quot;dimension_distance&quot; (geometry) sql=" name="côtes distance">dimension20130807094904783</Layer>
-          <Layer provider="postgres" source="service='qwat' sslmode=disable key='id' estimatedmetadata=true srid=21781 type=LineString table=&quot;qwat_dr&quot;.&quot;dimension_orientation&quot; (geometry) sql=" name="côtes orientation">od_dimension_orientation20131202111155806</Layer>
-          <Layer provider="postgres" source="service='qwat' sslmode=allow key='id' srid=21781 type=Polygon table=&quot;qwat_od&quot;.&quot;printmap&quot; (geometry) sql=" name="folios">printmap20130304110011400</Layer>
+          <Layer provider="postgres" source="service='qwat' sslmode=allow key='id' srid=21781 type=PointZ table=&quot;qwat_od&quot;.&quot;node&quot; (geometry) sql=" name="Noeuds (réseau et ouvrages)">node20130304110005126</Layer>
+          <Layer provider="postgres" source="service='qwat' sslmode=disable key='id' srid=21781 type=Point table=&quot;qwat_od&quot;.&quot;crossing&quot; (geometry) sql=" name="Croisements">od_crossing20141023083754327</Layer>
+          <Layer provider="postgres" source="service='qwat' sslmode=disable key='id' srid=21781 type=LineStringZ table=&quot;qwat_od&quot;.&quot;pipe&quot; (geometry) sql=" name="Conduites">conduites_copy20130709141244955</Layer>
+          <Layer provider="postgres" source="service='qwat' sslmode=disable key='id' srid=21781 type=MultiLineString table=&quot;qwat_od&quot;.&quot;remote&quot; (geometry) sql=" name="Télécommandes">od_remote20150116100522170</Layer>
+          <Layer provider="postgres" source="service='qwat' sslmode=disable key='id' estimatedmetadata=true srid=21781 type=LineString table=&quot;qwat_dr&quot;.&quot;annotationline&quot; (geometry) sql=" name="Annotations - ligne">od_annotationline20131203095020365</Layer>
+          <Layer provider="postgres" source="service='qwat' sslmode=disable key='id' estimatedmetadata=true srid=21781 type=Point table=&quot;qwat_dr&quot;.&quot;annotationpoint&quot; (geometry) sql=" name="Annotations - point">od_annotationpoint20131203095020392</Layer>
+          <Layer provider="postgres" source="service='qwat' sslmode=disable key='id' srid=21781 type=LineString table=&quot;qwat_dr&quot;.&quot;dimension_distance&quot; (geometry) sql=" name="Côtes distance">dimension20130807094904783</Layer>
+          <Layer provider="postgres" source="service='qwat' sslmode=disable key='id' estimatedmetadata=true srid=21781 type=LineString table=&quot;qwat_dr&quot;.&quot;dimension_orientation&quot; (geometry) sql=" name="Côtes orientation">od_dimension_orientation20131202111155806</Layer>
+          <Layer provider="postgres" source="service='qwat' sslmode=allow key='id' srid=21781 type=Polygon table=&quot;qwat_od&quot;.&quot;printmap&quot; (geometry) sql=" name="Folios (zones d'impression)">printmap20130304110011400</Layer>
         </LayerSet>
         <LayerStyles>
-          <LayerStyle provider="postgres" layerid="conduites_copy20130709141244955" source="service='qwat' sslmode=disable key='id' srid=21781 type=LineStringZ table=&quot;qwat_od&quot;.&quot;pipe&quot; (geometry) sql=" name="conduites">
+          <LayerStyle provider="postgres" layerid="conduites_copy20130709141244955" source="service='qwat' sslmode=disable key='id' srid=21781 type=LineStringZ table=&quot;qwat_od&quot;.&quot;pipe&quot; (geometry) sql=" name="Conduites">
             <qgis version="2.13.0-Master" minimumScale="-4.65661e-10" maximumScale="1e+08" simplifyDrawingHints="0" minLabelScale="0" maxLabelScale="1e+08" simplifyDrawingTol="1" simplifyMaxScale="1" hasScaleBasedVisibilityFlag="0" simplifyLocal="1" scaleBasedLabelVisibilityFlag="0">
               <edittypes>
                 <edittype widgetv2type="TextEdit" name="id">
@@ -2585,7 +2587,7 @@ def my_form_open(dialog, layer, feature):
               <layerGeometryType>1</layerGeometryType>
             </qgis>
           </LayerStyle>
-          <LayerStyle provider="postgres" layerid="dimension20130807094904783" source="service='qwat' sslmode=disable key='id' srid=21781 type=LineString table=&quot;qwat_dr&quot;.&quot;dimension_distance&quot; (geometry) sql=" name="côtes distance">
+          <LayerStyle provider="postgres" layerid="dimension20130807094904783" source="service='qwat' sslmode=disable key='id' srid=21781 type=LineString table=&quot;qwat_dr&quot;.&quot;dimension_distance&quot; (geometry) sql=" name="Côtes distance">
             <qgis version="2.13.0-Master" minimumScale="-4.65661e-10" maximumScale="501" simplifyDrawingHints="0" minLabelScale="0" maxLabelScale="1e+08" simplifyDrawingTol="1" simplifyMaxScale="1" hasScaleBasedVisibilityFlag="1" simplifyLocal="1" scaleBasedLabelVisibilityFlag="0">
               <edittypes>
                 <edittype widgetv2type="TextEdit" name="id">
@@ -2809,7 +2811,7 @@ def my_form_open(dialog, layer, feature):
               <layerGeometryType>1</layerGeometryType>
             </qgis>
           </LayerStyle>
-          <LayerStyle provider="postgres" layerid="hydrant20130304110004848" source="service='qwat' sslmode=allow key='id' srid=21781 type=PointZ table=&quot;qwat_od&quot;.&quot;vw_element_hydrant&quot; (geometry) sql=" name="hydrantes">
+          <LayerStyle provider="postgres" layerid="hydrant20130304110004848" source="service='qwat' sslmode=allow key='id' srid=21781 type=PointZ table=&quot;qwat_od&quot;.&quot;vw_element_hydrant&quot; (geometry) sql=" name="Hydrantes (bornes incendie)">
             <qgis version="2.13.0-Master" minimumScale="0" maximumScale="10001" simplifyDrawingHints="0" minLabelScale="1" maxLabelScale="1e+08" simplifyDrawingTol="1" simplifyMaxScale="1" hasScaleBasedVisibilityFlag="1" simplifyLocal="1" scaleBasedLabelVisibilityFlag="0">
               <edittypes>
                 <edittype widgetv2type="TextEdit" name="id">
@@ -3275,7 +3277,7 @@ def my_form_open(dialog, layer, feature):
               <layerGeometryType>0</layerGeometryType>
             </qgis>
           </LayerStyle>
-          <LayerStyle provider="postgres" layerid="node20130304110005126" source="service='qwat' sslmode=allow key='id' srid=21781 type=PointZ table=&quot;qwat_od&quot;.&quot;node&quot; (geometry) sql=" name="noeuds">
+          <LayerStyle provider="postgres" layerid="node20130304110005126" source="service='qwat' sslmode=allow key='id' srid=21781 type=PointZ table=&quot;qwat_od&quot;.&quot;node&quot; (geometry) sql=" name="Noeuds (réseau et ouvrages)">
             <qgis version="2.13.0-Master" minimumScale="0" maximumScale="501" simplifyDrawingHints="0" minLabelScale="1" maxLabelScale="1e+08" simplifyDrawingTol="1" simplifyMaxScale="1" hasScaleBasedVisibilityFlag="1" simplifyLocal="1" scaleBasedLabelVisibilityFlag="0">
               <edittypes>
                 <edittype widgetv2type="TextEdit" name="id">
@@ -3723,7 +3725,7 @@ def my_form_open(dialog, layer, feature):
               <layerGeometryType>0</layerGeometryType>
             </qgis>
           </LayerStyle>
-          <LayerStyle provider="postgres" layerid="od_annotationline20131203095020365" source="service='qwat' sslmode=disable key='id' estimatedmetadata=true srid=21781 type=LineString table=&quot;qwat_dr&quot;.&quot;annotationline&quot; (geometry) sql=" name="annotations - ligne">
+          <LayerStyle provider="postgres" layerid="od_annotationline20131203095020365" source="service='qwat' sslmode=disable key='id' estimatedmetadata=true srid=21781 type=LineString table=&quot;qwat_dr&quot;.&quot;annotationline&quot; (geometry) sql=" name="Annotations - ligne">
             <qgis version="2.13.0-Master" minimumScale="0" maximumScale="1001" simplifyDrawingHints="0" minLabelScale="0" maxLabelScale="1e+08" simplifyDrawingTol="1" simplifyMaxScale="1" hasScaleBasedVisibilityFlag="1" simplifyLocal="1" scaleBasedLabelVisibilityFlag="0">
               <edittypes>
                 <edittype widgetv2type="TextEdit" name="id">
@@ -3954,7 +3956,7 @@ def my_form_open(dialog, layer, feature):
               <layerGeometryType>1</layerGeometryType>
             </qgis>
           </LayerStyle>
-          <LayerStyle provider="postgres" layerid="od_annotationpoint20131203095020392" source="service='qwat' sslmode=disable key='id' estimatedmetadata=true srid=21781 type=Point table=&quot;qwat_dr&quot;.&quot;annotationpoint&quot; (geometry) sql=" name="annotations - point">
+          <LayerStyle provider="postgres" layerid="od_annotationpoint20131203095020392" source="service='qwat' sslmode=disable key='id' estimatedmetadata=true srid=21781 type=Point table=&quot;qwat_dr&quot;.&quot;annotationpoint&quot; (geometry) sql=" name="Annotations - point">
             <qgis version="2.13.0-Master" minimumScale="-4.65661e-10" maximumScale="1001" simplifyDrawingHints="1" minLabelScale="0" maxLabelScale="1e+08" simplifyDrawingTol="1" simplifyMaxScale="1" hasScaleBasedVisibilityFlag="1" simplifyLocal="1" scaleBasedLabelVisibilityFlag="0">
               <edittypes>
                 <edittype widgetv2type="TextEdit" name="id">
@@ -4187,7 +4189,7 @@ def my_form_open(dialog, layer, feature):
               <layerGeometryType>0</layerGeometryType>
             </qgis>
           </LayerStyle>
-          <LayerStyle provider="postgres" layerid="od_crossing20141023083754327" source="service='qwat' sslmode=disable key='id' srid=21781 type=Point table=&quot;qwat_od&quot;.&quot;crossing&quot; (geometry) sql=" name="croisements">
+          <LayerStyle provider="postgres" layerid="od_crossing20141023083754327" source="service='qwat' sslmode=disable key='id' srid=21781 type=Point table=&quot;qwat_od&quot;.&quot;crossing&quot; (geometry) sql=" name="Croisements">
             <qgis version="2.13.0-Master" minimumScale="-4.65661e-10" maximumScale="1e+08" simplifyDrawingHints="0" minLabelScale="0" maxLabelScale="1e+08" simplifyDrawingTol="1" simplifyMaxScale="1" hasScaleBasedVisibilityFlag="0" simplifyLocal="1" scaleBasedLabelVisibilityFlag="0">
               <edittypes>
                 <edittype widgetv2type="TextEdit" name="id">
@@ -4543,7 +4545,7 @@ def my_form_open(dialog, layer, feature):
               <layerGeometryType>0</layerGeometryType>
             </qgis>
           </LayerStyle>
-          <LayerStyle provider="postgres" layerid="od_dimension_orientation20131202111155806" source="service='qwat' sslmode=disable key='id' estimatedmetadata=true srid=21781 type=LineString table=&quot;qwat_dr&quot;.&quot;dimension_orientation&quot; (geometry) sql=" name="côtes orientation">
+          <LayerStyle provider="postgres" layerid="od_dimension_orientation20131202111155806" source="service='qwat' sslmode=disable key='id' estimatedmetadata=true srid=21781 type=LineString table=&quot;qwat_dr&quot;.&quot;dimension_orientation&quot; (geometry) sql=" name="Côtes orientation">
             <qgis version="2.13.0-Master" minimumScale="0" maximumScale="501" simplifyDrawingHints="0" minLabelScale="0" maxLabelScale="1e+08" simplifyDrawingTol="1" simplifyMaxScale="1" hasScaleBasedVisibilityFlag="1" simplifyLocal="1" scaleBasedLabelVisibilityFlag="0">
               <edittypes>
                 <edittype widgetv2type="TextEdit" name="id">
@@ -4762,7 +4764,7 @@ def my_form_open(dialog, layer, feature):
               <layerGeometryType>1</layerGeometryType>
             </qgis>
           </LayerStyle>
-          <LayerStyle provider="postgres" layerid="od_meter20131120073630165" source="service='qwat' sslmode=disable key='id' estimatedmetadata=true srid=21781 type=PointZ table=&quot;qwat_od&quot;.&quot;vw_element_meter&quot; (geometry) sql=" name="compteurs réseau">
+          <LayerStyle provider="postgres" layerid="od_meter20131120073630165" source="service='qwat' sslmode=disable key='id' estimatedmetadata=true srid=21781 type=PointZ table=&quot;qwat_od&quot;.&quot;vw_element_meter&quot; (geometry) sql=" name="Compteurs réseau">
             <qgis version="2.13.0-Master" minimumScale="4" maximumScale="1e+08" simplifyDrawingHints="0" minLabelScale="1" maxLabelScale="1e+08" simplifyDrawingTol="1" simplifyMaxScale="1" hasScaleBasedVisibilityFlag="1" simplifyLocal="1" scaleBasedLabelVisibilityFlag="0">
               <edittypes>
                 <edittype widgetv2type="TextEdit" name="id">
@@ -5910,7 +5912,7 @@ def my_form_open(dialog, layer, feature):
               <layerGeometryType>0</layerGeometryType>
             </qgis>
           </LayerStyle>
-          <LayerStyle provider="postgres" layerid="od_remote20150116100522170" source="service='qwat' sslmode=disable key='id' srid=21781 type=MultiLineString table=&quot;qwat_od&quot;.&quot;remote&quot; (geometry) sql=" name="télécommandes">
+          <LayerStyle provider="postgres" layerid="od_remote20150116100522170" source="service='qwat' sslmode=disable key='id' srid=21781 type=MultiLineString table=&quot;qwat_od&quot;.&quot;remote&quot; (geometry) sql=" name="Télécommandes">
             <qgis version="2.13.0-Master" minimumScale="0" maximumScale="1e+08" simplifyDrawingHints="0" minLabelScale="0" maxLabelScale="1e+08" simplifyDrawingTol="1" simplifyMaxScale="1" hasScaleBasedVisibilityFlag="0" simplifyLocal="1" scaleBasedLabelVisibilityFlag="0">
               <edittypes>
                 <edittype widgetv2type="TextEdit" name="id">
@@ -6245,7 +6247,7 @@ def my_form_open(dialog, layer, feature):
               <layerGeometryType>1</layerGeometryType>
             </qgis>
           </LayerStyle>
-          <LayerStyle provider="postgres" layerid="od_subscriber_reference20131206105928067" source="service='qwat' sslmode=disable key='id' estimatedmetadata=true srid=21781 type=Point table=&quot;qwat_od&quot;.&quot;subscriber_reference&quot; (geometry) sql=" name="abonnés - renvoi">
+          <LayerStyle provider="postgres" layerid="od_subscriber_reference20131206105928067" source="service='qwat' sslmode=disable key='id' estimatedmetadata=true srid=21781 type=Point table=&quot;qwat_od&quot;.&quot;subscriber_reference&quot; (geometry) sql=" name="Abonnés - renvoi">
             <qgis version="2.13.0-Master" minimumScale="0" maximumScale="3000" simplifyDrawingHints="0" minLabelScale="0" maxLabelScale="1e+08" simplifyDrawingTol="1" simplifyMaxScale="1" hasScaleBasedVisibilityFlag="1" simplifyLocal="1" scaleBasedLabelVisibilityFlag="0">
               <edittypes>
                 <edittype widgetv2type="TextEdit" name="id">
@@ -6496,7 +6498,7 @@ def my_form_open(dialog, layer, feature):
               <layerGeometryType>0</layerGeometryType>
             </qgis>
           </LayerStyle>
-          <LayerStyle provider="postgres" layerid="printmap20130304110011400" source="service='qwat' sslmode=allow key='id' srid=21781 type=Polygon table=&quot;qwat_od&quot;.&quot;printmap&quot; (geometry) sql=" name="folios">
+          <LayerStyle provider="postgres" layerid="printmap20130304110011400" source="service='qwat' sslmode=allow key='id' srid=21781 type=Polygon table=&quot;qwat_od&quot;.&quot;printmap&quot; (geometry) sql=" name="Folios (zones d'impression)">
             <qgis version="2.13.0-Master" minimumScale="200" maximumScale="250000" simplifyDrawingHints="1" minLabelScale="1" maxLabelScale="1e+08" simplifyDrawingTol="1" simplifyMaxScale="1" hasScaleBasedVisibilityFlag="1" simplifyLocal="1" scaleBasedLabelVisibilityFlag="0">
               <edittypes>
                 <edittype widgetv2type="TextEdit" name="id">
@@ -6878,7 +6880,7 @@ def my_form_open(dialog, layer, feature):
               <layerGeometryType>2</layerGeometryType>
             </qgis>
           </LayerStyle>
-          <LayerStyle provider="postgres" layerid="subscriber20130304110011459" source="service='qwat' sslmode=allow key='id' srid=21781 type=PointZ table=&quot;qwat_od&quot;.&quot;vw_element_subscriber&quot; (geometry) sql=" name="abonnés">
+          <LayerStyle provider="postgres" layerid="subscriber20130304110011459" source="service='qwat' sslmode=allow key='id' srid=21781 type=PointZ table=&quot;qwat_od&quot;.&quot;vw_element_subscriber&quot; (geometry) sql=" name="Abonnés">
             <qgis version="2.13.0-Master" minimumScale="4" maximumScale="1e+08" simplifyDrawingHints="0" minLabelScale="1" maxLabelScale="1e+08" simplifyDrawingTol="1" simplifyMaxScale="1" hasScaleBasedVisibilityFlag="1" simplifyLocal="1" scaleBasedLabelVisibilityFlag="0">
               <edittypes>
                 <edittype widgetv2type="TextEdit" name="id">
@@ -7475,7 +7477,7 @@ def my_form_open(dialog, layer, feature):
               <layerGeometryType>0</layerGeometryType>
             </qgis>
           </LayerStyle>
-          <LayerStyle provider="postgres" layerid="valve20130304110011497" source="service='qwat' sslmode=allow key='id' srid=21781 type=PointZ table=&quot;qwat_od&quot;.&quot;valve&quot; (geometry) sql=" name="vannes">
+          <LayerStyle provider="postgres" layerid="valve20130304110011497" source="service='qwat' sslmode=allow key='id' srid=21781 type=PointZ table=&quot;qwat_od&quot;.&quot;valve&quot; (geometry) sql=" name="Vannes">
             <qgis version="2.13.0-Master" minimumScale="-4.65661e-10" maximumScale="10001" simplifyDrawingHints="0" minLabelScale="1" maxLabelScale="1e+08" simplifyDrawingTol="1" simplifyMaxScale="1" hasScaleBasedVisibilityFlag="1" simplifyLocal="1" scaleBasedLabelVisibilityFlag="0">
               <edittypes>
                 <edittype widgetv2type="TextEdit" name="id">
@@ -8261,7 +8263,7 @@ def my_form_open(dialog, layer, feature):
               <layerGeometryType>0</layerGeometryType>
             </qgis>
           </LayerStyle>
-          <LayerStyle provider="postgres" layerid="vw_node_installation20150918153835436" source="service='qwat' sslmode=disable key='id' srid=21781 type=PointZ table=&quot;qwat_od&quot;.&quot;vw_element_installation&quot; (geometry) sql=" name="ouvrage">
+          <LayerStyle provider="postgres" layerid="vw_node_installation20150918153835436" source="service='qwat' sslmode=disable key='id' srid=21781 type=PointZ table=&quot;qwat_od&quot;.&quot;vw_element_installation&quot; (geometry) sql=" name="Ouvrage">
             <qgis version="2.13.0-Master" minimumScale="0" maximumScale="1e+08" simplifyDrawingHints="0" minLabelScale="0" maxLabelScale="1e+08" simplifyDrawingTol="1" simplifyMaxScale="1" hasScaleBasedVisibilityFlag="0" simplifyLocal="1" scaleBasedLabelVisibilityFlag="0">
               <edittypes>
                 <edittype widgetv2type="TextEdit" name="id">
@@ -9658,21 +9660,21 @@ def my_form_open(dialog, layer, feature):
       <ComposerMap followPreset="false" mapRotation="0" keepLayerSet="true" followPresetName="" id="0" previewMode="Cache" drawCanvasItems="true">
         <Extent ymin="140426.29129607175127603" xmin="557362.68987539270892739" ymax="144345.04317506882944144" xmax="562987.68988113012164831"/>
         <LayerSet>
-          <Layer provider="postgres" source="service='qwat' sslmode=allow key='id' srid=21781 type=PointZ table=&quot;qwat_od&quot;.&quot;vw_element_subscriber&quot; (geometry) sql=" name="abonnés">subscriber20130304110011459</Layer>
-          <Layer provider="postgres" source="service='qwat' sslmode=disable key='id' estimatedmetadata=true srid=21781 type=Point table=&quot;qwat_od&quot;.&quot;subscriber_reference&quot; (geometry) sql=" name="abonnés - renvoi">od_subscriber_reference20131206105928067</Layer>
-          <Layer provider="postgres" source="service='qwat' sslmode=disable key='id' estimatedmetadata=true srid=21781 type=PointZ table=&quot;qwat_od&quot;.&quot;vw_element_meter&quot; (geometry) sql=" name="compteurs réseau">od_meter20131120073630165</Layer>
+          <Layer provider="postgres" source="service='qwat' sslmode=allow key='id' srid=21781 type=PointZ table=&quot;qwat_od&quot;.&quot;vw_element_subscriber&quot; (geometry) sql=" name="Abonnés">subscriber20130304110011459</Layer>
+          <Layer provider="postgres" source="service='qwat' sslmode=disable key='id' estimatedmetadata=true srid=21781 type=Point table=&quot;qwat_od&quot;.&quot;subscriber_reference&quot; (geometry) sql=" name="Abonnés - renvoi">od_subscriber_reference20131206105928067</Layer>
+          <Layer provider="postgres" source="service='qwat' sslmode=disable key='id' estimatedmetadata=true srid=21781 type=PointZ table=&quot;qwat_od&quot;.&quot;vw_element_meter&quot; (geometry) sql=" name="Compteurs réseau">od_meter20131120073630165</Layer>
           <Layer provider="postgres" source="service='qwat' sslmode=disable key='id' estimatedmetadata=true srid=21781 type=Point table=&quot;qwat_od&quot;.&quot;meter_reference&quot; (geometry) sql=" name="Compteurs réseau - renvoi">od_meter_reference20140304165835390</Layer>
-          <Layer provider="postgres" source="service='qwat' sslmode=allow key='id' srid=21781 type=PointZ table=&quot;qwat_od&quot;.&quot;valve&quot; (geometry) sql=" name="vannes">valve20130304110011497</Layer>
-          <Layer provider="postgres" source="service='qwat' sslmode=allow key='id' srid=21781 type=PointZ table=&quot;qwat_od&quot;.&quot;vw_element_hydrant&quot; (geometry) sql=" name="hydrantes">hydrant20130304110004848</Layer>
-          <Layer provider="postgres" source="service='qwat' sslmode=allow key='id' srid=21781 type=PointZ table=&quot;qwat_od&quot;.&quot;node&quot; (geometry) sql=" name="noeuds">node20130304110005126</Layer>
+          <Layer provider="postgres" source="service='qwat' sslmode=allow key='id' srid=21781 type=PointZ table=&quot;qwat_od&quot;.&quot;valve&quot; (geometry) sql=" name="Vannes">valve20130304110011497</Layer>
+          <Layer provider="postgres" source="service='qwat' sslmode=allow key='id' srid=21781 type=PointZ table=&quot;qwat_od&quot;.&quot;vw_element_hydrant&quot; (geometry) sql=" name="Hydrantes (bornes incendie)">hydrant20130304110004848</Layer>
+          <Layer provider="postgres" source="service='qwat' sslmode=allow key='id' srid=21781 type=PointZ table=&quot;qwat_od&quot;.&quot;node&quot; (geometry) sql=" name="Noeuds (réseau et ouvrages)">node20130304110005126</Layer>
           <Layer provider="postgres" source="service='qwat' sslmode=disable key='id' estimatedmetadata=true srid=21781 type=PointZ table=&quot;qwat_od&quot;.&quot;vw_element_part&quot; (geometry) sql=" name="Pièces d'installations">od_part20140429113327995</Layer>
-          <Layer provider="postgres" source="service='qwat' sslmode=disable key='id' srid=21781 type=LineStringZ table=&quot;qwat_od&quot;.&quot;pipe&quot; (geometry) sql=" name="conduites">conduites_copy20130709141244955</Layer>
-          <Layer provider="postgres" source="service='qwat' sslmode=disable key='id' srid=21781 type=Point table=&quot;qwat_od&quot;.&quot;crossing&quot; (geometry) sql=" name="croisements">od_crossing20141023083754327</Layer>
-          <Layer provider="postgres" source="service='qwat' sslmode=disable key='id' estimatedmetadata=true srid=21781 type=LineString table=&quot;qwat_dr&quot;.&quot;annotationline&quot; (geometry) sql=" name="annotations - ligne">od_annotationline20131203095020365</Layer>
-          <Layer provider="postgres" source="service='qwat' sslmode=disable key='id' estimatedmetadata=true srid=21781 type=Point table=&quot;qwat_dr&quot;.&quot;annotationpoint&quot; (geometry) sql=" name="annotations - point">od_annotationpoint20131203095020392</Layer>
-          <Layer provider="postgres" source="service='qwat' sslmode=disable key='id' srid=21781 type=LineString table=&quot;qwat_dr&quot;.&quot;dimension_distance&quot; (geometry) sql=" name="côtes distance">dimension20130807094904783</Layer>
-          <Layer provider="postgres" source="service='qwat' sslmode=disable key='id' estimatedmetadata=true srid=21781 type=LineString table=&quot;qwat_dr&quot;.&quot;dimension_orientation&quot; (geometry) sql=" name="côtes orientation">od_dimension_orientation20131202111155806</Layer>
-          <Layer provider="postgres" source="service='qwat' sslmode=allow key='id' srid=21781 type=Polygon table=&quot;qwat_od&quot;.&quot;printmap&quot; (geometry) sql=" name="folios">printmap20130304110011400</Layer>
+          <Layer provider="postgres" source="service='qwat' sslmode=disable key='id' srid=21781 type=LineStringZ table=&quot;qwat_od&quot;.&quot;pipe&quot; (geometry) sql=" name="Conduites">conduites_copy20130709141244955</Layer>
+          <Layer provider="postgres" source="service='qwat' sslmode=disable key='id' srid=21781 type=Point table=&quot;qwat_od&quot;.&quot;crossing&quot; (geometry) sql=" name="Croisements">od_crossing20141023083754327</Layer>
+          <Layer provider="postgres" source="service='qwat' sslmode=disable key='id' estimatedmetadata=true srid=21781 type=LineString table=&quot;qwat_dr&quot;.&quot;annotationline&quot; (geometry) sql=" name="Annotations - ligne">od_annotationline20131203095020365</Layer>
+          <Layer provider="postgres" source="service='qwat' sslmode=disable key='id' estimatedmetadata=true srid=21781 type=Point table=&quot;qwat_dr&quot;.&quot;annotationpoint&quot; (geometry) sql=" name="Annotations - point">od_annotationpoint20131203095020392</Layer>
+          <Layer provider="postgres" source="service='qwat' sslmode=disable key='id' srid=21781 type=LineString table=&quot;qwat_dr&quot;.&quot;dimension_distance&quot; (geometry) sql=" name="Côtes distance">dimension20130807094904783</Layer>
+          <Layer provider="postgres" source="service='qwat' sslmode=disable key='id' estimatedmetadata=true srid=21781 type=LineString table=&quot;qwat_dr&quot;.&quot;dimension_orientation&quot; (geometry) sql=" name="Côtes orientation">od_dimension_orientation20131202111155806</Layer>
+          <Layer provider="postgres" source="service='qwat' sslmode=allow key='id' srid=21781 type=Polygon table=&quot;qwat_od&quot;.&quot;printmap&quot; (geometry) sql=" name="Folios (zones d'impression)">printmap20130304110011400</Layer>
         </LayerSet>
         <Grid/>
         <ComposerMapGrid rightAnnotationDirection="0" gridFramePenColor="0,0,0,255" show="0" bottomAnnotationPosition="0" annotationPrecision="0" showAnnotation="1" topFrameDivisions="0" uuid="{7f671b61-cebd-44ad-8f03-04891c6f2d26}" leftAnnotationDirection="0" topAnnotationPosition="0" rightAnnotationDisplay="0" offsetX="0" offsetY="0" rightFrameDivisions="0" gridStyle="0" annotationFontColor="0,0,0,255" intervalX="0" gridFrameSideFlags="15" intervalY="0" bottomAnnotationDirection="1" leftAnnotationDisplay="0" leftFrameDivisions="0" frameFillColor1="255,255,255,255" annotationExpression="" frameFillColor2="0,0,0,255" crossLength="3" gridFramePenThickness="0.5" bottomAnnotationDisplay="0" unit="0" topAnnotationDisplay="0" leftAnnotationPosition="0" blendMode="0" gridFrameStyle="0" rightAnnotationPosition="0" gridFrameWidth="4" name="Grid 1" annotationFormat="0" bottomFrameDivisions="0" topAnnotationDirection="1" frameAnnotationDistance="1">
@@ -9949,25 +9951,25 @@ def my_form_open(dialog, layer, feature):
       <ComposerMap followPreset="false" mapRotation="0" keepLayerSet="true" followPresetName="" id="0" previewMode="Cache" drawCanvasItems="true">
         <Extent ymin="137141.46842982753878459" xmin="554967.33877685014158487" ymax="137243.9684299319924321" xmax="555039.08877692325040698"/>
         <LayerSet>
-          <Layer provider="postgres" source="service='qwat' sslmode=allow key='id' srid=21781 type=PointZ table=&quot;qwat_od&quot;.&quot;valve&quot; (geometry) sql=" name="vannes">valve20130304110011497</Layer>
-          <Layer provider="postgres" source="service='qwat' sslmode=disable key='id' estimatedmetadata=true srid=21781 type=PointZ table=&quot;qwat_od&quot;.&quot;vw_element_meter&quot; (geometry) sql=" name="compteurs réseau">od_meter20131120073630165</Layer>
-          <Layer provider="postgres" source="service='qwat' sslmode=disable key='id' estimatedmetadata=true srid=21781 type=Point table=&quot;qwat_dr&quot;.&quot;annotationpoint&quot; (geometry) sql=" name="annotations - point">od_annotationpoint20131203095020392</Layer>
-          <Layer provider="postgres" source="service='qwat' sslmode=allow key='id' srid=21781 type=PointZ table=&quot;qwat_od&quot;.&quot;vw_element_hydrant&quot; (geometry) sql=" name="hydrantes">hydrant20130304110004848</Layer>
-          <Layer provider="postgres" source="service='qwat' sslmode=disable key='id' srid=21781 type=LineStringZ table=&quot;qwat_od&quot;.&quot;pipe&quot; (geometry) sql=" name="conduites">conduites_copy20130709141244955</Layer>
-          <Layer provider="postgres" source="service='qwat' sslmode=disable key='id' estimatedmetadata=true srid=21781 type=LineString table=&quot;qwat_dr&quot;.&quot;annotationline&quot; (geometry) sql=" name="annotations - ligne">od_annotationline20131203095020365</Layer>
-          <Layer provider="postgres" source="service='qwat' sslmode=disable key='id' estimatedmetadata=true srid=21781 type=LineString table=&quot;qwat_dr&quot;.&quot;dimension_orientation&quot; (geometry) sql=" name="côtes orientation">od_dimension_orientation20131202111155806</Layer>
-          <Layer provider="postgres" source="service='qwat' sslmode=disable key='id' srid=21781 type=MultiLineString table=&quot;qwat_od&quot;.&quot;remote&quot; (geometry) sql=" name="télécommandes">od_remote20150116100522170</Layer>
-          <Layer provider="postgres" source="service='qwat' sslmode=allow key='id' srid=21781 type=PointZ table=&quot;qwat_od&quot;.&quot;vw_element_subscriber&quot; (geometry) sql=" name="abonnés">subscriber20130304110011459</Layer>
+          <Layer provider="postgres" source="service='qwat' sslmode=allow key='id' srid=21781 type=PointZ table=&quot;qwat_od&quot;.&quot;valve&quot; (geometry) sql=" name="Vannes">valve20130304110011497</Layer>
+          <Layer provider="postgres" source="service='qwat' sslmode=disable key='id' estimatedmetadata=true srid=21781 type=PointZ table=&quot;qwat_od&quot;.&quot;vw_element_meter&quot; (geometry) sql=" name="Compteurs réseau">od_meter20131120073630165</Layer>
+          <Layer provider="postgres" source="service='qwat' sslmode=disable key='id' estimatedmetadata=true srid=21781 type=Point table=&quot;qwat_dr&quot;.&quot;annotationpoint&quot; (geometry) sql=" name="Annotations - point">od_annotationpoint20131203095020392</Layer>
+          <Layer provider="postgres" source="service='qwat' sslmode=allow key='id' srid=21781 type=PointZ table=&quot;qwat_od&quot;.&quot;vw_element_hydrant&quot; (geometry) sql=" name="Hydrantes (bornes incendie)">hydrant20130304110004848</Layer>
+          <Layer provider="postgres" source="service='qwat' sslmode=disable key='id' srid=21781 type=LineStringZ table=&quot;qwat_od&quot;.&quot;pipe&quot; (geometry) sql=" name="Conduites">conduites_copy20130709141244955</Layer>
+          <Layer provider="postgres" source="service='qwat' sslmode=disable key='id' estimatedmetadata=true srid=21781 type=LineString table=&quot;qwat_dr&quot;.&quot;annotationline&quot; (geometry) sql=" name="Annotations - ligne">od_annotationline20131203095020365</Layer>
+          <Layer provider="postgres" source="service='qwat' sslmode=disable key='id' estimatedmetadata=true srid=21781 type=LineString table=&quot;qwat_dr&quot;.&quot;dimension_orientation&quot; (geometry) sql=" name="Côtes orientation">od_dimension_orientation20131202111155806</Layer>
+          <Layer provider="postgres" source="service='qwat' sslmode=disable key='id' srid=21781 type=MultiLineString table=&quot;qwat_od&quot;.&quot;remote&quot; (geometry) sql=" name="Télécommandes">od_remote20150116100522170</Layer>
+          <Layer provider="postgres" source="service='qwat' sslmode=allow key='id' srid=21781 type=PointZ table=&quot;qwat_od&quot;.&quot;vw_element_subscriber&quot; (geometry) sql=" name="Abonnés">subscriber20130304110011459</Layer>
           <Layer provider="postgres" source="service='qwat' sslmode=disable key='id' estimatedmetadata=true srid=21781 type=PointZ table=&quot;qwat_od&quot;.&quot;vw_element_part&quot; (geometry) sql=" name="Pièces d'installations">od_part20140429113327995</Layer>
-          <Layer provider="postgres" source="service='qwat' sslmode=disable key='id' srid=21781 type=LineString table=&quot;qwat_dr&quot;.&quot;dimension_distance&quot; (geometry) sql=" name="côtes distance">dimension20130807094904783</Layer>
+          <Layer provider="postgres" source="service='qwat' sslmode=disable key='id' srid=21781 type=LineString table=&quot;qwat_dr&quot;.&quot;dimension_distance&quot; (geometry) sql=" name="Côtes distance">dimension20130807094904783</Layer>
           <Layer provider="postgres" source="service='qwat' sslmode=disable key='id' estimatedmetadata=true srid=21781 type=Point table=&quot;qwat_od&quot;.&quot;meter_reference&quot; (geometry) sql=" name="Compteurs réseau - renvoi">od_meter_reference20140304165835390</Layer>
-          <Layer provider="postgres" source="service='qwat' sslmode=disable key='id' estimatedmetadata=true srid=21781 type=Point table=&quot;qwat_od&quot;.&quot;subscriber_reference&quot; (geometry) sql=" name="abonnés - renvoi">od_subscriber_reference20131206105928067</Layer>
-          <Layer provider="postgres" source="service='qwat' sslmode=allow key='id' srid=21781 type=Polygon table=&quot;qwat_od&quot;.&quot;printmap&quot; (geometry) sql=" name="folios">printmap20130304110011400</Layer>
-          <Layer provider="postgres" source="service='qwat' sslmode=disable key='id' srid=21781 type=Point table=&quot;qwat_od&quot;.&quot;crossing&quot; (geometry) sql=" name="croisements">od_crossing20141023083754327</Layer>
-          <Layer provider="postgres" source="service='qwat' sslmode=allow key='id' srid=21781 type=PointZ table=&quot;qwat_od&quot;.&quot;node&quot; (geometry) sql=" name="noeuds">node20130304110005126</Layer>
+          <Layer provider="postgres" source="service='qwat' sslmode=disable key='id' estimatedmetadata=true srid=21781 type=Point table=&quot;qwat_od&quot;.&quot;subscriber_reference&quot; (geometry) sql=" name="Abonnés - renvoi">od_subscriber_reference20131206105928067</Layer>
+          <Layer provider="postgres" source="service='qwat' sslmode=allow key='id' srid=21781 type=Polygon table=&quot;qwat_od&quot;.&quot;printmap&quot; (geometry) sql=" name="Folios (zones d'impression)">printmap20130304110011400</Layer>
+          <Layer provider="postgres" source="service='qwat' sslmode=disable key='id' srid=21781 type=Point table=&quot;qwat_od&quot;.&quot;crossing&quot; (geometry) sql=" name="Croisements">od_crossing20141023083754327</Layer>
+          <Layer provider="postgres" source="service='qwat' sslmode=allow key='id' srid=21781 type=PointZ table=&quot;qwat_od&quot;.&quot;node&quot; (geometry) sql=" name="Noeuds (réseau et ouvrages)">node20130304110005126</Layer>
         </LayerSet>
         <LayerStyles>
-          <LayerStyle provider="postgres" layerid="conduites_copy20130709141244955" source="service='qwat' sslmode=disable key='id' srid=21781 type=LineStringZ table=&quot;qwat_od&quot;.&quot;pipe&quot; (geometry) sql=" name="conduites">
+          <LayerStyle provider="postgres" layerid="conduites_copy20130709141244955" source="service='qwat' sslmode=disable key='id' srid=21781 type=LineStringZ table=&quot;qwat_od&quot;.&quot;pipe&quot; (geometry) sql=" name="Conduites">
             <qgis version="2.11.0-Master" minimumScale="0" maximumScale="1e+08" simplifyDrawingHints="0" minLabelScale="0" maxLabelScale="1e+08" simplifyDrawingTol="1" simplifyMaxScale="1" hasScaleBasedVisibilityFlag="0" simplifyLocal="1" scaleBasedLabelVisibilityFlag="0">
               <edittypes>
                 <edittype widgetv2type="TextEdit" name="id">
@@ -11128,7 +11130,7 @@ def my_form_open(dialog, layer, feature):
               </conditionalstyles>
             </qgis>
           </LayerStyle>
-          <LayerStyle provider="postgres" layerid="dimension20130807094904783" source="service='qwat' sslmode=disable key='id' srid=21781 type=LineString table=&quot;qwat_dr&quot;.&quot;dimension_distance&quot; (geometry) sql=" name="côtes distance">
+          <LayerStyle provider="postgres" layerid="dimension20130807094904783" source="service='qwat' sslmode=disable key='id' srid=21781 type=LineString table=&quot;qwat_dr&quot;.&quot;dimension_distance&quot; (geometry) sql=" name="Côtes distance">
             <qgis version="2.11.0-Master" minimumScale="-4.65661e-10" maximumScale="501" simplifyDrawingHints="0" minLabelScale="0" maxLabelScale="1e+08" simplifyDrawingTol="1" simplifyMaxScale="1" hasScaleBasedVisibilityFlag="1" simplifyLocal="1" scaleBasedLabelVisibilityFlag="0">
               <edittypes>
                 <edittype widgetv2type="TextEdit" name="id">
@@ -11346,7 +11348,7 @@ def my_form_open(dialog, layer, feature):
               </conditionalstyles>
             </qgis>
           </LayerStyle>
-          <LayerStyle provider="postgres" layerid="hydrant20130304110004848" source="service='qwat' sslmode=allow key='id' srid=21781 type=PointZ table=&quot;qwat_od&quot;.&quot;vw_element_hydrant&quot; (geometry) sql=" name="hydrantes">
+          <LayerStyle provider="postgres" layerid="hydrant20130304110004848" source="service='qwat' sslmode=allow key='id' srid=21781 type=PointZ table=&quot;qwat_od&quot;.&quot;vw_element_hydrant&quot; (geometry) sql=" name="Hydrantes (bornes incendie)">
             <qgis version="2.11.0-Master" minimumScale="-4.65661e-10" maximumScale="10001" simplifyDrawingHints="0" minLabelScale="1" maxLabelScale="1e+08" simplifyDrawingTol="1" simplifyMaxScale="1" hasScaleBasedVisibilityFlag="1" simplifyLocal="1" scaleBasedLabelVisibilityFlag="0">
               <edittypes>
                 <edittype widgetv2type="TextEdit" name="id">
@@ -11747,7 +11749,7 @@ def my_form_open(dialog, layer, feature):
               </conditionalstyles>
             </qgis>
           </LayerStyle>
-          <LayerStyle provider="postgres" layerid="node20130304110005126" source="service='qwat' sslmode=allow key='id' srid=21781 type=PointZ table=&quot;qwat_od&quot;.&quot;node&quot; (geometry) sql=" name="noeuds">
+          <LayerStyle provider="postgres" layerid="node20130304110005126" source="service='qwat' sslmode=allow key='id' srid=21781 type=PointZ table=&quot;qwat_od&quot;.&quot;node&quot; (geometry) sql=" name="Noeuds (réseau et ouvrages)">
             <qgis version="2.11.0-Master" minimumScale="0" maximumScale="501" simplifyDrawingHints="0" minLabelScale="1" maxLabelScale="1e+08" simplifyDrawingTol="1" simplifyMaxScale="1" hasScaleBasedVisibilityFlag="1" simplifyLocal="1" scaleBasedLabelVisibilityFlag="0">
               <edittypes>
                 <edittype widgetv2type="TextEdit" name="id">
@@ -12175,7 +12177,7 @@ def my_form_open(dialog, layer, feature):
               </conditionalstyles>
             </qgis>
           </LayerStyle>
-          <LayerStyle provider="postgres" layerid="od_annotationline20131203095020365" source="service='qwat' sslmode=disable key='id' estimatedmetadata=true srid=21781 type=LineString table=&quot;qwat_dr&quot;.&quot;annotationline&quot; (geometry) sql=" name="annotations - ligne">
+          <LayerStyle provider="postgres" layerid="od_annotationline20131203095020365" source="service='qwat' sslmode=disable key='id' estimatedmetadata=true srid=21781 type=LineString table=&quot;qwat_dr&quot;.&quot;annotationline&quot; (geometry) sql=" name="Annotations - ligne">
             <qgis version="2.11.0-Master" minimumScale="0" maximumScale="1001" simplifyDrawingHints="0" minLabelScale="0" maxLabelScale="1e+08" simplifyDrawingTol="1" simplifyMaxScale="1" hasScaleBasedVisibilityFlag="1" simplifyLocal="1" scaleBasedLabelVisibilityFlag="0">
               <edittypes>
                 <edittype widgetv2type="TextEdit" name="id">
@@ -12400,7 +12402,7 @@ def my_form_open(dialog, layer, feature):
               </conditionalstyles>
             </qgis>
           </LayerStyle>
-          <LayerStyle provider="postgres" layerid="od_annotationpoint20131203095020392" source="service='qwat' sslmode=disable key='id' estimatedmetadata=true srid=21781 type=Point table=&quot;qwat_dr&quot;.&quot;annotationpoint&quot; (geometry) sql=" name="annotations - point">
+          <LayerStyle provider="postgres" layerid="od_annotationpoint20131203095020392" source="service='qwat' sslmode=disable key='id' estimatedmetadata=true srid=21781 type=Point table=&quot;qwat_dr&quot;.&quot;annotationpoint&quot; (geometry) sql=" name="Annotations - point">
             <qgis version="2.11.0-Master" minimumScale="-4.65661e-10" maximumScale="1001" simplifyDrawingHints="1" minLabelScale="0" maxLabelScale="1e+08" simplifyDrawingTol="1" simplifyMaxScale="1" hasScaleBasedVisibilityFlag="1" simplifyLocal="1" scaleBasedLabelVisibilityFlag="0">
               <edittypes>
                 <edittype widgetv2type="TextEdit" name="id">
@@ -12627,7 +12629,7 @@ def my_form_open(dialog, layer, feature):
               </conditionalstyles>
             </qgis>
           </LayerStyle>
-          <LayerStyle provider="postgres" layerid="od_crossing20141023083754327" source="service='qwat' sslmode=disable key='id' srid=21781 type=Point table=&quot;qwat_od&quot;.&quot;crossing&quot; (geometry) sql=" name="croisements">
+          <LayerStyle provider="postgres" layerid="od_crossing20141023083754327" source="service='qwat' sslmode=disable key='id' srid=21781 type=Point table=&quot;qwat_od&quot;.&quot;crossing&quot; (geometry) sql=" name="Croisements">
             <qgis version="2.11.0-Master" minimumScale="-4.65661e-10" maximumScale="1e+08" simplifyDrawingHints="0" minLabelScale="0" maxLabelScale="1e+08" simplifyDrawingTol="1" simplifyMaxScale="1" hasScaleBasedVisibilityFlag="0" simplifyLocal="1" scaleBasedLabelVisibilityFlag="0">
               <edittypes>
                 <edittype widgetv2type="TextEdit" name="id">
@@ -12977,7 +12979,7 @@ def my_form_open(dialog, layer, feature):
               </conditionalstyles>
             </qgis>
           </LayerStyle>
-          <LayerStyle provider="postgres" layerid="od_dimension_orientation20131202111155806" source="service='qwat' sslmode=disable key='id' estimatedmetadata=true srid=21781 type=LineString table=&quot;qwat_dr&quot;.&quot;dimension_orientation&quot; (geometry) sql=" name="côtes orientation">
+          <LayerStyle provider="postgres" layerid="od_dimension_orientation20131202111155806" source="service='qwat' sslmode=disable key='id' estimatedmetadata=true srid=21781 type=LineString table=&quot;qwat_dr&quot;.&quot;dimension_orientation&quot; (geometry) sql=" name="Côtes orientation">
             <qgis version="2.11.0-Master" minimumScale="0" maximumScale="501" simplifyDrawingHints="0" minLabelScale="0" maxLabelScale="1e+08" simplifyDrawingTol="1" simplifyMaxScale="1" hasScaleBasedVisibilityFlag="1" simplifyLocal="1" scaleBasedLabelVisibilityFlag="0">
               <edittypes>
                 <edittype widgetv2type="TextEdit" name="id">
@@ -13190,7 +13192,7 @@ def my_form_open(dialog, layer, feature):
               </conditionalstyles>
             </qgis>
           </LayerStyle>
-          <LayerStyle provider="postgres" layerid="od_meter20131120073630165" source="service='qwat' sslmode=disable key='id' estimatedmetadata=true srid=21781 type=PointZ table=&quot;qwat_od&quot;.&quot;vw_element_meter&quot; (geometry) sql=" name="compteurs réseau">
+          <LayerStyle provider="postgres" layerid="od_meter20131120073630165" source="service='qwat' sslmode=disable key='id' estimatedmetadata=true srid=21781 type=PointZ table=&quot;qwat_od&quot;.&quot;vw_element_meter&quot; (geometry) sql=" name="Compteurs réseau">
             <qgis version="2.11.0-Master" minimumScale="4" maximumScale="1e+08" simplifyDrawingHints="0" minLabelScale="1" maxLabelScale="1e+08" simplifyDrawingTol="1" simplifyMaxScale="1" hasScaleBasedVisibilityFlag="1" simplifyLocal="1" scaleBasedLabelVisibilityFlag="0">
               <edittypes>
                 <edittype widgetv2type="TextEdit" name="id">
@@ -14248,7 +14250,7 @@ def my_form_open(dialog, layer, feature):
               </conditionalstyles>
             </qgis>
           </LayerStyle>
-          <LayerStyle provider="postgres" layerid="od_remote20150116100522170" source="service='qwat' sslmode=disable key='id' srid=21781 type=MultiLineString table=&quot;qwat_od&quot;.&quot;remote&quot; (geometry) sql=" name="télécommandes">
+          <LayerStyle provider="postgres" layerid="od_remote20150116100522170" source="service='qwat' sslmode=disable key='id' srid=21781 type=MultiLineString table=&quot;qwat_od&quot;.&quot;remote&quot; (geometry) sql=" name="Télécommandes">
             <qgis version="2.11.0-Master" minimumScale="-4.65661e-10" maximumScale="1e+08" simplifyDrawingHints="0" minLabelScale="0" maxLabelScale="1e+08" simplifyDrawingTol="1" simplifyMaxScale="1" hasScaleBasedVisibilityFlag="0" simplifyLocal="1" scaleBasedLabelVisibilityFlag="0">
               <edittypes>
                 <edittype widgetv2type="TextEdit" name="id">
@@ -14543,7 +14545,7 @@ def my_form_open(dialog, layer, feature):
               </conditionalstyles>
             </qgis>
           </LayerStyle>
-          <LayerStyle provider="postgres" layerid="od_subscriber_reference20131206105928067" source="service='qwat' sslmode=disable key='id' estimatedmetadata=true srid=21781 type=Point table=&quot;qwat_od&quot;.&quot;subscriber_reference&quot; (geometry) sql=" name="abonnés - renvoi">
+          <LayerStyle provider="postgres" layerid="od_subscriber_reference20131206105928067" source="service='qwat' sslmode=disable key='id' estimatedmetadata=true srid=21781 type=Point table=&quot;qwat_od&quot;.&quot;subscriber_reference&quot; (geometry) sql=" name="Abonnés - renvoi">
             <qgis version="2.11.0-Master" minimumScale="0" maximumScale="3000" simplifyDrawingHints="0" minLabelScale="0" maxLabelScale="1e+08" simplifyDrawingTol="1" simplifyMaxScale="1" hasScaleBasedVisibilityFlag="1" simplifyLocal="1" scaleBasedLabelVisibilityFlag="0">
               <edittypes>
                 <edittype widgetv2type="TextEdit" name="id">
@@ -14791,7 +14793,7 @@ def my_form_open(dialog, layer, feature):
               </conditionalstyles>
             </qgis>
           </LayerStyle>
-          <LayerStyle provider="postgres" layerid="printmap20130304110011400" source="service='qwat' sslmode=allow key='id' srid=21781 type=Polygon table=&quot;qwat_od&quot;.&quot;printmap&quot; (geometry) sql=" name="folios">
+          <LayerStyle provider="postgres" layerid="printmap20130304110011400" source="service='qwat' sslmode=allow key='id' srid=21781 type=Polygon table=&quot;qwat_od&quot;.&quot;printmap&quot; (geometry) sql=" name="Folios (zones d'impression)">
             <qgis version="2.11.0-Master" minimumScale="200" maximumScale="250000" simplifyDrawingHints="1" minLabelScale="1" maxLabelScale="1e+08" simplifyDrawingTol="1" simplifyMaxScale="1" hasScaleBasedVisibilityFlag="1" simplifyLocal="1" scaleBasedLabelVisibilityFlag="0">
               <edittypes>
                 <edittype widgetv2type="TextEdit" name="id">
@@ -15142,7 +15144,7 @@ def my_form_open(dialog, layer, feature):
               </conditionalstyles>
             </qgis>
           </LayerStyle>
-          <LayerStyle provider="postgres" layerid="subscriber20130304110011459" source="service='qwat' sslmode=allow key='id' srid=21781 type=PointZ table=&quot;qwat_od&quot;.&quot;vw_element_subscriber&quot; (geometry) sql=" name="abonnés">
+          <LayerStyle provider="postgres" layerid="subscriber20130304110011459" source="service='qwat' sslmode=allow key='id' srid=21781 type=PointZ table=&quot;qwat_od&quot;.&quot;vw_element_subscriber&quot; (geometry) sql=" name="Abonnés">
             <qgis version="2.11.0-Master" minimumScale="4" maximumScale="1e+08" simplifyDrawingHints="0" minLabelScale="1" maxLabelScale="1e+08" simplifyDrawingTol="1" simplifyMaxScale="1" hasScaleBasedVisibilityFlag="1" simplifyLocal="1" scaleBasedLabelVisibilityFlag="0">
               <edittypes>
                 <edittype widgetv2type="TextEdit" name="id">
@@ -15627,7 +15629,7 @@ def my_form_open(dialog, layer, feature):
               </conditionalstyles>
             </qgis>
           </LayerStyle>
-          <LayerStyle provider="postgres" layerid="valve20130304110011497" source="service='qwat' sslmode=allow key='id' srid=21781 type=PointZ table=&quot;qwat_od&quot;.&quot;valve&quot; (geometry) sql=" name="vannes">
+          <LayerStyle provider="postgres" layerid="valve20130304110011497" source="service='qwat' sslmode=allow key='id' srid=21781 type=PointZ table=&quot;qwat_od&quot;.&quot;valve&quot; (geometry) sql=" name="Vannes">
             <qgis version="2.11.0-Master" minimumScale="-4.65661e-10" maximumScale="10001" simplifyDrawingHints="0" minLabelScale="1" maxLabelScale="1e+08" simplifyDrawingTol="1" simplifyMaxScale="1" hasScaleBasedVisibilityFlag="1" simplifyLocal="1" scaleBasedLabelVisibilityFlag="0">
               <edittypes>
                 <edittype widgetv2type="TextEdit" name="id">
@@ -16651,20 +16653,20 @@ def my_form_open(dialog, layer, feature):
       <ComposerMap followPreset="false" mapRotation="0" keepLayerSet="true" followPresetName="" id="0" previewMode="Cache" drawCanvasItems="true">
         <Extent ymin="142599.08241754528717138" xmin="559670.13398864679038525" ymax="142670.83241761845420115" xmax="559772.63398875133134425"/>
         <LayerSet>
-          <Layer provider="postgres" source="service='qwat' sslmode=allow key='id' srid=21781 type=PointZ table=&quot;qwat_od&quot;.&quot;vw_element_hydrant&quot; (geometry) sql=" name="hydrantes">hydrant20130304110004848</Layer>
-          <Layer provider="postgres" source="service='qwat' sslmode=allow key='id' srid=21781 type=PointZ table=&quot;qwat_od&quot;.&quot;valve&quot; (geometry) sql=" name="vannes">valve20130304110011497</Layer>
-          <Layer provider="postgres" source="service='qwat' sslmode=disable key='id' srid=21781 type=Point table=&quot;qwat_od&quot;.&quot;leak&quot; (geometry) sql=" name="fuites">leak20130821111917060</Layer>
-          <Layer provider="postgres" source="service='qwat' sslmode=allow key='id' srid=21781 type=PointZ table=&quot;qwat_od&quot;.&quot;vw_element_subscriber&quot; (geometry) sql=" name="abonnés">subscriber20130304110011459</Layer>
-          <Layer provider="postgres" source="service='qwat' sslmode=disable key='id' estimatedmetadata=true srid=21781 type=Point table=&quot;qwat_od&quot;.&quot;subscriber_reference&quot; (geometry) sql=" name="abonnés - renvoi">od_subscriber_reference20131206105928067</Layer>
-          <Layer provider="postgres" source="service='qwat' sslmode=disable key='id' estimatedmetadata=true srid=21781 type=PointZ table=&quot;qwat_od&quot;.&quot;vw_element_meter&quot; (geometry) sql=" name="compteurs réseau">od_meter20131120073630165</Layer>
+          <Layer provider="postgres" source="service='qwat' sslmode=allow key='id' srid=21781 type=PointZ table=&quot;qwat_od&quot;.&quot;vw_element_hydrant&quot; (geometry) sql=" name="Hydrantes (bornes incendie)">hydrant20130304110004848</Layer>
+          <Layer provider="postgres" source="service='qwat' sslmode=allow key='id' srid=21781 type=PointZ table=&quot;qwat_od&quot;.&quot;valve&quot; (geometry) sql=" name="Vannes">valve20130304110011497</Layer>
+          <Layer provider="postgres" source="service='qwat' sslmode=disable key='id' srid=21781 type=Point table=&quot;qwat_od&quot;.&quot;leak&quot; (geometry) sql=" name="Fuites">leak20130821111917060</Layer>
+          <Layer provider="postgres" source="service='qwat' sslmode=allow key='id' srid=21781 type=PointZ table=&quot;qwat_od&quot;.&quot;vw_element_subscriber&quot; (geometry) sql=" name="Abonnés">subscriber20130304110011459</Layer>
+          <Layer provider="postgres" source="service='qwat' sslmode=disable key='id' estimatedmetadata=true srid=21781 type=Point table=&quot;qwat_od&quot;.&quot;subscriber_reference&quot; (geometry) sql=" name="Abonnés - renvoi">od_subscriber_reference20131206105928067</Layer>
+          <Layer provider="postgres" source="service='qwat' sslmode=disable key='id' estimatedmetadata=true srid=21781 type=PointZ table=&quot;qwat_od&quot;.&quot;vw_element_meter&quot; (geometry) sql=" name="Compteurs réseau">od_meter20131120073630165</Layer>
           <Layer provider="postgres" source="service='qwat' sslmode=disable key='id' estimatedmetadata=true srid=21781 type=Point table=&quot;qwat_od&quot;.&quot;meter_reference&quot; (geometry) sql=" name="Compteurs réseau - renvoi">od_meter_reference20140304165835390</Layer>
-          <Layer provider="postgres" source="service='qwat' sslmode=allow key='id' srid=21781 type=PointZ table=&quot;qwat_od&quot;.&quot;node&quot; (geometry) sql=" name="noeuds">node20130304110005126</Layer>
-          <Layer provider="postgres" source="service='qwat' sslmode=disable key='id' srid=21781 type=LineStringZ table=&quot;qwat_od&quot;.&quot;pipe&quot; (geometry) sql=" name="conduites">conduites_copy20130709141244955</Layer>
-          <Layer provider="postgres" source="service='qwat' sslmode=disable key='id' estimatedmetadata=true srid=21781 type=LineString table=&quot;qwat_dr&quot;.&quot;annotationline&quot; (geometry) sql=" name="annotations - ligne">od_annotationline20131203095020365</Layer>
-          <Layer provider="postgres" source="service='qwat' sslmode=disable key='id' estimatedmetadata=true srid=21781 type=Point table=&quot;qwat_dr&quot;.&quot;annotationpoint&quot; (geometry) sql=" name="annotations - point">od_annotationpoint20131203095020392</Layer>
-          <Layer provider="postgres" source="service='qwat' sslmode=disable key='id' srid=21781 type=LineString table=&quot;qwat_dr&quot;.&quot;dimension_distance&quot; (geometry) sql=" name="côtes distance">dimension20130807094904783</Layer>
-          <Layer provider="postgres" source="service='qwat' sslmode=disable key='id' estimatedmetadata=true srid=21781 type=LineString table=&quot;qwat_dr&quot;.&quot;dimension_orientation&quot; (geometry) sql=" name="côtes orientation">od_dimension_orientation20131202111155806</Layer>
-          <Layer provider="postgres" source="service='qwat' sslmode=allow key='id' srid=21781 type=Polygon table=&quot;qwat_od&quot;.&quot;printmap&quot; (geometry) sql=" name="folios">printmap20130304110011400</Layer>
+          <Layer provider="postgres" source="service='qwat' sslmode=allow key='id' srid=21781 type=PointZ table=&quot;qwat_od&quot;.&quot;node&quot; (geometry) sql=" name="Noeuds (réseau et ouvrages)">node20130304110005126</Layer>
+          <Layer provider="postgres" source="service='qwat' sslmode=disable key='id' srid=21781 type=LineStringZ table=&quot;qwat_od&quot;.&quot;pipe&quot; (geometry) sql=" name="Conduites">conduites_copy20130709141244955</Layer>
+          <Layer provider="postgres" source="service='qwat' sslmode=disable key='id' estimatedmetadata=true srid=21781 type=LineString table=&quot;qwat_dr&quot;.&quot;annotationline&quot; (geometry) sql=" name="Annotations - ligne">od_annotationline20131203095020365</Layer>
+          <Layer provider="postgres" source="service='qwat' sslmode=disable key='id' estimatedmetadata=true srid=21781 type=Point table=&quot;qwat_dr&quot;.&quot;annotationpoint&quot; (geometry) sql=" name="Annotations - point">od_annotationpoint20131203095020392</Layer>
+          <Layer provider="postgres" source="service='qwat' sslmode=disable key='id' srid=21781 type=LineString table=&quot;qwat_dr&quot;.&quot;dimension_distance&quot; (geometry) sql=" name="Côtes distance">dimension20130807094904783</Layer>
+          <Layer provider="postgres" source="service='qwat' sslmode=disable key='id' estimatedmetadata=true srid=21781 type=LineString table=&quot;qwat_dr&quot;.&quot;dimension_orientation&quot; (geometry) sql=" name="Côtes orientation">od_dimension_orientation20131202111155806</Layer>
+          <Layer provider="postgres" source="service='qwat' sslmode=allow key='id' srid=21781 type=Polygon table=&quot;qwat_od&quot;.&quot;printmap&quot; (geometry) sql=" name="Folios (zones d'impression)">printmap20130304110011400</Layer>
         </LayerSet>
         <Grid/>
         <ComposerMapGrid rightAnnotationDirection="0" gridFramePenColor="0,0,0,255" show="0" bottomAnnotationPosition="1" annotationPrecision="3" showAnnotation="0" topFrameDivisions="0" uuid="{f33b132a-e26f-4783-a43f-20adc4c40ec7}" leftAnnotationDirection="0" topAnnotationPosition="1" rightAnnotationDisplay="0" offsetX="0" offsetY="0" rightFrameDivisions="0" gridStyle="0" annotationFontColor="0,0,0,255" intervalX="0" gridFrameSideFlags="15" intervalY="0" bottomAnnotationDirection="0" leftAnnotationDisplay="0" leftFrameDivisions="0" frameFillColor1="255,255,255,255" annotationExpression="" frameFillColor2="0,0,0,255" crossLength="3" gridFramePenThickness="0.5" bottomAnnotationDisplay="0" unit="0" topAnnotationDisplay="0" leftAnnotationPosition="1" blendMode="0" gridFrameStyle="0" rightAnnotationPosition="1" gridFrameWidth="2" name="Grid 1" annotationFormat="0" bottomFrameDivisions="0" topAnnotationDirection="0" frameAnnotationDistance="1">
@@ -18095,7 +18097,7 @@ def my_form_open(dialog, layer, feature):
       <keywordList>
         <value></value>
       </keywordList>
-      <layername>conduites</layername>
+      <layername>Conduites</layername>
       <srs>
         <spatialrefsys>
           <proj4>+proj=somerc +lat_0=46.95240555555556 +lon_0=7.439583333333333 +k_0=1 +x_0=600000 +y_0=200000 +ellps=bessel +towgs84=674.4,15.1,405.3,0,0,0,0 +units=m +no_defs</proj4>
@@ -19786,8 +19788,8 @@ def my_form_open(dialog, layer, feature):
       </edittypes>
       <renderer-v2 forceraster="0" symbollevels="0" type="RuleRenderer" enableorderby="0">
         <rules key="{dbde1c2b-a27d-484e-8dd5-d13dcd527b89}">
-          <rule filter="fk_distributor = 1  and &quot;status_value_en&quot; =  'in use' " key="{f550eef3-fdaa-427b-b415-bd7e8fc25f9e}" label="fonctionnel">
-            <rule filter="status_active = 't'" key="{f683634b-6b3e-459a-b735-1e5d0fe53ae9}" label="actif">
+          <rule filter="fk_distributor = 1  and &quot;status_value_en&quot; =  'in use' " key="{f550eef3-fdaa-427b-b415-bd7e8fc25f9e}" label="Fonctionnel">
+            <rule filter="status_active = 't'" key="{f683634b-6b3e-459a-b735-1e5d0fe53ae9}" label="Actif">
               <rule filter="COALESCE( &quot;schema_force_visible&quot;,  &quot;pipe_function_schema_visible&quot;) = 't' AND fk_status != 1307" key="{1db41c6f-d632-42a2-a453-287300377f48}" label="Schématique">
                 <rule filter=" &quot;pipe_function_major&quot;  = 't'" key="{684b69b2-b4e2-49e4-82f1-ea1e9a680e64}" symbol="0" label="principale"/>
                 <rule filter=" &quot;pipe_function_major&quot; = 'f'" key="{d0b9168b-e603-49dd-8c84-e17551131f81}" symbol="1" label="secondaire"/>
@@ -19801,7 +19803,7 @@ def my_form_open(dialog, layer, feature):
                 <rule scalemaxdenom="3000" filter=" &quot;fk_installmethod&quot;  =4202" key="{ab1fe7d1-2f11-4eea-915b-f4a08a217886}" symbol="7" scalemindenom="1" label="chemisée"/>
               </rule>
             </rule>
-            <rule filter="status_active = 'f'" key="{d1bbbb53-b702-4d56-9f8b-ccf8029e5318}" label="inactif">
+            <rule filter="status_active = 'f'" key="{d1bbbb53-b702-4d56-9f8b-ccf8029e5318}" label="Inactif">
               <rule filter="COALESCE( &quot;schema_force_visible&quot;,  &quot;pipe_function_schema_visible&quot;)  = 't'" key="{85a03431-ffdc-4bd4-9796-2113d60c4125}" label="Schématique">
                 <rule filter=" &quot;pipe_function_major&quot; = 't'" key="{6f5c08e7-bf93-4eee-94df-3f749becb926}" symbol="8" label="principale"/>
                 <rule filter=" &quot;pipe_function_major&quot; = 'f'" key="{8f3bf5ad-c837-4d67-9ba8-2a0c37ad6ae0}" symbol="9" label="secondaire"/>
@@ -19817,7 +19819,7 @@ def my_form_open(dialog, layer, feature):
             </rule>
             <rule filter="fk_status=1307" key="{7c5fde76-05d7-4d4a-9eaa-953db28fbe87}" symbol="16" label="Fictives"/>
           </rule>
-          <rule filter="fk_distributor = 1  and &quot;status_value_en&quot; =   'out of service' " key="{75060a73-107d-4ace-bc35-d573de40488f}" label="non fonctionnel">
+          <rule filter="fk_distributor = 1  and &quot;status_value_en&quot; =   'out of service' " key="{75060a73-107d-4ace-bc35-d573de40488f}" label="Non fonctionnel">
             <rule filter="COALESCE( &quot;schema_force_visible&quot;,  &quot;pipe_function_schema_visible&quot;)  = 't'" key="{5b970fd5-5c37-4865-81a5-cab18c5fb58c}" label="Schématique">
               <rule filter=" &quot;pipe_function_major&quot; = 't'" key="{783f2167-c790-4baf-a58d-d6fd65a299a4}" symbol="17" label="principale"/>
               <rule filter=" &quot;pipe_function_major&quot; = 'f'" key="{46c7536a-ac7b-4e7b-afe6-33f9fee2f171}" symbol="18" label="secondaire"/>
@@ -19831,7 +19833,7 @@ def my_form_open(dialog, layer, feature):
               <rule scalemaxdenom="3000" checkstate="0" filter=" &quot;fk_installmethod&quot;  =4202" key="{d7881ca8-054a-42d7-8a53-bc586b51d9de}" symbol="24" scalemindenom="1" label="chemisée"/>
             </rule>
           </rule>
-          <rule filter="fk_distributor != 1" key="{013429dc-a1cd-4a17-904a-6550a0175046}" label="étranger">
+          <rule filter="fk_distributor != 1" key="{013429dc-a1cd-4a17-904a-6550a0175046}" label="Étranger (autre distributeur)">
             <rule filter="COALESCE( &quot;schema_force_visible&quot;,  &quot;pipe_function_schema_visible&quot;)  = 't'" key="{2513a8b8-a110-4727-854c-6084f64e3bdf}" label="Schématique">
               <rule filter=" &quot;pipe_function_major&quot; = 't'" key="{f798c83b-a461-46c3-8031-8b5bc3caffd8}" symbol="25" label="principale"/>
               <rule filter=" &quot;pipe_function_major&quot; = 'f'" key="{ca06b6f2-f1ee-4958-b79a-6cb6cbc2059b}" symbol="26" label="secondaire"/>
@@ -19846,7 +19848,7 @@ def my_form_open(dialog, layer, feature):
             </rule>
           </rule>
           <rule checkstate="0" filter="fk_distributor = 1 and &quot;status_active&quot; = 't' and COALESCE( &quot;schema_force_visible&quot;,  &quot;pipe_function_schema_visible&quot;)  = 't'" key="{9c210704-187e-4e2a-9b89-2f7917f4376c}" symbol="33" label="Couleur par zone"/>
-          <rule filter="Else" key="{bb9b38f1-c76d-4c6d-908b-414f0cc24f97}" symbol="34" label="incomplètes"/>
+          <rule filter="Else" key="{bb9b38f1-c76d-4c6d-908b-414f0cc24f97}" symbol="34" label="Incomplètes"/>
         </rules>
         <symbols>
           <symbol alpha="1" clip_to_extent="1" type="line" name="0">
@@ -21847,7 +21849,7 @@ def my_form_open(dialog, layer, feature):
       <keywordList>
         <value></value>
       </keywordList>
-      <layername>points de construction</layername>
+      <layername>Points de construction</layername>
       <srs>
         <spatialrefsys>
           <proj4>+proj=somerc +lat_0=46.95240555555556 +lon_0=7.439583333333333 +k_0=1 +x_0=600000 +y_0=200000 +ellps=bessel +towgs84=674.4,15.1,405.3,0,0,0,0 +units=m +no_defs</proj4>
@@ -22226,7 +22228,7 @@ def my_form_open(dialog, layer, feature):
       <keywordList>
         <value></value>
       </keywordList>
-      <layername>côtes distance</layername>
+      <layername>Côtes distance</layername>
       <srs>
         <spatialrefsys>
           <proj4>+proj=somerc +lat_0=46.95240555555556 +lon_0=7.439583333333333 +k_0=1 +x_0=600000 +y_0=200000 +ellps=bessel +towgs84=674.4,15.1,405.3,0,0,0,0 +units=m +no_defs</proj4>
@@ -23063,7 +23065,7 @@ def my_form_open(dialog, layer, feature):
       <keywordList>
         <value></value>
       </keywordList>
-      <layername>dossiers techniques</layername>
+      <layername>Dossiers techniques (chantiers)</layername>
       <srs>
         <spatialrefsys>
           <proj4>+proj=somerc +lat_0=46.95240555555556 +lon_0=7.439583333333333 +k_0=1 +x_0=600000 +y_0=200000 +ellps=bessel +towgs84=674.4,15.1,405.3,0,0,0,0 +units=m +no_defs</proj4>
@@ -23431,7 +23433,7 @@ def my_form_open(dialog, layer, feature):
       <keywordList>
         <value></value>
       </keywordList>
-      <layername>hydrantes</layername>
+      <layername>Hydrantes (bornes incendie)</layername>
       <srs>
         <spatialrefsys>
           <proj4>+proj=somerc +lat_0=46.95240555555556 +lon_0=7.439583333333333 +k_0=1 +x_0=600000 +y_0=200000 +ellps=bessel +towgs84=674.4,15.1,405.3,0,0,0,0 +units=m +no_defs</proj4>
@@ -24709,7 +24711,7 @@ def my_form_open(dialog, layer, feature):
       <keywordList>
         <value></value>
       </keywordList>
-      <layername>hydrantes 5000 (pression)</layername>
+      <layername>Hydrantes 5000 (pression)</layername>
       <srs>
         <spatialrefsys>
           <proj4>+proj=somerc +lat_0=46.95240555555556 +lon_0=7.439583333333333 +k_0=1 +x_0=600000 +y_0=200000 +ellps=bessel +towgs84=674.4,15.1,405.3,0,0,0,0 +units=m +no_defs</proj4>
@@ -25506,7 +25508,7 @@ def my_form_open(dialog, layer, feature):
       <keywordList>
         <value></value>
       </keywordList>
-      <layername>fuites</layername>
+      <layername>Fuites</layername>
       <srs>
         <spatialrefsys>
           <proj4>+proj=somerc +lat_0=46.95240555555556 +lon_0=7.439583333333333 +k_0=1 +x_0=600000 +y_0=200000 +ellps=bessel +towgs84=674.4,15.1,405.3,0,0,0,0 +units=m +no_defs</proj4>
@@ -26093,7 +26095,7 @@ def my_form_open(dialog, layer, feature):
       <keywordList>
         <value></value>
       </keywordList>
-      <layername>noeuds</layername>
+      <layername>Noeuds (réseau et ouvrages)</layername>
       <srs>
         <spatialrefsys>
           <proj4>+proj=somerc +lat_0=46.95240555555556 +lon_0=7.439583333333333 +k_0=1 +x_0=600000 +y_0=200000 +ellps=bessel +towgs84=674.4,15.1,405.3,0,0,0,0 +units=m +no_defs</proj4>
@@ -26164,7 +26166,7 @@ def my_form_open(dialog, layer, feature):
           <rule filter="_pipe_node_type = 'couple_year'" key="{026d603f-cc2a-4c8b-b6d1-357175e36956}" symbol="2" label="Chg. année"/>
           <rule filter="_pipe_node_type = 'couple_other'" key="{d148d3d0-ca6b-405e-8259-c15f88e62ccb}" symbol="3" label="Chg. diamètre + matériau"/>
           <rule filter="_pipe_node_type = 'couple_diameter'" key="{87530b81-8a53-4983-a76e-b17b2c30ae43}" symbol="4" label="Chg. diamètre"/>
-          <rule filter="ELSE" key="{7eff4afa-192a-4cce-b911-9f644c0f8bf4}" symbol="5" label="Autres"/>
+          <rule filter=" &quot;_pipe_node_type&quot; is null " key="{7eff4afa-192a-4cce-b911-9f644c0f8bf4}" symbol="5" label="Autres"/>
         </rules>
         <symbols>
           <symbol alpha="1" clip_to_extent="1" type="marker" name="0">
@@ -26787,7 +26789,7 @@ def my_form_open(dialog, layer, feature):
       <keywordList>
         <value></value>
       </keywordList>
-      <layername>annotations - ligne</layername>
+      <layername>Annotations - ligne</layername>
       <srs>
         <spatialrefsys>
           <proj4>+proj=somerc +lat_0=46.95240555555556 +lon_0=7.439583333333333 +k_0=1 +x_0=600000 +y_0=200000 +ellps=bessel +towgs84=674.4,15.1,405.3,0,0,0,0 +units=m +no_defs</proj4>
@@ -27146,7 +27148,7 @@ def my_form_open(dialog, layer, feature):
       <keywordList>
         <value></value>
       </keywordList>
-      <layername>annotations - point</layername>
+      <layername>Annotations - point</layername>
       <srs>
         <spatialrefsys>
           <proj4>+proj=somerc +lat_0=46.95240555555556 +lon_0=7.439583333333333 +k_0=1 +x_0=600000 +y_0=200000 +ellps=bessel +towgs84=674.4,15.1,405.3,0,0,0,0 +units=m +no_defs</proj4>
@@ -27499,7 +27501,7 @@ def my_form_open(dialog, layer, feature):
       <keywordList>
         <value></value>
       </keywordList>
-      <layername>couvercles</layername>
+      <layername>Couvercles</layername>
       <srs>
         <spatialrefsys>
           <proj4>+proj=somerc +lat_0=46.95240555555556 +lon_0=7.439583333333333 +k_0=1 +x_0=600000 +y_0=200000 +ellps=bessel +towgs84=674.4,15.1,405.3,0,0,0,0 +units=m +no_defs</proj4>
@@ -28006,7 +28008,7 @@ def my_form_open(dialog, layer, feature):
       <keywordList>
         <value></value>
       </keywordList>
-      <layername>croisements</layername>
+      <layername>Croisements</layername>
       <srs>
         <spatialrefsys>
           <proj4>+proj=somerc +lat_0=46.95240555555556 +lon_0=7.439583333333333 +k_0=1 +x_0=600000 +y_0=200000 +ellps=bessel +towgs84=674.4,15.1,405.3,0,0,0,0 +units=m +no_defs</proj4>
@@ -28059,8 +28061,8 @@ def my_form_open(dialog, layer, feature):
       </edittypes>
       <renderer-v2 forceraster="0" symbollevels="0" type="RuleRenderer" enableorderby="0">
         <rules key="{8750e61a-8c50-4fd1-aa40-51b3d8bfbaa0}">
-          <rule scalemaxdenom="5000" key="{bdb56b7a-1c26-428b-8597-ce6b6eb58f01}" symbol="0" label="croisement"/>
-          <rule checkstate="0" filter="controled ='f'" key="{a8095b83-9f6e-4f71-859d-63fe932c52c8}" symbol="1" label="à contrôler"/>
+          <rule scalemaxdenom="5000" key="{bdb56b7a-1c26-428b-8597-ce6b6eb58f01}" symbol="0" label="Croisement"/>
+          <rule checkstate="0" filter="controled ='f'" key="{a8095b83-9f6e-4f71-859d-63fe932c52c8}" symbol="1" label="À contrôler"/>
         </rules>
         <symbols>
           <symbol alpha="1" clip_to_extent="1" type="marker" name="0">
@@ -28492,7 +28494,7 @@ def my_form_open(dialog, layer, feature):
       <keywordList>
         <value></value>
       </keywordList>
-      <layername>côtes orientation</layername>
+      <layername>Côtes orientation</layername>
       <srs>
         <spatialrefsys>
           <proj4>+proj=somerc +lat_0=46.95240555555556 +lon_0=7.439583333333333 +k_0=1 +x_0=600000 +y_0=200000 +ellps=bessel +towgs84=674.4,15.1,405.3,0,0,0,0 +units=m +no_defs</proj4>
@@ -28828,7 +28830,7 @@ def my_form_open(dialog, layer, feature):
       <keywordList>
         <value></value>
       </keywordList>
-      <layername>compteurs réseau</layername>
+      <layername>Compteurs réseau</layername>
       <srs>
         <spatialrefsys>
           <proj4>+proj=somerc +lat_0=46.95240555555556 +lon_0=7.439583333333333 +k_0=1 +x_0=600000 +y_0=200000 +ellps=bessel +towgs84=674.4,15.1,405.3,0,0,0,0 +units=m +no_defs</proj4>
@@ -29800,7 +29802,7 @@ def my_form_open(dialog, layer, feature):
       <keywordList>
         <value></value>
       </keywordList>
-      <layername>noeuds - tous - controle</layername>
+      <layername>Noeuds - tous - controle</layername>
       <srs>
         <spatialrefsys>
           <proj4>+proj=somerc +lat_0=46.95240555555556 +lon_0=7.439583333333333 +k_0=1 +x_0=600000 +y_0=200000 +ellps=bessel +towgs84=674.4,15.1,405.3,0,0,0,0 +units=m +no_defs</proj4>
@@ -30380,16 +30382,16 @@ def my_form_open(dialog, layer, feature):
       </edittypes>
       <renderer-v2 attr="fk_part_type" forceraster="0" symbollevels="0" type="categorizedSymbol" enableorderby="0">
         <categories>
-          <category render="true" symbol="0" value="9200" label="compteur"/>
-          <category render="true" symbol="1" value="9201" label="bouchon"/>
-          <category render="true" symbol="2" value="9202" label="bouche d'arrosage"/>
-          <category render="true" symbol="3" value="9203" label="raccord en T"/>
-          <category render="true" symbol="4" value="9204" label="raccord  coudé"/>
-          <category render="true" symbol="5" value="9206" label="réducteur de diamètre"/>
-          <category render="true" symbol="6" value="9207" label="raccord en croix"/>
-          <category render="true" symbol="7" value="9208" label="raccord inconnu"/>
-          <category render="true" symbol="8" value="9209" label="manomètre"/>
-          <category render="true" symbol="9" value="9210" label="débitmètre"/>
+          <category render="true" symbol="0" value="9200" label="Compteur"/>
+          <category render="true" symbol="1" value="9201" label="Bouchon"/>
+          <category render="true" symbol="2" value="9202" label="Bouche d'arrosage"/>
+          <category render="true" symbol="3" value="9203" label="Raccord en T"/>
+          <category render="true" symbol="4" value="9204" label="Raccord  coudé"/>
+          <category render="true" symbol="5" value="9206" label="Réducteur de diamètre"/>
+          <category render="true" symbol="6" value="9207" label="Raccord en croix"/>
+          <category render="true" symbol="7" value="9208" label="Raccord inconnu"/>
+          <category render="true" symbol="8" value="9209" label="Manomètre"/>
+          <category render="true" symbol="9" value="9210" label="Débitmètre"/>
         </categories>
         <symbols>
           <symbol alpha="1" clip_to_extent="1" type="marker" name="0">
@@ -31222,7 +31224,7 @@ def my_form_open(dialog, layer, feature):
       <keywordList>
         <value></value>
       </keywordList>
-      <layername>télécommandes</layername>
+      <layername>Télécommandes</layername>
       <srs>
         <spatialrefsys>
           <proj4>+proj=somerc +lat_0=46.95240555555556 +lon_0=7.439583333333333 +k_0=1 +x_0=600000 +y_0=200000 +ellps=bessel +towgs84=674.4,15.1,405.3,0,0,0,0 +units=m +no_defs</proj4>
@@ -31731,7 +31733,7 @@ def my_form_open(dialog, layer, feature):
       <keywordList>
         <value></value>
       </keywordList>
-      <layername>abonnés - renvoi</layername>
+      <layername>Abonnés - renvoi</layername>
       <srs>
         <spatialrefsys>
           <proj4>+proj=somerc +lat_0=46.95240555555556 +lon_0=7.439583333333333 +k_0=1 +x_0=600000 +y_0=200000 +ellps=bessel +towgs84=674.4,15.1,405.3,0,0,0,0 +units=m +no_defs</proj4>
@@ -32105,7 +32107,7 @@ def my_form_open(dialog, layer, feature):
       <keywordList>
         <value></value>
       </keywordList>
-      <layername>ouvrages 5000</layername>
+      <layername>Ouvrages 5000</layername>
       <srs>
         <spatialrefsys>
           <proj4>+proj=somerc +lat_0=46.95240555555556 +lon_0=7.439583333333333 +k_0=1 +x_0=600000 +y_0=200000 +ellps=bessel +towgs84=674.4,15.1,405.3,0,0,0,0 +units=m +no_defs</proj4>
@@ -33464,7 +33466,7 @@ def my_form_open(dialog, layer, feature):
       </edittypes>
       <renderer-v2 forceraster="0" symbollevels="0" type="RuleRenderer" enableorderby="0">
         <rules key="{89d1d7f3-6dd2-48ab-a978-572c899af422}">
-          <rule filter="status_functional = 't'" key="{71a064ea-fc5d-4548-9c69-5bf1fe84a66d}" label="fonctionnel">
+          <rule filter="status_functional = 't'" key="{71a064ea-fc5d-4548-9c69-5bf1fe84a66d}" label="Fonctionnel">
             <rule filter="status_active = 't' AND (fk_parent IS NULL OR @map_scale &lt; 501) AND fk_distributor = 1" key="{e946cc4f-cd0b-4ad9-8be4-7ffafae00622}" label="actif">
               <rule filter="installation_type = 'chamber'" key="{5a17ff38-f410-4abf-be4e-9c79367de4fe}" label="Chambre">
                 <rule filter="flow_meter = 't' or water_meter = 't' or manometer = 't'" key="{8822d14f-21ea-400b-ad73-aafc21c19773}" symbol="0" label="Chambre débitmètre"/>
@@ -33498,20 +33500,20 @@ def my_form_open(dialog, layer, feature):
               <rule filter="ELSE" key="{ba47d809-a5d0-4192-b1ef-631a0c6a0fb2}" symbol="19"/>
             </rule>
           </rule>
-          <rule filter="status_functional = 't' AND (fk_parent IS NULL OR @map_scale &lt; 501) AND fk_distributor != 1" key="{37ee4804-614d-4742-8288-a79d52f1e1d9}" label="étranger">
+          <rule filter="status_functional = 't' AND (fk_parent IS NULL OR @map_scale &lt; 501) AND fk_distributor != 1" key="{37ee4804-614d-4742-8288-a79d52f1e1d9}" label="Étranger (autre distributeur)">
             <rule filter="installation_type = 'chamber'" key="{c0076781-68f6-43ab-9b4b-1fb0a074b4c1}" label="Chambre">
               <rule filter="flow_meter = 't' or water_meter = 't' or manometer = 't'" key="{3820ee54-8445-4a23-b1ab-59038e2f6d28}" symbol="20" label="Chambre débitmètre"/>
               <rule filter="ELSE" key="{25e3684f-58b8-4a10-bdf2-faa3d1410626}" symbol="21" label="Chambre"/>
             </rule>
-            <rule filter="installation_type = 'pressurecontrol'" key="{cec9c0f1-7573-488d-917a-fb97f52e5cb2}" label="pressurecontrol">
+            <rule filter="installation_type = 'pressurecontrol'" key="{cec9c0f1-7573-488d-917a-fb97f52e5cb2}" label="Régulation de pression">
               <rule filter=" &quot;fk_pressurecontrol_type&quot; =  2801 " key="{18ded8b4-221b-4e2d-9817-0f52fd66b782}" symbol="22" label="Chambre réducteur"/>
               <rule filter=" &quot;fk_pressurecontrol_type&quot; =  2802" key="{fdad650c-d4a2-4b3d-bf92-e5a305c0d6ef}" symbol="23" label="Chambre coupe pression"/>
               <rule filter=" &quot;fk_pressurecontrol_type&quot; =  2803" key="{17131e2c-6fc3-40b3-b53d-5bc039d78a6b}" symbol="24" label="Chambre de rassemblement"/>
             </rule>
-            <rule filter="installation_type = 'pump'" key="{21502443-f0a0-4e80-83e6-198977343b0d}" symbol="25" label="pump"/>
-            <rule filter="installation_type = 'source'" key="{8fa41cb0-dcd9-4fb7-8375-9b2779b17514}" symbol="26" label="source"/>
-            <rule filter="installation_type = 'tank'" key="{1748c4b8-9632-4c31-b4c6-1e750fbb851f}" symbol="27" label="tank"/>
-            <rule filter="installation_type = 'treatment'" key="{59878a6a-ca5c-4809-b1a0-b317151cfb27}" symbol="28" label="treatment"/>
+            <rule filter="installation_type = 'pump'" key="{21502443-f0a0-4e80-83e6-198977343b0d}" symbol="25" label="Pompe"/>
+            <rule filter="installation_type = 'source'" key="{8fa41cb0-dcd9-4fb7-8375-9b2779b17514}" symbol="26" label="Source"/>
+            <rule filter="installation_type = 'tank'" key="{1748c4b8-9632-4c31-b4c6-1e750fbb851f}" symbol="27" label="Réservoir"/>
+            <rule filter="installation_type = 'treatment'" key="{59878a6a-ca5c-4809-b1a0-b317151cfb27}" symbol="28" label="Traitement"/>
             <rule filter="ELSE" key="{72c92aed-f674-478a-a8f8-e96348d0e09a}" symbol="29"/>
           </rule>
           <rule checkstate="0" filter="status_functional = 'f'" key="{6a77fe04-db6e-4bf9-a9c6-fe3ea7f31b03}" label="non fonctionnel">
@@ -33519,15 +33521,15 @@ def my_form_open(dialog, layer, feature):
               <rule filter="flow_meter = 't' or water_meter = 't' or manometer = 't'" key="{2af9d655-d60f-4ee2-a31b-d5f075a9fad8}" symbol="30" label="Chambre débitmètre"/>
               <rule filter="ELSE" key="{fa07847e-bb3b-454d-b957-1a2b5394e819}" symbol="31" label="Chambre"/>
             </rule>
-            <rule filter="installation_type = 'pressurecontrol'" key="{410bdc09-391b-489d-a4e7-3f13c5d2e18d}" label="pressurecontrol">
+            <rule filter="installation_type = 'pressurecontrol'" key="{410bdc09-391b-489d-a4e7-3f13c5d2e18d}" label="Régulation de pression">
               <rule filter=" &quot;fk_pressurecontrol_type&quot; =  2801 " key="{c896fa82-5e7f-4ffb-9f39-983dda5f6566}" symbol="32" label="Chambre réducteur"/>
               <rule filter=" &quot;fk_pressurecontrol_type&quot; =  2802" key="{b7cfa44a-acc1-4818-ae4e-eebc16b3b60f}" symbol="33" label="Chambre coupe pression"/>
               <rule filter=" &quot;fk_pressurecontrol_type&quot; =  2803" key="{6344ee42-45a2-40ee-b52d-f7b7db81a674}" symbol="34" label="Chambre de rassemblement"/>
             </rule>
-            <rule filter="installation_type = 'pump'" key="{604665a8-506c-4fdf-a10d-1fa4e79706e9}" symbol="35" label="pump"/>
-            <rule filter="installation_type = 'source'" key="{b2056b72-4abc-48fb-af2e-0e23779d9c64}" symbol="36" label="source"/>
-            <rule filter="installation_type = 'tank'" key="{8cf17e40-4159-47e8-b16b-e157021e9fd3}" symbol="37" label="tank"/>
-            <rule filter="installation_type = 'treatment'" key="{9f3f6e03-b69a-427b-8367-e7d64d6fc557}" symbol="38" label="treatment"/>
+            <rule filter="installation_type = 'pump'" key="{604665a8-506c-4fdf-a10d-1fa4e79706e9}" symbol="35" label="Pompe"/>
+            <rule filter="installation_type = 'source'" key="{b2056b72-4abc-48fb-af2e-0e23779d9c64}" symbol="36" label="Source"/>
+            <rule filter="installation_type = 'tank'" key="{8cf17e40-4159-47e8-b16b-e157021e9fd3}" symbol="37" label="Réservoir"/>
+            <rule filter="installation_type = 'treatment'" key="{9f3f6e03-b69a-427b-8367-e7d64d6fc557}" symbol="38" label="Traitement"/>
             <rule filter="ELSE" key="{4eeb5562-996b-4cb4-b502-b05eaf404d2e}" symbol="39"/>
           </rule>
         </rules>
@@ -35460,7 +35462,7 @@ def my_form_open(dialog, layer, feature):
       <keywordList>
         <value></value>
       </keywordList>
-      <layername>zones de pressions</layername>
+      <layername>Zones de pression</layername>
       <srs>
         <spatialrefsys>
           <proj4>+proj=somerc +lat_0=46.95240555555556 +lon_0=7.439583333333333 +k_0=1 +x_0=600000 +y_0=200000 +ellps=bessel +towgs84=674.4,15.1,405.3,0,0,0,0 +units=m +no_defs</proj4>
@@ -36059,7 +36061,7 @@ def my_form_open(dialog, layer, feature):
       <keywordList>
         <value></value>
       </keywordList>
-      <layername>folios</layername>
+      <layername>Folios (zones d'impression)</layername>
       <srs>
         <spatialrefsys>
           <proj4>+proj=somerc +lat_0=46.95240555555556 +lon_0=7.439583333333333 +k_0=1 +x_0=600000 +y_0=200000 +ellps=bessel +towgs84=674.4,15.1,405.3,0,0,0,0 +units=m +no_defs</proj4>
@@ -36648,7 +36650,7 @@ def my_form_open(dialog, layer, feature):
       <keywordList>
         <value></value>
       </keywordList>
-      <layername>zones de protections</layername>
+      <layername>Zones de protections</layername>
       <srs>
         <spatialrefsys>
           <proj4>+proj=somerc +lat_0=46.95240555555556 +lon_0=7.439583333333333 +k_0=1 +x_0=600000 +y_0=200000 +ellps=bessel +towgs84=674.4,15.1,405.3,0,0,0,0 +units=m +no_defs</proj4>
@@ -37065,7 +37067,7 @@ def my_form_open(dialog, layer, feature):
       </aliases>
       <excludeAttributesWMS/>
       <excludeAttributesWFS/>
-      <attributeactions default="0"/>
+      <attributeactions default="-1"/>
       <attributetableconfig actionWidgetStyle="dropDown" sortExpression="" sortOrder="0">
         <columns/>
       </attributetableconfig>
@@ -37332,10 +37334,12 @@ def my_form_open(dialog, layer, feature):
       </extent>
       <id>subscriber20130304110011459</id>
       <datasource>service='qwat' sslmode=allow key='id' srid=21781 type=PointZ table="qwat_od"."vw_element_subscriber" (geometry) sql=</datasource>
+      <title>Abonnés</title>
+      <abstract>Un abonné est matérialisé par un ponctuel (dérivant de la classe Node). Il peut être considéré au sens large comme un lieu de desserte d'eau potable, à savoir un abonnement individuel ou collectif classique, un arrosage, une fontaine, des toilettes publiques.</abstract>
       <keywordList>
         <value></value>
       </keywordList>
-      <layername>abonnés</layername>
+      <layername>Abonnés</layername>
       <srs>
         <spatialrefsys>
           <proj4>+proj=somerc +lat_0=46.95240555555556 +lon_0=7.439583333333333 +k_0=1 +x_0=600000 +y_0=200000 +ellps=bessel +towgs84=674.4,15.1,405.3,0,0,0,0 +units=m +no_defs</proj4>
@@ -37521,7 +37525,7 @@ def my_form_open(dialog, layer, feature):
             <rule filter="fk_subscriber_type=9405" key="{d65de48d-b504-438c-b40d-009b640bac2d}" symbol="4" label="Sprinkler"/>
             <rule filter="fk_subscriber_type=9404" key="{8893b40b-a12a-4f74-a391-5e4df2572f9c}" symbol="5" label="WC"/>
           </rule>
-          <rule scalemaxdenom="3001" filter="ELSE" key="{93f909a5-63e2-408f-9d76-f0c18a350900}" symbol="6" scalemindenom="1000" label="incomplètes"/>
+          <rule scalemaxdenom="3001" filter="ELSE" key="{93f909a5-63e2-408f-9d76-f0c18a350900}" symbol="6" scalemindenom="1000" label="Incomplètes"/>
         </rules>
         <symbols>
           <symbol alpha="1" clip_to_extent="1" type="marker" name="0">
@@ -38172,6 +38176,8 @@ def my_form_open(dialog, layer, feature):
       </extent>
       <id>subscriber_pipe_relation20130417092124312</id>
       <datasource>service='qwat' sslmode=disable key='id' srid=21781 type=LineString table="qwat_od"."vw_subscriber_pipe_relation" (geometry) sql=</datasource>
+      <title>Flèches abonnés -> conduite</title>
+      <abstract>Cette couche de donnée matérialise l'association entre un abonné et une conduite.</abstract>
       <keywordList>
         <value></value>
       </keywordList>
@@ -38505,7 +38511,7 @@ def my_form_open(dialog, layer, feature):
       <keywordList>
         <value></value>
       </keywordList>
-      <layername>télécommande 5000</layername>
+      <layername>Télécommande 5000</layername>
       <srs>
         <spatialrefsys>
           <proj4>+proj=somerc +lat_0=46.95240555555556 +lon_0=7.439583333333333 +k_0=1 +x_0=600000 +y_0=200000 +ellps=bessel +towgs84=674.4,15.1,405.3,0,0,0,0 +units=m +no_defs</proj4>
@@ -39014,7 +39020,7 @@ def my_form_open(dialog, layer, feature):
       <keywordList>
         <value></value>
       </keywordList>
-      <layername>vannes</layername>
+      <layername>Vannes</layername>
       <srs>
         <spatialrefsys>
           <proj4>+proj=somerc +lat_0=46.95240555555556 +lon_0=7.439583333333333 +k_0=1 +x_0=600000 +y_0=200000 +ellps=bessel +towgs84=674.4,15.1,405.3,0,0,0,0 +units=m +no_defs</proj4>
@@ -40138,20 +40144,18 @@ def my_form_open(dialog, layer, feature):
       </edittypes>
       <renderer-v2 forceraster="0" symbollevels="0" type="RuleRenderer" enableorderby="0">
         <rules key="{8ac6d04b-1bb5-46e9-b2fb-236cb107ffc9}">
-          <rule scalemaxdenom="10000" description="toutes les vannes sauf organe réseau et vanne d'hydrant" filter="status_active = 't' AND fk_valve_function != 6105 AND fk_valve_function != 6108" key="{7a025dab-c7fe-4c7c-9f0b-25a39f73abd8}" symbol="0" scalemindenom="-2147483648" label="réseau">
+          <rule scalemaxdenom="10000" description="toutes les vannes sauf organe réseau et vanne d'hydrant" filter="status_active = 't' AND fk_valve_function != 6105 AND fk_valve_function != 6108" key="{7a025dab-c7fe-4c7c-9f0b-25a39f73abd8}" symbol="0" scalemindenom="1000" label="Réseau">
             <rule filter="closed = 't'" key="{edf1c363-d849-4700-82d0-34d494178d4d}" symbol="1" label="Fermée"/>
-            <rule filter="&quot;fk_valve_type&quot; = 6312" key="{d1ec978f-6d96-4ed2-ac03-a37e6629f13c}" symbol="2" label="elgelf"/>
-            <rule filter="&quot;fk_valve_type&quot; =6313" key="{6c48a279-b0d9-428b-819c-2fc5371720fe}" symbol="3" label="arrêt"/>
-            <rule filter=" &quot;valve_function_value_fr&quot; IN ( 'vidange' ,  'vidange-ventouse' )" key="{3bf2a10c-e2fe-43c6-9287-c4055baec2a1}" symbol="4" label="vidange"/>
+            <rule filter="&quot;fk_valve_type&quot; =6313" key="{6c48a279-b0d9-428b-819c-2fc5371720fe}" symbol="2" label="Arrêt"/>
+            <rule filter=" &quot;valve_function_value_fr&quot; IN ( 'vidange' ,  'vidange-ventouse' )" key="{3bf2a10c-e2fe-43c6-9287-c4055baec2a1}" symbol="3" label="Vidange"/>
           </rule>
-          <rule scalemaxdenom="1000" filter="status_active = 't' AND fk_valve_function = 6105 OR fk_valve_function = 6108" key="{143022c7-b3e1-4c03-80d5-58520da677c2}" symbol="5" scalemindenom="-2147483648" label="abonné">
-            <rule filter="closed = 't'" key="{ee4ed8dd-20ae-42fb-b43b-a4c02c5399e9}" symbol="6" label="Fermée"/>
-            <rule filter="&quot;fk_valve_type&quot; =6313" key="{b149b2b9-3783-416c-b413-7a6f7de74e1d}" symbol="7" label="arrêt"/>
-            <rule filter="fk_valve_type = 6312" key="{221f27a3-6778-4b14-8bb9-1b4c7d708bc3}" symbol="8" label="elgelf"/>
-            <rule filter=" &quot;valve_function_value_fr&quot; IN ( 'vidange' ,  'vidange-ventouse' )" key="{a0c08631-a6ac-4d0b-b538-41bb1efe2315}" symbol="9" label="vidange"/>
+          <rule scalemaxdenom="1000" filter="status_active = 't' AND fk_valve_function = 6105 OR fk_valve_function = 6108" key="{143022c7-b3e1-4c03-80d5-58520da677c2}" symbol="4" scalemindenom="1000" label="Abonné">
+            <rule filter="closed = 't'" key="{ee4ed8dd-20ae-42fb-b43b-a4c02c5399e9}" symbol="5" label="Fermée"/>
+            <rule filter="&quot;fk_valve_type&quot; =6313" key="{b149b2b9-3783-416c-b413-7a6f7de74e1d}" symbol="6" label="Arrêt"/>
+            <rule filter=" &quot;valve_function_value_fr&quot; IN ( 'vidange' ,  'vidange-ventouse' )" key="{a0c08631-a6ac-4d0b-b538-41bb1efe2315}" symbol="7" label="Vidange"/>
           </rule>
-          <rule checkstate="0" filter="status_active = 'f'" key="{a4ee286d-3761-437f-94f9-825364216052}" symbol="10" label="inactive"/>
-          <rule checkstate="0" filter="else" key="{0cd1a85a-a13e-49cf-a280-ea45c305dc44}" symbol="11" label="autres"/>
+          <rule checkstate="0" filter="status_active = 'f'" key="{a4ee286d-3761-437f-94f9-825364216052}" symbol="8" label="Inactive"/>
+          <rule checkstate="0" filter="else" key="{0cd1a85a-a13e-49cf-a280-ea45c305dc44}" symbol="9" label="Autres"/>
         </rules>
         <symbols>
           <symbol alpha="1" clip_to_extent="1" type="marker" name="0">
@@ -40218,81 +40222,7 @@ def my_form_open(dialog, layer, feature):
               </effect>
             </layer>
           </symbol>
-          <symbol alpha="1" clip_to_extent="1" type="marker" name="10">
-            <layer pass="0" class="SimpleMarker" locked="0">
-              <prop k="angle" v="0"/>
-              <prop k="color" v="138,68,107,255"/>
-              <prop k="horizontal_anchor_point" v="1"/>
-              <prop k="joinstyle" v="bevel"/>
-              <prop k="name" v="circle"/>
-              <prop k="offset" v="0,0"/>
-              <prop k="offset_map_unit_scale" v="0,0,0,0,0,0"/>
-              <prop k="offset_unit" v="MM"/>
-              <prop k="outline_color" v="0,0,0,255"/>
-              <prop k="outline_style" v="solid"/>
-              <prop k="outline_width" v="0"/>
-              <prop k="outline_width_map_unit_scale" v="0,0,0,0,0,0"/>
-              <prop k="outline_width_unit" v="MM"/>
-              <prop k="scale_method" v="diameter"/>
-              <prop k="size" v="2"/>
-              <prop k="size_map_unit_scale" v="0,0,0,0,0,0"/>
-              <prop k="size_unit" v="MM"/>
-              <prop k="vertical_anchor_point" v="1"/>
-            </layer>
-          </symbol>
-          <symbol alpha="1" clip_to_extent="1" type="marker" name="11">
-            <layer pass="0" class="SimpleMarker" locked="0">
-              <prop k="angle" v="0"/>
-              <prop k="color" v="236,125,177,255"/>
-              <prop k="horizontal_anchor_point" v="1"/>
-              <prop k="joinstyle" v="bevel"/>
-              <prop k="name" v="circle"/>
-              <prop k="offset" v="0,0"/>
-              <prop k="offset_map_unit_scale" v="0,0,0,0,0,0"/>
-              <prop k="offset_unit" v="MM"/>
-              <prop k="outline_color" v="0,0,0,255"/>
-              <prop k="outline_style" v="solid"/>
-              <prop k="outline_width" v="0"/>
-              <prop k="outline_width_map_unit_scale" v="0,0,0,0,0,0"/>
-              <prop k="outline_width_unit" v="MM"/>
-              <prop k="scale_method" v="diameter"/>
-              <prop k="size" v="2"/>
-              <prop k="size_map_unit_scale" v="0,0,0,0,0,0"/>
-              <prop k="size_unit" v="MM"/>
-              <prop k="vertical_anchor_point" v="1"/>
-            </layer>
-          </symbol>
           <symbol alpha="1" clip_to_extent="1" type="marker" name="2">
-            <layer pass="0" class="SimpleMarker" locked="0">
-              <prop k="angle" v="0"/>
-              <prop k="color" v="255,255,255,255"/>
-              <prop k="horizontal_anchor_point" v="1"/>
-              <prop k="joinstyle" v="bevel"/>
-              <prop k="name" v="circle"/>
-              <prop k="offset" v="0,0"/>
-              <prop k="offset_map_unit_scale" v="0,0,0,0,0,0"/>
-              <prop k="offset_unit" v="MM"/>
-              <prop k="outline_color" v="255,255,255,255"/>
-              <prop k="outline_style" v="solid"/>
-              <prop k="outline_width" v="1.2"/>
-              <prop k="outline_width_map_unit_scale" v="0,0,0,0,0,0"/>
-              <prop k="outline_width_unit" v="MM"/>
-              <prop k="scale_method" v="area"/>
-              <prop k="size" v="1.8"/>
-              <prop k="size_map_unit_scale" v="0,0,0,0,0,0"/>
-              <prop k="size_unit" v="MM"/>
-              <prop k="vertical_anchor_point" v="1"/>
-              <effect enabled="0" type="effectStack">
-                <effect type="drawSource">
-                  <prop k="blend_mode" v="0"/>
-                  <prop k="draw_mode" v="2"/>
-                  <prop k="enabled" v="1"/>
-                  <prop k="transparency" v="0"/>
-                </effect>
-              </effect>
-            </layer>
-          </symbol>
-          <symbol alpha="1" clip_to_extent="1" type="marker" name="3">
             <layer pass="2" class="SimpleMarker" locked="0">
               <prop k="angle" v="0"/>
               <prop k="color" v="217,0,0,255"/>
@@ -40322,7 +40252,7 @@ def my_form_open(dialog, layer, feature):
               </effect>
             </layer>
           </symbol>
-          <symbol alpha="1" clip_to_extent="1" type="marker" name="4">
+          <symbol alpha="1" clip_to_extent="1" type="marker" name="3">
             <layer pass="0" class="SvgMarker" locked="0">
               <prop k="angle" v="0"/>
               <prop k="angle_dd_active" v="1"/>
@@ -40354,7 +40284,7 @@ def my_form_open(dialog, layer, feature):
               </effect>
             </layer>
           </symbol>
-          <symbol alpha="1" clip_to_extent="1" type="marker" name="5">
+          <symbol alpha="1" clip_to_extent="1" type="marker" name="4">
             <layer pass="1" class="SimpleMarker" locked="0">
               <prop k="angle" v="0"/>
               <prop k="color" v="255,255,255,255"/>
@@ -40384,7 +40314,7 @@ def my_form_open(dialog, layer, feature):
               </effect>
             </layer>
           </symbol>
-          <symbol alpha="1" clip_to_extent="1" type="marker" name="6">
+          <symbol alpha="1" clip_to_extent="1" type="marker" name="5">
             <layer pass="3" class="SimpleMarker" locked="0">
               <prop k="angle" v="0"/>
               <prop k="angle_dd_active" v="1"/>
@@ -40418,7 +40348,7 @@ def my_form_open(dialog, layer, feature):
               </effect>
             </layer>
           </symbol>
-          <symbol alpha="1" clip_to_extent="1" type="marker" name="7">
+          <symbol alpha="1" clip_to_extent="1" type="marker" name="6">
             <layer pass="2" class="SimpleMarker" locked="0">
               <prop k="angle" v="0"/>
               <prop k="color" v="0,140,255,255"/>
@@ -40448,37 +40378,7 @@ def my_form_open(dialog, layer, feature):
               </effect>
             </layer>
           </symbol>
-          <symbol alpha="1" clip_to_extent="1" type="marker" name="8">
-            <layer pass="0" class="SimpleMarker" locked="0">
-              <prop k="angle" v="0"/>
-              <prop k="color" v="255,255,255,255"/>
-              <prop k="horizontal_anchor_point" v="1"/>
-              <prop k="joinstyle" v="bevel"/>
-              <prop k="name" v="circle"/>
-              <prop k="offset" v="0,0"/>
-              <prop k="offset_map_unit_scale" v="0,0,0,0,0,0"/>
-              <prop k="offset_unit" v="MM"/>
-              <prop k="outline_color" v="255,255,255,255"/>
-              <prop k="outline_style" v="solid"/>
-              <prop k="outline_width" v="1.2"/>
-              <prop k="outline_width_map_unit_scale" v="0,0,0,0,0,0"/>
-              <prop k="outline_width_unit" v="MM"/>
-              <prop k="scale_method" v="area"/>
-              <prop k="size" v="1.8"/>
-              <prop k="size_map_unit_scale" v="0,0,0,0,0,0"/>
-              <prop k="size_unit" v="MM"/>
-              <prop k="vertical_anchor_point" v="1"/>
-              <effect enabled="0" type="effectStack">
-                <effect type="drawSource">
-                  <prop k="blend_mode" v="0"/>
-                  <prop k="draw_mode" v="2"/>
-                  <prop k="enabled" v="1"/>
-                  <prop k="transparency" v="0"/>
-                </effect>
-              </effect>
-            </layer>
-          </symbol>
-          <symbol alpha="1" clip_to_extent="1" type="marker" name="9">
+          <symbol alpha="1" clip_to_extent="1" type="marker" name="7">
             <layer pass="0" class="SvgMarker" locked="0">
               <prop k="angle" v="0"/>
               <prop k="angle_dd_active" v="1"/>
@@ -40508,6 +40408,50 @@ def my_form_open(dialog, layer, feature):
                   <prop k="transparency" v="0"/>
                 </effect>
               </effect>
+            </layer>
+          </symbol>
+          <symbol alpha="1" clip_to_extent="1" type="marker" name="8">
+            <layer pass="0" class="SimpleMarker" locked="0">
+              <prop k="angle" v="0"/>
+              <prop k="color" v="138,68,107,255"/>
+              <prop k="horizontal_anchor_point" v="1"/>
+              <prop k="joinstyle" v="bevel"/>
+              <prop k="name" v="circle"/>
+              <prop k="offset" v="0,0"/>
+              <prop k="offset_map_unit_scale" v="0,0,0,0,0,0"/>
+              <prop k="offset_unit" v="MM"/>
+              <prop k="outline_color" v="0,0,0,255"/>
+              <prop k="outline_style" v="solid"/>
+              <prop k="outline_width" v="0"/>
+              <prop k="outline_width_map_unit_scale" v="0,0,0,0,0,0"/>
+              <prop k="outline_width_unit" v="MM"/>
+              <prop k="scale_method" v="diameter"/>
+              <prop k="size" v="2"/>
+              <prop k="size_map_unit_scale" v="0,0,0,0,0,0"/>
+              <prop k="size_unit" v="MM"/>
+              <prop k="vertical_anchor_point" v="1"/>
+            </layer>
+          </symbol>
+          <symbol alpha="1" clip_to_extent="1" type="marker" name="9">
+            <layer pass="0" class="SimpleMarker" locked="0">
+              <prop k="angle" v="0"/>
+              <prop k="color" v="236,125,177,255"/>
+              <prop k="horizontal_anchor_point" v="1"/>
+              <prop k="joinstyle" v="bevel"/>
+              <prop k="name" v="circle"/>
+              <prop k="offset" v="0,0"/>
+              <prop k="offset_map_unit_scale" v="0,0,0,0,0,0"/>
+              <prop k="offset_unit" v="MM"/>
+              <prop k="outline_color" v="0,0,0,255"/>
+              <prop k="outline_style" v="solid"/>
+              <prop k="outline_width" v="0"/>
+              <prop k="outline_width_map_unit_scale" v="0,0,0,0,0,0"/>
+              <prop k="outline_width_unit" v="MM"/>
+              <prop k="scale_method" v="diameter"/>
+              <prop k="size" v="2"/>
+              <prop k="size_map_unit_scale" v="0,0,0,0,0,0"/>
+              <prop k="size_unit" v="MM"/>
+              <prop k="vertical_anchor_point" v="1"/>
             </layer>
           </symbol>
         </symbols>
@@ -41157,7 +41101,7 @@ def my_form_open(dialog, layer, feature):
       <keywordList>
         <value></value>
       </keywordList>
-      <layername>vannes 5000</layername>
+      <layername>Vannes 5000</layername>
       <srs>
         <spatialrefsys>
           <proj4>+proj=somerc +lat_0=46.95240555555556 +lon_0=7.439583333333333 +k_0=1 +x_0=600000 +y_0=200000 +ellps=bessel +towgs84=674.4,15.1,405.3,0,0,0,0 +units=m +no_defs</proj4>
@@ -45363,7 +45307,7 @@ def my_form_open(dialog, layer, feature):
       <keywordList>
         <value></value>
       </keywordList>
-      <layername>ouvrage_polygon</layername>
+      <layername>Ouvrage_polygon</layername>
       <srs>
         <spatialrefsys>
           <proj4>+proj=somerc +lat_0=46.95240555555556 +lon_0=7.439583333333333 +k_0=1 +x_0=600000 +y_0=200000 +ellps=bessel +towgs84=674.4,15.1,405.3,0,0,0,0 +units=m +no_defs</proj4>
@@ -46295,7 +46239,7 @@ END
       <keywordList>
         <value></value>
       </keywordList>
-      <layername>point de prélèvement</layername>
+      <layername>Point de prélèvement</layername>
       <srs>
         <spatialrefsys>
           <proj4>+proj=somerc +lat_0=46.95240555555556 +lon_0=7.439583333333333 +k_0=1 +x_0=600000 +y_0=200000 +ellps=bessel +towgs84=674.4,15.1,405.3,0,0,0,0 +units=m +no_defs</proj4>
@@ -46822,10 +46766,13 @@ def my_form_open(dialog, layer, feature):
       </extent>
       <id>vw_node_installation20150918153835436</id>
       <datasource>service='qwat' sslmode=disable key='id' srid=21781 type=PointZ table="qwat_od"."vw_element_installation" (geometry) sql=</datasource>
+      <title>Ouvrages (installations)</title>
+      <abstract>Les ouvrages (installations en anglais) sont des installations qui peuvent être des réservoirs (tanks), des chambres (chambers), des stations de traitement (treatment), des pompes (pumps) ou des dispositifs de régulation de pression (pressurecontrol). La représentation principale est ponctuelle, dérivé de la classe Node.
+</abstract>
       <keywordList>
         <value></value>
       </keywordList>
-      <layername>ouvrage</layername>
+      <layername>Ouvrage</layername>
       <srs>
         <spatialrefsys>
           <proj4>+proj=somerc +lat_0=46.95240555555556 +lon_0=7.439583333333333 +k_0=1 +x_0=600000 +y_0=200000 +ellps=bessel +towgs84=674.4,15.1,405.3,0,0,0,0 +units=m +no_defs</proj4>
@@ -48697,7 +48644,7 @@ END
       <keywordList>
         <value></value>
       </keywordList>
-      <layername>conduites impression 5000</layername>
+      <layername>Conduites impression 5000</layername>
       <srs>
         <spatialrefsys>
           <proj4>+proj=somerc +lat_0=46.95240555555556 +lon_0=7.439583333333333 +k_0=1 +x_0=600000 +y_0=200000 +ellps=bessel +towgs84=674.4,15.1,405.3,0,0,0,0 +units=m +no_defs</proj4>
@@ -49457,7 +49404,7 @@ def my_form_open(dialog, layer, feature):
       <keywordList>
         <value></value>
       </keywordList>
-      <layername>conduites edition 5000</layername>
+      <layername>Conduites edition 5000</layername>
       <srs>
         <spatialrefsys>
           <proj4>+proj=somerc +lat_0=46.95240555555556 +lon_0=7.439583333333333 +k_0=1 +x_0=600000 +y_0=200000 +ellps=bessel +towgs84=674.4,15.1,405.3,0,0,0,0 +units=m +no_defs</proj4>
