@@ -698,7 +698,7 @@
     </message>
     <message>
         <location filename="pipe.ui" line="237"/>
-        <source>Hydrauliqe</source>
+        <source>Hydraulique</source>
         <translation></translation>
     </message>
     <message>

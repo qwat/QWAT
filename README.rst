@@ -1,8 +1,19 @@
 .. image:: qwat.png
 
 
-qWat: QGIS Water Module
+QWAT: QGIS Water Module
 =======================
+
+Documentation
+-------------
+
+Hosted version here: http://qwat.readthedocs.org/
+
+Steps to build the documentation::
+
+    $ pip install sphinx # only once if you don't have sphinx installed
+    $ cd doc/
+    $ make html
 
 .. image:: https://readthedocs.org/projects/qwat/badge/?version=latest
     :target: http://qwat.readthedocs.org/en/latest/?badge=latest
@@ -74,16 +85,18 @@ database by creating a new connection with ``Name=qwat``, ``Service=qwat``, ``SS
 
 If that works then open the ``qwat.qgs`` project in QGIS.
 
-Documentation
--------------
+You can either choose to restore a sample dataset , then instead of running the init script, just run :
 
-Hosted version here: http://qwat.readthedocs.org/
+::
 
-Steps to build the documentation::
+  cd ..
+  git clone https://github.com/qwat/qwat-data-sample
+  psql -U postgres -c 'create database qwat;'
+  psql -U postgres -d qwat -c 'create extension postgis;'
+  psql -U postgres -d qwat -c 'create extension hstore;'
+  pg_restore --dbname qwat -e --no-owner --verbose --port 5432 qwat_data_sample.backup
 
-    $ pip install sphinx # only once if you don't have sphinx installed
-    $ cd doc/
-    $ make html
+
 
 
 Credits

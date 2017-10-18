@@ -61,6 +61,12 @@ The release process for QWAT is the following :
 * When ready (all due tickets closed), the *release manager* add version metadata to the project and tags the project(s) to release (data model, QWAT project) with the new version, 
 * The *release manager* announces the new version ( mailing lists, IRC, twitter…)
 
+Additional dependencies
+======================
+
+QWAT Project has several dependencies on different submodules
+* Fetching their content is achieved with a specific git command
+
 Customizing the data model
 ==========================
 
