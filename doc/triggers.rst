@@ -322,19 +322,19 @@ ft_node_element_update
 * UPDATE `node`_
 * UPDATE `network_element`_
 
-ft_vw_qwat_node_delete
+ft_vw_all_nodes_delete
 ----------------------
 * DELETE `network_element`_
 * `fn_node_set_type`_
  
-ft_vw_qwat_node_insert
+ft_vw_all_nodes_insert
 ----------------------
 * Update table fields
 * `fn_node_create`_
 * UPDATE `node`_
 * UPDATE `network_element`_
 
-ft_vw_qwat_node_update
+ft_vw_all_nodes_update
 ----------------------
 * Update table fields
 * UPDATE `node`_
@@ -897,11 +897,11 @@ vw_qwat_network_element
 * INSERT - `ft_vw_qwat_network_element_insert`_
 * UPDATE - `ft_vw_qwat_network_element_update`_
 
-vw_qwat_node
+vw_all_nodes
 ------------
-* DELETE - `ft_vw_qwat_node_delete`_
-* INSERT - `ft_vw_qwat_node_insert`_
-* UPDATE - `ft_vw_qwat_node_update`_
+* DELETE - `ft_vw_all_nodes_delete`_
+* INSERT - `ft_vw_all_nodes_insert`_
+* UPDATE - `ft_vw_all_nodes_update`_
 
 vw_remote
 ---------
