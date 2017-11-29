@@ -8,21 +8,21 @@ How to develop QWAT, add custom model fields, etc
 Prerequisites
 =============
 
-In order to develop for QWAT, the following skills may be required : 
+In order to develop for QWAT, the following skills may be required :
 
 * Good general knowledge of GIS
 * Good general knowledge of QGIS
 * Skills in relational databases and PostgreSQL/PostGIS specifically
 * Skills in Python
 
-* TODO : complete
 
 Environment
 ===========
 
 * You will need to [[install and configure Git and GitHub|qDG_git_github]]
-* TODO . Code editor
-* ...
+* Have python 3 installed and as your default python. In case it is not, use a `virtual environment<https://docs.python.org/3/library/venv.html>`_
+* have a bash shell
+* have admin rights to create and drop PostgreSQL databases
 
 QWAT architecture
 =================
@@ -44,25 +44,25 @@ New releases for QWAT are published on a regular basis, but non-fixed frequency.
 
 Version numbers follow as much as possible the [semantic versioning approach](http://semver.org)
 
-You can find the installed version number in the data model, in the `qwat_sys.versions` table : 
+You can find the installed version number in the data model, in the `qwat_sys.info` table :
 
 * model.core : model version
 
 Release process
 ===============
 
-The release process for QWAT is the following : 
+The release process for QWAT is the following :
 
 * Issues are triaged with milestones for next versions
 * The *release manager* decides when the next release will be made, in accordance with the community needs
 * He announces the estimated release date in advance ( at least 1 week)
 * Issues are re-triaged and the date can be moved according to how the work progresses
 * CHANGES.md is checked to be sure that it contains a description of changes for this version
-* When ready (all due tickets closed), the *release manager* add version metadata to the project and tags the project(s) to release (data model, QWAT project) with the new version, 
+* When ready (all due tickets closed), the *release manager* add version metadata to the project and tags the project(s) to release (data model, QWAT project) with the new version,
 * The *release manager* announces the new version ( mailing lists, IRC, twitter…)
 
 Additional dependencies
-======================
+=======================
 
 QWAT Project has several dependencies on different submodules
 * Fetching their content is achieved with a specific git command
@@ -128,7 +128,7 @@ Example : adding color informations to hydrants
    :linenos:
 
     CREATE SCHEMA usr_cityservices;
-    CREATE TABLE usr_cityservices.hydrant_paint ( 
+    CREATE TABLE usr_cityservices.hydrant_paint (
     id serial
     , fk_hydrant integer
     , color varchar
@@ -150,38 +150,37 @@ Example : adding color informations to hydrants
 Versioning your extensions
 ==========================
 
-It is advised to make versions for your QWAT extension to the core data model, in the same way the core data model is versioned.
+Before QWAT 1.3.0 data model, version was tracked in the qwat_sys.versions that contributors had to maintain manually.
+After that PUM module is taking care of raising and keeping track of versions automatically using core delta file naming convention.
+However, we recommend using only one customization SQL script, with no version in its name. You can version it in a separate git or SVN repository, but mixing local and core version might lead to a very complex system.
 
-You can insert your extension version in th `qwat_sys.versions` table. e.g. : 
-
-.. code-block:: sql
-   :linenos:
-
-    INSERT into qwat_sys.versions (module, version) values ('model.usr_pully', '1.0.0');
-
-This way, you can also create SQL deltas between your model version, just like it is done for the core data model.
 
 Developing the core data model
 ==============================
 
-To keep a controlled process over versioning, we have the following system : 
+To keep a controlled process over versioning, we have the following system :
 
 * The SQL files corresponding to the creation of the core data model
 * SQL files corresponding to the modifications from version X to version X+1 ( "diff SQL" )
 
-Diff files are located in the repository in the "upgrade" directory. Their name has this convention : 
+Diff files are located in the repository in the "delta" directory. Their name has this convention, which is used by PUM module :
 
-* `diff_fromversion_toversion.sql` e.g. `diff_v1.0_v1.1.sql`
+* `delta_1.3.2.sql`
 
 Deploying a model for a specific version and applying the diff files successively to reach another version should lead to the exact same model as deploying this latter version. The QWAT project will have tools to test for this compliance.
 
 It is advised to write the diff files at the same time as the model modification, but this is not mandatory. Diff files *must* be complete and uptodate when a new model version is released.
 Before releasing a new model version, the diff files should therefore be analyzed and completed. Some code can also be refactored to simplify the diff files ( e.g. multiple modification to the same field between two version)
 
+Some delta file are simple, like new tables and views. Some are more more complex since they are exposed via views. Most views in QWAT are autogenerated by the meta-project module.
+That means that adding user fields (in elements or pipes for instance), will require additional instructions to drop and recreate the views before / after applying you delta file.
+PUM allows to add pre and post files, either in python or sql for each update, see delta.1.2.8 for exemples. 
+
 As a consequence, when developing the core data model, you should : 
 
 * Put your modifications to the core model SQL files
 * Add your modifications to the correct diff file.
+
 
 Your pull request should be complete with these elements, or you have to be ready to review the diff SQL files before the release to ensure that the diff are uptodate.
 
@@ -197,6 +196,3 @@ Adding new features to QWAT
 * see contributor's guide for discussion process & issue management
 * creating a specific plugin
 * contributing to QGIS core
-
-
-

@@ -27,10 +27,10 @@ Read below advices on how to contribute.
 
 I found a bug in qWAT, what do I do ?
 -------------------------------------
-
-* Create a new issue here : https://github.com/qwat/QWAT/issues
-* Be sure to include all relevant information to reproduce the bug : minimal steps to follow, sample data
-* Be clear and concise
+* If the bug you find is a QGIS issue, please search if it doesn't exist upstream at `https://issues.qgis.org/projects/qgis/issues/ <https://issues.qgis.org/projects/qgis/issues/>`_ and add one if needed
+* Create a new issue here : https://github.com/qwat/QWAT/issues. Reference any upstream issue there.
+* Be sure to include all relevant information to reproduce the bug : minimal steps to follow, sample data, QGIS version, options used...
+* Be clear and concise. Any screencast or screenshot will help a lot.
 * Tag your issue as "Bug"
 * Keep an eye on the following discussion to give additional informations if needed
 
@@ -77,6 +77,7 @@ I need a change in the data model, what is the process ?
 * when the discussion converges, a decision is taken by commiters to go for this modification or not
 * Denis Rouzaud is the data model release manager and will have final word in case of unclear trend
 
+
 My change demand has been considered valid. What is next ?
 ----------------------------------------------------------
 
@@ -89,6 +90,10 @@ I can write the patch myself, what do I do ?
 * Write the patch
 * send a pull request to the qwat-data-model repository
 * commiters will review and merge it
+
+Note that a continuous integration tool will automatically run functional tests and conformity tests on your pull request.
+Please note that a patch must be done in two parts: the core model files used for initialization, and the delta files used to migrate existing database versions.
+A patch must lead to the exactly the same state between initialization and migration process to be valid.
 
 
 I want someone to write the modifications, what is the process ?
@@ -107,16 +112,3 @@ I want to add some custom fields/table to the model, how do I do ?
 ------------------------------------------------------------------
 
 * See `the Developer's Guide <developer.html>`__
-
-
-
-
-
-
-
-
-
-
-
-
-
