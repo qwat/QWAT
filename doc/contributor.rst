@@ -85,7 +85,7 @@ My change demand has been considered valid. What is next ?
 I can write the patch myself, what do I do ?
 --------------------------------------------
 
-* Read the developer's guide
+* Read the `developer's guide<contributor>`_
 * Write the patch
 * send a pull request to the qwat-data-model repository
 * commiters will review and merge it
@@ -106,17 +106,4 @@ I want someone to write the modifications, what is the process ?
 I want to add some custom fields/table to the model, how do I do ?
 ------------------------------------------------------------------
 
-* See `the Developer's Guide <developer.html>`__
-
-
-
-
-
-
-
-
-
-
-
-
-
+* See `the Developer's Guide <developer.html>`_ and `customization guidelines <local_customizations>`_
