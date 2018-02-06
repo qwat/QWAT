@@ -21,6 +21,7 @@ All sources are avalaible at `https://github.com/qwat/QWAT<https://github.com/qw
    :maxdepth: 2
 
    Features <features>
+   
    The user's guide <use>
 
    The data manager's guide <data_manager>
