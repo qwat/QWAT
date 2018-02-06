@@ -8,12 +8,6 @@ Welcome to QWAT's documentation!
 
 This is QWAT's project main knowledge base.
 
-<<<<<<< 5b19712a6c495ea9fb790eaceea17cdcad97489e
-Here is an `overview <features>`_ of the features covered and planned for QWAT.
-
-
-Please look into the guide corresponding to your profile :
-=======
 For general information about the project, please visit `http://qwat.org/ <http://qwat.org/>`_
 
 *******
@@ -22,11 +16,10 @@ Context
 
 QWAT is a GIS application developp to manage Drinkable Water networks. It relies on QGIS and postgreSQL.
 All sources are avalaible at `https://github.com/qwat/QWAT<https://github.com/qwat/QWAT>`_.
->>>>>>> better doc part 1
 
 .. toctree::
    :maxdepth: 2
-   
+
    Features <features>
    The user's guide <use>
 
