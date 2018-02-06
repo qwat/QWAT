@@ -8,7 +8,7 @@ Welcome to QWAT's documentation!
 
 This is QWAT's project main knowledge base.
 
-For general information about the project, please visit `http://qwat.org/ <http://qwat.org/>`_
+Here is an `overview <features.html>`__ of the features covered and planned for QWAT.
 
 *******
 Context
@@ -20,6 +20,7 @@ All sources are avalaible at `https://github.com/qwat/QWAT<https://github.com/qw
 .. toctree::
    :maxdepth: 2
 
+   Features <features>
    The user's guide <use>
 
    The data manager's guide <data_manager>
