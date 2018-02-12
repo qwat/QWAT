@@ -2,7 +2,7 @@
 Administrator's guide
 *********************
 
-How to install, deploy and other sysadmin tasks 
+How to install, deploy and other sysadmin tasks
 
 
 First steps
@@ -22,8 +22,9 @@ Upgrading
    :maxdepth: 2
 
    Upgrading the base data model <upgrade>
-   Upgrading specific addons <upgrade_addons>
+   Customizing the data model <local_customizations> 
    Upgrading project <upgrade_project>
+
 
 
 Backup and restore your data
@@ -33,4 +34,3 @@ Backup and restore your data
    :maxdepth: 2
 
    See the DataManager's guide <data_manager>
-   

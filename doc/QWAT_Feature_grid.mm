@@ -4,7 +4,7 @@
 
 <html>
   <head>
-    
+
   </head>
   <body>
     <p style="text-align: center">
@@ -126,7 +126,7 @@
 <node TEXT="hydrant" ID="ID_1870509190" CREATED="1497710738482" MODIFIED="1497710739755"/>
 <node TEXT="subscriber" ID="ID_497506517" CREATED="1497710640188" MODIFIED="1497710642845"/>
 <node TEXT="sampling point" ID="ID_674553297" CREATED="1497710761881" MODIFIED="1497710767507"/>
-<node TEXT="installations" FOLDED="true" ID="ID_830928841" CREATED="1497710662363" MODIFIED="1497710665653">
+<node TEXT="installations" ID="ID_830928841" CREATED="1497710662363" MODIFIED="1497710665653">
 <node TEXT="tank" ID="ID_1087731750" CREATED="1497710666750" MODIFIED="1497710672935"/>
 <node TEXT="chamber" ID="ID_705499164" CREATED="1497710677570" MODIFIED="1497710681844"/>
 <node TEXT="cover" ID="ID_1746617841" CREATED="1497710684517" MODIFIED="1497710685611"/>
@@ -308,7 +308,11 @@
 <node TEXT="Missing Features" LOCALIZED_STYLE_REF="AutomaticLayout.level,1" POSITION="right" ID="ID_1741279862" CREATED="1497696088257" MODIFIED="1497780711596" BACKGROUND_COLOR="#cce5ff">
 <font NAME="Sawasdee" BOLD="true"/>
 <edge COLOR="#ffff00"/>
+<<<<<<< 5b19712a6c495ea9fb790eaceea17cdcad97489e
 <node TEXT="Network routing" LOCALIZED_STYLE_REF="AutomaticLayout.level,2" ID="ID_18859882" CREATED="1497271995555" MODIFIED="1497780711613">
+=======
+<node TEXT="Network routing" LOCALIZED_STYLE_REF="AutomaticLayout.level,2" FOLDED="true" ID="ID_18859882" CREATED="1497271995555" MODIFIED="1497780711613">
+>>>>>>> better doc part 1
 <font NAME="Sawasdee"/>
 <node TEXT="Network quality analysis" ID="ID_87368744" CREATED="1497272018012" MODIFIED="1497780711613">
 <font NAME="Sawasdee"/>
@@ -339,6 +343,27 @@
 </node>
 </node>
 <node TEXT="Pipe Profile visualization" ID="ID_1380737865" CREATED="1497778392116" MODIFIED="1497780711610">
+<<<<<<< 5b19712a6c495ea9fb790eaceea17cdcad97489e
+=======
+<font NAME="Sawasdee"/>
+</node>
+<node TEXT="Hydraulic modeling" FOLDED="true" ID="ID_1652308703" CREATED="1497696279816" MODIFIED="1497780711607">
+<font NAME="Sawasdee"/>
+<node TEXT="EPANET tight linking" ID="ID_1115226935" CREATED="1497778432700" MODIFIED="1497780711608">
+<font NAME="Sawasdee"/>
+</node>
+</node>
+<node TEXT="Mobility" LOCALIZED_STYLE_REF="AutomaticLayout.level,2" FOLDED="true" ID="ID_838483895" CREATED="1494433900973" MODIFIED="1497780711597">
+<font NAME="Sawasdee"/>
+<node TEXT="Android client" ID="ID_770801110" CREATED="1497272669257" MODIFIED="1497780711597">
+<font NAME="Sawasdee"/>
+</node>
+<node TEXT="Offline / Online Sync" ID="ID_507695243" CREATED="1497272680490" MODIFIED="1497780711598">
+<font NAME="Sawasdee"/>
+</node>
+</node>
+<node TEXT="Operational management" ID="ID_55665155" CREATED="1497779796964" MODIFIED="1497780711602">
+>>>>>>> better doc part 1
 <font NAME="Sawasdee"/>
 </node>
 <node TEXT="Hydraulic modeling" ID="ID_1652308703" CREATED="1497696279816" MODIFIED="1497780711607">
@@ -347,6 +372,7 @@
 <font NAME="Sawasdee"/>
 </node>
 </node>
+<<<<<<< 5b19712a6c495ea9fb790eaceea17cdcad97489e
 <node TEXT="Mobility" LOCALIZED_STYLE_REF="AutomaticLayout.level,2" ID="ID_838483895" CREATED="1494433900973" MODIFIED="1497780711597">
 <font NAME="Sawasdee"/>
 <node TEXT="Android client" ID="ID_770801110" CREATED="1497272669257" MODIFIED="1497780711597">
@@ -361,6 +387,24 @@
 <node TEXT="field work Module" ID="ID_1187551156" CREATED="1497779816722" MODIFIED="1497780711603">
 <font NAME="Sawasdee"/>
 <node TEXT="subscriber notification module (mail, phone, email)" ID="ID_309300355" CREATED="1497779839231" MODIFIED="1497780711604">
+=======
+</node>
+<node TEXT="Full API on server side" LOCALIZED_STYLE_REF="AutomaticLayout.level,2" FOLDED="true" ID="ID_1924091547" CREATED="1497622213910" MODIFIED="1497780711617">
+<font NAME="Sawasdee"/>
+<node TEXT="enforce network constraints" ID="ID_1734453863" CREATED="1497696462255" MODIFIED="1497780711617">
+<font NAME="Sawasdee"/>
+</node>
+<node TEXT="enforce logical rules" ID="ID_1249171063" CREATED="1497696477724" MODIFIED="1497780711618">
+<font NAME="Sawasdee"/>
+</node>
+</node>
+<node TEXT="Asset Management" FOLDED="true" ID="ID_1292938182" CREATED="1497696183570" MODIFIED="1497780711605">
+<font NAME="Sawasdee"/>
+<node TEXT="Statistic analysis for material changes" ID="ID_1625124782" CREATED="1497778537603" MODIFIED="1497780711606">
+<font NAME="Sawasdee"/>
+</node>
+<node TEXT="Budget planning" ID="ID_1155959121" CREATED="1497778572417" MODIFIED="1497780711607">
+>>>>>>> better doc part 1
 <font NAME="Sawasdee"/>
 </node>
 </node>
@@ -374,7 +418,11 @@
 <font NAME="Sawasdee"/>
 </node>
 </node>
+<<<<<<< 5b19712a6c495ea9fb790eaceea17cdcad97489e
 <node TEXT="Asset Management" ID="ID_1292938182" CREATED="1497696183570" MODIFIED="1497780711605">
+=======
+<node TEXT="Open Source Governance" FOLDED="true" ID="ID_1340552149" CREATED="1497706173036" MODIFIED="1497780711611">
+>>>>>>> better doc part 1
 <font NAME="Sawasdee"/>
 <node TEXT="Statistic analysis for material changes" ID="ID_1625124782" CREATED="1497778537603" MODIFIED="1497780711606">
 <font NAME="Sawasdee"/>
@@ -383,6 +431,7 @@
 <font NAME="Sawasdee"/>
 </node>
 </node>
+<<<<<<< 5b19712a6c495ea9fb790eaceea17cdcad97489e
 <node TEXT="Productivity assistants" ID="ID_388358311" CREATED="1497703037126" MODIFIED="1497780711609">
 <font NAME="Sawasdee"/>
 <node TEXT="batch lateral creation" ID="ID_1099985057" CREATED="1497703049010" MODIFIED="1497780711610">
@@ -402,6 +451,9 @@
 </node>
 </node>
 <node TEXT="National needs" ID="ID_295232386" CREATED="1497707043944" MODIFIED="1497780711615">
+=======
+<node TEXT="National needs" FOLDED="true" ID="ID_295232386" CREATED="1497707043944" MODIFIED="1497780711615">
+>>>>>>> better doc part 1
 <font NAME="Sawasdee"/>
 <node TEXT="France" ID="ID_1376821656" CREATED="1497707049959" MODIFIED="1497780711615">
 <font NAME="Sawasdee"/>
@@ -419,7 +471,11 @@
 </node>
 </node>
 </node>
+<<<<<<< 5b19712a6c495ea9fb790eaceea17cdcad97489e
 <node TEXT="User preferences" ID="ID_518347235" CREATED="1497778889492" MODIFIED="1497780711618">
+=======
+<node TEXT="User preferences" FOLDED="true" ID="ID_518347235" CREATED="1497778889492" MODIFIED="1497780711618">
+>>>>>>> better doc part 1
 <font NAME="Sawasdee"/>
 <node TEXT="store user styles" ID="ID_478147461" CREATED="1497778897472" MODIFIED="1497780711618">
 <font NAME="Sawasdee"/>
