@@ -4,7 +4,7 @@ Developer's guide
 
 How to develop QWAT core datamodel.
 
-Local customization are described `here <local_customizations>`_.
+Local customization are described `here <local_customizations.html>`_.
 
 
 Prerequisites
@@ -22,8 +22,8 @@ In order to develop for QWAT, the following skills may be required :
 Environment
 ===========
 
-* You will need to [[install and configure Git and GitHub|qDG_git_github]]
-* Have python 3 installed and as your default python. In case it is not, use a `virtual environment<https://docs.python.org/3/library/venv.html>`_
+* You will need to `install and configure Git and GitHub <https://help.github.com/articles/set-up-git/>`_
+* Have python 3 installed and as your default python. In case it is not, use a `virtual environment <https://docs.python.org/3/library/venv.html>`_
 * have a bash shell
 * have admin rights to create and drop PostgreSQL databases
 
@@ -31,21 +31,21 @@ QWAT architecture
 =================
 
 * Describe here various parts of QWAT
-* Describe relation to other projects ( plugins, qgis core)
+* Describe relation to other projects (plugins, qgis core)
 
 Roles
 =====
 
 * *Commiters* have access to QWAT code repositories and can push to them. It means they control the evolution of the software
 * *contributors* can provide information, code, documentation to the project. They do not have direct access for modifications and must go through the *commiters* to get their modifications applied. See the [[Contributors_guide]] for more information and processes.
-* The *release manager* is in charge of deciding when a new version of the software is published, and to actually publish the release. Current release manager for QWAT is [Denis Rouzaud](https://github.com/3nids)
+* The *release manager* is in charge of deciding when a new version of the software is published, and to actually publish the release. Current release manager for QWAT is `Denis Rouzaud <https://github.com/3nids>`_.
 
 Release cycles and versioning
 =============================
 
 New releases for QWAT are published on a regular basis, but non-fixed frequency. The *release manager* decides when a new version is published.
 
-Version numbers follow as much as possible the [semantic versioning approach](http://semver.org)
+Version numbers follow as much as possible the `semantic versioning approach <http://semver.org>`.
 
 You can find the installed version number in the data model, in the `qwat_sys.info` table :
 
@@ -58,16 +58,17 @@ The release process for QWAT is the following :
 
 * Issues are triaged with milestones for next versions
 * The *release manager* decides when the next release will be made, in accordance with the community needs
-* He announces the estimated release date in advance ( at least 1 week)
+* He announces the estimated release date in advance (at least 1 week)
 * Issues are re-triaged and the date can be moved according to how the work progresses
 * CHANGES.md is checked to be sure that it contains a description of changes for this version
 * When ready (all due tickets closed), the *release manager* add version metadata to the project and tags the project(s) to release (data model, QWAT project) with the new version,
-* The *release manager* announces the new version ( mailing lists, IRC, twitter…)
+* The *release manager* announces the new version (mailing lists, IRC, twitter…)
 
 Additional dependencies
 =======================
 
 QWAT Project has several dependencies on different submodules
+
 * Fetching their content is achieved with a specific git command
 
 Versioning your extensions

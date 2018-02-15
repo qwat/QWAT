@@ -9,7 +9,9 @@ Documentation
 
 Hosted version here: http://qwat.readthedocs.org/
 
-Steps to build the documentation::
+Steps to build the documentation
+
+::
 
     $ pip install sphinx # only once if you don't have sphinx installed
     $ cd doc/
@@ -19,10 +21,34 @@ Steps to build the documentation::
     :target: http://qwat.readthedocs.org/en/latest/?badge=latest
     :alt: Documentation Status
 
-INSTALL
+Requirements
+------------
+
+Server side software components are:
+
+* `PostgreSQL <https://postgresql.org/>`_ (> 9.3)
+* `PostGIS <https://postgis.net/>`_, the spatial extension (> 2.1)
+* `Python <https://www.python.org/>`_, for installation and update (> 3.5)
+* `PUM <https://github.com/opengisch/pum>`_ for upgrade
+
+Supported and tested versions are PostgreSQL 9.6 and Postgis 2.3.
+
+The exact required hardware configuration is very dependant on the data sizes.
+However, water network data tend not to be huge volumes, and the minimal required configuration is very low.
+
+A comfortable configuration would be the following:
+
+* 4x Core Intel
+* >= 8GB RAM
+* SSD Storage (40GB+) with Raid capabilities for data redundancy
+
+We recommend using Linux as Operating System when running PostgreSQL, for performance and stability.
+
+
+Install
 -------
 
-In your shell:
+Assuming you have installed a postgresql server, in your shell:
 
 ::
 
@@ -80,23 +106,40 @@ The script has the following options:
 - ``-d`` or ``--drop-schema``  drop schemas (cascaded) if they exist
 - ``-r`` or ``--create-roles`` create roles in the database
 
-After your model gets created, in QGIS you should be able now to connect to the
-database by creating a new connection with ``Name=qwat``, ``Service=qwat``, ``SSL mode=prefer``.
-
-If that works then open the ``qwat.qgs`` project in QGIS.
-
-You can either choose to restore a sample dataset , then instead of running the init script, just run :
+You can restore a sample dataset, then download the data sample and insert it into the qwat database:
 
 ::
 
+        QWAT_VERSION=`cat system/CURRENT_VERSION.txt`
+        # With wget
+        wget "https://github.com/qwat/qwat-data-model/releases/download/$QWAT_VERSION/qwat_v"$QWAT_VERSION"_data_only_sample.backup"
+        pg_restore -U postgres --dbname qwat -e --no-owner --verbose --jobs=3 --disable-triggers --port 5432 "qwat_v"$QWAT_VERSION"_data_only_sample.backup"
+
+        # or directly with curl
+        curl -L "https://github.com/qwat/qwat-data-model/releases/download/$VERSION/qwat_v"$VERSION"_data_only_sample.backup" | pg_restore -U postgres --dbname qwat -e --no-owner --verbose --disable-triggers --port 5432
+
+.. Doesn't work with 1.3.1 see https://github.com/qwat/qwat-data-model/issues/224
+.. Instead of running the init script or git, just run :
+
+.. ::
   cd ..
   git clone https://github.com/qwat/qwat-data-sample
   psql -U postgres -c 'create database qwat;'
   psql -U postgres -d qwat -c 'create extension postgis;'
   psql -U postgres -d qwat -c 'create extension hstore;'
-  pg_restore --dbname qwat -e --no-owner --verbose --port 5432 qwat_data_sample.backup
+  QWAT_VERSION=1.3.1
+  wget "https://github.com/qwat/qwat-data-model/releases/download/$QWAT_VERSION/qwat_v"$QWAT_VERSION"_data_and_structure_sample.backup"
+  pg_restore -U postgres --dbname qwat -e --no-owner --verbose --jobs=3 --disable-triggers --port 5432 "qwat_v"$QWAT_VERSION"_data_and_structure_sample.backup"
+  # or with curl
+  curl -L "https://github.com/qwat/qwat-data-model/releases/download/$VERSION/qwat_v"$VERSION"_data_and_structure_sample.backup" | pg_restore -U postgres --dbname qwat -e --no-owner --verbose --disable-triggers --port 5432
 
+Open the project
+----------------
 
+After your model gets created, in QGIS you should be able now to connect to the
+database by creating a new connection with ``Name=qwat``, ``Service=qwat``, ``SSL mode=prefer``.
+
+If that works then open the ``qgis-projetct/qwat.qgs`` project in QGIS.
 
 
 Credits
