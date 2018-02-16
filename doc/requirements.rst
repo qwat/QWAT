@@ -5,15 +5,19 @@ Requirements
 Server-side
 ===========
 
-Server side software components are :
+Server side software components are:
 
-* PostgreSQL (> 9.3)
-* PostGIS, the spatial extension (> 2.1)
+* `PostgreSQL <https://postgresql.org/>`_ (> 9.3)
+* `PostGIS <https://postgis.net/>`_, the spatial extension (> 2.1)
+* `Python <https://www.python.org/>`_, for installation and update (> 3.5)
+* `PUM <https://github.com/opengisch/pum>`_ for upgrade
+
+Supported and tested versions are PostgreSQL 9.6 and Postgis 2.3.
 
 The exact required hardware configuration is very dependant on the data sizes.
 However, water network data tend not to be huge volumes, and the minimal required configuration is very low.
 
-A comfortable configuration would be the following :
+A comfortable configuration would be the following:
 
 * 4x Core Intel
 * >= 8GB RAM
@@ -24,7 +28,7 @@ We recommend using Linux as Operating System when running PostgreSQL, for perfor
 In order to benefit fully from your hardware, PostgreSQL should be configured correctly.
 You can use the following application to have a basic configuration better than default values : http://pgtune.leopard.in.ua/
 
-Choose the following parameters : 
+Choose the following parameters:
 
 * DB Version : your PostgreSQL database version
 * OS Type : your Operating System
@@ -37,7 +41,7 @@ The application should give you the settings to adapt in the ``postgresql.conf``
 Client-side
 ===========
 
-Client side components are :
+Client side components are:
 
 * QGIS (2.14+)
 * QGIS extensions (depending on specific use case)
@@ -46,7 +50,7 @@ The exact required configuration is very dependant on the data sizes and complex
 However, water network data tend not to be huge volumes, and the minimal required configuration
 is not really high. For smooth map rendering, it is advised to use recent hardware, good video card and enough RAM though.
 
-A comfortable configuration would be: 
+A comfortable configuration would be:
 
 * 4x core Intel processor
 * 8GB of RAM

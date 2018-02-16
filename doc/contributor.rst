@@ -86,7 +86,7 @@ My change demand has been considered valid. What is next ?
 I can write the patch myself, what do I do ?
 --------------------------------------------
 
-* Read the `developer's guide<contributor>`_
+* Read the `developer's guide <contributor>`_
 * Write the patch
 * send a pull request to the qwat-data-model repository
 * commiters will review and merge it
