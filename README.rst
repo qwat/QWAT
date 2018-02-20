@@ -118,20 +118,26 @@ You can restore a sample dataset, then download the data sample and insert it in
         # or directly with curl
         curl -L "https://github.com/qwat/qwat-data-model/releases/download/$VERSION/qwat_v"$VERSION"_data_only_sample.backup" | pg_restore -U postgres --dbname qwat -e --no-owner --verbose --disable-triggers --port 5432
 
-.. Doesn't work with 1.3.1 see https://github.com/qwat/qwat-data-model/issues/224
-.. Instead of running the init script or git, just run :
+Instead of running the init script or git, just run :
 
-.. ::
-  cd ..
-  git clone https://github.com/qwat/qwat-data-sample
+::
+
+  # Create the database and the extensions
   psql -U postgres -c 'create database qwat;'
   psql -U postgres -d qwat -c 'create extension postgis;'
   psql -U postgres -d qwat -c 'create extension hstore;'
+
+  # Create the roles for qwat
+  psql -c 'CREATE ROLE qwat_viewer NOSUPERUSER INHERIT NOCREATEDB NOCREATEROLE NOREPLICATION;' -U postgres
+  psql -c 'CREATE ROLE qwat_user NOSUPERUSER INHERIT NOCREATEDB NOCREATEROLE NOREPLICATION;' -U postgres
+  psql -c 'CREATE ROLE qwat_manager NOSUPERUSER INHERIT NOCREATEDB NOCREATEROLE NOREPLICATION;' -U postgres
+  psql -c 'CREATE ROLE qwat_sysadmin NOSUPERUSER INHERIT NOCREATEDB NOCREATEROLE NOREPLICATION;' -U postgres
+
   QWAT_VERSION=1.3.1
   wget "https://github.com/qwat/qwat-data-model/releases/download/$QWAT_VERSION/qwat_v"$QWAT_VERSION"_data_and_structure_sample.backup"
   pg_restore -U postgres --dbname qwat -e --no-owner --verbose --jobs=3 --disable-triggers --port 5432 "qwat_v"$QWAT_VERSION"_data_and_structure_sample.backup"
   # or with curl
-  curl -L "https://github.com/qwat/qwat-data-model/releases/download/$VERSION/qwat_v"$VERSION"_data_and_structure_sample.backup" | pg_restore -U postgres --dbname qwat -e --no-owner --verbose --disable-triggers --port 5432
+  curl -L "https://github.com/qwat/qwat-data-model/releases/download/$QWAT_VERSION/qwat_v"$QWAT_VERSION"_data_and_structure_sample.backup" | pg_restore -U postgres --dbname qwat -e --no-owner --verbose --disable-triggers --port 5432
 
 Open the project
 ----------------
