@@ -92,8 +92,24 @@ You can restore a sample dataset, then download the data sample and insert it in
         # or directly with curl
         curl -L "https://github.com/qwat/qwat-data-model/releases/download/$VERSION/qwat_v"$VERSION"_data_only_sample.backup" | pg_restore -U postgres --dbname qwat -e --no-owner --verbose --disable-triggers --port 5432
 
-.. note::
+Instead of running the init script or git, just run :
 
- If you don't like using git in the command line you can always go to the above links
- and press the **Clone and download** button then the **Download zip** one and extract
- the archives afterwards.
+::
+
+  # Create the database and the extensions
+  psql -U postgres -c 'create database qwat;'
+  psql -U postgres -d qwat -c 'create extension postgis;'
+  psql -U postgres -d qwat -c 'create extension hstore;'
+
+  # Create the roles for qwat
+  psql -c 'CREATE ROLE qwat_viewer NOSUPERUSER INHERIT NOCREATEDB NOCREATEROLE NOREPLICATION;' -U postgres
+  psql -c 'CREATE ROLE qwat_user NOSUPERUSER INHERIT NOCREATEDB NOCREATEROLE NOREPLICATION;' -U postgres
+  psql -c 'CREATE ROLE qwat_manager NOSUPERUSER INHERIT NOCREATEDB NOCREATEROLE NOREPLICATION;' -U postgres
+  psql -c 'CREATE ROLE qwat_sysadmin NOSUPERUSER INHERIT NOCREATEDB NOCREATEROLE NOREPLICATION;' -U postgres
+
+  QWAT_VERSION=1.3.1
+  wget "https://github.com/qwat/qwat-data-model/releases/download/$QWAT_VERSION/qwat_v"$QWAT_VERSION"_data_and_structure_sample.backup"
+  pg_restore -U postgres --dbname qwat -e --no-owner --verbose --jobs=3 --disable-triggers --port 5432 "qwat_v"$QWAT_VERSION"_data_and_structure_sample.backup"
+  # or with curl
+  curl -L "https://github.com/qwat/qwat-data-model/releases/download/$QWAT_VERSION/qwat_v"$QWAT_VERSION"_data_and_structure_sample.backup" | pg_restore -U postgres --dbname qwat -e --no-owner --verbose --disable-triggers --port 5432
+
