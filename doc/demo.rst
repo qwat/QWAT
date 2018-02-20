@@ -2,11 +2,11 @@
 Demo data and project
 *********************
 
-QWAT can be tested by downloading the QGS project repository `here <https://github.com/qwat/QWAT>`_` and restoring the latest full data dump in postgreSQL (+ extension postGIS and hstore)  `here <https://github.com/qwat/qwat-data-sample>`_.
+QWAT can be tested by downloading the QGS project repository `here <https://github.com/qwat/QWAT>`_` and restoring the latest full data dump in PostgreSQL (+ extension PostGIS and hstore) `here <https://github.com/qwat/qwat-data-model/releases>`_.
 
 More detailed instructions:
 
-How to install the data sample from the qWAT water distribution management project.
+How to install the data sample from the QWAT Water distribution management project.
 
 .. note::
 
@@ -15,49 +15,55 @@ How to install the data sample from the qWAT water distribution management proje
  you may checkout the next chapter and download the Demo VM.
 
 
+Create the QWAT database model with roles and restore the latest version:
 
-Create the QWAT database model with roles::
+::
 
- cd qwat-data-model && git submodule update --init --recursive
- ./init_qwat.sh -p qwat -s 21781 -d -r
+  # Create the database and the extensions
+  psql -U postgres -c 'create database qwat;'
+  psql -U postgres -d qwat -c 'create extension postgis;'
+  psql -U postgres -d qwat -c 'create extension hstore;'
 
-You now have the neweset data model (without sample data) + database roles.
+  # Create the roles for QWAT
+  psql -c 'CREATE ROLE qwat_viewer NOSUPERUSER INHERIT NOCREATEDB NOCREATEROLE NOREPLICATION;' -U postgres
+  psql -c 'CREATE ROLE qwat_user NOSUPERUSER INHERIT NOCREATEDB NOCREATEROLE NOREPLICATION;' -U postgres
+  psql -c 'CREATE ROLE qwat_manager NOSUPERUSER INHERIT NOCREATEDB NOCREATEROLE NOREPLICATION;' -U postgres
+  psql -c 'CREATE ROLE qwat_sysadmin NOSUPERUSER INHERIT NOCREATEDB NOCREATEROLE NOREPLICATION;' -U postgres
 
-**Create the qwat service in the ``.pg_service.conf`` file**
+  # Download the latest version
+  QWAT_VERSION=1.3.1
+  wget -q -O qwat_dump.backup "https://github.com/qwat/qwat-data-model/releases/download/$QWAT_VERSION/qwat_v"$QWAT_VERSION"_data_and_structure_sample.backup"
+  
+  # And restore it into your QWAT database
+  pg_restore -U postgres --dbname qwat -e --no-owner --verbose --jobs=3 --disable-triggers --port 5432 qwat_dump.backup
+  
+You now have the latest data model (with sample data) + database roles.
 
-If you already have the service defined you can skip this step.
+**Create the QWAT service in the ``.pg_service.conf`` file**
 
-You can use the following command in linux::
+If you already have the service defined you can skip this step, else edit the ``.pg_service.conf`` file and make it look like:
 
- echo "# Qwat service name
- [qwat]
- #enter your database ip
- host=127.0.0.1
- #database name
- dbname=qwat
- port=5432
- user=postgres
- #you can also add your password if you like
- password=YourPassword" >> ~/.pg_service.conf
+::
 
-If you just want to run the data model (without the sample data) you can simply open the **qwat.qgs** project from the qWat directory.
+    [qwat]
+    #enter your database ip
+    host=127.0.0.1
+    #database name
+    dbname=qwat
+    port=5432
+    user=postgres
+    #you can also add your password if you like
+    password=YourPassword
 
-**Restore the sample data**
-
-First drop the latest qwat model as the sample data may not match the latest structure::
-
- cd ../qwat-data-sample
- psql -U postgres -d qwat -c ' drop schema qwat_dr cascade;'
- psql -U postgres -d qwat -c ' drop schema qwat_od cascade;'
- psql -U postgres -d qwat -c ' drop schema qwat_sys cascade;'
- psql -U postgres -d qwat -c ' drop schema qwat_vl cascade;'
-
-Restore the sample data model using pgadmin or with command below::
-
- git remote add upstream https://github.com/tudorbarascu/qwat-data-sample
- git pull upstream master
-
- pg_restore --dbname qwat -e --no-owner --verbose --port 5432 qwat_data_sample.backup
+    [qwat_prod]
+    #enter your database ip
+    host=127.0.0.1
+    #database name
+    dbname=qwat
+    port=5432
+    user=postgres
+    #you can also add your password if you like
+    password=YourPassword
 
 **Open the qgis project**
 
@@ -67,6 +73,6 @@ You can open the **qwat.qgs** project from the qwat-data-sample directory and yo
 
 .. note::
 
- You can also try out the latest **qwat.qgs** project from the qWat directory. Keep in mind that there there's a chance
+ You can also try out the latest **qwat.qgs** project from the QWAT directory. Keep in mind that there there's a chance
  that it doesn't fit the sample data model. This is because the sample data model may be a little older than the latest
  data model and only the corresponding **.qgs** project has been matched.

@@ -48,16 +48,23 @@ We recommend using Linux as Operating System when running PostgreSQL, for perfor
 Install
 -------
 
-Assuming you have installed a postgresql server, in your shell:
+Assuming you have installed a postgresql server, there are two ways to set up the QWAT database:
+- The first way is to create an empty database with ``init_qwat.sh``.
+- The second way is to create a database from the sample dump using ``pg_restore``.
+
+First way. Create an empty database with ``init_qwat.sh``
+`````````````````````````````````````````````````````````
+
+Get the repositories. In a shell:
 
 ::
 
-    git clone https://github.com/qwat/qWat
-    cd qWat
+    git clone https://github.com/qwat/qwat
+    cd qwat
 
 If you haven't added your ssh key to github, then you need to tell git
 to access the data-model submodule through https.
-Edit the ``.gitmodules`` file in the qWat folder and replace the url value
+Edit the ``.gitmodules`` file in the qwat folder and replace the url value
 from ``git@github.com:qwat/qwat-data-model.git`` to ``https://github.com/qwat/qwat-data-model.git``
 
 ::
@@ -81,10 +88,9 @@ Assuming you named your database ``qwat``, edit the ``.pg_service.conf`` file an
 
 ::
 
-    # Qwat service name
     [qwat]
     #enter your database ip
-    host=192.168.0.1
+    host=127.0.0.1
     #database name
     dbname=qwat
     port=5432
@@ -101,37 +107,44 @@ Now go to the ``data-model`` directory and run the ``./init_qwat.sh`` script:
 
 The script has the following options:
 
-- ``-p``                   PG service to connect to the database.
+- ``-p``                     PG service to connect to the database.
 - ``-s`` or ``--srid``         PostGIS SRID. Default to 21781 (ch1903)
-- ``-d`` or ``--drop-schema``  drop schemas (cascaded) if they exist
+- ``-d`` or ``--drop-schema``    drop schemas (cascaded) if they exist
 - ``-r`` or ``--create-roles`` create roles in the database
 
-You can restore a sample dataset, then download the data sample and insert it into the qwat database:
+Optionally, you can restore a sample dataset. For that you need to download the data sample dump and restore it into the QWAT database:
 
 ::
 
-        QWAT_VERSION=`cat system/CURRENT_VERSION.txt`
-        # With wget
-        wget "https://github.com/qwat/qwat-data-model/releases/download/$QWAT_VERSION/qwat_v"$QWAT_VERSION"_data_only_sample.backup"
-        pg_restore -U postgres --dbname qwat -e --no-owner --verbose --jobs=3 --disable-triggers --port 5432 "qwat_v"$QWAT_VERSION"_data_only_sample.backup"
+    QWAT_VERSION=`cat system/CURRENT_VERSION.txt`
+    wget -q -O qwat_dump.backup "https://github.com/qwat/qwat-data-model/releases/download/$QWAT_VERSION/qwat_v"$QWAT_VERSION"_data_only_sample.backup"
+    pg_restore -U postgres --dbname qwat -e --no-owner --verbose --jobs=3 --disable-triggers --port 5432 qwat_dump.backup
 
-        # or directly with curl
-        curl -L "https://github.com/qwat/qwat-data-model/releases/download/$VERSION/qwat_v"$VERSION"_data_only_sample.backup" | pg_restore -U postgres --dbname qwat -e --no-owner --verbose --disable-triggers --port 5432
+Second way. Create a database from the sample dump using ``pg_restore``
+```````````````````````````````````````````````````````````````````````
 
-.. Doesn't work with 1.3.1 see https://github.com/qwat/qwat-data-model/issues/224
-.. Instead of running the init script or git, just run :
+In your shell:
 
-.. ::
-  cd ..
-  git clone https://github.com/qwat/qwat-data-sample
-  psql -U postgres -c 'create database qwat;'
-  psql -U postgres -d qwat -c 'create extension postgis;'
-  psql -U postgres -d qwat -c 'create extension hstore;'
-  QWAT_VERSION=1.3.1
-  wget "https://github.com/qwat/qwat-data-model/releases/download/$QWAT_VERSION/qwat_v"$QWAT_VERSION"_data_and_structure_sample.backup"
-  pg_restore -U postgres --dbname qwat -e --no-owner --verbose --jobs=3 --disable-triggers --port 5432 "qwat_v"$QWAT_VERSION"_data_and_structure_sample.backup"
-  # or with curl
-  curl -L "https://github.com/qwat/qwat-data-model/releases/download/$VERSION/qwat_v"$VERSION"_data_and_structure_sample.backup" | pg_restore -U postgres --dbname qwat -e --no-owner --verbose --disable-triggers --port 5432
+::
+
+    # Create the database and the extensions
+    psql -U postgres -c 'create database qwat;'
+    psql -U postgres -d qwat -c 'create extension postgis;'
+    psql -U postgres -d qwat -c 'create extension hstore;'
+
+    # Create the roles for QWAT
+    psql -c 'CREATE ROLE qwat_viewer NOSUPERUSER INHERIT NOCREATEDB NOCREATEROLE NOREPLICATION;' -U postgres
+    psql -c 'CREATE ROLE qwat_user NOSUPERUSER INHERIT NOCREATEDB NOCREATEROLE NOREPLICATION;' -U postgres
+    psql -c 'CREATE ROLE qwat_manager NOSUPERUSER INHERIT NOCREATEDB NOCREATEROLE NOREPLICATION;' -U postgres
+    psql -c 'CREATE ROLE qwat_sysadmin NOSUPERUSER INHERIT NOCREATEDB NOCREATEROLE NOREPLICATION;' -U postgres
+
+    # Download the latest version
+    QWAT_VERSION=1.3.1
+    wget -q -O qwat_dump.backup "https://github.com/qwat/qwat-data-model/releases/download/$QWAT_VERSION/qwat_v"$QWAT_VERSION"_data_and_structure_sample.backup"
+    
+    # And restore it into your QWAT database
+    pg_restore -U postgres --dbname qwat -e --no-owner --verbose --jobs=3 --disable-triggers --port 5432 qwat_dump.backup
+    
 
 Open the project
 ----------------
