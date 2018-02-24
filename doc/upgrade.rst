@@ -12,7 +12,7 @@ Create a new upgrade delta
 * Push your branch, and check travis result
 * If travis test is OK, then you can create a pull request to merge your modifications in master
 
-.. notice:: Data model should be TAGGED. Tag should respect the following syntax like this: x.x.x. For each major version, the tag MUSt be called x.0.0
+.. note:: Data model should be TAGGED. Tag should respect the following syntax like this: x.x.x. For each major version, the tag MUSt be called x.0.0
 
 
 Migrate an existing database
@@ -27,7 +27,7 @@ If you use an old version of qWat model, you can upgrade it by following the ins
     * This will test the migration process
 * If the migration process is OK, then launch again the command with the parameter to upgrade the real DB : ``./upgrade_db.sh --upgrade yes``
 
-.. notice:: Your *.pg_service.conf* must contain connexions to qwat, qwat_test and qwat_conform DB
+.. note:: Your *.pg_service.conf* must contain connexions to qwat, qwat_test and qwat_conform DB
 
 The way it works
 ================
