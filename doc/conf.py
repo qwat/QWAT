@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 #
-# qWat documentation build configuration file, created by
+# QWAT documentation build configuration file, created by
 # sphinx-quickstart on Mon Dec 21 12:08:54 2015.
 #
 # This file is execfile()d with the current directory set to its
@@ -48,9 +48,9 @@ source_suffix = '.rst'
 master_doc = 'index'
 
 # General information about the project.
-project = u'qWat'
-copyright = u'2015, qWat Team'
-author = u'qWat Team'
+project = u'QWAT'
+copyright = u'2015, QWAT Team'
+author = u'QWAT Team'
 
 # The version info for the project you're documenting, acts as replacement for
 # |version| and |release|, also used in various other places throughout the
@@ -204,7 +204,7 @@ html_static_path = ['_static']
 #html_search_scorer = 'scorer.js'
 
 # Output file base name for HTML help builder.
-htmlhelp_basename = 'qWatdoc'
+htmlhelp_basename = 'QWATdoc'
 
 # -- Options for LaTeX output ---------------------------------------------
 
@@ -226,8 +226,8 @@ latex_elements = {
 # (source start file, target name, title,
 #  author, documentclass [howto, manual, or own class]).
 latex_documents = [
-  (master_doc, 'qWat.tex', u'qWat Documentation',
-   u'qWat Team', 'manual'),
+  (master_doc, 'QWAT.tex', u'QWAT Documentation',
+   u'QWAT Team', 'manual'),
 ]
 
 # The name of an image file (relative to this directory) to place at the top of
@@ -256,7 +256,7 @@ latex_documents = [
 # One entry per manual page. List of tuples
 # (source start file, name, description, authors, manual section).
 man_pages = [
-    (master_doc, 'qwat', u'qWat Documentation',
+    (master_doc, 'qwat', u'QWAT Documentation',
      [author], 1)
 ]
 
@@ -270,8 +270,8 @@ man_pages = [
 # (source start file, target name, title, author,
 #  dir menu entry, description, category)
 texinfo_documents = [
-  (master_doc, 'qWat', u'qWat Documentation',
-   author, 'qWat', 'One line description of project.',
+  (master_doc, 'QWAT', u'QWAT Documentation',
+   author, 'QWAT', 'One line description of project.',
    'Miscellaneous'),
 ]
 

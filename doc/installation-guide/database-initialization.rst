@@ -1,12 +1,13 @@
-************
-Install QWAT
-************
+.. _database-initialization:
+
+Database initialization
+=======================
 
 Note that installing QWAT using the initialization script is only required for contributing to the model or extending the model.
 If you only need to test a demo or use a production database, a regular postgreSQL dump is enough. See Demo page for that.
 
-Install guide
--------------
+Process
+--------
 
 Assuming you have installed a postgresql server. In a shell:
 
@@ -64,6 +65,11 @@ The script has the following options:
 - ``-s`` or ``--srid``         PostGIS SRID. Default to 21781 (ch1903)
 - ``-d`` or ``--drop-schema``    drop schemas (cascaded) if they exist
 - ``-r`` or ``--create-roles`` create roles in the database
+
+.. _restore-demomodel:
+
+Restore demo datamodel
+^^^^^^^^^^^^^^^^^^^^^^
 
 Optionally, you can restore a sample dataset. For that you need to download the data sample dump and restore it into the QWAT database:
 

@@ -1,9 +1,8 @@
-****************
 Upgrade database
-****************
+================
 
 Create a new upgrade delta
-==========================
+--------------------------
 
 * First create a new branch for your modification on the model
 * Modify the SQL creation code at your convenience
@@ -16,9 +15,9 @@ Create a new upgrade delta
 
 
 Migrate an existing database
-============================
+----------------------------
 
-If you use an old version of qWat model, you can upgrade it by following the instructions bellow:
+If you use an old version of QWAT model, you can upgrade it by following the instructions bellow:
 
 .. warning:: You should always save you current database before upgrading
 
@@ -30,7 +29,7 @@ If you use an old version of qWat model, you can upgrade it by following the ins
 .. note:: Your *.pg_service.conf* must contain connexions to qwat, qwat_test and qwat_conform DB
 
 The way it works
-================
+----------------
 
 We've got a tag for version x.0
 
@@ -40,9 +39,9 @@ The contributor who add a new delta SQL file must also update the DB creation SQ
 
 For a user, the migration process consists in :
 
-* Get the version of his base (should be given in qWat the system schema).
+* Get the version of his base (should be given in QWAT the system schema).
 * Execute the migration script, which take in parameter that version number. The script execute the following tasks :
-    - pg_dump of the qWat DB
+    - pg_dump of the QWAT DB
     - pg_restore of the previous dump in a test DB (*qwat_test*)
     - Execute on test DB all SQL delta above or equals to the version number (sql deltas must be named *delta_NUM_TAG_date.sql*)
     - Execute conformity test script:
@@ -50,6 +49,6 @@ For a user, the migration process consists in :
         - Produce the reference file (result from the DB test sql)
         - Comparison of that reference file with the one produced by the *qwat_test* DB previously created
         - If all is OK, user is invited to launch the migration on his real DB
-        - If errors occur, the user has to debug himself or contact the qWat team
+        - If errors occur, the user has to debug himself or contact the QWAT team
 
 
