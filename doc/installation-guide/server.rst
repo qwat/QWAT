@@ -1,9 +1,15 @@
-************
-Requirements
-************
+Setup database server
+=====================
 
-Server-side
-===========
+If you expect to access the data from several different workstations, you can
+install the database on a network accessible server. If it is just a single
+desktop you are working on, this can be installed on the same machine.
+
+Required Software
+-----------------
+
+Server installation
+~~~~~~~~~~~~~~~~~~~
 
 Server side software components are:
 
@@ -34,25 +40,22 @@ Choose the following parameters:
 * OS Type : your Operating System
 * DB Type : "Mixed type of applications"
 * Total memory : how much memory is installed on your server
-* Number of connections : how many concurrent users you want to allow ( as a maximum ). Optional parameter
+* Number of connections : how many concurrent users you want to allow (as a maximum). Optional parameter
 
 The application should give you the settings to adapt in the ``postgresql.conf`` configuration file.
 
-Client-side
-===========
 
-Client side components are:
+.. note::
 
-* QGIS (2.14+)
-* QGIS extensions (depending on specific use case)
+ In a single desktop environment (no network database server) you can set up
+ your database to trust local connections.
 
-The exact required configuration is very dependant on the data sizes and complexity of rendering.
-However, water network data tend not to be huge volumes, and the minimal required configuration
-is not really high. For smooth map rendering, it is advised to use recent hardware, good video card and enough RAM though.
+ This way, the database won't ask for a password if you're connecting from your
+ local workstation while no password is written anywhere. You even can do
+ with no database password at all.
 
-A comfortable configuration would be:
+ This can be done by editing the database access configuration file
+ `pg_hba.conf <http://www.postgresql.org/docs/devel/static/auth-pg-hba-conf.html>`_
+ and set the auth-options from ``md5`` to ``trust``. A database service reload
+ is required to activate changes.
 
-* 4x core Intel processor
-* 8GB of RAM
-* SSD storage
-* Good video card (recent onboard Intel are ok, or dedicated NVidia/AMD)

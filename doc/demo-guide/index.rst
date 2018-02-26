@@ -1,8 +1,7 @@
-*********************
 Demo data and project
-*********************
+=====================
 
-QWAT can be tested by downloading the QGS project repository `here <https://github.com/qwat/QWAT>`_` and restoring the latest full data dump in PostgreSQL (+ extension PostGIS and hstore) `here <https://github.com/qwat/qwat-data-model/releases>`_.
+QWAT can be tested by downloading the QGS project repository `here <https://github.com/qwat/QWAT>`_ and restoring the latest `full data dump <https://github.com/qwat/qwat-data-model/releases>`_ in PostgreSQL (+ extension PostGIS and hstore).
 
 More detailed instructions:
 
@@ -39,7 +38,7 @@ Create the QWAT database model with roles and restore the latest version:
   
 You now have the latest data model (with sample data) + database roles.
 
-**Create the QWAT service in the ``.pg_service.conf`` file**
+**Create the QWAT service in the .pg_service.conf file**
 
 If you already have the service defined you can skip this step, else edit the ``.pg_service.conf`` file and make it look like:
 

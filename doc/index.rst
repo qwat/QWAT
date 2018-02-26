@@ -19,31 +19,23 @@ All sources are avalaible at `<https://github.com/qwat/QWAT>`_.
 
 .. toctree::
    :maxdepth: 2
+   :numbered:
 
-   Features <features>
-   
-   The user's guide <use>
+   features-guide/index
+   installation-guide/index
+   user-guide/index
+   admin-guide/index
+   contributor-guide/index
+   developer-guide/index
+   demo-guide/index
+   faq/index
+   glossary/index
+   translation/index
 
-   The data manager's guide <data_manager>
-
-   The administrator's guide <administrator>
-
-   The contributor's guide <contributor>
-
-   The developer's guide <developer>
-
-   Try me! <demo>
-
-   FAQ <faq>
-
-   Glossary <glossary>
-
-   Translation <translation>
-
-And you will find a `glossary <glossary.html>`__ if some terms sound obscure to you.
+And you will find a `glossary <glossary/index.html>`__ if some terms sound obscure to you.
 
 
-For non-native english speakers, `translation <translation.html>`__ of recurrent terms are available.
+For non-native english speakers, `translation <translation/index.html>`__ of recurrent terms are available.
 
 
 Indices and tables
