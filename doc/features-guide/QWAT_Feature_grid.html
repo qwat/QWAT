@@ -2,189 +2,50 @@
 <html>
 <head>
 <title>QWAT Features</title>
-<style type="text/css">
-    body {color: #000000; font-size: 10pt; font-family: "SansSerif", sans-serif; }
-li { list-style: none;  margin: 0; }
-p { margin: 0; }
-
-span.l { color: red; font-weight: bold; }
-
-a.mapnode:link,
-a.mapnode:visited,
-a.mapnode:active,
-a.mapnode:hover {
-    text-decoration: none; color: black;
-}
-a.mapnode:hover { background: #eeeee0; }
-span.foldopened, span.foldclosed  {
-    font-size: xx-small;
-    border-width: 1;
-    font-family: monospace;
-    padding: 0em 0.25em 0em 0.25em;
-    background: #e0e0e0;
-    cursor:pointer;
-}
-span.foldopened  {
-    color: white;
-    VISIBILITY: visible;
-}
-span.foldclosed {
-    color: #666666;
-    VISIBILITY: hidden;
-}
-span.foldspecial {
-    color: #666666;
-    font-size: xx-small;
-    border-style: none solid solid none;
-    border-color: #CCCCCC;
-    border-width: 1;
-    font-family: sans-serif;
-    padding: 0em 0.1em 0em 0.1em;
-    background: #e0e0e0;
-    cursor:pointer;
-}
-
-</style>
 <!-- ^ Position is not set to relative / absolute here because of Mozilla -->
 </head>
 <body bgcolor=#ffffff>
-<script type="text/javascript">
-// Here we implement folding. It works fine with MSIE5.5, MSIE6.0 and
-// Mozilla 0.9.6.
-
-if (document.layers) {
-    //Netscape 4 specific code
-    pre = 'document.';
-    post = ''; }
-if (document.getElementById) {
-    //Netscape 6 specific code
-    pre = 'document.getElementById("';
-    post = '").style'; }
-if (document.all) {
-    //IE4+ specific code
-    pre = 'document.all.';
-    post = '.style'; }
-
-function layer_exists(layer) {
-    try {
-	eval(pre + layer + post);
-	return true; }
-    catch (error) {
-	return false; }}
-
-function show_layer(layer) {
-    eval(pre + layer + post).position = 'relative';
-    eval(pre + layer + post).visibility = 'visible'; }
-
-function hide_layer(layer) {
-    eval(pre + layer + post).visibility = 'hidden';
-    eval(pre + layer + post).position = 'absolute'; }
-
-function hide_folder(folder) {
-    hide_folding_layer(folder)
-    show_layer('show'+folder);
-
-    scrollBy(0,0); // This is a work around to make it work in Browsers (Explorer, Mozilla)
-}
-
-function show_folder(folder) {
-    // Precondition: all subfolders are folded
-
-    show_layer('hide'+folder);
-    hide_layer('show'+folder);
-    show_layer('fold'+folder);
-
-    scrollBy(0,0); // This is a work around to make it work in Browsers (Explorer, Mozilla)
-
-    var i;
-    for (i=1; layer_exists('fold'+folder+'_'+i); ++i) {
-	show_layer('show'+folder+'_'+i); }
-}
-function show_folder_completely(folder) {
-    // Precondition: all subfolders are folded
-
-    show_layer('hide'+folder);
-    hide_layer('show'+folder);
-    show_layer('fold'+folder);
-
-    scrollBy(0,0); // This is a work around to make it work in Browsers (Explorer, Mozilla)
-
-    var i;
-    for (i=1; layer_exists('fold'+folder+'_'+i); ++i) {
-	show_folder_completely(folder+'_'+i); }
-}
-
-
-
-function hide_folding_layer(folder) {
-    var i;
-    for (i=1; layer_exists('fold'+folder+'_'+i); ++i) {
-	hide_folding_layer(folder+'_'+i); }
-
-    hide_layer('hide'+folder);
-    hide_layer('show'+folder);
-    hide_layer('fold'+folder);
-
-    scrollBy(0,0); // This is a work around to make it work in Browsers (Explorer, Mozilla)
-}
-
-function fold_document() {
-    var i;
-    var folder = '1';
-    for (i=1; layer_exists('fold'+folder+'_'+i); ++i) {
-	hide_folder(folder+'_'+i); }
-}
-
-function unfold_document() {
-    var i;
-    var folder = '1';
-    for (i=1; layer_exists('fold'+folder+'_'+i); ++i) {
-	show_folder_completely(folder+'_'+i); }
-}
-
-</script>
-
 <ul>
-<span style="color: #0066cc; font-size: 16pt; font-family: "Sawasdee", sans-serif; font-weight: bold; ">Pure Open Source Design</span>
+<span style="font-style: italic;">version 1.3.0 2017/11/27</span>
+<li><span style="color: #0066cc">Pure Open Source Design</span>
 <ul>
-<li><span style="color: #339900; font-size: 14pt; font-family: "Sawasdee", sans-serif; font-weight: bold; ">Collaborative practices</span>
+<li><span style="color: #339900">Collaborative practices</span>
 <ul>
-<li><span style="color: #00002a; font-size: 12pt; font-family: "Sawasdee", sans-serif; font-weight: bold; ">GIT code versionning and collaboration</span></li>
-<li><span style="color: #00002a; font-size: 12pt; font-family: "Sawasdee", sans-serif; font-weight: bold; ">GITHUB project management</span>
+<li><span style="color: #00002a">GIT code versionning and collaboration</span></li>
+<li><span style="color: #00002a">GITHUB project management</span>
 <ul>
-<li><span style="color: #111111; font-family: "Sawasdee", sans-serif; font-weight: bold; ">issues</span></li>
-<li><span style="color: #111111; font-family: "Sawasdee", sans-serif; font-weight: bold; ">Review process</span></li>
-<li><span style="color: #111111; font-family: "Sawasdee", sans-serif; font-weight: bold; ">Continuous Integration / Unit tests / Travis</span></li>
+<li><span style="color: #111111">issues</span></li>
+<li><span style="color: #111111">Review process</span></li>
+<li><span style="color: #111111">Continuous Integration / Unit tests / Travis</span></li>
 </ul>
 </li>
 </ul>
 </li>
-<li><span style="color: #339900; font-size: 14pt; font-family: "Sawasdee", sans-serif; font-weight: bold; ">Free to use and adapt</span></li>
-<li><span style="color: #339900; font-size: 14pt; font-family: "Sawasdee", sans-serif; font-weight: bold; ">Efficiency</span>
+<li><span style="color: #339900">Free to use and adapt</span></li>
+<li><span style="color: #339900">Efficiency</span>
 <ul>
-<li><span style="color: #00002a; font-size: 12pt; font-family: "Sawasdee", sans-serif; font-weight: bold; ">common components wiht QGEP</span></li>
-<li><span style="color: #00002a; font-size: 12pt; font-family: "Sawasdee", sans-serif; font-weight: bold; ">OSGEO tools</span></li>
-<li><span style="color: #00002a; font-size: 12pt; font-family: "Sawasdee", sans-serif; font-weight: bold; ">PostgreSQL</span></li>
+<li><span style="color: #00002a">common components wiht QGEP</span></li>
+<li><span style="color: #00002a">OSGEO tools</span></li>
+<li><span style="color: #00002a">PostgreSQL</span></li>
 </ul>
 </li>
 </ul>
 </li>
-<span style="color: #0066cc; font-size: 16pt; font-family: "Sawasdee", sans-serif; font-weight: bold; ">Data Model and Rules</span>
+<li><span style="color: #0066cc">Data Model and Rules</span>
 <ul>
-<li><span style="color: #339900; font-size: 14pt; font-weight: bold; ">Concepts and classes</span>
+<li><span style="color: #339900">Concepts and classes</span>
 <ul>
-<li><span style="color: #00002a; font-size: 12pt; font-weight: bold; ">Pipes</span></li>
-<li><span style="color: #00002a; font-size: 12pt; font-weight: bold; ">Nodes</span>
+<li><span style="color: #00002a">Pipes</span></li>
+<li><span style="color: #00002a">Nodes</span>
 <ul>
-<li><span style="color: #111111; font-weight: bold; ">Network elements</span>
+<li><span style="color: #111111">Network elements</span>
 <ul>
 <li>meter</li>
 <li>hydrant</li>
 <li>subscriber</li>
 <li>sampling point</li>
-<li><span id="show1_1" class="foldclosed" onClick="show_folder('1_1')" style="POSITION: absolute">+</span> <span id="hide1_1" class="foldopened" onClick="hide_folder('1_1')">-</span>
-installations
-<ul id="fold1_1" style="POSITION: relative; VISIBILITY: visible;">
+<li>installations
+<ul>
 <li>tank</li>
 <li>chamber</li>
 <li>cover</li>
@@ -196,233 +57,133 @@ installations
 </li>
 </ul>
 </li>
-<li><span style="color: #111111; font-weight: bold; ">pipe nodes</span></li>
+<li><span style="color: #111111">pipe nodes</span></li>
 </ul>
 </li>
-<li><span style="color: #00002a; font-size: 12pt; font-weight: bold; ">Valve</span></li>
-<li><span style="color: #00002a; font-size: 12pt; font-weight: bold; ">Leaks</span></li>
-<li><span style="color: #00002a; font-size: 12pt; font-weight: bold; ">Crossing</span></li>
-<li><span style="color: #00002a; font-size: 12pt; font-weight: bold; ">Remote</span></li>
-<li><span style="color: #00002a; font-size: 12pt; font-weight: bold; ">Distributor</span></li>
-<li><span style="color: #00002a; font-size: 12pt; font-weight: bold; ">Folder</span></li>
-<li><span style="color: #00002a; font-size: 12pt; font-weight: bold; ">Survey Points / Construction Points</span></li>
-<li><span style="color: #00002a; font-size: 12pt; font-weight: bold; ">PrintMaps</span></li>
-<li><span style="color: #00002a; font-size: 12pt; font-weight: bold; ">Protection zones</span></li>
-<li><span style="color: #00002a; font-size: 12pt; font-weight: bold; ">Pressure zones</span></li>
+<li><span style="color: #00002a">Valve</span></li>
+<li><span style="color: #00002a">Leaks</span></li>
+<li><span style="color: #00002a">Crossing</span></li>
+<li><span style="color: #00002a">Remote</span></li>
+<li><span style="color: #00002a">Distributor</span></li>
+<li><span style="color: #00002a">Folder</span></li>
+<li><span style="color: #00002a">Survey Points / Construction Points</span></li>
+<li><span style="color: #00002a">PrintMaps</span></li>
+<li><span style="color: #00002a">Protection zones</span></li>
+<li><span style="color: #00002a">Pressure zones</span></li>
 </ul>
 </li>
-<li><span style="color: #339900; font-size: 14pt; font-weight: bold; ">Altitude handling</span>
+<li><span style="color: #339900">Altitude handling</span>
 <ul>
-<li><span style="color: #00002a; font-size: 12pt; font-weight: bold; ">3D geometries</span></li>
-<li><span style="color: #00002a; font-size: 12pt; font-weight: bold; ">precision classes</span></li>
+<li><span style="color: #00002a">3D geometries</span></li>
+<li><span style="color: #00002a">precision classes</span></li>
 </ul>
 </li>
-<li><span style="color: #339900; font-size: 14pt; font-weight: bold; ">Assisted network editing (DB API)</span>
+<li><span style="color: #339900">Assisted network editing (DB API)</span>
 <ul>
-<li><span style="color: #00002a; font-size: 12pt; font-weight: bold; ">triggers</span></li>
-<li><span style="color: #00002a; font-size: 12pt; font-weight: bold; ">stored procedures</span></li>
-<li><span style="color: #00002a; font-size: 12pt; font-weight: bold; ">Automatic nodes handling</span></li>
+<li><span style="color: #00002a">triggers</span></li>
+<li><span style="color: #00002a">stored procedures</span></li>
+<li><span style="color: #00002a">Automatic nodes handling</span></li>
 </ul>
 </li>
-<li><span style="color: #339900; font-size: 14pt; font-weight: bold; ">Internationalized value lists</span></li>
-<li><span style="color: #339900; font-size: 14pt; font-weight: bold; ">audit History logging</span></li>
-<li><span style="color: #339900; font-size: 14pt; font-weight: bold; ">Extensible data model and value lists</span></li>
-<li><span style="color: #339900; font-size: 14pt; font-weight: bold; ">Interoperability</span>
+<li><span style="color: #339900">Internationalized value lists</span></li>
+<li><span style="color: #339900">audit History logging</span></li>
+<li><span style="color: #339900">Extensible data model and value lists</span></li>
+<li><span style="color: #339900">Interoperability</span>
 <ul>
-<li><span style="color: #00002a; font-size: 12pt; font-weight: bold; ">Topobase Import scripts</span></li>
-<li><span style="color: #00002a; font-size: 12pt; font-weight: bold; ">SIRE export (CH specific)</span></li>
-</ul>
-</li>
-</ul>
-</li>
-<span style="color: #0066cc; font-size: 16pt; font-family: "Sawasdee", sans-serif; font-weight: bold; ">Network editing</span>
-<ul>
-<li><span style="color: #339900; font-size: 14pt; font-weight: bold; ">topological snapping</span></li>
-<li><span style="color: #339900; font-size: 14pt; font-weight: bold; ">advanced CAD digitizing tools (construction using angles, distances, perpendicular and parallel constraints)</span></li>
-<li><span style="color: #339900; font-size: 14pt; font-weight: bold; ">Curve support</span></li>
-</ul>
-</li>
-<span style="color: #0066cc; font-size: 16pt; font-family: "Sawasdee", sans-serif; font-weight: bold; ">Advanced Mapping features</span>
-<ul>
-<li><span style="color: #339900; font-size: 14pt; font-family: "Sawasdee", sans-serif; font-weight: bold; ">Multi scale geometries and labels</span></li>
-<li><span style="color: #339900; font-size: 14pt; font-family: "Sawasdee", sans-serif; font-weight: bold; ">Import exports DXF / DWG (QGIS)</span></li>
-<li><span style="color: #339900; font-size: 14pt; font-family: "Sawasdee", sans-serif; font-weight: bold; ">Atlas batch Map generation</span></li>
-<li><span style="color: #339900; font-size: 14pt; font-family: "Sawasdee", sans-serif; font-weight: bold; ">Printing and reporting</span></li>
-<li><span style="color: #339900; font-size: 14pt; font-family: "Sawasdee", sans-serif; font-weight: bold; ">Annotations</span></li>
-<li><span style="color: #339900; font-size: 14pt; font-family: "Sawasdee", sans-serif; font-weight: bold; ">Street View / Mappilary view</span></li>
-</ul>
-</li>
-<span style="color: #0066cc; font-size: 16pt; font-family: "Sawasdee", sans-serif; font-weight: bold; ">QGIS client</span>
-<ul>
-<li><span style="color: #339900; font-size: 14pt; font-family: "Sawasdee", sans-serif; font-weight: bold; ">Internationalized</span></li>
-<li><span style="color: #339900; font-size: 14pt; font-family: "Sawasdee", sans-serif; font-weight: bold; ">Street view mapping</span></li>
-<li><span style="color: #339900; font-size: 14pt; font-family: "Sawasdee", sans-serif; font-weight: bold; ">Easy to Use</span></li>
-<li><span style="color: #339900; font-size: 14pt; font-family: "Sawasdee", sans-serif; font-weight: bold; ">Fast and nice rendering</span></li>
-<li><span style="color: #339900; font-size: 14pt; font-family: "Sawasdee", sans-serif; font-weight: bold; ">True native DataBase client</span>
-<ul>
-<li><span style="color: #00002a; font-size: 12pt; font-weight: bold; ">Transaction support/ multi users</span></li>
-<li><span style="color: #00002a; font-size: 12pt; font-weight: bold; ">PostgresSQL</span>
-<ul>
-<li><span style="color: #111111; font-weight: bold; ">scalable</span></li>
-<li><span style="color: #111111; font-weight: bold; ">Fast</span></li>
+<li><span style="color: #00002a">Topobase Import scripts</span></li>
+<li><span style="color: #00002a">SIRE export (CH specific)</span></li>
 </ul>
 </li>
 </ul>
 </li>
-<li><span style="color: #339900; font-size: 14pt; font-family: "Sawasdee", sans-serif; font-weight: bold; ">Read/write most external formats and data services</span></li>
-<li><span style="color: #339900; font-size: 14pt; font-family: "Sawasdee", sans-serif; font-weight: bold; ">Place search with full text indexing</span></li>
-<li><span style="color: #339900; font-size: 14pt; font-family: "Sawasdee", sans-serif; font-weight: bold; ">Mass editing</span></li>
-<li><span style="color: #339900; font-size: 14pt; font-family: "Sawasdee", sans-serif; font-weight: bold; ">DataBase Query</span></li>
-<li><span style="color: #339900; font-size: 14pt; font-family: "Sawasdee", sans-serif; font-weight: bold; ">Customizable forms</span></li>
+<li><span style="color: #0066cc">Network editing</span>
+<ul>
+<li><span style="color: #339900">topological snapping</span></li>
+<li><span style="color: #339900">advanced CAD digitizing tools (construction using angles, distances, perpendicular and parallel constraints)</span></li>
+<li><span style="color: #339900">Curve support</span></li>
 </ul>
 </li>
-<span style="color: #0066cc; font-size: 16pt; font-family: "Sawasdee", sans-serif; font-weight: bold; ">Infrastructure</span>
+<li><span style="color: #0066cc">Advanced Mapping features</span>
 <ul>
-<li><span style="color: #339900; font-size: 14pt; font-family: "Sawasdee", sans-serif; font-weight: bold; ">Continuous Integration and Quality Assessment</span></li>
-<li><span style="color: #339900; font-size: 14pt; font-family: "Sawasdee", sans-serif; font-weight: bold; ">Version control and Database migration</span></li>
-<li><span style="color: #339900; font-size: 14pt; font-family: "Sawasdee", sans-serif; font-weight: bold; ">Local Customization</span>
+<li><span style="color: #339900">Multi scale geometries and labels</span></li>
+<li><span style="color: #339900">Import exports DXF / DWG (QGIS)</span></li>
+<li><span style="color: #339900">Atlas batch Map generation</span></li>
+<li><span style="color: #339900">Printing and reporting</span></li>
+<li><span style="color: #339900">Annotations</span></li>
+<li><span style="color: #339900">Street View / Mappilary view</span></li>
+</ul>
+</li>
+<li><span style="color: #0066cc">QGIS client</span>
 <ul>
-<li><span style="color: #00002a; font-size: 12pt; font-family: "Sawasdee", sans-serif; font-weight: bold; ">SQL patches</span></li>
-<li><span style="color: #00002a; font-size: 12pt; font-family: "Sawasdee", sans-serif; font-weight: bold; ">qgis project translation</span></li>
-<li><span style="color: #00002a; font-size: 12pt; font-family: "Sawasdee", sans-serif; font-weight: bold; ">qgis project enrichment</span>
+<li><span style="color: #339900">Internationalized</span></li>
+<li><span style="color: #339900">Street view mapping</span></li>
+<li><span style="color: #339900">Easy to Use</span></li>
+<li><span style="color: #339900">Fast and nice rendering</span></li>
+<li><span style="color: #339900">True native DataBase client</span>
 <ul>
-<li><span style="color: #111111; font-family: "Sawasdee", sans-serif; font-weight: bold; ">Layers</span></li>
-<li><span style="color: #111111; font-family: "Sawasdee", sans-serif; font-weight: bold; ">Styles</span></li>
-<li><span style="color: #111111; font-family: "Sawasdee", sans-serif; font-weight: bold; ">Forms</span></li>
-<li><span style="color: #111111; font-family: "Sawasdee", sans-serif; font-weight: bold; ">Custom actions</span></li>
+<li><span style="color: #00002a">Transaction support/ multi users</span></li>
+<li><span style="color: #00002a">PostgresSQL</span>
+<ul>
+<li><span style="color: #111111">scalable</span></li>
+<li><span style="color: #111111">Fast</span></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><span style="color: #339900">Read/write most external formats and data services</span></li>
+<li><span style="color: #339900">Place search with full text indexing</span></li>
+<li><span style="color: #339900">Mass editing</span></li>
+<li><span style="color: #339900">DataBase Query</span></li>
+<li><span style="color: #339900">Customizable forms</span></li>
+</ul>
+</li>
+<li><span style="color: #0066cc">Infrastructure</span>
+<ul>
+<li><span style="color: #339900">Continuous Integration and Quality Assessment</span></li>
+<li><span style="color: #339900">Version control and Database migration</span></li>
+<li><span style="color: #339900">Local Customization</span>
+<ul>
+<li><span style="color: #00002a">SQL patches</span></li>
+<li><span style="color: #00002a">qgis project translation</span></li>
+<li><span style="color: #00002a">qgis project enrichment</span>
+<ul>
+<li><span style="color: #111111">Layers</span></li>
+<li><span style="color: #111111">Styles</span></li>
+<li><span style="color: #111111">Forms</span></li>
+<li><span style="color: #111111">Custom actions</span></li>
 </ul>
 </li>
 </ul>
 </li>
 </ul>
 </li>
-<span style="color: #0066cc; font-size: 16pt; font-family: "Sawasdee", sans-serif; font-weight: bold; ">Documentation</span>
+<li><span style="color: #0066cc">Documentation</span>
 <ul>
-<li><span style="color: #339900; font-size: 14pt; font-family: "Sawasdee", sans-serif; font-weight: bold; ">internationalized</span></li>
+<li><span style="color: #339900">internationalized</span></li>
 </ul>
 </li>
-<span style="color: #0066cc; font-size: 16pt; font-family: "Sawasdee", sans-serif; font-weight: bold; ">Planned Improvements</span>
+<li><span style="color: #0066cc">Planned Improvements</span>
 <ul>
-<li><span style="color: #339900; font-size: 14pt; font-family: "Sawasdee", sans-serif; font-weight: bold; ">Live geometric error display</span></li>
-<li><span style="color: #339900; font-size: 14pt; font-family: "Sawasdee", sans-serif; font-weight: bold; ">automatic Pressure zone polygon drawing</span></li>
-<li><span style="color: #339900; font-size: 14pt; font-family: "Sawasdee", sans-serif; font-weight: bold; ">Interoperability</span>
+<li><span style="color: #339900">Live geometric error display</span></li>
+<li><span style="color: #339900">automatic Pressure zone polygon drawing</span></li>
+<li><span style="color: #339900">Interoperability</span>
 <ul>
-<li><span style="color: #00002a; font-size: 12pt; font-family: "Sawasdee", sans-serif; font-weight: bold; "><a href="https://www.vd.ch/themes/environnement/eaux/eau-potable/systeme-dinformation-des-reseaux-deau-sire/" target="_blank">export SIRE</a>
+<li><span style="color: #00002a"><a href="https://www.vd.ch/themes/environnement/eaux/eau-potable/systeme-dinformation-des-reseaux-deau-sire/" target="_blank">export SIRE</a>
 </span></li>
-<li><span style="color: #00002a; font-size: 12pt; font-family: "Sawasdee", sans-serif; font-weight: bold; "><a href="http://www.sia.ch/en/services/sia-norm/" target="_blank">SIA compatible</a>
+<li><span style="color: #00002a"><a href="http://www.sia.ch/en/services/sia-norm/" target="_blank">SIA compatible</a>
 </span></li>
 </ul>
 </li>
-<li><span style="color: #339900; font-size: 14pt; font-family: "Sawasdee", sans-serif; font-weight: bold; ">GPS Import</span></li>
-<li><span style="color: #339900; font-size: 14pt; font-family: "Sawasdee", sans-serif; font-weight: bold; ">Document Management system</span>
+<li><span style="color: #339900">GPS Import</span></li>
+<li><span style="color: #339900">Document Management system</span>
 <ul>
-<li><span style="color: #00002a; font-size: 12pt; font-weight: bold; ">display document, picture and videos</span></li>
-<li><span style="color: #00002a; font-size: 12pt; font-weight: bold; ">wire to a dedicated DMS</span></li>
+<li><span style="color: #00002a">display document, picture and videos</span></li>
+<li><span style="color: #00002a">wire to a dedicated DMS</span></li>
 </ul>
 </li>
-<li><span style="color: #339900; font-size: 14pt; font-family: "Sawasdee", sans-serif; font-weight: bold; ">Constraints in QGIS</span></li>
-</ul>
-</li>
-<span style="color: #0066cc; font-size: 16pt; font-family: "Sawasdee", sans-serif; font-weight: bold; ">Missing Features</span>
-<ul>
-<li><span style="color: #339900; font-size: 14pt; font-family: "Sawasdee", sans-serif; font-weight: bold; ">Network routing</span>
-<ul>
-<li><span style="color: #00002a; font-size: 12pt; font-family: "Sawasdee", sans-serif; font-weight: bold; ">Network quality analysis</span></li>
-<li><span style="color: #00002a; font-size: 12pt; font-family: "Sawasdee", sans-serif; font-weight: bold; ">Find subscriber concerned by a leak</span></li>
-<li><span style="color: #00002a; font-size: 12pt; font-family: "Sawasdee", sans-serif; font-weight: bold; ">Identify involved valves in isolating a leak</span></li>
-</ul>
-</li>
-<li><span style="color: #339900; font-size: 14pt; font-family: "Sawasdee", sans-serif; font-weight: bold; ">Web Interface</span>
-<ul>
-<li><span style="color: #00002a; font-size: 12pt; font-family: "Sawasdee", sans-serif; font-weight: bold; ">Classical web App (wih editing capabilities)</span></li>
-<li><span style="color: #00002a; font-size: 12pt; font-family: "Sawasdee", sans-serif; font-weight: bold; ">Cloud based offer ?</span>
-<ul>
-<li><span style="color: #111111; font-family: "Sawasdee", sans-serif; font-weight: bold; ">PostgreSQL Hosting</span></li>
-<li><span style="color: #111111; font-family: "Sawasdee", sans-serif; font-weight: bold; ">Remote QGIS desktop</span></li>
-<li><span style="color: #111111; font-family: "Sawasdee", sans-serif; font-weight: bold; ">Web App</span></li>
+<li><span style="color: #339900">Constraints in QGIS</span></li>
 </ul>
 </li>
 </ul>
-</li>
-<li><span style="color: #339900; font-size: 14pt; font-family: "Sawasdee", sans-serif; font-weight: bold; ">Pipe Profile visualization</span></li>
-<li><span style="color: #339900; font-size: 14pt; font-family: "Sawasdee", sans-serif; font-weight: bold; ">Hydraulic modeling</span>
-<ul>
-<li><span style="color: #00002a; font-size: 12pt; font-family: "Sawasdee", sans-serif; font-weight: bold; ">EPANET tight linking</span></li>
-</ul>
-</li>
-<li><span style="color: #339900; font-size: 14pt; font-family: "Sawasdee", sans-serif; font-weight: bold; ">Mobility</span>
-<ul>
-<li><span style="color: #00002a; font-size: 12pt; font-family: "Sawasdee", sans-serif; font-weight: bold; ">Android client</span></li>
-<li><span style="color: #00002a; font-size: 12pt; font-family: "Sawasdee", sans-serif; font-weight: bold; ">Offline / Online Sync</span></li>
-</ul>
-</li>
-<li><span style="color: #339900; font-size: 14pt; font-family: "Sawasdee", sans-serif; font-weight: bold; ">Operational management</span>
-<ul>
-<li><span style="color: #00002a; font-size: 12pt; font-family: "Sawasdee", sans-serif; font-weight: bold; ">field work Module</span>
-<ul>
-<li><span style="color: #111111; font-family: "Sawasdee", sans-serif; font-weight: bold; ">subscriber notification module (mail, phone, email)</span></li>
-</ul>
-</li>
-</ul>
-</li>
-<li><span style="color: #339900; font-size: 14pt; font-family: "Sawasdee", sans-serif; font-weight: bold; ">Full API on server side</span>
-<ul>
-<li><span style="color: #00002a; font-size: 12pt; font-family: "Sawasdee", sans-serif; font-weight: bold; ">enforce network constraints</span></li>
-<li><span style="color: #00002a; font-size: 12pt; font-family: "Sawasdee", sans-serif; font-weight: bold; ">enforce logical rules</span></li>
-</ul>
-</li>
-<li><span style="color: #339900; font-size: 14pt; font-family: "Sawasdee", sans-serif; font-weight: bold; ">Asset Management</span>
-<ul>
-<li><span style="color: #00002a; font-size: 12pt; font-family: "Sawasdee", sans-serif; font-weight: bold; ">Statistic analysis for material changes</span></li>
-<li><span style="color: #00002a; font-size: 12pt; font-family: "Sawasdee", sans-serif; font-weight: bold; ">Budget planning</span></li>
-</ul>
-</li>
-<li><span style="color: #339900; font-size: 14pt; font-family: "Sawasdee", sans-serif; font-weight: bold; ">Productivity assistants</span>
-<ul>
-<li><span style="color: #00002a; font-size: 12pt; font-family: "Sawasdee", sans-serif; font-weight: bold; ">batch lateral creation</span></li>
-<li><span style="color: #00002a; font-size: 12pt; font-family: "Sawasdee", sans-serif; font-weight: bold; ">topology repair</span></li>
-</ul>
-</li>
-<li><span style="color: #339900; font-size: 14pt; font-family: "Sawasdee", sans-serif; font-weight: bold; ">Open Source Governance</span>
-<ul>
-<li><span style="color: #00002a; font-size: 12pt; font-family: "Sawasdee", sans-serif; font-weight: bold; ">Outsource meeting summary and roadmap ?</span></li>
-<li><span style="color: #00002a; font-size: 12pt; font-family: "Sawasdee", sans-serif; font-weight: bold; ">Outsource finances?</span></li>
-</ul>
-</li>
-<li><span style="color: #339900; font-size: 14pt; font-family: "Sawasdee", sans-serif; font-weight: bold; ">National needs</span>
-<ul>
-<li><span style="color: #00002a; font-size: 12pt; font-family: "Sawasdee", sans-serif; font-weight: bold; ">France</span>
-<ul>
-<li><span style="color: #111111; font-family: "Sawasdee", sans-serif; font-weight: bold; ">COVADIS export - Import</span></li>
-<li><span style="color: #111111; font-family: "Sawasdee", sans-serif; font-weight: bold; ">DT-DICT response (GML request for automatic map editing)</span></li>
-<li><span style="color: #111111; font-family: "Sawasdee", sans-serif; font-weight: bold; ">Cadastral file imports (EDIGEO)</span></li>
-<li><span style="color: #111111; font-family: "Sawasdee", sans-serif; font-weight: bold; ">Fire Protection area - compute minimum legal distance to hydrant zones</span></li>
-</ul>
-</li>
-</ul>
-</li>
-<li><span style="color: #339900; font-size: 14pt; font-family: "Sawasdee", sans-serif; font-weight: bold; ">User preferences</span>
-<ul>
-<li><span style="color: #00002a; font-size: 12pt; font-family: "Sawasdee", sans-serif; font-weight: bold; ">store user styles</span></li>
-<li><span style="color: #00002a; font-size: 12pt; font-family: "Sawasdee", sans-serif; font-weight: bold; ">store user annotations</span></li>
-</ul>
-</li>
-<li><span style="color: #339900; font-size: 14pt; font-family: "Sawasdee", sans-serif; font-weight: bold; ">Validation workflow</span></li>
-<li><span style="color: #339900; font-size: 14pt; font-family: "Sawasdee", sans-serif; font-weight: bold; ">Authentication</span>
-<ul>
-<li><span style="color: #00002a; font-size: 12pt; font-family: "Sawasdee", sans-serif; font-weight: bold; ">NTLM / Oauth / LDAP</span></li>
-<li><span style="color: #00002a; font-size: 12pt; font-family: "Sawasdee", sans-serif; font-weight: bold; ">User Group profiles</span>
-<ul>
-<li><span style="color: #111111; font-family: "Sawasdee", sans-serif; font-weight: bold; ">private features / layers</span></li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
-<SCRIPT type="text/javascript">
-fold_document();
-</SCRIPT>
 </body>
 </html>
