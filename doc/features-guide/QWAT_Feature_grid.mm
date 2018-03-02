@@ -14,7 +14,7 @@
 </html>
 </richcontent>
 <font NAME="Sawasdee"/>
-<hook NAME="MapStyle" background="#ffffff" zoom="1.211" layout="OUTLINE">
+<hook NAME="MapStyle" background="#ffffff" zoom="1.612" layout="OUTLINE">
     <properties fit_to_viewport="false"/>
 
 <map_styles>
@@ -70,13 +70,8 @@
 </hook>
 <edge STYLE="sharp_bezier" WIDTH="4"/>
 <hook NAME="accessories/plugins/AutomaticLayout.properties" VALUE="ALL"/>
-<node TEXT="" POSITION="right" ID="ID_1807018833" CREATED="1497781374819" MODIFIED="1497781441319" HGAP_QUANTITY="-201.0 px" VSHIFT_QUANTITY="-451.0 px">
+<node TEXT="version 1.3.0 2017/11/27" LOCALIZED_STYLE_REF="default" POSITION="right" ID="ID_986546557" CREATED="1497780557831" MODIFIED="1519400439806" HGAP_QUANTITY="287.0 px">
 <hook NAME="FreeNode"/>
-<hook URI="_static/qwat.png" SIZE="1.0" NAME="ExternalObject"/>
-</node>
-<node TEXT="version 1.3.0 201711/27" LOCALIZED_STYLE_REF="default" POSITION="right" ID="ID_986546557" CREATED="1497780557831" MODIFIED="1511794848778" HGAP_QUANTITY="287.0 px">
-<hook NAME="FreeNode"/>
-<font ITALIC="true"/>
 </node>
 <node TEXT="Pure Open Source Design" LOCALIZED_STYLE_REF="AutomaticLayout.level,1" POSITION="left" ID="ID_452777468" CREATED="1497696594223" MODIFIED="1497780711555" BACKGROUND_COLOR="#cce5ff">
 <font NAME="Sawasdee" BOLD="true"/>
@@ -303,201 +298,6 @@
 </node>
 <node TEXT="Constraints in QGIS" LOCALIZED_STYLE_REF="AutomaticLayout.level,2" ID="ID_1966399008" CREATED="1497696503226" MODIFIED="1497780711596">
 <font NAME="Sawasdee"/>
-</node>
-</node>
-<node TEXT="Missing Features" LOCALIZED_STYLE_REF="AutomaticLayout.level,1" POSITION="right" ID="ID_1741279862" CREATED="1497696088257" MODIFIED="1497780711596" BACKGROUND_COLOR="#cce5ff">
-<font NAME="Sawasdee" BOLD="true"/>
-<edge COLOR="#ffff00"/>
-<<<<<<< 5b19712a6c495ea9fb790eaceea17cdcad97489e
-<node TEXT="Network routing" LOCALIZED_STYLE_REF="AutomaticLayout.level,2" ID="ID_18859882" CREATED="1497271995555" MODIFIED="1497780711613">
-=======
-<node TEXT="Network routing" LOCALIZED_STYLE_REF="AutomaticLayout.level,2" FOLDED="true" ID="ID_18859882" CREATED="1497271995555" MODIFIED="1497780711613">
->>>>>>> better doc part 1
-<font NAME="Sawasdee"/>
-<node TEXT="Network quality analysis" ID="ID_87368744" CREATED="1497272018012" MODIFIED="1497780711613">
-<font NAME="Sawasdee"/>
-</node>
-<node TEXT="Find subscriber concerned by a leak" ID="ID_1759321277" CREATED="1497272025677" MODIFIED="1497780711614">
-<font NAME="Sawasdee"/>
-</node>
-<node TEXT="Identify involved valves in isolating a leak" ID="ID_1460925513" CREATED="1497272108171" MODIFIED="1497780711614">
-<font NAME="Sawasdee"/>
-</node>
-</node>
-<node TEXT="Web Interface" LOCALIZED_STYLE_REF="AutomaticLayout.level,2" ID="ID_42581810" CREATED="1497272708325" MODIFIED="1497780711598">
-<font NAME="Sawasdee"/>
-<node TEXT="Classical web App (wih editing capabilities)" ID="ID_620814571" CREATED="1497780189784" MODIFIED="1497780711599">
-<font NAME="Sawasdee"/>
-</node>
-<node TEXT="Cloud based offer ?" ID="ID_895805801" CREATED="1497780110590" MODIFIED="1497780711600">
-<font NAME="Sawasdee"/>
-<node TEXT="PostgreSQL Hosting" ID="ID_828020359" CREATED="1497780138560" MODIFIED="1497780711600">
-<font NAME="Sawasdee"/>
-</node>
-<node TEXT="Remote QGIS desktop" ID="ID_1310578174" CREATED="1497780163280" MODIFIED="1497780711601">
-<font NAME="Sawasdee"/>
-</node>
-<node TEXT="Web App" ID="ID_1701742834" CREATED="1497780182890" MODIFIED="1497780711601">
-<font NAME="Sawasdee"/>
-</node>
-</node>
-</node>
-<node TEXT="Pipe Profile visualization" ID="ID_1380737865" CREATED="1497778392116" MODIFIED="1497780711610">
-<<<<<<< 5b19712a6c495ea9fb790eaceea17cdcad97489e
-=======
-<font NAME="Sawasdee"/>
-</node>
-<node TEXT="Hydraulic modeling" FOLDED="true" ID="ID_1652308703" CREATED="1497696279816" MODIFIED="1497780711607">
-<font NAME="Sawasdee"/>
-<node TEXT="EPANET tight linking" ID="ID_1115226935" CREATED="1497778432700" MODIFIED="1497780711608">
-<font NAME="Sawasdee"/>
-</node>
-</node>
-<node TEXT="Mobility" LOCALIZED_STYLE_REF="AutomaticLayout.level,2" FOLDED="true" ID="ID_838483895" CREATED="1494433900973" MODIFIED="1497780711597">
-<font NAME="Sawasdee"/>
-<node TEXT="Android client" ID="ID_770801110" CREATED="1497272669257" MODIFIED="1497780711597">
-<font NAME="Sawasdee"/>
-</node>
-<node TEXT="Offline / Online Sync" ID="ID_507695243" CREATED="1497272680490" MODIFIED="1497780711598">
-<font NAME="Sawasdee"/>
-</node>
-</node>
-<node TEXT="Operational management" ID="ID_55665155" CREATED="1497779796964" MODIFIED="1497780711602">
->>>>>>> better doc part 1
-<font NAME="Sawasdee"/>
-</node>
-<node TEXT="Hydraulic modeling" ID="ID_1652308703" CREATED="1497696279816" MODIFIED="1497780711607">
-<font NAME="Sawasdee"/>
-<node TEXT="EPANET tight linking" ID="ID_1115226935" CREATED="1497778432700" MODIFIED="1497780711608">
-<font NAME="Sawasdee"/>
-</node>
-</node>
-<<<<<<< 5b19712a6c495ea9fb790eaceea17cdcad97489e
-<node TEXT="Mobility" LOCALIZED_STYLE_REF="AutomaticLayout.level,2" ID="ID_838483895" CREATED="1494433900973" MODIFIED="1497780711597">
-<font NAME="Sawasdee"/>
-<node TEXT="Android client" ID="ID_770801110" CREATED="1497272669257" MODIFIED="1497780711597">
-<font NAME="Sawasdee"/>
-</node>
-<node TEXT="Offline / Online Sync" ID="ID_507695243" CREATED="1497272680490" MODIFIED="1497780711598">
-<font NAME="Sawasdee"/>
-</node>
-</node>
-<node TEXT="Operational management" ID="ID_55665155" CREATED="1497779796964" MODIFIED="1497780711602">
-<font NAME="Sawasdee"/>
-<node TEXT="field work Module" ID="ID_1187551156" CREATED="1497779816722" MODIFIED="1497780711603">
-<font NAME="Sawasdee"/>
-<node TEXT="subscriber notification module (mail, phone, email)" ID="ID_309300355" CREATED="1497779839231" MODIFIED="1497780711604">
-=======
-</node>
-<node TEXT="Full API on server side" LOCALIZED_STYLE_REF="AutomaticLayout.level,2" FOLDED="true" ID="ID_1924091547" CREATED="1497622213910" MODIFIED="1497780711617">
-<font NAME="Sawasdee"/>
-<node TEXT="enforce network constraints" ID="ID_1734453863" CREATED="1497696462255" MODIFIED="1497780711617">
-<font NAME="Sawasdee"/>
-</node>
-<node TEXT="enforce logical rules" ID="ID_1249171063" CREATED="1497696477724" MODIFIED="1497780711618">
-<font NAME="Sawasdee"/>
-</node>
-</node>
-<node TEXT="Asset Management" FOLDED="true" ID="ID_1292938182" CREATED="1497696183570" MODIFIED="1497780711605">
-<font NAME="Sawasdee"/>
-<node TEXT="Statistic analysis for material changes" ID="ID_1625124782" CREATED="1497778537603" MODIFIED="1497780711606">
-<font NAME="Sawasdee"/>
-</node>
-<node TEXT="Budget planning" ID="ID_1155959121" CREATED="1497778572417" MODIFIED="1497780711607">
->>>>>>> better doc part 1
-<font NAME="Sawasdee"/>
-</node>
-</node>
-</node>
-<node TEXT="Full API on server side" LOCALIZED_STYLE_REF="AutomaticLayout.level,2" ID="ID_1924091547" CREATED="1497622213910" MODIFIED="1497780711617">
-<font NAME="Sawasdee"/>
-<node TEXT="enforce network constraints" ID="ID_1734453863" CREATED="1497696462255" MODIFIED="1497780711617">
-<font NAME="Sawasdee"/>
-</node>
-<node TEXT="enforce logical rules" ID="ID_1249171063" CREATED="1497696477724" MODIFIED="1497780711618">
-<font NAME="Sawasdee"/>
-</node>
-</node>
-<<<<<<< 5b19712a6c495ea9fb790eaceea17cdcad97489e
-<node TEXT="Asset Management" ID="ID_1292938182" CREATED="1497696183570" MODIFIED="1497780711605">
-=======
-<node TEXT="Open Source Governance" FOLDED="true" ID="ID_1340552149" CREATED="1497706173036" MODIFIED="1497780711611">
->>>>>>> better doc part 1
-<font NAME="Sawasdee"/>
-<node TEXT="Statistic analysis for material changes" ID="ID_1625124782" CREATED="1497778537603" MODIFIED="1497780711606">
-<font NAME="Sawasdee"/>
-</node>
-<node TEXT="Budget planning" ID="ID_1155959121" CREATED="1497778572417" MODIFIED="1497780711607">
-<font NAME="Sawasdee"/>
-</node>
-</node>
-<<<<<<< 5b19712a6c495ea9fb790eaceea17cdcad97489e
-<node TEXT="Productivity assistants" ID="ID_388358311" CREATED="1497703037126" MODIFIED="1497780711609">
-<font NAME="Sawasdee"/>
-<node TEXT="batch lateral creation" ID="ID_1099985057" CREATED="1497703049010" MODIFIED="1497780711610">
-<font NAME="Sawasdee"/>
-</node>
-<node TEXT="topology repair" ID="ID_22847839" CREATED="1497703073301" MODIFIED="1497780711610">
-<font NAME="Sawasdee"/>
-</node>
-</node>
-<node TEXT="Open Source Governance" ID="ID_1340552149" CREATED="1497706173036" MODIFIED="1497780711611">
-<font NAME="Sawasdee"/>
-<node TEXT="Outsource meeting summary and roadmap ?" ID="ID_1237815760" CREATED="1497706180776" MODIFIED="1497780711612">
-<font NAME="Sawasdee"/>
-</node>
-<node TEXT="Outsource finances?" ID="ID_823843440" CREATED="1497706317577" MODIFIED="1497780711612">
-<font NAME="Sawasdee"/>
-</node>
-</node>
-<node TEXT="National needs" ID="ID_295232386" CREATED="1497707043944" MODIFIED="1497780711615">
-=======
-<node TEXT="National needs" FOLDED="true" ID="ID_295232386" CREATED="1497707043944" MODIFIED="1497780711615">
->>>>>>> better doc part 1
-<font NAME="Sawasdee"/>
-<node TEXT="France" ID="ID_1376821656" CREATED="1497707049959" MODIFIED="1497780711615">
-<font NAME="Sawasdee"/>
-<node TEXT="COVADIS export - Import" ID="ID_531600807" CREATED="1497707059101" MODIFIED="1497780711615">
-<font NAME="Sawasdee"/>
-</node>
-<node TEXT="DT-DICT response (GML request for automatic map editing)" ID="ID_1528552438" CREATED="1497707073433" MODIFIED="1497780711616">
-<font NAME="Sawasdee"/>
-</node>
-<node TEXT="Cadastral file imports (EDIGEO)" ID="ID_80139961" CREATED="1497710239913" MODIFIED="1497780711616">
-<font NAME="Sawasdee"/>
-</node>
-<node TEXT="Fire Protection area - compute minimum legal distance to hydrant zones" ID="ID_1419539386" CREATED="1497715356605" MODIFIED="1497780711617">
-<font NAME="Sawasdee"/>
-</node>
-</node>
-</node>
-<<<<<<< 5b19712a6c495ea9fb790eaceea17cdcad97489e
-<node TEXT="User preferences" ID="ID_518347235" CREATED="1497778889492" MODIFIED="1497780711618">
-=======
-<node TEXT="User preferences" FOLDED="true" ID="ID_518347235" CREATED="1497778889492" MODIFIED="1497780711618">
->>>>>>> better doc part 1
-<font NAME="Sawasdee"/>
-<node TEXT="store user styles" ID="ID_478147461" CREATED="1497778897472" MODIFIED="1497780711618">
-<font NAME="Sawasdee"/>
-</node>
-<node TEXT="store user annotations" ID="ID_77445313" CREATED="1497778919129" MODIFIED="1497780711619">
-<font NAME="Sawasdee"/>
-</node>
-</node>
-<node TEXT="Validation workflow" ID="ID_389982233" CREATED="1497779021839" MODIFIED="1497780711619">
-<font NAME="Sawasdee"/>
-</node>
-<node TEXT="Authentication" ID="ID_338865961" CREATED="1497779183097" MODIFIED="1497780711620">
-<font NAME="Sawasdee"/>
-<node TEXT="NTLM / Oauth / LDAP" ID="ID_301189857" CREATED="1497779229517" MODIFIED="1497780711620">
-<font NAME="Sawasdee"/>
-</node>
-<node TEXT="User Group profiles" ID="ID_1997764044" CREATED="1497779264424" MODIFIED="1497780711620">
-<font NAME="Sawasdee"/>
-<node TEXT="private features / layers" ID="ID_271523008" CREATED="1497779350444" MODIFIED="1497780711621">
-<font NAME="Sawasdee"/>
-</node>
-</node>
 </node>
 </node>
 </node>
