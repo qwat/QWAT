@@ -33,18 +33,26 @@ Roles
 
 * *Commiters* have access to QWAT code repositories and can push to them. It means they control the evolution of the software
 * *contributors* can provide information, code, documentation to the project. They do not have direct access for modifications and must go through the *commiters* to get their modifications applied. See the [[Contributors_guide]] for more information and processes.
-* The *release manager* is in charge of deciding when a new version of the software is published, and to actually publish the release. Current release manager for QWAT is `Denis Rouzaud <https://github.com/3nids>`_.
+* The *release manager* is in charge of deciding when a new version of the software is published, and to actually publish the release. Current release manager is `Régis Haubourg (OSLANDIA)  <https://github.com/haubourg>`_ on behalf of the QWAT's group.
 
 Release cycles and versioning
 -----------------------------
 
 New releases for QWAT are published on a regular basis, but non-fixed frequency. The *release manager* decides when a new version is published.
 
-Version numbers follow as much as possible the `semantic versioning approach <http://semver.org>`_.
+You can find the installed version number in the data model, in the `qwat_sys.info` table.
 
-You can find the installed version number in the data model, in the `qwat_sys.info` table :
+Version and release management policy
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+* Version numbers follows the `semantic versioning approach <http://semver.org>`_.
+* Version Roadmap for new features must be shared on the tracker and with the general committee. Issues must be opened and tagged using labels (1.4 , 1.5).
+* Do not create a version for each code change.
+* Versions will group different code change and must be discussed with the released manager.
+* It is possible to multiple Delta files for one *version-release* Ex: `delta_1.3.2_0001_one_change`, `delta_1.3.2_0002_another_change`
+* Each new version will systematically have a release. A release is materialized by a git tag
+* travis-CI automatically deploys a release when the tag is pushed AND the tests succeed
+* Data administrators must NEVER work on master branch, but use release. The rationale behind that is that the latest version in master branch changes until the release, so it is not a reliable version tag . This means for git user they ahve to fetch remote tags and checkout to the desired release using git checkout tag_number
 
-* model.core : model version
 
 Release process
 ---------------
@@ -85,7 +93,7 @@ To keep a controlled process over versioning, we have the following system :
 
 Diff files are located in the repository in the "delta" directory. Their name has this convention, which is used by PUM module :
 
-* `delta_1.3.2.sql`
+* `delta_1.3.2_0001_one_change.sql`
 
 Deploying a model for a specific version and applying the diff files successively to reach another version should lead to the exact same model as deploying this latter version. The QWAT project will have tools to test for this compliance.
 

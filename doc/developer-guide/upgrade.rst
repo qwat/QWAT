@@ -7,11 +7,11 @@ Create a new upgrade delta
 * First create a new branch for your modification on the model
 * Modify the SQL creation code at your convenience
 * Create the corresponding SQL delta file in *data-model/update/delta*.
-  * file must be named : delta_{tag_number}_{year_month_day}.sql (delta_x.x.x_ddmmyyyy.sql)
+  * file must be named : delta_{tag_number}_{increment}_{short description}.sql `see Release cycles and versioning. <qwat_dev.html#release-cycles-and-versioning>`_
 * Push your branch, and check travis result
 * If travis test is OK, then you can create a pull request to merge your modifications in master
 
-.. note:: Data model should be TAGGED. Tag should respect the following syntax like this: x.x.x. For each major version, the tag MUSt be called x.0.0
+.. note:: Data model should be TAGGED. Tag should respect the following syntax like this: x.x.x. For each major version, the tag MUST be called x.0.0.
 
 
 Migrate an existing database
@@ -43,7 +43,7 @@ For a user, the migration process consists in :
 * Execute the migration script, which take in parameter that version number. The script execute the following tasks :
     - pg_dump of the QWAT DB
     - pg_restore of the previous dump in a test DB (*qwat_test*)
-    - Execute on test DB all SQL delta above or equals to the version number (sql deltas must be named *delta_NUM_TAG_date.sql*)
+    - Execute on test DB all SQL delta above or equals to the version number (sql deltas must be named *delta_{tag_number}_{increment}_{short description}.sql*)
     - Execute conformity test script:
         - Create a new DB: *qwat_test_conform*
         - Produce the reference file (result from the DB test sql)

@@ -74,7 +74,7 @@ I need a change in the data model, what is the process ?
 * participate in the discussion
 * do not hesitate to mention concerned people (like @vpicavet for example) to notify them of the discussion
 * when the discussion converges, a decision is taken by commiters to go for this modification or not
-* Denis Rouzaud is the data model release manager and will have final word in case of unclear trend
+* `OSLANDIA <http://oslandia.com/en/home-en/>`_, on behalf of the PSC, is the data model release manager and will have final word in case of unclear trend
 
 
 My change demand has been considered valid. What is next ?
