@@ -1,6 +1,10 @@
 Création d’objets dans QWAT
 ===========================
 
+Ce guide se veut un résumé des fonctionnalités de créations des données adaptées au besoin de QWAT dans QGIS.
+
+Il ne saurait remplacer la lecture du `manuel <https://docs.qgis.org/2.18/fr/docs/user_manual/working_with_vector/editing_geometry_attributes.html>`_ de QGIS expliquant en détail les différentes commandes. Le dessinateur est libre d'utiliser les plugins de dessin pour enrichir sa palette d'outils.
+
 Importation des points relevés
 ------------------------------
 
@@ -34,7 +38,7 @@ et utiliser le bouton « ajouter une entité »
 .. image:: img/icon_create_point.png
 
 Il ne reste plus qu’à cliquer à l’emplacement du point voulu.
-Le masque de l’objet s’ouvre, il n’y a aucun champ à remplir.
+Le formulaire de l’objet s’ouvre, il n’y a aucun champ à remplir.
 (Vous pouvez mettre une remarque éventuellement)
  
 
@@ -50,10 +54,14 @@ et utiliser le bouton «ajouter une entité»
 
 .. image:: img/icon_create_line.png
 
-Digitaliser ensuite la conduite et faites un clic droit pour la valider
+Dessiner ensuite la conduite et faites un clic droit pour la valider
 une fois tous les points de passage créés.
  
-Le masque de la conduite s’ouvre, il faut remplir les champs suivants:
+Le formulaire de la conduite s’ouvre.
+
+.. image:: img/pipe_form.png
+
+Il faut remplir les champs suivants:
 
 * Onglet Général
     * Distributeur
@@ -81,13 +89,12 @@ pour se raccorder sur le nouveau point levé. Pour se faire, il faut utiliser l�
 
 .. image:: img/icon_cut_entity.png
 
-Il faut ensuite faire une droite coupant notre conduite à l’endroit où l’on veut que notre conduite se fasse couper:
+Il faut ensuite faire une droite coupant notre conduite à l’endroit où l’on veut qu'elle soit coupée :
 
 .. image:: img/cut_entity.png
 
 La conduite se coupe alors en deux conduites. Les champs n’ont pas besoin d’être complété,
-la nouvelle conduite reprend les même attributs, juste le numéro d’ID de la conduite qui
-est créé automatiquement.
+la nouvelle conduite reprend les même attributs, le numéro d’ID de la conduite est créé automatiquement.
 
 Création des différentes pièces d’installation
 ----------------------------------------------
@@ -103,7 +110,7 @@ et utiliser le bouton « ajouter une entité »
 .. image:: img/icon_create_point.png
 
 Il ne reste plus qu’à cliquer à l’emplacement du point voulu.
-Le masque de l’objet s’ouvre, il faut remplir les champs suivants:
+Le formulaire de l’objet s’ouvre, il faut remplir les champs suivants:
 
 * Identification (numéro du point levé)
 * Année
@@ -117,7 +124,7 @@ Création des points d’introduction
 
 Le point d’introduction se crée en créant une pièce d’installation ayant comme
 « Type » = « point d’introduction ». Une fois cela fait, un point d’introduction sera
-automatiquement crée dans la couche « Nœuds » lors de la génération des nœuds (voir les explications plus bas).
+automatiquement crée dans la couche « Nœuds » lors de la génération des nœuds (voir les explications ci-dessous).
 
 
 Création des vannes
@@ -133,7 +140,7 @@ et utiliser le bouton « ajouter une entité ».
 .. image:: img/icon_create_point.png
 
 Il ne reste plus qu’à cliquer à l’emplacement du point voulu.
-Le masque de l’objet s’ouvre, il faut remplir les champs suivants:
+Le formulaire de l’objet s’ouvre, il faut remplir les champs suivants:
 
 * Onglet Général
     * Année 
@@ -164,7 +171,7 @@ et utiliser le bouton « ajouter une entité ».
 .. image:: img/icon_create_point.png
 
 Il ne reste plus qu’à cliquer à l’emplacement du point voulu.
-Le masque de l’objet s’ouvre, il faut remplir les champs suivants:
+Le formulaire de l’objet s’ouvre, il faut remplir les champs suivants:
 
 * Onglet Général
     * Année
@@ -197,7 +204,7 @@ et utiliser le bouton « ajouter une entité ».
 .. image:: img/icon_create_point.png
 
 Il ne reste plus qu’à cliquer à l’emplacement du point voulu.
-Le masque de l’objet s’ouvre, il faut remplir les champs suivants:
+Le formulaire de l’objet s’ouvre, il faut remplir les champs suivants:
 
 * « réparée »
     * à cocher si la fuite est réparée
@@ -246,7 +253,7 @@ et utiliser le bouton « ajouter une entité ».
 .. image:: img/icon_create_point.png
 
 Il ne reste plus qu’à cliquer à l’emplacement du point voulu.
-Le masque de l’objet s’ouvre, il faut remplir les champs suivants:
+Le formulaire de l’objet s’ouvre, il faut remplir les champs suivants:
 
 * Nom (composé d’une lettre suivi d’un nombre)
 * Statut 
@@ -268,7 +275,7 @@ et utiliser le bouton « ajouter une entité ».
 .. image:: img/icon_create_point.png
 
 Il ne reste plus qu’à cliquer à l’emplacement du point voulu.
-Le masque de l’objet s’ouvre, il faut remplir les champs suivants:
+Le formulaire de l’objet s’ouvre, il faut remplir les champs suivants:
 
 * identification (identique au champ « Nom » de l’ouvrage)
 * Diamètre (en mm) 
@@ -297,7 +304,7 @@ et utiliser le bouton « ajouter une entité ».
 .. image:: img/icon_create_polygon.png
 
 Il ne reste plus qu’à digitaliser l’emprise de l’ouvrage. Une fois le polygone crée, faites un clic‐droit pour arrêter la saisie.
-Le masque s’ouvre, il faut remplir les champs suivants:
+Le formulaire s’ouvre, il faut remplir les champs suivants:
 
 * name (identique au champ « Nom » de l’ouvrage)
 * id_type 
@@ -316,6 +323,6 @@ et utiliser le bouton « ajouter une entité ».
 .. image:: img/icon_create_point.png
 
 Il ne reste plus qu’à cliquer à l’emplacement du point voulu.
-Le masque de l’objet s’ouvre, il faut remplir les attributs selon
+Le formulaire de l’objet s’ouvre, il faut remplir les attributs selon
 le type de détail que l’on a créé (réservoirs, sources etc..).
 

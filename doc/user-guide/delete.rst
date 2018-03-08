@@ -3,6 +3,12 @@ Suppression d’objets dans QWAT
 
 .. warning:: Pour supprimer une conduite, il faut commencer par supprimer tous les points liés à cette conduite.
 
+Les données étant liées en base, des erreurs peuvent survenir si les données amont n'ont pas été supprimées ou détachées au préalable:
+
+.. image:: img/error_commit_delete.png
+.. image:: img/error_commit_delete_window.png 
+.. image:: img/error_commit_delete_2.png
+
 Suppression des pièces d’installation / points d’introduction / vannes / bornes  hydrantes / manchons de réparation et conduites
 --------------------------------------------------------------------------------------------------------------------------------
 
@@ -15,7 +21,7 @@ de sélection ou tout simplement cliquer sur le point à effacer.
 
 .. image:: img/icon_select.png
 
-.. warning:: A CE MOMENT, FAITES TRES ATTENTION DE N’AVOIR QUE LES POINTS A EFFACER QUI SONT SELECTIONNES CAR TOUT CE QUI EST SELECTIONNE VA ETRE EFFACE!
+.. warning:: À ce moment, soyez attentif au fait de n'avoir que les points désirés à effacer, sinon tous les points sélectionnés seront effacés.
 
 Pour voir quels objets sont selectionnés, il faut ouvrir la table d’attributs.
 
