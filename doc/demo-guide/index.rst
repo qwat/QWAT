@@ -1,7 +1,18 @@
 Demo data and project
 =====================
 
-QWAT can be tested by downloading the QGS project repository `here <https://github.com/qwat/QWAT>`_ and restoring the latest `full data dump <https://github.com/qwat/qwat-data-model/releases>`_ in PostgreSQL (+ extension PostGIS and hstore).
+QWAT can be tested by downloading the QGS project repository `here <https://github.com/qwat/QWAT>`_ and restoring the latest `data_and_structure_sample.backup <https://github.com/qwat/qwat-data-model/releases/latest>`_ in PostgreSQL (+ extension PostGIS and hstore).
+
+On the download page you can find theses backups:
+
+- `qwat_vX.X.X_data_and_structure_sample.backup`: Restore a full demo with dataset sample
+
+- `qwat_vX.X.X_structure_only.backup`:  Restore only the structure of QWAT (you need at least demo or custom value_list)
+
+- `qwat_vX.X.X_value_list_data_only.backup`: Restore the value list of QWAT demo project
+
+- `qwat_vX.X.X_data_only_sample.backup`: Restore the dataset sample (must have run init_qwat or restore the structure of QWAT) 
+
 
 More detailed instructions:
 
@@ -29,10 +40,6 @@ Create the QWAT database model with roles and restore the latest version:
   psql -c 'CREATE ROLE qwat_manager NOSUPERUSER INHERIT NOCREATEDB NOCREATEROLE NOREPLICATION;' -U postgres
   psql -c 'CREATE ROLE qwat_sysadmin NOSUPERUSER INHERIT NOCREATEDB NOCREATEROLE NOREPLICATION;' -U postgres
 
-  # Download the latest version
-  QWAT_VERSION=1.3.1
-  wget -q -O qwat_dump.backup "https://github.com/qwat/qwat-data-model/releases/download/$QWAT_VERSION/qwat_v"$QWAT_VERSION"_data_and_structure_sample.backup"
-  
   # And restore it into your QWAT database
   pg_restore -U postgres --dbname qwat -e --no-owner --verbose --jobs=3 --disable-triggers --port 5432 qwat_dump.backup
   
