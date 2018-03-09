@@ -4,7 +4,7 @@ Database initialization
 =======================
 
 Note that installing QWAT using the initialization script is only required for contributing to the model or extending the model.
-If you only need to test a demo or use a production database, a regular postgreSQL dump is enough. See Demo page for that.
+If you only need to test a demo or use a production database, a regular postgreSQL dump is enough. See `Demo page <../demo-guide/index.html>`_ for that.
 
 Process
 --------
@@ -71,11 +71,9 @@ The script has the following options:
 Restore demo datamodel
 ^^^^^^^^^^^^^^^^^^^^^^
 
-Optionally, you can restore a sample dataset. For that you need to download the data sample dump and restore it into the QWAT database:
+Optionally, you can restore a sample dataset. For that you need to `download <https://github.com/qwat/qwat-data-model/releases/latest>`_ the data sample dump and restore it into the QWAT database with pgAdmin or with pg_restore, assuming you have named the download file *qwat_dump.backup*:
 
 ::
 
-    QWAT_VERSION=`cat system/CURRENT_VERSION.txt`
-    wget -q -O qwat_dump.backup "https://github.com/qwat/qwat-data-model/releases/download/$QWAT_VERSION/qwat_v"$QWAT_VERSION"_data_only_sample.backup"
     pg_restore -U postgres --dbname qwat -e --no-owner --verbose --jobs=3 --disable-triggers --port 5432 qwat_dump.backup
 

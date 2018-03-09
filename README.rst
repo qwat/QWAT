@@ -122,6 +122,7 @@ Optionally, you can restore a sample dataset. For that you need to download the 
 
 Second way. Create a database from the sample dump using ``pg_restore``
 ```````````````````````````````````````````````````````````````````````
+QWAT can be tested by downloading the QGS project repository `here <https://github.com/qwat/QWAT>`_ and restoring the latest `data_and_structure_sample.backup <https://github.com/qwat/qwat-data-model/releases/latest>`_ in PostgreSQL (+ extension PostGIS and hstore).
 
 In your shell:
 
@@ -138,10 +139,6 @@ In your shell:
     psql -c 'CREATE ROLE qwat_manager NOSUPERUSER INHERIT NOCREATEDB NOCREATEROLE NOREPLICATION;' -U postgres
     psql -c 'CREATE ROLE qwat_sysadmin NOSUPERUSER INHERIT NOCREATEDB NOCREATEROLE NOREPLICATION;' -U postgres
 
-    # Download the latest version
-    QWAT_VERSION=1.3.1
-    wget -q -O qwat_dump.backup "https://github.com/qwat/qwat-data-model/releases/download/$QWAT_VERSION/qwat_v"$QWAT_VERSION"_data_and_structure_sample.backup"
-    
     # And restore it into your QWAT database
     pg_restore -U postgres --dbname qwat -e --no-owner --verbose --jobs=3 --disable-triggers --port 5432 qwat_dump.backup
     
