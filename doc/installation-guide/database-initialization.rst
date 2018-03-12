@@ -16,10 +16,7 @@ Assuming you have installed a postgresql server. In a shell:
     git clone https://github.com/qwat/qwat
     cd qwat
 
-If you haven't added your ssh key to github, then you need to tell git
-to access the data-model submodule through https.
-Edit the ``.gitmodules`` file in the qwat folder and replace the url value
-from ``git@github.com:qwat/qwat-data-model.git`` to ``https://github.com/qwat/qwat-data-model.git``
+Update data-model submodule:
 
 ::
 
