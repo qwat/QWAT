@@ -5,24 +5,18 @@ QWAT can be tested by downloading the QGS project repository `here <https://gith
 
 On the download page you can find theses backups:
 
-- `qwat_vX.X.X_data_and_structure_sample.backup`: Restore a full demo with dataset sample
+- `qwat_vX.X.X_data_and_structure_sample.backup`: Restore the QWAT schema plus the sample dataset
 
-- `qwat_vX.X.X_structure_only.backup`:  Restore only the structure of QWAT (you need at least demo or custom value_list)
+- `qwat_vX.X.X_structure_only.backup`:  Restore only the QWAT schema only. In addition you'll also need to restore the value_list_data_only dump
 
 - `qwat_vX.X.X_value_list_data_only.backup`: Restore the value list of QWAT demo project
 
-- `qwat_vX.X.X_data_only_sample.backup`: Restore the dataset sample (must have run init_qwat or restore the structure of QWAT) 
+- `qwat_vX.X.X_data_only_sample.backup`: Restore the sample dataset (the init_qwat.sh script should be run prior to restoring the sample dataset)
 
 
 More detailed instructions:
 
 How to install the data sample from the QWAT Water distribution management project.
-
-.. note::
-
- The install guide mainly presents how to restore the data sample from **GNU/Linux**.
- There are some suggestions on how to do it under **Windows** but if you feel you're in too deep
- you may checkout the next chapter and download the Demo VM.
 
 
 Create the QWAT database model with roles and restore the latest version:
