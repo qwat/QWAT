@@ -3,6 +3,25 @@ Customize local DB models
 
 DISCLAIMER: This section is being rewritten with the new PostgreSQL Update Manager (PUM). The versionning logic has changed and local customization still need some more work.
 
+Since QWAT 1.3.2, customization process and extension have been formalised.
+
+An **extension is a core data model customization** that is part of the core. It can be activated at any time, using its own initialization script.
+An extension follows the core data model life cycle, which means that fixing or improving a core extension will require a QWAT update.
+Currently, the only existing extension is the SIRE export extension. Note that it extends the value lists and is not totally separated from the core right now.
+
+A **local customization** will follow exactly the same developpement rules as an extension, except that it must be stored in a separate repository, apart from QWAT core directories.
+local customizations must be first initialized manually and then applied in QWAT migration process using upgrade_db.sh specific option to add additional directories.
+
+Both extension and customizations require the following :
+
+- a init script, adding the necessary informations to the model
+- a set of update scripts used when upgrading QWAT core data model :
+  - a pre-all.py script wich will eventually drop all additionnal views, trigger function or any dependencies locking the data model upgrade
+  - a set of SQL files prefixed with a version number inlined with QWAT core data model versions (ex: 1.3.1.001_local_Pully_script)
+  - a post-all.py script restoring the necessary dependencies once the core model and the extension/customization have been applied
+
+to implement
+
 Customizing the data model
 --------------------------
 
