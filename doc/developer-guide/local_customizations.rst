@@ -1,8 +1,6 @@
 Customize local DB models
 =========================
 
-DISCLAIMER: This section is being rewritten with the new PostgreSQL Update Manager (PUM). The versionning logic has changed and local customization still need some more work.
-
 Since QWAT 1.3.2, customization process and extension have been formalised.
 
 An **extension is a core data model customization** that is part of the core. It can be activated at any time, using its own initialization script.
@@ -15,12 +13,16 @@ local customizations must be first initialized manually and then applied in QWAT
 Both extension and customizations require the following :
 
 - a init script, adding the necessary informations to the model
+
 - a set of update scripts used when upgrading QWAT core data model :
+
   - a pre-all.py script wich will eventually drop all additionnal views, trigger function or any dependencies locking the data model upgrade
+  
   - a set of SQL files prefixed with a version number inlined with QWAT core data model versions (ex: 1.3.1.001_local_Pully_script)
+  
   - a post-all.py script restoring the necessary dependencies once the core model and the extension/customization have been applied
 
-to implement
+A full example is provided in the customizations/sigip folder
 
 Customizing the data model
 --------------------------
