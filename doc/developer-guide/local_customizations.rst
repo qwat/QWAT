@@ -22,7 +22,7 @@ Both extension and customizations require the following :
   
   - a post-all.py script restoring the necessary dependencies once the core model and the extension/customization have been applied
 
-A full example is provided in the customizations/sigip folder
+A full example is provided in the `.build/customizations/sigip <https://github.com/qwat/qwat-data-model/tree/master/.build/customizations/sigip>`_ folder
 
 Customizing the data model
 --------------------------
