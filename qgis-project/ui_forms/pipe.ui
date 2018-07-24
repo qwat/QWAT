@@ -6,25 +6,22 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>943</width>
-    <height>639</height>
+    <width>782</width>
+    <height>562</height>
    </rect>
   </property>
   <property name="windowTitle">
    <string>Conduites</string>
   </property>
   <layout class="QGridLayout" name="gridLayout_3">
-   <item row="11" column="0">
-    <widget class="QPlainTextEdit" name="remark">
-     <property name="toolTip">
-      <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Commentaire général sur la conduite&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
-     </property>
-     <property name="autoFillBackground">
-      <bool>false</bool>
+   <item row="1" column="0">
+    <widget class="QLabel" name="label_3">
+     <property name="text">
+      <string>Matériau</string>
      </property>
     </widget>
    </item>
-   <item row="12" column="0">
+   <item row="14" column="0">
     <widget class="QDialogButtonBox" name="buttonBox">
      <property name="orientation">
       <enum>Qt::Horizontal</enum>
@@ -34,10 +31,27 @@
      </property>
     </widget>
    </item>
+   <item row="13" column="0">
+    <widget class="QPlainTextEdit" name="remark">
+     <property name="toolTip">
+      <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Commentaire général sur la conduite&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+     </property>
+     <property name="autoFillBackground">
+      <bool>false</bool>
+     </property>
+    </widget>
+   </item>
+   <item row="2" column="0">
+    <widget class="QgsRelationReferenceWidget" name="fk_material">
+     <property name="toolTip">
+      <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Matériau de la conduite (&lt;span style=&quot; font-weight:600;&quot;&gt;obligatoire&lt;/span&gt;)&lt;/p&gt;&lt;p&gt;pré- filtre possibles par type de matériaux et diamètre.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+     </property>
+    </widget>
+   </item>
    <item row="0" column="0">
     <widget class="QTabWidget" name="tabWidget">
      <property name="currentIndex">
-      <number>0</number>
+      <number>2</number>
      </property>
      <widget class="QWidget" name="tab">
       <attribute name="title">
@@ -189,20 +203,6 @@
             </property>
             <property name="sizeAdjustPolicy">
              <enum>QComboBox::AdjustToContents</enum>
-            </property>
-           </widget>
-          </item>
-          <item row="2" column="0">
-           <widget class="QLabel" name="label_3">
-            <property name="text">
-             <string>Matériau</string>
-            </property>
-           </widget>
-          </item>
-          <item row="2" column="1">
-           <widget class="QgsRelationReferenceWidget" name="fk_material">
-            <property name="toolTip">
-             <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Matériau de la conduite (&lt;span style=&quot; font-weight:600;&quot;&gt;obligatoire&lt;/span&gt;)&lt;/p&gt;&lt;p&gt;pré- filtre possibles par type de matériaux et diamètre.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
             </property>
            </widget>
           </item>
@@ -394,16 +394,6 @@
             </property>
            </widget>
           </item>
-          <item row="1" column="1">
-           <widget class="QLineEdit" name="_districts">
-            <property name="enabled">
-             <bool>true</bool>
-            </property>
-            <property name="readOnly">
-             <bool>true</bool>
-            </property>
-           </widget>
-          </item>
           <item row="2" column="0">
            <widget class="QLabel" name="label_17">
             <property name="text">
@@ -414,7 +404,7 @@
           <item row="2" column="1">
            <widget class="QComboBox" name="fk_pressurezone">
             <property name="enabled">
-             <bool>false</bool>
+             <bool>true</bool>
             </property>
            </widget>
           </item>
@@ -459,14 +449,10 @@
             </property>
            </widget>
           </item>
+          <item row="1" column="1">
+           <widget class="QComboBox" name="fk_district"/>
+          </item>
          </layout>
-        </widget>
-       </item>
-       <item row="0" column="1">
-        <widget class="Line" name="line_2">
-         <property name="orientation">
-          <enum>Qt::Vertical</enum>
-         </property>
         </widget>
        </item>
        <item row="0" column="0">
@@ -485,7 +471,10 @@
           <item row="0" column="1">
            <widget class="QLineEdit" name="_length2d">
             <property name="enabled">
-             <bool>true</bool>
+             <bool>false</bool>
+            </property>
+            <property name="frame">
+             <bool>false</bool>
             </property>
             <property name="readOnly">
              <bool>true</bool>
@@ -502,7 +491,10 @@
           <item row="1" column="1">
            <widget class="QLineEdit" name="_length3d">
             <property name="enabled">
-             <bool>true</bool>
+             <bool>false</bool>
+            </property>
+            <property name="frame">
+             <bool>false</bool>
             </property>
             <property name="readOnly">
              <bool>true</bool>
@@ -551,7 +543,13 @@
            </widget>
           </item>
           <item row="2" column="1">
-           <widget class="QLineEdit" name="_diff_elevetion">
+           <widget class="QLineEdit" name="_diff_elevation">
+            <property name="enabled">
+             <bool>false</bool>
+            </property>
+            <property name="frame">
+             <bool>false</bool>
+            </property>
             <property name="readOnly">
              <bool>true</bool>
             </property>
@@ -565,6 +563,13 @@
            </widget>
           </item>
          </layout>
+        </widget>
+       </item>
+       <item row="0" column="1">
+        <widget class="Line" name="line_2">
+         <property name="orientation">
+          <enum>Qt::Vertical</enum>
+         </property>
         </widget>
        </item>
       </layout>
@@ -777,7 +782,7 @@
      </widget>
     </widget>
    </item>
-   <item row="1" column="0">
+   <item row="3" column="0">
     <widget class="QLabel" name="label_28">
      <property name="text">
       <string>Commentaire sur la conduite:</string>
