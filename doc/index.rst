@@ -21,7 +21,6 @@ All sources are avalaible at `<https://github.com/qwat/QWAT>`_.
    :maxdepth: 2
    :numbered:
 
-   features-guide/index
    installation-guide/index
    user-guide/index
    admin-guide/index
