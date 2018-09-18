@@ -29,7 +29,6 @@ All sources are avalaible at `<https://github.com/qwat/QWAT>`_.
    developer-guide/index
    demo-guide/index
    faq/index
-   glossary/index
 
 And you will find a `glossary <glossary/index.html>`__ if some terms sound obscure to you.
 
