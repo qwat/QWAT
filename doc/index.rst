@@ -30,12 +30,8 @@ All sources are avalaible at `<https://github.com/qwat/QWAT>`_.
    demo-guide/index
    faq/index
    glossary/index
-   translation/index
 
 And you will find a `glossary <glossary/index.html>`__ if some terms sound obscure to you.
-
-
-For non-native english speakers, `translation <translation/index.html>`__ of recurrent terms are available.
 
 
 Indices and tables
