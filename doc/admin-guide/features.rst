@@ -1,4 +1,4 @@
-QWAT features
+Features
 =============
 
 .. raw:: html

@@ -6,5 +6,6 @@ This represents a guide on how to administrate the database, customize, import/e
 .. toctree::
    :maxdepth: 2
 
+   features
    data_manager
    triggers
