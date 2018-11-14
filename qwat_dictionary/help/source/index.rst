@@ -3,18 +3,20 @@
    You can adapt this file completely to your liking, but it should at least
    contain the root `toctree` directive.
 
-Welcome to qwat_dictionary's documentation!
-============================================
+QWAT documentation has permanently moved to :
+#############################################
 
-Contents:
+https://qwat.github.io/docs/master/en/html/
 
-.. toctree::
-   :maxdepth: 2
+Don't forget to update your bookmarks !
 
-Indices and tables
-==================
+La documentation de QWAT a été déplacée définitivement sur: 
+###########################################################
 
-* :ref:`genindex`
-* :ref:`modindex`
-* :ref:`search`
+https://qwat.github.io/docs/master/fr/html/
+
+N'oubliez pas de mettre à jour vos marques pages!
+
+[edit 2018-11-14]
+
 
