@@ -7,19 +7,9 @@ QWAT: QGIS Water Module
 Documentation
 -------------
 
-Hosted version here: http://qwat.readthedocs.org/
+Hosted version here: https://qwat.github.io/docs/master/en/html/
 
-Steps to build the documentation
-
-::
-
-    $ pip install sphinx # only once if you don't have sphinx installed
-    $ cd doc/
-    $ make html
-
-.. image:: https://readthedocs.org/projects/qwat/badge/?version=latest
-    :target: http://qwat.readthedocs.org/en/latest/?badge=latest
-    :alt: Documentation Status
+The documentation has its own repository at https://github.com/qwat/docs
 
 Requirements
 ------------
