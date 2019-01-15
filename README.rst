@@ -16,8 +16,8 @@ Requirements
 
 Server side software components are:
 
-* `PostgreSQL <https://postgresql.org/>`_ (> 9.3)
-* `PostGIS <https://postgis.net/>`_, the spatial extension (> 2.1)
+* `PostgreSQL <https://postgresql.org/>`_ (> 9.6)
+* `PostGIS <https://postgis.net/>`_, the spatial extension (> 2.3)
 * `Python <https://www.python.org/>`_, for installation and update (> 3.5)
 * `PUM <https://github.com/opengisch/pum>`_ for upgrade
 
