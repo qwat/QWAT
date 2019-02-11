@@ -2023,30 +2023,30 @@ def my_form_open(dialog, layer, feature):
             <renderer-v2 enableorderby="0" symbollevels="0" type="RuleRenderer" forceraster="0">
               <rules key="{dbde1c2b-a27d-484e-8dd5-d13dcd527b89}">
                 <rule filter="fk_distributor = 1  and &quot;status_value_en&quot; =  'in use' " key="{f550eef3-fdaa-427b-b415-bd7e8fc25f9e}" label="Fonctionnel">
-                  <rule filter="status_active = 't'" key="{f683634b-6b3e-459a-b735-1e5d0fe53ae9}" label="Actif">
-                    <rule filter="COALESCE( &quot;schema_force_visible&quot;,  &quot;pipe_function_schema_visible&quot;) = 't' AND fk_status != 1307" key="{1db41c6f-d632-42a2-a453-287300377f48}" label="Schématique">
-                      <rule filter=" &quot;pipe_function_major&quot;  = 't'" key="{684b69b2-b4e2-49e4-82f1-ea1e9a680e64}" symbol="0" label="principale"/>
-                      <rule filter=" &quot;pipe_function_major&quot; = 'f'" key="{d0b9168b-e603-49dd-8c84-e17551131f81}" symbol="1" label="secondaire"/>
+                  <rule filter="status_active= 'true'" key="{f683634b-6b3e-459a-b735-1e5d0fe53ae9}" label="Actif">
+                    <rule filter="COALESCE( &quot;schema_force_visible&quot;,  &quot;pipe_function_schema_visible&quot;)= 'true' AND fk_status != 1307" key="{1db41c6f-d632-42a2-a453-287300377f48}" label="Schématique">
+                      <rule filter=" &quot;pipe_function_major&quot; = 'true'" key="{684b69b2-b4e2-49e4-82f1-ea1e9a680e64}" symbol="0" label="principale"/>
+                      <rule filter=" &quot;pipe_function_major&quot;= 'false'" key="{d0b9168b-e603-49dd-8c84-e17551131f81}" symbol="1" label="secondaire"/>
                       <rule filter=" &quot;fk_protection&quot; IS NOT NULL" key="{59ae2c57-00c7-4afe-bfba-16af06381694}" symbol="2" label="protégée"/>
                       <rule scalemaxdenom="3000" scalemindenom="1" filter=" &quot;fk_installmethod&quot;  =4202" key="{1d54e4f9-8261-4fb7-ab45-581756bf08a2}" symbol="3" label="chemisée"/>
                     </rule>
-                    <rule scalemaxdenom="3000" filter="COALESCE( &quot;schema_force_visible&quot;,  &quot;pipe_function_schema_visible&quot;)  = 'f' AND fk_status != 1307" key="{cbedc12d-c79c-4e2f-b007-5bbfcaa3cfd2}" label="Détail">
-                      <rule filter=" &quot;pipe_function_major&quot; = 't'" key="{af5a1df4-2d61-4c6c-9951-0f6f900354d9}" symbol="4" label="principale"/>
-                      <rule filter=" &quot;pipe_function_major&quot; = 'f'" key="{03ff9811-2539-4b32-b396-20796c2639bf}" symbol="5" label="secondaire"/>
+                    <rule scalemaxdenom="3000" filter="COALESCE( &quot;schema_force_visible&quot;,  &quot;pipe_function_schema_visible&quot;) = 'false' AND fk_status != 1307" key="{cbedc12d-c79c-4e2f-b007-5bbfcaa3cfd2}" label="Détail">
+                      <rule filter=" &quot;pipe_function_major&quot;= 'true'" key="{af5a1df4-2d61-4c6c-9951-0f6f900354d9}" symbol="4" label="principale"/>
+                      <rule filter=" &quot;pipe_function_major&quot;= 'false'" key="{03ff9811-2539-4b32-b396-20796c2639bf}" symbol="5" label="secondaire"/>
                       <rule filter=" &quot;fk_protection&quot; IS NOT NULL" key="{ad349920-d2f8-4ac3-ae12-639c93ed9224}" symbol="6" label="protégée"/>
                       <rule scalemaxdenom="3000" scalemindenom="1" filter=" &quot;fk_installmethod&quot;  =4202" key="{ab1fe7d1-2f11-4eea-915b-f4a08a217886}" symbol="7" label="chemisée"/>
                     </rule>
                   </rule>
-                  <rule filter="status_active = 'f'" key="{d1bbbb53-b702-4d56-9f8b-ccf8029e5318}" label="Inactif">
-                    <rule filter="COALESCE( &quot;schema_force_visible&quot;,  &quot;pipe_function_schema_visible&quot;)  = 't'" key="{85a03431-ffdc-4bd4-9796-2113d60c4125}" label="Schématique">
-                      <rule filter=" &quot;pipe_function_major&quot; = 't'" key="{6f5c08e7-bf93-4eee-94df-3f749becb926}" symbol="8" label="principale"/>
-                      <rule filter=" &quot;pipe_function_major&quot; = 'f'" key="{8f3bf5ad-c837-4d67-9ba8-2a0c37ad6ae0}" symbol="9" label="secondaire"/>
+                  <rule filter="status_active= 'false'" key="{d1bbbb53-b702-4d56-9f8b-ccf8029e5318}" label="Inactif">
+                    <rule filter="COALESCE( &quot;schema_force_visible&quot;,  &quot;pipe_function_schema_visible&quot;) = 'true'" key="{85a03431-ffdc-4bd4-9796-2113d60c4125}" label="Schématique">
+                      <rule filter=" &quot;pipe_function_major&quot;= 'true'" key="{6f5c08e7-bf93-4eee-94df-3f749becb926}" symbol="8" label="principale"/>
+                      <rule filter=" &quot;pipe_function_major&quot;= 'false'" key="{8f3bf5ad-c837-4d67-9ba8-2a0c37ad6ae0}" symbol="9" label="secondaire"/>
                       <rule filter=" &quot;fk_protection&quot; IS NOT NULL" key="{1c3be22e-50cf-4ddb-a382-cb79acc30446}" symbol="10" label="protégée"/>
                       <rule scalemaxdenom="3000" scalemindenom="1" filter=" &quot;fk_installmethod&quot;  =4202" key="{835c4cad-787b-45b7-b242-516a4da8a7f7}" symbol="11" label="chemisée"/>
                     </rule>
-                    <rule scalemaxdenom="3000" filter="COALESCE( &quot;schema_force_visible&quot;,  &quot;pipe_function_schema_visible&quot;)  = 'f'" key="{d7cd7ce7-c1fb-444f-9fd7-375e42e1119d}" label="Détail">
-                      <rule filter=" &quot;pipe_function_major&quot; = 't'" key="{820fcdfc-cca8-4a16-a307-192cf4ddd396}" symbol="12" label="principale"/>
-                      <rule filter=" &quot;pipe_function_major&quot; = 'f'" key="{1f73b079-4d8c-4982-b2ab-6e9b5756b800}" symbol="13" label="secondaire"/>
+                    <rule scalemaxdenom="3000" filter="COALESCE( &quot;schema_force_visible&quot;,  &quot;pipe_function_schema_visible&quot;) = 'false'" key="{d7cd7ce7-c1fb-444f-9fd7-375e42e1119d}" label="Détail">
+                      <rule filter=" &quot;pipe_function_major&quot;= 'true'" key="{820fcdfc-cca8-4a16-a307-192cf4ddd396}" symbol="12" label="principale"/>
+                      <rule filter=" &quot;pipe_function_major&quot;= 'false'" key="{1f73b079-4d8c-4982-b2ab-6e9b5756b800}" symbol="13" label="secondaire"/>
                       <rule filter=" &quot;fk_protection&quot; IS NOT NULL" key="{e3509205-7271-40dd-aa3a-b8edce4c3ffe}" symbol="14" label="protégée"/>
                       <rule scalemaxdenom="3000" scalemindenom="1" filter=" &quot;fk_installmethod&quot;  =4202" key="{846076c3-b88b-4391-801a-578d0abcdaf9}" symbol="15" label="chemisée"/>
                     </rule>
@@ -2054,34 +2054,34 @@ def my_form_open(dialog, layer, feature):
                   <rule filter="fk_status=1307" key="{7c5fde76-05d7-4d4a-9eaa-953db28fbe87}" symbol="16" label="Fictives"/>
                 </rule>
                 <rule filter="fk_distributor = 1  and &quot;status_value_en&quot; =   'out of service' " key="{75060a73-107d-4ace-bc35-d573de40488f}" label="Non fonctionnel">
-                  <rule filter="COALESCE( &quot;schema_force_visible&quot;,  &quot;pipe_function_schema_visible&quot;)  = 't'" key="{5b970fd5-5c37-4865-81a5-cab18c5fb58c}" label="Schématique">
-                    <rule filter=" &quot;pipe_function_major&quot; = 't'" key="{783f2167-c790-4baf-a58d-d6fd65a299a4}" symbol="17" label="principale"/>
-                    <rule filter=" &quot;pipe_function_major&quot; = 'f'" key="{46c7536a-ac7b-4e7b-afe6-33f9fee2f171}" symbol="18" label="secondaire"/>
+                  <rule filter="COALESCE( &quot;schema_force_visible&quot;,  &quot;pipe_function_schema_visible&quot;) = 'true'" key="{5b970fd5-5c37-4865-81a5-cab18c5fb58c}" label="Schématique">
+                    <rule filter=" &quot;pipe_function_major&quot;= 'true'" key="{783f2167-c790-4baf-a58d-d6fd65a299a4}" symbol="17" label="principale"/>
+                    <rule filter=" &quot;pipe_function_major&quot;= 'false'" key="{46c7536a-ac7b-4e7b-afe6-33f9fee2f171}" symbol="18" label="secondaire"/>
                     <rule filter=" &quot;fk_protection&quot; IS NOT NULL" key="{bd93e9ea-b64b-4fbd-bf89-6d4395730e60}" symbol="19" label="protégée"/>
                     <rule scalemaxdenom="3000" scalemindenom="1" filter=" &quot;fk_installmethod&quot;  =4202" key="{74f7b3d4-379f-41de-8006-12185dd708e0}" symbol="20" label="chemisée"/>
                   </rule>
-                  <rule scalemaxdenom="3000" filter="COALESCE( &quot;schema_force_visible&quot;,  &quot;pipe_function_schema_visible&quot;)  = 'f'" key="{7d0cfa7a-eaf4-499a-b977-1238b90ca15f}" label="Détail">
-                    <rule filter=" &quot;pipe_function_major&quot; = 't'" key="{c0af50d9-d68b-4c2f-b9fa-9e2be9ec0e34}" symbol="21" label="principale"/>
-                    <rule filter=" &quot;pipe_function_major&quot; = 'f'" key="{f2f26723-dc46-40c5-abe2-ef61a8c502e3}" symbol="22" label="secondaire"/>
+                  <rule scalemaxdenom="3000" filter="COALESCE( &quot;schema_force_visible&quot;,  &quot;pipe_function_schema_visible&quot;) = 'false'" key="{7d0cfa7a-eaf4-499a-b977-1238b90ca15f}" label="Détail">
+                    <rule filter=" &quot;pipe_function_major&quot;= 'true'" key="{c0af50d9-d68b-4c2f-b9fa-9e2be9ec0e34}" symbol="21" label="principale"/>
+                    <rule filter=" &quot;pipe_function_major&quot;= 'false'" key="{f2f26723-dc46-40c5-abe2-ef61a8c502e3}" symbol="22" label="secondaire"/>
                     <rule filter=" &quot;fk_protection&quot; IS NOT NULL" key="{9486a529-9a4e-4a3c-83fe-86f6f93102c0}" symbol="23" label="protégée"/>
                     <rule scalemaxdenom="3000" checkstate="0" scalemindenom="1" filter=" &quot;fk_installmethod&quot;  =4202" key="{d7881ca8-054a-42d7-8a53-bc586b51d9de}" symbol="24" label="chemisée"/>
                   </rule>
                 </rule>
                 <rule filter="fk_distributor != 1" key="{013429dc-a1cd-4a17-904a-6550a0175046}" label="Étranger (autre distributeur)">
-                  <rule filter="COALESCE( &quot;schema_force_visible&quot;,  &quot;pipe_function_schema_visible&quot;)  = 't'" key="{2513a8b8-a110-4727-854c-6084f64e3bdf}" label="Schématique">
-                    <rule filter=" &quot;pipe_function_major&quot; = 't'" key="{f798c83b-a461-46c3-8031-8b5bc3caffd8}" symbol="25" label="principale"/>
-                    <rule filter=" &quot;pipe_function_major&quot; = 'f'" key="{ca06b6f2-f1ee-4958-b79a-6cb6cbc2059b}" symbol="26" label="secondaire"/>
+                  <rule filter="COALESCE( &quot;schema_force_visible&quot;,  &quot;pipe_function_schema_visible&quot;) = 'true'" key="{2513a8b8-a110-4727-854c-6084f64e3bdf}" label="Schématique">
+                    <rule filter=" &quot;pipe_function_major&quot;= 'true'" key="{f798c83b-a461-46c3-8031-8b5bc3caffd8}" symbol="25" label="principale"/>
+                    <rule filter=" &quot;pipe_function_major&quot;= 'false'" key="{ca06b6f2-f1ee-4958-b79a-6cb6cbc2059b}" symbol="26" label="secondaire"/>
                     <rule scalemaxdenom="3000" scalemindenom="1" filter=" &quot;fk_installmethod&quot;  =4202" key="{8a8783e2-f346-41fc-b13b-f815824d51f5}" symbol="27" label="chemisée"/>
                     <rule filter=" &quot;fk_protection&quot; IS NOT NULL" key="{6c5ec343-05d3-4fcd-8dc1-283232838086}" symbol="28" label="protégée"/>
                   </rule>
-                  <rule scalemaxdenom="3000" filter="COALESCE( &quot;schema_force_visible&quot;,  &quot;pipe_function_schema_visible&quot;)  = 'f'" key="{2e14d53a-6d2f-40b3-bf3b-4f32112e3d59}" label="Détail">
-                    <rule filter=" &quot;pipe_function_major&quot; = 't'" key="{fb522923-eeee-47bb-8352-65a3d5637c4c}" symbol="29" label="principale"/>
-                    <rule filter=" &quot;pipe_function_major&quot; = 'f'" key="{1c861330-b48b-4ae4-91a2-d8e1a336c5f9}" symbol="30" label="secondaire"/>
+                  <rule scalemaxdenom="3000" filter="COALESCE( &quot;schema_force_visible&quot;,  &quot;pipe_function_schema_visible&quot;) = 'false'" key="{2e14d53a-6d2f-40b3-bf3b-4f32112e3d59}" label="Détail">
+                    <rule filter=" &quot;pipe_function_major&quot;= 'true'" key="{fb522923-eeee-47bb-8352-65a3d5637c4c}" symbol="29" label="principale"/>
+                    <rule filter=" &quot;pipe_function_major&quot;= 'false'" key="{1c861330-b48b-4ae4-91a2-d8e1a336c5f9}" symbol="30" label="secondaire"/>
                     <rule filter=" &quot;fk_protection&quot; IS NOT NULL" key="{e9048c41-9d67-475a-8909-a027412c34d1}" symbol="31" label="protégée"/>
                     <rule scalemaxdenom="3000" scalemindenom="1" filter=" &quot;fk_installmethod&quot;  =4202" key="{2ce95337-6d17-4772-a67e-31f016923af4}" symbol="32" label="chemisée"/>
                   </rule>
                 </rule>
-                <rule checkstate="0" filter="fk_distributor = 1 and &quot;status_active&quot; = 't' and COALESCE( &quot;schema_force_visible&quot;,  &quot;pipe_function_schema_visible&quot;)  = 't'" key="{9c210704-187e-4e2a-9b89-2f7917f4376c}" symbol="33" label="Couleur par zone"/>
+                <rule checkstate="0" filter="fk_distributor = 1 and &quot;status_active&quot;= 'true' and COALESCE( &quot;schema_force_visible&quot;,  &quot;pipe_function_schema_visible&quot;) = 'true'" key="{9c210704-187e-4e2a-9b89-2f7917f4376c}" symbol="33" label="Couleur par zone"/>
                 <rule filter="Else" key="{bb9b38f1-c76d-4c6d-908b-414f0cc24f97}" symbol="34" label="Incomplètes"/>
               </rules>
               <symbols>
@@ -4066,8 +4066,8 @@ def my_form_open(dialog, layer, feature):
               <property value="false" key="labeling/centroidInside"/>
               <property value="false" key="labeling/centroidWhole"/>
               <property value="1~~1~~CASE WHEN  &quot;label_1_visible&quot; = 2 THEN 1 ELSE 0 END~~" key="labeling/dataDefined/AlwaysShow"/>
-              <property value="1~~0~~CASE WHEN &quot;fk_labelvisible&quot; = 'f' THEN 0 ELSE 1 END~~label_1_visible" key="labeling/dataDefined/Show"/>
-              <property value="1~~1~~CASE&#xa;WHEN $scale > 1500 THEN 6&#xa;WHEN  &quot;pipe_function_schema_visible&quot;  = 't' THEN 8&#xa;ELSE 6&#xa;END~~" key="labeling/dataDefined/Size"/>
+              <property value="1~~0~~CASE WHEN &quot;fk_labelvisible&quot;= 'false' THEN 0 ELSE 1 END~~label_1_visible" key="labeling/dataDefined/Show"/>
+              <property value="1~~1~~CASE&#xa;WHEN $scale > 1500 THEN 6&#xa;WHEN  &quot;pipe_function_schema_visible&quot; = 'true' THEN 8&#xa;ELSE 6&#xa;END~~" key="labeling/dataDefined/Size"/>
               <property value="0" key="labeling/decimals"/>
               <property value="false" key="labeling/displayAll"/>
               <property value="1" key="labeling/dist"/>
@@ -5538,46 +5538,46 @@ def my_form_open(dialog, layer, feature):
       </flags>
       <renderer-v2 symbollevels="0" enableorderby="0" type="RuleRenderer" forceraster="0">
         <rules key="{dbde1c2b-a27d-484e-8dd5-d13dcd527b89}">
-          <rule filter="fk_distributor = 1and &quot;status_active&quot; = 't'" key="{f550eef3-fdaa-427b-b415-bd7e8fc25f9e}" label="active">
-            <rule filter="COALESCE( &quot;schema_force_visible&quot;,  &quot;pipe_function_schema_visible&quot;) = 't' AND fk_status != 1307" key="{1169fb39-5fd3-43b6-9c6c-0f8ef27a0149}" label="Schématique">
-              <rule filter=" &quot;pipe_function_major&quot;  = 't'" key="{091e66aa-1594-4ac1-a779-f671dde391e2}" symbol="0" label="principale"/>
-              <rule filter=" &quot;pipe_function_major&quot; = 'f'" key="{25c2e398-8d5a-4103-ac14-4ff461596d3a}" symbol="1" label="secondaire"/>
+          <rule filter="fk_distributor = 1and &quot;status_active&quot;= 'true'" key="{f550eef3-fdaa-427b-b415-bd7e8fc25f9e}" label="active">
+            <rule filter="COALESCE( &quot;schema_force_visible&quot;,  &quot;pipe_function_schema_visible&quot;)= 'true' AND fk_status != 1307" key="{1169fb39-5fd3-43b6-9c6c-0f8ef27a0149}" label="Schématique">
+              <rule filter=" &quot;pipe_function_major&quot; = 'true'" key="{091e66aa-1594-4ac1-a779-f671dde391e2}" symbol="0" label="principale"/>
+              <rule filter=" &quot;pipe_function_major&quot;= 'false'" key="{25c2e398-8d5a-4103-ac14-4ff461596d3a}" symbol="1" label="secondaire"/>
               <rule filter=" &quot;fk_protection&quot; IS NOT NULL" key="{8c51f402-8f2c-4f11-a826-cd90908f1eba}" symbol="2" label="protégée"/>
               <rule scalemaxdenom="3000" scalemindenom="1" filter=" &quot;fk_installmethod&quot;  =4202" key="{8068754f-f710-413f-b07d-9cf8a386733b}" symbol="3" label="chemisée"/>
             </rule>
-            <rule scalemaxdenom="3000" filter="COALESCE( &quot;schema_force_visible&quot;,  &quot;pipe_function_schema_visible&quot;)  = 'f' AND fk_status != 1307" key="{9646576f-b22a-45bf-a4a3-3678392bd8c0}" label="Détail">
-              <rule filter=" &quot;pipe_function_major&quot; = 't'" key="{93d733e3-3119-42cc-89f8-b67d3197925a}" symbol="4" label="principale"/>
-              <rule filter=" &quot;pipe_function_major&quot; = 'f'" key="{67caa7b7-52d8-494c-9386-6622b1e656a3}" symbol="5" label="secondaire"/>
+            <rule scalemaxdenom="3000" filter="COALESCE( &quot;schema_force_visible&quot;,  &quot;pipe_function_schema_visible&quot;) = 'false' AND fk_status != 1307" key="{9646576f-b22a-45bf-a4a3-3678392bd8c0}" label="Détail">
+              <rule filter=" &quot;pipe_function_major&quot;= 'true'" key="{93d733e3-3119-42cc-89f8-b67d3197925a}" symbol="4" label="principale"/>
+              <rule filter=" &quot;pipe_function_major&quot;= 'false'" key="{67caa7b7-52d8-494c-9386-6622b1e656a3}" symbol="5" label="secondaire"/>
               <rule filter=" &quot;fk_protection&quot; IS NOT NULL" key="{6082ca45-b8db-490b-a549-f86a8b5e961b}" symbol="6" label="protégée"/>
               <rule scalemaxdenom="3000" scalemindenom="1" filter=" &quot;fk_installmethod&quot;  =4202" key="{728d58ac-a5d3-4cc7-bca7-e774fc182d4f}" symbol="7" label="chemisée"/>
             </rule>
             <rule filter="fk_status=1307" key="{3792c184-3d81-4254-8c66-acdf171e2b71}" symbol="8" label="Fictives"/>
           </rule>
-          <rule filter="fk_distributor = 1and &quot;status_active&quot; = 'f'" key="{75060a73-107d-4ace-bc35-d573de40488f}" label="inactive">
-            <rule filter="COALESCE( &quot;schema_force_visible&quot;,  &quot;pipe_function_schema_visible&quot;)  = 't'" key="{5b970fd5-5c37-4865-81a5-cab18c5fb58c}" label="Schématique">
-              <rule filter=" &quot;pipe_function_major&quot; = 't'" key="{783f2167-c790-4baf-a58d-d6fd65a299a4}" symbol="9" label="principale"/>
-              <rule filter=" &quot;pipe_function_major&quot; = 'f'" key="{46c7536a-ac7b-4e7b-afe6-33f9fee2f171}" symbol="10" label="secondaire"/>
+          <rule filter="fk_distributor = 1and &quot;status_active&quot;= 'false'" key="{75060a73-107d-4ace-bc35-d573de40488f}" label="inactive">
+            <rule filter="COALESCE( &quot;schema_force_visible&quot;,  &quot;pipe_function_schema_visible&quot;) = 'true'" key="{5b970fd5-5c37-4865-81a5-cab18c5fb58c}" label="Schématique">
+              <rule filter=" &quot;pipe_function_major&quot;= 'true'" key="{783f2167-c790-4baf-a58d-d6fd65a299a4}" symbol="9" label="principale"/>
+              <rule filter=" &quot;pipe_function_major&quot;= 'false'" key="{46c7536a-ac7b-4e7b-afe6-33f9fee2f171}" symbol="10" label="secondaire"/>
               <rule filter=" &quot;fk_protection&quot; IS NOT NULL" key="{bd93e9ea-b64b-4fbd-bf89-6d4395730e60}" symbol="11" label="protégée"/>
             </rule>
-            <rule scalemaxdenom="3000" filter="COALESCE( &quot;schema_force_visible&quot;,  &quot;pipe_function_schema_visible&quot;)  = 'f'" key="{7d0cfa7a-eaf4-499a-b977-1238b90ca15f}" label="Détail">
-              <rule filter=" &quot;pipe_function_major&quot; = 't'" key="{c0af50d9-d68b-4c2f-b9fa-9e2be9ec0e34}" symbol="12" label="principale"/>
-              <rule filter=" &quot;pipe_function_major&quot; = 'f'" key="{f2f26723-dc46-40c5-abe2-ef61a8c502e3}" symbol="13" label="secondaire"/>
+            <rule scalemaxdenom="3000" filter="COALESCE( &quot;schema_force_visible&quot;,  &quot;pipe_function_schema_visible&quot;) = 'false'" key="{7d0cfa7a-eaf4-499a-b977-1238b90ca15f}" label="Détail">
+              <rule filter=" &quot;pipe_function_major&quot;= 'true'" key="{c0af50d9-d68b-4c2f-b9fa-9e2be9ec0e34}" symbol="12" label="principale"/>
+              <rule filter=" &quot;pipe_function_major&quot;= 'false'" key="{f2f26723-dc46-40c5-abe2-ef61a8c502e3}" symbol="13" label="secondaire"/>
               <rule filter=" &quot;fk_protection&quot; IS NOT NULL" key="{9486a529-9a4e-4a3c-83fe-86f6f93102c0}" symbol="14" label="protégée"/>
             </rule>
           </rule>
           <rule filter="fk_distributor != 1" key="{013429dc-a1cd-4a17-904a-6550a0175046}" label="étranger">
-            <rule filter="COALESCE( &quot;schema_force_visible&quot;,  &quot;pipe_function_schema_visible&quot;)  = 't'" key="{2513a8b8-a110-4727-854c-6084f64e3bdf}" label="Schématique">
-              <rule filter=" &quot;pipe_function_major&quot; = 't'" key="{f798c83b-a461-46c3-8031-8b5bc3caffd8}" symbol="15" label="principale"/>
-              <rule filter=" &quot;pipe_function_major&quot; = 'f'" key="{ca06b6f2-f1ee-4958-b79a-6cb6cbc2059b}" symbol="16" label="secondaire"/>
+            <rule filter="COALESCE( &quot;schema_force_visible&quot;,  &quot;pipe_function_schema_visible&quot;) = 'true'" key="{2513a8b8-a110-4727-854c-6084f64e3bdf}" label="Schématique">
+              <rule filter=" &quot;pipe_function_major&quot;= 'true'" key="{f798c83b-a461-46c3-8031-8b5bc3caffd8}" symbol="15" label="principale"/>
+              <rule filter=" &quot;pipe_function_major&quot;= 'false'" key="{ca06b6f2-f1ee-4958-b79a-6cb6cbc2059b}" symbol="16" label="secondaire"/>
               <rule filter=" &quot;fk_protection&quot; IS NOT NULL" key="{6c5ec343-05d3-4fcd-8dc1-283232838086}" symbol="17" label="protégée"/>
             </rule>
-            <rule scalemaxdenom="3000" filter="COALESCE( &quot;schema_force_visible&quot;,  &quot;pipe_function_schema_visible&quot;)  = 'f'" key="{2e14d53a-6d2f-40b3-bf3b-4f32112e3d59}" label="Détail">
-              <rule filter=" &quot;pipe_function_major&quot; = 't'" key="{fb522923-eeee-47bb-8352-65a3d5637c4c}" symbol="18" label="principale"/>
-              <rule filter=" &quot;pipe_function_major&quot; = 'f'" key="{b8c5c345-6f26-4237-a405-a503b361b9da}" symbol="19" label="secondaire"/>
+            <rule scalemaxdenom="3000" filter="COALESCE( &quot;schema_force_visible&quot;,  &quot;pipe_function_schema_visible&quot;) = 'false'" key="{2e14d53a-6d2f-40b3-bf3b-4f32112e3d59}" label="Détail">
+              <rule filter=" &quot;pipe_function_major&quot;= 'true'" key="{fb522923-eeee-47bb-8352-65a3d5637c4c}" symbol="18" label="principale"/>
+              <rule filter=" &quot;pipe_function_major&quot;= 'false'" key="{b8c5c345-6f26-4237-a405-a503b361b9da}" symbol="19" label="secondaire"/>
               <rule filter=" &quot;fk_protection&quot; IS NOT NULL" key="{65e92041-f079-42f0-80be-f3bedfbdcdac}" symbol="20" label="protégée"/>
             </rule>
           </rule>
-          <rule filter="fk_distributor = 1 and &quot;status_active&quot; = 't' and COALESCE( &quot;schema_force_visible&quot;,  &quot;pipe_function_schema_visible&quot;)  = 't'" key="{9c210704-187e-4e2a-9b89-2f7917f4376c}" symbol="21" label="Couleur par zone"/>
+          <rule filter="fk_distributor = 1 and &quot;status_active&quot;= 'true' and COALESCE( &quot;schema_force_visible&quot;,  &quot;pipe_function_schema_visible&quot;) = 'true'" key="{9c210704-187e-4e2a-9b89-2f7917f4376c}" symbol="21" label="Couleur par zone"/>
           <rule filter="ELSE" key="{bb9b38f1-c76d-4c6d-908b-414f0cc24f97}" symbol="22" label="incomplètes"/>
         </rules>
         <symbols>
@@ -9603,7 +9603,7 @@ def my_form_open(dialog, layer, feature):
       </renderer-v2>
       <labeling type="simple">
         <settings>
-          <text-style fontFamily="Sans Serif" useSubstitutions="0" fontWordSpacing="0" fontLetterSpacing="0" multilineHeight="1" fontCapitals="0" namedStyle="Normal" textColor="58,90,217,255" textOpacity="1" fontSize="9" fontSizeUnit="Point" fontStrikeout="0" isExpression="1" fontWeight="50" fontItalic="0" fontSizeMapUnitScale="3x:0,0,0,0,0,0" fontUnderline="0" fieldName="CASE WHEN  &quot;underground&quot; = 't' THEN 'HS' ELSE 'BH' END ||identification" blendMode="0" previewBkgrdColor="#ffffff">
+          <text-style fontFamily="Sans Serif" useSubstitutions="0" fontWordSpacing="0" fontLetterSpacing="0" multilineHeight="1" fontCapitals="0" namedStyle="Normal" textColor="58,90,217,255" textOpacity="1" fontSize="9" fontSizeUnit="Point" fontStrikeout="0" isExpression="1" fontWeight="50" fontItalic="0" fontSizeMapUnitScale="3x:0,0,0,0,0,0" fontUnderline="0" fieldName="CASE WHEN  &quot;underground&quot;= 'true' THEN 'HS' ELSE 'BH' END ||identification" blendMode="0" previewBkgrdColor="#ffffff">
             <text-buffer bufferOpacity="0.64" bufferBlendMode="0" bufferDraw="1" bufferSizeMapUnitScale="3x:0,0,0,0,0,0" bufferSizeUnits="MM" bufferColor="255,255,255,255" bufferSize="0.6" bufferJoinStyle="64" bufferNoFill="0"/>
             <background shapeOffsetX="0" shapeBorderWidthUnit="MM" shapeRotationType="0" shapeOpacity="1" shapeOffsetMapUnitScale="3x:0,0,0,0,0,0" shapeOffsetUnit="MM" shapeSizeUnit="MM" shapeBorderWidth="0" shapeBorderColor="128,128,128,255" shapeSizeType="0" shapeRotation="0" shapeSizeX="0" shapeDraw="0" shapeRadiiY="0" shapeSizeMapUnitScale="3x:0,0,0,0,0,0" shapeJoinStyle="64" shapeRadiiUnit="MM" shapeRadiiMapUnitScale="3x:0,0,0,0,0,0" shapeSVGFile="" shapeRadiiX="0" shapeBorderWidthMapUnitScale="3x:0,0,0,0,0,0" shapeSizeY="0" shapeOffsetY="0" shapeFillColor="255,255,255,255" shapeType="0" shapeBlendMode="0"/>
             <shadow shadowUnder="0" shadowRadiusUnit="MM" shadowRadiusAlphaOnly="0" shadowOffsetDist="1" shadowOffsetGlobal="1" shadowOffsetUnit="MM" shadowOpacity="0.7" shadowColor="0,0,0,255" shadowOffsetAngle="135" shadowRadius="1.5" shadowOffsetMapUnitScale="3x:0,0,0,0,0,0" shadowDraw="0" shadowRadiusMapUnitScale="3x:0,0,0,0,0,0" shadowScale="100" shadowBlendMode="6"/>
@@ -14370,7 +14370,7 @@ def my_form_open(dialog, layer, feature):
       </flags>
       <renderer-v2 symbollevels="0" enableorderby="0" type="RuleRenderer" forceraster="0">
         <rules key="{43385ed0-766f-4646-ad2f-3bb352c38c57}">
-          <rule filter="_pipe_node_type = 'T'" key="{95f84ff0-270b-4dd3-9a75-2ba742aabe87}" symbol="0" label="T"/>
+          <rule filter="_pipe_node_type= 'true'" key="{95f84ff0-270b-4dd3-9a75-2ba742aabe87}" symbol="0" label="T"/>
           <rule filter="_pipe_node_type = 'couple_material'" key="{af3e33a5-995b-40e1-a7a4-c5693a1608d4}" symbol="1" label="Chg. matériau"/>
           <rule filter="_pipe_node_type = 'couple_year'" key="{026d603f-cc2a-4c8b-b6d1-357175e36956}" symbol="2" label="Chg. année"/>
           <rule filter="_pipe_node_type = 'couple_other'" key="{d148d3d0-ca6b-405e-8259-c15f88e62ccb}" symbol="3" label="Chg. diamètre + matériau"/>
@@ -15865,8 +15865,8 @@ def my_form_open(dialog, layer, feature):
       </flags>
       <renderer-v2 symbollevels="0" enableorderby="0" type="RuleRenderer" forceraster="0">
         <rules key="{99308dc6-545d-410d-bf91-facc3f952028}">
-          <rule filter="circular = 'f'" key="{6b84601d-0034-4793-9b90-388447715e50}" symbol="0" label="Rectangulaire"/>
-          <rule filter="circular = 't'" key="{8efb24f5-2b00-41cc-811b-0bb6a1995bb5}" symbol="1" label="Circulaire"/>
+          <rule filter="circular= 'false'" key="{6b84601d-0034-4793-9b90-388447715e50}" symbol="0" label="Rectangulaire"/>
+          <rule filter="circular= 'true'" key="{8efb24f5-2b00-41cc-811b-0bb6a1995bb5}" symbol="1" label="Circulaire"/>
         </rules>
         <symbols>
           <symbol type="marker" alpha="1" force_rhr="0" name="0" clip_to_extent="1">
@@ -21538,9 +21538,9 @@ def my_form_open(dialog, layer, feature):
             </edittypes>
             <renderer-v2 enableorderby="0" symbollevels="0" type="RuleRenderer" forceraster="0">
               <rules key="{89d1d7f3-6dd2-48ab-a978-572c899af422}">
-                <rule filter="status_active = 't' AND (fk_parent IS NULL OR @map_scale &lt; 501)" key="{37ee4804-614d-4742-8288-a79d52f1e1d9}" label="actif">
+                <rule filter="status_active= 'true' AND (fk_parent IS NULL OR @map_scale &lt; 501)" key="{37ee4804-614d-4742-8288-a79d52f1e1d9}" label="actif">
                   <rule filter="installation_type = 'chamber'" key="{c0076781-68f6-43ab-9b4b-1fb0a074b4c1}" label="Chambre">
-                    <rule filter="flow_meter = 't' or water_meter = 't' or manometer = 't'" key="{3820ee54-8445-4a23-b1ab-59038e2f6d28}" symbol="0" label="Chambre débitmètre"/>
+                    <rule filter="flow_meter= 'true' or water_meter= 'true' or manometer= 'true'" key="{3820ee54-8445-4a23-b1ab-59038e2f6d28}" symbol="0" label="Chambre débitmètre"/>
                     <rule filter="ELSE" key="{25e3684f-58b8-4a10-bdf2-faa3d1410626}" symbol="1" label="Chambre"/>
                   </rule>
                   <rule filter="installation_type = 'pressurecontrol'" key="{cec9c0f1-7573-488d-917a-fb97f52e5cb2}" label="pressurecontrol">
@@ -21554,9 +21554,9 @@ def my_form_open(dialog, layer, feature):
                   <rule filter="installation_type = 'treatment'" key="{59878a6a-ca5c-4809-b1a0-b317151cfb27}" symbol="8" label="treatment"/>
                   <rule filter="ELSE" key="{72c92aed-f674-478a-a8f8-e96348d0e09a}" symbol="9"/>
                 </rule>
-                <rule checkstate="0" filter="status_active = 'f' AND (fk_parent IS NULL OR @map_scale &lt; 501)" key="{6a77fe04-db6e-4bf9-a9c6-fe3ea7f31b03}" label="inactif">
+                <rule checkstate="0" filter="status_active= 'false' AND (fk_parent IS NULL OR @map_scale &lt; 501)" key="{6a77fe04-db6e-4bf9-a9c6-fe3ea7f31b03}" label="inactif">
                   <rule filter="installation_type = 'chamber'" key="{467aeded-414e-4296-89ab-661c203802ce}" label="Chambre">
-                    <rule filter="flow_meter = 't' or water_meter = 't' or manometer = 't'" key="{2af9d655-d60f-4ee2-a31b-d5f075a9fad8}" symbol="10" label="Chambre débitmètre"/>
+                    <rule filter="flow_meter= 'true' or water_meter= 'true' or manometer= 'true'" key="{2af9d655-d60f-4ee2-a31b-d5f075a9fad8}" symbol="10" label="Chambre débitmètre"/>
                     <rule filter="ELSE" key="{fa07847e-bb3b-454d-b957-1a2b5394e819}" symbol="11" label="Chambre"/>
                   </rule>
                   <rule filter="installation_type = 'pressurecontrol'" key="{410bdc09-391b-489d-a4e7-3f13c5d2e18d}" label="pressurecontrol">
@@ -22253,10 +22253,10 @@ def my_form_open(dialog, layer, feature):
       </flags>
       <renderer-v2 symbollevels="0" enableorderby="0" type="RuleRenderer" forceraster="0">
         <rules key="{89d1d7f3-6dd2-48ab-a978-572c899af422}">
-          <rule checkstate="0" filter="status_functional = 't'" key="{71a064ea-fc5d-4548-9c69-5bf1fe84a66d}" label="Fonctionnel">
-            <rule checkstate="0" filter="status_active = 't' AND (fk_parent IS NULL OR @map_scale &lt; 501) AND fk_distributor = 1" key="{e946cc4f-cd0b-4ad9-8be4-7ffafae00622}" label="actif">
+          <rule checkstate="0" filter="status_functional= 'true'" key="{71a064ea-fc5d-4548-9c69-5bf1fe84a66d}" label="Fonctionnel">
+            <rule checkstate="0" filter="status_active= 'true' AND (fk_parent IS NULL OR @map_scale &lt; 501) AND fk_distributor = 1" key="{e946cc4f-cd0b-4ad9-8be4-7ffafae00622}" label="actif">
               <rule checkstate="0" filter="installation_type = 'chamber'" key="{5a17ff38-f410-4abf-be4e-9c79367de4fe}" label="Chambre">
-                <rule checkstate="0" filter="flow_meter = 't' or water_meter = 't' or manometer = 't'" key="{8822d14f-21ea-400b-ad73-aafc21c19773}" symbol="0" label="Chambre débitmètre"/>
+                <rule checkstate="0" filter="flow_meter= 'true' or water_meter= 'true' or manometer= 'true'" key="{8822d14f-21ea-400b-ad73-aafc21c19773}" symbol="0" label="Chambre débitmètre"/>
                 <rule checkstate="0" filter="ELSE" key="{6ade4f06-ed80-4a3f-9fe9-38516a340cad}" symbol="1" label="Chambre"/>
               </rule>
               <rule checkstate="0" filter="installation_type = 'pressurecontrol'" key="{7773e49d-eae4-41b4-8d92-aec7a265046c}" label="pressurecontrol">
@@ -22270,9 +22270,9 @@ def my_form_open(dialog, layer, feature):
               <rule checkstate="0" filter="installation_type = 'treatment'" key="{42540c94-3233-498c-a23d-4e8bd7c1ff4e}" symbol="8" label="treatment"/>
               <rule checkstate="0" filter="ELSE" key="{ed82ce06-eee6-4f2d-833b-e537d0b18649}" symbol="9"/>
             </rule>
-            <rule checkstate="0" filter="status_active = 'f' AND (fk_parent IS NULL OR @map_scale &lt; 501)" key="{83a4c36e-210b-4094-8407-553e64936b5e}" label="inactif">
+            <rule checkstate="0" filter="status_active= 'false' AND (fk_parent IS NULL OR @map_scale &lt; 501)" key="{83a4c36e-210b-4094-8407-553e64936b5e}" label="inactif">
               <rule checkstate="0" filter="installation_type = 'chamber'" key="{2aad166e-0cd1-4083-9002-8aead4f79917}" label="Chambre">
-                <rule checkstate="0" filter="flow_meter = 't' or water_meter = 't' or manometer = 't'" key="{d1daa4c4-aebd-4274-bbcd-c830f2a3ebe1}" symbol="10" label="Chambre débitmètre"/>
+                <rule checkstate="0" filter="flow_meter= 'true' or water_meter= 'true' or manometer= 'true'" key="{d1daa4c4-aebd-4274-bbcd-c830f2a3ebe1}" symbol="10" label="Chambre débitmètre"/>
                 <rule checkstate="0" filter="ELSE" key="{07a91d45-cb4d-4ee4-9f57-13d1f6f2b46b}" symbol="11" label="Chambre"/>
               </rule>
               <rule checkstate="0" filter="installation_type = 'pressurecontrol'" key="{d31d075b-227e-40b6-ab03-8d810a0d69b8}" label="pressurecontrol">
@@ -22287,9 +22287,9 @@ def my_form_open(dialog, layer, feature):
               <rule checkstate="0" filter="ELSE" key="{ba47d809-a5d0-4192-b1ef-631a0c6a0fb2}" symbol="19"/>
             </rule>
           </rule>
-          <rule filter="status_functional = 't' AND (fk_parent IS NULL OR @map_scale &lt; 501) AND fk_distributor != 1" key="{37ee4804-614d-4742-8288-a79d52f1e1d9}" label="Étranger (autre distributeur)">
+          <rule filter="status_functional= 'true' AND (fk_parent IS NULL OR @map_scale &lt; 501) AND fk_distributor != 1" key="{37ee4804-614d-4742-8288-a79d52f1e1d9}" label="Étranger (autre distributeur)">
             <rule filter="installation_type = 'chamber'" key="{c0076781-68f6-43ab-9b4b-1fb0a074b4c1}" label="Chambre">
-              <rule filter="flow_meter = 't' or water_meter = 't' or manometer = 't'" key="{3820ee54-8445-4a23-b1ab-59038e2f6d28}" symbol="20" label="Chambre débitmètre"/>
+              <rule filter="flow_meter= 'true' or water_meter= 'true' or manometer= 'true'" key="{3820ee54-8445-4a23-b1ab-59038e2f6d28}" symbol="20" label="Chambre débitmètre"/>
               <rule filter="ELSE" key="{25e3684f-58b8-4a10-bdf2-faa3d1410626}" symbol="21" label="Chambre"/>
             </rule>
             <rule filter="installation_type = 'pressurecontrol'" key="{cec9c0f1-7573-488d-917a-fb97f52e5cb2}" label="Régulation de pression">
@@ -22303,9 +22303,9 @@ def my_form_open(dialog, layer, feature):
             <rule filter="installation_type = 'treatment'" key="{59878a6a-ca5c-4809-b1a0-b317151cfb27}" symbol="28" label="Traitement"/>
             <rule filter="ELSE" key="{72c92aed-f674-478a-a8f8-e96348d0e09a}" symbol="29"/>
           </rule>
-          <rule checkstate="0" filter="status_functional = 'f'" key="{6a77fe04-db6e-4bf9-a9c6-fe3ea7f31b03}" label="non fonctionnel">
+          <rule checkstate="0" filter="status_functional= 'false'" key="{6a77fe04-db6e-4bf9-a9c6-fe3ea7f31b03}" label="non fonctionnel">
             <rule filter="installation_type = 'chamber'" key="{467aeded-414e-4296-89ab-661c203802ce}" label="Chambre">
-              <rule filter="flow_meter = 't' or water_meter = 't' or manometer = 't'" key="{2af9d655-d60f-4ee2-a31b-d5f075a9fad8}" symbol="30" label="Chambre débitmètre"/>
+              <rule filter="flow_meter= 'true' or water_meter= 'true' or manometer= 'true'" key="{2af9d655-d60f-4ee2-a31b-d5f075a9fad8}" symbol="30" label="Chambre débitmètre"/>
               <rule filter="ELSE" key="{fa07847e-bb3b-454d-b957-1a2b5394e819}" symbol="31" label="Chambre"/>
             </rule>
             <rule filter="installation_type = 'pressurecontrol'" key="{410bdc09-391b-489d-a4e7-3f13c5d2e18d}" label="Régulation de pression">
@@ -31450,17 +31450,17 @@ def my_form_open(dialog, layer, feature):
             </flags>
             <renderer-v2 enableorderby="0" symbollevels="0" type="RuleRenderer" forceraster="0">
               <rules key="{8ac6d04b-1bb5-46e9-b2fb-236cb107ffc9}">
-                <rule scalemaxdenom="10000" scalemindenom="1000" filter="status_active = 't' AND fk_valve_function != 6105 AND fk_valve_function != 6108" key="{7a025dab-c7fe-4c7c-9f0b-25a39f73abd8}" symbol="0" description="toutes les vannes sauf organe réseau et vanne d'hydrant" label="Réseau">
-                  <rule filter="closed = 't'" key="{edf1c363-d849-4700-82d0-34d494178d4d}" symbol="1" label="Fermée"/>
+                <rule scalemaxdenom="10000" scalemindenom="1000" filter="status_active= 'true' AND fk_valve_function != 6105 AND fk_valve_function != 6108" key="{7a025dab-c7fe-4c7c-9f0b-25a39f73abd8}" symbol="0" description="toutes les vannes sauf organe réseau et vanne d'hydrant" label="Réseau">
+                  <rule filter="closed= 'true'" key="{edf1c363-d849-4700-82d0-34d494178d4d}" symbol="1" label="Fermée"/>
                   <rule filter="&quot;fk_valve_type&quot; =6313" key="{6c48a279-b0d9-428b-819c-2fc5371720fe}" symbol="2" label="Arrêt"/>
                   <rule filter=" &quot;valve_function_value_fr&quot; IN ( 'vidange' ,  'vidange-ventouse' )" key="{3bf2a10c-e2fe-43c6-9287-c4055baec2a1}" symbol="3" label="Vidange"/>
                 </rule>
-                <rule scalemaxdenom="1000" scalemindenom="1000" filter="status_active = 't' AND fk_valve_function = 6105 OR fk_valve_function = 6108" key="{143022c7-b3e1-4c03-80d5-58520da677c2}" symbol="4" label="Abonné">
-                  <rule filter="closed = 't'" key="{ee4ed8dd-20ae-42fb-b43b-a4c02c5399e9}" symbol="5" label="Fermée"/>
+                <rule scalemaxdenom="1000" scalemindenom="1000" filter="status_active= 'true' AND fk_valve_function = 6105 OR fk_valve_function = 6108" key="{143022c7-b3e1-4c03-80d5-58520da677c2}" symbol="4" label="Abonné">
+                  <rule filter="closed= 'true'" key="{ee4ed8dd-20ae-42fb-b43b-a4c02c5399e9}" symbol="5" label="Fermée"/>
                   <rule filter="&quot;fk_valve_type&quot; =6313" key="{b149b2b9-3783-416c-b413-7a6f7de74e1d}" symbol="6" label="Arrêt"/>
                   <rule filter=" &quot;valve_function_value_fr&quot; IN ( 'vidange' ,  'vidange-ventouse' )" key="{a0c08631-a6ac-4d0b-b538-41bb1efe2315}" symbol="7" label="Vidange"/>
                 </rule>
-                <rule checkstate="0" filter="status_active = 'f'" key="{a4ee286d-3761-437f-94f9-825364216052}" symbol="8" label="Inactive"/>
+                <rule checkstate="0" filter="status_active= 'false'" key="{a4ee286d-3761-437f-94f9-825364216052}" symbol="8" label="Inactive"/>
                 <rule checkstate="0" filter="else" key="{0cd1a85a-a13e-49cf-a280-ea45c305dc44}" symbol="9" label="Autres"/>
               </rules>
               <symbols>
@@ -33342,13 +33342,13 @@ def my_form_open(dialog, layer, feature):
       <renderer-v2 symbollevels="0" enableorderby="0" type="RuleRenderer" forceraster="0">
         <rules key="{8ac6d04b-1bb5-46e9-b2fb-236cb107ffc9}">
           <rule scalemaxdenom="10000" scalemindenom="1" filter="fk_valve_function != 6105 AND fk_valve_function != 6108" key="{7a025dab-c7fe-4c7c-9f0b-25a39f73abd8}" symbol="0" label="réseau" description="toutes les vannes sauf organe réseau et vanne d'hydrant">
-            <rule filter="closed = 't'" key="{edf1c363-d849-4700-82d0-34d494178d4d}" symbol="1" label="Fermée"/>
+            <rule filter="closed= 'true'" key="{edf1c363-d849-4700-82d0-34d494178d4d}" symbol="1" label="Fermée"/>
             <rule filter="&quot;fk_valve_type&quot; = 6312" key="{d1ec978f-6d96-4ed2-ac03-a37e6629f13c}" symbol="2" label="elgelf"/>
             <rule filter="&quot;fk_valve_type&quot; =6313" key="{6c48a279-b0d9-428b-819c-2fc5371720fe}" symbol="3" label="arrêt"/>
             <rule filter=" &quot;valve_function_value_fr&quot; IN ( 'vidange' ,  'vidange-ventouse' )" key="{3bf2a10c-e2fe-43c6-9287-c4055baec2a1}" symbol="4" label="vidange"/>
           </rule>
           <rule scalemaxdenom="1000" scalemindenom="1" filter="fk_valve_function = 6105 OR fk_valve_function = 6108" key="{143022c7-b3e1-4c03-80d5-58520da677c2}" symbol="5" label="abonné">
-            <rule filter="closed = 't'" key="{ee4ed8dd-20ae-42fb-b43b-a4c02c5399e9}" symbol="6" label="Fermée"/>
+            <rule filter="closed= 'true'" key="{ee4ed8dd-20ae-42fb-b43b-a4c02c5399e9}" symbol="6" label="Fermée"/>
             <rule filter="&quot;fk_valve_type&quot; =6313" key="{b149b2b9-3783-416c-b413-7a6f7de74e1d}" symbol="7" label="arrêt"/>
             <rule filter="fk_valve_type = 6312" key="{221f27a3-6778-4b14-8bb9-1b4c7d708bc3}" symbol="8" label="elgelf"/>
             <rule filter=" &quot;valve_function_value_fr&quot; IN ( 'vidange' ,  'vidange-ventouse' )" key="{a0c08631-a6ac-4d0b-b538-41bb1efe2315}" symbol="9" label="vidange"/>
@@ -35500,12 +35500,12 @@ def my_form_open(dialog, layer, feature):
       </flags>
       <renderer-v2 symbollevels="0" enableorderby="0" type="RuleRenderer" forceraster="0">
         <rules key="{8ac6d04b-1bb5-46e9-b2fb-236cb107ffc9}">
-          <rule scalemaxdenom="100000" scalemindenom="1" filter=" COALESCE(&quot;schema_force_visible&quot;,&quot;valve_function_schema_visible&quot;) = 't' &#xa;AND COALESCE( &quot;pipe_schema_force_visible&quot; , &quot;pipe_pipe_function_schema_visible&quot; ) = 't'" key="{7a025dab-c7fe-4c7c-9f0b-25a39f73abd8}" label="réseau" description="toutes les vannes sauf organe réseau et vanne d'hydrant">
-            <rule filter="closed = 't'" key="{edf1c363-d849-4700-82d0-34d494178d4d}" symbol="0" label="Fermée"/>
+          <rule scalemaxdenom="100000" scalemindenom="1" filter=" COALESCE(&quot;schema_force_visible&quot;,&quot;valve_function_schema_visible&quot;)= 'true' &#xa;AND COALESCE( &quot;pipe_schema_force_visible&quot; , &quot;pipe_pipe_function_schema_visible&quot; )= 'true'" key="{7a025dab-c7fe-4c7c-9f0b-25a39f73abd8}" label="réseau" description="toutes les vannes sauf organe réseau et vanne d'hydrant">
+            <rule filter="closed= 'true'" key="{edf1c363-d849-4700-82d0-34d494178d4d}" symbol="0" label="Fermée"/>
             <rule filter="&quot;fk_valve_type&quot; =6313" key="{6c48a279-b0d9-428b-819c-2fc5371720fe}" symbol="1" label="arrêt"/>
             <rule filter="fk_valve_function IN (6110,6112)" key="{8f1997aa-ce0e-467b-a33f-719c22255041}" symbol="2" label="vidange"/>
             <rule filter="fk_valve_function =6102" key="{3bf2a10c-e2fe-43c6-9287-c4055baec2a1}" symbol="3" label="ventouse"/>
-            <rule filter="fk_valve_function NOT IN (6102,6110,6112) AND fk_valve_type NOT IN (6313) AND closed = 'f'" key="{6ea67572-5f92-462b-9419-18b0f15198f6}" symbol="4" label="vanne"/>
+            <rule filter="fk_valve_function NOT IN (6102,6110,6112) AND fk_valve_type NOT IN (6313) AND closed= 'false'" key="{6ea67572-5f92-462b-9419-18b0f15198f6}" symbol="4" label="vanne"/>
             <rule filter="distance(  $geometry,  make_point(  &quot;label_2_x&quot; ,  &quot;label_2_y&quot; ) ) / @map_scale  > 0.008" key="{ca9eb282-1517-4c0d-b3f2-2d60140a470a}" symbol="5" label="Lien vanne - étiquette"/>
           </rule>
         </rules>
@@ -46676,10 +46676,10 @@ def my_form_open(dialog, layer, feature):
       </flags>
       <renderer-v2 symbollevels="0" enableorderby="0" type="RuleRenderer" forceraster="0">
         <rules key="{89d1d7f3-6dd2-48ab-a978-572c899af422}">
-          <rule filter="fk_distributor = 1 AND status_functional = 't'" key="{69b3bf49-4ced-4bb9-8799-da2f168ad22c}" label="fonctionnel">
-            <rule filter="status_active = 't' AND (fk_parent IS NULL OR @map_scale &lt; 501)" key="{6f043e9f-1731-47a8-86d1-a6084a99e57b}" label="actif">
+          <rule filter="fk_distributor = 1 AND status_functional= 'true'" key="{69b3bf49-4ced-4bb9-8799-da2f168ad22c}" label="fonctionnel">
+            <rule filter="status_active= 'true' AND (fk_parent IS NULL OR @map_scale &lt; 501)" key="{6f043e9f-1731-47a8-86d1-a6084a99e57b}" label="actif">
               <rule filter="installation_type = 'chamber'" key="{e50fbbc2-a891-4432-a846-34d4f3e99c86}" label="Chambre">
-                <rule filter="flow_meter = 't' or water_meter = 't' or manometer = 't'" key="{c5aa7421-12d9-4e1f-b39e-ddc5f7c287e9}" symbol="0" label="Chambre débitmètre"/>
+                <rule filter="flow_meter= 'true' or water_meter= 'true' or manometer= 'true'" key="{c5aa7421-12d9-4e1f-b39e-ddc5f7c287e9}" symbol="0" label="Chambre débitmètre"/>
                 <rule filter="ELSE" key="{278ef659-c656-449d-a1c5-7c60acabaa65}" symbol="1" label="Chambre"/>
               </rule>
               <rule filter="installation_type = 'pressurecontrol'" key="{dcad679b-71a0-497e-b02e-93f46651826b}" label="pressurecontrol">
@@ -46693,9 +46693,9 @@ def my_form_open(dialog, layer, feature):
               <rule filter="installation_type = 'treatment'" key="{a841e611-3390-4ae1-b9f5-e7fee4fea027}" symbol="8" label="treatment"/>
               <rule filter="ELSE" key="{5d01efe9-2c1b-4052-a11f-5ce82dd09f65}" symbol="9"/>
             </rule>
-            <rule filter="status_active = 'f' AND (fk_parent IS NULL OR @map_scale &lt; 501)" key="{f955cc23-5f5f-4ac6-949b-6711a8862c7a}" label="inactif">
+            <rule filter="status_active= 'false' AND (fk_parent IS NULL OR @map_scale &lt; 501)" key="{f955cc23-5f5f-4ac6-949b-6711a8862c7a}" label="inactif">
               <rule filter="installation_type = 'chamber'" key="{33dee9ac-9240-41d9-8da7-d047d8521f65}" label="Chambre">
-                <rule filter="flow_meter = 't' or water_meter = 't' or manometer = 't'" key="{b30d473c-b7f4-448a-b647-b2a5ceb1a131}" symbol="10" label="Chambre débitmètre"/>
+                <rule filter="flow_meter= 'true' or water_meter= 'true' or manometer= 'true'" key="{b30d473c-b7f4-448a-b647-b2a5ceb1a131}" symbol="10" label="Chambre débitmètre"/>
                 <rule filter="ELSE" key="{ee6ec74f-d3e1-435a-90d0-b91da4a9537f}" symbol="11" label="Chambre"/>
               </rule>
               <rule filter="installation_type = 'pressurecontrol'" key="{dc540c42-11d4-4a71-a720-5c18f763734e}" label="pressurecontrol">
@@ -46710,9 +46710,9 @@ def my_form_open(dialog, layer, feature):
               <rule filter="ELSE" key="{0b8281d6-7c39-44b5-8a40-ecb1889399cb}" symbol="19"/>
             </rule>
           </rule>
-          <rule filter="fk_distributor = 1 AND status_functional = 'f'" key="{1a64d4d9-3bd2-437b-9620-740b13e32509}" label="non fonctionnel">
+          <rule filter="fk_distributor = 1 AND status_functional= 'false'" key="{1a64d4d9-3bd2-437b-9620-740b13e32509}" label="non fonctionnel">
             <rule filter="installation_type = 'chamber'" key="{ce0c94bb-b016-41a1-931c-3109807689b0}" label="Chambre">
-              <rule filter="flow_meter = 't' or water_meter = 't' or manometer = 't'" key="{f16643c2-ce75-4f94-beee-56389f55aee7}" symbol="20" label="Chambre débitmètre"/>
+              <rule filter="flow_meter= 'true' or water_meter= 'true' or manometer= 'true'" key="{f16643c2-ce75-4f94-beee-56389f55aee7}" symbol="20" label="Chambre débitmètre"/>
               <rule filter="ELSE" key="{8366c510-1142-41fb-85a1-bf9663ad9d11}" symbol="21" label="Chambre"/>
             </rule>
             <rule filter="installation_type = 'pressurecontrol'" key="{d31ae609-73ec-4d88-8324-5300f14ed738}" label="pressurecontrol">
@@ -46728,7 +46728,7 @@ def my_form_open(dialog, layer, feature):
           </rule>
           <rule filter="fk_distributor != 1" key="{05336f6d-543d-4bf7-bea5-a474d431bdf3}" label="étranger">
             <rule filter="installation_type = 'chamber'" key="{8beaf9ba-e486-46ce-8f70-957911d5515b}" label="Chambre">
-              <rule filter="flow_meter = 't' or water_meter = 't' or manometer = 't'" key="{5f09c1ec-36a2-4dba-98f0-bcd568e24533}" symbol="30" label="Chambre débitmètre"/>
+              <rule filter="flow_meter= 'true' or water_meter= 'true' or manometer= 'true'" key="{5f09c1ec-36a2-4dba-98f0-bcd568e24533}" symbol="30" label="Chambre débitmètre"/>
               <rule filter="ELSE" key="{a6204137-028d-44b7-b245-5d3b24a7d399}" symbol="31" label="Chambre"/>
             </rule>
             <rule filter="installation_type = 'pressurecontrol'" key="{94454820-5d27-4427-80f6-24d28c5c51a3}" label="pressurecontrol">
@@ -54748,45 +54748,45 @@ def closeProject():
               </edittypes>
               <renderer-v2 symbollevels="0" type="RuleRenderer" forceraster="0">
                 <rules key="{dbde1c2b-a27d-484e-8dd5-d13dcd527b89}">
-                  <rule filter="fk_distributor = 1and &quot;status_active&quot; = 't'" key="{f550eef3-fdaa-427b-b415-bd7e8fc25f9e}" label="active">
-                    <rule filter="COALESCE( &quot;schema_force_visible&quot;,  &quot;pipe_function_schema_visible&quot;) = 't' AND fk_status != 1307" key="{1169fb39-5fd3-43b6-9c6c-0f8ef27a0149}" label="Schématique">
-                      <rule filter=" &quot;pipe_function_major&quot;  = 't'" key="{091e66aa-1594-4ac1-a779-f671dde391e2}" symbol="0" label="principale"/>
-                      <rule filter=" &quot;pipe_function_major&quot; = 'f'" key="{25c2e398-8d5a-4103-ac14-4ff461596d3a}" symbol="1" label="secondaire"/>
+                  <rule filter="fk_distributor = 1and &quot;status_active&quot;= 'true'" key="{f550eef3-fdaa-427b-b415-bd7e8fc25f9e}" label="active">
+                    <rule filter="COALESCE( &quot;schema_force_visible&quot;,  &quot;pipe_function_schema_visible&quot;)= 'true' AND fk_status != 1307" key="{1169fb39-5fd3-43b6-9c6c-0f8ef27a0149}" label="Schématique">
+                      <rule filter=" &quot;pipe_function_major&quot; = 'true'" key="{091e66aa-1594-4ac1-a779-f671dde391e2}" symbol="0" label="principale"/>
+                      <rule filter=" &quot;pipe_function_major&quot;= 'false'" key="{25c2e398-8d5a-4103-ac14-4ff461596d3a}" symbol="1" label="secondaire"/>
                       <rule checkstate="0" filter=" &quot;fk_protection&quot; IS NOT NULL" key="{8c51f402-8f2c-4f11-a826-cd90908f1eba}" symbol="2" label="protégée"/>
                       <rule scalemaxdenom="3000" scalemindenom="1" filter=" &quot;fk_installmethod&quot;  =4202" key="{8068754f-f710-413f-b07d-9cf8a386733b}" symbol="3" label="chemisée"/>
                     </rule>
-                    <rule scalemaxdenom="3000" filter="COALESCE( &quot;schema_force_visible&quot;,  &quot;pipe_function_schema_visible&quot;)  = 'f' AND fk_status != 1307" key="{9646576f-b22a-45bf-a4a3-3678392bd8c0}" label="Détail">
-                      <rule filter=" &quot;pipe_function_major&quot; = 't'" key="{93d733e3-3119-42cc-89f8-b67d3197925a}" symbol="4" label="principale"/>
-                      <rule filter=" &quot;pipe_function_major&quot; = 'f'" key="{67caa7b7-52d8-494c-9386-6622b1e656a3}" symbol="5" label="secondaire"/>
+                    <rule scalemaxdenom="3000" filter="COALESCE( &quot;schema_force_visible&quot;,  &quot;pipe_function_schema_visible&quot;) = 'false' AND fk_status != 1307" key="{9646576f-b22a-45bf-a4a3-3678392bd8c0}" label="Détail">
+                      <rule filter=" &quot;pipe_function_major&quot;= 'true'" key="{93d733e3-3119-42cc-89f8-b67d3197925a}" symbol="4" label="principale"/>
+                      <rule filter=" &quot;pipe_function_major&quot;= 'false'" key="{67caa7b7-52d8-494c-9386-6622b1e656a3}" symbol="5" label="secondaire"/>
                       <rule filter=" &quot;fk_protection&quot; IS NOT NULL" key="{6082ca45-b8db-490b-a549-f86a8b5e961b}" symbol="6" label="protégée"/>
                     </rule>
                     <rule checkstate="0" filter="fk_status=1307" key="{3792c184-3d81-4254-8c66-acdf171e2b71}" symbol="7" label="Fictives"/>
                   </rule>
-                  <rule checkstate="0" filter="fk_distributor = 1and &quot;status_active&quot; = 'f'" key="{75060a73-107d-4ace-bc35-d573de40488f}" label="inactive">
-                    <rule filter="COALESCE( &quot;schema_force_visible&quot;,  &quot;pipe_function_schema_visible&quot;)  = 't'" key="{5b970fd5-5c37-4865-81a5-cab18c5fb58c}" label="Schématique">
-                      <rule filter=" &quot;pipe_function_major&quot; = 't'" key="{783f2167-c790-4baf-a58d-d6fd65a299a4}" symbol="8" label="principale"/>
-                      <rule filter=" &quot;pipe_function_major&quot; = 'f'" key="{46c7536a-ac7b-4e7b-afe6-33f9fee2f171}" symbol="9" label="secondaire"/>
+                  <rule checkstate="0" filter="fk_distributor = 1and &quot;status_active&quot;= 'false'" key="{75060a73-107d-4ace-bc35-d573de40488f}" label="inactive">
+                    <rule filter="COALESCE( &quot;schema_force_visible&quot;,  &quot;pipe_function_schema_visible&quot;) = 'true'" key="{5b970fd5-5c37-4865-81a5-cab18c5fb58c}" label="Schématique">
+                      <rule filter=" &quot;pipe_function_major&quot;= 'true'" key="{783f2167-c790-4baf-a58d-d6fd65a299a4}" symbol="8" label="principale"/>
+                      <rule filter=" &quot;pipe_function_major&quot;= 'false'" key="{46c7536a-ac7b-4e7b-afe6-33f9fee2f171}" symbol="9" label="secondaire"/>
                       <rule filter=" &quot;fk_protection&quot; IS NOT NULL" key="{bd93e9ea-b64b-4fbd-bf89-6d4395730e60}" symbol="10" label="protégée"/>
                     </rule>
-                    <rule scalemaxdenom="3000" filter="COALESCE( &quot;schema_force_visible&quot;,  &quot;pipe_function_schema_visible&quot;)  = 'f'" key="{7d0cfa7a-eaf4-499a-b977-1238b90ca15f}" label="Détail">
-                      <rule filter=" &quot;pipe_function_major&quot; = 't'" key="{c0af50d9-d68b-4c2f-b9fa-9e2be9ec0e34}" symbol="11" label="principale"/>
-                      <rule filter=" &quot;pipe_function_major&quot; = 'f'" key="{f2f26723-dc46-40c5-abe2-ef61a8c502e3}" symbol="12" label="secondaire"/>
+                    <rule scalemaxdenom="3000" filter="COALESCE( &quot;schema_force_visible&quot;,  &quot;pipe_function_schema_visible&quot;) = 'false'" key="{7d0cfa7a-eaf4-499a-b977-1238b90ca15f}" label="Détail">
+                      <rule filter=" &quot;pipe_function_major&quot;= 'true'" key="{c0af50d9-d68b-4c2f-b9fa-9e2be9ec0e34}" symbol="11" label="principale"/>
+                      <rule filter=" &quot;pipe_function_major&quot;= 'false'" key="{f2f26723-dc46-40c5-abe2-ef61a8c502e3}" symbol="12" label="secondaire"/>
                       <rule filter=" &quot;fk_protection&quot; IS NOT NULL" key="{9486a529-9a4e-4a3c-83fe-86f6f93102c0}" symbol="13" label="protégée"/>
                     </rule>
                   </rule>
                   <rule filter="fk_distributor != 1" key="{013429dc-a1cd-4a17-904a-6550a0175046}" label="étranger">
-                    <rule filter="COALESCE( &quot;schema_force_visible&quot;,  &quot;pipe_function_schema_visible&quot;)  = 't'" key="{2513a8b8-a110-4727-854c-6084f64e3bdf}" label="Schématique">
-                      <rule filter=" &quot;pipe_function_major&quot; = 't'" key="{f798c83b-a461-46c3-8031-8b5bc3caffd8}" symbol="14" label="principale"/>
-                      <rule filter=" &quot;pipe_function_major&quot; = 'f'" key="{ca06b6f2-f1ee-4958-b79a-6cb6cbc2059b}" symbol="15" label="secondaire"/>
+                    <rule filter="COALESCE( &quot;schema_force_visible&quot;,  &quot;pipe_function_schema_visible&quot;) = 'true'" key="{2513a8b8-a110-4727-854c-6084f64e3bdf}" label="Schématique">
+                      <rule filter=" &quot;pipe_function_major&quot;= 'true'" key="{f798c83b-a461-46c3-8031-8b5bc3caffd8}" symbol="14" label="principale"/>
+                      <rule filter=" &quot;pipe_function_major&quot;= 'false'" key="{ca06b6f2-f1ee-4958-b79a-6cb6cbc2059b}" symbol="15" label="secondaire"/>
                       <rule filter=" &quot;fk_protection&quot; IS NOT NULL" key="{6c5ec343-05d3-4fcd-8dc1-283232838086}" symbol="16" label="protégée"/>
                     </rule>
-                    <rule scalemaxdenom="3000" filter="COALESCE( &quot;schema_force_visible&quot;,  &quot;pipe_function_schema_visible&quot;)  = 'f'" key="{2e14d53a-6d2f-40b3-bf3b-4f32112e3d59}" label="Détail">
-                      <rule filter=" &quot;pipe_function_major&quot; = 't'" key="{fb522923-eeee-47bb-8352-65a3d5637c4c}" symbol="17" label="principale"/>
-                      <rule filter=" &quot;pipe_function_major&quot; = 'f'" key="{b8c5c345-6f26-4237-a405-a503b361b9da}" symbol="18" label="secondaire"/>
+                    <rule scalemaxdenom="3000" filter="COALESCE( &quot;schema_force_visible&quot;,  &quot;pipe_function_schema_visible&quot;) = 'false'" key="{2e14d53a-6d2f-40b3-bf3b-4f32112e3d59}" label="Détail">
+                      <rule filter=" &quot;pipe_function_major&quot;= 'true'" key="{fb522923-eeee-47bb-8352-65a3d5637c4c}" symbol="17" label="principale"/>
+                      <rule filter=" &quot;pipe_function_major&quot;= 'false'" key="{b8c5c345-6f26-4237-a405-a503b361b9da}" symbol="18" label="secondaire"/>
                       <rule filter=" &quot;fk_protection&quot; IS NOT NULL" key="{65e92041-f079-42f0-80be-f3bedfbdcdac}" symbol="19" label="protégée"/>
                     </rule>
                   </rule>
-                  <rule checkstate="0" filter="fk_distributor = 1 and &quot;status_active&quot; = 't' and COALESCE( &quot;schema_force_visible&quot;,  &quot;pipe_function_schema_visible&quot;)  = 't'" key="{9c210704-187e-4e2a-9b89-2f7917f4376c}" symbol="20" label="Couleur par zone"/>
+                  <rule checkstate="0" filter="fk_distributor = 1 and &quot;status_active&quot;= 'true' and COALESCE( &quot;schema_force_visible&quot;,  &quot;pipe_function_schema_visible&quot;) = 'true'" key="{9c210704-187e-4e2a-9b89-2f7917f4376c}" symbol="20" label="Couleur par zone"/>
                   <rule checkstate="0" filter="ELSE" key="{bb9b38f1-c76d-4c6d-908b-414f0cc24f97}" symbol="21" label="incomplètes"/>
                 </rules>
                 <symbols>
@@ -55614,8 +55614,8 @@ def closeProject():
                 <property value="false" key="labeling/centroidInside"/>
                 <property value="false" key="labeling/centroidWhole"/>
                 <property value="1~~1~~CASE WHEN  &quot;label_1_visible&quot; = 2 THEN 1 ELSE 0 END~~" key="labeling/dataDefined/AlwaysShow"/>
-                <property value="1~~0~~CASE WHEN &quot;fk_labelvisible&quot; = 'f' THEN 0 ELSE 1 END~~label_1_visible" key="labeling/dataDefined/Show"/>
-                <property value="1~~1~~CASE&#xa;WHEN $scale > 1500 THEN 6&#xa;WHEN  &quot;pipe_function_schema_visible&quot;  = 't' THEN 8&#xa;ELSE 6&#xa;END~~" key="labeling/dataDefined/Size"/>
+                <property value="1~~0~~CASE WHEN &quot;fk_labelvisible&quot;= 'false' THEN 0 ELSE 1 END~~label_1_visible" key="labeling/dataDefined/Show"/>
+                <property value="1~~1~~CASE&#xa;WHEN $scale > 1500 THEN 6&#xa;WHEN  &quot;pipe_function_schema_visible&quot; = 'true' THEN 8&#xa;ELSE 6&#xa;END~~" key="labeling/dataDefined/Size"/>
                 <property value="0" key="labeling/decimals"/>
                 <property value="false" key="labeling/displayAll"/>
                 <property value="1" key="labeling/dist"/>
@@ -56334,7 +56334,7 @@ def my_form_open(dialog, layer, feature):
                 <property value="0" key="labeling/distMapUnitMinScale"/>
                 <property value="true" key="labeling/drawLabels"/>
                 <property value="true" key="labeling/enabled"/>
-                <property value="CASE WHEN  &quot;underground&quot; = 't' THEN 'HS' ELSE 'BH' END ||identification" key="labeling/fieldName"/>
+                <property value="CASE WHEN  &quot;underground&quot;= 'true' THEN 'HS' ELSE 'BH' END ||identification" key="labeling/fieldName"/>
                 <property value="false" key="labeling/fitInPolygonOnly"/>
                 <property value="false" key="labeling/fontBold"/>
                 <property value="0" key="labeling/fontCapitals"/>
@@ -56577,7 +56577,7 @@ def my_form_open(dialog, layer, feature):
               </edittypes>
               <renderer-v2 symbollevels="0" type="RuleRenderer" forceraster="0">
                 <rules key="{43385ed0-766f-4646-ad2f-3bb352c38c57}">
-                  <rule filter="_pipe_node_type = 'T'" key="{95f84ff0-270b-4dd3-9a75-2ba742aabe87}" symbol="0" label="T"/>
+                  <rule filter="_pipe_node_type= 'true'" key="{95f84ff0-270b-4dd3-9a75-2ba742aabe87}" symbol="0" label="T"/>
                   <rule filter="_pipe_node_type = 'couple_material'" key="{af3e33a5-995b-40e1-a7a4-c5693a1608d4}" symbol="1" label="Chg. matériau"/>
                   <rule filter="_pipe_node_type = 'couple_year'" key="{026d603f-cc2a-4c8b-b6d1-357175e36956}" symbol="2" label="Chg. année"/>
                   <rule filter="_pipe_node_type = 'couple_other'" key="{d148d3d0-ca6b-405e-8259-c15f88e62ccb}" symbol="3" label="Chg. diamètre + matériau"/>
@@ -60949,13 +60949,13 @@ def my_form_open(dialog, layer, feature):
               <renderer-v2 symbollevels="0" type="RuleRenderer" forceraster="0">
                 <rules key="{8ac6d04b-1bb5-46e9-b2fb-236cb107ffc9}">
                   <rule scalemaxdenom="10000" scalemindenom="-2147483648" filter="fk_valve_function != 6105 AND fk_valve_function != 6108" key="{7a025dab-c7fe-4c7c-9f0b-25a39f73abd8}" symbol="0" description="toutes les vannes sauf organe réseau et vanne d'hydrant" label="réseau">
-                    <rule filter="closed = 't'" key="{edf1c363-d849-4700-82d0-34d494178d4d}" symbol="1" label="Fermée"/>
+                    <rule filter="closed= 'true'" key="{edf1c363-d849-4700-82d0-34d494178d4d}" symbol="1" label="Fermée"/>
                     <rule filter="&quot;fk_valve_type&quot; = 6312" key="{d1ec978f-6d96-4ed2-ac03-a37e6629f13c}" symbol="2" label="elgelf"/>
                     <rule filter="&quot;fk_valve_type&quot; =6313" key="{6c48a279-b0d9-428b-819c-2fc5371720fe}" symbol="3" label="arrêt"/>
                     <rule filter=" &quot;valve_function_value_fr&quot; IN ( 'vidange' ,  'vidange-ventouse' )" key="{3bf2a10c-e2fe-43c6-9287-c4055baec2a1}" symbol="4" label="vidange"/>
                   </rule>
                   <rule scalemaxdenom="1000" scalemindenom="-2147483648" filter="fk_valve_function = 6105 OR fk_valve_function = 6108" key="{143022c7-b3e1-4c03-80d5-58520da677c2}" symbol="5" label="abonné">
-                    <rule filter="closed = 't'" key="{ee4ed8dd-20ae-42fb-b43b-a4c02c5399e9}" symbol="6" label="Fermée"/>
+                    <rule filter="closed= 'true'" key="{ee4ed8dd-20ae-42fb-b43b-a4c02c5399e9}" symbol="6" label="Fermée"/>
                     <rule filter="&quot;fk_valve_type&quot; =6313" key="{b149b2b9-3783-416c-b413-7a6f7de74e1d}" symbol="7" label="arrêt"/>
                     <rule filter="fk_valve_type = 6312" key="{221f27a3-6778-4b14-8bb9-1b4c7d708bc3}" symbol="8" label="elgelf"/>
                     <rule filter=" &quot;valve_function_value_fr&quot; IN ( 'vidange' ,  'vidange-ventouse' )" key="{a0c08631-a6ac-4d0b-b538-41bb1efe2315}" symbol="9" label="vidange"/>
@@ -61296,7 +61296,7 @@ def my_form_open(dialog, layer, feature):
                 <property value="1~~0~~CASE &#xa; WHEN $scale=0 THEN &quot;label_1_x&quot;&#xa; WHEN $scale &lt; 300 THEN &quot;label_1_x&quot;&#xa; ELSE null END~~label_1_x" key="labeling/dataDefined/PositionX"/>
                 <property value="1~~0~~CASE&#xa; WHEN $scale=0 THEN &quot;label_1_y&quot;&#xa; WHEN $scale &lt; 300 THEN &quot;label_1_y&quot;&#xa; ELSE null END~~label_1_y" key="labeling/dataDefined/PositionY"/>
                 <property value="1~~0~~~~label_1_rotation" key="labeling/dataDefined/Rotation"/>
-                <property value="1~~0~~CASE WHEN &quot;fk_labelvisible&quot; = 'f' THEN 0 ELSE 1 END~~label_1_visible" key="labeling/dataDefined/Show"/>
+                <property value="1~~0~~CASE WHEN &quot;fk_labelvisible&quot;= 'false' THEN 0 ELSE 1 END~~label_1_visible" key="labeling/dataDefined/Show"/>
                 <property value="0" key="labeling/decimals"/>
                 <property value="true" key="labeling/displayAll"/>
                 <property value="1" key="labeling/dist"/>
@@ -61831,9 +61831,9 @@ def my_form_open(dialog, layer, feature):
               </edittypes>
               <renderer-v2 symbollevels="0" type="RuleRenderer" forceraster="0">
                 <rules key="{89d1d7f3-6dd2-48ab-a978-572c899af422}">
-                  <rule filter="status_active = 't' AND (fk_parent IS NULL OR @map_scale &lt; 501)" key="{37ee4804-614d-4742-8288-a79d52f1e1d9}" label="actif">
+                  <rule filter="status_active= 'true' AND (fk_parent IS NULL OR @map_scale &lt; 501)" key="{37ee4804-614d-4742-8288-a79d52f1e1d9}" label="actif">
                     <rule filter="installation_type = 'chamber'" key="{c0076781-68f6-43ab-9b4b-1fb0a074b4c1}" label="Chambre">
-                      <rule filter="flow_meter = 't' or water_meter = 't' or manometer = 't'" key="{3820ee54-8445-4a23-b1ab-59038e2f6d28}" symbol="0" label="Chambre débitmètre"/>
+                      <rule filter="flow_meter= 'true' or water_meter= 'true' or manometer= 'true'" key="{3820ee54-8445-4a23-b1ab-59038e2f6d28}" symbol="0" label="Chambre débitmètre"/>
                       <rule filter="ELSE" key="{25e3684f-58b8-4a10-bdf2-faa3d1410626}" symbol="1" label="Chambre"/>
                     </rule>
                     <rule filter="installation_type = 'pressurecontrol'" key="{cec9c0f1-7573-488d-917a-fb97f52e5cb2}" label="pressurecontrol">
@@ -61847,9 +61847,9 @@ def my_form_open(dialog, layer, feature):
                     <rule filter="installation_type = 'treatment'" key="{59878a6a-ca5c-4809-b1a0-b317151cfb27}" symbol="8" label="treatment"/>
                     <rule filter="ELSE" key="{72c92aed-f674-478a-a8f8-e96348d0e09a}" symbol="9"/>
                   </rule>
-                  <rule checkstate="0" filter="status_active = 'f' AND (fk_parent IS NULL OR @map_scale &lt; 501)" key="{6a77fe04-db6e-4bf9-a9c6-fe3ea7f31b03}" label="inactif">
+                  <rule checkstate="0" filter="status_active= 'false' AND (fk_parent IS NULL OR @map_scale &lt; 501)" key="{6a77fe04-db6e-4bf9-a9c6-fe3ea7f31b03}" label="inactif">
                     <rule filter="installation_type = 'chamber'" key="{467aeded-414e-4296-89ab-661c203802ce}" label="Chambre">
-                      <rule filter="flow_meter = 't' or water_meter = 't' or manometer = 't'" key="{2af9d655-d60f-4ee2-a31b-d5f075a9fad8}" symbol="10" label="Chambre débitmètre"/>
+                      <rule filter="flow_meter= 'true' or water_meter= 'true' or manometer= 'true'" key="{2af9d655-d60f-4ee2-a31b-d5f075a9fad8}" symbol="10" label="Chambre débitmètre"/>
                       <rule filter="ELSE" key="{fa07847e-bb3b-454d-b957-1a2b5394e819}" symbol="11" label="Chambre"/>
                     </rule>
                     <rule filter="installation_type = 'pressurecontrol'" key="{410bdc09-391b-489d-a4e7-3f13c5d2e18d}" label="pressurecontrol">
@@ -63824,45 +63824,45 @@ def my_form_open(dialog, layer, feature):
               </edittypes>
               <renderer-v2 symbollevels="0" type="RuleRenderer" forceraster="0">
                 <rules key="{dbde1c2b-a27d-484e-8dd5-d13dcd527b89}">
-                  <rule filter="fk_distributor = 1and &quot;status_active&quot; = 't'" key="{f550eef3-fdaa-427b-b415-bd7e8fc25f9e}" label="active">
-                    <rule filter="COALESCE( &quot;schema_force_visible&quot;,  &quot;pipe_function_schema_visible&quot;) = 't' AND fk_status != 1307" key="{1169fb39-5fd3-43b6-9c6c-0f8ef27a0149}" label="Schématique">
-                      <rule filter=" &quot;pipe_function_major&quot;  = 't'" key="{091e66aa-1594-4ac1-a779-f671dde391e2}" symbol="0" label="principale"/>
-                      <rule filter=" &quot;pipe_function_major&quot; = 'f'" key="{25c2e398-8d5a-4103-ac14-4ff461596d3a}" symbol="1" label="secondaire"/>
+                  <rule filter="fk_distributor = 1and &quot;status_active&quot;= 'true'" key="{f550eef3-fdaa-427b-b415-bd7e8fc25f9e}" label="active">
+                    <rule filter="COALESCE( &quot;schema_force_visible&quot;,  &quot;pipe_function_schema_visible&quot;)= 'true' AND fk_status != 1307" key="{1169fb39-5fd3-43b6-9c6c-0f8ef27a0149}" label="Schématique">
+                      <rule filter=" &quot;pipe_function_major&quot; = 'true'" key="{091e66aa-1594-4ac1-a779-f671dde391e2}" symbol="0" label="principale"/>
+                      <rule filter=" &quot;pipe_function_major&quot;= 'false'" key="{25c2e398-8d5a-4103-ac14-4ff461596d3a}" symbol="1" label="secondaire"/>
                       <rule checkstate="0" filter=" &quot;fk_protection&quot; IS NOT NULL" key="{8c51f402-8f2c-4f11-a826-cd90908f1eba}" symbol="2" label="protégée"/>
                       <rule scalemaxdenom="3000" scalemindenom="1" filter=" &quot;fk_installmethod&quot;  =4202" key="{8068754f-f710-413f-b07d-9cf8a386733b}" symbol="3" label="chemisée"/>
                     </rule>
-                    <rule scalemaxdenom="3000" filter="COALESCE( &quot;schema_force_visible&quot;,  &quot;pipe_function_schema_visible&quot;)  = 'f' AND fk_status != 1307" key="{9646576f-b22a-45bf-a4a3-3678392bd8c0}" label="Détail">
-                      <rule filter=" &quot;pipe_function_major&quot; = 't'" key="{93d733e3-3119-42cc-89f8-b67d3197925a}" symbol="4" label="principale"/>
-                      <rule filter=" &quot;pipe_function_major&quot; = 'f'" key="{67caa7b7-52d8-494c-9386-6622b1e656a3}" symbol="5" label="secondaire"/>
+                    <rule scalemaxdenom="3000" filter="COALESCE( &quot;schema_force_visible&quot;,  &quot;pipe_function_schema_visible&quot;) = 'false' AND fk_status != 1307" key="{9646576f-b22a-45bf-a4a3-3678392bd8c0}" label="Détail">
+                      <rule filter=" &quot;pipe_function_major&quot;= 'true'" key="{93d733e3-3119-42cc-89f8-b67d3197925a}" symbol="4" label="principale"/>
+                      <rule filter=" &quot;pipe_function_major&quot;= 'false'" key="{67caa7b7-52d8-494c-9386-6622b1e656a3}" symbol="5" label="secondaire"/>
                       <rule filter=" &quot;fk_protection&quot; IS NOT NULL" key="{6082ca45-b8db-490b-a549-f86a8b5e961b}" symbol="6" label="protégée"/>
                     </rule>
                     <rule checkstate="0" filter="fk_status=1307" key="{3792c184-3d81-4254-8c66-acdf171e2b71}" symbol="7" label="Fictives"/>
                   </rule>
-                  <rule checkstate="0" filter="fk_distributor = 1and &quot;status_active&quot; = 'f'" key="{75060a73-107d-4ace-bc35-d573de40488f}" label="inactive">
-                    <rule filter="COALESCE( &quot;schema_force_visible&quot;,  &quot;pipe_function_schema_visible&quot;)  = 't'" key="{5b970fd5-5c37-4865-81a5-cab18c5fb58c}" label="Schématique">
-                      <rule filter=" &quot;pipe_function_major&quot; = 't'" key="{783f2167-c790-4baf-a58d-d6fd65a299a4}" symbol="8" label="principale"/>
-                      <rule filter=" &quot;pipe_function_major&quot; = 'f'" key="{46c7536a-ac7b-4e7b-afe6-33f9fee2f171}" symbol="9" label="secondaire"/>
+                  <rule checkstate="0" filter="fk_distributor = 1and &quot;status_active&quot;= 'false'" key="{75060a73-107d-4ace-bc35-d573de40488f}" label="inactive">
+                    <rule filter="COALESCE( &quot;schema_force_visible&quot;,  &quot;pipe_function_schema_visible&quot;) = 'true'" key="{5b970fd5-5c37-4865-81a5-cab18c5fb58c}" label="Schématique">
+                      <rule filter=" &quot;pipe_function_major&quot;= 'true'" key="{783f2167-c790-4baf-a58d-d6fd65a299a4}" symbol="8" label="principale"/>
+                      <rule filter=" &quot;pipe_function_major&quot;= 'false'" key="{46c7536a-ac7b-4e7b-afe6-33f9fee2f171}" symbol="9" label="secondaire"/>
                       <rule filter=" &quot;fk_protection&quot; IS NOT NULL" key="{bd93e9ea-b64b-4fbd-bf89-6d4395730e60}" symbol="10" label="protégée"/>
                     </rule>
-                    <rule scalemaxdenom="3000" filter="COALESCE( &quot;schema_force_visible&quot;,  &quot;pipe_function_schema_visible&quot;)  = 'f'" key="{7d0cfa7a-eaf4-499a-b977-1238b90ca15f}" label="Détail">
-                      <rule filter=" &quot;pipe_function_major&quot; = 't'" key="{c0af50d9-d68b-4c2f-b9fa-9e2be9ec0e34}" symbol="11" label="principale"/>
-                      <rule filter=" &quot;pipe_function_major&quot; = 'f'" key="{f2f26723-dc46-40c5-abe2-ef61a8c502e3}" symbol="12" label="secondaire"/>
+                    <rule scalemaxdenom="3000" filter="COALESCE( &quot;schema_force_visible&quot;,  &quot;pipe_function_schema_visible&quot;) = 'false'" key="{7d0cfa7a-eaf4-499a-b977-1238b90ca15f}" label="Détail">
+                      <rule filter=" &quot;pipe_function_major&quot;= 'true'" key="{c0af50d9-d68b-4c2f-b9fa-9e2be9ec0e34}" symbol="11" label="principale"/>
+                      <rule filter=" &quot;pipe_function_major&quot;= 'false'" key="{f2f26723-dc46-40c5-abe2-ef61a8c502e3}" symbol="12" label="secondaire"/>
                       <rule filter=" &quot;fk_protection&quot; IS NOT NULL" key="{9486a529-9a4e-4a3c-83fe-86f6f93102c0}" symbol="13" label="protégée"/>
                     </rule>
                   </rule>
                   <rule filter="fk_distributor != 1" key="{013429dc-a1cd-4a17-904a-6550a0175046}" label="étranger">
-                    <rule filter="COALESCE( &quot;schema_force_visible&quot;,  &quot;pipe_function_schema_visible&quot;)  = 't'" key="{2513a8b8-a110-4727-854c-6084f64e3bdf}" label="Schématique">
-                      <rule filter=" &quot;pipe_function_major&quot; = 't'" key="{f798c83b-a461-46c3-8031-8b5bc3caffd8}" symbol="14" label="principale"/>
-                      <rule filter=" &quot;pipe_function_major&quot; = 'f'" key="{ca06b6f2-f1ee-4958-b79a-6cb6cbc2059b}" symbol="15" label="secondaire"/>
+                    <rule filter="COALESCE( &quot;schema_force_visible&quot;,  &quot;pipe_function_schema_visible&quot;) = 'true'" key="{2513a8b8-a110-4727-854c-6084f64e3bdf}" label="Schématique">
+                      <rule filter=" &quot;pipe_function_major&quot;= 'true'" key="{f798c83b-a461-46c3-8031-8b5bc3caffd8}" symbol="14" label="principale"/>
+                      <rule filter=" &quot;pipe_function_major&quot;= 'false'" key="{ca06b6f2-f1ee-4958-b79a-6cb6cbc2059b}" symbol="15" label="secondaire"/>
                       <rule filter=" &quot;fk_protection&quot; IS NOT NULL" key="{6c5ec343-05d3-4fcd-8dc1-283232838086}" symbol="16" label="protégée"/>
                     </rule>
-                    <rule scalemaxdenom="3000" filter="COALESCE( &quot;schema_force_visible&quot;,  &quot;pipe_function_schema_visible&quot;)  = 'f'" key="{2e14d53a-6d2f-40b3-bf3b-4f32112e3d59}" label="Détail">
-                      <rule filter=" &quot;pipe_function_major&quot; = 't'" key="{fb522923-eeee-47bb-8352-65a3d5637c4c}" symbol="17" label="principale"/>
-                      <rule filter=" &quot;pipe_function_major&quot; = 'f'" key="{b8c5c345-6f26-4237-a405-a503b361b9da}" symbol="18" label="secondaire"/>
+                    <rule scalemaxdenom="3000" filter="COALESCE( &quot;schema_force_visible&quot;,  &quot;pipe_function_schema_visible&quot;) = 'false'" key="{2e14d53a-6d2f-40b3-bf3b-4f32112e3d59}" label="Détail">
+                      <rule filter=" &quot;pipe_function_major&quot;= 'true'" key="{fb522923-eeee-47bb-8352-65a3d5637c4c}" symbol="17" label="principale"/>
+                      <rule filter=" &quot;pipe_function_major&quot;= 'false'" key="{b8c5c345-6f26-4237-a405-a503b361b9da}" symbol="18" label="secondaire"/>
                       <rule filter=" &quot;fk_protection&quot; IS NOT NULL" key="{65e92041-f079-42f0-80be-f3bedfbdcdac}" symbol="19" label="protégée"/>
                     </rule>
                   </rule>
-                  <rule checkstate="0" filter="fk_distributor = 1 and &quot;status_active&quot; = 't' and COALESCE( &quot;schema_force_visible&quot;,  &quot;pipe_function_schema_visible&quot;)  = 't'" key="{9c210704-187e-4e2a-9b89-2f7917f4376c}" symbol="20" label="Couleur par zone"/>
+                  <rule checkstate="0" filter="fk_distributor = 1 and &quot;status_active&quot;= 'true' and COALESCE( &quot;schema_force_visible&quot;,  &quot;pipe_function_schema_visible&quot;) = 'true'" key="{9c210704-187e-4e2a-9b89-2f7917f4376c}" symbol="20" label="Couleur par zone"/>
                 </rules>
                 <symbols>
                   <symbol type="line" alpha="1" name="0" clip_to_extent="1">
@@ -64591,8 +64591,8 @@ def my_form_open(dialog, layer, feature):
                 <property value="false" key="labeling/centroidInside"/>
                 <property value="false" key="labeling/centroidWhole"/>
                 <property value="1~~1~~CASE WHEN  &quot;label_1_visible&quot; = 2 THEN 1 ELSE 0 END~~" key="labeling/dataDefined/AlwaysShow"/>
-                <property value="1~~0~~CASE WHEN &quot;fk_labelvisible&quot; = 'f' THEN 0 ELSE 1 END~~label_1_visible" key="labeling/dataDefined/Show"/>
-                <property value="1~~1~~CASE&#xa;WHEN $scale > 1500 THEN 6&#xa;WHEN  &quot;pipe_function_schema_visible&quot;  = 't' THEN 8&#xa;ELSE 6&#xa;END~~" key="labeling/dataDefined/Size"/>
+                <property value="1~~0~~CASE WHEN &quot;fk_labelvisible&quot;= 'false' THEN 0 ELSE 1 END~~label_1_visible" key="labeling/dataDefined/Show"/>
+                <property value="1~~1~~CASE&#xa;WHEN $scale > 1500 THEN 6&#xa;WHEN  &quot;pipe_function_schema_visible&quot; = 'true' THEN 8&#xa;ELSE 6&#xa;END~~" key="labeling/dataDefined/Size"/>
                 <property value="0" key="labeling/decimals"/>
                 <property value="false" key="labeling/displayAll"/>
                 <property value="1" key="labeling/dist"/>
@@ -65233,7 +65233,7 @@ def my_form_open(dialog, layer, feature):
                 <property value="0" key="labeling/distMapUnitMaxScale"/>
                 <property value="0" key="labeling/distMapUnitMinScale"/>
                 <property value="true" key="labeling/enabled"/>
-                <property value="CASE WHEN  &quot;underground&quot; = 't' THEN 'HS' ELSE 'BH' END ||identification" key="labeling/fieldName"/>
+                <property value="CASE WHEN  &quot;underground&quot;= 'true' THEN 'HS' ELSE 'BH' END ||identification" key="labeling/fieldName"/>
                 <property value="false" key="labeling/fontBold"/>
                 <property value="0" key="labeling/fontCapitals"/>
                 <property value="Arial" key="labeling/fontFamily"/>
@@ -69480,13 +69480,13 @@ def my_form_open(dialog, layer, feature):
               <renderer-v2 symbollevels="0" type="RuleRenderer" forceraster="0">
                 <rules key="{8ac6d04b-1bb5-46e9-b2fb-236cb107ffc9}">
                   <rule scalemaxdenom="10000" filter="fk_function != 6105 AND fk_function != 6108" key="{7a025dab-c7fe-4c7c-9f0b-25a39f73abd8}" symbol="0" description="toutes les vannes sauf organe réseau et vanne d'hydrant" label="réseau">
-                    <rule filter="closed = 't'" key="{edf1c363-d849-4700-82d0-34d494178d4d}" symbol="1" label="Fermée"/>
+                    <rule filter="closed= 'true'" key="{edf1c363-d849-4700-82d0-34d494178d4d}" symbol="1" label="Fermée"/>
                     <rule filter="&quot;fk_type&quot; = 6312" key="{d1ec978f-6d96-4ed2-ac03-a37e6629f13c}" symbol="2" label="elgelf"/>
                     <rule filter="&quot;fk_type&quot; =6313" key="{6c48a279-b0d9-428b-819c-2fc5371720fe}" symbol="3" label="arrêt"/>
                     <rule filter=" &quot;valve_function_value_fr&quot; IN ( 'vidange' ,  'vidange-ventouse' )" key="{3bf2a10c-e2fe-43c6-9287-c4055baec2a1}" symbol="4" label="vidange"/>
                   </rule>
                   <rule scalemaxdenom="1000" filter="fk_function = 6105 OR fk_function = 6108" key="{143022c7-b3e1-4c03-80d5-58520da677c2}" symbol="5" label="abonné">
-                    <rule filter="closed = 't'" key="{ee4ed8dd-20ae-42fb-b43b-a4c02c5399e9}" symbol="6" label="Fermée"/>
+                    <rule filter="closed= 'true'" key="{ee4ed8dd-20ae-42fb-b43b-a4c02c5399e9}" symbol="6" label="Fermée"/>
                     <rule filter="&quot;fk_type&quot; =6313" key="{b149b2b9-3783-416c-b413-7a6f7de74e1d}" symbol="7" label="arrêt"/>
                     <rule filter="fk_type = 6312" key="{221f27a3-6778-4b14-8bb9-1b4c7d708bc3}" symbol="8" label="elgelf"/>
                     <rule filter=" &quot;valve_function_value_fr&quot; IN ( 'vidange' ,  'vidange-ventouse' )" key="{a0c08631-a6ac-4d0b-b538-41bb1efe2315}" symbol="9" label="vidange"/>
@@ -69826,7 +69826,7 @@ def my_form_open(dialog, layer, feature):
                 <property value="1~~0~~CASE &#xa; WHEN $scale=0 THEN &quot;label_1_x&quot;&#xa; WHEN $scale &lt; 300 THEN &quot;label_1_x&quot;&#xa; ELSE null END~~label_1_x" key="labeling/dataDefined/PositionX"/>
                 <property value="1~~0~~CASE&#xa; WHEN $scale=0 THEN &quot;label_1_y&quot;&#xa; WHEN $scale &lt; 300 THEN &quot;label_1_y&quot;&#xa; ELSE null END~~label_1_y" key="labeling/dataDefined/PositionY"/>
                 <property value="1~~0~~~~label_1_rotation" key="labeling/dataDefined/Rotation"/>
-                <property value="1~~0~~CASE WHEN &quot;fk_labelvisible&quot; = 'f' THEN 0 ELSE 1 END~~label_1_visible" key="labeling/dataDefined/Show"/>
+                <property value="1~~0~~CASE WHEN &quot;fk_labelvisible&quot;= 'false' THEN 0 ELSE 1 END~~label_1_visible" key="labeling/dataDefined/Show"/>
                 <property value="0" key="labeling/decimals"/>
                 <property value="false" key="labeling/displayAll"/>
                 <property value="1" key="labeling/dist"/>
