@@ -1,86 +1,86 @@
 <!DOCTYPE qgis PUBLIC 'http://mrcc.com/qgis.dtd' 'SYSTEM'>
-<qgis maxScale="0" minScale="1e+08" simplifyLocal="1" labelsEnabled="0" simplifyMaxScale="1" simplifyDrawingHints="0" hasScaleBasedVisibilityFlag="0" simplifyAlgorithm="0" styleCategories="AllStyleCategories" simplifyDrawingTol="1" readOnly="0" version="3.4.7-Madeira">
+<qgis simplifyAlgorithm="0" maxScale="0" hasScaleBasedVisibilityFlag="0" simplifyDrawingTol="1" styleCategories="AllStyleCategories" version="3.4.7-Madeira" minScale="1e+08" labelsEnabled="0" simplifyLocal="1" simplifyDrawingHints="0" simplifyMaxScale="1" readOnly="0">
   <flags>
     <Identifiable>1</Identifiable>
     <Removable>1</Removable>
     <Searchable>1</Searchable>
   </flags>
-  <renderer-v2 type="RuleRenderer" symbollevels="0" forceraster="0" enableorderby="0">
+  <renderer-v2 type="RuleRenderer" forceraster="0" enableorderby="0" symbollevels="0">
     <rules key="{99308dc6-545d-410d-bf91-facc3f952028}">
-      <rule label="Rectangulaire" filter="circular= 'false'" symbol="0" key="{6b84601d-0034-4793-9b90-388447715e50}"/>
-      <rule label="Circulaire" filter="circular= 'true'" symbol="1" key="{8efb24f5-2b00-41cc-811b-0bb6a1995bb5}"/>
+      <rule symbol="0" key="{6b84601d-0034-4793-9b90-388447715e50}" filter="circular= 'false'" label="Rectangulaire"/>
+      <rule symbol="1" key="{8efb24f5-2b00-41cc-811b-0bb6a1995bb5}" filter="circular= 'true'" label="Circulaire"/>
     </rules>
     <symbols>
-      <symbol force_rhr="0" name="0" type="marker" alpha="1" clip_to_extent="1">
-        <layer pass="0" enabled="1" class="SimpleMarker" locked="0">
-          <prop k="angle" v="0"/>
-          <prop k="color" v="234,233,232,255"/>
-          <prop k="horizontal_anchor_point" v="1"/>
-          <prop k="joinstyle" v="bevel"/>
-          <prop k="name" v="square"/>
-          <prop k="offset" v="0,0"/>
-          <prop k="offset_map_unit_scale" v="3x:0,0,0,0,0,0"/>
-          <prop k="offset_unit" v="MM"/>
-          <prop k="outline_color" v="0,0,0,255"/>
-          <prop k="outline_style" v="solid"/>
-          <prop k="outline_width" v="0.4"/>
-          <prop k="outline_width_map_unit_scale" v="3x:0,0,0,0,0,0"/>
-          <prop k="outline_width_unit" v="MM"/>
-          <prop k="scale_method" v="area"/>
-          <prop k="size" v="2"/>
-          <prop k="size_map_unit_scale" v="3x:0,0,0,0,0,0"/>
-          <prop k="size_unit" v="MM"/>
-          <prop k="vertical_anchor_point" v="1"/>
+      <symbol clip_to_extent="1" force_rhr="0" alpha="1" type="marker" name="0">
+        <layer class="SimpleMarker" enabled="1" locked="0" pass="0">
+          <prop v="0" k="angle"/>
+          <prop v="234,233,232,255" k="color"/>
+          <prop v="1" k="horizontal_anchor_point"/>
+          <prop v="bevel" k="joinstyle"/>
+          <prop v="square" k="name"/>
+          <prop v="0,0" k="offset"/>
+          <prop v="3x:0,0,0,0,0,0" k="offset_map_unit_scale"/>
+          <prop v="MM" k="offset_unit"/>
+          <prop v="0,0,0,255" k="outline_color"/>
+          <prop v="solid" k="outline_style"/>
+          <prop v="0.4" k="outline_width"/>
+          <prop v="3x:0,0,0,0,0,0" k="outline_width_map_unit_scale"/>
+          <prop v="MM" k="outline_width_unit"/>
+          <prop v="area" k="scale_method"/>
+          <prop v="2" k="size"/>
+          <prop v="3x:0,0,0,0,0,0" k="size_map_unit_scale"/>
+          <prop v="MM" k="size_unit"/>
+          <prop v="1" k="vertical_anchor_point"/>
           <effect enabled="0" type="effectStack">
             <effect type="drawSource">
-              <prop k="blend_mode" v="0"/>
-              <prop k="draw_mode" v="2"/>
-              <prop k="enabled" v="1"/>
-              <prop k="opacity" v="1"/>
+              <prop v="0" k="blend_mode"/>
+              <prop v="2" k="draw_mode"/>
+              <prop v="1" k="enabled"/>
+              <prop v="1" k="opacity"/>
             </effect>
           </effect>
           <data_defined_properties>
             <Option type="Map">
-              <Option value="" name="name" type="QString"/>
+              <Option value="" type="QString" name="name"/>
               <Option name="properties"/>
-              <Option value="collection" name="type" type="QString"/>
+              <Option value="collection" type="QString" name="type"/>
             </Option>
           </data_defined_properties>
         </layer>
       </symbol>
-      <symbol force_rhr="0" name="1" type="marker" alpha="1" clip_to_extent="1">
-        <layer pass="0" enabled="1" class="SimpleMarker" locked="0">
-          <prop k="angle" v="0"/>
-          <prop k="color" v="234,233,232,255"/>
-          <prop k="horizontal_anchor_point" v="1"/>
-          <prop k="joinstyle" v="bevel"/>
-          <prop k="name" v="circle"/>
-          <prop k="offset" v="0,0"/>
-          <prop k="offset_map_unit_scale" v="3x:0,0,0,0,0,0"/>
-          <prop k="offset_unit" v="MM"/>
-          <prop k="outline_color" v="0,0,0,255"/>
-          <prop k="outline_style" v="solid"/>
-          <prop k="outline_width" v="0.4"/>
-          <prop k="outline_width_map_unit_scale" v="3x:0,0,0,0,0,0"/>
-          <prop k="outline_width_unit" v="MM"/>
-          <prop k="scale_method" v="area"/>
-          <prop k="size" v="2"/>
-          <prop k="size_map_unit_scale" v="3x:0,0,0,0,0,0"/>
-          <prop k="size_unit" v="MM"/>
-          <prop k="vertical_anchor_point" v="1"/>
+      <symbol clip_to_extent="1" force_rhr="0" alpha="1" type="marker" name="1">
+        <layer class="SimpleMarker" enabled="1" locked="0" pass="0">
+          <prop v="0" k="angle"/>
+          <prop v="234,233,232,255" k="color"/>
+          <prop v="1" k="horizontal_anchor_point"/>
+          <prop v="bevel" k="joinstyle"/>
+          <prop v="circle" k="name"/>
+          <prop v="0,0" k="offset"/>
+          <prop v="3x:0,0,0,0,0,0" k="offset_map_unit_scale"/>
+          <prop v="MM" k="offset_unit"/>
+          <prop v="0,0,0,255" k="outline_color"/>
+          <prop v="solid" k="outline_style"/>
+          <prop v="0.4" k="outline_width"/>
+          <prop v="3x:0,0,0,0,0,0" k="outline_width_map_unit_scale"/>
+          <prop v="MM" k="outline_width_unit"/>
+          <prop v="area" k="scale_method"/>
+          <prop v="2" k="size"/>
+          <prop v="3x:0,0,0,0,0,0" k="size_map_unit_scale"/>
+          <prop v="MM" k="size_unit"/>
+          <prop v="1" k="vertical_anchor_point"/>
           <effect enabled="0" type="effectStack">
             <effect type="drawSource">
-              <prop k="blend_mode" v="0"/>
-              <prop k="draw_mode" v="2"/>
-              <prop k="enabled" v="1"/>
-              <prop k="opacity" v="1"/>
+              <prop v="0" k="blend_mode"/>
+              <prop v="2" k="draw_mode"/>
+              <prop v="1" k="enabled"/>
+              <prop v="1" k="opacity"/>
             </effect>
           </effect>
           <data_defined_properties>
             <Option type="Map">
-              <Option value="" name="name" type="QString"/>
+              <Option value="" type="QString" name="name"/>
               <Option name="properties"/>
-              <Option value="collection" name="type" type="QString"/>
+              <Option value="collection" type="QString" name="type"/>
             </Option>
           </data_defined_properties>
         </layer>
@@ -88,14 +88,17 @@
     </symbols>
     <effect enabled="0" type="effectStack">
       <effect type="drawSource">
-        <prop k="blend_mode" v="0"/>
-        <prop k="draw_mode" v="2"/>
-        <prop k="enabled" v="1"/>
-        <prop k="opacity" v="1"/>
+        <prop v="0" k="blend_mode"/>
+        <prop v="2" k="draw_mode"/>
+        <prop v="1" k="enabled"/>
+        <prop v="1" k="opacity"/>
       </effect>
     </effect>
   </renderer-v2>
   <customproperties>
+    <property key="dualview/previewExpressions">
+      <value>id</value>
+    </property>
     <property value="0" key="embeddedWidgets/count"/>
     <property key="variableNames"/>
     <property key="variableValues"/>
@@ -104,21 +107,21 @@
   <featureBlendMode>0</featureBlendMode>
   <layerOpacity>1</layerOpacity>
   <SingleCategoryDiagramRenderer diagramType="Histogram" attributeLegend="1">
-    <DiagramCategory maxScaleDenominator="1e+08" width="15" penAlpha="255" minimumSize="0" diagramOrientation="Up" labelPlacementMethod="XHeight" sizeType="MM" penWidth="0" barWidth="5" scaleBasedVisibility="0" scaleDependency="Area" minScaleDenominator="0" enabled="0" backgroundColor="#ffffff" sizeScale="3x:0,0,0,0,0,0" backgroundAlpha="255" height="15" rotationOffset="270" penColor="#000000" lineSizeType="MM" lineSizeScale="3x:0,0,0,0,0,0" opacity="1">
+    <DiagramCategory backgroundAlpha="255" penColor="#000000" maxScaleDenominator="1e+08" height="15" minScaleDenominator="0" penAlpha="255" opacity="1" sizeType="MM" barWidth="5" scaleDependency="Area" width="15" minimumSize="0" lineSizeScale="3x:0,0,0,0,0,0" diagramOrientation="Up" lineSizeType="MM" sizeScale="3x:0,0,0,0,0,0" rotationOffset="270" labelPlacementMethod="XHeight" enabled="0" scaleBasedVisibility="0" penWidth="0" backgroundColor="#ffffff">
       <fontProperties description="Lato,10,-1,5,50,0,0,0,0,0" style=""/>
-      <attribute field="" label="" color="#000000"/>
+      <attribute field="" color="#000000" label=""/>
     </DiagramCategory>
   </SingleCategoryDiagramRenderer>
-  <DiagramLayerSettings priority="0" zIndex="0" showAll="1" linePlacementFlags="2" dist="0" obstacle="0" placement="0">
+  <DiagramLayerSettings dist="0" priority="0" zIndex="0" obstacle="0" linePlacementFlags="2" showAll="1" placement="0">
     <properties>
       <Option type="Map">
-        <Option value="" name="name" type="QString"/>
+        <Option value="" type="QString" name="name"/>
         <Option name="properties"/>
-        <Option value="collection" name="type" type="QString"/>
+        <Option value="collection" type="QString" name="type"/>
       </Option>
     </properties>
   </DiagramLayerSettings>
-  <geometryOptions removeDuplicateNodes="0" geometryPrecision="0">
+  <geometryOptions geometryPrecision="0" removeDuplicateNodes="0">
     <activeChecks/>
     <checkConfiguration/>
   </geometryOptions>
@@ -127,8 +130,8 @@
       <editWidget type="TextEdit">
         <config>
           <Option type="Map">
-            <Option value="false" name="IsMultiline" type="bool"/>
-            <Option value="false" name="UseHtml" type="bool"/>
+            <Option value="false" type="bool" name="IsMultiline"/>
+            <Option value="false" type="bool" name="UseHtml"/>
           </Option>
         </config>
       </editWidget>
@@ -137,8 +140,8 @@
       <editWidget type="TextEdit">
         <config>
           <Option type="Map">
-            <Option value="false" name="IsMultiline" type="bool"/>
-            <Option value="false" name="UseHtml" type="bool"/>
+            <Option value="false" type="bool" name="IsMultiline"/>
+            <Option value="false" type="bool" name="UseHtml"/>
           </Option>
         </config>
       </editWidget>
@@ -147,15 +150,15 @@
       <editWidget type="ValueRelation">
         <config>
           <Option type="Map">
-            <Option value="false" name="AllowMulti" type="bool"/>
-            <Option value="false" name="AllowNull" type="bool"/>
-            <Option value="" name="FilterExpression" type="QString"/>
-            <Option value="id" name="Key" type="QString"/>
-            <Option value="distributor20130304114719702" name="Layer" type="QString"/>
-            <Option value="1" name="NofColumns" type="int"/>
-            <Option value="false" name="OrderByValue" type="bool"/>
-            <Option value="false" name="UseCompleter" type="bool"/>
-            <Option value="name" name="Value" type="QString"/>
+            <Option value="false" type="bool" name="AllowMulti"/>
+            <Option value="false" type="bool" name="AllowNull"/>
+            <Option value="" type="QString" name="FilterExpression"/>
+            <Option value="id" type="QString" name="Key"/>
+            <Option value="distributor20130304114719702" type="QString" name="Layer"/>
+            <Option value="1" type="int" name="NofColumns"/>
+            <Option value="false" type="bool" name="OrderByValue"/>
+            <Option value="false" type="bool" name="UseCompleter"/>
+            <Option value="name" type="QString" name="Value"/>
           </Option>
         </config>
       </editWidget>
@@ -164,15 +167,15 @@
       <editWidget type="ValueRelation">
         <config>
           <Option type="Map">
-            <Option value="false" name="AllowMulti" type="bool"/>
-            <Option value="false" name="AllowNull" type="bool"/>
-            <Option value="" name="FilterExpression" type="QString"/>
-            <Option value="id" name="Key" type="QString"/>
-            <Option value="vl_status20130304110011436" name="Layer" type="QString"/>
-            <Option value="1" name="NofColumns" type="int"/>
-            <Option value="false" name="OrderByValue" type="bool"/>
-            <Option value="false" name="UseCompleter" type="bool"/>
-            <Option value="value_fr" name="Value" type="QString"/>
+            <Option value="false" type="bool" name="AllowMulti"/>
+            <Option value="false" type="bool" name="AllowNull"/>
+            <Option value="" type="QString" name="FilterExpression"/>
+            <Option value="id" type="QString" name="Key"/>
+            <Option value="vl_status20130304110011436" type="QString" name="Layer"/>
+            <Option value="1" type="int" name="NofColumns"/>
+            <Option value="false" type="bool" name="OrderByValue"/>
+            <Option value="false" type="bool" name="UseCompleter"/>
+            <Option value="value_fr" type="QString" name="Value"/>
           </Option>
         </config>
       </editWidget>
@@ -181,15 +184,15 @@
       <editWidget type="ValueRelation">
         <config>
           <Option type="Map">
-            <Option value="false" name="AllowMulti" type="bool"/>
-            <Option value="false" name="AllowNull" type="bool"/>
-            <Option value="" name="FilterExpression" type="QString"/>
-            <Option value="id" name="Key" type="QString"/>
-            <Option value="vl_cover_type20141219115626290" name="Layer" type="QString"/>
-            <Option value="1" name="NofColumns" type="int"/>
-            <Option value="false" name="OrderByValue" type="bool"/>
-            <Option value="false" name="UseCompleter" type="bool"/>
-            <Option value="value_fr" name="Value" type="QString"/>
+            <Option value="false" type="bool" name="AllowMulti"/>
+            <Option value="false" type="bool" name="AllowNull"/>
+            <Option value="" type="QString" name="FilterExpression"/>
+            <Option value="id" type="QString" name="Key"/>
+            <Option value="vl_cover_type20141219115626290" type="QString" name="Layer"/>
+            <Option value="1" type="int" name="NofColumns"/>
+            <Option value="false" type="bool" name="OrderByValue"/>
+            <Option value="false" type="bool" name="UseCompleter"/>
+            <Option value="value_fr" type="QString" name="Value"/>
           </Option>
         </config>
       </editWidget>
@@ -198,14 +201,14 @@
       <editWidget type="RelationReference">
         <config>
           <Option type="Map">
-            <Option value="false" name="AllowAddFeatures" type="bool"/>
-            <Option value="true" name="AllowNULL" type="bool"/>
-            <Option value="true" name="MapIdentification" type="bool"/>
-            <Option value="false" name="OrderByValue" type="bool"/>
-            <Option value="true" name="ReadOnly" type="bool"/>
-            <Option value="relation_cover_installation" name="Relation" type="QString"/>
-            <Option value="false" name="ShowForm" type="bool"/>
-            <Option value="true" name="ShowOpenFormButton" type="bool"/>
+            <Option value="false" type="bool" name="AllowAddFeatures"/>
+            <Option value="true" type="bool" name="AllowNULL"/>
+            <Option value="true" type="bool" name="MapIdentification"/>
+            <Option value="false" type="bool" name="OrderByValue"/>
+            <Option value="true" type="bool" name="ReadOnly"/>
+            <Option value="relation_cover_installation" type="QString" name="Relation"/>
+            <Option value="false" type="bool" name="ShowForm"/>
+            <Option value="true" type="bool" name="ShowOpenFormButton"/>
           </Option>
         </config>
       </editWidget>
@@ -214,11 +217,11 @@
       <editWidget type="DateTime">
         <config>
           <Option type="Map">
-            <Option value="true" name="allow_null" type="bool"/>
-            <Option value="true" name="calendar_popup" type="bool"/>
-            <Option value="yyyy" name="display_format" type="QString"/>
-            <Option value="yyyy" name="field_format" type="QString"/>
-            <Option value="false" name="field_iso_format" type="bool"/>
+            <Option value="true" type="bool" name="allow_null"/>
+            <Option value="true" type="bool" name="calendar_popup"/>
+            <Option value="yyyy" type="QString" name="display_format"/>
+            <Option value="yyyy" type="QString" name="field_format"/>
+            <Option value="false" type="bool" name="field_iso_format"/>
           </Option>
         </config>
       </editWidget>
@@ -227,8 +230,8 @@
       <editWidget type="TextEdit">
         <config>
           <Option type="Map">
-            <Option value="0" name="IsMultiline" type="QString"/>
-            <Option value="0" name="UseHtml" type="QString"/>
+            <Option value="0" type="QString" name="IsMultiline"/>
+            <Option value="0" type="QString" name="UseHtml"/>
           </Option>
         </config>
       </editWidget>
@@ -237,8 +240,8 @@
       <editWidget type="CheckBox">
         <config>
           <Option type="Map">
-            <Option value="" name="CheckedState" type="QString"/>
-            <Option value="" name="UncheckedState" type="QString"/>
+            <Option value="" type="QString" name="CheckedState"/>
+            <Option value="" type="QString" name="UncheckedState"/>
           </Option>
         </config>
       </editWidget>
@@ -247,8 +250,8 @@
       <editWidget type="TextEdit">
         <config>
           <Option type="Map">
-            <Option value="false" name="IsMultiline" type="bool"/>
-            <Option value="false" name="UseHtml" type="bool"/>
+            <Option value="false" type="bool" name="IsMultiline"/>
+            <Option value="false" type="bool" name="UseHtml"/>
           </Option>
         </config>
       </editWidget>
@@ -257,8 +260,8 @@
       <editWidget type="TextEdit">
         <config>
           <Option type="Map">
-            <Option value="false" name="IsMultiline" type="bool"/>
-            <Option value="false" name="UseHtml" type="bool"/>
+            <Option value="false" type="bool" name="IsMultiline"/>
+            <Option value="false" type="bool" name="UseHtml"/>
           </Option>
         </config>
       </editWidget>
@@ -267,8 +270,8 @@
       <editWidget type="TextEdit">
         <config>
           <Option type="Map">
-            <Option value="false" name="IsMultiline" type="bool"/>
-            <Option value="false" name="UseHtml" type="bool"/>
+            <Option value="false" type="bool" name="IsMultiline"/>
+            <Option value="false" type="bool" name="UseHtml"/>
           </Option>
         </config>
       </editWidget>
@@ -277,8 +280,8 @@
       <editWidget type="TextEdit">
         <config>
           <Option type="Map">
-            <Option value="0" name="IsMultiline" type="QString"/>
-            <Option value="0" name="UseHtml" type="QString"/>
+            <Option value="0" type="QString" name="IsMultiline"/>
+            <Option value="0" type="QString" name="UseHtml"/>
           </Option>
         </config>
       </editWidget>
@@ -287,8 +290,8 @@
       <editWidget type="TextEdit">
         <config>
           <Option type="Map">
-            <Option value="0" name="IsMultiline" type="QString"/>
-            <Option value="0" name="UseHtml" type="QString"/>
+            <Option value="0" type="QString" name="IsMultiline"/>
+            <Option value="0" type="QString" name="UseHtml"/>
           </Option>
         </config>
       </editWidget>
@@ -297,8 +300,8 @@
       <editWidget type="TextEdit">
         <config>
           <Option type="Map">
-            <Option value="0" name="IsMultiline" type="QString"/>
-            <Option value="0" name="UseHtml" type="QString"/>
+            <Option value="0" type="QString" name="IsMultiline"/>
+            <Option value="0" type="QString" name="UseHtml"/>
           </Option>
         </config>
       </editWidget>
@@ -307,8 +310,8 @@
       <editWidget type="TextEdit">
         <config>
           <Option type="Map">
-            <Option value="0" name="IsMultiline" type="QString"/>
-            <Option value="0" name="UseHtml" type="QString"/>
+            <Option value="0" type="QString" name="IsMultiline"/>
+            <Option value="0" type="QString" name="UseHtml"/>
           </Option>
         </config>
       </editWidget>
@@ -317,8 +320,8 @@
       <editWidget type="TextEdit">
         <config>
           <Option type="Map">
-            <Option value="0" name="IsMultiline" type="QString"/>
-            <Option value="0" name="UseHtml" type="QString"/>
+            <Option value="0" type="QString" name="IsMultiline"/>
+            <Option value="0" type="QString" name="UseHtml"/>
           </Option>
         </config>
       </editWidget>
@@ -327,8 +330,8 @@
       <editWidget type="TextEdit">
         <config>
           <Option type="Map">
-            <Option value="0" name="IsMultiline" type="QString"/>
-            <Option value="0" name="UseHtml" type="QString"/>
+            <Option value="0" type="QString" name="IsMultiline"/>
+            <Option value="0" type="QString" name="UseHtml"/>
           </Option>
         </config>
       </editWidget>
@@ -337,8 +340,8 @@
       <editWidget type="TextEdit">
         <config>
           <Option type="Map">
-            <Option value="0" name="IsMultiline" type="QString"/>
-            <Option value="0" name="UseHtml" type="QString"/>
+            <Option value="0" type="QString" name="IsMultiline"/>
+            <Option value="0" type="QString" name="UseHtml"/>
           </Option>
         </config>
       </editWidget>
@@ -347,8 +350,8 @@
       <editWidget type="TextEdit">
         <config>
           <Option type="Map">
-            <Option value="0" name="IsMultiline" type="QString"/>
-            <Option value="0" name="UseHtml" type="QString"/>
+            <Option value="0" type="QString" name="IsMultiline"/>
+            <Option value="0" type="QString" name="UseHtml"/>
           </Option>
         </config>
       </editWidget>
@@ -357,8 +360,8 @@
       <editWidget type="TextEdit">
         <config>
           <Option type="Map">
-            <Option value="0" name="IsMultiline" type="QString"/>
-            <Option value="0" name="UseHtml" type="QString"/>
+            <Option value="0" type="QString" name="IsMultiline"/>
+            <Option value="0" type="QString" name="UseHtml"/>
           </Option>
         </config>
       </editWidget>
@@ -367,8 +370,8 @@
       <editWidget type="TextEdit">
         <config>
           <Option type="Map">
-            <Option value="0" name="IsMultiline" type="QString"/>
-            <Option value="0" name="UseHtml" type="QString"/>
+            <Option value="0" type="QString" name="IsMultiline"/>
+            <Option value="0" type="QString" name="UseHtml"/>
           </Option>
         </config>
       </editWidget>
@@ -377,8 +380,8 @@
       <editWidget type="TextEdit">
         <config>
           <Option type="Map">
-            <Option value="0" name="IsMultiline" type="QString"/>
-            <Option value="0" name="UseHtml" type="QString"/>
+            <Option value="0" type="QString" name="IsMultiline"/>
+            <Option value="0" type="QString" name="UseHtml"/>
           </Option>
         </config>
       </editWidget>
@@ -387,8 +390,8 @@
       <editWidget type="TextEdit">
         <config>
           <Option type="Map">
-            <Option value="0" name="IsMultiline" type="QString"/>
-            <Option value="0" name="UseHtml" type="QString"/>
+            <Option value="0" type="QString" name="IsMultiline"/>
+            <Option value="0" type="QString" name="UseHtml"/>
           </Option>
         </config>
       </editWidget>
@@ -397,8 +400,8 @@
       <editWidget type="TextEdit">
         <config>
           <Option type="Map">
-            <Option value="0" name="IsMultiline" type="QString"/>
-            <Option value="0" name="UseHtml" type="QString"/>
+            <Option value="0" type="QString" name="IsMultiline"/>
+            <Option value="0" type="QString" name="UseHtml"/>
           </Option>
         </config>
       </editWidget>
@@ -410,7 +413,7 @@
     <alias field="fk_distributor" index="2" name="Distributeur"/>
     <alias field="fk_status" index="3" name="Statut"/>
     <alias field="fk_cover_type" index="4" name="Type"/>
-    <alias field="fk_installation" index="5" name=""/>
+    <alias field="fk_installation" index="5" name="Ouvrage"/>
     <alias field="year" index="6" name="Année"/>
     <alias field="altitude" index="7" name=""/>
     <alias field="circular" index="8" name="Circulaire"/>
@@ -488,69 +491,69 @@
     <constraint field="fk_object_reference" notnull_strength="0" unique_strength="0" exp_strength="0" constraints="0"/>
   </constraints>
   <constraintExpressions>
-    <constraint field="id" desc="" exp=""/>
-    <constraint field="identification" desc="" exp=""/>
-    <constraint field="fk_distributor" desc="" exp=""/>
-    <constraint field="fk_status" desc="" exp=""/>
-    <constraint field="fk_cover_type" desc="" exp=""/>
-    <constraint field="fk_installation" desc="" exp=""/>
-    <constraint field="year" desc="" exp=""/>
-    <constraint field="altitude" desc="" exp=""/>
-    <constraint field="circular" desc="" exp=""/>
-    <constraint field="form_dimension" desc="" exp=""/>
-    <constraint field="remark" desc="" exp=""/>
-    <constraint field="geometry_polygon" desc="" exp=""/>
-    <constraint field="label_1_visible" desc="" exp=""/>
-    <constraint field="label_1_x" desc="" exp=""/>
-    <constraint field="label_1_y" desc="" exp=""/>
-    <constraint field="label_1_rotation" desc="" exp=""/>
-    <constraint field="label_1_text" desc="" exp=""/>
-    <constraint field="label_2_visible" desc="" exp=""/>
-    <constraint field="label_2_x" desc="" exp=""/>
-    <constraint field="label_2_y" desc="" exp=""/>
-    <constraint field="label_2_rotation" desc="" exp=""/>
-    <constraint field="label_2_text" desc="" exp=""/>
-    <constraint field="fk_precision" desc="" exp=""/>
-    <constraint field="fk_precisionalti" desc="" exp=""/>
-    <constraint field="fk_object_reference" desc="" exp=""/>
+    <constraint field="id" exp="" desc=""/>
+    <constraint field="identification" exp="" desc=""/>
+    <constraint field="fk_distributor" exp="" desc=""/>
+    <constraint field="fk_status" exp="" desc=""/>
+    <constraint field="fk_cover_type" exp="" desc=""/>
+    <constraint field="fk_installation" exp="" desc=""/>
+    <constraint field="year" exp="" desc=""/>
+    <constraint field="altitude" exp="" desc=""/>
+    <constraint field="circular" exp="" desc=""/>
+    <constraint field="form_dimension" exp="" desc=""/>
+    <constraint field="remark" exp="" desc=""/>
+    <constraint field="geometry_polygon" exp="" desc=""/>
+    <constraint field="label_1_visible" exp="" desc=""/>
+    <constraint field="label_1_x" exp="" desc=""/>
+    <constraint field="label_1_y" exp="" desc=""/>
+    <constraint field="label_1_rotation" exp="" desc=""/>
+    <constraint field="label_1_text" exp="" desc=""/>
+    <constraint field="label_2_visible" exp="" desc=""/>
+    <constraint field="label_2_x" exp="" desc=""/>
+    <constraint field="label_2_y" exp="" desc=""/>
+    <constraint field="label_2_rotation" exp="" desc=""/>
+    <constraint field="label_2_text" exp="" desc=""/>
+    <constraint field="fk_precision" exp="" desc=""/>
+    <constraint field="fk_precisionalti" exp="" desc=""/>
+    <constraint field="fk_object_reference" exp="" desc=""/>
   </constraintExpressions>
   <expressionfields/>
   <attributeactions>
     <defaultAction value="{00000000-0000-0000-0000-000000000000}" key="Canvas"/>
-    <actionsetting name="History audit" notificationMessage="" icon="" action="qgis.utils.plugins['postgres91plusauditor'].audit('od_cover20141219115626229',[% $id %])" type="1" id="{2ad5c10a-89e6-47ec-9c1c-59d569e38588}" shortTitle="" capture="0" isEnabledOnlyWhenEditable="0">
-      <actionScope id="Canvas"/>
+    <actionsetting capture="0" icon="" isEnabledOnlyWhenEditable="0" notificationMessage="" type="1" id="{71957eb9-ae96-48d7-b32c-2e69e3309de6}" name="History audit" shortTitle="" action="qgis.utils.plugins['postgres91plusauditor'].audit('od_cover20141219115626229',[% $id %])">
       <actionScope id="Field"/>
+      <actionScope id="Canvas"/>
       <actionScope id="Feature"/>
     </actionsetting>
   </attributeactions>
-  <attributetableconfig sortOrder="0" sortExpression="" actionWidgetStyle="dropDown">
+  <attributetableconfig sortExpression="" actionWidgetStyle="dropDown" sortOrder="0">
     <columns>
-      <column name="id" width="-1" type="field" hidden="0"/>
-      <column name="identification" width="-1" type="field" hidden="0"/>
-      <column name="fk_distributor" width="-1" type="field" hidden="0"/>
-      <column name="fk_status" width="-1" type="field" hidden="0"/>
-      <column name="fk_cover_type" width="-1" type="field" hidden="0"/>
-      <column name="fk_installation" width="-1" type="field" hidden="0"/>
-      <column name="year" width="-1" type="field" hidden="0"/>
-      <column name="altitude" width="-1" type="field" hidden="0"/>
-      <column name="circular" width="-1" type="field" hidden="0"/>
-      <column name="form_dimension" width="-1" type="field" hidden="0"/>
-      <column name="remark" width="-1" type="field" hidden="0"/>
-      <column name="geometry_polygon" width="-1" type="field" hidden="0"/>
-      <column name="label_1_visible" width="-1" type="field" hidden="0"/>
-      <column name="label_1_x" width="-1" type="field" hidden="0"/>
-      <column name="label_1_y" width="-1" type="field" hidden="0"/>
-      <column name="label_1_rotation" width="-1" type="field" hidden="0"/>
-      <column name="label_1_text" width="-1" type="field" hidden="0"/>
-      <column name="label_2_visible" width="-1" type="field" hidden="0"/>
-      <column name="label_2_x" width="-1" type="field" hidden="0"/>
-      <column name="label_2_y" width="-1" type="field" hidden="0"/>
-      <column name="label_2_rotation" width="-1" type="field" hidden="0"/>
-      <column name="label_2_text" width="-1" type="field" hidden="0"/>
-      <column width="-1" type="actions" hidden="1"/>
-      <column name="fk_precision" width="-1" type="field" hidden="0"/>
-      <column name="fk_precisionalti" width="-1" type="field" hidden="0"/>
-      <column name="fk_object_reference" width="-1" type="field" hidden="0"/>
+      <column hidden="0" type="field" name="id" width="-1"/>
+      <column hidden="0" type="field" name="identification" width="-1"/>
+      <column hidden="0" type="field" name="fk_distributor" width="-1"/>
+      <column hidden="0" type="field" name="fk_status" width="-1"/>
+      <column hidden="0" type="field" name="fk_cover_type" width="-1"/>
+      <column hidden="0" type="field" name="fk_installation" width="-1"/>
+      <column hidden="0" type="field" name="year" width="-1"/>
+      <column hidden="0" type="field" name="altitude" width="-1"/>
+      <column hidden="0" type="field" name="circular" width="-1"/>
+      <column hidden="0" type="field" name="form_dimension" width="-1"/>
+      <column hidden="0" type="field" name="remark" width="-1"/>
+      <column hidden="0" type="field" name="geometry_polygon" width="-1"/>
+      <column hidden="0" type="field" name="label_1_visible" width="-1"/>
+      <column hidden="0" type="field" name="label_1_x" width="-1"/>
+      <column hidden="0" type="field" name="label_1_y" width="-1"/>
+      <column hidden="0" type="field" name="label_1_rotation" width="-1"/>
+      <column hidden="0" type="field" name="label_1_text" width="-1"/>
+      <column hidden="0" type="field" name="label_2_visible" width="-1"/>
+      <column hidden="0" type="field" name="label_2_x" width="-1"/>
+      <column hidden="0" type="field" name="label_2_y" width="-1"/>
+      <column hidden="0" type="field" name="label_2_rotation" width="-1"/>
+      <column hidden="0" type="field" name="label_2_text" width="-1"/>
+      <column hidden="1" type="actions" width="-1"/>
+      <column hidden="0" type="field" name="fk_precision" width="-1"/>
+      <column hidden="0" type="field" name="fk_precisionalti" width="-1"/>
+      <column hidden="0" type="field" name="fk_object_reference" width="-1"/>
     </columns>
   </attributetableconfig>
   <conditionalstyles>
@@ -580,18 +583,18 @@ def my_form_open(dialog, layer, feature):
   <featformsuppress>0</featformsuppress>
   <editorlayout>tablayout</editorlayout>
   <attributeEditorForm>
-    <attributeEditorContainer showLabel="1" name="Général" visibilityExpressionEnabled="0" columnCount="2" visibilityExpression="" groupBox="0">
-      <attributeEditorField showLabel="1" name="id" index="0"/>
-      <attributeEditorField showLabel="1" name="fk_distributor" index="2"/>
-      <attributeEditorField showLabel="1" name="identification" index="1"/>
-      <attributeEditorField showLabel="1" name="fk_status" index="3"/>
-      <attributeEditorField showLabel="1" name="fk_installation" index="5"/>
-      <attributeEditorField showLabel="1" name="fk_cover_type" index="4"/>
-      <attributeEditorField showLabel="1" name="form_dimension" index="9"/>
-      <attributeEditorField showLabel="1" name="year" index="6"/>
+    <attributeEditorContainer visibilityExpressionEnabled="0" columnCount="2" visibilityExpression="" groupBox="0" name="Général" showLabel="1">
+      <attributeEditorField index="0" name="id" showLabel="1"/>
+      <attributeEditorField index="2" name="fk_distributor" showLabel="1"/>
+      <attributeEditorField index="1" name="identification" showLabel="1"/>
+      <attributeEditorField index="3" name="fk_status" showLabel="1"/>
+      <attributeEditorField index="5" name="fk_installation" showLabel="1"/>
+      <attributeEditorField index="4" name="fk_cover_type" showLabel="1"/>
+      <attributeEditorField index="9" name="form_dimension" showLabel="1"/>
+      <attributeEditorField index="6" name="year" showLabel="1"/>
     </attributeEditorContainer>
-    <attributeEditorField showLabel="1" name="circular" index="8"/>
-    <attributeEditorField showLabel="1" name="remark" index="10"/>
+    <attributeEditorField index="8" name="circular" showLabel="1"/>
+    <attributeEditorField index="10" name="remark" showLabel="1"/>
   </attributeEditorForm>
   <editable>
     <field name="altitude" editable="1"/>

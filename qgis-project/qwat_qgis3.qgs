@@ -18528,6 +18528,9 @@ def my_form_open(dialog, layer, feature):
         </effect>
       </renderer-v2>
       <customproperties>
+        <property key="dualview/previewExpressions">
+          <value>id</value>
+        </property>
         <property value="0" key="embeddedWidgets/count"/>
         <property key="variableNames"/>
         <property key="variableValues"/>
@@ -18842,7 +18845,7 @@ def my_form_open(dialog, layer, feature):
         <alias field="fk_distributor" index="2" name="Distributeur"/>
         <alias field="fk_status" index="3" name="Statut"/>
         <alias field="fk_cover_type" index="4" name="Type"/>
-        <alias field="fk_installation" index="5" name=""/>
+        <alias field="fk_installation" index="5" name="Ouvrage"/>
         <alias field="year" index="6" name="Année"/>
         <alias field="altitude" index="7" name=""/>
         <alias field="circular" index="8" name="Circulaire"/>
@@ -18949,7 +18952,7 @@ def my_form_open(dialog, layer, feature):
       <expressionfields/>
       <attributeactions>
         <defaultAction value="{00000000-0000-0000-0000-000000000000}" key="Canvas"/>
-        <actionsetting capture="0" icon="" isEnabledOnlyWhenEditable="0" notificationMessage="" type="1" id="{2ad5c10a-89e6-47ec-9c1c-59d569e38588}" name="History audit" shortTitle="" action="qgis.utils.plugins['postgres91plusauditor'].audit('od_cover20141219115626229',[% $id %])">
+        <actionsetting capture="0" icon="" isEnabledOnlyWhenEditable="0" notificationMessage="" type="1" id="{71957eb9-ae96-48d7-b32c-2e69e3309de6}" name="History audit" shortTitle="" action="qgis.utils.plugins['postgres91plusauditor'].audit('od_cover20141219115626229',[% $id %])">
           <actionScope id="Field"/>
           <actionScope id="Canvas"/>
           <actionScope id="Feature"/>
@@ -27828,10 +27831,10 @@ def my_form_open(dialog, layer, feature):
         <rowstyles/>
         <fieldstyles/>
       </conditionalstyles>
-      <editform tolerant="1">./ui_forms/installation.ui</editform>
+      <editform tolerant="1">/home/lbartoletti/QWAT/qgis-project/ui_forms/installation.ui</editform>
       <editforminit>formOpen</editforminit>
       <editforminitcodesource>1</editforminitcodesource>
-      <editforminitfilepath>./python/installation_form.py</editforminitfilepath>
+      <editforminitfilepath>/home/lbartoletti/QWAT/qgis-project/python/installation_form.py</editforminitfilepath>
       <editforminitcode><![CDATA[from python.installation_form import formOpen
 ]]></editforminitcode>
       <featformsuppress>0</featformsuppress>
@@ -48235,10 +48238,10 @@ END
         <rowstyles/>
         <fieldstyles/>
       </conditionalstyles>
-      <editform tolerant="1">./ui_forms/installation.ui</editform>
+      <editform tolerant="1">/home/lbartoletti/QWAT/qgis-project/ui_forms/installation.ui</editform>
       <editforminit>formOpen</editforminit>
       <editforminitcodesource>0</editforminitcodesource>
-      <editforminitfilepath>./python/installation_form.py</editforminitfilepath>
+      <editforminitfilepath>/home/lbartoletti/QWAT/qgis-project/python/installation_form.py</editforminitfilepath>
       <editforminitcode><![CDATA[from python.installation_form import formOpen
 ]]></editforminitcode>
       <featformsuppress>0</featformsuppress>
@@ -52493,10 +52496,10 @@ END
         <rowstyles/>
         <fieldstyles/>
       </conditionalstyles>
-      <editform tolerant="1">./ui_forms/installation.ui</editform>
+      <editform tolerant="1">/home/lbartoletti/QWAT/qgis-project/ui_forms/installation.ui</editform>
       <editforminit>formOpen</editforminit>
       <editforminitcodesource>0</editforminitcodesource>
-      <editforminitfilepath>./python/installation_form.py</editforminitfilepath>
+      <editforminitfilepath>/home/lbartoletti/QWAT/qgis-project/python/installation_form.py</editforminitfilepath>
       <editforminitcode><![CDATA[from python.installation_form import formOpen
 ]]></editforminitcode>
       <featformsuppress>0</featformsuppress>
