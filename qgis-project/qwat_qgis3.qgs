@@ -21,7 +21,7 @@
     <customproperties/>
     <layer-tree-group name="Réseau" checked="Qt::Checked" expanded="1">
       <customproperties/>
-      <layer-tree-group name="ouvrages" checked="Qt::Checked" expanded="1">
+      <layer-tree-group name="ouvrages" checked="Qt::Checked" expanded="0">
         <customproperties/>
         <layer-tree-layer source="service='qwat' sslmode=disable key='id' srid=21781 type=PointZ table=&quot;qwat_od&quot;.&quot;vw_element_installation&quot; (geometry) sql=" id="vw_node_installation20150918153835436" name="Ouvrage" checked="Qt::Checked" expanded="1" providerKey="postgres">
           <customproperties>
@@ -65,7 +65,7 @@
           </customproperties>
         </layer-tree-layer>
       </layer-tree-group>
-      <layer-tree-layer source="service='qwat' sslmode=disable key='id' srid=21781 type=LineStringZ table=&quot;qwat_od&quot;.&quot;pipe&quot; (geometry) sql=" id="conduites_copy20130709141244955" name="Conduites" checked="Qt::Checked" expanded="1" providerKey="postgres">
+      <layer-tree-layer source="service='qwat' sslmode=disable key='id' srid=21781 type=LineStringZ table=&quot;qwat_od&quot;.&quot;pipe&quot; (geometry) sql=" id="conduites_copy20130709141244955" name="Conduites" checked="Qt::Checked" expanded="0" providerKey="postgres">
         <customproperties>
           <property key="expandedLegendNodes">
             <value>{f550eef3-fdaa-427b-b415-bd7e8fc25f9e}</value>
@@ -645,7 +645,7 @@
   <projectModels/>
   <legend updateDrawingOrder="false">
     <legendgroup open="true" name="Réseau" checked="Qt::Checked">
-      <legendgroup open="true" name="ouvrages" checked="Qt::Checked">
+      <legendgroup open="false" name="ouvrages" checked="Qt::Checked">
         <legendlayer drawingOrder="1" open="true" name="Ouvrage" checked="Qt::Checked" showFeatureCount="1">
           <filegroup hidden="false" open="true">
             <legendlayerfile layerid="vw_node_installation20150918153835436" visible="1" isInOverview="0"/>
@@ -684,8 +684,8 @@
           </filegroup>
         </legendlayer>
       </legendgroup>
-      <legendlayer drawingOrder="14" open="true" name="Conduites" checked="Qt::Checked" showFeatureCount="0">
-        <filegroup hidden="false" open="true">
+      <legendlayer drawingOrder="14" open="false" name="Conduites" checked="Qt::Checked" showFeatureCount="0">
+        <filegroup hidden="false" open="false">
           <legendlayerfile layerid="conduites_copy20130709141244955" visible="1" isInOverview="0"/>
         </filegroup>
       </legendlayer>
@@ -33889,6 +33889,15 @@ def my_form_open(dialog, layer, feature):
         <type></type>
         <title></title>
         <abstract></abstract>
+        <contact>
+          <name></name>
+          <organization></organization>
+          <position></position>
+          <voice></voice>
+          <fax></fax>
+          <email></email>
+          <role></role>
+        </contact>
         <links/>
         <fees></fees>
         <encoding></encoding>
@@ -33904,7 +33913,15 @@ def my_form_open(dialog, layer, feature):
             <geographicflag>false</geographicflag>
           </spatialrefsys>
         </crs>
-        <extent/>
+        <extent>
+          <spatial miny="0" maxy="0" dimensions="2" maxz="0" minx="0" crs="" minz="0" maxx="0"/>
+          <temporal>
+            <period>
+              <start></start>
+              <end></end>
+            </period>
+          </temporal>
+        </extent>
       </resourceMetadata>
       <provider encoding="ISO-8859-1">postgres</provider>
       <vectorjoins>
@@ -36239,7 +36256,7 @@ def my_form_open(dialog, layer, feature):
       </renderer-v2>
       <labeling type="simple">
         <settings>
-          <text-style fontFamily="DejaVu Sans" useSubstitutions="0" fontUnderline="0" fontItalic="0" fontWordSpacing="0" fontStrikeout="0" fieldName="COALESCE(&quot;valve_function_short_fr&quot;,'')&#xa;||&#xa;COALESCE(&quot;valve_type_short_fr&quot;,'')&#xa;|| &#xa;identification&#xa;||&#xa;CASE&#xa;WHEN  $scale  &lt;= 6000  THEN COALESCE(' ' ||&quot;label_1_text&quot;,'')&#xa;ELSE ''&#xa;END" blendMode="0" fontSizeUnit="Point" textOpacity="1" textColor="217,0,0,255" multilineHeight="1" namedStyle="Regular" fontSize="7.2" isExpression="1" fontWeight="50" previewBkgrdColor="#ffffff" fontSizeMapUnitScale="3x:0,0,0,0,0,0" fontLetterSpacing="0" fontCapitals="0">
+          <text-style fontFamily="DejaVu Sans" useSubstitutions="0" fontUnderline="0" fontItalic="0" fontWordSpacing="0" fontStrikeout="0" fieldName="COALESCE(&quot;valve_function_short_fr&quot;,'')&#xa;||&#xa;COALESCE(&quot;valve_type_short_fr&quot;,'')&#xa;|| &#xa;identification&#xa;||&#xa;CASE&#xa;WHEN  $scale  &lt;= 6000  THEN COALESCE(' ' ||&quot;label_1_text&quot;,'')&#xa;ELSE ''&#xa;END" blendMode="0" fontSizeUnit="Point" textOpacity="1" textColor="217,0,0,255" multilineHeight="1" namedStyle="Book" fontSize="7.2" isExpression="1" fontWeight="50" previewBkgrdColor="#ffffff" fontSizeMapUnitScale="3x:0,0,0,0,0,0" fontLetterSpacing="0" fontCapitals="0">
             <text-buffer bufferOpacity="1" bufferSizeUnits="MM" bufferColor="255,255,255,255" bufferJoinStyle="64" bufferNoFill="0" bufferDraw="1" bufferSize="1" bufferBlendMode="0" bufferSizeMapUnitScale="3x:0,0,0,0,0,0"/>
             <background shapeSizeX="0" shapeBorderColor="128,128,128,255" shapeDraw="0" shapeSizeMapUnitScale="3x:0,0,0,0,0,0" shapeBorderWidthMapUnitScale="3x:0,0,0,0,0,0" shapeOffsetX="0" shapeBorderWidth="0" shapeRadiiY="0" shapeRotation="0" shapeSizeY="0" shapeOpacity="1" shapeSizeUnit="MM" shapeRadiiMapUnitScale="3x:0,0,0,0,0,0" shapeType="0" shapeBorderWidthUnit="MM" shapeBlendMode="0" shapeSizeType="0" shapeFillColor="255,255,255,255" shapeRotationType="0" shapeRadiiX="0" shapeSVGFile="" shapeRadiiUnit="MM" shapeOffsetUnit="MM" shapeJoinStyle="64" shapeOffsetY="0" shapeOffsetMapUnitScale="3x:0,0,0,0,0,0"/>
             <shadow shadowOffsetAngle="135" shadowRadiusAlphaOnly="0" shadowColor="0,0,0,255" shadowOffsetMapUnitScale="3x:0,0,0,0,0,0" shadowDraw="0" shadowRadiusUnit="MM" shadowRadiusMapUnitScale="3x:0,0,0,0,0,0" shadowUnder="0" shadowOpacity="0.7" shadowOffsetDist="1" shadowOffsetUnit="MM" shadowRadius="1.5" shadowOffsetGlobal="1" shadowScale="100" shadowBlendMode="6"/>
@@ -36284,12 +36301,15 @@ def my_form_open(dialog, layer, feature):
         </settings>
       </labeling>
       <customproperties>
+        <property key="dualview/previewExpressions">
+          <value>id</value>
+        </property>
         <property value="0" key="embeddedWidgets/count"/>
         <property value="no" key="itemBrowserConnected"/>
         <property value="95" key="itemBrowserCurrentItem"/>
         <property value="[]" key="itemBrowserSelection"/>
-        <property value="_fields_" key="variableNames"/>
-        <property value="" key="variableValues"/>
+        <property key="variableNames"/>
+        <property key="variableValues"/>
       </customproperties>
       <blendMode>0</blendMode>
       <featureBlendMode>0</featureBlendMode>
@@ -36300,7 +36320,7 @@ def my_form_open(dialog, layer, feature):
           <attribute field="" color="#000000" label=""/>
         </DiagramCategory>
       </SingleCategoryDiagramRenderer>
-      <DiagramLayerSettings dist="0" priority="0" zIndex="0" obstacle="0" linePlacementFlags="10" showAll="1" placement="0">
+      <DiagramLayerSettings dist="0" priority="0" zIndex="0" obstacle="0" linePlacementFlags="2" showAll="1" placement="0">
         <properties>
           <Option type="Map">
             <Option value="" type="QString" name="name"/>
@@ -36324,8 +36344,8 @@ def my_form_open(dialog, layer, feature):
           <editWidget type="TextEdit">
             <config>
               <Option type="Map">
-                <Option value="0" type="QString" name="IsMultiline"/>
-                <Option value="0" type="QString" name="UseHtml"/>
+                <Option value="false" type="bool" name="IsMultiline"/>
+                <Option value="false" type="bool" name="UseHtml"/>
               </Option>
             </config>
           </editWidget>
@@ -36334,13 +36354,14 @@ def my_form_open(dialog, layer, feature):
           <editWidget type="ValueRelation">
             <config>
               <Option type="Map">
-                <Option value="0" type="QString" name="AllowMulti"/>
-                <Option value="0" type="QString" name="AllowNull"/>
+                <Option value="false" type="bool" name="AllowMulti"/>
+                <Option value="false" type="bool" name="AllowNull"/>
                 <Option value="" type="QString" name="FilterExpression"/>
                 <Option value="id" type="QString" name="Key"/>
                 <Option value="vl_valve_type20130304110011685" type="QString" name="Layer"/>
-                <Option value="0" type="QString" name="OrderByValue"/>
-                <Option value="0" type="QString" name="UseCompleter"/>
+                <Option value="1" type="int" name="NofColumns"/>
+                <Option value="false" type="bool" name="OrderByValue"/>
+                <Option value="false" type="bool" name="UseCompleter"/>
                 <Option value="value_fr" type="QString" name="Value"/>
               </Option>
             </config>
@@ -36350,13 +36371,14 @@ def my_form_open(dialog, layer, feature):
           <editWidget type="ValueRelation">
             <config>
               <Option type="Map">
-                <Option value="0" type="QString" name="AllowMulti"/>
-                <Option value="0" type="QString" name="AllowNull"/>
+                <Option value="false" type="bool" name="AllowMulti"/>
+                <Option value="false" type="bool" name="AllowNull"/>
                 <Option value="" type="QString" name="FilterExpression"/>
                 <Option value="id" type="QString" name="Key"/>
                 <Option value="vl_valve_function20130304110011544" type="QString" name="Layer"/>
-                <Option value="0" type="QString" name="OrderByValue"/>
-                <Option value="0" type="QString" name="UseCompleter"/>
+                <Option value="1" type="int" name="NofColumns"/>
+                <Option value="false" type="bool" name="OrderByValue"/>
+                <Option value="false" type="bool" name="UseCompleter"/>
                 <Option value="value_fr" type="QString" name="Value"/>
               </Option>
             </config>
@@ -36366,13 +36388,14 @@ def my_form_open(dialog, layer, feature):
           <editWidget type="ValueRelation">
             <config>
               <Option type="Map">
-                <Option value="0" type="QString" name="AllowMulti"/>
-                <Option value="0" type="QString" name="AllowNull"/>
+                <Option value="false" type="bool" name="AllowMulti"/>
+                <Option value="false" type="bool" name="AllowNull"/>
                 <Option value="" type="QString" name="FilterExpression"/>
                 <Option value="id" type="QString" name="Key"/>
                 <Option value="valve_actuation20150608112911022" type="QString" name="Layer"/>
-                <Option value="0" type="QString" name="OrderByValue"/>
-                <Option value="0" type="QString" name="UseCompleter"/>
+                <Option value="1" type="int" name="NofColumns"/>
+                <Option value="false" type="bool" name="OrderByValue"/>
+                <Option value="false" type="bool" name="UseCompleter"/>
                 <Option value="value_fr" type="QString" name="Value"/>
               </Option>
             </config>
@@ -36382,13 +36405,14 @@ def my_form_open(dialog, layer, feature):
           <editWidget type="RelationReference">
             <config>
               <Option type="Map">
-                <Option value="0" type="QString" name="AllowAddFeatures"/>
-                <Option value="1" type="QString" name="AllowNULL"/>
-                <Option value="1" type="QString" name="MapIdentification"/>
-                <Option value="0" type="QString" name="OrderByValue"/>
-                <Option value="1" type="QString" name="ReadOnly"/>
+                <Option value="false" type="bool" name="AllowAddFeatures"/>
+                <Option value="true" type="bool" name="AllowNULL"/>
+                <Option value="true" type="bool" name="MapIdentification"/>
+                <Option value="false" type="bool" name="OrderByValue"/>
+                <Option value="true" type="bool" name="ReadOnly"/>
                 <Option value="relation_valve_pipe" type="QString" name="Relation"/>
-                <Option value="0" type="QString" name="ShowForm"/>
+                <Option value="false" type="bool" name="ShowForm"/>
+                <Option value="true" type="bool" name="ShowOpenFormButton"/>
               </Option>
             </config>
           </editWidget>
@@ -36397,13 +36421,14 @@ def my_form_open(dialog, layer, feature):
           <editWidget type="ValueRelation">
             <config>
               <Option type="Map">
-                <Option value="0" type="QString" name="AllowMulti"/>
-                <Option value="0" type="QString" name="AllowNull"/>
+                <Option value="false" type="bool" name="AllowMulti"/>
+                <Option value="false" type="bool" name="AllowNull"/>
                 <Option value="" type="QString" name="FilterExpression"/>
                 <Option value="id" type="QString" name="Key"/>
                 <Option value="vl_precision20130304110011372" type="QString" name="Layer"/>
-                <Option value="0" type="QString" name="OrderByValue"/>
-                <Option value="0" type="QString" name="UseCompleter"/>
+                <Option value="1" type="int" name="NofColumns"/>
+                <Option value="false" type="bool" name="OrderByValue"/>
+                <Option value="false" type="bool" name="UseCompleter"/>
                 <Option value="value_fr" type="QString" name="Value"/>
               </Option>
             </config>
@@ -36413,13 +36438,14 @@ def my_form_open(dialog, layer, feature):
           <editWidget type="ValueRelation">
             <config>
               <Option type="Map">
-                <Option value="0" type="QString" name="AllowMulti"/>
-                <Option value="0" type="QString" name="AllowNull"/>
+                <Option value="false" type="bool" name="AllowMulti"/>
+                <Option value="false" type="bool" name="AllowNull"/>
                 <Option value="" type="QString" name="FilterExpression"/>
                 <Option value="id" type="QString" name="Key"/>
                 <Option value="vl_precisionalti20131211161429510" type="QString" name="Layer"/>
-                <Option value="0" type="QString" name="OrderByValue"/>
-                <Option value="0" type="QString" name="UseCompleter"/>
+                <Option value="1" type="int" name="NofColumns"/>
+                <Option value="false" type="bool" name="OrderByValue"/>
+                <Option value="false" type="bool" name="UseCompleter"/>
                 <Option value="value_fr" type="QString" name="Value"/>
               </Option>
             </config>
@@ -36429,13 +36455,14 @@ def my_form_open(dialog, layer, feature):
           <editWidget type="ValueRelation">
             <config>
               <Option type="Map">
-                <Option value="1" type="QString" name="AllowMulti"/>
-                <Option value="0" type="QString" name="AllowNull"/>
+                <Option value="true" type="bool" name="AllowMulti"/>
+                <Option value="false" type="bool" name="AllowNull"/>
                 <Option value="" type="QString" name="FilterExpression"/>
                 <Option value="id" type="QString" name="Key"/>
                 <Option value="vl_valve_maintenance20130304110011567" type="QString" name="Layer"/>
-                <Option value="0" type="QString" name="OrderByValue"/>
-                <Option value="0" type="QString" name="UseCompleter"/>
+                <Option value="1" type="int" name="NofColumns"/>
+                <Option value="false" type="bool" name="OrderByValue"/>
+                <Option value="false" type="bool" name="UseCompleter"/>
                 <Option value="value_fr" type="QString" name="Value"/>
               </Option>
             </config>
@@ -36445,7 +36472,7 @@ def my_form_open(dialog, layer, feature):
           <editWidget type="UniqueValues">
             <config>
               <Option type="Map">
-                <Option value="1" type="QString" name="Editable"/>
+                <Option value="true" type="bool" name="Editable"/>
               </Option>
             </config>
           </editWidget>
@@ -36454,8 +36481,8 @@ def my_form_open(dialog, layer, feature):
           <editWidget type="CheckBox">
             <config>
               <Option type="Map">
-                <Option value="t" type="QString" name="CheckedState"/>
-                <Option value="f" type="QString" name="UncheckedState"/>
+                <Option value="" type="QString" name="CheckedState"/>
+                <Option value="" type="QString" name="UncheckedState"/>
               </Option>
             </config>
           </editWidget>
@@ -36464,8 +36491,8 @@ def my_form_open(dialog, layer, feature):
           <editWidget type="CheckBox">
             <config>
               <Option type="Map">
-                <Option value="t" type="QString" name="CheckedState"/>
-                <Option value="f" type="QString" name="UncheckedState"/>
+                <Option value="" type="QString" name="CheckedState"/>
+                <Option value="" type="QString" name="UncheckedState"/>
               </Option>
             </config>
           </editWidget>
@@ -36474,8 +36501,8 @@ def my_form_open(dialog, layer, feature):
           <editWidget type="TextEdit">
             <config>
               <Option type="Map">
-                <Option value="0" type="QString" name="IsMultiline"/>
-                <Option value="0" type="QString" name="UseHtml"/>
+                <Option value="false" type="bool" name="IsMultiline"/>
+                <Option value="false" type="bool" name="UseHtml"/>
               </Option>
             </config>
           </editWidget>
@@ -36494,13 +36521,14 @@ def my_form_open(dialog, layer, feature):
           <editWidget type="ValueRelation">
             <config>
               <Option type="Map">
-                <Option value="0" type="QString" name="AllowMulti"/>
-                <Option value="0" type="QString" name="AllowNull"/>
+                <Option value="false" type="bool" name="AllowMulti"/>
+                <Option value="false" type="bool" name="AllowNull"/>
                 <Option value="" type="QString" name="FilterExpression"/>
                 <Option value="id" type="QString" name="Key"/>
                 <Option value="district20130304110004764" type="QString" name="Layer"/>
-                <Option value="1" type="QString" name="OrderByValue"/>
-                <Option value="0" type="QString" name="UseCompleter"/>
+                <Option value="1" type="int" name="NofColumns"/>
+                <Option value="true" type="bool" name="OrderByValue"/>
+                <Option value="false" type="bool" name="UseCompleter"/>
                 <Option value="name" type="QString" name="Value"/>
               </Option>
             </config>
@@ -36510,13 +36538,14 @@ def my_form_open(dialog, layer, feature):
           <editWidget type="ValueRelation">
             <config>
               <Option type="Map">
-                <Option value="0" type="QString" name="AllowMulti"/>
-                <Option value="0" type="QString" name="AllowNull"/>
+                <Option value="false" type="bool" name="AllowMulti"/>
+                <Option value="false" type="bool" name="AllowNull"/>
                 <Option value="" type="QString" name="FilterExpression"/>
                 <Option value="id" type="QString" name="Key"/>
                 <Option value="pressurezone20130417133612105" type="QString" name="Layer"/>
-                <Option value="1" type="QString" name="OrderByValue"/>
-                <Option value="0" type="QString" name="UseCompleter"/>
+                <Option value="1" type="int" name="NofColumns"/>
+                <Option value="true" type="bool" name="OrderByValue"/>
+                <Option value="false" type="bool" name="UseCompleter"/>
                 <Option value="name" type="QString" name="Value"/>
               </Option>
             </config>
@@ -36526,13 +36555,14 @@ def my_form_open(dialog, layer, feature):
           <editWidget type="ValueRelation">
             <config>
               <Option type="Map">
-                <Option value="0" type="QString" name="AllowMulti"/>
-                <Option value="0" type="QString" name="AllowNull"/>
+                <Option value="false" type="bool" name="AllowMulti"/>
+                <Option value="false" type="bool" name="AllowNull"/>
                 <Option value="" type="QString" name="FilterExpression"/>
                 <Option value="id" type="QString" name="Key"/>
                 <Option value="distributor20130304114719702" type="QString" name="Layer"/>
-                <Option value="0" type="QString" name="OrderByValue"/>
-                <Option value="0" type="QString" name="UseCompleter"/>
+                <Option value="1" type="int" name="NofColumns"/>
+                <Option value="false" type="bool" name="OrderByValue"/>
+                <Option value="false" type="bool" name="UseCompleter"/>
                 <Option value="name" type="QString" name="Value"/>
               </Option>
             </config>
@@ -36542,13 +36572,14 @@ def my_form_open(dialog, layer, feature):
           <editWidget type="ValueRelation">
             <config>
               <Option type="Map">
-                <Option value="0" type="QString" name="AllowMulti"/>
-                <Option value="0" type="QString" name="AllowNull"/>
+                <Option value="false" type="bool" name="AllowMulti"/>
+                <Option value="false" type="bool" name="AllowNull"/>
                 <Option value="" type="QString" name="FilterExpression"/>
                 <Option value="id" type="QString" name="Key"/>
                 <Option value="vl_precision20130304110011372" type="QString" name="Layer"/>
-                <Option value="0" type="QString" name="OrderByValue"/>
-                <Option value="0" type="QString" name="UseCompleter"/>
+                <Option value="1" type="int" name="NofColumns"/>
+                <Option value="false" type="bool" name="OrderByValue"/>
+                <Option value="false" type="bool" name="UseCompleter"/>
                 <Option value="value_fr" type="QString" name="Value"/>
               </Option>
             </config>
@@ -36558,13 +36589,14 @@ def my_form_open(dialog, layer, feature):
           <editWidget type="ValueRelation">
             <config>
               <Option type="Map">
-                <Option value="0" type="QString" name="AllowMulti"/>
-                <Option value="0" type="QString" name="AllowNull"/>
+                <Option value="false" type="bool" name="AllowMulti"/>
+                <Option value="false" type="bool" name="AllowNull"/>
                 <Option value="" type="QString" name="FilterExpression"/>
                 <Option value="id" type="QString" name="Key"/>
                 <Option value="vl_precisionalti20131211161429510" type="QString" name="Layer"/>
-                <Option value="0" type="QString" name="OrderByValue"/>
-                <Option value="0" type="QString" name="UseCompleter"/>
+                <Option value="1" type="int" name="NofColumns"/>
+                <Option value="false" type="bool" name="OrderByValue"/>
+                <Option value="false" type="bool" name="UseCompleter"/>
                 <Option value="value_fr" type="QString" name="Value"/>
               </Option>
             </config>
@@ -36574,13 +36606,14 @@ def my_form_open(dialog, layer, feature):
           <editWidget type="ValueRelation">
             <config>
               <Option type="Map">
-                <Option value="0" type="QString" name="AllowMulti"/>
-                <Option value="0" type="QString" name="AllowNull"/>
+                <Option value="false" type="bool" name="AllowMulti"/>
+                <Option value="false" type="bool" name="AllowNull"/>
                 <Option value="" type="QString" name="FilterExpression"/>
                 <Option value="id" type="QString" name="Key"/>
                 <Option value="vl_status20130304110011436" type="QString" name="Layer"/>
-                <Option value="0" type="QString" name="OrderByValue"/>
-                <Option value="0" type="QString" name="UseCompleter"/>
+                <Option value="1" type="int" name="NofColumns"/>
+                <Option value="false" type="bool" name="OrderByValue"/>
+                <Option value="false" type="bool" name="UseCompleter"/>
                 <Option value="value_fr" type="QString" name="Value"/>
               </Option>
             </config>
@@ -36590,13 +36623,14 @@ def my_form_open(dialog, layer, feature):
           <editWidget type="ValueRelation">
             <config>
               <Option type="Map">
-                <Option value="0" type="QString" name="AllowMulti"/>
-                <Option value="0" type="QString" name="AllowNull"/>
+                <Option value="false" type="bool" name="AllowMulti"/>
+                <Option value="false" type="bool" name="AllowNull"/>
                 <Option value="" type="QString" name="FilterExpression"/>
                 <Option value="id" type="QString" name="Key"/>
                 <Option value="object_reference20150922083109152" type="QString" name="Layer"/>
-                <Option value="0" type="QString" name="OrderByValue"/>
-                <Option value="0" type="QString" name="UseCompleter"/>
+                <Option value="1" type="int" name="NofColumns"/>
+                <Option value="false" type="bool" name="OrderByValue"/>
+                <Option value="false" type="bool" name="UseCompleter"/>
                 <Option value="value_fr" type="QString" name="Value"/>
               </Option>
             </config>
@@ -36606,13 +36640,14 @@ def my_form_open(dialog, layer, feature):
           <editWidget type="RelationReference">
             <config>
               <Option type="Map">
-                <Option value="0" type="QString" name="AllowAddFeatures"/>
-                <Option value="1" type="QString" name="AllowNULL"/>
-                <Option value="0" type="QString" name="MapIdentification"/>
-                <Option value="1" type="QString" name="OrderByValue"/>
-                <Option value="0" type="QString" name="ReadOnly"/>
+                <Option value="false" type="bool" name="AllowAddFeatures"/>
+                <Option value="true" type="bool" name="AllowNULL"/>
+                <Option value="false" type="bool" name="MapIdentification"/>
+                <Option value="true" type="bool" name="OrderByValue"/>
+                <Option value="false" type="bool" name="ReadOnly"/>
                 <Option value="relation_vanne_folder" type="QString" name="Relation"/>
-                <Option value="0" type="QString" name="ShowForm"/>
+                <Option value="false" type="bool" name="ShowForm"/>
+                <Option value="true" type="bool" name="ShowOpenFormButton"/>
               </Option>
             </config>
           </editWidget>
@@ -36621,8 +36656,8 @@ def my_form_open(dialog, layer, feature):
           <editWidget type="TextEdit">
             <config>
               <Option type="Map">
-                <Option value="0" type="QString" name="IsMultiline"/>
-                <Option value="0" type="QString" name="UseHtml"/>
+                <Option value="false" type="bool" name="IsMultiline"/>
+                <Option value="false" type="bool" name="UseHtml"/>
               </Option>
             </config>
           </editWidget>
@@ -36641,8 +36676,8 @@ def my_form_open(dialog, layer, feature):
           <editWidget type="TextEdit">
             <config>
               <Option type="Map">
-                <Option value="0" type="QString" name="IsMultiline"/>
-                <Option value="0" type="QString" name="UseHtml"/>
+                <Option value="false" type="bool" name="IsMultiline"/>
+                <Option value="false" type="bool" name="UseHtml"/>
               </Option>
             </config>
           </editWidget>
@@ -36661,8 +36696,8 @@ def my_form_open(dialog, layer, feature):
           <editWidget type="TextEdit">
             <config>
               <Option type="Map">
-                <Option value="0" type="QString" name="IsMultiline"/>
-                <Option value="0" type="QString" name="UseHtml"/>
+                <Option value="false" type="bool" name="IsMultiline"/>
+                <Option value="false" type="bool" name="UseHtml"/>
               </Option>
             </config>
           </editWidget>
@@ -36671,8 +36706,8 @@ def my_form_open(dialog, layer, feature):
           <editWidget type="TextEdit">
             <config>
               <Option type="Map">
-                <Option value="0" type="QString" name="IsMultiline"/>
-                <Option value="0" type="QString" name="UseHtml"/>
+                <Option value="false" type="bool" name="IsMultiline"/>
+                <Option value="false" type="bool" name="UseHtml"/>
               </Option>
             </config>
           </editWidget>
@@ -36681,8 +36716,8 @@ def my_form_open(dialog, layer, feature):
           <editWidget type="TextEdit">
             <config>
               <Option type="Map">
-                <Option value="1" type="QString" name="IsMultiline"/>
-                <Option value="0" type="QString" name="UseHtml"/>
+                <Option value="true" type="bool" name="IsMultiline"/>
+                <Option value="false" type="bool" name="UseHtml"/>
               </Option>
             </config>
           </editWidget>
@@ -36701,8 +36736,8 @@ def my_form_open(dialog, layer, feature):
           <editWidget type="TextEdit">
             <config>
               <Option type="Map">
-                <Option value="0" type="QString" name="IsMultiline"/>
-                <Option value="0" type="QString" name="UseHtml"/>
+                <Option value="false" type="bool" name="IsMultiline"/>
+                <Option value="false" type="bool" name="UseHtml"/>
               </Option>
             </config>
           </editWidget>
@@ -36711,8 +36746,8 @@ def my_form_open(dialog, layer, feature):
           <editWidget type="TextEdit">
             <config>
               <Option type="Map">
-                <Option value="0" type="QString" name="IsMultiline"/>
-                <Option value="0" type="QString" name="UseHtml"/>
+                <Option value="false" type="bool" name="IsMultiline"/>
+                <Option value="false" type="bool" name="UseHtml"/>
               </Option>
             </config>
           </editWidget>
@@ -36721,8 +36756,8 @@ def my_form_open(dialog, layer, feature):
           <editWidget type="TextEdit">
             <config>
               <Option type="Map">
-                <Option value="0" type="QString" name="IsMultiline"/>
-                <Option value="0" type="QString" name="UseHtml"/>
+                <Option value="false" type="bool" name="IsMultiline"/>
+                <Option value="false" type="bool" name="UseHtml"/>
               </Option>
             </config>
           </editWidget>
@@ -36731,8 +36766,8 @@ def my_form_open(dialog, layer, feature):
           <editWidget type="TextEdit">
             <config>
               <Option type="Map">
-                <Option value="0" type="QString" name="IsMultiline"/>
-                <Option value="0" type="QString" name="UseHtml"/>
+                <Option value="false" type="bool" name="IsMultiline"/>
+                <Option value="false" type="bool" name="UseHtml"/>
               </Option>
             </config>
           </editWidget>
@@ -36741,8 +36776,8 @@ def my_form_open(dialog, layer, feature):
           <editWidget type="TextEdit">
             <config>
               <Option type="Map">
-                <Option value="0" type="QString" name="IsMultiline"/>
-                <Option value="0" type="QString" name="UseHtml"/>
+                <Option value="false" type="bool" name="IsMultiline"/>
+                <Option value="false" type="bool" name="UseHtml"/>
               </Option>
             </config>
           </editWidget>
@@ -36751,8 +36786,8 @@ def my_form_open(dialog, layer, feature):
           <editWidget type="TextEdit">
             <config>
               <Option type="Map">
-                <Option value="0" type="QString" name="IsMultiline"/>
-                <Option value="0" type="QString" name="UseHtml"/>
+                <Option value="false" type="bool" name="IsMultiline"/>
+                <Option value="false" type="bool" name="UseHtml"/>
               </Option>
             </config>
           </editWidget>
@@ -36801,13 +36836,14 @@ def my_form_open(dialog, layer, feature):
           <editWidget type="ValueRelation">
             <config>
               <Option type="Map">
-                <Option value="0" type="QString" name="AllowMulti"/>
-                <Option value="0" type="QString" name="AllowNull"/>
+                <Option value="false" type="bool" name="AllowMulti"/>
+                <Option value="false" type="bool" name="AllowNull"/>
                 <Option value="" type="QString" name="FilterExpression"/>
                 <Option value="vl_code_int" type="QString" name="Key"/>
                 <Option value="vl_visible20130304110011703" type="QString" name="Layer"/>
-                <Option value="0" type="QString" name="OrderByValue"/>
-                <Option value="0" type="QString" name="UseCompleter"/>
+                <Option value="1" type="int" name="NofColumns"/>
+                <Option value="false" type="bool" name="OrderByValue"/>
+                <Option value="false" type="bool" name="UseCompleter"/>
                 <Option value="value_fr" type="QString" name="Value"/>
               </Option>
             </config>
@@ -36817,8 +36853,8 @@ def my_form_open(dialog, layer, feature):
           <editWidget type="TextEdit">
             <config>
               <Option type="Map">
-                <Option value="0" type="QString" name="IsMultiline"/>
-                <Option value="0" type="QString" name="UseHtml"/>
+                <Option value="false" type="bool" name="IsMultiline"/>
+                <Option value="false" type="bool" name="UseHtml"/>
               </Option>
             </config>
           </editWidget>
@@ -36847,8 +36883,8 @@ def my_form_open(dialog, layer, feature):
           <editWidget type="TextEdit">
             <config>
               <Option type="Map">
-                <Option value="0" type="QString" name="IsMultiline"/>
-                <Option value="0" type="QString" name="UseHtml"/>
+                <Option value="false" type="bool" name="IsMultiline"/>
+                <Option value="false" type="bool" name="UseHtml"/>
               </Option>
             </config>
           </editWidget>
@@ -36857,13 +36893,14 @@ def my_form_open(dialog, layer, feature):
           <editWidget type="ValueRelation">
             <config>
               <Option type="Map">
-                <Option value="0" type="QString" name="AllowMulti"/>
-                <Option value="0" type="QString" name="AllowNull"/>
+                <Option value="false" type="bool" name="AllowMulti"/>
+                <Option value="false" type="bool" name="AllowNull"/>
                 <Option value="" type="QString" name="FilterExpression"/>
                 <Option value="vl_code_int" type="QString" name="Key"/>
                 <Option value="vl_visible20130304110011703" type="QString" name="Layer"/>
-                <Option value="0" type="QString" name="OrderByValue"/>
-                <Option value="0" type="QString" name="UseCompleter"/>
+                <Option value="1" type="int" name="NofColumns"/>
+                <Option value="false" type="bool" name="OrderByValue"/>
+                <Option value="false" type="bool" name="UseCompleter"/>
                 <Option value="value_fr" type="QString" name="Value"/>
               </Option>
             </config>
@@ -36903,8 +36940,8 @@ def my_form_open(dialog, layer, feature):
           <editWidget type="TextEdit">
             <config>
               <Option type="Map">
-                <Option value="0" type="QString" name="IsMultiline"/>
-                <Option value="0" type="QString" name="UseHtml"/>
+                <Option value="false" type="bool" name="IsMultiline"/>
+                <Option value="false" type="bool" name="UseHtml"/>
               </Option>
             </config>
           </editWidget>
@@ -36913,13 +36950,14 @@ def my_form_open(dialog, layer, feature):
           <editWidget type="ValueRelation">
             <config>
               <Option type="Map">
-                <Option value="0" type="QString" name="AllowMulti"/>
-                <Option value="0" type="QString" name="AllowNull"/>
+                <Option value="false" type="bool" name="AllowMulti"/>
+                <Option value="false" type="bool" name="AllowNull"/>
                 <Option value="" type="QString" name="FilterExpression"/>
                 <Option value="vl_code" type="QString" name="Key"/>
                 <Option value="vl_visible20130304110011703" type="QString" name="Layer"/>
-                <Option value="0" type="QString" name="OrderByValue"/>
-                <Option value="0" type="QString" name="UseCompleter"/>
+                <Option value="1" type="int" name="NofColumns"/>
+                <Option value="false" type="bool" name="OrderByValue"/>
+                <Option value="false" type="bool" name="UseCompleter"/>
                 <Option value="value_fr" type="QString" name="Value"/>
               </Option>
             </config>
@@ -36929,8 +36967,8 @@ def my_form_open(dialog, layer, feature):
           <editWidget type="TextEdit">
             <config>
               <Option type="Map">
-                <Option value="0" type="QString" name="IsMultiline"/>
-                <Option value="0" type="QString" name="UseHtml"/>
+                <Option value="false" type="bool" name="IsMultiline"/>
+                <Option value="false" type="bool" name="UseHtml"/>
               </Option>
             </config>
           </editWidget>
@@ -37009,8 +37047,8 @@ def my_form_open(dialog, layer, feature):
           <editWidget type="TextEdit">
             <config>
               <Option type="Map">
-                <Option value="0" type="QString" name="IsMultiline"/>
-                <Option value="0" type="QString" name="UseHtml"/>
+                <Option value="false" type="bool" name="IsMultiline"/>
+                <Option value="false" type="bool" name="UseHtml"/>
               </Option>
             </config>
           </editWidget>
@@ -37209,8 +37247,8 @@ def my_form_open(dialog, layer, feature):
           <editWidget type="TextEdit">
             <config>
               <Option type="Map">
-                <Option value="0" type="QString" name="IsMultiline"/>
-                <Option value="0" type="QString" name="UseHtml"/>
+                <Option value="false" type="bool" name="IsMultiline"/>
+                <Option value="false" type="bool" name="UseHtml"/>
               </Option>
             </config>
           </editWidget>
@@ -37219,41 +37257,41 @@ def my_form_open(dialog, layer, feature):
           <editWidget type="TextEdit">
             <config>
               <Option type="Map">
-                <Option value="0" type="QString" name="IsMultiline"/>
-                <Option value="0" type="QString" name="UseHtml"/>
+                <Option value="false" type="bool" name="IsMultiline"/>
+                <Option value="false" type="bool" name="UseHtml"/>
               </Option>
             </config>
           </editWidget>
         </field>
       </fieldConfiguration>
       <aliases>
-        <alias field="id" index="0" name=""/>
-        <alias field="fk_valve_type" index="1" name=""/>
-        <alias field="fk_valve_function" index="2" name=""/>
-        <alias field="fk_valve_actuation" index="3" name=""/>
-        <alias field="fk_pipe" index="4" name="ID conduite"/>
-        <alias field="fk_handle_precision" index="5" name="précision de la position de la tige"/>
-        <alias field="fk_handle_precisionalti" index="6" name="précision de l'altitude de la tige"/>
-        <alias field="fk_maintenance" index="7" name="entretien"/>
-        <alias field="diameter_nominal" index="8" name="diamètre nominal"/>
-        <alias field="closed" index="9" name="fermée"/>
-        <alias field="networkseparation" index="10" name=""/>
-        <alias field="handle_altitude" index="11" name=""/>
+        <alias field="id" index="0" name="ID"/>
+        <alias field="fk_valve_type" index="1" name="Type"/>
+        <alias field="fk_valve_function" index="2" name="Fonction"/>
+        <alias field="fk_valve_actuation" index="3" name="Actionnement"/>
+        <alias field="fk_pipe" index="4" name="Conduite"/>
+        <alias field="fk_handle_precision" index="5" name="Précision de la position de la tige"/>
+        <alias field="fk_handle_precisionalti" index="6" name="Précision de l'altitude de la tige"/>
+        <alias field="fk_maintenance" index="7" name="Maintenance"/>
+        <alias field="diameter_nominal" index="8" name="Diamètre nominal"/>
+        <alias field="closed" index="9" name="Fermée"/>
+        <alias field="networkseparation" index="10" name="Séparation réseau"/>
+        <alias field="handle_altitude" index="11" name="Altitude tige"/>
         <alias field="handle_geometry" index="12" name=""/>
-        <alias field="fk_district" index="13" name="commune"/>
-        <alias field="fk_pressurezone" index="14" name="zone de pression"/>
-        <alias field="fk_distributor" index="15" name=""/>
-        <alias field="fk_precision" index="16" name=""/>
-        <alias field="fk_precisionalti" index="17" name=""/>
-        <alias field="fk_status" index="18" name=""/>
-        <alias field="fk_object_reference" index="19" name=""/>
-        <alias field="fk_folder" index="20" name=""/>
-        <alias field="year" index="21" name="année"/>
+        <alias field="fk_district" index="13" name="Commune"/>
+        <alias field="fk_pressurezone" index="14" name="Zone de pression"/>
+        <alias field="fk_distributor" index="15" name="Distributeur"/>
+        <alias field="fk_precision" index="16" name="Précision"/>
+        <alias field="fk_precisionalti" index="17" name="Précision alti."/>
+        <alias field="fk_status" index="18" name="Statut"/>
+        <alias field="fk_object_reference" index="19" name="Pt. de réf."/>
+        <alias field="fk_folder" index="20" name="Dossier technique"/>
+        <alias field="year" index="21" name="Année"/>
         <alias field="year_end" index="22" name=""/>
-        <alias field="altitude" index="23" name=""/>
+        <alias field="altitude" index="23" name="Altitude réelle"/>
         <alias field="orientation" index="24" name=""/>
-        <alias field="fk_locationtype" index="25" name=""/>
-        <alias field="identification" index="26" name=""/>
+        <alias field="fk_locationtype" index="25" name=" "/>
+        <alias field="identification" index="26" name="Identification"/>
         <alias field="remark" index="27" name="remarques"/>
         <alias field="fk_printmap" index="28" name="folio"/>
         <alias field="_geometry_alt1_used" index="29" name=""/>
@@ -37261,22 +37299,22 @@ def my_form_open(dialog, layer, feature):
         <alias field="_pipe_node_type" index="31" name=""/>
         <alias field="_pipe_orientation" index="32" name=""/>
         <alias field="_pipe_schema_visible" index="33" name=""/>
-        <alias field="_printmaps" index="34" name="folios"/>
+        <alias field="_printmaps" index="34" name="Folios"/>
         <alias field="geometry_alt1" index="35" name=""/>
         <alias field="geometry_alt2" index="36" name=""/>
         <alias field="update_geometry_alt1" index="37" name=""/>
         <alias field="update_geometry_alt2" index="38" name=""/>
-        <alias field="label_1_visible" index="39" name=""/>
+        <alias field="label_1_visible" index="39" name="1/250"/>
         <alias field="label_1_x" index="40" name=""/>
         <alias field="label_1_y" index="41" name=""/>
         <alias field="label_1_rotation" index="42" name=""/>
-        <alias field="label_1_text" index="43" name=""/>
-        <alias field="label_2_visible" index="44" name=""/>
+        <alias field="label_1_text" index="43" name=" "/>
+        <alias field="label_2_visible" index="44" name="1/5000"/>
         <alias field="label_2_x" index="45" name=""/>
         <alias field="label_2_y" index="46" name=""/>
         <alias field="label_2_rotation" index="47" name=""/>
-        <alias field="label_2_text" index="48" name=""/>
-        <alias field="schema_force_visible" index="49" name="visibilité schéma"/>
+        <alias field="label_2_text" index="48" name=" "/>
+        <alias field="schema_force_visible" index="49" name="Visibilité"/>
         <alias field="_schema_visible" index="50" name=""/>
         <alias field="valve_function_vl_active" index="51" name=""/>
         <alias field="valve_function_short_fr" index="52" name=""/>
@@ -37559,14 +37597,96 @@ def my_form_open(dialog, layer, feature):
       <expressionfields/>
       <attributeactions>
         <defaultAction value="{00000000-0000-0000-0000-000000000000}" key="Canvas"/>
-        <actionsetting capture="0" icon="" isEnabledOnlyWhenEditable="0" notificationMessage="" type="1" id="{f5edf6d2-0691-4786-ac43-2736a0d3d67f}" name="History audit" shortTitle="" action="qgis.utils.plugins['postgres91plusauditor'].showHistory('valve20130304110011497',[% $id %])">
+        <actionsetting capture="0" icon="" isEnabledOnlyWhenEditable="0" notificationMessage="" type="1" id="{d73f8b49-7a98-44e5-9863-6292da7cc60f}" name="History audit" shortTitle="" action="qgis.utils.plugins['postgres91plusauditor'].showHistory('valve20130304110011497',[% $id %])">
           <actionScope id="Field"/>
           <actionScope id="Canvas"/>
           <actionScope id="Feature"/>
         </actionsetting>
       </attributeactions>
       <attributetableconfig sortExpression="" actionWidgetStyle="dropDown" sortOrder="0">
-        <columns/>
+        <columns>
+          <column hidden="0" type="field" name="id" width="-1"/>
+          <column hidden="0" type="field" name="fk_valve_type" width="-1"/>
+          <column hidden="0" type="field" name="fk_valve_function" width="-1"/>
+          <column hidden="0" type="field" name="fk_valve_actuation" width="-1"/>
+          <column hidden="0" type="field" name="fk_pipe" width="-1"/>
+          <column hidden="0" type="field" name="fk_handle_precision" width="-1"/>
+          <column hidden="0" type="field" name="fk_handle_precisionalti" width="-1"/>
+          <column hidden="0" type="field" name="fk_maintenance" width="-1"/>
+          <column hidden="0" type="field" name="diameter_nominal" width="-1"/>
+          <column hidden="0" type="field" name="closed" width="-1"/>
+          <column hidden="0" type="field" name="networkseparation" width="-1"/>
+          <column hidden="0" type="field" name="handle_altitude" width="-1"/>
+          <column hidden="0" type="field" name="handle_geometry" width="-1"/>
+          <column hidden="0" type="field" name="fk_district" width="-1"/>
+          <column hidden="0" type="field" name="fk_pressurezone" width="-1"/>
+          <column hidden="0" type="field" name="fk_distributor" width="-1"/>
+          <column hidden="0" type="field" name="fk_precision" width="-1"/>
+          <column hidden="0" type="field" name="fk_precisionalti" width="-1"/>
+          <column hidden="0" type="field" name="fk_status" width="-1"/>
+          <column hidden="0" type="field" name="fk_object_reference" width="-1"/>
+          <column hidden="0" type="field" name="fk_folder" width="-1"/>
+          <column hidden="0" type="field" name="year" width="-1"/>
+          <column hidden="0" type="field" name="year_end" width="-1"/>
+          <column hidden="0" type="field" name="altitude" width="-1"/>
+          <column hidden="0" type="field" name="orientation" width="-1"/>
+          <column hidden="0" type="field" name="fk_locationtype" width="-1"/>
+          <column hidden="0" type="field" name="identification" width="-1"/>
+          <column hidden="0" type="field" name="remark" width="-1"/>
+          <column hidden="0" type="field" name="fk_printmap" width="-1"/>
+          <column hidden="0" type="field" name="_geometry_alt1_used" width="-1"/>
+          <column hidden="0" type="field" name="_geometry_alt2_used" width="-1"/>
+          <column hidden="0" type="field" name="_pipe_node_type" width="-1"/>
+          <column hidden="0" type="field" name="_pipe_orientation" width="-1"/>
+          <column hidden="0" type="field" name="_pipe_schema_visible" width="-1"/>
+          <column hidden="0" type="field" name="_printmaps" width="-1"/>
+          <column hidden="0" type="field" name="geometry_alt1" width="-1"/>
+          <column hidden="0" type="field" name="geometry_alt2" width="-1"/>
+          <column hidden="0" type="field" name="update_geometry_alt1" width="-1"/>
+          <column hidden="0" type="field" name="update_geometry_alt2" width="-1"/>
+          <column hidden="0" type="field" name="label_1_visible" width="-1"/>
+          <column hidden="0" type="field" name="label_1_x" width="-1"/>
+          <column hidden="0" type="field" name="label_1_y" width="-1"/>
+          <column hidden="0" type="field" name="label_1_rotation" width="-1"/>
+          <column hidden="0" type="field" name="label_1_text" width="-1"/>
+          <column hidden="0" type="field" name="label_2_visible" width="-1"/>
+          <column hidden="0" type="field" name="label_2_x" width="-1"/>
+          <column hidden="0" type="field" name="label_2_y" width="-1"/>
+          <column hidden="0" type="field" name="label_2_rotation" width="-1"/>
+          <column hidden="0" type="field" name="label_2_text" width="-1"/>
+          <column hidden="0" type="field" name="schema_force_visible" width="-1"/>
+          <column hidden="0" type="field" name="_schema_visible" width="-1"/>
+          <column hidden="0" type="field" name="valve_function_vl_active" width="-1"/>
+          <column hidden="0" type="field" name="valve_function_short_fr" width="-1"/>
+          <column hidden="0" type="field" name="valve_function_short_en" width="-1"/>
+          <column hidden="0" type="field" name="valve_function_short_ro" width="-1"/>
+          <column hidden="0" type="field" name="valve_function_value_fr" width="-1"/>
+          <column hidden="0" type="field" name="valve_function_value_en" width="-1"/>
+          <column hidden="0" type="field" name="valve_function_value_ro" width="-1"/>
+          <column hidden="0" type="field" name="valve_function_description_fr" width="-1"/>
+          <column hidden="0" type="field" name="valve_function_description_en" width="-1"/>
+          <column hidden="0" type="field" name="valve_function_description_ro" width="-1"/>
+          <column hidden="0" type="field" name="valve_function_schema_visible" width="-1"/>
+          <column hidden="0" type="field" name="valve_type_vl_active" width="-1"/>
+          <column hidden="0" type="field" name="valve_type_short_fr" width="-1"/>
+          <column hidden="0" type="field" name="valve_type_short_en" width="-1"/>
+          <column hidden="0" type="field" name="valve_type_short_ro" width="-1"/>
+          <column hidden="0" type="field" name="valve_type_value_fr" width="-1"/>
+          <column hidden="0" type="field" name="valve_type_value_en" width="-1"/>
+          <column hidden="0" type="field" name="valve_type_value_ro" width="-1"/>
+          <column hidden="0" type="field" name="valve_type_description_fr" width="-1"/>
+          <column hidden="0" type="field" name="valve_type_description_en" width="-1"/>
+          <column hidden="0" type="field" name="valve_type_description_ro" width="-1"/>
+          <column hidden="0" type="field" name="valve_actuation_id" width="-1"/>
+          <column hidden="0" type="field" name="valve_actuation_vl_active" width="-1"/>
+          <column hidden="0" type="field" name="valve_actuation_short_fr" width="-1"/>
+          <column hidden="0" type="field" name="valve_actuation_value_fr" width="-1"/>
+          <column hidden="0" type="field" name="valve_actuation_description_fr" width="-1"/>
+          <column hidden="0" type="field" name="valve_actuation_schema_visible" width="-1"/>
+          <column hidden="0" type="field" name="status_active" width="-1"/>
+          <column hidden="0" type="field" name="status_functional" width="-1"/>
+          <column hidden="1" type="actions" width="-1"/>
+        </columns>
       </attributetableconfig>
       <conditionalstyles>
         <rowstyles/>
@@ -37594,11 +37714,222 @@ def my_form_open(dialog, layer, feature):
 	control = dialog.findChild(QWidget, "MyLineEdit")
 ]]></editforminitcode>
       <featformsuppress>0</featformsuppress>
-      <editorlayout>uifilelayout</editorlayout>
-      <editable/>
-      <labelOnTop/>
+      <editorlayout>tablayout</editorlayout>
+      <attributeEditorForm>
+        <attributeEditorContainer visibilityExpressionEnabled="0" columnCount="1" visibilityExpression="" groupBox="0" name="Général" showLabel="1">
+          <attributeEditorContainer visibilityExpressionEnabled="0" columnCount="2" visibilityExpression="" groupBox="1" name="" showLabel="0">
+            <attributeEditorField index="0" name="id" showLabel="1"/>
+            <attributeEditorField index="15" name="fk_distributor" showLabel="1"/>
+            <attributeEditorField index="26" name="identification" showLabel="1"/>
+            <attributeEditorField index="1" name="fk_valve_type" showLabel="1"/>
+            <attributeEditorField index="8" name="diameter_nominal" showLabel="1"/>
+            <attributeEditorField index="2" name="fk_valve_function" showLabel="1"/>
+            <attributeEditorField index="20" name="fk_folder" showLabel="1"/>
+            <attributeEditorField index="3" name="fk_valve_actuation" showLabel="1"/>
+            <attributeEditorField index="21" name="year" showLabel="1"/>
+            <attributeEditorField index="18" name="fk_status" showLabel="1"/>
+            <attributeEditorField index="9" name="closed" showLabel="1"/>
+            <attributeEditorField index="10" name="networkseparation" showLabel="1"/>
+            <attributeEditorField index="7" name="fk_maintenance" showLabel="1"/>
+          </attributeEditorContainer>
+        </attributeEditorContainer>
+        <attributeEditorContainer visibilityExpressionEnabled="0" columnCount="2" visibilityExpression="" groupBox="0" name="Géométrie" showLabel="1">
+          <attributeEditorField index="23" name="altitude" showLabel="1"/>
+          <attributeEditorField index="4" name="fk_pipe" showLabel="1"/>
+          <attributeEditorField index="17" name="fk_precisionalti" showLabel="1"/>
+          <attributeEditorField index="34" name="_printmaps" showLabel="1"/>
+          <attributeEditorField index="16" name="fk_precision" showLabel="1"/>
+          <attributeEditorField index="13" name="fk_district" showLabel="1"/>
+          <attributeEditorField index="19" name="fk_object_reference" showLabel="1"/>
+          <attributeEditorField index="14" name="fk_pressurezone" showLabel="1"/>
+          <attributeEditorContainer visibilityExpressionEnabled="0" columnCount="1" visibilityExpression="" groupBox="1" name="" showLabel="1">
+            <attributeEditorField index="11" name="handle_altitude" showLabel="1"/>
+            <attributeEditorField index="5" name="fk_handle_precision" showLabel="1"/>
+            <attributeEditorField index="6" name="fk_handle_precisionalti" showLabel="1"/>
+          </attributeEditorContainer>
+        </attributeEditorContainer>
+        <attributeEditorContainer visibilityExpressionEnabled="0" columnCount="2" visibilityExpression="" groupBox="0" name="Rendu" showLabel="1">
+          <attributeEditorContainer visibilityExpressionEnabled="0" columnCount="1" visibilityExpression="" groupBox="1" name="Schématique" showLabel="1">
+            <attributeEditorField index="49" name="schema_force_visible" showLabel="1"/>
+          </attributeEditorContainer>
+          <attributeEditorContainer visibilityExpressionEnabled="0" columnCount="2" visibilityExpression="" groupBox="1" name="Étiquette" showLabel="1">
+            <attributeEditorField index="39" name="label_1_visible" showLabel="1"/>
+            <attributeEditorField index="43" name="label_1_text" showLabel="0"/>
+            <attributeEditorField index="44" name="label_2_visible" showLabel="1"/>
+            <attributeEditorField index="48" name="label_2_text" showLabel="0"/>
+          </attributeEditorContainer>
+        </attributeEditorContainer>
+        <attributeEditorContainer visibilityExpressionEnabled="0" columnCount="1" visibilityExpression="" groupBox="0" name="Emplacement" showLabel="1">
+          <attributeEditorField index="25" name="fk_locationtype" showLabel="0"/>
+        </attributeEditorContainer>
+        <attributeEditorField index="27" name="remark" showLabel="0"/>
+      </attributeEditorForm>
+      <editable>
+        <field name="_geometry_alt1_used" editable="1"/>
+        <field name="_geometry_alt2_used" editable="1"/>
+        <field name="_pipe_node_type" editable="1"/>
+        <field name="_pipe_orientation" editable="1"/>
+        <field name="_pipe_schema_visible" editable="1"/>
+        <field name="_printmaps" editable="1"/>
+        <field name="_schema_visible" editable="1"/>
+        <field name="altitude" editable="1"/>
+        <field name="closed" editable="1"/>
+        <field name="diameter_nominal" editable="1"/>
+        <field name="fk_distributor" editable="1"/>
+        <field name="fk_district" editable="1"/>
+        <field name="fk_folder" editable="1"/>
+        <field name="fk_handle_precision" editable="1"/>
+        <field name="fk_handle_precisionalti" editable="1"/>
+        <field name="fk_locationtype" editable="1"/>
+        <field name="fk_maintenance" editable="1"/>
+        <field name="fk_object_reference" editable="1"/>
+        <field name="fk_pipe" editable="1"/>
+        <field name="fk_precision" editable="1"/>
+        <field name="fk_precisionalti" editable="1"/>
+        <field name="fk_pressurezone" editable="1"/>
+        <field name="fk_printmap" editable="1"/>
+        <field name="fk_status" editable="1"/>
+        <field name="fk_valve_actuation" editable="1"/>
+        <field name="fk_valve_function" editable="1"/>
+        <field name="fk_valve_type" editable="1"/>
+        <field name="geometry_alt1" editable="1"/>
+        <field name="geometry_alt2" editable="1"/>
+        <field name="handle_altitude" editable="1"/>
+        <field name="handle_geometry" editable="1"/>
+        <field name="id" editable="1"/>
+        <field name="identification" editable="1"/>
+        <field name="label_1_rotation" editable="1"/>
+        <field name="label_1_text" editable="1"/>
+        <field name="label_1_visible" editable="1"/>
+        <field name="label_1_x" editable="1"/>
+        <field name="label_1_y" editable="1"/>
+        <field name="label_2_rotation" editable="1"/>
+        <field name="label_2_text" editable="1"/>
+        <field name="label_2_visible" editable="1"/>
+        <field name="label_2_x" editable="1"/>
+        <field name="label_2_y" editable="1"/>
+        <field name="networkseparation" editable="1"/>
+        <field name="orientation" editable="1"/>
+        <field name="remark" editable="1"/>
+        <field name="schema_force_visible" editable="1"/>
+        <field name="status_active" editable="0"/>
+        <field name="status_functional" editable="0"/>
+        <field name="update_geometry_alt1" editable="1"/>
+        <field name="update_geometry_alt2" editable="1"/>
+        <field name="valve_actuation_description_fr" editable="0"/>
+        <field name="valve_actuation_id" editable="0"/>
+        <field name="valve_actuation_schema_visible" editable="0"/>
+        <field name="valve_actuation_short_fr" editable="0"/>
+        <field name="valve_actuation_value_fr" editable="0"/>
+        <field name="valve_actuation_vl_active" editable="0"/>
+        <field name="valve_function_description_en" editable="0"/>
+        <field name="valve_function_description_fr" editable="0"/>
+        <field name="valve_function_description_ro" editable="0"/>
+        <field name="valve_function_schema_visible" editable="0"/>
+        <field name="valve_function_short_en" editable="0"/>
+        <field name="valve_function_short_fr" editable="0"/>
+        <field name="valve_function_short_ro" editable="0"/>
+        <field name="valve_function_value_en" editable="0"/>
+        <field name="valve_function_value_fr" editable="0"/>
+        <field name="valve_function_value_ro" editable="0"/>
+        <field name="valve_function_vl_active" editable="0"/>
+        <field name="valve_type_description_en" editable="0"/>
+        <field name="valve_type_description_fr" editable="0"/>
+        <field name="valve_type_description_ro" editable="0"/>
+        <field name="valve_type_short_en" editable="0"/>
+        <field name="valve_type_short_fr" editable="0"/>
+        <field name="valve_type_short_ro" editable="0"/>
+        <field name="valve_type_value_en" editable="0"/>
+        <field name="valve_type_value_fr" editable="0"/>
+        <field name="valve_type_value_ro" editable="0"/>
+        <field name="valve_type_vl_active" editable="0"/>
+        <field name="year" editable="1"/>
+        <field name="year_end" editable="1"/>
+      </editable>
+      <labelOnTop>
+        <field name="_geometry_alt1_used" labelOnTop="0"/>
+        <field name="_geometry_alt2_used" labelOnTop="0"/>
+        <field name="_pipe_node_type" labelOnTop="0"/>
+        <field name="_pipe_orientation" labelOnTop="0"/>
+        <field name="_pipe_schema_visible" labelOnTop="0"/>
+        <field name="_printmaps" labelOnTop="0"/>
+        <field name="_schema_visible" labelOnTop="0"/>
+        <field name="altitude" labelOnTop="0"/>
+        <field name="closed" labelOnTop="0"/>
+        <field name="diameter_nominal" labelOnTop="0"/>
+        <field name="fk_distributor" labelOnTop="0"/>
+        <field name="fk_district" labelOnTop="0"/>
+        <field name="fk_folder" labelOnTop="0"/>
+        <field name="fk_handle_precision" labelOnTop="0"/>
+        <field name="fk_handle_precisionalti" labelOnTop="0"/>
+        <field name="fk_locationtype" labelOnTop="0"/>
+        <field name="fk_maintenance" labelOnTop="0"/>
+        <field name="fk_object_reference" labelOnTop="0"/>
+        <field name="fk_pipe" labelOnTop="0"/>
+        <field name="fk_precision" labelOnTop="0"/>
+        <field name="fk_precisionalti" labelOnTop="0"/>
+        <field name="fk_pressurezone" labelOnTop="0"/>
+        <field name="fk_printmap" labelOnTop="0"/>
+        <field name="fk_status" labelOnTop="0"/>
+        <field name="fk_valve_actuation" labelOnTop="0"/>
+        <field name="fk_valve_function" labelOnTop="0"/>
+        <field name="fk_valve_type" labelOnTop="0"/>
+        <field name="geometry_alt1" labelOnTop="0"/>
+        <field name="geometry_alt2" labelOnTop="0"/>
+        <field name="handle_altitude" labelOnTop="0"/>
+        <field name="handle_geometry" labelOnTop="0"/>
+        <field name="id" labelOnTop="0"/>
+        <field name="identification" labelOnTop="0"/>
+        <field name="label_1_rotation" labelOnTop="0"/>
+        <field name="label_1_text" labelOnTop="0"/>
+        <field name="label_1_visible" labelOnTop="0"/>
+        <field name="label_1_x" labelOnTop="0"/>
+        <field name="label_1_y" labelOnTop="0"/>
+        <field name="label_2_rotation" labelOnTop="0"/>
+        <field name="label_2_text" labelOnTop="0"/>
+        <field name="label_2_visible" labelOnTop="0"/>
+        <field name="label_2_x" labelOnTop="0"/>
+        <field name="label_2_y" labelOnTop="0"/>
+        <field name="networkseparation" labelOnTop="0"/>
+        <field name="orientation" labelOnTop="0"/>
+        <field name="remark" labelOnTop="0"/>
+        <field name="schema_force_visible" labelOnTop="0"/>
+        <field name="status_active" labelOnTop="0"/>
+        <field name="status_functional" labelOnTop="0"/>
+        <field name="update_geometry_alt1" labelOnTop="0"/>
+        <field name="update_geometry_alt2" labelOnTop="0"/>
+        <field name="valve_actuation_description_fr" labelOnTop="0"/>
+        <field name="valve_actuation_id" labelOnTop="0"/>
+        <field name="valve_actuation_schema_visible" labelOnTop="0"/>
+        <field name="valve_actuation_short_fr" labelOnTop="0"/>
+        <field name="valve_actuation_value_fr" labelOnTop="0"/>
+        <field name="valve_actuation_vl_active" labelOnTop="0"/>
+        <field name="valve_function_description_en" labelOnTop="0"/>
+        <field name="valve_function_description_fr" labelOnTop="0"/>
+        <field name="valve_function_description_ro" labelOnTop="0"/>
+        <field name="valve_function_schema_visible" labelOnTop="0"/>
+        <field name="valve_function_short_en" labelOnTop="0"/>
+        <field name="valve_function_short_fr" labelOnTop="0"/>
+        <field name="valve_function_short_ro" labelOnTop="0"/>
+        <field name="valve_function_value_en" labelOnTop="0"/>
+        <field name="valve_function_value_fr" labelOnTop="0"/>
+        <field name="valve_function_value_ro" labelOnTop="0"/>
+        <field name="valve_function_vl_active" labelOnTop="0"/>
+        <field name="valve_type_description_en" labelOnTop="0"/>
+        <field name="valve_type_description_fr" labelOnTop="0"/>
+        <field name="valve_type_description_ro" labelOnTop="0"/>
+        <field name="valve_type_short_en" labelOnTop="0"/>
+        <field name="valve_type_short_fr" labelOnTop="0"/>
+        <field name="valve_type_short_ro" labelOnTop="0"/>
+        <field name="valve_type_value_en" labelOnTop="0"/>
+        <field name="valve_type_value_fr" labelOnTop="0"/>
+        <field name="valve_type_value_ro" labelOnTop="0"/>
+        <field name="valve_type_vl_active" labelOnTop="0"/>
+        <field name="year" labelOnTop="0"/>
+        <field name="year_end" labelOnTop="0"/>
+      </labelOnTop>
       <widgets/>
-      <previewExpression>"id"</previewExpression>
+      <previewExpression>id</previewExpression>
       <mapTip></mapTip>
     </maplayer>
     <maplayer refreshOnNotifyEnabled="0" maxScale="-4.65661e-10" hasScaleBasedVisibilityFlag="0" autoRefreshEnabled="0" styleCategories="AllStyleCategories" autoRefreshTime="0" minScale="1e+08" type="vector" refreshOnNotifyMessage="" readOnly="0" geometry="No geometry">
