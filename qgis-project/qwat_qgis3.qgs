@@ -41,7 +41,7 @@
           </customproperties>
         </layer-tree-layer>
       </layer-tree-group>
-      <layer-tree-group expanded="0" name="Abonnés" checked="Qt::Checked">
+      <layer-tree-group expanded="1" name="Abonnés" checked="Qt::Checked">
         <customproperties/>
         <layer-tree-layer expanded="0" id="subscriber20130304110011459" name="Abonnés" checked="Qt::Checked" providerKey="postgres" source="service='qwat' sslmode=allow key='id' srid=21781 type=PointZ table=&quot;qwat_od&quot;.&quot;vw_element_subscriber&quot; (geometry) sql=">
           <customproperties>
@@ -662,7 +662,7 @@
           </filegroup>
         </legendlayer>
       </legendgroup>
-      <legendgroup name="Abonnés" checked="Qt::Checked" open="false">
+      <legendgroup name="Abonnés" checked="Qt::Checked" open="true">
         <legendlayer checked="Qt::Checked" name="Abonnés" drawingOrder="2" open="false" showFeatureCount="0">
           <filegroup hidden="false" open="false">
             <legendlayerfile visible="1" isInOverview="0" layerid="subscriber20130304110011459"/>
@@ -16801,7 +16801,7 @@ def my_form_open(dialog, layer, feature):
         <rowstyles/>
         <fieldstyles/>
       </conditionalstyles>
-      <editform tolerant="1">./ui_forms/leak.ui</editform>
+      <editform tolerant="1">/home/lbartoletti/QWAT/qgis-project/ui_forms/leak.ui</editform>
       <editforminit/>
       <editforminitcodesource>0</editforminitcodesource>
       <editforminitfilepath>.</editforminitfilepath>
@@ -20858,6 +20858,7 @@ def my_form_open(dialog, layer, feature):
       </constraintExpressions>
       <expressionfields/>
       <attributeactions>
+        <defaultAction value="{00000000-0000-0000-0000-000000000000}" key="Canvas"/>
         <actionsetting icon="" id="{05b326f8-5290-4517-a620-f0d2c6c008a7}" isEnabledOnlyWhenEditable="0" shortTitle="" notificationMessage="" type="1" capture="0" name="History audit" action="qgis.utils.plugins['postgres91plusauditor'].showHistory('subscriber20130304110011459',[% $id %])">
           <actionScope id="Field"/>
           <actionScope id="Canvas"/>
@@ -21184,6 +21185,7 @@ def my_form_open(dialog, layer, feature):
       </constraintExpressions>
       <expressionfields/>
       <attributeactions>
+        <defaultAction value="{00000000-0000-0000-0000-000000000000}" key="Canvas"/>
         <actionsetting icon="" id="{b60d6746-84b9-44d4-a90b-7930776c9c96}" isEnabledOnlyWhenEditable="0" shortTitle="" notificationMessage="" type="1" capture="0" name="History audit" action="qgis.utils.plugins['postgres91plusauditor'].audit('od_subscriber_reference20131206105928067',[% $id %])">
           <actionScope id="Field"/>
           <actionScope id="Canvas"/>
@@ -23957,6 +23959,7 @@ def my_form_open(dialog, layer, feature):
       </constraintExpressions>
       <expressionfields/>
       <attributeactions>
+        <defaultAction value="{00000000-0000-0000-0000-000000000000}" key="Canvas"/>
         <actionsetting icon="" id="{89d40db1-fcec-489c-a1aa-d386610ece55}" isEnabledOnlyWhenEditable="0" shortTitle="" notificationMessage="" type="1" capture="0" name="History audit" action="qgis.utils.plugins['postgres91plusauditor'].audit('od_subscriber_reference20131206105928067',[% $id %])">
           <actionScope id="Field"/>
           <actionScope id="Canvas"/>
@@ -31423,6 +31426,15 @@ def my_form_open(dialog, layer, feature):
         <type></type>
         <title></title>
         <abstract></abstract>
+        <contact>
+          <name></name>
+          <organization></organization>
+          <position></position>
+          <voice></voice>
+          <fax></fax>
+          <email></email>
+          <role></role>
+        </contact>
         <links/>
         <fees></fees>
         <encoding></encoding>
@@ -31438,7 +31450,15 @@ def my_form_open(dialog, layer, feature):
             <geographicflag>false</geographicflag>
           </spatialrefsys>
         </crs>
-        <extent/>
+        <extent>
+          <spatial dimensions="2" minx="0" maxz="0" maxx="0" miny="0" minz="0" maxy="0" crs=""/>
+          <temporal>
+            <period>
+              <start></start>
+              <end></end>
+            </period>
+          </temporal>
+        </extent>
       </resourceMetadata>
       <provider encoding="ISO-8859-1">postgres</provider>
       <vectorjoins>
@@ -31809,7 +31829,7 @@ def my_form_open(dialog, layer, feature):
           <attribute field="" color="#000000" label=""/>
         </DiagramCategory>
       </SingleCategoryDiagramRenderer>
-      <DiagramLayerSettings dist="0" priority="0" zIndex="0" linePlacementFlags="10" placement="0" obstacle="0" showAll="1">
+      <DiagramLayerSettings dist="0" priority="0" zIndex="0" linePlacementFlags="2" placement="0" obstacle="0" showAll="1">
         <properties>
           <Option type="Map">
             <Option value="" type="QString" name="name"/>
@@ -31833,8 +31853,8 @@ def my_form_open(dialog, layer, feature):
           <editWidget type="TextEdit">
             <config>
               <Option type="Map">
-                <Option value="0" type="QString" name="IsMultiline"/>
-                <Option value="0" type="QString" name="UseHtml"/>
+                <Option value="false" type="bool" name="IsMultiline"/>
+                <Option value="false" type="bool" name="UseHtml"/>
               </Option>
             </config>
           </editWidget>
@@ -31843,13 +31863,14 @@ def my_form_open(dialog, layer, feature):
           <editWidget type="ValueRelation">
             <config>
               <Option type="Map">
-                <Option value="0" type="QString" name="AllowMulti"/>
-                <Option value="0" type="QString" name="AllowNull"/>
+                <Option value="false" type="bool" name="AllowMulti"/>
+                <Option value="false" type="bool" name="AllowNull"/>
                 <Option value="" type="QString" name="FilterExpression"/>
                 <Option value="id" type="QString" name="Key"/>
                 <Option value="district20130304110004764" type="QString" name="Layer"/>
-                <Option value="0" type="QString" name="OrderByValue"/>
-                <Option value="0" type="QString" name="UseCompleter"/>
+                <Option value="1" type="int" name="NofColumns"/>
+                <Option value="false" type="bool" name="OrderByValue"/>
+                <Option value="false" type="bool" name="UseCompleter"/>
                 <Option value="name" type="QString" name="Value"/>
               </Option>
             </config>
@@ -31859,13 +31880,14 @@ def my_form_open(dialog, layer, feature):
           <editWidget type="ValueRelation">
             <config>
               <Option type="Map">
-                <Option value="0" type="QString" name="AllowMulti"/>
-                <Option value="0" type="QString" name="AllowNull"/>
+                <Option value="false" type="bool" name="AllowMulti"/>
+                <Option value="false" type="bool" name="AllowNull"/>
                 <Option value="" type="QString" name="FilterExpression"/>
                 <Option value="id" type="QString" name="Key"/>
                 <Option value="pressurezone20130417133612105" type="QString" name="Layer"/>
-                <Option value="0" type="QString" name="OrderByValue"/>
-                <Option value="0" type="QString" name="UseCompleter"/>
+                <Option value="1" type="int" name="NofColumns"/>
+                <Option value="false" type="bool" name="OrderByValue"/>
+                <Option value="false" type="bool" name="UseCompleter"/>
                 <Option value="name" type="QString" name="Value"/>
               </Option>
             </config>
@@ -31891,8 +31913,8 @@ def my_form_open(dialog, layer, feature):
           <editWidget type="TextEdit">
             <config>
               <Option type="Map">
-                <Option value="0" type="QString" name="IsMultiline"/>
-                <Option value="0" type="QString" name="UseHtml"/>
+                <Option value="false" type="bool" name="IsMultiline"/>
+                <Option value="false" type="bool" name="UseHtml"/>
               </Option>
             </config>
           </editWidget>
@@ -31991,8 +32013,8 @@ def my_form_open(dialog, layer, feature):
           <editWidget type="TextEdit">
             <config>
               <Option type="Map">
-                <Option value="0" type="QString" name="IsMultiline"/>
-                <Option value="0" type="QString" name="UseHtml"/>
+                <Option value="false" type="bool" name="IsMultiline"/>
+                <Option value="false" type="bool" name="UseHtml"/>
               </Option>
             </config>
           </editWidget>
@@ -32001,13 +32023,14 @@ def my_form_open(dialog, layer, feature):
           <editWidget type="ValueRelation">
             <config>
               <Option type="Map">
-                <Option value="0" type="QString" name="AllowMulti"/>
-                <Option value="0" type="QString" name="AllowNull"/>
+                <Option value="false" type="bool" name="AllowMulti"/>
+                <Option value="false" type="bool" name="AllowNull"/>
                 <Option value="" type="QString" name="FilterExpression"/>
                 <Option value="id" type="QString" name="Key"/>
                 <Option value="distributor20130304114719702" type="QString" name="Layer"/>
-                <Option value="0" type="QString" name="OrderByValue"/>
-                <Option value="0" type="QString" name="UseCompleter"/>
+                <Option value="1" type="int" name="NofColumns"/>
+                <Option value="false" type="bool" name="OrderByValue"/>
+                <Option value="false" type="bool" name="UseCompleter"/>
                 <Option value="name" type="QString" name="Value"/>
               </Option>
             </config>
@@ -32017,13 +32040,14 @@ def my_form_open(dialog, layer, feature):
           <editWidget type="ValueRelation">
             <config>
               <Option type="Map">
-                <Option value="0" type="QString" name="AllowMulti"/>
-                <Option value="0" type="QString" name="AllowNull"/>
+                <Option value="false" type="bool" name="AllowMulti"/>
+                <Option value="false" type="bool" name="AllowNull"/>
                 <Option value="" type="QString" name="FilterExpression"/>
                 <Option value="id" type="QString" name="Key"/>
                 <Option value="vl_status20130304110011436" type="QString" name="Layer"/>
-                <Option value="0" type="QString" name="OrderByValue"/>
-                <Option value="0" type="QString" name="UseCompleter"/>
+                <Option value="1" type="int" name="NofColumns"/>
+                <Option value="false" type="bool" name="OrderByValue"/>
+                <Option value="false" type="bool" name="UseCompleter"/>
                 <Option value="value_fr" type="QString" name="Value"/>
               </Option>
             </config>
@@ -32059,13 +32083,14 @@ def my_form_open(dialog, layer, feature):
           <editWidget type="ValueRelation">
             <config>
               <Option type="Map">
-                <Option value="0" type="QString" name="AllowMulti"/>
-                <Option value="0" type="QString" name="AllowNull"/>
+                <Option value="false" type="bool" name="AllowMulti"/>
+                <Option value="false" type="bool" name="AllowNull"/>
                 <Option value="" type="QString" name="FilterExpression"/>
                 <Option value="id" type="QString" name="Key"/>
                 <Option value="vl_precision20130304110011372" type="QString" name="Layer"/>
-                <Option value="0" type="QString" name="OrderByValue"/>
-                <Option value="0" type="QString" name="UseCompleter"/>
+                <Option value="1" type="int" name="NofColumns"/>
+                <Option value="false" type="bool" name="OrderByValue"/>
+                <Option value="false" type="bool" name="UseCompleter"/>
                 <Option value="value_fr" type="QString" name="Value"/>
               </Option>
             </config>
@@ -32147,8 +32172,8 @@ def my_form_open(dialog, layer, feature):
           <editWidget type="TextEdit">
             <config>
               <Option type="Map">
-                <Option value="1" type="QString" name="IsMultiline"/>
-                <Option value="0" type="QString" name="UseHtml"/>
+                <Option value="true" type="bool" name="IsMultiline"/>
+                <Option value="false" type="bool" name="UseHtml"/>
               </Option>
             </config>
           </editWidget>
@@ -32257,13 +32282,14 @@ def my_form_open(dialog, layer, feature):
           <editWidget type="ValueRelation">
             <config>
               <Option type="Map">
-                <Option value="0" type="QString" name="AllowMulti"/>
-                <Option value="0" type="QString" name="AllowNull"/>
+                <Option value="false" type="bool" name="AllowMulti"/>
+                <Option value="false" type="bool" name="AllowNull"/>
                 <Option value="" type="QString" name="FilterExpression"/>
                 <Option value="id" type="QString" name="Key"/>
                 <Option value="vl_subscriber_type20130304110011480" type="QString" name="Layer"/>
-                <Option value="0" type="QString" name="OrderByValue"/>
-                <Option value="0" type="QString" name="UseCompleter"/>
+                <Option value="1" type="int" name="NofColumns"/>
+                <Option value="false" type="bool" name="OrderByValue"/>
+                <Option value="false" type="bool" name="UseCompleter"/>
                 <Option value="value_fr" type="QString" name="Value"/>
               </Option>
             </config>
@@ -32273,13 +32299,14 @@ def my_form_open(dialog, layer, feature):
           <editWidget type="RelationReference">
             <config>
               <Option type="Map">
-                <Option value="0" type="QString" name="AllowAddFeatures"/>
-                <Option value="1" type="QString" name="AllowNULL"/>
-                <Option value="1" type="QString" name="MapIdentification"/>
-                <Option value="0" type="QString" name="OrderByValue"/>
-                <Option value="1" type="QString" name="ReadOnly"/>
+                <Option value="false" type="bool" name="AllowAddFeatures"/>
+                <Option value="true" type="bool" name="AllowNULL"/>
+                <Option value="true" type="bool" name="MapIdentification"/>
+                <Option value="false" type="bool" name="OrderByValue"/>
+                <Option value="true" type="bool" name="ReadOnly"/>
                 <Option value="relation_pipe_subscriber" type="QString" name="Relation"/>
-                <Option value="0" type="QString" name="ShowForm"/>
+                <Option value="false" type="bool" name="ShowForm"/>
+                <Option value="true" type="bool" name="ShowOpenFormButton"/>
               </Option>
             </config>
           </editWidget>
@@ -32288,8 +32315,8 @@ def my_form_open(dialog, layer, feature):
           <editWidget type="TextEdit">
             <config>
               <Option type="Map">
-                <Option value="0" type="QString" name="IsMultiline"/>
-                <Option value="0" type="QString" name="UseHtml"/>
+                <Option value="false" type="bool" name="IsMultiline"/>
+                <Option value="false" type="bool" name="UseHtml"/>
               </Option>
             </config>
           </editWidget>
@@ -32298,8 +32325,8 @@ def my_form_open(dialog, layer, feature):
           <editWidget type="TextEdit">
             <config>
               <Option type="Map">
-                <Option value="0" type="QString" name="IsMultiline"/>
-                <Option value="0" type="QString" name="UseHtml"/>
+                <Option value="false" type="bool" name="IsMultiline"/>
+                <Option value="false" type="bool" name="UseHtml"/>
               </Option>
             </config>
           </editWidget>
@@ -32308,8 +32335,8 @@ def my_form_open(dialog, layer, feature):
           <editWidget type="TextEdit">
             <config>
               <Option type="Map">
-                <Option value="0" type="QString" name="IsMultiline"/>
-                <Option value="0" type="QString" name="UseHtml"/>
+                <Option value="false" type="bool" name="IsMultiline"/>
+                <Option value="false" type="bool" name="UseHtml"/>
               </Option>
             </config>
           </editWidget>
@@ -32358,15 +32385,15 @@ def my_form_open(dialog, layer, feature):
           <editWidget type="TextEdit">
             <config>
               <Option type="Map">
-                <Option value="0" type="QString" name="IsMultiline"/>
-                <Option value="0" type="QString" name="UseHtml"/>
+                <Option value="false" type="bool" name="IsMultiline"/>
+                <Option value="false" type="bool" name="UseHtml"/>
               </Option>
             </config>
           </editWidget>
         </field>
       </fieldConfiguration>
       <aliases>
-        <alias field="id" index="0" name=""/>
+        <alias field="id" index="0" name="ID"/>
         <alias field="fk_district" index="1" name="Commune"/>
         <alias field="fk_pressurezone" index="2" name="Zone de pression"/>
         <alias field="fk_printmap" index="3" name="Folios"/>
@@ -32381,7 +32408,7 @@ def my_form_open(dialog, layer, feature):
         <alias field="update_geometry_alt1" index="12" name=""/>
         <alias field="update_geometry_alt2" index="13" name=""/>
         <alias field="identification" index="14" name="Identification"/>
-        <alias field="fk_distributor" index="15" name=""/>
+        <alias field="fk_distributor" index="15" name="Distributeur"/>
         <alias field="fk_status" index="16" name="Statut"/>
         <alias field="fk_folder" index="17" name=""/>
         <alias field="fk_locationtype" index="18" name=""/>
@@ -32392,7 +32419,7 @@ def my_form_open(dialog, layer, feature):
         <alias field="year" index="23" name=""/>
         <alias field="year_end" index="24" name=""/>
         <alias field="orientation" index="25" name=""/>
-        <alias field="remark" index="26" name="Remarque"/>
+        <alias field="remark" index="26" name="Commentaire"/>
         <alias field="label_1_visible" index="27" name=""/>
         <alias field="label_1_x" index="28" name=""/>
         <alias field="label_1_y" index="29" name=""/>
@@ -32403,16 +32430,16 @@ def my_form_open(dialog, layer, feature):
         <alias field="label_2_y" index="34" name=""/>
         <alias field="label_2_rotation" index="35" name=""/>
         <alias field="label_2_text" index="36" name=""/>
-        <alias field="fk_subscriber_type" index="37" name=""/>
+        <alias field="fk_subscriber_type" index="37" name="tYPE"/>
         <alias field="fk_pipe" index="38" name="Conduite"/>
         <alias field="parcel" index="39" name="Parcelle"/>
-        <alias field="flow_current" index="40" name=""/>
-        <alias field="flow_planned" index="41" name=""/>
+        <alias field="flow_current" index="40" name="Débit"/>
+        <alias field="flow_planned" index="41" name="Débit prévu"/>
         <alias field="district_name" index="42" name=""/>
         <alias field="district_shortname" index="43" name=""/>
         <alias field="district_zip" index="44" name=""/>
         <alias field="district_land_registry" index="45" name=""/>
-        <alias field="district_prefix" index="46" name=""/>
+        <alias field="district_prefix" index="46" name="Préfix"/>
       </aliases>
       <excludeAttributesWMS/>
       <excludeAttributesWFS/>
@@ -32565,7 +32592,8 @@ def my_form_open(dialog, layer, feature):
       </constraintExpressions>
       <expressionfields/>
       <attributeactions>
-        <actionsetting icon="" id="{be972866-2d72-4a5d-9f39-b1afad6d213b}" isEnabledOnlyWhenEditable="0" shortTitle="" notificationMessage="" type="1" capture="0" name="Abonnés - conduite" action="qgis.utils.plugins['linkit'].linkit('subscriber20130304110011459','fk_pipe','conduites_copy20130709141244955', [% $id %])">
+        <defaultAction value="{00000000-0000-0000-0000-000000000000}" key="Canvas"/>
+        <actionsetting icon="" id="{da341ace-1aee-4dfd-b7a4-bbdc17decb8d}" isEnabledOnlyWhenEditable="0" shortTitle="" notificationMessage="" type="1" capture="0" name="Abonnés - conduite" action="qgis.utils.plugins['linkit'].linkit('subscriber20130304110011459','fk_pipe','conduites_copy20130709141244955', [% $id %])">
           <actionScope id="Field"/>
           <actionScope id="Canvas"/>
           <actionScope id="Feature"/>
@@ -32595,7 +32623,6 @@ def my_form_open(dialog, layer, feature):
           <column width="-1" hidden="0" type="field" name="year"/>
           <column width="-1" hidden="0" type="field" name="year_end"/>
           <column width="-1" hidden="0" type="field" name="remark"/>
-          <column width="-1" hidden="0" type="field" name="schema_force_visible"/>
           <column width="-1" hidden="0" type="field" name="label_1_visible"/>
           <column width="-1" hidden="0" type="field" name="label_1_x"/>
           <column width="-1" hidden="0" type="field" name="label_1_y"/>
@@ -32650,12 +32677,129 @@ def my_form_open(dialog, layer, feature):
 	control = dialog.findChild(QWidget, "MyLineEdit")
 ]]></editforminitcode>
       <featformsuppress>0</featformsuppress>
-      <editorlayout>uifilelayout</editorlayout>
-      <editable/>
-      <labelOnTop/>
+      <editorlayout>tablayout</editorlayout>
+      <attributeEditorForm>
+        <attributeEditorContainer showLabel="0" columnCount="2" groupBox="0" visibilityExpressionEnabled="0" name="" visibilityExpression="">
+          <attributeEditorField showLabel="1" index="0" name="id"/>
+          <attributeEditorField showLabel="1" index="37" name="fk_subscriber_type"/>
+          <attributeEditorField showLabel="1" index="46" name="district_prefix"/>
+          <attributeEditorField showLabel="1" index="14" name="identification"/>
+          <attributeEditorField showLabel="1" index="38" name="fk_pipe"/>
+          <attributeEditorField showLabel="1" index="16" name="fk_status"/>
+          <attributeEditorField showLabel="1" index="15" name="fk_distributor"/>
+          <attributeEditorField showLabel="1" index="4" name="_printmaps"/>
+          <attributeEditorField showLabel="1" index="39" name="parcel"/>
+          <attributeEditorField showLabel="1" index="2" name="fk_pressurezone"/>
+          <attributeEditorField showLabel="1" index="1" name="fk_district"/>
+          <attributeEditorField showLabel="1" index="40" name="flow_current"/>
+          <attributeEditorField showLabel="1" index="41" name="flow_planned"/>
+          <attributeEditorField showLabel="1" index="19" name="fk_precision"/>
+        </attributeEditorContainer>
+        <attributeEditorField showLabel="1" index="26" name="remark"/>
+      </attributeEditorForm>
+      <editable>
+        <field name="_geometry_alt1_used" editable="1"/>
+        <field name="_geometry_alt2_used" editable="1"/>
+        <field name="_pipe_node_type" editable="1"/>
+        <field name="_pipe_orientation" editable="1"/>
+        <field name="_pipe_schema_visible" editable="1"/>
+        <field name="_printmaps" editable="1"/>
+        <field name="altitude" editable="1"/>
+        <field name="district_land_registry" editable="0"/>
+        <field name="district_name" editable="0"/>
+        <field name="district_prefix" editable="0"/>
+        <field name="district_shortname" editable="0"/>
+        <field name="district_zip" editable="0"/>
+        <field name="fk_distributor" editable="1"/>
+        <field name="fk_district" editable="1"/>
+        <field name="fk_folder" editable="1"/>
+        <field name="fk_locationtype" editable="1"/>
+        <field name="fk_object_reference" editable="1"/>
+        <field name="fk_pipe" editable="1"/>
+        <field name="fk_precision" editable="1"/>
+        <field name="fk_precisionalti" editable="1"/>
+        <field name="fk_pressurezone" editable="1"/>
+        <field name="fk_printmap" editable="1"/>
+        <field name="fk_status" editable="1"/>
+        <field name="fk_subscriber_type" editable="1"/>
+        <field name="flow_current" editable="1"/>
+        <field name="flow_planned" editable="1"/>
+        <field name="geometry_alt1" editable="1"/>
+        <field name="geometry_alt2" editable="1"/>
+        <field name="id" editable="1"/>
+        <field name="identification" editable="1"/>
+        <field name="label_1_rotation" editable="1"/>
+        <field name="label_1_text" editable="1"/>
+        <field name="label_1_visible" editable="1"/>
+        <field name="label_1_x" editable="1"/>
+        <field name="label_1_y" editable="1"/>
+        <field name="label_2_rotation" editable="1"/>
+        <field name="label_2_text" editable="1"/>
+        <field name="label_2_visible" editable="1"/>
+        <field name="label_2_x" editable="1"/>
+        <field name="label_2_y" editable="1"/>
+        <field name="orientation" editable="1"/>
+        <field name="parcel" editable="1"/>
+        <field name="remark" editable="1"/>
+        <field name="update_geometry_alt1" editable="1"/>
+        <field name="update_geometry_alt2" editable="1"/>
+        <field name="year" editable="1"/>
+        <field name="year_end" editable="1"/>
+      </editable>
+      <labelOnTop>
+        <field labelOnTop="0" name="_geometry_alt1_used"/>
+        <field labelOnTop="0" name="_geometry_alt2_used"/>
+        <field labelOnTop="0" name="_pipe_node_type"/>
+        <field labelOnTop="0" name="_pipe_orientation"/>
+        <field labelOnTop="0" name="_pipe_schema_visible"/>
+        <field labelOnTop="0" name="_printmaps"/>
+        <field labelOnTop="0" name="altitude"/>
+        <field labelOnTop="0" name="district_land_registry"/>
+        <field labelOnTop="0" name="district_name"/>
+        <field labelOnTop="0" name="district_prefix"/>
+        <field labelOnTop="0" name="district_shortname"/>
+        <field labelOnTop="0" name="district_zip"/>
+        <field labelOnTop="0" name="fk_distributor"/>
+        <field labelOnTop="0" name="fk_district"/>
+        <field labelOnTop="0" name="fk_folder"/>
+        <field labelOnTop="0" name="fk_locationtype"/>
+        <field labelOnTop="0" name="fk_object_reference"/>
+        <field labelOnTop="0" name="fk_pipe"/>
+        <field labelOnTop="0" name="fk_precision"/>
+        <field labelOnTop="0" name="fk_precisionalti"/>
+        <field labelOnTop="0" name="fk_pressurezone"/>
+        <field labelOnTop="0" name="fk_printmap"/>
+        <field labelOnTop="0" name="fk_status"/>
+        <field labelOnTop="0" name="fk_subscriber_type"/>
+        <field labelOnTop="0" name="flow_current"/>
+        <field labelOnTop="0" name="flow_planned"/>
+        <field labelOnTop="0" name="geometry_alt1"/>
+        <field labelOnTop="0" name="geometry_alt2"/>
+        <field labelOnTop="0" name="id"/>
+        <field labelOnTop="0" name="identification"/>
+        <field labelOnTop="0" name="label_1_rotation"/>
+        <field labelOnTop="0" name="label_1_text"/>
+        <field labelOnTop="0" name="label_1_visible"/>
+        <field labelOnTop="0" name="label_1_x"/>
+        <field labelOnTop="0" name="label_1_y"/>
+        <field labelOnTop="0" name="label_2_rotation"/>
+        <field labelOnTop="0" name="label_2_text"/>
+        <field labelOnTop="0" name="label_2_visible"/>
+        <field labelOnTop="0" name="label_2_x"/>
+        <field labelOnTop="0" name="label_2_y"/>
+        <field labelOnTop="0" name="orientation"/>
+        <field labelOnTop="0" name="parcel"/>
+        <field labelOnTop="0" name="remark"/>
+        <field labelOnTop="0" name="update_geometry_alt1"/>
+        <field labelOnTop="0" name="update_geometry_alt2"/>
+        <field labelOnTop="0" name="year"/>
+        <field labelOnTop="0" name="year_end"/>
+      </labelOnTop>
       <widgets>
         <widget name="relation_subscriber_reference">
-          <config/>
+          <config type="Map">
+            <Option value="" type="QString" name="nm-rel"/>
+          </config>
         </widget>
       </widgets>
       <previewExpression>COALESCE( "id", '&lt;NULL>' )</previewExpression>
