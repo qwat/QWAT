@@ -1,7 +1,7 @@
 
-from PyQt4.QtCore import QSettings
-from PyQt4.QtGui import QDialog
-from qgis.core import QgsMapLayerRegistry, QgsFeature, QgsFeatureRequest
+from PyQt5.QtCore import QSettings
+from PyQt5.QtWidgets import QDialog
+from qgis.core import QgsProject, QgsFeature, QgsFeatureRequest
 from qgis.gui import QgisInterface
 from python.ui_alternative_geometry_dialog import Ui_AltGeomDialog
 
@@ -13,58 +13,58 @@ remoteLayerId = "od_remote20150116100522170"
 
 # PIPE
 def pipeConnectGeomModified():
-	pipeLayer = QgsMapLayerRegistry.instance().mapLayer(pipeLayerId)
+	pipeLayer = QgsProject().instance().mapLayer(pipeLayerId)
 	pipeLayer.editingStarted.connect(pipeEditingStarted)
 	
 def pipeEditingStarted():
-	pipeLayer = QgsMapLayerRegistry.instance().mapLayer(pipeLayerId)
+	pipeLayer = QgsProject().instance().mapLayer(pipeLayerId)
 	editBuffer = pipeLayer.editBuffer()
 	editBuffer.geometryChanged.connect(pipeGeomModified)
 
 def pipeGeomModified(featureId, geom):
-	pipeLayer = QgsMapLayerRegistry.instance().mapLayer(pipeLayerId)
+	pipeLayer = QgsProject().instance().mapLayer(pipeLayerId)
 	geomModified(pipeLayer, featureId)
 	
 # VALVES	
 def valveConnectGeomModified():
-	valveLayer = QgsMapLayerRegistry.instance().mapLayer(valveLayerId)
+	valveLayer = QgsProject().instance().mapLayer(valveLayerId)
 	valveLayer.editingStarted.connect(valveEditingStarted)
 	
 def valveEditingStarted():
-	valveLayer = QgsMapLayerRegistry.instance().mapLayer(valveLayerId)
+	valveLayer = QgsProject().instance().mapLayer(valveLayerId)
 	editBuffer = valveLayer.editBuffer()
 	editBuffer.geometryChanged.connect(valveGeomModified)
 
 def valveGeomModified(featureId, geom):
-	valveLayer = QgsMapLayerRegistry.instance().mapLayer(valveLayerId)
+	valveLayer = QgsProject().instance().mapLayer(valveLayerId)
 	geomModified(valveLayer, featureId)	
 	
 # INSTALLATIONS	
 def installConnectGeomModified():
-	installLayer = QgsMapLayerRegistry.instance().mapLayer(installLayerId)
+	installLayer = QgsProject().instance().mapLayer(installLayerId)
 	installLayer.editingStarted.connect(installEditingStarted)
 	
 def installEditingStarted():
-	installLayer = QgsMapLayerRegistry.instance().mapLayer(installLayerId)
+	installLayer = QgsProject().instance().mapLayer(installLayerId)
 	editBuffer = installLayer.editBuffer()
 	editBuffer.geometryChanged.connect(installGeomModified)
 
 def installGeomModified(featureId, geom):
-	installLayer = QgsMapLayerRegistry.instance().mapLayer(installLayerId)
+	installLayer = QgsProject().instance().mapLayer(installLayerId)
 	geomModified(installLayer, featureId)	
 	
 # REMOTE	
 def remoteConnectGeomModified():
-	remoteLayer = QgsMapLayerRegistry.instance().mapLayer(remoteLayerId)
+	remoteLayer = QgsProject().instance().mapLayer(remoteLayerId)
 	remoteLayer.editingStarted.connect(remoteEditingStarted)
 	
 def remoteEditingStarted():
-	remoteLayer = QgsMapLayerRegistry.instance().mapLayer(remoteLayerId)
+	remoteLayer = QgsProject().instance().mapLayer(remoteLayerId)
 	editBuffer = remoteLayer.editBuffer()
 	editBuffer.geometryChanged.connect(remoteGeomModified)
 
 def remoteGeomModified(featureId, geom):
-	remoteLayer = QgsMapLayerRegistry.instance().mapLayer(remoteLayerId)
+	remoteLayer = QgsProject().instance().mapLayer(remoteLayerId)
 	geomModified(remoteLayer, featureId)	
 	
 
@@ -83,7 +83,7 @@ def geomModified(layer, featureId):
 		return
 		
 	if f.attribute("update_geometry_alt1") in ('t','f') and f.attribute("update_geometry_alt2") in ('t','f'):
-		print "qwat: already asked if alternative geometries should be updated"
+		print("qwat: already asked if alternative geometries should be updated")
 		return
 	
 	_geometry_alt1_used = f.attribute("_geometry_alt1_used") == 't'
