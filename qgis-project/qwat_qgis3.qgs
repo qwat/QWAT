@@ -628,10 +628,10 @@
   <mapcanvas annotationsVisible="1" name="theMapCanvas">
     <units>meters</units>
     <extent>
-      <xmin>516054.28519940061960369</xmin>
-      <ymin>158030.88342503292369656</ymin>
-      <xmax>516418.18024994770530611</xmax>
-      <ymax>158329.65588627496617846</ymax>
+      <xmin>515952.98105768690584227</xmin>
+      <ymin>158093.75287293488509022</ymin>
+      <xmax>516044.53660008328733966</xmax>
+      <ymax>158181.56411493392079137</ymax>
     </extent>
     <rotation>0</rotation>
     <destinationsrs>
@@ -735,7 +735,7 @@
           <legendlayerfile visible="0" isInOverview="0" layerid="vw_element_samplingpoint20151002161215716"/>
         </filegroup>
       </legendlayer>
-      <legendgroup checked="Qt::Unchecked" open="true" name="Contrôle">
+      <legendgroup checked="Qt::Checked" open="true" name="Contrôle">
         <legendlayer checked="Qt::Unchecked" open="false" name="Fleches abonné -> conduite" drawingOrder="6" showFeatureCount="0">
           <filegroup hidden="false" open="false">
             <legendlayerfile visible="0" isInOverview="0" layerid="subscriber_pipe_relation20130417092124312"/>
@@ -748,7 +748,7 @@
         </legendlayer>
       </legendgroup>
     </legendgroup>
-    <legendgroup checked="Qt::Checked" open="true" name="Schématique">
+    <legendgroup checked="Qt::Unchecked" open="true" name="Schématique">
       <legendgroup checked="Qt::Unchecked" open="true" name="impression">
         <legendlayer checked="Qt::Unchecked" open="false" name="Hydrantes 5000 (pression)" drawingOrder="37" showFeatureCount="0">
           <filegroup hidden="false" open="false">
@@ -2071,7 +2071,7 @@ def my_form_open(dialog, layer, feature):
               <rule label="protégée" filter=" &quot;fk_protection&quot; IS NOT NULL" symbol="14" key="{9486a529-9a4e-4a3c-83fe-86f6f93102c0}"/>
             </rule>
           </rule>
-          <rule label="étranger" filter="fk_distributor != 1" key="{013429dc-a1cd-4a17-904a-6550a0175046}">
+          <rule label="Autres distributeurs" filter="fk_distributor != 1" key="{013429dc-a1cd-4a17-904a-6550a0175046}">
             <rule label="Schématique" filter="COALESCE( &quot;schema_force_visible&quot;,  &quot;pipe_function_schema_visible&quot;) = 'true'" key="{2513a8b8-a110-4727-854c-6084f64e3bdf}">
               <rule label="principale" filter=" &quot;pipe_function_major&quot;= 'true'" symbol="15" key="{f798c83b-a461-46c3-8031-8b5bc3caffd8}"/>
               <rule label="secondaire" filter=" &quot;pipe_function_major&quot;= 'false'" symbol="16" key="{ca06b6f2-f1ee-4958-b79a-6cb6cbc2059b}"/>
@@ -12320,6 +12320,9 @@ def my_form_open(dialog, layer, feature):
         </settings>
       </labeling>
       <customproperties>
+        <property key="dualview/previewExpressions">
+          <value>"id"</value>
+        </property>
         <property value="0" key="embeddedWidgets/count"/>
         <property key="variableNames"/>
         <property key="variableValues"/>
@@ -12648,6 +12651,10 @@ def my_form_open(dialog, layer, feature):
         </settings>
       </labeling>
       <customproperties>
+        <property key="dualview/previewExpressions">
+          <value>COALESCE( "id", '&lt;NULL>' )</value>
+          <value>COALESCE( "id", '&lt;NULL>' )</value>
+        </property>
         <property value="0" key="embeddedWidgets/count"/>
         <property value="[]" key="itemBrowserSelection"/>
         <property key="variableNames"/>
@@ -15577,6 +15584,15 @@ def my_form_open(dialog, layer, feature):
         <type></type>
         <title></title>
         <abstract></abstract>
+        <contact>
+          <name></name>
+          <organization></organization>
+          <position></position>
+          <voice></voice>
+          <fax></fax>
+          <email></email>
+          <role></role>
+        </contact>
         <links/>
         <fees></fees>
         <encoding></encoding>
@@ -15592,7 +15608,15 @@ def my_form_open(dialog, layer, feature):
             <geographicflag>false</geographicflag>
           </spatialrefsys>
         </crs>
-        <extent/>
+        <extent>
+          <spatial maxx="0" minz="0" maxy="0" maxz="0" dimensions="2" minx="0" crs="" miny="0"/>
+          <temporal>
+            <period>
+              <start></start>
+              <end></end>
+            </period>
+          </temporal>
+        </extent>
       </resourceMetadata>
       <provider encoding="UTF-8">postgres</provider>
       <vectorjoins/>
@@ -15614,22 +15638,22 @@ def my_form_open(dialog, layer, feature):
           <symbol clip_to_extent="1" force_rhr="0" name="0" type="marker" alpha="1">
             <layer enabled="1" pass="0" class="SimpleMarker" locked="0">
               <prop k="angle" v="0"/>
-              <prop k="color" v="100,143,110,255"/>
+              <prop k="color" v="129,129,129,255"/>
               <prop k="horizontal_anchor_point" v="1"/>
               <prop k="joinstyle" v="bevel"/>
               <prop k="name" v="circle"/>
               <prop k="offset" v="0,0"/>
               <prop k="offset_map_unit_scale" v="3x:0,0,0,0,0,0"/>
               <prop k="offset_unit" v="MM"/>
-              <prop k="outline_color" v="0,0,0,255"/>
+              <prop k="outline_color" v="204,204,204,255"/>
               <prop k="outline_style" v="solid"/>
               <prop k="outline_width" v="0"/>
               <prop k="outline_width_map_unit_scale" v="3x:0,0,0,0,0,0"/>
               <prop k="outline_width_unit" v="MM"/>
               <prop k="scale_method" v="area"/>
-              <prop k="size" v="2"/>
-              <prop k="size_map_unit_scale" v="3x:0,0,0,0,0,0"/>
-              <prop k="size_unit" v="MM"/>
+              <prop k="size" v="4.2"/>
+              <prop k="size_map_unit_scale" v="3x:0,0,1,5,1,0.5"/>
+              <prop k="size_unit" v="MapUnit"/>
               <prop k="vertical_anchor_point" v="1"/>
               <effect enabled="0" type="effectStack">
                 <effect type="drawSource">
@@ -15662,7 +15686,7 @@ def my_form_open(dialog, layer, feature):
       </renderer-v2>
       <labeling type="simple">
         <settings>
-          <text-style textOpacity="1" blendMode="0" fontCapitals="0" fontSize="11" previewBkgrdColor="#ffffff" fontUnderline="0" fontLetterSpacing="0" fontWordSpacing="0" fontItalic="1" namedStyle="Moyen Italic" fontSizeUnit="Point" fontWeight="75" fontFamily="Ubuntu" useSubstitutions="0" isExpression="1" fontSizeMapUnitScale="3x:0,0,0,0,0,0" fontStrikeout="0" multilineHeight="1" textColor="0,0,0,255" fieldName="id || ' ' ||  &quot;_type&quot; ">
+          <text-style textOpacity="1" blendMode="0" fontCapitals="0" fontSize="11" previewBkgrdColor="#ffffff" fontUnderline="0" fontLetterSpacing="0" fontWordSpacing="0" fontItalic="0" namedStyle="Regular" fontSizeUnit="Point" fontWeight="50" fontFamily="Ubuntu" useSubstitutions="0" isExpression="1" fontSizeMapUnitScale="3x:0,0,0,0,0,0" fontStrikeout="0" multilineHeight="1" textColor="0,0,0,255" fieldName="id || ' ' ||  &quot;_type&quot; ">
             <text-buffer bufferSizeUnits="MM" bufferSize="1" bufferBlendMode="0" bufferNoFill="0" bufferOpacity="1" bufferSizeMapUnitScale="3x:0,0,0,0,0,0" bufferDraw="0" bufferColor="255,255,255,255" bufferJoinStyle="64"/>
             <background shapeSizeType="0" shapeType="0" shapeRadiiX="0" shapeBlendMode="0" shapeRadiiY="0" shapeOffsetUnit="MM" shapeRadiiMapUnitScale="3x:0,0,0,0,0,0" shapeOffsetMapUnitScale="3x:0,0,0,0,0,0" shapeFillColor="255,255,255,255" shapeSizeMapUnitScale="3x:0,0,0,0,0,0" shapeBorderWidth="0" shapeOffsetY="0" shapeBorderWidthUnit="MM" shapeRotation="0" shapeJoinStyle="64" shapeRotationType="0" shapeSizeY="0" shapeBorderColor="128,128,128,255" shapeRadiiUnit="MM" shapeSVGFile="" shapeSizeUnit="MM" shapeBorderWidthMapUnitScale="3x:0,0,0,0,0,0" shapeOffsetX="0" shapeSizeX="0" shapeDraw="0" shapeOpacity="1"/>
             <shadow shadowRadiusMapUnitScale="3x:0,0,0,0,0,0" shadowOpacity="0.7" shadowOffsetAngle="135" shadowRadiusUnit="MM" shadowColor="0,0,0,255" shadowDraw="0" shadowOffsetDist="1" shadowOffsetMapUnitScale="3x:0,0,0,0,0,0" shadowScale="100" shadowOffsetUnit="MM" shadowUnder="0" shadowRadius="1.5" shadowOffsetGlobal="1" shadowBlendMode="6" shadowRadiusAlphaOnly="0"/>
@@ -15689,12 +15713,12 @@ def my_form_open(dialog, layer, feature):
       <featureBlendMode>0</featureBlendMode>
       <layerOpacity>1</layerOpacity>
       <SingleCategoryDiagramRenderer attributeLegend="1" diagramType="Histogram">
-        <DiagramCategory penWidth="0" backgroundAlpha="255" enabled="0" scaleBasedVisibility="0" height="15" diagramOrientation="Up" lineSizeScale="3x:0,0,0,0,0,0" minScaleDenominator="inf" width="15" labelPlacementMethod="XHeight" sizeType="MM" barWidth="5" lineSizeType="MM" backgroundColor="#ffffff" scaleDependency="Area" rotationOffset="270" penColor="#000000" maxScaleDenominator="1e+8" penAlpha="255" minimumSize="0" opacity="1" sizeScale="3x:0,0,0,0,0,0">
+        <DiagramCategory penWidth="0" backgroundAlpha="255" enabled="0" scaleBasedVisibility="0" height="15" diagramOrientation="Up" lineSizeScale="3x:0,0,0,0,0,0" minScaleDenominator="-2.14748e+9" width="15" labelPlacementMethod="XHeight" sizeType="MM" barWidth="5" lineSizeType="MM" backgroundColor="#ffffff" scaleDependency="Area" rotationOffset="270" penColor="#000000" maxScaleDenominator="1e+8" penAlpha="255" minimumSize="0" opacity="1" sizeScale="3x:0,0,0,0,0,0">
           <fontProperties style="" description="Lato,10,-1,5,50,0,0,0,0,0"/>
           <attribute field="" label="" color="#000000"/>
         </DiagramCategory>
       </SingleCategoryDiagramRenderer>
-      <DiagramLayerSettings showAll="1" obstacle="0" zIndex="0" linePlacementFlags="10" priority="0" placement="0" dist="0">
+      <DiagramLayerSettings showAll="1" obstacle="0" zIndex="0" linePlacementFlags="2" priority="0" placement="0" dist="0">
         <properties>
           <Option type="Map">
             <Option name="name" value="" type="QString"/>
@@ -15922,7 +15946,9 @@ def my_form_open(dialog, layer, feature):
         <constraint exp="" field="update_geometry_alt2" desc=""/>
       </constraintExpressions>
       <expressionfields/>
-      <attributeactions/>
+      <attributeactions>
+        <defaultAction value="{00000000-0000-0000-0000-000000000000}" key="Canvas"/>
+      </attributeactions>
       <attributetableconfig sortOrder="0" actionWidgetStyle="dropDown" sortExpression="&quot;id&quot;">
         <columns>
           <column hidden="0" name="id" type="field" width="-1"/>
@@ -15969,8 +15995,38 @@ def my_form_open(dialog, layer, feature):
 ]]></editforminitcode>
       <featformsuppress>0</featformsuppress>
       <editorlayout>generatedlayout</editorlayout>
-      <editable/>
-      <labelOnTop/>
+      <editable>
+        <field name="_geometry_alt1_used" editable="1"/>
+        <field name="_geometry_alt2_used" editable="1"/>
+        <field name="_pipe_node_type" editable="1"/>
+        <field name="_pipe_orientation" editable="1"/>
+        <field name="_pipe_schema_visible" editable="1"/>
+        <field name="_printmaps" editable="1"/>
+        <field name="fk_district" editable="1"/>
+        <field name="fk_pressurezone" editable="1"/>
+        <field name="fk_printmap" editable="1"/>
+        <field name="geometry_alt1" editable="1"/>
+        <field name="geometry_alt2" editable="1"/>
+        <field name="id" editable="1"/>
+        <field name="update_geometry_alt1" editable="1"/>
+        <field name="update_geometry_alt2" editable="1"/>
+      </editable>
+      <labelOnTop>
+        <field labelOnTop="0" name="_geometry_alt1_used"/>
+        <field labelOnTop="0" name="_geometry_alt2_used"/>
+        <field labelOnTop="0" name="_pipe_node_type"/>
+        <field labelOnTop="0" name="_pipe_orientation"/>
+        <field labelOnTop="0" name="_pipe_schema_visible"/>
+        <field labelOnTop="0" name="_printmaps"/>
+        <field labelOnTop="0" name="fk_district"/>
+        <field labelOnTop="0" name="fk_pressurezone"/>
+        <field labelOnTop="0" name="fk_printmap"/>
+        <field labelOnTop="0" name="geometry_alt1"/>
+        <field labelOnTop="0" name="geometry_alt2"/>
+        <field labelOnTop="0" name="id"/>
+        <field labelOnTop="0" name="update_geometry_alt1"/>
+        <field labelOnTop="0" name="update_geometry_alt2"/>
+      </labelOnTop>
       <widgets/>
       <previewExpression>COALESCE( "id", '&lt;NULL>' )</previewExpression>
       <mapTip></mapTip>
