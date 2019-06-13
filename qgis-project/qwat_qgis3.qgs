@@ -81,7 +81,7 @@
           <property value="0" key="showFeatureCount"/>
         </customproperties>
       </layer-tree-layer>
-      <layer-tree-layer source="service='qwat' sslmode=allow key='id' srid=21781 type=PointZ checkPrimaryKeyUnicity='0' table=&quot;qwat_od&quot;.&quot;node&quot; (geometry) sql=" checked="Qt::Checked" name="Noeuds (réseau et ouvrages)" expanded="0" id="node20130304110005126" providerKey="postgres">
+      <layer-tree-layer source="service='qwat' sslmode=allow key='id' srid=21781 type=PointZ checkPrimaryKeyUnicity='0' table=&quot;qwat_od&quot;.&quot;node&quot; (geometry) sql=" checked="Qt::Checked" name="Noeuds (réseau et ouvrages)" expanded="1" id="node20130304110005126" providerKey="postgres">
         <customproperties>
           <property key="expandedLegendNodes"/>
           <property value="0" key="showFeatureCount"/>
@@ -135,7 +135,7 @@
             <property key="expandedLegendNodes"/>
           </customproperties>
         </layer-tree-layer>
-        <layer-tree-layer source="service='qwat' sslmode=disable key='id' estimatedmetadata=true srid=21781 type=PointZ checkPrimaryKeyUnicity='0' table=&quot;qwat_od&quot;.&quot;node&quot; (geometry) sql=" checked="Qt::Unchecked" name="Noeuds - tous - controle" expanded="0" id="od_node20140116161508743" providerKey="postgres">
+        <layer-tree-layer source="service='qwat' sslmode=disable key='id' estimatedmetadata=true srid=21781 type=PointZ checkPrimaryKeyUnicity='0' table=&quot;qwat_od&quot;.&quot;node&quot; (geometry) sql=" checked="Qt::Checked" name="Noeuds - tous - controle" expanded="0" id="od_node20140116161508743" providerKey="postgres">
           <customproperties>
             <property key="expandedLegendNodes"/>
           </customproperties>
@@ -11312,7 +11312,7 @@ def my_form_open(dialog, layer, feature):
       <previewExpression></previewExpression>
       <mapTip></mapTip>
     </maplayer>
-    <maplayer simplifyDrawingTol="1" minScale="501" refreshOnNotifyMessage="" readOnly="0" geometry="Point" maxScale="0" simplifyLocal="1" simplifyDrawingHints="0" styleCategories="AllStyleCategories" hasScaleBasedVisibilityFlag="1" autoRefreshTime="0" type="vector" labelsEnabled="1" simplifyMaxScale="1" autoRefreshEnabled="0" refreshOnNotifyEnabled="0" simplifyAlgorithm="0">
+    <maplayer simplifyDrawingTol="1" minScale="1000" refreshOnNotifyMessage="" readOnly="0" geometry="Point" maxScale="0" simplifyLocal="1" simplifyDrawingHints="0" styleCategories="AllStyleCategories" hasScaleBasedVisibilityFlag="1" autoRefreshTime="0" type="vector" labelsEnabled="0" simplifyMaxScale="1" autoRefreshEnabled="0" refreshOnNotifyEnabled="0" simplifyAlgorithm="0">
       <extent>
         <xmin>514025.66549615800613537</xmin>
         <ymin>155871.89602727998862974</ymin>
@@ -11378,12 +11378,13 @@ def my_form_open(dialog, layer, feature):
       </flags>
       <renderer-v2 forceraster="0" symbollevels="0" enableorderby="0" type="RuleRenderer">
         <rules key="{43385ed0-766f-4646-ad2f-3bb352c38c57}">
-          <rule label="T" filter="_pipe_node_type= 'true'" symbol="0" key="{95f84ff0-270b-4dd3-9a75-2ba742aabe87}"/>
+          <rule label="T" filter="_pipe_node_type= 'T'" symbol="0" key="{95f84ff0-270b-4dd3-9a75-2ba742aabe87}"/>
           <rule label="Chg. matériau" filter="_pipe_node_type = 'couple_material'" symbol="1" key="{af3e33a5-995b-40e1-a7a4-c5693a1608d4}"/>
           <rule label="Chg. année" filter="_pipe_node_type = 'couple_year'" symbol="2" key="{026d603f-cc2a-4c8b-b6d1-357175e36956}"/>
           <rule label="Chg. diamètre + matériau" filter="_pipe_node_type = 'couple_other'" symbol="3" key="{d148d3d0-ca6b-405e-8259-c15f88e62ccb}"/>
           <rule label="Chg. diamètre" filter="_pipe_node_type = 'couple_diameter'" symbol="4" key="{87530b81-8a53-4983-a76e-b17b2c30ae43}"/>
           <rule label="Autres" filter=" &quot;_pipe_node_type&quot; is null " symbol="5" key="{7eff4afa-192a-4cce-b911-9f644c0f8bf4}"/>
+          <rule checkstate="0" label="ELSE" filter="ELSE" symbol="6" key="{bda11452-1866-4824-b81a-eede99b1eff6}"/>
         </rules>
         <symbols>
           <symbol clip_to_extent="1" force_rhr="0" name="0" type="marker" alpha="1">
@@ -11401,7 +11402,7 @@ def my_form_open(dialog, layer, feature):
               <prop k="outline_width_map_unit_scale" v="3x:0,0,0,0,0,0"/>
               <prop k="outline_width_unit" v="MM"/>
               <prop k="scale_method" v="diameter"/>
-              <prop k="size" v="4"/>
+              <prop k="size" v="7.8"/>
               <prop k="size_map_unit_scale" v="3x:0,0,0,0,0,0"/>
               <prop k="size_unit" v="MM"/>
               <prop k="vertical_anchor_point" v="1"/>
@@ -11619,6 +11620,35 @@ def my_form_open(dialog, layer, feature):
               </data_defined_properties>
             </layer>
           </symbol>
+          <symbol clip_to_extent="1" force_rhr="0" name="6" type="marker" alpha="1">
+            <layer enabled="1" pass="0" class="SimpleMarker" locked="0">
+              <prop k="angle" v="0"/>
+              <prop k="color" v="243,166,178,0"/>
+              <prop k="horizontal_anchor_point" v="1"/>
+              <prop k="joinstyle" v="bevel"/>
+              <prop k="name" v="circle"/>
+              <prop k="offset" v="0,0"/>
+              <prop k="offset_map_unit_scale" v="3x:0,0,0,0,0,0"/>
+              <prop k="offset_unit" v="MM"/>
+              <prop k="outline_color" v="35,35,35,255"/>
+              <prop k="outline_style" v="solid"/>
+              <prop k="outline_width" v="0"/>
+              <prop k="outline_width_map_unit_scale" v="3x:0,0,0,0,0,0"/>
+              <prop k="outline_width_unit" v="MM"/>
+              <prop k="scale_method" v="diameter"/>
+              <prop k="size" v="2"/>
+              <prop k="size_map_unit_scale" v="3x:0,0,0,0,0,0"/>
+              <prop k="size_unit" v="MM"/>
+              <prop k="vertical_anchor_point" v="1"/>
+              <data_defined_properties>
+                <Option type="Map">
+                  <Option name="name" value="" type="QString"/>
+                  <Option name="properties"/>
+                  <Option name="type" value="collection" type="QString"/>
+                </Option>
+              </data_defined_properties>
+            </layer>
+          </symbol>
         </symbols>
         <effect enabled="0" type="effectStack">
           <effect type="drawSource">
@@ -11637,16 +11667,16 @@ def my_form_open(dialog, layer, feature):
         <property key="variableNames"/>
         <property key="variableValues"/>
       </customproperties>
-      <blendMode>0</blendMode>
-      <featureBlendMode>0</featureBlendMode>
+      <blendMode>6</blendMode>
+      <featureBlendMode>6</featureBlendMode>
       <layerOpacity>1</layerOpacity>
       <SingleCategoryDiagramRenderer attributeLegend="1" diagramType="Pie">
-        <DiagramCategory penWidth="0" backgroundAlpha="255" enabled="0" scaleBasedVisibility="1" height="15" diagramOrientation="Up" lineSizeScale="3x:0,0,0,0,0,0" minScaleDenominator="inf" width="15" labelPlacementMethod="XHeight" sizeType="MM" barWidth="5" lineSizeType="MM" backgroundColor="#ffffff" scaleDependency="Area" rotationOffset="270" penColor="#000000" maxScaleDenominator="501" penAlpha="255" minimumSize="0" opacity="1" sizeScale="3x:0,0,0,0,0,0">
+        <DiagramCategory penWidth="0" backgroundAlpha="255" enabled="0" scaleBasedVisibility="1" height="15" diagramOrientation="Up" lineSizeScale="3x:0,0,0,0,0,0" minScaleDenominator="0" width="15" labelPlacementMethod="XHeight" sizeType="MM" barWidth="5" lineSizeType="MM" backgroundColor="#ffffff" scaleDependency="Area" rotationOffset="270" penColor="#000000" maxScaleDenominator="501" penAlpha="255" minimumSize="0" opacity="1" sizeScale="3x:0,0,0,0,0,0">
           <fontProperties style="" description="Cantarell,11,-1,5,50,0,0,0,0,0"/>
           <attribute field="" label="" color="#000000"/>
         </DiagramCategory>
       </SingleCategoryDiagramRenderer>
-      <DiagramLayerSettings showAll="1" obstacle="0" zIndex="0" linePlacementFlags="10" priority="0" placement="0" dist="0">
+      <DiagramLayerSettings showAll="1" obstacle="0" zIndex="0" linePlacementFlags="2" priority="0" placement="0" dist="0">
         <properties>
           <Option type="Map">
             <Option name="name" value="" type="QString"/>
@@ -11929,8 +11959,38 @@ def my_form_open(dialog, layer, feature):
 ]]></editforminitcode>
       <featformsuppress>0</featformsuppress>
       <editorlayout>generatedlayout</editorlayout>
-      <editable/>
-      <labelOnTop/>
+      <editable>
+        <field name="_geometry_alt1_used" editable="1"/>
+        <field name="_geometry_alt2_used" editable="1"/>
+        <field name="_pipe_node_type" editable="1"/>
+        <field name="_pipe_orientation" editable="1"/>
+        <field name="_pipe_schema_visible" editable="1"/>
+        <field name="_printmaps" editable="1"/>
+        <field name="fk_district" editable="1"/>
+        <field name="fk_pressurezone" editable="1"/>
+        <field name="fk_printmap" editable="1"/>
+        <field name="geometry_alt1" editable="1"/>
+        <field name="geometry_alt2" editable="1"/>
+        <field name="id" editable="1"/>
+        <field name="update_geometry_alt1" editable="1"/>
+        <field name="update_geometry_alt2" editable="1"/>
+      </editable>
+      <labelOnTop>
+        <field labelOnTop="0" name="_geometry_alt1_used"/>
+        <field labelOnTop="0" name="_geometry_alt2_used"/>
+        <field labelOnTop="0" name="_pipe_node_type"/>
+        <field labelOnTop="0" name="_pipe_orientation"/>
+        <field labelOnTop="0" name="_pipe_schema_visible"/>
+        <field labelOnTop="0" name="_printmaps"/>
+        <field labelOnTop="0" name="fk_district"/>
+        <field labelOnTop="0" name="fk_pressurezone"/>
+        <field labelOnTop="0" name="fk_printmap"/>
+        <field labelOnTop="0" name="geometry_alt1"/>
+        <field labelOnTop="0" name="geometry_alt2"/>
+        <field labelOnTop="0" name="id"/>
+        <field labelOnTop="0" name="update_geometry_alt1"/>
+        <field labelOnTop="0" name="update_geometry_alt2"/>
+      </labelOnTop>
       <widgets/>
       <previewExpression>COALESCE( "id", '&lt;NULL>' )</previewExpression>
       <mapTip></mapTip>
