@@ -3232,6 +3232,11 @@ def my_form_open(dialog, layer, feature):
               <Option type="Map">
                 <Option name="AllowAddFeatures" value="false" type="bool"/>
                 <Option name="AllowNULL" value="false" type="bool"/>
+                <Option name="ChainFilters" value="true" type="bool"/>
+                <Option name="FilterFields" type="StringList">
+                  <Option value="diameter" type="QString"/>
+                  <Option value="short_fr" type="QString"/>
+                </Option>
                 <Option name="MapIdentification" value="false" type="bool"/>
                 <Option name="OrderByValue" value="false" type="bool"/>
                 <Option name="ReadOnly" value="false" type="bool"/>
@@ -4310,12 +4315,12 @@ def my_form_open(dialog, layer, feature):
       <expressionfields/>
       <attributeactions>
         <defaultAction value="{00000000-0000-0000-0000-000000000000}" key="Canvas"/>
-        <actionsetting notificationMessage="" action="qgis.utils.plugins['postgres91plusauditor'].audit('pipe20130507153818274',[% $id %])" capture="0" name="History audit" icon="" id="{269bf54b-6e4d-4aad-87b5-dbb3493b04d6}" type="1" shortTitle="" isEnabledOnlyWhenEditable="0">
+        <actionsetting notificationMessage="" action="qgis.utils.plugins['postgres91plusauditor'].audit('pipe20130507153818274',[% $id %])" capture="0" name="History audit" icon="" id="{ac13c7cc-9eba-4936-a268-913aa94dfe2e}" type="1" shortTitle="" isEnabledOnlyWhenEditable="0">
           <actionScope id="Canvas"/>
           <actionScope id="Field"/>
           <actionScope id="Feature"/>
         </actionsetting>
-        <actionsetting notificationMessage="" action="qgis.utils.plugins['linkit'].linkit('conduites_copy20130709141244955','fk_parent','conduites_copy20130709141244955', [% $id %])" capture="0" name="Conduites parent" icon="" id="{38016aec-152f-47d0-9247-846aacbbfb88}" type="1" shortTitle="" isEnabledOnlyWhenEditable="0">
+        <actionsetting notificationMessage="" action="qgis.utils.plugins['linkit'].linkit('conduites_copy20130709141244955','fk_parent','conduites_copy20130709141244955', [% $id %])" capture="0" name="Conduites parent" icon="" id="{9071b21d-d38b-43bb-84db-abffaa89da42}" type="1" shortTitle="" isEnabledOnlyWhenEditable="0">
           <actionScope id="Canvas"/>
           <actionScope id="Field"/>
           <actionScope id="Feature"/>
