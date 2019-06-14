@@ -95,22 +95,16 @@ def geomModified(layer, featureId):
     if layer.getFeatures(QgsFeatureRequest().setFilterFid(featureId)).nextFeature(f) is False:
         return
 
-    if f.attribute("update_geometry_alt1") in ('t', 'f') and f.attribute("update_geometry_alt2") in ('t', 'f'):
+    if f.attribute("update_geometry_alt2") in ('t', 'f'):
         QgsMessageLog.logMessage(
             "Already asked if alternative geometries should be updated", "QWAT", Qgis.Info)
         return
 
-    _geometry_alt1_used = f.attribute("_geometry_alt1_used")
     _geometry_alt2_used = f.attribute("_geometry_alt2_used")
 
-    if _geometry_alt1_used and f.attribute("update_geometry_alt1").isNull() or _geometry_alt2_used and f.attribute("update_geometry_alt2").isNull():
+    if _geometry_alt2_used and f.attribute("update_geometry_alt2").isNull():
         dlg = AltGeomDialog()
-        if f.attribute("update_geometry_alt1").isNull():
-            dlg.updateAlt1.setChecked(False if _geometry_alt1_used else True)
-        else:
-            dlg.updateAlt1.setChecked(True if f.attribute(
-                "update_geometry_alt1") == 't' else False)
-
+       
         if f.attribute("update_geometry_alt2").isNull():
             dlg.updateAlt2.setChecked(False if _geometry_alt2_used else True)
         else:
@@ -121,7 +115,5 @@ def geomModified(layer, featureId):
             continue
 
         editBuffer = layer.editBuffer()
-        editBuffer.changeAttributeValue(featureId, layer.fields().indexFromName(
-            "update_geometry_alt1"), "t" if dlg.updateAlt1.isChecked() else "f")
         editBuffer.changeAttributeValue(featureId, layer.fields().indexFromName(
             "update_geometry_alt2"), "t" if dlg.updateAlt2.isChecked() else "f")
