@@ -1,46 +1,45 @@
 <!DOCTYPE qgis PUBLIC 'http://mrcc.com/qgis.dtd' 'SYSTEM'>
-<qgis simplifyAlgorithm="0" maxScale="100000" hasScaleBasedVisibilityFlag="0" simplifyDrawingTol="1" styleCategories="LayerConfiguration|Symbology3D|Labeling|Fields|Forms|Actions|MapTips|Diagrams|AttributeTable|Rendering|CustomProperties|GeometryOptions" version="3.4.7-Madeira" minScale="1e+08" labelsEnabled="1" simplifyLocal="1" simplifyDrawingHints="0" simplifyMaxScale="1" readOnly="0">
+<qgis simplifyAlgorithm="0" maxScale="100000" hasScaleBasedVisibilityFlag="0" simplifyDrawingTol="1" styleCategories="AllStyleCategories" version="3.4.7-Madeira" minScale="1e+08" labelsEnabled="0" simplifyLocal="1" simplifyDrawingHints="0" simplifyMaxScale="1" readOnly="0">
   <flags>
     <Identifiable>1</Identifiable>
     <Removable>1</Removable>
     <Searchable>1</Searchable>
   </flags>
-  <labeling type="simple">
-    <settings>
-      <text-style fontFamily="Sans Serif" useSubstitutions="0" fontUnderline="0" fontItalic="0" fontWordSpacing="0" fontStrikeout="0" fieldName="CASE&#xa;WHEN  &quot;installation_type&quot;  = 'chamber' THEN 'C. '&#xa;WHEN &quot;installation_type&quot;  = 'pressurecontrol' AND fk_pressurecontrol_type = 2801 THEN 'CR. '&#xa;WHEN  &quot;installation_type&quot;  = 'pressurecontrol' AND fk_pressurecontrol_type = 2802 THEN 'CCP. ' &#xa;WHEN  &quot;installation_type&quot;  = 'pressurecontrol' AND fk_pressurecontrol_type = 2803 THEN 'CRA. '&#xa;WHEN  &quot;installation_type&quot;  = 'pump' THEN 'P. ' &#xa;WHEN  &quot;installation_type&quot;  = 'source' THEN 'S. ' &#xa;WHEN  &quot;installation_type&quot;  = 'tank' THEN 'R. '&#xa;WHEN  &quot;installation_type&quot;  = 'treatment' THEN 'T. '&#xa;ELSE '' &#xa;END&#xa;|| coalesce(name, '')" blendMode="0" fontSizeUnit="Point" textOpacity="1" textColor="0,0,0,255" multilineHeight="1" namedStyle="Normal" fontSize="11" isExpression="1" fontWeight="50" previewBkgrdColor="#ffffff" fontSizeMapUnitScale="3x:0,0,0,0,0,0" fontLetterSpacing="0" fontCapitals="0">
-        <text-buffer bufferOpacity="1" bufferSizeUnits="MM" bufferColor="255,255,255,255" bufferJoinStyle="64" bufferNoFill="0" bufferDraw="1" bufferSize="1" bufferBlendMode="0" bufferSizeMapUnitScale="3x:0,0,0,0,0,0"/>
-        <background shapeSizeX="0" shapeBorderColor="128,128,128,255" shapeDraw="0" shapeSizeMapUnitScale="3x:0,0,0,0,0,0" shapeBorderWidthMapUnitScale="3x:0,0,0,0,0,0" shapeOffsetX="0" shapeBorderWidth="0" shapeRadiiY="0" shapeRotation="0" shapeSizeY="0" shapeOpacity="1" shapeSizeUnit="MM" shapeRadiiMapUnitScale="3x:0,0,0,0,0,0" shapeType="0" shapeBorderWidthUnit="MM" shapeBlendMode="0" shapeSizeType="0" shapeFillColor="255,255,255,255" shapeRotationType="0" shapeRadiiX="0" shapeSVGFile="" shapeRadiiUnit="MM" shapeOffsetUnit="MM" shapeJoinStyle="64" shapeOffsetY="0" shapeOffsetMapUnitScale="3x:0,0,0,0,0,0"/>
-        <shadow shadowOffsetAngle="135" shadowRadiusAlphaOnly="0" shadowColor="0,0,0,255" shadowOffsetMapUnitScale="3x:0,0,0,0,0,0" shadowDraw="0" shadowRadiusUnit="MM" shadowRadiusMapUnitScale="3x:0,0,0,0,0,0" shadowUnder="0" shadowOpacity="0.7" shadowOffsetDist="1" shadowOffsetUnit="MM" shadowRadius="1.5" shadowOffsetGlobal="1" shadowScale="100" shadowBlendMode="6"/>
-        <substitutions/>
-      </text-style>
-      <text-format multilineAlign="1" plussign="0" decimals="3" useMaxLineLengthForAutoWrap="1" addDirectionSymbol="0" placeDirectionSymbol="0" leftDirectionSymbol="&lt;" reverseDirectionSymbol="0" rightDirectionSymbol=">" wrapChar="" autoWrapLength="0" formatNumbers="0"/>
-      <placement rotationAngle="0" fitInPolygonOnly="0" offsetType="0" repeatDistanceMapUnitScale="3x:0,0,0,0,0,0" offsetUnits="MapUnit" centroidInside="0" quadOffset="4" repeatDistance="0" maxCurvedCharAngleIn="20" yOffset="0" xOffset="0" centroidWhole="0" distMapUnitScale="3x:0,0,0,0,0,0" maxCurvedCharAngleOut="-20" repeatDistanceUnits="MM" distUnits="MM" preserveRotation="1" priority="5" placement="0" labelOffsetMapUnitScale="3x:0,0,0,0,0,0" placementFlags="10" predefinedPositionOrder="TR,TL,BR,BL,R,L,TSR,BSR" dist="3"/>
-      <rendering scaleVisibility="1" obstacleType="0" obstacle="1" upsidedownLabels="0" scaleMax="10000" limitNumLabels="0" displayAll="1" drawLabels="1" maxNumLabels="2000" obstacleFactor="1" fontMaxPixelSize="10000" scaleMin="1" fontLimitPixelSize="0" fontMinPixelSize="3" mergeLines="0" zIndex="0" labelPerPart="0" minFeatureSize="0"/>
-      <dd_properties>
-        <Option type="Map">
-          <Option value="" type="QString" name="name"/>
-          <Option type="Map" name="properties">
-            <Option type="Map" name="LabelRotation">
-              <Option value="true" type="bool" name="active"/>
-              <Option value="360 - (&quot;label_1_rotation&quot;)" type="QString" name="expression"/>
-              <Option value="3" type="int" name="type"/>
+  <renderer-v2 type="singleSymbol" forceraster="0" enableorderby="0" symbollevels="0">
+    <symbols>
+      <symbol clip_to_extent="1" force_rhr="0" alpha="1" type="fill" name="0">
+        <layer class="GradientFill" enabled="1" locked="0" pass="0">
+          <prop v="0" k="angle"/>
+          <prop v="0,213,255,187" k="color"/>
+          <prop v="0,0,255,255" k="color1"/>
+          <prop v="0,255,0,255" k="color2"/>
+          <prop v="0" k="color_type"/>
+          <prop v="0" k="coordinate_mode"/>
+          <prop v="0" k="discrete"/>
+          <prop v="255,255,255,255" k="gradient_color2"/>
+          <prop v="0,0" k="offset"/>
+          <prop v="3x:0,0,0,0,0,0" k="offset_map_unit_scale"/>
+          <prop v="MM" k="offset_unit"/>
+          <prop v="gradient" k="rampType"/>
+          <prop v="0,0" k="reference_point1"/>
+          <prop v="0" k="reference_point1_iscentroid"/>
+          <prop v="1,1" k="reference_point2"/>
+          <prop v="0" k="reference_point2_iscentroid"/>
+          <prop v="0" k="spread"/>
+          <prop v="1" k="type"/>
+          <data_defined_properties>
+            <Option type="Map">
+              <Option value="" type="QString" name="name"/>
+              <Option name="properties"/>
+              <Option value="collection" type="QString" name="type"/>
             </Option>
-            <Option type="Map" name="PositionX">
-              <Option value="true" type="bool" name="active"/>
-              <Option value="label_1_x" type="QString" name="field"/>
-              <Option value="2" type="int" name="type"/>
-            </Option>
-            <Option type="Map" name="PositionY">
-              <Option value="true" type="bool" name="active"/>
-              <Option value="label_1_y" type="QString" name="field"/>
-              <Option value="2" type="int" name="type"/>
-            </Option>
-          </Option>
-          <Option value="collection" type="QString" name="type"/>
-        </Option>
-      </dd_properties>
-    </settings>
-  </labeling>
+          </data_defined_properties>
+        </layer>
+      </symbol>
+    </symbols>
+    <rotation/>
+    <sizescale/>
+  </renderer-v2>
   <customproperties>
     <property key="dualview/previewExpressions">
       <value>coalesce(identification|| ' ','') || CASE
@@ -60,6 +59,8 @@ END
     <property key="variableNames"/>
     <property key="variableValues"/>
   </customproperties>
+  <blendMode>0</blendMode>
+  <featureBlendMode>0</featureBlendMode>
   <layerOpacity>1</layerOpacity>
   <SingleCategoryDiagramRenderer diagramType="Pie" attributeLegend="1">
     <DiagramCategory backgroundAlpha="255" penColor="#000000" maxScaleDenominator="1e+08" height="15" minScaleDenominator="100000" penAlpha="255" opacity="1" sizeType="MM" barWidth="5" scaleDependency="Area" width="15" minimumSize="0" lineSizeScale="3x:0,0,0,0,0,0" diagramOrientation="Up" lineSizeType="MM" sizeScale="3x:0,0,0,0,0,0" rotationOffset="270" labelPlacementMethod="XHeight" enabled="0" scaleBasedVisibility="0" penWidth="0" backgroundColor="#ffffff">
@@ -192,6 +193,16 @@ END
       </editWidget>
     </field>
     <field name="_pipe_schema_visible">
+      <editWidget type="TextEdit">
+        <config>
+          <Option type="Map">
+            <Option value="0" type="QString" name="IsMultiline"/>
+            <Option value="0" type="QString" name="UseHtml"/>
+          </Option>
+        </config>
+      </editWidget>
+    </field>
+    <field name="geometry">
       <editWidget type="TextEdit">
         <config>
           <Option type="Map">
@@ -627,16 +638,6 @@ END
           <Option type="Map">
             <Option value="" type="QString" name="CheckedState"/>
             <Option value="" type="QString" name="UncheckedState"/>
-          </Option>
-        </config>
-      </editWidget>
-    </field>
-    <field name="geometry_polygon">
-      <editWidget type="TextEdit">
-        <config>
-          <Option type="Map">
-            <Option value="0" type="QString" name="IsMultiline"/>
-            <Option value="0" type="QString" name="UseHtml"/>
           </Option>
         </config>
       </editWidget>
@@ -1247,26 +1248,6 @@ END
         </config>
       </editWidget>
     </field>
-    <field name="status_active">
-      <editWidget type="TextEdit">
-        <config>
-          <Option type="Map">
-            <Option value="false" type="bool" name="IsMultiline"/>
-            <Option value="false" type="bool" name="UseHtml"/>
-          </Option>
-        </config>
-      </editWidget>
-    </field>
-    <field name="status_functional">
-      <editWidget type="TextEdit">
-        <config>
-          <Option type="Map">
-            <Option value="0" type="QString" name="IsMultiline"/>
-            <Option value="0" type="QString" name="UseHtml"/>
-          </Option>
-        </config>
-      </editWidget>
-    </field>
     <field name="_installation_type_short">
       <editWidget type="TextEdit">
         <config>
@@ -1289,42 +1270,42 @@ END
     <alias field="_pipe_node_type" index="7" name=""/>
     <alias field="_pipe_orientation" index="8" name=""/>
     <alias field="_pipe_schema_visible" index="9" name=""/>
-    <alias field="geometry_alt1" index="10" name=""/>
-    <alias field="geometry_alt2" index="11" name=""/>
-    <alias field="update_geometry_alt1" index="12" name=""/>
-    <alias field="update_geometry_alt2" index="13" name=""/>
-    <alias field="identification" index="14" name="Identification"/>
-    <alias field="fk_distributor" index="15" name="Distributeur"/>
-    <alias field="fk_status" index="16" name="Status"/>
-    <alias field="fk_folder" index="17" name=""/>
-    <alias field="fk_locationtype" index="18" name="Emplacement"/>
-    <alias field="fk_precision" index="19" name="Précision"/>
-    <alias field="fk_precisionalti" index="20" name="Précision alti."/>
-    <alias field="fk_object_reference" index="21" name="Pt. de réf."/>
-    <alias field="altitude" index="22" name="Altitude"/>
-    <alias field="year" index="23" name="Année"/>
-    <alias field="year_end" index="24" name="Année fin"/>
-    <alias field="orientation" index="25" name=""/>
-    <alias field="remark" index="26" name="Commentaire"/>
-    <alias field="label_1_visible" index="27" name=""/>
-    <alias field="label_1_x" index="28" name=""/>
-    <alias field="label_1_y" index="29" name=""/>
-    <alias field="label_1_rotation" index="30" name=""/>
-    <alias field="label_1_text" index="31" name=""/>
-    <alias field="label_2_visible" index="32" name=""/>
-    <alias field="label_2_x" index="33" name=""/>
-    <alias field="label_2_y" index="34" name=""/>
-    <alias field="label_2_rotation" index="35" name=""/>
-    <alias field="label_2_text" index="36" name=""/>
-    <alias field="installation_type" index="37" name="Type"/>
-    <alias field="name" index="38" name="Nom"/>
-    <alias field="fk_parent" index="39" name="Ouvrage principal"/>
-    <alias field="fk_remote" index="40" name="Télécom."/>
-    <alias field="fk_watertype" index="41" name="Type d'eau"/>
-    <alias field="parcel" index="42" name="Parcelle"/>
-    <alias field="eca" index="43" name="ECA"/>
-    <alias field="open_water_surface" index="44" name="Eau de surface"/>
-    <alias field="geometry_polygon" index="45" name=""/>
+    <alias field="geometry" index="10" name=""/>
+    <alias field="geometry_alt1" index="11" name=""/>
+    <alias field="geometry_alt2" index="12" name=""/>
+    <alias field="update_geometry_alt1" index="13" name=""/>
+    <alias field="update_geometry_alt2" index="14" name=""/>
+    <alias field="identification" index="15" name="Identification"/>
+    <alias field="fk_distributor" index="16" name="Distributeur"/>
+    <alias field="fk_status" index="17" name="Status"/>
+    <alias field="fk_folder" index="18" name=""/>
+    <alias field="fk_locationtype" index="19" name="Emplacement"/>
+    <alias field="fk_precision" index="20" name="Précision"/>
+    <alias field="fk_precisionalti" index="21" name="Précision alti."/>
+    <alias field="fk_object_reference" index="22" name="Pt. de réf."/>
+    <alias field="altitude" index="23" name="Altitude"/>
+    <alias field="year" index="24" name="Année"/>
+    <alias field="year_end" index="25" name="Année fin"/>
+    <alias field="orientation" index="26" name=""/>
+    <alias field="remark" index="27" name="Commentaire"/>
+    <alias field="label_1_visible" index="28" name=""/>
+    <alias field="label_1_x" index="29" name=""/>
+    <alias field="label_1_y" index="30" name=""/>
+    <alias field="label_1_rotation" index="31" name=""/>
+    <alias field="label_1_text" index="32" name=""/>
+    <alias field="label_2_visible" index="33" name=""/>
+    <alias field="label_2_x" index="34" name=""/>
+    <alias field="label_2_y" index="35" name=""/>
+    <alias field="label_2_rotation" index="36" name=""/>
+    <alias field="label_2_text" index="37" name=""/>
+    <alias field="installation_type" index="38" name="Type"/>
+    <alias field="name" index="39" name="Nom"/>
+    <alias field="fk_parent" index="40" name="Ouvrage principal"/>
+    <alias field="fk_remote" index="41" name="Télécom."/>
+    <alias field="fk_watertype" index="42" name="Type d'eau"/>
+    <alias field="parcel" index="43" name="Parcelle"/>
+    <alias field="eca" index="44" name="ECA"/>
+    <alias field="open_water_surface" index="45" name="Eau de surface"/>
     <alias field="networkseparation" index="46" name="séparation de réseau"/>
     <alias field="flow_meter" index="47" name="débitmètre"/>
     <alias field="water_meter" index="48" name="compteur"/>
@@ -1377,9 +1358,7 @@ END
     <alias field="activatedcharcoal" index="95" name="charbon actif"/>
     <alias field="settling" index="96" name="décantation"/>
     <alias field="treatment_capacity" index="97" name="capacité"/>
-    <alias field="status_active" index="98" name=""/>
-    <alias field="status_functional" index="99" name=""/>
-    <alias field="_installation_type_short" index="100" name=""/>
+    <alias field="_installation_type_short" index="98" name=""/>
   </aliases>
   <excludeAttributesWMS/>
   <excludeAttributesWFS/>
@@ -1394,6 +1373,7 @@ END
     <default field="_pipe_node_type" expression="" applyOnUpdate="0"/>
     <default field="_pipe_orientation" expression="" applyOnUpdate="0"/>
     <default field="_pipe_schema_visible" expression="" applyOnUpdate="0"/>
+    <default field="geometry" expression="" applyOnUpdate="0"/>
     <default field="geometry_alt1" expression="" applyOnUpdate="0"/>
     <default field="geometry_alt2" expression="" applyOnUpdate="0"/>
     <default field="update_geometry_alt1" expression="" applyOnUpdate="0"/>
@@ -1429,7 +1409,6 @@ END
     <default field="parcel" expression="" applyOnUpdate="0"/>
     <default field="eca" expression="" applyOnUpdate="0"/>
     <default field="open_water_surface" expression="" applyOnUpdate="0"/>
-    <default field="geometry_polygon" expression="" applyOnUpdate="0"/>
     <default field="networkseparation" expression="" applyOnUpdate="0"/>
     <default field="flow_meter" expression="" applyOnUpdate="0"/>
     <default field="water_meter" expression="" applyOnUpdate="0"/>
@@ -1482,8 +1461,6 @@ END
     <default field="activatedcharcoal" expression="" applyOnUpdate="0"/>
     <default field="settling" expression="" applyOnUpdate="0"/>
     <default field="treatment_capacity" expression="" applyOnUpdate="0"/>
-    <default field="status_active" expression="" applyOnUpdate="0"/>
-    <default field="status_functional" expression="" applyOnUpdate="0"/>
     <default field="_installation_type_short" expression="" applyOnUpdate="0"/>
   </defaults>
   <constraints>
@@ -1497,6 +1474,7 @@ END
     <constraint field="_pipe_node_type" notnull_strength="0" unique_strength="0" exp_strength="0" constraints="0"/>
     <constraint field="_pipe_orientation" notnull_strength="0" unique_strength="0" exp_strength="0" constraints="0"/>
     <constraint field="_pipe_schema_visible" notnull_strength="0" unique_strength="0" exp_strength="0" constraints="0"/>
+    <constraint field="geometry" notnull_strength="0" unique_strength="0" exp_strength="0" constraints="0"/>
     <constraint field="geometry_alt1" notnull_strength="0" unique_strength="0" exp_strength="0" constraints="0"/>
     <constraint field="geometry_alt2" notnull_strength="0" unique_strength="0" exp_strength="0" constraints="0"/>
     <constraint field="update_geometry_alt1" notnull_strength="0" unique_strength="0" exp_strength="0" constraints="0"/>
@@ -1532,7 +1510,6 @@ END
     <constraint field="parcel" notnull_strength="0" unique_strength="0" exp_strength="0" constraints="0"/>
     <constraint field="eca" notnull_strength="0" unique_strength="0" exp_strength="0" constraints="0"/>
     <constraint field="open_water_surface" notnull_strength="0" unique_strength="0" exp_strength="0" constraints="0"/>
-    <constraint field="geometry_polygon" notnull_strength="0" unique_strength="0" exp_strength="0" constraints="0"/>
     <constraint field="networkseparation" notnull_strength="0" unique_strength="0" exp_strength="0" constraints="0"/>
     <constraint field="flow_meter" notnull_strength="0" unique_strength="0" exp_strength="0" constraints="0"/>
     <constraint field="water_meter" notnull_strength="0" unique_strength="0" exp_strength="0" constraints="0"/>
@@ -1585,8 +1562,6 @@ END
     <constraint field="activatedcharcoal" notnull_strength="0" unique_strength="0" exp_strength="0" constraints="0"/>
     <constraint field="settling" notnull_strength="0" unique_strength="0" exp_strength="0" constraints="0"/>
     <constraint field="treatment_capacity" notnull_strength="0" unique_strength="0" exp_strength="0" constraints="0"/>
-    <constraint field="status_active" notnull_strength="0" unique_strength="0" exp_strength="0" constraints="0"/>
-    <constraint field="status_functional" notnull_strength="0" unique_strength="0" exp_strength="0" constraints="0"/>
     <constraint field="_installation_type_short" notnull_strength="0" unique_strength="0" exp_strength="0" constraints="0"/>
   </constraints>
   <constraintExpressions>
@@ -1600,6 +1575,7 @@ END
     <constraint field="_pipe_node_type" exp="" desc=""/>
     <constraint field="_pipe_orientation" exp="" desc=""/>
     <constraint field="_pipe_schema_visible" exp="" desc=""/>
+    <constraint field="geometry" exp="" desc=""/>
     <constraint field="geometry_alt1" exp="" desc=""/>
     <constraint field="geometry_alt2" exp="" desc=""/>
     <constraint field="update_geometry_alt1" exp="" desc=""/>
@@ -1635,7 +1611,6 @@ END
     <constraint field="parcel" exp="" desc=""/>
     <constraint field="eca" exp="" desc=""/>
     <constraint field="open_water_surface" exp="" desc=""/>
-    <constraint field="geometry_polygon" exp="" desc=""/>
     <constraint field="networkseparation" exp="" desc=""/>
     <constraint field="flow_meter" exp="" desc=""/>
     <constraint field="water_meter" exp="" desc=""/>
@@ -1688,8 +1663,6 @@ END
     <constraint field="activatedcharcoal" exp="" desc=""/>
     <constraint field="settling" exp="" desc=""/>
     <constraint field="treatment_capacity" exp="" desc=""/>
-    <constraint field="status_active" exp="" desc=""/>
-    <constraint field="status_functional" exp="" desc=""/>
     <constraint field="_installation_type_short" exp="" desc=""/>
   </constraintExpressions>
   <expressionfields>
@@ -1745,7 +1718,6 @@ END
       <column hidden="0" type="field" name="parcel" width="-1"/>
       <column hidden="0" type="field" name="eca" width="-1"/>
       <column hidden="0" type="field" name="open_water_surface" width="-1"/>
-      <column hidden="0" type="field" name="geometry_polygon" width="-1"/>
       <column hidden="0" type="field" name="fk_source_type" width="-1"/>
       <column hidden="0" type="field" name="fk_source_quality" width="-1"/>
       <column hidden="0" type="field" name="flow_lowest" width="-1"/>
@@ -1797,11 +1769,10 @@ END
       <column hidden="0" type="field" name="depth" width="-1"/>
       <column hidden="0" type="field" name="no_valves" width="-1"/>
       <column hidden="0" type="field" name="fk_pressurecontrol_type" width="-1"/>
-      <column hidden="0" type="field" name="status_active" width="-1"/>
-      <column hidden="0" type="field" name="status_functional" width="-1"/>
-      <column hidden="0" type="field" name="_installation_type_short" width="-1"/>
       <column hidden="1" type="actions" width="-1"/>
+      <column hidden="0" type="field" name="geometry" width="-1"/>
       <column hidden="0" type="field" name="sanitization_chlorine_gas" width="-1"/>
+      <column hidden="0" type="field" name="_installation_type_short" width="-1"/>
     </columns>
   </attributetableconfig>
   <conditionalstyles>
@@ -1820,23 +1791,23 @@ END
     <attributeEditorContainer visibilityExpressionEnabled="0" columnCount="1" visibilityExpression="" groupBox="0" name="Général" showLabel="1">
       <attributeEditorContainer visibilityExpressionEnabled="0" columnCount="1" visibilityExpression="" groupBox="1" name="" showLabel="0">
         <attributeEditorField index="0" name="id" showLabel="1"/>
-        <attributeEditorField index="37" name="installation_type" showLabel="1"/>
-        <attributeEditorField index="38" name="name" showLabel="1"/>
-        <attributeEditorField index="14" name="identification" showLabel="1"/>
-        <attributeEditorField index="39" name="fk_parent" showLabel="1"/>
-        <attributeEditorField index="43" name="eca" showLabel="1"/>
-        <attributeEditorField index="16" name="fk_status" showLabel="1"/>
-        <attributeEditorField index="42" name="parcel" showLabel="1"/>
-        <attributeEditorField index="15" name="fk_distributor" showLabel="1"/>
-        <attributeEditorField index="22" name="altitude" showLabel="1"/>
-        <attributeEditorField index="23" name="year" showLabel="1"/>
-        <attributeEditorField index="19" name="fk_precision" showLabel="1"/>
-        <attributeEditorField index="24" name="year_end" showLabel="1"/>
-        <attributeEditorField index="20" name="fk_precisionalti" showLabel="1"/>
-        <attributeEditorField index="41" name="fk_watertype" showLabel="1"/>
-        <attributeEditorField index="21" name="fk_object_reference" showLabel="1"/>
-        <attributeEditorField index="40" name="fk_remote" showLabel="1"/>
-        <attributeEditorField index="44" name="open_water_surface" showLabel="1"/>
+        <attributeEditorField index="38" name="installation_type" showLabel="1"/>
+        <attributeEditorField index="39" name="name" showLabel="1"/>
+        <attributeEditorField index="15" name="identification" showLabel="1"/>
+        <attributeEditorField index="40" name="fk_parent" showLabel="1"/>
+        <attributeEditorField index="44" name="eca" showLabel="1"/>
+        <attributeEditorField index="17" name="fk_status" showLabel="1"/>
+        <attributeEditorField index="43" name="parcel" showLabel="1"/>
+        <attributeEditorField index="16" name="fk_distributor" showLabel="1"/>
+        <attributeEditorField index="23" name="altitude" showLabel="1"/>
+        <attributeEditorField index="24" name="year" showLabel="1"/>
+        <attributeEditorField index="20" name="fk_precision" showLabel="1"/>
+        <attributeEditorField index="25" name="year_end" showLabel="1"/>
+        <attributeEditorField index="21" name="fk_precisionalti" showLabel="1"/>
+        <attributeEditorField index="42" name="fk_watertype" showLabel="1"/>
+        <attributeEditorField index="22" name="fk_object_reference" showLabel="1"/>
+        <attributeEditorField index="41" name="fk_remote" showLabel="1"/>
+        <attributeEditorField index="45" name="open_water_surface" showLabel="1"/>
       </attributeEditorContainer>
       <attributeEditorContainer visibilityExpressionEnabled="1" columnCount="1" visibilityExpression=" &quot;installation_type&quot; = 'chamber' " groupBox="1" name="Chambre" showLabel="1">
         <attributeEditorField index="46" name="networkseparation" showLabel="1"/>
@@ -1908,10 +1879,10 @@ END
           <attributeEditorField index="87" name="_cistern2_litrepercm" showLabel="1"/>
         </attributeEditorContainer>
       </attributeEditorContainer>
-      <attributeEditorField index="26" name="remark" showLabel="0"/>
+      <attributeEditorField index="27" name="remark" showLabel="0"/>
     </attributeEditorContainer>
     <attributeEditorContainer visibilityExpressionEnabled="0" columnCount="1" visibilityExpression="" groupBox="0" name="Emplacement" showLabel="1">
-      <attributeEditorField index="18" name="fk_locationtype" showLabel="0"/>
+      <attributeEditorField index="19" name="fk_locationtype" showLabel="0"/>
     </attributeEditorContainer>
   </attributeEditorForm>
   <editable>
@@ -1972,6 +1943,7 @@ END
     <field name="flow_lowest" editable="1"/>
     <field name="flow_meter" editable="1"/>
     <field name="gathering_chamber" editable="1"/>
+    <field name="geometry" editable="1"/>
     <field name="geometry_alt1" editable="1"/>
     <field name="geometry_alt2" editable="1"/>
     <field name="geometry_polygon" editable="1"/>
@@ -2075,6 +2047,7 @@ END
     <field name="flow_lowest" labelOnTop="0"/>
     <field name="flow_meter" labelOnTop="0"/>
     <field name="gathering_chamber" labelOnTop="0"/>
+    <field name="geometry" labelOnTop="0"/>
     <field name="geometry_alt1" labelOnTop="0"/>
     <field name="geometry_alt2" labelOnTop="0"/>
     <field name="geometry_polygon" labelOnTop="0"/>
@@ -2145,5 +2118,5 @@ ELSE ''
 END
 || coalesce(name,'')</previewExpression>
   <mapTip></mapTip>
-  <layerGeometryType>0</layerGeometryType>
+  <layerGeometryType>2</layerGeometryType>
 </qgis>

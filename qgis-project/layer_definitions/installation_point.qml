@@ -1,10 +1,1289 @@
 <!DOCTYPE qgis PUBLIC 'http://mrcc.com/qgis.dtd' 'SYSTEM'>
-<qgis simplifyAlgorithm="0" maxScale="100000" hasScaleBasedVisibilityFlag="0" simplifyDrawingTol="1" styleCategories="LayerConfiguration|Symbology3D|Labeling|Fields|Forms|Actions|MapTips|Diagrams|AttributeTable|Rendering|CustomProperties|GeometryOptions" version="3.4.7-Madeira" minScale="1e+08" labelsEnabled="1" simplifyLocal="1" simplifyDrawingHints="0" simplifyMaxScale="1" readOnly="0">
+<qgis simplifyAlgorithm="0" maxScale="100000" hasScaleBasedVisibilityFlag="0" simplifyDrawingTol="1" styleCategories="AllStyleCategories" version="3.4.7-Madeira" minScale="1e+08" labelsEnabled="1" simplifyLocal="1" simplifyDrawingHints="0" simplifyMaxScale="1" readOnly="0">
   <flags>
     <Identifiable>1</Identifiable>
     <Removable>1</Removable>
     <Searchable>1</Searchable>
   </flags>
+  <renderer-v2 type="RuleRenderer" forceraster="0" enableorderby="0" symbollevels="0">
+    <rules key="{89d1d7f3-6dd2-48ab-a978-572c899af422}">
+      <rule key="{69b3bf49-4ced-4bb9-8799-da2f168ad22c}" filter="fk_distributor = 1 AND status_functional= 'true'" label="fonctionnel">
+        <rule key="{6f043e9f-1731-47a8-86d1-a6084a99e57b}" filter="status_active= 'true' AND (fk_parent IS NULL OR @map_scale &lt; 501)" label="actif">
+          <rule key="{e50fbbc2-a891-4432-a846-34d4f3e99c86}" filter="installation_type = 'chamber'" label="Chambre">
+            <rule symbol="0" key="{c5aa7421-12d9-4e1f-b39e-ddc5f7c287e9}" filter="flow_meter= 'true' or water_meter= 'true' or manometer= 'true'" label="Chambre débitmètre"/>
+            <rule symbol="1" key="{278ef659-c656-449d-a1c5-7c60acabaa65}" filter="ELSE" label="Chambre"/>
+          </rule>
+          <rule key="{dcad679b-71a0-497e-b02e-93f46651826b}" filter="installation_type = 'pressurecontrol'" label="pressurecontrol">
+            <rule symbol="2" key="{980ea4bf-d999-4d98-b45a-9c3890a64496}" filter=" &quot;fk_pressurecontrol_type&quot; =  2801 " label="Chambre réducteur"/>
+            <rule symbol="3" key="{37877255-94b0-449e-ae98-71803ed4ef1c}" filter=" &quot;fk_pressurecontrol_type&quot; =  2802" label="Chambre coupe pression"/>
+            <rule symbol="4" key="{7e777116-29bb-4af3-883d-504a8f109298}" filter=" &quot;fk_pressurecontrol_type&quot; =  2803" label="Chambre de rassemblement"/>
+          </rule>
+          <rule symbol="5" key="{3c04b823-cf69-4ac1-89cf-d04e9bdd4989}" filter="installation_type = 'pump'" label="pump"/>
+          <rule symbol="6" key="{6be86ca3-25cf-47e9-a4d8-09d481490c9c}" filter="installation_type = 'source'" label="source"/>
+          <rule symbol="7" key="{cdead7aa-d728-472d-b382-91cf70fd6e5f}" filter="installation_type = 'tank'" label="tank"/>
+          <rule symbol="8" key="{a841e611-3390-4ae1-b9f5-e7fee4fea027}" filter="installation_type = 'treatment'" label="treatment"/>
+          <rule symbol="9" key="{5d01efe9-2c1b-4052-a11f-5ce82dd09f65}" filter="ELSE"/>
+        </rule>
+        <rule key="{f955cc23-5f5f-4ac6-949b-6711a8862c7a}" filter="status_active= 'false' AND (fk_parent IS NULL OR @map_scale &lt; 501)" label="inactif">
+          <rule key="{33dee9ac-9240-41d9-8da7-d047d8521f65}" filter="installation_type = 'chamber'" label="Chambre">
+            <rule symbol="10" key="{b30d473c-b7f4-448a-b647-b2a5ceb1a131}" filter="flow_meter= 'true' or water_meter= 'true' or manometer= 'true'" label="Chambre débitmètre"/>
+            <rule symbol="11" key="{ee6ec74f-d3e1-435a-90d0-b91da4a9537f}" filter="ELSE" label="Chambre"/>
+          </rule>
+          <rule key="{dc540c42-11d4-4a71-a720-5c18f763734e}" filter="installation_type = 'pressurecontrol'" label="pressurecontrol">
+            <rule symbol="12" key="{e2eb5440-e94b-4c54-a2bc-91b66b6e2c21}" filter=" &quot;fk_pressurecontrol_type&quot; =  2801 " label="Chambre réducteur"/>
+            <rule symbol="13" key="{a36e1dd4-a5ba-4a46-8647-4b6ecf6a4e58}" filter=" &quot;fk_pressurecontrol_type&quot; =  2802" label="Chambre coupe pression"/>
+            <rule symbol="14" key="{5fb13620-50f9-41de-93f9-9ab384ab087f}" filter=" &quot;fk_pressurecontrol_type&quot; =  2803" label="Chambre de rassemblement"/>
+          </rule>
+          <rule symbol="15" key="{082eff42-4984-492f-97dc-caedb6a17a07}" filter="installation_type = 'pump'" label="pump"/>
+          <rule symbol="16" key="{a6946f96-07f0-4f35-aa70-ad33d6866b8d}" filter="installation_type = 'source'" label="source"/>
+          <rule symbol="17" key="{ffab370b-cfc7-4704-9929-5e4dd09ee8f3}" filter="installation_type = 'tank'" label="tank"/>
+          <rule symbol="18" key="{224820ff-9d97-46ba-88a8-8073f0a09a29}" filter="installation_type = 'treatment'" label="treatment"/>
+          <rule symbol="19" key="{0b8281d6-7c39-44b5-8a40-ecb1889399cb}" filter="ELSE"/>
+        </rule>
+      </rule>
+      <rule key="{1a64d4d9-3bd2-437b-9620-740b13e32509}" filter="fk_distributor = 1 AND status_functional= 'false'" label="non fonctionnel">
+        <rule key="{ce0c94bb-b016-41a1-931c-3109807689b0}" filter="installation_type = 'chamber'" label="Chambre">
+          <rule symbol="20" key="{f16643c2-ce75-4f94-beee-56389f55aee7}" filter="flow_meter= 'true' or water_meter= 'true' or manometer= 'true'" label="Chambre débitmètre"/>
+          <rule symbol="21" key="{8366c510-1142-41fb-85a1-bf9663ad9d11}" filter="ELSE" label="Chambre"/>
+        </rule>
+        <rule key="{d31ae609-73ec-4d88-8324-5300f14ed738}" filter="installation_type = 'pressurecontrol'" label="pressurecontrol">
+          <rule symbol="22" key="{5b2d8e5a-3356-4b07-b16a-4d65880b37be}" filter=" &quot;fk_pressurecontrol_type&quot; =  2801 " label="Chambre réducteur"/>
+          <rule symbol="23" key="{58ca52b5-c570-46bb-a8d6-37620ad6dfdd}" filter=" &quot;fk_pressurecontrol_type&quot; =  2802" label="Chambre coupe pression"/>
+          <rule symbol="24" key="{e5d0325a-e0da-4e48-9d56-e1af3d322a7c}" filter=" &quot;fk_pressurecontrol_type&quot; =  2803" label="Chambre de rassemblement"/>
+        </rule>
+        <rule symbol="25" key="{53d7b7ef-bd10-4993-87fd-3d4573cd83ce}" filter="installation_type = 'pump'" label="pump"/>
+        <rule symbol="26" key="{18febfc6-d9a9-4440-bee8-fa580f8b5d76}" filter="installation_type = 'source'" label="source"/>
+        <rule symbol="27" key="{006b8eb0-9edd-4fe7-8811-9db931679b5f}" filter="installation_type = 'tank'" label="tank"/>
+        <rule symbol="28" key="{d9e91fdc-4236-40c2-9a43-470f8c8503cf}" filter="installation_type = 'treatment'" label="treatment"/>
+        <rule symbol="29" key="{502f5a4d-e6dd-456d-9170-febbacdf05b8}" filter="ELSE"/>
+      </rule>
+      <rule key="{05336f6d-543d-4bf7-bea5-a474d431bdf3}" filter="fk_distributor != 1" label="étranger">
+        <rule key="{8beaf9ba-e486-46ce-8f70-957911d5515b}" filter="installation_type = 'chamber'" label="Chambre">
+          <rule symbol="30" key="{5f09c1ec-36a2-4dba-98f0-bcd568e24533}" filter="flow_meter= 'true' or water_meter= 'true' or manometer= 'true'" label="Chambre débitmètre"/>
+          <rule symbol="31" key="{a6204137-028d-44b7-b245-5d3b24a7d399}" filter="ELSE" label="Chambre"/>
+        </rule>
+        <rule key="{94454820-5d27-4427-80f6-24d28c5c51a3}" filter="installation_type = 'pressurecontrol'" label="pressurecontrol">
+          <rule symbol="32" key="{d2372040-fe4c-4b5f-8432-b8fe2a68d576}" filter=" &quot;fk_pressurecontrol_type&quot; =  2801 " label="Chambre réducteur"/>
+          <rule symbol="33" key="{9402cda0-5af5-4a12-8353-366c479faed7}" filter=" &quot;fk_pressurecontrol_type&quot; =  2802" label="Chambre coupe pression"/>
+          <rule symbol="34" key="{318b69f6-b284-41b7-aa22-bdf34451d264}" filter=" &quot;fk_pressurecontrol_type&quot; =  2803" label="Chambre de rassemblement"/>
+        </rule>
+        <rule symbol="35" key="{c43ff5da-3940-4343-ba73-5421a97e3150}" filter="installation_type = 'pump'" label="pump"/>
+        <rule symbol="36" key="{79439a36-597f-4775-89a8-7c072e5beef5}" filter="installation_type = 'source'" label="source"/>
+        <rule symbol="37" key="{2da4b3f5-47c6-44d2-8e96-2a0b70b6ad15}" filter="installation_type = 'tank'" label="tank"/>
+        <rule symbol="38" key="{da2a0958-a57b-43fc-9c43-8725b703dedc}" filter="installation_type = 'treatment'" label="treatment"/>
+        <rule symbol="39" key="{95c23bff-05b6-444b-ba53-a19d85aec669}" filter="ELSE"/>
+      </rule>
+    </rules>
+    <symbols>
+      <symbol clip_to_extent="1" force_rhr="0" alpha="1" type="marker" name="0">
+        <layer class="SvgMarker" enabled="1" locked="0" pass="0">
+          <prop v="0" k="angle"/>
+          <prop v="0,0,0,255" k="color"/>
+          <prop v="0" k="fixedAspectRatio"/>
+          <prop v="1" k="horizontal_anchor_point"/>
+          <prop v="/usr/home/lbartoletti/QWAT/qgis-project/symbols/installations/param_svg/meter.svg" k="name"/>
+          <prop v="0,0" k="offset"/>
+          <prop v="3x:0,0,0,0,0,0" k="offset_map_unit_scale"/>
+          <prop v="MM" k="offset_unit"/>
+          <prop v="255,255,255,255" k="outline_color"/>
+          <prop v="1" k="outline_width"/>
+          <prop v="3x:0,0,0,0,0,0" k="outline_width_map_unit_scale"/>
+          <prop v="MM" k="outline_width_unit"/>
+          <prop v="diameter" k="scale_method"/>
+          <prop v="4" k="size"/>
+          <prop v="3x:0,0,0,0,0,0" k="size_map_unit_scale"/>
+          <prop v="MM" k="size_unit"/>
+          <prop v="1" k="vertical_anchor_point"/>
+          <data_defined_properties>
+            <Option type="Map">
+              <Option value="" type="QString" name="name"/>
+              <Option type="Map" name="properties">
+                <Option type="Map" name="fillColor">
+                  <Option value="true" type="bool" name="active"/>
+                  <Option value="'[0,0,0]'" type="QString" name="expression"/>
+                  <Option value="3" type="int" name="type"/>
+                </Option>
+                <Option type="Map" name="outlineColor">
+                  <Option value="true" type="bool" name="active"/>
+                  <Option value="'[0,0,0]'" type="QString" name="expression"/>
+                  <Option value="3" type="int" name="type"/>
+                </Option>
+              </Option>
+              <Option value="collection" type="QString" name="type"/>
+            </Option>
+          </data_defined_properties>
+        </layer>
+      </symbol>
+      <symbol clip_to_extent="1" force_rhr="0" alpha="1" type="marker" name="1">
+        <layer class="SvgMarker" enabled="1" locked="0" pass="0">
+          <prop v="0" k="angle"/>
+          <prop v="0,0,0,255" k="color"/>
+          <prop v="0" k="fixedAspectRatio"/>
+          <prop v="1" k="horizontal_anchor_point"/>
+          <prop v="/usr/home/lbartoletti/QWAT/qgis-project/symbols/installations/param_svg/chamber.svg" k="name"/>
+          <prop v="0,0" k="offset"/>
+          <prop v="3x:0,0,0,0,0,0" k="offset_map_unit_scale"/>
+          <prop v="MM" k="offset_unit"/>
+          <prop v="255,255,255,255" k="outline_color"/>
+          <prop v="0" k="outline_width"/>
+          <prop v="3x:0,0,0,0,0,0" k="outline_width_map_unit_scale"/>
+          <prop v="MM" k="outline_width_unit"/>
+          <prop v="diameter" k="scale_method"/>
+          <prop v="4" k="size"/>
+          <prop v="3x:0,0,0,0,0,0" k="size_map_unit_scale"/>
+          <prop v="MM" k="size_unit"/>
+          <prop v="1" k="vertical_anchor_point"/>
+          <data_defined_properties>
+            <Option type="Map">
+              <Option value="" type="QString" name="name"/>
+              <Option name="properties"/>
+              <Option value="collection" type="QString" name="type"/>
+            </Option>
+          </data_defined_properties>
+        </layer>
+      </symbol>
+      <symbol clip_to_extent="1" force_rhr="0" alpha="1" type="marker" name="10">
+        <layer class="SvgMarker" enabled="1" locked="0" pass="0">
+          <prop v="0" k="angle"/>
+          <prop v="227,26,28,255" k="color"/>
+          <prop v="0" k="fixedAspectRatio"/>
+          <prop v="1" k="horizontal_anchor_point"/>
+          <prop v="/usr/home/lbartoletti/QWAT/qgis-project/symbols/installations/param_svg/meter.svg" k="name"/>
+          <prop v="0,0" k="offset"/>
+          <prop v="3x:0,0,0,0,0,0" k="offset_map_unit_scale"/>
+          <prop v="MM" k="offset_unit"/>
+          <prop v="227,26,28,255" k="outline_color"/>
+          <prop v="1" k="outline_width"/>
+          <prop v="3x:0,0,0,0,0,0" k="outline_width_map_unit_scale"/>
+          <prop v="MM" k="outline_width_unit"/>
+          <prop v="diameter" k="scale_method"/>
+          <prop v="4" k="size"/>
+          <prop v="3x:0,0,0,0,0,0" k="size_map_unit_scale"/>
+          <prop v="MM" k="size_unit"/>
+          <prop v="1" k="vertical_anchor_point"/>
+          <data_defined_properties>
+            <Option type="Map">
+              <Option value="" type="QString" name="name"/>
+              <Option name="properties"/>
+              <Option value="collection" type="QString" name="type"/>
+            </Option>
+          </data_defined_properties>
+        </layer>
+      </symbol>
+      <symbol clip_to_extent="1" force_rhr="0" alpha="1" type="marker" name="11">
+        <layer class="SvgMarker" enabled="1" locked="0" pass="0">
+          <prop v="0" k="angle"/>
+          <prop v="227,26,28,255" k="color"/>
+          <prop v="0" k="fixedAspectRatio"/>
+          <prop v="1" k="horizontal_anchor_point"/>
+          <prop v="/usr/home/lbartoletti/QWAT/qgis-project/symbols/installations/param_svg/chamber.svg" k="name"/>
+          <prop v="0,0" k="offset"/>
+          <prop v="3x:0,0,0,0,0,0" k="offset_map_unit_scale"/>
+          <prop v="MM" k="offset_unit"/>
+          <prop v="227,26,28,255" k="outline_color"/>
+          <prop v="0" k="outline_width"/>
+          <prop v="3x:0,0,0,0,0,0" k="outline_width_map_unit_scale"/>
+          <prop v="MM" k="outline_width_unit"/>
+          <prop v="diameter" k="scale_method"/>
+          <prop v="4" k="size"/>
+          <prop v="3x:0,0,0,0,0,0" k="size_map_unit_scale"/>
+          <prop v="MM" k="size_unit"/>
+          <prop v="1" k="vertical_anchor_point"/>
+          <data_defined_properties>
+            <Option type="Map">
+              <Option value="" type="QString" name="name"/>
+              <Option name="properties"/>
+              <Option value="collection" type="QString" name="type"/>
+            </Option>
+          </data_defined_properties>
+        </layer>
+      </symbol>
+      <symbol clip_to_extent="1" force_rhr="0" alpha="1" type="marker" name="12">
+        <layer class="SvgMarker" enabled="1" locked="0" pass="0">
+          <prop v="0" k="angle"/>
+          <prop v="227,26,28,255" k="color"/>
+          <prop v="0" k="fixedAspectRatio"/>
+          <prop v="1" k="horizontal_anchor_point"/>
+          <prop v="/usr/home/lbartoletti/QWAT/qgis-project/symbols/installations/param_svg/reduction.svg" k="name"/>
+          <prop v="0,0" k="offset"/>
+          <prop v="3x:0,0,0,0,0,0" k="offset_map_unit_scale"/>
+          <prop v="MM" k="offset_unit"/>
+          <prop v="227,26,28,255" k="outline_color"/>
+          <prop v="0" k="outline_width"/>
+          <prop v="3x:0,0,0,0,0,0" k="outline_width_map_unit_scale"/>
+          <prop v="MM" k="outline_width_unit"/>
+          <prop v="diameter" k="scale_method"/>
+          <prop v="4" k="size"/>
+          <prop v="3x:0,0,0,0,0,0" k="size_map_unit_scale"/>
+          <prop v="MM" k="size_unit"/>
+          <prop v="1" k="vertical_anchor_point"/>
+          <data_defined_properties>
+            <Option type="Map">
+              <Option value="" type="QString" name="name"/>
+              <Option name="properties"/>
+              <Option value="collection" type="QString" name="type"/>
+            </Option>
+          </data_defined_properties>
+        </layer>
+      </symbol>
+      <symbol clip_to_extent="1" force_rhr="0" alpha="1" type="marker" name="13">
+        <layer class="SvgMarker" enabled="1" locked="0" pass="0">
+          <prop v="0" k="angle"/>
+          <prop v="227,26,28,255" k="color"/>
+          <prop v="0" k="fixedAspectRatio"/>
+          <prop v="1" k="horizontal_anchor_point"/>
+          <prop v="/usr/home/lbartoletti/QWAT/qgis-project/symbols/installations/param_svg/pressurebreak.svg" k="name"/>
+          <prop v="0,0" k="offset"/>
+          <prop v="3x:0,0,0,0,0,0" k="offset_map_unit_scale"/>
+          <prop v="MM" k="offset_unit"/>
+          <prop v="227,26,28,255" k="outline_color"/>
+          <prop v="0" k="outline_width"/>
+          <prop v="3x:0,0,0,0,0,0" k="outline_width_map_unit_scale"/>
+          <prop v="MM" k="outline_width_unit"/>
+          <prop v="diameter" k="scale_method"/>
+          <prop v="4" k="size"/>
+          <prop v="3x:0,0,0,0,0,0" k="size_map_unit_scale"/>
+          <prop v="MM" k="size_unit"/>
+          <prop v="1" k="vertical_anchor_point"/>
+          <data_defined_properties>
+            <Option type="Map">
+              <Option value="" type="QString" name="name"/>
+              <Option name="properties"/>
+              <Option value="collection" type="QString" name="type"/>
+            </Option>
+          </data_defined_properties>
+        </layer>
+      </symbol>
+      <symbol clip_to_extent="1" force_rhr="0" alpha="1" type="marker" name="14">
+        <layer class="SvgMarker" enabled="1" locked="0" pass="0">
+          <prop v="0" k="angle"/>
+          <prop v="0,0,0,255" k="color"/>
+          <prop v="0" k="fixedAspectRatio"/>
+          <prop v="1" k="horizontal_anchor_point"/>
+          <prop v="/usr/home/lbartoletti/QWAT/qgis-project/symbols/installations/param_svg/gathering.svg" k="name"/>
+          <prop v="0,0" k="offset"/>
+          <prop v="3x:0,0,0,0,0,0" k="offset_map_unit_scale"/>
+          <prop v="MM" k="offset_unit"/>
+          <prop v="227,26,28,255" k="outline_color"/>
+          <prop v="0" k="outline_width"/>
+          <prop v="3x:0,0,0,0,0,0" k="outline_width_map_unit_scale"/>
+          <prop v="MM" k="outline_width_unit"/>
+          <prop v="diameter" k="scale_method"/>
+          <prop v="4" k="size"/>
+          <prop v="3x:0,0,0,0,0,0" k="size_map_unit_scale"/>
+          <prop v="MM" k="size_unit"/>
+          <prop v="1" k="vertical_anchor_point"/>
+          <data_defined_properties>
+            <Option type="Map">
+              <Option value="" type="QString" name="name"/>
+              <Option type="Map" name="properties">
+                <Option type="Map" name="fillColor">
+                  <Option value="false" type="bool" name="active"/>
+                  <Option value="'[227,26,0]'" type="QString" name="expression"/>
+                  <Option value="3" type="int" name="type"/>
+                </Option>
+                <Option type="Map" name="outlineColor">
+                  <Option value="false" type="bool" name="active"/>
+                  <Option value="'[227,26,0]'" type="QString" name="expression"/>
+                  <Option value="3" type="int" name="type"/>
+                </Option>
+              </Option>
+              <Option value="collection" type="QString" name="type"/>
+            </Option>
+          </data_defined_properties>
+        </layer>
+      </symbol>
+      <symbol clip_to_extent="1" force_rhr="0" alpha="1" type="marker" name="15">
+        <layer class="SvgMarker" enabled="1" locked="0" pass="0">
+          <prop v="0" k="angle"/>
+          <prop v="227,26,28,255" k="color"/>
+          <prop v="0" k="fixedAspectRatio"/>
+          <prop v="1" k="horizontal_anchor_point"/>
+          <prop v="/usr/home/lbartoletti/QWAT/qgis-project/symbols/installations/param_svg/pump.svg" k="name"/>
+          <prop v="0,0" k="offset"/>
+          <prop v="3x:0,0,0,0,0,0" k="offset_map_unit_scale"/>
+          <prop v="MM" k="offset_unit"/>
+          <prop v="227,26,28,255" k="outline_color"/>
+          <prop v="0" k="outline_width"/>
+          <prop v="3x:0,0,0,0,0,0" k="outline_width_map_unit_scale"/>
+          <prop v="MM" k="outline_width_unit"/>
+          <prop v="diameter" k="scale_method"/>
+          <prop v="4" k="size"/>
+          <prop v="3x:0,0,0,0,0,0" k="size_map_unit_scale"/>
+          <prop v="MM" k="size_unit"/>
+          <prop v="1" k="vertical_anchor_point"/>
+          <data_defined_properties>
+            <Option type="Map">
+              <Option value="" type="QString" name="name"/>
+              <Option name="properties"/>
+              <Option value="collection" type="QString" name="type"/>
+            </Option>
+          </data_defined_properties>
+        </layer>
+      </symbol>
+      <symbol clip_to_extent="1" force_rhr="0" alpha="1" type="marker" name="16">
+        <layer class="SvgMarker" enabled="1" locked="0" pass="0">
+          <prop v="0" k="angle"/>
+          <prop v="0,0,0,255" k="color"/>
+          <prop v="0" k="fixedAspectRatio"/>
+          <prop v="1" k="horizontal_anchor_point"/>
+          <prop v="/usr/home/lbartoletti/QWAT/qgis-project/symbols/installations/param_svg/source.svg" k="name"/>
+          <prop v="0,0" k="offset"/>
+          <prop v="3x:0,0,0,0,0,0" k="offset_map_unit_scale"/>
+          <prop v="MM" k="offset_unit"/>
+          <prop v="227,26,28,255" k="outline_color"/>
+          <prop v="0" k="outline_width"/>
+          <prop v="3x:0,0,0,0,0,0" k="outline_width_map_unit_scale"/>
+          <prop v="MM" k="outline_width_unit"/>
+          <prop v="diameter" k="scale_method"/>
+          <prop v="4" k="size"/>
+          <prop v="3x:0,0,0,0,0,0" k="size_map_unit_scale"/>
+          <prop v="MM" k="size_unit"/>
+          <prop v="1" k="vertical_anchor_point"/>
+          <data_defined_properties>
+            <Option type="Map">
+              <Option value="" type="QString" name="name"/>
+              <Option name="properties"/>
+              <Option value="collection" type="QString" name="type"/>
+            </Option>
+          </data_defined_properties>
+        </layer>
+      </symbol>
+      <symbol clip_to_extent="1" force_rhr="0" alpha="1" type="marker" name="17">
+        <layer class="SvgMarker" enabled="1" locked="0" pass="0">
+          <prop v="0" k="angle"/>
+          <prop v="227,26,28,255" k="color"/>
+          <prop v="0" k="fixedAspectRatio"/>
+          <prop v="1" k="horizontal_anchor_point"/>
+          <prop v="/usr/home/lbartoletti/QWAT/qgis-project/symbols/installations/param_svg/tank.svg" k="name"/>
+          <prop v="0,0" k="offset"/>
+          <prop v="3x:0,0,0,0,0,0" k="offset_map_unit_scale"/>
+          <prop v="MM" k="offset_unit"/>
+          <prop v="227,26,28,255" k="outline_color"/>
+          <prop v="0" k="outline_width"/>
+          <prop v="3x:0,0,0,0,0,0" k="outline_width_map_unit_scale"/>
+          <prop v="MM" k="outline_width_unit"/>
+          <prop v="diameter" k="scale_method"/>
+          <prop v="4" k="size"/>
+          <prop v="3x:0,0,0,0,0,0" k="size_map_unit_scale"/>
+          <prop v="MM" k="size_unit"/>
+          <prop v="1" k="vertical_anchor_point"/>
+          <data_defined_properties>
+            <Option type="Map">
+              <Option value="" type="QString" name="name"/>
+              <Option type="Map" name="properties">
+                <Option type="Map" name="fillColor">
+                  <Option value="false" type="bool" name="active"/>
+                  <Option value="@color_inactive" type="QString" name="expression"/>
+                  <Option value="3" type="int" name="type"/>
+                </Option>
+                <Option type="Map" name="outlineColor">
+                  <Option value="false" type="bool" name="active"/>
+                  <Option value="@color_inactive" type="QString" name="expression"/>
+                  <Option value="3" type="int" name="type"/>
+                </Option>
+              </Option>
+              <Option value="collection" type="QString" name="type"/>
+            </Option>
+          </data_defined_properties>
+        </layer>
+      </symbol>
+      <symbol clip_to_extent="1" force_rhr="0" alpha="1" type="marker" name="18">
+        <layer class="SvgMarker" enabled="1" locked="0" pass="0">
+          <prop v="0" k="angle"/>
+          <prop v="227,26,28,255" k="color"/>
+          <prop v="0" k="fixedAspectRatio"/>
+          <prop v="1" k="horizontal_anchor_point"/>
+          <prop v="/usr/home/lbartoletti/QWAT/qgis-project/symbols/installations/param_svg/treatment.svg" k="name"/>
+          <prop v="0,0" k="offset"/>
+          <prop v="3x:0,0,0,0,0,0" k="offset_map_unit_scale"/>
+          <prop v="MM" k="offset_unit"/>
+          <prop v="227,26,28,255" k="outline_color"/>
+          <prop v="0" k="outline_width"/>
+          <prop v="3x:0,0,0,0,0,0" k="outline_width_map_unit_scale"/>
+          <prop v="MM" k="outline_width_unit"/>
+          <prop v="diameter" k="scale_method"/>
+          <prop v="4" k="size"/>
+          <prop v="3x:0,0,0,0,0,0" k="size_map_unit_scale"/>
+          <prop v="MM" k="size_unit"/>
+          <prop v="1" k="vertical_anchor_point"/>
+          <data_defined_properties>
+            <Option type="Map">
+              <Option value="" type="QString" name="name"/>
+              <Option name="properties"/>
+              <Option value="collection" type="QString" name="type"/>
+            </Option>
+          </data_defined_properties>
+        </layer>
+      </symbol>
+      <symbol clip_to_extent="1" force_rhr="0" alpha="1" type="marker" name="19">
+        <layer class="SimpleMarker" enabled="1" locked="0" pass="0">
+          <prop v="0" k="angle"/>
+          <prop v="238,208,136,255" k="color"/>
+          <prop v="1" k="horizontal_anchor_point"/>
+          <prop v="bevel" k="joinstyle"/>
+          <prop v="circle" k="name"/>
+          <prop v="0,0" k="offset"/>
+          <prop v="3x:0,0,0,0,0,0" k="offset_map_unit_scale"/>
+          <prop v="MM" k="offset_unit"/>
+          <prop v="0,0,0,255" k="outline_color"/>
+          <prop v="solid" k="outline_style"/>
+          <prop v="0" k="outline_width"/>
+          <prop v="3x:0,0,0,0,0,0" k="outline_width_map_unit_scale"/>
+          <prop v="MM" k="outline_width_unit"/>
+          <prop v="diameter" k="scale_method"/>
+          <prop v="2" k="size"/>
+          <prop v="3x:0,0,0,0,0,0" k="size_map_unit_scale"/>
+          <prop v="MM" k="size_unit"/>
+          <prop v="1" k="vertical_anchor_point"/>
+          <data_defined_properties>
+            <Option type="Map">
+              <Option value="" type="QString" name="name"/>
+              <Option name="properties"/>
+              <Option value="collection" type="QString" name="type"/>
+            </Option>
+          </data_defined_properties>
+        </layer>
+      </symbol>
+      <symbol clip_to_extent="1" force_rhr="0" alpha="1" type="marker" name="2">
+        <layer class="SvgMarker" enabled="1" locked="0" pass="0">
+          <prop v="0" k="angle"/>
+          <prop v="0,0,0,255" k="color"/>
+          <prop v="0" k="fixedAspectRatio"/>
+          <prop v="1" k="horizontal_anchor_point"/>
+          <prop v="/usr/home/lbartoletti/QWAT/qgis-project/symbols/installations/param_svg/reduction.svg" k="name"/>
+          <prop v="0,0" k="offset"/>
+          <prop v="3x:0,0,0,0,0,0" k="offset_map_unit_scale"/>
+          <prop v="MM" k="offset_unit"/>
+          <prop v="255,255,255,255" k="outline_color"/>
+          <prop v="0" k="outline_width"/>
+          <prop v="3x:0,0,0,0,0,0" k="outline_width_map_unit_scale"/>
+          <prop v="MM" k="outline_width_unit"/>
+          <prop v="diameter" k="scale_method"/>
+          <prop v="4" k="size"/>
+          <prop v="3x:0,0,0,0,0,0" k="size_map_unit_scale"/>
+          <prop v="MM" k="size_unit"/>
+          <prop v="1" k="vertical_anchor_point"/>
+          <data_defined_properties>
+            <Option type="Map">
+              <Option value="" type="QString" name="name"/>
+              <Option name="properties"/>
+              <Option value="collection" type="QString" name="type"/>
+            </Option>
+          </data_defined_properties>
+        </layer>
+      </symbol>
+      <symbol clip_to_extent="1" force_rhr="0" alpha="1" type="marker" name="20">
+        <layer class="SvgMarker" enabled="1" locked="0" pass="0">
+          <prop v="0" k="angle"/>
+          <prop v="227,26,28,255" k="color"/>
+          <prop v="0" k="fixedAspectRatio"/>
+          <prop v="1" k="horizontal_anchor_point"/>
+          <prop v="/usr/home/lbartoletti/QWAT/qgis-project/symbols/installations/param_svg/meter.svg" k="name"/>
+          <prop v="0,0" k="offset"/>
+          <prop v="3x:0,0,0,0,0,0" k="offset_map_unit_scale"/>
+          <prop v="MM" k="offset_unit"/>
+          <prop v="227,26,28,255" k="outline_color"/>
+          <prop v="1" k="outline_width"/>
+          <prop v="3x:0,0,0,0,0,0" k="outline_width_map_unit_scale"/>
+          <prop v="MM" k="outline_width_unit"/>
+          <prop v="diameter" k="scale_method"/>
+          <prop v="4" k="size"/>
+          <prop v="3x:0,0,0,0,0,0" k="size_map_unit_scale"/>
+          <prop v="MM" k="size_unit"/>
+          <prop v="1" k="vertical_anchor_point"/>
+          <data_defined_properties>
+            <Option type="Map">
+              <Option value="" type="QString" name="name"/>
+              <Option name="properties"/>
+              <Option value="collection" type="QString" name="type"/>
+            </Option>
+          </data_defined_properties>
+        </layer>
+      </symbol>
+      <symbol clip_to_extent="1" force_rhr="0" alpha="1" type="marker" name="21">
+        <layer class="SvgMarker" enabled="1" locked="0" pass="0">
+          <prop v="0" k="angle"/>
+          <prop v="227,26,28,255" k="color"/>
+          <prop v="0" k="fixedAspectRatio"/>
+          <prop v="1" k="horizontal_anchor_point"/>
+          <prop v="/usr/home/lbartoletti/QWAT/qgis-project/symbols/installations/param_svg/chamber.svg" k="name"/>
+          <prop v="0,0" k="offset"/>
+          <prop v="3x:0,0,0,0,0,0" k="offset_map_unit_scale"/>
+          <prop v="MM" k="offset_unit"/>
+          <prop v="227,26,28,255" k="outline_color"/>
+          <prop v="0" k="outline_width"/>
+          <prop v="3x:0,0,0,0,0,0" k="outline_width_map_unit_scale"/>
+          <prop v="MM" k="outline_width_unit"/>
+          <prop v="diameter" k="scale_method"/>
+          <prop v="4" k="size"/>
+          <prop v="3x:0,0,0,0,0,0" k="size_map_unit_scale"/>
+          <prop v="MM" k="size_unit"/>
+          <prop v="1" k="vertical_anchor_point"/>
+          <data_defined_properties>
+            <Option type="Map">
+              <Option value="" type="QString" name="name"/>
+              <Option name="properties"/>
+              <Option value="collection" type="QString" name="type"/>
+            </Option>
+          </data_defined_properties>
+        </layer>
+      </symbol>
+      <symbol clip_to_extent="1" force_rhr="0" alpha="1" type="marker" name="22">
+        <layer class="SvgMarker" enabled="1" locked="0" pass="0">
+          <prop v="0" k="angle"/>
+          <prop v="227,26,28,255" k="color"/>
+          <prop v="0" k="fixedAspectRatio"/>
+          <prop v="1" k="horizontal_anchor_point"/>
+          <prop v="/usr/home/lbartoletti/QWAT/qgis-project/symbols/installations/param_svg/reduction.svg" k="name"/>
+          <prop v="0,0" k="offset"/>
+          <prop v="3x:0,0,0,0,0,0" k="offset_map_unit_scale"/>
+          <prop v="MM" k="offset_unit"/>
+          <prop v="227,26,28,255" k="outline_color"/>
+          <prop v="0" k="outline_width"/>
+          <prop v="3x:0,0,0,0,0,0" k="outline_width_map_unit_scale"/>
+          <prop v="MM" k="outline_width_unit"/>
+          <prop v="diameter" k="scale_method"/>
+          <prop v="4" k="size"/>
+          <prop v="3x:0,0,0,0,0,0" k="size_map_unit_scale"/>
+          <prop v="MM" k="size_unit"/>
+          <prop v="1" k="vertical_anchor_point"/>
+          <data_defined_properties>
+            <Option type="Map">
+              <Option value="" type="QString" name="name"/>
+              <Option name="properties"/>
+              <Option value="collection" type="QString" name="type"/>
+            </Option>
+          </data_defined_properties>
+        </layer>
+      </symbol>
+      <symbol clip_to_extent="1" force_rhr="0" alpha="1" type="marker" name="23">
+        <layer class="SvgMarker" enabled="1" locked="0" pass="0">
+          <prop v="0" k="angle"/>
+          <prop v="227,26,28,255" k="color"/>
+          <prop v="0" k="fixedAspectRatio"/>
+          <prop v="1" k="horizontal_anchor_point"/>
+          <prop v="/usr/home/lbartoletti/QWAT/qgis-project/symbols/installations/param_svg/pressurebreak.svg" k="name"/>
+          <prop v="0,0" k="offset"/>
+          <prop v="3x:0,0,0,0,0,0" k="offset_map_unit_scale"/>
+          <prop v="MM" k="offset_unit"/>
+          <prop v="227,26,28,255" k="outline_color"/>
+          <prop v="0" k="outline_width"/>
+          <prop v="3x:0,0,0,0,0,0" k="outline_width_map_unit_scale"/>
+          <prop v="MM" k="outline_width_unit"/>
+          <prop v="diameter" k="scale_method"/>
+          <prop v="4" k="size"/>
+          <prop v="3x:0,0,0,0,0,0" k="size_map_unit_scale"/>
+          <prop v="MM" k="size_unit"/>
+          <prop v="1" k="vertical_anchor_point"/>
+          <data_defined_properties>
+            <Option type="Map">
+              <Option value="" type="QString" name="name"/>
+              <Option name="properties"/>
+              <Option value="collection" type="QString" name="type"/>
+            </Option>
+          </data_defined_properties>
+        </layer>
+      </symbol>
+      <symbol clip_to_extent="1" force_rhr="0" alpha="1" type="marker" name="24">
+        <layer class="SvgMarker" enabled="1" locked="0" pass="0">
+          <prop v="0" k="angle"/>
+          <prop v="0,0,0,255" k="color"/>
+          <prop v="0" k="fixedAspectRatio"/>
+          <prop v="1" k="horizontal_anchor_point"/>
+          <prop v="/usr/home/lbartoletti/QWAT/qgis-project/symbols/installations/param_svg/gathering.svg" k="name"/>
+          <prop v="0,0" k="offset"/>
+          <prop v="3x:0,0,0,0,0,0" k="offset_map_unit_scale"/>
+          <prop v="MM" k="offset_unit"/>
+          <prop v="227,26,28,255" k="outline_color"/>
+          <prop v="0" k="outline_width"/>
+          <prop v="3x:0,0,0,0,0,0" k="outline_width_map_unit_scale"/>
+          <prop v="MM" k="outline_width_unit"/>
+          <prop v="diameter" k="scale_method"/>
+          <prop v="4" k="size"/>
+          <prop v="3x:0,0,0,0,0,0" k="size_map_unit_scale"/>
+          <prop v="MM" k="size_unit"/>
+          <prop v="1" k="vertical_anchor_point"/>
+          <data_defined_properties>
+            <Option type="Map">
+              <Option value="" type="QString" name="name"/>
+              <Option type="Map" name="properties">
+                <Option type="Map" name="fillColor">
+                  <Option value="false" type="bool" name="active"/>
+                  <Option value="'[227,26,0]'" type="QString" name="expression"/>
+                  <Option value="3" type="int" name="type"/>
+                </Option>
+                <Option type="Map" name="outlineColor">
+                  <Option value="false" type="bool" name="active"/>
+                  <Option value="'[227,26,0]'" type="QString" name="expression"/>
+                  <Option value="3" type="int" name="type"/>
+                </Option>
+              </Option>
+              <Option value="collection" type="QString" name="type"/>
+            </Option>
+          </data_defined_properties>
+        </layer>
+      </symbol>
+      <symbol clip_to_extent="1" force_rhr="0" alpha="1" type="marker" name="25">
+        <layer class="SvgMarker" enabled="1" locked="0" pass="0">
+          <prop v="0" k="angle"/>
+          <prop v="227,26,28,255" k="color"/>
+          <prop v="0" k="fixedAspectRatio"/>
+          <prop v="1" k="horizontal_anchor_point"/>
+          <prop v="/usr/home/lbartoletti/QWAT/qgis-project/symbols/installations/param_svg/pump.svg" k="name"/>
+          <prop v="0,0" k="offset"/>
+          <prop v="3x:0,0,0,0,0,0" k="offset_map_unit_scale"/>
+          <prop v="MM" k="offset_unit"/>
+          <prop v="227,26,28,255" k="outline_color"/>
+          <prop v="0" k="outline_width"/>
+          <prop v="3x:0,0,0,0,0,0" k="outline_width_map_unit_scale"/>
+          <prop v="MM" k="outline_width_unit"/>
+          <prop v="diameter" k="scale_method"/>
+          <prop v="4" k="size"/>
+          <prop v="3x:0,0,0,0,0,0" k="size_map_unit_scale"/>
+          <prop v="MM" k="size_unit"/>
+          <prop v="1" k="vertical_anchor_point"/>
+          <data_defined_properties>
+            <Option type="Map">
+              <Option value="" type="QString" name="name"/>
+              <Option name="properties"/>
+              <Option value="collection" type="QString" name="type"/>
+            </Option>
+          </data_defined_properties>
+        </layer>
+      </symbol>
+      <symbol clip_to_extent="1" force_rhr="0" alpha="1" type="marker" name="26">
+        <layer class="SvgMarker" enabled="1" locked="0" pass="0">
+          <prop v="0" k="angle"/>
+          <prop v="0,0,0,255" k="color"/>
+          <prop v="0" k="fixedAspectRatio"/>
+          <prop v="1" k="horizontal_anchor_point"/>
+          <prop v="/usr/home/lbartoletti/QWAT/qgis-project/symbols/installations/param_svg/source.svg" k="name"/>
+          <prop v="0,0" k="offset"/>
+          <prop v="3x:0,0,0,0,0,0" k="offset_map_unit_scale"/>
+          <prop v="MM" k="offset_unit"/>
+          <prop v="227,26,28,255" k="outline_color"/>
+          <prop v="0" k="outline_width"/>
+          <prop v="3x:0,0,0,0,0,0" k="outline_width_map_unit_scale"/>
+          <prop v="MM" k="outline_width_unit"/>
+          <prop v="diameter" k="scale_method"/>
+          <prop v="4" k="size"/>
+          <prop v="3x:0,0,0,0,0,0" k="size_map_unit_scale"/>
+          <prop v="MM" k="size_unit"/>
+          <prop v="1" k="vertical_anchor_point"/>
+          <data_defined_properties>
+            <Option type="Map">
+              <Option value="" type="QString" name="name"/>
+              <Option name="properties"/>
+              <Option value="collection" type="QString" name="type"/>
+            </Option>
+          </data_defined_properties>
+        </layer>
+      </symbol>
+      <symbol clip_to_extent="1" force_rhr="0" alpha="1" type="marker" name="27">
+        <layer class="SvgMarker" enabled="1" locked="0" pass="0">
+          <prop v="0" k="angle"/>
+          <prop v="227,26,28,255" k="color"/>
+          <prop v="0" k="fixedAspectRatio"/>
+          <prop v="1" k="horizontal_anchor_point"/>
+          <prop v="/usr/home/lbartoletti/QWAT/qgis-project/symbols/installations/param_svg/tank.svg" k="name"/>
+          <prop v="0,0" k="offset"/>
+          <prop v="3x:0,0,0,0,0,0" k="offset_map_unit_scale"/>
+          <prop v="MM" k="offset_unit"/>
+          <prop v="227,26,28,255" k="outline_color"/>
+          <prop v="0" k="outline_width"/>
+          <prop v="3x:0,0,0,0,0,0" k="outline_width_map_unit_scale"/>
+          <prop v="MM" k="outline_width_unit"/>
+          <prop v="diameter" k="scale_method"/>
+          <prop v="4" k="size"/>
+          <prop v="3x:0,0,0,0,0,0" k="size_map_unit_scale"/>
+          <prop v="MM" k="size_unit"/>
+          <prop v="1" k="vertical_anchor_point"/>
+          <data_defined_properties>
+            <Option type="Map">
+              <Option value="" type="QString" name="name"/>
+              <Option type="Map" name="properties">
+                <Option type="Map" name="fillColor">
+                  <Option value="false" type="bool" name="active"/>
+                  <Option value="@color_inactive" type="QString" name="expression"/>
+                  <Option value="3" type="int" name="type"/>
+                </Option>
+                <Option type="Map" name="outlineColor">
+                  <Option value="false" type="bool" name="active"/>
+                  <Option value="@color_inactive" type="QString" name="expression"/>
+                  <Option value="3" type="int" name="type"/>
+                </Option>
+              </Option>
+              <Option value="collection" type="QString" name="type"/>
+            </Option>
+          </data_defined_properties>
+        </layer>
+      </symbol>
+      <symbol clip_to_extent="1" force_rhr="0" alpha="1" type="marker" name="28">
+        <layer class="SvgMarker" enabled="1" locked="0" pass="0">
+          <prop v="0" k="angle"/>
+          <prop v="227,26,28,255" k="color"/>
+          <prop v="0" k="fixedAspectRatio"/>
+          <prop v="1" k="horizontal_anchor_point"/>
+          <prop v="/usr/home/lbartoletti/QWAT/qgis-project/symbols/installations/param_svg/treatment.svg" k="name"/>
+          <prop v="0,0" k="offset"/>
+          <prop v="3x:0,0,0,0,0,0" k="offset_map_unit_scale"/>
+          <prop v="MM" k="offset_unit"/>
+          <prop v="227,26,28,255" k="outline_color"/>
+          <prop v="0" k="outline_width"/>
+          <prop v="3x:0,0,0,0,0,0" k="outline_width_map_unit_scale"/>
+          <prop v="MM" k="outline_width_unit"/>
+          <prop v="diameter" k="scale_method"/>
+          <prop v="4" k="size"/>
+          <prop v="3x:0,0,0,0,0,0" k="size_map_unit_scale"/>
+          <prop v="MM" k="size_unit"/>
+          <prop v="1" k="vertical_anchor_point"/>
+          <data_defined_properties>
+            <Option type="Map">
+              <Option value="" type="QString" name="name"/>
+              <Option name="properties"/>
+              <Option value="collection" type="QString" name="type"/>
+            </Option>
+          </data_defined_properties>
+        </layer>
+      </symbol>
+      <symbol clip_to_extent="1" force_rhr="0" alpha="1" type="marker" name="29">
+        <layer class="SimpleMarker" enabled="1" locked="0" pass="0">
+          <prop v="0" k="angle"/>
+          <prop v="238,208,136,255" k="color"/>
+          <prop v="1" k="horizontal_anchor_point"/>
+          <prop v="bevel" k="joinstyle"/>
+          <prop v="circle" k="name"/>
+          <prop v="0,0" k="offset"/>
+          <prop v="3x:0,0,0,0,0,0" k="offset_map_unit_scale"/>
+          <prop v="MM" k="offset_unit"/>
+          <prop v="0,0,0,255" k="outline_color"/>
+          <prop v="solid" k="outline_style"/>
+          <prop v="0" k="outline_width"/>
+          <prop v="3x:0,0,0,0,0,0" k="outline_width_map_unit_scale"/>
+          <prop v="MM" k="outline_width_unit"/>
+          <prop v="diameter" k="scale_method"/>
+          <prop v="2" k="size"/>
+          <prop v="3x:0,0,0,0,0,0" k="size_map_unit_scale"/>
+          <prop v="MM" k="size_unit"/>
+          <prop v="1" k="vertical_anchor_point"/>
+          <data_defined_properties>
+            <Option type="Map">
+              <Option value="" type="QString" name="name"/>
+              <Option name="properties"/>
+              <Option value="collection" type="QString" name="type"/>
+            </Option>
+          </data_defined_properties>
+        </layer>
+      </symbol>
+      <symbol clip_to_extent="1" force_rhr="0" alpha="1" type="marker" name="3">
+        <layer class="SvgMarker" enabled="1" locked="0" pass="0">
+          <prop v="0" k="angle"/>
+          <prop v="0,0,0,255" k="color"/>
+          <prop v="0" k="fixedAspectRatio"/>
+          <prop v="1" k="horizontal_anchor_point"/>
+          <prop v="/usr/home/lbartoletti/QWAT/qgis-project/symbols/installations/param_svg/pressurebreak.svg" k="name"/>
+          <prop v="0,0" k="offset"/>
+          <prop v="3x:0,0,0,0,0,0" k="offset_map_unit_scale"/>
+          <prop v="MM" k="offset_unit"/>
+          <prop v="255,255,255,255" k="outline_color"/>
+          <prop v="0" k="outline_width"/>
+          <prop v="3x:0,0,0,0,0,0" k="outline_width_map_unit_scale"/>
+          <prop v="MM" k="outline_width_unit"/>
+          <prop v="diameter" k="scale_method"/>
+          <prop v="4" k="size"/>
+          <prop v="3x:0,0,0,0,0,0" k="size_map_unit_scale"/>
+          <prop v="MM" k="size_unit"/>
+          <prop v="1" k="vertical_anchor_point"/>
+          <data_defined_properties>
+            <Option type="Map">
+              <Option value="" type="QString" name="name"/>
+              <Option name="properties"/>
+              <Option value="collection" type="QString" name="type"/>
+            </Option>
+          </data_defined_properties>
+        </layer>
+      </symbol>
+      <symbol clip_to_extent="1" force_rhr="0" alpha="1" type="marker" name="30">
+        <layer class="SvgMarker" enabled="1" locked="0" pass="0">
+          <prop v="0" k="angle"/>
+          <prop v="40,180,16,255" k="color"/>
+          <prop v="0" k="fixedAspectRatio"/>
+          <prop v="1" k="horizontal_anchor_point"/>
+          <prop v="/usr/home/lbartoletti/QWAT/qgis-project/symbols/installations/param_svg/meter.svg" k="name"/>
+          <prop v="0,0" k="offset"/>
+          <prop v="3x:0,0,0,0,0,0" k="offset_map_unit_scale"/>
+          <prop v="MM" k="offset_unit"/>
+          <prop v="227,26,28,255" k="outline_color"/>
+          <prop v="1" k="outline_width"/>
+          <prop v="3x:0,0,0,0,0,0" k="outline_width_map_unit_scale"/>
+          <prop v="MM" k="outline_width_unit"/>
+          <prop v="diameter" k="scale_method"/>
+          <prop v="4" k="size"/>
+          <prop v="3x:0,0,0,0,0,0" k="size_map_unit_scale"/>
+          <prop v="MM" k="size_unit"/>
+          <prop v="1" k="vertical_anchor_point"/>
+          <data_defined_properties>
+            <Option type="Map">
+              <Option value="" type="QString" name="name"/>
+              <Option name="properties"/>
+              <Option value="collection" type="QString" name="type"/>
+            </Option>
+          </data_defined_properties>
+        </layer>
+      </symbol>
+      <symbol clip_to_extent="1" force_rhr="0" alpha="1" type="marker" name="31">
+        <layer class="SvgMarker" enabled="1" locked="0" pass="0">
+          <prop v="0" k="angle"/>
+          <prop v="40,180,16,255" k="color"/>
+          <prop v="0" k="fixedAspectRatio"/>
+          <prop v="1" k="horizontal_anchor_point"/>
+          <prop v="/usr/home/lbartoletti/QWAT/qgis-project/symbols/installations/param_svg/chamber.svg" k="name"/>
+          <prop v="0,0" k="offset"/>
+          <prop v="3x:0,0,0,0,0,0" k="offset_map_unit_scale"/>
+          <prop v="MM" k="offset_unit"/>
+          <prop v="227,26,28,255" k="outline_color"/>
+          <prop v="0" k="outline_width"/>
+          <prop v="3x:0,0,0,0,0,0" k="outline_width_map_unit_scale"/>
+          <prop v="MM" k="outline_width_unit"/>
+          <prop v="diameter" k="scale_method"/>
+          <prop v="4" k="size"/>
+          <prop v="3x:0,0,0,0,0,0" k="size_map_unit_scale"/>
+          <prop v="MM" k="size_unit"/>
+          <prop v="1" k="vertical_anchor_point"/>
+          <data_defined_properties>
+            <Option type="Map">
+              <Option value="" type="QString" name="name"/>
+              <Option name="properties"/>
+              <Option value="collection" type="QString" name="type"/>
+            </Option>
+          </data_defined_properties>
+        </layer>
+      </symbol>
+      <symbol clip_to_extent="1" force_rhr="0" alpha="1" type="marker" name="32">
+        <layer class="SvgMarker" enabled="1" locked="0" pass="0">
+          <prop v="0" k="angle"/>
+          <prop v="227,26,28,255" k="color"/>
+          <prop v="0" k="fixedAspectRatio"/>
+          <prop v="1" k="horizontal_anchor_point"/>
+          <prop v="/usr/home/lbartoletti/QWAT/qgis-project/symbols/installations/param_svg/reduction.svg" k="name"/>
+          <prop v="0,0" k="offset"/>
+          <prop v="3x:0,0,0,0,0,0" k="offset_map_unit_scale"/>
+          <prop v="MM" k="offset_unit"/>
+          <prop v="227,26,28,255" k="outline_color"/>
+          <prop v="0" k="outline_width"/>
+          <prop v="3x:0,0,0,0,0,0" k="outline_width_map_unit_scale"/>
+          <prop v="MM" k="outline_width_unit"/>
+          <prop v="diameter" k="scale_method"/>
+          <prop v="4" k="size"/>
+          <prop v="3x:0,0,0,0,0,0" k="size_map_unit_scale"/>
+          <prop v="MM" k="size_unit"/>
+          <prop v="1" k="vertical_anchor_point"/>
+          <data_defined_properties>
+            <Option type="Map">
+              <Option value="" type="QString" name="name"/>
+              <Option name="properties"/>
+              <Option value="collection" type="QString" name="type"/>
+            </Option>
+          </data_defined_properties>
+        </layer>
+      </symbol>
+      <symbol clip_to_extent="1" force_rhr="0" alpha="1" type="marker" name="33">
+        <layer class="SvgMarker" enabled="1" locked="0" pass="0">
+          <prop v="0" k="angle"/>
+          <prop v="227,26,28,255" k="color"/>
+          <prop v="0" k="fixedAspectRatio"/>
+          <prop v="1" k="horizontal_anchor_point"/>
+          <prop v="/usr/home/lbartoletti/QWAT/qgis-project/symbols/installations/param_svg/pressurebreak.svg" k="name"/>
+          <prop v="0,0" k="offset"/>
+          <prop v="3x:0,0,0,0,0,0" k="offset_map_unit_scale"/>
+          <prop v="MM" k="offset_unit"/>
+          <prop v="227,26,28,255" k="outline_color"/>
+          <prop v="0" k="outline_width"/>
+          <prop v="3x:0,0,0,0,0,0" k="outline_width_map_unit_scale"/>
+          <prop v="MM" k="outline_width_unit"/>
+          <prop v="diameter" k="scale_method"/>
+          <prop v="4" k="size"/>
+          <prop v="3x:0,0,0,0,0,0" k="size_map_unit_scale"/>
+          <prop v="MM" k="size_unit"/>
+          <prop v="1" k="vertical_anchor_point"/>
+          <data_defined_properties>
+            <Option type="Map">
+              <Option value="" type="QString" name="name"/>
+              <Option name="properties"/>
+              <Option value="collection" type="QString" name="type"/>
+            </Option>
+          </data_defined_properties>
+        </layer>
+      </symbol>
+      <symbol clip_to_extent="1" force_rhr="0" alpha="1" type="marker" name="34">
+        <layer class="SvgMarker" enabled="1" locked="0" pass="0">
+          <prop v="0" k="angle"/>
+          <prop v="0,0,0,255" k="color"/>
+          <prop v="0" k="fixedAspectRatio"/>
+          <prop v="1" k="horizontal_anchor_point"/>
+          <prop v="/usr/home/lbartoletti/QWAT/qgis-project/symbols/installations/param_svg/gathering.svg" k="name"/>
+          <prop v="0,0" k="offset"/>
+          <prop v="3x:0,0,0,0,0,0" k="offset_map_unit_scale"/>
+          <prop v="MM" k="offset_unit"/>
+          <prop v="227,26,28,255" k="outline_color"/>
+          <prop v="0" k="outline_width"/>
+          <prop v="3x:0,0,0,0,0,0" k="outline_width_map_unit_scale"/>
+          <prop v="MM" k="outline_width_unit"/>
+          <prop v="diameter" k="scale_method"/>
+          <prop v="4" k="size"/>
+          <prop v="3x:0,0,0,0,0,0" k="size_map_unit_scale"/>
+          <prop v="MM" k="size_unit"/>
+          <prop v="1" k="vertical_anchor_point"/>
+          <data_defined_properties>
+            <Option type="Map">
+              <Option value="" type="QString" name="name"/>
+              <Option type="Map" name="properties">
+                <Option type="Map" name="fillColor">
+                  <Option value="false" type="bool" name="active"/>
+                  <Option value="'[227,26,0]'" type="QString" name="expression"/>
+                  <Option value="3" type="int" name="type"/>
+                </Option>
+                <Option type="Map" name="outlineColor">
+                  <Option value="false" type="bool" name="active"/>
+                  <Option value="'[227,26,0]'" type="QString" name="expression"/>
+                  <Option value="3" type="int" name="type"/>
+                </Option>
+              </Option>
+              <Option value="collection" type="QString" name="type"/>
+            </Option>
+          </data_defined_properties>
+        </layer>
+      </symbol>
+      <symbol clip_to_extent="1" force_rhr="0" alpha="1" type="marker" name="35">
+        <layer class="SvgMarker" enabled="1" locked="0" pass="0">
+          <prop v="0" k="angle"/>
+          <prop v="40,180,16,255" k="color"/>
+          <prop v="0" k="fixedAspectRatio"/>
+          <prop v="1" k="horizontal_anchor_point"/>
+          <prop v="/usr/home/lbartoletti/QWAT/qgis-project/symbols/installations/param_svg/pump.svg" k="name"/>
+          <prop v="0,0" k="offset"/>
+          <prop v="3x:0,0,0,0,0,0" k="offset_map_unit_scale"/>
+          <prop v="MM" k="offset_unit"/>
+          <prop v="227,26,28,255" k="outline_color"/>
+          <prop v="0" k="outline_width"/>
+          <prop v="3x:0,0,0,0,0,0" k="outline_width_map_unit_scale"/>
+          <prop v="MM" k="outline_width_unit"/>
+          <prop v="diameter" k="scale_method"/>
+          <prop v="4" k="size"/>
+          <prop v="3x:0,0,0,0,0,0" k="size_map_unit_scale"/>
+          <prop v="MM" k="size_unit"/>
+          <prop v="1" k="vertical_anchor_point"/>
+          <data_defined_properties>
+            <Option type="Map">
+              <Option value="" type="QString" name="name"/>
+              <Option name="properties"/>
+              <Option value="collection" type="QString" name="type"/>
+            </Option>
+          </data_defined_properties>
+        </layer>
+      </symbol>
+      <symbol clip_to_extent="1" force_rhr="0" alpha="1" type="marker" name="36">
+        <layer class="SvgMarker" enabled="1" locked="0" pass="0">
+          <prop v="0" k="angle"/>
+          <prop v="40,180,16,255" k="color"/>
+          <prop v="0" k="fixedAspectRatio"/>
+          <prop v="1" k="horizontal_anchor_point"/>
+          <prop v="/usr/home/lbartoletti/QWAT/qgis-project/symbols/installations/param_svg/source.svg" k="name"/>
+          <prop v="0,0" k="offset"/>
+          <prop v="3x:0,0,0,0,0,0" k="offset_map_unit_scale"/>
+          <prop v="MM" k="offset_unit"/>
+          <prop v="40,180,16,255" k="outline_color"/>
+          <prop v="0" k="outline_width"/>
+          <prop v="3x:0,0,0,0,0,0" k="outline_width_map_unit_scale"/>
+          <prop v="MM" k="outline_width_unit"/>
+          <prop v="diameter" k="scale_method"/>
+          <prop v="4" k="size"/>
+          <prop v="3x:0,0,0,0,0,0" k="size_map_unit_scale"/>
+          <prop v="MM" k="size_unit"/>
+          <prop v="1" k="vertical_anchor_point"/>
+          <data_defined_properties>
+            <Option type="Map">
+              <Option value="" type="QString" name="name"/>
+              <Option name="properties"/>
+              <Option value="collection" type="QString" name="type"/>
+            </Option>
+          </data_defined_properties>
+        </layer>
+      </symbol>
+      <symbol clip_to_extent="1" force_rhr="0" alpha="1" type="marker" name="37">
+        <layer class="SvgMarker" enabled="1" locked="0" pass="0">
+          <prop v="0" k="angle"/>
+          <prop v="40,180,16,255" k="color"/>
+          <prop v="0" k="fixedAspectRatio"/>
+          <prop v="1" k="horizontal_anchor_point"/>
+          <prop v="/usr/home/lbartoletti/QWAT/qgis-project/symbols/installations/param_svg/tank.svg" k="name"/>
+          <prop v="0,0" k="offset"/>
+          <prop v="3x:0,0,0,0,0,0" k="offset_map_unit_scale"/>
+          <prop v="MM" k="offset_unit"/>
+          <prop v="40,180,16,255" k="outline_color"/>
+          <prop v="0" k="outline_width"/>
+          <prop v="3x:0,0,0,0,0,0" k="outline_width_map_unit_scale"/>
+          <prop v="MM" k="outline_width_unit"/>
+          <prop v="diameter" k="scale_method"/>
+          <prop v="4" k="size"/>
+          <prop v="3x:0,0,0,0,0,0" k="size_map_unit_scale"/>
+          <prop v="MM" k="size_unit"/>
+          <prop v="1" k="vertical_anchor_point"/>
+          <data_defined_properties>
+            <Option type="Map">
+              <Option value="" type="QString" name="name"/>
+              <Option type="Map" name="properties">
+                <Option type="Map" name="fillColor">
+                  <Option value="false" type="bool" name="active"/>
+                  <Option value="@color_inactive" type="QString" name="expression"/>
+                  <Option value="3" type="int" name="type"/>
+                </Option>
+                <Option type="Map" name="outlineColor">
+                  <Option value="false" type="bool" name="active"/>
+                  <Option value="@color_inactive" type="QString" name="expression"/>
+                  <Option value="3" type="int" name="type"/>
+                </Option>
+              </Option>
+              <Option value="collection" type="QString" name="type"/>
+            </Option>
+          </data_defined_properties>
+        </layer>
+      </symbol>
+      <symbol clip_to_extent="1" force_rhr="0" alpha="1" type="marker" name="38">
+        <layer class="SvgMarker" enabled="1" locked="0" pass="0">
+          <prop v="0" k="angle"/>
+          <prop v="40,180,16,255" k="color"/>
+          <prop v="0" k="fixedAspectRatio"/>
+          <prop v="1" k="horizontal_anchor_point"/>
+          <prop v="/usr/home/lbartoletti/QWAT/qgis-project/symbols/installations/param_svg/treatment.svg" k="name"/>
+          <prop v="0,0" k="offset"/>
+          <prop v="3x:0,0,0,0,0,0" k="offset_map_unit_scale"/>
+          <prop v="MM" k="offset_unit"/>
+          <prop v="40,180,16,255" k="outline_color"/>
+          <prop v="0" k="outline_width"/>
+          <prop v="3x:0,0,0,0,0,0" k="outline_width_map_unit_scale"/>
+          <prop v="MM" k="outline_width_unit"/>
+          <prop v="diameter" k="scale_method"/>
+          <prop v="4" k="size"/>
+          <prop v="3x:0,0,0,0,0,0" k="size_map_unit_scale"/>
+          <prop v="MM" k="size_unit"/>
+          <prop v="1" k="vertical_anchor_point"/>
+          <data_defined_properties>
+            <Option type="Map">
+              <Option value="" type="QString" name="name"/>
+              <Option name="properties"/>
+              <Option value="collection" type="QString" name="type"/>
+            </Option>
+          </data_defined_properties>
+        </layer>
+      </symbol>
+      <symbol clip_to_extent="1" force_rhr="0" alpha="1" type="marker" name="39">
+        <layer class="SimpleMarker" enabled="1" locked="0" pass="0">
+          <prop v="0" k="angle"/>
+          <prop v="238,208,136,255" k="color"/>
+          <prop v="1" k="horizontal_anchor_point"/>
+          <prop v="bevel" k="joinstyle"/>
+          <prop v="circle" k="name"/>
+          <prop v="0,0" k="offset"/>
+          <prop v="3x:0,0,0,0,0,0" k="offset_map_unit_scale"/>
+          <prop v="MM" k="offset_unit"/>
+          <prop v="0,0,0,255" k="outline_color"/>
+          <prop v="solid" k="outline_style"/>
+          <prop v="0" k="outline_width"/>
+          <prop v="3x:0,0,0,0,0,0" k="outline_width_map_unit_scale"/>
+          <prop v="MM" k="outline_width_unit"/>
+          <prop v="diameter" k="scale_method"/>
+          <prop v="2" k="size"/>
+          <prop v="3x:0,0,0,0,0,0" k="size_map_unit_scale"/>
+          <prop v="MM" k="size_unit"/>
+          <prop v="1" k="vertical_anchor_point"/>
+          <data_defined_properties>
+            <Option type="Map">
+              <Option value="" type="QString" name="name"/>
+              <Option name="properties"/>
+              <Option value="collection" type="QString" name="type"/>
+            </Option>
+          </data_defined_properties>
+        </layer>
+      </symbol>
+      <symbol clip_to_extent="1" force_rhr="0" alpha="1" type="marker" name="4">
+        <layer class="SvgMarker" enabled="1" locked="0" pass="0">
+          <prop v="0" k="angle"/>
+          <prop v="0,0,0,255" k="color"/>
+          <prop v="0" k="fixedAspectRatio"/>
+          <prop v="1" k="horizontal_anchor_point"/>
+          <prop v="/usr/home/lbartoletti/QWAT/qgis-project/symbols/installations/param_svg/gathering.svg" k="name"/>
+          <prop v="0,0" k="offset"/>
+          <prop v="3x:0,0,0,0,0,0" k="offset_map_unit_scale"/>
+          <prop v="MM" k="offset_unit"/>
+          <prop v="0,0,0,255" k="outline_color"/>
+          <prop v="0" k="outline_width"/>
+          <prop v="3x:0,0,0,0,0,0" k="outline_width_map_unit_scale"/>
+          <prop v="MM" k="outline_width_unit"/>
+          <prop v="diameter" k="scale_method"/>
+          <prop v="4" k="size"/>
+          <prop v="3x:0,0,0,0,0,0" k="size_map_unit_scale"/>
+          <prop v="MM" k="size_unit"/>
+          <prop v="1" k="vertical_anchor_point"/>
+          <data_defined_properties>
+            <Option type="Map">
+              <Option value="" type="QString" name="name"/>
+              <Option type="Map" name="properties">
+                <Option type="Map" name="outlineColor">
+                  <Option value="false" type="bool" name="active"/>
+                  <Option value="'[255,100,0]'" type="QString" name="expression"/>
+                  <Option value="3" type="int" name="type"/>
+                </Option>
+              </Option>
+              <Option value="collection" type="QString" name="type"/>
+            </Option>
+          </data_defined_properties>
+        </layer>
+      </symbol>
+      <symbol clip_to_extent="1" force_rhr="0" alpha="1" type="marker" name="5">
+        <layer class="SvgMarker" enabled="1" locked="0" pass="0">
+          <prop v="0" k="angle"/>
+          <prop v="0,0,0,255" k="color"/>
+          <prop v="0" k="fixedAspectRatio"/>
+          <prop v="1" k="horizontal_anchor_point"/>
+          <prop v="/usr/home/lbartoletti/QWAT/qgis-project/symbols/installations/param_svg/pump.svg" k="name"/>
+          <prop v="0,0" k="offset"/>
+          <prop v="3x:0,0,0,0,0,0" k="offset_map_unit_scale"/>
+          <prop v="MM" k="offset_unit"/>
+          <prop v="0,0,0,255" k="outline_color"/>
+          <prop v="0" k="outline_width"/>
+          <prop v="3x:0,0,0,0,0,0" k="outline_width_map_unit_scale"/>
+          <prop v="MM" k="outline_width_unit"/>
+          <prop v="diameter" k="scale_method"/>
+          <prop v="4" k="size"/>
+          <prop v="3x:0,0,0,0,0,0" k="size_map_unit_scale"/>
+          <prop v="MM" k="size_unit"/>
+          <prop v="1" k="vertical_anchor_point"/>
+          <data_defined_properties>
+            <Option type="Map">
+              <Option value="" type="QString" name="name"/>
+              <Option name="properties"/>
+              <Option value="collection" type="QString" name="type"/>
+            </Option>
+          </data_defined_properties>
+        </layer>
+      </symbol>
+      <symbol clip_to_extent="1" force_rhr="0" alpha="1" type="marker" name="6">
+        <layer class="SvgMarker" enabled="1" locked="0" pass="0">
+          <prop v="0" k="angle"/>
+          <prop v="0,0,0,255" k="color"/>
+          <prop v="0" k="fixedAspectRatio"/>
+          <prop v="1" k="horizontal_anchor_point"/>
+          <prop v="/usr/home/lbartoletti/QWAT/qgis-project/symbols/installations/param_svg/source.svg" k="name"/>
+          <prop v="0,0" k="offset"/>
+          <prop v="3x:0,0,0,0,0,0" k="offset_map_unit_scale"/>
+          <prop v="MM" k="offset_unit"/>
+          <prop v="0,0,0,255" k="outline_color"/>
+          <prop v="0" k="outline_width"/>
+          <prop v="3x:0,0,0,0,0,0" k="outline_width_map_unit_scale"/>
+          <prop v="MM" k="outline_width_unit"/>
+          <prop v="diameter" k="scale_method"/>
+          <prop v="4" k="size"/>
+          <prop v="3x:0,0,0,0,0,0" k="size_map_unit_scale"/>
+          <prop v="MM" k="size_unit"/>
+          <prop v="1" k="vertical_anchor_point"/>
+          <data_defined_properties>
+            <Option type="Map">
+              <Option value="" type="QString" name="name"/>
+              <Option name="properties"/>
+              <Option value="collection" type="QString" name="type"/>
+            </Option>
+          </data_defined_properties>
+        </layer>
+      </symbol>
+      <symbol clip_to_extent="1" force_rhr="0" alpha="1" type="marker" name="7">
+        <layer class="SvgMarker" enabled="1" locked="0" pass="0">
+          <prop v="0" k="angle"/>
+          <prop v="0,0,0,255" k="color"/>
+          <prop v="0" k="fixedAspectRatio"/>
+          <prop v="1" k="horizontal_anchor_point"/>
+          <prop v="/usr/home/lbartoletti/QWAT/qgis-project/symbols/installations/param_svg/tank.svg" k="name"/>
+          <prop v="0,0" k="offset"/>
+          <prop v="3x:0,0,0,0,0,0" k="offset_map_unit_scale"/>
+          <prop v="MM" k="offset_unit"/>
+          <prop v="255,255,255,255" k="outline_color"/>
+          <prop v="0" k="outline_width"/>
+          <prop v="3x:0,0,0,0,0,0" k="outline_width_map_unit_scale"/>
+          <prop v="MM" k="outline_width_unit"/>
+          <prop v="diameter" k="scale_method"/>
+          <prop v="4" k="size"/>
+          <prop v="3x:0,0,0,0,0,0" k="size_map_unit_scale"/>
+          <prop v="MM" k="size_unit"/>
+          <prop v="1" k="vertical_anchor_point"/>
+          <data_defined_properties>
+            <Option type="Map">
+              <Option value="" type="QString" name="name"/>
+              <Option name="properties"/>
+              <Option value="collection" type="QString" name="type"/>
+            </Option>
+          </data_defined_properties>
+        </layer>
+      </symbol>
+      <symbol clip_to_extent="1" force_rhr="0" alpha="1" type="marker" name="8">
+        <layer class="SvgMarker" enabled="1" locked="0" pass="0">
+          <prop v="0" k="angle"/>
+          <prop v="0,0,0,255" k="color"/>
+          <prop v="0" k="fixedAspectRatio"/>
+          <prop v="1" k="horizontal_anchor_point"/>
+          <prop v="/usr/home/lbartoletti/QWAT/qgis-project/symbols/installations/param_svg/treatment.svg" k="name"/>
+          <prop v="0,0" k="offset"/>
+          <prop v="3x:0,0,0,0,0,0" k="offset_map_unit_scale"/>
+          <prop v="MM" k="offset_unit"/>
+          <prop v="0,0,0,255" k="outline_color"/>
+          <prop v="0" k="outline_width"/>
+          <prop v="3x:0,0,0,0,0,0" k="outline_width_map_unit_scale"/>
+          <prop v="MM" k="outline_width_unit"/>
+          <prop v="diameter" k="scale_method"/>
+          <prop v="4" k="size"/>
+          <prop v="3x:0,0,0,0,0,0" k="size_map_unit_scale"/>
+          <prop v="MM" k="size_unit"/>
+          <prop v="1" k="vertical_anchor_point"/>
+          <data_defined_properties>
+            <Option type="Map">
+              <Option value="" type="QString" name="name"/>
+              <Option name="properties"/>
+              <Option value="collection" type="QString" name="type"/>
+            </Option>
+          </data_defined_properties>
+        </layer>
+      </symbol>
+      <symbol clip_to_extent="1" force_rhr="0" alpha="1" type="marker" name="9">
+        <layer class="SimpleMarker" enabled="1" locked="0" pass="0">
+          <prop v="0" k="angle"/>
+          <prop v="238,208,136,255" k="color"/>
+          <prop v="1" k="horizontal_anchor_point"/>
+          <prop v="bevel" k="joinstyle"/>
+          <prop v="circle" k="name"/>
+          <prop v="0,0" k="offset"/>
+          <prop v="3x:0,0,0,0,0,0" k="offset_map_unit_scale"/>
+          <prop v="MM" k="offset_unit"/>
+          <prop v="0,0,0,255" k="outline_color"/>
+          <prop v="solid" k="outline_style"/>
+          <prop v="0" k="outline_width"/>
+          <prop v="3x:0,0,0,0,0,0" k="outline_width_map_unit_scale"/>
+          <prop v="MM" k="outline_width_unit"/>
+          <prop v="diameter" k="scale_method"/>
+          <prop v="2" k="size"/>
+          <prop v="3x:0,0,0,0,0,0" k="size_map_unit_scale"/>
+          <prop v="MM" k="size_unit"/>
+          <prop v="1" k="vertical_anchor_point"/>
+          <data_defined_properties>
+            <Option type="Map">
+              <Option value="" type="QString" name="name"/>
+              <Option name="properties"/>
+              <Option value="collection" type="QString" name="type"/>
+            </Option>
+          </data_defined_properties>
+        </layer>
+      </symbol>
+    </symbols>
+  </renderer-v2>
   <labeling type="simple">
     <settings>
       <text-style fontFamily="Sans Serif" useSubstitutions="0" fontUnderline="0" fontItalic="0" fontWordSpacing="0" fontStrikeout="0" fieldName="CASE&#xa;WHEN  &quot;installation_type&quot;  = 'chamber' THEN 'C. '&#xa;WHEN &quot;installation_type&quot;  = 'pressurecontrol' AND fk_pressurecontrol_type = 2801 THEN 'CR. '&#xa;WHEN  &quot;installation_type&quot;  = 'pressurecontrol' AND fk_pressurecontrol_type = 2802 THEN 'CCP. ' &#xa;WHEN  &quot;installation_type&quot;  = 'pressurecontrol' AND fk_pressurecontrol_type = 2803 THEN 'CRA. '&#xa;WHEN  &quot;installation_type&quot;  = 'pump' THEN 'P. ' &#xa;WHEN  &quot;installation_type&quot;  = 'source' THEN 'S. ' &#xa;WHEN  &quot;installation_type&quot;  = 'tank' THEN 'R. '&#xa;WHEN  &quot;installation_type&quot;  = 'treatment' THEN 'T. '&#xa;ELSE '' &#xa;END&#xa;|| coalesce(name, '')" blendMode="0" fontSizeUnit="Point" textOpacity="1" textColor="0,0,0,255" multilineHeight="1" namedStyle="Normal" fontSize="11" isExpression="1" fontWeight="50" previewBkgrdColor="#ffffff" fontSizeMapUnitScale="3x:0,0,0,0,0,0" fontLetterSpacing="0" fontCapitals="0">
@@ -60,6 +1339,8 @@ END
     <property key="variableNames"/>
     <property key="variableValues"/>
   </customproperties>
+  <blendMode>0</blendMode>
+  <featureBlendMode>0</featureBlendMode>
   <layerOpacity>1</layerOpacity>
   <SingleCategoryDiagramRenderer diagramType="Pie" attributeLegend="1">
     <DiagramCategory backgroundAlpha="255" penColor="#000000" maxScaleDenominator="1e+08" height="15" minScaleDenominator="100000" penAlpha="255" opacity="1" sizeType="MM" barWidth="5" scaleDependency="Area" width="15" minimumSize="0" lineSizeScale="3x:0,0,0,0,0,0" diagramOrientation="Up" lineSizeType="MM" sizeScale="3x:0,0,0,0,0,0" rotationOffset="270" labelPlacementMethod="XHeight" enabled="0" scaleBasedVisibility="0" penWidth="0" backgroundColor="#ffffff">
