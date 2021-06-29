@@ -10,9 +10,11 @@ GROUP_NAME = "Pollution réseau"
 LAYER_RESULAT_NAME = "Conduites touchées"
 
 class SearchPipesDialog(QDialog):
-    def __init__(self, parent, pipe_id):
+    def __init__(self, parent, pipe_id, x, y):
         super(SearchPipesDialog, self).__init__(parent)
         self.pipe_id = pipe_id
+        self.x = x
+        self.y = y
         self.setWindowTitle("Pollution sur le réseau")
         self.point = QgsGeometry()
         self.startFeature = None
@@ -59,7 +61,7 @@ class SearchPipesDialog(QDialog):
         self.cleanResults()
 
         # Set query for a temporary layer which will retreive the data only one time
-        query = "(select * from qwat_network.ft_search_network_and_subscribers(" + str(self.pipe_id) + "," + str(km) + "," + str(stopOnNetworkValves) + "," + str(stopOnSubscriberValves) + "," + str(stopOnCurrentPressureZone) + "))"
+        query = "(select * from qwat_network.ft_search_network_and_subscribers(" + str(self.pipe_id) + "," + str(self.x) + "," + str(self.y) + "," + str(km) + "," + str(stopOnNetworkValves) + "," + str(stopOnSubscriberValves) + "," + str(stopOnCurrentPressureZone) + "))"
 
         # Set connection to database
         source = """{} key='id' table="{}" (geometry)""".format("service=qwat", query)
@@ -96,6 +98,6 @@ class SearchPipesDialog(QDialog):
         else:
             self.group = root.insertGroup(0, GROUP_NAME)
 
-sp = SearchPipesDialog(iface.mainWindow(), [% "ID" %])
+sp = SearchPipesDialog(iface.mainWindow(), [% "ID" %], [% @click_x %], [% @click_y %])
 sp.show()
 

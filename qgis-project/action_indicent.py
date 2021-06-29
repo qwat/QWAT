@@ -21,13 +21,13 @@ class SearchOpenedValvesDialog(QDialog):
         self.layout = QGridLayout()
         self.layout.setContentsMargins(10, 10, 10, 10)
 
-        self.depthLabel = QLabel("Récursion max. : ")
-        self.layout.addWidget(self.depthLabel, 0, 0)
-        self.depthSpinBox = QSpinBox()
-        self.depthSpinBox.setMinimum(1)
-        self.depthSpinBox.setMaximum(50)
-        self.depthSpinBox.setValue(20)
-        self.layout.addWidget(self.depthSpinBox, 1, 0)
+        self.kmLabel = QLabel("Km max. : ")
+        self.layout.addWidget(self.kmLabel, 0, 0)
+        self.kmSpinBox = QSpinBox()
+        self.kmSpinBox.setMinimum(1)
+        self.kmSpinBox.setMaximum(50)
+        self.kmSpinBox.setValue(20)
+        self.layout.addWidget(self.kmSpinBox, 1, 0)
 
         self.checkNetworkValves = QCheckBox("S'arrêter uniquement aux vannes réseaux")
         self.checkNetworkValves.setChecked(True)
@@ -42,14 +42,14 @@ class SearchOpenedValvesDialog(QDialog):
         self.setLayout(self.layout)
 
     def searchOpenedValves(self):
-        depth = self.depthSpinBox.value()
+        km = self.kmSpinBox.value()
         stopOnNetworkValves = str(self.checkNetworkValves.isChecked())
 
         # Check if the result layer already exists
         self.cleanResults()
 
         # Set query for a temporary layer which will retreive the data only one time
-        query = "(select * from qwat_network.ft_search_opened_valves(" + str(self.pipe_id) + "," + str(depth) + ", " + stopOnNetworkValves + "))"
+        query = "(select * from qwat_network.ft_search_opened_valves(" + str(self.pipe_id) + "," + str(km) + ", " + stopOnNetworkValves + "))"
 
         # Set connection to database
         source = """{} key='id' table="{}" (geometry)""".format("service=qwat", query)
