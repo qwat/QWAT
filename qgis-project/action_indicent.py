@@ -10,13 +10,15 @@ GROUP_NAME = "Incident réseau"
 LAYER_RESULAT_NAME = "Vannes à fermer"
 
 class SearchOpenedValvesDialog(QDialog):
-    def __init__(self, parent, pipe_id):
+    def __init__(self, parent, pipe_id, x, y):
         super(SearchOpenedValvesDialog, self).__init__(parent)
         self.pipe_id = pipe_id
         self.setWindowTitle("Incident sur le réseau")
         self.point = QgsGeometry()
         self.startFeature = None
         self.endFeature = None
+        self.x = x
+        self.y = y
 
         self.layout = QGridLayout()
         self.layout.setContentsMargins(10, 10, 10, 10)
@@ -49,7 +51,7 @@ class SearchOpenedValvesDialog(QDialog):
         self.cleanResults()
 
         # Set query for a temporary layer which will retreive the data only one time
-        query = "(select * from qwat_network.ft_search_opened_valves(" + str(self.pipe_id) + "," + str(km) + ", " + stopOnNetworkValves + "))"
+        query = "(select * from qwat_network.ft_search_opened_valves(" + str(self.pipe_id) + "," +  str(self.x) + "," + str(self.y) + "," + str(km) + ", " + stopOnNetworkValves + "))"
 
         # Set connection to database
         source = """{} key='id' table="{}" (geometry)""".format("service=qwat", query)
@@ -84,6 +86,6 @@ class SearchOpenedValvesDialog(QDialog):
         else:
             self.group = root.insertGroup(0, GROUP_NAME)
         
-sp = SearchOpenedValvesDialog(iface.mainWindow(), [% "ID" %])
+sp = SearchOpenedValvesDialog(iface.mainWindow(), [% "ID" %], [% @click_x %], [% @click_y %])
 sp.show()
 

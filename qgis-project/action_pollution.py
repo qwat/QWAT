@@ -8,6 +8,7 @@ from qgis.PyQt.QtWidgets import *
 
 GROUP_NAME = "Pollution réseau"
 LAYER_RESULAT_NAME = "Conduites touchées"
+SUBSCRIBER_LAYER_NAME = "Abonnés"
 
 class SearchPipesDialog(QDialog):
     def __init__(self, parent, pipe_id, x, y):
@@ -19,6 +20,9 @@ class SearchPipesDialog(QDialog):
         self.point = QgsGeometry()
         self.startFeature = None
         self.endFeature = None
+
+        # Store result pipes, sources and targets in lists
+        self.resultPipes = []
 
         self.layout = QGridLayout()
         self.layout.setContentsMargins(10, 10, 10, 10)
@@ -45,20 +49,24 @@ class SearchPipesDialog(QDialog):
 
         buttons = QDialogButtonBox.Ok | QDialogButtonBox.Cancel
         self.buttonBox = QDialogButtonBox(buttons)
-        self.buttonBox.button(QDialogButtonBox.Ok).clicked.connect(self.searchOpenedValves)
+        self.buttonBox.button(QDialogButtonBox.Ok).clicked.connect(self.searchNetwork)
         self.buttonBox.rejected.connect(self.reject)
         self.layout.addWidget(self.buttonBox, 5, 0)
 
         self.setLayout(self.layout)
 
-    def searchOpenedValves(self):
+    def searchNetwork(self):
+        # Check if the result layer already exists
+        self.cleanResults()
+
+        self.searchPipes()
+        self.searchSubscribers()
+
+    def searchPipes(self):
         km = self.kmSpinBox.value()
         stopOnNetworkValves = self.stopOnNetworkValves.isChecked()
         stopOnSubscriberValves = self.stopOnSubscriberValves.isChecked()
         stopOnCurrentPressureZone = self.stopOnCurrentPressureZone.isChecked()
-
-        # Check if the result layer already exists
-        self.cleanResults()
 
         # Set query for a temporary layer which will retreive the data only one time
         query = "(select * from qwat_network.ft_search_network_and_subscribers(" + str(self.pipe_id) + "," + str(self.x) + "," + str(self.y) + "," + str(km) + "," + str(stopOnNetworkValves) + "," + str(stopOnSubscriberValves) + "," + str(stopOnCurrentPressureZone) + "))"
@@ -67,7 +75,6 @@ class SearchPipesDialog(QDialog):
         source = """{} key='id' table="{}" (geometry)""".format("service=qwat", query)
 
         tmpLayer = QgsVectorLayer(source, "temporary", "postgres")
-        
         if tmpLayer.isValid():
         
             # Create a memory layer (the final one which will be display to the user)
@@ -77,6 +84,7 @@ class SearchPipesDialog(QDialog):
             # Copy feature from temporary layer to final one (memory)
             features = []
             for feature in tmpLayer.getFeatures():
+                self.resultPipes.append(feature['id'])
                 features.append(feature)
 
             layer.startEditing()
@@ -89,6 +97,41 @@ class SearchPipesDialog(QDialog):
             l = QgsProject.instance().addMapLayer(layer, False)
             self.group.addLayer(l)
         self.close()
+
+    def searchSubscribers(self):
+        QgsMessageLog.logMessage("Recherche des abonnés", 'Messages', Qgis.Info)
+        # Set query
+        query = """
+        select * from qwat_od.vw_element_subscriber 
+        where fk_pipe in (select id from qwat_network.network where network_id in ({pipes}))
+        """.format(pipes=', '.join(repr(p) for p in self.resultPipes))
+        # Set connection to database
+        source = """{} key='id' table="({})" (geometry)""".format("service=qwat", query)
+
+        tmpLayer = QgsVectorLayer(source, "temporary", "postgres")
+        if tmpLayer.isValid():
+            # Create a memory layer (the final one which will be display to the user)
+            layer = QgsVectorLayer("Point?crs=epsg:21781", SUBSCRIBER_LAYER_NAME, "memory")
+            # TODO récupérer le srid depuis la couche temporaire ? 
+
+            # Copy feature from temporary layer to final one (memory)
+            attr = tmpLayer.dataProvider().fields().toList()
+            features = []
+            for feature in tmpLayer.getFeatures():
+                features.append(feature)
+
+            layer.startEditing()
+            dataP = layer.dataProvider()
+            dataP.addAttributes(attr)
+            layer.updateFields()
+            dataP.addFeatures(features)
+            layer.commitChanges()
+
+            layer.renderer().symbol().setSize(10)
+            layer.renderer().symbol().symbolLayer(0).setShape(QgsSimpleMarkerSymbolLayerBase.Pentagon)
+            layer.renderer().symbol().setColor(QColor(255, 0, 0))
+            l = QgsProject.instance().addMapLayer(layer, False)
+            self.group.addLayer(l)
 
     def cleanResults(self):
         root = QgsProject.instance().layerTreeRoot()
