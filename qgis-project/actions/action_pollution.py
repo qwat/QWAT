@@ -1,3 +1,7 @@
+"""
+This action code should be added to the pipe layer in the QGIS project
+"""
+
 from PyQt5.QtGui import QColor
 from PyQt5.QtCore import QVariant
 from qgis.utils import iface
@@ -9,6 +13,7 @@ from qgis.PyQt.QtWidgets import *
 GROUP_NAME = "Pollution réseau"
 LAYER_RESULAT_NAME = "Conduites touchées"
 SUBSCRIBER_LAYER_NAME = "Abonnés"
+
 
 class SearchPipesDialog(QDialog):
     def __init__(self, parent, pipe_id, x, y):
@@ -76,10 +81,10 @@ class SearchPipesDialog(QDialog):
 
         tmpLayer = QgsVectorLayer(source, "temporary", "postgres")
         if tmpLayer.isValid():
-        
+
             # Create a memory layer (the final one which will be display to the user)
             layer = QgsVectorLayer("LineString?crs=epsg:21781", LAYER_RESULAT_NAME, "memory")
-            # TODO récupérer le srid depuis la couche temporaire ? 
+            # TODO récupérer le srid depuis la couche temporaire ?
 
             # Copy feature from temporary layer to final one (memory)
             features = []
@@ -94,15 +99,15 @@ class SearchPipesDialog(QDialog):
 
             layer.renderer().symbol().setWidth(5)
             layer.renderer().symbol().setColor(QColor(255, 0, 0))
-            l = QgsProject.instance().addMapLayer(layer, False)
-            self.group.addLayer(l)
+            map_layer = QgsProject.instance().addMapLayer(layer, False)
+            self.group.addLayer(map_layer)
         self.close()
 
     def searchSubscribers(self):
         QgsMessageLog.logMessage("Recherche des abonnés", 'Messages', Qgis.Info)
         # Set query
         query = """
-        select * from qwat_od.vw_element_subscriber 
+        select * from qwat_od.vw_element_subscriber
         where fk_pipe in (select id from qwat_network.network where network_id in ({pipes}))
         """.format(pipes=', '.join(repr(p) for p in self.resultPipes))
         # Set connection to database
@@ -112,7 +117,7 @@ class SearchPipesDialog(QDialog):
         if tmpLayer.isValid():
             # Create a memory layer (the final one which will be display to the user)
             layer = QgsVectorLayer("Point?crs=epsg:21781", SUBSCRIBER_LAYER_NAME, "memory")
-            # TODO récupérer le srid depuis la couche temporaire ? 
+            # TODO récupérer le srid depuis la couche temporaire ?
 
             # Copy feature from temporary layer to final one (memory)
             attr = tmpLayer.dataProvider().fields().toList()
@@ -130,8 +135,8 @@ class SearchPipesDialog(QDialog):
             layer.renderer().symbol().setSize(10)
             layer.renderer().symbol().symbolLayer(0).setShape(QgsSimpleMarkerSymbolLayerBase.Pentagon)
             layer.renderer().symbol().setColor(QColor(255, 0, 0))
-            l = QgsProject.instance().addMapLayer(layer, False)
-            self.group.addLayer(l)
+            map_layer = QgsProject.instance().addMapLayer(layer, False)
+            self.group.addLayer(map_layer)
 
     def cleanResults(self):
         root = QgsProject.instance().layerTreeRoot()
@@ -141,6 +146,6 @@ class SearchPipesDialog(QDialog):
         else:
             self.group = root.insertGroup(0, GROUP_NAME)
 
+
 sp = SearchPipesDialog(iface.mainWindow(), [% "ID" %], [% @click_x %], [% @click_y %])
 sp.show()
-

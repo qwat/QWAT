@@ -1,3 +1,7 @@
+"""
+This action code should be added to the pipe layer in the QGIS project
+"""
+
 from PyQt5.QtGui import QColor
 from PyQt5.QtCore import QVariant
 from qgis.utils import iface
@@ -8,6 +12,7 @@ from qgis.PyQt.QtWidgets import *
 
 GROUP_NAME = "Incident réseau"
 LAYER_RESULAT_NAME = "Vannes à fermer"
+
 
 class SearchOpenedValvesDialog(QDialog):
     def __init__(self, parent, pipe_id, x, y):
@@ -51,7 +56,7 @@ class SearchOpenedValvesDialog(QDialog):
         self.cleanResults()
 
         # Set query for a temporary layer which will retreive the data only one time
-        query = "(select * from qwat_network.ft_search_opened_valves(" + str(self.pipe_id) + "," +  str(self.x) + "," + str(self.y) + "," + str(km) + ", " + stopOnNetworkValves + "))"
+        query = "(select * from qwat_network.ft_search_opened_valves(" + str(self.pipe_id) + "," + str(self.x) + "," + str(self.y) + "," + str(km) + ", " + stopOnNetworkValves + "))"
 
         # Set connection to database
         source = """{} key='id' table="{}" (geometry)""".format("service=qwat", query)
@@ -60,7 +65,7 @@ class SearchOpenedValvesDialog(QDialog):
         if tmpLayer.isValid():
             # Create a memory layer (the final one which will be display to the user)
             layer = QgsVectorLayer("Point?crs=epsg:21781", LAYER_RESULAT_NAME, "memory")
-            # TODO récupérer le srid depuis la couche temporaire ? 
+            # TODO récupérer le srid depuis la couche temporaire ?
 
             # Copy feature from temporary layer to final one (memory)
             features = []
@@ -74,8 +79,8 @@ class SearchOpenedValvesDialog(QDialog):
 
             layer.renderer().symbol().setSize(10)
             layer.renderer().symbol().setColor(QColor(255, 0, 0))
-            l = QgsProject.instance().addMapLayer(layer, False)
-            self.group.addLayer(l)
+            map_layer = QgsProject.instance().addMapLayer(layer, False)
+            self.group.addLayer(map_layer)
         self.close()
 
     def cleanResults(self):
@@ -85,7 +90,7 @@ class SearchOpenedValvesDialog(QDialog):
             self.group.removeAllChildren()
         else:
             self.group = root.insertGroup(0, GROUP_NAME)
-        
+
+
 sp = SearchOpenedValvesDialog(iface.mainWindow(), [% "ID" %], [% @click_x %], [% @click_y %])
 sp.show()
-
