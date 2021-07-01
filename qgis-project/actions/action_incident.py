@@ -56,7 +56,7 @@ class SearchOpenedValvesDialog(QDialog):
         self.cleanResults()
 
         # Set query for a temporary layer which will retreive the data only one time
-        query = "(select * from qwat_network.ft_search_opened_valves(" + str(self.pipe_id) + "," + str(self.x) + "," + str(self.y) + "," + str(km) + ", " + stopOnNetworkValves + "))"
+        query = """(select * from qwat_network.ft_search_opened_valves({pipe_id},{x},{y},{km},{stopOnNetworkValves}))""".format(pipe_id=str(self.pipe_id), x=str(self.x), y=str(self.y), km=str(km), stopOnNetworkValves=str(stopOnNetworkValves))
 
         # Set connection to database
         source = """{} key='id' table="{}" (geometry)""".format("service=qwat", query)
