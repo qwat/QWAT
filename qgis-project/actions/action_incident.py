@@ -68,12 +68,15 @@ class SearchOpenedValvesDialog(QDialog):
             # TODO récupérer le srid depuis la couche temporaire ?
 
             # Copy feature from temporary layer to final one (memory)
+            attr = tmpLayer.dataProvider().fields().toList()
             features = []
             for feature in tmpLayer.getFeatures():
                 features.append(feature)
 
             layer.startEditing()
             dataP = layer.dataProvider()
+            dataP.addAttributes(attr)
+            layer.updateFields()
             dataP.addFeatures(features)
             layer.commitChanges()
 
