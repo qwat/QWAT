@@ -25,7 +25,7 @@ class NetworkInterruptionDialog(QDialog):
         self.valve_layer = QgsProject.instance().mapLayersByName('Vannes')[0]
         self.valvesMapTool = selectTool(iface, self.valve_layer)
         uri = QgsDataSourceUri()
-        uri.setConnection("qwat", "qwat", "postgres", "postgres")
+        uri.setConnection("qwat", "", "", "")
         uri.setDataSource("qwat_network", "network", "geometry", "")
         self.network_layer = QgsVectorLayer(uri.uri(), "Network", "postgres")         
         self.pipe_layer = QgsProject.instance().mapLayersByName('Conduites')[0]
