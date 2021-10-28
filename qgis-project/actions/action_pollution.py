@@ -26,6 +26,15 @@ class SearchPipesDialog(QDialog):
         self.startFeature = None
         self.endFeature = None
 
+        # Get CRS from settings table
+        query = "(select id, value from qwat_sys.settings)"
+        source = """{} key='id' table="({})" ()""".format("service=qwat", query)
+        crsLayer = QgsVectorLayer(source, "temporary", "postgres")
+        if crsLayer.isValid():
+            for feature in crsLayer.getFeatures():
+                self.crs = feature["value"]
+                break
+
         # Store result pipes, sources and targets in lists
         self.resultPipes = []
 
@@ -83,8 +92,7 @@ class SearchPipesDialog(QDialog):
         if tmpLayer.isValid():
 
             # Create a memory layer (the final one which will be display to the user)
-            layer = QgsVectorLayer("LineString?crs=epsg:21781", LAYER_RESULAT_NAME, "memory")
-            # TODO récupérer le srid depuis la couche temporaire ?
+            layer = QgsVectorLayer("LineString?crs=epsg:" + self.crs, LAYER_RESULAT_NAME, "memory")
 
             # Copy feature from temporary layer to final one (memory)
             attr = tmpLayer.dataProvider().fields().toList()
@@ -119,8 +127,7 @@ class SearchPipesDialog(QDialog):
         tmpLayer = QgsVectorLayer(source, "temporary", "postgres")
         if tmpLayer.isValid():
             # Create a memory layer (the final one which will be display to the user)
-            layer = QgsVectorLayer("Point?crs=epsg:21781", SUBSCRIBER_LAYER_NAME, "memory")
-            # TODO récupérer le srid depuis la couche temporaire ?
+            layer = QgsVectorLayer("Point?crs=epsg:" + self.crs, SUBSCRIBER_LAYER_NAME, "memory")
 
             # Copy feature from temporary layer to final one (memory)
             attr = tmpLayer.dataProvider().fields().toList()

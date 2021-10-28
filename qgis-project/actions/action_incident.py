@@ -25,6 +25,15 @@ class SearchOpenedValvesDialog(QDialog):
         self.x = x
         self.y = y
 
+        # Get CRS from settings table
+        query = "(select id, value from qwat_sys.settings)"
+        source = """{} key='id' table="({})" ()""".format("service=qwat", query)
+        crsLayer = QgsVectorLayer(source, "temporary", "postgres")
+        if crsLayer.isValid():
+            for feature in crsLayer.getFeatures():
+                self.crs = feature["value"]
+                break
+
         self.layout = QGridLayout()
         self.layout.setContentsMargins(10, 10, 10, 10)
 
@@ -64,8 +73,7 @@ class SearchOpenedValvesDialog(QDialog):
         tmpLayer = QgsVectorLayer(source, "temporary", "postgres")
         if tmpLayer.isValid():
             # Create a memory layer (the final one which will be display to the user)
-            layer = QgsVectorLayer("Point?crs=epsg:21781", LAYER_RESULAT_NAME, "memory")
-            # TODO récupérer le srid depuis la couche temporaire ?
+            layer = QgsVectorLayer("Point?crs=epsg:" + self.crs, LAYER_RESULAT_NAME, "memory")
 
             # Copy feature from temporary layer to final one (memory)
             attr = tmpLayer.dataProvider().fields().toList()

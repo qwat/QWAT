@@ -27,10 +27,19 @@ class NetworkInterruptionDialog(QDialog):
         uri = QgsDataSourceUri()
         uri.setConnection("qwat", "", "", "")
         uri.setDataSource("qwat_network", "network", "geometry", "")
-        self.network_layer = QgsVectorLayer(uri.uri(), "Network", "postgres")         
+        self.network_layer = QgsVectorLayer(uri.uri(), "Network", "postgres")
         self.pipe_layer = QgsProject.instance().mapLayersByName('Conduites')[0]
         self.pipeMapTool = selectTool(iface, self.network_layer)
-       
+
+        # Get CRS from settings table
+        query = "(select id, value from qwat_sys.settings)"
+        source = """{} key='id' table="({})" ()""".format("service=qwat", query)
+        crsLayer = QgsVectorLayer(source, "temporary", "postgres")
+        if crsLayer.isValid():
+            for feature in crsLayer.getFeatures():
+                self.crs = feature["value"]
+                break
+
         self.startPoint = QgsPoint()
         self.pipeFeature = None
         self.valves = []
@@ -154,8 +163,7 @@ class NetworkInterruptionDialog(QDialog):
         tmpLayer = QgsVectorLayer(source, "temporary", "postgres")
         if tmpLayer.isValid():
             # Create a memory layer (the final one which will be display to the user)
-            layer = QgsVectorLayer("LineString?crs=epsg:21781", PIPE_LAYER_NAME, "memory")
-            # TODO récupérer le srid depuis la couche temporaire ? 
+            layer = QgsVectorLayer("LineString?crs=epsg:" + self.crs, PIPE_LAYER_NAME, "memory")
 
             # Copy feature from temporary layer to final one (memory)
             attr = tmpLayer.dataProvider().fields().toList()
@@ -204,8 +212,7 @@ class NetworkInterruptionDialog(QDialog):
         tmpLayer = QgsVectorLayer(source, "temporary", "postgres")
         if tmpLayer.isValid():
             # Create a memory layer (the final one which will be display to the user)
-            layer = QgsVectorLayer("Point?crs=epsg:21781", HYDRANT_LAYER_NAME, "memory")
-            # TODO récupérer le srid depuis la couche temporaire ? 
+            layer = QgsVectorLayer("Point?crs=epsg:" + self.crs, HYDRANT_LAYER_NAME, "memory")
 
             # Copy feature from temporary layer to final one (memory)
             attr = tmpLayer.dataProvider().fields().toList()
@@ -239,8 +246,7 @@ class NetworkInterruptionDialog(QDialog):
         tmpLayer = QgsVectorLayer(source, "temporary", "postgres")
         if tmpLayer.isValid():
             # Create a memory layer (the final one which will be display to the user)
-            layer = QgsVectorLayer("Point?crs=epsg:21781", METER_LAYER_NAME, "memory")
-            # TODO récupérer le srid depuis la couche temporaire ? 
+            layer = QgsVectorLayer("Point?crs=epsg:" + self.crs, METER_LAYER_NAME, "memory")
 
             # Copy feature from temporary layer to final one (memory)
             attr = tmpLayer.dataProvider().fields().toList()
@@ -274,8 +280,7 @@ class NetworkInterruptionDialog(QDialog):
         tmpLayer = QgsVectorLayer(source, "temporary", "postgres")
         if tmpLayer.isValid():
             # Create a memory layer (the final one which will be display to the user)
-            layer = QgsVectorLayer("Point?crs=epsg:21781", SUBSCRIBER_LAYER_NAME, "memory")
-            # TODO récupérer le srid depuis la couche temporaire ? 
+            layer = QgsVectorLayer("Point?crs=epsg:" + self.crs, SUBSCRIBER_LAYER_NAME, "memory")
 
             # Copy feature from temporary layer to final one (memory)
             attr = tmpLayer.dataProvider().fields().toList()
@@ -310,8 +315,7 @@ class NetworkInterruptionDialog(QDialog):
         tmpLayer = QgsVectorLayer(source, "temporary", "postgres")
         if tmpLayer.isValid():
             # Create a memory layer (the final one which will be display to the user)
-            layer = QgsVectorLayer("Point?crs=epsg:21781", SUBSCRIBER_REF_LAYER_NAME, "memory")
-            # TODO récupérer le srid depuis la couche temporaire ? 
+            layer = QgsVectorLayer("Point?crs=epsg:" + self.crs, SUBSCRIBER_REF_LAYER_NAME, "memory")
 
             # Copy feature from temporary layer to final one (memory)
             attr = tmpLayer.dataProvider().fields().toList()
