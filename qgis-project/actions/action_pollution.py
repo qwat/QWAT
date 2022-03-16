@@ -91,9 +91,12 @@ class SearchPipesDialog(QDialog):
     def searchNetwork(self):
         # Check if the result layer already exists
         self.cleanResults()
+        self.resultPipes.clear()
 
         self.searchPipes()
-        self.searchSubscribers()
+        if self.resultPipes:
+            self.searchSubscribers()
+        self.reorderLayers(self.group)
 
     def searchPipes(self):
         km = self.kmSpinBox.value()
@@ -175,6 +178,12 @@ class SearchPipesDialog(QDialog):
         else:
             self.group = root.insertGroup(0, GROUP_NAME)
 
+    def reorderLayers(self, group):
+        bridge = iface.layerTreeCanvasBridge() 
+        order = bridge.rootGroup().customLayerOrder()
+        for layer in group.children():
+            order.insert(0, order.pop(order.index(layer.layer())))
+        bridge.rootGroup().setCustomLayerOrder(order)
 
 sp = SearchPipesDialog(iface.mainWindow(), [% "ID" %], [% @click_x %], [% @click_y %])
 sp.show()

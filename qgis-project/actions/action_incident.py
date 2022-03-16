@@ -112,6 +112,7 @@ class SearchOpenedValvesDialog(QDialog):
             map_layer = QgsProject.instance().addMapLayer(layer, False)
             self.group.addLayer(map_layer)
         self.close()
+        self.reorderLayers(self.group)
 
     def cleanResults(self):
         root = QgsProject.instance().layerTreeRoot()
@@ -121,6 +122,12 @@ class SearchOpenedValvesDialog(QDialog):
         else:
             self.group = root.insertGroup(0, GROUP_NAME)
 
+    def reorderLayers(self, group):
+        bridge = iface.layerTreeCanvasBridge() 
+        order = bridge.rootGroup().customLayerOrder()
+        for layer in group.children():
+            order.insert(0, order.pop(order.index(layer.layer())))
+        bridge.rootGroup().setCustomLayerOrder(order)
 
 sp = SearchOpenedValvesDialog(iface.mainWindow(), [% "ID" %], [% @click_x %], [% @click_y %])
 sp.show()

@@ -194,6 +194,8 @@ class NetworkInterruptionDialog(QDialog):
             self.searchSubscribers()
             if self.resultSubscribers: 
                 self.searchSubscribersReferences()
+            if self.resultPipes:
+                self.reorderLayers(self.group)
         self.close()
 
     def searchPipes(self):
@@ -385,5 +387,12 @@ class NetworkInterruptionDialog(QDialog):
             l = QgsProject.instance().addMapLayer(layer, False)
             self.group.addLayer(l)
 
-nc = NetworkInterruptionDialog(iface.mainWindow())#, [% "ID" %]
+    def reorderLayers(self, group):
+        bridge = iface.layerTreeCanvasBridge() 
+        order = bridge.rootGroup().customLayerOrder()
+        for layer in group.children():
+            order.insert(0, order.pop(order.index(layer.layer())))
+        bridge.rootGroup().setCustomLayerOrder(order)
+
+nc = NetworkInterruptionDialog(iface.mainWindow(), [% "ID" %])
 nc.show()
