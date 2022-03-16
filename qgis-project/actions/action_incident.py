@@ -13,6 +13,7 @@ from qgis.PyQt.QtWidgets import *
 GROUP_NAME = "Incident réseau"
 LAYER_RESULAT_NAME = "Vannes à fermer"
 
+VALVE_SOURCE_NAME = '"qwat_od"."valve"'
 
 class SearchOpenedValvesDialog(QDialog):
     def __init__(self, parent, pipe_id, x, y):
@@ -56,6 +57,23 @@ class SearchOpenedValvesDialog(QDialog):
         self.layout.addWidget(self.buttonBox, 3, 0)
 
         self.setLayout(self.layout)
+
+    def showEvent(self, event):
+        self.setupLayers()
+
+    def setupLayers(self):
+        layers = QgsProject.instance().mapLayers()
+        valve_layername = None
+        for layer_id, layer in layers.items():
+            if layer.dataProvider().uri().quotedTablename() == VALVE_SOURCE_NAME:
+                valve_layername = layer.name()
+                break
+        if (valve_layername is None):
+            QgsMessageLog.logMessage("Valve layer does not exist in QGIS project !", 'Messages', Qgis.Critical)
+            iface.messageBar().pushMessage("Error", "Valve layer does not exist in QGIS project !", level=Qgis.Critical)            
+            QTimer.singleShot(0, self.reject)
+            return
+        self.valve_layer = QgsProject.instance().mapLayersByName(valve_layername)[0]
 
     def searchOpenedValves(self):
         km = self.kmSpinBox.value()

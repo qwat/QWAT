@@ -14,6 +14,7 @@ GROUP_NAME = "Pollution réseau"
 LAYER_RESULAT_NAME = "Conduites touchées"
 SUBSCRIBER_LAYER_NAME = "Abonnés"
 
+PIPE_SOURCE_NAME = '"qwat_od"."pipe"'
 
 class SearchPipesDialog(QDialog):
     def __init__(self, parent, pipe_id, x, y):
@@ -68,6 +69,23 @@ class SearchPipesDialog(QDialog):
         self.layout.addWidget(self.buttonBox, 5, 0)
 
         self.setLayout(self.layout)
+
+    def showEvent(self, event):
+        self.setupLayers()
+
+    def setupLayers(self):
+        layers = QgsProject.instance().mapLayers()
+        pipe_layername = None
+        for layer_id, layer in layers.items():
+            if layer.dataProvider().uri().quotedTablename() == PIPE_SOURCE_NAME:
+                pipe_layername = layer.name()
+                break
+        if (pipe_layername is None):
+            QgsMessageLog.logMessage("Pipe layer does not exist in QGIS project !", 'Messages', Qgis.Critical)
+            iface.messageBar().pushMessage("Error", "Pipe layer does not exist in QGIS project !", level=Qgis.Critical)            
+            QTimer.singleShot(0, self.reject)
+            return
+        self.pipe_layer = QgsProject.instance().mapLayersByName(pipe_layername)[0]
 
     def searchNetwork(self):
         # Check if the result layer already exists

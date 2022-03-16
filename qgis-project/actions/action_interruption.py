@@ -11,6 +11,9 @@ METER_LAYER_NAME = "Compteurs réseau"
 SUBSCRIBER_LAYER_NAME = "Abonnés"
 SUBSCRIBER_REF_LAYER_NAME = "Renvois d'abonnés"
 
+VALVE_SOURCE_NAME = '"qwat_od"."valve"'
+PIPE_SOURCE_NAME = '"qwat_od"."pipe"'
+
 class selectTool(QgsMapToolIdentifyFeature):
     def __init__(self, iface, layer):
         self.iface = iface
@@ -21,15 +24,11 @@ class selectTool(QgsMapToolIdentifyFeature):
 class NetworkInterruptionDialog(QDialog):
     def __init__(self, parent):
         super().__init__(parent)
-        self.setWindowTitle("Coupure de réseau")
-        self.valve_layer = QgsProject.instance().mapLayersByName('Vannes')[0]
-        self.valvesMapTool = selectTool(iface, self.valve_layer)
+        self.setWindowTitle("Coupure de réseau")       
         uri = QgsDataSourceUri()
         uri.setConnection("qwat", "", "", "")
         uri.setDataSource("qwat_network", "network", "geometry", "")
         self.network_layer = QgsVectorLayer(uri.uri(), "Network", "postgres")
-        self.pipe_layer = QgsProject.instance().mapLayersByName('Conduites')[0]
-        self.pipeMapTool = selectTool(iface, self.network_layer)
 
         # Get CRS from settings table
         query = "(select id, value from qwat_sys.settings)"
@@ -97,6 +96,32 @@ class NetworkInterruptionDialog(QDialog):
 
         self.setLayout(self.layout)
 
+    def showEvent(self, event):
+        self.setupLayers()
+
+    def setupLayers(self):
+        layers = QgsProject.instance().mapLayers()
+        valve_layername = None
+        pipe_layername = None
+        for layer_id, layer in layers.items():
+            if (layer.dataProvider().uri().quotedTablename() == VALVE_SOURCE_NAME) \
+                and (layer.dataProvider().uri().geometryColumn() == 'geometry'):
+                valve_layername = layer.name()
+                break
+        for layer_id, layer in layers.items():
+            if (layer.dataProvider().uri().quotedTablename() == PIPE_SOURCE_NAME) \
+                and (layer.dataProvider().uri().geometryColumn() == 'geometry'):
+                pipe_layername = layer.name()
+                break
+        if (valve_layername is None) or (pipe_layername is None):
+            QgsMessageLog.logMessage("Valve layer or Pipe layer does not exist in QGIS project !", 'Messages', Qgis.Critical)
+            iface.messageBar().pushMessage("Error", "Valve layer or Pipe layer does not exist in QGIS project !", level=Qgis.Critical)            
+            QTimer.singleShot(0, self.reject)
+            return
+        self.valve_layer = QgsProject.instance().mapLayersByName(valve_layername)[0]
+        self.valvesMapTool = selectTool(iface, self.valve_layer)
+        self.pipe_layer = QgsProject.instance().mapLayersByName(pipe_layername)[0]
+        self.pipeMapTool = selectTool(iface, self.network_layer)
         
     def onValveIdentified(self, feature):
         QgsMessageLog.logMessage("Vanne : " + str(feature.id()) + " sélectionnée", 'Messages', Qgis.Info)
