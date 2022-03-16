@@ -22,7 +22,7 @@ class selectTool(QgsMapToolIdentifyFeature):
         QgsMapToolIdentifyFeature.__init__(self, self.canvas, self.layer)
 
 class NetworkInterruptionDialog(QDialog):
-    def __init__(self, parent):
+    def __init__(self, parent, valve_id):
         super().__init__(parent)
         self.setWindowTitle("Coupure de réseau")       
         uri = QgsDataSourceUri()
@@ -111,6 +111,10 @@ class NetworkInterruptionDialog(QDialog):
         self.layout.addWidget(self.buttonBox)
 
         self.setLayout(self.layout)
+
+        # Add valve where action was launched from
+        self.valvesList.addItem(str(valve_id))
+        self.valves.append(valve_id)
 
     def showEvent(self, event):
         self.setupLayers()
