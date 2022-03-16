@@ -56,28 +56,43 @@ class NetworkInterruptionDialog(QDialog):
         
 
         self.valvesLabel = QLabel("Sélectionner les vannes à fermer")
-        self.valvesText = QTextEdit()
-        self.valvesText.setReadOnly(True)
+        self.valvesList = QListWidget()
+        self.valvesList.setSelectionMode(QAbstractItemView.MultiSelection)        
+        self.valveVerticalLayout = QVBoxLayout()
         self.selectValveToolButton = QToolButton()
-        self.selectValveToolButton.setText('...')
-        self.selectValveToolButton.setToolTip('Sélectionner les vannes...')
+        self.selectValveToolButton.setIcon(QgsApplication.instance().getThemeIcon('symbologyAdd.svg'))
+        self.selectValveToolButton.setFixedSize(25, 25)
+        self.selectValveToolButton.setToolTip('Sélectionner une vanne...')
         self.selectValveToolButton.setObjectName('SelectValvesButton')
         self.selectValveToolButton.clicked.connect(self.selectValves)
+        self.removeValveToolButton = QToolButton()
+        self.removeValveToolButton.setIcon(QgsApplication.instance().getThemeIcon('symbologyRemove.svg'))
+        self.removeValveToolButton.setFixedSize(25, 25)
+        self.removeValveToolButton.setToolTip('Supprimer la vanne sélectionnée')
+        self.removeValveToolButton.setObjectName('RemoveValveButton')
+        self.removeValveToolButton.clicked.connect(self.removeValves)
+        self.valveVerticalLayout.addStretch()
+        self.valveVerticalLayout.addWidget(self.selectValveToolButton)
+        self.valveVerticalLayout.addWidget(self.removeValveToolButton)
         self.layout.addWidget(self.valvesLabel, 0, 0)
-        self.layout.addWidget(self.valvesText, 1, 0)
-        self.layout.addWidget(self.selectValveToolButton, 1, 1)
+        self.layout.addWidget(self.valvesList, 1, 0)
+        self.layout.addLayout(self.valveVerticalLayout, 1, 1)
 
         self.pipeLabel = QLabel("Sélectionner une conduite")
         self.pipeText = QTextEdit()
         self.pipeText.setReadOnly(True)
+        self.pipeVerticalLayout = QVBoxLayout()
         self.selectPipeToolButton = QToolButton()
-        self.selectPipeToolButton.setText('...')
+        self.selectPipeToolButton.setIcon(QgsApplication.instance().getThemeIcon('symbologyAdd.svg'))
+        self.selectPipeToolButton.setFixedSize(25, 25)
         self.selectPipeToolButton.setToolTip('Sélectionner une conduite...')
         self.selectPipeToolButton.setObjectName('SelectPipeButton')
         self.selectPipeToolButton.clicked.connect(self.selectPipe)
+        self.pipeVerticalLayout.addStretch()
+        self.pipeVerticalLayout.addWidget(self.selectPipeToolButton)
         self.layout.addWidget(self.pipeLabel, 2, 0)
         self.layout.addWidget(self.pipeText, 3, 0)
-        self.layout.addWidget(self.selectPipeToolButton, 3, 1)
+        self.layout.addLayout(self.pipeVerticalLayout, 3, 1)
 
         self.kmMaxLabel = QLabel("Km max. : ")
         self.layout.addWidget(self.kmMaxLabel, 4, 0)
@@ -127,7 +142,7 @@ class NetworkInterruptionDialog(QDialog):
     def onValveIdentified(self, feature):
         QgsMessageLog.logMessage("Vanne : " + str(feature.id()) + " sélectionnée", 'Messages', Qgis.Info)
         if feature.id() not in self.valves:
-            self.valvesText.append('Vanne : ' + str(feature.id()))
+            self.valvesList.addItem(str(feature.id()))
             self.valves.append(feature.id())
             self.status.append(feature['closed'])
         else:
@@ -137,6 +152,14 @@ class NetworkInterruptionDialog(QDialog):
 
     def selectValves(self):
         self.valvesMapTool.featureIdentified.connect(self.onValveIdentified)
+        iface.mapCanvas().setMapTool(self.valvesMapTool)
+
+    def removeValves(self):
+        selectedValves = [item.text() for item in self.valvesList.selectedItems()]
+        if selectedValves:
+            self.valves = [v for v in self.valves if str(v) not in selectedValves]
+        for item in self.valvesList.selectedItems():
+            self.valvesList.takeItem(self.valvesList.row(item))
         iface.mapCanvas().setMapTool(self.valvesMapTool)
     
     def onPipeIdentified(self, feature):
