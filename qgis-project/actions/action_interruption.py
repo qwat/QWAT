@@ -4,7 +4,7 @@ from qgis.PyQt.QtGui import *
 from qgis.PyQt.QtCore import *
 from qgis.PyQt.QtWidgets import *
 
-GROUP_NAME = "Coupure de réseau"
+GROUP_NAME = "Interruption réseau"
 PIPE_LAYER_NAME = "Conduites"
 HYDRANT_LAYER_NAME = "Bornes hydrantes"
 METER_LAYER_NAME = "Compteurs réseau"
@@ -189,9 +189,10 @@ class NetworkInterruptionDialog(QDialog):
             else:
                 self.group = root.insertGroup(0, GROUP_NAME)
             self.searchPipes()
-            self.searchHydrants()
-            self.searchMeters()
-            self.searchSubscribers()
+            if self.resultPipes:
+                self.searchHydrants()
+                self.searchMeters()
+                self.searchSubscribers()
             if self.resultSubscribers: 
                 self.searchSubscribersReferences()
             if self.resultPipes:
@@ -245,6 +246,9 @@ class NetworkInterruptionDialog(QDialog):
             layer.renderer().symbol().setColor(QColor(255, 0, 0))
             l = QgsProject.instance().addMapLayer(layer, False)
             self.group.addLayer(l)
+        else:
+            QgsMessageLog.logMessage("Layer not valid in search pipes", 'Messages', Qgis.Critical)
+
     
     def searchHydrants(self):
         QgsMessageLog.logMessage("Recherche des bornes hydrantes", 'Messages', Qgis.Info)
