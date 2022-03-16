@@ -81,10 +81,11 @@ class NetworkInterruptionDialog(QDialog):
 
         self.kmMaxLabel = QLabel("Km max. : ")
         self.layout.addWidget(self.kmMaxLabel, 4, 0)
-        self.kmMaxSpinBox = QSpinBox()
-        self.kmMaxSpinBox.setMinimum(1)
+        self.kmMaxSpinBox = QDoubleSpinBox()
+        self.kmMaxSpinBox.setDecimals(2)
+        self.kmMaxSpinBox.setMinimum(0.1)
         self.kmMaxSpinBox.setMaximum(50)
-        self.kmMaxSpinBox.setValue(20)
+        self.kmMaxSpinBox.setValue(1)
         self.layout.addWidget(self.kmMaxSpinBox, 4, 1)        
         
         buttons = QDialogButtonBox.Ok | QDialogButtonBox.Cancel

@@ -44,10 +44,11 @@ class SearchPipesDialog(QDialog):
 
         self.kmLabel = QLabel("Km max. : ")
         self.layout.addWidget(self.kmLabel, 0, 0)
-        self.kmSpinBox = QSpinBox()
-        self.kmSpinBox.setMinimum(1)
+        self.kmSpinBox = QDoubleSpinBox()
+        self.kmSpinBox.setDecimals(2)
+        self.kmSpinBox.setMinimum(0.1)        
         self.kmSpinBox.setMaximum(50)
-        self.kmSpinBox.setValue(10)
+        self.kmSpinBox.setValue(1)
         self.layout.addWidget(self.kmSpinBox, 1, 0)
 
         self.stopOnNetworkValves = QCheckBox("S'arrêter aux vannes réseaux")
