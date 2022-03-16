@@ -232,6 +232,15 @@ class NetworkInterruptionDialog(QDialog):
             dataP.addFeatures(features)
             layer.commitChanges()
 
+            # Join pipe layer
+            join = QgsVectorLayerJoinInfo()
+            join.setJoinFieldName('id')
+            join.setTargetFieldName('id')
+            join.setJoinLayerId(self.pipe_layer.id())
+            join.setUsingMemoryCache(True)
+            join.setJoinLayer(self.pipe_layer)
+            layer.addJoin(join)
+
             layer.renderer().symbol().setWidth(3.0)            
             layer.renderer().symbol().setColor(QColor(255, 0, 0))
             l = QgsProject.instance().addMapLayer(layer, False)
@@ -249,7 +258,7 @@ class NetworkInterruptionDialog(QDialog):
         where qwat_network.ft_check_node_is_hydrant(source) 
         or qwat_network.ft_check_node_is_hydrant(target)
         )
-        select h.id, h.geometry from qwat_od.vw_element_hydrant h, pipes where h.id in (pipes.target) or h.id  in (pipes.source)
+        select h.* from qwat_od.vw_element_hydrant h, pipes where h.id in (pipes.target) or h.id  in (pipes.source)
         """.format(valves=str(self.valves), networkId=str(networkId), kmmax=str(kmMax))
         # query = """
         # select h.id, h.geometry 
@@ -287,7 +296,7 @@ class NetworkInterruptionDialog(QDialog):
         QgsMessageLog.logMessage("Recherche des compteurs réseau", 'Messages', Qgis.Info)
         # Set query
         query = """
-        select m.id, m.geometry 
+        select * 
         from qwat_od.vw_element_meter m
         where m.id in ({pipes})
         """.format(pipes=', '.join(repr(p) for p in self.resultPipes))        

@@ -130,6 +130,15 @@ class SearchPipesDialog(QDialog):
             dataP.addFeatures(features)
             layer.commitChanges()
 
+            # Join pipe layer
+            join = QgsVectorLayerJoinInfo()
+            join.setJoinFieldName('id')
+            join.setTargetFieldName('id_pipe')
+            join.setJoinLayerId(self.pipe_layer.id())
+            join.setUsingMemoryCache(True)
+            join.setJoinLayer(self.pipe_layer)
+            layer.addJoin(join)
+
             layer.renderer().symbol().setWidth(5)
             layer.renderer().symbol().setColor(QColor(255, 0, 0))
             map_layer = QgsProject.instance().addMapLayer(layer, False)

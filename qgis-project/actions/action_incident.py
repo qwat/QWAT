@@ -107,6 +107,15 @@ class SearchOpenedValvesDialog(QDialog):
             dataP.addFeatures(features)
             layer.commitChanges()
 
+            # Join valve layer
+            join = QgsVectorLayerJoinInfo()
+            join.setJoinFieldName('id')
+            join.setTargetFieldName('id')
+            join.setJoinLayerId(self.valve_layer.id())
+            join.setUsingMemoryCache(True)
+            join.setJoinLayer(self.valve_layer)
+            layer.addJoin(join)
+
             layer.renderer().symbol().setSize(10)
             layer.renderer().symbol().setColor(QColor(255, 0, 0))
             map_layer = QgsProject.instance().addMapLayer(layer, False)
