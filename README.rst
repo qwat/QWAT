@@ -1,13 +1,13 @@
 .. image:: qwat.png
 
 
-QWAT: QGIS Water Module
-=======================
+TEKSI Water Module based on QGIS / Postgis (Project QWAT)
+=========================================================
 
 Documentation
 -------------
 
-Hosted version here: https://qwat.github.io/docs/master/en/html/
+Hosted version here: https://qwat.github.io/docs/
 
 The documentation has its own repository at https://github.com/qwat/docs
 
