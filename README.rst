@@ -1,4 +1,4 @@
-.. image:: 210910-teksi-drink-logos-en-01_20pp.png
+.. image:: 210910-teksi-drink-logos-en-01_45pp.png
 
 
 TEKSI drinking water module (Project QWAT)
