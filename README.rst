@@ -1,8 +1,10 @@
 .. image:: qwat.png
 
 
-TEKSI Water Module based on QGIS / Postgis (Project QWAT)
+TEKSI drinking water module (Project QWAT)
 =========================================================
+
+Open source water distribution network module based on QGIS / Postgis
 
 Documentation
 -------------
