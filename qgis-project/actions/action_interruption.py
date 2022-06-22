@@ -24,7 +24,7 @@ class selectTool(QgsMapToolIdentifyFeature):
 class NetworkInterruptionDialog(QDialog):
     def __init__(self, parent, valve_id):
         super().__init__(parent)
-        self.setWindowTitle("Coupure de réseau")       
+        self.setWindowTitle("Interruption réseau")       
         uri = QgsDataSourceUri()
         uri.setConnection("qwat", "", "", "")
         uri.setDataSource("qwat_network", "network", "geometry", "")
