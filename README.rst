@@ -1,13 +1,15 @@
-.. image:: qwat.png
+.. image:: 210910-teksi-drink-logos-en-01_96pp.png
 
 
-QWAT: QGIS Water Module
-=======================
+TEKSI drinking water module (Project QWAT)
+=========================================================
+
+Open source water distribution network module based on QGIS / Postgis
 
 Documentation
 -------------
 
-Hosted version here: https://qwat.github.io/docs/master/en/html/
+Hosted version here: https://qwat.github.io/docs/
 
 The documentation has its own repository at https://github.com/qwat/docs
 
