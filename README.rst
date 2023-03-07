@@ -7,7 +7,7 @@ QWAT: QGIS Water Module
 Documentation
 -------------
 
-Hosted version here: https://qwat.github.io/docs/master/en/html/
+Hosted version here: https://qwat.github.io/docs/
 
 The documentation has its own repository at https://github.com/qwat/docs
 
