@@ -142,11 +142,11 @@ If that works then open the ``qgis-projetct/qwat.qgs`` project in QGIS.
 Credits
 -------
 
-see `CREDITS <https://github.com/qwat/QWAT/blob/master/CREDITS.rst>`_
+see `CREDITS <https://github.com/qwat/QWAT/blob/main/CREDITS.rst>`_
 
 License
 -------
 
 This work is free software and licenced under the GNU GPL version 2 or any later version.
 
-You can get the `LICENSE here <https://github.com/qwat/QWAT/blob/master/LICENSE>`_ .
+You can get the `LICENSE here <https://github.com/qwat/QWAT/blob/main/LICENSE>`_ .
