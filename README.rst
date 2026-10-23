@@ -76,14 +76,16 @@ Assuming you named your database ``qwat``, edit the ``.pg_service.conf`` file an
 ::
 
     [pg_qwat]
-    #enter your database ip
+    # Enter your database ip
     host=127.0.0.1
-    #database name
+    # Database name
     dbname=qwat
     port=5432
     user=postgres
-    #you can also add your password if you like
+    # You can also add your password if you like
     password=YourPassword
+    # Choose sslmode=disable if you don't want to use SSL, or sslmode=require if you want to force SSL connections.
+    sslmode=prefer
 
 Now go to the ``data-model`` directory and run the ``./init_qwat.sh`` script:
 
