@@ -21,7 +21,7 @@ Server side software components are:
 * `Python <https://www.python.org/>`_, for installation and update (> 3.5)
 * `PUM <https://github.com/opengisch/pum>`_ for upgrade
 
-Supported and tested versions are PostgreSQL 9.6 and Postgis 2.3.
+Supported and tested versions are PostgreSQL 10 and Postgis 2.3.
 
 The exact required hardware configuration is very dependant on the data sizes.
 However, water network data tend not to be huge volumes, and the minimal required configuration is very low.
