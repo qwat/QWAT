@@ -75,22 +75,24 @@ Assuming you named your database ``qwat``, edit the ``.pg_service.conf`` file an
 
 ::
 
-    [qwat]
-    #enter your database ip
+    [pg_qwat]
+    # Enter your database ip
     host=127.0.0.1
-    #database name
+    # Database name
     dbname=qwat
     port=5432
     user=postgres
-    #you can also add your password if you like
+    # You can also add your password if you like
     password=YourPassword
+    # Choose sslmode=disable if you don't want to use SSL, or sslmode=require if you want to force SSL connections.
+    sslmode=prefer
 
 Now go to the ``data-model`` directory and run the ``./init_qwat.sh`` script:
 
 ::
 
     cd data-model
-    ./init_qwat.sh -p qwat -s 21781 -d -r
+    ./init_qwat.sh -p pg_qwat -s 21781 -d -r
 
 The script has the following options:
 
@@ -134,9 +136,9 @@ Open the project
 ----------------
 
 After your model gets created, in QGIS you should be able now to connect to the
-database by creating a new connection with ``Name=qwat``, ``Service=qwat``, ``SSL mode=prefer``.
+database by creating a new connection with ``Name=pg_qwat``, ``Service=pg_qwat``, ``SSL mode=prefer``.
 
-If that works then open the ``qgis-projetct/qwat.qgs`` project in QGIS.
+If that works then open the ``qgis-project/qwat.qgs`` project in QGIS.
 
 
 Credits

@@ -407,7 +407,7 @@
             <Option type="QString" value="sia405pt_protection_tube_material_7b59fe1e_5225_4c0b_8c27_d2b74ad90eb1" name="Layer"/>
             <Option type="QString" value="sia405pt_protection_tube_material" name="LayerName"/>
             <Option type="QString" value="postgres" name="LayerProviderName"/>
-            <Option type="QString" value="dbname='qwat140' host=localhost port=5433 sslmode=disable key='code' checkPrimaryKeyUnicity='0' table=&quot;qwat_vl&quot;.&quot;sia405pt_protection_tube_material&quot;" name="LayerSource"/>
+            <Option type="QString" value="service='pg_qwat' key='code' checkPrimaryKeyUnicity='0' table=&quot;qwat_vl&quot;.&quot;sia405pt_protection_tube_material&quot;" name="LayerSource"/>
             <Option type="int" value="1" name="NofColumns"/>
             <Option type="bool" value="true" name="OrderByValue"/>
             <Option type="bool" value="false" name="UseCompleter"/>
@@ -482,7 +482,7 @@
             <Option type="QString" value="sia405pt_protection_tube_horizontal_positioning_e3a26b3a_3410_4519_9aa9_2158877d80ac" name="Layer"/>
             <Option type="QString" value="sia405pt_protection_tube_horizontal_positioning" name="LayerName"/>
             <Option type="QString" value="postgres" name="LayerProviderName"/>
-            <Option type="QString" value="dbname='qwat140' host=localhost port=5433 sslmode=disable key='code' checkPrimaryKeyUnicity='0' table=&quot;qwat_vl&quot;.&quot;sia405pt_protection_tube_horizontal_positioning&quot;" name="LayerSource"/>
+            <Option type="QString" value="service='pg_qwat' key='code' checkPrimaryKeyUnicity='0' table=&quot;qwat_vl&quot;.&quot;sia405pt_protection_tube_horizontal_positioning&quot;" name="LayerSource"/>
             <Option type="int" value="1" name="NofColumns"/>
             <Option type="bool" value="true" name="OrderByValue"/>
             <Option type="bool" value="false" name="UseCompleter"/>
@@ -503,7 +503,7 @@
             <Option type="QString" value="sia405pt_protection_tube_status_3261ceca_87ca_42cd_a347_68427dc83c89" name="Layer"/>
             <Option type="QString" value="sia405pt_protection_tube_status" name="LayerName"/>
             <Option type="QString" value="postgres" name="LayerProviderName"/>
-            <Option type="QString" value="dbname='qwat140' host=localhost port=5433 sslmode=disable key='code' checkPrimaryKeyUnicity='0' table=&quot;qwat_vl&quot;.&quot;sia405pt_protection_tube_status&quot;" name="LayerSource"/>
+            <Option type="QString" value="service='pg_qwat' key='code' checkPrimaryKeyUnicity='0' table=&quot;qwat_vl&quot;.&quot;sia405pt_protection_tube_status&quot;" name="LayerSource"/>
             <Option type="int" value="1" name="NofColumns"/>
             <Option type="bool" value="true" name="OrderByValue"/>
             <Option type="bool" value="false" name="UseCompleter"/>
@@ -573,7 +573,7 @@
             <Option type="QString" value="organisation_3ef23cbe_fb5b_49c7_83e9_b8dfd77b16f1" name="Layer"/>
             <Option type="QString" value="organisation" name="LayerName"/>
             <Option type="QString" value="postgres" name="LayerProviderName"/>
-            <Option type="QString" value="dbname='qwat140' host=localhost port=5433 sslmode=disable key='obj_id' checkPrimaryKeyUnicity='0' table=&quot;qwat_od&quot;.&quot;organisation&quot;" name="LayerSource"/>
+            <Option type="QString" value="service='pg_qwat' key='obj_id' checkPrimaryKeyUnicity='0' table=&quot;qwat_od&quot;.&quot;organisation&quot;" name="LayerSource"/>
             <Option type="int" value="1" name="NofColumns"/>
             <Option type="bool" value="true" name="OrderByValue"/>
             <Option type="bool" value="false" name="UseCompleter"/>
@@ -594,7 +594,7 @@
             <Option type="QString" value="organisation_3ef23cbe_fb5b_49c7_83e9_b8dfd77b16f1" name="Layer"/>
             <Option type="QString" value="organisation" name="LayerName"/>
             <Option type="QString" value="postgres" name="LayerProviderName"/>
-            <Option type="QString" value="dbname='qwat140' host=localhost port=5433 sslmode=disable key='obj_id' checkPrimaryKeyUnicity='0' table=&quot;qwat_od&quot;.&quot;organisation&quot;" name="LayerSource"/>
+            <Option type="QString" value="service='pg_qwat' key='obj_id' checkPrimaryKeyUnicity='0' table=&quot;qwat_od&quot;.&quot;organisation&quot;" name="LayerSource"/>
             <Option type="int" value="1" name="NofColumns"/>
             <Option type="bool" value="false" name="OrderByValue"/>
             <Option type="bool" value="false" name="UseCompleter"/>
@@ -615,7 +615,7 @@
             <Option type="QString" value="organisation_3ef23cbe_fb5b_49c7_83e9_b8dfd77b16f1" name="Layer"/>
             <Option type="QString" value="organisation" name="LayerName"/>
             <Option type="QString" value="postgres" name="LayerProviderName"/>
-            <Option type="QString" value="dbname='qwat140' host=localhost port=5433 sslmode=disable key='obj_id' checkPrimaryKeyUnicity='0' table=&quot;qwat_od&quot;.&quot;organisation&quot;" name="LayerSource"/>
+            <Option type="QString" value="service='pg_qwat' key='obj_id' checkPrimaryKeyUnicity='0' table=&quot;qwat_od&quot;.&quot;organisation&quot;" name="LayerSource"/>
             <Option type="int" value="1" name="NofColumns"/>
             <Option type="bool" value="true" name="OrderByValue"/>
             <Option type="bool" value="false" name="UseCompleter"/>
